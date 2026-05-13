@@ -77,7 +77,7 @@ export function SkillDetailPanel({
           </div>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-300 text-lg leading-none flex-shrink-0 mt-0.5"
+            className="text-gray-500 hover:text-gray-300 text-lg flex-shrink-0 w-11 h-11 flex items-center justify-center rounded touch-manipulation"
           >
             ✕
           </button>
@@ -135,7 +135,7 @@ export function SkillDetailPanel({
         <div className="flex gap-2">
           <Button
             variant="danger"
-            size="sm"
+            size="md"
             onClick={onDivest}
             disabled={!canDivest.ok}
             title={canDivest.reason}
@@ -145,7 +145,7 @@ export function SkillDetailPanel({
           </Button>
           <Button
             variant="primary"
-            size="sm"
+            size="md"
             onClick={onInvest}
             disabled={!canInvest.ok}
             title={canInvest.reason}

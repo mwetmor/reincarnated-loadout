@@ -71,22 +71,22 @@ export function SkillTree({
 
   return (
     <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
-      {/* Tree Grid */}
-      <div className="flex-1 min-w-0">
+      {/* Tree Grid — horizontal scroll fallback at very small widths */}
+      <div className="flex-1 min-w-0 overflow-x-auto">
         {/* Chain header */}
-        <div className="grid gap-2 mb-2" style={{ gridTemplateColumns: '2.5rem repeat(4, 1fr)' }}>
+        <div className="grid gap-1.5 sm:gap-2 mb-2 min-w-[280px]" style={{ gridTemplateColumns: '2rem repeat(4, 1fr)' }}>
           <div /> {/* tier label spacer */}
           {CHAINS.map((chain) => (
             <div key={chain} className="text-center">
               <span className="text-xs font-mono text-gray-500 uppercase">
-                Chain {CHAIN_LABELS[chain as keyof typeof CHAIN_LABELS]}
+                {CHAIN_LABELS[chain as keyof typeof CHAIN_LABELS]}
               </span>
             </div>
           ))}
         </div>
 
         {/* Tier rows */}
-        <div className="space-y-2">
+        <div className="space-y-1.5 sm:space-y-2 min-w-[280px]">
           {tiersWithSkills.map((tier) => {
             const unlocked = isTierUnlocked(tier);
             return (
@@ -100,8 +100,8 @@ export function SkillTree({
                   </div>
                 )}
                 <div
-                  className={`grid gap-2 items-start ${unlocked ? '' : 'pointer-events-none'}`}
-                  style={{ gridTemplateColumns: '2.5rem repeat(4, 1fr)' }}
+                  className={`grid gap-1.5 sm:gap-2 items-start ${unlocked ? '' : 'pointer-events-none'}`}
+                  style={{ gridTemplateColumns: '2rem repeat(4, 1fr)' }}
                 >
                   {/* Tier label */}
                   <div className="flex items-center justify-center">

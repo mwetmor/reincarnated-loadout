@@ -30,8 +30,8 @@ export function SkillNode({ skill, state, rank, seasonElementName, onClick }: Sk
       title={displayName}
       className={`
         relative flex flex-col items-center justify-center
-        w-16 h-16 rounded-lg border-2 transition-all duration-150
-        text-center select-none
+        w-12 h-12 sm:w-16 sm:h-16 rounded-lg border-2 transition-all duration-150
+        text-center select-none touch-manipulation
         ${stateStyles[state]}
       `}
     >

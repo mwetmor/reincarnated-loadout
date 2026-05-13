@@ -6,7 +6,7 @@ import { Analytics } from './pages/Analytics';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-950 text-gray-100">
+      <div className="min-h-screen bg-gray-950 text-gray-100" style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
         <Nav />
         <Routes>
           <Route path="/" element={<Loadout />} />

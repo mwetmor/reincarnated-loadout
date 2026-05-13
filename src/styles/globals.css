@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Safe-area insets for notched/home-indicator devices */
+body {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Ensure minimum tap target height on mobile */
+@media (max-width: 640px) {
+  button, select, a[role="button"] {
+    min-height: 44px;
+  }
+}

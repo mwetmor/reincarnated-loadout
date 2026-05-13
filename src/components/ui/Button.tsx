@@ -13,8 +13,8 @@ const variantClasses = {
 };
 
 const sizeClasses = {
-  sm: 'px-2.5 py-1 text-xs',
-  md: 'px-4 py-2 text-sm',
+  sm: 'px-2.5 py-1 text-xs min-h-[36px]',
+  md: 'px-4 py-2 text-sm min-h-[44px]',
 };
 
 export function Button({
@@ -29,7 +29,7 @@ export function Button({
       className={`
         inline-flex items-center gap-1.5 rounded border font-medium
         transition-colors duration-100 focus:outline-none focus-visible:ring-2
-        focus-visible:ring-violet-500
+        focus-visible:ring-violet-500 touch-manipulation
         ${variantClasses[variant]}
         ${sizeClasses[size]}
         ${props.disabled ? 'opacity-50 pointer-events-none' : ''}
