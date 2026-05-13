@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Nav } from './components/Nav';
 import { Loadout } from './pages/Loadout';
+import { Sample } from './pages/Sample';
 import { Analytics } from './pages/Analytics';
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Loadout />} />
+          <Route path="/sample" element={<Sample />} />
           <Route path="/analytics" element={<Analytics />} />
         </Routes>
       </div>

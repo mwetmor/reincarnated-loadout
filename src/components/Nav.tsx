@@ -16,6 +16,7 @@ export function Nav() {
 
         <div className="flex items-center gap-1">
           <NavItem to="/">Loadout</NavItem>
+          <NavItem to="/sample">Sample</NavItem>
           <NavItem to="/analytics">Analytics</NavItem>
         </div>
       </div>
