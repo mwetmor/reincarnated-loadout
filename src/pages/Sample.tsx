@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import type { ClassData, SeasonManifest } from '../data/types';
+import type { ClassData, GearCatalog, SeasonManifest } from '../data/types';
 import { ARCHETYPE_LABEL, ELEMENT_COLORS, SP_BUDGET } from '../data/constants';
 import { useSeasonData } from '../hooks/useSeasonData';
+import { synthesizeSampleLoadout } from '../utils/synthesizeSampleLoadout';
 import { SkillTree } from '../components/SkillTree/SkillTree';
 import { StatsPanel } from '../components/StatsPanel/StatsPanel';
 import { GearGrid } from '../components/GearGrid/GearGrid';
 import { SpiritGuide } from '../components/SpiritGuide/SpiritGuide';
 import { Tag } from '../components/ui/Tag';
 import { FlavorTip } from '../components/ui/FlavorTip';
+import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+import gearCatalogRaw from '../../data/sample-season/gear/catalog.json';
+const gearCatalog = gearCatalogRaw as GearCatalog;
 
 function hexFromInt(n: number): string {
   return '#' + n.toString(16).padStart(6, '0');
@@ -71,6 +76,7 @@ function SampleClassHeader({
       <div className="flex flex-col sm:flex-row sm:items-start gap-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
+            <ClassIcon classId={classData.id} size={32} className="rounded" />
             <h1 className="text-xl font-bold text-gray-100">
               {classData.name ?? classData.id}
             </h1>
@@ -125,6 +131,10 @@ function SampleClassHeader({
       </div>
 
       <div className="py-2 px-3 rounded-lg bg-gray-900/50 border border-gray-800 space-y-2">
+        <div className="flex items-center gap-2 mb-1">
+          <SeasonIcon seasonKey={manifest.season_id} size={20} />
+          <span className="text-[10px] text-gray-600 font-mono">{manifest.season_id}</span>
+        </div>
         <ElementMappingRow manifest={manifest} />
         <div className="flex items-start gap-1.5">
           <p className="text-[10px] text-gray-600 font-mono flex-1">
@@ -180,7 +190,12 @@ export function Sample() {
   }
 
   const allocations = baselineAllocations(classData);
-  const totalSP = classData.skills.length; // rank 1 × n skills
+  const totalSP = classData.skills.length;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const synthesizedGear = useMemo(
+    () => synthesizeSampleLoadout(classData, gearCatalog),
+    [classData.id]
+  );
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
@@ -190,8 +205,10 @@ export function Sample() {
         <div className="min-w-0">
           <p className="text-sm font-semibold text-violet-300">Engine Baseline View</p>
           <p className="text-xs text-violet-400/80 mt-1 leading-relaxed">
-            Every skill at rank 1, no gear equipped. This is the converged state the balance
-            loop tuned against; win rate was calculated from this configuration.{' '}
+            Every skill at rank 1. Gear shown is synthesized based on class affinity (range,
+            archetype) for visualization — in-game loot will be rolled with effects from the
+            season's effect pool. This is the converged state the balance loop tuned against;
+            win rate was calculated from this configuration.{' '}
             <Link to="/" className="underline hover:text-violet-300 transition-colors">
               Switch to Loadout
             </Link>{' '}
@@ -231,7 +248,7 @@ export function Sample() {
         remainingSP={SP_BUDGET - totalSP}
       />
 
-      <GearGrid />
+      <GearGrid mode="sample" synthesized={synthesizedGear} />
       <SpiritGuide />
 
       <div className="pt-2 border-t border-gray-800 flex items-center justify-between gap-4">

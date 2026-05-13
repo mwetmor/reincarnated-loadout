@@ -87,6 +87,26 @@ export interface SeasonData {
   classes: ClassData[];
 }
 
+export interface GearBaseItem {
+  id: string;
+  name: string;
+  slot: string;
+  handedness?: string;
+  compatible_effect_triggers?: string[];
+}
+
+export interface GearCatalog {
+  season_id: string;
+  base_items: GearBaseItem[];
+}
+
+export interface SynthesizedSlot {
+  displaySlot: string;
+  baseItemId: string;
+  displayName: string;
+  synthesized: true;
+}
+
 export interface BuildState {
   version: number;
   classId: string;

@@ -11,6 +11,7 @@ import { SpiritGuide } from '../components/SpiritGuide/SpiritGuide';
 import { ActionBar } from '../components/ActionBar';
 import { Tag } from '../components/ui/Tag';
 import { FlavorTip } from '../components/ui/FlavorTip';
+import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
 
 function hexFromInt(n: number): string {
   return '#' + n.toString(16).padStart(6, '0');
@@ -124,6 +125,7 @@ function ClassHeader({
       <div className="flex flex-col sm:flex-row sm:items-start gap-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
+            <ClassIcon classId={classData.id} size={32} className="rounded" />
             <h1 className="text-xl font-bold text-gray-100">
               {classData.name ?? classData.id}
             </h1>
@@ -175,6 +177,10 @@ function ClassHeader({
 
       {/* Season + anchor block */}
       <div className="py-2 px-3 rounded-lg bg-gray-900/50 border border-gray-800 space-y-2">
+        <div className="flex items-center gap-2 mb-1">
+          <SeasonIcon seasonKey={manifest.season_id} size={20} />
+          <span className="text-[10px] text-gray-600 font-mono">{manifest.season_id}</span>
+        </div>
         <ElementMappingBadges manifest={manifest} />
         <div className="flex items-start gap-1.5">
           <p className="text-[10px] text-gray-600 font-mono flex-1">
