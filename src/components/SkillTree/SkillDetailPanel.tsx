@@ -3,6 +3,7 @@ import { ROLE_LABEL, ELEMENT_COLORS } from '../../data/constants';
 import { Button } from '../ui/Button';
 import { Tag } from '../ui/Tag';
 import { Card } from '../ui/Card';
+import { FlavorTip } from '../ui/FlavorTip';
 
 interface SkillDetailPanelProps {
   skill: Skill | null;
@@ -87,6 +88,24 @@ export function SkillDetailPanel({
           <Tag element={skill.canonical_element}>{elName}</Tag>
           <Tag>{roleLabel}</Tag>
         </div>
+
+        {/* Flavor text — inline if short, modal (i) if long */}
+        {skill.flavor_text && (
+          <div className="mt-2">
+            {skill.flavor_text.length <= 80 ? (
+              <FlavorTip mode="inline">{skill.flavor_text}</FlavorTip>
+            ) : (
+              <div className="flex items-start gap-1.5">
+                <p className="text-xs text-gray-600 italic leading-snug line-clamp-2 flex-1">
+                  {skill.flavor_text.slice(0, 120)}…
+                </p>
+                <FlavorTip mode="modal" title={displayName} className="flex-shrink-0 mt-0.5">
+                  {skill.flavor_text}
+                </FlavorTip>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Stats row */}

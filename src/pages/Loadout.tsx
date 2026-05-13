@@ -10,6 +10,15 @@ import { GearGrid } from '../components/GearGrid/GearGrid';
 import { SpiritGuide } from '../components/SpiritGuide/SpiritGuide';
 import { ActionBar } from '../components/ActionBar';
 import { Tag } from '../components/ui/Tag';
+import { FlavorTip } from '../components/ui/FlavorTip';
+
+function hexFromInt(n: number): string {
+  return '#' + n.toString(16).padStart(6, '0');
+}
+
+function flavorMode(text: string): 'inline' | 'modal' {
+  return text.length <= 80 ? 'inline' : 'modal';
+}
 
 function buildShareUrl(classData: ClassData, seasonId: string, allocations: Record<string, number>): string {
   const ranks = classData.skills.map((s) => allocations[s.id] ?? 0);
@@ -36,17 +45,34 @@ function parseBuildUrl(
   }
 }
 
+function ColorPalette({ palette }: { palette: number[] }) {
+  if (!palette?.length) return null;
+  return (
+    <div className="flex items-center gap-1 flex-wrap">
+      <span className="text-[10px] text-gray-700 font-mono mr-0.5">palette</span>
+      {palette.map((n, i) => (
+        <span
+          key={i}
+          title={hexFromInt(n)}
+          className="w-3 h-3 rounded-sm border border-gray-800 flex-shrink-0"
+          style={{ backgroundColor: hexFromInt(n) }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function ElementMappingBadges({ manifest }: { manifest: SeasonManifest }) {
-  const yomiElements = manifest.elements;
   const canonicals = ['fire', 'wind', 'water', 'earth'];
 
   return (
     <div className="flex flex-wrap gap-1.5 items-center">
       <span className="text-xs text-gray-600 font-mono mr-0.5">Season elements:</span>
       {canonicals.map((canonical) => {
-        const mapped = yomiElements[canonical];
+        const mapped = manifest.elements[canonical];
         if (!mapped) return null;
         const colors = ELEMENT_COLORS[canonical] ?? ELEMENT_COLORS['physical'];
+        const tagList = mapped.tags?.join(' · ');
         return (
           <span
             key={canonical}
@@ -57,6 +83,17 @@ function ElementMappingBadges({ manifest }: { manifest: SeasonManifest }) {
             <span className="font-semibold">{mapped.name}</span>
             {mapped.is_new && (
               <span className="text-[9px] text-violet-400 ml-0.5">new</span>
+            )}
+            {tagList && (
+              <span onClick={(e) => e.stopPropagation()}>
+                <FlavorTip
+                  mode="modal"
+                  title={`${mapped.name} — ${canonical}`}
+                  className="ml-0.5"
+                >
+                  {tagList}
+                </FlavorTip>
+              </span>
             )}
           </span>
         );
@@ -79,13 +116,13 @@ function ClassHeader({
   const dominantElementName =
     manifest.elements[classData.dominant_element]?.name ?? classData.dominant_element;
   const bm = classData.balance_metadata;
+  const anchor = manifest.anchor;
 
   return (
     <div className="space-y-3">
-      {/* Class picker + header row */}
+      {/* Name + WR row */}
       <div className="flex flex-col sm:flex-row sm:items-start gap-3">
         <div className="flex-1 min-w-0">
-          {/* Name */}
           <div className="flex items-center gap-2 flex-wrap">
             <h1 className="text-xl font-bold text-gray-100">
               {classData.name ?? classData.id}
@@ -95,41 +132,66 @@ function ClassHeader({
                 ⚠ unconverged
               </span>
             )}
+            {classData.flavor_text && (
+              <FlavorTip
+                mode={flavorMode(classData.flavor_text)}
+                title={classData.name ?? classData.id}
+              >
+                {classData.flavor_text}
+              </FlavorTip>
+            )}
           </div>
+
+          {classData.flavor_text && flavorMode(classData.flavor_text) === 'inline' && (
+            <FlavorTip mode="inline" className="block mt-1">
+              {classData.flavor_text}
+            </FlavorTip>
+          )}
 
           {/* Archetype + meta tags */}
           <div className="flex flex-wrap gap-1.5 mt-2">
             <Tag>{ARCHETYPE_LABEL[classData.archetype_tag] ?? classData.archetype_tag}</Tag>
-            <Tag element={classData.dominant_element}>
-              {dominantElementName}
-            </Tag>
+            <Tag element={classData.dominant_element}>{dominantElementName}</Tag>
             <Tag>{classData.role_orientation}</Tag>
             <Tag>{classData.range_profile}</Tag>
             <Tag>{classData.energy_type}</Tag>
           </div>
+
+          {/* Color palette */}
+          {classData.color_palette?.length > 0 && (
+            <div className="mt-2">
+              <ColorPalette palette={classData.color_palette} />
+            </div>
+          )}
         </div>
 
         {/* Balance stats */}
         <div className="flex gap-3 text-right flex-shrink-0">
           <StatPill label="WR" value={`${(bm.actual_winrate * 100).toFixed(1)}%`} />
-          <StatPill label="Conv. Iters" value={String(bm.convergence_iterations)} />
-          <StatPill
-            label="Modifier"
-            value={bm.final_modifier.toFixed(4)}
-            dim
-          />
+          <StatPill label="Iterations" value={String(bm.convergence_iterations)} />
+          <StatPill label="Modifier" value={bm.final_modifier.toFixed(4)} dim />
         </div>
       </div>
 
-      {/* Seasonal element mapping */}
-      <div className="py-2 px-3 rounded-lg bg-gray-900/50 border border-gray-800">
+      {/* Season + anchor block */}
+      <div className="py-2 px-3 rounded-lg bg-gray-900/50 border border-gray-800 space-y-2">
         <ElementMappingBadges manifest={manifest} />
-        <p className="text-[10px] text-gray-700 font-mono mt-1.5">
-          Anchor: {manifest.anchor.name} · {manifest.anchor.description}
-        </p>
+        <div className="flex items-start gap-1.5">
+          <p className="text-[10px] text-gray-600 font-mono flex-1">
+            <span className="text-gray-500">Anchor:</span>{' '}
+            <span className="text-gray-400">{anchor.name}</span>
+            {' · '}
+            <span className="italic">{anchor.description}</span>
+          </p>
+          {anchor.description && anchor.description.length > 40 && (
+            <FlavorTip mode="modal" title={anchor.name} className="flex-shrink-0">
+              {anchor.description}
+            </FlavorTip>
+          )}
+        </div>
       </div>
 
-      {/* Class selector */}
+      {/* Class picker */}
       {allClasses.length > 1 && (
         <div className="flex items-center gap-2">
           <label className="text-xs text-gray-600 font-mono flex-shrink-0">Class:</label>
@@ -153,7 +215,7 @@ function ClassHeader({
 function StatPill({ label, value, dim }: { label: string; value: string; dim?: boolean }) {
   return (
     <div className="text-center">
-      <p className={`text-xs font-mono ${dim ? 'text-gray-300' : 'text-gray-100'} font-semibold`}>
+      <p className={`text-xs font-mono ${dim ? 'text-gray-400' : 'text-gray-100'} font-semibold`}>
         {value}
       </p>
       <p className="text-[10px] font-mono text-gray-600">{label}</p>
@@ -177,15 +239,10 @@ export function Loadout() {
   const seasonId = season?.manifest.season_id ?? 'sample-season';
   const build = useSkillBuild(classData, seasonId);
 
-  // Apply build from URL if present
   useEffect(() => {
     if (!classData) return;
-    const urlBuild = parseBuildUrl(searchParams, classData);
-    if (urlBuild) {
-      // Replace current allocations with URL build (not exposed in hook directly;
-      // reset + invest is handled here by direct state replacement via save trick)
-      // For v0: just show a note; full URL-load wiring is a v1 detail
-    }
+    parseBuildUrl(searchParams, classData); // reserved for v1 URL-load
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [classData?.id]);
 
   if (!season || !classData) {
@@ -200,7 +257,6 @@ export function Loadout() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
-      {/* Class header */}
       <ClassHeader
         classData={classData}
         manifest={season.manifest}
@@ -208,7 +264,6 @@ export function Loadout() {
         onClassChange={setSelectedClassId}
       />
 
-      {/* Skill Tree */}
       <section>
         <h2 className="text-xs font-mono text-gray-500 uppercase tracking-wide mb-3">
           Skill Tree — {classData.skills.length} skills · {build.totalSP} / 120 SP
@@ -225,20 +280,15 @@ export function Loadout() {
         />
       </section>
 
-      {/* Stats */}
       <StatsPanel
         classData={classData}
         totalSP={build.totalSP}
         remainingSP={build.remainingSP}
       />
 
-      {/* Gear */}
       <GearGrid />
-
-      {/* Spirit Guide */}
       <SpiritGuide />
 
-      {/* Action bar */}
       <div className="flex items-center justify-between gap-4 pt-2 border-t border-gray-800">
         <ActionBar
           onReset={build.reset}

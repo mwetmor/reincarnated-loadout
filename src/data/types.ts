@@ -6,6 +6,7 @@ export interface SkillEffect {
 export interface Skill {
   id: string;
   name: string | null;
+  flavor_text: string | null;
   role: string;
   canonical_element: string;
   effect_category: string;
@@ -39,11 +40,13 @@ export interface ClassData {
   id: string;
   name: string | null;
   title_completion: string | null;
+  flavor_text: string | null;
   archetype_tag: string;
   energy_type: string;
   role_orientation: string;
   range_profile: string;
   dominant_element: string;
+  color_palette: number[];
   stat_distribution: StatDistribution;
   skills: Skill[];
   balance_metadata: BalanceMetadata;

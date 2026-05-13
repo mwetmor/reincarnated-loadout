@@ -1,5 +1,6 @@
 import type { Skill } from '../../data/types';
 import { ROLE_ABBREV, ELEMENT_COLORS } from '../../data/constants';
+import { FlavorTip } from '../ui/FlavorTip';
 
 type NodeState = 'locked' | 'available' | 'selected' | 'invested';
 
@@ -36,18 +37,18 @@ export function SkillNode({ skill, state, rank, seasonElementName, onClick }: Sk
       `}
     >
       {/* Element color bar */}
-      <div className={`absolute top-0 left-0 right-0 h-0.5 rounded-t-lg ${elColors.bg.replace('bg-', 'bg-').replace('950', '600').replace('800', '500')}`} />
+      <div className={`absolute top-0 left-0 right-0 h-0.5 rounded-t-lg ${elColors.bg.replace('950','600').replace('800','500')}`} />
 
       {/* Role abbreviation */}
-      <span className="text-xs font-bold font-mono leading-none">{abbrev}</span>
+      <span className="text-[10px] sm:text-xs font-bold font-mono leading-none">{abbrev}</span>
 
       {/* Element name */}
-      <span className={`text-[9px] leading-none mt-0.5 font-mono ${elColors.text}`}>
+      <span className={`text-[8px] sm:text-[9px] leading-none mt-0.5 font-mono ${elColors.text}`}>
         {seasonElementName}
       </span>
 
       {/* Scaling coef */}
-      <span className="text-[9px] leading-none mt-0.5 text-gray-500 font-mono">
+      <span className="text-[8px] sm:text-[9px] leading-none mt-0.5 text-gray-500 font-mono">
         ×{skill.scaling_coefficient.toFixed(2)}
       </span>
 
@@ -58,7 +59,19 @@ export function SkillNode({ skill, state, rank, seasonElementName, onClick }: Sk
         </span>
       )}
 
-      {/* Locked overlay icon */}
+      {/* Flavor (i) icon — only when flavor_text exists and node is not locked */}
+      {skill.flavor_text && state !== 'locked' && (
+        <span
+          className="absolute bottom-0.5 right-0.5"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <FlavorTip mode="modal" title={displayName}>
+            {skill.flavor_text}
+          </FlavorTip>
+        </span>
+      )}
+
+      {/* Locked overlay */}
       {state === 'locked' && (
         <span className="absolute inset-0 flex items-center justify-center text-gray-700 text-lg">
           ⚿
