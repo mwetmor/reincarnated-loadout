@@ -1,0 +1,181 @@
+{
+  "id": "class_0001",
+  "name": "Drowned Torch Keeper",
+  "title_completion": "a Drowned Torch Keeper",
+  "flavor_text": "In the Cathedral of Bone, they say fire does not die \u2014 it merely learns to breathe underwater. You were appointed to tend flames that should not exist, guttering and spitting milk-white light from wicks that have never known air. Your congregation is silence, your sermon is heat, and the tide has never once managed to put you out.",
+  "archetype_tag": "fire_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "fire",
+  "color_palette": [
+    76978,
+    76085,
+    46198,
+    55120,
+    58455
+  ],
+  "stat_distribution": {
+    "strength": 6,
+    "dexterity": 22,
+    "intelligence": 160,
+    "wisdom": 10,
+    "vitality": 72
+  },
+  "skills": [
+    {
+      "id": "skill_000001",
+      "name": "Drowned Torch Spit",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 6.2,
+      "cooldown_seconds": 0.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 76978,
+      "flavor_text": "A gout of fire tears through standing water like a held breath finally breaking the surface. The Cathedral's bones drink the light and give nothing back."
+    },
+    {
+      "id": "skill_000002",
+      "name": "Torch Against the Tide",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 25.1,
+      "cooldown_seconds": 8.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.3
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.09
+          }
+        }
+      ],
+      "color_value": 76085,
+      "flavor_text": "A single flame hurled into the drowned dark of the Cathedral, hungry and defiant, drinking the life it burns away. The water does not extinguish it \u2014 it feeds."
+    },
+    {
+      "id": "skill_000003",
+      "name": "Drowned Torch Choir",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 24.9,
+      "cooldown_seconds": 4.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 46198,
+      "flavor_text": "Where the Cathedral's submerged nave holds its breath, a single flame refuses the dark water \u2014 singing outward in a sustained column that scorches the silence. The bone vaults remember every fire that tried to outlast the tide."
+    },
+    {
+      "id": "skill_000004",
+      "name": "Drowned Torch Vigil",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 24.1,
+      "cooldown_seconds": 7.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.6
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 55120,
+      "flavor_text": "A circle of cathedral fire blooms where the torch meets the flooded nave floor, burning against all reason beneath the water's weight. The flame does not surrender \u2014 it consumes the very tide that seeks to swallow it."
+    },
+    {
+      "id": "skill_000005",
+      "name": "Drowned Torch Vigil",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/defensive",
+      "energy_cost": 21.8,
+      "cooldown_seconds": 10.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.0
+          }
+        }
+      ],
+      "color_value": 58455,
+      "flavor_text": "Where bone vaults meet the tide, a single flame held beneath the flood burns all the brighter for its defiance. The water presses close, but the light holds."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.4,
+    "actual_winrate": 0.3933,
+    "convergence_iterations": 9,
+    "converged": true,
+    "final_modifier": 0.0537,
+    "gauntlet_results": {
+      "monster_00017": 0.0,
+      "monster_00018": 0.3333,
+      "monster_00019": 0.3667,
+      "monster_00016": 1.0,
+      "monster_00020": 0.5333,
+      "monster_00021": 0.0667,
+      "monster_00022": 1.0,
+      "monster_00023": 0.1333,
+      "monster_00024": 0.3667,
+      "monster_00025": 0.1333
+    }
+  }
+}

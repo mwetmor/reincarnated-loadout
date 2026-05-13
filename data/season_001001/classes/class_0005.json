@@ -1,0 +1,196 @@
+{
+  "id": "class_0005",
+  "name": "Abyssal Gale Archer",
+  "title_completion": "an Abyssal Gale Archer",
+  "flavor_text": "From the lightless depths of the Trench, the wind does not blow \u2014 it thrums, a low and hungry vibration that travels through basalt and brine alike until it finds something to tear apart. You have learned to pull that thrum taut along a bowstring, loosing arrows that carry the full, resonant fury of the abyss. Whatever swims between you and your mark would do well to simply step aside.",
+  "archetype_tag": "hunter",
+  "energy_type": "focus",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "physical",
+  "color_palette": [
+    109330,
+    189344,
+    114711,
+    198770,
+    144892,
+    168119
+  ],
+  "stat_distribution": {
+    "strength": 29,
+    "dexterity": 136,
+    "intelligence": 20,
+    "wisdom": 20,
+    "vitality": 65
+  },
+  "skills": [
+    {
+      "id": "skill_000024",
+      "name": "Trench Gale Shot",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 13.7,
+      "cooldown_seconds": 1.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "physical",
+            "pierce": 1,
+            "multishot": 2
+          }
+        }
+      ],
+      "color_value": 109330,
+      "flavor_text": "A bolt hurled with the force of wind funneled through crushing ocean depths, where pressure and current conspire into something merciless. It crosses the distance before the air has time to mourn its passing."
+    },
+    {
+      "id": "skill_000025",
+      "name": "Trench Gale Draw",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 25.2,
+      "cooldown_seconds": 5.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "physical",
+            "pierce": 1,
+            "multishot": 2
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.19,
+            "duration_seconds": 5.0
+          }
+        }
+      ],
+      "color_value": 189344,
+      "flavor_text": "From the lightless depths, pressure builds into a single held breath \u2014 then releases upward with the fury of a wind that has never known open sky. What it strikes does not simply break; it is scattered."
+    },
+    {
+      "id": "skill_000026",
+      "name": "Trench Howl Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/physical/area_damage",
+      "energy_cost": 17.4,
+      "cooldown_seconds": 6.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 114711,
+      "flavor_text": "From the lightless deep, a column of compressed wind tears upward through the water and stone alike, splitting everything in its narrow path with the voice of the abyss. The trench does not simply crack \u2014 it screams."
+    },
+    {
+      "id": "skill_000027",
+      "name": "Trench Gale Rending",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 22.7,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.8
+          }
+        }
+      ],
+      "color_value": 198770,
+      "flavor_text": "The wind that rises from the abyss does not howl \u2014 it tears, pulling flesh apart in slow, spiraling ribbons. Whatever it touches bleeds into the dark water below, drop by inexorable drop."
+    },
+    {
+      "id": "skill_000028",
+      "name": "Abyssal Gale Ward",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 18.6,
+      "cooldown_seconds": 10.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.2
+          }
+        }
+      ],
+      "color_value": 144892,
+      "flavor_text": "From the lightless pressures of the Deep Trench, a howling column of compressed wind coils around the body like iron, shrugging off ruin with the patience of stone. The ward does not bend \u2014 it breathes."
+    },
+    {
+      "id": "skill_000029",
+      "name": "Trench Surge Breath",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/physical/utility",
+      "energy_cost": 19.7,
+      "cooldown_seconds": 16.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.19,
+            "duration_seconds": 4.6
+          }
+        }
+      ],
+      "color_value": 168119,
+      "flavor_text": "A column of pressurized air rises from the abyss below, drawn upward through crushing fathoms until it erupts in a fierce ring around the fighter. For a breathless moment, every swing carries the weight of the deep wind behind it."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.5967,
+    "convergence_iterations": 4,
+    "converged": true,
+    "final_modifier": 0.8812,
+    "gauntlet_results": {
+      "monster_00017": 0.4,
+      "monster_00018": 0.5667,
+      "monster_00019": 0.4667,
+      "monster_00016": 1.0,
+      "monster_00020": 0.5667,
+      "monster_00021": 0.6667,
+      "monster_00022": 1.0,
+      "monster_00023": 0.5333,
+      "monster_00024": 0.4667,
+      "monster_00025": 0.3
+    }
+  }
+}

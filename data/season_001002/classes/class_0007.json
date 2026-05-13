@@ -1,0 +1,189 @@
+{
+  "id": "class_0007",
+  "name": "Saltweeping Ossomancer",
+  "title_completion": "a Saltweeping Ossomancer",
+  "flavor_text": "Beneath the Crypt of the First Saint, the bones themselves remember grief \u2014 and you have learned to read their tears. You draw mana not from the air or sky, but from the slow seep of brine through ancient marrow, coaxing sorrow out of stone until it floods. The dead here do not rest; they weep, and you have made their weeping into a weapon.",
+  "archetype_tag": "hybrid_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "color_palette": [
+    611635,
+    604990,
+    675407,
+    576847,
+    580519
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 11,
+    "intelligence": 101,
+    "wisdom": 95,
+    "vitality": 53
+  },
+  "skills": [
+    {
+      "id": "skill_000033",
+      "name": "Salt Seeping Through Stone",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 5.8,
+      "cooldown_seconds": 0.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.45,
+            "duration_seconds": 5.0
+          }
+        }
+      ],
+      "color_value": 611635,
+      "flavor_text": "A single tear falls into the crypt's ancient earth and does not stop \u2014 it finds the cold veins beneath, carrying grief downward until it freezes whatever it touches. The saint wept once here, and the ground has never fully thawed."
+    },
+    {
+      "id": "skill_000034",
+      "name": "Salt Weeps Through Stone",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 22.5,
+      "cooldown_seconds": 8.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.41,
+            "duration_seconds": 3.3
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.12,
+            "duration_seconds": 7.5
+          }
+        }
+      ],
+      "color_value": 604990,
+      "flavor_text": "A single tear falls from the crypt's oldest carving and spreads outward in a slow, freezing ring \u2014 the saint's grief made manifest, cold and absolute. Where it passes, the air tastes of salt and old sorrow, and those who survive find their wounds sing louder for a breath."
+    },
+    {
+      "id": "skill_000035",
+      "name": "Weeping Stone Breath",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "water",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 18.4,
+      "cooldown_seconds": 15.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.49,
+            "duration_seconds": 3.0
+          }
+        }
+      ],
+      "color_value": 675407,
+      "flavor_text": "From the cold mouth of the crypt, a grief older than memory exhales outward in a pale cone \u2014 salt-heavy, bone-deep, seeping into joints and slowing the living to the pace of the buried. The First Saint never wept for mercy, only for the weight of knowing."
+    },
+    {
+      "id": "skill_000036",
+      "name": "Salt Seep Rite",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 22.2,
+      "cooldown_seconds": 5.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 576847,
+      "flavor_text": "Beneath the crypt floor, where saints wept into stone for centuries, a thin line of brine rises and tears itself open. The earth remembers every sorrow it was asked to swallow."
+    },
+    {
+      "id": "skill_000037",
+      "name": "Salt Kept in Stone",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 18.2,
+      "cooldown_seconds": 8.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.7
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.22,
+            "duration_seconds": 7.3
+          }
+        }
+      ],
+      "color_value": 580519,
+      "flavor_text": "A single tear falls into the crypt's dark earth and the ground remembers it, rising as a shell of mineral grief around the one who wept. The saint's sorrow does not break \u2014 it holds."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5033,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.102,
+    "gauntlet_results": {
+      "monster_00017": 0.9,
+      "monster_00018": 0.0667,
+      "monster_00019": 0.2333,
+      "monster_00016": 1.0,
+      "monster_00020": 0.6333,
+      "monster_00021": 0.5667,
+      "monster_00022": 0.9667,
+      "monster_00023": 0.1,
+      "monster_00024": 0.3333,
+      "monster_00025": 0.2333
+    }
+  }
+}

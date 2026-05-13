@@ -1,0 +1,212 @@
+{
+  "id": "class_0002",
+  "name": "Ossuary Milk-Priest",
+  "title_completion": "an Ossuary Milk-Priest",
+  "flavor_text": "In the Cathedral of Bone, the faithful do not drink wine \u2014 they drink something older, something that seeps from the marrow of saints long turned to ivory. You have inherited the chalice, the sermon, and the terrible tide that follows when you tip it. The congregation kneels not out of reverence, but because the flood has taken their legs.",
+  "archetype_tag": "water_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "color_palette": [
+    680186,
+    571944,
+    689036,
+    681712,
+    683893,
+    630396
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 16,
+    "intelligence": 155,
+    "wisdom": 9,
+    "vitality": 80
+  },
+  "skills": [
+    {
+      "id": "skill_000006",
+      "name": "Marrow Tide Offering",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 8.4,
+      "cooldown_seconds": 1.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 680186,
+      "flavor_text": "From the Cathedral's pale vaults, a dense surge of white water erupts forward, thick and vital as something sacred spilled. It carries the cold weight of devotion in every drop."
+    },
+    {
+      "id": "skill_000007",
+      "name": "Pale Tide Sermon",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 37.1,
+      "cooldown_seconds": 7.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.47,
+            "duration_seconds": 4.0
+          }
+        }
+      ],
+      "color_value": 571944,
+      "flavor_text": "From the hollowed nave of ancient bone, a cone of white-cold water surges forth like a mother's grief made flood. It slows whatever it touches, leaving flesh pale and trembling in its blessed, terrible wake."
+    },
+    {
+      "id": "skill_000008",
+      "name": "Pale Tide Sermon",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 24.4,
+      "cooldown_seconds": 7.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.26,
+            "duration_seconds": 4.1
+          }
+        }
+      ],
+      "color_value": 689036,
+      "flavor_text": "A cone of white water erupts from the caster's outstretched hands, cold as the marrow-damp air inside the Cathedral of Bone. Enemies caught within are drenched and slowed, their warmth drawn out like an offering left at a sacred font."
+    },
+    {
+      "id": "skill_000009",
+      "name": "Pale Tide Seeping",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 21.9,
+      "cooldown_seconds": 7.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.34,
+            "duration_seconds": 3.7
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 681712,
+      "flavor_text": "From the marrow-white halls of the Cathedral of Bone, a slow cold current finds its way beneath the skin, patient as milk souring in still water. It does not strike \u2014 it lingers, spreading its chill through living tissue with quiet, ruinous devotion."
+    },
+    {
+      "id": "skill_000010",
+      "name": "Ivory Tide Veil",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 18.6,
+      "cooldown_seconds": 14.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.1
+          }
+        }
+      ],
+      "color_value": 683893,
+      "flavor_text": "A surge of pale, luminous water rises from within, wrapping the body in a membrane as white and dense as cathedral milk. For one breathless moment, nothing in this world can reach you."
+    },
+    {
+      "id": "skill_000011",
+      "name": "Pale Tide Drinking",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "water",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 17.4,
+      "cooldown_seconds": 15.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.26,
+            "duration_seconds": 8.7
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.9
+          }
+        }
+      ],
+      "color_value": 630396,
+      "flavor_text": "The Cathedral's drowned altars weep upward, and the water remembers milk \u2014 white, ancient, silencing everything that is not the self. What feeds you now also floods the mouths of those who would name you."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.6133,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.0871,
+    "gauntlet_results": {
+      "monster_00017": 0.4333,
+      "monster_00018": 0.2333,
+      "monster_00019": 0.4667,
+      "monster_00016": 1.0,
+      "monster_00020": 0.5667,
+      "monster_00021": 0.6667,
+      "monster_00022": 1.0,
+      "monster_00023": 0.4,
+      "monster_00024": 0.7,
+      "monster_00025": 0.6667
+    }
+  }
+}

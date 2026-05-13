@@ -1,0 +1,168 @@
+{
+  "id": "class_0002",
+  "name": "Mercurial Court Sorcerer",
+  "title_completion": "a Mercurial Court Sorcerer",
+  "flavor_text": "Once a minor functionary in a king's crumbling court, you drowned in the throne room's flooded mercury veins and woke knowing the silver poison as your blood. You conjure cascading deluges of quicksilver that shatter men like glass, pooling and seeping through cracks in castle stone until nothing breathes. The Mad King's throne still calls to you \u2014 not as a seat of power, but as a font of beautiful, terrible flood.",
+  "archetype_tag": "water_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "water",
+  "color_palette": [
+    697875,
+    674076,
+    636589,
+    644212,
+    671838
+  ],
+  "stat_distribution": {
+    "strength": 15,
+    "dexterity": 21,
+    "intelligence": 152,
+    "wisdom": 10,
+    "vitality": 72
+  },
+  "skills": [
+    {
+      "id": "skill_000007",
+      "name": "Quicksilver Deluge",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 11.1,
+      "cooldown_seconds": 0.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 697875,
+      "flavor_text": "A dense bead of mercurial water launches from the caster's palm, heavy as a king's decree and just as final. It strikes with the cold inevitability of a throne room floor swallowing something fragile."
+    },
+    {
+      "id": "skill_000008",
+      "name": "Throne Mercury Deluge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 39.4,
+      "cooldown_seconds": 8.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 674076,
+      "flavor_text": "From the cracked throne room floor, silver water rises in a single crushing column, heavy and cold as a mad king's judgment. It finds one target and does not miss."
+    },
+    {
+      "id": "skill_000009",
+      "name": "Mercury Court Deluge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 17.9,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 636589,
+      "flavor_text": "Quicksilver seeps through the cracked throne room floor, swelling upward in a sudden drowning circle. The mad king's hall remembers every flood that was never meant to happen here."
+    },
+    {
+      "id": "skill_000010",
+      "name": "Throne Seep Totem",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 18.8,
+      "cooldown_seconds": 6.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.25,
+            "duration_seconds": 10.2
+          }
+        }
+      ],
+      "color_value": 644212,
+      "flavor_text": "A column of mercurial water rises unbidden from the cracked marble floor, weeping cold silver down its flanks in slow, deliberate trails. Whatever it touches forgets how to move quickly."
+    },
+    {
+      "id": "skill_000011",
+      "name": "Quicksilver Throne Veil",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 22.6,
+      "cooldown_seconds": 14.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.8
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.22,
+            "duration_seconds": 9.1
+          }
+        }
+      ],
+      "color_value": 671838,
+      "flavor_text": "Mercury bleeds up from the cracked throne room floor, pooling around the target in a skin of living silver that swallows the weight of every blow. The mad king's hall remembers how to hold something sacred, even now."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4733,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.0648,
+    "gauntlet_results": {
+      "monster_00017": 0.3,
+      "monster_00018": 0.0,
+      "monster_00019": 0.5333,
+      "monster_00016": 1.0,
+      "monster_00020": 0.9333,
+      "monster_00021": 0.4,
+      "monster_00022": 0.7,
+      "monster_00023": 0.2333,
+      "monster_00024": 0.2667,
+      "monster_00025": 0.3667
+    }
+  }
+}

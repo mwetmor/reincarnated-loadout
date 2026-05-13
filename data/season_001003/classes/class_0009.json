@@ -1,0 +1,182 @@
+{
+  "id": "class_0009",
+  "name": "Milk-Drowned Chorister",
+  "title_completion": "a Milk-Drowned Chorister",
+  "flavor_text": "In the Cathedral of Bone, the holy rites are sung not with water but with milk \u2014 breathed deep, breathed out, until the breath itself becomes a gale that strips the flesh from the faithful. You did not choose this choir. But your lungs remember every hymn.",
+  "archetype_tag": "wind_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "wind",
+  "color_palette": [
+    518843,
+    423809,
+    491837,
+    468358,
+    499583
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 30,
+    "intelligence": 15,
+    "wisdom": 140,
+    "vitality": 75
+  },
+  "skills": [
+    {
+      "id": "skill_000045",
+      "name": "Tide Breath Gale",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 11.4,
+      "cooldown_seconds": 1.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 518843,
+      "flavor_text": "A living exhale surges outward from the Cathedral's hollow ribs, carrying the weight of deep water and open sky. It strikes with the intimacy of a whisper and the force of a breaking wave."
+    },
+    {
+      "id": "skill_000046",
+      "name": "Last Breath Tide",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 21.6,
+      "cooldown_seconds": 5.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 423809,
+      "flavor_text": "Drawn from the deepest hollow of the Cathedral of Bone, this breath becomes a current \u2014 warm, pressurized, alive \u2014 that strikes with the weight of everything the lungs have ever held. The air does not simply move; it remembers."
+    },
+    {
+      "id": "skill_000047",
+      "name": "Tidecaller's Last Breath",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/wind/area_damage",
+      "energy_cost": 17.6,
+      "cooldown_seconds": 6.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 3.8,
+            "stagger_seconds": 0.8
+          }
+        }
+      ],
+      "color_value": 491837,
+      "flavor_text": "From the drowned nave of the Cathedral of Bone, a single exhalation unfurls outward like a wave breaking against nothing \u2014 warm, vast, and final. Those caught within it are flung back as though the sea itself has exhaled them from its memory."
+    },
+    {
+      "id": "skill_000048",
+      "name": "Drowned Exhale",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 11.3,
+      "cooldown_seconds": 4.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.1,
+            "stagger_seconds": 0.7
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 468358,
+      "flavor_text": "A single breath pulled from the Cathedral's salt-damp halls becomes a rushing torrent of air, warm and crushing as a tide. It carries the smell of old bone and open sea, and it does not stop until something gives way."
+    },
+    {
+      "id": "skill_000049",
+      "name": "Drowned Breath Ward",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 23.2,
+      "cooldown_seconds": 14.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.5
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.21,
+            "duration_seconds": 8.0
+          }
+        }
+      ],
+      "color_value": 499583,
+      "flavor_text": "Where the Cathedral of Bone exhales its cold tide, a warm breath rises against it \u2014 pressing outward, holding the body like water holds a stone. For a moment, nothing breaks through."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4933,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.0945,
+    "gauntlet_results": {
+      "monster_00017": 0.4,
+      "monster_00018": 0.6,
+      "monster_00019": 0.4667,
+      "monster_00016": 1.0,
+      "monster_00020": 0.1667,
+      "monster_00021": 0.5333,
+      "monster_00022": 1.0,
+      "monster_00023": 0.1667,
+      "monster_00024": 0.1667,
+      "monster_00025": 0.4333
+    }
+  }
+}

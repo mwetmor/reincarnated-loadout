@@ -1,0 +1,210 @@
+{
+  "id": "class_0003",
+  "name": "Ossuary Oracle",
+  "title_completion": "an Ossuary Oracle",
+  "flavor_text": "Deep beneath the Crypt of the First Saint, where marrow-light seeps through cracked reliquaries, the Ossuary Oracle reads the will of the buried dead in the very calcium of the earth. They do not cast spells so much as petition the bones \u2014 and the bones, remembering pain, answer with devastating generosity. To stand before an Ossuary Oracle is to feel your own skeleton grow suddenly, uncomfortably aware of itself.",
+  "archetype_tag": "earth_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "earth",
+  "color_palette": [
+    326756,
+    257837,
+    290514,
+    304927,
+    262409,
+    325508
+  ],
+  "stat_distribution": {
+    "strength": 7,
+    "dexterity": 25,
+    "intelligence": 13,
+    "wisdom": 158,
+    "vitality": 67
+  },
+  "skills": [
+    {
+      "id": "skill_000011",
+      "name": "Marrow Toll Strike",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 15.0,
+      "cooldown_seconds": 1.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 326756,
+      "flavor_text": "Something beneath the stone remembers how to break. The blow finds the hidden seam where all living things are most themselves."
+    },
+    {
+      "id": "skill_000012",
+      "name": null,
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 20.8,
+      "cooldown_seconds": 5.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.14,
+            "duration_seconds": 6.8
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.08
+          }
+        }
+      ],
+      "color_value": 257837,
+      "flavor_text": null
+    },
+    {
+      "id": "skill_000013",
+      "name": "Marrow of the First Saint",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 24.8,
+      "cooldown_seconds": 4.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.5
+          }
+        }
+      ],
+      "color_value": 290514,
+      "flavor_text": "The ground splits along veins older than memory, and what rises is not stone but something that was once alive. Those caught within it do not merely fall \u2014 they are held, as if the earth has finally recognized its kin."
+    },
+    {
+      "id": "skill_000014",
+      "name": "Marrow of the Buried Saint",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 18.6,
+      "cooldown_seconds": 5.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.9
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 304927,
+      "flavor_text": "Beneath the crypt's floor, something older than faith remembers how to hunger. The earth drinks deep, and what it holds, it does not soon release."
+    },
+    {
+      "id": "skill_000015",
+      "name": "Marrow of the Interred Saint",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 14.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.5
+          }
+        }
+      ],
+      "color_value": 262409,
+      "flavor_text": "The deepest substance of hallowed bone rises to the skin, hardening the living against all that would unmake them. What the First Saint carried into death now shields the faithful against it."
+    },
+    {
+      "id": "skill_000016",
+      "name": "Marrow Saints Resolve",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 14.0,
+      "cooldown_seconds": 15.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.27,
+            "duration_seconds": 4.8
+          }
+        }
+      ],
+      "color_value": 325508,
+      "flavor_text": "Deep within the crypt, something older than bone answers the call \u2014 a warmth that rises through stone and sinew alike. For a breath, your strikes carry the weight of the buried faithful."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.48,
+    "convergence_iterations": 6,
+    "converged": true,
+    "final_modifier": 0.0797,
+    "gauntlet_results": {
+      "monster_00017": 0.6333,
+      "monster_00018": 0.6,
+      "monster_00019": 0.0,
+      "monster_00016": 1.0,
+      "monster_00020": 0.4667,
+      "monster_00021": 0.4333,
+      "monster_00022": 0.8667,
+      "monster_00023": 0.0,
+      "monster_00024": 0.3667,
+      "monster_00025": 0.4333
+    }
+  }
+}

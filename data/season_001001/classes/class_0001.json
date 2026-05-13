@@ -1,0 +1,227 @@
+{
+  "id": "class_0001",
+  "name": "Trenchwind Pitch-Caster",
+  "title_completion": "a Trenchwind Pitch-Caster",
+  "flavor_text": "From the lightless depths of the Deep Trench, the pitch thrums upward on strange currents, hungry and alive. You have learned to catch that dark wind in your palms and hurl it screaming toward anything foolish enough to stand still. Down here, fire doesn't flicker \u2014 it ignites with a low, terrible thrum that the brine cannot drown.",
+  "archetype_tag": "fire_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "fire",
+  "color_palette": [
+    24731,
+    2511,
+    51775,
+    79842,
+    30794,
+    12664
+  ],
+  "stat_distribution": {
+    "strength": 8,
+    "dexterity": 18,
+    "intelligence": 157,
+    "wisdom": 15,
+    "vitality": 72
+  },
+  "skills": [
+    {
+      "id": "skill_000001",
+      "name": "Trenchwind Pitch Bolt",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 5.0,
+      "cooldown_seconds": 0.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.9
+          }
+        }
+      ],
+      "color_value": 24731,
+      "flavor_text": "From the lightless pressures of the Deep Trench, a bead of burning pitch rides the howling updraft straight and true. Where it lands, the black tar clings and feeds the flame long after the wind has moved on."
+    },
+    {
+      "id": "skill_000002",
+      "name": "Trench Pitch Ignition",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 33.4,
+      "cooldown_seconds": 9.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.4
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.18,
+            "duration_seconds": 10.0
+          }
+        }
+      ],
+      "color_value": 2511,
+      "flavor_text": "From the lightless deep, a breath of wind drags something ancient and black into the open air \u2014 and where fire meets it, the burning refuses to stop. The target learns what it means to carry the trench's dark weight."
+    },
+    {
+      "id": "skill_000003",
+      "name": "Trench Pitch Ignition",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/fire/area_damage",
+      "energy_cost": 25.2,
+      "cooldown_seconds": 3.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.8
+          }
+        }
+      ],
+      "color_value": 51775,
+      "flavor_text": "From the lightless depths, a circle of black tar erupts and catches \u2014 the wind does not extinguish this flame, it feeds it. The burning pitch clings and breathes and refuses to die."
+    },
+    {
+      "id": "skill_000004",
+      "name": "Trenchwind Pitch Bloom",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 13.2,
+      "cooldown_seconds": 6.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 3.6
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 79842,
+      "flavor_text": "From the lightless deep, a breath of scorching wind carries something ancient and adhesive to the surface, spreading across the ground in a slow, hungry circle of black fire. It clings to everything it touches, burning long after the gust has passed."
+    },
+    {
+      "id": "skill_000005",
+      "name": "Trench Pitch Shroud",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/defensive",
+      "energy_cost": 18.7,
+      "cooldown_seconds": 13.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.1
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.27,
+            "duration_seconds": 9.5
+          }
+        }
+      ],
+      "color_value": 30794,
+      "flavor_text": "From the lightless deep, a skin of burning pitch rises with the updraft and hardens around the caster like a second skeleton. The wind screams against it and finds nothing to grip."
+    },
+    {
+      "id": "skill_000006",
+      "name": "Trench Pitch Ignition",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 14.9,
+      "cooldown_seconds": 18.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.28,
+            "duration_seconds": 7.4
+          }
+        }
+      ],
+      "color_value": 12664,
+      "flavor_text": "From the lightless deep, a breath of pressurized dark rises and catches \u2014 coating thought itself in slow-burning tar. The mind runs hotter, heavier, and far more dangerous."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5067,
+    "convergence_iterations": 9,
+    "converged": true,
+    "final_modifier": 0.0537,
+    "gauntlet_results": {
+      "monster_00017": 0.2,
+      "monster_00018": 0.4,
+      "monster_00019": 0.5,
+      "monster_00016": 1.0,
+      "monster_00020": 0.3667,
+      "monster_00021": 0.6333,
+      "monster_00022": 0.9667,
+      "monster_00023": 0.6667,
+      "monster_00024": 0.2667,
+      "monster_00025": 0.0667
+    }
+  }
+}

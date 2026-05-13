@@ -1,0 +1,166 @@
+{
+  "id": "class_0006",
+  "name": "Crypt Chandler",
+  "title_completion": "a Crypt Chandler",
+  "flavor_text": "In the cold belly of the First Saint's tomb, the dead are kept honest by candlelight \u2014 and so are you. You render the marrow of the ancient faithful into tallow, sealing the restless beneath dripping wax before they remember they have teeth. Every flame you birth in this darkness is a lock, and you alone hold the wick.",
+  "archetype_tag": "fire_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "medium",
+  "dominant_element": "fire",
+  "color_palette": [
+    83444,
+    89135,
+    81778,
+    12204,
+    80319
+  ],
+  "stat_distribution": {
+    "strength": 11,
+    "dexterity": 17,
+    "intelligence": 140,
+    "wisdom": 10,
+    "vitality": 92
+  },
+  "skills": [
+    {
+      "id": "skill_000028",
+      "name": null,
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 8.3,
+      "cooldown_seconds": 0.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 83444,
+      "flavor_text": null
+    },
+    {
+      "id": "skill_000029",
+      "name": "Sepulcher Wax Seal",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 26.9,
+      "cooldown_seconds": 9.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 4.0
+          }
+        }
+      ],
+      "color_value": 89135,
+      "flavor_text": "A pale flame breathes against the target's throat, leaving soft wax where words once lived. The saint's crypt holds many secrets \u2014 now so do they."
+    },
+    {
+      "id": "skill_000030",
+      "name": "Crypt Candle Seal",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 21.7,
+      "cooldown_seconds": 8.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 1.9
+          }
+        }
+      ],
+      "color_value": 81778,
+      "flavor_text": "A pale flame gutters against the throat, soft as burial wax pressed into cold stone. The voice melts before it can form, swallowed by the saint's long silence."
+    },
+    {
+      "id": "skill_000031",
+      "name": "Crypt Tallow Bloom",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 22.4,
+      "cooldown_seconds": 7.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.2
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 12204,
+      "flavor_text": "Pale wax seeps up through the consecrated earth, pooling in sacred circles before igniting with a slow, devotional hunger. The ground remembers every saint who burned here, and it is not done remembering."
+    },
+    {
+      "id": "skill_000032",
+      "name": "Crypt Candle Bloom",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 16.7,
+      "cooldown_seconds": 16.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.23,
+            "duration_seconds": 8.8
+          }
+        }
+      ],
+      "color_value": 80319,
+      "flavor_text": "Pale wax softens against the skin, drawing heat upward through the bones like a flame remembering its purpose. For a breath of seconds, thought burns hotter than stone."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.6667,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00017": 0.6,
+      "monster_00018": 0.7667,
+      "monster_00019": 0.7333,
+      "monster_00016": 1.0,
+      "monster_00020": 0.8333,
+      "monster_00021": 0.4667,
+      "monster_00022": 0.9333,
+      "monster_00023": 0.4333,
+      "monster_00024": 0.6333,
+      "monster_00025": 0.2667
+    }
+  }
+}

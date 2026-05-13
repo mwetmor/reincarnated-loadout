@@ -1,0 +1,182 @@
+{
+  "id": "class_0004",
+  "name": "Abyssal Thrummer",
+  "title_completion": "an Abyssal Thrummer",
+  "flavor_text": "At the bottom of the Deep Trench, where no light reaches and the pressure should silence everything, you hear it \u2014 a low, resonant thrum that bends the water and shakes the basalt walls. You are the source of that sound now, a conduit for winds that have never once touched open sky. The trenches do not echo; they obey.",
+  "archetype_tag": "wind_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "close",
+  "dominant_element": "wind",
+  "color_palette": [
+    452093,
+    432580,
+    512635,
+    430812,
+    441278
+  ],
+  "stat_distribution": {
+    "strength": 8,
+    "dexterity": 36,
+    "intelligence": 7,
+    "wisdom": 140,
+    "vitality": 79
+  },
+  "skills": [
+    {
+      "id": "skill_000019",
+      "name": "Trench Thrum Gale",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 12.7,
+      "cooldown_seconds": 0.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 4.0,
+            "stagger_seconds": 0.4
+          }
+        }
+      ],
+      "color_value": 452093,
+      "flavor_text": "From the lightless deep, a pressure older than storms answers the strike \u2014 the air itself shudders and splits. What stands before it finds no ground to hold."
+    },
+    {
+      "id": "skill_000020",
+      "name": "Trench Thrum Expulsion",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 19.8,
+      "cooldown_seconds": 12.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 4.4,
+            "stagger_seconds": 0.7
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 432580,
+      "flavor_text": "A sound older than storms rises from the deep and strikes outward \u2014 not heard so much as felt in the chest and spine. Whatever stands before it does not fall so much as simply cease to be near."
+    },
+    {
+      "id": "skill_000021",
+      "name": "Trench Thrum Surge",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 17.9,
+      "cooldown_seconds": 9.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.4,
+            "stagger_seconds": 0.5
+          }
+        }
+      ],
+      "color_value": 512635,
+      "flavor_text": "A pulse of pressurized wind erupts from the deep, carrying the bone-deep resonance of abyssal currents. Everything within reach is flung back by a force that feels less like wind and more like the ocean floor exhaling."
+    },
+    {
+      "id": "skill_000022",
+      "name": "Trench Thrum Gale",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 11.1,
+      "cooldown_seconds": 6.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.3,
+            "stagger_seconds": 0.7
+          }
+        }
+      ],
+      "color_value": 430812,
+      "flavor_text": "From the crushing dark of the Deep Trench, a column of pressurized wind screams upward and finds its mark, humming through bone and cartilage like a tuning fork struck against the seafloor. The resonance lingers, tearing from the inside out."
+    },
+    {
+      "id": "skill_000023",
+      "name": "Trench Thrum Ascent",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 14.7,
+      "cooldown_seconds": 18.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.32,
+            "duration_seconds": 8.6
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.29,
+            "duration_seconds": 6.2
+          }
+        }
+      ],
+      "color_value": 441278,
+      "flavor_text": "From the lightless deep, a resonant pressure rises through the body like a column of pressurized water finding the surface. The wind above answers, sharpening the mind and loosening the flow of something ancient."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.49,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.1168,
+    "gauntlet_results": {
+      "monster_00017": 0.6,
+      "monster_00018": 0.2333,
+      "monster_00019": 0.5667,
+      "monster_00016": 0.7,
+      "monster_00020": 0.3,
+      "monster_00021": 0.7667,
+      "monster_00022": 0.9,
+      "monster_00023": 0.6333,
+      "monster_00024": 0.0,
+      "monster_00025": 0.2
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "id": "class_0005",
+  "name": "Marrowrunner",
+  "title_completion": "a Marrowrunner",
+  "flavor_text": "In the Cathedral of Bone, the walls weep milk instead of holy water, and those who drink from the cracks learn to move like the tide \u2014 boneless, relentless, inevitable. The Marrowrunner has no patience for armor or honor, only the wet crack of a strike finding its mark between ribs. They say her torch never gutters, because she runs too fast for the dark to catch her.",
+  "archetype_tag": "rogue",
+  "energy_type": "combo",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "physical",
+  "color_palette": [
+    199199,
+    158009,
+    119652,
+    153269,
+    157438,
+    199499
+  ],
+  "stat_distribution": {
+    "strength": 60,
+    "dexterity": 163,
+    "intelligence": 9,
+    "wisdom": 6,
+    "vitality": 32
+  },
+  "skills": [
+    {
+      "id": "skill_000023",
+      "name": "Tidal Marrow Strike",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 0.0,
+      "cooldown_seconds": 0.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 199199,
+      "flavor_text": "The Cathedral's drowned saints press their weight through your fist, each blow carrying the crush of fathomless water against ancient bone. Something always cracks."
+    },
+    {
+      "id": "skill_000024",
+      "name": "Tidal Marrow Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/physical/area_damage",
+      "energy_cost": 3.0,
+      "cooldown_seconds": 5.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 9.7
+          }
+        }
+      ],
+      "color_value": 158009,
+      "flavor_text": "A crushing wave of force erupts from the Cathedral's ossified floor, splitting bone and stone alike in a perfect ring of devastation. The impact lingers in the body like a tide that refuses to recede, driving muscle and sinew to their violent peak."
+    },
+    {
+      "id": "skill_000025",
+      "name": "Marrow Tide Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 3.0,
+      "cooldown_seconds": 5.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.2
+          }
+        }
+      ],
+      "color_value": 119652,
+      "flavor_text": "The Cathedral's ossified floor fractures upward in a crushing wave, driving splinters of ancient bone through everything standing above it. The wounds left behind weep steadily, as though the skeleton itself still remembers how to bleed."
+    },
+    {
+      "id": "skill_000026",
+      "name": "Tidemarrow Rend",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 13.7,
+      "cooldown_seconds": 5.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.9
+          }
+        }
+      ],
+      "color_value": 153269,
+      "flavor_text": "Fingers of current find the seams between muscle and bone, pulling apart what should hold together. The wound breathes like a tide \u2014 slow, patient, inevitable."
+    },
+    {
+      "id": "skill_000027",
+      "name": "Marrow Tide Rising",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 22.8,
+      "cooldown_seconds": 11.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.3
+          }
+        }
+      ],
+      "color_value": 157438,
+      "flavor_text": "The Cathedral's ancient bones weep saltwater upward through the skin, hardening into a shell that moves with the body like a second skeleton. For a breath and a half, the tide holds."
+    },
+    {
+      "id": "skill_000028",
+      "name": "Tide Marrow Surge",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/physical/utility",
+      "energy_cost": 18.7,
+      "cooldown_seconds": 14.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.17,
+            "duration_seconds": 6.5
+          }
+        }
+      ],
+      "color_value": 199499,
+      "flavor_text": "A totem of pale bone rises from the cathedral floor, seeping with deep-current pressure that floods the muscles and sharpens every blow. For a breath, the body moves like water finding its lowest, hardest point."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4933,
+    "convergence_iterations": 4,
+    "converged": true,
+    "final_modifier": 0.1688,
+    "gauntlet_results": {
+      "monster_00017": 0.4,
+      "monster_00018": 0.5,
+      "monster_00019": 0.2,
+      "monster_00016": 1.0,
+      "monster_00020": 0.3,
+      "monster_00021": 0.6,
+      "monster_00022": 1.0,
+      "monster_00023": 0.2,
+      "monster_00024": 0.2667,
+      "monster_00025": 0.4667
+    }
+  }
+}

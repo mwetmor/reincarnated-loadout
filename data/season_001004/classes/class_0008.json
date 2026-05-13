@@ -1,0 +1,188 @@
+{
+  "id": "class_0008",
+  "name": "Crumbling Throne Arbiter",
+  "title_completion": "a Crumbling Throne Arbiter",
+  "flavor_text": "They say the Mad King's throne still remembers every edict ever screamed from it \u2014 and now it screams through you. You did not inherit a crown; you inherited the weight of stone that crushed one. With a gesture, the ground kneels, and what the earth swallows, no king may reclaim.",
+  "archetype_tag": "earth_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "medium",
+  "dominant_element": "earth",
+  "color_palette": [
+    261049,
+    321722,
+    299744,
+    289716,
+    376348,
+    366979
+  ],
+  "stat_distribution": {
+    "strength": 15,
+    "dexterity": 10,
+    "intelligence": 19,
+    "wisdom": 146,
+    "vitality": 80
+  },
+  "skills": [
+    {
+      "id": "skill_000039",
+      "name": "Throne Shard Volley",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 10.9,
+      "cooldown_seconds": 0.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.08
+          }
+        }
+      ],
+      "color_value": 261049,
+      "flavor_text": "A fragment of the mad king's sundered seat tears through the air, heavy with centuries of obsession and crumbled authority. Where it strikes, the earth remembers who once commanded it."
+    },
+    {
+      "id": "skill_000040",
+      "name": "Throne of Cracked Stone",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 29.5,
+      "cooldown_seconds": 16.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.8
+          }
+        }
+      ],
+      "color_value": 321722,
+      "flavor_text": "The earth remembers every king who ever sat too long and grew into the rock itself. Those caught in its grip find their feet swallowed by the floor, crowned in stillness whether they will it or not."
+    },
+    {
+      "id": "skill_000041",
+      "name": "Throne Settles Stone",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 23.6,
+      "cooldown_seconds": 15.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 18.5
+          }
+        }
+      ],
+      "color_value": 299744,
+      "flavor_text": "The weight of a mad king's obsession radiates outward, pressing all things into the earth as if the ground itself demands obeisance. Roots of packed clay and old grudge coil upward, and nothing moves that the soil does not permit."
+    },
+    {
+      "id": "skill_000042",
+      "name": "Throne Swallows Ground",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 13.6,
+      "cooldown_seconds": 4.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 1.7
+          }
+        }
+      ],
+      "color_value": 289716,
+      "flavor_text": "The earth remembers every throne ever set upon it, and sometimes it decides to keep one. Stone fingers close around the ankles of the living, pulling them down toward a kingdom that never asked for a king."
+    },
+    {
+      "id": "skill_000043",
+      "name": "Throne of Loam",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 18.8,
+      "cooldown_seconds": 15.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.31,
+            "duration_seconds": 8.0
+          }
+        }
+      ],
+      "color_value": 376348,
+      "flavor_text": "The earth remembers every king who ever sat upon it and was swallowed whole. You borrow that weight now, pressing it outward in a slow, crushing ring."
+    },
+    {
+      "id": "skill_000044",
+      "name": "Sunken Throne Edict",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 29.8,
+      "cooldown_seconds": 6.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 366979,
+      "flavor_text": "The earth remembers every throne ever swallowed by its depths. Where you point, the ground opens its mouth and pulls down with royal authority."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5267,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.0871,
+    "gauntlet_results": {
+      "monster_00017": 0.4333,
+      "monster_00018": 0.6667,
+      "monster_00019": 0.2,
+      "monster_00016": 1.0,
+      "monster_00020": 0.8667,
+      "monster_00021": 0.5,
+      "monster_00022": 0.9,
+      "monster_00023": 0.0,
+      "monster_00024": 0.1667,
+      "monster_00025": 0.5333
+    }
+  }
+}

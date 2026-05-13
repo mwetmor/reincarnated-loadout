@@ -1,0 +1,219 @@
+{
+  "id": "class_0001",
+  "name": "Charred Throne Pretender",
+  "title_completion": "a Charred Throne Pretender",
+  "flavor_text": "They say the Mad King's throne was never meant to be sat upon \u2014 only burned beside. You arrived in his court with no crown, no claim, and fingers already smoldering with the memory of a fire you didn't start. Now you hurl cinders like edicts and call the scorching air your court, because if the throne is ash, then so is every right to stop you from taking it.",
+  "archetype_tag": "fire_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "fire",
+  "color_palette": [
+    7651,
+    60775,
+    28443,
+    38490,
+    26308,
+    8455
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 19,
+    "intelligence": 166,
+    "wisdom": 8,
+    "vitality": 67
+  },
+  "skills": [
+    {
+      "id": "skill_000001",
+      "name": "Cinder Throne Shard",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 13.9,
+      "cooldown_seconds": 1.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 7651,
+      "flavor_text": "A fragment of blackened royal stone tears through the air, still smoking from a crown that burned long before anyone thought to ask why. The Mad King's hall remembers every fire it has swallowed."
+    },
+    {
+      "id": "skill_000002",
+      "name": "Ashen Throne Verdict",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 35.4,
+      "cooldown_seconds": 4.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.5
+          }
+        }
+      ],
+      "color_value": 60775,
+      "flavor_text": "Where the mad king once raged, the earth remembers only char \u2014 this judgment gathers that ancient heat into a single, terrible answer. The target is not struck so much as concluded, left smoldering like a throne no one will ever reclaim."
+    },
+    {
+      "id": "skill_000003",
+      "name": "Throne of Ashen Ruin",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 29.9,
+      "cooldown_seconds": 4.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.1
+          }
+        }
+      ],
+      "color_value": 28443,
+      "flavor_text": "Where the mad king once sat, a channel of scorching fire tears through the hall, leaving only blackened earth and the smell of a dynasty's end. The char spreads outward like a final decree no one survived to obey."
+    },
+    {
+      "id": "skill_000004",
+      "name": "Ashen Throne Scorch",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 6.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.9
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 38490,
+      "flavor_text": "Where the mad king once raged, the floor remembers \u2014 blackened stone exhales fire as though the room itself still burns with his fury. The char spreads outward in a slow, hungry circle, consuming what the throne room never forgot how to ruin."
+    },
+    {
+      "id": "skill_000005",
+      "name": "Charred Throne Asylum",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/defensive",
+      "energy_cost": 19.9,
+      "cooldown_seconds": 8.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.1
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.27,
+            "duration_seconds": 7.6
+          }
+        }
+      ],
+      "color_value": 26308,
+      "flavor_text": "Where the mad king's seat once burned to blackened ruin, a shell of scorched memory rises around you \u2014 unyielding, ancient, still smoldering at its edges. The earth remembers what the fire left behind, and for a breathless moment, so do you."
+    },
+    {
+      "id": "skill_000006",
+      "name": "Cinder Throne Mending",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "fire",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/fire/sustain",
+      "energy_cost": 20.7,
+      "cooldown_seconds": 10.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.33,
+            "duration_seconds": 9.3
+          }
+        }
+      ],
+      "color_value": 8455,
+      "flavor_text": "Where the mad king's seat still smolders, a healer draws warmth from the blackened stone, coaxing life from what the fire left behind. The char breathes again, and so does the one who touches it."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.51,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.0574,
+    "gauntlet_results": {
+      "monster_00017": 0.1667,
+      "monster_00018": 0.3667,
+      "monster_00019": 0.8333,
+      "monster_00016": 1.0,
+      "monster_00020": 0.9333,
+      "monster_00021": 0.1667,
+      "monster_00022": 0.9,
+      "monster_00023": 0.3333,
+      "monster_00024": 0.3333,
+      "monster_00025": 0.0667
+    }
+  }
+}

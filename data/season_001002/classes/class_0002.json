@@ -1,0 +1,181 @@
+{
+  "id": "class_0002",
+  "name": "class_0002",
+  "title_completion": null,
+  "flavor_text": null,
+  "archetype_tag": "hybrid_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "color_palette": [
+    671584,
+    582875,
+    649196,
+    670419,
+    682520
+  ],
+  "stat_distribution": {
+    "strength": 9,
+    "dexterity": 6,
+    "intelligence": 105,
+    "wisdom": 105,
+    "vitality": 45
+  },
+  "skills": [
+    {
+      "id": "skill_000006",
+      "name": "Salt Seeping Through Stone",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 9.9,
+      "cooldown_seconds": 1.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 671584,
+      "flavor_text": "A single tear finds the hairline fracture in the crypt wall and becomes something merciless. What the earth held sealed for centuries, grief opens in an instant."
+    },
+    {
+      "id": "skill_000007",
+      "name": "Salt Seep Requiem",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 23.8,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.07
+          }
+        }
+      ],
+      "color_value": 582875,
+      "flavor_text": "A grief held long enough becomes its own aquifer. The saint's tear rises through the crypt floor in a slow circle, and everything it touches returns something to the one who wept."
+    },
+    {
+      "id": "skill_000008",
+      "name": "Salt Seeps Through Stone",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "water",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 25.7,
+      "cooldown_seconds": 12.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.23,
+            "duration_seconds": 2.2
+          }
+        }
+      ],
+      "color_value": 649196,
+      "flavor_text": "A single tear falls where the first saint was laid to rest, and the ground remembers cold. Whatever it touches slows, as if the earth itself is grieving."
+    },
+    {
+      "id": "skill_000009",
+      "name": "Saltwater Mourning Ground",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 29.6,
+      "cooldown_seconds": 4.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.25,
+            "duration_seconds": 3.1
+          }
+        }
+      ],
+      "color_value": 670419,
+      "flavor_text": "Where the First Saint wept into the crypt floor, the earth still remembers \u2014 cold brine rises through ancient stone and pulls the living toward stillness. The ground does not forgive what salt has claimed."
+    },
+    {
+      "id": "skill_000010",
+      "name": "Salt of the Buried Saint",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 18.6,
+      "cooldown_seconds": 12.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.6
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.16,
+            "duration_seconds": 7.8
+          }
+        }
+      ],
+      "color_value": 682520,
+      "flavor_text": "A single tear falls into the crypt's dust and spreads outward as a skin of still water, holding the world at arm's length. The saint wept once, and the earth remembered."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.1316,
+    "gauntlet_results": {
+      "monster_00017": 0.8,
+      "monster_00018": 0.0333,
+      "monster_00019": 0.3,
+      "monster_00016": 1.0,
+      "monster_00020": 0.6,
+      "monster_00021": 0.4,
+      "monster_00022": 0.8667,
+      "monster_00023": 0.1667,
+      "monster_00024": 0.3667,
+      "monster_00025": 0.4667
+    }
+  }
+}

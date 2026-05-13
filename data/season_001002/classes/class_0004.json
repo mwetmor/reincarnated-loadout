@@ -1,0 +1,189 @@
+{
+  "id": "class_0004",
+  "name": "Exhaled Saint",
+  "title_completion": "an Exhaled Saint",
+  "flavor_text": "The holy dead do not rest quietly in the Crypt of the First Saint \u2014 they breathe. You have learned to gather those last, rattling exhalations and shape them into something terrible and sacred. Your lungs are not your own; they belong to every martyr who ever whispered a final prayer into the dark.",
+  "archetype_tag": "wind_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "medium",
+  "dominant_element": "wind",
+  "color_palette": [
+    487873,
+    473759,
+    467683,
+    452061,
+    473962
+  ],
+  "stat_distribution": {
+    "strength": 5,
+    "dexterity": 45,
+    "intelligence": 5,
+    "wisdom": 133,
+    "vitality": 82
+  },
+  "skills": [
+    {
+      "id": "skill_000017",
+      "name": "Last Breath of Saints",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 5.5,
+      "cooldown_seconds": 0.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 6.7,
+            "stagger_seconds": 0.9
+          }
+        }
+      ],
+      "color_value": 487873,
+      "flavor_text": "The crypt exhales what the buried faithful never finished saying, a warm gust that carries the weight of final words. It strikes like a sigh that has forgotten how to be gentle."
+    },
+    {
+      "id": "skill_000018",
+      "name": "Last Breath of Saints",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 15.6,
+      "cooldown_seconds": 17.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.2,
+            "stagger_seconds": 0.5
+          }
+        }
+      ],
+      "color_value": 473759,
+      "flavor_text": "The crypt exhales what it has held for centuries \u2014 a slow, warm gust that carries the weight of endings. Those caught in its passage are not struck so much as gently, irrevocably dismissed."
+    },
+    {
+      "id": "skill_000019",
+      "name": "Last Breath of Saints",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 28.7,
+      "cooldown_seconds": 10.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 3.3,
+            "stagger_seconds": 0.4
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 467683,
+      "flavor_text": "The crypt exhales what it has held for centuries \u2014 a warm, stale gust that carries the weight of final moments. It does not cut; it simply ends, pressing the living away from where the dead have chosen to rest."
+    },
+    {
+      "id": "skill_000020",
+      "name": "Last Breath of Saints",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 23.2,
+      "cooldown_seconds": 7.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 3.3,
+            "stagger_seconds": 0.6
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 452061,
+      "flavor_text": "From the sealed crypts it rises \u2014 one final warm exhalation, centuries old, carrying the weight of every buried prayer. It does not howl; it simply ends, and takes something with it."
+    },
+    {
+      "id": "skill_000021",
+      "name": "Tomb Breath Rising",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 11.7,
+      "cooldown_seconds": 16.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.18,
+            "duration_seconds": 7.6
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.28,
+            "duration_seconds": 8.8
+          }
+        }
+      ],
+      "color_value": 473962,
+      "flavor_text": "The crypt exhales what it has held for centuries \u2014 a warm, mineral sigh that sharpens the mind and loosens something long buried in the blood. It does not linger, but its passing leaves the air tasting of old devotion."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5033,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.1242,
+    "gauntlet_results": {
+      "monster_00017": 0.8,
+      "monster_00018": 0.6667,
+      "monster_00019": 0.3333,
+      "monster_00016": 1.0,
+      "monster_00020": 0.0333,
+      "monster_00021": 0.5333,
+      "monster_00022": 1.0,
+      "monster_00023": 0.2333,
+      "monster_00024": 0.0667,
+      "monster_00025": 0.3667
+    }
+  }
+}

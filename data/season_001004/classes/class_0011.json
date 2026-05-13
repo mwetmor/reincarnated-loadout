@@ -1,0 +1,181 @@
+{
+  "id": "class_0011",
+  "name": "Char-Crowned Usurper",
+  "title_completion": "a Char-Crowned Usurper",
+  "flavor_text": "The throne was already burning when you sat down \u2014 you simply refused to stand back up. From the Mad King's smoldering seat you hurl shards of scorched obsidian and exhale the kingdom's last breath as cinder and ash. Every court needs a fire mage; this one just happens to rule from the wreckage.",
+  "archetype_tag": "fire_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "fire",
+  "color_palette": [
+    41380,
+    53991,
+    6537,
+    4700,
+    26349
+  ],
+  "stat_distribution": {
+    "strength": 12,
+    "dexterity": 20,
+    "intelligence": 156,
+    "wisdom": 13,
+    "vitality": 69
+  },
+  "skills": [
+    {
+      "id": "skill_000057",
+      "name": "Cinder Throne Shard",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 6.7,
+      "cooldown_seconds": 0.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 41380,
+      "flavor_text": "A fragment of blackened sovereignty tears through the air, still hot from the king's last decree. What the fire consumed, the mind now wields."
+    },
+    {
+      "id": "skill_000058",
+      "name": "Cinder Throne Scatter",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "fire",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/fire/mobility",
+      "energy_cost": 14.9,
+      "cooldown_seconds": 10.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.25,
+            "duration_seconds": 4.6
+          }
+        }
+      ],
+      "color_value": 53991,
+      "flavor_text": "The blackened ash of a mad king's seat rises in a sudden gust, and you are gone before the smoke settles. Something ancient and scorched remembers how to flee."
+    },
+    {
+      "id": "skill_000059",
+      "name": "Ashen Throne Exhale",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/fire/area_damage",
+      "energy_cost": 37.6,
+      "cooldown_seconds": 4.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.8
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 7.8
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.07
+          }
+        }
+      ],
+      "color_value": 6537,
+      "flavor_text": "The Mad King's seat still breathes \u2014 a slow, scorched exhalation that coats everything forward in the memory of fire. What it touches does not simply burn; it becomes proof that something once stood here."
+    },
+    {
+      "id": "skill_000060",
+      "name": "Ashen Throne Kindle",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 19.0,
+      "cooldown_seconds": 19.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.12,
+            "duration_seconds": 5.1
+          }
+        }
+      ],
+      "color_value": 4700,
+      "flavor_text": "Where the mad king's charred circle still scorches the stone, something in the blackened remnant remembers how to burn. Intelligence shapes that memory into hunger, and for a breathless moment, every strike carries the heat of a ruined reign."
+    },
+    {
+      "id": "skill_000061",
+      "name": "Cinder Throne Vanish",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/defensive",
+      "energy_cost": 19.4,
+      "cooldown_seconds": 9.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.0
+          }
+        }
+      ],
+      "color_value": 26349,
+      "flavor_text": "Where you stood, only scorched stone remains \u2014 a king's silhouette burned into the floor, still radiating heat. You are somewhere else now, wrapped in the last breath of a mad man's pyre."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.91,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00017": 0.8667,
+      "monster_00018": 0.9667,
+      "monster_00019": 0.9667,
+      "monster_00016": 1.0,
+      "monster_00020": 1.0,
+      "monster_00021": 0.8,
+      "monster_00022": 1.0,
+      "monster_00023": 0.9333,
+      "monster_00024": 0.8667,
+      "monster_00025": 0.7
+    }
+  }
+}

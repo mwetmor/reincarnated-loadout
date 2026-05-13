@@ -1,0 +1,208 @@
+{
+  "id": "class_0003",
+  "name": "Abyssal Basalt Monk",
+  "title_completion": "an Abyssal Basalt Monk",
+  "flavor_text": "At the bottom of the Deep Trench, where the thrum of wind never reaches and the brine presses down like a fist, the stone itself breathes. You have learned to breathe with it \u2014 sealing cracks, binding foes in basalt, and striking with the slow, inevitable patience of the ocean floor. Up above, they call it magic. Down here, it is simply waiting long enough for the rock to agree.",
+  "archetype_tag": "earth_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "close",
+  "dominant_element": "earth",
+  "color_palette": [
+    328140,
+    274930,
+    355765,
+    311890,
+    325877,
+    298837
+  ],
+  "stat_distribution": {
+    "strength": 9,
+    "dexterity": 9,
+    "intelligence": 21,
+    "wisdom": 145,
+    "vitality": 86
+  },
+  "skills": [
+    {
+      "id": "skill_000013",
+      "name": "Basalt Wind Fist",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 8.0,
+      "cooldown_seconds": 0.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 328140,
+      "flavor_text": "A dense column of volcanic stone rises from the trench floor and strikes with the speed of a gale. The impact carries the pressure of depths where no wind has ever reached."
+    },
+    {
+      "id": "skill_000014",
+      "name": "Trench Basalt Seal",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 22.9,
+      "cooldown_seconds": 13.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.3
+          }
+        }
+      ],
+      "color_value": 274930,
+      "flavor_text": "From the windless dark below the ocean floor, a slab of volcanic stone erupts upward and locks the earth in place. What the deep trench holds, it does not release easily."
+    },
+    {
+      "id": "skill_000015",
+      "name": "Trench Basalt Surge",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 24.4,
+      "cooldown_seconds": 16.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.7
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 355765,
+      "flavor_text": "From the lightless deep, a column of volcanic rock erupts through the earth, locking all it touches in a cage of ancient stone. The wind above goes still, as if the world itself holds its breath."
+    },
+    {
+      "id": "skill_000016",
+      "name": "Trench Basalt Binding",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 15.1,
+      "cooldown_seconds": 6.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.4
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 311890,
+      "flavor_text": "From the lightless floor of the deep, a column of dense volcanic stone erupts and locks around the target, grinding slow and inevitable. The earth does not hurry \u2014 it simply does not let go."
+    },
+    {
+      "id": "skill_000017",
+      "name": "Basalt Breath Seal",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 12.1,
+      "cooldown_seconds": 13.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.32,
+            "duration_seconds": 9.6
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.2
+          }
+        }
+      ],
+      "color_value": 325877,
+      "flavor_text": "From the lightless trench, a column of dense volcanic air rises and presses against the throat \u2014 not to crush, but to focus. The silence that follows carries the weight of stone and the patience of deep wind."
+    },
+    {
+      "id": "skill_000018",
+      "name": "Trench Floor Breaks",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 29.3,
+      "cooldown_seconds": 4.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.9
+          }
+        }
+      ],
+      "color_value": 298837,
+      "flavor_text": "Basalt splits open along the deepest seam, exhaling pressurized dark air that pins everything above it to the wound. The ground does not shake \u2014 it simply refuses to let go."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.6567,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00017": 0.7,
+      "monster_00018": 0.5333,
+      "monster_00019": 0.4,
+      "monster_00016": 0.8667,
+      "monster_00020": 0.8667,
+      "monster_00021": 0.7667,
+      "monster_00022": 0.9333,
+      "monster_00023": 0.2333,
+      "monster_00024": 0.7667,
+      "monster_00025": 0.5
+    }
+  }
+}

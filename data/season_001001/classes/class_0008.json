@@ -1,0 +1,193 @@
+{
+  "id": "class_0008",
+  "name": "Abyssal Basalt Cantor",
+  "title_completion": "an Abyssal Basalt Cantor",
+  "flavor_text": "From the lightless floor of the Deep Trench, where basalt walls hum with ancient pressure, this scholar-priest learned to sing stone into violence. Their voice carries the thrum of wind through submarine canyons, coaxing slabs of black rock to splinter and soar with uncanny precision. They do not cast spells so much as conduct them \u2014 patient, resonant, and terrifyingly loud.",
+  "archetype_tag": "hybrid_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "earth",
+  "color_palette": [
+    292531,
+    275966,
+    335468,
+    364972,
+    327545
+  ],
+  "stat_distribution": {
+    "strength": 11,
+    "dexterity": 5,
+    "intelligence": 100,
+    "wisdom": 104,
+    "vitality": 50
+  },
+  "skills": [
+    {
+      "id": "skill_000042",
+      "name": "Basalt Gale Shard",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 9.1,
+      "cooldown_seconds": 1.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.09
+          }
+        }
+      ],
+      "color_value": 292531,
+      "flavor_text": "A dense fragment of volcanic stone screams upward from the trench floor, riding a column of pressurized wind. It drinks what it touches before the echo fades."
+    },
+    {
+      "id": "skill_000043",
+      "name": "Trench Basalt Howl",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 38.6,
+      "cooldown_seconds": 5.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.3
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.19,
+            "duration_seconds": 9.4
+          }
+        }
+      ],
+      "color_value": 275966,
+      "flavor_text": "From the lightless floor of the Deep Trench, a column of volcanic stone screams upward on a wind that has never known the sun. Whatever it strikes is pinned beneath the weight of a world that forgot warmth long ago."
+    },
+    {
+      "id": "skill_000044",
+      "name": "Trench Basalt Gale",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/earth/area_damage",
+      "energy_cost": 16.4,
+      "cooldown_seconds": 19.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.5
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 335468,
+      "flavor_text": "A cone of pressurized deep-wind tears basalt shards upward from the ocean floor, locking all caught within its shadow to the stone beneath their feet. The roots that bind them are not vine nor rope, but the weight of the abyss itself."
+    },
+    {
+      "id": "skill_000045",
+      "name": "Trench Basalt Howl",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 24.6,
+      "cooldown_seconds": 5.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 364972,
+      "flavor_text": "From the lightless floor of the Deep Trench, wind tears upward through volcanic stone, splitting basalt columns into a roaring circle of black shrapnel. The pressure holds, grinding and groaning, before the earth finally exhales."
+    },
+    {
+      "id": "skill_000046",
+      "name": "Basalt Wind Ward",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 18.8,
+      "cooldown_seconds": 11.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.2
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.14,
+            "duration_seconds": 6.2
+          }
+        }
+      ],
+      "color_value": 327545,
+      "flavor_text": "From the lightless pressure of the Deep Trench, a shell of volcanic stone rises on a breath of abyssal wind, dense and unyielding as the ocean floor itself. It does not deflect \u2014 it simply refuses."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5033,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.0871,
+    "gauntlet_results": {
+      "monster_00017": 0.6333,
+      "monster_00018": 0.2333,
+      "monster_00019": 0.0667,
+      "monster_00016": 0.8667,
+      "monster_00020": 0.6667,
+      "monster_00021": 0.7333,
+      "monster_00022": 0.9667,
+      "monster_00023": 0.0333,
+      "monster_00024": 0.5333,
+      "monster_00025": 0.3
+    }
+  }
+}

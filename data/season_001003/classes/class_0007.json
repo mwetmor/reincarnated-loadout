@@ -1,0 +1,175 @@
+{
+  "id": "class_0007",
+  "name": "Milk-Blessed Ossifier",
+  "title_completion": "a Milk-Blessed Ossifier",
+  "flavor_text": "In the Cathedral of Bone, the sacred milk does not nourish \u2014 it calcifies, drowning the unholy in slow white tides that harden flesh to ivory. You arrived with no memory and wet robes, clutching a torch that the milk had already half-extinguished. The congregation says the bones in the walls still weep for the last one who held your title.",
+  "archetype_tag": "water_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "water",
+  "color_palette": [
+    603539,
+    658994,
+    612325,
+    630794,
+    594664
+  ],
+  "stat_distribution": {
+    "strength": 8,
+    "dexterity": 25,
+    "intelligence": 152,
+    "wisdom": 15,
+    "vitality": 70
+  },
+  "skills": [
+    {
+      "id": "skill_000034",
+      "name": "Pale Tide Rite",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 12.7,
+      "cooldown_seconds": 1.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 603539,
+      "flavor_text": "From the Cathedral's drowned altars rises a surge the color of old milk, cold and absolute. It finds the living the way water finds cracks \u2014 without hesitation, without mercy."
+    },
+    {
+      "id": "skill_000035",
+      "name": "Pale Tide Sermon",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 26.3,
+      "cooldown_seconds": 4.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 658994,
+      "flavor_text": "The Cathedral exhales a breath of white water, spreading outward in a perfect ring that drowns the air in cold, nourishing pressure. What feeds can also consume."
+    },
+    {
+      "id": "skill_000036",
+      "name": "Marrow Tide Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 16.6,
+      "cooldown_seconds": 6.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 612325,
+      "flavor_text": "Where the Cathedral's bone-white floors meet the flood, the water runs thick and pale, blooming outward like something ancient finally exhaling. It does not merely strike \u2014 it saturates, filling every hollow thing."
+    },
+    {
+      "id": "skill_000037",
+      "name": "Pale Font Vigil",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 21.3,
+      "cooldown_seconds": 7.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.25,
+            "duration_seconds": 17.3
+          }
+        }
+      ],
+      "color_value": 630794,
+      "flavor_text": "A totem of ossified tide rises from the cathedral floor, weeping milk-white water that seeps into the marrow of all nearby. The cold does not bite \u2014 it simply stays, patient and thorough, long after warmth has forgotten the wound."
+    },
+    {
+      "id": "skill_000038",
+      "name": "Ivory Tide Vestment",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 20.2,
+      "cooldown_seconds": 14.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.4
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.23,
+            "duration_seconds": 9.7
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.35,
+            "duration_seconds": 5.6
+          }
+        }
+      ],
+      "color_value": 594664,
+      "flavor_text": "The pale waters of the Cathedral rise and harden around the body like consecrated milk turned to living shell, drinking in every blow that dares approach. For a breathless moment, the faithful become untouchable \u2014 white, sealed, and vast as a sunken nave."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5033,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.0945,
+    "gauntlet_results": {
+      "monster_00017": 0.2667,
+      "monster_00018": 0.1,
+      "monster_00019": 0.4333,
+      "monster_00016": 1.0,
+      "monster_00020": 0.5,
+      "monster_00021": 0.6,
+      "monster_00022": 1.0,
+      "monster_00023": 0.2333,
+      "monster_00024": 0.3667,
+      "monster_00025": 0.5333
+    }
+  }
+}

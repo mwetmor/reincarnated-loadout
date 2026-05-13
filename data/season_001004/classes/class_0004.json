@@ -1,0 +1,167 @@
+{
+  "id": "class_0004",
+  "name": "Hollow Throne Whisperer",
+  "title_completion": "a Hollow Throne Whisperer",
+  "flavor_text": "The Mad King's throne room has been empty for a century, but the drafts that haunt its vaulted halls remember every whispered conspiracy and rattled crown. You did not inherit power \u2014 you inherited the cold breath that fills the space where power once sat. With patience older than any dynasty, you let the room exhale, and your enemies bend like candle flames before a cracked window.",
+  "archetype_tag": "wind_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "medium",
+  "dominant_element": "wind",
+  "color_palette": [
+    449918,
+    447405,
+    473864,
+    492664,
+    482618
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 35,
+    "intelligence": 5,
+    "wisdom": 140,
+    "vitality": 80
+  },
+  "skills": [
+    {
+      "id": "skill_000017",
+      "name": "Throne Room Draft",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 14.1,
+      "cooldown_seconds": 0.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.06
+          }
+        }
+      ],
+      "color_value": 449918,
+      "flavor_text": "A cool breath moves through the cracked stone hall unbidden, finding the gaps in flesh the way it finds the gaps in mortar. The mad king's banners stir, and something vital follows the air out."
+    },
+    {
+      "id": "skill_000018",
+      "name": "Loam Breath Circle",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 22.2,
+      "cooldown_seconds": 16.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.6,
+            "stagger_seconds": 0.3
+          }
+        }
+      ],
+      "color_value": 447405,
+      "flavor_text": "A cool exhalation rises from the cracked throne room floor, carrying the smell of deep earth and forgotten cellars. Those caught in its slow ring find themselves pushed back, legs uncertain, as though the ground itself exhaled."
+    },
+    {
+      "id": "skill_000019",
+      "name": "Throne Hall Exhale",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 29.7,
+      "cooldown_seconds": 14.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.2,
+            "stagger_seconds": 0.9
+          }
+        }
+      ],
+      "color_value": 473864,
+      "flavor_text": "A cold breath moves through the cracked stone walls, unhurried and deliberate, finding the one who least expects to be moved. The mad king's hall has always known how to dismiss its guests."
+    },
+    {
+      "id": "skill_000020",
+      "name": "Throne Room Exhale",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 14.3,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.2,
+            "stagger_seconds": 0.5
+          }
+        }
+      ],
+      "color_value": 492664,
+      "flavor_text": "A cold draft rises from the cracked stone floor, threading itself into lungs and marrow before it turns cruel. The Mad King's hall breathes still, and what it breathes out does not stop bleeding."
+    },
+    {
+      "id": "skill_000021",
+      "name": "Crownless Chamber Breath",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 10.6,
+      "cooldown_seconds": 16.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.2,
+            "duration_seconds": 9.8
+          }
+        }
+      ],
+      "color_value": 482618,
+      "flavor_text": "A totem rises from the flagstone, exhaling the cold draft that wanders these abandoned halls without a king to command it. Weapons drawn near it find their edges sharpened by something older than any throne."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4967,
+    "convergence_iterations": 9,
+    "converged": true,
+    "final_modifier": 0.1131,
+    "gauntlet_results": {
+      "monster_00017": 0.5667,
+      "monster_00018": 0.2667,
+      "monster_00019": 0.8333,
+      "monster_00016": 0.7333,
+      "monster_00020": 0.2,
+      "monster_00021": 0.7333,
+      "monster_00022": 0.9333,
+      "monster_00023": 0.3333,
+      "monster_00024": 0.0,
+      "monster_00025": 0.3667
+    }
+  }
+}

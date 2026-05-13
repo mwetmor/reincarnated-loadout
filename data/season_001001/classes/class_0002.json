@@ -1,0 +1,206 @@
+{
+  "id": "class_0002",
+  "name": "Trench-Breathed Tidecaller",
+  "title_completion": "a Trench-Breathed Tidecaller",
+  "flavor_text": "From the lightless depths of the Deep Trench, the brine itself learns to exhale \u2014 a slow, salt-laden thrum that bends currents and drowns sound before it can become a scream. You do not summon the tide so much as remind it where it was always going. The abyss, it turns out, has very strong opinions about stillness.",
+  "archetype_tag": "water_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "color_palette": [
+    658684,
+    694288,
+    650144,
+    684623,
+    591903,
+    672170
+  ],
+  "stat_distribution": {
+    "strength": 5,
+    "dexterity": 9,
+    "intelligence": 136,
+    "wisdom": 30,
+    "vitality": 90
+  },
+  "skills": [
+    {
+      "id": "skill_000007",
+      "name": "Brine Wind Lash",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 10.9,
+      "cooldown_seconds": 0.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.36,
+            "duration_seconds": 2.6
+          }
+        }
+      ],
+      "color_value": 658684,
+      "flavor_text": "A salt-laden gust tears up from the Deep Trench, striking with the cold weight of fathomless water. The chill it leaves behind is ancient and preserving, as if the sea itself means to keep what it claims."
+    },
+    {
+      "id": "skill_000008",
+      "name": "Abyssal Brine Gust",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "water",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 22.2,
+      "cooldown_seconds": 18.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.39,
+            "duration_seconds": 4.5
+          }
+        }
+      ],
+      "color_value": 694288,
+      "flavor_text": "A cold breath rises from the Deep Trench, carrying the sharp bite of ancient salt that seeps into joints and stiffens the will. The target moves as though dragged through fathomless, heavy water."
+    },
+    {
+      "id": "skill_000009",
+      "name": "Trench Brine Stillness",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 15.6,
+      "cooldown_seconds": 11.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.25,
+            "duration_seconds": 19.4
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 650144,
+      "flavor_text": "A cold salt wind rises from impossible depths, wrapping the air in a preserving chill that holds flesh and motion alike in suspension. The water does not strike \u2014 it simply refuses to let anything move."
+    },
+    {
+      "id": "skill_000010",
+      "name": "Brine Hollow Vent",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 11.0,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.25,
+            "duration_seconds": 20.0
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 684623,
+      "flavor_text": "A totem of salt-crusted bone rises from the trench floor, exhaling the cold breath of buried water. The brine seeps in slowly, preserving everything it touches in a creeping, bitter stillness."
+    },
+    {
+      "id": "skill_000011",
+      "name": "Brine Wind Clarity",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "water",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/water/utility",
+      "energy_cost": 10.1,
+      "cooldown_seconds": 17.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.17,
+            "duration_seconds": 9.2
+          }
+        }
+      ],
+      "color_value": 591903,
+      "flavor_text": "Salt-laced updrafts from the Deep Trench strip the mind bare, leaving only cold, preserved purpose. The bitter air sharpens thought into something ancient and cutting."
+    },
+    {
+      "id": "skill_000012",
+      "name": "Brine Gale Hollow",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 29.0,
+      "cooldown_seconds": 3.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 672170,
+      "flavor_text": "A column of salt-laden wind tears up from the trench floor, bitter and absolute, leaving everything it touches preserved in ruin. The deep does not forget what it swallows."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.4,
+    "actual_winrate": 0.55,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00017": 0.5,
+      "monster_00018": 0.1667,
+      "monster_00019": 0.7333,
+      "monster_00016": 0.6333,
+      "monster_00020": 0.5667,
+      "monster_00021": 0.7,
+      "monster_00022": 0.6333,
+      "monster_00023": 0.3667,
+      "monster_00024": 0.5667,
+      "monster_00025": 0.6333
+    }
+  }
+}

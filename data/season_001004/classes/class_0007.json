@@ -1,0 +1,212 @@
+{
+  "id": "class_0007",
+  "name": "Mercury-Blooded Court Mage",
+  "title_completion": "a Mercury-Blooded Court Mage",
+  "flavor_text": "The Mad King's throne room runs silver underfoot, its floors long since warped by the poisonous tides you now command. You were not invited to court \u2014 you seeped in, slow and inevitable, through the cracks between the flagstones. Where others wield water, you pour mercury: beautiful, treacherous, and impossible to hold.",
+  "archetype_tag": "water_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "color_palette": [
+    570799,
+    564184,
+    699584,
+    664939,
+    637962,
+    687973
+  ],
+  "stat_distribution": {
+    "strength": 9,
+    "dexterity": 25,
+    "intelligence": 155,
+    "wisdom": 6,
+    "vitality": 75
+  },
+  "skills": [
+    {
+      "id": "skill_000033",
+      "name": "Throne Room Deluge",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 5.6,
+      "cooldown_seconds": 0.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 570799,
+      "flavor_text": "Mercury bleeds through cracked marble, summoning a surge of dark water that strikes with the weight of a mad king's obsession. The flood remembers every throne it has swallowed."
+    },
+    {
+      "id": "skill_000034",
+      "name": "Mercury Throne Deluge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 26.1,
+      "cooldown_seconds": 8.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.37,
+            "duration_seconds": 2.6
+          }
+        }
+      ],
+      "color_value": 564184,
+      "flavor_text": "From the cracked stone floor of a king's forgotten madness, silver water rises and gathers into a single crushing column. It strikes with the weight of a drowned crown, leaving its target sluggish and cold as flooded marble."
+    },
+    {
+      "id": "skill_000035",
+      "name": "Quicksilver Throne Deluge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 29.4,
+      "cooldown_seconds": 5.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.37,
+            "duration_seconds": 4.6
+          }
+        }
+      ],
+      "color_value": 699584,
+      "flavor_text": "Mercury bleeds upward through the cracked stone floor, blooming into a circle of cold silver water that seeps into bone and slows the blood. The Mad King's hall remembers every flood that ever silenced a court."
+    },
+    {
+      "id": "skill_000036",
+      "name": "Throne Floor Seeping",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 23.2,
+      "cooldown_seconds": 7.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.21,
+            "duration_seconds": 2.9
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 664939,
+      "flavor_text": "Mercury bleeds through the cracked stone beneath the mad king's seat, pooling into something colder and slower than silver should ever be. The floor drinks deep, and those who stand upon it are drawn into its patient, freezing hunger."
+    },
+    {
+      "id": "skill_000037",
+      "name": "Mercurial Throne Sediment",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 22.2,
+      "cooldown_seconds": 9.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.5
+          }
+        }
+      ],
+      "color_value": 637962,
+      "flavor_text": "A dense, silver-heavy stillness rises from the floor like the mad king's sunken regrets, wrapping the target in cold fluid stone. It does not merely defend \u2014 it remembers every crack in the foundation and seals them all."
+    },
+    {
+      "id": "skill_000038",
+      "name": "Throne Mercury Tide",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "water",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 18.5,
+      "cooldown_seconds": 14.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 9.4
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.3
+          }
+        }
+      ],
+      "color_value": 687973,
+      "flavor_text": "The mad king's chamber remembers every word ever screamed within its walls \u2014 you drink that silence into yourself, and for a breathless moment the weight of silver water fills your veins, sharpening every blow. The room holds its breath with you."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5067,
+    "convergence_iterations": 10,
+    "converged": true,
+    "final_modifier": 0.0519,
+    "gauntlet_results": {
+      "monster_00017": 0.3667,
+      "monster_00018": 0.0,
+      "monster_00019": 0.8,
+      "monster_00016": 1.0,
+      "monster_00020": 0.8,
+      "monster_00021": 0.3667,
+      "monster_00022": 0.7333,
+      "monster_00023": 0.1667,
+      "monster_00024": 0.2333,
+      "monster_00025": 0.6
+    }
+  }
+}

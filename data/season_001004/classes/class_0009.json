@@ -1,0 +1,219 @@
+{
+  "id": "class_0009",
+  "name": "Breath of the Mad King's Court",
+  "title_completion": "a Breath of the Mad King's Court",
+  "flavor_text": "In the Throne Room where drafts whisper secrets between cracked pillars, you are not the king \u2014 you are the air he breathes, and the silence before his next decree. Your exhales carry the weight of a court gone still, drafts that strip banners from their poles and send courtiers stumbling to their knees. The throne does not command you; it merely gives you somewhere to blow from.",
+  "archetype_tag": "wind_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "wind",
+  "color_palette": [
+    439152,
+    449416,
+    439714,
+    439664,
+    495092,
+    455825
+  ],
+  "stat_distribution": {
+    "strength": 5,
+    "dexterity": 29,
+    "intelligence": 10,
+    "wisdom": 151,
+    "vitality": 75
+  },
+  "skills": [
+    {
+      "id": "skill_000045",
+      "name": "Throne Room Exhale",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 5.6,
+      "cooldown_seconds": 1.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 439152,
+      "flavor_text": "A cool breath moves through the cracked stone hall as if the castle itself sighs, and where it touches, it cuts. The mad king never felt it coming."
+    },
+    {
+      "id": "skill_000046",
+      "name": "Throne Room Exhale",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/wind/area_damage",
+      "energy_cost": 26.3,
+      "cooldown_seconds": 9.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 3.2,
+            "stagger_seconds": 0.4
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.18,
+            "duration_seconds": 6.6
+          }
+        }
+      ],
+      "color_value": 449416,
+      "flavor_text": "A cold breath rolls across the cracked mosaic floor, rising suddenly into a column of invisible fury that scatters dust and courtiers alike. The mad king never noticed the draft \u2014 until now, it has learned to bite."
+    },
+    {
+      "id": "skill_000047",
+      "name": "Throne Room Exhale",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 27.9,
+      "cooldown_seconds": 7.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 6.3,
+            "stagger_seconds": 0.6
+          }
+        }
+      ],
+      "color_value": 439714,
+      "flavor_text": "A cold breath rises through the cracked stone floor, as if the earth itself has grown tired of holding up the weight above it. Everything standing nearby is simply... dismissed."
+    },
+    {
+      "id": "skill_000048",
+      "name": "Throne Room Exhale",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 15.4,
+      "cooldown_seconds": 4.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.5,
+            "stagger_seconds": 0.4
+          }
+        }
+      ],
+      "color_value": 439664,
+      "flavor_text": "A cold breath rises from the cracked stone floor, lazy and deliberate, as if the castle itself has grown tired of holding its lungs. It does not howl \u2014 it simply pushes, and the earth beneath remembers the weight of every fallen king."
+    },
+    {
+      "id": "skill_000049",
+      "name": "Still Before the Throne",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 24.1,
+      "cooldown_seconds": 10.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.0
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.12,
+            "duration_seconds": 10.0
+          }
+        }
+      ],
+      "color_value": 495092,
+      "flavor_text": "A cold current moves through the cracked stone halls, and for a breathless moment it finds you \u2014 wrapping close, holding fast. The mad king's drafts remember older, steadier things."
+    },
+    {
+      "id": "skill_000050",
+      "name": "Throne Room Exhale",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "wind",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/wind/sustain",
+      "energy_cost": 20.2,
+      "cooldown_seconds": 10.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        },
+        {
+          "name": "heal_over_time",
+          "params": {
+            "tick_heal": 375,
+            "duration_seconds": 8.0
+          }
+        }
+      ],
+      "color_value": 455825,
+      "flavor_text": "A cool draft lifts from the cracked stone floor, carrying with it the quiet patience of deep earth. It settles into the wound, slow and certain, the way soil reclaims what was broken."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4767,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.0648,
+    "gauntlet_results": {
+      "monster_00017": 0.5333,
+      "monster_00018": 0.2667,
+      "monster_00019": 0.7667,
+      "monster_00016": 0.9667,
+      "monster_00020": 0.2,
+      "monster_00021": 0.5,
+      "monster_00022": 1.0,
+      "monster_00023": 0.1667,
+      "monster_00024": 0.0,
+      "monster_00025": 0.3667
+    }
+  }
+}

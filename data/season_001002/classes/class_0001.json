@@ -1,0 +1,173 @@
+{
+  "id": "class_0001",
+  "name": "Crypt Chandler",
+  "title_completion": "a Crypt Chandler",
+  "flavor_text": "Deep beneath the Crypt of the First Saint, where the air is thick with the breath of the long-dead, the Crypt Chandler tends to candles that were never meant to be lit. They shape the sacred tallow into effigies and seals, binding souls and scorching flesh with wax that weeps like a mourner who has forgotten why they grieve. The flame they carry is not warmth \u2014 it is a reminder that even saints leave grease behind.",
+  "archetype_tag": "fire_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "medium",
+  "dominant_element": "fire",
+  "color_palette": [
+    35482,
+    6093,
+    86470,
+    78645,
+    75020
+  ],
+  "stat_distribution": {
+    "strength": 9,
+    "dexterity": 20,
+    "intelligence": 138,
+    "wisdom": 8,
+    "vitality": 95
+  },
+  "skills": [
+    {
+      "id": "skill_000001",
+      "name": "Dripping Crypt Tallow",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 14.2,
+      "cooldown_seconds": 0.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 3.3
+          }
+        }
+      ],
+      "color_value": 35482,
+      "flavor_text": "Pale wax weeps from the saint's cold altar, igniting before it ever hits the ground. What it touches does not simply burn \u2014 it renders, slow and thorough, like a body returning to the earth it borrowed."
+    },
+    {
+      "id": "skill_000002",
+      "name": "Crypt Candle Seal",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 15.7,
+      "cooldown_seconds": 19.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.2
+          }
+        }
+      ],
+      "color_value": 6093,
+      "flavor_text": "A pale flame gutters into being at the target's throat, sealing it shut with a soft pour of sacred wax. The silence that follows is the silence of the entombed \u2014 not empty, but held."
+    },
+    {
+      "id": "skill_000003",
+      "name": "Pale Wax Sealing",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 26.5,
+      "cooldown_seconds": 11.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.6
+          }
+        }
+      ],
+      "color_value": 86470,
+      "flavor_text": "A cone of pale fire breathes outward from the crypt's threshold, coating lips and throat in soft, cooling wax. Those caught in its spread find their voices buried beneath the saint's ancient silence."
+    },
+    {
+      "id": "skill_000004",
+      "name": "Crypt Tallow Effigy",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 11.4,
+      "cooldown_seconds": 8.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 375,
+            "duration_seconds": 17.3
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 78645,
+      "flavor_text": "A pale wax figure rises from the burial soil, sweating heat before it weeps itself into flame. The saint's crypt remembers every body it has held, and this one burns slow."
+    },
+    {
+      "id": "skill_000005",
+      "name": "Crypt Tallow Effigy",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 11.3,
+      "cooldown_seconds": 13.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.26,
+            "duration_seconds": 5.0
+          }
+        }
+      ],
+      "color_value": 75020,
+      "flavor_text": "A pale wax figure rises from the crypt floor, its wick-heart guttering with sacred flame. For a breath of seconds, the fire it breathes sharpens every blow struck in its presence."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5167,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.102,
+    "gauntlet_results": {
+      "monster_00017": 0.4333,
+      "monster_00018": 0.5667,
+      "monster_00019": 0.4667,
+      "monster_00016": 1.0,
+      "monster_00020": 0.8,
+      "monster_00021": 0.2,
+      "monster_00022": 1.0,
+      "monster_00023": 0.1333,
+      "monster_00024": 0.5667,
+      "monster_00025": 0.0
+    }
+  }
+}

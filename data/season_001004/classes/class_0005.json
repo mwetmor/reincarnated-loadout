@@ -1,0 +1,198 @@
+{
+  "id": "class_0005",
+  "name": "Throne-Breaker",
+  "title_completion": "a Throne-Breaker",
+  "flavor_text": "Every king who ever sat upon a throne believed it made them eternal. You are the proof that it does not \u2014 your hands have split stone seats, cracked gilded armrests, and sent crowns rolling across marble floors like loose coins. In the Throne Room of the Mad King, you did not bow. You brought the whole thing down.",
+  "archetype_tag": "physical_skirmisher",
+  "energy_type": "stamina-as-resource",
+  "role_orientation": "hybrid",
+  "range_profile": "close",
+  "dominant_element": "physical",
+  "color_palette": [
+    103353,
+    111482,
+    144920,
+    137745,
+    187670,
+    186266
+  ],
+  "stat_distribution": {
+    "strength": 100,
+    "dexterity": 98,
+    "intelligence": 7,
+    "wisdom": 11,
+    "vitality": 54
+  },
+  "skills": [
+    {
+      "id": "skill_000022",
+      "name": "Cracked Throne Hammerblow",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 7.5,
+      "cooldown_seconds": 1.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 103353,
+      "flavor_text": "The floor splits beneath each strike, ancient marble giving way like soil after drought. The Mad King's hall remembers every blow."
+    },
+    {
+      "id": "skill_000023",
+      "name": "Shattered Throne Upheaval",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/physical/area_damage",
+      "energy_cost": 30.2,
+      "cooldown_seconds": 6.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.8
+          }
+        }
+      ],
+      "color_value": 111482,
+      "flavor_text": "The cracked marble floor remembers every king who knelt upon it, and now it remembers you. Stone and blood erupt outward in a grinding ring, leaving the hall weeping red from a hundred splitting seams."
+    },
+    {
+      "id": "skill_000024",
+      "name": "Throne Breaks First",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 27.8,
+      "cooldown_seconds": 12.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 1.5
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 144920,
+      "flavor_text": "The floor of the mad king's hall splits open like a wound that was always waiting. Every voice in the room swallows itself whole."
+    },
+    {
+      "id": "skill_000025",
+      "name": "Throne Rending Heave",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 18.5,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 137745,
+      "flavor_text": "The floor itself buckles as the warrior drags their weapon through a slow, grinding arc \u2014 marble cracks, thrones splinter, and the very foundations of the hall groan in protest. What kings built over centuries comes apart in a single, deliberate sweep."
+    },
+    {
+      "id": "skill_000026",
+      "name": "Bedrock Throne Stance",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 18.5,
+      "cooldown_seconds": 9.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.1
+          }
+        }
+      ],
+      "color_value": 187670,
+      "flavor_text": "The mad king's seat remembers every tyrant who refused to fall \u2014 you borrow that stubborn weight now, stone swallowing stone, unyielding as the earth beneath crumbling crowns."
+    },
+    {
+      "id": "skill_000027",
+      "name": "Throne Stone Verdict",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/physical/utility",
+      "energy_cost": 18.5,
+      "cooldown_seconds": 11.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.1,
+            "duration_seconds": 9.9
+          }
+        }
+      ],
+      "color_value": 186266,
+      "flavor_text": "The cracked marble beneath the mad king's seat remembers every judgment passed in fury \u2014 it lends that same crushing authority to your next blow. Stone does not forgive, and neither will you."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4933,
+    "convergence_iterations": 5,
+    "converged": true,
+    "final_modifier": 0.1094,
+    "gauntlet_results": {
+      "monster_00017": 0.2667,
+      "monster_00018": 0.3333,
+      "monster_00019": 0.5667,
+      "monster_00016": 1.0,
+      "monster_00020": 1.0,
+      "monster_00021": 0.1667,
+      "monster_00022": 1.0,
+      "monster_00023": 0.2,
+      "monster_00024": 0.1667,
+      "monster_00025": 0.2333
+    }
+  }
+}

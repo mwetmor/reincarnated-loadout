@@ -1,0 +1,166 @@
+{
+  "id": "class_0006",
+  "name": "Charred Throne Usurper",
+  "title_completion": "a Charred Throne Usurper",
+  "flavor_text": "The Mad King's seat still smolders, and you have claimed it \u2014 not by birthright, but by the char that clings to your hands. You do not rule with armies; you rule with stillness, with the suffocating heat of a room no one dares leave. Every edict you speak scorches the air before it reaches the ears of those who would disobey.",
+  "archetype_tag": "fire_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "close",
+  "dominant_element": "fire",
+  "color_palette": [
+    70195,
+    50540,
+    31589,
+    71485,
+    8009
+  ],
+  "stat_distribution": {
+    "strength": 11,
+    "dexterity": 16,
+    "intelligence": 146,
+    "wisdom": 10,
+    "vitality": 87
+  },
+  "skills": [
+    {
+      "id": "skill_000028",
+      "name": "Ashen Throne Smite",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 11.1,
+      "cooldown_seconds": 0.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 70195,
+      "flavor_text": "The Mad King's scorched seat crumbles beneath each blow, its blackened armrests feeding the flame that never fully died. What remains of grandeur becomes fuel."
+    },
+    {
+      "id": "skill_000029",
+      "name": "Charred Throne Edict",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 26.5,
+      "cooldown_seconds": 12.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 1.7
+          }
+        }
+      ],
+      "color_value": 50540,
+      "flavor_text": "A ring of scorched earth rises from the blackened stones where kings once raged, swallowing every voice in its radius whole. The silence it leaves behind smells of ash and something older than obedience."
+    },
+    {
+      "id": "skill_000030",
+      "name": "Ashthrone Stillness",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 19.6,
+      "cooldown_seconds": 13.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 1.6
+          }
+        }
+      ],
+      "color_value": 31589,
+      "flavor_text": "The charred floor of the mad king's hall remembers every scream it swallowed. One fist driven into that blackened stone and the room forgets how to speak."
+    },
+    {
+      "id": "skill_000031",
+      "name": "Ashen Throne Circle",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 15.7,
+      "cooldown_seconds": 5.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.2
+          }
+        }
+      ],
+      "color_value": 71485,
+      "flavor_text": "Where the mad king once held court, the floor remembers fire \u2014 a ring of smoldering char blooms outward, patient and absolute. The earth does not forgive what burned here."
+    },
+    {
+      "id": "skill_000032",
+      "name": "Ashen Throne Kindling",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 16.7,
+      "cooldown_seconds": 16.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.3,
+            "duration_seconds": 7.4
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.26,
+            "duration_seconds": 6.8
+          }
+        }
+      ],
+      "color_value": 8009,
+      "flavor_text": "The scorched stone of the mad king's seat still holds a memory of fire, and those who trace its blackened circle awaken something that never fully died. For a breath of seconds, thought burns clean and hungry."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5933,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00017": 0.1333,
+      "monster_00018": 0.6333,
+      "monster_00019": 0.6667,
+      "monster_00016": 1.0,
+      "monster_00020": 0.8667,
+      "monster_00021": 0.3667,
+      "monster_00022": 0.8667,
+      "monster_00023": 0.5667,
+      "monster_00024": 0.5667,
+      "monster_00025": 0.2667
+    }
+  }
+}

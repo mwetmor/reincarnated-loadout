@@ -1,0 +1,198 @@
+{
+  "id": "class_0010",
+  "name": "Ossuary Tide-Breaker",
+  "title_completion": "an Ossuary Tide-Breaker",
+  "flavor_text": "In the Cathedral of Bone, the milk-white tide does not wash things clean \u2014 it hollows them out, carves marrow into weapon and wall alike. You are what remains when the water recedes: something harder, something hungry, all cracked ivory and surging force. The bones remember the ocean, and so do your fists.",
+  "archetype_tag": "physical_skirmisher",
+  "energy_type": "stamina-as-resource",
+  "role_orientation": "hybrid",
+  "range_profile": "close",
+  "dominant_element": "physical",
+  "color_palette": [
+    188462,
+    168531,
+    105768,
+    111751,
+    188546,
+    137880
+  ],
+  "stat_distribution": {
+    "strength": 100,
+    "dexterity": 97,
+    "intelligence": 8,
+    "wisdom": 14,
+    "vitality": 51
+  },
+  "skills": [
+    {
+      "id": "skill_000050",
+      "name": "Tidal Marrow Strike",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 13.4,
+      "cooldown_seconds": 0.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 188462,
+      "flavor_text": "The Cathedral's drowned dead say the tide never truly recedes \u2014 it simply waits inside the bone. Each blow lands with the full weight of a wave that has traveled a thousand miles to break here."
+    },
+    {
+      "id": "skill_000051",
+      "name": "Tidecleave Ossuary",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 23.2,
+      "cooldown_seconds": 4.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 168531,
+      "flavor_text": "The swing carries the weight of sunken cathedrals, bone and brine splitting the air in a single drowning arc. What stands before it does not stand after."
+    },
+    {
+      "id": "skill_000052",
+      "name": "Tidal Marrow Crash",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "physical",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/physical/control",
+      "energy_cost": 26.8,
+      "cooldown_seconds": 15.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.3
+          }
+        }
+      ],
+      "color_value": 105768,
+      "flavor_text": "The Cathedral's sunken nave remembers every drowned voice \u2014 this strike calls that silence up through the stone, swallowing sound whole. For a breathless moment, the world forgets how to speak."
+    },
+    {
+      "id": "skill_000053",
+      "name": "Tidecrypt Rending",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 25.6,
+      "cooldown_seconds": 6.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 111751,
+      "flavor_text": "Deep within the Cathedral of Bone, the faithful learn that water does not ask permission before it breaks stone. The arc of this channeled sweep carries the cold patience of an ocean that has already won."
+    },
+    {
+      "id": "skill_000054",
+      "name": "Tidal Bone Mantle",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 17.7,
+      "cooldown_seconds": 12.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.9
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.2,
+            "duration_seconds": 8.8
+          }
+        }
+      ],
+      "color_value": 188546,
+      "flavor_text": "The Cathedral breathes outward through you, wrapping flesh in a surge of pressurized marrow-water that bends blows aside before they land. For a breathless moment, you are the reef \u2014 immovable, ancient, alive."
+    },
+    {
+      "id": "skill_000055",
+      "name": "Tideworn Ossian Surge",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/physical/utility",
+      "energy_cost": 13.6,
+      "cooldown_seconds": 11.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.12,
+            "duration_seconds": 6.2
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 5.8
+          }
+        }
+      ],
+      "color_value": 137880,
+      "flavor_text": "Where saltwater has carved through bone for centuries, the Cathedral remembers pressure \u2014 and how to release it. Strength rises like a flood tide finding the cracks it has always known."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4733,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.1539,
+    "gauntlet_results": {
+      "monster_00017": 0.2667,
+      "monster_00018": 0.5333,
+      "monster_00019": 0.2667,
+      "monster_00016": 1.0,
+      "monster_00020": 0.2,
+      "monster_00021": 0.4667,
+      "monster_00022": 1.0,
+      "monster_00023": 0.2333,
+      "monster_00024": 0.4,
+      "monster_00025": 0.3667
+    }
+  }
+}

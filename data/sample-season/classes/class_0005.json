@@ -1,0 +1,585 @@
+{
+  "id": "class_0005",
+  "name": "class_0005",
+  "title_completion": null,
+  "flavor_text": null,
+  "archetype_tag": "physical_warrior",
+  "energy_type": "rage",
+  "role_orientation": "damage",
+  "range_profile": "close",
+  "dominant_element": "physical",
+  "color_palette": [
+    108298,
+    136166,
+    189584,
+    622094,
+    165939,
+    180952,
+    197168,
+    190549,
+    592640,
+    189325,
+    178930
+  ],
+  "stat_distribution": {
+    "strength": 143,
+    "dexterity": 33,
+    "intelligence": 5,
+    "wisdom": 5,
+    "vitality": 84
+  },
+  "skills": [
+    {
+      "id": "skill_000071",
+      "name": null,
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 26.2,
+      "cooldown_seconds": 6.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.2
+          }
+        }
+      ],
+      "color_value": 108298,
+      "flavor_text": null,
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0623
+    },
+    {
+      "id": "skill_000072",
+      "name": null,
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 25.5,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 136166,
+      "flavor_text": null,
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0642
+    },
+    {
+      "id": "skill_000073",
+      "name": null,
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 41.6,
+      "cooldown_seconds": 9.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.7
+          }
+        }
+      ],
+      "color_value": 189584,
+      "flavor_text": null,
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0558
+    },
+    {
+      "id": "skill_000074",
+      "name": null,
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 46.4,
+      "cooldown_seconds": 7.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.43,
+            "duration_seconds": 4.1
+          }
+        }
+      ],
+      "color_value": 622094,
+      "flavor_text": null,
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0746
+    },
+    {
+      "id": "skill_000075",
+      "name": null,
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 36.7,
+      "cooldown_seconds": 0.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.1
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.08
+          }
+        }
+      ],
+      "color_value": 165939,
+      "flavor_text": null,
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000071"
+      ],
+      "scaling_coefficient": 1.0888
+    },
+    {
+      "id": "skill_000076",
+      "name": null,
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 35.6,
+      "cooldown_seconds": 11.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.9
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.22,
+            "duration_seconds": 8.6
+          }
+        }
+      ],
+      "color_value": 180952,
+      "flavor_text": null,
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000073"
+      ],
+      "scaling_coefficient": 1.1135
+    },
+    {
+      "id": "skill_000077",
+      "name": null,
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/physical/mobility",
+      "energy_cost": 46.5,
+      "cooldown_seconds": 7.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.29,
+            "duration_seconds": 5.7
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 197168,
+      "flavor_text": null,
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000073"
+      ],
+      "scaling_coefficient": 1.1028
+    },
+    {
+      "id": "skill_000078",
+      "name": null,
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/physical/utility",
+      "energy_cost": 45.9,
+      "cooldown_seconds": 13.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.18,
+            "duration_seconds": 8.3
+          }
+        }
+      ],
+      "color_value": 190549,
+      "flavor_text": null,
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000075"
+      ],
+      "scaling_coefficient": 1.14
+    },
+    {
+      "id": "skill_000079",
+      "name": null,
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 48.7,
+      "cooldown_seconds": 6.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.48,
+            "duration_seconds": 2.7
+          }
+        }
+      ],
+      "color_value": 592640,
+      "flavor_text": null,
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000076"
+      ],
+      "scaling_coefficient": 1.1483
+    },
+    {
+      "id": "skill_000080",
+      "name": null,
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/physical/utility",
+      "energy_cost": 36.4,
+      "cooldown_seconds": 19.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.18,
+            "duration_seconds": 9.5
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.16,
+            "duration_seconds": 9.6
+          }
+        }
+      ],
+      "color_value": 189325,
+      "flavor_text": null,
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000078"
+      ],
+      "scaling_coefficient": 1.2009
+    },
+    {
+      "id": "skill_000081",
+      "name": null,
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/physical/control",
+      "energy_cost": 49.4,
+      "cooldown_seconds": 10.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.22,
+            "duration_seconds": 6.6
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.3
+          }
+        }
+      ],
+      "color_value": 178930,
+      "flavor_text": null,
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000079"
+      ],
+      "scaling_coefficient": 1.2325
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.492,
+    "convergence_iterations": 6,
+    "converged": true,
+    "final_modifier": 0.3172,
+    "gauntlet_results": {
+      "monster_00017": 0.24,
+      "monster_00018": 0.59,
+      "monster_00019": 0.59,
+      "monster_00016": 0.99,
+      "monster_00020": 0.21,
+      "monster_00021": 0.18,
+      "monster_00022": 1.0,
+      "monster_00023": 0.16,
+      "monster_00024": 0.28,
+      "monster_00025": 0.68
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.492,
+      "iterations": 6,
+      "converged": true,
+      "final_modifier": 0.3172,
+      "dimensions_explored": [
+        "geometry_mix",
+        "cooldown_energy",
+        "skill_swap"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00017": 0.24,
+        "monster_00018": 0.59,
+        "monster_00019": 0.59,
+        "monster_00016": 0.99,
+        "monster_00020": 0.21,
+        "monster_00021": 0.18,
+        "monster_00022": 1.0,
+        "monster_00023": 0.16,
+        "monster_00024": 0.28,
+        "monster_00025": 0.68
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.502,
+      "iterations": 6,
+      "converged": true,
+      "final_modifier": 0.1984,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00041": 0.12,
+        "monster_00042": 0.59,
+        "monster_00043": 0.99,
+        "monster_00044": 0.45,
+        "monster_00045": 0.36
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.484,
+      "iterations": 6,
+      "converged": true,
+      "final_modifier": 0.0797,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00046": 0.44,
+        "monster_00047": 0.61,
+        "monster_00048": 0.41,
+        "monster_00049": 0.69,
+        "monster_00050": 0.27
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.18,
+      "p75": 0.2,
+      "p95": 0.196,
+      "p99": 0.216,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.38,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.42,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.48,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "utility",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000080",
+          "swapped_from_role": "utility",
+          "swapped_to_role": "area_damage",
+          "swapped_to_id": "skill_000190",
+          "role": "utility",
+          "rationale": "fine_tune_increase"
+        },
+        "attempt": 1,
+        "before_winrate": 0.419,
+        "after_winrate": 0.419,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.4062
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "utility",
+        "lever_specifics": {
+          "skill_id": "skill_000081",
+          "role": "utility",
+          "from_geometry": "single_target",
+          "to_geometry": "circle",
+          "rationale": "geometry_rebias_fine_tune"
+        },
+        "attempt": 1,
+        "before_winrate": 0.419,
+        "after_winrate": 0.419,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.4062
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "utility",
+        "lever_specifics": {
+          "skill_id": "skill_000080",
+          "role": "utility",
+          "param": "cooldown_seconds",
+          "from_cd": 19.1,
+          "to_cd": 17.19,
+          "from_cost": 36.4,
+          "to_cost": 32.76,
+          "rationale": "cd_decrease_increase_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.419,
+        "after_winrate": 0.419,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.4062
+      }
+    ],
+    "recompose_outcome": "modifier_fallback",
+    "composition_pre_modifier_wr": 0.985,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [],
+    "secondary_loop_outcome": "secondary_skipped_pure_element",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.3172,
+      "would_pass_clamp": true
+    }
+  }
+}

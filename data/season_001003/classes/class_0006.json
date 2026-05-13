@@ -1,0 +1,196 @@
+{
+  "id": "class_0006",
+  "name": "Drowned Torch Bearer",
+  "title_completion": "a Drowned Torch Bearer",
+  "flavor_text": "In the Cathedral of Bone, the torches never go out \u2014 they simply learn to burn beneath the milk-white flood. She arrived clutching a flame that should not exist, sputtering and spitting against the tide that swallowed everything else. The sisters of the deep call it blasphemy; she calls it stubbornness.",
+  "archetype_tag": "fire_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "fire",
+  "color_palette": [
+    88543,
+    19299,
+    9721,
+    73407,
+    88647
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 20,
+    "intelligence": 160,
+    "wisdom": 10,
+    "vitality": 70
+  },
+  "skills": [
+    {
+      "id": "skill_000029",
+      "name": "Drowned Torch Flare",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 14.8,
+      "cooldown_seconds": 0.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 3.3
+          }
+        }
+      ],
+      "color_value": 88543,
+      "flavor_text": "A flame that should not exist gutters up from beneath cold water, hungry and salt-bright. It finds the target the way fire always finds what is already dry."
+    },
+    {
+      "id": "skill_000030",
+      "name": "Drowned Torch Bloom",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/fire/area_damage",
+      "energy_cost": 28.4,
+      "cooldown_seconds": 7.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.0
+          }
+        }
+      ],
+      "color_value": 19299,
+      "flavor_text": "In the Cathedral of Bone, where salt water seeps through ancient ribs, a single torch held underwater blooms outward in a circle of impossible fire. The flame does not drown \u2014 it spreads."
+    },
+    {
+      "id": "skill_000031",
+      "name": "Drowned Cathedral Torch",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 18.4,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.3
+          }
+        }
+      ],
+      "color_value": 9721,
+      "flavor_text": "A beam of firelight cuts through the submerged nave, burning where water should extinguish. The bones remember warmth, and the flame obliges them."
+    },
+    {
+      "id": "skill_000032",
+      "name": "Drowned Torch Vigil",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 11.0,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 375,
+            "duration_seconds": 10.8
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 73407,
+      "flavor_text": "A flame planted in the deep dark of the Cathedral's flooded nave refuses to gutter, burning hotter the more the cold water presses in. It does not light the way \u2014 it punishes whatever draws close."
+    },
+    {
+      "id": "skill_000033",
+      "name": "Torch Against the Tide",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/defensive",
+      "energy_cost": 19.7,
+      "cooldown_seconds": 8.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.0
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.1,
+            "duration_seconds": 8.7
+          }
+        }
+      ],
+      "color_value": 88647,
+      "flavor_text": "A single flame held aloft in the drowned cathedral, its light bending the dark water back before it can close in. For a breath, the fire holds \u2014 and nothing reaches you."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5133,
+    "convergence_iterations": 6,
+    "converged": true,
+    "final_modifier": 0.0797,
+    "gauntlet_results": {
+      "monster_00017": 0.0,
+      "monster_00018": 0.7,
+      "monster_00019": 0.6,
+      "monster_00016": 1.0,
+      "monster_00020": 0.6667,
+      "monster_00021": 0.0667,
+      "monster_00022": 1.0,
+      "monster_00023": 0.2333,
+      "monster_00024": 0.6333,
+      "monster_00025": 0.2333
+    }
+  }
+}

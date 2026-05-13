@@ -1,0 +1,197 @@
+{
+  "id": "class_0008",
+  "name": "Tideworn Ossomancer",
+  "title_completion": "a Tideworn Ossomancer",
+  "flavor_text": "Beneath the Cathedral of Bone, where milk-white tides lap at ancient relics, the Ossomancer listens to what the marrow remembers. They do not cast spells so much as coax confessions from the dead \u2014 and the dead, it turns out, have a great deal of unfinished business. Every strike is a sermon, every shattered rib a hymn.",
+  "archetype_tag": "earth_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "earth",
+  "color_palette": [
+    287689,
+    347125,
+    377881,
+    285942,
+    267291,
+    261683
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 21,
+    "intelligence": 5,
+    "wisdom": 158,
+    "vitality": 76
+  },
+  "skills": [
+    {
+      "id": "skill_000039",
+      "name": "Tideworn Osseous Strike",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 6.7,
+      "cooldown_seconds": 0.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 287689,
+      "flavor_text": "The Cathedral's sunken pillars remember every shore they once stood upon. A blow lands with the weight of sediment and salt-bleached marrow, drawn from the deep places where earth and sea have long forgotten their argument."
+    },
+    {
+      "id": "skill_000040",
+      "name": "Marrow Tide Reckoning",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 37.6,
+      "cooldown_seconds": 8.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 347125,
+      "flavor_text": "Where the Cathedral's pale ribs meet the deep, the earth remembers every buried weight. Wisdom calls the sediment upward in one crushing, bone-white surge."
+    },
+    {
+      "id": "skill_000041",
+      "name": "Sunken Cathedral Marrow",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 17.5,
+      "cooldown_seconds": 7.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 377881,
+      "flavor_text": "The drowned bones of the deep cathedral groan and fracture beneath the tide, splitting the earth upward in pale shards. What the water preserves, the ground remembers."
+    },
+    {
+      "id": "skill_000042",
+      "name": "Drowned Marrow Tide",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 21.9,
+      "cooldown_seconds": 4.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 1.9
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 285942,
+      "flavor_text": "Beneath the Cathedral's flooded nave, the earth remembers every skeleton it has swallowed. Bone-white roots surge upward through the silt, clutching at living ankles with the patience of things long dead."
+    },
+    {
+      "id": "skill_000043",
+      "name": "Tideworn Ossuary Ward",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 20.5,
+      "cooldown_seconds": 8.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.3
+          }
+        }
+      ],
+      "color_value": 267291,
+      "flavor_text": "The bleached ribs of the deep cathedral rise through the silt, locking around the faithful like a cage of holy remains. What the ocean could not dissolve, it consecrated."
+    },
+    {
+      "id": "skill_000044",
+      "name": "Marrow Tide Rising",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "earth",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/earth/sustain",
+      "energy_cost": 29.1,
+      "cooldown_seconds": 5.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        },
+        {
+          "name": "heal_over_time",
+          "params": {
+            "tick_heal": 375,
+            "duration_seconds": 6.3
+          }
+        }
+      ],
+      "color_value": 261683,
+      "flavor_text": "Seawater seeps through ancient bone, carrying life back into hollow places. The Cathedral breathes, and so does the wounded."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5233,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.0648,
+    "gauntlet_results": {
+      "monster_00017": 0.2333,
+      "monster_00018": 0.7667,
+      "monster_00019": 0.2667,
+      "monster_00016": 1.0,
+      "monster_00020": 0.4667,
+      "monster_00021": 0.3333,
+      "monster_00022": 1.0,
+      "monster_00023": 0.0,
+      "monster_00024": 0.6333,
+      "monster_00025": 0.5333
+    }
+  }
+}

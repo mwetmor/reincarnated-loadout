@@ -1,0 +1,200 @@
+{
+  "id": "class_0010",
+  "name": "Ossuary Ranger",
+  "title_completion": "an Ossuary Ranger",
+  "flavor_text": "Beneath the Crypt of the First Saint, where marrow seeps through stone and the ground remembers every soul it has swallowed, she learned to hunt by listening to what the earth keeps. Her arrows are pulled from the ribs of the buried, and her traps are the crypt floor itself \u2014 waiting, patient, inevitable. The dead do not chase their prey; they simply make the ground give way.",
+  "archetype_tag": "hunter",
+  "energy_type": "focus",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "physical",
+  "color_palette": [
+    170991,
+    121884,
+    182116,
+    181652,
+    179076,
+    130033
+  ],
+  "stat_distribution": {
+    "strength": 30,
+    "dexterity": 136,
+    "intelligence": 15,
+    "wisdom": 25,
+    "vitality": 64
+  },
+  "skills": [
+    {
+      "id": "skill_000050",
+      "name": "Sepulcher Weight",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/physical/control",
+      "energy_cost": 13.4,
+      "cooldown_seconds": 12.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.12,
+            "duration_seconds": 5.8
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.8
+          }
+        }
+      ],
+      "color_value": 170991,
+      "flavor_text": "The saint's buried silence presses into flesh and bone, sealing the throat while hardening the fist. What rests beneath the crypt does not sleep \u2014 it waits to be borrowed."
+    },
+    {
+      "id": "skill_000051",
+      "name": "Burial Root Surge",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/physical/mobility",
+      "energy_cost": 19.9,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.1
+          }
+        }
+      ],
+      "color_value": 121884,
+      "flavor_text": "Ancient roots crack through sanctified stone, driving you forward with the weight of interred centuries. Where you land, the earth remembers \u2014 and the wound it leaves behind weeps long after the impact."
+    },
+    {
+      "id": "skill_000052",
+      "name": "Grave Shard Volley",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 12.0,
+      "cooldown_seconds": 1.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "physical",
+            "pierce": 1,
+            "multishot": 2
+          }
+        }
+      ],
+      "color_value": 182116,
+      "flavor_text": "Fragments of the crypt's ancient stonework tear through the air with the weight of buried centuries. What the First Saint's tomb gives, it gives with unforgiving force."
+    },
+    {
+      "id": "skill_000053",
+      "name": "Reliquary Ground Surge",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/physical/utility",
+      "energy_cost": 18.3,
+      "cooldown_seconds": 17.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.16,
+            "duration_seconds": 4.4
+          }
+        }
+      ],
+      "color_value": 181652,
+      "flavor_text": "The bones of the First Saint stir beneath the stone, their ancient strength rising through the floor in a slow, trembling circle. For a breath, the living borrow power from the long-buried."
+    },
+    {
+      "id": "skill_000054",
+      "name": "Crypt Floor Collapse",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/physical/area_damage",
+      "energy_cost": 26.1,
+      "cooldown_seconds": 4.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 179076,
+      "flavor_text": "The saint's burial stone fractures outward in a widening ring, swallowing everything above it into the dark below. The earth does not discriminate between the living and the already forgotten."
+    },
+    {
+      "id": "skill_000055",
+      "name": "Crypt Floor Rending",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/physical/area_damage",
+      "energy_cost": 24.3,
+      "cooldown_seconds": 7.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.0
+          }
+        }
+      ],
+      "color_value": 130033,
+      "flavor_text": "The saint's burial stones split apart in a grinding circle, dragging flesh against jagged edges until the ground drinks deep. What was consecrated now hungers."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.52,
+    "convergence_iterations": 5,
+    "converged": true,
+    "final_modifier": 0.7031,
+    "gauntlet_results": {
+      "monster_00017": 0.4333,
+      "monster_00018": 0.4667,
+      "monster_00019": 0.3,
+      "monster_00016": 1.0,
+      "monster_00020": 0.3667,
+      "monster_00021": 0.3333,
+      "monster_00022": 0.8667,
+      "monster_00023": 0.3333,
+      "monster_00024": 0.4667,
+      "monster_00025": 0.6333
+    }
+  }
+}

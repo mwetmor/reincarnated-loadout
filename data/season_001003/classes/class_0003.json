@@ -1,0 +1,179 @@
+{
+  "id": "class_0003",
+  "name": "Ossuary Tidecaller",
+  "title_completion": "an Ossuary Tidecaller",
+  "flavor_text": "Deep within the Cathedral of Bone, where torchlight never quite reaches and the walls exhale a cold, milk-white mist, the Ossuary Tidecaller listens to what the dead have left behind. They do not raise the fallen \u2014 they read them, drawing power from the slow sediment of centuries compressed into sacred marrow. What they unleash is neither spell nor strike, but something older: the tide that carved the bone, finally remembering its shape.",
+  "archetype_tag": "hybrid_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "earth",
+  "color_palette": [
+    267750,
+    316736,
+    376304,
+    323653,
+    288450
+  ],
+  "stat_distribution": {
+    "strength": 8,
+    "dexterity": 15,
+    "intelligence": 100,
+    "wisdom": 101,
+    "vitality": 46
+  },
+  "skills": [
+    {
+      "id": "skill_000012",
+      "name": "Tideworn Marrow Strike",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 6.4,
+      "cooldown_seconds": 1.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 1.7
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.06
+          }
+        }
+      ],
+      "color_value": 267750,
+      "flavor_text": "Salt-bleached bone erupts from the cathedral floor, pinning the living to the earth as the strike drinks deep of their warmth. What the tide leaves behind still hungers."
+    },
+    {
+      "id": "skill_000013",
+      "name": "Marrow Tide Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 28.1,
+      "cooldown_seconds": 9.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.32,
+            "duration_seconds": 8.3
+          }
+        }
+      ],
+      "color_value": 316736,
+      "flavor_text": "Deep beneath the Cathedral of Bone, the earth remembers every creature it has swallowed whole \u2014 and now it exhales them all at once. The ground splits like a cracked ribcage, releasing a surge of calcified force that lingers in the wound it leaves behind."
+    },
+    {
+      "id": "skill_000014",
+      "name": "Tide Carved Marrow",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 22.9,
+      "cooldown_seconds": 18.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 1.5
+          }
+        }
+      ],
+      "color_value": 376304,
+      "flavor_text": "Where the cathedral's drowned foundations press into the earth, something ancient grips the living from below. Bone remembers the shape of stillness."
+    },
+    {
+      "id": "skill_000015",
+      "name": "Sediment of Saints",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/earth/area_damage",
+      "energy_cost": 26.5,
+      "cooldown_seconds": 4.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 323653,
+      "flavor_text": "The cathedral floor exhales centuries of compressed bone and silt, surging outward in a pale tide that grinds everything in its path to dust. What the faithful built endures \u2014 what stands before it does not."
+    },
+    {
+      "id": "skill_000016",
+      "name": "Bleached Tide Reliquary",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 23.1,
+      "cooldown_seconds": 12.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.2
+          }
+        }
+      ],
+      "color_value": 288450,
+      "flavor_text": "The bones of the deep cathedral rise through the skin like coral, white and salt-hardened, drinking the current into stillness. What the water carved away, the marrow remembers."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4967,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.0945,
+    "gauntlet_results": {
+      "monster_00017": 0.2333,
+      "monster_00018": 0.7667,
+      "monster_00019": 0.1,
+      "monster_00016": 1.0,
+      "monster_00020": 0.2333,
+      "monster_00021": 0.3,
+      "monster_00022": 1.0,
+      "monster_00023": 0.1,
+      "monster_00024": 0.6667,
+      "monster_00025": 0.5667
+    }
+  }
+}

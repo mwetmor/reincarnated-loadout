@@ -1,0 +1,182 @@
+{
+  "id": "class_0011",
+  "name": "Drowned Torch Priest",
+  "title_completion": "a Drowned Torch Priest",
+  "flavor_text": "Deep beneath the Cathedral of Bone, the sacred flames are never lit with flint \u2014 they are coaxed from milk-soaked wicks by breath alone, guttering and blue and wrong. You have inherited the oldest rite: to burn without burning out, to preach to a congregation of ribs and silence. The torch does not fear drowning. Neither, now, do you.",
+  "archetype_tag": "fire_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "close",
+  "dominant_element": "fire",
+  "color_palette": [
+    8084,
+    39624,
+    6056,
+    66740,
+    76776,
+    74757
+  ],
+  "stat_distribution": {
+    "strength": 12,
+    "dexterity": 16,
+    "intelligence": 140,
+    "wisdom": 12,
+    "vitality": 90
+  },
+  "skills": [
+    {
+      "id": "skill_000056",
+      "name": "Drowned Torch Surge",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 13.4,
+      "cooldown_seconds": 1.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 8084,
+      "flavor_text": "A guttering flame held beneath dark cathedral waters still burns \u2014 it simply burns differently. The fire that survives drowning asks no permission before it strikes."
+    },
+    {
+      "id": "skill_000057",
+      "name": "Drowned Torch Hush",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 22.1,
+      "cooldown_seconds": 17.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.1
+          }
+        }
+      ],
+      "color_value": 39624,
+      "flavor_text": "A flame gutters beneath dark water, and the world holds its breath. The silence that follows is not empty \u2014 it is the cathedral listening."
+    },
+    {
+      "id": "skill_000058",
+      "name": "Drowned Torch Hush",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 25.0,
+      "cooldown_seconds": 11.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.2
+          }
+        }
+      ],
+      "color_value": 6056,
+      "flavor_text": "A flame plunged beneath black cathedral water \u2014 the hiss swallows every sound before it can be born. The silence that follows is not empty but heavy, soaked through, pressing against the throat like a wet hand."
+    },
+    {
+      "id": "skill_000059",
+      "name": "Drowned Torch Sermon",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 23.0,
+      "cooldown_seconds": 16.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 1.5
+          }
+        }
+      ],
+      "color_value": 66740,
+      "flavor_text": "A flame driven into the cathedral floor releases a hiss of silencing steam, swallowing every voice in its radius. The fire does not die \u2014 it simply refuses to be heard."
+    },
+    {
+      "id": "skill_000060",
+      "name": "Drowned Torch Sweep",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 18.1,
+      "cooldown_seconds": 4.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 76776,
+      "flavor_text": "A guttering flame dragged through salt-heavy air, it burns brightest where the water is deepest. The Cathedral's bone vaults hold the heat long after the light is gone."
+    },
+    {
+      "id": "skill_000061",
+      "name": "Drowned Torch Rite",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 15.8,
+      "cooldown_seconds": 7.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 3.7
+          }
+        }
+      ],
+      "color_value": 74757,
+      "flavor_text": "A flame carried into the Cathedral of Bone does not die in the deep water \u2014 it burns stranger, clinging to flesh like a memory of warmth that has curdled into wound. The strike leaves its mark long after the hand withdraws."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5167,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.1539,
+    "gauntlet_results": {
+      "monster_00017": 0.0333,
+      "monster_00018": 0.7,
+      "monster_00019": 0.4333,
+      "monster_00016": 1.0,
+      "monster_00020": 0.7,
+      "monster_00021": 0.1667,
+      "monster_00022": 1.0,
+      "monster_00023": 0.4333,
+      "monster_00024": 0.5,
+      "monster_00025": 0.2
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "id": "class_0004",
+  "name": "Drowned Cantor",
+  "title_completion": "a Drowned Cantor",
+  "flavor_text": "In the Cathedral of Bone, the dead do not rest \u2014 they resonate. You have learned to breathe where no breath should exist, filling hollow ribs and vaulted marrow with a tide of sacred, suffocating song. Your lungs are not your own; they belong to the deep, and what they exhale, the living cannot long endure.",
+  "archetype_tag": "wind_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "wind",
+  "color_palette": [
+    461832,
+    490680,
+    442546,
+    445496,
+    496070,
+    439004
+  ],
+  "stat_distribution": {
+    "strength": 7,
+    "dexterity": 31,
+    "intelligence": 8,
+    "wisdom": 154,
+    "vitality": 70
+  },
+  "skills": [
+    {
+      "id": "skill_000017",
+      "name": "Tide Breath Surge",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 12.3,
+      "cooldown_seconds": 1.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 461832,
+      "flavor_text": "A warm exhalation tears through the cathedral's drowned silence, carrying the weight of deep water and hollow bone. It arrives before the sound does."
+    },
+    {
+      "id": "skill_000018",
+      "name": "Tide Breath Exhalation",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 27.2,
+      "cooldown_seconds": 9.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 490680,
+      "flavor_text": "Within the Cathedral of Bone, where salt-damp air clings to ancient ivory, a single exhaled breath swells into a roaring surge of wind that strips flesh from purpose. The water remembers every shore it has ever shattered."
+    },
+    {
+      "id": "skill_000019",
+      "name": "Drowned Breath Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 22.8,
+      "cooldown_seconds": 6.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 442546,
+      "flavor_text": "Where the Cathedral's hollow ribs once sang with tide, a single exhaled gust tears outward in a circle of annihilating stillness. The air smells of deep water and something warm that no longer lives."
+    },
+    {
+      "id": "skill_000020",
+      "name": "Drowned Choir Exhale",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 15.4,
+      "cooldown_seconds": 5.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 6.1,
+            "stagger_seconds": 0.4
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 445496,
+      "flavor_text": "A breath stolen from the Cathedral's hollow ribs tears outward in a spiraling column, carrying the cold patience of deep water. The target staggers, lungs emptied, as wind and tide memory scour them from the inside."
+    },
+    {
+      "id": "skill_000021",
+      "name": "Tide Held Breath",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 22.3,
+      "cooldown_seconds": 12.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.3
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.22,
+            "duration_seconds": 8.9
+          }
+        }
+      ],
+      "color_value": 496070,
+      "flavor_text": "In the Cathedral of Bone, where water remembers every body it has ever claimed, the defender draws one slow breath and holds it \u2014 and the sea holds with them. For a suspended moment, nothing that moves through air can find them."
+    },
+    {
+      "id": "skill_000022",
+      "name": "Tidecaller's Exhale",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 15.2,
+      "cooldown_seconds": 15.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.15,
+            "duration_seconds": 4.8
+          }
+        }
+      ],
+      "color_value": 439004,
+      "flavor_text": "A slow breath drawn from the marrow-cold air of the Cathedral fills the lungs with something older than water. For a few charged seconds, every strike carries the weight of a held tide."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.51,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.0945,
+    "gauntlet_results": {
+      "monster_00017": 0.5,
+      "monster_00018": 0.5,
+      "monster_00019": 0.5,
+      "monster_00016": 0.9667,
+      "monster_00020": 0.1333,
+      "monster_00021": 0.6,
+      "monster_00022": 1.0,
+      "monster_00023": 0.3667,
+      "monster_00024": 0.0333,
+      "monster_00025": 0.5
+    }
+  }
+}

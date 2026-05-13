@@ -1,0 +1,205 @@
+{
+  "id": "class_0007",
+  "name": "Drowned Cantor",
+  "title_completion": "a Drowned Cantor",
+  "flavor_text": "From the lightless depths of the Deep Trench, their voice carries not sound but pressure \u2014 a thrumming brine-song that bends currents and buckles hulls. They do not cast spells so much as intone them, each syllable a column of cold water rising. Those who hear the Drowned Cantor's stillness mistake silence for mercy, and that is always their last mistake.",
+  "archetype_tag": "hybrid_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "color_palette": [
+    664260,
+    699836,
+    681536,
+    562730,
+    639334,
+    692168
+  ],
+  "stat_distribution": {
+    "strength": 14,
+    "dexterity": 14,
+    "intelligence": 96,
+    "wisdom": 96,
+    "vitality": 50
+  },
+  "skills": [
+    {
+      "id": "skill_000036",
+      "name": "Brine Gust Strike",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 9.4,
+      "cooldown_seconds": 1.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 664260,
+      "flavor_text": "A salt-laden wind tears from the depths of the Trench, carrying the bitter cold of lightless water. It strikes with the weight of pressure that has never known air."
+    },
+    {
+      "id": "skill_000037",
+      "name": "Brine Hollow Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 37.9,
+      "cooldown_seconds": 5.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.28,
+            "duration_seconds": 3.0
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.25,
+            "duration_seconds": 8.0
+          }
+        }
+      ],
+      "color_value": 699836,
+      "flavor_text": "From the lightless floor of the Deep Trench, a column of pressurized salt-water detonates outward in a bitter ring, flash-freezing everything it touches with the cold that lives where wind has never reached. The brine lingers in the wound, sharpening the next blow like salt rubbed into a blade's edge."
+    },
+    {
+      "id": "skill_000038",
+      "name": "Brine Wind Stillness",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "water",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 28.3,
+      "cooldown_seconds": 18.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.4,
+            "duration_seconds": 3.5
+          }
+        }
+      ],
+      "color_value": 681536,
+      "flavor_text": "A cold breath rises from the Deep Trench, carrying salt and silence that seeps into the target's bones and slows the world around them. The air tastes of preserved things, of depths where nothing moves quickly and nothing escapes unchanged."
+    },
+    {
+      "id": "skill_000039",
+      "name": "Trench Brine Howl",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 28.1,
+      "cooldown_seconds": 7.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 562730,
+      "flavor_text": "From the lightless deep, a column of salt-heavy wind erupts in a churning ring, stripping flesh and memory alike. The ocean remembers everything it has ever swallowed."
+    },
+    {
+      "id": "skill_000040",
+      "name": "Brine Wall Convergence",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 19.6,
+      "cooldown_seconds": 11.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.3
+          }
+        }
+      ],
+      "color_value": 639334,
+      "flavor_text": "Salt-heavy wind tears upward from the trench's throat, crystallizing around the caster in a shimmering shell of preserved stillness. The deep does not yield, and neither do you."
+    },
+    {
+      "id": "skill_000041",
+      "name": "Brine Lung Stillness",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "water",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 15.4,
+      "cooldown_seconds": 16.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.18,
+            "duration_seconds": 9.5
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 1.7
+          }
+        }
+      ],
+      "color_value": 692168,
+      "flavor_text": "The diver draws the trench's bitter cold into their chest, and for a breathless moment the deep silences everything above. Salt-preserved and wind-hollowed, their strikes carry the crushing weight of fathomless water."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4767,
+    "convergence_iterations": 9,
+    "converged": true,
+    "final_modifier": 0.0908,
+    "gauntlet_results": {
+      "monster_00017": 0.4,
+      "monster_00018": 0.0,
+      "monster_00019": 0.5,
+      "monster_00016": 0.9333,
+      "monster_00020": 0.5,
+      "monster_00021": 0.6333,
+      "monster_00022": 0.7667,
+      "monster_00023": 0.6333,
+      "monster_00024": 0.1667,
+      "monster_00025": 0.2333
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "id": "class_0010",
+  "name": "Trench Gale Brawler",
+  "title_completion": "a Trench Gale Brawler",
+  "flavor_text": "In the lightless depths where pressure crushes stone and silence has weight, the thrum of the abyss became your fists. You do not fight with grace \u2014 you fight with the relentless, howling force of water driven to violence, rending flesh and cracking basalt with every blow. Down here, the wind does not whisper; it tears.",
+  "archetype_tag": "physical_warrior",
+  "energy_type": "stamina-as-resource",
+  "role_orientation": "damage",
+  "range_profile": "close",
+  "dominant_element": "physical",
+  "color_palette": [
+    169555,
+    126043,
+    169339,
+    157651,
+    152220,
+    193164
+  ],
+  "stat_distribution": {
+    "strength": 146,
+    "dexterity": 27,
+    "intelligence": 8,
+    "wisdom": 9,
+    "vitality": 80
+  },
+  "skills": [
+    {
+      "id": "skill_000052",
+      "name": "Trench Gale Cleave",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 26.4,
+      "cooldown_seconds": 6.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.9
+          }
+        }
+      ],
+      "color_value": 169555,
+      "flavor_text": "A savage arc tears through the pressure-dark water like a wind that has forgotten it cannot exist here. The wound it leaves behind breathes on its own, slow and rhythmic, as if the deep itself has learned to exhale."
+    },
+    {
+      "id": "skill_000053",
+      "name": "Trench Gale Fist",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 6.7,
+      "cooldown_seconds": 0.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 126043,
+      "flavor_text": "From the crushing dark below, a fist rises with the fury of trapped air finally breaking surface. The impact carries the weight of every fathom it clawed through to reach you."
+    },
+    {
+      "id": "skill_000054",
+      "name": "Abyssal Gale Rend",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 24.3,
+      "cooldown_seconds": 5.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.9
+          }
+        }
+      ],
+      "color_value": 169339,
+      "flavor_text": "A blow that howls through flesh like wind through a deep-sea fracture, leaving wounds that weep in rhythmic, tide-pulled pulses. The trench remembers every cut."
+    },
+    {
+      "id": "skill_000055",
+      "name": "Trench Pressure Drop",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 26.9,
+      "cooldown_seconds": 6.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 157651,
+      "flavor_text": "The fist meets the earth and the air itself collapses inward, a sudden brutal vacuum that crushes everything standing above the stone. At the bottom of the world, the wind does not blow \u2014 it implodes."
+    },
+    {
+      "id": "skill_000056",
+      "name": "Trench Gale Rend",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 16.4,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 3.8
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 152220,
+      "flavor_text": "A strike borrowed from the crushing winds that howl through the deepest underwater chasms, where pressure splits stone like skin. The wound breathes open, exhaling in slow, wet pulses."
+    },
+    {
+      "id": "skill_000057",
+      "name": "Trench Gale Surge",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/physical/utility",
+      "energy_cost": 15.9,
+      "cooldown_seconds": 17.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.27,
+            "duration_seconds": 5.3
+          }
+        }
+      ],
+      "color_value": 193164,
+      "flavor_text": "A column of pressurized wind rises from the crushing dark below, coiling around the body in a tight ring that makes every strike land heavier. The deep breathes upward, and for a moment you carry its impossible weight in your fists."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4867,
+    "convergence_iterations": 5,
+    "converged": true,
+    "final_modifier": 0.1094,
+    "gauntlet_results": {
+      "monster_00017": 0.3667,
+      "monster_00018": 0.2,
+      "monster_00019": 0.5,
+      "monster_00016": 1.0,
+      "monster_00020": 0.3333,
+      "monster_00021": 0.6,
+      "monster_00022": 1.0,
+      "monster_00023": 0.5,
+      "monster_00024": 0.2333,
+      "monster_00025": 0.1333
+    }
+  }
+}

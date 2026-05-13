@@ -1,0 +1,199 @@
+{
+  "id": "class_0006",
+  "name": "Abyssal Pitch-Tender",
+  "title_completion": "an Abyssal Pitch-Tender",
+  "flavor_text": "Far below where light surrenders, the trenches weep black pitch that hums with a pressure no surface-dweller could endure. You have learned to coax that thrumming darkness into bloom, letting it catch and roar in curtains of brine-kissed fire. The deep does not forgive carelessness \u2014 but then, neither do you.",
+  "archetype_tag": "fire_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "fire",
+  "color_palette": [
+    74839,
+    49393,
+    43956,
+    88090,
+    30711,
+    62130
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 15,
+    "intelligence": 156,
+    "wisdom": 9,
+    "vitality": 80
+  },
+  "skills": [
+    {
+      "id": "skill_000030",
+      "name": "Trench Pitch Flare",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 6.4,
+      "cooldown_seconds": 0.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 74839,
+      "flavor_text": "A gout of burning pitch tears upward from the abyssal dark, carried on a howling updraft that smells of sulfur and crushed depth. It clings where it lands, indifferent to mercy."
+    },
+    {
+      "id": "skill_000031",
+      "name": "Trench Pitch Gale",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/fire/area_damage",
+      "energy_cost": 37.5,
+      "cooldown_seconds": 7.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.3
+          }
+        }
+      ],
+      "color_value": 49393,
+      "flavor_text": "From the lightless depths, a held breath becomes a roaring exhalation of black fire \u2014 pitch torn from the trench floor ignites mid-air and sprays forward in a blistering cone. The burning residue clings like memory, feeding on whatever it finds."
+    },
+    {
+      "id": "skill_000032",
+      "name": "Trench Pitch Gale",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 29.4,
+      "cooldown_seconds": 5.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 43956,
+      "flavor_text": "From the lightless deep, wind drags up something ancient and burning \u2014 black pitch ignites mid-air and rains down in a seething circle. The fire does not flicker; it clings."
+    },
+    {
+      "id": "skill_000033",
+      "name": "Trenchwind Pitch Bloom",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 13.3,
+      "cooldown_seconds": 7.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 3.8
+          }
+        }
+      ],
+      "color_value": 88090,
+      "flavor_text": "From the lightless deep, a breath of scalding wind carries black pitch to the surface, where it blooms into a slow, clinging fire that the wind itself refuses to extinguish. It burns like a secret the trench has kept for centuries."
+    },
+    {
+      "id": "skill_000034",
+      "name": "Trench Pitch Veil",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/defensive",
+      "energy_cost": 17.2,
+      "cooldown_seconds": 12.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.9
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.29,
+            "duration_seconds": 7.7
+          }
+        }
+      ],
+      "color_value": 30711,
+      "flavor_text": "From the lightless deep, a curtain of burning black pitch tears itself upward through the wind and wraps the caster in searing, adhesive flame. Nothing that touches it leaves unchanged."
+    },
+    {
+      "id": "skill_000035",
+      "name": "Trench Pitch Ignition",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 15.8,
+      "cooldown_seconds": 15.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.34,
+            "duration_seconds": 4.2
+          }
+        }
+      ],
+      "color_value": 62130,
+      "flavor_text": "From the lightless deep, a breath of scorched wind carries the smell of burning tar \u2014 and something in the flame listens, sharpens, hungers. The air around the target crackles with a fury that did not exist a moment before."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.51,
+    "convergence_iterations": 6,
+    "converged": true,
+    "final_modifier": 0.0797,
+    "gauntlet_results": {
+      "monster_00017": 0.2,
+      "monster_00018": 0.4667,
+      "monster_00019": 0.4333,
+      "monster_00016": 1.0,
+      "monster_00020": 0.5,
+      "monster_00021": 0.5667,
+      "monster_00022": 0.9667,
+      "monster_00023": 0.5667,
+      "monster_00024": 0.3333,
+      "monster_00025": 0.0667
+    }
+  }
+}

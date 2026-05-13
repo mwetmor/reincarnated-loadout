@@ -1,0 +1,210 @@
+{
+  "id": "class_0008",
+  "name": "Ossuary Cantor",
+  "title_completion": "an Ossuary Cantor",
+  "flavor_text": "Deep beneath the Crypt of the First Saint, the marrow of the holy dead still hums with forgotten prayers. The Ossuary Cantor draws that sacred residue upward through cracked stone and fractured bone, shaping it into hymns that shatter the living and sanctify the fallen. Their voice is not their own \u2014 it belongs to everyone buried here.",
+  "archetype_tag": "earth_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "earth",
+  "color_palette": [
+    379264,
+    272046,
+    358853,
+    276759,
+    264010,
+    359214
+  ],
+  "stat_distribution": {
+    "strength": 13,
+    "dexterity": 20,
+    "intelligence": 10,
+    "wisdom": 156,
+    "vitality": 71
+  },
+  "skills": [
+    {
+      "id": "skill_000038",
+      "name": "Marrow Shard Hymn",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 14.5,
+      "cooldown_seconds": 0.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 379264,
+      "flavor_text": "A splinter of the saint's own buried earth tears free and sings forward, dense with the memory of bone and root. It does not merely strike \u2014 it remembers the body it enters."
+    },
+    {
+      "id": "skill_000039",
+      "name": null,
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 22.5,
+      "cooldown_seconds": 4.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 272046,
+      "flavor_text": null
+    },
+    {
+      "id": "skill_000040",
+      "name": "Marrow of the Buried Saint",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 19.9,
+      "cooldown_seconds": 3.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.4
+          }
+        }
+      ],
+      "color_value": 358853,
+      "flavor_text": "The ground remembers what was interred here \u2014 something older than faith, something that still breathes. Roots of calcified bone erupt upward, locking the living in place while the earth drinks deep."
+    },
+    {
+      "id": "skill_000041",
+      "name": "Marrow of the Interred",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 15.5,
+      "cooldown_seconds": 7.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.8
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 276759,
+      "flavor_text": "The saint's buried wisdom seeps upward through consecrated soil, locking the living in communion with the dead. Roots of petrified marrow split the earth and hold their quarry until the ground has fed."
+    },
+    {
+      "id": "skill_000042",
+      "name": "Marrow of the Buried Saint",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 23.2,
+      "cooldown_seconds": 14.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.1
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.25,
+            "duration_seconds": 7.9
+          }
+        }
+      ],
+      "color_value": 264010,
+      "flavor_text": "The crypt breathes upward through stone and root, wrapping the faithful in something older than bone. What rests beneath the first saint does not sleep \u2014 it waits to shield those who remember."
+    },
+    {
+      "id": "skill_000043",
+      "name": "Marrow of the First Saint",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "earth",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/earth/sustain",
+      "energy_cost": 30.8,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        },
+        {
+          "name": "heal_over_time",
+          "params": {
+            "tick_heal": 375,
+            "duration_seconds": 8.1
+          }
+        }
+      ],
+      "color_value": 359214,
+      "flavor_text": "Deep beneath consecrated stone, something older than prayer stirs and answers. Warmth spreads from the bone outward, slow and certain as the earth remembering spring."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.59,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.0945,
+    "gauntlet_results": {
+      "monster_00017": 0.7667,
+      "monster_00018": 0.6667,
+      "monster_00019": 0.1,
+      "monster_00016": 1.0,
+      "monster_00020": 0.6333,
+      "monster_00021": 0.6667,
+      "monster_00022": 1.0,
+      "monster_00023": 0.0333,
+      "monster_00024": 0.4333,
+      "monster_00025": 0.6
+    }
+  }
+}

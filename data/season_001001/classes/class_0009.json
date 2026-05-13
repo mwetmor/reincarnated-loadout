@@ -1,0 +1,173 @@
+{
+  "id": "class_0009",
+  "name": "Abyssal Cantor",
+  "title_completion": "an Abyssal Cantor",
+  "flavor_text": "Far below where light forgets itself, the trenches hum with a pressure that has no name \u2014 until you arrived and gave it one. You do not cast spells so much as exhale them, drawing breath from basalt fissures and releasing it as thrumming gales that shatter brine-soaked stone. The deep does not echo here; it listens.",
+  "archetype_tag": "hybrid_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "wind",
+  "color_palette": [
+    516047,
+    512699,
+    459047,
+    474991,
+    462439
+  ],
+  "stat_distribution": {
+    "strength": 7,
+    "dexterity": 10,
+    "intelligence": 100,
+    "wisdom": 100,
+    "vitality": 53
+  },
+  "skills": [
+    {
+      "id": "skill_000047",
+      "name": "Trench Thrum Gale",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 6.9,
+      "cooldown_seconds": 1.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.12
+          }
+        }
+      ],
+      "color_value": 516047,
+      "flavor_text": "From the crushing dark below, a resonant wind tears upward through flesh and marrow, pulling something vital back with it. The deep does not let go without taking its share."
+    },
+    {
+      "id": "skill_000048",
+      "name": "Trench Thrum Draw",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 39.7,
+      "cooldown_seconds": 7.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.09
+          }
+        }
+      ],
+      "color_value": 512699,
+      "flavor_text": "From the lightless pressure of the deep, a breath is drawn inward until the air itself screams. It releases as a column of resonant wind that hollows whatever it touches, returning a sliver of that stolen life to the one who called it."
+    },
+    {
+      "id": "skill_000049",
+      "name": "Trench Thrum Exhale",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 24.7,
+      "cooldown_seconds": 12.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 6.1,
+            "stagger_seconds": 0.3
+          }
+        }
+      ],
+      "color_value": 459047,
+      "flavor_text": "From the lightless deep, a resonant breath surges upward and outward, carrying the pressure of fathomless silence. Whatever stands before it does not fall so much as get unmade from its footing."
+    },
+    {
+      "id": "skill_000050",
+      "name": "Trench Hollow Thrum",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 16.0,
+      "cooldown_seconds": 3.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 474991,
+      "flavor_text": "From the lightless deep, a column of resonant wind screams upward, vibrating the bones of everything it touches. The sound arrives before the damage does."
+    },
+    {
+      "id": "skill_000051",
+      "name": "Trench Breath Ward",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 12.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 8.0
+          }
+        }
+      ],
+      "color_value": 462439,
+      "flavor_text": "From somewhere beneath all sound, the deep places exhale \u2014 and the wind wraps you in a shell of pressurized silence. Nothing reaches you here, not yet."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5133,
+    "convergence_iterations": 5,
+    "converged": true,
+    "final_modifier": 0.1094,
+    "gauntlet_results": {
+      "monster_00017": 0.6,
+      "monster_00018": 0.2333,
+      "monster_00019": 0.7333,
+      "monster_00016": 0.9,
+      "monster_00020": 0.2667,
+      "monster_00021": 0.8667,
+      "monster_00022": 0.9667,
+      "monster_00023": 0.4,
+      "monster_00024": 0.0,
+      "monster_00025": 0.1667
+    }
+  }
+}

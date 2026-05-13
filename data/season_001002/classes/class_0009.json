@@ -1,0 +1,192 @@
+{
+  "id": "class_0009",
+  "name": "Exhaled Ossomancer",
+  "title_completion": "an Exhaled Ossomancer",
+  "flavor_text": "In the Crypt of the First Saint, the dead do not rot \u2014 they breathe. She learned to read the last exhalations trapped in marrow-dry bones, coaxing ancient winds from hollow ribcages and crumbling skulls. What saints whispered at the moment of death, she commands.",
+  "archetype_tag": "wind_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "long",
+  "dominant_element": "wind",
+  "color_palette": [
+    425027,
+    476860,
+    441065,
+    519901,
+    481236,
+    458989
+  ],
+  "stat_distribution": {
+    "strength": 15,
+    "dexterity": 35,
+    "intelligence": 5,
+    "wisdom": 140,
+    "vitality": 75
+  },
+  "skills": [
+    {
+      "id": "skill_000044",
+      "name": "Last Breath Loam",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 10.5,
+      "cooldown_seconds": 0.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 425027,
+      "flavor_text": "The crypt exhales what the saint could not keep \u2014 a warm, spent gust that carries the weight of burial soil and finished prayers. It strikes with the quiet finality of a chest that will not rise again."
+    },
+    {
+      "id": "skill_000045",
+      "name": "Last Breath Below",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 23.2,
+      "cooldown_seconds": 12.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 3.7,
+            "stagger_seconds": 0.7
+          }
+        }
+      ],
+      "color_value": 476860,
+      "flavor_text": "The crypt exhales what it has held for centuries \u2014 a warm, stale gust that carries the weight of endings. Those caught in its passage are not struck so much as dismissed."
+    },
+    {
+      "id": "skill_000046",
+      "name": "Last Breath Below",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 29.9,
+      "cooldown_seconds": 14.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 3.9,
+            "stagger_seconds": 0.4
+          }
+        }
+      ],
+      "color_value": 441065,
+      "flavor_text": "The crypt exhales what it has held for centuries \u2014 a single, humid gust that carries the weight of interred seasons. It does not cut; it simply releases, and whatever stood before you is no longer close."
+    },
+    {
+      "id": "skill_000047",
+      "name": "Last Breath Totem",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 14.3,
+      "cooldown_seconds": 7.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 6.8,
+            "stagger_seconds": 0.7
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 519901,
+      "flavor_text": "From the crypt's stillness rises a column of spent air, warm with the memory of the saint's final exhale. It does not roar \u2014 it simply releases, and what stands before it does not remain standing."
+    },
+    {
+      "id": "skill_000048",
+      "name": "Last Breath of Saints",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 18.1,
+      "cooldown_seconds": 15.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.28,
+            "duration_seconds": 7.4
+          }
+        }
+      ],
+      "color_value": 481236,
+      "flavor_text": "The crypt exhales one final time, and its warmth fills your lungs with the weight of consecrated endings. For a breath's span, you carry the accumulated will of those who have already spent everything."
+    },
+    {
+      "id": "skill_000049",
+      "name": "Last Breath Below",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 23.7,
+      "cooldown_seconds": 5.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 458989,
+      "flavor_text": "The crypt exhales what it has held for centuries \u2014 a warm, stale wind that rises through cracked stone and scours everything above it clean. The air does not rush; it simply releases, the way the dead finally do."
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.5033,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.0945,
+    "gauntlet_results": {
+      "monster_00017": 0.8333,
+      "monster_00018": 0.6333,
+      "monster_00019": 0.4667,
+      "monster_00016": 0.9333,
+      "monster_00020": 0.0,
+      "monster_00021": 0.5,
+      "monster_00022": 0.9,
+      "monster_00023": 0.2,
+      "monster_00024": 0.0,
+      "monster_00025": 0.5667
+    }
+  }
+}
