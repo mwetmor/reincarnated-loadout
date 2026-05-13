@@ -1,0 +1,173 @@
+{
+  "id": "trial_0001",
+  "name": "Miasma Judgment Wraith",
+  "title": null,
+  "flavor_text": "From the ashen depths of Yomi it exhales, a sovereign of poisoned winds that scours flesh and dissolves will alike. Those who face its trial find their mana unraveling in the gale before the killing breath even lands.",
+  "approach_narration": null,
+  "defeat_narration": null,
+  "signature_mechanic": "reflective_armor",
+  "dominant_element": "wind",
+  "max_hp": 50131.0,
+  "armor": 6814.0,
+  "phases": [
+    {
+      "phase_id": 1,
+      "hp_threshold": 1.0,
+      "signature_mechanic": null
+    },
+    {
+      "phase_id": 2,
+      "hp_threshold": 0.66,
+      "signature_mechanic": "reflective_armor"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill_000001",
+      "name": "Yomi Exhale Swarm",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 23.9,
+      "cooldown_seconds": 5.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 462776,
+      "flavor_text": "The underworld breathes out and the air splits into a dozen choking gales, each one carrying the weight of something that should not be above ground. They do not merely cut \u2014 they fill the lungs with the memory of rot.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_000002",
+      "name": "Yomi Exhale",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 25.4,
+      "cooldown_seconds": 7.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 483852,
+      "flavor_text": "The underworld breathes out and the air turns wrong \u2014 a column of miasmic wind tears through the living world in a single suffocating gust. Those caught in its path taste something ancient and airless, like the last breath of a sealed tomb.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_000003",
+      "name": "Yomi Exhale",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 22.5,
+      "cooldown_seconds": 7.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 4.6,
+            "stagger_seconds": 0.5
+          }
+        }
+      ],
+      "color_value": 518568,
+      "flavor_text": "A breath from beyond the pale tears through the living air, carrying the rot of Yomi's depths in a howling column that strips flesh and will alike. Those caught in its passage reel backward, lungs burning with something that has no name among the living.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_000004",
+      "name": "Yomi Exhale",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 23.4,
+      "cooldown_seconds": 12.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.5,
+            "stagger_seconds": 0.4
+          }
+        }
+      ],
+      "color_value": 489291,
+      "flavor_text": "A breath from the sunless hollow rises through cracked earth and finds you \u2014 wet, cold, and wrong. The air itself recoils, and so do you.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_000005",
+      "name": "Yomi Breath Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 34.6,
+      "cooldown_seconds": 4.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 440331,
+      "flavor_text": "A held breath draws the miasma of Yomi's hollow winds into a single choking gust, then releases it in a ricocheting torrent that strips the air from every corner it touches. The dead do not breathe \u2014 but they remember how.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    }
+  ],
+  "balance_metadata": {
+    "target_defeat_rate": 0.5,
+    "actual_defeat_rate": 0.508,
+    "convergence_iterations": 6,
+    "converged": true,
+    "final_modifier": 1.2188
+  }
+}
