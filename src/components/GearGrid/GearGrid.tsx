@@ -1,4 +1,5 @@
 import type { SynthesizedSlot } from '../../data/types';
+import { formatEffect } from '../../utils/formatEffect';
 import { Card } from '../ui/Card';
 import { FlavorTip } from '../ui/FlavorTip';
 
@@ -59,9 +60,24 @@ export function GearGrid({ mode = 'empty', synthesized = [] }: GearGridProps) {
                     mode="modal"
                     title={filled ? `${label}: ${filled.displayName}` : `${label} slot`}
                   >
-                    {filled
-                      ? `${filled.displayName} — synthesized from class affinity (range, archetype) for visualization. Concrete loot rolls in-game will have effect procs from the season's effect pool. ${tip}`
-                      : `${tip} Gear wiring ships in v1.`}
+                    {filled ? (
+                      <>
+                        {filled.displayName} — synthesized from class affinity.
+                        {filled.rolledEffects.length > 0 && (
+                          <>
+                            <span className="block mt-2 not-italic text-gray-400 text-sm">Effects:</span>
+                            {filled.rolledEffects.map((e, i) => (
+                              <span key={i} className="block not-italic text-violet-300 text-sm">
+                                • {formatEffect(e)}
+                              </span>
+                            ))}
+                          </>
+                        )}
+                        <span className="block mt-2 text-gray-500 text-sm not-italic">{tip}</span>
+                      </>
+                    ) : (
+                      `${tip} Gear wiring ships in v1.`
+                    )}
                   </FlavorTip>
                 </span>
               </div>
@@ -72,6 +88,9 @@ export function GearGrid({ mode = 'empty', synthesized = [] }: GearGridProps) {
               >
                 {filled ? filled.displayName.slice(0, 6) : label}
               </span>
+              {filled && filled.rolledEffects.length > 0 && (
+                <span className="text-[9px] text-violet-400 font-mono">{filled.rolledEffects.length}fx</span>
+              )}
               {!filled && (
                 <span className="text-[9px] text-gray-700 font-mono">{label}</span>
               )}

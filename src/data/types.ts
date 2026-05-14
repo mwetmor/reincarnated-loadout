@@ -95,9 +95,29 @@ export interface GearBaseItem {
   compatible_effect_triggers?: string[];
 }
 
+export interface GearEffectPoolEntry {
+  id: string;
+  effect_type: string;
+  element: string | null;
+  trigger: string;
+  magnitude_range: [number, number];
+  compatible_slots: string[];
+  rarity_min: string;
+  dimensional_tags: string[];
+  stat_affinity: string | null;
+}
+
+export interface RolledEffect {
+  effectType: string;
+  element: string | null;
+  trigger: string;
+  magnitude: number;
+}
+
 export interface GearCatalog {
   season_id: string;
   base_items: GearBaseItem[];
+  effect_pool: GearEffectPoolEntry[];
 }
 
 export interface SynthesizedSlot {
@@ -105,6 +125,7 @@ export interface SynthesizedSlot {
   baseItemId: string;
   displayName: string;
   synthesized: true;
+  rolledEffects: RolledEffect[];
 }
 
 export interface BuildState {

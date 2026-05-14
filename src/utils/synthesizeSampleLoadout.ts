@@ -1,4 +1,36 @@
-import type { ClassData, GearCatalog, SynthesizedSlot } from '../data/types';
+import type { ClassData, GearCatalog, GearEffectPoolEntry, RolledEffect, SynthesizedSlot } from '../data/types';
+
+function hashStr(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+function rollEffectsForItem(
+  itemId: string,
+  displaySlot: string,
+  effectPool: GearEffectPoolEntry[]
+): RolledEffect[] {
+  const compatible = effectPool.filter((e) => e.compatible_slots.includes(itemId));
+  if (compatible.length === 0) return [];
+
+  const seed = hashStr(itemId + displaySlot);
+  const count = Math.min(1 + (seed % 2), compatible.length);
+  const rolled: RolledEffect[] = [];
+  const used = new Set<string>();
+
+  for (let i = 0; rolled.length < count; i++) {
+    if (i >= compatible.length * 3) break;
+    const entry = compatible[(seed + i * 7) % compatible.length];
+    const key = entry.effect_type + '|' + entry.trigger;
+    if (used.has(key)) continue;
+    used.add(key);
+    const [lo, hi] = entry.magnitude_range;
+    const mag = lo + (((seed * (i + 1) * 1009) % 1000) / 1000) * (hi - lo);
+    rolled.push({ effectType: entry.effect_type, element: entry.element, trigger: entry.trigger, magnitude: mag });
+  }
+  return rolled;
+}
 
 function pickWeapon(archetype: string, range: string): string {
   if (range === 'long' && archetype === 'hunter') return 'bow';
@@ -36,6 +68,7 @@ export function synthesizeSampleLoadout(
     baseItemId: id,
     displayName: itemsById[id]?.name ?? id,
     synthesized: true,
+    rolledEffects: rollEffectsForItem(id, displaySlot, catalog.effect_pool ?? []),
   });
 
   const caster = isCaster(archetype_tag);
