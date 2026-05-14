@@ -15,7 +15,7 @@ function rollEffectsForItem(
   if (compatible.length === 0) return [];
 
   const seed = hashStr(itemId + displaySlot);
-  const count = Math.min(1 + (seed % 2), compatible.length);
+  const count = Math.min(2 + (seed % 2), compatible.length);
   const rolled: RolledEffect[] = [];
   const used = new Set<string>();
 
@@ -27,7 +27,7 @@ function rollEffectsForItem(
     used.add(key);
     const [lo, hi] = entry.magnitude_range;
     const mag = lo + (((seed * (i + 1) * 1009) % 1000) / 1000) * (hi - lo);
-    rolled.push({ effectType: entry.effect_type, element: entry.element, trigger: entry.trigger, magnitude: mag });
+    rolled.push({ effectType: entry.effect_type, element: entry.element, trigger: entry.trigger, magnitude: mag, rarityMin: entry.rarity_min });
   }
   return rolled;
 }

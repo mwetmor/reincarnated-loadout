@@ -112,6 +112,7 @@ export interface RolledEffect {
   element: string | null;
   trigger: string;
   magnitude: number;
+  rarityMin: string;
 }
 
 export interface GearCatalog {

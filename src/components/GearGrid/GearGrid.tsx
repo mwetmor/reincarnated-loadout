@@ -1,7 +1,58 @@
-import type { SynthesizedSlot } from '../../data/types';
+import type { RolledEffect, SynthesizedSlot } from '../../data/types';
 import { formatEffect } from '../../utils/formatEffect';
 import { Card } from '../ui/Card';
 import { FlavorTip } from '../ui/FlavorTip';
+
+const ITEM_FLAVOR: Record<string, string> = {
+  sword:          'Balanced steel, honed for those who trust their arm over their mind.',
+  staff:          'Channels elemental force through its core. The wood still hums.',
+  dagger:         'Light enough to forget. Sharp enough to remember.',
+  hammer:         'Leaves craters where it lands. Subtlety was never the goal.',
+  bow:            'Every shot is a question. Every hit is the answer.',
+  wand:           'Precise. Controlled. The controller\'s preferred extension.',
+  greatsword:     'Two-handed and uncompromising. It doesn\'t block — it ends things.',
+  helmet:         'Forged to outlast its wearer.',
+  chest:          'Plate and padding. The body\'s last argument.',
+  robe:           'Woven to amplify, not absorb.',
+  hood:           'Conceals intent. Focuses purpose.',
+  ring:           'A small loop of compressed potential.',
+  amulet:         'Worn close to the pulse for a reason.',
+  shield:         'It has seen worse. It will see worse still.',
+  off_hand_dagger:'The second strike they didn\'t see coming.',
+  off_hand_sword: 'Offhand only to those who don\'t know how to use it.',
+  grimoire:       'Pages that rewrite themselves when no one is looking.',
+  orb:            'Spins in the palm. Answers when asked.',
+  focus:          'Channels what the mind cannot hold alone.',
+};
+
+const RARITY_ORDER: Record<string, number> = { common: 0, uncommon: 1, rare: 2 };
+
+const TIER_LABEL: Record<string, string> = {
+  common:   'Common',
+  uncommon: 'Uncommon',
+  rare:     'Rare',
+};
+
+const TIER_COLOR: Record<string, string> = {
+  common:   'text-gray-400 border-gray-600',
+  uncommon: 'text-green-400 border-green-700',
+  rare:     'text-blue-400 border-blue-700',
+};
+
+const STAT_COLOR: Record<string, string> = {
+  common:   'text-gray-300',
+  uncommon: 'text-green-400',
+  rare:     'text-blue-400',
+};
+
+function itemTier(effects: RolledEffect[]): string {
+  if (effects.length === 0) return 'common';
+  return effects.reduce(
+    (best, e) =>
+      (RARITY_ORDER[e.rarityMin] ?? 0) > (RARITY_ORDER[best] ?? 0) ? e.rarityMin : best,
+    'common'
+  );
+}
 
 const EMPTY_SLOTS = [
   { label: 'Head',   tip: 'Helmets, hoods, crowns — protect the mind and channel focus.' },
@@ -58,24 +109,34 @@ export function GearGrid({ mode = 'empty', synthesized = [] }: GearGridProps) {
                 >
                   <FlavorTip
                     mode="modal"
-                    title={filled ? `${label}: ${filled.displayName}` : `${label} slot`}
+                    title={filled ? filled.displayName : `${label} slot`}
                   >
-                    {filled ? (
-                      <>
-                        {filled.displayName} — synthesized from class affinity.
-                        {filled.rolledEffects.length > 0 && (
-                          <>
-                            <span className="block mt-2 not-italic text-gray-400 text-sm">Effects:</span>
-                            {filled.rolledEffects.map((e, i) => (
-                              <span key={i} className="block not-italic text-violet-300 text-sm">
-                                • {formatEffect(e)}
-                              </span>
-                            ))}
-                          </>
-                        )}
-                        <span className="block mt-2 text-gray-500 text-sm not-italic">{tip}</span>
-                      </>
-                    ) : (
+                    {filled ? (() => {
+                      const tier = itemTier(filled.rolledEffects);
+                      const tierLabel = TIER_LABEL[tier] ?? tier;
+                      const tierColor = TIER_COLOR[tier] ?? 'text-gray-400 border-gray-600';
+                      const flavor = ITEM_FLAVOR[filled.baseItemId];
+                      return (
+                        <>
+                          <span className="block text-xs text-gray-500 not-italic mb-2 uppercase tracking-wide">{label} slot</span>
+                          <span className={`inline-block text-xs font-mono not-italic border rounded px-1.5 py-0.5 mb-3 ${tierColor}`}>
+                            {tierLabel}
+                          </span>
+                          {filled.rolledEffects.length > 0 && (
+                            <span className="block mb-3">
+                              {filled.rolledEffects.map((e, i) => (
+                                <span key={i} className={`block text-sm font-mono not-italic ${STAT_COLOR[e.rarityMin] ?? 'text-gray-300'}`}>
+                                  {formatEffect(e)}
+                                </span>
+                              ))}
+                            </span>
+                          )}
+                          {flavor && (
+                            <span className="block text-gray-500 text-sm">{flavor}</span>
+                          )}
+                        </>
+                      );
+                    })() : (
                       `${tip} Gear wiring ships in v1.`
                     )}
                   </FlavorTip>
