@@ -26,6 +26,21 @@ const ELEMENT_COLORS: Record<string, string> = {
   physical: 'text-gray-400',
 };
 
+// Maps EMPTY_SLOTS display labels to player-readable slot type names shown in the gear modal.
+// Keeps "Main" / "Off" internal shorthand separate from player-facing copy.
+const SLOT_TYPE_LABEL: Record<string, string> = {
+  Head:    'Helmet',
+  Chest:   'Chest Armor',
+  Hands:   'Gloves',
+  Legs:    'Leggings',
+  Feet:    'Boots',
+  Main:    'Weapon',
+  Off:     'Off-Hand',
+  Neck:    'Necklace',
+  'Ring 1': 'Ring',
+  'Ring 2': 'Ring',
+};
+
 const EMPTY_SLOTS = [
   { label: 'Head',   tip: 'Helmets, hoods, crowns — protect the mind and channel focus.' },
   { label: 'Chest',  tip: 'Robes, plate, coats — your primary defense layer.' },
@@ -92,7 +107,7 @@ export function GearGrid({ mode = 'empty', synthesized = [] }: GearGridProps) {
                       return (
                         <>
                           <span className="block text-xs text-gray-500 not-italic mb-2 uppercase tracking-wide">
-                            {label} slot
+                            {SLOT_TYPE_LABEL[label] ?? label}
                           </span>
                           <span className={`inline-block text-xs font-mono not-italic border rounded px-1.5 py-0.5 mb-3 ${tierColor}`}>
                             {tierLabel}
@@ -102,11 +117,8 @@ export function GearGrid({ mode = 'empty', synthesized = [] }: GearGridProps) {
                               {slot.item.dominant_element}
                             </span>
                           )}
-                          <span className="block text-xs font-mono not-italic text-gray-500 mb-3">
-                            Power {slot.item.power_score.toFixed(3)}
-                          </span>
                           {slot.item.flavor_text && (
-                            <span className="block text-gray-500 text-sm">
+                            <span className="block text-gray-500 text-sm mt-1">
                               {slot.item.flavor_text}
                             </span>
                           )}

@@ -1,22 +1,23 @@
 // Selects best-fitting gear from the season gear pool for each display slot.
 // Uses the same fit-score formula as the engine's spirit_guide:
 //   fit = (energy_type × range_profile × role_orientation)^(1/3)
-//   value = power_score × fit
-// Items are ranked per engine-slot bucket; each display slot picks by rank.
+//   value = fit (power_score removed from player-facing selection to avoid all-legendary bias)
+//
+// Each display slot targets a specific tier to ensure tier diversity.
+// Hands / Legs / Feet are not in the season gear pool — omitted intentionally.
 
 import type { ClassData, GearPoolEntry, LoadoutSlot } from '../data/types';
 
-// Map display slots to engine gear slots + rank within that slot's sorted list.
-// Rank 0 = best-fit item, rank 1 = second-best, etc.
-// Hands / Legs / Feet are not in the season gear pool — omitted intentionally.
-const SLOT_MAP: { displaySlot: string; engineSlot: string; rank: number }[] = [
-  { displaySlot: 'Main',   engineSlot: 'weapon',    rank: 0 },
-  { displaySlot: 'Off',    engineSlot: 'off_hand',  rank: 0 },
-  { displaySlot: 'Head',   engineSlot: 'armor',     rank: 0 },
-  { displaySlot: 'Chest',  engineSlot: 'armor',     rank: 1 },
-  { displaySlot: 'Neck',   engineSlot: 'accessory', rank: 0 },
-  { displaySlot: 'Ring 1', engineSlot: 'accessory', rank: 1 },
-  { displaySlot: 'Ring 2', engineSlot: 'accessory', rank: 2 },
+// Explicit tier per display slot → guarantees all 5 tiers appear across a 7-slot loadout.
+// Tier assignment is a display-layer policy decision, not engine data.
+const SLOT_MAP: { displaySlot: string; engineSlot: string; tier: string }[] = [
+  { displaySlot: 'Main',   engineSlot: 'weapon',    tier: 'legendary' },
+  { displaySlot: 'Off',    engineSlot: 'off_hand',  tier: 'rare'      },
+  { displaySlot: 'Head',   engineSlot: 'armor',     tier: 'epic'      },
+  { displaySlot: 'Chest',  engineSlot: 'armor',     tier: 'uncommon'  },
+  { displaySlot: 'Neck',   engineSlot: 'accessory', tier: 'epic'      },
+  { displaySlot: 'Ring 1', engineSlot: 'accessory', tier: 'common'    },
+  { displaySlot: 'Ring 2', engineSlot: 'accessory', tier: 'rare'      },
 ];
 
 function fitScore(item: GearPoolEntry, classData: ClassData): number {
@@ -24,30 +25,39 @@ function fitScore(item: GearPoolEntry, classData: ClassData): number {
   const r = item.fit_range_profile[classData.range_profile] ?? 0;
   const o = item.fit_role_orientation[classData.role_orientation] ?? 0;
   if (e <= 0 || r <= 0 || o <= 0) return 0;
-  return item.power_score * Math.pow(e * r * o, 1 / 3);
+  // Omit power_score from selection: power_score is tier-correlated, so including it
+  // would override the explicit tier targets above and bias selection back toward legendary.
+  return Math.pow(e * r * o, 1 / 3);
 }
 
 export function synthesizeSampleLoadout(
   classData: ClassData,
   gearPool: GearPoolEntry[]
 ): LoadoutSlot[] {
-  // Group items by engine slot and score each one for this class
-  const bySlot: Record<string, { score: number; item: GearPoolEntry }[]> = {};
+  // Group items by engine slot × tier, scored by fit
+  const bySlotAndTier: Record<string, Record<string, { score: number; item: GearPoolEntry }[]>> = {};
   for (const item of gearPool) {
-    if (!bySlot[item.slot]) bySlot[item.slot] = [];
-    bySlot[item.slot].push({ score: fitScore(item, classData), item });
+    if (!bySlotAndTier[item.slot]) bySlotAndTier[item.slot] = {};
+    if (!bySlotAndTier[item.slot][item.tier]) bySlotAndTier[item.slot][item.tier] = [];
+    bySlotAndTier[item.slot][item.tier].push({ score: fitScore(item, classData), item });
   }
 
   // Sort each bucket descending by fit score (deterministic for a given class)
-  for (const key of Object.keys(bySlot)) {
-    bySlot[key].sort((a, b) => b.score - a.score);
+  for (const slotBuckets of Object.values(bySlotAndTier)) {
+    for (const tierList of Object.values(slotBuckets)) {
+      tierList.sort((a, b) => b.score - a.score);
+    }
   }
 
+  // Track used item ids to prevent the same item from filling two display slots
+  const usedIds = new Set<string>();
   const result: LoadoutSlot[] = [];
-  for (const { displaySlot, engineSlot, rank } of SLOT_MAP) {
-    const candidates = bySlot[engineSlot] ?? [];
-    const entry = candidates[rank];
+
+  for (const { displaySlot, engineSlot, tier } of SLOT_MAP) {
+    const candidates = bySlotAndTier[engineSlot]?.[tier] ?? [];
+    const entry = candidates.find((c) => !usedIds.has(c.item.gear_id));
     if (!entry) continue;
+    usedIds.add(entry.item.gear_id);
     result.push({ displaySlot, engineSlot, item: entry.item });
   }
   return result;
