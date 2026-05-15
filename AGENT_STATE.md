@@ -1,48 +1,54 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-14
-**Last tag:** v0.5-real-gear
+**Last tag:** drax/v0.6-encounter-viz
 **Branch:** main
 
-## Current work
+## Session summary
 
-Completed dispatch `2026-05-14-drax-real-gear-from-season-json` (v0.5-real-gear).
+Completed two dispatches this session:
 
-**Findings confirmed during implementation:**
-- `role: "primary_attack"` IS a real engine field on skills (not a UI heuristic). Confirmed
-  from `data/season_002328/classes/class_0001.json` — skills have a `role` field with values
-  including `primary_attack`, `defensive`, `area_damage`, `burst_damage`, `control`, etc.
+### v0.5-real-gear (completed)
+- Retired all synthesized gear types (`GearEffectPoolEntry`, `RolledEffect`, `GearCatalog`, `SynthesizedSlot`, `formatEffect.ts`)
+- Added `GearPoolEntry`, `LoadoutSlot` types matching real engine schema
+- Implemented fit-score gear selector: `fit = (energy_type × range_profile × role_orientation)^(1/3); value = power_score × fit`
+- Display slots → engine slots: Main=weapon/0, Off=off_hand/0, Head=armor/0, Chest=armor/1, Neck=accessory/0, Ring1=accessory/1, Ring2=accessory/2
+- GearGrid: full tier badge palette (legendary/epic/rare/uncommon/common), real names + flavor text
+- "Gear — synthesized" retired → "Gear — Yomi Season"
+- Loadout page now shows real gear (was empty mode before)
+- Preview: https://reincarnated-loadout-osl3wm67q-matthew-wetmore-s-projects.vercel.app
 
-**What shipped in v0.5-real-gear:**
-- Retired `GearEffectPoolEntry`, `RolledEffect`, `GearCatalog`, `SynthesizedSlot` types
-- Added `GearPoolEntry`, `LoadoutSlot` types matching real engine gear schema
-- Replaced hash-roller in `synthesizeSampleLoadout.ts` with fit-score selector:
-  `fit = (energy_type × range_profile × role_orientation)^(1/3); value = power_score × fit`
-  Items ranked per engine-slot bucket; display slots pick by rank (Main=weapon/0, Off=off_hand/0,
-  Head=armor/0, Chest=armor/1, Neck=accessory/0, Ring1=accessory/1, Ring2=accessory/2)
-- `GearGrid.tsx` updated: full tier badge palette (legendary/epic/rare/uncommon/common),
-  real item name, real flavor text, real tier from engine output
-- "Gear — synthesized" label retired → "Gear — Yomi Season"
-- Banner text in Sample.tsx updated to reflect real engine output
-- Loadout.tsx now shows real gear too (was empty mode before)
-- `formatEffect.ts` retired (no rolled effects in real gear schema; `stat_requirements: null` for all Yomi items)
-- Source: `data/season_002328/gear_pool.json` (200 items, 40/tier, slots: weapon/off_hand/armor/accessory)
+### v0.6-encounter-viz (completed)
+- New `/encounters` route with 4th nav tab
+- Two-panel SVG schematic: AOE vs pack (left) + single-target vs pack (right)
+- 3 Yomi classes: Lantern-Keeper (AOE), Miasma Warden (AOE), Hollow Wind Ascetic (no AOE)
+- Pack N=8 (design-intent placeholder per B10.2; exact value locked by gamora)
+- Geometry inferred from `effect_category` (area_damage → circle, others → point)
+  - `// TODO: wire B11 geometry field when rocket ships it` — comment in Encounters.tsx
+- AOE overlay: skill's `color_value` brightened (+100/channel) for dark UI visibility
+- Single-target: ring highlight + tick indicator on closest pack member
+- `Skill.color_value: number` added to types.ts (confirmed real engine field)
+- Preview: https://reincarnated-loadout-cd6428rrk-matthew-wetmore-s-projects.vercel.app
 
-**Next dispatch queued (BLOCKED until v0.5-real-gear is tagged+shipped):**
-- `2026-05-14-drax-encounter-viz.md` — `/encounters` route with AOE vs pack SVG schematic
+## Confirmed findings
+
+- `role: "primary_attack"` is a real engine field (confirmed from class JSON; not a UI heuristic)
+- `Skill.color_value` is a real engine field (RGB integer, calibrated for Pixi.js; dark for Yomi palette)
+- `stat_requirements: null` for all 200 Yomi gear items (formatEffect.ts retired cleanly)
+- No `origin` remote configured in loadout repo — push steps skipped both dispatches
 
 ## Next session pick-up
 
 Open items:
-- Encounter viz dispatch (`2026-05-14-drax-encounter-viz.md`) — can start now that v0.5 is shipped
 - Tailwind safelist trim (`tailwind.config.js` → narrow safelist)
 - CC-BY attribution footer (game-icons.net; currently in commit messages only)
 - Tier 3 analytics (3 remaining charts on Page 2)
+- Add git remote to loadout repo for off-laptop backup
+- Milestone tag `v0.6-encounter-viz` requires Matt approval on visualization quality (per dispatch)
 
-## Smoke-test status as of v0.5-real-gear
+## Smoke-test status
 
-✓ TypeScript: `npm run build` — clean (0 errors)
-✓ Build: 680 modules transformed, dist/ produced
-✓ Dev server: http://localhost:5175/ — HTML 200
-
-Preview URL pending Vercel deploy (see completion record in dispatch).
+✓ TypeScript: `npm run build` — clean (0 errors), 681 modules
+✓ Build: dist/ produced, gzip sizes nominal
+✓ Dev server: root route HTTP 200
+✓ Vercel preview: READY for both deploys
