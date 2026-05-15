@@ -1,7 +1,7 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-14
-**Last tag:** drax/v0.6.5-analytics-tier3
+**Last updated:** 2026-05-15
+**Last tag:** drax/v0.5.1-bug-fixes (also drax/v0.6.5-analytics-tier3 on same main)
 **Branch:** main
 
 ## Session summary
@@ -81,9 +81,22 @@ Open items remaining:
 - **StatRadarChart PolarRadiusAxis domain** — currently fixed at [0, 50]; works for current data but mages spike INT/WIS to ~40% range. Check if any archetype exceeds 50% on a single stat and adjust if needed.
 - **SkillTierChart** — experimental archetype has 0 classes in Yomi with tier data (only 1 class, class_0010, archetype=experimental); verify it appears in chart
 
+### v0.5.1-bug-fixes (completed, this session)
+
+1. **Bug 1 — All legendary**: `synthesizeSampleLoadout.ts` now assigns explicit tiers per display slot (legendary/rare/epic/uncommon/epic/common/rare → all 5 tiers present). Removed `power_score` from fit formula — was tier-correlated and would override tier targets.
+
+2. **Bug 2 — power_score visible**: Removed `Power X.XXX` line from GearGrid modal tooltip.
+
+3. **Bug 3 — raw slot key**: Added `SLOT_TYPE_LABEL` map to GearGrid. Modal now shows "Helmet", "Chest Armor", "Weapon", "Off-Hand", "Necklace", "Ring" instead of internal shorthand ("Head slot", "Main slot").
+
+4. **Bug 4 — gear on /loadout**: Loadout.tsx reverted to `<GearGrid mode="empty" />`. Removed all synthesized gear imports and useMemo.
+
+**Preview:** https://reincarnated-loadout-606gj5w7p-matthew-wetmore-s-projects.vercel.app
+
 ## Smoke-test status
 
 ✓ TypeScript: `npm run build` — clean (0 errors), 684 modules
 ✓ Build: dist/ produced, gzip sizes nominal
-✓ Dev server: root route HTTP 200
-✓ Tag: `drax/v0.6.5-analytics-tier3` on `main`
+✓ Dev server: all 3 tested routes HTTP 200 (/, /sample, /analytics)
+✓ Vercel preview: READY
+✓ Tags on main: `drax/v0.5.1-bug-fixes`, `drax/v0.6.5-analytics-tier3`
