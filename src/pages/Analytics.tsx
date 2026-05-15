@@ -5,6 +5,9 @@ import { ModifierRangeChart } from '../components/analytics/ModifierRangeChart';
 import { ElementPie } from '../components/analytics/ElementPie';
 import { ConvergenceChart } from '../components/analytics/ConvergenceChart';
 import { EnergyPie } from '../components/analytics/EnergyPie';
+import { StatRadarChart } from '../components/analytics/StatRadarChart';
+import { SeasonTimelineChart } from '../components/analytics/SeasonTimelineChart';
+import { SkillTierChart } from '../components/analytics/SkillTierChart';
 
 export function Analytics() {
   const analytics = useAnalytics();
@@ -45,6 +48,15 @@ export function Analytics() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <EnergyPie data={analytics.energySlices} />
         <ConvergenceChart data={analytics.iterRanges} />
+      </div>
+
+      {/* Tier 3 — Row 5: Season timeline (full width) */}
+      <SeasonTimelineChart data={analytics.seasonTimeline} />
+
+      {/* Tier 3 — Row 6: Stat radar + Skill tier composition */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <StatRadarChart entries={analytics.statRadarEntries} globalAvg={analytics.globalStatAvg} />
+        <SkillTierChart data={analytics.skillTierBars} />
       </div>
     </div>
   );
