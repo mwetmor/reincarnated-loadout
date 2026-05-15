@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import type { ClassData, GearCatalog, SeasonManifest } from '../data/types';
+import type { ClassData, GearPoolEntry, SeasonManifest } from '../data/types';
 import { ARCHETYPE_LABEL, ELEMENT_COLORS, SP_BUDGET } from '../data/constants';
 import { useSeasonData } from '../hooks/useSeasonData';
 import { synthesizeSampleLoadout } from '../utils/synthesizeSampleLoadout';
@@ -12,8 +12,8 @@ import { Tag } from '../components/ui/Tag';
 import { FlavorTip } from '../components/ui/FlavorTip';
 import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-import gearCatalogRaw from '../../data/sample-season/gear/catalog.json';
-const gearCatalog = gearCatalogRaw as GearCatalog;
+import gearPoolRaw from '../../data/season_002328/gear_pool.json';
+const gearPool = gearPoolRaw as GearPoolEntry[];
 
 function hexFromInt(n: number): string {
   return '#' + n.toString(16).padStart(6, '0');
@@ -193,7 +193,7 @@ export function Sample() {
   const totalSP = classData.skills.length;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const synthesizedGear = useMemo(
-    () => synthesizeSampleLoadout(classData, gearCatalog),
+    () => synthesizeSampleLoadout(classData, gearPool),
     [classData.id]
   );
 
@@ -205,10 +205,10 @@ export function Sample() {
         <div className="min-w-0">
           <p className="text-sm font-semibold text-violet-300">Engine Baseline View</p>
           <p className="text-xs text-violet-400/80 mt-1 leading-relaxed">
-            Every skill at rank 1. Gear shown is synthesized based on class affinity (range,
-            archetype) for visualization — in-game loot will be rolled with effects from the
-            season's effect pool. This is the converged state the balance loop tuned against;
-            win rate was calculated from this configuration.{' '}
+            Every skill at rank 1. Gear shown is the highest fit-score selection from the Yomi
+            season gear pool — real engine output, assigned by energy type × role orientation ×
+            range profile. This is the converged state the balance loop tuned against; win rate
+            was calculated from this configuration.{' '}
             <Link to="/" className="underline hover:text-violet-300 transition-colors">
               Switch to Loadout
             </Link>{' '}

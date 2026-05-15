@@ -1,7 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import type { ClassData, SeasonManifest } from '../data/types';
+import type { ClassData, GearPoolEntry, SeasonManifest } from '../data/types';
 import { ARCHETYPE_LABEL, ELEMENT_COLORS } from '../data/constants';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+import gearPoolRaw from '../../data/season_002328/gear_pool.json';
+import { synthesizeSampleLoadout } from '../utils/synthesizeSampleLoadout';
+const gearPool = gearPoolRaw as GearPoolEntry[];
 import { useSeasonData } from '../hooks/useSeasonData';
 import { useSkillBuild } from '../hooks/useSkillBuild';
 import { SkillTree } from '../components/SkillTree/SkillTree';
@@ -251,6 +255,12 @@ export function Loadout() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [classData?.id]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const synthesizedGear = useMemo(
+    () => (classData ? synthesizeSampleLoadout(classData, gearPool) : []),
+    [classData?.id]
+  );
+
   if (!season || !classData) {
     return (
       <div className="max-w-6xl mx-auto px-4 py-16 text-center text-gray-600 font-mono">
@@ -292,7 +302,7 @@ export function Loadout() {
         remainingSP={build.remainingSP}
       />
 
-      <GearGrid />
+      <GearGrid mode="sample" synthesized={synthesizedGear} />
       <SpiritGuide />
 
       <div className="flex items-center justify-between gap-4 pt-2 border-t border-gray-800">

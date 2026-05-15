@@ -87,46 +87,29 @@ export interface SeasonData {
   classes: ClassData[];
 }
 
-export interface GearBaseItem {
-  id: string;
-  name: string;
+export interface GearPoolEntry {
+  gear_id: string;
   slot: string;
-  handedness?: string;
-  compatible_effect_triggers?: string[];
+  handedness: string;
+  tier: string;
+  dominant_element: string | null;
+  power_score: number;
+  fit_energy_type: Record<string, number>;
+  fit_range_profile: Record<string, number>;
+  fit_role_orientation: Record<string, number>;
+  color_value: number;
+  color_palette: number[];
+  color_signature: string;
+  name: string;
+  flavor_text: string;
+  visual_prompt: string;
+  stat_requirements: Record<string, number> | null;
 }
 
-export interface GearEffectPoolEntry {
-  id: string;
-  effect_type: string;
-  element: string | null;
-  trigger: string;
-  magnitude_range: [number, number];
-  compatible_slots: string[];
-  rarity_min: string;
-  dimensional_tags: string[];
-  stat_affinity: string | null;
-}
-
-export interface RolledEffect {
-  effectType: string;
-  element: string | null;
-  trigger: string;
-  magnitude: number;
-  rarityMin: string;
-}
-
-export interface GearCatalog {
-  season_id: string;
-  base_items: GearBaseItem[];
-  effect_pool: GearEffectPoolEntry[];
-}
-
-export interface SynthesizedSlot {
+export interface LoadoutSlot {
   displaySlot: string;
-  baseItemId: string;
-  displayName: string;
-  synthesized: true;
-  rolledEffects: RolledEffect[];
+  engineSlot: string;
+  item: GearPoolEntry;
 }
 
 export interface BuildState {

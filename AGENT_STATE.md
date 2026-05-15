@@ -1,38 +1,48 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-14
-**Last tag:** v0.4-gear-effects
+**Last tag:** v0.5-real-gear
 **Branch:** main
 
 ## Current work
 
-Completed dispatch `2026-05-14-drax-loadout-gear-effects`. Wired `effect_pool` from
-`data/sample-season/gear/catalog.json` through the full presentation stack:
-`types.ts` → `synthesizeSampleLoadout.ts` → `GearGrid.tsx`. Each synthesized gear
-slot now carries 1–2 deterministically-rolled effects. The gear grid shows a violet
-`Nfx` badge on filled cells; tapping the info button opens the FlavorTip modal with
-human-readable effect lines (e.g. "Fire Damage on hit (562)").
+Completed dispatch `2026-05-14-drax-real-gear-from-season-json` (v0.5-real-gear).
+
+**Findings confirmed during implementation:**
+- `role: "primary_attack"` IS a real engine field on skills (not a UI heuristic). Confirmed
+  from `data/season_002328/classes/class_0001.json` — skills have a `role` field with values
+  including `primary_attack`, `defensive`, `area_damage`, `burst_damage`, `control`, etc.
+
+**What shipped in v0.5-real-gear:**
+- Retired `GearEffectPoolEntry`, `RolledEffect`, `GearCatalog`, `SynthesizedSlot` types
+- Added `GearPoolEntry`, `LoadoutSlot` types matching real engine gear schema
+- Replaced hash-roller in `synthesizeSampleLoadout.ts` with fit-score selector:
+  `fit = (energy_type × range_profile × role_orientation)^(1/3); value = power_score × fit`
+  Items ranked per engine-slot bucket; display slots pick by rank (Main=weapon/0, Off=off_hand/0,
+  Head=armor/0, Chest=armor/1, Neck=accessory/0, Ring1=accessory/1, Ring2=accessory/2)
+- `GearGrid.tsx` updated: full tier badge palette (legendary/epic/rare/uncommon/common),
+  real item name, real flavor text, real tier from engine output
+- "Gear — synthesized" label retired → "Gear — Yomi Season"
+- Banner text in Sample.tsx updated to reflect real engine output
+- Loadout.tsx now shows real gear too (was empty mode before)
+- `formatEffect.ts` retired (no rolled effects in real gear schema; `stat_requirements: null` for all Yomi items)
+- Source: `data/season_002328/gear_pool.json` (200 items, 40/tier, slots: weapon/off_hand/armor/accessory)
+
+**Next dispatch queued (BLOCKED until v0.5-real-gear is tagged+shipped):**
+- `2026-05-14-drax-encounter-viz.md` — `/encounters` route with AOE vs pack SVG schematic
 
 ## Next session pick-up
 
-Open items from dispatch out-of-scope list (pick up from knight-rider):
-- Tailwind safelist trim (`src/tailwind.config.js` → narrow safelist)
+Open items:
+- Encounter viz dispatch (`2026-05-14-drax-encounter-viz.md`) — can start now that v0.5 is shipped
+- Tailwind safelist trim (`tailwind.config.js` → narrow safelist)
 - CC-BY attribution footer (game-icons.net; currently in commit messages only)
 - Tier 3 analytics (3 remaining charts on Page 2)
-- Add git remote to loadout repo for off-laptop backup
 
-Preview URL for this session: https://reincarnated-loadout-3q2sppuw8-matthew-wetmore-s-projects.vercel.app
+## Smoke-test status as of v0.5-real-gear
 
-## Open questions for jack-ryan or knight-rider
+✓ TypeScript: `npm run build` — clean (0 errors)
+✓ Build: 680 modules transformed, dist/ produced
+✓ Dev server: http://localhost:5175/ — HTML 200
 
-- Dispatch acceptance criteria met — should this go to QA queue before Matt promotes to prod?
-- `effect_pool` display decision (documented here): effects are machine-readable fields,
-  formatted via `src/utils/formatEffect.ts` to "Element Type trigger (magnitude)".
-  Mobile layout: compact badge in grid cell + full list in FlavorTip modal. No layout
-  restructure needed.
-
-## Smoke-test status as of last commit
-
-✓ TypeScript: `npx tsc --noEmit` — clean (0 errors)
-✓ Routes: /, /sample, /analytics — all HTTP 200
-✓ Vercel preview build: 681 modules, READY
+Preview URL pending Vercel deploy (see completion record in dispatch).
