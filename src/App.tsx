@@ -3,6 +3,7 @@ import { Nav } from './components/Nav';
 import { Loadout } from './pages/Loadout';
 import { Sample } from './pages/Sample';
 import { Analytics } from './pages/Analytics';
+import { Encounters } from './pages/Encounters';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/" element={<Loadout />} />
           <Route path="/sample" element={<Sample />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/encounters" element={<Encounters />} />
         </Routes>
       </div>
     </BrowserRouter>

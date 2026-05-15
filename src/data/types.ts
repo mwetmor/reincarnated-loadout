@@ -18,6 +18,7 @@ export interface Skill {
   scaling_coefficient: number;
   energy_cost: number;
   cooldown_seconds: number;
+  color_value: number;
 }
 
 export interface StatDistribution {
