@@ -124,7 +124,8 @@
 ## Next session pick-up
 
 Open items remaining:
-- **Milestone tags** — `v0.7-encounter-analytics`, `v0.5.2-stats-and-slot`, `v0.6.5-analytics-tier3`, `v0.7.1-skill-gate-fix` milestones require knight-rider/Matt confirmation (ADR-003)
+- **Milestone tags** — ~~local, push pending~~ **PUSHED 2026-05-16 by star-lord** (`2026-05-16-star-lord-loadout-origin-remote.md` dispatch). All 21 local tags (`v0.5.1-bug-fixes`, `v0.5.2-stats-and-slot`, `v0.6.5-analytics-tier3`, `v0.7-encounter-analytics`, all drax/* intermediates, all v0.x milestones) are now on remote. See repo-state section below.
+- **`v0.7.1-skill-gate-fix` milestone** — intermediate tag exists (`drax/v0.7.1-skill-gate-fix`, commit 68dfceb); milestone tag `v0.7.1-skill-gate-fix` not yet cut — this dispatch only covered the four tags explicitly listed in `2026-05-16-drax-milestone-tags.md`.
 - **encounter_analytics.json regen** — tier-1 columns (duration_seconds) still only 3% populated; regenerate once star-lord or gamora ensures full coverage per fight row. Switch projection label to Damage×TTK when ready.
 - **Gear tab wiring** — Loadout.tsx still has `<GearGrid mode="empty" />`. Needs fit-score selector wired from real gear pool.
 
@@ -157,3 +158,10 @@ Open items remaining:
 ✓ Build: dist/ produced, gzip sizes nominal
 ✓ Vercel preview: READY (68dfceb) — https://reincarnated-loadout-odfuct08x-matthew-wetmore-s-projects.vercel.app
 ✓ Tags on main: `drax/v0.5.1-bug-fixes`, `drax/v0.6.5-analytics-tier3`, `drax/v0.5.2-stats-and-slot`, `drax/v0.7-encounter-analytics`, `drax/v0.7.1-skill-gate-fix`
+
+## Repo state (set by star-lord 2026-05-16)
+
+- **Remote:** `https://github.com/mwetmor/reincarnated-loadout.git` — configured and verified
+- **main:** up to date with `origin/main` (371493d)
+- **Tags:** 21 local / 21 remote — fully synced (`git push origin --tags` complete)
+- **Untracked `data/telemetry.db`** — present in working tree; not committed and not in .gitignore. Flag for drax: confirm whether this is intentional (local-only data file) or whether it should be gitignored.
