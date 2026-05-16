@@ -1,10 +1,22 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-16
-**Last tag:** drax/v0.7.1-skill-gate-fix (commit 68dfceb)
+**Last tag:** drax/v0.8-gear-wiring (commit fe8b810)
 **Branch:** main
 
 ## Session summary
+
+### v0.8-gear-wiring (completed, this session)
+
+1. **Gear tab wired** — `Loadout.tsx` now imports `gear_pool.json` from `season_002328`, calls `synthesizeSampleLoadout(classData, gearPool)` via `useMemo` (re-runs on class change), and passes `mode="sample"` + `synthesized={synthesizedGear}` to `<GearGrid />`. Same fit-score formula as `Sample.tsx`: fit = (energy_type × range_profile × role_orientation)^(1/3).
+
+2. **`data/telemetry.db` gitignored** — added `data/telemetry.db` to `.gitignore`. Large local data file, not for VCS.
+
+**Build:** Clean (0 TS errors, 686 modules)
+**Tag:** `drax/v0.8-gear-wiring` (commit fe8b810) — intermediate
+**Preview:** https://reincarnated-loadout-g3v3ffhry-matthew-wetmore-s-projects.vercel.app
+
+---
 
 ### v0.5-real-gear (completed, prev session)
 - Retired all synthesized gear types (`GearEffectPoolEntry`, `RolledEffect`, `GearCatalog`, `SynthesizedSlot`, `formatEffect.ts`)
@@ -124,10 +136,8 @@
 ## Next session pick-up
 
 Open items remaining:
-- **Milestone tags** — ~~local, push pending~~ **PUSHED 2026-05-16 by star-lord** (`2026-05-16-star-lord-loadout-origin-remote.md` dispatch). All 21 local tags (`v0.5.1-bug-fixes`, `v0.5.2-stats-and-slot`, `v0.6.5-analytics-tier3`, `v0.7-encounter-analytics`, all drax/* intermediates, all v0.x milestones) are now on remote. See repo-state section below.
-- **`v0.7.1-skill-gate-fix` milestone** — intermediate tag exists (`drax/v0.7.1-skill-gate-fix`, commit 68dfceb); milestone tag `v0.7.1-skill-gate-fix` not yet cut — this dispatch only covered the four tags explicitly listed in `2026-05-16-drax-milestone-tags.md`.
 - **encounter_analytics.json regen** — tier-1 columns (duration_seconds) still only 3% populated; regenerate once star-lord or gamora ensures full coverage per fight row. Switch projection label to Damage×TTK when ready.
-- **Gear tab wiring** — Loadout.tsx still has `<GearGrid mode="empty" />`. Needs fit-score selector wired from real gear pool.
+- **v0.8 milestone tag** — pending Matt approval. Intermediate tag `drax/v0.8-gear-wiring` cut locally; push + milestone tag once approved.
 
 ### v0.5.1-bug-fixes (completed, this session)
 
@@ -157,7 +167,7 @@ Open items remaining:
 ✓ TypeScript: `npm run build` — clean (0 errors), 686 modules
 ✓ Build: dist/ produced, gzip sizes nominal
 ✓ Vercel preview: READY (68dfceb) — https://reincarnated-loadout-odfuct08x-matthew-wetmore-s-projects.vercel.app
-✓ Tags on main: `drax/v0.5.1-bug-fixes`, `drax/v0.6.5-analytics-tier3`, `drax/v0.5.2-stats-and-slot`, `drax/v0.7-encounter-analytics`, `drax/v0.7.1-skill-gate-fix`
+✓ Tags on main: `drax/v0.5.1-bug-fixes`, `drax/v0.6.5-analytics-tier3`, `drax/v0.5.2-stats-and-slot`, `drax/v0.7-encounter-analytics`, `drax/v0.7.1-skill-gate-fix`, `v0.7.1-skill-gate-fix` (milestone, pushed 2026-05-16)
 
 ## Repo state (set by star-lord 2026-05-16)
 
