@@ -1,4 +1,4 @@
-// Encounter Analytics — v0.7
+// Encounter Analytics — v0.7 (legends + explanatory content, v0.7-encounter-analytics-legends)
 // Multi-dimensional centroid + stdev-ellipse clustering across (class, encounter-slot) pairs.
 //
 // Data: season_001005 (11 classes, 22 encounter slots) via encounter_analytics.json.
@@ -24,6 +24,10 @@ import {
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const DIVERGENCE_WR_CEIL = 0.25; // flag below this win rate
+
+// AOE % roster bounds from season_001005 data (class_0005 min=18%, class_0007 max=54%)
+const AOE_PCT_MIN = 18;
+const AOE_PCT_MAX = 54;
 
 // Fixed class colors (11 classes in season_001005; Yomi will have 14)
 const CLASS_COLORS: Record<string, string> = {
@@ -236,7 +240,28 @@ function ScatterCard({ title, subtitle, points, xExtent, hasFlag }: ScatterCardP
   );
 }
 
-// ── Legend ─────────────────────────────────────────────────────────────────────
+// ── AxisLegend — axis + ellipse semantics strip (Surface 1) ──────────────────
+
+function AxisLegend() {
+  return (
+    <div className="text-[9px] font-mono text-gray-600 bg-gray-900/30 border border-gray-800/50 rounded px-2.5 py-1.5 space-y-0.5">
+      <p>
+        <span className="text-gray-500">X axis:</span> Avg damage dealt — per-fight average for this (class × encounter) pair across all fights run
+        &ensp;·&ensp;
+        <span className="text-gray-500">Y axis:</span> Win rate — 0% at bottom, 100% at top
+      </p>
+      <p>
+        <span className="text-gray-500">Each point</span> = one (class × encounter-slot) pair in this view
+        &ensp;·&ensp;
+        <span className="text-gray-500">Ellipse width</span> = σ(damage) — wider means damage was inconsistent across fights
+        &ensp;·&ensp;
+        <span className="text-gray-500">Ellipse height</span> = √(WR×(1−WR)) — taller means outcome was uncertain (binomial variance)
+      </p>
+    </div>
+  );
+}
+
+// ── Legend components (Surface 2) ─────────────────────────────────────────────
 
 function SlotLegend({ slotColors }: { slotColors: Record<string, string> }) {
   return (
@@ -316,20 +341,73 @@ export function Encounters() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-5">
 
-      {/* Header */}
+      {/* ── Header ─────────────────────────────────────────────────────────── */}
       <div className="space-y-1">
         <h1 className="text-lg font-bold text-gray-100">Encounter Analytics</h1>
         <p className="text-xs text-gray-500 font-mono">
           season_001005 · {analytics.class_ids.length} classes · {analytics.encounter_slots.length} encounter slots
-          {!analytics.tier1_populated && (
-            <span className="text-amber-700 ml-2">
-              (Tier-1 fields pending — Yomi regen not yet complete; using Damage × Win Rate projection)
-            </span>
-          )}
         </p>
+        {/* Surface 6: expanded tier-1 pending note */}
+        {!analytics.tier1_populated && (
+          <p className="text-[10px] font-mono text-amber-800/80 leading-relaxed">
+            Tier-1 telemetry fields (duration, heals, potions) are pending the next Yomi regen.
+            Once those land, the X-axis will switch from Avg Damage to a Damage × Time-to-Kill
+            projection that better captures class efficiency. Until then, treat damage values as
+            directional and prefer Win Rate as the primary signal.
+          </p>
+        )}
       </div>
 
-      {/* View A interpretation callout */}
+      {/* ── Surface 3: "How to read this" expandable panel ─────────────────── */}
+      <details className="rounded-lg border border-gray-800 bg-gray-900/40 group" open>
+        <summary className="cursor-pointer px-4 py-2.5 text-[10px] font-mono text-gray-500 font-semibold uppercase tracking-wide select-none hover:text-gray-400 flex items-center gap-2">
+          <span className="transition-transform group-open:rotate-90 inline-block">▸</span>
+          How to read this
+        </summary>
+        <div className="px-4 pb-4 pt-1 space-y-2 text-[10px] font-mono text-gray-500 border-t border-gray-800/60">
+          <p className="pt-2">
+            <span className="text-gray-400">1. What this page shows.</span>{' '}
+            Each card visualizes how one class performs against every encounter slot the simulation
+            tested (per-class view), or how every class performs against one encounter slot
+            (per-encounter-slot view). Two orientations of the same underlying data.
+          </p>
+          <p>
+            <span className="text-gray-400">2. The data.</span>{' '}
+            Per-fight aggregates from <span className="text-gray-400">season_001005</span> telemetry
+            (11 classes · 22 encounter slots). Each (class × monster) pair is one point; the ellipse
+            shows damage and outcome variance across multiple fights run during balance convergence.
+          </p>
+          <p>
+            <span className="text-gray-400">3. What "good" looks like.</span>{' '}
+            Differentiated archetype shapes — points spread <em>across</em> damage values within each
+            card, win rates clearly above 25% on every encounter slot, and AOE classes showing high WR
+            on swarm slots while non-AOE classes still hold a playable floor.
+          </p>
+          <p>
+            <span className="text-gray-400">4. What "bad" looks like.</span>{' '}
+            Vertical stacking (damage barely varies across encounters — classes win or lose without
+            speed differentiation); red-flagged ellipses below 25% WR ⚑ (divergence-ceiling failure —
+            a helpless matchup); boss/mini-boss clusters with zero spread across classes
+            (high-tier encounters that brick or trivialize uniformly).
+          </p>
+          <p>
+            <span className="text-gray-400">5. Important caveats.</span>{' '}
+            Tier-1 columns (duration, heals, potions) are <span className="text-amber-700">NULL</span>{' '}
+            for season_001005 — this is why X is currently Avg Damage rather than Damage × TTK.
+            Pack encounters are shown for diagnostic purposes but are excluded from the convergence
+            binary search (per Option 2 / B10.4).
+          </p>
+          <p>
+            <span className="text-gray-400">6. Analytic frame.</span>{' '}
+            The <span className="text-gray-400">Design interpretation</span> callout below is the{' '}
+            <em>analytic frame</em> — what these patterns mean for balance decisions (View A,
+            locked 2026-05-16). This panel is the <em>mechanical frame</em> — how to read the
+            visual encoding.
+          </p>
+        </div>
+      </details>
+
+      {/* ── View A interpretation callout ──────────────────────────────────── */}
       <div className="rounded-lg border border-gray-800 bg-gray-900/40 px-4 py-3 space-y-1.5">
         <p className="text-[10px] font-mono text-gray-500 font-semibold uppercase tracking-wide">
           Design interpretation (View A · locked 2026-05-16)
@@ -359,45 +437,62 @@ export function Encounters() {
         )}
       </div>
 
-      {/* View toggle */}
-      <div className="flex items-center gap-2">
-        <span className="text-[10px] font-mono text-gray-600 uppercase tracking-wide">View:</span>
-        <button
-          onClick={() => setView('class')}
-          className={`text-xs font-mono px-3 py-1 rounded border transition-colors ${
-            view === 'class'
-              ? 'bg-violet-900/40 border-violet-700 text-violet-300'
-              : 'bg-gray-900 border-gray-700 text-gray-500 hover:text-gray-400'
-          }`}
-        >
-          Per-class
-        </button>
-        <button
-          onClick={() => setView('slot')}
-          className={`text-xs font-mono px-3 py-1 rounded border transition-colors ${
-            view === 'slot'
-              ? 'bg-violet-900/40 border-violet-700 text-violet-300'
-              : 'bg-gray-900 border-gray-700 text-gray-500 hover:text-gray-400'
-          }`}
-        >
-          Per-encounter-slot
-        </button>
+      {/* ── Surface 2 + Surface 5: sticky view toggle + color legend ────────── */}
+      <div className="sticky top-0 z-10 bg-gray-950 border-b border-gray-800 py-2.5 -mx-4 px-4 space-y-2">
+        {/* Surface 5: view toggle with subline descriptions */}
+        <div className="flex flex-wrap items-start gap-x-4 gap-y-1">
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-mono text-gray-600 uppercase tracking-wide">View:</span>
+            <button
+              onClick={() => setView('class')}
+              className={`text-xs font-mono px-3 py-1 rounded border transition-colors ${
+                view === 'class'
+                  ? 'bg-violet-900/40 border-violet-700 text-violet-300'
+                  : 'bg-gray-900 border-gray-700 text-gray-500 hover:text-gray-400'
+              }`}
+            >
+              Per-class
+            </button>
+            <button
+              onClick={() => setView('slot')}
+              className={`text-xs font-mono px-3 py-1 rounded border transition-colors ${
+                view === 'slot'
+                  ? 'bg-violet-900/40 border-violet-700 text-violet-300'
+                  : 'bg-gray-900 border-gray-700 text-gray-500 hover:text-gray-400'
+              }`}
+            >
+              Per-encounter-slot
+            </button>
+          </div>
+          <p className="text-[9px] font-mono text-gray-600 self-center">
+            {view === 'class'
+              ? `Each card = one class · points show its performance across all ${analytics.encounter_slots.length} encounter slots · color = encounter type`
+              : `Each card = one monster · points show all ${analytics.class_ids.length} classes' performance against it · color = class`
+            }
+          </p>
+        </div>
+
+        {/* Surface 2: color legend — updates on view toggle */}
+        {view === 'class' ? (
+          <SlotLegend slotColors={analytics.slot_type_colors} />
+        ) : (
+          <ClassLegend classIds={analytics.class_ids} />
+        )}
       </div>
 
-      {/* Legend */}
-      {view === 'class' ? (
-        <SlotLegend slotColors={analytics.slot_type_colors} />
-      ) : (
-        <ClassLegend classIds={analytics.class_ids} />
-      )}
-
-      {/* Small multiples grid — View 1: Per-class */}
+      {/* ── Surface 4 + Surface 1 + Card grid — Per-class view ─────────────── */}
       {view === 'class' && (
         <>
-          <p className="text-[10px] font-mono text-gray-600">
-            Each card: one class · one point per encounter slot · X = avg damage dealt · Y = win rate
-            · ellipse = damage stdev × outcome variance
+          {/* Surface 4: AOE % context */}
+          <p className="text-[9px] font-mono text-gray-600">
+            AOE % = fraction of class's skill kit that produces area damage
+            &ensp;·&ensp;
+            roster range in season_001005: {AOE_PCT_MIN}% to {AOE_PCT_MAX}%
           </p>
+
+          {/* Surface 1: axis + ellipse legend */}
+          <AxisLegend />
+
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
             {classCards.map(({ cid, points, hasFlag, aoeLabel }) => (
               <ScatterCard
@@ -413,13 +508,12 @@ export function Encounters() {
         </>
       )}
 
-      {/* Small multiples grid — View 2: Per-encounter-slot */}
+      {/* ── Surface 1 + Card grid — Per-encounter-slot view ─────────────────── */}
       {view === 'slot' && (
         <>
-          <p className="text-[10px] font-mono text-gray-600">
-            Each card: one encounter slot · one point per class · X = avg damage dealt · Y = win rate
-            · ellipse = damage stdev × outcome variance · color = class
-          </p>
+          {/* Surface 1: axis + ellipse legend */}
+          <AxisLegend />
+
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
             {slotCards.map(({ slot, points, hasFlag }) => {
               const label = `${SLOT_LABELS[slot.slot_type] ?? slot.slot_type}${slot.is_pack ? ' (Pack)' : ''}`;
@@ -438,7 +532,7 @@ export function Encounters() {
         </>
       )}
 
-      {/* Footer notes */}
+      {/* ── Footer notes ──────────────────────────────────────────────────────── */}
       <div className="space-y-1 pt-2 border-t border-gray-800">
         <p className="text-[9px] font-mono text-gray-700">
           Projection: Damage Dealt × Win Rate (default until Tier-1 regen; tier-1 will enable Damage × Time-to-Kill).
