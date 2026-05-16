@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import type { ClassData, SeasonManifest } from '../data/types';
+import type { ClassData, GearPoolEntry, SeasonManifest } from '../data/types';
 import { ARCHETYPE_LABEL, ELEMENT_COLORS } from '../data/constants';
 import { useSeasonData } from '../hooks/useSeasonData';
 import { useSkillBuild } from '../hooks/useSkillBuild';
+import { synthesizeSampleLoadout } from '../utils/synthesizeSampleLoadout';
 import { SkillTree } from '../components/SkillTree/SkillTree';
 import { StatsPanel } from '../components/StatsPanel/StatsPanel';
 import { GearGrid } from '../components/GearGrid/GearGrid';
@@ -12,6 +13,9 @@ import { ActionBar } from '../components/ActionBar';
 import { Tag } from '../components/ui/Tag';
 import { FlavorTip } from '../components/ui/FlavorTip';
 import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+import gearPoolRaw from '../../data/season_002328/gear_pool.json';
+const gearPool = gearPoolRaw as unknown as GearPoolEntry[];
 
 function hexFromInt(n: number): string {
   return '#' + n.toString(16).padStart(6, '0');
@@ -245,6 +249,14 @@ export function Loadout() {
   const seasonId = season?.manifest.season_id ?? 'sample-season';
   const build = useSkillBuild(classData, seasonId);
 
+  // Gear: best-fit selection from Yomi season pool, re-computed when class changes.
+  // Yomi (season_002328) is the only season with a gear pool currently.
+  const synthesizedGear = useMemo(
+    () => (classData ? synthesizeSampleLoadout(classData, gearPool) : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [classData?.id]
+  );
+
   useEffect(() => {
     if (!classData) return;
     parseBuildUrl(searchParams, classData); // reserved for v1 URL-load
@@ -292,7 +304,7 @@ export function Loadout() {
         remainingSP={build.remainingSP}
       />
 
-      <GearGrid mode="empty" />
+      <GearGrid mode="sample" synthesized={synthesizedGear} />
       <SpiritGuide />
 
       <div className="flex items-center justify-between gap-4 pt-2 border-t border-gray-800">
