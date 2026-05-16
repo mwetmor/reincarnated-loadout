@@ -137,7 +137,13 @@
 
 Open items remaining:
 - **encounter_analytics.json regen** — tier-1 columns (duration_seconds) still only 3% populated; regenerate once star-lord or gamora ensures full coverage per fight row. Switch projection label to Damage×TTK when ready.
-- **v0.8 milestone tag** — pending Matt approval. Intermediate tag `drax/v0.8-gear-wiring` cut locally; push + milestone tag once approved.
+- **Encounters page explanatory content** — dispatch `2026-05-16-drax-encounters-page-explanatory-content.md` is queued; pick up next full session.
+
+### Milestone tag: v0.8-gear-wiring (2026-05-16, Pattern A subagent)
+
+- Matt approved at 2026-05-16 Day 4 mid-session (reviewed preview at https://reincarnated-loadout-g3v3ffhry-matthew-wetmore-s-projects.vercel.app)
+- Milestone tag `v0.8-gear-wiring` cut at commit `fe8b810` (the actual feature commit Matt reviewed) and pushed to origin
+- **Anomaly noted:** intermediate tag `drax/v0.8-gear-wiring` sits at `72bc4e9` (the subsequent AGENT_STATE update commit), one commit ahead of `fe8b810`. The dispatch specified `fe8b810` as the target — milestone tag placed there as instructed. The two tags do not point to the same commit (unlike v0.7.1 where both tags matched). Raised here for knight-rider awareness; no action taken beyond following dispatch instructions.
 
 ### v0.5.1-bug-fixes (completed, this session)
 
