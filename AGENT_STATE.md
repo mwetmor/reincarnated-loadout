@@ -1,7 +1,7 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-16
-**Last tag:** drax/v0.5.2-stats-and-slot (commit ad49d3d)
+**Last tag:** drax/v0.7-encounter-analytics (commit 1949def)
 **Branch:** main
 
 ## Session summary
@@ -83,16 +83,39 @@
 - `final_modifier` range: 0.05–0.88 across all seasons (not > 1.0)
 - No `origin` remote configured in loadout repo — push steps skipped
 
+### v0.7-encounter-analytics (completed, this session)
+
+**Multi-dimensional centroid + stdev-ellipse encounter analytics:**
+
+- `data/encounter_analytics.json` — pre-computed fight aggregates from season_001005 (11 classes, 22 encounter slots, 230 (class × monster) pairs)
+  - Generated via `/tmp/gen_encounter_analytics.py` querying `data/telemetry.db`
+  - Tier-1 columns (duration_seconds, a_heals_received, a_potions_used) are NULL for all existing rows — marked tier1_populated: false
+  - Geometry mix per class computed from abilities table (AOE / single / buff percentages)
+  - Win rate and stdev(damage) per (class, monster) pair
+
+- `src/hooks/useEncounterAnalytics.ts` — typed hook; global damage extent; by-slot index
+- `src/pages/Encounters.tsx` — full v0.7 replacement of v0.6 static SVG:
+  - **View 1** (default): per-class small multiples, one point per encounter slot
+  - **View 2**: per-encounter-slot small multiples, one point per class
+  - SVG scatter plots: centroid dot + stdev ellipse per (class × encounter-slot) pair
+  - Projection: Damage Dealt × Win Rate (Tier-1 pending; TODO switches to Damage × TTK once gamora Option 2 regen ships)
+  - Divergence ceiling: WR < 25% flagged red ⚑ (Lock 2 threshold)
+  - View A interpretation callout (locked 2026-05-16 per decisions-log)
+  - No new npm dependencies — pure React + SVG
+
+**v0.6 promote-or-retire decision:** Option (a) — rolled v0.6 into v0.7; v0.6 intermediate tag `drax/v0.6-encounter-viz` retained as history; v0.7 gets the milestone tag (pending Matt).
+
+**Tag:** `drax/v0.7-encounter-analytics` (commit 1949def) — intermediate
+**Preview:** https://reincarnated-loadout-fqcfcam6s-matthew-wetmore-s-projects.vercel.app
+
 ## Next session pick-up
 
 Open items remaining:
-- **Milestone tag** — `drax/v0.5.2-stats-and-slot` intermediate; `v0.5.2` milestone requires knight-rider/Matt confirmation (ADR-003)
-- **v0.7-encounter-analytics dispatch** — BLOCKED on star-lord fight-log granularity research; do not start until knight-rider confirms unblock
-- **Add git remote to loadout repo** — needs Matt to provide remote URL or create GitHub repo
-- **Milestone tags** — `v0.6-encounter-viz` and `v0.6.5-analytics-tier3` intermediate only; `v0.6` milestone requires Matt approval per ADR-003
+- **Yomi regen** — gamora Option 2 not yet complete; when it lands, regenerate `encounter_analytics.json` from Yomi season data, set `tier1_populated: true`, switch projection label to Damage×TTK
+- **Milestone tags** — `v0.7-encounter-analytics`, `v0.5.2-stats-and-slot`, `v0.6.5-analytics-tier3` milestones require knight-rider/Matt confirmation (ADR-003)
 - **Skill gate bug** — gates open per total tree points (5+5=all open); should be per-chain — flagged in v0.4 notes, still open
-- **StatRadarChart PolarRadiusAxis domain** — currently fixed at [0, 50]; works for current data but mages spike INT/WIS to ~40% range. Check if any archetype exceeds 50% on a single stat and adjust if needed.
-- **SkillTierChart** — experimental archetype has 0 classes in Yomi with tier data (only 1 class, class_0010, archetype=experimental); verify it appears in chart
+- **StatRadarChart PolarRadiusAxis domain** — currently fixed at [0, 50]; check if any archetype exceeds 50% on a single stat
+- **SkillTierChart** — experimental archetype has 0 classes in Yomi with tier data (only 1 class, class_0010); verify it appears in chart
 
 ### v0.5.1-bug-fixes (completed, this session)
 
