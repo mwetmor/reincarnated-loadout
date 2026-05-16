@@ -1,7 +1,7 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-16
-**Last tag:** drax/v0.7-encounter-analytics (commit 1949def)
+**Last tag:** drax/v0.7.1-skill-gate-fix (commit 68dfceb)
 **Branch:** main
 
 ## Session summary
@@ -108,14 +108,25 @@
 **Tag:** `drax/v0.7-encounter-analytics` (commit 1949def) — intermediate
 **Preview:** https://reincarnated-loadout-fqcfcam6s-matthew-wetmore-s-projects.vercel.app
 
+### v0.7.1-skill-gate-fix (completed, this session)
+
+1. **Skill gate bug (FIXED)** — `unlockRules.ts`: `spInTiersBelow` and `isTierUnlocked` now accept optional `chainId` parameter. `canInvest` uses `skill.chain_id` so each chain's T2/T3/T4 unlocks independently based only on that chain's lower-tier SP. `SkillTree.tsx`: `getNodeState` passes `skill.chain_id`; row-level locked overlay only shows when ALL chains in that tier are locked. `useSkillBuild.ts`: signature updated to `(tier, chainId?) => boolean`.
+
+2. **StatRadarChart domain (FIXED)** — domain expanded from `[0, 50]` to `[0, 70]`. Empirical check: INT/WIS peak at 61.5%, DEX at 60.4%, STR at 54.1%. 50 was clipping real data.
+
+3. **SkillTierChart experimental (VERIFIED)** — `class_0010` (experimental, Yomi) has `tier: null` on all skills, `chain_id: 'flat'` (flat non-tiered structure by design). Correctly excluded by existing `firstTier == null` guard. Caption updated to acknowledge this.
+
+4. **encounter_analytics.json note updated** — reflects gamora Option 2 regen complete (10/10 converged, 849s, 2026-05-16). Tier-1 column coverage assessed: `duration_seconds` only 3.4% of rows (52,800/1,541,700), sparse and uneven (only first 6 balance iterations). Projection stays Damage×WR; `tier1_populated` stays `false`.
+
+**Preview:** https://reincarnated-loadout-odfuct08x-matthew-wetmore-s-projects.vercel.app
+**Tag:** `drax/v0.7.1-skill-gate-fix` (commit 68dfceb) — intermediate
+
 ## Next session pick-up
 
 Open items remaining:
-- **Yomi regen** — gamora Option 2 not yet complete; when it lands, regenerate `encounter_analytics.json` from Yomi season data, set `tier1_populated: true`, switch projection label to Damage×TTK
-- **Milestone tags** — `v0.7-encounter-analytics`, `v0.5.2-stats-and-slot`, `v0.6.5-analytics-tier3` milestones require knight-rider/Matt confirmation (ADR-003)
-- **Skill gate bug** — gates open per total tree points (5+5=all open); should be per-chain — flagged in v0.4 notes, still open
-- **StatRadarChart PolarRadiusAxis domain** — currently fixed at [0, 50]; check if any archetype exceeds 50% on a single stat
-- **SkillTierChart** — experimental archetype has 0 classes in Yomi with tier data (only 1 class, class_0010); verify it appears in chart
+- **Milestone tags** — `v0.7-encounter-analytics`, `v0.5.2-stats-and-slot`, `v0.6.5-analytics-tier3`, `v0.7.1-skill-gate-fix` milestones require knight-rider/Matt confirmation (ADR-003)
+- **encounter_analytics.json regen** — tier-1 columns (duration_seconds) still only 3% populated; regenerate once star-lord or gamora ensures full coverage per fight row. Switch projection label to Damage×TTK when ready.
+- **Gear tab wiring** — Loadout.tsx still has `<GearGrid mode="empty" />`. Needs fit-score selector wired from real gear pool.
 
 ### v0.5.1-bug-fixes (completed, this session)
 
@@ -142,7 +153,7 @@ Open items remaining:
 
 ## Smoke-test status
 
-✓ TypeScript: `npm run build` — clean (0 errors), 684 modules
+✓ TypeScript: `npm run build` — clean (0 errors), 686 modules
 ✓ Build: dist/ produced, gzip sizes nominal
-✓ Vercel preview: READY (ad49d3d)
-✓ Tags on main: `drax/v0.5.1-bug-fixes`, `drax/v0.6.5-analytics-tier3`, `drax/v0.5.2-stats-and-slot`
+✓ Vercel preview: READY (68dfceb) — https://reincarnated-loadout-odfuct08x-matthew-wetmore-s-projects.vercel.app
+✓ Tags on main: `drax/v0.5.1-bug-fixes`, `drax/v0.6.5-analytics-tier3`, `drax/v0.5.2-stats-and-slot`, `drax/v0.7-encounter-analytics`, `drax/v0.7.1-skill-gate-fix`
