@@ -133,11 +133,26 @@
 **Preview:** https://reincarnated-loadout-odfuct08x-matthew-wetmore-s-projects.vercel.app
 **Tag:** `drax/v0.7.1-skill-gate-fix` (commit 68dfceb) — intermediate
 
+### v0.7-encounter-analytics-legends (completed, this session)
+
+All 6 surfaces from dispatch `2026-05-16-drax-encounters-page-explanatory-content.md`:
+
+1. **Surface 1** — `AxisLegend` component: compact strip above each card grid; X/Y axis meanings + ellipse semantics (σ(damage) width, √(WR×(1-WR)) height)
+2. **Surface 2** — Sticky view toggle + color legend block (`sticky top-0 z-10 bg-gray-950`); legend reactively switches between encounter-type colors (per-class view) and class colors (per-slot view); subline text makes the semantic change explicit
+3. **Surface 3** — `<details open>` "How to read this" panel at page top (6-item structured guide: what/data/good/bad/caveats/analytic-frame); cross-references the View A callout as the analytic frame
+4. **Surface 4** — AOE % roster range note above per-class grid (18%–54% for season_001005; verified from encounter_analytics.json)
+5. **Surface 5** — View-toggle sublines that update on toggle, calling out color semantics switch
+6. **Surface 6** — Tier-1 pending note expanded to full paragraph with "prefer Win Rate as primary signal" guidance
+
+**Build:** Clean (0 TS errors, 686 modules)
+**Tag:** `drax/v0.7-encounter-analytics-legends` (commit 3f2fca6) — intermediate
+**Preview:** https://reincarnated-loadout-1tj6lewiv-matthew-wetmore-s-projects.vercel.app
+
 ## Next session pick-up
 
 Open items remaining:
 - **encounter_analytics.json regen** — tier-1 columns (duration_seconds) still only 3% populated; regenerate once star-lord or gamora ensures full coverage per fight row. Switch projection label to Damage×TTK when ready.
-- **Encounters page explanatory content** — dispatch `2026-05-16-drax-encounters-page-explanatory-content.md` is queued; pick up next full session.
+- **Milestone tag `v0.7-encounter-analytics`** — on hold per dispatch (Matt must review preview). Once Matt approves, cut milestone tag at commit 3f2fca6 and push to origin.
 
 ### Milestone tag: v0.8-gear-wiring (2026-05-16, Pattern A subagent)
 
