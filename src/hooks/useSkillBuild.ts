@@ -11,7 +11,7 @@ interface UseSkillBuildReturn {
   divest: (skillId: string) => { ok: boolean; reason?: string };
   reset: () => void;
   save: () => void;
-  isTierUnlockedForClass: (tier: number) => boolean;
+  isTierUnlockedForClass: (tier: number, chainId?: string) => boolean;
   canInvestSkill: (skillId: string) => { ok: boolean; reason?: string };
   canDivestSkill: (skillId: string) => { ok: boolean; reason?: string };
 }
@@ -55,7 +55,7 @@ export function useSkillBuild(
   const remainingSP = SP_BUDGET - totalSP;
 
   const isTierUnlockedForClass = useCallback(
-    (tier: number) => isTierUnlocked(tier, allocations, skills),
+    (tier: number, chainId?: string) => isTierUnlocked(tier, allocations, skills, chainId),
     [allocations, skills]
   );
 

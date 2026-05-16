@@ -39,7 +39,7 @@ export function SkillTierChart({ data }: Props) {
       title="Skill Tree Composition by Archetype"
       subtitle="Avg skill count per tier — T1 (foundation) through T4 (capstone). Yomi season only."
       height={chartHeight}
-      caption="Yomi season (season_002328) — older seasons lack tier metadata. Most archetypes are T1-heavy; T4 capstones appear only in select archetypes."
+      caption="Yomi season (season_002328) — older seasons lack tier metadata. Experimental archetype excluded (flat skill structure, no tier field). Most archetypes are T1-heavy; T4 capstones appear only in select archetypes."
     >
       <ResponsiveContainer width="100%" height="100%">
         <BarChart

@@ -72,7 +72,7 @@ export function StatRadarChart({ entries, globalAvg }: Props) {
               />
               <PolarRadiusAxis
                 angle={90}
-                domain={[0, 50]}
+                domain={[0, 70]}
                 tick={{ fontSize: 9, fill: '#4b5563' }}
                 tickCount={4}
               />

@@ -7,7 +7,7 @@ interface SkillTreeProps {
   classData: ClassData;
   manifest: SeasonManifest;
   allocations: Record<string, number>;
-  isTierUnlocked: (tier: number) => boolean;
+  isTierUnlocked: (tier: number, chainId?: string) => boolean;
   canInvestSkill: (id: string) => { ok: boolean; reason?: string };
   canDivestSkill: (id: string) => { ok: boolean; reason?: string };
   onInvest: (id: string) => void;
@@ -59,7 +59,8 @@ export function SkillTree({
   const selectedRank = selectedSkillId ? (allocations[selectedSkillId] ?? 0) : 0;
 
   function getNodeState(skill: Skill): NodeState {
-    if (!isTierUnlocked(skill.tier)) return 'locked';
+    // Per-chain gate: a skill is locked if its chain hasn't met the tier threshold
+    if (!isTierUnlocked(skill.tier, skill.chain_id)) return 'locked';
     if (skill.id === selectedSkillId) return 'selected';
     if ((allocations[skill.id] ?? 0) > 0) return 'invested';
     return 'available';
@@ -88,11 +89,19 @@ export function SkillTree({
         {/* Tier rows */}
         <div className="space-y-1.5 sm:space-y-2 min-w-[280px]">
           {tiersWithSkills.map((tier) => {
-            const unlocked = isTierUnlocked(tier);
+            // Per-chain gates: tier row overlay only shows when EVERY chain with skills
+            // in this tier is locked. Once any chain unlocks, individual SkillNode lock
+            // icons handle the per-cell locked state.
+            const chainsWithSkillsInTier = CHAINS.filter(
+              (c) => (grid.get(`${tier}:${c}`) ?? []).length > 0
+            );
+            const allChainsLocked =
+              chainsWithSkillsInTier.length > 0 &&
+              chainsWithSkillsInTier.every((c) => !isTierUnlocked(tier, c));
             return (
               <div key={tier} className="relative">
-                {/* Locked overlay line */}
-                {!unlocked && (
+                {/* Locked overlay — only when all chains in this tier are locked */}
+                {allChainsLocked && (
                   <div className="absolute inset-0 z-10 rounded-lg bg-gray-950/60 flex items-center justify-center pointer-events-none">
                     <span className="text-xs text-gray-600 font-mono bg-gray-950 px-2 py-0.5 rounded border border-gray-700">
                       T{tier} locked
@@ -100,14 +109,14 @@ export function SkillTree({
                   </div>
                 )}
                 <div
-                  className={`grid gap-1.5 sm:gap-2 items-start ${unlocked ? '' : 'pointer-events-none'}`}
+                  className={`grid gap-1.5 sm:gap-2 items-start ${allChainsLocked ? 'pointer-events-none' : ''}`}
                   style={{ gridTemplateColumns: '2rem repeat(4, 1fr)' }}
                 >
                   {/* Tier label */}
                   <div className="flex items-center justify-center">
                     <span
                       className={`text-xs font-mono font-bold ${
-                        unlocked ? 'text-gray-400' : 'text-gray-700'
+                        !allChainsLocked ? 'text-gray-400' : 'text-gray-700'
                       }`}
                     >
                       T{tier}
