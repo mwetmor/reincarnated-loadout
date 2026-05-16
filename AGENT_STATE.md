@@ -1,7 +1,7 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-15
-**Last tag:** drax/v0.5.1-bug-fixes (also drax/v0.6.5-analytics-tier3 on same main)
+**Last updated:** 2026-05-16
+**Last tag:** drax/v0.5.2-stats-and-slot (commit ad49d3d)
 **Branch:** main
 
 ## Session summary
@@ -61,6 +61,18 @@
 - Attributes game-icons.net (Lorc, Delapouite & contributors) under CC BY 3.0 with live links
 - Previously attribution was in commit messages only
 
+### v0.5.2-stats-and-slot (completed, this session)
+
+1. **Bug A — Slot/flavor mismatch**: Modal slot label now uses `ENGINE_SLOT_LABEL[slot.engineSlot]` instead of `SLOT_TYPE_LABEL[displayLabel]`. Both Head/Chest positions show "Armor" — honest about engine's single armor pool. "Miasma Shroud of Yomi" robe now shows "Armor" not "Helmet".
+
+2. **Bug 5 — Stats display**: Wired `stats`, `rolled_effects`, `ability_modifiers` from MIGRATION.md v1.1. Modal shows cyan stat lines, yellow effect lines, violet modifier lines. `buildStatLines()`, `fmtEffect()`, `fmtModifier()` helper functions.
+
+3. **Bug B — Element on card cell**: `dominant_element` shown as small colored text on card cell below tier abbreviation. 126/200 items have null element — badge optional.
+
+4. **types.ts**: Added `GearStats`, `GearRolledEffect` interfaces; fixed pre-existing nullable type errors (`color_signature`, `flavor_text`, `visual_prompt`). Fixed `Sample.tsx` cast to `as unknown as GearPoolEntry[]`.
+
+**Preview:** https://reincarnated-loadout-7uokkvr61-matthew-wetmore-s-projects.vercel.app
+
 ## Confirmed findings
 
 - `role: "primary_attack"` is a real engine field (confirmed from class JSON; not a UI heuristic)
@@ -74,9 +86,10 @@
 ## Next session pick-up
 
 Open items remaining:
+- **Milestone tag** — `drax/v0.5.2-stats-and-slot` intermediate; `v0.5.2` milestone requires knight-rider/Matt confirmation (ADR-003)
 - **v0.7-encounter-analytics dispatch** — BLOCKED on star-lord fight-log granularity research; do not start until knight-rider confirms unblock
 - **Add git remote to loadout repo** — needs Matt to provide remote URL or create GitHub repo
-- **Milestone tag** — `v0.6-encounter-viz` and `v0.6.5-analytics-tier3` intermediate only; `v0.6` milestone requires Matt approval per ADR-003
+- **Milestone tags** — `v0.6-encounter-viz` and `v0.6.5-analytics-tier3` intermediate only; `v0.6` milestone requires Matt approval per ADR-003
 - **Skill gate bug** — gates open per total tree points (5+5=all open); should be per-chain — flagged in v0.4 notes, still open
 - **StatRadarChart PolarRadiusAxis domain** — currently fixed at [0, 50]; works for current data but mages spike INT/WIS to ~40% range. Check if any archetype exceeds 50% on a single stat and adjust if needed.
 - **SkillTierChart** — experimental archetype has 0 classes in Yomi with tier data (only 1 class, class_0010, archetype=experimental); verify it appears in chart
@@ -93,10 +106,20 @@ Open items remaining:
 
 **Preview:** https://reincarnated-loadout-606gj5w7p-matthew-wetmore-s-projects.vercel.app
 
+## Confirmed findings (additions this session)
+
+- `color_signature`: null for 160/200 items in gear_pool.json (type was `string`, now `string | null`)
+- `flavor_text`: null for 120/200 items (was `string`, now `string | null`)
+- `visual_prompt`: null for 120/200 items (was `string`, now `string | null`)
+- `dominant_element`: null for 126/200 items (was already `string | null` — correct)
+- Engine armor pool is flat (slot='armor' only) — no head/chest sub-slot distinction
+- `fit_energy_type` keys: combo, focus, mana, rage, stamina-as-resource (energy type names, not element names)
+- `ability_modifiers` keys in data: cooldown_factor, energy_cost_factor, crit_bonus_damage, control_duration_bonus (matches MIGRATION.md)
+- Stats range: bonus_damage_flat up to 3707; bonus_hp up to 1430; bonus_crit_chance max 0.1 (10%)
+
 ## Smoke-test status
 
 ✓ TypeScript: `npm run build` — clean (0 errors), 684 modules
 ✓ Build: dist/ produced, gzip sizes nominal
-✓ Dev server: all 3 tested routes HTTP 200 (/, /sample, /analytics)
-✓ Vercel preview: READY
-✓ Tags on main: `drax/v0.5.1-bug-fixes`, `drax/v0.6.5-analytics-tier3`
+✓ Vercel preview: READY (ad49d3d)
+✓ Tags on main: `drax/v0.5.1-bug-fixes`, `drax/v0.6.5-analytics-tier3`, `drax/v0.5.2-stats-and-slot`
