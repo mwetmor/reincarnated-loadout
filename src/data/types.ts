@@ -88,6 +88,26 @@ export interface SeasonData {
   classes: ClassData[];
 }
 
+// v1.1 schema (star-lord/season-002328-gear-pool-stats, MIGRATION.md v1.1)
+export interface GearStats {
+  bonus_hp: number;
+  bonus_armor: number;
+  bonus_crit_chance: number;
+  bonus_damage_flat: number;
+  bonus_damage_percent: number;
+  bonus_mana_regen: number;
+  elemental_resistances: Record<string, number>;
+  block_chance: number;
+  block_value: number;
+}
+
+export interface GearRolledEffect {
+  effect_type: string;
+  element: string | null;
+  trigger: string;
+  magnitude: number;
+}
+
 export interface GearPoolEntry {
   gear_id: string;
   slot: string;
@@ -100,11 +120,15 @@ export interface GearPoolEntry {
   fit_role_orientation: Record<string, number>;
   color_value: number;
   color_palette: number[];
-  color_signature: string;
+  color_signature: string | null;   // null for most items (engine doesn't always populate)
   name: string;
-  flavor_text: string;
-  visual_prompt: string;
+  flavor_text: string | null;       // null for ~60% of items
+  visual_prompt: string | null;     // null for ~60% of items
   stat_requirements: Record<string, number> | null;
+  // v1.1 additions — guard stats?.bonus_hp ?? 0 (null if exporter lacked catalog)
+  stats: GearStats | null;
+  rolled_effects: GearRolledEffect[];
+  ability_modifiers: Record<string, number>;
 }
 
 export interface LoadoutSlot {

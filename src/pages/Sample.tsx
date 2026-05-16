@@ -13,7 +13,9 @@ import { FlavorTip } from '../components/ui/FlavorTip';
 import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 import gearPoolRaw from '../../data/season_002328/gear_pool.json';
-const gearPool = gearPoolRaw as GearPoolEntry[];
+// JSON import: use double-cast since TS infers specific literal types for JSON
+// that don't satisfy GearPoolEntry exactly (e.g. optional vs absent keys in ability_modifiers).
+const gearPool = gearPoolRaw as unknown as GearPoolEntry[];
 
 function hexFromInt(n: number): string {
   return '#' + n.toString(16).padStart(6, '0');
