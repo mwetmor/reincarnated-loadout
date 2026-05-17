@@ -1,0 +1,678 @@
+{
+  "schema_version": "1.0",
+  "authored": "2026-05-18",
+  "authority": "drax-loadout (Phase-1 P1 D19 Sub-phase A)",
+  "hive_log_ref": "agentic_orchestration/hive-mind/phase-1-p1-log.md [2026-05-18]",
+  "migration_ref": "reincarnated-loadout/MIGRATION.md §v1.0-vfx-manifest",
+  "notes": [
+    "geometry_animation_map keys MUST match geometry_affinities names in substrate-identity-declarations-2026-05-17.md",
+    "acquisition_status values: on-disk | pending-matt | catalogue-only | entity-only-on-disk | partial-on-disk",
+    "All chierit paths reference reincarnated-demo/public/assets/chierit/<character>/ (extracted Sub-phase A)",
+    "All pimen paths reference reincarnated-demo/public/assets/pimen/<pack>/raw/<animation-dir>/",
+    "register_risk field flags Frostwindz conditional-accept disposition per gandalf DECISION [2026-05-18 00:00Z]",
+    "TODO(drax): remove acquisition_status:pending-matt entries when Matt downloads CraftPix/Fellor/Frostwindz packs"
+  ],
+  "substrates": {
+    "fire": {
+      "canonical_name": "fire",
+      "grouping_label": "ignition",
+      "primary_spell_pack": {
+        "pack_slug": "pimen-fire-spell-effect-3",
+        "pack_name": "Fire Spell Effect 3",
+        "vendor": "pimen",
+        "path": "pimen/fire-spell-effect-3",
+        "derived_register": "hand-drawn-pixel",
+        "register_verified": true,
+        "license": "commercial-royalty-free",
+        "attribution_required": false
+      },
+      "geometry_animation_map": {
+        "burst": {
+          "pack": "pimen-fire-spell-effect-3",
+          "animation_dir": "pimen/fire-spell-effect-3/raw/Fire combo",
+          "affinity": "PREFER",
+          "notes": "Fire combo animation: multi-hit burst sequence"
+        },
+        "cone": {
+          "pack": "pimen-fire-spell-effect-3",
+          "animation_dir": "pimen/fire-spell-effect-3/raw/Fire Claw And Slashes",
+          "affinity": "PREFER",
+          "notes": "Fire Claw And Slashes: directional cone sweep"
+        },
+        "area_sustain": {
+          "pack": "pimen-fire-spell-effect-3",
+          "animation_dir": "pimen/fire-spell-effect-3/raw/Barrier",
+          "affinity": "PREFER",
+          "notes": "Barrier: sustained area fire zone"
+        },
+        "ground_targeted_circle": {
+          "pack": "pimen-fire-spell-effect-3",
+          "animation_dir": "pimen/fire-spell-effect-3/raw/Fire Shield",
+          "affinity": "PREFER",
+          "notes": "Fire Shield: circular ground-targeted protective ring"
+        },
+        "projectile": {
+          "pack": "pimen-fire-spell-effect-3",
+          "animation_dir": "pimen/fire-spell-effect-3/raw/Fire Bite",
+          "affinity": "NEUTRAL",
+          "notes": "Fire Bite: fast projectile fire bolt"
+        },
+        "branching": {
+          "pack": "pimen-fire-spell-effect-3",
+          "animation_dir": "pimen/fire-spell-effect-3/raw/Fire Beam",
+          "affinity": "NEUTRAL",
+          "notes": "Fire Beam: linear/branching beam VFX"
+        },
+        "melee_arc": {
+          "pack": "pimen-fire-spell-effect-3",
+          "animation_dir": "pimen/fire-spell-effect-3/raw/Fire combo",
+          "affinity": "NEUTRAL",
+          "notes": "Reuses Fire combo for melee-arc fire swing; acceptable placeholder"
+        }
+      },
+      "entity_packs": [
+        {
+          "pack_slug": "chierit-fire_knight",
+          "character": "fire_knight",
+          "path": "chierit/fire_knight",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 349,
+          "gif_count": 32,
+          "animation_groups": [
+            "idle", "run", "jump", "roll", "1_atk", "2_atk", "3_atk", "sp_atk",
+            "defend", "take_hit", "death", "transform",
+            "e_idle", "e_run", "e_jump", "e_fireball", "e_1_atk", "e_2_atk", "e_3_atk",
+            "e_sp_atk", "e_defend", "e_take_hit", "back2human", "air_atk"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false,
+          "attribution_note": "No embedded license.txt found in ZIP; commercial use permitted per itch.io bundle purchase"
+        }
+      ],
+      "thumbnail_frame": {
+        "source": "chierit/fire_knight",
+        "file": "chierit/fire_knight/gifs/08_sp_atk.gif",
+        "notes": "Fire knight special attack — high-energy fire burst; representative of substrate"
+      },
+      "acquisition_status": "on-disk",
+      "combat_vfx_ready": true
+    },
+    "water": {
+      "canonical_name": "water",
+      "grouping_label": "suffusion",
+      "primary_spell_pack": {
+        "pack_slug": "pimen-water-spell-effect-03",
+        "pack_name": "Water Spell Effect 03",
+        "vendor": "pimen",
+        "path": "pimen/water-spell-effect-03",
+        "derived_register": "hand-drawn-pixel",
+        "register_verified": true,
+        "license": "commercial-royalty-free",
+        "attribution_required": false
+      },
+      "geometry_animation_map": {
+        "area_sustain": {
+          "pack": "pimen-water-spell-effect-03",
+          "animation_dir": "pimen/water-spell-effect-03/raw/Water Burst",
+          "affinity": "PREFER",
+          "notes": "Water Burst: expanding radial zone sustain"
+        },
+        "circle": {
+          "pack": "pimen-water-spell-effect-03",
+          "animation_dir": "pimen/water-spell-effect-03/raw/Water Magic Circle",
+          "affinity": "PREFER",
+          "notes": "Water Magic Circle: summoned circle geometry"
+        },
+        "wave": {
+          "pack": "pimen-water-spell-effect-03",
+          "animation_dir": "pimen/water-spell-effect-03/raw/Water Combo",
+          "affinity": "PREFER",
+          "notes": "Water Combo: sweeping wave effect"
+        },
+        "ground_targeted_circle": {
+          "pack": "pimen-water-spell-effect-03",
+          "animation_dir": "pimen/water-spell-effect-03/raw/Water Mine",
+          "affinity": "PREFER",
+          "notes": "Water Mine: delayed-trigger ground circle"
+        },
+        "cone": {
+          "pack": "pimen-water-spell-effect-03",
+          "animation_dir": "pimen/water-spell-effect-03/raw/Water Beam",
+          "affinity": "NEUTRAL",
+          "notes": "Water Beam: directional beam usable for cone approximation"
+        },
+        "projectile": {
+          "pack": "pimen-water-spell-effect-03",
+          "animation_dir": "pimen/water-spell-effect-03/raw/Water Portal",
+          "affinity": "NEUTRAL",
+          "notes": "Water Portal: projectile arc; portal-open VFX"
+        }
+      },
+      "entity_packs": [
+        {
+          "pack_slug": "chierit-water_priestess",
+          "character": "water_priestess",
+          "path": "chierit/water_priestess",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 328,
+          "gif_count": 30,
+          "animation_groups": [
+            "idle", "walk", "surf", "j_up", "j_down", "tumble",
+            "1_atk", "2_atk", "3_atk", "sp_atk", "heal", "defend", "take_hit", "death", "transform",
+            "e_idle", "e_move", "e_j_up", "e_j_down", "e_1_atk"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false,
+          "attribution_note": "No embedded license.txt found in ZIP; commercial use permitted per itch.io bundle purchase"
+        }
+      ],
+      "thumbnail_frame": {
+        "source": "chierit/water_priestess",
+        "file": "chierit/water_priestess/gif_samples/sp_atk.gif",
+        "notes": "Water priestess special attack; representative of suffusion substrate identity"
+      },
+      "acquisition_status": "on-disk",
+      "combat_vfx_ready": true,
+      "sub_register_notes": "Ice sub-register: pimen ice-spell-effect-02 on-disk but extraction status unclear (plan § 1.2 gap). Not included in geometry_animation_map pending verification."
+    },
+    "earth": {
+      "canonical_name": "earth",
+      "grouping_label": "bulwark",
+      "primary_spell_pack": {
+        "pack_slug": "pimen-earth-spell-effect-03",
+        "pack_name": "Earth Spell Effect 03",
+        "vendor": "pimen",
+        "path": "pimen/earth-spell-effect-03",
+        "derived_register": "hand-drawn-pixel",
+        "register_verified": true,
+        "license": "commercial-royalty-free",
+        "attribution_required": false
+      },
+      "supplementary_packs": [
+        {
+          "pack_slug": "craftpix-wood-nature",
+          "sub_register": "biological-organic",
+          "acquisition_status": "pending-matt",
+          "projected_path": "craftpix/wood-nature",
+          "substrates_served": ["earth"],
+          "geometry_types_targeted": ["ground_targeted_circle", "area_sustain"],
+          "notes": "Fills root/bark/leaf/vine/moss biological-organic VFX gap. Acquisition authorized; payment pending."
+        },
+        {
+          "pack_slug": "fellor-crystal",
+          "sub_register": "crystal-gem",
+          "acquisition_status": "pending-matt",
+          "projected_path": "fellor/crystal",
+          "substrates_served": ["earth"],
+          "geometry_types_targeted": ["pillar", "burst"],
+          "notes": "Crystal/gem VFX for crystal_mauler integration. Fellor medium-priority acquisition."
+        }
+      ],
+      "geometry_animation_map": {
+        "ground_targeted_circle": {
+          "pack": "pimen-earth-spell-effect-03",
+          "animation_dir": "pimen/earth-spell-effect-03/raw/Earth Trap 1",
+          "affinity": "PREFER",
+          "notes": "Earth Trap 1: triggered ground circle trap"
+        },
+        "pillar": {
+          "pack": "pimen-earth-spell-effect-03",
+          "animation_dir": "pimen/earth-spell-effect-03/raw/Earth Spike",
+          "affinity": "PREFER",
+          "notes": "Earth Spike: upward pillar/spike geometry"
+        },
+        "slam": {
+          "pack": "pimen-earth-spell-effect-03",
+          "animation_dir": "pimen/earth-spell-effect-03/raw/Earth Hammer",
+          "affinity": "PREFER",
+          "notes": "Earth Hammer: downward slam impact"
+        },
+        "melee_arc": {
+          "pack": "pimen-earth-spell-effect-03",
+          "animation_dir": "pimen/earth-spell-effect-03/raw/Earth Burst",
+          "affinity": "PREFER",
+          "notes": "Earth Burst: radial melee-arc eruption"
+        },
+        "area_sustain": {
+          "pack": "pimen-earth-spell-effect-03",
+          "animation_dir": "pimen/earth-spell-effect-03/raw/Earth Trap 2",
+          "affinity": "PREFER",
+          "notes": "Earth Trap 2: sustained area trap zone"
+        },
+        "cone": {
+          "pack": "pimen-earth-spell-effect-03",
+          "animation_dir": "pimen/earth-spell-effect-03/raw/Petrify",
+          "affinity": "NEUTRAL",
+          "notes": "Petrify: forward cone petrification effect"
+        },
+        "projectile": {
+          "pack": "pimen-earth-spell-effect-03",
+          "animation_dir": "pimen/earth-spell-effect-03/raw/Boulder",
+          "affinity": "NEUTRAL",
+          "notes": "Boulder: slow heavy projectile"
+        }
+      },
+      "entity_packs": [
+        {
+          "pack_slug": "chierit-ground_monk",
+          "character": "ground_monk",
+          "path": "chierit/ground_monk",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 281,
+          "gif_count": 26,
+          "substrate_sub_register": "stone",
+          "animation_groups": [
+            "idle", "run", "j_up", "j_down", "roll", "meditate",
+            "1_atk", "2_atk", "3_atk", "air_atk", "sp_atk", "defend", "take_hit", "death",
+            "e_idle", "e_walk", "e_1_atk", "e_2_atk", "e_3_atk", "e_sp_atk", "e_air_atk",
+            "e_take_hit", "back2human", "e_jump"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false
+        },
+        {
+          "pack_slug": "chierit-crystal_mauler",
+          "character": "crystal_mauler",
+          "path": "chierit/crystal_mauler",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 306,
+          "gif_count": 31,
+          "substrate_sub_register": "crystal-gem",
+          "animation_groups": [
+            "idle", "run", "j_up", "j_down",
+            "1_atk", "2_atk", "3_atk", "air_atk", "sp_atk", "defend", "take_hit", "death",
+            "e_idle", "e_walk", "e_1_atk", "e_2_atk", "e_3_atk", "e_sp_atk", "e_air_atk",
+            "e_defend", "e_take_hit", "back2human", "e_jump_up", "e_jump_down", "e_jump_full"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false
+        },
+        {
+          "pack_slug": "chierit-leaf_ranger",
+          "character": "leaf_ranger",
+          "path": "chierit/leaf_ranger",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 482,
+          "gif_count": 35,
+          "substrate_sub_register": "biological-organic",
+          "animation_groups": [
+            "idle", "run", "j_up", "j_down",
+            "1_atk", "2_atk", "3_atk", "air_atk", "sp_atk", "defend", "defend_pose", "take_hit", "death",
+            "e_idle", "e_walk", "e_1_atk", "e_2_atk", "e_3_atk", "e_sp_atk", "e_air_atk",
+            "e_defend", "e_take_hit", "back2human", "e_jump_up", "e_jump_down", "e_jump_full"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false,
+          "notes": "Biological-organic earth sub-register; pairs with CraftPix wood-nature VFX (pending acquisition)"
+        },
+        {
+          "pack_slug": "chierit-metal_bladekeeper",
+          "character": "metal_bladekeeper",
+          "path": "chierit/metal_bladekeeper",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 324,
+          "gif_count": 35,
+          "substrate_sub_register": "earth-metal",
+          "animation_groups": [
+            "idle", "run", "j_up", "j_down", "roll",
+            "projectile_cast", "trap_cast", "1_atk", "2_atk", "3_atk", "sp_atk",
+            "defend", "take_hit", "death", "transform",
+            "e_idle", "e_move", "e_j_up", "e_j_down"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false,
+          "notes": "Earth-metal sub-register; assigned earth substrate per D19 plan § 1.3"
+        }
+      ],
+      "thumbnail_frame": {
+        "source": "chierit/ground_monk",
+        "file": "chierit/ground_monk/gif_samples/sp_atk.gif",
+        "notes": "Ground monk special attack; stone-earth register representative"
+      },
+      "acquisition_status": "partial-on-disk",
+      "combat_vfx_ready": true,
+      "combat_vfx_notes": "Stone/impact sub-register ready. Crystal-gem and biological-organic sub-registers require pending acquisitions (Fellor + CraftPix)."
+    },
+    "wind": {
+      "canonical_name": "wind",
+      "grouping_label": "displacement",
+      "primary_spell_pack": {
+        "pack_slug": "pimen-wind-spell-effect-03",
+        "pack_name": "Wind Spell Effect 03",
+        "vendor": "pimen",
+        "path": "pimen/wind-spell-effect-03",
+        "derived_register": "hand-drawn-pixel",
+        "register_verified": true,
+        "license": "commercial-royalty-free",
+        "attribution_required": false
+      },
+      "geometry_animation_map": {
+        "cone": {
+          "pack": "pimen-wind-spell-effect-03",
+          "animation_dir": "pimen/wind-spell-effect-03/raw/Wind Beam",
+          "affinity": "PREFER",
+          "notes": "Wind Beam: directional cone push"
+        },
+        "swirl": {
+          "pack": "pimen-wind-spell-effect-03",
+          "animation_dir": "pimen/wind-spell-effect-03/raw/Tornado",
+          "affinity": "PREFER",
+          "notes": "Tornado: swirling vortex displacement"
+        },
+        "vortex_pull": {
+          "pack": "pimen-wind-spell-effect-03",
+          "animation_dir": "pimen/wind-spell-effect-03/raw/Air attack",
+          "affinity": "PREFER",
+          "notes": "Air attack: circular pull/vortex mechanics"
+        },
+        "projectile": {
+          "pack": "pimen-wind-spell-effect-03",
+          "animation_dir": "pimen/wind-spell-effect-03/raw/Projectile 1",
+          "affinity": "PREFER",
+          "notes": "Projectile 1: compact wind projectile"
+        },
+        "line": {
+          "pack": "pimen-wind-spell-effect-03",
+          "animation_dir": "pimen/wind-spell-effect-03/raw/Multi Slashes",
+          "affinity": "PREFER",
+          "notes": "Multi Slashes: line-of-site slashing cuts"
+        },
+        "area_sustain": {
+          "pack": "pimen-wind-spell-effect-03",
+          "animation_dir": "pimen/wind-spell-effect-03/raw/Wind trap",
+          "affinity": "NEUTRAL",
+          "notes": "Wind trap: area sustain wind zone"
+        },
+        "burst": {
+          "pack": "pimen-wind-spell-effect-03",
+          "animation_dir": "pimen/wind-spell-effect-03/raw/Extras",
+          "affinity": "NEUTRAL",
+          "notes": "Extras: miscellaneous wind burst effects"
+        },
+        "bolt_line": {
+          "pack": "pimen-wind-spell-effect-03",
+          "animation_dir": "pimen/wind-spell-effect-03/raw/Slashes",
+          "affinity": "NEUTRAL",
+          "notes": "Slashes: fast bolt-line wind cuts"
+        }
+      },
+      "entity_packs": [
+        {
+          "pack_slug": "chierit-wind_hashashin",
+          "character": "wind_hashashin",
+          "path": "chierit/wind_hashashin",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 293,
+          "gif_count": 29,
+          "animation_groups": [
+            "idle", "run", "j_up", "j_down", "roll",
+            "1_atk", "2_atk", "3_atk", "air_atk", "sp_atk", "defend", "take_hit", "death",
+            "e_idle", "e_walk", "e_1_atk", "e_2_atk", "e_3_atk", "e_sp_atk", "e_air_atk",
+            "e_dodge", "e_fall", "e_float_fwd", "e_fly_up", "e_take_hit", "back2human"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false
+        }
+      ],
+      "thumbnail_frame": {
+        "source": "chierit/wind_hashashin",
+        "file": "chierit/wind_hashashin/gif_samples/sp_atk.gif",
+        "notes": "Wind hashashin special attack; displacement substrate representative"
+      },
+      "acquisition_status": "on-disk",
+      "combat_vfx_ready": true
+    },
+    "lightning": {
+      "canonical_name": "lightning",
+      "grouping_label": "resonance",
+      "primary_spell_pack": {
+        "pack_slug": "pimen-thunder-spell-effect-03",
+        "pack_name": "Thunder Spell Effect 03",
+        "vendor": "pimen",
+        "path": "pimen/thunder-spell-effect-03",
+        "derived_register": "hand-drawn-pixel",
+        "register_verified": true,
+        "license": "commercial-royalty-free",
+        "attribution_required": false,
+        "naming_note": "Pack titled 'Thunder' but contains lightning/electric content; tagged substrate:lightning per D19 plan § 3.5"
+      },
+      "supplementary_packs": [
+        {
+          "pack_slug": "creativekind-lightning-horizontal",
+          "sub_register": "bolt-line",
+          "acquisition_status": "on-disk",
+          "path": "CreativeKind/Lightning_horizontal",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true
+        },
+        {
+          "pack_slug": "creativekind-lightning-vertical",
+          "sub_register": "bolt-line",
+          "acquisition_status": "on-disk",
+          "path": "CreativeKind/Lightning_vertical",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true
+        }
+      ],
+      "geometry_animation_map": {
+        "arc": {
+          "pack": "pimen-thunder-spell-effect-03",
+          "animation_dir": "pimen/thunder-spell-effect-03/raw/Electric bow (64x32)",
+          "affinity": "PREFER",
+          "notes": "Electric bow: arc projectile following curve geometry"
+        },
+        "bolt_line": {
+          "pack": "creativekind-lightning-horizontal",
+          "animation_dir": "CreativeKind/Lightning_horizontal",
+          "affinity": "PREFER",
+          "notes": "CreativeKind Lightning horizontal: dedicated bolt-line sprite animation"
+        },
+        "branching": {
+          "pack": "pimen-thunder-spell-effect-03",
+          "animation_dir": "pimen/thunder-spell-effect-03/raw/Burst(48x48)",
+          "affinity": "PREFER",
+          "notes": "Burst: branching radial discharge"
+        },
+        "chain_lightning": {
+          "pack": "pimen-thunder-spell-effect-03",
+          "animation_dir": "pimen/thunder-spell-effect-03/raw/Thunder Whip (56x56)",
+          "affinity": "PREFER",
+          "notes": "Thunder Whip: multi-target chain animation"
+        },
+        "projectile": {
+          "pack": "pimen-thunder-spell-effect-03",
+          "animation_dir": "pimen/thunder-spell-effect-03/raw/Thunder Bullet (64x32)",
+          "affinity": "PREFER",
+          "notes": "Thunder Bullet: fast linear electric projectile"
+        },
+        "cone": {
+          "pack": "pimen-thunder-spell-effect-03",
+          "animation_dir": "pimen/thunder-spell-effect-03/raw/Eletric Disc (32x32)",
+          "affinity": "NEUTRAL",
+          "notes": "Electric Disc: spinning disc for cone approximation"
+        },
+        "ground_targeted_circle": {
+          "pack": "pimen-thunder-spell-effect-03",
+          "animation_dir": "pimen/thunder-spell-effect-03/raw/Eletric Trap (48x48)",
+          "affinity": "NEUTRAL",
+          "notes": "Electric Trap: delayed ground-circle trigger"
+        }
+      },
+      "entity_packs": [
+        {
+          "pack_slug": "chierit-lightning_ronin",
+          "character": "lightning_ronin",
+          "path": "chierit/lightning_ronin",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 408,
+          "gif_count": 39,
+          "animation_groups": [
+            "idle", "run", "j_up", "j_down", "roll", "dash", "dash_loop",
+            "1_atk", "2_atk", "3_atk", "air_atk", "sp_atk", "defend", "take_hit",
+            "e_idle", "e_1_atk", "e_2_atk", "e_3_atk", "e_sp_atk", "e_air_atk", "e_air_atk_loop",
+            "e_defend", "e_j_up", "e_j_down", "e_j_full", "lightning_dash", "lightning_dash_loop",
+            "back2human", "death"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false
+        }
+      ],
+      "thumbnail_frame": {
+        "source": "chierit/lightning_ronin",
+        "file": "chierit/lightning_ronin/gif_samples/sp_atk.gif",
+        "notes": "Lightning ronin special attack; resonance substrate representative"
+      },
+      "acquisition_status": "on-disk",
+      "combat_vfx_ready": true,
+      "combat_vfx_notes": "Best-covered new substrate. Pimen thunder pack alone provides adequate geometry coverage across all PREFER affinities."
+    },
+    "holy": {
+      "canonical_name": "holy",
+      "grouping_label": "radiance",
+      "primary_spell_pack": null,
+      "supplementary_packs": [
+        {
+          "pack_slug": "creativekind-holy-spell-effects",
+          "sub_register": "radiant-aura",
+          "acquisition_status": "catalogue-only",
+          "notes": "CreativeKind Holy Spell Effects: GREEN-list per legolas. NOT in Matt's three authorized acquisitions. Fourth acquisition needed for holy combat VFX. Surface to Matt via knight-rider as L3."
+        },
+        {
+          "pack_slug": "pimen-holy-spell-effect",
+          "sub_register": "shaft-nova",
+          "acquisition_status": "catalogue-only",
+          "notes": "Pimen Holy Spell Effect: catalogue-only. Not yet acquired."
+        }
+      ],
+      "geometry_animation_map": {},
+      "geometry_animation_map_notes": "EMPTY: no holy spell VFX on-disk as of Sub-phase A. geometry_animation_map will be populated when CreativeKind Holy Spell Effects or equivalent is acquired. This is the largest VFX gap among the 7 substrates.",
+      "entity_packs": [
+        {
+          "pack_slug": "chierit-light_valkyrie",
+          "character": "light_valkyrie",
+          "path": "chierit/light_valkyrie",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 520,
+          "gif_count": 47,
+          "animation_groups": [
+            "idle", "run", "j_up", "j_down", "dash", "dash_loop",
+            "couch_idle", "couch_defend", "couch_slide", "couch_stab",
+            "1_atk", "2_atk", "3_atk", "air_atk", "sp_atk", "defend", "take_hit", "death",
+            "e_idle", "e_1_atk", "e_2_atk", "e_3_atk", "e_sp_atk", "e_air_atk",
+            "e_defend", "e_down_loop", "back2human"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false
+        }
+      ],
+      "thumbnail_frame": {
+        "source": "chierit/light_valkyrie",
+        "file": "chierit/light_valkyrie/gif_samples/e_idle.gif",
+        "notes": "Light valkyrie elemental form idle; best available holy substrate representative (entity-only)"
+      },
+      "acquisition_status": "entity-only-on-disk",
+      "combat_vfx_ready": false,
+      "combat_vfx_notes": "Entity sprites available (light_valkyrie); zero dedicated holy spell VFX on-disk. geometry_animation_map EMPTY until CreativeKind Holy Spell Effects acquisition. See D19 plan § 3.6 for acquisition gap analysis."
+    },
+    "shadow": {
+      "canonical_name": "shadow",
+      "grouping_label": "penumbra",
+      "primary_spell_pack": {
+        "pack_slug": "creativekind-dark-hole",
+        "pack_name": "Dark Hole",
+        "vendor": "CreativeKind",
+        "path": "CreativeKind/Dark_Hole",
+        "derived_register": "hand-drawn-pixel",
+        "register_verified": true,
+        "license": "commercial-royalty-free",
+        "attribution_required": false
+      },
+      "supplementary_packs": [
+        {
+          "pack_slug": "frostwindz-deathbringer",
+          "sub_register": "bone-death",
+          "acquisition_status": "pending-matt",
+          "projected_path": "frostwindz/deathbringer",
+          "register_risk": "likely-retro-pixel",
+          "gandalf_disposition": "CONDITIONAL — see DECISION [2026-05-18 00:00Z]",
+          "permitted_uses": ["substrate-browser-thumbnail", "trial-cinematic-redraw-source"],
+          "denied_uses": ["in-combat-vfx", "court-portrait-full-screen"],
+          "notes": "TODO(drax): Do NOT wire Frostwindz Deathbringer to in-combat VFX without register verification + gandalf register exception. Condition from gandalf DECISION: UI thumbnails APPROVED; in-combat VFX DENIED."
+        },
+        {
+          "pack_slug": "creativekind-shadow-tendril",
+          "sub_register": "tendril",
+          "acquisition_status": "catalogue-only",
+          "notes": "CreativeKind shadow-tendril: GREEN-list per legolas. Not yet acquired. Fills shadow geometry gap for tendril/creep PREFER affinities."
+        }
+      ],
+      "geometry_animation_map": {
+        "void_pool": {
+          "pack": "creativekind-dark-hole",
+          "animation_dir": "CreativeKind/Dark_Hole",
+          "affinity": "PREFER",
+          "notes": "Dark Hole: direct void-pool geometry match; only on-disk shadow spell VFX animation"
+        }
+      },
+      "geometry_animation_map_notes": "PARTIAL: only void_pool covered on-disk. tendril/creep/area_sustain PREFER geometries have no on-disk VFX. Shadow tendril requires CreativeKind shadow-tendril acquisition (catalogue-only).",
+      "entity_packs": [
+        {
+          "pack_slug": "chierit-shadow_stalker",
+          "character": "shadow_stalker",
+          "path": "chierit/shadow_stalker",
+          "derived_register": "hand-drawn-pixel",
+          "register_verified": true,
+          "extraction_status": "extracted",
+          "extraction_date": "2026-05-18",
+          "png_count": 550,
+          "gif_count": 53,
+          "animation_groups": [
+            "idle", "run", "j_up", "j_down", "dash", "dash_loop",
+            "couch_idle", "couch_defend", "couch_slide", "couch_atk", "couch_sequence",
+            "1_atk", "2_atk", "3_atk", "air_atk", "sp_atk", "sp_atk_disappear", "sp_atk_appear",
+            "defend", "defend_loop", "take_hit", "death",
+            "e_idle", "e_1_atk", "e_2_atk", "e_3_atk", "e_sp_atk", "e_air_atk",
+            "e_defend", "e_take_hit", "back2human"
+          ],
+          "license": "commercial-use-permitted",
+          "attribution_required": false
+        }
+      ],
+      "thumbnail_frame": {
+        "source": "chierit/shadow_stalker",
+        "file": "chierit/shadow_stalker/gif_samples/e_idle.gif",
+        "notes": "Shadow stalker elemental form idle; penumbra substrate representative"
+      },
+      "acquisition_status": "partial-on-disk",
+      "combat_vfx_ready": false,
+      "combat_vfx_notes": "void_pool geometry covered (Dark_Hole). tendril/creep PREFER geometries absent. Frostwindz Deathbringer: CONDITIONAL accept per gandalf — UI thumbnails only; NOT for in-combat VFX. CreativeKind shadow-tendril needed for full geometry coverage."
+    }
+  }
+}
