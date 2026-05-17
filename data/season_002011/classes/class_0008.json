@@ -419,5 +419,444 @@
   },
   "grouping_season_id": "vs2a",
   "grouping_layer_version": "v1.1",
-  "post_process_d10": true
+  "post_process_d10": true,
+  "carried_gear": {
+    "weapon": {
+      "id": "gear_192409",
+      "base_type_id": "sword",
+      "slot": "weapon",
+      "tier": "legendary",
+      "rarity_score": 5,
+      "handedness": "1h",
+      "dominant_element": "physical",
+      "stats": {
+        "bonus_hp": 142.7,
+        "bonus_armor": 0.0,
+        "bonus_crit_chance": 0.0,
+        "bonus_damage_flat": 544.7,
+        "bonus_damage_percent": 0.0,
+        "bonus_mana_regen": 0.0,
+        "elemental_resistances": {},
+        "block_chance": 0.0,
+        "block_value": 0.0
+      },
+      "rolled_effects": [
+        {
+          "effect_type": "heal",
+          "element": null,
+          "trigger": "on_kill",
+          "magnitude": 356.7
+        },
+        {
+          "effect_type": "damage",
+          "element": "physical",
+          "trigger": "on_hit",
+          "magnitude": 544.7
+        },
+        {
+          "effect_type": "bleed",
+          "element": "physical",
+          "trigger": "on_hit",
+          "magnitude": 442.8
+        }
+      ],
+      "ability_modifiers": {
+        "cooldown_factor": 0.929,
+        "energy_cost_factor": 0.945
+      },
+      "traits": [
+        {
+          "trait_id": "gear_stat_bonus_crit_chance",
+          "category": "stat",
+          "description": "Gear-granted bonus_crit_chance bonus",
+          "stat_key": "bonus_crit_chance",
+          "stat_value": 0.038,
+          "stat_magnitude_type": "flat",
+          "ability_modifier_key": null,
+          "ability_modifier_value": null,
+          "granted_role": null,
+          "granted_element": null,
+          "composition": "additive",
+          "source": "gear"
+        }
+      ],
+      "stat_requirements": {},
+      "power_score": 0.3367,
+      "class_fit_profile": {
+        "energy_type": {
+          "mana": 0.309,
+          "rage": 1.0,
+          "combo": 0.767,
+          "focus": 0.577,
+          "stamina-as-resource": 0.862
+        },
+        "range_profile": {
+          "close": 1.0,
+          "medium": 0.636,
+          "long": 0.323
+        },
+        "role_orientation": {
+          "damage": 1.0,
+          "control": 0.419,
+          "hybrid": 0.762,
+          "support": 0.335
+        },
+        "armor_weight": {
+          "all": 1.0
+        },
+        "damage_type": {
+          "all": 1.0
+        }
+      },
+      "canonical_pair_ref": null,
+      "color_value": 102374,
+      "color_palette": [
+        195361,
+        190327,
+        179412
+      ],
+      "color_signature": null,
+      "set_id": null,
+      "set_position": null,
+      "set_piece_count_required": [],
+      "name": null,
+      "flavor_text": null,
+      "visual_prompt": null,
+      "season_id": null,
+      "generation_mode": "mechanics_only",
+      "used_in_carried_gear": true
+    },
+    "off_hand": {
+      "id": "gear_192412",
+      "base_type_id": "shield",
+      "slot": "off_hand",
+      "tier": "legendary",
+      "rarity_score": 5,
+      "handedness": "1h",
+      "dominant_element": null,
+      "stats": {
+        "bonus_hp": 1262.6,
+        "bonus_armor": 214.5,
+        "bonus_crit_chance": 0.102,
+        "bonus_damage_flat": 0.0,
+        "bonus_damage_percent": 0.09,
+        "bonus_mana_regen": 0.0,
+        "elemental_resistances": {},
+        "block_chance": 0.388,
+        "block_value": 0.778
+      },
+      "rolled_effects": [
+        {
+          "effect_type": "shield",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 1111.3
+        },
+        {
+          "effect_type": "buff_dodge",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 255.2
+        },
+        {
+          "effect_type": "buff_defense",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 214.5
+        },
+        {
+          "effect_type": "buff_damage",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 223.9
+        },
+        {
+          "effect_type": "heal",
+          "element": null,
+          "trigger": "on_kill",
+          "magnitude": 378.2
+        }
+      ],
+      "ability_modifiers": {},
+      "traits": [],
+      "stat_requirements": {},
+      "power_score": 0.3805,
+      "class_fit_profile": {
+        "energy_type": {
+          "mana": 0.312,
+          "rage": 0.938,
+          "combo": 0.5,
+          "focus": 0.375,
+          "stamina-as-resource": 1.0
+        },
+        "range_profile": {
+          "close": 1.0,
+          "medium": 0.556,
+          "long": 0.222
+        },
+        "role_orientation": {
+          "damage": 0.529,
+          "control": 1.0,
+          "hybrid": 0.765,
+          "support": 0.647
+        },
+        "armor_weight": {
+          "all": 1.0
+        },
+        "damage_type": {
+          "all": 1.0
+        }
+      },
+      "canonical_pair_ref": null,
+      "color_value": 191289,
+      "color_palette": [
+        138826,
+        189913,
+        162272,
+        146932,
+        169114
+      ],
+      "color_signature": null,
+      "set_id": null,
+      "set_position": null,
+      "set_piece_count_required": [],
+      "name": null,
+      "flavor_text": null,
+      "visual_prompt": null,
+      "season_id": null,
+      "generation_mode": "mechanics_only",
+      "used_in_carried_gear": true
+    },
+    "armor": {
+      "id": "gear_192421",
+      "base_type_id": "chest",
+      "slot": "armor",
+      "tier": "legendary",
+      "rarity_score": 5,
+      "handedness": "1h",
+      "dominant_element": null,
+      "stats": {
+        "bonus_hp": 1178.5,
+        "bonus_armor": 267.0,
+        "bonus_crit_chance": 0.04,
+        "bonus_damage_flat": 0.0,
+        "bonus_damage_percent": 0.0,
+        "bonus_mana_regen": 0.0,
+        "elemental_resistances": {},
+        "block_chance": 0.0,
+        "block_value": 0.0
+      },
+      "rolled_effects": [
+        {
+          "effect_type": "heal",
+          "element": null,
+          "trigger": "on_kill",
+          "magnitude": 335.4
+        },
+        {
+          "effect_type": "buff_defense",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 267.0
+        },
+        {
+          "effect_type": "shield",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 1044.3
+        },
+        {
+          "effect_type": "buff_dodge",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 101.2
+        }
+      ],
+      "ability_modifiers": {
+        "cooldown_factor": 0.894,
+        "control_duration_bonus": 1.852
+      },
+      "traits": [
+        {
+          "trait_id": "gear_stat_bonus_hp",
+          "category": "stat",
+          "description": "Gear-granted bonus_hp bonus",
+          "stat_key": "bonus_hp",
+          "stat_value": 369.868,
+          "stat_magnitude_type": "flat",
+          "ability_modifier_key": null,
+          "ability_modifier_value": null,
+          "granted_role": null,
+          "granted_element": null,
+          "composition": "additive",
+          "source": "gear"
+        }
+      ],
+      "stat_requirements": {},
+      "power_score": 0.4259,
+      "class_fit_profile": {
+        "energy_type": {
+          "mana": 0.691,
+          "rage": 0.982,
+          "combo": 0.845,
+          "focus": 0.705,
+          "stamina-as-resource": 1.0
+        },
+        "range_profile": {
+          "close": 1.0,
+          "medium": 0.837,
+          "long": 0.587
+        },
+        "role_orientation": {
+          "damage": 0.944,
+          "control": 0.808,
+          "hybrid": 1.0,
+          "support": 0.63
+        },
+        "armor_weight": {
+          "all": 1.0
+        },
+        "damage_type": {
+          "all": 1.0
+        }
+      },
+      "canonical_pair_ref": null,
+      "color_value": 182928,
+      "color_palette": [
+        134176,
+        162126,
+        127543,
+        122629
+      ],
+      "color_signature": null,
+      "set_id": null,
+      "set_position": null,
+      "set_piece_count_required": [],
+      "name": null,
+      "flavor_text": null,
+      "visual_prompt": null,
+      "season_id": null,
+      "generation_mode": "mechanics_only",
+      "used_in_carried_gear": true
+    },
+    "accessory": {
+      "id": "gear_192435",
+      "base_type_id": "amulet",
+      "slot": "accessory",
+      "tier": "legendary",
+      "rarity_score": 5,
+      "handedness": "1h",
+      "dominant_element": null,
+      "stats": {
+        "bonus_hp": 640.9,
+        "bonus_armor": 0.0,
+        "bonus_crit_chance": 0.069,
+        "bonus_damage_flat": 0.0,
+        "bonus_damage_percent": 0.146,
+        "bonus_mana_regen": 2.03,
+        "elemental_resistances": {},
+        "block_chance": 0.0,
+        "block_value": 0.0
+      },
+      "rolled_effects": [
+        {
+          "effect_type": "heal",
+          "element": null,
+          "trigger": "on_kill",
+          "magnitude": 325.9
+        },
+        {
+          "effect_type": "shield",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 510.5
+        },
+        {
+          "effect_type": "buff_dodge",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 172.8
+        },
+        {
+          "effect_type": "buff_mana_regen",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 253.6
+        },
+        {
+          "effect_type": "buff_damage",
+          "element": null,
+          "trigger": "passive",
+          "magnitude": 364.5
+        }
+      ],
+      "ability_modifiers": {
+        "cooldown_factor": 0.904,
+        "crit_bonus_damage": 0.168
+      },
+      "traits": [
+        {
+          "trait_id": "gear_stat_bonus_damage_percent",
+          "category": "stat",
+          "description": "Gear-granted bonus_damage_percent bonus",
+          "stat_key": "bonus_damage_percent",
+          "stat_value": 0.081,
+          "stat_magnitude_type": "flat",
+          "ability_modifier_key": null,
+          "ability_modifier_value": null,
+          "granted_role": null,
+          "granted_element": null,
+          "composition": "additive",
+          "source": "gear"
+        }
+      ],
+      "stat_requirements": {},
+      "power_score": 0.4276,
+      "class_fit_profile": {
+        "energy_type": {
+          "mana": 1.0,
+          "rage": 0.92,
+          "combo": 0.913,
+          "focus": 0.876,
+          "stamina-as-resource": 0.836
+        },
+        "range_profile": {
+          "close": 0.869,
+          "medium": 1.0,
+          "long": 0.876
+        },
+        "role_orientation": {
+          "damage": 0.993,
+          "control": 0.7,
+          "hybrid": 1.0,
+          "support": 0.613
+        },
+        "armor_weight": {
+          "all": 1.0
+        },
+        "damage_type": {
+          "all": 1.0
+        }
+      },
+      "canonical_pair_ref": null,
+      "color_value": 164310,
+      "color_palette": [
+        125879,
+        186637,
+        194500,
+        119104,
+        175338
+      ],
+      "color_signature": null,
+      "set_id": null,
+      "set_position": null,
+      "set_piece_count_required": [],
+      "name": null,
+      "flavor_text": null,
+      "visual_prompt": null,
+      "season_id": null,
+      "generation_mode": "mechanics_only",
+      "used_in_carried_gear": true
+    }
+  }
 }
