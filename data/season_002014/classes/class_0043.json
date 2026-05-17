@@ -247,43 +247,6 @@
       "scaling_coefficient": 1.0987
     },
     {
-      "id": "skill_001051",
-      "name": "Contagion Arc Seep",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "lightning",
-      "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 21.6,
-      "cooldown_seconds": 5.4,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "shock",
-          "params": {
-            "duration_seconds": 1.6
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "lightning"
-          }
-        }
-      ],
-      "color_value": 560946,
-      "flavor_text": "A current of fouled lightning threads through standing water and open wounds alike, finding the body's salt and setting it alight. The shock lingers the way fever does \u2014 not in a single blow, but in slow, insistent ruin.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001046"
-      ],
-      "scaling_coefficient": 1.1133
-    },
-    {
       "id": "skill_001052",
       "name": "Contagion Arc Breach",
       "composition_mode": "single",
@@ -314,43 +277,6 @@
       "scaling_coefficient": 1.1151
     },
     {
-      "id": "skill_001053",
-      "name": "Contagion Arc Seep",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "lightning",
-      "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 15.7,
-      "cooldown_seconds": 4.6,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "lightning"
-          }
-        },
-        {
-          "name": "shock",
-          "params": {
-            "duration_seconds": 1.3
-          }
-        }
-      ],
-      "color_value": 540909,
-      "flavor_text": "A crackling current leaps between the waterlogged bodies of the city's forgotten, spreading ruin like a sickness that knows no quarantine. The shock lingers in the marrow long after the light fades from standing water.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001048"
-      ],
-      "scaling_coefficient": 1.1311
-    },
-    {
       "id": "skill_001054",
       "name": "Miasmal Seep Ring",
       "composition_mode": "single",
@@ -379,37 +305,6 @@
         "skill_001050"
       ],
       "scaling_coefficient": 1.1267
-    },
-    {
-      "id": "skill_001055",
-      "name": "Contagion Arc Deluge",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "lightning",
-      "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 22.2,
-      "cooldown_seconds": 4.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "lightning"
-          }
-        }
-      ],
-      "color_value": 535013,
-      "flavor_text": "The healer's district remembers the flood that never came \u2014 this channeled storm calls it forth now, lightning threading through standing water in widening rings of ruin. What the plague left standing, the current does not.",
-      "tier": 4,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001053"
-      ],
-      "scaling_coefficient": 1.231
     },
     {
       "id": "skill_001056",
@@ -451,12 +346,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.7925,
-    "convergence_winrate": 0.585,
+    "actual_winrate": 0.7222222222222222,
+    "convergence_winrate": 0.5222222222222223,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.0509,
+    "converged": true,
+    "final_modifier": 0.17430937500000002,
     "gauntlet_results": {
       "monster_00163_pack": 1.0,
       "monster_00164_pack": 1.0,
@@ -690,5 +585,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

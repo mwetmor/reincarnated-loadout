@@ -34,42 +34,6 @@
   },
   "skills": [
     {
-      "id": "skill_000300",
-      "name": "Smolder Cascade Meridian",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "fire",
-      "seasonal_element": "charcoal",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
-      "energy_cost": 24.9,
-      "cooldown_seconds": 4.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 375,
-            "duration_seconds": 17.6
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "fire"
-          }
-        }
-      ],
-      "color_value": 84256,
-      "flavor_text": "A totem of compressed charcoal rises at the mapped coordinate, exhaling slow black fire that rewrites the air around it. The burn does not rush \u2014 it surveys, it lingers, it claims the territory as scorched and known.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0569
-    },
-    {
       "id": "skill_000301",
       "name": "Smolder Cascade Drafts",
       "composition_mode": "single",
@@ -305,44 +269,6 @@
       "scaling_coefficient": 1.1186
     },
     {
-      "id": "skill_000308",
-      "name": "Cartographic Haze Bifurcation",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "water",
-      "seasonal_element": "salt",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 23.6,
-      "cooldown_seconds": 6.0,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.39,
-            "duration_seconds": 2.8
-          }
-        }
-      ],
-      "color_value": 695890,
-      "flavor_text": "Salt-laden wind splits at the tower's peak, each arm charting a bitter cold front across the mapped terrain below. Where the forks converge, moisture crystallizes mid-air, preserving the moment of impact like a specimen pressed between parchment.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000300"
-      ],
-      "scaling_coefficient": 1.1012
-    },
-    {
       "id": "skill_000309",
       "name": "Border Erasure",
       "composition_mode": "single",
@@ -450,37 +376,6 @@
       "scaling_coefficient": 1.1421
     },
     {
-      "id": "skill_000312",
-      "name": "Border Erasure Shroud",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/wind/utility",
-      "energy_cost": 13.9,
-      "cooldown_seconds": 14.7,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.32,
-            "duration_seconds": 5.1
-          }
-        }
-      ],
-      "color_value": 503869,
-      "flavor_text": "The tower's oldest maps dissolve at the edges where wind has worn the ink to nothing \u2014 in that unmapped dark, something strikes harder, freed from the cartographer's careful limits. A circle of pale erasure opens beneath your feet, and for a breathless moment, the boundary between known and lethal simply ceases to exist.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000305"
-      ],
-      "scaling_coefficient": 1.1291
-    },
-    {
       "id": "skill_000313",
       "name": "Smolder Cascade Survey",
       "composition_mode": "single",
@@ -520,12 +415,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8617,
-    "convergence_winrate": 0.7233,
+    "actual_winrate": 0.8500000000000001,
+    "convergence_winrate": 0.7000000000000001,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000905990600586,
     "gauntlet_results": {
       "monster_00055_pack": 1.0,
       "monster_00056_pack": 1.0,
@@ -763,5 +658,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

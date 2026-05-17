@@ -265,44 +265,6 @@
       "scaling_coefficient": 1.1666
     },
     {
-      "id": "skill_000912",
-      "name": "Brine Shaft Flood",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 26.5,
-      "cooldown_seconds": 5.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.45,
-            "duration_seconds": 4.3
-          }
-        }
-      ],
-      "color_value": 679868,
-      "flavor_text": "Saltwater surges up through the cracked floor of a forgotten hall, swallowing the ground in a bitter, preserving cold. What once rang with hammer-song now holds only the slow drag of the deep.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000908"
-      ],
-      "scaling_coefficient": 1.1507
-    },
-    {
       "id": "skill_000913",
       "name": "Salt Seam Settling",
       "composition_mode": "single",
@@ -410,44 +372,6 @@
       "scaling_coefficient": 1.2445
     },
     {
-      "id": "skill_000916",
-      "name": "Brine Seam Divergence",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 29.0,
-      "cooldown_seconds": 7.6,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.39,
-            "duration_seconds": 4.4
-          }
-        }
-      ],
-      "color_value": 586520,
-      "flavor_text": "Where the old tunnels split, salt water finds every crack and remembers the shape of what was carved. It spreads slow and heavy, cold as a hall no forge has warmed in a generation.",
-      "tier": 4,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000913"
-      ],
-      "scaling_coefficient": 1.2254
-    },
-    {
       "id": "skill_000917",
       "name": "Brine Seam Burst",
       "composition_mode": "single",
@@ -481,11 +405,11 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8192,
-    "convergence_winrate": 0.64,
+    "actual_winrate": 0.7388888888888889,
+    "convergence_winrate": 0.4777777777777778,
     "pack_winrate": 0.9983,
     "convergence_iterations": 10,
-    "converged": false,
+    "converged": true,
     "final_modifier": 0.05,
     "gauntlet_results": {
       "monster_00109_pack": 1.0,
@@ -733,5 +657,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

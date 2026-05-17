@@ -157,42 +157,6 @@
       "scaling_coefficient": 1.0676
     },
     {
-      "id": "skill_000142",
-      "name": "Crossing Surge Pall",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
-      "energy_cost": 28.5,
-      "cooldown_seconds": 4.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "wind"
-          }
-        },
-        {
-          "name": "knockback",
-          "params": {
-            "distance": 6.5,
-            "stagger_seconds": 0.5
-          }
-        }
-      ],
-      "color_value": 518610,
-      "flavor_text": "A dark wind tears through the border crossing like something that was never meant to be declared, pulling everything toward a hollow center. Those caught in its pull are flung aside, breathless, as though the wall itself exhaled.",
-      "tier": 1,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0622
-    },
-    {
       "id": "skill_000143",
       "name": "Checkpoint Hold",
       "composition_mode": "single",
@@ -403,44 +367,6 @@
       "scaling_coefficient": 1.0978
     },
     {
-      "id": "skill_000149",
-      "name": "Contraband Ignition Surge",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "fire",
-      "seasonal_element": "pitch",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/fire/area_damage",
-      "energy_cost": 38.3,
-      "cooldown_seconds": 5.7,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "fire"
-          }
-        },
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 5.8
-          }
-        }
-      ],
-      "color_value": 60642,
-      "flavor_text": "Pitch smuggled through the wall's cracks ignites in a roaring cone, consuming everything caught in the declaration of its passage. What the checkpoint couldn't hold, the fire takes instead.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000138"
-      ],
-      "scaling_coefficient": 1.115
-    },
-    {
       "id": "skill_000150",
       "name": "Checkpoint Hold Volley",
       "composition_mode": "single",
@@ -520,91 +446,16 @@
         "skill_000144"
       ],
       "scaling_coefficient": 1.1634
-    },
-    {
-      "id": "skill_000152",
-      "name": "Contraband Ignition Volley",
-      "composition_mode": "single",
-      "role": "primary_attack",
-      "canonical_element": "fire",
-      "seasonal_element": "pitch",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
-      "energy_cost": 14.3,
-      "cooldown_seconds": 0.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 625,
-            "element": "fire"
-          }
-        },
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 4.1
-          }
-        },
-        {
-          "name": "lifesteal",
-          "params": {
-            "percent": 0.08
-          }
-        }
-      ],
-      "color_value": 34032,
-      "flavor_text": "Gouts of burning pitch scatter from the wall's shadow like seized cargo thrown into a bonfire, each drop clinging and consuming whatever it touches. The heat feeds back into the hand that throws it, a tithe collected in reverse.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000144"
-      ],
-      "scaling_coefficient": 1.1291
-    },
-    {
-      "id": "skill_000153",
-      "name": "Contraband Ignition",
-      "composition_mode": "single",
-      "role": "primary_attack",
-      "canonical_element": "fire",
-      "seasonal_element": "pitch",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 14.5,
-      "cooldown_seconds": 0.6,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 625,
-            "element": "fire"
-          }
-        }
-      ],
-      "color_value": 59056,
-      "flavor_text": "Pitch smuggled through the wall's blind spots ignites on contact, carrying the heat of a hundred desperate crossings. What the checkpoint never declared burns all the same.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000144"
-      ],
-      "scaling_coefficient": 1.1247
     }
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8392,
-    "convergence_winrate": 0.6783,
+    "actual_winrate": 0.85,
+    "convergence_winrate": 0.7000000000000001,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00001_pack": 1.0,
       "monster_00002_pack": 1.0,
@@ -852,5 +703,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

@@ -148,82 +148,6 @@
       "scaling_coefficient": 1.072
     },
     {
-      "id": "skill_000019",
-      "name": "Contraband Ignition Toll Strike",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "fire",
-      "seasonal_element": "pitch",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
-      "energy_cost": 29.2,
-      "cooldown_seconds": 4.6,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "fire"
-          }
-        },
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 6.1
-          }
-        }
-      ],
-      "color_value": 73238,
-      "flavor_text": "A dense mass of pitch, held back and pressured to its limit, erupts from the wall and ricochets between surfaces in a cascade of clinging fire. What the checkpoint could not contain now burns through everything it touches.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000015"
-      ],
-      "scaling_coefficient": 1.1027
-    },
-    {
-      "id": "skill_000020",
-      "name": "Crossing Surge Pall",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/wind/utility",
-      "energy_cost": 13.1,
-      "cooldown_seconds": 13.0,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.12,
-            "duration_seconds": 8.1
-          }
-        },
-        {
-          "name": "buff_mana_regen",
-          "params": {
-            "percent": 0.15,
-            "duration_seconds": 9.7
-          }
-        }
-      ],
-      "color_value": 463100,
-      "flavor_text": "A deathly stillness settles over the caster like contraband wrapped in shadow, sharpening intent and drawing mana through unseen channels. What crosses the wall undetected carries a weight that feeds the willing mind.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000015"
-      ],
-      "scaling_coefficient": 1.1171
-    },
-    {
       "id": "skill_000021",
       "name": "Crossing Surge Pall",
       "composition_mode": "single",
@@ -298,37 +222,6 @@
         "skill_000015"
       ],
       "scaling_coefficient": 1.0823
-    },
-    {
-      "id": "skill_000023",
-      "name": "Checkpoint Hold",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "earth",
-      "seasonal_element": "iron",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/earth/utility",
-      "energy_cost": 16.6,
-      "cooldown_seconds": 12.6,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.2,
-            "duration_seconds": 6.8
-          }
-        }
-      ],
-      "color_value": 319021,
-      "flavor_text": "The wall's iron patience becomes yours \u2014 every blow lands with the full weight of something that has never once yielded. For a breath, you are the gate itself.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000015"
-      ],
-      "scaling_coefficient": 1.117
     },
     {
       "id": "skill_000024",
@@ -471,12 +364,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.4,
-    "actual_winrate": 0.8492,
-    "convergence_winrate": 0.6983,
+    "actual_winrate": 0.8277777777777776,
+    "convergence_winrate": 0.6555555555555556,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00001_pack": 1.0,
       "monster_00002_pack": 1.0,
@@ -710,5 +603,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

@@ -67,35 +67,6 @@
       "scaling_coefficient": 1.0702
     },
     {
-      "id": "skill_000598",
-      "name": "Seam Pressure Totem",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "fire",
-      "seasonal_element": "coal",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/utility",
-      "energy_cost": 10.3,
-      "cooldown_seconds": 13.8,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.16,
-            "duration_seconds": 6.4
-          }
-        }
-      ],
-      "color_value": 23959,
-      "flavor_text": "Driven into the flooded stone like a forgotten survey spike, it hums with the compressed memory of coal seams that once fed these halls. The water finds it first, then the fury follows.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0531
-    },
-    {
       "id": "skill_000599",
       "name": "Seam Pressure Remembrance",
       "composition_mode": "single",
@@ -201,43 +172,6 @@
       "scaling_coefficient": 1.0818
     },
     {
-      "id": "skill_000602",
-      "name": "Collapse Draft Rising",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/wind/control",
-      "energy_cost": 13.5,
-      "cooldown_seconds": 12.8,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.16,
-            "duration_seconds": 5.0
-          }
-        },
-        {
-          "name": "silence",
-          "params": {
-            "duration_seconds": 3.2
-          }
-        }
-      ],
-      "color_value": 486845,
-      "flavor_text": "The silence of abandoned shafts fills the lungs before the blow lands \u2014 a held breath that strikes harder for the waiting. What the halls forgot how to say, the body remembers as force.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000598"
-      ],
-      "scaling_coefficient": 1.0976
-    },
-    {
       "id": "skill_000603",
       "name": "Seam Pressure Pickfall",
       "composition_mode": "single",
@@ -273,44 +207,6 @@
         "skill_000598"
       ],
       "scaling_coefficient": 1.1084
-    },
-    {
-      "id": "skill_000604",
-      "name": "Seam Pressure Remembrance",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "fire",
-      "seasonal_element": "coal",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
-      "energy_cost": 24.1,
-      "cooldown_seconds": 5.4,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "fire"
-          }
-        },
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 3.6
-          }
-        }
-      ],
-      "color_value": 23162,
-      "flavor_text": "Where the dwarves once stoked their deepest furnaces, the coal-black floor still holds its heat \u2014 waiting for something to wake the pressure trapped beneath. It does not explode outward; it exhales upward, slow and absolute, the way a seam gives before a tunnel falls.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 3,
-      "parent_skill_ids": [
-        "skill_000598"
-      ],
-      "scaling_coefficient": 1.0935
     },
     {
       "id": "skill_000605",
@@ -415,12 +311,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.4,
-    "actual_winrate": 0.9083,
-    "convergence_winrate": 0.8167,
+    "actual_winrate": 0.888888888888889,
+    "convergence_winrate": 0.7777777777777778,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00109_pack": 1.0,
       "monster_00110_pack": 1.0,
@@ -668,5 +564,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

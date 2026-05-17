@@ -384,84 +384,6 @@
       "scaling_coefficient": 1.1572
     },
     {
-      "id": "skill_001190",
-      "name": "Carrier Strike Seep",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "physical",
-      "seasonal_element": null,
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/physical/damage_over_time",
-      "energy_cost": 22.8,
-      "cooldown_seconds": 5.7,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "bleed",
-          "params": {
-            "tick_damage": 1009,
-            "duration_seconds": 5.1
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1009,
-            "element": "physical",
-            "pierce": 1,
-            "multishot": 2
-          }
-        }
-      ],
-      "color_value": 156179,
-      "flavor_text": "A single thrown shard of plague-soaked bone finds the gap between armor and flesh, weeping dark into the wound. The city's oldest sickness remembers how to spread.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001185"
-      ],
-      "scaling_coefficient": 1.1437
-    },
-    {
-      "id": "skill_001191",
-      "name": "Carrier Strike Tide",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "physical",
-      "seasonal_element": null,
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/physical/area_damage",
-      "energy_cost": 21.7,
-      "cooldown_seconds": 6.7,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2018,
-            "element": "physical"
-          }
-        },
-        {
-          "name": "bleed",
-          "params": {
-            "tick_damage": 1009,
-            "duration_seconds": 5.9
-          }
-        }
-      ],
-      "color_value": 115670,
-      "flavor_text": "A crushing wave of pestilent force crashes outward from the infected streets, splitting skin and seeping into the cracks left behind. The wounded bleed slow, as if the city itself refuses to let go.",
-      "tier": 4,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001187"
-      ],
-      "scaling_coefficient": 1.1835
-    },
-    {
       "id": "skill_001192",
       "name": "Pall Surge Exhale",
       "composition_mode": "single",
@@ -502,8 +424,8 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.7525,
-    "convergence_winrate": 0.505,
+    "actual_winrate": 0.75,
+    "convergence_winrate": 0.5,
     "pack_winrate": 1.0,
     "convergence_iterations": 3,
     "converged": true,
@@ -724,5 +646,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

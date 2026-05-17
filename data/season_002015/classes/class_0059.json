@@ -96,34 +96,6 @@
       "scaling_coefficient": 1.0514
     },
     {
-      "id": "skill_001361",
-      "name": "Mad Proclamation Weathervane",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "lightning",
-      "seasonal_element": null,
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 24.6,
-      "cooldown_seconds": 5.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "shock",
-          "params": {
-            "duration_seconds": 10.7
-          }
-        }
-      ],
-      "color_value": 547807,
-      "flavor_text": "A totem of crackling wind erupts from the throne room floor, spinning like a king's edict that contradicts itself with every rotation. Those caught in its arc find their nerves singing with a voltage that no loyal subject could silence.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0769
-    },
-    {
       "id": "skill_001362",
       "name": "Mad Proclamation Holds",
       "composition_mode": "single",
@@ -298,43 +270,6 @@
       "scaling_coefficient": 1.123
     },
     {
-      "id": "skill_001367",
-      "name": "Hollow Court Edict",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "lightning",
-      "seasonal_element": null,
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 15.7,
-      "cooldown_seconds": 12.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.25,
-            "duration_seconds": 7.4
-          }
-        },
-        {
-          "name": "silence",
-          "params": {
-            "duration_seconds": 3.6
-          }
-        }
-      ],
-      "color_value": 540032,
-      "flavor_text": "The Mad King's words fill the throne room like a held breath \u2014 absolute, airless, and impossible to answer. For a moment, the wind itself refuses to speak.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001364"
-      ],
-      "scaling_coefficient": 1.1688
-    },
-    {
       "id": "skill_001368",
       "name": "Mad Proclamation Howls",
       "composition_mode": "single",
@@ -398,12 +333,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.915,
-    "convergence_winrate": 0.83,
+    "actual_winrate": 0.8833333333333333,
+    "convergence_winrate": 0.7666666666666667,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00217_pack": 1.0,
       "monster_00218_pack": 1.0,
@@ -616,5 +551,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

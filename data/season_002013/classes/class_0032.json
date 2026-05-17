@@ -178,43 +178,6 @@
       "scaling_coefficient": 1.1167
     },
     {
-      "id": "skill_000666",
-      "name": "Shaft Echo Surge",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "lightning",
-      "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 28.5,
-      "cooldown_seconds": 4.9,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "lightning"
-          }
-        },
-        {
-          "name": "shock",
-          "params": {
-            "duration_seconds": 0.8
-          }
-        }
-      ],
-      "color_value": 528197,
-      "flavor_text": "A crack of lightning finds the water pooled between abandoned tracks, leaping seam to seam through the hollow dark. The empty halls remember every hammer blow \u2014 and answer with their own.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000661"
-      ],
-      "scaling_coefficient": 1.0811
-    },
-    {
       "id": "skill_000667",
       "name": "Shaft Echo Surge",
       "composition_mode": "single",
@@ -344,51 +307,6 @@
       "scaling_coefficient": 1.1697
     },
     {
-      "id": "skill_000671",
-      "name": "Load-Bearing Stillness",
-      "composition_mode": "single",
-      "role": "defensive",
-      "canonical_element": "lightning",
-      "seasonal_element": null,
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 20.2,
-      "cooldown_seconds": 8.4,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "shield",
-          "params": {
-            "magnitude": 1000,
-            "duration_seconds": 7.6
-          }
-        },
-        {
-          "name": "buff_defense",
-          "params": {
-            "percent": 0.31,
-            "duration_seconds": 6.1
-          }
-        },
-        {
-          "name": "buff_dodge",
-          "params": {
-            "percent": 0.35,
-            "duration_seconds": 9.2
-          }
-        }
-      ],
-      "color_value": 535049,
-      "flavor_text": "The water remembers every crack it widened, every seam it softened \u2014 and now it holds, perfectly still, bracing what the mountain forgot to. In the empty halls, stillness is the last thing standing.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000667"
-      ],
-      "scaling_coefficient": 1.1388
-    },
-    {
       "id": "skill_000672",
       "name": "Brine Load Stillness",
       "composition_mode": "single",
@@ -466,12 +384,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8292,
-    "convergence_winrate": 0.6583,
+    "actual_winrate": 0.7944444444444444,
+    "convergence_winrate": 0.5888888888888889,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.05,
+    "final_modifier": 0.050000905990600586,
     "gauntlet_results": {
       "monster_00109_pack": 1.0,
       "monster_00110_pack": 1.0,
@@ -733,5 +651,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

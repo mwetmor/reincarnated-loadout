@@ -171,35 +171,6 @@
       "scaling_coefficient": 1.0528
     },
     {
-      "id": "skill_000005",
-      "name": "Checkpoint Hold",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "earth",
-      "seasonal_element": "iron",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/earth/utility",
-      "energy_cost": 15.4,
-      "cooldown_seconds": 12.8,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.18,
-            "duration_seconds": 4.0
-          }
-        }
-      ],
-      "color_value": 279766,
-      "flavor_text": "The wall does not yield \u2014 and for a breath, neither do you. Iron discipline floods the body, every blow landing with the full weight of immovable stone.",
-      "tier": 1,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0735
-    },
-    {
       "id": "skill_000006",
       "name": "Brine Toll Strike",
       "composition_mode": "single",
@@ -289,113 +260,6 @@
         "skill_000001"
       ],
       "scaling_coefficient": 1.116
-    },
-    {
-      "id": "skill_000009",
-      "name": "Brine Crossing Surge",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 13.6,
-      "cooldown_seconds": 4.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.42,
-            "duration_seconds": 4.6
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "water"
-          }
-        }
-      ],
-      "color_value": 677356,
-      "flavor_text": "Salt-heavy water seeps through every crack in the wall, finding the body's warmth and stealing it slowly. What crosses here does not cross clean.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000001"
-      ],
-      "scaling_coefficient": 1.1157
-    },
-    {
-      "id": "skill_000010",
-      "name": "Checkpoint Hold",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "earth",
-      "seasonal_element": "iron",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/earth/utility",
-      "energy_cost": 17.7,
-      "cooldown_seconds": 10.3,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.23,
-            "duration_seconds": 5.1
-          }
-        }
-      ],
-      "color_value": 339382,
-      "flavor_text": "At the wall's iron threshold, the body becomes the barrier \u2014 every nerve drawn taut, every breath rationed like contraband. For a suspended moment, nothing passes through without paying the full toll.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000001"
-      ],
-      "scaling_coefficient": 1.1162
-    },
-    {
-      "id": "skill_000011",
-      "name": "Brine Crossing Surge",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 26.7,
-      "cooldown_seconds": 3.3,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.38,
-            "duration_seconds": 2.9
-          }
-        }
-      ],
-      "color_value": 613277,
-      "flavor_text": "Salt-heavy water crackles between bodies like a current running through contraband routes, each arc leaving flesh cold and sluggish as a smuggler caught in winter shallows. The border does not forgive those who carry the sea with them.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000001"
-      ],
-      "scaling_coefficient": 1.0857
     },
     {
       "id": "skill_000012",
@@ -498,12 +362,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.7833,
-    "convergence_winrate": 0.5667,
+    "actual_winrate": 0.8388888888888889,
+    "convergence_winrate": 0.6777777777777777,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000905990600586,
     "gauntlet_results": {
       "monster_00001_pack": 1.0,
       "monster_00002_pack": 1.0,
@@ -751,5 +615,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

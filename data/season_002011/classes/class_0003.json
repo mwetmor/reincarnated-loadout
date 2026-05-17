@@ -122,48 +122,6 @@
       "scaling_coefficient": 1.0581
     },
     {
-      "id": "skill_000031",
-      "name": "Toll Strike Crossing",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "earth",
-      "seasonal_element": "iron",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 21.1,
-      "cooldown_seconds": 5.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "earth"
-          }
-        },
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.3,
-            "duration_seconds": 4.7
-          }
-        },
-        {
-          "name": "lifesteal",
-          "params": {
-            "percent": 0.06
-          }
-        }
-      ],
-      "color_value": 294431,
-      "flavor_text": "A held breath at the checkpoint releases all at once \u2014 compressed earth erupts outward in jagged volleys, each shard carrying the weight of every body that ever tried to pass unseen. The land itself collects what is owed.",
-      "tier": 1,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0677
-    },
-    {
       "id": "skill_000032",
       "name": "Checkpoint Hold",
       "composition_mode": "single",
@@ -191,42 +149,6 @@
       "chain_position": 2,
       "parent_skill_ids": [],
       "scaling_coefficient": 1.0571
-    },
-    {
-      "id": "skill_000033",
-      "name": "Brine Toll Surge",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 38.1,
-      "cooldown_seconds": 4.3,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.29,
-            "duration_seconds": 9.9
-          }
-        }
-      ],
-      "color_value": 627662,
-      "flavor_text": "Salt-heavy water builds behind the checkpoint like unpaid debt, then releases in a single crushing wave. What crosses the wall does not cross clean.",
-      "tier": 1,
-      "chain_id": "chain_D",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0714
     },
     {
       "id": "skill_000034",
@@ -478,44 +400,6 @@
       "scaling_coefficient": 1.1758
     },
     {
-      "id": "skill_000041",
-      "name": "Crossing Surge Pall",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
-      "energy_cost": 18.3,
-      "cooldown_seconds": 6.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "knockback",
-          "params": {
-            "distance": 5.2,
-            "stagger_seconds": 1.0
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "wind"
-          }
-        }
-      ],
-      "color_value": 430023,
-      "flavor_text": "A shrouded totem erupts at the border's edge, exhaling a deathly wind that tears through those who dare cross unbidden. The earth itself holds its breath as the dark gust scatters trespassers into the dust.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000034"
-      ],
-      "scaling_coefficient": 1.1594
-    },
-    {
       "id": "skill_000042",
       "name": "Crossing Surge Pall",
       "composition_mode": "single",
@@ -556,12 +440,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.6,
-    "actual_winrate": 0.8583,
-    "convergence_winrate": 0.7167,
+    "actual_winrate": 0.8444444444444444,
+    "convergence_winrate": 0.6888888888888888,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00001_pack": 1.0,
       "monster_00002_pack": 1.0,
@@ -799,5 +683,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

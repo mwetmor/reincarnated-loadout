@@ -91,42 +91,6 @@
       "scaling_coefficient": 1.0633
     },
     {
-      "id": "skill_001458",
-      "name": "Gauntlet Strike Edict",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "physical",
-      "seasonal_element": null,
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/physical/area_damage",
-      "energy_cost": 20.1,
-      "cooldown_seconds": 4.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2018,
-            "element": "physical"
-          }
-        },
-        {
-          "name": "bleed",
-          "params": {
-            "tick_damage": 1009,
-            "duration_seconds": 4.4
-          }
-        }
-      ],
-      "color_value": 179776,
-      "flavor_text": "A sovereign wind descends upon the throne room floor, splitting stone and courtier alike with the force of a king's iron fist. The air itself bleeds where the decree has landed, unwilling to close.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0779
-    },
-    {
       "id": "skill_001545",
       "name": "Gauntlet of Mad Proclamation",
       "composition_mode": "single",
@@ -160,35 +124,6 @@
       "chain_position": 2,
       "parent_skill_ids": [],
       "scaling_coefficient": 1.0628
-    },
-    {
-      "id": "skill_001460",
-      "name": "Throne Wind Gauntlet",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "physical",
-      "seasonal_element": null,
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/physical/area_damage",
-      "energy_cost": 21.8,
-      "cooldown_seconds": 3.7,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2018,
-            "element": "physical"
-          }
-        }
-      ],
-      "color_value": 128116,
-      "flavor_text": "The Mad King's fury erupts outward in a sweeping arc, the air itself cracking like a royal censure made physical. Every courtier in its path learns the weight of a sovereign's displeasure.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 3,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0669
     },
     {
       "id": "skill_001461",
@@ -464,12 +399,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.6,
-    "actual_winrate": 0.7967,
-    "convergence_winrate": 0.5933,
+    "actual_winrate": 0.8055555555555555,
+    "convergence_winrate": 0.611111111111111,
     "pack_winrate": 1.0,
     "convergence_iterations": 6,
     "converged": true,
-    "final_modifier": 0.3766,
+    "final_modifier": 0.829525,
     "gauntlet_results": {
       "monster_00217_pack": 1.0,
       "monster_00218_pack": 1.0,
@@ -701,5 +636,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

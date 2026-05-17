@@ -64,157 +64,6 @@
       "scaling_coefficient": 1.0645
     },
     {
-      "id": "skill_000942",
-      "name": "Chalk Ward Seeping",
-      "composition_mode": "single",
-      "role": "sustain",
-      "canonical_element": "earth",
-      "seasonal_element": "chalk",
-      "effect_category": "sustain",
-      "canonical_pair_ref": "canonical/earth/sustain",
-      "energy_cost": 22.0,
-      "cooldown_seconds": 5.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "heal",
-          "params": {
-            "magnitude": 1250
-          }
-        },
-        {
-          "name": "heal_over_time",
-          "params": {
-            "tick_heal": 375,
-            "duration_seconds": 6.9
-          }
-        },
-        {
-          "name": "buff_mana_regen",
-          "params": {
-            "percent": 0.12,
-            "duration_seconds": 6.4
-          }
-        }
-      ],
-      "color_value": 346370,
-      "flavor_text": "Pale dust dissolves into the wound like a slow tide, drawing fever out through the skin and leaving something cool and replenishing behind. The body drinks what the plague city offers \u2014 not poison this time, but a quiet, mineral mercy.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0611
-    },
-    {
-      "id": "skill_000943",
-      "name": "Pall Surge Bloom",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "wind",
-      "seasonal_element": "miasma",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
-      "energy_cost": 17.7,
-      "cooldown_seconds": 4.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "wind"
-          }
-        },
-        {
-          "name": "knockback",
-          "params": {
-            "distance": 5.7,
-            "stagger_seconds": 0.9
-          }
-        }
-      ],
-      "color_value": 488232,
-      "flavor_text": "A ring of fetid air erupts outward from the caster, carrying the breath of the Plague City's oldest canals. Those caught in its swell are flung back, lungs full of something that does not belong to the living world.",
-      "tier": 1,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0603
-    },
-    {
-      "id": "skill_000944",
-      "name": "Brine Held Breath",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/water/control",
-      "energy_cost": 15.3,
-      "cooldown_seconds": 12.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.17,
-            "duration_seconds": 5.5
-          }
-        },
-        {
-          "name": "silence",
-          "params": {
-            "duration_seconds": 2.2
-          }
-        }
-      ],
-      "color_value": 655201,
-      "flavor_text": "The salt closes your throat and sharpens your hands at once, a bitter preservation that trades voice for violence. For a few suspended seconds, the city's silence becomes yours.",
-      "tier": 1,
-      "chain_id": "chain_D",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0697
-    },
-    {
-      "id": "skill_000945",
-      "name": "Brine Pall Seep",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 26.1,
-      "cooldown_seconds": 3.9,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.24,
-            "duration_seconds": 3.4
-          }
-        }
-      ],
-      "color_value": 601903,
-      "flavor_text": "Salt water rises through cracked cobblestones, cold and deliberate, drawing heat from the living as though preserving them for something worse. The ground weeps and those caught within it slow, heavy with the city's old grief.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000941"
-      ],
-      "scaling_coefficient": 1.0883
-    },
-    {
       "id": "skill_000946",
       "name": "Pall Surge Rite",
       "composition_mode": "single",
@@ -571,12 +420,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8883,
-    "convergence_winrate": 0.7767,
+    "actual_winrate": 0.8222222222222223,
+    "convergence_winrate": 0.6444444444444445,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00163_pack": 1.0,
       "monster_00164_pack": 1.0,
@@ -814,5 +663,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

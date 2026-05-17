@@ -369,44 +369,6 @@
       "scaling_coefficient": 1.0864
     },
     {
-      "id": "skill_001278",
-      "name": "Pitch Bloom Drain",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "fire",
-      "seasonal_element": "pitch",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
-      "energy_cost": 19.9,
-      "cooldown_seconds": 4.0,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "fire"
-          }
-        },
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 6.3
-          }
-        }
-      ],
-      "color_value": 56969,
-      "flavor_text": "The black water spirals inward, drinking everything it touches into a single burning mouth. What the vortex swallows does not drown \u2014 it ignites.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001272"
-      ],
-      "scaling_coefficient": 1.1766
-    },
-    {
       "id": "skill_001279",
       "name": "Chalk Tide Lapse",
       "composition_mode": "single",
@@ -473,53 +435,16 @@
         "skill_001272"
       ],
       "scaling_coefficient": 1.1298
-    },
-    {
-      "id": "skill_001281",
-      "name": "Chalk Ward Deluge",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "earth",
-      "seasonal_element": "chalk",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 16.2,
-      "cooldown_seconds": 3.8,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "earth"
-          }
-        },
-        {
-          "name": "root",
-          "params": {
-            "duration_seconds": 2.2
-          }
-        }
-      ],
-      "color_value": 320587,
-      "flavor_text": "The infected ground softens and swallows, pulling the stricken inward as white powder dissolves into a slow, grinding churn. What the city could not bury, the earth reclaims in one patient, crumbling embrace.",
-      "tier": 3,
-      "chain_id": "chain_D",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001272"
-      ],
-      "scaling_coefficient": 1.1434
     }
   ],
   "balance_metadata": {
     "target_winrate": 0.4,
-    "actual_winrate": 0.8658,
-    "convergence_winrate": 0.7317,
+    "actual_winrate": 0.8055555555555557,
+    "convergence_winrate": 0.611111111111111,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00163_pack": 1.0,
       "monster_00164_pack": 1.0,
@@ -757,5 +682,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

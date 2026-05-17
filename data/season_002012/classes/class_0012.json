@@ -170,42 +170,6 @@
       "scaling_coefficient": 1.0508
     },
     {
-      "id": "skill_000246",
-      "name": "Cartographic Haze",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "water",
-      "seasonal_element": "salt",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 28.0,
-      "cooldown_seconds": 5.9,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.45,
-            "duration_seconds": 2.1
-          }
-        }
-      ],
-      "color_value": 586698,
-      "flavor_text": "The tower's breath descends in a slow spiral, salt-heavy and bitter, erasing the warmth from the ground as if redrawing the land in cold meridian ink. What stood here is now preserved in stillness, a territory claimed by the map's unfeeling gaze.",
-      "tier": 1,
-      "chain_id": "chain_D",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0771
-    },
-    {
       "id": "skill_000247",
       "name": "Charcoal Stroke Survey",
       "composition_mode": "single",
@@ -413,44 +377,6 @@
       "scaling_coefficient": 1.105
     },
     {
-      "id": "skill_000253",
-      "name": "Smolder Cascade Reckoning",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "fire",
-      "seasonal_element": "charcoal",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 25.0,
-      "cooldown_seconds": 5.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "fire"
-          }
-        },
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.29,
-            "duration_seconds": 7.3
-          }
-        }
-      ],
-      "color_value": 88136,
-      "flavor_text": "Charcoal dust gathers at the fingertips, pressured and trembling, before erupting outward in a fan of scorched trajectories that blacken the air like cartographer's lines burned into parchment. For a breath after, everything the smoke touches ignites a little easier.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000247"
-      ],
-      "scaling_coefficient": 1.1523
-    },
-    {
       "id": "skill_000254",
       "name": "Cartographic Haze Ward",
       "composition_mode": "single",
@@ -480,53 +406,16 @@
         "skill_000247"
       ],
       "scaling_coefficient": 1.1502
-    },
-    {
-      "id": "skill_000255",
-      "name": "Border Erasure Pall",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/wind/control",
-      "energy_cost": 10.7,
-      "cooldown_seconds": 10.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.35,
-            "duration_seconds": 6.5
-          }
-        },
-        {
-          "name": "silence",
-          "params": {
-            "duration_seconds": 3.3
-          }
-        }
-      ],
-      "color_value": 461069,
-      "flavor_text": "The cartographer draws a breath and unmakes the edges of the known world, wrapping themselves in a silence so total that even the wind forgets to speak. For a suspended moment, every boundary dissolves and the strike that follows lands without witness or warning.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000247"
-      ],
-      "scaling_coefficient": 1.1208
     }
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8867,
-    "convergence_winrate": 0.7733,
+    "actual_winrate": 0.8833333333333333,
+    "convergence_winrate": 0.7666666666666666,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00055_pack": 1.0,
       "monster_00056_pack": 1.0,
@@ -764,5 +653,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

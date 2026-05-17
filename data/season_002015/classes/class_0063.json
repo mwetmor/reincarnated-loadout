@@ -254,44 +254,6 @@
       "scaling_coefficient": 1.11
     },
     {
-      "id": "skill_001499",
-      "name": "Royal Decree Immolation",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "fire",
-      "seasonal_element": "brand",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/fire/area_damage",
-      "energy_cost": 38.0,
-      "cooldown_seconds": 4.3,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "fire"
-          }
-        },
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 3.9
-          }
-        }
-      ],
-      "color_value": 26856,
-      "flavor_text": "The Mad King's voice tears through the hall as a cone of sovereign fire, branding every soul it touches with a decree that cannot be unwritten. The marks smolder long after the words have faded, as if the throne itself insists on being obeyed.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001494"
-      ],
-      "scaling_coefficient": 1.0833
-    },
-    {
       "id": "skill_001500",
       "name": "Sovereign Seal of Marble",
       "composition_mode": "single",
@@ -401,12 +363,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8883,
-    "convergence_winrate": 0.7767,
+    "actual_winrate": 0.8055555555555555,
+    "convergence_winrate": 0.611111111111111,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00217_pack": 1.0,
       "monster_00218_pack": 1.0,
@@ -654,5 +616,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

@@ -63,35 +63,6 @@
       "scaling_coefficient": 1.0633
     },
     {
-      "id": "skill_001194",
-      "name": "Brine Steep Clarity",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/water/utility",
-      "energy_cost": 11.0,
-      "cooldown_seconds": 11.9,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.34,
-            "duration_seconds": 9.8
-          }
-        }
-      ],
-      "color_value": 687931,
-      "flavor_text": "Salt draws inward, curing thought the way it cures meat \u2014 slow, total, merciless. What emerges is not wisdom but precision, preserved against rot.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0555
-    },
-    {
       "id": "skill_001195",
       "name": "Pall Surge Idol",
       "composition_mode": "single",
@@ -287,80 +258,6 @@
       "scaling_coefficient": 1.1101
     },
     {
-      "id": "skill_001201",
-      "name": "Chalk Ward Seeping",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "earth",
-      "seasonal_element": "chalk",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/earth/utility",
-      "energy_cost": 16.1,
-      "cooldown_seconds": 15.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.13,
-            "duration_seconds": 8.7
-          }
-        }
-      ],
-      "color_value": 358522,
-      "flavor_text": "The white dust rises from crumbling walls and clings to skin like a second breath, sharpening every strike with the city's long memory of suffering. What the plague could not dissolve, the chalk remembers.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 3,
-      "parent_skill_ids": [
-        "skill_001193"
-      ],
-      "scaling_coefficient": 1.1043
-    },
-    {
-      "id": "skill_001202",
-      "name": "Chalk Ward Deluge",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "earth",
-      "seasonal_element": "chalk",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 33.2,
-      "cooldown_seconds": 7.3,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "earth"
-          }
-        },
-        {
-          "name": "root",
-          "params": {
-            "duration_seconds": 3.1
-          }
-        },
-        {
-          "name": "lifesteal",
-          "params": {
-            "percent": 0.11
-          }
-        }
-      ],
-      "color_value": 345812,
-      "flavor_text": "Pale sediment erupts from the waterlogged streets in a fan of crumbling shards, pinning the infected where they stand. The city drinks what it takes, and something flows back through the caster's veins.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001193"
-      ],
-      "scaling_coefficient": 1.0869
-    },
-    {
       "id": "skill_001203",
       "name": "Miasmal Seep Surge",
       "composition_mode": "single",
@@ -430,44 +327,6 @@
       "scaling_coefficient": 1.1417
     },
     {
-      "id": "skill_001205",
-      "name": "Chalk Seam Reckoning",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "earth",
-      "seasonal_element": "chalk",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 27.8,
-      "cooldown_seconds": 6.4,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "earth"
-          }
-        },
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.25,
-            "duration_seconds": 9.6
-          }
-        }
-      ],
-      "color_value": 358379,
-      "flavor_text": "Pressure builds along the white veins of the city's bones until the earth itself cracks open in a silent, splitting roar. What the ground releases travels fast, hungers longer.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001197"
-      ],
-      "scaling_coefficient": 1.1445
-    },
-    {
       "id": "skill_001206",
       "name": "Salt Slip Tide",
       "composition_mode": "single",
@@ -501,12 +360,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.915,
-    "convergence_winrate": 0.83,
+    "actual_winrate": 0.8388888888888889,
+    "convergence_winrate": 0.6777777777777777,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000905990600586,
     "gauntlet_results": {
       "monster_00163_pack": 1.0,
       "monster_00164_pack": 1.0,
@@ -744,5 +603,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

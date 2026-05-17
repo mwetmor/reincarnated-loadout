@@ -186,80 +186,6 @@
       "scaling_coefficient": 1.0767
     },
     {
-      "id": "skill_000261",
-      "name": "Salt Meridian Ring",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "water",
-      "seasonal_element": "salt",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 28.6,
-      "cooldown_seconds": 4.4,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.37,
-            "duration_seconds": 2.3
-          }
-        }
-      ],
-      "color_value": 681581,
-      "flavor_text": "A crystalline haze expands outward from the tower's pinnacle, charting ruin in a bitter circle of brine-heavy wind. Where the boundary settles, flesh stiffens and warmth surrenders to the map's cold edge.",
-      "tier": 1,
-      "chain_id": "chain_D",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0778
-    },
-    {
-      "id": "skill_000262",
-      "name": "Charcoal Stroke Survey",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "fire",
-      "seasonal_element": "charcoal",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/utility",
-      "energy_cost": 14.6,
-      "cooldown_seconds": 14.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.26,
-            "duration_seconds": 6.5
-          }
-        },
-        {
-          "name": "buff_mana_regen",
-          "params": {
-            "percent": 0.29,
-            "duration_seconds": 10.0
-          }
-        }
-      ],
-      "color_value": 54348,
-      "flavor_text": "A totem rises at the tower's peak, its pressed-black edges bleeding wind-borne pigment across the mapped air. The cartographer's hand never lifts \u2014 every line drawn feeds the mind that draws it.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000256"
-      ],
-      "scaling_coefficient": 1.0993
-    },
-    {
       "id": "skill_000263",
       "name": "Border Erasure Shroud",
       "composition_mode": "single",
@@ -434,116 +360,16 @@
         "skill_000256"
       ],
       "scaling_coefficient": 1.0826
-    },
-    {
-      "id": "skill_000268",
-      "name": "Smolder Cascade Reading",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "fire",
-      "seasonal_element": "charcoal",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/utility",
-      "energy_cost": 19.3,
-      "cooldown_seconds": 13.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.22,
-            "duration_seconds": 8.9
-          }
-        }
-      ],
-      "color_value": 45910,
-      "flavor_text": "The cartographer traces a burning line across the known world and feels the pressure of every unmapped edge compress into their grip. For a breath, the charcoal knows exactly where it wants to fall.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000262"
-      ],
-      "scaling_coefficient": 1.1638
-    },
-    {
-      "id": "skill_000269",
-      "name": "Smolder Cascade",
-      "composition_mode": "single",
-      "role": "primary_attack",
-      "canonical_element": "fire",
-      "seasonal_element": "charcoal",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
-      "energy_cost": 7.8,
-      "cooldown_seconds": 0.8,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 625,
-            "element": "fire"
-          }
-        },
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 4.3
-          }
-        }
-      ],
-      "color_value": 37757,
-      "flavor_text": "A line of charcoal dragged across the target leaves a mark that breathes and blackens, the residue catching heat long after the hand has moved. The tower's wind feeds it, turning a single stroke into something that refuses to stop burning.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000262"
-      ],
-      "scaling_coefficient": 1.1532
-    },
-    {
-      "id": "skill_000270",
-      "name": "Smolder Cascade Stroke",
-      "composition_mode": "single",
-      "role": "primary_attack",
-      "canonical_element": "fire",
-      "seasonal_element": "charcoal",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 12.6,
-      "cooldown_seconds": 1.4,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 625,
-            "element": "fire"
-          }
-        }
-      ],
-      "color_value": 30378,
-      "flavor_text": "A single line of charcoal dragged across the air ignites where the wind breathes on it, tracing the target's coordinates in fire. The Cartographer's Tower teaches that every point on the map can burn.",
-      "tier": 3,
-      "chain_id": "chain_D",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000262"
-      ],
-      "scaling_coefficient": 1.1516
     }
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.9033,
-    "convergence_winrate": 0.8067,
+    "actual_winrate": 0.888888888888889,
+    "convergence_winrate": 0.7777777777777777,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00055_pack": 1.0,
       "monster_00056_pack": 1.0,
@@ -791,5 +617,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

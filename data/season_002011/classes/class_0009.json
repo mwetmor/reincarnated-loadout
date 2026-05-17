@@ -199,44 +199,6 @@
       "scaling_coefficient": 1.0999
     },
     {
-      "id": "skill_000219",
-      "name": "Contraband Ignition",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "fire",
-      "seasonal_element": "pitch",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
-      "energy_cost": 20.5,
-      "cooldown_seconds": 5.4,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 4.4
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "fire"
-          }
-        }
-      ],
-      "color_value": 38727,
-      "flavor_text": "A circle of smuggled pitch seeps up through the cracked earth, catching without warning \u2014 the kind of fire that was never supposed to cross. It clings to everything it touches and keeps its secret long after the flame takes hold.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000214"
-      ],
-      "scaling_coefficient": 1.1056
-    },
-    {
       "id": "skill_000220",
       "name": "Contraband Ignition Ring",
       "composition_mode": "single",
@@ -413,12 +375,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8183,
-    "convergence_winrate": 0.6367,
+    "actual_winrate": 0.8444444444444446,
+    "convergence_winrate": 0.6888888888888888,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00001_pack": 1.0,
       "monster_00002_pack": 1.0,
@@ -631,5 +593,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

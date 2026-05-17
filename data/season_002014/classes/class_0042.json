@@ -228,37 +228,6 @@
       "scaling_coefficient": 1.1179
     },
     {
-      "id": "skill_001002",
-      "name": "Bilge Contagion Arc",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "wind",
-      "seasonal_element": "miasma",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/wind/utility",
-      "energy_cost": 18.0,
-      "cooldown_seconds": 11.3,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.26,
-            "duration_seconds": 4.0
-          }
-        }
-      ],
-      "color_value": 473323,
-      "flavor_text": "A fetid totem rises from the waterlogged streets, exhaling a resonant sickness that sharpens every blow struck within its radius. The plague remembers what the city forgot \u2014 that rot and ruin move together.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000996"
-      ],
-      "scaling_coefficient": 1.1026
-    },
-    {
       "id": "skill_001003",
       "name": "Miasmal Seep Fork",
       "composition_mode": "single",
@@ -288,37 +257,6 @@
         "skill_000999"
       ],
       "scaling_coefficient": 1.0973
-    },
-    {
-      "id": "skill_001004",
-      "name": "Brine Keeper's Resolve",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/water/utility",
-      "energy_cost": 11.7,
-      "cooldown_seconds": 10.3,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.33,
-            "duration_seconds": 7.9
-          }
-        }
-      ],
-      "color_value": 578699,
-      "flavor_text": "The salt of the Plague City's dead waters seeps into the blood, sharpening the mind to a killing edge. What the brine preserves, it makes merciless.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001001"
-      ],
-      "scaling_coefficient": 1.1584
     },
     {
       "id": "skill_001005",
@@ -392,8 +330,8 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.6,
-    "actual_winrate": 0.815,
-    "convergence_winrate": 0.6433,
+    "actual_winrate": 0.7999999999999999,
+    "convergence_winrate": 0.6,
     "pack_winrate": 0.9867,
     "convergence_iterations": 10,
     "converged": true,
@@ -641,5 +579,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

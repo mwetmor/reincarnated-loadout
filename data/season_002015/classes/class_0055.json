@@ -353,44 +353,6 @@
       "scaling_coefficient": 1.1269
     },
     {
-      "id": "skill_001318",
-      "name": "Throne Pyre Decree",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "fire",
-      "seasonal_element": "brand",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
-      "energy_cost": 13.7,
-      "cooldown_seconds": 5.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 5.6
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "fire"
-          }
-        }
-      ],
-      "color_value": 84747,
-      "flavor_text": "The Mad King's seal burns itself into the floor where you command it, a royal mark that smolders with the absolute authority of a ruler who has forgotten mercy. Stone and flesh alike accept the brand without question.",
-      "tier": 4,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001315"
-      ],
-      "scaling_coefficient": 1.2461
-    },
-    {
       "id": "skill_001319",
       "name": "Royal Decree Immolation",
       "composition_mode": "single",
@@ -431,12 +393,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.4,
-    "actual_winrate": 0.7883,
-    "convergence_winrate": 0.5767,
+    "actual_winrate": 0.7444444444444445,
+    "convergence_winrate": 0.48888888888888893,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00217_pack": 1.0,
       "monster_00218_pack": 1.0,
@@ -684,5 +646,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

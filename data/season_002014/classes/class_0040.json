@@ -77,71 +77,6 @@
       "scaling_coefficient": 1.0564
     },
     {
-      "id": "skill_000971",
-      "name": "Seep and Know",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "wind",
-      "seasonal_element": "miasma",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/wind/utility",
-      "energy_cost": 15.1,
-      "cooldown_seconds": 10.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.32,
-            "duration_seconds": 8.7
-          }
-        }
-      ],
-      "color_value": 469453,
-      "flavor_text": "The miasma teaches what clean air never could \u2014 the body opens itself to damage the way a wound opens to rain. Wisdom rises with the rot.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0699
-    },
-    {
-      "id": "skill_000972",
-      "name": "Brine Seep Totem",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 12.6,
-      "cooldown_seconds": 5.8,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.25,
-            "duration_seconds": 13.3
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "water"
-          }
-        }
-      ],
-      "color_value": 601571,
-      "flavor_text": "A pillar of salted water weeps upward from the cobblestones, soaking the air with cold preservation. Those caught in its reach find their limbs stiffening, their wounds refusing to close cleanly.",
-      "tier": 1,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0644
-    },
-    {
       "id": "skill_000973",
       "name": "Pitch Bloom Ring",
       "composition_mode": "single",
@@ -346,44 +281,6 @@
       "scaling_coefficient": 1.0964
     },
     {
-      "id": "skill_000979",
-      "name": "Pall Surge Tide",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "wind",
-      "seasonal_element": "miasma",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
-      "energy_cost": 25.3,
-      "cooldown_seconds": 7.0,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "wind"
-          }
-        },
-        {
-          "name": "knockback",
-          "params": {
-            "distance": 5.2,
-            "stagger_seconds": 0.8
-          }
-        }
-      ],
-      "color_value": 472288,
-      "flavor_text": "A ring of choking miasma erupts outward from the caster, the plague city's foul breath given sudden and violent shape. Those caught in its sweep are flung back, lungs seizing, as the toxic wind rolls through the streets like a wave breaking against stone.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000970"
-      ],
-      "scaling_coefficient": 1.0897
-    },
-    {
       "id": "skill_000980",
       "name": "Still Water Ward",
       "composition_mode": "single",
@@ -482,47 +379,16 @@
         "skill_000974"
       ],
       "scaling_coefficient": 1.1359
-    },
-    {
-      "id": "skill_000983",
-      "name": "Brine Preserved Edge",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "water",
-      "seasonal_element": "brine",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/water/utility",
-      "energy_cost": 13.0,
-      "cooldown_seconds": 13.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.34,
-            "duration_seconds": 5.9
-          }
-        }
-      ],
-      "color_value": 682192,
-      "flavor_text": "Salt seeps into the sinew and sharpens what rot would otherwise claim. For a breath, every blow lands with the cruel precision of something pickled in grief.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000974"
-      ],
-      "scaling_coefficient": 1.1478
     }
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8925,
-    "convergence_winrate": 0.785,
+    "actual_winrate": 0.8055555555555557,
+    "convergence_winrate": 0.6222222222222222,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000905990600586,
     "gauntlet_results": {
       "monster_00163_pack": 1.0,
       "monster_00164_pack": 1.0,
@@ -760,5 +626,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

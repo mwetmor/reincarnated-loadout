@@ -188,50 +188,6 @@
       "scaling_coefficient": 1.0574
     },
     {
-      "id": "skill_000063",
-      "name": "Gate Signal Cascade",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "lightning",
-      "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 30.3,
-      "cooldown_seconds": 5.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "lightning"
-          }
-        },
-        {
-          "name": "shock",
-          "params": {
-            "duration_seconds": 2.0
-          }
-        },
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.19,
-            "duration_seconds": 7.3
-          }
-        }
-      ],
-      "color_value": 552160,
-      "flavor_text": "A crackling charge tears through the checkpoint's iron sensors, leaping from body to body like a rumor passed between desperate hands. Those caught in its arc carry the voltage forward, branded by the wall's own current.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000058"
-      ],
-      "scaling_coefficient": 1.0836
-    },
-    {
       "id": "skill_000064",
       "name": "Gate Signal Surge",
       "composition_mode": "single",
@@ -396,12 +352,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8608,
-    "convergence_winrate": 0.7217,
+    "actual_winrate": 0.8666666666666666,
+    "convergence_winrate": 0.7333333333333333,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00001_pack": 1.0,
       "monster_00002_pack": 1.0,
@@ -649,5 +605,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

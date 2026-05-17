@@ -119,41 +119,6 @@
       "scaling_coefficient": 1.068
     },
     {
-      "id": "skill_001337",
-      "name": "Sovereign Seal of Settling Dust",
-      "composition_mode": "single",
-      "role": "burst_damage",
-      "canonical_element": "earth",
-      "seasonal_element": "marble",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 28.7,
-      "cooldown_seconds": 5.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 2500,
-            "element": "earth"
-          }
-        },
-        {
-          "name": "root",
-          "params": {
-            "duration_seconds": 1.5
-          }
-        }
-      ],
-      "color_value": 335016,
-      "flavor_text": "The mad king's marble floors crack outward in pale veins as the decree takes hold, each shard a wordless command driving roots into the earth. Those who linger in the throne room learn that stillness is not offered \u2014 it is imposed.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0609
-    },
-    {
       "id": "skill_001338",
       "name": "Sovereign Seal Restored",
       "composition_mode": "single",
@@ -442,12 +407,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8742,
-    "convergence_winrate": 0.7483,
+    "actual_winrate": 0.7777777777777778,
+    "convergence_winrate": 0.5555555555555555,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.05,
+    "converged": true,
+    "final_modifier": 0.050000905990600586,
     "gauntlet_results": {
       "monster_00217_pack": 1.0,
       "monster_00218_pack": 1.0,
@@ -690,5 +655,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

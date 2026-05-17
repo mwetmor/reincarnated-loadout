@@ -182,43 +182,6 @@
       "scaling_coefficient": 1.0565
     },
     {
-      "id": "skill_000989",
-      "name": "Chalk Ward Deluge",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "earth",
-      "seasonal_element": "chalk",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 25.8,
-      "cooldown_seconds": 3.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "earth"
-          }
-        },
-        {
-          "name": "root",
-          "params": {
-            "duration_seconds": 2.3
-          }
-        }
-      ],
-      "color_value": 258891,
-      "flavor_text": "The healer draws a circle in crumbling white on the infected cobblestones, and the ground drinks deep before it holds \u2014 soft stone swelling upward through standing water, pinning whatever wades within. The ward does not protect; it remembers every weight that has pressed it down.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000984"
-      ],
-      "scaling_coefficient": 1.0982
-    },
-    {
       "id": "skill_000990",
       "name": "Chalk Ward Seep",
       "composition_mode": "single",
@@ -425,12 +388,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.7558,
-    "convergence_winrate": 0.5117,
+    "actual_winrate": 0.7555555555555555,
+    "convergence_winrate": 0.5111111111111112,
     "pack_winrate": 1.0,
     "convergence_iterations": 6,
     "converged": true,
-    "final_modifier": 0.0797,
+    "final_modifier": 0.202209375,
     "gauntlet_results": {
       "monster_00163_pack": 1.0,
       "monster_00164_pack": 1.0,
@@ -668,5 +631,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

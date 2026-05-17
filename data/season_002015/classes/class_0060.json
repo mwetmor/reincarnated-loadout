@@ -26,35 +26,6 @@
   },
   "skills": [
     {
-      "id": "skill_001538",
-      "name": "Legitimate Claim Rises",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "holy",
-      "seasonal_element": null,
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 18.7,
-      "cooldown_seconds": 12.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.11,
-            "duration_seconds": 9.1
-          }
-        }
-      ],
-      "color_value": 597589,
-      "flavor_text": "The wind through the throne room carries the weight of rightful authority, and for a breathless moment every strike lands as though decreed by something older than the Mad King's raving. Wisdom is the wind's true direction.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
-    },
-    {
       "id": "skill_001436",
       "name": "Legitimate Claim Silenced",
       "composition_mode": "single",
@@ -182,53 +153,16 @@
       "chain_position": null,
       "parent_skill_ids": [],
       "scaling_coefficient": null
-    },
-    {
-      "id": "skill_001440",
-      "name": "Legitimate Claim Convenes",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "holy",
-      "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 19.2,
-      "cooldown_seconds": 3.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "holy"
-          }
-        },
-        {
-          "name": "consecrate",
-          "params": {
-            "zone_duration_seconds": 6.2,
-            "dot_tick_damage": 750,
-            "heal_amplification_percent": 0.13
-          }
-        }
-      ],
-      "color_value": 597455,
-      "flavor_text": "The Mad King's voice tears through the hall in spiraling golden wind, pulling every soul toward the center of his absolute authority. Holy light scorches the marble where courtiers stood, and the air itself remains consecrated \u2014 still ringing with the decree long after the screaming stops.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
     }
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.7525,
-    "convergence_winrate": 0.505,
+    "actual_winrate": 0.7333333333333333,
+    "convergence_winrate": 0.5222222222222223,
     "pack_winrate": 1.0,
     "convergence_iterations": 8,
     "converged": true,
-    "final_modifier": 0.0871,
+    "final_modifier": 0.33165625,
     "gauntlet_results": {
       "monster_00217_pack": 1.0,
       "monster_00218_pack": 1.0,
@@ -455,5 +389,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

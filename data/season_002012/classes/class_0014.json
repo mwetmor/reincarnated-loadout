@@ -63,77 +63,6 @@
       "scaling_coefficient": 1.0712
     },
     {
-      "id": "skill_000272",
-      "name": "Fixed Meridian Gust",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "earth",
-      "seasonal_element": "slate",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/earth/control",
-      "energy_cost": 18.4,
-      "cooldown_seconds": 13.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.19,
-            "duration_seconds": 5.9
-          }
-        },
-        {
-          "name": "silence",
-          "params": {
-            "duration_seconds": 1.9
-          }
-        }
-      ],
-      "color_value": 348058,
-      "flavor_text": "A slate totem erupts from the tower's wind-scoured floor, its layered edges humming with charted silence \u2014 for a breathless moment, the air itself holds its tongue and edges sharpen like a freshly inked border.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0502
-    },
-    {
-      "id": "skill_000273",
-      "name": "Cartographic Haze Deluge",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "water",
-      "seasonal_element": "salt",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/water/area_damage",
-      "energy_cost": 22.8,
-      "cooldown_seconds": 5.6,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.21,
-            "duration_seconds": 2.9
-          }
-        }
-      ],
-      "color_value": 684179,
-      "flavor_text": "Salt-laden wind pours through the Tower's open windows, crystallizing into a bitter fog that floods the mapped coastlines of the air itself. What it touches slows to the stillness of a preserved chart, cold and exact.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0514
-    },
-    {
       "id": "skill_000274",
       "name": "Cartographic Haze Meridian",
       "composition_mode": "single",
@@ -219,37 +148,6 @@
       "chain_position": 2,
       "parent_skill_ids": [],
       "scaling_coefficient": 1.0739
-    },
-    {
-      "id": "skill_000277",
-      "name": "Smolder Cascade Survey",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "fire",
-      "seasonal_element": "charcoal",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/utility",
-      "energy_cost": 15.3,
-      "cooldown_seconds": 16.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.2,
-            "duration_seconds": 7.5
-          }
-        }
-      ],
-      "color_value": 55502,
-      "flavor_text": "The cartographer draws a single charcoal line across the known world and feels the pressure of every unmapped edge concentrate in her hand. For a breathless moment, the residue knows exactly where to strike.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000271"
-      ],
-      "scaling_coefficient": 1.1144
     },
     {
       "id": "skill_000278",
@@ -413,44 +311,6 @@
       "scaling_coefficient": 1.1235
     },
     {
-      "id": "skill_000283",
-      "name": "Cartographic Haze",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "water",
-      "seasonal_element": "salt",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
-      "energy_cost": 21.6,
-      "cooldown_seconds": 5.6,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "water"
-          }
-        },
-        {
-          "name": "chill",
-          "params": {
-            "slow_percent": 0.25,
-            "duration_seconds": 4.5
-          }
-        }
-      ],
-      "color_value": 654612,
-      "flavor_text": "Salt-laden fog rolls off the Tower's unfinished maps, leaping between bodies like a surveyor's chain measuring only ruin. What it touches is preserved in cold \u2014 precise, bitter, still.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000277"
-      ],
-      "scaling_coefficient": 1.1216
-    },
-    {
       "id": "skill_000284",
       "name": "Salt Line Meridian",
       "composition_mode": "single",
@@ -491,12 +351,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8892,
-    "convergence_winrate": 0.7783,
+    "actual_winrate": 0.8555555555555555,
+    "convergence_winrate": 0.7111111111111111,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00055_pack": 1.0,
       "monster_00056_pack": 1.0,
@@ -730,5 +590,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

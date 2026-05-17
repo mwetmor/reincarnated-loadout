@@ -62,41 +62,6 @@
       "scaling_coefficient": 1.0697
     },
     {
-      "id": "skill_000635",
-      "name": "Collapse Draft Stillness",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "earth",
-      "seasonal_element": "obsidian",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 14.4,
-      "cooldown_seconds": 7.6,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "root",
-          "params": {
-            "duration_seconds": 3.8
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "earth"
-          }
-        }
-      ],
-      "color_value": 254969,
-      "flavor_text": "The floor remembers the weight of ten thousand boots and refuses to forget. Obsidian veins split upward through the stone, locking what stands above them in the grip of halls that will not let go.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0693
-    },
-    {
       "id": "skill_000636",
       "name": "Shaft Echo Stillness",
       "composition_mode": "single",
@@ -160,37 +125,6 @@
         "skill_000634"
       ],
       "scaling_coefficient": 1.1012
-    },
-    {
-      "id": "skill_000638",
-      "name": "Pickfall Remembrance",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "earth",
-      "seasonal_element": "obsidian",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 19.5,
-      "cooldown_seconds": 3.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "earth"
-          }
-        }
-      ],
-      "color_value": 338711,
-      "flavor_text": "The floor remembers every strike that was ever driven into it. It gives back all of them at once.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000634"
-      ],
-      "scaling_coefficient": 1.1086
     },
     {
       "id": "skill_000639",
@@ -453,12 +387,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.7992,
-    "convergence_winrate": 0.5983,
+    "actual_winrate": 0.7388888888888889,
+    "convergence_winrate": 0.4777777777777778,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.0509,
+    "converged": true,
+    "final_modifier": 0.11260468750000001,
     "gauntlet_results": {
       "monster_00109_pack": 1.0,
       "monster_00110_pack": 1.0,
@@ -706,5 +640,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

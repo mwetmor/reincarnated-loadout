@@ -34,41 +34,6 @@
   },
   "skills": [
     {
-      "id": "skill_000608",
-      "name": "Seam Pressure Settling",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "earth",
-      "seasonal_element": "obsidian",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 18.5,
-      "cooldown_seconds": 4.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "root",
-          "params": {
-            "duration_seconds": 3.8
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "earth"
-          }
-        }
-      ],
-      "color_value": 268888,
-      "flavor_text": "The floor remembers every pickfall, every cart, every boot \u2014 and now it remembers yours. Stone closes around stillness like water filling a hollow, and nothing held upright stays that way.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0676
-    },
-    {
       "id": "skill_000609",
       "name": "Withdrawal Soot Surge",
       "composition_mode": "single",
@@ -289,50 +254,6 @@
       "scaling_coefficient": 1.1111
     },
     {
-      "id": "skill_000615",
-      "name": "Seam Pressure Hush",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "fire",
-      "seasonal_element": "coal",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/control",
-      "energy_cost": 13.2,
-      "cooldown_seconds": 17.4,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.29,
-            "duration_seconds": 4.4
-          }
-        },
-        {
-          "name": "silence",
-          "params": {
-            "duration_seconds": 1.9
-          }
-        },
-        {
-          "name": "buff_mana_regen",
-          "params": {
-            "percent": 0.23,
-            "duration_seconds": 4.2
-          }
-        }
-      ],
-      "color_value": 2820,
-      "flavor_text": "A dense stillness rises from the flooded shaft floors, pressing against the throat and sharpening the hands. The old coal remembers how to hold its breath before the crack.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000608"
-      ],
-      "scaling_coefficient": 1.1049
-    },
-    {
       "id": "skill_000616",
       "name": "Seam Pressure Pickfall",
       "composition_mode": "single",
@@ -362,43 +283,6 @@
         "skill_000608"
       ],
       "scaling_coefficient": 1.1179
-    },
-    {
-      "id": "skill_000617",
-      "name": "Pickfall Remembrance",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "earth",
-      "seasonal_element": "obsidian",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/earth/area_damage",
-      "energy_cost": 27.4,
-      "cooldown_seconds": 6.7,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "earth"
-          }
-        },
-        {
-          "name": "root",
-          "params": {
-            "duration_seconds": 3.1
-          }
-        }
-      ],
-      "color_value": 308147,
-      "flavor_text": "The flooded floor remembers every strike ever driven into it, and for one suspended moment the weight of all those blows returns at once. Stone buckles upward in a ring, pinning whatever stands within to the drowned dark.",
-      "tier": 2,
-      "chain_id": "chain_D",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000608"
-      ],
-      "scaling_coefficient": 1.0988
     },
     {
       "id": "skill_000618",
@@ -438,68 +322,6 @@
       "scaling_coefficient": 1.1308
     },
     {
-      "id": "skill_000619",
-      "name": "Seam Pressure Rising",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "fire",
-      "seasonal_element": "coal",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/utility",
-      "energy_cost": 11.4,
-      "cooldown_seconds": 12.9,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.28,
-            "duration_seconds": 6.2
-          }
-        }
-      ],
-      "color_value": 33493,
-      "flavor_text": "The old compression finds you \u2014 weight of unmined stone, of held breath in a tunnel that forgot daylight. You burn slower and hotter for it.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000612"
-      ],
-      "scaling_coefficient": 1.1541
-    },
-    {
-      "id": "skill_000620",
-      "name": "Seam Pressure Totem",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "fire",
-      "seasonal_element": "coal",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/utility",
-      "energy_cost": 10.7,
-      "cooldown_seconds": 12.8,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.25,
-            "duration_seconds": 4.1
-          }
-        }
-      ],
-      "color_value": 11930,
-      "flavor_text": "A dense knot of compressed memory rises from the stone floor, humming with the weight of every strike the old halls once absorbed. For a breath, it makes your blows feel like the mountain remembers how to fall.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000612"
-      ],
-      "scaling_coefficient": 1.1519
-    },
-    {
       "id": "skill_000621",
       "name": "Seam Pressure Ring",
       "composition_mode": "single",
@@ -533,12 +355,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8925,
-    "convergence_winrate": 0.785,
+    "actual_winrate": 0.8833333333333333,
+    "convergence_winrate": 0.7666666666666666,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00109_pack": 1.0,
       "monster_00110_pack": 1.0,
@@ -781,5 +603,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

@@ -97,42 +97,6 @@
       "scaling_coefficient": 1.051
     },
     {
-      "id": "skill_001348",
-      "name": "Exile Writ Gale",
-      "composition_mode": "single",
-      "role": "damage_over_time",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
-      "energy_cost": 15.2,
-      "cooldown_seconds": 7.1,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "knockback",
-          "params": {
-            "distance": 4.7,
-            "stagger_seconds": 0.9
-          }
-        },
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 750,
-            "element": "wind"
-          }
-        }
-      ],
-      "color_value": 494989,
-      "flavor_text": "The mad king's banishment tears through flesh and marrow like a wind that has forgotten mercy. It does not merely push \u2014 it unmakes your right to stand here.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 3,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0595
-    },
-    {
       "id": "skill_001349",
       "name": "Exile Writ Pall",
       "composition_mode": "single",
@@ -222,74 +186,6 @@
       "scaling_coefficient": 1.1185
     },
     {
-      "id": "skill_001352",
-      "name": "Exile Writ Howling",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
-      "energy_cost": 21.6,
-      "cooldown_seconds": 6.6,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "wind"
-          }
-        }
-      ],
-      "color_value": 423112,
-      "flavor_text": "The Mad King's banishment tears through the throne room like a gale given teeth, ricocheting off marble pillars and gilded walls until every soul present feels the weight of his displeasure. None are spared the edict; the wind carries it to each corner, indifferent and absolute.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001346"
-      ],
-      "scaling_coefficient": 1.1165
-    },
-    {
-      "id": "skill_001353",
-      "name": "Exile Writ Descends",
-      "composition_mode": "single",
-      "role": "utility",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/wind/control",
-      "energy_cost": 10.5,
-      "cooldown_seconds": 12.7,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "buff_damage",
-          "params": {
-            "percent": 0.11,
-            "duration_seconds": 8.5
-          }
-        },
-        {
-          "name": "silence",
-          "params": {
-            "duration_seconds": 3.4
-          }
-        }
-      ],
-      "color_value": 445969,
-      "flavor_text": "A cold shroud of displaced authority settles over the caster, muffling the court's noise into hollow silence. The decree has been written \u2014 now only the strike remains.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001349"
-      ],
-      "scaling_coefficient": 1.1075
-    },
-    {
       "id": "skill_001354",
       "name": "Exile Writ Gale",
       "composition_mode": "single",
@@ -319,44 +215,6 @@
         "skill_001349"
       ],
       "scaling_coefficient": 1.1178
-    },
-    {
-      "id": "skill_001355",
-      "name": "Exile Writ Descends",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "wind",
-      "seasonal_element": "pall",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
-      "energy_cost": 19.2,
-      "cooldown_seconds": 5.2,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "wind"
-          }
-        },
-        {
-          "name": "knockback",
-          "params": {
-            "distance": 4.9,
-            "stagger_seconds": 0.7
-          }
-        }
-      ],
-      "color_value": 503256,
-      "flavor_text": "The mad king's condemnation takes shape as a shroud of crushing wind, pulling all who stand before the throne into its dark judgment. Those caught within are flung aside like names struck from the royal record.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001351"
-      ],
-      "scaling_coefficient": 1.1288
     },
     {
       "id": "skill_001356",
@@ -468,12 +326,12 @@
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.8017,
-    "convergence_winrate": 0.6033,
+    "actual_winrate": 0.7555555555555554,
+    "convergence_winrate": 0.5111111111111112,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.0509,
+    "converged": true,
+    "final_modifier": 0.26686640625,
     "gauntlet_results": {
       "monster_00217_pack": 1.0,
       "monster_00218_pack": 1.0,
@@ -721,5 +579,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }

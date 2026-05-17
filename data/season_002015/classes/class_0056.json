@@ -372,44 +372,6 @@
       "scaling_coefficient": 1.0997
     },
     {
-      "id": "skill_001330",
-      "name": "Scorched Royal Decree",
-      "composition_mode": "single",
-      "role": "area_damage",
-      "canonical_element": "fire",
-      "seasonal_element": "brand",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
-      "energy_cost": 19.7,
-      "cooldown_seconds": 3.5,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 1500,
-            "element": "fire"
-          }
-        },
-        {
-          "name": "burn",
-          "params": {
-            "tick_damage": 750,
-            "duration_seconds": 3.1
-          }
-        }
-      ],
-      "color_value": 29431,
-      "flavor_text": "The mad king's words leap from tongue to tongue, each courtier branded in turn as the edict burns its way across the hall. Those who receive it carry the mark long after the screaming stops.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001320"
-      ],
-      "scaling_coefficient": 1.0875
-    },
-    {
       "id": "skill_001331",
       "name": "Sovereign Seal of Still Stone",
       "composition_mode": "single",
@@ -482,47 +444,16 @@
         "skill_001326"
       ],
       "scaling_coefficient": 1.1408
-    },
-    {
-      "id": "skill_001333",
-      "name": "Cold Marble Verdict",
-      "composition_mode": "single",
-      "role": "primary_attack",
-      "canonical_element": "earth",
-      "seasonal_element": "marble",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
-      "energy_cost": 8.8,
-      "cooldown_seconds": 1.0,
-      "damage_multiplier": 1.0,
-      "effects": [
-        {
-          "name": "damage",
-          "params": {
-            "magnitude": 625,
-            "element": "earth"
-          }
-        }
-      ],
-      "color_value": 332662,
-      "flavor_text": "The floor answers before the king does \u2014 a pale slab rises and breaks against the accused with the finality of a sealed decree. Wind howls through the throne room as dust settles like forgotten names.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001326"
-      ],
-      "scaling_coefficient": 1.128
     }
   ],
   "balance_metadata": {
     "target_winrate": 0.5,
-    "actual_winrate": 0.9167,
-    "convergence_winrate": 0.8333,
+    "actual_winrate": 0.8722222222222222,
+    "convergence_winrate": 0.7444444444444445,
     "pack_winrate": 1.0,
     "convergence_iterations": 10,
     "converged": false,
-    "final_modifier": 0.0509,
+    "final_modifier": 0.050000878906250004,
     "gauntlet_results": {
       "monster_00217_pack": 1.0,
       "monster_00218_pack": 1.0,
@@ -766,5 +697,6 @@
     "physical": "impact"
   },
   "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1"
+  "grouping_layer_version": "v1.1",
+  "post_process_d10": true
 }
