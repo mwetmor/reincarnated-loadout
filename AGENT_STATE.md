@@ -1,11 +1,54 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-17
-**Last tag:** drax/v0.21-form-bias-stage-3-cipher-consumption (commit 84487ea) — loadout seam; no new loadout tag this session (planning only)
+**Last updated:** 2026-05-18
+**Last tag:** drax/v0.23-d19-sub-phase-a-chierit-extraction-manifest-1 (commit f659c90) — loadout seam
 **Branch:** main
 **Hive-mind mode:** ACTIVE (Phase-1 P1; distributed authority L1 in-seam)
 
 ## Session summary
+
+### D19 Sub-phase A: chierit extraction + vfx-manifest.json + MIGRATION.md (completed 2026-05-18)
+
+**Hive-mode D19 Sub-phase A.** Deliverable 19 VFX library extension — Sub-phase A.
+**Tag:** `drax/v0.23-d19-sub-phase-a-chierit-extraction-manifest-1`
+**Loadout commit:** `f659c90` (MIGRATION.md + data/vfx-manifest.json)
+**Demo commit:** `c5d8a40` (public/assets/chierit/ — 4,211 files, 10 character packs)
+**Hive log entries:** STATE start, milestone x2, HANDOFF to jack-ryan (WP-4a close), QUESTION to star-lord
+
+**What shipped:**
+
+1. **Chierit extraction** (`reincarnated-demo/public/assets/chierit/`):
+   - 10 ZIPs extracted from `Elementals_bundle/` to `chierit/<character_slug>/`
+   - Path convention: normalized lowercase slug; vendor-original internal structure preserved
+   - 3,841 PNGs + 357 GIFs; all 10 packs registered in vfx-manifest.json
+   - Source ZIPs retained at `Elementals_bundle/` (originals preserved)
+
+2. **`data/vfx-manifest.json`** — new cross-seam VFX data contract (schema v1.0):
+   - 7 substrates: fire/water/earth/wind/lightning/holy/shadow
+   - Per-substrate: grouping_label, primary_spell_pack, geometry_animation_map, entity_packs, thumbnail_frame, acquisition_status, combat_vfx_ready
+   - geometry_animation_map keys match substrate-identity-declarations geometry_affinities names
+   - Frostwindz: register_risk + permitted_uses/denied_uses per gandalf DECISION [2026-05-18 00:00Z]
+   - Combat VFX ready: fire/water/earth(stone)/wind/lightning
+   - NOT READY: holy (entity-only; no spell VFX), shadow (void_pool only; tendril/creep absent)
+
+3. **`MIGRATION.md`** — new file per jack-ryan WP-4a:
+   - First entry: §v1.0-vfx-manifest
+   - Full schema documentation + consumer responsibilities per seam
+   - geometry_animation_map key constraint documented (load-bearing for D15/D17)
+   - Chierit extraction path convention table
+   - Frostwindz conditional-accept disposition + TODO(drax) guard
+   - Schema evolution notes for Sub-phases B + C
+
+**Smoke results:**
+- vfx-manifest.json: parses clean; all 7 substrates; 5 combat-ready; grouping_labels confirmed; Frostwindz risk documented
+- loadout build: 687 modules, 0 TS errors (unchanged)
+- chierit: 10 directories; 3,841 PNGs + 357 GIFs verified
+
+**Cross-seam observations:**
+- Star-lord D15/D17/D22: geometry_animation_map key naming is now committed. QUESTION to star-lord in hive log re: prompt-cipher schema alignment with manifest keys.
+- Rocket D17: thumbnail_frame.file paths ready for Court browser substrate thumbnails.
+- Jack-ryan WP-4a: MIGRATION.md authored. WP-4a should close.
+- TODO(drax): Frostwindz Deathbringer — do NOT wire to in-combat VFX per gandalf DECISION. UI thumbnails only.
 
 ### D19-vfx-library-extension-plan (completed 2026-05-17 — PLANNING ONLY; no code changes)
 
@@ -264,8 +307,10 @@ All 6 surfaces from dispatch `2026-05-16-drax-encounters-page-explanatory-conten
 **Phase-1 P1 hive-mode active. Next loadout-seam tasks:**
 
 Priority 1 (DISPATCHABLE NOW — no Matt acquisitions required):
-- **D19 Sub-phase A:** Extract chierit Elementals ZIPs (10 packs in `Elementals_bundle/`); author `reincarnated-demo/public/assets/vfx-manifest.json` per schema in d19-vfx-library-extension-plan.md § 4.4
-- Smoke-test: demo launches without console errors using new manifest reference (or demo does not reference manifest yet — the manifest is authored in advance of wiring; no demo code change in Sub-phase A)
+- **D19 Sub-phase A: COMPLETE** (tag: `drax/v0.23-d19-sub-phase-a-chierit-extraction-manifest-1`)
+
+Priority 1 next (BLOCKED on Matt acquisitions):
+- **D19 Sub-phase B:** Intake CraftPix/Fellor/Frostwindz packs when Matt downloads; register verification on Frostwindz (expected RETRO — Frostwindz DENIED for in-combat per gandalf); update vfx-manifest.json acquisition_status fields from `pending-matt` to `on-disk`; update geometry_animation_map entries for earth organic + crystal sub-registers
 
 Priority 2 (BLOCKED on Matt acquisitions + holy gap resolution):
 - **D19 Sub-phase B:** Intake CraftPix/Fellor/Frostwindz packs when Matt downloads; register verification on Frostwindz (likely RETRO); update vfx-manifest.json acquisition_status fields
