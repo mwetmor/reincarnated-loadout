@@ -1,11 +1,65 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-17
-**Last tag:** drax/v1.0-d17-court-browser-surface-1 — loadout seam (significant version bump; D17 milestone)
+**Last tag:** drax/v1.1-loadout-website-refresh-new-seasons-and-analytics-1 — loadout seam
 **Branch:** main
 **Hive-mind mode:** ACTIVE (Phase-1 P1; distributed authority L1 in-seam)
 
 ## Session summary
+
+### v1.1 Website refresh — new seasons + seasonal analytics (completed 2026-05-17)
+
+**Dispatch:** `2026-05-17-drax-loadout-website-refresh-new-seasons-and-analytics.md` — COMPLETE
+**Tag:** `drax/v1.1-loadout-website-refresh-new-seasons-and-analytics-1`
+**Source:** `reincarnated-engine/output/standard-demo-regen-2026-05-17/` (5 seasons 002011-002015)
+
+**Data layer:** 11 seasons total / 114 classes now in `data/`
+- Historical (canonical-4): season_001001, 001002, 001003, 001004, 001005
+- Canonical-7 (lightning/holy/shadow added): season_002011, 002012, 002013, 002014, 002015
+- Yomi (gear-pool season): season_002328
+- `useSeasonData` auto-discovers via `import.meta.glob` — no hook changes needed beyond `selectableSeasons` addition
+
+**Analytics refresh (`src/pages/Analytics.tsx` + hooks + 2 new components):**
+
+1. **SeasonSummaryCards** (`src/components/analytics/SeasonSummaryCards.tsx`) — per-season card grid:
+   - Three groups: Historical / Canonical-7 / Yomi
+   - Per card: label, C7 badge, PASS/FAIL validation, theme element (colored dot), anchor name, class count, convergence failures, avg modifier, substrate chips (* = new canonical-7)
+   - Canonical-7 new-substrate callout per card when lightning/holy/shadow present
+
+2. **SubstrateHeatmap** (`src/components/analytics/SubstrateHeatmap.tsx`) — cross-season substrate count table:
+   - Rows = seasons (C7 seasons left-border highlighted, violet C7 label)
+   - Columns = all substrates (fire/water/earth/wind/lightning/holy/shadow/physical)
+   - Cell intensity scales to max observed count; color-coded by substrate hue
+   - Columns marked * for canonical-7 substrates
+
+3. **useAnalytics additions:**
+   - `SeasonSummaryCard`, `SubstrateHeatmapRow` types
+   - `seasonSummaryCards`, `substrateHeatmap`, `allSubstrates`, `newSubstrateSet` fields
+   - `isCanonical7Season()` helper identifies 002011-002015
+
+4. **Analytics.tsx:**
+   - New canonical-7 callout banner (violet, above summary cards)
+   - `NewSubstratesBadge` in summary strip (shows "lightning · holy · shadow")
+   - SeasonSummaryCards + SubstrateHeatmap inserted above existing Tier 1 charts
+   - Existing 9 charts fully preserved
+
+5. **Season pickers (Loadout.tsx + Sample.tsx):**
+   - `selectableSeasons` added to `useSeasonData` return
+   - Dropdown at page top; class resets on season change
+   - Works across all 11 real seasons (sample-season alias excluded from picker)
+
+6. **constants.ts extensions:**
+   - `ELEMENT_COLORS`: added lightning (yellow), holy (violet), shadow (purple)
+   - `ARCHETYPE_LABEL`: added lightning_mage, lightning_controller, holy_caster, holy_controller, shadow_mage, shadow_controller, physical_grappler
+
+**Smoke results:**
+- `npm run build`: clean (0 TypeScript errors, 760 modules)
+- Bundle size: 2,315 KB minified / 469 KB gzip — grew ~1.5 KB from 51 new class JSONs (within expectations)
+- CourtBrowser.tsx: untouched; court.json bootstrap path intact
+- Encounters.tsx: untouched (fixed to season_001005 encounter analytics data)
+- Vercel deploy size: OBSERVATION — pre-existing chunk warning (Recharts), no new issue
+
+**Note on season_001005:** Was absent from loadout data (only 001001-004 were present). Sourced from `reincarnated-engine/seasons/season_001005/` (not the standard-demo-regen-2026-05-17 staging dir). Now present alongside the other historical seasons.
 
 ### D17 Court of Forms browser surface (completed 2026-05-17)
 
@@ -438,6 +492,9 @@ All 6 surfaces from dispatch `2026-05-16-drax-encounters-page-explanatory-conten
 ## Next session pick-up
 
 **Phase-1 P1 hive-mode active. Next loadout-seam tasks:**
+
+Priority 0 (COMPLETE — this session):
+- **v1.1 website refresh:** 10 new seasons exposed (001005 + 002011-002015), analytics refreshed, season pickers live. Tag: `drax/v1.1-loadout-website-refresh-new-seasons-and-analytics-1`
 
 Priority 1 (READY — D17 Court browser COMPLETE):
 - **D17 Court browser: COMPLETE** (tag: `drax/v1.0-d17-court-browser-surface-1`)
