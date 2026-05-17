@@ -9,6 +9,7 @@
   "range_profile": "medium",
   "dominant_element": "water",
   "seasonal_dominant_element": "brine",
+  "is_act_boss": false,
   "color_palette": [
     690947,
     593152,
@@ -35,12 +36,10 @@
     {
       "id": "skill_000905",
       "name": "Brine Holds Fast",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/water/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 24.2,
       "cooldown_seconds": 12.9,
       "damage_multiplier": 1.0,
@@ -60,23 +59,15 @@
           }
         }
       ],
-      "color_value": 690947,
-      "flavor_text": "The salt remembers what the stone forgot \u2014 it closes around you like a sealed cask, bitter and unyielding. For a breath, nothing finds you where the old halls kept their silence.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0685
+      "flavor_text": "The salt remembers what the stone forgot \u2014 it closes around you like a sealed cask, bitter and unyielding. For a breath, nothing finds you where the old halls kept their silence."
     },
     {
       "id": "skill_000906",
       "name": "Brine Seep Stillness",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/water/control",
+      "geometry_type": "aura",
       "energy_cost": 15.9,
       "cooldown_seconds": 12.4,
       "damage_multiplier": 1.0,
@@ -89,23 +80,15 @@
           }
         }
       ],
-      "color_value": 593152,
-      "flavor_text": "Salt breathes outward from the empty forge rooms, thick and cold, settling into the joints of anything that moves. The halls have been still for a long time \u2014 now, so are you.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.05
+      "flavor_text": "Salt breathes outward from the empty forge rooms, thick and cold, settling into the joints of anything that moves. The halls have been still for a long time \u2014 now, so are you."
     },
     {
       "id": "skill_000907",
       "name": "Damp Creep Brine",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/water/control",
+      "geometry_type": "aura",
       "energy_cost": 24.3,
       "cooldown_seconds": 18.8,
       "damage_multiplier": 1.0,
@@ -118,23 +101,15 @@
           }
         }
       ],
-      "color_value": 684534,
-      "flavor_text": "Salt seeps through the old stone floors in a slow, spreading ring, drawing the cold of abandoned depths into every joint and sinew. What moves here moves like water remembering it has nowhere left to go.",
-      "tier": 1,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0724
+      "flavor_text": "Salt seeps through the old stone floors in a slow, spreading ring, drawing the cold of abandoned depths into every joint and sinew. What moves here moves like water remembering it has nowhere left to go."
     },
     {
       "id": "skill_000908",
       "name": "Brine Seam Slip",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/water/mobility",
+      "geometry_type": "blink",
       "energy_cost": 13.0,
       "cooldown_seconds": 11.7,
       "damage_multiplier": 1.0,
@@ -147,25 +122,15 @@
           }
         }
       ],
-      "color_value": 596185,
-      "flavor_text": "The dwarf-carved salt veins remember every passage \u2014 step between them and the cold preserves you mid-transit, slowing whatever reaches for you in the crossing. The empty halls hold their breath as you arrive elsewhere.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000905"
-      ],
-      "scaling_coefficient": 1.1081
+      "flavor_text": "The dwarf-carved salt veins remember every passage \u2014 step between them and the cold preserves you mid-transit, slowing whatever reaches for you in the crossing. The empty halls hold their breath as you arrive elsewhere."
     },
     {
       "id": "skill_000909",
       "name": "Damp Creep Deluge",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "geometry_type": "circle",
       "energy_cost": 27.6,
       "cooldown_seconds": 3.9,
       "damage_multiplier": 1.0,
@@ -185,25 +150,15 @@
           }
         }
       ],
-      "color_value": 628722,
-      "flavor_text": "Brine seeps up through the cracked flagstones, blooming outward in a slow, salt-heavy tide that remembers every corridor it ever filled. The cold it carries is not the cold of weather \u2014 it is the cold of abandonment, still and preserving.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000906"
-      ],
-      "scaling_coefficient": 1.1104
+      "flavor_text": "Brine seeps up through the cracked flagstones, blooming outward in a slow, salt-heavy tide that remembers every corridor it ever filled. The cold it carries is not the cold of weather \u2014 it is the cold of abandonment, still and preserving."
     },
     {
       "id": "skill_000910",
       "name": "Collapse Draft Remembrance",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "wind",
       "seasonal_element": "pall",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "geometry_type": "vortex_pull",
       "energy_cost": 19.6,
       "cooldown_seconds": 5.0,
       "damage_multiplier": 1.0,
@@ -223,25 +178,15 @@
           }
         }
       ],
-      "color_value": 470006,
-      "flavor_text": "Where the halls caved and the forges went cold, the air still moves \u2014 a last exhale from stone lungs, dragging the living toward the dark. It does not stop until something breaks.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000907"
-      ],
-      "scaling_coefficient": 1.1133
+      "flavor_text": "Where the halls caved and the forges went cold, the air still moves \u2014 a last exhale from stone lungs, dragging the living toward the dark. It does not stop until something breaks."
     },
     {
       "id": "skill_000911",
       "name": "Brine-Soaked Seam",
-      "composition_mode": "single",
       "role": "utility",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/water/utility",
+      "geometry_type": "self_buff",
       "energy_cost": 15.9,
       "cooldown_seconds": 12.8,
       "damage_multiplier": 1.0,
@@ -254,25 +199,15 @@
           }
         }
       ],
-      "color_value": 599400,
-      "flavor_text": "Salt finds every crack the dwarves left behind, biting into stone and sinew alike. What it preserves, it sharpens.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000908"
-      ],
-      "scaling_coefficient": 1.1666
+      "flavor_text": "Salt finds every crack the dwarves left behind, biting into stone and sinew alike. What it preserves, it sharpens."
     },
     {
       "id": "skill_000913",
       "name": "Salt Seam Settling",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/water/control",
+      "geometry_type": "circle",
       "energy_cost": 16.5,
       "cooldown_seconds": 4.6,
       "damage_multiplier": 1.0,
@@ -285,25 +220,15 @@
           }
         }
       ],
-      "color_value": 696583,
-      "flavor_text": "Brine finds the old cracks in the stone floor, spreading slow and patient through every forgotten groove. What it touches, it keeps \u2014 cold, stiff, and tasting of something that will not wash out.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000909"
-      ],
-      "scaling_coefficient": 1.1312
+      "flavor_text": "Brine finds the old cracks in the stone floor, spreading slow and patient through every forgotten groove. What it touches, it keeps \u2014 cold, stiff, and tasting of something that will not wash out."
     },
     {
       "id": "skill_000914",
       "name": "Brine Seal Stillness",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/water/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 16.8,
       "cooldown_seconds": 13.6,
       "damage_multiplier": 1.0,
@@ -316,25 +241,15 @@
           }
         }
       ],
-      "color_value": 643737,
-      "flavor_text": "The salt remembers every crack in the stone, every beam that held long after the hands that placed it were gone. For a breath, the body becomes load-bearing \u2014 preserved, immovable, tasting of the deep dark water that filled these halls long before the last torch went out.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000910"
-      ],
-      "scaling_coefficient": 1.1461
+      "flavor_text": "The salt remembers every crack in the stone, every beam that held long after the hands that placed it were gone. For a breath, the body becomes load-bearing \u2014 preserved, immovable, tasting of the deep dark water that filled these halls long before the last torch went out."
     },
     {
       "id": "skill_000915",
       "name": "Brine Seam Stillness",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/water/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 17.1,
       "cooldown_seconds": 14.9,
       "damage_multiplier": 1.0,
@@ -361,25 +276,15 @@
           }
         }
       ],
-      "color_value": 581605,
-      "flavor_text": "Salt finds every crack before the stone admits it is broken \u2014 the body hardens the same way, drinking the bitter deep. In the drowned silence of abandoned halls, pressure becomes armor.",
-      "tier": 4,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000911"
-      ],
-      "scaling_coefficient": 1.2445
+      "flavor_text": "Salt finds every crack before the stone admits it is broken \u2014 the body hardens the same way, drinking the bitter deep. In the drowned silence of abandoned halls, pressure becomes armor."
     },
     {
       "id": "skill_000917",
       "name": "Brine Seam Burst",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "geometry_type": "circle",
       "energy_cost": 19.0,
       "cooldown_seconds": 5.2,
       "damage_multiplier": 1.0,
@@ -392,273 +297,9 @@
           }
         }
       ],
-      "color_value": 685340,
-      "flavor_text": "Salt water finds every crack the miners left behind, surging up through forgotten seams in a sudden, punishing bloom. The halls remember the flood even when the dwarves do not.",
-      "tier": 4,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000914"
-      ],
-      "scaling_coefficient": 1.1955
+      "flavor_text": "Salt water finds every crack the miners left behind, surging up through forgotten seams in a sudden, punishing bloom. The halls remember the flood even when the dwarves do not."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.7388888888888889,
-    "convergence_winrate": 0.4777777777777778,
-    "pack_winrate": 0.9983,
-    "convergence_iterations": 10,
-    "converged": true,
-    "final_modifier": 0.05,
-    "gauntlet_results": {
-      "monster_00109_pack": 1.0,
-      "monster_00110_pack": 0.99,
-      "monster_00111_pack": 1.0,
-      "monster_00112_pack": 1.0,
-      "monster_00113_pack": 1.0,
-      "monster_00114_pack": 1.0,
-      "monster_00121": 1.0,
-      "monster_00122": 0.97,
-      "monster_00141": 1.0,
-      "monster_00142": 0.6,
-      "monster_00149": 0.27,
-      "monster_00151": 0.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.05
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.64,
-      "overall_winrate": 0.8192,
-      "pack_winrate": 0.9983,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.05,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00109_pack": 1.0,
-        "monster_00110_pack": 0.99,
-        "monster_00111_pack": 1.0,
-        "monster_00112_pack": 1.0,
-        "monster_00113_pack": 1.0,
-        "monster_00114_pack": 1.0,
-        "monster_00121": 1.0,
-        "monster_00122": 0.97,
-        "monster_00141": 1.0,
-        "monster_00142": 0.6,
-        "monster_00149": 0.27,
-        "monster_00151": 0.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.564,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00153": 0.73,
-        "monster_00154": 0.05,
-        "monster_00155": 0.61,
-        "monster_00156": 0.45,
-        "monster_00157": 0.98
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.826,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00158": 0.83,
-        "monster_00159": 0.56,
-        "monster_00160": 0.74,
-        "monster_00161": 1.0,
-        "monster_00162": 1.0
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.555,
-      "p75": 0.5717,
-      "p95": 0.57,
-      "p99": 0.5783,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.28,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.44,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.34,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_000916",
-          "swapped_from_role": "area_damage",
-          "swapped_to_role": "sustain",
-          "swapped_to_id": "skill_000967",
-          "role": "area_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8242,
-        "after_winrate": 0.7958,
-        "delta": -0.0283,
-        "accepted": true,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_000917",
-          "swapped_from_role": "area_damage",
-          "swapped_to_role": "sustain",
-          "swapped_to_id": "skill_000968",
-          "role": "area_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 2,
-        "before_winrate": 0.7958,
-        "after_winrate": 0.7958,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "skill_id": "skill_000912",
-          "role": "area_damage",
-          "from_geometry": "ground_targeted_circle",
-          "to_geometry": "ring",
-          "rationale": "geometry_rebias_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7958,
-        "after_winrate": 0.7958,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "skill_id": "skill_000909",
-          "role": "area_damage",
-          "param": "cooldown_seconds",
-          "from_cd": 3.9,
-          "to_cd": 4.29,
-          "from_cost": 27.6,
-          "to_cost": 30.36,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7958,
-        "after_winrate": 0.7958,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "primary_loop_reverted",
-    "composition_pre_modifier_wr": 0.9333,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [
-      {
-        "variant": 1,
-        "from_element": "water",
-        "to_element": "wind",
-        "n_swapped": 3,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      }
-    ],
-    "secondary_loop_outcome": "secondary_reverted",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.05,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.05
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "control",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_567725",
@@ -1058,5 +699,56 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7388888888888889,
+    "convergence_winrate": 0.4777777777777778,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 1,
+    "converged": true,
+    "final_modifier": 0.05,
+    "gauntlet_results": {
+      "monster_00109_pack": 1.0,
+      "monster_00110_pack": 1.0,
+      "monster_00111_pack": 1.0,
+      "monster_00112_pack": 1.0,
+      "monster_00113_pack": 1.0,
+      "monster_00114_pack": 1.0,
+      "monster_00121": 1.0,
+      "monster_00122": 0.7333,
+      "monster_00141": 1.0,
+      "monster_00142": 0.1333,
+      "monster_00149": 0.0,
+      "monster_00151": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 1
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 13,
+    "final_skill_count": 11,
+    "skills_dropped_count": 2,
+    "skills_dropped": [
+      "skill_000912",
+      "skill_000916"
+    ],
+    "skill_count_drops": [
+      "skill_000912",
+      "skill_000916"
+    ],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 11,
+    "element_ceiling": 2
   }
 }

@@ -9,6 +9,7 @@
   "range_profile": "medium",
   "dominant_element": "fire",
   "seasonal_dominant_element": "pitch",
+  "is_act_boss": false,
   "color_palette": [
     25298,
     55913,
@@ -33,12 +34,10 @@
     {
       "id": "skill_000214",
       "name": "Contraband Ignition",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 14.4,
       "cooldown_seconds": 7.8,
       "damage_multiplier": 1.0,
@@ -51,23 +50,15 @@
           }
         }
       ],
-      "color_value": 25298,
-      "flavor_text": "Pitch seeps through the cracks in the wall's foundation, pooling black and hungry where no inspector dares to look. What was smuggled through now burns from underneath, patient and absolute.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0703
+      "flavor_text": "Pitch seeps through the cracks in the wall's foundation, pooling black and hungry where no inspector dares to look. What was smuggled through now burns from underneath, patient and absolute."
     },
     {
       "id": "skill_000215",
       "name": "Contraband Ignition",
-      "composition_mode": "single",
       "role": "primary_attack",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "multi_projectile",
       "energy_cost": 9.7,
       "cooldown_seconds": 0.3,
       "damage_multiplier": 1.0,
@@ -80,23 +71,15 @@
           }
         }
       ],
-      "color_value": 55913,
-      "flavor_text": "A bolt of smuggled fire, black and reeking of pitch, punches through at the checkpoint where nothing is supposed to pass. The Wall remembers every crossing.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0647
+      "flavor_text": "A bolt of smuggled fire, black and reeking of pitch, punches through at the checkpoint where nothing is supposed to pass. The Wall remembers every crossing."
     },
     {
       "id": "skill_000216",
       "name": "Smuggled Transit Blink",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 19.6,
       "cooldown_seconds": 14.8,
       "damage_multiplier": 1.0,
@@ -123,23 +106,15 @@
           }
         }
       ],
-      "color_value": 16665,
-      "flavor_text": "A body moves through the Wall like contraband through a loose stone \u2014 unseen, untaxed, arriving whole on the other side. The pitch clings to the air where you stood, a decoy shadow hardening into a shield no inspector dares touch.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0579
+      "flavor_text": "A body moves through the Wall like contraband through a loose stone \u2014 unseen, untaxed, arriving whole on the other side. The pitch clings to the air where you stood, a decoy shadow hardening into a shield no inspector dares touch."
     },
     {
       "id": "skill_000217",
       "name": "Contraband Ignition Sweep",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/fire/area_damage",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 16.7,
       "cooldown_seconds": 7.0,
       "damage_multiplier": 1.0,
@@ -159,23 +134,15 @@
           }
         }
       ],
-      "color_value": 45827,
-      "flavor_text": "Pitch smuggled through the wall's blind spots ignites in a single breathless moment, rolling forward in a blackened fan of fire and clinging smoke. What it touches, it keeps burning \u2014 slow and deliberate, like a secret that refuses to stay buried.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0713
+      "flavor_text": "Pitch smuggled through the wall's blind spots ignites in a single breathless moment, rolling forward in a blackened fan of fire and clinging smoke. What it touches, it keeps burning \u2014 slow and deliberate, like a secret that refuses to stay buried."
     },
     {
       "id": "skill_000218",
       "name": "Contraband Ignition Surge",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/fire/area_damage",
+      "geometry_type": "single_target",
       "energy_cost": 38.5,
       "cooldown_seconds": 6.6,
       "damage_multiplier": 1.0,
@@ -188,25 +155,15 @@
           }
         }
       ],
-      "color_value": 81474,
-      "flavor_text": "Pitch smuggled through the Wall's blind spots erupts outward in a spreading fan of black fire, consuming everything the checkpoint was built to stop. The heat reads as declared, but the damage is anything but.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000214"
-      ],
-      "scaling_coefficient": 1.0999
+      "flavor_text": "Pitch smuggled through the Wall's blind spots erupts outward in a spreading fan of black fire, consuming everything the checkpoint was built to stop. The heat reads as declared, but the damage is anything but."
     },
     {
       "id": "skill_000220",
       "name": "Contraband Ignition Ring",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 23.6,
       "cooldown_seconds": 6.3,
       "damage_multiplier": 1.0,
@@ -226,25 +183,15 @@
           }
         }
       ],
-      "color_value": 78516,
-      "flavor_text": "A circle of smuggled pitch erupts at the wall's edge, black and hungry, marking everything within its radius as forfeit. The tar clings and burns long after the border has been crossed.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000216"
-      ],
-      "scaling_coefficient": 1.106
+      "flavor_text": "A circle of smuggled pitch erupts at the wall's edge, black and hungry, marking everything within its radius as forfeit. The tar clings and burns long after the border has been crossed."
     },
     {
       "id": "skill_000221",
       "name": "Contraband Ignition Run",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 26.5,
       "cooldown_seconds": 4.2,
       "damage_multiplier": 1.0,
@@ -257,25 +204,15 @@
           }
         }
       ],
-      "color_value": 14558,
-      "flavor_text": "Pitch leaps from body to body along the wall's blind corridor, each contact erupting in a chain of fire that no checkpoint was built to stop. The border holds nothing when the smuggled flame already knows the route.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000216"
-      ],
-      "scaling_coefficient": 1.1018
+      "flavor_text": "Pitch leaps from body to body along the wall's blind corridor, each contact erupting in a chain of fire that no checkpoint was built to stop. The border holds nothing when the smuggled flame already knows the route."
     },
     {
       "id": "skill_000222",
       "name": "Contraband Ignition Totem",
-      "composition_mode": "single",
       "role": "utility",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/utility",
+      "geometry_type": "self_buff",
       "energy_cost": 13.8,
       "cooldown_seconds": 17.2,
       "damage_multiplier": 1.0,
@@ -295,25 +232,15 @@
           }
         }
       ],
-      "color_value": 79461,
-      "flavor_text": "A column of pitch-black resin erupts from the earth at the border's edge, seething with smuggled energy that sharpens the mind and replenishes what the crossing cost. Those who pass through its heat leave faster and hungrier than they arrived.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 3,
-      "parent_skill_ids": [
-        "skill_000216"
-      ],
-      "scaling_coefficient": 1.1152
+      "flavor_text": "A column of pitch-black resin erupts from the earth at the border's edge, seething with smuggled energy that sharpens the mind and replenishes what the crossing cost. Those who pass through its heat leave faster and hungrier than they arrived."
     },
     {
       "id": "skill_000223",
       "name": "Smuggled Transit Pitch",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/fire/mobility",
+      "geometry_type": "teleport",
       "energy_cost": 11.7,
       "cooldown_seconds": 11.4,
       "damage_multiplier": 1.0,
@@ -326,25 +253,15 @@
           }
         }
       ],
-      "color_value": 81098,
-      "flavor_text": "A runner learns to move like contraband \u2014 low, black, and unseen until the moment of crossing. The pitch clings where you were, burning a false trail for those who would hold the line.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000218"
-      ],
-      "scaling_coefficient": 1.1314
+      "flavor_text": "A runner learns to move like contraband \u2014 low, black, and unseen until the moment of crossing. The pitch clings where you were, burning a false trail for those who would hold the line."
     },
     {
       "id": "skill_000224",
       "name": "Checkpoint Hold",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "fire",
       "seasonal_element": "pitch",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 24.1,
       "cooldown_seconds": 12.7,
       "damage_multiplier": 1.0,
@@ -364,237 +281,9 @@
           }
         }
       ],
-      "color_value": 47525,
-      "flavor_text": "Pitch seals the crossing point like a stamped denial, thick and absolute \u2014 nothing passes that has not been cleared. The body learns to slip sideways through scrutiny, moving where the wall's gaze does not fall.",
-      "tier": 4,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.2261
+      "flavor_text": "Pitch seals the crossing point like a stamped denial, thick and absolute \u2014 nothing passes that has not been cleared. The body learns to slip sideways through scrutiny, moving where the wall's gaze does not fall."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.8444444444444446,
-    "convergence_winrate": 0.6888888888888888,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.050000878906250004,
-    "gauntlet_results": {
-      "monster_00001_pack": 1.0,
-      "monster_00002_pack": 1.0,
-      "monster_00003_pack": 1.0,
-      "monster_00004_pack": 1.0,
-      "monster_00005_pack": 1.0,
-      "monster_00006_pack": 1.0,
-      "monster_00013": 1.0,
-      "monster_00014": 1.0,
-      "monster_00033": 1.0,
-      "monster_00034": 0.82,
-      "monster_00041": 0.0,
-      "monster_00043": 0.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.6367,
-      "overall_winrate": 0.8183,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00001_pack": 1.0,
-        "monster_00002_pack": 1.0,
-        "monster_00003_pack": 1.0,
-        "monster_00004_pack": 1.0,
-        "monster_00005_pack": 1.0,
-        "monster_00006_pack": 1.0,
-        "monster_00013": 1.0,
-        "monster_00014": 1.0,
-        "monster_00033": 1.0,
-        "monster_00034": 0.82,
-        "monster_00041": 0.0,
-        "monster_00043": 0.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.774,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00045": 1.0,
-        "monster_00046": 0.91,
-        "monster_00047": 0.96,
-        "monster_00048": 0.87,
-        "monster_00049": 0.13
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.988,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00050": 0.97,
-        "monster_00051": 0.99,
-        "monster_00052": 0.98,
-        "monster_00053": 1.0,
-        "monster_00054": 1.0
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.69,
-      "p75": 0.7017,
-      "p95": 0.7083,
-      "p99": 0.7183,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.46,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.42,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.4,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_000220",
-          "swapped_from_role": "area_damage",
-          "swapped_to_role": "utility",
-          "swapped_to_id": "skill_000273",
-          "role": "area_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8183,
-        "after_winrate": 0.8183,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "geometry_unchanged"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8183,
-        "after_winrate": 0.8183,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "primary_attack",
-        "lever_specifics": {
-          "skill_id": "skill_000215",
-          "role": "primary_attack",
-          "param": "cooldown_seconds",
-          "from_cd": 0.3,
-          "to_cd": 0.33,
-          "from_cost": 9.7,
-          "to_cost": 10.67,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8183,
-        "after_winrate": 0.8183,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "failed_regenerate",
-    "composition_pre_modifier_wr": 0.9975,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [],
-    "secondary_loop_outcome": "secondary_skipped_pure_element",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.0509,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "burst",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_192401",
@@ -987,5 +676,56 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.8444444444444446,
+    "convergence_winrate": 0.6888888888888888,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.050000878906250004,
+    "gauntlet_results": {
+      "monster_00001_pack": 1.0,
+      "monster_00002_pack": 1.0,
+      "monster_00003_pack": 1.0,
+      "monster_00004_pack": 1.0,
+      "monster_00005_pack": 1.0,
+      "monster_00006_pack": 1.0,
+      "monster_00013": 1.0,
+      "monster_00014": 1.0,
+      "monster_00033": 1.0,
+      "monster_00034": 0.8,
+      "monster_00041": 0.3333,
+      "monster_00043": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 10,
+    "modifier_flag_tier": "floor_over_band",
+    "estimated_gap": 0.1889
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 11,
+    "final_skill_count": 10,
+    "skills_dropped_count": 1,
+    "skills_dropped": [
+      "skill_000219"
+    ],
+    "skill_count_drops": [
+      "skill_000219"
+    ],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 10,
+    "element_ceiling": 2
   }
 }

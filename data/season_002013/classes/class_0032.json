@@ -9,6 +9,7 @@
   "range_profile": "medium",
   "dominant_element": "lightning",
   "seasonal_dominant_element": null,
+  "is_act_boss": false,
   "color_palette": [
     566035,
     520873,
@@ -35,12 +36,10 @@
     {
       "id": "skill_000661",
       "name": "Shaft Echo Pull",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "ring",
       "energy_cost": 16.4,
       "cooldown_seconds": 17.5,
       "damage_multiplier": 1.0,
@@ -52,23 +51,15 @@
           }
         }
       ],
-      "color_value": 566035,
-      "flavor_text": "Water finds the old tunnels first, rushing through forgotten shafts in a spiral that drags everything toward the dark center. For a breath, the walls remember the sound of picks \u2014 and everything standing nearby forgets how to stand.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0533
+      "flavor_text": "Water finds the old tunnels first, rushing through forgotten shafts in a spiral that drags everything toward the dark center. For a breath, the walls remember the sound of picks \u2014 and everything standing nearby forgets how to stand."
     },
     {
       "id": "skill_000662",
       "name": "Shaft Echo Ring",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "ring",
       "energy_cost": 21.5,
       "cooldown_seconds": 15.2,
       "damage_multiplier": 1.0,
@@ -80,23 +71,15 @@
           }
         }
       ],
-      "color_value": 520873,
-      "flavor_text": "Water finds the old drill-holes first, pooling in rings where the stone remembers pressure. The vibration travels outward through flooded corridors, locking limbs in a tremor the rock has held for centuries.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0537
+      "flavor_text": "Water finds the old drill-holes first, pooling in rings where the stone remembers pressure. The vibration travels outward through flooded corridors, locking limbs in a tremor the rock has held for centuries."
     },
     {
       "id": "skill_000663",
       "name": "Shaft Echo Slip",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "teleport",
       "energy_cost": 14.7,
       "cooldown_seconds": 7.5,
       "damage_multiplier": 1.0,
@@ -109,23 +92,15 @@
           }
         }
       ],
-      "color_value": 569251,
-      "flavor_text": "The old tunnels remember every footfall, and the water that weeps through the stone knows how to move without being seen. You borrow that knowledge, sliding through the dark where the sound goes but the body does not.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0572
+      "flavor_text": "The old tunnels remember every footfall, and the water that weeps through the stone knows how to move without being seen. You borrow that knowledge, sliding through the dark where the sound goes but the body does not."
     },
     {
       "id": "skill_000664",
       "name": "Shaft Echo Rising",
-      "composition_mode": "single",
       "role": "utility",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "self_buff",
       "energy_cost": 12.5,
       "cooldown_seconds": 12.1,
       "damage_multiplier": 1.0,
@@ -138,23 +113,15 @@
           }
         }
       ],
-      "color_value": 527392,
-      "flavor_text": "Deep in the drowned corridors where hammers no longer fall, the silence has learned to carry force. You borrow that pressure \u2014 the memory of ten thousand strikes still ringing in flooded stone.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0536
+      "flavor_text": "Deep in the drowned corridors where hammers no longer fall, the silence has learned to carry force. You borrow that pressure \u2014 the memory of ten thousand strikes still ringing in flooded stone."
     },
     {
       "id": "skill_000665",
       "name": "Shaft Echo Surge",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "chain_lightning",
       "energy_cost": 26.2,
       "cooldown_seconds": 6.0,
       "damage_multiplier": 1.0,
@@ -167,25 +134,15 @@
           }
         }
       ],
-      "color_value": 546935,
-      "flavor_text": "A forgotten current finds the old ore veins, leaping shaft to shaft through flooded corridors no living hand has touched. The halls remember the shape of thunder better than they remember warmth.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000661"
-      ],
-      "scaling_coefficient": 1.1167
+      "flavor_text": "A forgotten current finds the old ore veins, leaping shaft to shaft through flooded corridors no living hand has touched. The halls remember the shape of thunder better than they remember warmth."
     },
     {
       "id": "skill_000667",
       "name": "Shaft Echo Surge",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "teleport",
       "energy_cost": 14.8,
       "cooldown_seconds": 8.7,
       "damage_multiplier": 1.0,
@@ -197,25 +154,15 @@
           }
         }
       ],
-      "color_value": 559492,
-      "flavor_text": "Water finds the forgotten seams of the rock and moves through them before the stone can object. The shock that follows is the hall remembering what it felt like to be full.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000663"
-      ],
-      "scaling_coefficient": 1.0978
+      "flavor_text": "Water finds the forgotten seams of the rock and moves through them before the stone can object. The shock that follows is the hall remembering what it felt like to be full."
     },
     {
       "id": "skill_000668",
       "name": "Shaft Echo Seep",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "circle",
       "energy_cost": 14.8,
       "cooldown_seconds": 7.1,
       "damage_multiplier": 1.0,
@@ -227,25 +174,15 @@
           }
         }
       ],
-      "color_value": 552934,
-      "flavor_text": "Water finds the old drill-paths, tracing every forgotten bore with a pressure that hums against stone and bone alike. The halls remember the rhythm of picks, and now that rhythm answers back.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000663"
-      ],
-      "scaling_coefficient": 1.1081
+      "flavor_text": "Water finds the old drill-paths, tracing every forgotten bore with a pressure that hums against stone and bone alike. The halls remember the rhythm of picks, and now that rhythm answers back."
     },
     {
       "id": "skill_000669",
       "name": "Still Shaft Holding",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "self_buff",
       "energy_cost": 18.2,
       "cooldown_seconds": 8.9,
       "damage_multiplier": 1.0,
@@ -265,25 +202,15 @@
           }
         }
       ],
-      "color_value": 537485,
-      "flavor_text": "The silence of abandoned tunnels becomes armor, a pressure so complete that blows lose their way in the dark. Water remembers every crack it has ever filled, and fills them again.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000665"
-      ],
-      "scaling_coefficient": 1.1491
+      "flavor_text": "The silence of abandoned tunnels becomes armor, a pressure so complete that blows lose their way in the dark. Water remembers every crack it has ever filled, and fills them again."
     },
     {
       "id": "skill_000670",
       "name": "Brine Ring Settling",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/water/control",
+      "geometry_type": "aura",
       "energy_cost": 26.8,
       "cooldown_seconds": 10.5,
       "damage_multiplier": 1.0,
@@ -296,25 +223,15 @@
           }
         }
       ],
-      "color_value": 599231,
-      "flavor_text": "Salt seeps into the stone's old memory, drawing the air thick and slow around whatever stands within. The halls have waited this long \u2014 a few more moments cost nothing.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000665"
-      ],
-      "scaling_coefficient": 1.1697
+      "flavor_text": "Salt seeps into the stone's old memory, drawing the air thick and slow around whatever stands within. The halls have waited this long \u2014 a few more moments cost nothing."
     },
     {
       "id": "skill_000672",
       "name": "Brine Load Stillness",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/water/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 20.1,
       "cooldown_seconds": 12.2,
       "damage_multiplier": 1.0,
@@ -334,25 +251,15 @@
           }
         }
       ],
-      "color_value": 632338,
-      "flavor_text": "The salt remembers what stone forgot \u2014 it seeps into every crack and holds. What presses against you finds itself preserved in resistance, bitter and immovable as the halls that outlasted their makers.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000667"
-      ],
-      "scaling_coefficient": 1.1685
+      "flavor_text": "The salt remembers what stone forgot \u2014 it seeps into every crack and holds. What presses against you finds itself preserved in resistance, bitter and immovable as the halls that outlasted their makers."
     },
     {
       "id": "skill_000673",
       "name": "Shaft Echo Surge",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "chain_lightning",
       "energy_cost": 19.5,
       "cooldown_seconds": 7.1,
       "damage_multiplier": 1.0,
@@ -371,288 +278,9 @@
           }
         }
       ],
-      "color_value": 557863,
-      "flavor_text": "Deep in the drowned corridors, the water remembers every hammer strike and screams it back at once. The vortex pulls inward before the lightning answers, and the stone walls ring like a bell no dwarf will ever hear again.",
-      "tier": 4,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000669"
-      ],
-      "scaling_coefficient": 1.1916
+      "flavor_text": "Deep in the drowned corridors, the water remembers every hammer strike and screams it back at once. The vortex pulls inward before the lightning answers, and the stone walls ring like a bell no dwarf will ever hear again."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.7944444444444444,
-    "convergence_winrate": 0.5888888888888889,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.050000905990600586,
-    "gauntlet_results": {
-      "monster_00109_pack": 1.0,
-      "monster_00110_pack": 1.0,
-      "monster_00111_pack": 1.0,
-      "monster_00112_pack": 1.0,
-      "monster_00113_pack": 1.0,
-      "monster_00114_pack": 1.0,
-      "monster_00121": 1.0,
-      "monster_00122": 1.0,
-      "monster_00141": 1.0,
-      "monster_00142": 0.68,
-      "monster_00149": 0.27,
-      "monster_00151": 0.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.05
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.6583,
-      "overall_winrate": 0.8292,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.05,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00109_pack": 1.0,
-        "monster_00110_pack": 1.0,
-        "monster_00111_pack": 1.0,
-        "monster_00112_pack": 1.0,
-        "monster_00113_pack": 1.0,
-        "monster_00114_pack": 1.0,
-        "monster_00121": 1.0,
-        "monster_00122": 1.0,
-        "monster_00141": 1.0,
-        "monster_00142": 0.68,
-        "monster_00149": 0.27,
-        "monster_00151": 0.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.618,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00153": 0.72,
-        "monster_00154": 0.21,
-        "monster_00155": 0.61,
-        "monster_00156": 0.57,
-        "monster_00157": 0.98
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.864,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00158": 0.83,
-        "monster_00159": 0.82,
-        "monster_00160": 0.67,
-        "monster_00161": 1.0,
-        "monster_00162": 1.0
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.6933,
-      "p75": 0.6967,
-      "p95": 0.6917,
-      "p99": 0.7183,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.3,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.32,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.42,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_000673",
-          "swapped_from_role": "area_damage",
-          "swapped_to_role": "sustain",
-          "swapped_to_id": "skill_000949",
-          "role": "area_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8308,
-        "after_winrate": 0.8308,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "skill_id": "skill_000666",
-          "role": "area_damage",
-          "from_geometry": "chain_lightning",
-          "to_geometry": "ground_targeted_circle",
-          "rationale": "geometry_rebias_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8308,
-        "after_winrate": 0.8042,
-        "delta": -0.0267,
-        "accepted": true,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "no_geometry_candidates"
-        },
-        "attempt": 2,
-        "before_winrate": 0.8042,
-        "after_winrate": 0.8042,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "skill_id": "skill_000950",
-          "role": "area_damage",
-          "param": "cooldown_seconds",
-          "from_cd": 5.4,
-          "to_cd": 5.94,
-          "from_cost": 27.1,
-          "to_cost": 29.81,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8042,
-        "after_winrate": 0.8042,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "primary_loop_reverted",
-    "composition_pre_modifier_wr": 0.9342,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [
-      {
-        "variant": 1,
-        "from_element": "lightning",
-        "to_element": "water",
-        "n_swapped": 1,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      },
-      {
-        "variant": 2,
-        "from_element": "lightning",
-        "to_element": "water",
-        "n_swapped": 1,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      },
-      {
-        "variant": 3,
-        "from_element": "lightning",
-        "to_element": "water",
-        "n_swapped": 3,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      }
-    ],
-    "secondary_loop_outcome": "secondary_reverted",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.05,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.05
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "control",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_567730",
@@ -1090,5 +718,58 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7944444444444444,
+    "convergence_winrate": 0.5888888888888889,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.050000905990600586,
+    "gauntlet_results": {
+      "monster_00109_pack": 1.0,
+      "monster_00110_pack": 1.0,
+      "monster_00111_pack": 1.0,
+      "monster_00112_pack": 1.0,
+      "monster_00113_pack": 1.0,
+      "monster_00114_pack": 1.0,
+      "monster_00121": 1.0,
+      "monster_00122": 1.0,
+      "monster_00141": 1.0,
+      "monster_00142": 0.4667,
+      "monster_00149": 0.0667,
+      "monster_00151": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 10,
+    "modifier_flag_tier": "floor_over_band",
+    "estimated_gap": 0.0889
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 13,
+    "final_skill_count": 11,
+    "skills_dropped_count": 2,
+    "skills_dropped": [
+      "skill_000671",
+      "skill_000666"
+    ],
+    "skill_count_drops": [
+      "skill_000671",
+      "skill_000666"
+    ],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 11,
+    "element_ceiling": 2
   }
 }

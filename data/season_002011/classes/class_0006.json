@@ -9,6 +9,7 @@
   "range_profile": "long",
   "dominant_element": "holy",
   "seasonal_dominant_element": null,
+  "is_act_boss": false,
   "color_palette": [
     579111,
     594508,
@@ -28,12 +29,10 @@
     {
       "id": "skill_000261",
       "name": "Declared Passage Dash",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "dash_attack",
       "energy_cost": 17.0,
       "cooldown_seconds": 9.3,
       "damage_multiplier": 1.0,
@@ -53,23 +52,15 @@
           }
         }
       ],
-      "color_value": 615140,
-      "flavor_text": "A pilgrim steps through the checkpoint's blinding scrutiny and emerges untouchable, blessed by the harsh light of official sanction. For one breathless moment, nothing illegal can touch what has been declared clean.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A pilgrim steps through the checkpoint's blinding scrutiny and emerges untouchable, blessed by the harsh light of official sanction. For one breathless moment, nothing illegal can touch what has been declared clean."
     },
     {
       "id": "skill_000133",
       "name": "Checkpoint Hold Signal",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "ring",
       "energy_cost": 21.4,
       "cooldown_seconds": 19.9,
       "damage_multiplier": 1.0,
@@ -81,23 +72,15 @@
           }
         }
       ],
-      "color_value": 594508,
-      "flavor_text": "A ring of earthen authority erupts at the border, sealing every tongue mid-word as if papers have been found wanting. The silence is not absence \u2014 it is the weight of a gate that will not open.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A ring of earthen authority erupts at the border, sealing every tongue mid-word as if papers have been found wanting. The silence is not absence \u2014 it is the weight of a gate that will not open."
     },
     {
       "id": "skill_000134",
       "name": "Declared Passage Lockdown",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "ring",
       "energy_cost": 28.4,
       "cooldown_seconds": 8.8,
       "damage_multiplier": 1.0,
@@ -109,23 +92,15 @@
           }
         }
       ],
-      "color_value": 570176,
-      "flavor_text": "At the border's threshold, light pools into a binding circle \u2014 every voice caught within it is stamped, held, and made silent. No word crosses without permission.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "At the border's threshold, light pools into a binding circle \u2014 every voice caught within it is stamped, held, and made silent. No word crosses without permission."
     },
     {
       "id": "skill_000135",
       "name": "Declared Passage Ground",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "circle",
       "energy_cost": 18.6,
       "cooldown_seconds": 7.7,
       "damage_multiplier": 1.0,
@@ -146,23 +121,15 @@
           }
         }
       ],
-      "color_value": 570462,
-      "flavor_text": "Where the earth is stamped and sanctioned, holy light seeps through the cracks like contraband that cannot be stopped. The zone burns with the slow authority of something officially denied yet undeniably present.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Where the earth is stamped and sanctioned, holy light seeps through the cracks like contraband that cannot be stopped. The zone burns with the slow authority of something officially denied yet undeniably present."
     },
     {
       "id": "skill_000136",
       "name": "Declared Passage Totem",
-      "composition_mode": "single",
       "role": "utility",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "self_buff",
       "energy_cost": 16.1,
       "cooldown_seconds": 17.2,
       "damage_multiplier": 1.0,
@@ -175,25 +142,17 @@
           }
         }
       ],
-      "color_value": 571893,
-      "flavor_text": "A pillar of violet light erupts from the earth at the border's edge, its radiance sanctioning every blow that passes through. For a breathless moment, the wall itself seems to bless the crossing.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A pillar of violet light erupts from the earth at the border's edge, its radiance sanctioning every blow that passes through. For a breathless moment, the wall itself seems to bless the crossing."
     },
     {
       "id": "skill_000137",
       "name": "Declared Passage Fork",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
-      "energy_cost": 22.7,
-      "cooldown_seconds": 4.3,
+      "geometry_type": "ground_targeted_circle",
+      "energy_cost": 24.97,
+      "cooldown_seconds": 4.73,
       "damage_multiplier": 1.0,
       "effects": [
         {
@@ -212,251 +171,9 @@
           }
         }
       ],
-      "color_value": 612329,
-      "flavor_text": "At the wall's threshold, light splits into twin columns of sanctioned radiance, searing the ground with holy authority. The consecrated earth smolders where it touched, as if the border itself has been stamped and sealed.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "At the wall's threshold, light splits into twin columns of sanctioned radiance, searing the ground with holy authority. The consecrated earth smolders where it touched, as if the border itself has been stamped and sealed."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.75,
-    "convergence_winrate": 0.5,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 9,
-    "converged": true,
-    "final_modifier": 0.1153609375,
-    "gauntlet_results": {
-      "monster_00001_pack": 1.0,
-      "monster_00002_pack": 1.0,
-      "monster_00003_pack": 1.0,
-      "monster_00004_pack": 1.0,
-      "monster_00005_pack": 1.0,
-      "monster_00006_pack": 1.0,
-      "monster_00013": 1.0,
-      "monster_00014": 0.97,
-      "monster_00033": 1.0,
-      "monster_00034": 0.21,
-      "monster_00041": 0.0,
-      "monster_00043": 0.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0537
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.53,
-      "overall_winrate": 0.765,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 9,
-      "converged": true,
-      "final_modifier": 0.0537,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00001_pack": 1.0,
-        "monster_00002_pack": 1.0,
-        "monster_00003_pack": 1.0,
-        "monster_00004_pack": 1.0,
-        "monster_00005_pack": 1.0,
-        "monster_00006_pack": 1.0,
-        "monster_00013": 1.0,
-        "monster_00014": 0.97,
-        "monster_00033": 1.0,
-        "monster_00034": 0.21,
-        "monster_00041": 0.0,
-        "monster_00043": 0.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.578,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00045": 1.0,
-        "monster_00046": 0.46,
-        "monster_00047": 0.81,
-        "monster_00048": 0.48,
-        "monster_00049": 0.14
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.952,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00050": 1.0,
-        "monster_00051": 0.89,
-        "monster_00052": 0.89,
-        "monster_00053": 0.98,
-        "monster_00054": 1.0
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.6667,
-      "p75": 0.6683,
-      "p95": 0.6683,
-      "p99": 0.6667,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.36,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.52,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.32,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "primary_attack",
-        "lever_specifics": {
-          "swapped_from_id": "skill_000132",
-          "swapped_from_role": "primary_attack",
-          "swapped_to_role": "mobility",
-          "swapped_to_id": "skill_000261",
-          "role": "primary_attack",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7925,
-        "after_winrate": 0.7608,
-        "delta": -0.0317,
-        "accepted": true,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "no_swappable_candidates"
-        },
-        "attempt": 2,
-        "before_winrate": 0.7608,
-        "after_winrate": 0.7608,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "geometry_unchanged"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7608,
-        "after_winrate": 0.7608,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "skill_id": "skill_000137",
-          "role": "area_damage",
-          "param": "cooldown_seconds",
-          "from_cd": 4.3,
-          "to_cd": 4.73,
-          "from_cost": 22.7,
-          "to_cost": 24.97,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7608,
-        "after_winrate": 0.7608,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "primary_loop_converged",
-    "composition_pre_modifier_wr": 0.9725,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [],
-    "secondary_loop_outcome": "secondary_skipped_pure_element",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.0537,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0537
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "control",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_192408",
@@ -835,5 +552,50 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.75,
+    "convergence_winrate": 0.5,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 7,
+    "converged": true,
+    "final_modifier": 0.1153609375,
+    "gauntlet_results": {
+      "monster_00001_pack": 1.0,
+      "monster_00002_pack": 1.0,
+      "monster_00003_pack": 1.0,
+      "monster_00004_pack": 1.0,
+      "monster_00005_pack": 1.0,
+      "monster_00006_pack": 1.0,
+      "monster_00013": 1.0,
+      "monster_00014": 1.0,
+      "monster_00033": 1.0,
+      "monster_00034": 0.0,
+      "monster_00041": 0.0,
+      "monster_00043": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.1154
+    },
+    "iterations": 7
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 6,
+    "final_skill_count": 6,
+    "skills_dropped_count": 0,
+    "skills_dropped": [],
+    "skill_count_drops": [],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 11,
+    "element_ceiling": 2
   }
 }

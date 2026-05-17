@@ -9,6 +9,7 @@
   "range_profile": "long",
   "dominant_element": "shadow",
   "seasonal_dominant_element": null,
+  "is_act_boss": true,
   "color_palette": [
     640867,
     671547,
@@ -27,12 +28,10 @@
     {
       "id": "skill_000498",
       "name": "Terra Incognita Fork",
-      "composition_mode": "single",
       "role": "primary_attack",
       "canonical_element": "shadow",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "multi_projectile",
       "energy_cost": 10.8,
       "cooldown_seconds": 1.1,
       "damage_multiplier": 1.0,
@@ -45,23 +44,15 @@
           }
         }
       ],
-      "color_value": 640867,
-      "flavor_text": "Where the cartographer's quill splits, shadow bleeds into unmapped territory, swallowing light along two diverging edges of the known world. The wind carries ink that has never dried.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Where the cartographer's quill splits, shadow bleeds into unmapped territory, swallowing light along two diverging edges of the known world. The wind carries ink that has never dried."
     },
     {
       "id": "skill_000499",
       "name": "Terra Incognita Fork",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "shadow",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "single_target",
       "energy_cost": 38.6,
       "cooldown_seconds": 4.8,
       "damage_multiplier": 1.0,
@@ -74,23 +65,15 @@
           }
         }
       ],
-      "color_value": 671547,
-      "flavor_text": "Where the cartographer's quill splits into unmapped territory, shadow blooms outward in branching strokes that swallow light whole. The wind carries no echo back from these uncharted edges.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Where the cartographer's quill splits into unmapped territory, shadow blooms outward in branching strokes that swallow light whole. The wind carries no echo back from these uncharted edges."
     },
     {
       "id": "skill_000500",
       "name": "Terra Incognita Gale",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "shadow",
       "seasonal_element": null,
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "circle",
       "energy_cost": 15.2,
       "cooldown_seconds": 5.8,
       "damage_multiplier": 1.0,
@@ -110,23 +93,15 @@
           }
         }
       ],
-      "color_value": 639893,
-      "flavor_text": "Where the cartographer's ink never reached, a shadow-wind scours the ground in slow, hungry circles, pulling the light from those caught within its unmapped edge. What stands inside is gradually erased from the known world.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Where the cartographer's ink never reached, a shadow-wind scours the ground in slow, hungry circles, pulling the light from those caught within its unmapped edge. What stands inside is gradually erased from the known world."
     },
     {
       "id": "skill_000501",
       "name": "Terra Incognita Drift",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "shadow",
       "seasonal_element": null,
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "circle",
       "energy_cost": 21.6,
       "cooldown_seconds": 7.7,
       "damage_multiplier": 1.0,
@@ -146,23 +121,15 @@
           }
         }
       ],
-      "color_value": 622359,
-      "flavor_text": "A circle of unmapped shadow blooms across the ground, its edges shifting like coastlines no cartographer dared finish. The wind carries nothing out of it \u2014 only draws things in, slowly, until they are gone.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A circle of unmapped shadow blooms across the ground, its edges shifting like coastlines no cartographer dared finish. The wind carries nothing out of it \u2014 only draws things in, slowly, until they are gone."
     },
     {
       "id": "skill_000502",
       "name": "Terra Incognita Veil",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "shadow",
       "seasonal_element": null,
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "self_buff",
       "energy_cost": 15.5,
       "cooldown_seconds": 13.3,
       "damage_multiplier": 1.0,
@@ -182,232 +149,9 @@
           }
         }
       ],
-      "color_value": 655315,
-      "flavor_text": "The unmapped edges of the known world fold inward, wrapping the cartographer in a shroud of uncharted wind and shadow. What cannot be named cannot be struck.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "The unmapped edges of the known world fold inward, wrapping the cartographer in a shroud of uncharted wind and shadow. What cannot be named cannot be struck."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.6,
-    "actual_winrate": 0.9111111111111111,
-    "convergence_winrate": 0.8222222222222223,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.050000878906250004,
-    "gauntlet_results": {
-      "monster_00055_pack": 1.0,
-      "monster_00056_pack": 1.0,
-      "monster_00057_pack": 1.0,
-      "monster_00058_pack": 1.0,
-      "monster_00059_pack": 1.0,
-      "monster_00060_pack": 1.0,
-      "monster_00067": 1.0,
-      "monster_00068": 1.0,
-      "monster_00087": 0.81,
-      "monster_00088": 0.97,
-      "monster_00095": 0.0,
-      "monster_00097": 1.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.7967,
-      "overall_winrate": 0.8983,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00055_pack": 1.0,
-        "monster_00056_pack": 1.0,
-        "monster_00057_pack": 1.0,
-        "monster_00058_pack": 1.0,
-        "monster_00059_pack": 1.0,
-        "monster_00060_pack": 1.0,
-        "monster_00067": 1.0,
-        "monster_00068": 1.0,
-        "monster_00087": 0.81,
-        "monster_00088": 0.97,
-        "monster_00095": 0.0,
-        "monster_00097": 1.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.9,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00099": 1.0,
-        "monster_00100": 0.52,
-        "monster_00101": 1.0,
-        "monster_00102": 1.0,
-        "monster_00103": 0.98
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.996,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00104": 1.0,
-        "monster_00105": 0.98,
-        "monster_00106": 1.0,
-        "monster_00107": 1.0,
-        "monster_00108": 1.0
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.75,
-      "p75": 0.75,
-      "p95": 0.75,
-      "p99": 0.75,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.32,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.48,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.52,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "no_swappable_candidates"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8983,
-        "after_winrate": 0.8983,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "no_geometry_candidates"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8983,
-        "after_winrate": 0.8983,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "primary_attack",
-        "lever_specifics": {
-          "skill_id": "skill_000498",
-          "role": "primary_attack",
-          "param": "cooldown_seconds",
-          "from_cd": 1.1,
-          "to_cd": 1.21,
-          "from_cost": 10.8,
-          "to_cost": 11.88,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8983,
-        "after_winrate": 0.8983,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "failed_regenerate",
-    "composition_pre_modifier_wr": 1.0,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [],
-    "secondary_loop_outcome": "secondary_skipped_pure_element",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.0509,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "burst",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_383445",
@@ -839,5 +583,52 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.9111111111111111,
+    "convergence_winrate": 0.8222222222222223,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.050000878906250004,
+    "gauntlet_results": {
+      "monster_00055_pack": 1.0,
+      "monster_00056_pack": 1.0,
+      "monster_00057_pack": 1.0,
+      "monster_00058_pack": 1.0,
+      "monster_00059_pack": 1.0,
+      "monster_00060_pack": 1.0,
+      "monster_00067": 1.0,
+      "monster_00068": 1.0,
+      "monster_00087": 1.0,
+      "monster_00088": 1.0,
+      "monster_00095": 0.9333,
+      "monster_00097": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 10,
+    "modifier_flag_tier": "floor_over_band",
+    "estimated_gap": 0.3222
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 5,
+    "final_skill_count": 5,
+    "skills_dropped_count": 0,
+    "skills_dropped": [],
+    "skill_count_drops": [],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 10,
+    "element_ceiling": 2
   }
 }

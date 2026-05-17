@@ -9,6 +9,7 @@
   "range_profile": "long",
   "dominant_element": "water",
   "seasonal_dominant_element": "blood",
+  "is_act_boss": false,
   "color_palette": [
     675732,
     683819,
@@ -30,12 +31,10 @@
     {
       "id": "skill_001541",
       "name": "Breath of Royal Clemency",
-      "composition_mode": "single",
       "role": "sustain",
       "canonical_element": "water",
       "seasonal_element": "blood",
-      "effect_category": "sustain",
-      "canonical_pair_ref": "canonical/water/sustain",
+      "geometry_type": "single_target",
       "energy_cost": 21.6,
       "cooldown_seconds": 11.5,
       "damage_multiplier": 1.0,
@@ -54,23 +53,15 @@
           }
         }
       ],
-      "color_value": 675732,
-      "flavor_text": "A warm gust moves through the throne room like a pardon spoken aloud, pressing blood back into wounds with the insistent pressure of a king's mercy. It lingers, coaxing the body to remember what it means to be alive and chosen.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A warm gust moves through the throne room like a pardon spoken aloud, pressing blood back into wounds with the insistent pressure of a king's mercy. It lingers, coaxing the body to remember what it means to be alive and chosen."
     },
     {
       "id": "skill_001542",
       "name": "Bloodwind Royal Decree",
-      "composition_mode": "single",
       "role": "utility",
       "canonical_element": "water",
       "seasonal_element": "blood",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/water/utility",
+      "geometry_type": "self_buff",
       "energy_cost": 12.5,
       "cooldown_seconds": 10.8,
       "damage_multiplier": 1.0,
@@ -90,23 +81,15 @@
           }
         }
       ],
-      "color_value": 683819,
-      "flavor_text": "A warm gust tears through the throne room carrying the scent of iron and old parchment, and for a breathless moment the Mad King's will becomes your own. Power floods the veins like a decree that cannot be refused.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A warm gust tears through the throne room carrying the scent of iron and old parchment, and for a breathless moment the Mad King's will becomes your own. Power floods the veins like a decree that cannot be refused."
     },
     {
       "id": "skill_001543",
       "name": "Bloodwind Court Tithe",
-      "composition_mode": "single",
       "role": "primary_attack",
       "canonical_element": "water",
       "seasonal_element": "blood",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "geometry_type": "multi_projectile",
       "energy_cost": 7.4,
       "cooldown_seconds": 1.2,
       "damage_multiplier": 1.0,
@@ -125,23 +108,15 @@
           }
         }
       ],
-      "color_value": 630681,
-      "flavor_text": "The king's breath moves through you like a cold edict, drawing warmth from the wound before the body knows to grieve it. What the throne demands, the blood repays.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "The king's breath moves through you like a cold edict, drawing warmth from the wound before the body knows to grieve it. What the throne demands, the blood repays."
     },
     {
       "id": "skill_001544",
       "name": "Bloodwind Sovereign Seal",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "water",
       "seasonal_element": "blood",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/water/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 24.0,
       "cooldown_seconds": 13.6,
       "damage_multiplier": 1.0,
@@ -161,23 +136,15 @@
           }
         }
       ],
-      "color_value": 693146,
-      "flavor_text": "The throne room breathes in and the warm dark air folds around you like a decree no sword can contest. For a breathless moment, you are untouchable \u2014 the mad king's blood-soaked wind holds every blade at bay.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "The throne room breathes in and the warm dark air folds around you like a decree no sword can contest. For a breathless moment, you are untouchable \u2014 the mad king's blood-soaked wind holds every blade at bay."
     },
     {
       "id": "skill_001545",
       "name": "Bloodwind Court Censure",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "water",
       "seasonal_element": "blood",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/water/control",
+      "geometry_type": "aura",
       "energy_cost": 28.8,
       "cooldown_seconds": 16.5,
       "damage_multiplier": 1.0,
@@ -190,23 +157,15 @@
           }
         }
       ],
-      "color_value": 689861,
-      "flavor_text": "The king's unspoken displeasure moves through the throne room like a cold draft through cracked stone, finding the condemned where they stand. Their blood slows, thickens, obedient at last to a will they cannot refuse.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "The king's unspoken displeasure moves through the throne room like a cold draft through cracked stone, finding the condemned where they stand. Their blood slows, thickens, obedient at last to a will they cannot refuse."
     },
     {
       "id": "skill_001546",
       "name": "Drowned Royal Decree",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "water",
       "seasonal_element": "blood",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "geometry_type": "single_target",
       "energy_cost": 27.6,
       "cooldown_seconds": 8.0,
       "damage_multiplier": 1.0,
@@ -219,23 +178,15 @@
           }
         }
       ],
-      "color_value": 658850,
-      "flavor_text": "The king's voice rises to a shriek and the air tears open, flooding the throne room with a column of dark water that swallows the accused whole. What was once command is now current, cold and absolute.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "The king's voice rises to a shriek and the air tears open, flooding the throne room with a column of dark water that swallows the accused whole. What was once command is now current, cold and absolute."
     },
     {
       "id": "skill_001547",
       "name": "Bloodtide Court Edict",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "water",
       "seasonal_element": "blood",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "geometry_type": "circle",
       "energy_cost": 19.7,
       "cooldown_seconds": 5.3,
       "damage_multiplier": 1.0,
@@ -255,23 +206,15 @@
           }
         }
       ],
-      "color_value": 593584,
-      "flavor_text": "A ring of cold, vital pressure erupts outward from the caster like a decree no courtier dares refuse \u2014 the air turns wet and sharp, and those caught within it slow as if their blood has thickened with dread. The Mad King's throne room breathes this chill into every corner, a living reminder that obedience runs cold.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A ring of cold, vital pressure erupts outward from the caster like a decree no courtier dares refuse \u2014 the air turns wet and sharp, and those caught within it slow as if their blood has thickened with dread. The Mad King's throne room breathes this chill into every corner, a living reminder that obedience runs cold."
     },
     {
       "id": "skill_001548",
       "name": "Blood Sovereign Seal",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "water",
       "seasonal_element": "blood",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/water/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 22.3,
       "cooldown_seconds": 12.8,
       "damage_multiplier": 1.0,
@@ -284,178 +227,9 @@
           }
         }
       ],
-      "color_value": 594322,
-      "flavor_text": "The mad king's decree tears you from harm's reach in a breath of hot copper air, wrapping you in a ward that pulses like a living wound. For a breathless moment, the throne room's draft cannot touch you \u2014 only the warm, dark authority of blood given freely to the crown.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "The mad king's decree tears you from harm's reach in a breath of hot copper air, wrapping you in a ward that pulses like a living wound. For a breathless moment, the throne room's draft cannot touch you \u2014 only the warm, dark authority of blood given freely to the crown."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.8000000000000002,
-    "convergence_winrate": 0.6,
-    "pack_winrate": 0.9883,
-    "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.050000878906250004,
-    "gauntlet_results": {
-      "monster_00217_pack": 1.0,
-      "monster_00218_pack": 1.0,
-      "monster_00219_pack": 1.0,
-      "monster_00220_pack": 1.0,
-      "monster_00221_pack": 1.0,
-      "monster_00222_pack": 0.93,
-      "monster_00229": 1.0,
-      "monster_00230": 0.28,
-      "monster_00249": 0.37,
-      "monster_00250": 0.56,
-      "monster_00257": 0.0,
-      "monster_00259": 1.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.535,
-      "overall_winrate": 0.7617,
-      "pack_winrate": 0.9883,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": true,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00217_pack": 1.0,
-        "monster_00218_pack": 1.0,
-        "monster_00219_pack": 1.0,
-        "monster_00220_pack": 1.0,
-        "monster_00221_pack": 1.0,
-        "monster_00222_pack": 0.93,
-        "monster_00229": 1.0,
-        "monster_00230": 0.28,
-        "monster_00249": 0.37,
-        "monster_00250": 0.56,
-        "monster_00257": 0.0,
-        "monster_00259": 1.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.882,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00261": 0.99,
-        "monster_00262": 0.44,
-        "monster_00263": 0.99,
-        "monster_00264": 0.99,
-        "monster_00265": 1.0
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.898,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00266": 1.0,
-        "monster_00267": 0.49,
-        "monster_00268": 1.0,
-        "monster_00269": 1.0,
-        "monster_00270": 1.0
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.4,
-      "p75": 0.4217,
-      "p95": 0.4333,
-      "p99": 0.4233,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.48,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.34,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.58,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [],
-    "recompose_outcome": "skipped_experimental",
-    "composition_pre_modifier_wr": 0.9967,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [],
-    "secondary_loop_outcome": "skipped_experimental",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.0509,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "specialist",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_933842",
@@ -887,5 +661,52 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.8000000000000002,
+    "convergence_winrate": 0.6,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.050000878906250004,
+    "gauntlet_results": {
+      "monster_00217_pack": 1.0,
+      "monster_00218_pack": 1.0,
+      "monster_00219_pack": 1.0,
+      "monster_00220_pack": 1.0,
+      "monster_00221_pack": 1.0,
+      "monster_00222_pack": 1.0,
+      "monster_00229": 1.0,
+      "monster_00230": 0.7333,
+      "monster_00249": 1.0,
+      "monster_00250": 0.6,
+      "monster_00257": 0.2667,
+      "monster_00259": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 10,
+    "modifier_flag_tier": "floor_over_band",
+    "estimated_gap": 0.1
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 8,
+    "final_skill_count": 8,
+    "skills_dropped_count": 0,
+    "skills_dropped": [],
+    "skill_count_drops": [],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 12,
+    "element_ceiling": 2
   }
 }

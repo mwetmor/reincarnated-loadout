@@ -9,6 +9,7 @@
   "range_profile": "long",
   "dominant_element": "physical",
   "seasonal_dominant_element": null,
+  "is_act_boss": true,
   "color_palette": [
     505760,
     167942,
@@ -35,12 +36,10 @@
     {
       "id": "skill_001456",
       "name": "Exile Writ Howling",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "wind",
       "seasonal_element": "pall",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "geometry_type": "vortex_pull",
       "energy_cost": 24.4,
       "cooldown_seconds": 6.2,
       "damage_multiplier": 1.0,
@@ -53,23 +52,15 @@
           }
         }
       ],
-      "color_value": 505760,
-      "flavor_text": "The mad king's banishment tears through the court in a screaming chain, each soul it touches cast further into the cold dark beyond the throne room's shattered windows. Wind does not negotiate; it simply erases.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0681
+      "flavor_text": "The mad king's banishment tears through the court in a screaming chain, each soul it touches cast further into the cold dark beyond the throne room's shattered windows. Wind does not negotiate; it simply erases."
     },
     {
       "id": "skill_001457",
       "name": "Gauntlet Strike Decree",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/physical/area_damage",
+      "geometry_type": "ground_slam",
       "energy_cost": 22.8,
       "cooldown_seconds": 4.4,
       "damage_multiplier": 1.0,
@@ -82,23 +73,15 @@
           }
         }
       ],
-      "color_value": 167942,
-      "flavor_text": "The Mad King's fist comes down and the throne room floor splits open, wind howling through the cracks like a courtier screaming the verdict. Stone and sovereign fury hold the space long after the blow lands.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0633
+      "flavor_text": "The Mad King's fist comes down and the throne room floor splits open, wind howling through the cracks like a courtier screaming the verdict. Stone and sovereign fury hold the space long after the blow lands."
     },
     {
       "id": "skill_001545",
       "name": "Gauntlet of Mad Proclamation",
-      "composition_mode": "single",
       "role": "utility",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/physical/control",
+      "geometry_type": "single_target",
       "energy_cost": 15.0,
       "cooldown_seconds": 18.3,
       "damage_multiplier": 1.0,
@@ -117,23 +100,43 @@
           }
         }
       ],
-      "color_value": 122436,
-      "flavor_text": "A single blow carries the weight of a throne room silenced mid-sentence, the king's unfinished decree still hanging in the air like a held breath. The struck foe finds their voice stripped away as your strength swells with borrowed authority.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0628
+      "flavor_text": "A single blow carries the weight of a throne room silenced mid-sentence, the king's unfinished decree still hanging in the air like a held breath. The struck foe finds their voice stripped away as your strength swells with borrowed authority."
+    },
+    {
+      "id": "skill_000104",
+      "name": null,
+      "role": "defensive",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "energy_cost": 19.6,
+      "cooldown_seconds": 14.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 0,
+            "duration_seconds": 7.8
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.13,
+            "duration_seconds": 9.5
+          }
+        }
+      ],
+      "flavor_text": null
     },
     {
       "id": "skill_001461",
       "name": "Gauntlet Strike Censure",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "geometry_type": "melee_strike",
       "energy_cost": 10.7,
       "cooldown_seconds": 4.5,
       "damage_multiplier": 1.0,
@@ -146,25 +149,15 @@
           }
         }
       ],
-      "color_value": 149824,
-      "flavor_text": "The blow lands with the weight of a king's unspoken displeasure, and the wound bleeds as if the body itself is being slowly erased from court record. Wind hisses through the throne room as the victim staggers, hemorrhaging legitimacy and life alike.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001456"
-      ],
-      "scaling_coefficient": 1.0971
+      "flavor_text": "The blow lands with the weight of a king's unspoken displeasure, and the wound bleeds as if the body itself is being slowly erased from court record. Wind hisses through the throne room as the victim staggers, hemorrhaging legitimacy and life alike."
     },
     {
       "id": "skill_001462",
       "name": "Gauntlet Edict",
-      "composition_mode": "single",
       "role": "primary_attack",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "geometry_type": "melee_strike",
       "energy_cost": 8.1,
       "cooldown_seconds": 0.9,
       "damage_multiplier": 1.0,
@@ -179,25 +172,15 @@
           }
         }
       ],
-      "color_value": 195065,
-      "flavor_text": "The king's fury given weight and velocity, a decree that does not ask for compliance. It arrives before the sound of its own sending.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001456"
-      ],
-      "scaling_coefficient": 1.101
+      "flavor_text": "The king's fury given weight and velocity, a decree that does not ask for compliance. It arrives before the sound of its own sending."
     },
     {
       "id": "skill_001463",
       "name": "Gauntlet Strike Decree",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "geometry_type": "melee_strike",
       "energy_cost": 21.4,
       "cooldown_seconds": 4.6,
       "damage_multiplier": 1.0,
@@ -210,25 +193,15 @@
           }
         }
       ],
-      "color_value": 170469,
-      "flavor_text": "The Mad King's fist descends in a ring of howling wind, and those caught within find their veins opened by the edict of his displeasure. The court watches in silence as the bleeding begins, slow and inevitable as royal law.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 3,
-      "parent_skill_ids": [
-        "skill_001456"
-      ],
-      "scaling_coefficient": 1.1127
+      "flavor_text": "The Mad King's fist descends in a ring of howling wind, and those caught within find their veins opened by the edict of his displeasure. The court watches in silence as the bleeding begins, slow and inevitable as royal law."
     },
     {
       "id": "skill_001464",
       "name": "Wind Through Empty Thrones",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/physical/mobility",
+      "geometry_type": "dash_attack",
       "energy_cost": 17.4,
       "cooldown_seconds": 6.3,
       "damage_multiplier": 1.0,
@@ -248,25 +221,15 @@
           }
         }
       ],
-      "color_value": 142095,
-      "flavor_text": "The warrior vanishes between one heartbeat and the next, leaving only a cold draft where the Mad King's censure could not follow. Movement becomes answer, absence becomes armor.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001458"
-      ],
-      "scaling_coefficient": 1.1025
+      "flavor_text": "The warrior vanishes between one heartbeat and the next, leaving only a cold draft where the Mad King's censure could not follow. Movement becomes answer, absence becomes armor."
     },
     {
       "id": "skill_001465",
       "name": "Gauntlet Wind Exile",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/physical/mobility",
+      "geometry_type": "leap_strike",
       "energy_cost": 12.1,
       "cooldown_seconds": 10.7,
       "damage_multiplier": 1.0,
@@ -279,25 +242,15 @@
           }
         }
       ],
-      "color_value": 191726,
-      "flavor_text": "The throne room howls as you throw yourself aside, the mad king's decree scattering like parchment in a gale. For a breathless moment, his court cannot touch you \u2014 you belong to the wind, not his writ.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001458"
-      ],
-      "scaling_coefficient": 1.1039
+      "flavor_text": "The throne room howls as you throw yourself aside, the mad king's decree scattering like parchment in a gale. For a breathless moment, his court cannot touch you \u2014 you belong to the wind, not his writ."
     },
     {
       "id": "skill_001466",
       "name": "Gauntlet of Mad Winds",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "geometry_type": "melee_arc",
       "energy_cost": 28.5,
       "cooldown_seconds": 6.1,
       "damage_multiplier": 1.0,
@@ -310,25 +263,15 @@
           }
         }
       ],
-      "color_value": 130011,
-      "flavor_text": "The king's fury takes shape as a compressed gale that strikes like a royal judgment \u2014 sudden, total, and without appeal. Banners tear from their poles the moment the fist descends.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001461"
-      ],
-      "scaling_coefficient": 1.1481
+      "flavor_text": "The king's fury takes shape as a compressed gale that strikes like a royal judgment \u2014 sudden, total, and without appeal. Banners tear from their poles the moment the fist descends."
     },
     {
       "id": "skill_001467",
       "name": "Sovereign Seal Gauntlet",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/physical/defensive",
+      "geometry_type": "single_target",
       "energy_cost": 23.3,
       "cooldown_seconds": 13.4,
       "damage_multiplier": 1.0,
@@ -348,25 +291,15 @@
           }
         }
       ],
-      "color_value": 199358,
-      "flavor_text": "The Mad King's decree solidifies into an iron wall of wind-pressed authority, each gust carrying the weight of a throne no one dares question. For a breathless moment, the air itself refuses to let harm pass.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001464"
-      ],
-      "scaling_coefficient": 1.1283
+      "flavor_text": "The Mad King's decree solidifies into an iron wall of wind-pressed authority, each gust carrying the weight of a throne no one dares question. For a breathless moment, the air itself refuses to let harm pass."
     },
     {
       "id": "skill_001468",
       "name": "Sovereign Seal Gauntlet",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "physical",
       "seasonal_element": null,
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/physical/defensive",
+      "geometry_type": "single_target",
       "energy_cost": 21.0,
       "cooldown_seconds": 9.6,
       "damage_multiplier": 1.0,
@@ -386,258 +319,9 @@
           }
         }
       ],
-      "color_value": 108269,
-      "flavor_text": "The Mad King's throne room howls with wind as the decree is made flesh \u2014 a barrier of cold authority that no blade dare contest. For a breathless moment, the storm itself bows to the weight of the seal.",
-      "tier": 4,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001466"
-      ],
-      "scaling_coefficient": 1.2186
+      "flavor_text": "The Mad King's throne room howls with wind as the decree is made flesh \u2014 a barrier of cold authority that no blade dare contest. For a breathless moment, the storm itself bows to the weight of the seal."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.6,
-    "actual_winrate": 0.8055555555555555,
-    "convergence_winrate": 0.611111111111111,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 6,
-    "converged": true,
-    "final_modifier": 0.829525,
-    "gauntlet_results": {
-      "monster_00217_pack": 1.0,
-      "monster_00218_pack": 1.0,
-      "monster_00219_pack": 1.0,
-      "monster_00220_pack": 1.0,
-      "monster_00221_pack": 1.0,
-      "monster_00222_pack": 1.0,
-      "monster_00229": 1.0,
-      "monster_00230": 1.0,
-      "monster_00249": 0.44,
-      "monster_00250": 0.6,
-      "monster_00257": 0.0,
-      "monster_00259": 0.52
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.3766
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.5933,
-      "overall_winrate": 0.7967,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 6,
-      "converged": true,
-      "final_modifier": 0.3766,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00217_pack": 1.0,
-        "monster_00218_pack": 1.0,
-        "monster_00219_pack": 1.0,
-        "monster_00220_pack": 1.0,
-        "monster_00221_pack": 1.0,
-        "monster_00222_pack": 1.0,
-        "monster_00229": 1.0,
-        "monster_00230": 1.0,
-        "monster_00249": 0.44,
-        "monster_00250": 0.6,
-        "monster_00257": 0.0,
-        "monster_00259": 0.52
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.574,
-      "iterations": 5,
-      "converged": true,
-      "final_modifier": 0.2281,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00261": 0.9,
-        "monster_00262": 0.51,
-        "monster_00263": 0.69,
-        "monster_00264": 0.41,
-        "monster_00265": 0.36
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.61,
-      "iterations": 7,
-      "converged": true,
-      "final_modifier": 0.1539,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00266": 0.56,
-        "monster_00267": 0.02,
-        "monster_00268": 0.59,
-        "monster_00269": 1.0,
-        "monster_00270": 0.88
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.6633,
-      "p75": 0.6617,
-      "p95": 0.6717,
-      "p99": 0.665,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.4,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.4,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.38,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_001459",
-          "swapped_from_role": "area_damage",
-          "swapped_to_role": "utility",
-          "swapped_to_id": "skill_001545",
-          "role": "area_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.6658,
-        "after_winrate": 0.6342,
-        "delta": -0.0317,
-        "accepted": true,
-        "eval_modifier": 0.1094
-      },
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_001460",
-          "swapped_from_role": "area_damage",
-          "swapped_to_role": "utility",
-          "swapped_to_id": "skill_001546",
-          "role": "area_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 2,
-        "before_winrate": 0.6342,
-        "after_winrate": 0.6342,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.1094
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "geometry_unchanged"
-        },
-        "attempt": 1,
-        "before_winrate": 0.6342,
-        "after_winrate": 0.6342,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.1094
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "primary_attack",
-        "lever_specifics": {
-          "skill_id": "skill_001462",
-          "role": "primary_attack",
-          "param": "cooldown_seconds",
-          "from_cd": 0.9,
-          "to_cd": 0.99,
-          "from_cost": 8.1,
-          "to_cost": 8.91,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.6342,
-        "after_winrate": 0.6342,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.1094
-      }
-    ],
-    "recompose_outcome": "primary_loop_converged",
-    "composition_pre_modifier_wr": 0.9167,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [],
-    "secondary_loop_outcome": "secondary_skipped_pure_element",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.3766,
-      "would_pass_clamp": true
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.3766
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "martial_combat",
-  "class_role_function": "ranged",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_933851",
@@ -1040,5 +724,54 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.8055555555555555,
+    "convergence_winrate": 0.611111111111111,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 4,
+    "converged": true,
+    "final_modifier": 0.829525,
+    "gauntlet_results": {
+      "monster_00217_pack": 1.0,
+      "monster_00218_pack": 1.0,
+      "monster_00219_pack": 1.0,
+      "monster_00220_pack": 1.0,
+      "monster_00221_pack": 1.0,
+      "monster_00222_pack": 1.0,
+      "monster_00229": 1.0,
+      "monster_00230": 1.0,
+      "monster_00249": 1.0,
+      "monster_00250": 0.6667,
+      "monster_00257": 0.0,
+      "monster_00259": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.8295
+    },
+    "iterations": 4
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 13,
+    "final_skill_count": 12,
+    "skills_dropped_count": 1,
+    "skills_dropped": [
+      "skill_001458"
+    ],
+    "skill_count_drops": [
+      "skill_001458"
+    ],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 12,
+    "element_ceiling": 2
   }
 }

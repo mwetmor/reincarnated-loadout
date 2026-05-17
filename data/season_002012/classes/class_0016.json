@@ -9,6 +9,7 @@
   "range_profile": "close",
   "dominant_element": "lightning",
   "seasonal_dominant_element": null,
+  "is_act_boss": false,
   "color_palette": [
     523804,
     546028,
@@ -27,12 +28,10 @@
     {
       "id": "skill_000369",
       "name": "Parallel Transit Strike",
-      "composition_mode": "single",
       "role": "primary_attack",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "melee_strike",
       "energy_cost": 10.5,
       "cooldown_seconds": 0.8,
       "damage_multiplier": 1.0,
@@ -51,23 +50,15 @@
           }
         }
       ],
-      "color_value": 523804,
-      "flavor_text": "A charted line snaps taut between two points, carrying the storm's full voltage in a single surveyed instant. The air smells of scorched vellum long after the target falls.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A charted line snaps taut between two points, carrying the storm's full voltage in a single surveyed instant. The air smells of scorched vellum long after the target falls."
     },
     {
       "id": "skill_000370",
       "name": "Parallel Transit Arc",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "chain_lightning",
       "energy_cost": 26.4,
       "cooldown_seconds": 6.4,
       "damage_multiplier": 1.0,
@@ -86,23 +77,15 @@
           }
         }
       ],
-      "color_value": 546028,
-      "flavor_text": "The cartographer's breath holds, then releases \u2014 a sweeping charge that maps every nerve and meridian in a single crackling stroke. What the lightning claims, the surveyor keeps.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "The cartographer's breath holds, then releases \u2014 a sweeping charge that maps every nerve and meridian in a single crackling stroke. What the lightning claims, the surveyor keeps."
     },
     {
       "id": "skill_000371",
       "name": "Parallel Transit Gyre",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "chain_lightning",
       "energy_cost": 16.5,
       "cooldown_seconds": 6.0,
       "damage_multiplier": 1.0,
@@ -115,23 +98,15 @@
           }
         }
       ],
-      "color_value": 559197,
-      "flavor_text": "From the tower's highest lens, the wind finds every mapped corridor at once, threading lightning along invisible meridians in a single catastrophic rotation. The air smells of ozone and scorched parchment long after the last arc fades.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "From the tower's highest lens, the wind finds every mapped corridor at once, threading lightning along invisible meridians in a single catastrophic rotation. The air smells of ozone and scorched parchment long after the last arc fades."
     },
     {
       "id": "skill_000372",
       "name": "Parallel Transit Strike",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "circle",
       "energy_cost": 18.1,
       "cooldown_seconds": 5.0,
       "damage_multiplier": 1.0,
@@ -150,23 +125,15 @@
           }
         }
       ],
-      "color_value": 535179,
-      "flavor_text": "A current of mapped lightning traces the exact meridian between two points, burning the route into living flesh. The wind carries the smell of scorched parchment long after the arc fades.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A current of mapped lightning traces the exact meridian between two points, burning the route into living flesh. The wind carries the smell of scorched parchment long after the arc fades."
     },
     {
       "id": "skill_000373",
       "name": "Fixed Meridian Gust",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "lightning",
       "seasonal_element": null,
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "self_buff",
       "energy_cost": 20.9,
       "cooldown_seconds": 8.2,
       "damage_multiplier": 1.0,
@@ -179,232 +146,9 @@
           }
         }
       ],
-      "color_value": 557709,
-      "flavor_text": "The tower's oldest wind finds you and holds \u2014 a cartographic absolute drawn in breathless amber around your form. For a moment, the map says you cannot be moved.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "The tower's oldest wind finds you and holds \u2014 a cartographic absolute drawn in breathless amber around your form. For a moment, the map says you cannot be moved."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.7444444444444445,
-    "convergence_winrate": 0.48888888888888893,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 5,
-    "converged": true,
-    "final_modifier": 0.0797,
-    "gauntlet_results": {
-      "monster_00055_pack": 1.0,
-      "monster_00056_pack": 1.0,
-      "monster_00057_pack": 1.0,
-      "monster_00058_pack": 1.0,
-      "monster_00059_pack": 1.0,
-      "monster_00060_pack": 1.0,
-      "monster_00067": 1.0,
-      "monster_00068": 1.0,
-      "monster_00087": 0.06,
-      "monster_00088": 1.0,
-      "monster_00095": 0.02,
-      "monster_00097": 0.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.1094
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.5133,
-      "overall_winrate": 0.7567,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 5,
-      "converged": true,
-      "final_modifier": 0.1094,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00055_pack": 1.0,
-        "monster_00056_pack": 1.0,
-        "monster_00057_pack": 1.0,
-        "monster_00058_pack": 1.0,
-        "monster_00059_pack": 1.0,
-        "monster_00060_pack": 1.0,
-        "monster_00067": 1.0,
-        "monster_00068": 1.0,
-        "monster_00087": 0.06,
-        "monster_00088": 1.0,
-        "monster_00095": 0.02,
-        "monster_00097": 0.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.688,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00099": 0.97,
-        "monster_00100": 0.11,
-        "monster_00101": 0.98,
-        "monster_00102": 0.7,
-        "monster_00103": 0.68
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.918,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00104": 0.96,
-        "monster_00105": 0.81,
-        "monster_00106": 0.99,
-        "monster_00107": 0.92,
-        "monster_00108": 0.91
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.6667,
-      "p75": 0.6667,
-      "p95": 0.6667,
-      "p99": 0.6667,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.46,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.36,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.44,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "no_swappable_candidates"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7358,
-        "after_winrate": 0.7358,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "no_geometry_candidates"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7358,
-        "after_winrate": 0.7358,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "primary_attack",
-        "lever_specifics": {
-          "skill_id": "skill_000369",
-          "role": "primary_attack",
-          "param": "cooldown_seconds",
-          "from_cd": 0.8,
-          "to_cd": 0.88,
-          "from_cost": 10.5,
-          "to_cost": 11.55,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7358,
-        "after_winrate": 0.7358,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "modifier_fallback",
-    "composition_pre_modifier_wr": 0.9467,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [],
-    "secondary_loop_outcome": "secondary_skipped_pure_element",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.1094,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.1094
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "burst",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_383443",
@@ -849,5 +593,50 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7444444444444445,
+    "convergence_winrate": 0.48888888888888893,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 2,
+    "converged": true,
+    "final_modifier": 0.0797,
+    "gauntlet_results": {
+      "monster_00055_pack": 1.0,
+      "monster_00056_pack": 1.0,
+      "monster_00057_pack": 1.0,
+      "monster_00058_pack": 1.0,
+      "monster_00059_pack": 1.0,
+      "monster_00060_pack": 1.0,
+      "monster_00067": 1.0,
+      "monster_00068": 1.0,
+      "monster_00087": 0.0,
+      "monster_00088": 0.9333,
+      "monster_00095": 0.0,
+      "monster_00097": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0797
+    },
+    "iterations": 2
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 5,
+    "final_skill_count": 5,
+    "skills_dropped_count": 0,
+    "skills_dropped": [],
+    "skill_count_drops": [],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 10,
+    "element_ceiling": 2
   }
 }

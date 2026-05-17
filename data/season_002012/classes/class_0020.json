@@ -9,6 +9,7 @@
   "range_profile": "long",
   "dominant_element": "fire",
   "seasonal_dominant_element": "charcoal",
+  "is_act_boss": false,
   "color_palette": [
     45437,
     279825,
@@ -33,12 +34,10 @@
     {
       "id": "skill_000514",
       "name": "Smolder Cascade",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "fire",
       "seasonal_element": "charcoal",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 18.0,
       "cooldown_seconds": 7.9,
       "damage_multiplier": 1.0,
@@ -58,23 +57,15 @@
           }
         }
       ],
-      "color_value": 45437,
-      "flavor_text": "Charcoal dust lifts from the tower's drafting tables and ignites mid-air, settling into a slow-burning circle that chars whatever the cartographer once claimed as measured ground. The heat does not rush \u2014 it lingers, tracing its boundary with the patience of a surveyor who knows the land will yield.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0544
+      "flavor_text": "Charcoal dust lifts from the tower's drafting tables and ignites mid-air, settling into a slow-burning circle that chars whatever the cartographer once claimed as measured ground. The heat does not rush \u2014 it lingers, tracing its boundary with the patience of a surveyor who knows the land will yield."
     },
     {
       "id": "skill_000515",
       "name": "Fixed Meridian Ring",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "earth",
       "seasonal_element": "slate",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/earth/control",
+      "geometry_type": "vortex_pull",
       "energy_cost": 17.1,
       "cooldown_seconds": 9.4,
       "damage_multiplier": 1.0,
@@ -86,23 +77,15 @@
           }
         }
       ],
-      "color_value": 279825,
-      "flavor_text": "A grey circle of pressed wind fans outward from the caster's feet, charting the ground beneath enemies as immovable territory. Those caught within the survey find their steps erased from the map entirely, held fast where the cartographer has drawn the line.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0515
+      "flavor_text": "A grey circle of pressed wind fans outward from the caster's feet, charting the ground beneath enemies as immovable territory. Those caught within the survey find their steps erased from the map entirely, held fast where the cartographer has drawn the line."
     },
     {
       "id": "skill_000516",
       "name": "Smolder Cascade Survey",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "fire",
       "seasonal_element": "charcoal",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/fire/area_damage",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 24.0,
       "cooldown_seconds": 5.9,
       "damage_multiplier": 1.0,
@@ -115,23 +98,15 @@
           }
         }
       ],
-      "color_value": 17170,
-      "flavor_text": "Charcoal dust lifts from the tower's drafting tables and spirals outward in a burning gyre, mapping every surface it touches in ash and ember. The wind reads the room before the fire does.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0675
+      "flavor_text": "Charcoal dust lifts from the tower's drafting tables and spirals outward in a burning gyre, mapping every surface it touches in ash and ember. The wind reads the room before the fire does."
     },
     {
       "id": "skill_000517",
       "name": "Terra Incognita Ring",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "fire",
       "seasonal_element": "charcoal",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/control",
+      "geometry_type": "ring",
       "energy_cost": 17.1,
       "cooldown_seconds": 8.1,
       "damage_multiplier": 1.0,
@@ -143,25 +118,15 @@
           }
         }
       ],
-      "color_value": 82315,
-      "flavor_text": "A halo of charcoal dust blooms outward from the tower's apex, smothering every voice it crosses in a silence as absolute as uncharted territory. The wind carries the residue in a perfect circle, redrawing the map with absence.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000514"
-      ],
-      "scaling_coefficient": 1.0975
+      "flavor_text": "A halo of charcoal dust blooms outward from the tower's apex, smothering every voice it crosses in a silence as absolute as uncharted territory. The wind carries the residue in a perfect circle, redrawing the map with absence."
     },
     {
       "id": "skill_000518",
       "name": "Charcoal Stroke Meridian",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "earth",
       "seasonal_element": "slate",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 18.8,
       "cooldown_seconds": 5.1,
       "damage_multiplier": 1.0,
@@ -180,25 +145,15 @@
           }
         }
       ],
-      "color_value": 300849,
-      "flavor_text": "The cartographer drags a finger across the living map and the ground below cracks open in long grey seams, pinning the world in place. What is drawn cannot move until the line is finished.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000515"
-      ],
-      "scaling_coefficient": 1.0965
+      "flavor_text": "The cartographer drags a finger across the living map and the ground below cracks open in long grey seams, pinning the world in place. What is drawn cannot move until the line is finished."
     },
     {
       "id": "skill_000519",
       "name": "Fixed Meridian Smolder",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "fire",
       "seasonal_element": "charcoal",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 22.7,
       "cooldown_seconds": 8.2,
       "damage_multiplier": 1.0,
@@ -225,25 +180,15 @@
           }
         }
       ],
-      "color_value": 15365,
-      "flavor_text": "Charcoal lines burn themselves into the air around the caster, tracing a boundary the wind cannot cross. The tower's oldest surveys hold here, unyielding as pressed carbon against the open sky.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000515"
-      ],
-      "scaling_coefficient": 1.0925
+      "flavor_text": "Charcoal lines burn themselves into the air around the caster, tracing a boundary the wind cannot cross. The tower's oldest surveys hold here, unyielding as pressed carbon against the open sky."
     },
     {
       "id": "skill_000520",
       "name": "Smolder Cascade",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "fire",
       "seasonal_element": "charcoal",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 17.7,
       "cooldown_seconds": 4.3,
       "damage_multiplier": 1.0,
@@ -256,25 +201,15 @@
           }
         }
       ],
-      "color_value": 4,
-      "flavor_text": "Charcoal dust erupts from the tower's drafty floor, spinning into a dense burning ring that scorches everything it traces. The residue clings and eats, patient as a cartographer filling in blank coastlines.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000517"
-      ],
-      "scaling_coefficient": 1.1215
+      "flavor_text": "Charcoal dust erupts from the tower's drafty floor, spinning into a dense burning ring that scorches everything it traces. The residue clings and eats, patient as a cartographer filling in blank coastlines."
     },
     {
       "id": "skill_000521",
       "name": "Terra Incognita Ring",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "fire",
       "seasonal_element": "charcoal",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/control",
+      "geometry_type": "ring",
       "energy_cost": 19.2,
       "cooldown_seconds": 14.5,
       "damage_multiplier": 1.0,
@@ -286,25 +221,15 @@
           }
         }
       ],
-      "color_value": 68953,
-      "flavor_text": "A hush falls in a perfect circle, the wind carrying every sound outward and away from this unmapped silence. The charcoal line holds \u2014 no voice crosses it.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000518"
-      ],
-      "scaling_coefficient": 1.1212
+      "flavor_text": "A hush falls in a perfect circle, the wind carrying every sound outward and away from this unmapped silence. The charcoal line holds \u2014 no voice crosses it."
     },
     {
       "id": "skill_000522",
       "name": "Terra Incognita Smolder",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "fire",
       "seasonal_element": "charcoal",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/control",
+      "geometry_type": "ring",
       "energy_cost": 18.6,
       "cooldown_seconds": 15.0,
       "damage_multiplier": 1.0,
@@ -316,25 +241,15 @@
           }
         }
       ],
-      "color_value": 69054,
-      "flavor_text": "A cone of compressed charcoal dust billows outward from the tower's highest window, swallowing voices whole in a blackened unmapped silence. Where the haze settles, no sound escapes \u2014 only the soft ruin of breath.",
-      "tier": 4,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000520"
-      ],
-      "scaling_coefficient": 1.2415
+      "flavor_text": "A cone of compressed charcoal dust billows outward from the tower's highest window, swallowing voices whole in a blackened unmapped silence. Where the haze settles, no sound escapes \u2014 only the soft ruin of breath."
     },
     {
       "id": "skill_000523",
       "name": "Smolder Cascade Survey",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "fire",
       "seasonal_element": "charcoal",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 29.5,
       "cooldown_seconds": 5.2,
       "damage_multiplier": 1.0,
@@ -354,25 +269,15 @@
           }
         }
       ],
-      "color_value": 40380,
-      "flavor_text": "Charcoal dust spirals down from unseen heights, tracing the contours of the ground in burning black lines before the whole circle ignites at once. The wind does not extinguish it \u2014 the wind is why it spreads.",
-      "tier": 4,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_000521"
-      ],
-      "scaling_coefficient": 1.1908
+      "flavor_text": "Charcoal dust spirals down from unseen heights, tracing the contours of the ground in burning black lines before the whole circle ignites at once. The wind does not extinguish it \u2014 the wind is why it spreads."
     },
     {
       "id": "skill_000524",
       "name": "Charcoal Stroke Meridian",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "earth",
       "seasonal_element": "slate",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 24.2,
       "cooldown_seconds": 3.9,
       "damage_multiplier": 1.0,
@@ -385,274 +290,9 @@
           }
         }
       ],
-      "color_value": 353450,
-      "flavor_text": "The tower's shadow falls across unmapped ground and the earth answers, splitting along fault lines only the cartographer's eye could trace. Slate layers shear apart in a perfect circle, as if the land itself has been struck through with a surveyor's final mark.",
-      "tier": 4,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_000521"
-      ],
-      "scaling_coefficient": 1.1818
+      "flavor_text": "The tower's shadow falls across unmapped ground and the earth answers, splitting along fault lines only the cartographer's eye could trace. Slate layers shear apart in a perfect circle, as if the land itself has been struck through with a surveyor's final mark."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.7666666666666666,
-    "convergence_winrate": 0.5333333333333333,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 10,
-    "converged": true,
-    "final_modifier": 0.050000878906250004,
-    "gauntlet_results": {
-      "monster_00055_pack": 1.0,
-      "monster_00056_pack": 1.0,
-      "monster_00057_pack": 1.0,
-      "monster_00058_pack": 1.0,
-      "monster_00059_pack": 1.0,
-      "monster_00060_pack": 1.0,
-      "monster_00067": 1.0,
-      "monster_00068": 1.0,
-      "monster_00087": 0.03,
-      "monster_00088": 0.22,
-      "monster_00095": 0.0,
-      "monster_00097": 0.93
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.53,
-      "overall_winrate": 0.765,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": true,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00055_pack": 1.0,
-        "monster_00056_pack": 1.0,
-        "monster_00057_pack": 1.0,
-        "monster_00058_pack": 1.0,
-        "monster_00059_pack": 1.0,
-        "monster_00060_pack": 1.0,
-        "monster_00067": 1.0,
-        "monster_00068": 1.0,
-        "monster_00087": 0.03,
-        "monster_00088": 0.22,
-        "monster_00095": 0.0,
-        "monster_00097": 0.93
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.516,
-      "iterations": 8,
-      "converged": true,
-      "final_modifier": 0.0574,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00099": 1.0,
-        "monster_00100": 0.0,
-        "monster_00101": 0.53,
-        "monster_00102": 1.0,
-        "monster_00103": 0.05
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.628,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00104": 1.0,
-        "monster_00105": 0.17,
-        "monster_00106": 0.48,
-        "monster_00107": 0.49,
-        "monster_00108": 1.0
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.475,
-      "p75": 0.4783,
-      "p95": 0.4917,
-      "p99": 0.515,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.32,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.38,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.4,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_000523",
-          "swapped_from_role": "area_damage",
-          "swapped_to_role": "sustain",
-          "swapped_to_id": "skill_000561",
-          "role": "area_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.765,
-        "after_winrate": 0.765,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": "control",
-        "lever_specifics": {
-          "skill_id": "skill_000522",
-          "role": "control",
-          "from_geometry": "cone",
-          "to_geometry": "ring",
-          "rationale": "geometry_rebias_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.765,
-        "after_winrate": 0.765,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "skill_id": "skill_000524",
-          "role": "area_damage",
-          "param": "cooldown_seconds",
-          "from_cd": 3.9,
-          "to_cd": 4.29,
-          "from_cost": 24.2,
-          "to_cost": 26.62,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.765,
-        "after_winrate": 0.765,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "modifier_fallback",
-    "composition_pre_modifier_wr": 0.9867,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [
-      {
-        "variant": 1,
-        "from_element": "fire",
-        "to_element": "earth",
-        "n_swapped": 1,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      },
-      {
-        "variant": 2,
-        "from_element": "fire",
-        "to_element": "earth",
-        "n_swapped": 1,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      },
-      {
-        "variant": 3,
-        "from_element": "fire",
-        "to_element": "earth",
-        "n_swapped": 2,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      }
-    ],
-    "secondary_loop_outcome": "secondary_reverted",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.0509,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "control",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_383448",
@@ -1054,5 +694,50 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7666666666666666,
+    "convergence_winrate": 0.5333333333333333,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": true,
+    "final_modifier": 0.050000878906250004,
+    "gauntlet_results": {
+      "monster_00055_pack": 1.0,
+      "monster_00056_pack": 1.0,
+      "monster_00057_pack": 1.0,
+      "monster_00058_pack": 1.0,
+      "monster_00059_pack": 1.0,
+      "monster_00060_pack": 1.0,
+      "monster_00067": 1.0,
+      "monster_00068": 1.0,
+      "monster_00087": 1.0,
+      "monster_00088": 0.2,
+      "monster_00095": 0.0,
+      "monster_00097": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 10
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 11,
+    "final_skill_count": 11,
+    "skills_dropped_count": 0,
+    "skills_dropped": [],
+    "skill_count_drops": [],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 11,
+    "element_ceiling": 2
   }
 }

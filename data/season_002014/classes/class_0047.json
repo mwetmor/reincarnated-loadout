@@ -9,6 +9,7 @@
   "range_profile": "medium",
   "dominant_element": "fire",
   "seasonal_dominant_element": "pitch",
+  "is_act_boss": false,
   "color_palette": [
     463100,
     687931,
@@ -36,15 +37,13 @@
     {
       "id": "skill_001193",
       "name": "Pall Surge Bloom",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "wind",
       "seasonal_element": "miasma",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "geometry_type": "vortex_pull",
       "energy_cost": 23.3,
       "cooldown_seconds": 7.2,
-      "damage_multiplier": 1.0,
+      "damage_multiplier": 0.8556,
       "effects": [
         {
           "name": "damage",
@@ -54,23 +53,15 @@
           }
         }
       ],
-      "color_value": 463100,
-      "flavor_text": "A held breath releases \u2014 the air above the cobblestones curdles outward in a slow, suffocating wave, peeling rot from stone and marrow alike. Whatever stands within the circle learns what the city's dead already know.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0633
+      "flavor_text": "A held breath releases \u2014 the air above the cobblestones curdles outward in a slow, suffocating wave, peeling rot from stone and marrow alike. Whatever stands within the circle learns what the city's dead already know."
     },
     {
       "id": "skill_001195",
       "name": "Pall Surge Idol",
-      "composition_mode": "single",
       "role": "utility",
       "canonical_element": "wind",
       "seasonal_element": "miasma",
-      "effect_category": "utility",
-      "canonical_pair_ref": "canonical/wind/utility",
+      "geometry_type": "self_buff",
       "energy_cost": 10.4,
       "cooldown_seconds": 15.8,
       "damage_multiplier": 1.0,
@@ -83,26 +74,18 @@
           }
         }
       ],
-      "color_value": 511699,
-      "flavor_text": "A fetish of blackened bone rises from the cobblestones, exhaling a column of plague-thick air that sharpens every blade passing through it. The miasma does not weaken here \u2014 it chooses sides.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0758
+      "flavor_text": "A fetish of blackened bone rises from the cobblestones, exhaling a column of plague-thick air that sharpens every blade passing through it. The miasma does not weaken here \u2014 it chooses sides."
     },
     {
       "id": "skill_001196",
       "name": "Chalk Ward Cleave",
-      "composition_mode": "single",
       "role": "primary_attack",
       "canonical_element": "earth",
       "seasonal_element": "chalk",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "geometry_type": "multi_projectile",
       "energy_cost": 5.7,
       "cooldown_seconds": 0.7,
-      "damage_multiplier": 1.0,
+      "damage_multiplier": 0.8556,
       "effects": [
         {
           "name": "damage",
@@ -118,23 +101,15 @@
           }
         }
       ],
-      "color_value": 328405,
-      "flavor_text": "The earth splits in two pale tongues, soft and decisive as a chalk line drawn through standing water. What it marks stays marked, feet sinking into the silted ground like a verdict.",
-      "tier": 1,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0774
+      "flavor_text": "The earth splits in two pale tongues, soft and decisive as a chalk line drawn through standing water. What it marks stays marked, feet sinking into the silted ground like a verdict."
     },
     {
       "id": "skill_001197",
       "name": "Pall Surge",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "wind",
       "seasonal_element": "miasma",
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/wind/mobility",
+      "geometry_type": "blink",
       "energy_cost": 15.3,
       "cooldown_seconds": 8.6,
       "damage_multiplier": 1.0,
@@ -147,28 +122,18 @@
           }
         }
       ],
-      "color_value": 473841,
-      "flavor_text": "The miasma thickens into a wall of breathless air, hurling all who stand in its path backward through the choking murk. Where the body moves, the plague follows \u2014 and so do its consequences.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001193"
-      ],
-      "scaling_coefficient": 1.0905
+      "flavor_text": "The miasma thickens into a wall of breathless air, hurling all who stand in its path backward through the choking murk. Where the body moves, the plague follows \u2014 and so do its consequences."
     },
     {
       "id": "skill_001198",
       "name": "Chalk Seam Breach",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "earth",
       "seasonal_element": "chalk",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/earth/area_damage",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 17.5,
       "cooldown_seconds": 6.2,
-      "damage_multiplier": 1.0,
+      "damage_multiplier": 0.8556,
       "effects": [
         {
           "name": "damage",
@@ -178,25 +143,15 @@
           }
         }
       ],
-      "color_value": 284834,
-      "flavor_text": "A fissure tears through the waterlogged earth in a pale, crumbling line \u2014 the city's soft foundations splitting open like a wound that has finally stopped holding. What the plague softened, the ground swallows.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001193"
-      ],
-      "scaling_coefficient": 1.1058
+      "flavor_text": "A fissure tears through the waterlogged earth in a pale, crumbling line \u2014 the city's soft foundations splitting open like a wound that has finally stopped holding. What the plague softened, the ground swallows."
     },
     {
       "id": "skill_001199",
       "name": "Pall Surge Blight",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "wind",
       "seasonal_element": "miasma",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/wind/control",
+      "geometry_type": "vortex_pull",
       "energy_cost": 21.9,
       "cooldown_seconds": 4.9,
       "damage_multiplier": 1.0,
@@ -209,28 +164,18 @@
           }
         }
       ],
-      "color_value": 503809,
-      "flavor_text": "A festering pocket of miasma erupts from the cobblestones, hurling the afflicted backward through curtains of choking vapor. The rot lingers where they stood, patient as the city itself.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001193"
-      ],
-      "scaling_coefficient": 1.0863
+      "flavor_text": "A festering pocket of miasma erupts from the cobblestones, hurling the afflicted backward through curtains of choking vapor. The rot lingers where they stood, patient as the city itself."
     },
     {
       "id": "skill_001200",
       "name": "Brine Contagion Arc",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "geometry_type": "single_target",
       "energy_cost": 21.3,
       "cooldown_seconds": 7.1,
-      "damage_multiplier": 1.0,
+      "damage_multiplier": 0.8556,
       "effects": [
         {
           "name": "damage",
@@ -247,28 +192,18 @@
           }
         }
       ],
-      "color_value": 597566,
-      "flavor_text": "Salt finds every wound the city has forgotten to close. The charge builds in stillwater patience before leaping between bodies like a rumor of plague.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001193"
-      ],
-      "scaling_coefficient": 1.1101
+      "flavor_text": "Salt finds every wound the city has forgotten to close. The charge builds in stillwater patience before leaping between bodies like a rumor of plague."
     },
     {
       "id": "skill_001203",
       "name": "Miasmal Seep Surge",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "geometry_type": "single_target",
       "energy_cost": 23.4,
       "cooldown_seconds": 6.5,
-      "damage_multiplier": 1.0,
+      "damage_multiplier": 0.8556,
       "effects": [
         {
           "name": "damage",
@@ -285,25 +220,15 @@
           }
         }
       ],
-      "color_value": 575855,
-      "flavor_text": "Salt-heavy current threads between bodies like rumor, each arc leaving skin pale and slow. The brine remembers every wound it has ever touched.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001193"
-      ],
-      "scaling_coefficient": 1.0894
+      "flavor_text": "Salt-heavy current threads between bodies like rumor, each arc leaving skin pale and slow. The brine remembers every wound it has ever touched."
     },
     {
       "id": "skill_001204",
       "name": "Miasmal Seep Ward",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/water/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 18.1,
       "cooldown_seconds": 14.6,
       "damage_multiplier": 1.0,
@@ -316,25 +241,15 @@
           }
         }
       ],
-      "color_value": 617072,
-      "flavor_text": "Salt crusts over the skin like a second dermis, drawn from the city's own weeping walls. What the brine preserves, the plague cannot claim.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001197"
-      ],
-      "scaling_coefficient": 1.1417
+      "flavor_text": "Salt crusts over the skin like a second dermis, drawn from the city's own weeping walls. What the brine preserves, the plague cannot claim."
     },
     {
       "id": "skill_001206",
       "name": "Salt Slip Tide",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/water/mobility",
+      "geometry_type": "blink",
       "energy_cost": 15.5,
       "cooldown_seconds": 10.5,
       "damage_multiplier": 1.0,
@@ -347,264 +262,9 @@
           }
         }
       ],
-      "color_value": 561743,
-      "flavor_text": "The body dissolves into brine for a breathless moment, slipping between heartbeats and plague-thick air. What remains is slick, preserved, untouchable \u2014 the city's rot finds no purchase on skin that has briefly ceased to exist.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001197"
-      ],
-      "scaling_coefficient": 1.136
+      "flavor_text": "The body dissolves into brine for a breathless moment, slipping between heartbeats and plague-thick air. What remains is slick, preserved, untouchable \u2014 the city's rot finds no purchase on skin that has briefly ceased to exist."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.8388888888888889,
-    "convergence_winrate": 0.6777777777777777,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.050000905990600586,
-    "gauntlet_results": {
-      "monster_00163_pack": 1.0,
-      "monster_00164_pack": 1.0,
-      "monster_00165_pack": 1.0,
-      "monster_00166_pack": 1.0,
-      "monster_00167_pack": 1.0,
-      "monster_00168_pack": 1.0,
-      "monster_00175": 1.0,
-      "monster_00176": 1.0,
-      "monster_00195": 1.0,
-      "monster_00196": 0.99,
-      "monster_00203": 0.98,
-      "monster_00205": 0.01
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.83,
-      "overall_winrate": 0.915,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00163_pack": 1.0,
-        "monster_00164_pack": 1.0,
-        "monster_00165_pack": 1.0,
-        "monster_00166_pack": 1.0,
-        "monster_00167_pack": 1.0,
-        "monster_00168_pack": 1.0,
-        "monster_00175": 1.0,
-        "monster_00176": 1.0,
-        "monster_00195": 1.0,
-        "monster_00196": 0.99,
-        "monster_00203": 0.98,
-        "monster_00205": 0.01
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 1.0,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00207": 1.0,
-        "monster_00208": 1.0,
-        "monster_00209": 1.0,
-        "monster_00210": 1.0,
-        "monster_00211": 1.0
-      }
-    },
-    "early_band_L17": {
-      "winrate": 1.0,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00212": 1.0,
-        "monster_00213": 1.0,
-        "monster_00214": 1.0,
-        "monster_00215": 1.0,
-        "monster_00216": 1.0
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.75,
-      "p75": 0.75,
-      "p95": 0.75,
-      "p99": 0.75,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.4,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.34,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.5,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "burst_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_001200",
-          "swapped_from_role": "burst_damage",
-          "swapped_to_role": "defensive",
-          "swapped_to_id": "skill_001241",
-          "role": "burst_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.915,
-        "after_winrate": 0.915,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": "burst_damage",
-        "lever_specifics": {
-          "skill_id": "skill_001203",
-          "role": "burst_damage",
-          "from_geometry": "chain_lightning",
-          "to_geometry": "ricochet_bounce",
-          "rationale": "geometry_rebias_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.915,
-        "after_winrate": 0.915,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "primary_attack",
-        "lever_specifics": {
-          "skill_id": "skill_001196",
-          "role": "primary_attack",
-          "param": "cooldown_seconds",
-          "from_cd": 0.7,
-          "to_cd": 0.77,
-          "from_cost": 5.7,
-          "to_cost": 6.27,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.915,
-        "after_winrate": 0.915,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "failed_regenerate",
-    "composition_pre_modifier_wr": 1.0,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [
-      {
-        "variant": 1,
-        "from_element": "water",
-        "to_element": "wind",
-        "n_swapped": 1,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      },
-      {
-        "variant": 2,
-        "from_element": "water",
-        "to_element": "wind",
-        "n_swapped": 1,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      }
-    ],
-    "secondary_loop_outcome": "secondary_reverted",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.0509,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "specialist",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_765742",
@@ -1014,5 +674,76 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
-  }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.8388888888888889,
+    "convergence_winrate": 0.6777777777777777,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.05000000000086402,
+    "gauntlet_results": {
+      "monster_00163_pack": 1.0,
+      "monster_00164_pack": 1.0,
+      "monster_00165_pack": 1.0,
+      "monster_00166_pack": 1.0,
+      "monster_00167_pack": 1.0,
+      "monster_00168_pack": 1.0,
+      "monster_00175": 1.0,
+      "monster_00176": 1.0,
+      "monster_00195": 1.0,
+      "monster_00196": 0.6667,
+      "monster_00203": 0.4,
+      "monster_00205": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 10,
+    "modifier_flag_tier": "floor_over_band",
+    "estimated_gap": 0.1778,
+    "element_coverage_tax": {
+      "n_elements": 3,
+      "tax_multiplier": 0.92,
+      "element_coverage_tax_applied": true,
+      "damage_bearing_skills_taxed": 5,
+      "alpha": 0.08,
+      "n_skills_post_prune": 10,
+      "skills_pruned": 0
+    }
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 14,
+    "final_skill_count": 10,
+    "skills_dropped_count": 4,
+    "skills_dropped": [
+      "skill_001202",
+      "skill_001205",
+      "skill_001194",
+      "skill_001201"
+    ],
+    "skill_count_drops": [
+      "skill_001202",
+      "skill_001205"
+    ],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [
+      "skill_001194",
+      "skill_001201"
+    ],
+    "skill_ceiling": 12,
+    "element_ceiling": 4
+  },
+  "post_process_d11": true,
+  "element_coverage_tax_multiplier": 0.92,
+  "post_process_d11_1": true,
+  "post_process_d11_1_date": "2026-05-17"
 }

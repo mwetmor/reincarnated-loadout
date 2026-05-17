@@ -9,6 +9,7 @@
   "range_profile": "long",
   "dominant_element": "fire",
   "seasonal_dominant_element": "brand",
+  "is_act_boss": true,
   "color_palette": [
     69643,
     89804,
@@ -34,12 +35,10 @@
     {
       "id": "skill_001308",
       "name": "Royal Decree Burns",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 17.3,
       "cooldown_seconds": 3.3,
       "damage_multiplier": 1.0,
@@ -52,23 +51,15 @@
           }
         }
       ],
-      "color_value": 69643,
-      "flavor_text": "The Mad King's voice descends like a wind-fanned flame, and where his word lands, the stone floor remembers it forever. No petition survives the mark.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.062
+      "flavor_text": "The Mad King's voice descends like a wind-fanned flame, and where his word lands, the stone floor remembers it forever. No petition survives the mark."
     },
     {
       "id": "skill_001309",
       "name": "Sovereign Seal Burns",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 12.0,
       "cooldown_seconds": 7.7,
       "damage_multiplier": 1.0,
@@ -81,23 +72,15 @@
           }
         }
       ],
-      "color_value": 89804,
-      "flavor_text": "The mad king's iron brand descends \u2014 not as punishment, but as ownership. The mark smolders through flesh and bone, a permanent declaration that you were noticed.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0576
+      "flavor_text": "The mad king's iron brand descends \u2014 not as punishment, but as ownership. The mark smolders through flesh and bone, a permanent declaration that you were noticed."
     },
     {
       "id": "skill_001310",
       "name": "Edict of Still Air",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "ring",
       "energy_cost": 29.2,
       "cooldown_seconds": 10.2,
       "damage_multiplier": 1.0,
@@ -116,23 +99,15 @@
           }
         }
       ],
-      "color_value": 55560,
-      "flavor_text": "A ring of scorched wind collapses inward from the throne's dais, searing the breath from every throat it touches. The Mad King's voice alone fills the silence that follows.",
-      "tier": 1,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0696
+      "flavor_text": "A ring of scorched wind collapses inward from the throne's dais, searing the breath from every throat it touches. The Mad King's voice alone fills the silence that follows."
     },
     {
       "id": "skill_001311",
       "name": "Edict of Scorched Wind",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 21.1,
       "cooldown_seconds": 5.9,
       "damage_multiplier": 1.0,
@@ -152,23 +127,15 @@
           }
         }
       ],
-      "color_value": 83539,
-      "flavor_text": "The Mad King's final decree tears through the throne room as a howling gyre of branded flame, searing his mark into the stone and the flesh alike. Those caught within its radius carry the royal seal long after the fire dies \u2014 a permanent reminder that his word, however broken, still burns.",
-      "tier": 1,
-      "chain_id": "chain_C",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.058
+      "flavor_text": "The Mad King's final decree tears through the throne room as a howling gyre of branded flame, searing his mark into the stone and the flesh alike. Those caught within its radius carry the royal seal long after the fire dies \u2014 a permanent reminder that his word, however broken, still burns."
     },
     {
       "id": "skill_001312",
       "name": "Exile Writ Descends",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "wind",
       "seasonal_element": "pall",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/wind/control",
+      "geometry_type": "vortex_pull",
       "energy_cost": 23.0,
       "cooldown_seconds": 7.1,
       "damage_multiplier": 1.0,
@@ -181,25 +148,15 @@
           }
         }
       ],
-      "color_value": 508187,
-      "flavor_text": "A seal of shrouded wind crashes into the earth at the king's unspoken command, hurling the condemned outward as if the throne room itself rejects their presence. The dark gale lingers, stripping away flesh and dignity in equal measure.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001308"
-      ],
-      "scaling_coefficient": 1.0868
+      "flavor_text": "A seal of shrouded wind crashes into the earth at the king's unspoken command, hurling the condemned outward as if the throne room itself rejects their presence. The dark gale lingers, stripping away flesh and dignity in equal measure."
     },
     {
       "id": "skill_001313",
       "name": "Exile Writ Descends",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "wind",
       "seasonal_element": "pall",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "geometry_type": "vortex_pull",
       "energy_cost": 16.9,
       "cooldown_seconds": 5.0,
       "damage_multiplier": 1.0,
@@ -212,25 +169,15 @@
           }
         }
       ],
-      "color_value": 489402,
-      "flavor_text": "The mad king's parchment unfurls into a howling vortex, stripping flesh and title alike from all who stand within its cursed radius. Those caught beneath it are unmade not by blade, but by the terrible weight of royal abandonment.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001309"
-      ],
-      "scaling_coefficient": 1.0838
+      "flavor_text": "The mad king's parchment unfurls into a howling vortex, stripping flesh and title alike from all who stand within its cursed radius. Those caught beneath it are unmade not by blade, but by the terrible weight of royal abandonment."
     },
     {
       "id": "skill_001314",
       "name": "Mad Proclamation Scorches All",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 11.0,
       "cooldown_seconds": 6.2,
       "damage_multiplier": 1.0,
@@ -250,25 +197,15 @@
           }
         }
       ],
-      "color_value": 47204,
-      "flavor_text": "The king's decree hits the floor like a burning seal, and the wind carries no mercy \u2014 only the smell of iron and ruin. Those who linger in the circle learn what it means to be named by a madman.",
-      "tier": 2,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001310"
-      ],
-      "scaling_coefficient": 1.0845
+      "flavor_text": "The king's decree hits the floor like a burning seal, and the wind carries no mercy \u2014 only the smell of iron and ruin. Those who linger in the circle learn what it means to be named by a madman."
     },
     {
       "id": "skill_001315",
       "name": "Branded Wind Edict",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/fire/mobility",
+      "geometry_type": "teleport",
       "energy_cost": 18.3,
       "cooldown_seconds": 9.7,
       "damage_multiplier": 1.0,
@@ -281,25 +218,15 @@
           }
         }
       ],
-      "color_value": 20522,
-      "flavor_text": "The mad king's decree scorches itself into flesh as you tumble through the throne room's howling drafts, iron words burning long after the voice that spoke them has gone silent. The mark does not fade \u2014 it was never meant to.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001312"
-      ],
-      "scaling_coefficient": 1.1561
+      "flavor_text": "The mad king's decree scorches itself into flesh as you tumble through the throne room's howling drafts, iron words burning long after the voice that spoke them has gone silent. The mark does not fade \u2014 it was never meant to."
     },
     {
       "id": "skill_001316",
       "name": "Mad Proclamation Silences All",
-      "composition_mode": "single",
       "role": "control",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/fire/control",
+      "geometry_type": "ring",
       "energy_cost": 15.8,
       "cooldown_seconds": 9.0,
       "damage_multiplier": 1.0,
@@ -311,25 +238,15 @@
           }
         }
       ],
-      "color_value": 9286,
-      "flavor_text": "A gust tears through the throne room and the king's latest decree hangs in the air, branding every tongue within its circle with iron silence. No voice dares rise until the wind itself decides the edict has been satisfied.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001313"
-      ],
-      "scaling_coefficient": 1.1388
+      "flavor_text": "A gust tears through the throne room and the king's latest decree hangs in the air, branding every tongue within its circle with iron silence. No voice dares rise until the wind itself decides the edict has been satisfied."
     },
     {
       "id": "skill_001317",
       "name": "Sovereign Seal Stands",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 21.2,
       "cooldown_seconds": 12.6,
       "damage_multiplier": 1.0,
@@ -342,25 +259,15 @@
           }
         }
       ],
-      "color_value": 3217,
-      "flavor_text": "The mad king's iron brand sears itself into the air around you, a ward of absolute authority that even the howling throne room gales cannot unmake. For one breathless moment, you are inviolable \u2014 marked, permanent, beyond reach.",
-      "tier": 3,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001314"
-      ],
-      "scaling_coefficient": 1.1269
+      "flavor_text": "The mad king's iron brand sears itself into the air around you, a ward of absolute authority that even the howling throne room gales cannot unmake. For one breathless moment, you are inviolable \u2014 marked, permanent, beyond reach."
     },
     {
       "id": "skill_001319",
       "name": "Royal Decree Immolation",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "damage_over_time",
-      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 29.5,
       "cooldown_seconds": 7.1,
       "damage_multiplier": 1.0,
@@ -380,274 +287,9 @@
           }
         }
       ],
-      "color_value": 67270,
-      "flavor_text": "The mad king's voice tears through the hall like a gale-fed furnace, and where his words land, the stone itself remembers the burning. No subject walks away unmarked.",
-      "tier": 4,
-      "chain_id": "chain_C",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001317"
-      ],
-      "scaling_coefficient": 1.2329
+      "flavor_text": "The mad king's voice tears through the hall like a gale-fed furnace, and where his words land, the stone itself remembers the burning. No subject walks away unmarked."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.4,
-    "actual_winrate": 0.7444444444444445,
-    "convergence_winrate": 0.48888888888888893,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.050000878906250004,
-    "gauntlet_results": {
-      "monster_00217_pack": 1.0,
-      "monster_00218_pack": 1.0,
-      "monster_00219_pack": 1.0,
-      "monster_00220_pack": 1.0,
-      "monster_00221_pack": 1.0,
-      "monster_00222_pack": 1.0,
-      "monster_00229": 1.0,
-      "monster_00230": 0.93,
-      "monster_00249": 0.05,
-      "monster_00250": 0.48,
-      "monster_00257": 0.0,
-      "monster_00259": 1.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.5767,
-      "overall_winrate": 0.7883,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00217_pack": 1.0,
-        "monster_00218_pack": 1.0,
-        "monster_00219_pack": 1.0,
-        "monster_00220_pack": 1.0,
-        "monster_00221_pack": 1.0,
-        "monster_00222_pack": 1.0,
-        "monster_00229": 1.0,
-        "monster_00230": 0.93,
-        "monster_00249": 0.05,
-        "monster_00250": 0.48,
-        "monster_00257": 0.0,
-        "monster_00259": 1.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.852,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00261": 0.96,
-        "monster_00262": 0.58,
-        "monster_00263": 0.96,
-        "monster_00264": 0.94,
-        "monster_00265": 0.82
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.86,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00266": 0.99,
-        "monster_00267": 0.39,
-        "monster_00268": 0.94,
-        "monster_00269": 1.0,
-        "monster_00270": 0.98
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.6133,
-      "p75": 0.6117,
-      "p95": 0.6267,
-      "p99": 0.6217,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.44,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.44,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.54,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_001319",
-          "swapped_from_role": "area_damage",
-          "swapped_to_role": "control",
-          "swapped_to_id": "skill_001513",
-          "role": "area_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7883,
-        "after_winrate": 0.7883,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "skill_id": "skill_001319",
-          "role": "area_damage",
-          "from_geometry": "ground_targeted_circle",
-          "to_geometry": "ring",
-          "rationale": "geometry_rebias_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7883,
-        "after_winrate": 0.7883,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "skill_id": "skill_001308",
-          "role": "area_damage",
-          "param": "cooldown_seconds",
-          "from_cd": 3.3,
-          "to_cd": 3.63,
-          "from_cost": 17.3,
-          "to_cost": 19.03,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7883,
-        "after_winrate": 0.7883,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "failed_regenerate",
-    "composition_pre_modifier_wr": 0.9983,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [
-      {
-        "variant": 1,
-        "from_element": "fire",
-        "to_element": "wind",
-        "n_swapped": 1,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      },
-      {
-        "variant": 2,
-        "from_element": "fire",
-        "to_element": "wind",
-        "n_swapped": 1,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      },
-      {
-        "variant": 3,
-        "from_element": "fire",
-        "to_element": "wind",
-        "n_swapped": 2,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      }
-    ],
-    "secondary_loop_outcome": "secondary_reverted",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.0509,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "control",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_933843",
@@ -1093,5 +735,56 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.4,
+    "actual_winrate": 0.7444444444444445,
+    "convergence_winrate": 0.48888888888888893,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.050000878906250004,
+    "gauntlet_results": {
+      "monster_00217_pack": 1.0,
+      "monster_00218_pack": 1.0,
+      "monster_00219_pack": 1.0,
+      "monster_00220_pack": 1.0,
+      "monster_00221_pack": 1.0,
+      "monster_00222_pack": 1.0,
+      "monster_00229": 1.0,
+      "monster_00230": 0.8667,
+      "monster_00249": 0.6,
+      "monster_00250": 0.4667,
+      "monster_00257": 0.0,
+      "monster_00259": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 10,
+    "modifier_flag_tier": "floor_over_band",
+    "estimated_gap": -0.0111
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 12,
+    "final_skill_count": 11,
+    "skills_dropped_count": 1,
+    "skills_dropped": [
+      "skill_001318"
+    ],
+    "skill_count_drops": [
+      "skill_001318"
+    ],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 11,
+    "element_ceiling": 2
   }
 }

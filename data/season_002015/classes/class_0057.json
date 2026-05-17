@@ -9,6 +9,7 @@
   "range_profile": "medium",
   "dominant_element": "earth",
   "seasonal_dominant_element": "marble",
+  "is_act_boss": false,
   "color_palette": [
     360509,
     315819,
@@ -34,12 +35,10 @@
     {
       "id": "skill_001334",
       "name": "Sovereign Seal Descent",
-      "composition_mode": "single",
       "role": "primary_attack",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "geometry_type": "multi_projectile",
       "energy_cost": 12.4,
       "cooldown_seconds": 1.5,
       "damage_multiplier": 1.0,
@@ -52,23 +51,15 @@
           }
         }
       ],
-      "color_value": 360509,
-      "flavor_text": "The cold marble breathes upward in a pale column, an edict from the earth itself pressed into flesh and bone. What the Mad King's floor remembers, it returns without mercy.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0656
+      "flavor_text": "The cold marble breathes upward in a pale column, an edict from the earth itself pressed into flesh and bone. What the Mad King's floor remembers, it returns without mercy."
     },
     {
       "id": "skill_001335",
       "name": "Sovereign Seal of Loam",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/earth/area_damage",
+      "geometry_type": "single_target",
       "energy_cost": 23.6,
       "cooldown_seconds": 6.1,
       "damage_multiplier": 1.0,
@@ -81,23 +72,15 @@
           }
         }
       ],
-      "color_value": 315819,
-      "flavor_text": "The Mad King's crest splits the marble floor in a widening ring of packed earth and cold authority, each crack a sentence passed without appeal. What the seal touches does not crumble \u2014 it is simply declared beneath consideration.",
-      "tier": 1,
-      "chain_id": "chain_A",
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.0793
+      "flavor_text": "The Mad King's crest splits the marble floor in a widening ring of packed earth and cold authority, each crack a sentence passed without appeal. What the seal touches does not crumble \u2014 it is simply declared beneath consideration."
     },
     {
       "id": "skill_001336",
       "name": "Sovereign Seal of Shattered Marble",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "geometry_type": "single_target",
       "energy_cost": 25.3,
       "cooldown_seconds": 6.8,
       "damage_multiplier": 1.0,
@@ -110,23 +93,15 @@
           }
         }
       ],
-      "color_value": 366228,
-      "flavor_text": "The wind tears through the throne room and the floor answers \u2014 pale slabs split and launch outward in a cold, deliberate volley, as though the palace itself has passed judgment. Each fragment carries the weight of a king's last rational thought.",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [],
-      "scaling_coefficient": 1.068
+      "flavor_text": "The wind tears through the throne room and the floor answers \u2014 pale slabs split and launch outward in a cold, deliberate volley, as though the palace itself has passed judgment. Each fragment carries the weight of a king's last rational thought."
     },
     {
       "id": "skill_001338",
       "name": "Sovereign Seal Restored",
-      "composition_mode": "single",
       "role": "sustain",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "sustain",
-      "canonical_pair_ref": "canonical/earth/sustain",
+      "geometry_type": "single_target",
       "energy_cost": 34.7,
       "cooldown_seconds": 11.0,
       "damage_multiplier": 1.0,
@@ -138,25 +113,15 @@
           }
         }
       ],
-      "color_value": 262063,
-      "flavor_text": "Cold marble breathes again beneath the wind's passage, pale and whole, as though the throne itself has chosen to remember what it means to stand. A single subject is made sovereign over their own suffering.",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001334"
-      ],
-      "scaling_coefficient": 1.0858
+      "flavor_text": "Cold marble breathes again beneath the wind's passage, pale and whole, as though the throne itself has chosen to remember what it means to stand. A single subject is made sovereign over their own suffering."
     },
     {
       "id": "skill_001339",
       "name": "Sovereign Seal Absolute",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/earth/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 20.5,
       "cooldown_seconds": 12.2,
       "damage_multiplier": 1.0,
@@ -176,25 +141,15 @@
           }
         }
       ],
-      "color_value": 355186,
-      "flavor_text": "The cold marble breathes outward in a sudden gust, and for a breathless moment the throne room falls silent \u2014 the wind itself recognizing the seal's authority. Nothing passes through it uninvited.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001336"
-      ],
-      "scaling_coefficient": 1.1168
+      "flavor_text": "The cold marble breathes outward in a sudden gust, and for a breathless moment the throne room falls silent \u2014 the wind itself recognizing the seal's authority. Nothing passes through it uninvited."
     },
     {
       "id": "skill_001340",
       "name": "Marble Wind Pardon",
-      "composition_mode": "single",
       "role": "mobility",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "mobility",
-      "canonical_pair_ref": "canonical/earth/mobility",
+      "geometry_type": "dash_attack",
       "energy_cost": 10.4,
       "cooldown_seconds": 6.1,
       "damage_multiplier": 1.0,
@@ -214,25 +169,15 @@
           }
         }
       ],
-      "color_value": 320886,
-      "flavor_text": "The cold throne room exhales and you are elsewhere, the king's gaze passing through the space where you stood. Stone remembers your absence before your body does.",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001336"
-      ],
-      "scaling_coefficient": 1.0887
+      "flavor_text": "The cold throne room exhales and you are elsewhere, the king's gaze passing through the space where you stood. Stone remembers your absence before your body does."
     },
     {
       "id": "skill_001341",
       "name": "Sovereign Seal Descends",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/earth/area_damage",
+      "geometry_type": "ground_targeted_circle",
       "energy_cost": 20.8,
       "cooldown_seconds": 5.7,
       "damage_multiplier": 1.0,
@@ -245,25 +190,15 @@
           }
         }
       ],
-      "color_value": 298541,
-      "flavor_text": "The cold marble trembles as an invisible edict presses down from above, cracking the floor in a perfect circle of royal judgment. What the Mad King decrees, the earth itself obeys.",
-      "tier": 3,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001338"
-      ],
-      "scaling_coefficient": 1.1375
+      "flavor_text": "The cold marble trembles as an invisible edict presses down from above, cracking the floor in a perfect circle of royal judgment. What the Mad King decrees, the earth itself obeys."
     },
     {
       "id": "skill_001342",
       "name": "Sovereign Seal Edict",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "fire",
       "seasonal_element": "brand",
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/defensive",
+      "geometry_type": "self_buff",
       "energy_cost": 18.7,
       "cooldown_seconds": 8.1,
       "damage_multiplier": 1.0,
@@ -276,25 +211,15 @@
           }
         }
       ],
-      "color_value": 14263,
-      "flavor_text": "The wind stills in the throne room as an invisible brand sears the air around you, a permanent mark of inviolable authority. No blade, no gust, no whispered treachery passes through what the Mad King has decreed untouchable.",
-      "tier": 3,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001339"
-      ],
-      "scaling_coefficient": 1.1388
+      "flavor_text": "The wind stills in the throne room as an invisible brand sears the air around you, a permanent mark of inviolable authority. No blade, no gust, no whispered treachery passes through what the Mad King has decreed untouchable."
     },
     {
       "id": "skill_001343",
       "name": "Marble Edict Stillness",
-      "composition_mode": "single",
       "role": "utility",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/earth/control",
+      "geometry_type": "circle",
       "energy_cost": 10.1,
       "cooldown_seconds": 12.0,
       "damage_multiplier": 1.0,
@@ -313,25 +238,15 @@
           }
         }
       ],
-      "color_value": 319450,
-      "flavor_text": "A cold sovereign seal rises from the throne room floor, pale as forgotten law, and the air itself holds its breath. Those who stand within its reach strike harder, briefly \u2014 and enemies find their voices have been quietly revoked.",
-      "tier": 4,
-      "chain_id": "chain_A",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001341"
-      ],
-      "scaling_coefficient": 1.2349
+      "flavor_text": "A cold sovereign seal rises from the throne room floor, pale as forgotten law, and the air itself holds its breath. Those who stand within its reach strike harder, briefly \u2014 and enemies find their voices have been quietly revoked."
     },
     {
       "id": "skill_001344",
       "name": "Sovereign Seal of Still Air",
-      "composition_mode": "single",
       "role": "sustain",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "sustain",
-      "canonical_pair_ref": "canonical/earth/sustain",
+      "geometry_type": "single_target",
       "energy_cost": 29.6,
       "cooldown_seconds": 11.6,
       "damage_multiplier": 1.0,
@@ -357,25 +272,15 @@
           }
         }
       ],
-      "color_value": 300746,
-      "flavor_text": "The mad king's marble throne breathes once, slow and cold, and the silence between his decrees becomes a mercy that holds the body together. Where wind forgets to move, wounds forget to bleed.",
-      "tier": 4,
-      "chain_id": "chain_B",
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001342"
-      ],
-      "scaling_coefficient": 1.1932
+      "flavor_text": "The mad king's marble throne breathes once, slow and cold, and the silence between his decrees becomes a mercy that holds the body together. Where wind forgets to move, wounds forget to bleed."
     },
     {
       "id": "skill_001345",
       "name": "Sovereign Seal of Still Marble",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "earth",
       "seasonal_element": "marble",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/earth/area_damage",
+      "geometry_type": "single_target",
       "energy_cost": 33.4,
       "cooldown_seconds": 7.4,
       "damage_multiplier": 1.0,
@@ -394,269 +299,9 @@
           }
         }
       ],
-      "color_value": 351285,
-      "flavor_text": "The throne room floor answers the king's last coherent command, a circle of pale stone surging upward to swallow the ground beneath a traitor's feet. Cold and absolute, it holds them there \u2014 rooted in the silence of a court that has learned not to speak.",
-      "tier": 4,
-      "chain_id": "chain_B",
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001342"
-      ],
-      "scaling_coefficient": 1.195
+      "flavor_text": "The throne room floor answers the king's last coherent command, a circle of pale stone surging upward to swallow the ground beneath a traitor's feet. Cold and absolute, it holds them there \u2014 rooted in the silence of a court that has learned not to speak."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.7777777777777778,
-    "convergence_winrate": 0.5555555555555555,
-    "pack_winrate": 1.0,
-    "convergence_iterations": 10,
-    "converged": true,
-    "final_modifier": 0.050000905990600586,
-    "gauntlet_results": {
-      "monster_00217_pack": 1.0,
-      "monster_00218_pack": 1.0,
-      "monster_00219_pack": 1.0,
-      "monster_00220_pack": 1.0,
-      "monster_00221_pack": 1.0,
-      "monster_00222_pack": 1.0,
-      "monster_00229": 1.0,
-      "monster_00230": 0.99,
-      "monster_00249": 0.72,
-      "monster_00250": 0.78,
-      "monster_00257": 0.0,
-      "monster_00259": 1.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.05
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.7483,
-      "overall_winrate": 0.8742,
-      "pack_winrate": 1.0,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.05,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00217_pack": 1.0,
-        "monster_00218_pack": 1.0,
-        "monster_00219_pack": 1.0,
-        "monster_00220_pack": 1.0,
-        "monster_00221_pack": 1.0,
-        "monster_00222_pack": 1.0,
-        "monster_00229": 1.0,
-        "monster_00230": 0.99,
-        "monster_00249": 0.72,
-        "monster_00250": 0.78,
-        "monster_00257": 0.0,
-        "monster_00259": 1.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.966,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00261": 1.0,
-        "monster_00262": 0.93,
-        "monster_00263": 0.9,
-        "monster_00264": 1.0,
-        "monster_00265": 1.0
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.922,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00266": 1.0,
-        "monster_00267": 0.77,
-        "monster_00268": 0.85,
-        "monster_00269": 1.0,
-        "monster_00270": 0.99
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.5833,
-      "p75": 0.5833,
-      "p95": 0.585,
-      "p99": 0.5867,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.48,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.5,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.54,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "burst_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_001337",
-          "swapped_from_role": "burst_damage",
-          "swapped_to_role": "mobility",
-          "swapped_to_id": "skill_001526",
-          "role": "burst_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8775,
-        "after_winrate": 0.8508,
-        "delta": -0.0267,
-        "accepted": true,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "burst_damage",
-        "lever_specifics": {
-          "swapped_from_id": "skill_001345",
-          "swapped_from_role": "burst_damage",
-          "swapped_to_role": "mobility",
-          "swapped_to_id": "skill_001527",
-          "role": "burst_damage",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 2,
-        "before_winrate": 0.8508,
-        "after_winrate": 0.8508,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "no_geometry_candidates"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8508,
-        "after_winrate": 0.8508,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "primary_attack",
-        "lever_specifics": {
-          "skill_id": "skill_001334",
-          "role": "primary_attack",
-          "param": "cooldown_seconds",
-          "from_cd": 1.5,
-          "to_cd": 1.65,
-          "from_cost": 12.4,
-          "to_cost": 13.64,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.8508,
-        "after_winrate": 0.8508,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "primary_loop_reverted",
-    "composition_pre_modifier_wr": 1.0,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [
-      {
-        "variant": 1,
-        "from_element": "earth",
-        "to_element": "fire",
-        "n_swapped": 2,
-        "eval_modifier": 0.0509,
-        "modifier_dist_from_1": 0.9491,
-        "baseline_dist": 0.9491,
-        "accepted": false
-      }
-    ],
-    "secondary_loop_outcome": "secondary_reverted",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.05,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.05
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "burst",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_933850",
@@ -1102,5 +747,54 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7777777777777778,
+    "convergence_winrate": 0.5555555555555555,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": true,
+    "final_modifier": 0.050000905990600586,
+    "gauntlet_results": {
+      "monster_00217_pack": 1.0,
+      "monster_00218_pack": 1.0,
+      "monster_00219_pack": 1.0,
+      "monster_00220_pack": 1.0,
+      "monster_00221_pack": 1.0,
+      "monster_00222_pack": 1.0,
+      "monster_00229": 1.0,
+      "monster_00230": 0.8667,
+      "monster_00249": 0.9333,
+      "monster_00250": 0.5333,
+      "monster_00257": 0.0,
+      "monster_00259": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 10
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 12,
+    "final_skill_count": 11,
+    "skills_dropped_count": 1,
+    "skills_dropped": [
+      "skill_001337"
+    ],
+    "skill_count_drops": [
+      "skill_001337"
+    ],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 11,
+    "element_ceiling": 2
   }
 }

@@ -9,6 +9,7 @@
   "range_profile": "close",
   "dominant_element": "holy",
   "seasonal_dominant_element": null,
+  "is_act_boss": false,
   "color_palette": [
     613256,
     578907,
@@ -27,12 +28,10 @@
     {
       "id": "skill_000727",
       "name": "Forge Remembrance Strike",
-      "composition_mode": "single",
       "role": "primary_attack",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "melee_strike",
       "energy_cost": 6.3,
       "cooldown_seconds": 0.1,
       "damage_multiplier": 1.0,
@@ -45,23 +44,15 @@
           }
         }
       ],
-      "color_value": 613256,
-      "flavor_text": "Where the hammers have long gone silent, the stone still holds their heat \u2014 each blow lands with the sacred weight of ten thousand forgotten shifts. The light that rises from the impact is not fire, but memory made holy.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Where the hammers have long gone silent, the stone still holds their heat \u2014 each blow lands with the sacred weight of ten thousand forgotten shifts. The light that rises from the impact is not fire, but memory made holy."
     },
     {
       "id": "skill_000728",
       "name": "Forge Remembrance Seam",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "single_target",
       "energy_cost": 38.1,
       "cooldown_seconds": 9.4,
       "damage_multiplier": 1.0,
@@ -74,23 +65,15 @@
           }
         }
       ],
-      "color_value": 578907,
-      "flavor_text": "Deep in the drowned corridors where dwarven forges long went cold, something holy still pressurizes the dark \u2014 waiting for a mind wise enough to crack the seam open. The light that floods out does not illuminate. It judges.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Deep in the drowned corridors where dwarven forges long went cold, something holy still pressurizes the dark \u2014 waiting for a mind wise enough to crack the seam open. The light that floods out does not illuminate. It judges."
     },
     {
       "id": "skill_000729",
       "name": "Forge Remembrance Breaks",
-      "composition_mode": "single",
       "role": "area_damage",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "ground_slam",
       "energy_cost": 17.5,
       "cooldown_seconds": 4.3,
       "damage_multiplier": 1.0,
@@ -103,23 +86,15 @@
           }
         }
       ],
-      "color_value": 580253,
-      "flavor_text": "The floor remembers every hammer, every prayer, every dwarf who stood here and believed the stone would hold. It does not hold now.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "The floor remembers every hammer, every prayer, every dwarf who stood here and believed the stone would hold. It does not hold now."
     },
     {
       "id": "skill_000730",
       "name": "Forge Remembrance Seam",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "circle",
       "energy_cost": 20.2,
       "cooldown_seconds": 6.1,
       "damage_multiplier": 1.0,
@@ -140,23 +115,15 @@
           }
         }
       ],
-      "color_value": 602116,
-      "flavor_text": "Where the hammer last fell, the stone still holds its heat \u2014 a sacred pressure that bleeds upward through water-dark rock, searing what walks above it. The halls remember every strike, and they do not forgive trespass.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Where the hammer last fell, the stone still holds its heat \u2014 a sacred pressure that bleeds upward through water-dark rock, searing what walks above it. The halls remember every strike, and they do not forgive trespass."
     },
     {
       "id": "skill_000731",
       "name": "Load-Bearing Stillness",
-      "composition_mode": "single",
       "role": "defensive",
       "canonical_element": "holy",
       "seasonal_element": null,
-      "effect_category": "defensive",
-      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "geometry_type": "self_buff",
       "energy_cost": 18.1,
       "cooldown_seconds": 11.8,
       "damage_multiplier": 1.0,
@@ -169,237 +136,9 @@
           }
         }
       ],
-      "color_value": 583332,
-      "flavor_text": "Where the old supports still hold, something remembers how to bear weight \u2014 the damp air presses in, but does not pass. A quiet that has outlasted the hammers settles around you like stone that has never once considered falling.",
-      "tier": null,
-      "chain_id": null,
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Where the old supports still hold, something remembers how to bear weight \u2014 the damp air presses in, but does not pass. A quiet that has outlasted the hammers settles around you like stone that has never once considered falling."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.75,
-    "convergence_winrate": 0.5111111111111111,
-    "pack_winrate": 0.9983,
-    "convergence_iterations": 10,
-    "converged": true,
-    "final_modifier": 0.08175234375000001,
-    "gauntlet_results": {
-      "monster_00109_pack": 1.0,
-      "monster_00110_pack": 0.99,
-      "monster_00111_pack": 1.0,
-      "monster_00112_pack": 1.0,
-      "monster_00113_pack": 1.0,
-      "monster_00114_pack": 1.0,
-      "monster_00121": 1.0,
-      "monster_00122": 1.0,
-      "monster_00141": 0.33,
-      "monster_00142": 1.0,
-      "monster_00149": 0.0,
-      "monster_00151": 0.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.555,
-      "overall_winrate": 0.7767,
-      "pack_winrate": 0.9983,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": true,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [
-        "geometry_mix",
-        "skill_swap",
-        "cooldown_energy"
-      ],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00109_pack": 1.0,
-        "monster_00110_pack": 0.99,
-        "monster_00111_pack": 1.0,
-        "monster_00112_pack": 1.0,
-        "monster_00113_pack": 1.0,
-        "monster_00114_pack": 1.0,
-        "monster_00121": 1.0,
-        "monster_00122": 1.0,
-        "monster_00141": 0.33,
-        "monster_00142": 1.0,
-        "monster_00149": 0.0,
-        "monster_00151": 0.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.894,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00153": 0.8,
-        "monster_00154": 0.79,
-        "monster_00155": 0.99,
-        "monster_00156": 0.93,
-        "monster_00157": 0.96
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.99,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00158": 0.98,
-        "monster_00159": 0.99,
-        "monster_00160": 1.0,
-        "monster_00161": 0.99,
-        "monster_00162": 0.99
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.295,
-      "p75": 0.3267,
-      "p95": 0.3533,
-      "p99": 0.3733,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.44,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.42,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.4,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [
-      {
-        "lever": "skill_swap",
-        "band_id": "L50",
-        "role": "damage_over_time",
-        "lever_specifics": {
-          "swapped_from_id": "skill_000730",
-          "swapped_from_role": "damage_over_time",
-          "swapped_to_role": "utility",
-          "swapped_to_id": "skill_000956",
-          "role": "damage_over_time",
-          "rationale": "reduce_damage_output"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7775,
-        "after_winrate": 0.7775,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "geometry_mix",
-        "band_id": "L50",
-        "role": null,
-        "lever_specifics": {
-          "rationale": "no_geometry_candidates"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7775,
-        "after_winrate": 0.7775,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      },
-      {
-        "lever": "cooldown_energy",
-        "band_id": "L50",
-        "role": "area_damage",
-        "lever_specifics": {
-          "skill_id": "skill_000729",
-          "role": "area_damage",
-          "param": "cooldown_seconds",
-          "from_cd": 4.3,
-          "to_cd": 4.73,
-          "from_cost": 17.5,
-          "to_cost": 19.25,
-          "rationale": "cd_increase_reduce_dps"
-        },
-        "attempt": 1,
-        "before_winrate": 0.7775,
-        "after_winrate": 0.7775,
-        "delta": 0.0,
-        "accepted": false,
-        "eval_modifier": 0.0509
-      }
-    ],
-    "recompose_outcome": "modifier_fallback",
-    "composition_pre_modifier_wr": 0.9867,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [],
-    "secondary_loop_outcome": "secondary_skipped_pure_element",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.0509,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "specialist",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_567727",
@@ -830,5 +569,50 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.75,
+    "convergence_winrate": 0.5111111111111111,
+    "pack_winrate": 0.9889,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.08175234375000001,
+    "gauntlet_results": {
+      "monster_00109_pack": 1.0,
+      "monster_00110_pack": 0.9333,
+      "monster_00111_pack": 1.0,
+      "monster_00112_pack": 1.0,
+      "monster_00113_pack": 1.0,
+      "monster_00114_pack": 1.0,
+      "monster_00121": 1.0,
+      "monster_00122": 1.0,
+      "monster_00141": 0.1333,
+      "monster_00142": 0.9333,
+      "monster_00149": 0.0,
+      "monster_00151": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0818
+    },
+    "iterations": 8
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 5,
+    "final_skill_count": 5,
+    "skills_dropped_count": 0,
+    "skills_dropped": [],
+    "skill_count_drops": [],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 11,
+    "element_ceiling": 2
   }
 }

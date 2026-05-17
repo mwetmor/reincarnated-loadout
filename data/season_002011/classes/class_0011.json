@@ -9,6 +9,7 @@
   "range_profile": "long",
   "dominant_element": "water",
   "seasonal_dominant_element": "brine",
+  "is_act_boss": false,
   "color_palette": [
     669510,
     686545,
@@ -30,12 +31,10 @@
     {
       "id": "skill_000234",
       "name": "Brine Checkpoint Bloom",
-      "composition_mode": "single",
       "role": "sustain",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "sustain",
-      "canonical_pair_ref": "canonical/water/sustain",
+      "geometry_type": "single_target",
       "energy_cost": 28.8,
       "cooldown_seconds": 5.8,
       "damage_multiplier": 1.0,
@@ -61,23 +60,15 @@
           }
         }
       ],
-      "color_value": 669510,
-      "flavor_text": "Salt seeps through every crack in the wall, carrying with it a bitter nourishment that mends flesh and steadies the mind. What the border preserves, it also sustains.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Salt seeps through every crack in the wall, carrying with it a bitter nourishment that mends flesh and steadies the mind. What the border preserves, it also sustains."
     },
     {
       "id": "skill_000235",
       "name": "Brine Toll Strike",
-      "composition_mode": "single",
       "role": "primary_attack",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "single_target_damage",
-      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "geometry_type": "multi_projectile",
       "energy_cost": 7.3,
       "cooldown_seconds": 0.2,
       "damage_multiplier": 1.0,
@@ -90,23 +81,15 @@
           }
         }
       ],
-      "color_value": 686545,
-      "flavor_text": "A concentrated surge of salt-heavy water crashes against a single target like a smuggler's debt come due. The sting lingers long after the blow, preserving the wound in bitter memory.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A concentrated surge of salt-heavy water crashes against a single target like a smuggler's debt come due. The sting lingers long after the blow, preserving the wound in bitter memory."
     },
     {
       "id": "skill_000236",
       "name": "Brine Marker Post",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/water/control",
+      "geometry_type": "circle",
       "energy_cost": 14.4,
       "cooldown_seconds": 6.2,
       "damage_multiplier": 1.0,
@@ -119,23 +102,15 @@
           }
         }
       ],
-      "color_value": 630024,
-      "flavor_text": "A squat column of salt-crusted earth erupts at the border's edge, weeping mineral tears into the soil beneath those who linger too long. The ground remembers every crossing, and it is not forgiving.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "A squat column of salt-crusted earth erupts at the border's edge, weeping mineral tears into the soil beneath those who linger too long. The ground remembers every crossing, and it is not forgiving."
     },
     {
       "id": "skill_000237",
       "name": "Brine Sealed Crossing",
-      "composition_mode": "single",
       "role": "sustain",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "sustain",
-      "canonical_pair_ref": "canonical/water/sustain",
+      "geometry_type": "single_target",
       "energy_cost": 27.6,
       "cooldown_seconds": 5.7,
       "damage_multiplier": 1.0,
@@ -154,23 +129,15 @@
           }
         }
       ],
-      "color_value": 655578,
-      "flavor_text": "Salt pressed into the wound holds more than it stings \u2014 it preserves what remains, drawing the body back from the threshold with bitter, stubborn care. The mana flows steady after, like contraband finding its route through familiar walls.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Salt pressed into the wound holds more than it stings \u2014 it preserves what remains, drawing the body back from the threshold with bitter, stubborn care. The mana flows steady after, like contraband finding its route through familiar walls."
     },
     {
       "id": "skill_000238",
       "name": "Brine Toll Strike",
-      "composition_mode": "single",
       "role": "burst_damage",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/water/area_damage",
+      "geometry_type": "single_target",
       "energy_cost": 27.5,
       "cooldown_seconds": 9.0,
       "damage_multiplier": 1.0,
@@ -190,23 +157,15 @@
           }
         }
       ],
-      "color_value": 620198,
-      "flavor_text": "At the crossing, salt-heavy water erupts in a crushing circle, soaking through skin and slowing the blood to a bitter crawl. Those caught in the surge pay the price of passage whether they intended to cross or not.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "At the crossing, salt-heavy water erupts in a crushing circle, soaking through skin and slowing the blood to a bitter crawl. Those caught in the surge pay the price of passage whether they intended to cross or not."
     },
     {
       "id": "skill_000239",
       "name": "Brine Checkpoint Seep",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "area_damage",
-      "canonical_pair_ref": "canonical/water/area_damage",
+      "geometry_type": "circle",
       "energy_cost": 19.8,
       "cooldown_seconds": 7.0,
       "damage_multiplier": 1.0,
@@ -226,23 +185,15 @@
           }
         }
       ],
-      "color_value": 650555,
-      "flavor_text": "Salt water bleeds through the cracked wall in slow, relentless rings, stinging everything it touches into stillness. What crosses this threshold carries the border's bitterness long after it passes.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Salt water bleeds through the cracked wall in slow, relentless rings, stinging everything it touches into stillness. What crosses this threshold carries the border's bitterness long after it passes."
     },
     {
       "id": "skill_000240",
       "name": "Brine Checkpoint Bloom",
-      "composition_mode": "single",
       "role": "sustain",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "sustain",
-      "canonical_pair_ref": "canonical/water/sustain",
+      "geometry_type": "single_target",
       "energy_cost": 34.8,
       "cooldown_seconds": 7.5,
       "damage_multiplier": 1.0,
@@ -254,23 +205,15 @@
           }
         }
       ],
-      "color_value": 618956,
-      "flavor_text": "Salt seeps upward through cracked earth at the wall's base, pulling life back into those who have stood too long at the crossing. The bitter mineral haze settles over skin like a preserving hand, knitting what the long wait has worn thin.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Salt seeps upward through cracked earth at the wall's base, pulling life back into those who have stood too long at the crossing. The bitter mineral haze settles over skin like a preserving hand, knitting what the long wait has worn thin."
     },
     {
       "id": "skill_000241",
       "name": "Brine Seep Crossing",
-      "composition_mode": "single",
       "role": "damage_over_time",
       "canonical_element": "water",
       "seasonal_element": "brine",
-      "effect_category": "control",
-      "canonical_pair_ref": "canonical/water/control",
+      "geometry_type": "circle",
       "energy_cost": 22.1,
       "cooldown_seconds": 7.5,
       "damage_multiplier": 1.0,
@@ -283,178 +226,9 @@
           }
         }
       ],
-      "color_value": 640278,
-      "flavor_text": "Salt-heavy water rises through cracked earth at the checkpoint line, soaking into boots and slowing every desperate step. It preserves what it catches, holding trespassers in place long after the ground looks dry.",
-      "tier": null,
-      "chain_id": "flat",
-      "chain_position": null,
-      "parent_skill_ids": [],
-      "scaling_coefficient": null
+      "flavor_text": "Salt-heavy water rises through cracked earth at the checkpoint line, soaking into boots and slowing every desperate step. It preserves what it catches, holding trespassers in place long after the ground looks dry."
     }
   ],
-  "balance_metadata": {
-    "target_winrate": 0.5,
-    "actual_winrate": 0.8277777777777778,
-    "convergence_winrate": 0.6555555555555556,
-    "pack_winrate": 0.9883,
-    "convergence_iterations": 10,
-    "converged": false,
-    "final_modifier": 0.050000878906250004,
-    "gauntlet_results": {
-      "monster_00001_pack": 1.0,
-      "monster_00002_pack": 0.93,
-      "monster_00003_pack": 1.0,
-      "monster_00004_pack": 1.0,
-      "monster_00005_pack": 1.0,
-      "monster_00006_pack": 1.0,
-      "monster_00013": 1.0,
-      "monster_00014": 0.88,
-      "monster_00033": 1.0,
-      "monster_00034": 0.33,
-      "monster_00041": 0.02,
-      "monster_00043": 0.0
-    },
-    "use_room_evaluation": false,
-    "room_winrate": 0.0,
-    "room_pack_winrate": 0.0,
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "convergence_report": {
-    "endgame_L50": {
-      "winrate": 0.5383,
-      "overall_winrate": 0.7633,
-      "pack_winrate": 0.9883,
-      "use_room_evaluation": false,
-      "room_winrate": 0.0,
-      "room_pack_winrate": 0.0,
-      "iterations": 10,
-      "converged": true,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00001_pack": 1.0,
-        "monster_00002_pack": 0.93,
-        "monster_00003_pack": 1.0,
-        "monster_00004_pack": 1.0,
-        "monster_00005_pack": 1.0,
-        "monster_00006_pack": 1.0,
-        "monster_00013": 1.0,
-        "monster_00014": 0.88,
-        "monster_00033": 1.0,
-        "monster_00034": 0.33,
-        "monster_00041": 0.02,
-        "monster_00043": 0.0
-      }
-    },
-    "mid_band_L33": {
-      "winrate": 0.73,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00045": 1.0,
-        "monster_00046": 0.55,
-        "monster_00047": 0.89,
-        "monster_00048": 0.71,
-        "monster_00049": 0.5
-      }
-    },
-    "early_band_L17": {
-      "winrate": 0.934,
-      "iterations": 10,
-      "converged": false,
-      "final_modifier": 0.0509,
-      "dimensions_explored": [],
-      "optimal_distribution": null,
-      "gauntlet_results": {
-        "monster_00050": 1.0,
-        "monster_00051": 0.75,
-        "monster_00052": 0.95,
-        "monster_00053": 0.97,
-        "monster_00054": 1.0
-      }
-    },
-    "variance_check_L50": {
-      "p50": 0.4383,
-      "p75": 0.465,
-      "p95": 0.4833,
-      "p99": 0.4767,
-      "pathology_flagged": false
-    },
-    "doppelganger_validation": {
-      "L17_mirror": {
-        "winrate": 0.52,
-        "balanced": true
-      },
-      "L33_mirror": {
-        "winrate": 0.44,
-        "balanced": true
-      },
-      "L50_mirror": {
-        "winrate": 0.56,
-        "balanced": true
-      }
-    },
-    "recompose_attempts": [],
-    "recompose_outcome": "skipped_experimental",
-    "composition_pre_modifier_wr": 0.9883,
-    "composition_sufficient_for_055": false,
-    "secondary_loop_attempts": [],
-    "secondary_loop_outcome": "skipped_experimental",
-    "modifier_clamp_observation": {
-      "clamp_range": [
-        0.15,
-        2.5
-      ],
-      "final_modifier": 0.0509,
-      "would_pass_clamp": false
-    },
-    "modifier_flag": {
-      "tier": null,
-      "threshold": 3.0,
-      "final_modifier": 0.0509
-    }
-  },
-  "embodiment_tag": "humanoid",
-  "embodiment_anatomy_tags": [
-    "bipedal",
-    "arms_2",
-    "hands_2",
-    "head",
-    "torso"
-  ],
-  "embodiment_action_register": "arcane_channel",
-  "class_role_function": "specialist",
-  "gear_slot_labels": {
-    "main_hand": "Weapon",
-    "off_hand": "Off-hand",
-    "head": "Helm",
-    "chest": "Chest",
-    "hands": "Gloves",
-    "feet": "Boots",
-    "belt": "Belt",
-    "ring_1": "Ring",
-    "ring_2": "Ring",
-    "amulet": "Amulet"
-  },
-  "movement_speed": 8.0,
-  "grouping_pair_structure": {
-    "fire": "ignition",
-    "water": "suffusion",
-    "earth": "bulwark",
-    "wind": "displacement",
-    "physical": "impact"
-  },
-  "grouping_season_id": "vs2a",
-  "grouping_layer_version": "v1.1",
-  "post_process_d10": true,
   "carried_gear": {
     "weapon": {
       "id": "gear_192405",
@@ -900,5 +674,52 @@
       "generation_mode": "mechanics_only",
       "used_in_carried_gear": true
     }
+  },
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.8277777777777778,
+    "convergence_winrate": 0.6555555555555556,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.050000878906250004,
+    "gauntlet_results": {
+      "monster_00001_pack": 1.0,
+      "monster_00002_pack": 1.0,
+      "monster_00003_pack": 1.0,
+      "monster_00004_pack": 1.0,
+      "monster_00005_pack": 1.0,
+      "monster_00006_pack": 1.0,
+      "monster_00013": 1.0,
+      "monster_00014": 0.9333,
+      "monster_00033": 1.0,
+      "monster_00034": 0.3333,
+      "monster_00041": 0.6667,
+      "monster_00043": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    },
+    "iterations": 10,
+    "modifier_flag_tier": "floor_over_band",
+    "estimated_gap": 0.1556
+  },
+  "movement_speed": 8.0,
+  "post_process_d10": true,
+  "d10_pruning_log": {
+    "original_skill_count": 8,
+    "final_skill_count": 8,
+    "skills_dropped_count": 0,
+    "skills_dropped": [],
+    "skill_count_drops": [],
+    "element_breadth_drops": [],
+    "buff_damage_drops": [],
+    "skill_ceiling": 12,
+    "element_ceiling": 2
   }
 }
