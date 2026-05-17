@@ -1,11 +1,88 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-17
-**Last tag:** drax/v0.24-d19-sub-phase-b-partial-holy-frostwindz-1 (commit 3b17175) — loadout seam
+**Last tag:** drax/v1.0-d17-court-browser-surface-1 — loadout seam (significant version bump; D17 milestone)
 **Branch:** main
 **Hive-mind mode:** ACTIVE (Phase-1 P1; distributed authority L1 in-seam)
 
 ## Session summary
+
+### D17 Court of Forms browser surface (completed 2026-05-17)
+
+**Dispatch:** `2026-05-17-drax-loadout-d17-court-browser-surface.md` — COMPLETE
+**Tag:** `drax/v1.0-d17-court-browser-surface-1` (significant version bump; loadout-side D17 milestone)
+**Route:** `/court` (new nav tab "Court")
+**MIGRATION.md:** §v1.2
+**Hive log entries:** STATE + QUESTION (rocket export step) + HANDOFF (drax-demo) appended
+
+**Architecture decision: Path A static export** (documented in MIGRATION.md §v1.2)
+- Engine (rocket) writes JSON snapshot to `~/.config/reincarnated/court_export.json`
+- Loadout reads from `public/data/court.json` (bootstrap empty file in place)
+- Path B (API) and Path C (SQLite file-watch) rejected — disproportionate for local-first Phase-1 P1
+- QUESTION filed → rocket: add `Court.export_json(earth_self_id, output_path)` to `court_persistence.py`
+
+**What shipped (5 items):**
+
+1. **Architecture decision** — Path A static export; documented in MIGRATION.md §v1.2 including
+   QUESTION to rocket for the missing export step.
+
+2. **Court data consumption layer:**
+   - `src/data/courtTypes.ts` — TypeScript types mirroring Python dataclasses (`CourtForm`,
+     `CourtSkill`, `CourtVisualSignature`, `CourtExport`); `SUBSTRATE_COLORS` (all 7 canonical
+     substrates); `SUBSTRATE_GROUPING_LABEL`, `PATH_TAKEN_LABEL`, `COURT_ROLE_LABEL`
+   - `src/hooks/useCourtData.ts` — React hook; discriminated union state (loading/empty/ready/error);
+     graceful empty-Court handling; forms sorted season ASC on load
+
+3. **Court browser UI (`src/pages/CourtBrowser.tsx`):**
+   - Card grid (1→2→3→4 col responsive)
+   - Substrate filter toggles (grouping_label display; "all" default)
+   - Search by form_name (substring, case-insensitive)
+   - Sort: season ASC/DESC, substrate, name
+   - N=5 recency indicator (accent-color "recent" badge on most recently ascended forms)
+   - Sprite thumbnails from vfx-manifest.json v1.1 `thumbnail_frame.file` paths; `onError` graceful degradation
+   - All 7 substrate colors visible (SUBSTRATE_COLORS extension of v0.28 palette)
+   - Per-card: form_name (full, per C3), season, archetype, role, class_role_function,
+     iconic skill, path_taken, court_resonance strip
+   - Empty state: canonical voice copy ("Your Court will populate as you ascend forms across seasons")
+   - Loading + error states
+
+4. **Cross-seam reference update:**
+   - `MIGRATION.md §v1.2` authored (architecture decision + schema + consumer responsibilities)
+   - `AGENT_STATE.md` updated (this entry)
+   - Bootstrap `public/data/court.json` created (empty envelope; triggers empty state)
+
+5. **Hive log + tag:**
+   - STATE entry appended
+   - QUESTION → rocket (export_json() needed)
+   - HANDOFF → drax-demo (informational; Court browser live in loadout)
+   - Tag: `drax/v1.0-d17-court-browser-surface-1`
+
+**New files:**
+- `src/data/courtTypes.ts` — Court TypeScript types + substrate palette
+- `src/hooks/useCourtData.ts` — React hook for court.json consumption
+- `src/pages/CourtBrowser.tsx` — Court browser UI page
+- `public/data/court.json` — bootstrap empty envelope (Path A consumer path)
+
+**Modified files:**
+- `src/App.tsx` — added `/court` route + CourtBrowser import
+- `src/components/Nav.tsx` — added "Court" nav tab
+- `MIGRATION.md` — §v1.2 appended
+- `AGENT_STATE.md` — this entry
+
+**Smoke results:**
+- `npm run build`: 690 modules, 0 TypeScript errors (clean)
+- court.json: valid JSON, empty envelope, graceful empty state path verified by type
+- Substrate colors: all 7 substrates have explicit Tailwind literal classes (no safelist additions needed)
+- Sprite thumbnail paths: `onError` degradation means broken paths don't crash the page
+- Build chunk size warning is pre-existing (Recharts); no new issue
+
+**TODO(drax): remove Path A bootstrap** — when rocket ships `export_json()` and first export
+is produced, the empty `public/data/court.json` gets replaced with real data. Then the empty
+state is no longer the default path. Track until rocket HANDOFF confirms export step live.
+
+**TODO(drax): Frostwindz guard preserved** — Frostwindz Deathbringer is `denied_uses: ["court_portrait_full_screen"]`.
+Court card thumbnails use `chierit/shadow_stalker/gif_samples/e_idle.gif` for shadow (not Frostwindz).
+No Frostwindz paths referenced in CourtBrowser.tsx. Guard intact.
 
 ### D19 Sub-phase B-partial: holy VFX gap closed + Frostwindz ingested + earth deferred (completed 2026-05-17)
 
@@ -362,18 +439,18 @@ All 6 surfaces from dispatch `2026-05-16-drax-encounters-page-explanatory-conten
 
 **Phase-1 P1 hive-mode active. Next loadout-seam tasks:**
 
-Priority 1 (READY — D19 Sub-phase B-partial COMPLETE):
-- **D19 Sub-phase B-partial: COMPLETE** (tag: `drax/v0.24-d19-sub-phase-b-partial-holy-frostwindz-1`)
+Priority 1 (READY — D17 Court browser COMPLETE):
+- **D17 Court browser: COMPLETE** (tag: `drax/v1.0-d17-court-browser-surface-1`)
+- **BLOCKED on rocket:** Court browser is live but shows empty state until rocket ships `export_json()`.
+  See MIGRATION.md §v1.2 QUESTION entry. When rocket HANDOFF confirms, replace
+  `public/data/court.json` bootstrap with a real export to verify full render path.
+
+Priority 2 (D19 Sub-phase C — next loadout work):
 - **D19 Sub-phase C:** Demo VFX wiring (element-keyed routing + geometry-affinity dispatch) + loadout D21 substrate browser + D22 embodiment display + element badges for lightning/holy/shadow
   - Holy wiring UNBLOCKED (CreativeKind Holy Spell Effects on-disk; geometry_animation_map complete)
   - Lightning wiring UNBLOCKED (pimen thunder pack + CreativeKind lightning on-disk; geometry_animation_map complete)
   - Shadow PARTIAL (void_pool only; tendril/creep still gap)
   - Earth stone-VFX fallback available (CraftPix/Fellor deferred to Phase-2)
-
-Priority 2 (parallel; D17 Court of Forms browser):
-- **D17:** Rocket D17 Court persistence SHIPPED. Loadout Court browser surface may be dispatchable.
-  - Holy thumbnail now UNBLOCKED (Spell 4_gold_red.gif)
-  - Check with knight-rider for dispatch readiness
 
 Priority 3 (Phase-2 followup — DO NOT start in Phase-1 P1):
 - CraftPix Premium wood-nature acquisition (earth biological-organic VFX)

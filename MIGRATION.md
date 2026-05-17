@@ -396,6 +396,176 @@ Matt L3 disposition 2026-05-17: CraftPix Premium wood-nature and Fellor Crystal 
 
 ---
 
+## [2026-05-17] §v1.2-court-browser — Court of Forms browser surface (Phase-1 P1 D17 loadout-side)
+
+**Author:** drax-loadout
+**Phase-1 P1 Deliverable:** D17 Court browser surface (loadout seam)
+**Hive log ref:** `agentic_orchestration/hive-mind/phase-1-p1-log.md` [2026-05-17 STATE drax-loadout D17 Court browser]
+**Tag:** `drax/v1.0-d17-court-browser-surface-1`
+**Predecessor engine-side:** rocket D17 Court of Forms persistence @ commit `a8808ac` — `court_persistence.py` + SQLite at `~/.config/reincarnated/court_of_forms.db`
+**Predecessor manifest:** §v1.1-vfx-manifest (D19 Sub-phase B-partial) — `thumbnail_frame.file` paths consumed here
+
+### Item 1 — Architecture decision: Path A static export
+
+**Decision: Path A static export.**
+
+Rationale:
+- Phase-1 P1 priorities: simplicity + ship-readiness over runtime sophistication.
+- Engine + loadout run on the same machine (local-first; no network service requirement).
+- Court is read-mostly from loadout's perspective (Phase-1 P1 is display-only; no writes).
+- Path B (API endpoint) requires service orchestration — two processes running, port binding, CORS. Disproportionate for a local-first single-player app in Phase-1 P1.
+- Path C (SQLite file-watch) requires a Node.js bridge layer or WASM SQLite build — added complexity, browser security constraints.
+- Path A: engine writes a JSON snapshot when the Court changes; loadout reads JSON at boot. No service orchestration. The JSON file is the cross-seam boundary.
+
+**Path A cross-seam contract:**
+- Engine (rocket) writes: `~/.config/reincarnated/court_export.json` — full Court snapshot for one Earth Self.
+- Loadout reads: `/public/data/court.json` — the JSON snapshot (copied or symlinked from engine output).
+- Refresh model: player re-exports after ascension (or export is automated at ascension time). No live reload in Phase-1 P1 scope.
+
+**QUESTION to rocket (Path A export step needed):**
+`court_persistence.py` at commit `a8808ac` does NOT include a JSON export method.
+The `Court` class provides `list_forms(earth_self_id)` → `list[CourtForm]` but no serialization
+to JSON file. Rocket needs to add an `export_json(earth_self_id, output_path)` method that:
+1. Calls `list_forms(earth_self_id)`
+2. Serializes each `CourtForm` to a dict (skills, visual_signature, key_moments as arrays)
+3. Writes the `CourtExport` envelope (schema_version, exported_at, earth_self_id, forms) to `output_path`
+
+This is a new engine-side addition. Drax does NOT modify `court_persistence.py` (engine is read-only per scope).
+
+**TODO(drax): remove Path A bootstrap file** — `public/data/court.json` currently contains an empty envelope
+(`{"schema_version": "1.0", "exported_at": null, "earth_self_id": null, "forms": []}`).
+This is the empty-state file that triggers the "Your Court will populate" empty state.
+When rocket ships the export step and the player has ascended at least one form, this file
+is replaced with a real export. Remove this TODO when rocket HANDOFF confirms export_json() is live.
+
+### Item 2 — Court data consumption layer
+
+**File:** `reincarnated-loadout/src/data/courtTypes.ts`
+
+TypeScript types mirroring the Python `CourtForm` / `CourtSkill` / `CourtVisualSignature` dataclasses:
+
+```typescript
+interface CourtSkill {
+  skill_id: string;
+  name: string;
+  role: string;
+  geometry_type: string;
+  canonical_element: string;
+  is_iconic: boolean;
+}
+
+interface CourtVisualSignature {
+  sprite_ref: string;
+  vfx_register_ref: string;
+  embodiment_tag: string;
+}
+
+interface CourtForm {
+  earth_self_id: string;
+  season_number: number;
+  ritual_outcome: string;     // always "ascension"
+  form_name: string;
+  substrate: string;
+  archetype_name: string;
+  role: string;
+  class_role_function: string;
+  skills: CourtSkill[];
+  visual_signature: CourtVisualSignature;
+  court_resonance: string;
+  season_cosmology: string;
+  key_moments: string[];
+  path_taken: string;
+  ascended_at_iso: string;
+}
+
+interface CourtExport {
+  schema_version: string;
+  exported_at: string | null;
+  earth_self_id: string | null;
+  forms: CourtForm[];
+}
+```
+
+**Additional exports in `courtTypes.ts`:**
+- `SUBSTRATE_COLORS` — all 7 canonical substrates (extends v0.28 palette with lightning/holy/shadow)
+- `SUBSTRATE_GROUPING_LABEL` — grouping label per substrate (from vfx-manifest.json v1.1)
+- `PATH_TAKEN_LABEL` — player-facing path labels
+- `COURT_ROLE_LABEL` — player-facing role labels
+
+**File:** `reincarnated-loadout/src/hooks/useCourtData.ts`
+
+React hook that fetches and parses `public/data/court.json`. Returns a discriminated union:
+- `{ status: 'loading' }` — fetch in flight
+- `{ status: 'empty', reason: 'no-data' }` — fetch succeeded but forms array is empty
+- `{ status: 'ready', export: CourtExport, forms: CourtForm[] }` — populated Court; forms sorted season ASC
+- `{ status: 'error', message: string }` — fetch/parse failure
+
+Gracefully handles first-time player (empty forms array → empty state render).
+
+### Item 3 — Court browser UI
+
+**Route:** `/court` (new route in App.tsx, new nav tab in Nav.tsx)
+**File:** `reincarnated-loadout/src/pages/CourtBrowser.tsx`
+
+**Features shipped:**
+
+| Feature | Implementation |
+|---|---|
+| Card grid | CSS Grid: 1 col mobile, 2 col sm, 3 col lg, 4 col xl |
+| Substrate filter | Toggle buttons per substrate + "all"; grouping_label used as label text |
+| Search | Text input filtering form_name (case-insensitive substring match) |
+| Sort | Select: season ASC/DESC, substrate, name |
+| N=5 recency indicator | Accent-color "recent" badge on N=5 most recently ascended forms |
+| Sprite thumbnails | `<img>` from `SUBSTRATE_THUMBNAIL` paths (vfx-manifest.json v1.1 `thumbnail_frame.file`); graceful `onError` degradation |
+| Substrate colors | `SUBSTRATE_COLORS` map — all 7 substrates; per-card border + bg + text |
+| Per-card content | form_name (full, per C3), season_number, archetype_name, role, class_role_function, iconic skill name + geometry/role, path_taken, court_resonance (collapsed strip) |
+| Empty state | Canonical voice copy; empty state distinguished from filtered-to-zero |
+| Loading state | Inline "Loading Court of Forms…" |
+| Error state | Inline error message with diagnostic hint |
+
+**Substrate thumbnail paths** (from vfx-manifest.json v1.1 `thumbnail_frame.file`):
+
+| substrate | thumbnail_frame.file |
+|---|---|
+| fire | chierit/fire_knight/gifs/08_sp_atk.gif |
+| water | chierit/water_priestess/gif_samples/sp_atk.gif |
+| earth | chierit/ground_monk/gif_samples/sp_atk.gif |
+| wind | chierit/wind_hashashin/gif_samples/sp_atk.gif |
+| lightning | chierit/lightning_ronin/gif_samples/sp_atk.gif |
+| holy | Holy_Spell_Effects_Creativekind/Preview/Spell 4_gold_red.gif |
+| shadow | chierit/shadow_stalker/gif_samples/e_idle.gif |
+
+Note: thumbnails resolve from the demo's `/public/assets/` path. In loadout-only serving context
+(no demo assets co-served), images gracefully degrade via `onError` (hide img; substrate color bg visible).
+Full thumbnail rendering requires demo assets served at the same origin — Phase-1 P1 acceptable behavior.
+
+### Cross-seam consumer responsibilities
+
+#### rocket (Court export step)
+
+- Add `export_json(earth_self_id: str, output_path: str | Path)` to `Court` class in `court_persistence.py`.
+- Output envelope matches `CourtExport` schema (schema_version: "1.0", exported_at: ISO-8601, earth_self_id, forms: [...]).
+- Each `CourtForm` dict must serialize `skills` (array of dicts), `visual_signature` (dict), `key_moments` (array of strings) — same as the SQLite JSON-column serialization already done in `ascend_form()`.
+- Caller (ascension event handler) invokes after `ascend_form()` to keep export in sync.
+- Output path convention: `~/.config/reincarnated/court_export.json` (matches `DEFAULT_COURT_DB_PATH` directory).
+
+#### star-lord
+
+- No new obligation. Court browser is display-only; star-lord's Spirit Guide cross-season reference API (`Court.get_form_by_season()`) is unaffected.
+- When star-lord's LLM voice lines reference Court members by name, the `form_name` field is the load-bearing canonical name per C3.
+
+#### gamora
+
+- No obligation. Court browser is presentation-only; no engine-simulation coupling.
+
+### Schema evolution notes
+
+- When rocket ships `export_json()`: replace the bootstrap `public/data/court.json` with a real export. No `courtTypes.ts` or `useCourtData.ts` code changes required if the envelope matches this schema.
+- If rocket adds new fields to `CourtForm`: `courtTypes.ts` gets additive `?:` optional fields. No version bump for additive additions.
+- If `court_export.json` path convention changes: update `public/data/court.json` copy/symlink step in rocket's tooling. No loadout code changes (loadout reads from `/public/data/court.json` always).
+
+---
+
 *MIGRATION.md created 2026-05-18. First entry: §v1.0-vfx-manifest (D19 Sub-phase A).*
 *Previous sessions (v0.5 through v0.21) did not require a MIGRATION.md entry; the engine's*
 *`reincarnated-engine/src/reincarnated/export/MIGRATION.md` was the upstream contract drax consumed.*

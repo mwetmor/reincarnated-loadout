@@ -19,6 +19,7 @@ export function Nav() {
           <NavItem to="/sample">Sample</NavItem>
           <NavItem to="/analytics">Analytics</NavItem>
           <NavItem to="/encounters">Encounters</NavItem>
+          <NavItem to="/court">Court</NavItem>
         </div>
       </div>
     </nav>

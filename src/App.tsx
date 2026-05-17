@@ -4,6 +4,7 @@ import { Loadout } from './pages/Loadout';
 import { Sample } from './pages/Sample';
 import { Analytics } from './pages/Analytics';
 import { Encounters } from './pages/Encounters';
+import { CourtBrowser } from './pages/CourtBrowser';
 
 function Footer() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
             <Route path="/sample" element={<Sample />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/encounters" element={<Encounters />} />
+            <Route path="/court" element={<CourtBrowser />} />
           </Routes>
         </main>
         <Footer />
