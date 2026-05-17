@@ -1,11 +1,67 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-18
-**Last tag:** drax/v0.23-d19-sub-phase-a-chierit-extraction-manifest-1 (commit f659c90) — loadout seam
+**Last updated:** 2026-05-17
+**Last tag:** drax/v0.24-d19-sub-phase-b-partial-holy-frostwindz-1 (commit 3b17175) — loadout seam
 **Branch:** main
 **Hive-mind mode:** ACTIVE (Phase-1 P1; distributed authority L1 in-seam)
 
 ## Session summary
+
+### D19 Sub-phase B-partial: holy VFX gap closed + Frostwindz ingested + earth deferred (completed 2026-05-17)
+
+**Hive-mode D19 Sub-phase B-partial.** Matt landed two vendor packs on-disk: CreativeKind Holy Spell Effects + Frostwindz Deathbringer. CraftPix Premium + Fellor Crystal DEFERRED to Phase-2 per Matt L3 disposition 2026-05-17.
+**Tag:** `drax/v0.24-d19-sub-phase-b-partial-holy-frostwindz-1`
+**Loadout commit:** `3b17175` (data/vfx-manifest.json v1.1 + MIGRATION.md §v1.1)
+**Demo commit:** `103ed6c` (metadata.json for both packs)
+**Hive log entries:** STATE + HANDOFF + OBSERVATION (appended after commit)
+
+**What shipped:**
+
+1. **CreativeKind Holy Spell Effects metadata.json** (`Holy_Spell_Effects_Creativekind/metadata.json`):
+   - 13 animation slugs (Spell 1–13) with geometry_type + affinity mapping
+   - derived_register: hand-drawn-pixel (VERIFIED — HD-resolution spritesheets, smooth digital painting)
+   - All 5 PREFER holy geometries mapped (radiant_aura, shaft, nova, ground_targeted_circle, area_sustain)
+   - 52 assets (26 preview GIFs + 26 spritesheets); 9 color variants for Spell 4 (radiant_aura)
+
+2. **Frostwindz Deathbringer metadata.json** (`Deathbringer VFX/metadata.json`):
+   - derived_register: 16-bit-shaped-pixel (CONFIRMED retro-pixel by visual inspection)
+   - permitted_uses: [ui_thumbnail, loadout_static, substrate_browser_thumbnail, trial_cinematic_redraw_source]
+   - denied_uses: [in_combat_vfx, court_portrait_full_screen] per gandalf DECISION [2026-05-18 00:00Z]
+   - License: commercial-royalty-free (no attribution required; read from embedded docx)
+   - 6 VFX animations; 99 total frames across VFX 1-6
+   - TODO(drax) guard preserved and strengthened
+
+3. **vfx-manifest.json v1.1** (`data/vfx-manifest.json`):
+   - schema_version: "1.0" → "1.1"
+   - HOLY: primary_spell_pack set (creativekind-holy-spell-effects); geometry_animation_map populated (8 keys); acquisition_status entity-only-on-disk → on-disk; combat_vfx_ready: false → **true** (Discipline #12 semantic shift)
+   - SHADOW (Frostwindz): acquisition_status pending-matt → on-disk; register_risk confirmed; permitted_uses/denied_uses set; NOT in geometry_animation_map (in-combat denied)
+   - EARTH (CraftPix + Fellor): acquisition_status pending-matt → deferred-post-phase-1-p1; phase_2_followup notes added; stone-VFX fallback documented
+   - New v1.1 fields: permitted_uses, denied_uses, register_risk (confirmed), phase_2_followup, gandalf_decision_ref, animation_preview, deferred-post-phase-1-p1 status value
+
+4. **MIGRATION.md §v1.1** entry authored:
+   - Semantic shift documentation (holy combat_vfx_ready false → true)
+   - Frostwindz conditional-accept ingestion + TODO(drax) guard
+   - Earth deferral disposition + Phase-2 followup
+   - Schema field additions (backward-compatible)
+   - Consumer responsibilities per seam (star-lord / rocket / drax)
+
+**Smoke results:**
+- vfx-manifest.json: parses clean (python3 -m json.tool)
+- No Frostwindz entries in any geometry_animation_map (verified by script)
+- All holy PREFER geometry affinities covered; no key drift vs § 6 declarations
+- npm run build: succeeded (687 modules, 0 TS errors)
+
+**Phase-2 followup queue (captured in manifest + state):**
+1. CraftPix Premium wood-nature (earth biological-organic) — DEFERRED 2026-05-17 per Matt
+2. Fellor Crystal Gem (earth crystal-gem) — DEFERRED 2026-05-17 per Matt; macOS Gatekeeper note on retry
+3. CreativeKind shadow-tendril (shadow tendril/creep geometry) — catalogue-only; not yet authorized; needed for full shadow combat_vfx_ready
+
+**Cross-seam observations:**
+- Holy combat_vfx_ready now TRUE — rocket D17 Court browser holy thumbnail UNBLOCKED (new thumbnail: Spell 4_gold_red.gif)
+- Shadow combat_vfx_ready remains FALSE — Frostwindz is UI-only; tendril/creep PREFER geometries still absent
+- Earth stone-VFX fallback is functional for Phase-1 P1 ship (graceful degradation)
+
+**TODO(drax): Frostwindz Deathbringer** — do NOT wire to in-combat VFX. Register CONFIRMED retro-pixel. UI thumbnails only. Explicit gandalf exception required to override DECISION [2026-05-18 00:00Z]. Guard in metadata.json AND vfx-manifest.json shadow.supplementary_packs.
 
 ### D19 Sub-phase A: chierit extraction + vfx-manifest.json + MIGRATION.md (completed 2026-05-18)
 
@@ -306,30 +362,30 @@ All 6 surfaces from dispatch `2026-05-16-drax-encounters-page-explanatory-conten
 
 **Phase-1 P1 hive-mode active. Next loadout-seam tasks:**
 
-Priority 1 (DISPATCHABLE NOW — no Matt acquisitions required):
-- **D19 Sub-phase A: COMPLETE** (tag: `drax/v0.23-d19-sub-phase-a-chierit-extraction-manifest-1`)
+Priority 1 (READY — D19 Sub-phase B-partial COMPLETE):
+- **D19 Sub-phase B-partial: COMPLETE** (tag: `drax/v0.24-d19-sub-phase-b-partial-holy-frostwindz-1`)
+- **D19 Sub-phase C:** Demo VFX wiring (element-keyed routing + geometry-affinity dispatch) + loadout D21 substrate browser + D22 embodiment display + element badges for lightning/holy/shadow
+  - Holy wiring UNBLOCKED (CreativeKind Holy Spell Effects on-disk; geometry_animation_map complete)
+  - Lightning wiring UNBLOCKED (pimen thunder pack + CreativeKind lightning on-disk; geometry_animation_map complete)
+  - Shadow PARTIAL (void_pool only; tendril/creep still gap)
+  - Earth stone-VFX fallback available (CraftPix/Fellor deferred to Phase-2)
 
-Priority 1 next (BLOCKED on Matt acquisitions):
-- **D19 Sub-phase B:** Intake CraftPix/Fellor/Frostwindz packs when Matt downloads; register verification on Frostwindz (expected RETRO — Frostwindz DENIED for in-combat per gandalf); update vfx-manifest.json acquisition_status fields from `pending-matt` to `on-disk`; update geometry_animation_map entries for earth organic + crystal sub-registers
+Priority 2 (parallel; D17 Court of Forms browser):
+- **D17:** Rocket D17 Court persistence SHIPPED. Loadout Court browser surface may be dispatchable.
+  - Holy thumbnail now UNBLOCKED (Spell 4_gold_red.gif)
+  - Check with knight-rider for dispatch readiness
 
-Priority 2 (BLOCKED on Matt acquisitions + holy gap resolution):
-- **D19 Sub-phase B:** Intake CraftPix/Fellor/Frostwindz packs when Matt downloads; register verification on Frostwindz (likely RETRO); update vfx-manifest.json acquisition_status fields
-- **D19 Sub-phase C:** Demo VFX wiring (element-keyed routing + geometry-affinity dispatch); loadout D21 substrate browser; D22 embodiment display; element badges for lightning/holy/shadow
-
-Priority 3 (parallel; blocked on engine D1 landing):
-- **D17 Court of Forms browser surface:** Loadout browsable Court surface; blocked on rocket D1 SubstrateIdentity loader + court persistence data structure
-
-Priority 4 (open pre-hive items, lower priority during Phase-1 P1):
-- **encounter_analytics.json regen** — tier-1 columns (duration_seconds) still only 3% populated; regenerate once star-lord or gamora ensures full coverage per fight row. Switch projection label to Damage×TTK when ready.
-- **Milestone tag `v0.7-encounter-analytics`** — on hold per dispatch (Matt must review preview). Once Matt approves, cut milestone tag at commit 3f2fca6 and push to origin.
+Priority 3 (Phase-2 followup — DO NOT start in Phase-1 P1):
+- CraftPix Premium wood-nature acquisition (earth biological-organic VFX)
+- Fellor Crystal Gem acquisition (earth crystal-gem VFX)
+- CreativeKind shadow-tendril acquisition (shadow tendril/creep VFX) — not yet authorized
 
 **Cross-seam dependencies to watch:**
-- Gandalf ruling on Frostwindz register exception (L2 OBSERVATION in hive log)
-- Matt authorization for CreativeKind Holy Spell Effects (L3 OBSERVATION via knight-rider)
-- Star-lord D17/D22/D15 manifest schema key naming (coordinate before Sub-phase C VFX wiring)
-- Rocket D1 SubstrateIdentity loader (unblocks D17 + D22 loadout surfaces)
+- Star-lord D17/D22/D15 manifest schema key naming (QUESTION in hive log line 3382 — coordinate before Sub-phase C VFX wiring)
+- Rocket D1 SubstrateIdentity loader (unblocks D22 embodiment display substrate identity consumption)
+- Jack-ryan WP-4a: should close with §v1.1 MIGRATION.md entry
 
-**TODO(drax): Frostwindz Deathbringer** — do NOT wire to combat VFX until gandalf register disposition lands. Track as pre-integration gate item.
+**TODO(drax): Frostwindz Deathbringer** — do NOT wire to in-combat VFX. Register CONFIRMED retro-pixel. UI thumbnails ONLY. Guard in both metadata.json and vfx-manifest.json. Explicit gandalf exception required to override DECISION [2026-05-18 00:00Z].
 
 **Outstanding pre-hive open items (unchanged from v0.21):**
 
