@@ -1,0 +1,714 @@
+{
+  "id": "class_0002",
+  "name": "Saltwater Hexbrigand",
+  "title_completion": "a Saltwater Hexbrigand",
+  "flavor_text": "Where the wall meets the tide, contraband flows like brine through cracked iron \u2014 and so does her magic. She deals in cursed totems, surge-borne pallclouds, and checkpoint spells that hold travelers in place just long enough to toll them twice. Every border is a transaction, and she has never once paid her own way through.",
+  "archetype_tag": "hybrid_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "seasonal_dominant_element": "brine",
+  "color_palette": [
+    270932,
+    72876,
+    277651,
+    325555,
+    73238,
+    463100,
+    497358,
+    485358,
+    319021,
+    61334,
+    41675,
+    267632,
+    442578
+  ],
+  "stat_distribution": {
+    "strength": 7,
+    "dexterity": 7,
+    "intelligence": 96,
+    "wisdom": 103,
+    "vitality": 57
+  },
+  "skills": [
+    {
+      "id": "skill_000015",
+      "name": "Crossing Surge Hold",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/earth/mobility",
+      "energy_cost": 19.3,
+      "cooldown_seconds": 6.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.0
+          }
+        }
+      ],
+      "color_value": 270932,
+      "flavor_text": "The body tears through the checkpoint in a breath, but the earth remembers the crossing and clamps down, rooting both mover and ground in a moment of iron refusal. What passes through the wall does not pass freely.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0696
+    },
+    {
+      "id": "skill_000016",
+      "name": "Contraband Ignition Totem",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "seasonal_element": "pitch",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 19.5,
+      "cooldown_seconds": 6.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 375,
+            "duration_seconds": 13.4
+          }
+        }
+      ],
+      "color_value": 72876,
+      "flavor_text": "A slick column of pitch rises unbidden from the earth, seeping through the cracks where no inspector looks. It burns slow and deliberate, the kind of fire that knows how to wait.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0599
+    },
+    {
+      "id": "skill_000017",
+      "name": "Toll Strike Contraband",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 36.9,
+      "cooldown_seconds": 7.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 277651,
+      "flavor_text": "Iron teeth of the checkpoint bite through flesh and stone alike, a chain of crushing earth-weight passing from body to body like a smuggled debt finally collected. The wall remembers every soul that tried to cross without paying.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0744
+    },
+    {
+      "id": "skill_000018",
+      "name": "Checkpoint Hold Volley",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 31.6,
+      "cooldown_seconds": 8.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 325555,
+      "flavor_text": "At the wall's edge, the earth itself is interrogated \u2014 stones wrenched from the border's foundation gather into a dense, trembling mass before erupting outward in a punishing barrage. Each fragment carries the weight of every crossing denied, every toll unpaid.",
+      "tier": 1,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.072
+    },
+    {
+      "id": "skill_000019",
+      "name": "Contraband Ignition Toll Strike",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "seasonal_element": "pitch",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 29.2,
+      "cooldown_seconds": 4.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 6.1
+          }
+        }
+      ],
+      "color_value": 73238,
+      "flavor_text": "A dense mass of pitch, held back and pressured to its limit, erupts from the wall and ricochets between surfaces in a cascade of clinging fire. What the checkpoint could not contain now burns through everything it touches.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000015"
+      ],
+      "scaling_coefficient": 1.1027
+    },
+    {
+      "id": "skill_000020",
+      "name": "Crossing Surge Pall",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 13.1,
+      "cooldown_seconds": 13.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.12,
+            "duration_seconds": 8.1
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.15,
+            "duration_seconds": 9.7
+          }
+        }
+      ],
+      "color_value": 463100,
+      "flavor_text": "A deathly stillness settles over the caster like contraband wrapped in shadow, sharpening intent and drawing mana through unseen channels. What crosses the wall undetected carries a weight that feeds the willing mind.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000015"
+      ],
+      "scaling_coefficient": 1.1171
+    },
+    {
+      "id": "skill_000021",
+      "name": "Crossing Surge Pall",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 10.5,
+      "cooldown_seconds": 0.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.0,
+            "stagger_seconds": 0.5
+          }
+        }
+      ],
+      "color_value": 497358,
+      "flavor_text": "A shroud of wind tears through the border crossing like something desperate and unseen, scattering everything that dares hold its ground. The dark current asks no permission and waits for no checkpoint.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000015"
+      ],
+      "scaling_coefficient": 1.0983
+    },
+    {
+      "id": "skill_000022",
+      "name": "Crossing Surge Pall",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 26.0,
+      "cooldown_seconds": 5.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 4.0,
+            "stagger_seconds": 0.4
+          }
+        }
+      ],
+      "color_value": 485358,
+      "flavor_text": "A shroud of wind tears through the border crossing in chained bursts, scattering bodies like contraband flung from an overturned cart. The air goes dead and dark between each crack of displaced force.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000015"
+      ],
+      "scaling_coefficient": 1.0823
+    },
+    {
+      "id": "skill_000023",
+      "name": "Checkpoint Hold",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 16.6,
+      "cooldown_seconds": 12.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.2,
+            "duration_seconds": 6.8
+          }
+        }
+      ],
+      "color_value": 319021,
+      "flavor_text": "The wall's iron patience becomes yours \u2014 every blow lands with the full weight of something that has never once yielded. For a breath, you are the gate itself.",
+      "tier": 2,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000015"
+      ],
+      "scaling_coefficient": 1.117
+    },
+    {
+      "id": "skill_000024",
+      "name": "Contraband Ignition Ring",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "seasonal_element": "pitch",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 14.0,
+      "cooldown_seconds": 18.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.32,
+            "duration_seconds": 6.1
+          }
+        }
+      ],
+      "color_value": 61334,
+      "flavor_text": "Pitch seeps up through the checkpoint cracks in a perfect circle, catching light no inspector was meant to see. For a breathless moment, everything that crosses its boundary hits harder than it has any right to.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000019"
+      ],
+      "scaling_coefficient": 1.1673
+    },
+    {
+      "id": "skill_000025",
+      "name": "Contraband Ignition Barrage",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "seasonal_element": "pitch",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 27.6,
+      "cooldown_seconds": 7.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 41675,
+      "flavor_text": "Fistfuls of pitch-black contraband arc over the checkpoint wall in a slow, deliberate volley, each mass hitting the earth with a wet, adhesive slap before blooming into roaring fire. The border holds nothing back once the ground itself starts burning.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000019"
+      ],
+      "scaling_coefficient": 1.1248
+    },
+    {
+      "id": "skill_000026",
+      "name": "Checkpoint Hold",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 17.4,
+      "cooldown_seconds": 12.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.5
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.3,
+            "duration_seconds": 4.3
+          }
+        }
+      ],
+      "color_value": 267632,
+      "flavor_text": "The wall becomes you \u2014 iron pressed into skin, breath held at the threshold while the world's weight finds nothing to grip. For a moment, you are the border itself, unmoved and unreadable.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000019"
+      ],
+      "scaling_coefficient": 1.169
+    },
+    {
+      "id": "skill_000027",
+      "name": "Crossing Surge Pall",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 22.3,
+      "cooldown_seconds": 4.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.8,
+            "stagger_seconds": 0.9
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 442578,
+      "flavor_text": "A totem erupts at the border's edge, exhaling a dark wind that tears through everything caught between here and the other side. Those who linger are flung back, breathless, as if the wall itself refused their crossing.",
+      "tier": 3,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000019"
+      ],
+      "scaling_coefficient": 1.1362
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.4,
+    "actual_winrate": 0.8492,
+    "convergence_winrate": 0.6983,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00001_pack": 1.0,
+      "monster_00002_pack": 1.0,
+      "monster_00003_pack": 1.0,
+      "monster_00004_pack": 1.0,
+      "monster_00005_pack": 1.0,
+      "monster_00006_pack": 1.0,
+      "monster_00013": 1.0,
+      "monster_00014": 1.0,
+      "monster_00033": 1.0,
+      "monster_00034": 0.96,
+      "monster_00041": 0.23,
+      "monster_00043": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.6983,
+      "overall_winrate": 0.8492,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00001_pack": 1.0,
+        "monster_00002_pack": 1.0,
+        "monster_00003_pack": 1.0,
+        "monster_00004_pack": 1.0,
+        "monster_00005_pack": 1.0,
+        "monster_00006_pack": 1.0,
+        "monster_00013": 1.0,
+        "monster_00014": 1.0,
+        "monster_00033": 1.0,
+        "monster_00034": 0.96,
+        "monster_00041": 0.23,
+        "monster_00043": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.974,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00045": 1.0,
+        "monster_00046": 1.0,
+        "monster_00047": 0.97,
+        "monster_00048": 0.98,
+        "monster_00049": 0.92
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.998,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00050": 1.0,
+        "monster_00051": 1.0,
+        "monster_00052": 1.0,
+        "monster_00053": 0.99,
+        "monster_00054": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.7483,
+      "p75": 0.75,
+      "p95": 0.75,
+      "p99": 0.75,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.52,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.58,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.48,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000027",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "defensive",
+          "swapped_to_id": "skill_000241",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8492,
+        "after_winrate": 0.8492,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "geometry_unchanged"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8492,
+        "after_winrate": 0.8492,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000021",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.3,
+          "to_cd": 0.33,
+          "from_cost": 10.5,
+          "to_cost": 11.55,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8492,
+        "after_winrate": 0.8492,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 0.9992,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "earth",
+        "to_element": "wind",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "earth",
+        "to_element": "wind",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "specialist",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

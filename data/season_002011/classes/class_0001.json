@@ -1,0 +1,755 @@
+{
+  "id": "class_0001",
+  "name": "Brine-Soaked Border Mage",
+  "title_completion": "a Brine-Soaked Border Mage",
+  "flavor_text": "They say the Wall was built to keep things out, but you've learned it's better used to keep things in \u2014 suspended, saturated, and slowly dissolving in saltwater hexes. You stamp the air like a customs form and the world obeys, held at the checkpoint between what is permitted and what seeps through anyway. Your magic smells like low tide and contraband pitch, and the guards on both sides have learned not to ask questions.",
+  "archetype_tag": "hybrid_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "fire",
+  "seasonal_dominant_element": "pitch",
+  "color_palette": [
+    647911,
+    645888,
+    376648,
+    653997,
+    279766,
+    602737,
+    282812,
+    693296,
+    677356,
+    339382,
+    613277,
+    311490,
+    306455,
+    314559
+  ],
+  "stat_distribution": {
+    "strength": 15,
+    "dexterity": 6,
+    "intelligence": 101,
+    "wisdom": 98,
+    "vitality": 50
+  },
+  "skills": [
+    {
+      "id": "skill_000001",
+      "name": "Brine Marked Crossing",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/water/utility",
+      "energy_cost": 14.2,
+      "cooldown_seconds": 15.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.3,
+            "duration_seconds": 6.2
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.13,
+            "duration_seconds": 7.9
+          }
+        }
+      ],
+      "color_value": 647911,
+      "flavor_text": "Salt crusts the skin like a second document, and the body moves with the quiet authority of someone who has already paid every toll. For a breath, the border is yours.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0792
+    },
+    {
+      "id": "skill_000002",
+      "name": "Brine Crossing Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 31.6,
+      "cooldown_seconds": 9.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 645888,
+      "flavor_text": "Salt-heavy water leaps from hand to hand along the wall, tracing every hidden route at once. What the border cannot hold, the tide remembers.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0688
+    },
+    {
+      "id": "skill_000003",
+      "name": "Checkpoint Hold",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 18.8,
+      "cooldown_seconds": 11.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.1
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.35,
+            "duration_seconds": 5.4
+          }
+        }
+      ],
+      "color_value": 376648,
+      "flavor_text": "The wall breathes iron and stops time at the crossing \u2014 for one suspended moment, nothing passes that you do not allow. The earth itself becomes your authority.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0723
+    },
+    {
+      "id": "skill_000004",
+      "name": "Brine Crossing Volley",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 29.8,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.33,
+            "duration_seconds": 4.1
+          }
+        }
+      ],
+      "color_value": 653997,
+      "flavor_text": "Salt-heavy water bursts from the wall's shadow in a punishing spread, each droplet carrying the bitter cold of things preserved too long in the wrong place. Those caught in its path slow, stiffened by the sting of a border that remembers every crossing.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0528
+    },
+    {
+      "id": "skill_000005",
+      "name": "Checkpoint Hold",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 15.4,
+      "cooldown_seconds": 12.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.18,
+            "duration_seconds": 4.0
+          }
+        }
+      ],
+      "color_value": 279766,
+      "flavor_text": "The wall does not yield \u2014 and for a breath, neither do you. Iron discipline floods the body, every blow landing with the full weight of immovable stone.",
+      "tier": 1,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0735
+    },
+    {
+      "id": "skill_000006",
+      "name": "Brine Toll Strike",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 15.1,
+      "cooldown_seconds": 5.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 602737,
+      "flavor_text": "Salt water rises in a punishing circle, wrung from the earth at the checkpoint like contraband seized and crushed. Those caught within it taste the bitter cost of crossing.",
+      "tier": 1,
+      "chain_id": "chain_C",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0721
+    },
+    {
+      "id": "skill_000007",
+      "name": "Toll Strike Contraband",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 36.2,
+      "cooldown_seconds": 6.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 282812,
+      "flavor_text": "At the checkpoint, the earth remembers every unpaid debt \u2014 fissures crack open beneath those who thought they could pass unseen, swallowing them in the wall's dark reckoning. Wisdom knows where the ground is hungriest.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000001"
+      ],
+      "scaling_coefficient": 1.082
+    },
+    {
+      "id": "skill_000008",
+      "name": "Smuggled Transit Brine",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/water/mobility",
+      "energy_cost": 16.3,
+      "cooldown_seconds": 9.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.41,
+            "duration_seconds": 2.3
+          }
+        }
+      ],
+      "color_value": 693296,
+      "flavor_text": "A traveler vanishes through the salt-crusted wall, reappearing somewhere the guards forgot to watch. The cold that clings to them afterward is the border's way of remembering.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000001"
+      ],
+      "scaling_coefficient": 1.116
+    },
+    {
+      "id": "skill_000009",
+      "name": "Brine Crossing Surge",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 13.6,
+      "cooldown_seconds": 4.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.42,
+            "duration_seconds": 4.6
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 677356,
+      "flavor_text": "Salt-heavy water seeps through every crack in the wall, finding the body's warmth and stealing it slowly. What crosses here does not cross clean.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000001"
+      ],
+      "scaling_coefficient": 1.1157
+    },
+    {
+      "id": "skill_000010",
+      "name": "Checkpoint Hold",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 17.7,
+      "cooldown_seconds": 10.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.23,
+            "duration_seconds": 5.1
+          }
+        }
+      ],
+      "color_value": 339382,
+      "flavor_text": "At the wall's iron threshold, the body becomes the barrier \u2014 every nerve drawn taut, every breath rationed like contraband. For a suspended moment, nothing passes through without paying the full toll.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000001"
+      ],
+      "scaling_coefficient": 1.1162
+    },
+    {
+      "id": "skill_000011",
+      "name": "Brine Crossing Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 26.7,
+      "cooldown_seconds": 3.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.38,
+            "duration_seconds": 2.9
+          }
+        }
+      ],
+      "color_value": 613277,
+      "flavor_text": "Salt-heavy water crackles between bodies like a current running through contraband routes, each arc leaving flesh cold and sluggish as a smuggler caught in winter shallows. The border does not forgive those who carry the sea with them.",
+      "tier": 2,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000001"
+      ],
+      "scaling_coefficient": 1.0857
+    },
+    {
+      "id": "skill_000012",
+      "name": "Checkpoint Hold",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 7.2,
+      "cooldown_seconds": 1.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 4.0
+          }
+        }
+      ],
+      "color_value": 311490,
+      "flavor_text": "The earth rises like a barricade at the border, seizing the target in packed iron soil that refuses to yield. Nothing moves until the wall decides otherwise.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000007"
+      ],
+      "scaling_coefficient": 1.1593
+    },
+    {
+      "id": "skill_000013",
+      "name": "Checkpoint Hold",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 20.1,
+      "cooldown_seconds": 4.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 1.9
+          }
+        }
+      ],
+      "color_value": 306455,
+      "flavor_text": "The border's iron will closes around the target like a gate that has not opened in years. Roots of compacted earth and cold rebar hold them fast while the crossing exacts its slow toll.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000007"
+      ],
+      "scaling_coefficient": 1.1266
+    },
+    {
+      "id": "skill_000014",
+      "name": "Crossing Surge Passage",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "earth",
+      "seasonal_element": "iron",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/earth/mobility",
+      "energy_cost": 16.7,
+      "cooldown_seconds": 8.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.21,
+            "duration_seconds": 6.5
+          }
+        }
+      ],
+      "color_value": 314559,
+      "flavor_text": "A body learns the wall's blind spots before the mind does \u2014 one moment here, the next already through, the iron logic of borders briefly outpaced. For 6.5 seconds the crossing stays open, each step landing where eyes aren't.",
+      "tier": 3,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000007"
+      ],
+      "scaling_coefficient": 1.1649
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7833,
+    "convergence_winrate": 0.5667,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00001_pack": 1.0,
+      "monster_00002_pack": 1.0,
+      "monster_00003_pack": 1.0,
+      "monster_00004_pack": 1.0,
+      "monster_00005_pack": 1.0,
+      "monster_00006_pack": 1.0,
+      "monster_00013": 1.0,
+      "monster_00014": 1.0,
+      "monster_00033": 1.0,
+      "monster_00034": 0.39,
+      "monster_00041": 0.01,
+      "monster_00043": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.5667,
+      "overall_winrate": 0.7833,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00001_pack": 1.0,
+        "monster_00002_pack": 1.0,
+        "monster_00003_pack": 1.0,
+        "monster_00004_pack": 1.0,
+        "monster_00005_pack": 1.0,
+        "monster_00006_pack": 1.0,
+        "monster_00013": 1.0,
+        "monster_00014": 1.0,
+        "monster_00033": 1.0,
+        "monster_00034": 0.39,
+        "monster_00041": 0.01,
+        "monster_00043": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.838,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00045": 1.0,
+        "monster_00046": 0.71,
+        "monster_00047": 0.9,
+        "monster_00048": 0.83,
+        "monster_00049": 0.75
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.954,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00050": 1.0,
+        "monster_00051": 0.88,
+        "monster_00052": 0.89,
+        "monster_00053": 1.0,
+        "monster_00054": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.6717,
+      "p75": 0.6717,
+      "p95": 0.685,
+      "p99": 0.6817,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.54,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.48,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.46,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000009",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "mobility",
+          "swapped_to_id": "skill_000234",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7833,
+        "after_winrate": 0.7833,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "burst_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000004",
+          "role": "burst_damage",
+          "from_geometry": "multi_projectile",
+          "to_geometry": "ricochet_bounce",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7833,
+        "after_winrate": 0.7833,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000012",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 1.0,
+          "to_cd": 1.1,
+          "from_cost": 7.2,
+          "to_cost": 7.92,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7833,
+        "after_winrate": 0.7833,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 1.0,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "water",
+        "to_element": "earth",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "water",
+        "to_element": "earth",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 3,
+        "from_element": "water",
+        "to_element": "earth",
+        "n_swapped": 3,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "specialist",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

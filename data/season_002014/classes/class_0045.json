@@ -1,0 +1,439 @@
+{
+  "id": "class_0045",
+  "name": "Unmarked Plague Cartographer",
+  "title_completion": "an Unmarked Plague Cartographer",
+  "flavor_text": "They say the Plague City's doors no longer bear names \u2014 because she erased them, one by one, until the sickness forgot where it lived. She walks the quarantine lines with chalk-dusted fingers and brine-soaked maps, tracing the unmarked thresholds where contagion seeps through the dark. Where others flee the miasma, she breathes it in and breathes it back out as shadow.",
+  "archetype_tag": "shadow_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "shadow",
+  "seasonal_dominant_element": null,
+  "color_palette": [
+    631464,
+    645963,
+    671447,
+    627834,
+    637014,
+    660480
+  ],
+  "stat_distribution": {
+    "strength": 6,
+    "dexterity": 22,
+    "intelligence": 159,
+    "wisdom": 22,
+    "vitality": 61
+  },
+  "skills": [
+    {
+      "id": "skill_001174",
+      "name": "Door Unmarking Touch",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 10.9,
+      "cooldown_seconds": 0.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "shadow"
+          }
+        }
+      ],
+      "color_value": 631464,
+      "flavor_text": "A threshold dissolves where the finger lands, and what lived behind it spills out cold and wrong. The Plague City knows this erasure \u2014 it has watched whole addresses forget themselves overnight.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001175",
+      "name": "Door Unmarking Tide",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 31.0,
+      "cooldown_seconds": 9.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "shadow"
+          }
+        },
+        {
+          "name": "drain",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.3
+          }
+        }
+      ],
+      "color_value": 645963,
+      "flavor_text": "A shadow-soaked ripple departs from the caster's fingertips and careens through the infected alleyways, peeling names from doorframes as it passes. What it touches forgets it was ever whole.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001176",
+      "name": "Miasmal Door Unmarking",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 22.8,
+      "cooldown_seconds": 3.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "shadow"
+          }
+        }
+      ],
+      "color_value": 671447,
+      "flavor_text": "A sickness of shadow leaps between the condemned, each body a stepping stone for something that has learned to travel without permission. The plague city remembers every door it has passed through.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001177",
+      "name": "Miasmal Seep Ward",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 13.7,
+      "cooldown_seconds": 5.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "drain",
+          "params": {
+            "tick_damage": 375,
+            "duration_seconds": 12.1
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "shadow"
+          }
+        }
+      ],
+      "color_value": 627834,
+      "flavor_text": "A totem of blackened chalk rises from the waterlogged street, weeping shadow into the standing flood. What it touches does not die quickly \u2014 it dissolves, the way the city does, in slow and patient increments.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001178",
+      "name": "Door Unmarking Ward",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 17.3,
+      "cooldown_seconds": 10.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.3
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.23,
+            "duration_seconds": 4.6
+          }
+        }
+      ],
+      "color_value": 637014,
+      "flavor_text": "The infected city folds around you, and for a breath you exist between its walls \u2014 chalk-white and unreachable. Whatever hunts you loses the scent of your presence entirely.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001179",
+      "name": "Door Unmarking Tide",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 33.2,
+      "cooldown_seconds": 8.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        }
+      ],
+      "color_value": 660480,
+      "flavor_text": "Where the plague's shadow has eaten through a name, the water finds the wound and fills it back with knowing. The self returns, briefly, like a face remembered in standing water.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.8617,
+    "convergence_winrate": 0.7233,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00163_pack": 1.0,
+      "monster_00164_pack": 1.0,
+      "monster_00165_pack": 1.0,
+      "monster_00166_pack": 1.0,
+      "monster_00167_pack": 1.0,
+      "monster_00168_pack": 1.0,
+      "monster_00175": 1.0,
+      "monster_00176": 1.0,
+      "monster_00195": 1.0,
+      "monster_00196": 0.86,
+      "monster_00203": 0.48,
+      "monster_00205": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.7233,
+      "overall_winrate": 0.8617,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00163_pack": 1.0,
+        "monster_00164_pack": 1.0,
+        "monster_00165_pack": 1.0,
+        "monster_00166_pack": 1.0,
+        "monster_00167_pack": 1.0,
+        "monster_00168_pack": 1.0,
+        "monster_00175": 1.0,
+        "monster_00176": 1.0,
+        "monster_00195": 1.0,
+        "monster_00196": 0.86,
+        "monster_00203": 0.48,
+        "monster_00205": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.99,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00207": 1.0,
+        "monster_00208": 0.99,
+        "monster_00209": 0.99,
+        "monster_00210": 1.0,
+        "monster_00211": 0.97
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.996,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00212": 1.0,
+        "monster_00213": 0.99,
+        "monster_00214": 0.99,
+        "monster_00215": 1.0,
+        "monster_00216": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.7433,
+      "p75": 0.7433,
+      "p95": 0.7483,
+      "p99": 0.7467,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.34,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.46,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.36,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_swappable_candidates"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8617,
+        "after_winrate": 0.8617,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_geometry_candidates"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8617,
+        "after_winrate": 0.8617,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_001174",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.7,
+          "to_cd": 0.77,
+          "from_cost": 10.9,
+          "to_cost": 11.99,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8617,
+        "after_winrate": 0.8617,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 0.9942,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [],
+    "secondary_loop_outcome": "secondary_skipped_pure_element",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "burst",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

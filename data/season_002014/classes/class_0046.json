@@ -1,0 +1,728 @@
+{
+  "id": "class_0046",
+  "name": "Plague Diver",
+  "title_completion": "a Plague Diver",
+  "flavor_text": "Where the Chalk Wards crumble and the miasma pools like black water in the gutters, the Plague Diver moves \u2014 not fleeing the contagion, but riding it. They have learned to hold their breath inside the Pall and strike like something surfacing from a depth no one else dared sound. Every bolt they loose carries the tide of the Plague City with it, spreading in rings, drowning what it touches.",
+  "archetype_tag": "hunter",
+  "energy_type": "focus",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "physical",
+  "seasonal_dominant_element": null,
+  "color_palette": [
+    450009,
+    101745,
+    176043,
+    517422,
+    166633,
+    162001,
+    156266,
+    197424,
+    122896,
+    196455,
+    156179,
+    115670,
+    502925
+  ],
+  "stat_distribution": {
+    "strength": 27,
+    "dexterity": 143,
+    "intelligence": 16,
+    "wisdom": 20,
+    "vitality": 64
+  },
+  "skills": [
+    {
+      "id": "skill_001180",
+      "name": "Pall Surge Drowning",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 18.7,
+      "cooldown_seconds": 4.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2018,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 450009,
+      "flavor_text": "The air above the cobblestones thickens into something wet and suffocating, a churning column of plague-wind that pulls breath from lungs like tide pulling sand. It does not strike \u2014 it swallows.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.051
+    },
+    {
+      "id": "skill_001181",
+      "name": "Carrier Strike Flood",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/physical/area_damage",
+      "energy_cost": 24.3,
+      "cooldown_seconds": 7.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2018,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 101745,
+      "flavor_text": "A surging channel of diseased water tears through the infected streets, carrying the city's rot in a single devastating wave. Whatever stands in its path finds the plague's weight pressed into flesh and bone alike.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0779
+    },
+    {
+      "id": "skill_001182",
+      "name": "Carrier Strike Tide",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 38.8,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 3364,
+            "element": "physical",
+            "pierce": 1,
+            "multishot": 2
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.34,
+            "duration_seconds": 5.7
+          }
+        }
+      ],
+      "color_value": 176043,
+      "flavor_text": "A body of water holds its breath before the blow lands \u2014 dense, pressurized, carrying something unseen from the plague city's flooded quarters. Whatever it delivers does not wash clean.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.077
+    },
+    {
+      "id": "skill_001183",
+      "name": "Pall Surge Drift",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/wind/mobility",
+      "energy_cost": 16.0,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.23,
+            "duration_seconds": 4.8
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 517422,
+      "flavor_text": "The infected quarter exhales and you move with it, slipping through the yellow haze like a rumor no one can catch. For a breath's span, the sickness parts around you rather than through you.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0655
+    },
+    {
+      "id": "skill_001184",
+      "name": "Carrier Strike Deluge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 24.2,
+      "cooldown_seconds": 5.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 3364,
+            "element": "physical",
+            "pierce": 1,
+            "multishot": 2
+          }
+        }
+      ],
+      "color_value": 166633,
+      "flavor_text": "A single held breath, then the weight of the flooded lower wards crashes down in one unforgiving blow. Whatever stood there does not stand after.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001180"
+      ],
+      "scaling_coefficient": 1.1171
+    },
+    {
+      "id": "skill_001185",
+      "name": "Carrier Strike Deluge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/physical/area_damage",
+      "energy_cost": 29.6,
+      "cooldown_seconds": 6.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2018,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1009,
+            "duration_seconds": 4.3
+          }
+        }
+      ],
+      "color_value": 162001,
+      "flavor_text": "A crushing wave of force tears through the infected streets, leaving split skin and weeping wounds in its wake. The afflicted stumble and bleed where the blow finds them, no different from the sick who already line these gutters.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001182"
+      ],
+      "scaling_coefficient": 1.1152
+    },
+    {
+      "id": "skill_001186",
+      "name": "Carrier Strike",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 9.9,
+      "cooldown_seconds": 0.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 841,
+            "element": "physical",
+            "pierce": 1,
+            "multishot": 2
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.07
+          }
+        }
+      ],
+      "color_value": 156266,
+      "flavor_text": "A single weighted blow delivered through fetid air, drawn from the same dark reservoir it opens in its target. The city's sickness travels in the fist.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001182"
+      ],
+      "scaling_coefficient": 1.1073
+    },
+    {
+      "id": "skill_001187",
+      "name": "Carrier Strike Deluge",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 24.7,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1009,
+            "duration_seconds": 6.9
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1009,
+            "element": "physical",
+            "pierce": 1,
+            "multishot": 2
+          }
+        }
+      ],
+      "color_value": 197424,
+      "flavor_text": "A single launched mass tears through exposed flesh like plague-water through cracked stone, leaving wounds that weep and refuse to close. The city's sick air finds every opening.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001184"
+      ],
+      "scaling_coefficient": 1.1506
+    },
+    {
+      "id": "skill_001188",
+      "name": "Chalk Ward Carrier Strike",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 15.9,
+      "cooldown_seconds": 9.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1346,
+            "duration_seconds": 6.5
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.24,
+            "duration_seconds": 7.1
+          }
+        }
+      ],
+      "color_value": 122896,
+      "flavor_text": "The body becomes a sealed vessel, skin hardened like quarantine plaster slapped over a condemned door. What tries to break through finds only the city's old refusal staring back.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001184"
+      ],
+      "scaling_coefficient": 1.1355
+    },
+    {
+      "id": "skill_001189",
+      "name": "Carrier Strike Tide",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/physical/mobility",
+      "energy_cost": 18.2,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1009,
+            "duration_seconds": 5.9
+          }
+        }
+      ],
+      "color_value": 196455,
+      "flavor_text": "The infected waters of the Plague City surge through you as you lunge, leaving a crimson trail that weeps long after the blow lands. Those caught in your wake find the wound refuses to close, as if the city itself drinks from them.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001185"
+      ],
+      "scaling_coefficient": 1.1572
+    },
+    {
+      "id": "skill_001190",
+      "name": "Carrier Strike Seep",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 22.8,
+      "cooldown_seconds": 5.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1009,
+            "duration_seconds": 5.1
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1009,
+            "element": "physical",
+            "pierce": 1,
+            "multishot": 2
+          }
+        }
+      ],
+      "color_value": 156179,
+      "flavor_text": "A single thrown shard of plague-soaked bone finds the gap between armor and flesh, weeping dark into the wound. The city's oldest sickness remembers how to spread.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001185"
+      ],
+      "scaling_coefficient": 1.1437
+    },
+    {
+      "id": "skill_001191",
+      "name": "Carrier Strike Tide",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/physical/area_damage",
+      "energy_cost": 21.7,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2018,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1009,
+            "duration_seconds": 5.9
+          }
+        }
+      ],
+      "color_value": 115670,
+      "flavor_text": "A crushing wave of pestilent force crashes outward from the infected streets, splitting skin and seeping into the cracks left behind. The wounded bleed slow, as if the city itself refuses to let go.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001187"
+      ],
+      "scaling_coefficient": 1.1835
+    },
+    {
+      "id": "skill_001192",
+      "name": "Pall Surge Exhale",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/wind/area_damage",
+      "energy_cost": 15.5,
+      "cooldown_seconds": 7.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2018,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.1,
+            "stagger_seconds": 1.0
+          }
+        }
+      ],
+      "color_value": 502925,
+      "flavor_text": "The channeler draws the city's sick breath into their lungs and releases it outward in a sweeping cone of pressurized miasma. Those caught in the exhalation tumble backward, gasping through air that tastes of standing water and rot.",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001189"
+      ],
+      "scaling_coefficient": 1.2085
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7525,
+    "convergence_winrate": 0.505,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 3,
+    "converged": true,
+    "final_modifier": 0.2875,
+    "gauntlet_results": {
+      "monster_00163_pack": 1.0,
+      "monster_00164_pack": 1.0,
+      "monster_00165_pack": 1.0,
+      "monster_00166_pack": 1.0,
+      "monster_00167_pack": 1.0,
+      "monster_00168_pack": 1.0,
+      "monster_00175": 1.0,
+      "monster_00176": 1.0,
+      "monster_00195": 1.0,
+      "monster_00196": 0.03,
+      "monster_00203": 0.0,
+      "monster_00205": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.2875
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.505,
+      "overall_winrate": 0.7525,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 3,
+      "converged": true,
+      "final_modifier": 0.2875,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00163_pack": 1.0,
+        "monster_00164_pack": 1.0,
+        "monster_00165_pack": 1.0,
+        "monster_00166_pack": 1.0,
+        "monster_00167_pack": 1.0,
+        "monster_00168_pack": 1.0,
+        "monster_00175": 1.0,
+        "monster_00176": 1.0,
+        "monster_00195": 1.0,
+        "monster_00196": 0.03,
+        "monster_00203": 0.0,
+        "monster_00205": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.508,
+      "iterations": 6,
+      "converged": true,
+      "final_modifier": 0.3172,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00207": 0.66,
+        "monster_00208": 0.39,
+        "monster_00209": 0.76,
+        "monster_00210": 0.36,
+        "monster_00211": 0.37
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.478,
+      "iterations": 7,
+      "converged": true,
+      "final_modifier": 0.0945,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00212": 0.36,
+        "monster_00213": 0.0,
+        "monster_00214": 0.03,
+        "monster_00215": 1.0,
+        "monster_00216": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.7433,
+      "p75": 0.75,
+      "p95": 0.7483,
+      "p99": 0.7467,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.46,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.5,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.34,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_001190",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "sustain",
+          "swapped_to_id": "skill_001239",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.695,
+        "after_winrate": 0.695,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0574
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "skill_id": "skill_001190",
+          "role": "damage_over_time",
+          "from_geometry": "ranged_physical",
+          "to_geometry": "single_target",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.695,
+        "after_winrate": 0.695,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0574
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_001186",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.4,
+          "to_cd": 0.44,
+          "from_cost": 9.9,
+          "to_cost": 10.89,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.695,
+        "after_winrate": 0.695,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0574
+      }
+    ],
+    "recompose_outcome": "modifier_fallback",
+    "composition_pre_modifier_wr": 0.8333,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [],
+    "secondary_loop_outcome": "secondary_skipped_pure_element",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.2875,
+      "would_pass_clamp": true
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.2875
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "martial_combat",
+  "class_role_function": "ranged",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

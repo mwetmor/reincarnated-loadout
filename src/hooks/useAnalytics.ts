@@ -75,6 +75,32 @@ export interface SkillTierBar {
   t4: number;
 }
 
+/** Summary card for one season — for the per-season summary grid. */
+export interface SeasonSummaryCard {
+  seasonId: string;
+  label: string;
+  themeElement: string;
+  anchorName: string;
+  classCount: number;
+  convergenceFailures: number;
+  validationPassed: boolean;
+  /** substrate tags present in this season's class dominant_element values */
+  substrates: string[];
+  /** substrates that are new to canonical-7 (not in historical 001xxx seasons) */
+  newSubstrates: string[];
+  /** avg final_modifier across all classes */
+  avgModifier: number;
+  isCanonical7: boolean; // true for 002011-002015 (canonical-7 substrate variety)
+}
+
+/** One row in the substrate heatmap — one season across all substrate columns. */
+export interface SubstrateHeatmapRow {
+  seasonId: string;
+  label: string;
+  isCanonical7: boolean;
+  counts: Record<string, number>;
+}
+
 export interface AnalyticsData {
   winRateBins: WinRateBin[];
   archetypeBySeasonRows: ArchetypeSeasonRow[];
@@ -90,6 +116,11 @@ export interface AnalyticsData {
   globalStatAvg: Omit<StatRadarEntry, 'archetype' | 'label'>;
   seasonTimeline: SeasonTimelinePoint[];
   skillTierBars: SkillTierBar[];
+  // Season summary + substrate analytics (canonical-7 refresh)
+  seasonSummaryCards: SeasonSummaryCard[];
+  substrateHeatmap: SubstrateHeatmapRow[];
+  allSubstrates: string[];
+  newSubstrateSet: string[]; // substrates first appearing in 002011-002015
 }
 
 function seasonLabel(id: string): string {
@@ -307,6 +338,68 @@ export function useAnalytics(): AnalyticsData | null {
       }))
       .sort((a, b) => a.label.localeCompare(b.label));
 
+    // 10. Season summary cards + substrate heatmap (canonical-7 refresh)
+    // Historical seasons: 001xxx (canonical-4: fire/wind/water/earth/physical)
+    // Canonical-7 seasons: 002011-002015 (adds lightning/holy/shadow)
+    // Yomi (002328): canonical-4 only (pre-canonical-7 regen)
+    const CANONICAL_7_NEW = new Set(['lightning', 'holy', 'shadow']);
+    const isCanonical7Season = (id: string) =>
+      /^season_00201[1-5]$/.test(id);
+
+    // Collect all substrates observed across all analytics seasons
+    const allSubstrateSet = new Set<string>();
+    for (const cls of allClasses) {
+      if (cls.dominant_element) allSubstrateSet.add(cls.dominant_element);
+    }
+    // Preferred display order: historical first, then new canonical-7, then physical
+    const SUBSTRATE_ORDER = ['fire', 'water', 'earth', 'wind', 'lightning', 'holy', 'shadow', 'physical'];
+    const allSubstrates = SUBSTRATE_ORDER.filter((s) => allSubstrateSet.has(s));
+    // Any remaining not in ordered list
+    for (const s of allSubstrateSet) {
+      if (!allSubstrates.includes(s)) allSubstrates.push(s);
+    }
+
+    const newSubstrateSet = allSubstrates.filter((s) => CANONICAL_7_NEW.has(s));
+
+    const seasonSummaryCards: SeasonSummaryCard[] = analyticsSeasons.map((s) => {
+      const mods = s.classes
+        .map((c) => c.balance_metadata?.final_modifier)
+        .filter((v): v is number => v != null);
+      const avg = mods.length ? mods.reduce((a, b) => a + b, 0) / mods.length : 0;
+      const subSet = new Set(s.classes.map((c) => c.dominant_element).filter(Boolean));
+      const substrates = allSubstrates.filter((sub) => subSet.has(sub));
+      const newSubs = substrates.filter((sub) => CANONICAL_7_NEW.has(sub));
+      return {
+        seasonId: s.seasonId,
+        label: seasonLabel(s.seasonId),
+        themeElement: s.manifest.season_theme_element,
+        anchorName: s.manifest.anchor?.name ?? s.seasonId,
+        classCount: s.classes.length,
+        convergenceFailures: s.manifest.summary?.convergence_failures ?? 0,
+        validationPassed: s.manifest.validation_passed ?? false,
+        substrates,
+        newSubstrates: newSubs,
+        avgModifier: Math.round(avg * 10000) / 10000,
+        isCanonical7: isCanonical7Season(s.seasonId),
+      };
+    });
+
+    const substrateHeatmap: SubstrateHeatmapRow[] = analyticsSeasons.map((s) => {
+      const counts: Record<string, number> = {};
+      for (const sub of allSubstrates) counts[sub] = 0;
+      for (const cls of s.classes) {
+        if (cls.dominant_element) {
+          counts[cls.dominant_element] = (counts[cls.dominant_element] ?? 0) + 1;
+        }
+      }
+      return {
+        seasonId: s.seasonId,
+        label: seasonLabel(s.seasonId),
+        isCanonical7: isCanonical7Season(s.seasonId),
+        counts,
+      };
+    });
+
     return {
       winRateBins,
       archetypeBySeasonRows,
@@ -321,6 +414,10 @@ export function useAnalytics(): AnalyticsData | null {
       globalStatAvg,
       seasonTimeline,
       skillTierBars,
+      seasonSummaryCards,
+      substrateHeatmap,
+      allSubstrates,
+      newSubstrateSet,
     };
   }, [analyticsSeasons]);
 }

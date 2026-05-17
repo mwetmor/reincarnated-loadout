@@ -1,0 +1,661 @@
+{
+  "id": "class_0027",
+  "name": "Salt-Charted Cartomancer",
+  "title_completion": "a Salt-Charted Cartomancer",
+  "flavor_text": "The Cartographer's Tower gave you ink made of brine and a map that rewrites itself with every gust. You do not navigate the world \u2014 you dissolve its edges until only your meridians remain. Where others see coastline, you see a wound waiting to be salted.",
+  "archetype_tag": "water_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "seasonal_dominant_element": "salt",
+  "color_palette": [
+    672597,
+    698234,
+    257923,
+    635984,
+    604192,
+    263737,
+    666995,
+    568531,
+    283499,
+    690656,
+    625955
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 25,
+    "intelligence": 159,
+    "wisdom": 15,
+    "vitality": 61
+  },
+  "skills": [
+    {
+      "id": "skill_000586",
+      "name": "Cartographic Haze",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 19.5,
+      "cooldown_seconds": 7.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.42,
+            "duration_seconds": 3.2
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 672597,
+      "flavor_text": "A bitter salt-wind unrolls across the ground like a surveyor's last unfinished chart, and whatever it touches is preserved mid-motion \u2014 slowed, stung, and slowly undone by the cold it carries. The Tower's cartographers once warned that some territories, once mapped in salt, refuse to thaw.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0798
+    },
+    {
+      "id": "skill_000587",
+      "name": "Cartographic Haze Brine",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 24.3,
+      "cooldown_seconds": 6.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 698234,
+      "flavor_text": "A circle of salted fog unrolls across the ground like a surveyor's dampened chart, crystallizing the air into bitter, cutting mist. Where the haze settles, flesh and stone alike are mapped in white ruin.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0547
+    },
+    {
+      "id": "skill_000588",
+      "name": "Fixed Meridian Survey",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "earth",
+      "seasonal_element": "slate",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/earth/sustain",
+      "energy_cost": 20.2,
+      "cooldown_seconds": 9.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        },
+        {
+          "name": "heal_over_time",
+          "params": {
+            "tick_heal": 375,
+            "duration_seconds": 9.9
+          }
+        }
+      ],
+      "color_value": 257923,
+      "flavor_text": "From the tower's highest window, the healer traces a steady line across the patient's form \u2014 grey slate light following the contour like a cartographer redrawing a coastline that had forgotten its own shape. The wind holds still for this, as if even the air refuses to interrupt the work.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0749
+    },
+    {
+      "id": "skill_000589",
+      "name": "Salt Wind Reckoning",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 14.0,
+      "cooldown_seconds": 10.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 9.2
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.6
+          }
+        }
+      ],
+      "color_value": 635984,
+      "flavor_text": "The cartographer draws breath and the air crystallizes around her \u2014 bitter, still, absolute. For a moment, the world holds its tongue while her instruments find true bearing.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0686
+    },
+    {
+      "id": "skill_000590",
+      "name": "Salt Line Meridian",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 21.3,
+      "cooldown_seconds": 11.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.8
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.15,
+            "duration_seconds": 8.6
+          }
+        }
+      ],
+      "color_value": 604192,
+      "flavor_text": "A bitter crystalline boundary etches itself into the air around the caster, each grain holding fast against the wind's insistence. The tower's old surveys say some borders were never meant to be crossed.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0654
+    },
+    {
+      "id": "skill_000591",
+      "name": "Fixed Meridian Holds",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "seasonal_element": "slate",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 20.4,
+      "cooldown_seconds": 6.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 10.4
+          }
+        }
+      ],
+      "color_value": 263737,
+      "flavor_text": "A slate totem erupts from the earth at the cartographer's command, its layered grey faces etched with wind-lines that pin the world in place. The air around it stops moving entirely, and whatever stands within finds its feet written into the map.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000586"
+      ],
+      "scaling_coefficient": 1.0875
+    },
+    {
+      "id": "skill_000592",
+      "name": "Cartographic Haze Saltward",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/water/mobility",
+      "energy_cost": 19.4,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 666995,
+      "flavor_text": "The tower's brine-laced fog swallows distance whole, depositing the traveler at coordinates only the wind remembers. What arrives is preserved in salt, sharp and exact as a meridian drawn in the dark.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000586"
+      ],
+      "scaling_coefficient": 1.081
+    },
+    {
+      "id": "skill_000593",
+      "name": "Salt Chart Deluge",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 7.4,
+      "cooldown_seconds": 0.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.35,
+            "duration_seconds": 4.4
+          }
+        }
+      ],
+      "color_value": 568531,
+      "flavor_text": "A bitter crystalline torrent erupts from the tower's highest window, mapping cold ruin across whatever it touches. The water it carries tastes of preserved distance and forgotten coastlines.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000588"
+      ],
+      "scaling_coefficient": 1.0863
+    },
+    {
+      "id": "skill_000594",
+      "name": "Charcoal Stroke Meridian",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "seasonal_element": "slate",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 28.2,
+      "cooldown_seconds": 8.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.28,
+            "duration_seconds": 5.2
+          }
+        }
+      ],
+      "color_value": 283499,
+      "flavor_text": "From the Tower's highest window, the cartographer drags a charged finger across the living map \u2014 grey pressure splits into leaping arcs, each strike redrawing the earth beneath. For a breathless moment, the ground remembers every border it has ever held.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000588"
+      ],
+      "scaling_coefficient": 1.0901
+    },
+    {
+      "id": "skill_000595",
+      "name": "Brine Chart Settling",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 18.7,
+      "cooldown_seconds": 4.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.48,
+            "duration_seconds": 2.2
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 690656,
+      "flavor_text": "Salt crystallizes along the target's meridian lines, tracing their form into something cold and cartographed. The bitter water bites deep, slowing the blood to the pace of a held breath.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000591"
+      ],
+      "scaling_coefficient": 1.136
+    },
+    {
+      "id": "skill_000596",
+      "name": "Cartographic Haze Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 36.3,
+      "cooldown_seconds": 6.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 625955,
+      "flavor_text": "A bitter salt-laden wind unfurls from the tower's apex, rewriting the air itself into a sweeping cone of crystalline water that scours flesh and memory alike. What stood mapped is now dissolved, its coordinates erased in a single drenching breath.",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.2073
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.4,
+    "actual_winrate": 0.8692,
+    "convergence_winrate": 0.7383,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00055_pack": 1.0,
+      "monster_00056_pack": 1.0,
+      "monster_00057_pack": 1.0,
+      "monster_00058_pack": 1.0,
+      "monster_00059_pack": 1.0,
+      "monster_00060_pack": 1.0,
+      "monster_00067": 1.0,
+      "monster_00068": 1.0,
+      "monster_00087": 0.57,
+      "monster_00088": 0.85,
+      "monster_00095": 0.01,
+      "monster_00097": 1.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.7383,
+      "overall_winrate": 0.8692,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00055_pack": 1.0,
+        "monster_00056_pack": 1.0,
+        "monster_00057_pack": 1.0,
+        "monster_00058_pack": 1.0,
+        "monster_00059_pack": 1.0,
+        "monster_00060_pack": 1.0,
+        "monster_00067": 1.0,
+        "monster_00068": 1.0,
+        "monster_00087": 0.57,
+        "monster_00088": 0.85,
+        "monster_00095": 0.01,
+        "monster_00097": 1.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.766,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00099": 1.0,
+        "monster_00100": 0.06,
+        "monster_00101": 1.0,
+        "monster_00102": 1.0,
+        "monster_00103": 0.77
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.952,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00104": 1.0,
+        "monster_00105": 0.76,
+        "monster_00106": 1.0,
+        "monster_00107": 1.0,
+        "monster_00108": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.565,
+      "p75": 0.585,
+      "p95": 0.6067,
+      "p99": 0.6083,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.54,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.52,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.46,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "burst_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000594",
+          "swapped_from_role": "burst_damage",
+          "swapped_to_role": "control",
+          "swapped_to_id": "skill_000567",
+          "role": "burst_damage",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8692,
+        "after_winrate": 0.8692,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "geometry_unchanged"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8692,
+        "after_winrate": 0.8692,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000593",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.5,
+          "to_cd": 0.55,
+          "from_cost": 7.4,
+          "to_cost": 8.14,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8692,
+        "after_winrate": 0.8692,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 1.0,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "water",
+        "to_element": "earth",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "water",
+        "to_element": "earth",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 3,
+        "from_element": "water",
+        "to_element": "earth",
+        "n_swapped": 2,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "sustain",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

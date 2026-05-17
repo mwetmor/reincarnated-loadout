@@ -1,0 +1,696 @@
+{
+  "id": "class_0035",
+  "name": "Shaft Diver",
+  "title_completion": "a Shaft Diver",
+  "flavor_text": "Where the dwarves once swung their picks in thunderous rhythm, you have learned to read the silence they left behind \u2014 the groan of unsupported stone, the draft that whispers before a tunnel breathes its last. You do not fight so much as fall with precision, letting gravity and the memory of old seams carry your strikes deeper than muscle alone could manage. The empty halls remember the shape of industry, and you move through them like a rumor of what once echoed here.",
+  "archetype_tag": "hunter",
+  "energy_type": "focus",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "physical",
+  "seasonal_dominant_element": null,
+  "color_palette": [
+    109053,
+    191953,
+    105299,
+    121778,
+    191345,
+    430368,
+    141110,
+    125353,
+    158343,
+    196920,
+    151939,
+    139815,
+    137843
+  ],
+  "stat_distribution": {
+    "strength": 26,
+    "dexterity": 138,
+    "intelligence": 24,
+    "wisdom": 20,
+    "vitality": 62
+  },
+  "skills": [
+    {
+      "id": "skill_000799",
+      "name": "Pickfall Seam Drop",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/physical/mobility",
+      "energy_cost": 12.7,
+      "cooldown_seconds": 10.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1009,
+            "duration_seconds": 4.8
+          }
+        }
+      ],
+      "color_value": 109053,
+      "flavor_text": "The dwarf who knows these halls doesn't run \u2014 he falls sideways through the dark, arriving where the stone remembers being struck. The wound opens after, slow as a seam filling with water.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0791
+    },
+    {
+      "id": "skill_000800",
+      "name": "Pickfall Seam Pressure",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 25.6,
+      "cooldown_seconds": 7.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 3364,
+            "element": "physical",
+            "pierce": 1,
+            "multishot": 2
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.08
+          }
+        }
+      ],
+      "color_value": 191953,
+      "flavor_text": "Where the old shafts gave way, the water found its path \u2014 straight down, without mercy. A single point of contact, and the hollow dark remembers every blow it ever swallowed.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0683
+    },
+    {
+      "id": "skill_000801",
+      "name": "Pickfall Brace",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 15.9,
+      "cooldown_seconds": 12.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1346,
+            "duration_seconds": 4.0
+          }
+        }
+      ],
+      "color_value": 105299,
+      "flavor_text": "The stone remembers every blow it has ever absorbed. For a moment, so do you.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0595
+    },
+    {
+      "id": "skill_000802",
+      "name": "Pickfall Seam Drift",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/physical/mobility",
+      "energy_cost": 13.6,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1009,
+            "duration_seconds": 3.5
+          }
+        }
+      ],
+      "color_value": 121778,
+      "flavor_text": "The dwarf vanishes into a crack in the stone where water once ran, reappearing where the rock remembers the weight of old tools. Something tears open in the passing \u2014 a wound that weeps slow and steady, like a forgotten seam giving way.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0576
+    },
+    {
+      "id": "skill_000803",
+      "name": "Pickfall Stillness",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 18.6,
+      "cooldown_seconds": 9.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1346,
+            "duration_seconds": 7.8
+          }
+        }
+      ],
+      "color_value": 191345,
+      "flavor_text": "Where the last hammer rang and the tunnels went quiet, something dense and unyielding answers the blow. Water finds the cracks the dwarves left behind, and holds them shut.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0664
+    },
+    {
+      "id": "skill_000804",
+      "name": "Collapse Draft Scatter",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 29.2,
+      "cooldown_seconds": 3.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2018,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 430368,
+      "flavor_text": "Where the dwarves once breathed, the air still remembers how to rush through broken corridors. It does not wait for permission.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000799"
+      ],
+      "scaling_coefficient": 1.0871
+    },
+    {
+      "id": "skill_000805",
+      "name": "Pickfall Load-Bearing Stillness",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 19.9,
+      "cooldown_seconds": 10.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1346,
+            "duration_seconds": 6.1
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.2,
+            "duration_seconds": 6.8
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.22,
+            "duration_seconds": 6.6
+          }
+        }
+      ],
+      "color_value": 141110,
+      "flavor_text": "Where the tunnels gave way and the water came in, something in the stone learned to hold. The weight settles into you like a flooded shaft going quiet.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000799"
+      ],
+      "scaling_coefficient": 1.0914
+    },
+    {
+      "id": "skill_000806",
+      "name": "Pickfall Seam Pressure",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/physical/area_damage",
+      "energy_cost": 19.2,
+      "cooldown_seconds": 3.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2018,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 125353,
+      "flavor_text": "The old shafts remember every blow struck within them \u2014 channel that memory downward and the floor gives way in a spreading ring of ruin. Stone that once held up a civilization yields all at once.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000801"
+      ],
+      "scaling_coefficient": 1.0811
+    },
+    {
+      "id": "skill_000807",
+      "name": "Pickfall Seam Pressure",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 7.4,
+      "cooldown_seconds": 0.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 841,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 158343,
+      "flavor_text": "The weight of flooded tunnels finds its answer in a single, decisive blow. What the water loosened, the strike finishes.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000801"
+      ],
+      "scaling_coefficient": 1.095
+    },
+    {
+      "id": "skill_000959",
+      "name": "Pickfall Seam Pressure",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/physical/sustain",
+      "energy_cost": 26.6,
+      "cooldown_seconds": 7.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1682
+          }
+        },
+        {
+          "name": "heal_over_time",
+          "params": {
+            "tick_heal": 505,
+            "duration_seconds": 6.8
+          }
+        }
+      ],
+      "color_value": 139042,
+      "flavor_text": "Where the pick once rang and the walls held fast, a slow weight settles into the wound \u2014 not crushing, but filling, the way deep water finds every crack. The stillness of stone remembers how to carry.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 3,
+      "parent_skill_ids": [
+        "skill_000801"
+      ],
+      "scaling_coefficient": 1.1152
+    },
+    {
+      "id": "skill_000809",
+      "name": "Pickfall Seam Pressure",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 19.8,
+      "cooldown_seconds": 4.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1009,
+            "duration_seconds": 4.3
+          }
+        }
+      ],
+      "color_value": 151939,
+      "flavor_text": "Something deep in the rock remembers the weight of the pick, and the wound opens along that old memory. It bleeds the way a seam bleeds \u2014 slow, persistent, following the grain.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000804"
+      ],
+      "scaling_coefficient": 1.1458
+    },
+    {
+      "id": "skill_000810",
+      "name": "Pickfall Roll",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/physical/mobility",
+      "energy_cost": 15.6,
+      "cooldown_seconds": 7.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.31,
+            "duration_seconds": 8.4
+          }
+        }
+      ],
+      "color_value": 139815,
+      "flavor_text": "The dwarf reads the shaft before it reads them \u2014 a sudden drop into the tunnel's hollow dark, carried by the same momentum that once shook ore loose from the seam. The body learns to fall like water finds its level, fast and without argument.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000806"
+      ],
+      "scaling_coefficient": 1.1361
+    },
+    {
+      "id": "skill_000811",
+      "name": "Pickfall Retreat",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/physical/mobility",
+      "energy_cost": 12.1,
+      "cooldown_seconds": 7.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 137843,
+      "flavor_text": "The dwarf lunges aside as the ceiling gives way, riding the collapse draft like a current through flooded stone. Where they stood, nothing remains but the damp creep of settling dust.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000809"
+      ],
+      "scaling_coefficient": 1.2151
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.7875,
+    "convergence_winrate": 0.575,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 3,
+    "converged": true,
+    "final_modifier": 0.2875,
+    "gauntlet_results": {
+      "monster_00109_pack": 1.0,
+      "monster_00110_pack": 1.0,
+      "monster_00111_pack": 1.0,
+      "monster_00112_pack": 1.0,
+      "monster_00113_pack": 1.0,
+      "monster_00114_pack": 1.0,
+      "monster_00121": 1.0,
+      "monster_00122": 1.0,
+      "monster_00141": 1.0,
+      "monster_00142": 0.45,
+      "monster_00149": 0.0,
+      "monster_00151": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.2875
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.575,
+      "overall_winrate": 0.7875,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 3,
+      "converged": true,
+      "final_modifier": 0.2875,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00109_pack": 1.0,
+        "monster_00110_pack": 1.0,
+        "monster_00111_pack": 1.0,
+        "monster_00112_pack": 1.0,
+        "monster_00113_pack": 1.0,
+        "monster_00114_pack": 1.0,
+        "monster_00121": 1.0,
+        "monster_00122": 1.0,
+        "monster_00141": 1.0,
+        "monster_00142": 0.45,
+        "monster_00149": 0.0,
+        "monster_00151": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.596,
+      "iterations": 4,
+      "converged": true,
+      "final_modifier": 0.4062,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00153": 0.9,
+        "monster_00154": 0.14,
+        "monster_00155": 0.44,
+        "monster_00156": 0.5,
+        "monster_00157": 1.0
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.596,
+      "iterations": 6,
+      "converged": true,
+      "final_modifier": 0.1984,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00158": 0.48,
+        "monster_00159": 0.15,
+        "monster_00160": 0.35,
+        "monster_00161": 1.0,
+        "monster_00162": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.75,
+      "p75": 0.7583,
+      "p95": 0.75,
+      "p99": 0.7617,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.4,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.6,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.44,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000808",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "sustain",
+          "swapped_to_id": "skill_000959",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.6533,
+        "after_winrate": 0.615,
+        "delta": -0.0383,
+        "accepted": true,
+        "eval_modifier": 0.0574
+      },
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_swappable_candidates"
+        },
+        "attempt": 2,
+        "before_winrate": 0.615,
+        "after_winrate": 0.615,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0574
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "burst_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000800",
+          "role": "burst_damage",
+          "from_geometry": "ranged_physical",
+          "to_geometry": "single_target",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.615,
+        "after_winrate": 0.615,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0574
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000807",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.6,
+          "to_cd": 0.66,
+          "from_cost": 7.4,
+          "to_cost": 8.14,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.615,
+        "after_winrate": 0.615,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0574
+      }
+    ],
+    "recompose_outcome": "primary_loop_converged",
+    "composition_pre_modifier_wr": 0.8733,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [],
+    "secondary_loop_outcome": "secondary_skipped_pure_element",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.2875,
+      "would_pass_clamp": true
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.2875
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "martial_combat",
+  "class_role_function": "ranged",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

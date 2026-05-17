@@ -29,11 +29,15 @@ export const ROLE_LABEL: Record<string, string> = {
 };
 
 export const ELEMENT_COLORS: Record<string, { bg: string; text: string; border: string }> = {
-  fire:     { bg: 'bg-orange-950', text: 'text-orange-300', border: 'border-orange-700' },
-  wind:     { bg: 'bg-teal-950',   text: 'text-teal-300',   border: 'border-teal-700'   },
-  water:    { bg: 'bg-blue-950',   text: 'text-blue-300',   border: 'border-blue-700'   },
-  earth:    { bg: 'bg-amber-950',  text: 'text-amber-300',  border: 'border-amber-700'  },
-  physical: { bg: 'bg-slate-800',  text: 'text-slate-300',  border: 'border-slate-600'  },
+  fire:      { bg: 'bg-orange-950', text: 'text-orange-300', border: 'border-orange-700' },
+  wind:      { bg: 'bg-teal-950',   text: 'text-teal-300',   border: 'border-teal-700'   },
+  water:     { bg: 'bg-blue-950',   text: 'text-blue-300',   border: 'border-blue-700'   },
+  earth:     { bg: 'bg-amber-950',  text: 'text-amber-300',  border: 'border-amber-700'  },
+  physical:  { bg: 'bg-slate-800',  text: 'text-slate-300',  border: 'border-slate-600'  },
+  // Canonical-7 additions (MIGRATION.md v1.3 — standard-demo-regen-2026-05-17)
+  lightning: { bg: 'bg-yellow-950', text: 'text-yellow-300', border: 'border-yellow-700' },
+  holy:      { bg: 'bg-violet-950', text: 'text-violet-300', border: 'border-violet-700' },
+  shadow:    { bg: 'bg-purple-950', text: 'text-purple-300', border: 'border-purple-700' },
 };
 
 export const STAT_LABELS: Record<string, string> = {
@@ -63,9 +67,17 @@ export const ARCHETYPE_LABEL: Record<string, string> = {
   water_controller:     'Water Controller',
   physical_warrior:     'Physical Warrior',
   physical_skirmisher:  'Physical Skirmisher',
+  physical_grappler:    'Physical Grappler',
   rogue:                'Rogue',
   hunter:               'Hunter',
   experimental:         'Experimental',
+  // Canonical-7 archetypes (MIGRATION.md v1.3 — standard-demo-regen-2026-05-17)
+  lightning_mage:       'Lightning Mage',
+  lightning_controller: 'Lightning Controller',
+  holy_caster:          'Holy Caster',
+  holy_controller:      'Holy Controller',
+  shadow_mage:          'Shadow Mage',
+  shadow_controller:    'Shadow Controller',
 };
 
 // Archetype tag → which canonical-four element is embedded in the display label.

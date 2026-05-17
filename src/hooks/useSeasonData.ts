@@ -54,6 +54,14 @@ export function useSeasonData() {
         a.manifest.generated_at.localeCompare(b.manifest.generated_at)
       );
 
-    return { defaultSeason, analyticsSeasons, allSeasons };
+    // For season picker dropdowns (Loadout / Sample): real seasons sorted chronologically.
+    // sample-season excluded (alias); Yomi (002328) placed last for clarity.
+    const selectableSeasons = analyticsSeasons.slice().sort((a, b) => {
+      if (a.seasonId === 'season_002328') return 1;
+      if (b.seasonId === 'season_002328') return -1;
+      return a.manifest.generated_at.localeCompare(b.manifest.generated_at);
+    });
+
+    return { defaultSeason, analyticsSeasons, allSeasons, selectableSeasons };
   }, []);
 }

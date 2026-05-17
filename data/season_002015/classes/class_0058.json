@@ -1,0 +1,725 @@
+{
+  "id": "class_0058",
+  "name": "Banished Royal Herald",
+  "title_completion": "a Banished Royal Herald",
+  "flavor_text": "Once your voice carried the weight of crowns, your proclamations scattering lesser men like leaves before a gale. Now the Mad King's Exile Writ bears your own name, and you have learned that a herald without a throne commands something far more dangerous than loyalty \u2014 the wind itself remembers every word you ever spoke. You wander the marble corridors of memory, unrolling decrees that bleed into the air and swallow armies whole.",
+  "archetype_tag": "wind_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "long",
+  "dominant_element": "wind",
+  "seasonal_dominant_element": "pall",
+  "color_palette": [
+    675853,
+    474893,
+    494989,
+    432092,
+    509196,
+    504013,
+    423112,
+    445969,
+    498212,
+    503256,
+    658153,
+    490311,
+    519789
+  ],
+  "stat_distribution": {
+    "strength": 18,
+    "dexterity": 5,
+    "intelligence": 5,
+    "wisdom": 165,
+    "vitality": 77
+  },
+  "skills": [
+    {
+      "id": "skill_001346",
+      "name": "Bleeding Mad Proclamation",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "water",
+      "seasonal_element": "blood",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 18.4,
+      "cooldown_seconds": 19.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.26,
+            "duration_seconds": 5.3
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.4
+          }
+        }
+      ],
+      "color_value": 675853,
+      "flavor_text": "A totem erupts in the throne room's stale air, pulsing with warm arterial light as the king's unhinged decree tears through the court \u2014 mouths clamp shut and blades grow hungry with borrowed fury.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0642
+    },
+    {
+      "id": "skill_001347",
+      "name": "Exile Writ Descends",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 20.4,
+      "cooldown_seconds": 15.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 4.9,
+            "stagger_seconds": 0.6
+          }
+        }
+      ],
+      "color_value": 474893,
+      "flavor_text": "A cold vortex of sovereign darkness pulls the condemned inward before hurling them beyond the throne room's reach. The Mad King's decree needs no signature \u2014 only the hollow shriek of wind through empty halls.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.051
+    },
+    {
+      "id": "skill_001348",
+      "name": "Exile Writ Gale",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 15.2,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 4.7,
+            "stagger_seconds": 0.9
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 494989,
+      "flavor_text": "The mad king's banishment tears through flesh and marrow like a wind that has forgotten mercy. It does not merely push \u2014 it unmakes your right to stand here.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0595
+    },
+    {
+      "id": "skill_001349",
+      "name": "Exile Writ Pall",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 16.0,
+      "cooldown_seconds": 6.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 3.5,
+            "stagger_seconds": 0.6
+          }
+        }
+      ],
+      "color_value": 432092,
+      "flavor_text": "The mad king's decree tears through flesh like a wind that carries no warmth, only the cold finality of banishment. The condemned stumbles backward, marked by an edict that continues to fester long after the throne room falls silent.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0513
+    },
+    {
+      "id": "skill_001350",
+      "name": "Exile Writ Unspoken",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 23.6,
+      "cooldown_seconds": 17.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.5,
+            "stagger_seconds": 0.8
+          }
+        }
+      ],
+      "color_value": 509196,
+      "flavor_text": "The mad king's silence is louder than any decree \u2014 a cold vortex opens in the throne room's heart, and those who stand before it are simply no longer there. The wind does not push; it erases.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0682
+    },
+    {
+      "id": "skill_001351",
+      "name": "Exile Writ Descends",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 17.1,
+      "cooldown_seconds": 6.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.2,
+            "stagger_seconds": 0.6
+          }
+        }
+      ],
+      "color_value": 504013,
+      "flavor_text": "A darkness pools on the throne room floor like spilled ink from a mad king's decree, and those caught within are flung outward as though the crown itself has renounced them. The wind carries the verdict \u2014 there is no appeal.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001346"
+      ],
+      "scaling_coefficient": 1.1185
+    },
+    {
+      "id": "skill_001352",
+      "name": "Exile Writ Howling",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 21.6,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 423112,
+      "flavor_text": "The Mad King's banishment tears through the throne room like a gale given teeth, ricocheting off marble pillars and gilded walls until every soul present feels the weight of his displeasure. None are spared the edict; the wind carries it to each corner, indifferent and absolute.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001346"
+      ],
+      "scaling_coefficient": 1.1165
+    },
+    {
+      "id": "skill_001353",
+      "name": "Exile Writ Descends",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 10.5,
+      "cooldown_seconds": 12.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 8.5
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.4
+          }
+        }
+      ],
+      "color_value": 445969,
+      "flavor_text": "A cold shroud of displaced authority settles over the caster, muffling the court's noise into hollow silence. The decree has been written \u2014 now only the strike remains.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001349"
+      ],
+      "scaling_coefficient": 1.1075
+    },
+    {
+      "id": "skill_001354",
+      "name": "Exile Writ Gale",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 27.0,
+      "cooldown_seconds": 5.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 498212,
+      "flavor_text": "The mad king's banishment tears through the throne room like a howling wind, leaping from traitor to traitor with cold, sovereign fury. Those it touches are not merely struck \u2014 they are unmade from the court entire.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001349"
+      ],
+      "scaling_coefficient": 1.1178
+    },
+    {
+      "id": "skill_001355",
+      "name": "Exile Writ Descends",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 19.2,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 4.9,
+            "stagger_seconds": 0.7
+          }
+        }
+      ],
+      "color_value": 503256,
+      "flavor_text": "The mad king's condemnation takes shape as a shroud of crushing wind, pulling all who stand before the throne into its dark judgment. Those caught within are flung aside like names struck from the royal record.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001351"
+      ],
+      "scaling_coefficient": 1.1288
+    },
+    {
+      "id": "skill_001356",
+      "name": "Drowning Court Decree",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "seasonal_element": "blood",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 26.3,
+      "cooldown_seconds": 4.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.44,
+            "duration_seconds": 4.9
+          }
+        }
+      ],
+      "color_value": 658153,
+      "flavor_text": "A torrent of freezing wind-driven water erupts across the throne room floor, carrying the weight of a mad king's final word. Those caught in its sweep find their blood running cold, their limbs sluggish with the chill of royal displeasure.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001353"
+      ],
+      "scaling_coefficient": 1.1641
+    },
+    {
+      "id": "skill_001357",
+      "name": "Exile Writ Gust",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/wind/mobility",
+      "energy_cost": 18.6,
+      "cooldown_seconds": 11.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 490311,
+      "flavor_text": "The Mad King's banishment carries no sword \u2014 only a sudden, suffocating wind that tears the condemned from where they stand. One moment present, the next simply gone, as though the throne room itself refused to remember them.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001355"
+      ],
+      "scaling_coefficient": 1.2306
+    },
+    {
+      "id": "skill_001358",
+      "name": "Exile Writ Unseen",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 20.3,
+      "cooldown_seconds": 9.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.9
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.15,
+            "duration_seconds": 9.4
+          }
+        }
+      ],
+      "color_value": 519789,
+      "flavor_text": "The wind closes around you like a sealed decree, cold and absolute, carrying the weight of a king's darkest silence. For a breath, nothing may touch what the throne has already cast out.",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001356"
+      ],
+      "scaling_coefficient": 1.2243
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.8017,
+    "convergence_winrate": 0.6033,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00217_pack": 1.0,
+      "monster_00218_pack": 1.0,
+      "monster_00219_pack": 1.0,
+      "monster_00220_pack": 1.0,
+      "monster_00221_pack": 1.0,
+      "monster_00222_pack": 1.0,
+      "monster_00229": 1.0,
+      "monster_00230": 0.92,
+      "monster_00249": 0.26,
+      "monster_00250": 0.44,
+      "monster_00257": 0.0,
+      "monster_00259": 1.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.6033,
+      "overall_winrate": 0.8017,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00217_pack": 1.0,
+        "monster_00218_pack": 1.0,
+        "monster_00219_pack": 1.0,
+        "monster_00220_pack": 1.0,
+        "monster_00221_pack": 1.0,
+        "monster_00222_pack": 1.0,
+        "monster_00229": 1.0,
+        "monster_00230": 0.92,
+        "monster_00249": 0.26,
+        "monster_00250": 0.44,
+        "monster_00257": 0.0,
+        "monster_00259": 1.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.806,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00261": 0.96,
+        "monster_00262": 0.62,
+        "monster_00263": 0.85,
+        "monster_00264": 0.7,
+        "monster_00265": 0.9
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.83,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00266": 1.0,
+        "monster_00267": 0.31,
+        "monster_00268": 0.84,
+        "monster_00269": 1.0,
+        "monster_00270": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.555,
+      "p75": 0.5683,
+      "p95": 0.56,
+      "p99": 0.5617,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.44,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.38,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.3,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_001348",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "sustain",
+          "swapped_to_id": "skill_001530",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8017,
+        "after_winrate": 0.8017,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "control",
+        "lever_specifics": {
+          "skill_id": "skill_001350",
+          "role": "control",
+          "from_geometry": "vortex_pull",
+          "to_geometry": "single_target",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8017,
+        "after_winrate": 0.8017,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "skill_id": "skill_001356",
+          "role": "area_damage",
+          "param": "cooldown_seconds",
+          "from_cd": 4.6,
+          "to_cd": 5.06,
+          "from_cost": 26.3,
+          "to_cost": 28.93,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8017,
+        "after_winrate": 0.8017,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 1.0,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "wind",
+        "to_element": "water",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "wind",
+        "to_element": "water",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 3,
+        "from_element": "wind",
+        "to_element": "water",
+        "n_swapped": 3,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "control",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

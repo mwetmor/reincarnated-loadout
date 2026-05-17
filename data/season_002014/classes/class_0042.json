@@ -1,0 +1,645 @@
+{
+  "id": "class_0042",
+  "name": "Plague Wind Censer",
+  "title_completion": "a Plague Wind Censer",
+  "flavor_text": "Once a fumigator hired to cleanse the sick wards of the Plague City, you learned too late that the miasma doesn't leave \u2014 it listens. Now you exhale brine-laced palls and chalk-white wards, conducting contagion across rooftops like a conductor of rot. The city named you a hazard. You call it a career.",
+  "archetype_tag": "wind_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "wind",
+  "seasonal_dominant_element": "miasma",
+  "color_palette": [
+    424700,
+    514375,
+    518958,
+    491381,
+    450941,
+    503991,
+    473323,
+    670470,
+    578699,
+    441413,
+    490097
+  ],
+  "stat_distribution": {
+    "strength": 18,
+    "dexterity": 14,
+    "intelligence": 5,
+    "wisdom": 160,
+    "vitality": 73
+  },
+  "skills": [
+    {
+      "id": "skill_000996",
+      "name": "Pall Surge Breath",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 12.0,
+      "cooldown_seconds": 0.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 6.4,
+            "stagger_seconds": 0.7
+          }
+        }
+      ],
+      "color_value": 424700,
+      "flavor_text": "A pressurized gust of plague-thick air erupts outward, carrying the city's rot on its tongue. Whatever it touches staggers back, lungs full of something that was never meant to be breathed.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.061
+    },
+    {
+      "id": "skill_000997",
+      "name": "Brine Contagion Arc",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 17.1,
+      "cooldown_seconds": 14.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.15,
+            "duration_seconds": 7.7
+          }
+        }
+      ],
+      "color_value": 514375,
+      "flavor_text": "Salt and sickness move through you like a tide that never recedes, sharpening every strike into something the city's wounds would recognize. The air thickens around your hands, heavy with what the water carries.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.052
+    },
+    {
+      "id": "skill_000998",
+      "name": "Chalk Ward Rising",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 16.1,
+      "cooldown_seconds": 12.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.8
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.29,
+            "duration_seconds": 4.1
+          }
+        }
+      ],
+      "color_value": 518958,
+      "flavor_text": "The body draws a pale boundary against the creeping air, and for a breath the plague finds no purchase here. What cannot be named cannot enter.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0771
+    },
+    {
+      "id": "skill_000999",
+      "name": "Chalk Ward Submersion",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 20.4,
+      "cooldown_seconds": 11.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.2
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.23,
+            "duration_seconds": 6.6
+          }
+        }
+      ],
+      "color_value": 491381,
+      "flavor_text": "The body seals itself in a membrane of quarantine-white stillness, dense as standing water over a sealed district. Nothing passes through \u2014 not breath, not blame, not the slow rot the city exhales.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.07
+    },
+    {
+      "id": "skill_001000",
+      "name": "Chalk Ward Submersion",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 18.9,
+      "cooldown_seconds": 13.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.1
+          }
+        }
+      ],
+      "color_value": 450941,
+      "flavor_text": "The body seals itself in a breathless quiet, white residue blooming across the skin like lime washed over a condemned door. Nothing that moves through the air may find purchase here.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0653
+    },
+    {
+      "id": "skill_001001",
+      "name": "Pall Surge Ricochet",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 39.0,
+      "cooldown_seconds": 5.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 503991,
+      "flavor_text": "A pressurized gust of plague-wind launches from the caster's palms and caroms off walls and bodies alike, each bounce thickening the air with choking displacement. The miasma does not dissipate \u2014 it finds every corner the living hoped to hide in.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000996"
+      ],
+      "scaling_coefficient": 1.1179
+    },
+    {
+      "id": "skill_001002",
+      "name": "Bilge Contagion Arc",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 18.0,
+      "cooldown_seconds": 11.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.26,
+            "duration_seconds": 4.0
+          }
+        }
+      ],
+      "color_value": 473323,
+      "flavor_text": "A fetid totem rises from the waterlogged streets, exhaling a resonant sickness that sharpens every blow struck within its radius. The plague remembers what the city forgot \u2014 that rot and ruin move together.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000996"
+      ],
+      "scaling_coefficient": 1.1026
+    },
+    {
+      "id": "skill_001003",
+      "name": "Miasmal Seep Fork",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 28.7,
+      "cooldown_seconds": 4.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 670470,
+      "flavor_text": "Salt-heavy water splits through the infected air, each branch carrying the bitter patience of brine into flesh that has already forgotten how to heal. The city's canals remember every body they have swallowed.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000999"
+      ],
+      "scaling_coefficient": 1.0973
+    },
+    {
+      "id": "skill_001004",
+      "name": "Brine Keeper's Resolve",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/water/utility",
+      "energy_cost": 11.7,
+      "cooldown_seconds": 10.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.33,
+            "duration_seconds": 7.9
+          }
+        }
+      ],
+      "color_value": 578699,
+      "flavor_text": "The salt of the Plague City's dead waters seeps into the blood, sharpening the mind to a killing edge. What the brine preserves, it makes merciless.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001001"
+      ],
+      "scaling_coefficient": 1.1584
+    },
+    {
+      "id": "skill_001005",
+      "name": "Pall Surge Tide",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 24.9,
+      "cooldown_seconds": 6.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 441413,
+      "flavor_text": "A choking wave of miasmic air leaps from body to body, each breath drawn in the plague city carrying the surge forward. The wind does not howl here \u2014 it seeps, patient and consuming.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001003"
+      ],
+      "scaling_coefficient": 1.1498
+    },
+    {
+      "id": "skill_001006",
+      "name": "Pall Surge Tide",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 22.3,
+      "cooldown_seconds": 7.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.2,
+            "stagger_seconds": 0.9
+          }
+        }
+      ],
+      "color_value": 490097,
+      "flavor_text": "A drowning current of plague-wind tears through the infected streets, leaping from body to body in crackling arcs of suffocating color. Those caught in its path are hurled aside, gasping, as the miasma drinks deep of their breath.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001004"
+      ],
+      "scaling_coefficient": 1.2015
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.815,
+    "convergence_winrate": 0.6433,
+    "pack_winrate": 0.9867,
+    "convergence_iterations": 10,
+    "converged": true,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00163_pack": 1.0,
+      "monster_00164_pack": 1.0,
+      "monster_00165_pack": 1.0,
+      "monster_00166_pack": 0.99,
+      "monster_00167_pack": 1.0,
+      "monster_00168_pack": 0.93,
+      "monster_00175": 1.0,
+      "monster_00176": 1.0,
+      "monster_00195": 1.0,
+      "monster_00196": 0.6,
+      "monster_00203": 0.26,
+      "monster_00205": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.6433,
+      "overall_winrate": 0.815,
+      "pack_winrate": 0.9867,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": true,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00163_pack": 1.0,
+        "monster_00164_pack": 1.0,
+        "monster_00165_pack": 1.0,
+        "monster_00166_pack": 0.99,
+        "monster_00167_pack": 1.0,
+        "monster_00168_pack": 0.93,
+        "monster_00175": 1.0,
+        "monster_00176": 1.0,
+        "monster_00195": 1.0,
+        "monster_00196": 0.6,
+        "monster_00203": 0.26,
+        "monster_00205": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.866,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00207": 0.97,
+        "monster_00208": 0.73,
+        "monster_00209": 0.92,
+        "monster_00210": 0.87,
+        "monster_00211": 0.84
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.988,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00212": 1.0,
+        "monster_00213": 0.95,
+        "monster_00214": 0.99,
+        "monster_00215": 1.0,
+        "monster_00216": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.6883,
+      "p75": 0.6933,
+      "p95": 0.7117,
+      "p99": 0.7133,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.52,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.48,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.56,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_001006",
+          "swapped_from_role": "area_damage",
+          "swapped_to_role": "defensive",
+          "swapped_to_id": "skill_001230",
+          "role": "area_damage",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8217,
+        "after_winrate": 0.8217,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_geometry_candidates"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8217,
+        "after_winrate": 0.8217,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000996",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.3,
+          "to_cd": 0.33,
+          "from_cost": 12.0,
+          "to_cost": 13.2,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8217,
+        "after_winrate": 0.8217,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "modifier_fallback",
+    "composition_pre_modifier_wr": 0.995,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "wind",
+        "to_element": "water",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "wind",
+        "to_element": "water",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 3,
+        "from_element": "wind",
+        "to_element": "water",
+        "n_swapped": 2,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "mobility",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

@@ -1,0 +1,459 @@
+{
+  "id": "class_0060",
+  "name": "Windborne Herald of the Fractured Court",
+  "title_completion": "a Windborne Herald of the Fractured Court",
+  "flavor_text": "You did not ask to carry the Mad King's proclamations across the howling throne room, yet the parchments found your hands all the same. Your voice, blessed by some forgotten wind-saint, can silence a lord mid-sentence or lift a decree so high it becomes law before it lands. The court does not love you \u2014 but it obeys, and in this kingdom, that is holier than love.",
+  "archetype_tag": "holy_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "long",
+  "dominant_element": "holy",
+  "seasonal_dominant_element": null,
+  "color_palette": [
+    597225,
+    588902,
+    611602,
+    598181,
+    599618,
+    597455
+  ],
+  "stat_distribution": {
+    "strength": 20,
+    "dexterity": 6,
+    "intelligence": 5,
+    "wisdom": 160,
+    "vitality": 79
+  },
+  "skills": [
+    {
+      "id": "skill_001538",
+      "name": "Legitimate Claim Rises",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 18.7,
+      "cooldown_seconds": 12.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 9.1
+          }
+        }
+      ],
+      "color_value": 597589,
+      "flavor_text": "The wind through the throne room carries the weight of rightful authority, and for a breathless moment every strike lands as though decreed by something older than the Mad King's raving. Wisdom is the wind's true direction.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001436",
+      "name": "Legitimate Claim Silenced",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 25.4,
+      "cooldown_seconds": 11.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.7
+          }
+        }
+      ],
+      "color_value": 588902,
+      "flavor_text": "The mad king's court collapses inward like a held breath, and every tongue in the chamber forgets the shape of words. What was spoken is now property of the wind.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001437",
+      "name": "Legitimate Claim Silenced",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 18.7,
+      "cooldown_seconds": 18.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.3
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "holy"
+          }
+        }
+      ],
+      "color_value": 611602,
+      "flavor_text": "A ring of holy wind expands outward from the throne's cracked foundation, carrying the weight of a decree no tongue may answer. Those caught within it find their voices stolen, swallowed by the mad king's unanswerable authority.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001438",
+      "name": "Windswept Legitimate Claim",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 22.1,
+      "cooldown_seconds": 4.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "consecrate",
+          "params": {
+            "zone_duration_seconds": 5.0,
+            "dot_tick_damage": 750,
+            "heal_amplification_percent": 0.09
+          }
+        }
+      ],
+      "color_value": 598181,
+      "flavor_text": "Where the Mad King's decree once howled through the throne room, the air still burns with the memory of his righteous fury. The ground itself answers, radiating a slow and suffocating sovereignty over all who stand within it.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001439",
+      "name": "Legitimate Claim Ascendant",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 12.6,
+      "cooldown_seconds": 15.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.29,
+            "duration_seconds": 6.5
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.31,
+            "duration_seconds": 7.0
+          }
+        }
+      ],
+      "color_value": 599618,
+      "flavor_text": "The wind through the throne room carries the weight of undeniable authority, sharpening the mind and replenishing what the court has long withheld. For one breathless moment, your right to act is absolute.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001440",
+      "name": "Legitimate Claim Convenes",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 19.2,
+      "cooldown_seconds": 3.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "holy"
+          }
+        },
+        {
+          "name": "consecrate",
+          "params": {
+            "zone_duration_seconds": 6.2,
+            "dot_tick_damage": 750,
+            "heal_amplification_percent": 0.13
+          }
+        }
+      ],
+      "color_value": 597455,
+      "flavor_text": "The Mad King's voice tears through the hall in spiraling golden wind, pulling every soul toward the center of his absolute authority. Holy light scorches the marble where courtiers stood, and the air itself remains consecrated \u2014 still ringing with the decree long after the screaming stops.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7525,
+    "convergence_winrate": 0.505,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.0871,
+    "gauntlet_results": {
+      "monster_00217_pack": 1.0,
+      "monster_00218_pack": 1.0,
+      "monster_00219_pack": 1.0,
+      "monster_00220_pack": 1.0,
+      "monster_00221_pack": 1.0,
+      "monster_00222_pack": 1.0,
+      "monster_00229": 1.0,
+      "monster_00230": 0.62,
+      "monster_00249": 0.17,
+      "monster_00250": 0.24,
+      "monster_00257": 0.0,
+      "monster_00259": 1.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0871
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.505,
+      "overall_winrate": 0.7525,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 8,
+      "converged": true,
+      "final_modifier": 0.0871,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00217_pack": 1.0,
+        "monster_00218_pack": 1.0,
+        "monster_00219_pack": 1.0,
+        "monster_00220_pack": 1.0,
+        "monster_00221_pack": 1.0,
+        "monster_00222_pack": 1.0,
+        "monster_00229": 1.0,
+        "monster_00230": 0.62,
+        "monster_00249": 0.17,
+        "monster_00250": 0.24,
+        "monster_00257": 0.0,
+        "monster_00259": 1.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.55,
+      "iterations": 10,
+      "converged": true,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00261": 0.98,
+        "monster_00262": 0.06,
+        "monster_00263": 0.51,
+        "monster_00264": 0.53,
+        "monster_00265": 0.67
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.676,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00266": 0.93,
+        "monster_00267": 0.0,
+        "monster_00268": 0.49,
+        "monster_00269": 1.0,
+        "monster_00270": 0.96
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.5833,
+      "p75": 0.595,
+      "p95": 0.6017,
+      "p99": 0.5967,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.44,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.44,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.34,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "swapped_from_id": "skill_001435",
+          "swapped_from_role": "primary_attack",
+          "swapped_to_role": "utility",
+          "swapped_to_id": "skill_001538",
+          "role": "primary_attack",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7817,
+        "after_winrate": 0.6775,
+        "delta": -0.1042,
+        "accepted": true,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_swappable_candidates"
+        },
+        "attempt": 2,
+        "before_winrate": 0.6775,
+        "after_winrate": 0.6775,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "geometry_unchanged"
+        },
+        "attempt": 1,
+        "before_winrate": 0.6775,
+        "after_winrate": 0.6775,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "skill_id": "skill_001440",
+          "role": "area_damage",
+          "param": "cooldown_seconds",
+          "from_cd": 3.5,
+          "to_cd": 3.85,
+          "from_cost": 19.2,
+          "to_cost": 21.12,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.6775,
+        "after_winrate": 0.6775,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "primary_loop_converged",
+    "composition_pre_modifier_wr": 0.98,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [],
+    "secondary_loop_outcome": "secondary_skipped_pure_element",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0871,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0871
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "control",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

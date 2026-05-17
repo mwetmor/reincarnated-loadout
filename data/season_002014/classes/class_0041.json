@@ -1,0 +1,672 @@
+{
+  "id": "class_0041",
+  "name": "Chalk-Handed Quarantine Warden",
+  "title_completion": "a Chalk-Handed Quarantine Warden",
+  "flavor_text": "Where the Plague City's streets run thick with brine and the miasma curls between cobblestones like a living thing, she draws her wards \u2014 broad white lines across doorframes, gutters, and the foreheads of the already-dying. The chalk never runs out; the city always needs more lines. They say she was an inspector once, in another life, measuring property boundaries no one cares about anymore.",
+  "archetype_tag": "earth_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "long",
+  "dominant_element": "earth",
+  "seasonal_dominant_element": "chalk",
+  "color_palette": [
+    312360,
+    282577,
+    664117,
+    275021,
+    310714,
+    258891,
+    317221,
+    284568,
+    367846,
+    283103,
+    310511,
+    378615
+  ],
+  "stat_distribution": {
+    "strength": 18,
+    "dexterity": 5,
+    "intelligence": 7,
+    "wisdom": 160,
+    "vitality": 80
+  },
+  "skills": [
+    {
+      "id": "skill_000984",
+      "name": "Chalk Ward Subsidence",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 20.3,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 312360,
+      "flavor_text": "The pale ground softens and drinks itself down, pulling the sick city's foundations into a slow, white collapse. What was solid remembers it was always powder.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0582
+    },
+    {
+      "id": "skill_001227",
+      "name": "Chalk Pall Drift",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/earth/mobility",
+      "energy_cost": 16.5,
+      "cooldown_seconds": 9.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.8
+          }
+        }
+      ],
+      "color_value": 372271,
+      "flavor_text": "The ward dissolves into pale suspension, carrying the caster through infected air before setting like plaster around those left behind. Three heartbeats pass before the dust remembers how to crumble.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0716
+    },
+    {
+      "id": "skill_000986",
+      "name": "Brine Seep Totem",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 14.3,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.25,
+            "duration_seconds": 13.2
+          }
+        }
+      ],
+      "color_value": 664117,
+      "flavor_text": "A pillar of salt-heavy fog rises from the cracked cobblestones, breathing cold preservation into the air around it. What it touches slows, thickens, begins to cure from the inside out.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0546
+    },
+    {
+      "id": "skill_000987",
+      "name": "Chalk Ward Soaking",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 23.7,
+      "cooldown_seconds": 9.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.9
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 8.5
+          }
+        }
+      ],
+      "color_value": 275021,
+      "flavor_text": "The chalk drinks deep before it holds, swelling white and dense against whatever comes. For a breath, the body becomes a sealed thing \u2014 soft but unyielding, like a wall that has forgotten how to crumble.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.056
+    },
+    {
+      "id": "skill_000988",
+      "name": "Chalk Ward Tide",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 26.3,
+      "cooldown_seconds": 18.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.3
+          }
+        }
+      ],
+      "color_value": 310714,
+      "flavor_text": "A pale surge exhales outward from crumbling white hands, dragging the afflicted still as standing water in a sealed courtyard. The city holds its breath, and so do they.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0565
+    },
+    {
+      "id": "skill_000989",
+      "name": "Chalk Ward Deluge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 25.8,
+      "cooldown_seconds": 3.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.3
+          }
+        }
+      ],
+      "color_value": 258891,
+      "flavor_text": "The healer draws a circle in crumbling white on the infected cobblestones, and the ground drinks deep before it holds \u2014 soft stone swelling upward through standing water, pinning whatever wades within. The ward does not protect; it remembers every weight that has pressed it down.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000984"
+      ],
+      "scaling_coefficient": 1.0982
+    },
+    {
+      "id": "skill_000990",
+      "name": "Chalk Ward Seep",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/earth/mobility",
+      "energy_cost": 19.1,
+      "cooldown_seconds": 11.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.9
+          }
+        }
+      ],
+      "color_value": 317221,
+      "flavor_text": "The healer vanishes through a wall of soft white dust, reappearing where the contagion is thickest \u2014 and the ground beneath their feet drinks deep, holding everything still. Chalk settles like a held breath.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000984"
+      ],
+      "scaling_coefficient": 1.1166
+    },
+    {
+      "id": "skill_000991",
+      "name": "Chalk Ward Tide",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 29.1,
+      "cooldown_seconds": 14.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.8
+          }
+        }
+      ],
+      "color_value": 284568,
+      "flavor_text": "A ring of pale sediment blooms outward from crumbling white walls, and those caught within it find their feet swallowed by softening ground that hardens like plaster around bone. The city exhales its stillness into them.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 3,
+      "parent_skill_ids": [
+        "skill_000984"
+      ],
+      "scaling_coefficient": 1.1016
+    },
+    {
+      "id": "skill_000992",
+      "name": "Chalk Ward Immersion",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 19.0,
+      "cooldown_seconds": 12.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.5
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.12,
+            "duration_seconds": 7.8
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.28,
+            "duration_seconds": 9.6
+          }
+        }
+      ],
+      "color_value": 367846,
+      "flavor_text": "The defender dissolves into still water and resurfaces wrapped in a shell of pale chalk, soft as river sediment hardening against the current. For a breath, nothing that moves through the plague-thick air can find them.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000987"
+      ],
+      "scaling_coefficient": 1.0854
+    },
+    {
+      "id": "skill_000993",
+      "name": "Chalk Ward Rising",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 22.9,
+      "cooldown_seconds": 11.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.8
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.29,
+            "duration_seconds": 6.7
+          }
+        }
+      ],
+      "color_value": 283103,
+      "flavor_text": "The body draws a boundary the plague cannot read, white dust lifting from skin like a city sealing its own gates. For a breath, the sickness forgets where you are.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000987"
+      ],
+      "scaling_coefficient": 1.084
+    },
+    {
+      "id": "skill_000994",
+      "name": "Chalk Ward Tide",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 20.3,
+      "cooldown_seconds": 12.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.2
+          }
+        }
+      ],
+      "color_value": 310511,
+      "flavor_text": "The white dust rises from cracked walls and binds itself to skin like a second body, dense and cold as still harbor water. For a breathless moment, the city's sickness cannot find you.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000989"
+      ],
+      "scaling_coefficient": 1.1438
+    },
+    {
+      "id": "skill_000995",
+      "name": "Chalk Ward Tide",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "seasonal_element": "chalk",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 24.2,
+      "cooldown_seconds": 11.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.4
+          }
+        }
+      ],
+      "color_value": 378615,
+      "flavor_text": "A ring of pale, water-logged chalk swells up from the ground, soft and suffocating, locking everything it touches in a slow, crumbling grip. The city's old quarantine lines remember where they were drawn.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000994"
+      ],
+      "scaling_coefficient": 1.2496
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7558,
+    "convergence_winrate": 0.5117,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 6,
+    "converged": true,
+    "final_modifier": 0.0797,
+    "gauntlet_results": {
+      "monster_00163_pack": 1.0,
+      "monster_00164_pack": 1.0,
+      "monster_00165_pack": 1.0,
+      "monster_00166_pack": 1.0,
+      "monster_00167_pack": 1.0,
+      "monster_00168_pack": 1.0,
+      "monster_00175": 1.0,
+      "monster_00176": 0.84,
+      "monster_00195": 1.0,
+      "monster_00196": 0.23,
+      "monster_00203": 0.0,
+      "monster_00205": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0797
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.5117,
+      "overall_winrate": 0.7558,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 6,
+      "converged": true,
+      "final_modifier": 0.0797,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00163_pack": 1.0,
+        "monster_00164_pack": 1.0,
+        "monster_00165_pack": 1.0,
+        "monster_00166_pack": 1.0,
+        "monster_00167_pack": 1.0,
+        "monster_00168_pack": 1.0,
+        "monster_00175": 1.0,
+        "monster_00176": 0.84,
+        "monster_00195": 1.0,
+        "monster_00196": 0.23,
+        "monster_00203": 0.0,
+        "monster_00205": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.496,
+      "iterations": 7,
+      "converged": true,
+      "final_modifier": 0.0945,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00207": 0.63,
+        "monster_00208": 0.43,
+        "monster_00209": 0.39,
+        "monster_00210": 0.51,
+        "monster_00211": 0.52
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.722,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00212": 0.94,
+        "monster_00213": 0.41,
+        "monster_00214": 0.26,
+        "monster_00215": 1.0,
+        "monster_00216": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.62,
+      "p75": 0.6317,
+      "p95": 0.6417,
+      "p99": 0.6367,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.38,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.46,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.36,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000985",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "mobility",
+          "swapped_to_id": "skill_001227",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7475,
+        "after_winrate": 0.7167,
+        "delta": -0.0308,
+        "accepted": true,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_swappable_candidates"
+        },
+        "attempt": 2,
+        "before_winrate": 0.7167,
+        "after_winrate": 0.7167,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_geometry_candidates"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7167,
+        "after_winrate": 0.7167,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000989",
+          "role": "area_damage",
+          "param": "cooldown_seconds",
+          "from_cd": 3.1,
+          "to_cd": 3.41,
+          "from_cost": 25.8,
+          "to_cost": 28.38,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7167,
+        "after_winrate": 0.7167,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "primary_loop_converged",
+    "composition_pre_modifier_wr": 0.9183,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "earth",
+        "to_element": "water",
+        "n_swapped": 2,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0797,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0797
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "control",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

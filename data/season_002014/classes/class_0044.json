@@ -1,0 +1,447 @@
+{
+  "id": "class_0044",
+  "name": "Plague Lantern Bearer",
+  "title_completion": "a Plague Lantern Bearer",
+  "flavor_text": "In the Plague City, the lantern-bearers came before the burial carts \u2014 not to guide the living, but to judge them. She holds her light steady over the sick and the sealed doors, and where it falls, the miasma retreats like a tide that knows shame. The brine in the air tastes like penance; she has learned not to mind.",
+  "archetype_tag": "holy_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "holy",
+  "seasonal_dominant_element": null,
+  "color_palette": [
+    578262,
+    593235,
+    593683,
+    619870,
+    583008,
+    579832
+  ],
+  "stat_distribution": {
+    "strength": 19,
+    "dexterity": 20,
+    "intelligence": 6,
+    "wisdom": 155,
+    "vitality": 70
+  },
+  "skills": [
+    {
+      "id": "skill_001113",
+      "name": "Quarantine Light Spill",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 8.2,
+      "cooldown_seconds": 0.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "holy"
+          }
+        },
+        {
+          "name": "consecrate",
+          "params": {
+            "zone_duration_seconds": 6.2,
+            "dot_tick_damage": 750,
+            "heal_amplification_percent": 0.11
+          }
+        }
+      ],
+      "color_value": 578262,
+      "flavor_text": "A focused beam of consecrated radiance strikes the afflicted and lingers, pooling in the wound like light that refuses to leave a condemned room. The ground it touches burns clean, indifferent to suffering.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001114",
+      "name": "Quarantine Light Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 34.2,
+      "cooldown_seconds": 6.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "holy"
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.18,
+            "duration_seconds": 9.5
+          }
+        }
+      ],
+      "color_value": 593235,
+      "flavor_text": "Drawn from the city's sealed wards, a held breath of holy radiance leaps between the infected in cascading arcs of burning white. What the plague claimed, the light reclaims \u2014 vessel by vessel, without mercy.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001115",
+      "name": "Quarantine Light Seep",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 17.9,
+      "cooldown_seconds": 7.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "holy"
+          }
+        }
+      ],
+      "color_value": 593683,
+      "flavor_text": "A searing luminance bleeds from one fevered body to the next, tracing the invisible paths of contagion through the flooded streets. What the plague connected, the light now judges.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001116",
+      "name": "Quarantine Light Totem",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 16.6,
+      "cooldown_seconds": 5.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "consecrate",
+          "params": {
+            "zone_duration_seconds": 5.0,
+            "dot_tick_damage": 375,
+            "heal_amplification_percent": 0.18
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "holy"
+          }
+        }
+      ],
+      "color_value": 619870,
+      "flavor_text": "A pale ward erupts from the cobblestones, flooding the afflicted ground with a searing, clinical glow that does not comfort. What lingers in its radius does not linger long.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001117",
+      "name": "Chalk Ward Rising",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 21.7,
+      "cooldown_seconds": 14.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.6
+          }
+        }
+      ],
+      "color_value": 583008,
+      "flavor_text": "The body becomes a sealed district, ringed in pale luminescence that the sickness cannot cross. For a breath and a half, nothing enters that has not been permitted.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_001118",
+      "name": "Quarantine Light Offering",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 14.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.27,
+            "duration_seconds": 9.8
+          }
+        }
+      ],
+      "color_value": 579832,
+      "flavor_text": "A totem rises from the waterlogged stones, bleeding pale radiance through the city's perpetual fog. Those who stand within its glow find their strikes sharpened, as though the sickness itself has taught them where flesh yields.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.8783,
+    "convergence_winrate": 0.7567,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00163_pack": 1.0,
+      "monster_00164_pack": 1.0,
+      "monster_00165_pack": 1.0,
+      "monster_00166_pack": 1.0,
+      "monster_00167_pack": 1.0,
+      "monster_00168_pack": 1.0,
+      "monster_00175": 1.0,
+      "monster_00176": 1.0,
+      "monster_00195": 1.0,
+      "monster_00196": 0.9,
+      "monster_00203": 0.64,
+      "monster_00205": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.7567,
+      "overall_winrate": 0.8783,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00163_pack": 1.0,
+        "monster_00164_pack": 1.0,
+        "monster_00165_pack": 1.0,
+        "monster_00166_pack": 1.0,
+        "monster_00167_pack": 1.0,
+        "monster_00168_pack": 1.0,
+        "monster_00175": 1.0,
+        "monster_00176": 1.0,
+        "monster_00195": 1.0,
+        "monster_00196": 0.9,
+        "monster_00203": 0.64,
+        "monster_00205": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.992,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00207": 1.0,
+        "monster_00208": 0.98,
+        "monster_00209": 1.0,
+        "monster_00210": 0.99,
+        "monster_00211": 0.99
+      }
+    },
+    "early_band_L17": {
+      "winrate": 1.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00212": 1.0,
+        "monster_00213": 1.0,
+        "monster_00214": 1.0,
+        "monster_00215": 1.0,
+        "monster_00216": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.7383,
+      "p75": 0.7467,
+      "p95": 0.75,
+      "p99": 0.745,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.48,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.46,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.44,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_001116",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "defensive",
+          "swapped_to_id": "skill_001238",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8783,
+        "after_winrate": 0.8783,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_geometry_candidates"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8783,
+        "after_winrate": 0.8783,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_001113",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.7,
+          "to_cd": 0.77,
+          "from_cost": 8.2,
+          "to_cost": 9.02,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8783,
+        "after_winrate": 0.8783,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 0.9975,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [],
+    "secondary_loop_outcome": "secondary_skipped_pure_element",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "specialist",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

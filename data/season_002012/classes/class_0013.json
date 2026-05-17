@@ -1,0 +1,795 @@
+{
+  "id": "class_0013",
+  "name": "Cartographer of Unmapped Winds",
+  "title_completion": "a Cartographer of Unmapped Winds",
+  "flavor_text": "Armed with charcoal-dusted fingers and charts that dissolve the borders of the world, you map territories that refuse to stay still. From the Cartographer's Tower, salt-winds carry your surveys across shifting frontiers, rewriting coastlines and erasing the edges of kingdoms that never asked to be found. What you chart becomes real \u2014 and what you erase is simply... gone.",
+  "archetype_tag": "hybrid_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "seasonal_dominant_element": "salt",
+  "color_palette": [
+    641685,
+    447361,
+    14117,
+    568329,
+    501810,
+    681581,
+    54348,
+    440143,
+    449242,
+    3490,
+    652444,
+    461830,
+    45910,
+    37757,
+    30378
+  ],
+  "stat_distribution": {
+    "strength": 9,
+    "dexterity": 10,
+    "intelligence": 100,
+    "wisdom": 101,
+    "vitality": 50
+  },
+  "skills": [
+    {
+      "id": "skill_000256",
+      "name": "Salt Chart Volley",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 7.7,
+      "cooldown_seconds": 0.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "water"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.06
+          }
+        }
+      ],
+      "color_value": 641685,
+      "flavor_text": "Bitter crystalline needles scatter outward like survey lines etched across a soaked map, each one drawing back a thin thread of what they pierce. The tower's winds carry them true, and the cartographer's hand never wavers.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0621
+    },
+    {
+      "id": "skill_000257",
+      "name": "Border Erasure Veil",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 18.2,
+      "cooldown_seconds": 19.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.34,
+            "duration_seconds": 6.4
+          }
+        }
+      ],
+      "color_value": 447361,
+      "flavor_text": "The cartographer smudges the boundary between self and storm, and for a breathless moment the wind strikes through them rather than past. What the map cannot contain, the body becomes.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0641
+    },
+    {
+      "id": "skill_000258",
+      "name": "Smolder Cascade Survey",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "seasonal_element": "charcoal",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 30.0,
+      "cooldown_seconds": 4.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 14117,
+      "flavor_text": "A single charcoal line drawn across the target ignites everything the cartographer once measured \u2014 the heat follows the map, not the territory. What burns has already been claimed.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0606
+    },
+    {
+      "id": "skill_000259",
+      "name": "Cartographic Haze Salt Tide",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 15.8,
+      "cooldown_seconds": 3.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 568329,
+      "flavor_text": "A brine-heavy fog descends from the tower's highest windows, crystallizing mid-air into a bitter map of ruin before crashing earthward. The salt preserves the moment of impact like a specimen pinned beneath glass.",
+      "tier": 1,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0798
+    },
+    {
+      "id": "skill_000260",
+      "name": "Border Erasure Gale",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 34.7,
+      "cooldown_seconds": 4.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 501810,
+      "flavor_text": "A shrouding wind tears through the mapped world, unraveling the lines between territories in a chain of desolate, howling force. Where the cartographer once drew borders, only scoured emptiness remains.",
+      "tier": 1,
+      "chain_id": "chain_D",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0767
+    },
+    {
+      "id": "skill_000261",
+      "name": "Salt Meridian Ring",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 28.6,
+      "cooldown_seconds": 4.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.37,
+            "duration_seconds": 2.3
+          }
+        }
+      ],
+      "color_value": 681581,
+      "flavor_text": "A crystalline haze expands outward from the tower's pinnacle, charting ruin in a bitter circle of brine-heavy wind. Where the boundary settles, flesh stiffens and warmth surrenders to the map's cold edge.",
+      "tier": 1,
+      "chain_id": "chain_D",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0778
+    },
+    {
+      "id": "skill_000262",
+      "name": "Charcoal Stroke Survey",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "seasonal_element": "charcoal",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 14.6,
+      "cooldown_seconds": 14.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.26,
+            "duration_seconds": 6.5
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.29,
+            "duration_seconds": 10.0
+          }
+        }
+      ],
+      "color_value": 54348,
+      "flavor_text": "A totem rises at the tower's peak, its pressed-black edges bleeding wind-borne pigment across the mapped air. The cartographer's hand never lifts \u2014 every line drawn feeds the mind that draws it.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000256"
+      ],
+      "scaling_coefficient": 1.0993
+    },
+    {
+      "id": "skill_000263",
+      "name": "Border Erasure Shroud",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 21.5,
+      "cooldown_seconds": 9.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.5
+          }
+        }
+      ],
+      "color_value": 440143,
+      "flavor_text": "The cartographer steps sideways through a fold in the mapped world, wrapped in a pall of uncharted dark where no blade can find purchase. For a breath, they exist between territories \u2014 neither here nor there, untouchable.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000256"
+      ],
+      "scaling_coefficient": 1.1139
+    },
+    {
+      "id": "skill_000264",
+      "name": "Border Erasure Pall",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 16.4,
+      "cooldown_seconds": 14.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.3
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.24,
+            "duration_seconds": 7.4
+          }
+        }
+      ],
+      "color_value": 449242,
+      "flavor_text": "The cartographer unmakes the boundary between here and elsewhere, and for a breathless moment the wind cannot find you. You exist only as a smear of ink on a map no one holds.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000256"
+      ],
+      "scaling_coefficient": 1.1058
+    },
+    {
+      "id": "skill_000265",
+      "name": "Smolder Cascade Survey",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "seasonal_element": "charcoal",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 39.7,
+      "cooldown_seconds": 7.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 3490,
+      "flavor_text": "From the tower's highest window, compressed charcoal lines leap between fixed points on the map, each stroke igniting the next in a chain of blackened meridians. The cartographer's hand never lifts \u2014 the fire simply continues the survey.",
+      "tier": 2,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000256"
+      ],
+      "scaling_coefficient": 1.1054
+    },
+    {
+      "id": "skill_000266",
+      "name": "Salt Meridian Totem",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "seasonal_element": "salt",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 16.6,
+      "cooldown_seconds": 7.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.25,
+            "duration_seconds": 19.6
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 652444,
+      "flavor_text": "A crystalline marker is driven into the ground, exhaling a bitter cold that seeps into cartographic lines no map can erase. The air around it tastes of ocean and old parchment, slowing everything that dares cross its fixed boundary.",
+      "tier": 2,
+      "chain_id": "chain_D",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000256"
+      ],
+      "scaling_coefficient": 1.1005
+    },
+    {
+      "id": "skill_000267",
+      "name": "Border Erasure",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 20.5,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 4.1,
+            "stagger_seconds": 0.7
+          }
+        }
+      ],
+      "color_value": 461830,
+      "flavor_text": "A shroud of wind tears across the cartographer's unfinished lines, unmapping flesh and bone with each leaping arc. What stood is scattered, the boundary between presence and absence quietly, finally dissolved.",
+      "tier": 2,
+      "chain_id": "chain_D",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000256"
+      ],
+      "scaling_coefficient": 1.0826
+    },
+    {
+      "id": "skill_000268",
+      "name": "Smolder Cascade Reading",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "seasonal_element": "charcoal",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 19.3,
+      "cooldown_seconds": 13.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.22,
+            "duration_seconds": 8.9
+          }
+        }
+      ],
+      "color_value": 45910,
+      "flavor_text": "The cartographer traces a burning line across the known world and feels the pressure of every unmapped edge compress into their grip. For a breath, the charcoal knows exactly where it wants to fall.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000262"
+      ],
+      "scaling_coefficient": 1.1638
+    },
+    {
+      "id": "skill_000269",
+      "name": "Smolder Cascade",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "seasonal_element": "charcoal",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 7.8,
+      "cooldown_seconds": 0.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.3
+          }
+        }
+      ],
+      "color_value": 37757,
+      "flavor_text": "A line of charcoal dragged across the target leaves a mark that breathes and blackens, the residue catching heat long after the hand has moved. The tower's wind feeds it, turning a single stroke into something that refuses to stop burning.",
+      "tier": 3,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000262"
+      ],
+      "scaling_coefficient": 1.1532
+    },
+    {
+      "id": "skill_000270",
+      "name": "Smolder Cascade Stroke",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "seasonal_element": "charcoal",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 12.6,
+      "cooldown_seconds": 1.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 30378,
+      "flavor_text": "A single line of charcoal dragged across the air ignites where the wind breathes on it, tracing the target's coordinates in fire. The Cartographer's Tower teaches that every point on the map can burn.",
+      "tier": 3,
+      "chain_id": "chain_D",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000262"
+      ],
+      "scaling_coefficient": 1.1516
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.9033,
+    "convergence_winrate": 0.8067,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00055_pack": 1.0,
+      "monster_00056_pack": 1.0,
+      "monster_00057_pack": 1.0,
+      "monster_00058_pack": 1.0,
+      "monster_00059_pack": 1.0,
+      "monster_00060_pack": 1.0,
+      "monster_00067": 1.0,
+      "monster_00068": 1.0,
+      "monster_00087": 0.89,
+      "monster_00088": 0.95,
+      "monster_00095": 0.0,
+      "monster_00097": 1.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.8067,
+      "overall_winrate": 0.9033,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00055_pack": 1.0,
+        "monster_00056_pack": 1.0,
+        "monster_00057_pack": 1.0,
+        "monster_00058_pack": 1.0,
+        "monster_00059_pack": 1.0,
+        "monster_00060_pack": 1.0,
+        "monster_00067": 1.0,
+        "monster_00068": 1.0,
+        "monster_00087": 0.89,
+        "monster_00088": 0.95,
+        "monster_00095": 0.0,
+        "monster_00097": 1.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.888,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00099": 1.0,
+        "monster_00100": 0.45,
+        "monster_00101": 1.0,
+        "monster_00102": 1.0,
+        "monster_00103": 0.99
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.992,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00104": 1.0,
+        "monster_00105": 0.96,
+        "monster_00106": 1.0,
+        "monster_00107": 1.0,
+        "monster_00108": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.7483,
+      "p75": 0.75,
+      "p95": 0.75,
+      "p99": 0.75,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.46,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.52,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.52,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000269",
+          "swapped_from_role": "primary_attack",
+          "swapped_to_role": "control",
+          "swapped_to_id": "skill_000541",
+          "role": "primary_attack",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.9033,
+        "after_winrate": 0.9033,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "burst_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000265",
+          "role": "burst_damage",
+          "from_geometry": "chain_lightning",
+          "to_geometry": "multi_projectile",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.9033,
+        "after_winrate": 0.9033,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000256",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.2,
+          "to_cd": 0.22,
+          "from_cost": 7.7,
+          "to_cost": 8.47,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.9033,
+        "after_winrate": 0.9033,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 1.0,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "fire",
+        "to_element": "water",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "fire",
+        "to_element": "water",
+        "n_swapped": 2,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 3,
+        "from_element": "fire",
+        "to_element": "water",
+        "n_swapped": 3,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "specialist",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

@@ -1,0 +1,653 @@
+{
+  "id": "class_0005",
+  "name": "Wall-Shocked Smuggler",
+  "title_completion": "a Wall-Shocked Smuggler",
+  "flavor_text": "Every border has a current running through it \u2014 she just learned to become the current. They said the iron wall at the checkpoint was impenetrable, until she discovered that signal travels through anything if you push hard enough. Now she moves in surges, crackling between gates, carrying contraband lightning across every line they dare to draw.",
+  "archetype_tag": "lightning_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "medium",
+  "dominant_element": "lightning",
+  "seasonal_dominant_element": null,
+  "color_palette": [
+    535706,
+    523195,
+    510473,
+    544223,
+    568945,
+    552160,
+    538717,
+    530599,
+    554575,
+    519561,
+    547699
+  ],
+  "stat_distribution": {
+    "strength": 10,
+    "dexterity": 23,
+    "intelligence": 165,
+    "wisdom": 9,
+    "vitality": 63
+  },
+  "skills": [
+    {
+      "id": "skill_000058",
+      "name": "Gate Signal Crossing",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 17.7,
+      "cooldown_seconds": 8.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.0
+          }
+        }
+      ],
+      "color_value": 535706,
+      "flavor_text": "A resonance pulses through the checkpoint's bones, dragging the defender sideways through packed earth and bureaucratic stone. For seven seconds, the wall itself becomes their skin.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0743
+    },
+    {
+      "id": "skill_000059",
+      "name": "Gate Signal Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 28.8,
+      "cooldown_seconds": 6.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "lightning"
+          }
+        },
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.0
+          }
+        }
+      ],
+      "color_value": 523195,
+      "flavor_text": "At the border wall, every stone remembers the charge of ten thousand crossings \u2014 the earth itself rings like struck iron when the signal fires. Lightning answers the frequency of accumulated passage, scorching a circle into the dust where contraband and confession alike are laid bare.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.072
+    },
+    {
+      "id": "skill_000060",
+      "name": "Crossing Surge Vigil",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/wind/sustain",
+      "energy_cost": 24.8,
+      "cooldown_seconds": 10.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        }
+      ],
+      "color_value": 510473,
+      "flavor_text": "At the wall's shadow, a shrouded hand pulls the wounded back from the threshold. Life does not cross over \u2014 it is turned firmly, mercifully, home.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0703
+    },
+    {
+      "id": "skill_000061",
+      "name": "Gate Signal Barrage",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 12.7,
+      "cooldown_seconds": 0.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "lightning"
+          }
+        }
+      ],
+      "color_value": 544223,
+      "flavor_text": "The wall hums with accumulated tension, splitting into a dozen simultaneous bolts that trace every unauthorized frequency at once. Each discharge finds its mark like a border scanner that has already decided the answer.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0674
+    },
+    {
+      "id": "skill_000062",
+      "name": "Gate Signal Fork",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 22.4,
+      "cooldown_seconds": 9.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "lightning"
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.26,
+            "duration_seconds": 9.1
+          }
+        }
+      ],
+      "color_value": 568945,
+      "flavor_text": "The checkpoint hums with split-current authority, lightning threading two paths at once through those who thought they could pass unseen. What the wall detects, it punishes with the full voltage of its knowing.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0574
+    },
+    {
+      "id": "skill_000063",
+      "name": "Gate Signal Cascade",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 30.3,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "lightning"
+          }
+        },
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 2.0
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.19,
+            "duration_seconds": 7.3
+          }
+        }
+      ],
+      "color_value": 552160,
+      "flavor_text": "A crackling charge tears through the checkpoint's iron sensors, leaping from body to body like a rumor passed between desperate hands. Those caught in its arc carry the voltage forward, branded by the wall's own current.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000058"
+      ],
+      "scaling_coefficient": 1.0836
+    },
+    {
+      "id": "skill_000064",
+      "name": "Gate Signal Surge",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 19.0,
+      "cooldown_seconds": 6.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.4
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "lightning"
+          }
+        }
+      ],
+      "color_value": 538717,
+      "flavor_text": "A ring of contraband current crackles up through the packed earth, tracing the old checkpoint lines like memory turned voltage. Everything caught inside the boundary shudders and burns.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000058"
+      ],
+      "scaling_coefficient": 1.0986
+    },
+    {
+      "id": "skill_000065",
+      "name": "Gate Signal Contraband",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 17.8,
+      "cooldown_seconds": 4.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.4
+          }
+        }
+      ],
+      "color_value": 530599,
+      "flavor_text": "A tremor moves through the wall's deep stone, reading what passes through it like a confession. The earth remembers every crossing, and it does not forget.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000060"
+      ],
+      "scaling_coefficient": 1.0944
+    },
+    {
+      "id": "skill_000066",
+      "name": "Gate Signal Mending",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 23.2,
+      "cooldown_seconds": 10.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        }
+      ],
+      "color_value": 554575,
+      "flavor_text": "A deep resonance hums through the checkpoint stones, drawing up the earth's slow patience and pressing it into wounded flesh. What the wall has held back for years, it now releases \u2014 carefully, deliberately, all at once.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000060"
+      ],
+      "scaling_coefficient": 1.1153
+    },
+    {
+      "id": "skill_000067",
+      "name": "Crossing Surge Mercy",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/wind/sustain",
+      "energy_cost": 29.2,
+      "cooldown_seconds": 11.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        },
+        {
+          "name": "heal_over_time",
+          "params": {
+            "tick_heal": 375,
+            "duration_seconds": 5.2
+          }
+        }
+      ],
+      "color_value": 519561,
+      "flavor_text": "At the wall's edge, the desperate find unexpected reprieve \u2014 wounds close in slow waves, as if the earth itself absorbs what was taken. What crosses through carries more than it brought.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000065"
+      ],
+      "scaling_coefficient": 1.1589
+    },
+    {
+      "id": "skill_000068",
+      "name": "Gate Signal Crossing",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 16.4,
+      "cooldown_seconds": 7.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.6
+          }
+        }
+      ],
+      "color_value": 547699,
+      "flavor_text": "The wall hums with buried intelligence, and for a breathless moment the checkpoint opens \u2014 not for you, but around you. Whatever stands in the way learns the cost of blocking a signal already sent.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.1948
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.8608,
+    "convergence_winrate": 0.7217,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00001_pack": 1.0,
+      "monster_00002_pack": 1.0,
+      "monster_00003_pack": 1.0,
+      "monster_00004_pack": 1.0,
+      "monster_00005_pack": 1.0,
+      "monster_00006_pack": 1.0,
+      "monster_00013": 1.0,
+      "monster_00014": 1.0,
+      "monster_00033": 1.0,
+      "monster_00034": 1.0,
+      "monster_00041": 0.33,
+      "monster_00043": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.7217,
+      "overall_winrate": 0.8608,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00001_pack": 1.0,
+        "monster_00002_pack": 1.0,
+        "monster_00003_pack": 1.0,
+        "monster_00004_pack": 1.0,
+        "monster_00005_pack": 1.0,
+        "monster_00006_pack": 1.0,
+        "monster_00013": 1.0,
+        "monster_00014": 1.0,
+        "monster_00033": 1.0,
+        "monster_00034": 1.0,
+        "monster_00041": 0.33,
+        "monster_00043": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.996,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00045": 1.0,
+        "monster_00046": 1.0,
+        "monster_00047": 1.0,
+        "monster_00048": 1.0,
+        "monster_00049": 0.98
+      }
+    },
+    "early_band_L17": {
+      "winrate": 1.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00050": 1.0,
+        "monster_00051": 1.0,
+        "monster_00052": 1.0,
+        "monster_00053": 1.0,
+        "monster_00054": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.75,
+      "p75": 0.75,
+      "p95": 0.75,
+      "p99": 0.75,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.54,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.48,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.48,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "burst_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000062",
+          "swapped_from_role": "burst_damage",
+          "swapped_to_role": "mobility",
+          "swapped_to_id": "skill_000255",
+          "role": "burst_damage",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8608,
+        "after_winrate": 0.8608,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "burst_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000063",
+          "role": "burst_damage",
+          "from_geometry": "chain_lightning",
+          "to_geometry": "multi_projectile",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8608,
+        "after_winrate": 0.8608,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000061",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.3,
+          "to_cd": 0.33,
+          "from_cost": 12.7,
+          "to_cost": 13.97,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.8608,
+        "after_winrate": 0.8608,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 1.0,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "lightning",
+        "to_element": "wind",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "lightning",
+        "to_element": "wind",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 3,
+        "from_element": "lightning",
+        "to_element": "wind",
+        "n_swapped": 2,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "burst",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

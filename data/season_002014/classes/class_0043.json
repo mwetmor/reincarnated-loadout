@@ -1,0 +1,694 @@
+{
+  "id": "class_0043",
+  "name": "Quarantine Lector",
+  "title_completion": "a Quarantine Lector",
+  "flavor_text": "Armed with chalk-marked tomes and a voice that carries contagion like a tide, the Quarantine Lector seals streets and souls with equal authority. They do not fight so much as pronounce \u2014 drawing rings of miasmal law around the infected and the innocent alike. In the Plague City, the line between warden and disease was always thinner than the chalk.",
+  "archetype_tag": "lightning_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "long",
+  "dominant_element": "lightning",
+  "seasonal_dominant_element": null,
+  "color_palette": [
+    561600,
+    497663,
+    543088,
+    611351,
+    522820,
+    511365,
+    473977,
+    560946,
+    549163,
+    540909,
+    560401,
+    535013,
+    523769
+  ],
+  "stat_distribution": {
+    "strength": 16,
+    "dexterity": 9,
+    "intelligence": 155,
+    "wisdom": 7,
+    "vitality": 83
+  },
+  "skills": [
+    {
+      "id": "skill_001044",
+      "name": "Miasmal Seep Ward",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 15.1,
+      "cooldown_seconds": 15.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.7
+          }
+        }
+      ],
+      "color_value": 561600,
+      "flavor_text": "The plague-touched water remembers every body it has passed through, and now it passes through you \u2014 a living barrier of contagion that turns harm aside. For a breath, nothing reaches you that the sickness has not already claimed.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0783
+    },
+    {
+      "id": "skill_001045",
+      "name": "Pall Surge Ring",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 21.3,
+      "cooldown_seconds": 18.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 4.3,
+            "stagger_seconds": 0.5
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 497663,
+      "flavor_text": "A sudden exhalation of plague-thick air erupts outward in a perfect circle, hurling everything at its edge into the choking fog beyond. The city breathes once, violently, and the streets empty.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.079
+    },
+    {
+      "id": "skill_001046",
+      "name": "Contagion Arc Tide",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 17.7,
+      "cooldown_seconds": 8.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.2
+          }
+        }
+      ],
+      "color_value": 543088,
+      "flavor_text": "A ring of brackish resonance erupts outward from the caster, carrying the shuddering frequency of the Plague City's flooded underchambers. Those caught in its circumference seize as the water remembers every body it has ever claimed.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0787
+    },
+    {
+      "id": "skill_001047",
+      "name": "Chalk Ward Brine",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "seasonal_element": "brine",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 19.2,
+      "cooldown_seconds": 11.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.8
+          }
+        }
+      ],
+      "color_value": 611351,
+      "flavor_text": "Salt crystallizes across the skin in pale lattices, hardening into a carapace that the plague city's rot cannot penetrate. What the brine preserves, no contagion unravels.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0607
+    },
+    {
+      "id": "skill_001048",
+      "name": "Contagion Arc Tide",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 25.6,
+      "cooldown_seconds": 13.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.3
+          }
+        }
+      ],
+      "color_value": 522820,
+      "flavor_text": "A ring of brackish resonance erupts from the caster, carrying the city's oldest sickness on its current. Those caught in its spread seize and shudder, held briefly in the fever's grip.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001044"
+      ],
+      "scaling_coefficient": 1.0976
+    },
+    {
+      "id": "skill_001049",
+      "name": "Chalk Ward Rising",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 16.3,
+      "cooldown_seconds": 14.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.2
+          }
+        }
+      ],
+      "color_value": 511365,
+      "flavor_text": "The air thickens into something almost solid, a pale membrane drawn from the city's oldest quarantine chalk. For a breath, nothing gets through.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001044"
+      ],
+      "scaling_coefficient": 1.1166
+    },
+    {
+      "id": "skill_001050",
+      "name": "Pall Surge Tide",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "seasonal_element": "miasma",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 25.5,
+      "cooldown_seconds": 10.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.0,
+            "stagger_seconds": 1.0
+          }
+        }
+      ],
+      "color_value": 473977,
+      "flavor_text": "A circle of choking miasma erupts outward from the caster, carrying the wet rot of the Plague City on a wave that flings bodies into the murk. The stagger it leaves behind smells of standing water and something worse.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001046"
+      ],
+      "scaling_coefficient": 1.0987
+    },
+    {
+      "id": "skill_001051",
+      "name": "Contagion Arc Seep",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 21.6,
+      "cooldown_seconds": 5.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.6
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "lightning"
+          }
+        }
+      ],
+      "color_value": 560946,
+      "flavor_text": "A current of fouled lightning threads through standing water and open wounds alike, finding the body's salt and setting it alight. The shock lingers the way fever does \u2014 not in a single blow, but in slow, insistent ruin.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001046"
+      ],
+      "scaling_coefficient": 1.1133
+    },
+    {
+      "id": "skill_001052",
+      "name": "Contagion Arc Breach",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 15.4,
+      "cooldown_seconds": 8.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 0.6
+          }
+        }
+      ],
+      "color_value": 549163,
+      "flavor_text": "The afflicted mind tears a hole between two points in the waterlogged streets, leaving a crackling sickness in the air where the body once stood. Whatever remains at the destination shudders, briefly undone by the passage.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 3,
+      "parent_skill_ids": [
+        "skill_001046"
+      ],
+      "scaling_coefficient": 1.1151
+    },
+    {
+      "id": "skill_001053",
+      "name": "Contagion Arc Seep",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 15.7,
+      "cooldown_seconds": 4.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "lightning"
+          }
+        },
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.3
+          }
+        }
+      ],
+      "color_value": 540909,
+      "flavor_text": "A crackling current leaps between the waterlogged bodies of the city's forgotten, spreading ruin like a sickness that knows no quarantine. The shock lingers in the marrow long after the light fades from standing water.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001048"
+      ],
+      "scaling_coefficient": 1.1311
+    },
+    {
+      "id": "skill_001054",
+      "name": "Miasmal Seep Ring",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 19.5,
+      "cooldown_seconds": 5.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 0.8
+          }
+        }
+      ],
+      "color_value": 560401,
+      "flavor_text": "A slow circle of contaminated water blooms outward from the caster's feet, carrying the city's old sickness in every ripple. Those caught within it twitch and seize as the contagion finds the gaps between their bones.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001050"
+      ],
+      "scaling_coefficient": 1.1267
+    },
+    {
+      "id": "skill_001055",
+      "name": "Contagion Arc Deluge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 22.2,
+      "cooldown_seconds": 4.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "lightning"
+          }
+        }
+      ],
+      "color_value": 535013,
+      "flavor_text": "The healer's district remembers the flood that never came \u2014 this channeled storm calls it forth now, lightning threading through standing water in widening rings of ruin. What the plague left standing, the current does not.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001053"
+      ],
+      "scaling_coefficient": 1.231
+    },
+    {
+      "id": "skill_001056",
+      "name": "Contagion Arc Tidemark",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 23.4,
+      "cooldown_seconds": 18.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.3
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "lightning"
+          }
+        }
+      ],
+      "color_value": 523769,
+      "flavor_text": "A ring of infected current erupts from the caster's feet, crackling outward through standing water and hollow bone alike. Those caught in its circumference seize \u2014 the city's old sickness finding new voltage in their veins.",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001054"
+      ],
+      "scaling_coefficient": 1.2473
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7925,
+    "convergence_winrate": 0.585,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00163_pack": 1.0,
+      "monster_00164_pack": 1.0,
+      "monster_00165_pack": 1.0,
+      "monster_00166_pack": 1.0,
+      "monster_00167_pack": 1.0,
+      "monster_00168_pack": 1.0,
+      "monster_00175": 1.0,
+      "monster_00176": 0.98,
+      "monster_00195": 1.0,
+      "monster_00196": 0.4,
+      "monster_00203": 0.13,
+      "monster_00205": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.585,
+      "overall_winrate": 0.7925,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00163_pack": 1.0,
+        "monster_00164_pack": 1.0,
+        "monster_00165_pack": 1.0,
+        "monster_00166_pack": 1.0,
+        "monster_00167_pack": 1.0,
+        "monster_00168_pack": 1.0,
+        "monster_00175": 1.0,
+        "monster_00176": 0.98,
+        "monster_00195": 1.0,
+        "monster_00196": 0.4,
+        "monster_00203": 0.13,
+        "monster_00205": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.934,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00207": 0.96,
+        "monster_00208": 0.85,
+        "monster_00209": 0.97,
+        "monster_00210": 0.98,
+        "monster_00211": 0.91
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.982,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00212": 1.0,
+        "monster_00213": 0.94,
+        "monster_00214": 0.97,
+        "monster_00215": 1.0,
+        "monster_00216": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.67,
+      "p75": 0.67,
+      "p95": 0.6833,
+      "p99": 0.6767,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.4,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.38,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.42,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_001051",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "sustain",
+          "swapped_to_id": "skill_001235",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7925,
+        "after_winrate": 0.7925,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_geometry_candidates"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7925,
+        "after_winrate": 0.7925,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "skill_id": "skill_001055",
+          "role": "area_damage",
+          "param": "cooldown_seconds",
+          "from_cd": 4.1,
+          "to_cd": 4.51,
+          "from_cost": 22.2,
+          "to_cost": 24.42,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7925,
+        "after_winrate": 0.7925,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 0.9783,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "lightning",
+        "to_element": "water",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "lightning",
+        "to_element": "water",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "control",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

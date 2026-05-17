@@ -1,0 +1,672 @@
+{
+  "id": "class_0028",
+  "name": "Canary of the Drowned Seam",
+  "title_completion": "a Canary of the Drowned Seam",
+  "flavor_text": "The mines fell silent long before the water rose \u2014 you were the last one listening. Now you carry the pressure of collapsed veins in your chest, and when you exhale, the coal remembers it was once fire. The Dwarves left their halls empty, but they left their heat behind, and it sings through you like a warning no one heeded.",
+  "archetype_tag": "fire_mage",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "fire",
+  "seasonal_dominant_element": "coal",
+  "color_palette": [
+    70438,
+    23959,
+    51034,
+    70534,
+    43246,
+    486845,
+    80151,
+    23162,
+    45921,
+    43587,
+    4265
+  ],
+  "stat_distribution": {
+    "strength": 12,
+    "dexterity": 25,
+    "intelligence": 159,
+    "wisdom": 15,
+    "vitality": 59
+  },
+  "skills": [
+    {
+      "id": "skill_000597",
+      "name": "Seam Pressure Bloom",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 20.0,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.5
+          }
+        }
+      ],
+      "color_value": 70438,
+      "flavor_text": "Where the old coal seams remember their heat, the ground breathes fire upward through the flooded stone. The damp does not extinguish it \u2014 it feeds it, slow and absolute.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0702
+    },
+    {
+      "id": "skill_000598",
+      "name": "Seam Pressure Totem",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 10.3,
+      "cooldown_seconds": 13.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.16,
+            "duration_seconds": 6.4
+          }
+        }
+      ],
+      "color_value": 23959,
+      "flavor_text": "Driven into the flooded stone like a forgotten survey spike, it hums with the compressed memory of coal seams that once fed these halls. The water finds it first, then the fury follows.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0531
+    },
+    {
+      "id": "skill_000599",
+      "name": "Seam Pressure Remembrance",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 20.8,
+      "cooldown_seconds": 7.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.0
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 51034,
+      "flavor_text": "Where dwarven boots once wore grooves in stone, the coal beneath the floor remembers every furnace it fed. Heat bleeds upward through the cracks, slow and inevitable as debt.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.066
+    },
+    {
+      "id": "skill_000600",
+      "name": "Seam Pressure Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 28.0,
+      "cooldown_seconds": 5.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 70534,
+      "flavor_text": "Deep in the abandoned shafts, heat has nowhere left to go \u2014 it builds between the rock faces, patient and absolute, until the walls themselves become the weapon. What the dwarves once called a warning crack, you have learned to hold in your hands.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000597"
+      ],
+      "scaling_coefficient": 1.0958
+    },
+    {
+      "id": "skill_000601",
+      "name": "Load-Bearing Stillness",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/defensive",
+      "energy_cost": 22.5,
+      "cooldown_seconds": 11.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.8
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.26,
+            "duration_seconds": 9.8
+          }
+        }
+      ],
+      "color_value": 43246,
+      "flavor_text": "The dwarf who vanishes into the dark between heartbeats carries the weight of the mountain with them \u2014 every drop of seeping water, every groaning timber, held in suspension by sheer knowing. For a breath, nothing falls.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000597"
+      ],
+      "scaling_coefficient": 1.0818
+    },
+    {
+      "id": "skill_000602",
+      "name": "Collapse Draft Rising",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 13.5,
+      "cooldown_seconds": 12.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.16,
+            "duration_seconds": 5.0
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.2
+          }
+        }
+      ],
+      "color_value": 486845,
+      "flavor_text": "The silence of abandoned shafts fills the lungs before the blow lands \u2014 a held breath that strikes harder for the waiting. What the halls forgot how to say, the body remembers as force.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000598"
+      ],
+      "scaling_coefficient": 1.0976
+    },
+    {
+      "id": "skill_000603",
+      "name": "Seam Pressure Pickfall",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 29.5,
+      "cooldown_seconds": 8.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.1
+          }
+        }
+      ],
+      "color_value": 80151,
+      "flavor_text": "Deep in the abandoned shafts, the coal remembers every blow it ever absorbed \u2014 and gives it all back at once. The burst travels outward in fractured lines, drinking what warmth it finds to feed the fire still smoldering in the stone.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000598"
+      ],
+      "scaling_coefficient": 1.1084
+    },
+    {
+      "id": "skill_000604",
+      "name": "Seam Pressure Remembrance",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 24.1,
+      "cooldown_seconds": 5.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 3.6
+          }
+        }
+      ],
+      "color_value": 23162,
+      "flavor_text": "Where the dwarves once stoked their deepest furnaces, the coal-black floor still holds its heat \u2014 waiting for something to wake the pressure trapped beneath. It does not explode outward; it exhales upward, slow and absolute, the way a seam gives before a tunnel falls.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 3,
+      "parent_skill_ids": [
+        "skill_000598"
+      ],
+      "scaling_coefficient": 1.0935
+    },
+    {
+      "id": "skill_000605",
+      "name": "Collapse Draft Roll",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/fire/mobility",
+      "energy_cost": 10.3,
+      "cooldown_seconds": 10.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 45921,
+      "flavor_text": "The dwarf's empty tunnels exhale their last warm breath as you tumble through the displaced air, carrying the ghost of forge-heat in your wake. Pressure finds the cracks before you do.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000600"
+      ],
+      "scaling_coefficient": 1.1415
+    },
+    {
+      "id": "skill_000606",
+      "name": "Seam Pressure Welling",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 18.2,
+      "cooldown_seconds": 17.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.14,
+            "duration_seconds": 4.3
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.31,
+            "duration_seconds": 9.8
+          }
+        }
+      ],
+      "color_value": 43587,
+      "flavor_text": "Water finds the old cracks in the coal-dark walls, and for a breath the pressure builds into something useful \u2014 a slow, dense surge that sharpens the next blow and coaxes mana up through forgotten veins. The halls are empty, but the seams still remember how to give.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000602"
+      ],
+      "scaling_coefficient": 1.1249
+    },
+    {
+      "id": "skill_000607",
+      "name": "Seam Pressure Scatter",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 6.2,
+      "cooldown_seconds": 1.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 4265,
+      "flavor_text": "Where the old coal walls still hold heat, pressure finds its cracks and speaks all at once. Each burst carries the memory of a forge that no longer breathes.",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000606"
+      ],
+      "scaling_coefficient": 1.2397
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.4,
+    "actual_winrate": 0.9083,
+    "convergence_winrate": 0.8167,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00109_pack": 1.0,
+      "monster_00110_pack": 1.0,
+      "monster_00111_pack": 1.0,
+      "monster_00112_pack": 1.0,
+      "monster_00113_pack": 1.0,
+      "monster_00114_pack": 1.0,
+      "monster_00121": 1.0,
+      "monster_00122": 1.0,
+      "monster_00141": 1.0,
+      "monster_00142": 1.0,
+      "monster_00149": 0.9,
+      "monster_00151": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.8167,
+      "overall_winrate": 0.9083,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00109_pack": 1.0,
+        "monster_00110_pack": 1.0,
+        "monster_00111_pack": 1.0,
+        "monster_00112_pack": 1.0,
+        "monster_00113_pack": 1.0,
+        "monster_00114_pack": 1.0,
+        "monster_00121": 1.0,
+        "monster_00122": 1.0,
+        "monster_00141": 1.0,
+        "monster_00142": 1.0,
+        "monster_00149": 0.9,
+        "monster_00151": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.992,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00153": 1.0,
+        "monster_00154": 0.96,
+        "monster_00155": 1.0,
+        "monster_00156": 1.0,
+        "monster_00157": 1.0
+      }
+    },
+    "early_band_L17": {
+      "winrate": 1.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00158": 1.0,
+        "monster_00159": 1.0,
+        "monster_00160": 1.0,
+        "monster_00161": 1.0,
+        "monster_00162": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.75,
+      "p75": 0.75,
+      "p95": 0.7583,
+      "p99": 0.7567,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.46,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.46,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.58,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000604",
+          "swapped_from_role": "area_damage",
+          "swapped_to_role": "mobility",
+          "swapped_to_id": "skill_000926",
+          "role": "area_damage",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.9083,
+        "after_winrate": 0.9083,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "skill_id": "skill_000599",
+          "role": "damage_over_time",
+          "from_geometry": "ground_targeted_circle",
+          "to_geometry": "single_target",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.9083,
+        "after_winrate": 0.9083,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000607",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 1.3,
+          "to_cd": 1.43,
+          "from_cost": 6.2,
+          "to_cost": 6.82,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.9083,
+        "after_winrate": 0.9083,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 0.9983,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "fire",
+        "to_element": "wind",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "fire",
+        "to_element": "wind",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 3,
+        "from_element": "fire",
+        "to_element": "wind",
+        "n_swapped": 2,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "burst",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

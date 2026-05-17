@@ -1,0 +1,629 @@
+{
+  "id": "class_0019",
+  "name": "Charcoal-Handed Surveyor",
+  "title_completion": "a Charcoal-Handed Surveyor",
+  "flavor_text": "They say the Cartographer's Tower fell not to siege nor storm, but to a single cartographer who grew tired of drawing borders they could not enforce. Now reborn with fists like slate and fingers eternally stained black, you redraw the battlefield one brutal stroke at a time. Every enemy you fell is a landmark. Every line you carve is final.",
+  "archetype_tag": "physical_warrior",
+  "energy_type": "stamina-as-resource",
+  "role_orientation": "damage",
+  "range_profile": "close",
+  "dominant_element": "physical",
+  "seasonal_dominant_element": null,
+  "color_palette": [
+    191658,
+    513922,
+    176916,
+    471185,
+    125752,
+    171495,
+    123247,
+    174871,
+    169431,
+    117931,
+    197076
+  ],
+  "stat_distribution": {
+    "strength": 150,
+    "dexterity": 25,
+    "intelligence": 7,
+    "wisdom": 8,
+    "vitality": 80
+  },
+  "skills": [
+    {
+      "id": "skill_000503",
+      "name": "Charcoal Stroke Gale",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 35.5,
+      "cooldown_seconds": 5.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 4225,
+            "element": "physical"
+          }
+        },
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1268,
+            "duration_seconds": 5.6
+          }
+        }
+      ],
+      "color_value": 191658,
+      "flavor_text": "A cartographer's heaviest mark driven into flesh by the tower's howling updrafts, the line cut so deep it bleeds like a river traced across parchment. The wind holds the wound open long after the hand has lifted.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0776
+    },
+    {
+      "id": "skill_000504",
+      "name": "Border Erasure Veil",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 18.2,
+      "cooldown_seconds": 14.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1690,
+            "duration_seconds": 6.8
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.3,
+            "duration_seconds": 4.4
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.18,
+            "duration_seconds": 9.4
+          }
+        }
+      ],
+      "color_value": 513922,
+      "flavor_text": "The wind peels back the edges of what can be harmed, smearing the boundary between self and shadow until no blade finds purchase. For a breath, you exist just outside the map's reach.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0646
+    },
+    {
+      "id": "skill_000505",
+      "name": "Charcoal Stroke Gale",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 30.0,
+      "cooldown_seconds": 9.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 4225,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 176916,
+      "flavor_text": "A cartographer's frustration made lethal \u2014 the arm sweeps wide, dragging a crushing arc of pressurized wind across the parchment of the battlefield. What it erases does not return.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0779
+    },
+    {
+      "id": "skill_000506",
+      "name": "Border Erasure Rush",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "wind",
+      "seasonal_element": "pall",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/wind/mobility",
+      "energy_cost": 15.3,
+      "cooldown_seconds": 9.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 6.1,
+            "stagger_seconds": 0.7
+          }
+        }
+      ],
+      "color_value": 471185,
+      "flavor_text": "The cartographer tears through charted space like a line struck from the map, leaving the struck figure stumbling at the edge of an unmeasured void. Where she passed, the air carries the cold pall of territories that no longer exist.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0571
+    },
+    {
+      "id": "skill_000507",
+      "name": "Charcoal Stroke Meridian",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 10.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1690,
+            "duration_seconds": 4.5
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.31,
+            "duration_seconds": 5.2
+          }
+        }
+      ],
+      "color_value": 125752,
+      "flavor_text": "A single decisive mark pressed into the wind-torn air, solid as a surveyor's line drawn against the gale. The tower's fixed geometry holds, unyielding where the storm would erase all borders.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000503"
+      ],
+      "scaling_coefficient": 1.093
+    },
+    {
+      "id": "skill_000508",
+      "name": "Charcoal Stroke Meridian",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/physical/control",
+      "energy_cost": 18.4,
+      "cooldown_seconds": 17.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.33,
+            "duration_seconds": 8.9
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.6
+          }
+        }
+      ],
+      "color_value": 171495,
+      "flavor_text": "A single deliberate mark drawn across the target silences their movement like a line erased from the living map. The wind holds its breath, and for a moment, the tower's cartographers could plot the stillness.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000503"
+      ],
+      "scaling_coefficient": 1.0921
+    },
+    {
+      "id": "skill_000509",
+      "name": "Charcoal Stroke Meridian",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 19.4,
+      "cooldown_seconds": 11.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1690,
+            "duration_seconds": 4.8
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.21,
+            "duration_seconds": 7.8
+          }
+        }
+      ],
+      "color_value": 123247,
+      "flavor_text": "A cartographer's decisive line drawn across the map of harm \u2014 the tower wind holds the mark firm, and for a breathless moment nothing crosses it. The surveyed body moves with the certainty of fixed coordinates, slipping what cannot be plotted.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 3,
+      "parent_skill_ids": [
+        "skill_000503"
+      ],
+      "scaling_coefficient": 1.1074
+    },
+    {
+      "id": "skill_000510",
+      "name": "Charcoal Stroke Gale",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 13.7,
+      "cooldown_seconds": 0.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1056,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 174871,
+      "flavor_text": "A heavy sweep of the arm draws a dark line through the air, as if redrawing the world's edge with a single deliberate mark. The wind follows the motion like ink pulled across wet parchment.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000505"
+      ],
+      "scaling_coefficient": 1.1079
+    },
+    {
+      "id": "skill_000511",
+      "name": "Charcoal Stroke Bleeds",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/physical/damage_over_time",
+      "energy_cost": 18.4,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "bleed",
+          "params": {
+            "tick_damage": 1268,
+            "duration_seconds": 6.6
+          }
+        }
+      ],
+      "color_value": 169431,
+      "flavor_text": "A cartographer's mark drawn in wind and iron, the line scores deep and refuses to close. The tower remembers every boundary it has ever cut.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000505"
+      ],
+      "scaling_coefficient": 1.0829
+    },
+    {
+      "id": "skill_000512",
+      "name": "Charcoal Stroke Meridian",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/physical/defensive",
+      "energy_cost": 24.1,
+      "cooldown_seconds": 14.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1690,
+            "duration_seconds": 5.6
+          }
+        }
+      ],
+      "color_value": 117931,
+      "flavor_text": "A cartographer's decisive mark holds the world in place \u2014 one firm line drawn against the wind's erasure, and the boundary holds. The tower knows where it stands.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000510"
+      ],
+      "scaling_coefficient": 1.1201
+    },
+    {
+      "id": "skill_000513",
+      "name": "Charcoal Stroke Meridian",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/physical/single_target_damage",
+      "energy_cost": 27.2,
+      "cooldown_seconds": 3.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2535,
+            "element": "physical"
+          }
+        }
+      ],
+      "color_value": 197076,
+      "flavor_text": "The cartographer's fist meets the earth like a ruling pen dragged across vellum, and the ground splits open in a wide, dark seam. Wind carries the chalk-dust outward in a perfect arc, as if the land itself has been redrawn.",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000512"
+      ],
+      "scaling_coefficient": 1.2313
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.755,
+    "convergence_winrate": 0.51,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 4,
+    "converged": true,
+    "final_modifier": 0.1688,
+    "gauntlet_results": {
+      "monster_00055_pack": 1.0,
+      "monster_00056_pack": 1.0,
+      "monster_00057_pack": 1.0,
+      "monster_00058_pack": 1.0,
+      "monster_00059_pack": 1.0,
+      "monster_00060_pack": 1.0,
+      "monster_00067": 1.0,
+      "monster_00068": 1.0,
+      "monster_00087": 0.06,
+      "monster_00088": 1.0,
+      "monster_00095": 0.0,
+      "monster_00097": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.1688
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.51,
+      "overall_winrate": 0.755,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 4,
+      "converged": true,
+      "final_modifier": 0.1688,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00055_pack": 1.0,
+        "monster_00056_pack": 1.0,
+        "monster_00057_pack": 1.0,
+        "monster_00058_pack": 1.0,
+        "monster_00059_pack": 1.0,
+        "monster_00060_pack": 1.0,
+        "monster_00067": 1.0,
+        "monster_00068": 1.0,
+        "monster_00087": 0.06,
+        "monster_00088": 1.0,
+        "monster_00095": 0.0,
+        "monster_00097": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.628,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00099": 0.97,
+        "monster_00100": 0.13,
+        "monster_00101": 1.0,
+        "monster_00102": 0.79,
+        "monster_00103": 0.25
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.92,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00104": 0.99,
+        "monster_00105": 0.8,
+        "monster_00106": 1.0,
+        "monster_00107": 0.92,
+        "monster_00108": 0.89
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.75,
+      "p75": 0.7483,
+      "p95": 0.7483,
+      "p99": 0.7483,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.4,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.34,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.34,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000511",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "defensive",
+          "swapped_to_id": "skill_000559",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7,
+        "after_winrate": 0.7,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "geometry_unchanged"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7,
+        "after_winrate": 0.7,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000510",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.6,
+          "to_cd": 0.66,
+          "from_cost": 13.7,
+          "to_cost": 15.07,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7,
+        "after_winrate": 0.7,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "modifier_fallback",
+    "composition_pre_modifier_wr": 0.88,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [],
+    "secondary_loop_outcome": "secondary_skipped_pure_element",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.1688,
+      "would_pass_clamp": true
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.1688
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "martial_combat",
+  "class_role_function": "front_line",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

@@ -1,0 +1,437 @@
+{
+  "id": "class_0034",
+  "name": "Delver of Spent Seams",
+  "title_completion": "a Delver of Spent Seams",
+  "flavor_text": "Where the dwarves once carved their glory from the deep, you read the darkness they left behind \u2014 the soot-stained silence of exhausted tunnels, the slow creep of brine through hollow rock. You do not fight with fire or steel, but with the memory of absence: rings of withdrawal soot that choke the light, drains that pull the warmth from living things as surely as a flooded shaft swallows a lantern. The halls are empty, and you have learned to wield that emptiness like a pickaxe.",
+  "archetype_tag": "shadow_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "long",
+  "dominant_element": "shadow",
+  "seasonal_dominant_element": null,
+  "color_palette": [
+    674635,
+    647689,
+    648326,
+    640752,
+    623657
+  ],
+  "stat_distribution": {
+    "strength": 16,
+    "dexterity": 11,
+    "intelligence": 158,
+    "wisdom": 5,
+    "vitality": 80
+  },
+  "skills": [
+    {
+      "id": "skill_000794",
+      "name": "Withdrawal Soot Seam",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 6.7,
+      "cooldown_seconds": 0.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "shadow"
+          }
+        }
+      ],
+      "color_value": 674635,
+      "flavor_text": "Where the old forges went cold, shadow pooled in the cracks like standing water \u2014 and learned to move. It finds the gaps between stone and memory, splitting outward in dark rivulets that carry the weight of everything abandoned.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_000795",
+      "name": "Withdrawal Soot Ring",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 16.9,
+      "cooldown_seconds": 11.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.5
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "shadow"
+          }
+        }
+      ],
+      "color_value": 647689,
+      "flavor_text": "A hush spreads outward through the drowned dark of empty tunnels, swallowing sound before it can find a wall to answer. The shadow settles like soot on still water, and nothing speaks.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_000796",
+      "name": "Withdrawal Soot Drain",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 28.9,
+      "cooldown_seconds": 18.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 3.1
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "shadow"
+          }
+        }
+      ],
+      "color_value": 648326,
+      "flavor_text": "The silence of abandoned shafts pulls inward like a held breath, dragging sound and shadow into the dark where no hammer has rung for generations. What it takes, it does not return.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_000797",
+      "name": "Withdrawal Soot Seam",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 12.6,
+      "cooldown_seconds": 4.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "drain",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 8.5
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "shadow"
+          }
+        }
+      ],
+      "color_value": 640752,
+      "flavor_text": "Where the forges went cold, something darker learned to breathe \u2014 it seeps through the stone in rings, pulling warmth from bone the way water pulls salt from dead rock. The halls do not echo here; they only take.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    },
+    {
+      "id": "skill_000798",
+      "name": "Withdrawal Soot Reading",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "shadow",
+      "seasonal_element": null,
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 11.5,
+      "cooldown_seconds": 14.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.31,
+            "duration_seconds": 4.4
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.7
+          }
+        }
+      ],
+      "color_value": 623657,
+      "flavor_text": "In the breathless dark where the forges went cold, a dwarven hand once pressed flat against the wall and listened before speaking. The silence that follows is not empty \u2014 it is loaded.",
+      "tier": null,
+      "chain_id": null,
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "scaling_coefficient": null
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.9133,
+    "convergence_winrate": 0.8267,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.05,
+    "gauntlet_results": {
+      "monster_00109_pack": 1.0,
+      "monster_00110_pack": 1.0,
+      "monster_00111_pack": 1.0,
+      "monster_00112_pack": 1.0,
+      "monster_00113_pack": 1.0,
+      "monster_00114_pack": 1.0,
+      "monster_00121": 1.0,
+      "monster_00122": 1.0,
+      "monster_00141": 1.0,
+      "monster_00142": 1.0,
+      "monster_00149": 0.96,
+      "monster_00151": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.8267,
+      "overall_winrate": 0.9133,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.05,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00109_pack": 1.0,
+        "monster_00110_pack": 1.0,
+        "monster_00111_pack": 1.0,
+        "monster_00112_pack": 1.0,
+        "monster_00113_pack": 1.0,
+        "monster_00114_pack": 1.0,
+        "monster_00121": 1.0,
+        "monster_00122": 1.0,
+        "monster_00141": 1.0,
+        "monster_00142": 1.0,
+        "monster_00149": 0.96,
+        "monster_00151": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.966,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00153": 1.0,
+        "monster_00154": 0.83,
+        "monster_00155": 1.0,
+        "monster_00156": 1.0,
+        "monster_00157": 1.0
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.998,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00158": 1.0,
+        "monster_00159": 1.0,
+        "monster_00160": 0.99,
+        "monster_00161": 1.0,
+        "monster_00162": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.75,
+      "p75": 0.7517,
+      "p95": 0.755,
+      "p99": 0.7567,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.5,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.52,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.48,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000794",
+          "swapped_from_role": "primary_attack",
+          "swapped_to_role": "sustain",
+          "swapped_to_id": "skill_000957",
+          "role": "primary_attack",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.9142,
+        "after_winrate": 0.82,
+        "delta": -0.0942,
+        "accepted": true,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_swappable_candidates"
+        },
+        "attempt": 2,
+        "before_winrate": 0.82,
+        "after_winrate": 0.82,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "control",
+        "lever_specifics": {
+          "skill_id": "skill_000796",
+          "role": "control",
+          "from_geometry": "vortex_pull",
+          "to_geometry": "ring",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.82,
+        "after_winrate": 0.82,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "skill_id": "skill_000797",
+          "role": "damage_over_time",
+          "param": "cooldown_seconds",
+          "from_cd": 4.8,
+          "to_cd": 5.28,
+          "from_cost": 12.6,
+          "to_cost": 13.86,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.82,
+        "after_winrate": 0.82,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "primary_loop_reverted",
+    "composition_pre_modifier_wr": 0.9183,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [],
+    "secondary_loop_outcome": "secondary_skipped_pure_element",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.05,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.05
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "control",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

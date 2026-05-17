@@ -1,0 +1,710 @@
+{
+  "id": "class_0030",
+  "name": "Collapsed Shaft Warden",
+  "title_completion": "a Collapsed Shaft Warden",
+  "flavor_text": "The halls are empty now, but the stone remembers every pick-strike, every breath, every cave-in swallowed in silence. You do not fight with fire or fury \u2014 you fight with weight, with the patient inevitability of a ceiling that has decided it is done holding. Let them step into your ground, and let the mountain answer.",
+  "archetype_tag": "earth_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "medium",
+  "dominant_element": "earth",
+  "seasonal_dominant_element": "obsidian",
+  "color_palette": [
+    288081,
+    254969,
+    251272,
+    252404,
+    338711,
+    280410,
+    294075,
+    319902,
+    89475,
+    322182,
+    11400,
+    81784,
+    327591
+  ],
+  "stat_distribution": {
+    "strength": 16,
+    "dexterity": 5,
+    "intelligence": 7,
+    "wisdom": 161,
+    "vitality": 81
+  },
+  "skills": [
+    {
+      "id": "skill_000634",
+      "name": "Shaft Echo Collapse",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 20.2,
+      "cooldown_seconds": 7.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 288081,
+      "flavor_text": "The old tunnels remember every blow ever struck within them. Pressure rings outward through stone and silence, and the walls answer back.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0697
+    },
+    {
+      "id": "skill_000635",
+      "name": "Collapse Draft Stillness",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 14.4,
+      "cooldown_seconds": 7.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.8
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 254969,
+      "flavor_text": "The floor remembers the weight of ten thousand boots and refuses to forget. Obsidian veins split upward through the stone, locking what stands above them in the grip of halls that will not let go.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0693
+    },
+    {
+      "id": "skill_000636",
+      "name": "Shaft Echo Stillness",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 20.7,
+      "cooldown_seconds": 8.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 16.7
+          }
+        }
+      ],
+      "color_value": 251272,
+      "flavor_text": "The flooded tunnels remember every footfall, and the water holds them in place the way stone once held ore. Something beneath the surface refuses to let go.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0596
+    },
+    {
+      "id": "skill_000637",
+      "name": "Pickfall Ring",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 28.8,
+      "cooldown_seconds": 7.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.5
+          }
+        }
+      ],
+      "color_value": 252404,
+      "flavor_text": "The floor remembers every blow it ever took. One breath of Load-Bearing Stillness and the old fractures speak all at once, locking everything in the radius beneath a crown of upthrust obsidian shards.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000634"
+      ],
+      "scaling_coefficient": 1.1012
+    },
+    {
+      "id": "skill_000638",
+      "name": "Pickfall Remembrance",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 19.5,
+      "cooldown_seconds": 3.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 338711,
+      "flavor_text": "The floor remembers every strike that was ever driven into it. It gives back all of them at once.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000634"
+      ],
+      "scaling_coefficient": 1.1086
+    },
+    {
+      "id": "skill_000639",
+      "name": "Load-Bearing Stillness",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 18.1,
+      "cooldown_seconds": 10.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.6
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.32,
+            "duration_seconds": 7.3
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.16,
+            "duration_seconds": 4.8
+          }
+        }
+      ],
+      "color_value": 280410,
+      "flavor_text": "The old obsidian walls remember every weight they ever held \u2014 press your back against that memory and nothing moves you. Water finds every crack, but not this one, not now.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000636"
+      ],
+      "scaling_coefficient": 1.1147
+    },
+    {
+      "id": "skill_000640",
+      "name": "Pickfall Ring",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 14.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.0
+          }
+        }
+      ],
+      "color_value": 294075,
+      "flavor_text": "Where the shafts went silent, the stone remembers every footfall \u2014 a circle of arrested weight presses down through flooded corridors, holding fast whatever dares to move within it. The water does not rush here; it simply refuses to release.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000636"
+      ],
+      "scaling_coefficient": 1.103
+    },
+    {
+      "id": "skill_000641",
+      "name": "Collapse Draft Step",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/earth/mobility",
+      "energy_cost": 17.5,
+      "cooldown_seconds": 10.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.0
+          }
+        }
+      ],
+      "color_value": 319902,
+      "flavor_text": "The dwarf-carved air still remembers where the walls once stood, and something ancient seizes your feet the moment you arrive. You are here, rooted, held by the hollow pressure of what collapsed long before you.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000637"
+      ],
+      "scaling_coefficient": 1.1205
+    },
+    {
+      "id": "skill_000642",
+      "name": "Seam Pressure Break",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 26.6,
+      "cooldown_seconds": 7.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 89475,
+      "flavor_text": "Where the old coal veins ran deepest, the earth still holds its heat \u2014 and sometimes, it lets go all at once. The ground splits open in a ring of compressed fire, exhaling centuries of smoldering patience in a single, terrible breath.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000637"
+      ],
+      "scaling_coefficient": 1.1639
+    },
+    {
+      "id": "skill_000643",
+      "name": "Pickfall Ring Holds",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 19.9,
+      "cooldown_seconds": 13.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.1
+          }
+        }
+      ],
+      "color_value": 322182,
+      "flavor_text": "Where the obsidian seam fractured and the hall went silent, something in the stone remembers how to refuse movement. The ring settles like water finding the lowest crack, and nothing caught within it walks free.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000639"
+      ],
+      "scaling_coefficient": 1.134
+    },
+    {
+      "id": "skill_000644",
+      "name": "Seam Pressure Bloom",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 19.8,
+      "cooldown_seconds": 4.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 3.7
+          }
+        }
+      ],
+      "color_value": 11400,
+      "flavor_text": "Where the dwarves once split stone with patient fire, the ground remembers. Heat rises slow through flooded tunnels, finding every crack.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000639"
+      ],
+      "scaling_coefficient": 1.1391
+    },
+    {
+      "id": "skill_000645",
+      "name": "Collapse Draft Reflex",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "fire",
+      "seasonal_element": "coal",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/fire/mobility",
+      "energy_cost": 17.8,
+      "cooldown_seconds": 9.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.17,
+            "duration_seconds": 5.7
+          }
+        }
+      ],
+      "color_value": 81784,
+      "flavor_text": "The body learns what the mines taught: when the air shifts, you move before the ceiling does. For a breath, you are nothing the stone can catch.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000641"
+      ],
+      "scaling_coefficient": 1.2369
+    },
+    {
+      "id": "skill_000646",
+      "name": "Shaft Echo Seam",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "seasonal_element": "obsidian",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 25.9,
+      "cooldown_seconds": 18.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.2
+          }
+        }
+      ],
+      "color_value": 327591,
+      "flavor_text": "A ring of pressurized dark water erupts from the flooded tunnel floor, locking boots to stone the way forgotten halls hold their silence. The obsidian veins in the rock hum with it, remembering every footstep that once belonged here.",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000643"
+      ],
+      "scaling_coefficient": 1.2286
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.7992,
+    "convergence_winrate": 0.5983,
+    "pack_winrate": 1.0,
+    "convergence_iterations": 10,
+    "converged": false,
+    "final_modifier": 0.0509,
+    "gauntlet_results": {
+      "monster_00109_pack": 1.0,
+      "monster_00110_pack": 1.0,
+      "monster_00111_pack": 1.0,
+      "monster_00112_pack": 1.0,
+      "monster_00113_pack": 1.0,
+      "monster_00114_pack": 1.0,
+      "monster_00121": 0.99,
+      "monster_00122": 1.0,
+      "monster_00141": 1.0,
+      "monster_00142": 0.5,
+      "monster_00149": 0.1,
+      "monster_00151": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.5983,
+      "overall_winrate": 0.7992,
+      "pack_winrate": 1.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00109_pack": 1.0,
+        "monster_00110_pack": 1.0,
+        "monster_00111_pack": 1.0,
+        "monster_00112_pack": 1.0,
+        "monster_00113_pack": 1.0,
+        "monster_00114_pack": 1.0,
+        "monster_00121": 0.99,
+        "monster_00122": 1.0,
+        "monster_00141": 1.0,
+        "monster_00142": 0.5,
+        "monster_00149": 0.1,
+        "monster_00151": 0.0
+      }
+    },
+    "mid_band_L33": {
+      "winrate": 0.51,
+      "iterations": 6,
+      "converged": true,
+      "final_modifier": 0.0797,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00153": 0.89,
+        "monster_00154": 0.14,
+        "monster_00155": 0.14,
+        "monster_00156": 0.38,
+        "monster_00157": 1.0
+      }
+    },
+    "early_band_L17": {
+      "winrate": 0.702,
+      "iterations": 10,
+      "converged": false,
+      "final_modifier": 0.0509,
+      "dimensions_explored": [],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00158": 0.88,
+        "monster_00159": 0.43,
+        "monster_00160": 0.2,
+        "monster_00161": 1.0,
+        "monster_00162": 1.0
+      }
+    },
+    "variance_check_L50": {
+      "p50": 0.53,
+      "p75": 0.555,
+      "p95": 0.5667,
+      "p99": 0.555,
+      "pathology_flagged": false
+    },
+    "doppelganger_validation": {
+      "L17_mirror": {
+        "winrate": 0.44,
+        "balanced": true
+      },
+      "L33_mirror": {
+        "winrate": 0.24,
+        "balanced": true
+      },
+      "L50_mirror": {
+        "winrate": 0.34,
+        "balanced": true
+      }
+    },
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000635",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "utility",
+          "swapped_to_id": "skill_000938",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7992,
+        "after_winrate": 0.7992,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000638",
+          "role": "area_damage",
+          "from_geometry": "ground_targeted_circle",
+          "to_geometry": "ring",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7992,
+        "after_winrate": 0.7992,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000638",
+          "role": "area_damage",
+          "param": "cooldown_seconds",
+          "from_cd": 3.5,
+          "to_cd": 3.85,
+          "from_cost": 19.5,
+          "to_cost": 21.45,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.7992,
+        "after_winrate": 0.7992,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0509
+      }
+    ],
+    "recompose_outcome": "failed_regenerate",
+    "composition_pre_modifier_wr": 0.9167,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "earth",
+        "to_element": "fire",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 2,
+        "from_element": "earth",
+        "to_element": "fire",
+        "n_swapped": 1,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      },
+      {
+        "variant": 3,
+        "from_element": "earth",
+        "to_element": "fire",
+        "n_swapped": 3,
+        "eval_modifier": 0.0509,
+        "modifier_dist_from_1": 0.9491,
+        "baseline_dist": 0.9491,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0509,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0509
+    }
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "control",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1"
+}

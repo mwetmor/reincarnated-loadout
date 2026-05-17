@@ -202,8 +202,17 @@ function SampleClassHeader({
 }
 
 export function Sample() {
-  const { defaultSeason } = useSeasonData();
-  const season = defaultSeason;
+  const { defaultSeason, selectableSeasons } = useSeasonData();
+
+  // Season picker: default to sample-season; user can switch to any real season.
+  const [selectedSeasonId, setSelectedSeasonId] = useState<string | null>(
+    defaultSeason?.seasonId ?? null
+  );
+
+  const season = selectedSeasonId
+    ? (selectableSeasons.find((s) => s.seasonId === selectedSeasonId) ?? defaultSeason)
+    : defaultSeason;
+
   const classes = season?.classes ?? [];
 
   const [selectedClassId, setSelectedClassId] = useState<string | null>(classes[0]?.id ?? null);
@@ -229,6 +238,27 @@ export function Sample() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
+      {/* Season picker */}
+      {selectableSeasons.length > 1 && (
+        <div className="flex items-center gap-2">
+          <label className="text-xs text-gray-600 font-mono flex-shrink-0">Season:</label>
+          <select
+            value={season?.seasonId ?? ''}
+            onChange={(e) => {
+              setSelectedSeasonId(e.target.value);
+              setSelectedClassId(null); // reset class on season change
+            }}
+            className="flex-1 max-w-xs bg-gray-900 border border-gray-700 text-gray-300 text-sm rounded px-2 py-1 focus:outline-none focus:border-violet-500"
+          >
+            {selectableSeasons.map((s) => (
+              <option key={s.seasonId} value={s.seasonId}>
+                {s.seasonId} — {s.manifest.anchor?.name ?? s.manifest.season_theme_element}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
       {/* Engine Baseline Banner */}
       <div className="rounded-lg border border-violet-800 bg-violet-950/40 px-4 py-3 flex items-start gap-3">
         <span className="text-violet-400 text-lg flex-shrink-0 mt-0.5">◈</span>
