@@ -1,16 +1,19 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "authored": "2026-05-18",
-  "authority": "drax-loadout (Phase-1 P1 D19 Sub-phase A)",
-  "hive_log_ref": "agentic_orchestration/hive-mind/phase-1-p1-log.md [2026-05-18]",
-  "migration_ref": "reincarnated-loadout/MIGRATION.md §v1.0-vfx-manifest",
+  "updated": "2026-05-17",
+  "authority": "drax-loadout (Phase-1 P1 D19 Sub-phase B-partial)",
+  "hive_log_ref": "agentic_orchestration/hive-mind/phase-1-p1-log.md [2026-05-17 STATE drax-loadout Sub-phase B-partial]",
+  "migration_ref": "reincarnated-loadout/MIGRATION.md §v1.1-vfx-manifest",
   "notes": [
     "geometry_animation_map keys MUST match geometry_affinities names in substrate-identity-declarations-2026-05-17.md",
-    "acquisition_status values: on-disk | pending-matt | catalogue-only | entity-only-on-disk | partial-on-disk",
+    "acquisition_status values: on-disk | pending-matt | catalogue-only | entity-only-on-disk | partial-on-disk | deferred-post-phase-1-p1",
     "All chierit paths reference reincarnated-demo/public/assets/chierit/<character>/ (extracted Sub-phase A)",
     "All pimen paths reference reincarnated-demo/public/assets/pimen/<pack>/raw/<animation-dir>/",
     "register_risk field flags Frostwindz conditional-accept disposition per gandalf DECISION [2026-05-18 00:00Z]",
-    "TODO(drax): remove acquisition_status:pending-matt entries when Matt downloads CraftPix/Fellor/Frostwindz packs"
+    "permitted_uses / denied_uses fields added in v1.1 for register-gated packs (Frostwindz Deathbringer)",
+    "phase_2_followup field added in v1.1 for deferred-post-phase-1-p1 supplementary packs (CraftPix + Fellor)",
+    "TODO(drax): Phase-2 revisit for earth supplementary packs — CraftPix wood-nature (biological-organic) + Fellor crystal (crystal-gem) deferred per Matt L3 disposition 2026-05-17"
   ],
   "substrates": {
     "fire": {
@@ -198,20 +201,22 @@
         {
           "pack_slug": "craftpix-wood-nature",
           "sub_register": "biological-organic",
-          "acquisition_status": "pending-matt",
+          "acquisition_status": "deferred-post-phase-1-p1",
           "projected_path": "craftpix/wood-nature",
           "substrates_served": ["earth"],
           "geometry_types_targeted": ["ground_targeted_circle", "area_sustain"],
-          "notes": "Fills root/bark/leaf/vine/moss biological-organic VFX gap. Acquisition authorized; payment pending."
+          "phase_2_followup": "Biological-organic earth sub-register (root/bark/vine/moss VFX) falls back to stone VFX (pimen earth-spell-effect-03) for Phase-1 P1 ship. CraftPix Premium wood-nature acquisition deferred to Phase-2 polish pass per Matt L3 disposition 2026-05-17. chierit leaf_ranger entity sprites carry biological-organic visual identity at character level.",
+          "notes": "DEFERRED 2026-05-17 per Matt L3. Graceful degradation: stone-VFX fallback is functional combat coverage for Phase-1 P1."
         },
         {
           "pack_slug": "fellor-crystal",
           "sub_register": "crystal-gem",
-          "acquisition_status": "pending-matt",
+          "acquisition_status": "deferred-post-phase-1-p1",
           "projected_path": "fellor/crystal",
           "substrates_served": ["earth"],
           "geometry_types_targeted": ["pillar", "burst"],
-          "notes": "Crystal/gem VFX for crystal_mauler integration. Fellor medium-priority acquisition."
+          "phase_2_followup": "Crystal-gem earth sub-register (crystal burst/aura VFX) falls back to stone VFX (pimen earth-spell-effect-03) for Phase-1 P1 ship. Fellor Crystal Gem acquisition deferred to Phase-2 polish pass per Matt L3 disposition 2026-05-17. chierit crystal_mauler entity sprites carry crystal-gem visual identity at character level. Download issue: likely macOS Gatekeeper quarantine — try Firefox or 'xattr -d com.apple.quarantine' workaround on Phase-2 retry.",
+          "notes": "DEFERRED 2026-05-17 per Matt L3. Graceful degradation: stone-VFX fallback is functional combat coverage for Phase-1 P1."
         }
       ],
       "geometry_animation_map": {
@@ -349,7 +354,7 @@
       },
       "acquisition_status": "partial-on-disk",
       "combat_vfx_ready": true,
-      "combat_vfx_notes": "Stone/impact sub-register ready. Crystal-gem and biological-organic sub-registers require pending acquisitions (Fellor + CraftPix)."
+      "combat_vfx_notes": "Stone/impact sub-register fully combat-ready (pimen earth-spell-effect-03, 11 animation groups). Crystal-gem and biological-organic sub-registers fall back to stone VFX (pimen earth-spell-effect-03) for Phase-1 P1 ship — graceful degradation, not a defect. CraftPix Premium (biological-organic) and Fellor Crystal (crystal-gem) acquisitions DEFERRED to Phase-2 per Matt L3 disposition 2026-05-17. chierit crystal_mauler + leaf_ranger entity sprites carry sub-register visual identity at character level."
     },
     "wind": {
       "canonical_name": "wind",
@@ -553,23 +558,83 @@
     "holy": {
       "canonical_name": "holy",
       "grouping_label": "radiance",
-      "primary_spell_pack": null,
+      "primary_spell_pack": {
+        "pack_slug": "creativekind-holy-spell-effects",
+        "pack_name": "Holy Spell Effects",
+        "vendor": "CreativeKind",
+        "path": "Holy_Spell_Effects_Creativekind",
+        "derived_register": "hand-drawn-pixel",
+        "register_verified": true,
+        "register_notes": "Spritesheets are HD-resolution multi-frame strips (e.g., 1920x160, 2720x912). Smooth hand-drawn digital painting with radiant glow, clean anti-aliased edges, gold/silver/iron/blue color-palette variants. Consistent with CreativeKind's vendor-level HD-2D hand-drawn-pixel register. CONFORMANT.",
+        "license": "commercial-royalty-free",
+        "attribution_required": false
+      },
       "supplementary_packs": [
-        {
-          "pack_slug": "creativekind-holy-spell-effects",
-          "sub_register": "radiant-aura",
-          "acquisition_status": "catalogue-only",
-          "notes": "CreativeKind Holy Spell Effects: GREEN-list per legolas. NOT in Matt's three authorized acquisitions. Fourth acquisition needed for holy combat VFX. Surface to Matt via knight-rider as L3."
-        },
         {
           "pack_slug": "pimen-holy-spell-effect",
           "sub_register": "shaft-nova",
           "acquisition_status": "catalogue-only",
-          "notes": "Pimen Holy Spell Effect: catalogue-only. Not yet acquired."
+          "notes": "Pimen Holy Spell Effect: catalogue-only. Not yet acquired. CreativeKind Holy Spell Effects (now on-disk) closes the holy VFX gap; pimen pack would add depth but is not blocking."
         }
       ],
-      "geometry_animation_map": {},
-      "geometry_animation_map_notes": "EMPTY: no holy spell VFX on-disk as of Sub-phase A. geometry_animation_map will be populated when CreativeKind Holy Spell Effects or equivalent is acquired. This is the largest VFX gap among the 7 substrates.",
+      "geometry_animation_map": {
+        "radiant_aura": {
+          "pack": "creativekind-holy-spell-effects",
+          "animation_dir": "Holy_Spell_Effects_Creativekind/Spritesheet/Spell 4-Sheet_gold_red.png",
+          "animation_preview": "Holy_Spell_Effects_Creativekind/Preview/Spell 4_gold_red.gif",
+          "affinity": "PREFER",
+          "notes": "Spell 4 multi-variant radiant aura (9 color variants: gold_red, gold_orange, gold_magenta, iron_blue, iron_green, iron_orange, silver_blue, silver_green, silver_orange). Primary holy geometry match. Use gold_red variant as canonical holy; blue variants available for alt-color holy forms."
+        },
+        "shaft": {
+          "pack": "creativekind-holy-spell-effects",
+          "animation_dir": "Holy_Spell_Effects_Creativekind/Spritesheet/Spell 1-Sheet.png",
+          "animation_preview": "Holy_Spell_Effects_Creativekind/Preview/Spell 1.gif",
+          "affinity": "PREFER",
+          "notes": "Spell 1 + Spell 10: vertical shaft/pillar of light. Two shaft variants available (Spell 1 = compact; Spell 10 = tall). Blue variants available for both."
+        },
+        "nova": {
+          "pack": "creativekind-holy-spell-effects",
+          "animation_dir": "Holy_Spell_Effects_Creativekind/Spritesheet/Spell 2-Sheet.png",
+          "animation_preview": "Holy_Spell_Effects_Creativekind/Preview/Spell 2.gif",
+          "affinity": "PREFER",
+          "notes": "Spell 2 + Spell 9 + Spell 13: three nova variants at small/medium/large scale. Spell 13 is the full-screen radiance nova."
+        },
+        "ground_targeted_circle": {
+          "pack": "creativekind-holy-spell-effects",
+          "animation_dir": "Holy_Spell_Effects_Creativekind/Spritesheet/Spell 5-Sheet.png",
+          "animation_preview": "Holy_Spell_Effects_Creativekind/Preview/Spell 5.gif",
+          "affinity": "PREFER",
+          "notes": "Spell 5: ground consecration circle placement. Two variants (default + blue). Matches holy ground_targeted_circle PREFER geometry for consecrate ailment zone."
+        },
+        "area_sustain": {
+          "pack": "creativekind-holy-spell-effects",
+          "animation_dir": "Holy_Spell_Effects_Creativekind/Spritesheet/Spell 3-Sheet.png",
+          "animation_preview": "Holy_Spell_Effects_Creativekind/Preview/Spell 3.gif",
+          "affinity": "PREFER",
+          "notes": "Spell 3 + Spell 11: sustained area holy glow. Matches holy area_sustain PREFER geometry for blessing/amplification zones."
+        },
+        "cone": {
+          "pack": "creativekind-holy-spell-effects",
+          "animation_dir": "Holy_Spell_Effects_Creativekind/Spritesheet/Spell 8-Sheet.png",
+          "animation_preview": "Holy_Spell_Effects_Creativekind/Preview/Spell 8.gif",
+          "affinity": "NEUTRAL",
+          "notes": "Spell 8: forward cone holy sweep. Holy cone is NEUTRAL geometry affinity."
+        },
+        "burst": {
+          "pack": "creativekind-holy-spell-effects",
+          "animation_dir": "Holy_Spell_Effects_Creativekind/Spritesheet/Spell 6-Sheet.png",
+          "animation_preview": "Holy_Spell_Effects_Creativekind/Preview/Spell 6.gif",
+          "affinity": "NEUTRAL",
+          "notes": "Spell 6: burst explosion. Holy burst is NEUTRAL geometry affinity. Blue variant available."
+        },
+        "projectile": {
+          "pack": "creativekind-holy-spell-effects",
+          "animation_dir": "Holy_Spell_Effects_Creativekind/Spritesheet/Spell 7-Sheet.png",
+          "animation_preview": "Holy_Spell_Effects_Creativekind/Preview/Spell 7.gif",
+          "affinity": "NEUTRAL",
+          "notes": "Spell 7: projectile orb. Holy projectile is NEUTRAL geometry affinity. Blue variant available."
+        }
+      },
       "entity_packs": [
         {
           "pack_slug": "chierit-light_valkyrie",
@@ -593,13 +658,13 @@
         }
       ],
       "thumbnail_frame": {
-        "source": "chierit/light_valkyrie",
-        "file": "chierit/light_valkyrie/gif_samples/e_idle.gif",
-        "notes": "Light valkyrie elemental form idle; best available holy substrate representative (entity-only)"
+        "source": "Holy_Spell_Effects_Creativekind",
+        "file": "Holy_Spell_Effects_Creativekind/Preview/Spell 4_gold_red.gif",
+        "notes": "Spell 4 gold_red radiant aura — highest-energy holy VFX; representative of radiant_aura PREFER geometry and holy substrate identity. Gold color palette matches holy cosmological commitment (revelation / amplification)."
       },
-      "acquisition_status": "entity-only-on-disk",
-      "combat_vfx_ready": false,
-      "combat_vfx_notes": "Entity sprites available (light_valkyrie); zero dedicated holy spell VFX on-disk. geometry_animation_map EMPTY until CreativeKind Holy Spell Effects acquisition. See D19 plan § 3.6 for acquisition gap analysis."
+      "acquisition_status": "on-disk",
+      "combat_vfx_ready": true,
+      "combat_vfx_notes": "Holy L3 VFX gap CLOSED. CreativeKind Holy Spell Effects on-disk (Matt acquisition 2026-05-17). All 5 PREFER geometry affinities covered: radiant_aura (Spell 4 × 9 variants + Spell 12), shaft (Spell 1 + Spell 10), nova (Spell 2 + Spell 9 + Spell 13), ground_targeted_circle (Spell 5), area_sustain (Spell 3 + Spell 11). NEUTRAL geometries (cone/burst/projectile) also covered. Full geometry_animation_map populated for holy combat rendering."
     },
     "shadow": {
       "canonical_name": "shadow",
@@ -618,13 +683,17 @@
         {
           "pack_slug": "frostwindz-deathbringer",
           "sub_register": "bone-death",
-          "acquisition_status": "pending-matt",
-          "projected_path": "frostwindz/deathbringer",
-          "register_risk": "likely-retro-pixel",
-          "gandalf_disposition": "CONDITIONAL — see DECISION [2026-05-18 00:00Z]",
-          "permitted_uses": ["substrate-browser-thumbnail", "trial-cinematic-redraw-source"],
-          "denied_uses": ["in-combat-vfx", "court-portrait-full-screen"],
-          "notes": "TODO(drax): Do NOT wire Frostwindz Deathbringer to in-combat VFX without register verification + gandalf register exception. Condition from gandalf DECISION: UI thumbnails APPROVED; in-combat VFX DENIED."
+          "acquisition_status": "on-disk",
+          "path": "Deathbringer VFX",
+          "derived_register": "16-bit-shaped-pixel",
+          "register_verified": true,
+          "register_risk": "CONFIRMED-retro-pixel",
+          "gandalf_decision_ref": "DECISION [2026-05-18 00:00Z] — Frostwindz Deathbringer CONDITIONAL ACCEPT; UI thumbnails APPROVED; in-combat VFX DENIED",
+          "permitted_uses": ["ui_thumbnail", "loadout_static", "substrate_browser_thumbnail", "trial_cinematic_redraw_source"],
+          "denied_uses": ["in_combat_vfx", "court_portrait_full_screen"],
+          "animation_count": 6,
+          "total_frames": 99,
+          "notes": "TODO(drax): Do NOT wire Frostwindz Deathbringer to in-combat VFX. Register CONFIRMED retro-pixel (16-bit-shaped per visual inspection + style-register.md classification). Explicit gandalf register-exception required to override DECISION [2026-05-18 00:00Z]. UI-thumbnail use ONLY — permitted for substrate-browser shadow preview frame and loadout static surfaces. In-combat VFX DENIED."
         },
         {
           "pack_slug": "creativekind-shadow-tendril",

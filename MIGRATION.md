@@ -243,7 +243,160 @@ mixing retro-pixel VFX with HD-2D character sprites in combat violates the style
 
 ---
 
-*MIGRATION.md created 2026-05-18. First entry: vfx-manifest.json v1.0 (D19 Sub-phase A).*
+## [2026-05-17] §v1.1-vfx-manifest — VFX manifest schema v1.0 → v1.1 (Phase-1 P1 D19 Sub-phase B-partial)
+
+**Author:** drax-loadout
+**Phase-1 P1 Deliverable:** D19 Sub-phase B-partial — Frostwindz Deathbringer + CreativeKind Holy ingestion + CraftPix/Fellor deferral disposition
+**Hive log ref:** `agentic_orchestration/hive-mind/phase-1-p1-log.md` [2026-05-17 STATE drax-loadout Sub-phase B-partial]
+**Tag:** `drax/v0.24-d19-sub-phase-b-partial-holy-frostwindz-1`
+**Predecessor:** §v1.0-vfx-manifest (D19 Sub-phase A, tag `drax/v0.23-d19-sub-phase-a-chierit-extraction-manifest-1`)
+**Authority:** Matt L3 disposition 2026-05-17 (CraftPix + Fellor deferred to Phase-2; Frostwindz + CreativeKind Holy on-disk confirmed) + gandalf DECISION [2026-05-18 00:00Z] (Frostwindz register conditional)
+
+### What changed
+
+#### 1. Holy substrate — combat_vfx_ready: false → true (SEMANTIC SHIFT per Discipline #12)
+
+**Change type:** Semantic shift — the holy substrate transitions from entity-only to fully combat-VFX-ready.
+
+The holy L3 VFX gap (the largest VFX gap identified in Sub-phase A) is now CLOSED. Matt delivered CreativeKind Holy Spell Effects on-disk at `reincarnated-demo/public/assets/Holy_Spell_Effects_Creativekind/`.
+
+**Manifest changes:**
+- `substrates.holy.primary_spell_pack`: was `null`; now set to `creativekind-holy-spell-effects`
+- `substrates.holy.primary_spell_pack.path`: `Holy_Spell_Effects_Creativekind`
+- `substrates.holy.primary_spell_pack.derived_register`: `hand-drawn-pixel` (verified: HD-resolution spritesheets, smooth digital painting, CreativeKind vendor-level register confirmed)
+- `substrates.holy.geometry_animation_map`: was `{}`; now populated with 8 geometry type mappings
+- `substrates.holy.acquisition_status`: `entity-only-on-disk` → `on-disk`
+- `substrates.holy.combat_vfx_ready`: `false` → `true`
+- `substrates.holy.combat_vfx_notes`: updated to document full coverage
+- `substrates.holy.thumbnail_frame`: updated to `Holy_Spell_Effects_Creativekind/Preview/Spell 4_gold_red.gif` (Spell 4 gold_red radiant aura — representative high-energy holy VFX)
+- `substrates.holy.supplementary_packs`: CreativeKind Holy promoted to `primary_spell_pack`; pimen-holy-spell-effect remains catalogue-only
+
+**Holy geometry_animation_map — populated entries:**
+
+| geometry_type | affinity | spell | notes |
+|---|---|---|---|
+| `radiant_aura` | PREFER | Spell 4 (×9 color variants) + Spell 12 | Primary holy geometry; 9 palette options |
+| `shaft` | PREFER | Spell 1 (+ blue) + Spell 10 (+ blue) | Vertical pillar of light; two size variants |
+| `nova` | PREFER | Spell 2 + Spell 9 + Spell 13 | Three scale variants; Spell 13 = full-screen |
+| `ground_targeted_circle` | PREFER | Spell 5 (+ blue) | Consecrate zone placement |
+| `area_sustain` | PREFER | Spell 3 + Spell 11 | Sustained holy glow / blessing zone |
+| `cone` | NEUTRAL | Spell 8 | Forward cone sweep |
+| `burst` | NEUTRAL | Spell 6 (+ blue) | Burst explosion |
+| `projectile` | NEUTRAL | Spell 7 (+ blue) | Projectile orb |
+
+All PREFER geometry affinities per § 6 holy covered. All NEUTRAL geometry affinities covered. AVOID geometries (tendril/swirl/chain_lightning) have no entries — correct.
+
+**Register verification:** CreativeKind Holy Spell Effects is HD-2D-conformant. Spritesheets at 1920x160 to 2720x912 px; frame content = smooth hand-drawn digital painting with radiant glow and multi-palette color variants. No retro pixel grid visible. CONFORMANT.
+
+**New metadata.json:** `reincarnated-demo/public/assets/Holy_Spell_Effects_Creativekind/metadata.json` authored (pack_slug, vendor, substrate, geometry coverage assessment, 13 animation entries with geometry_type + affinity mapping).
+
+#### 2. Shadow substrate — Frostwindz Deathbringer ingestion (UI-only conditional)
+
+**Change type:** Additive — new supplementary_packs field additions.
+
+Frostwindz Deathbringer is now on-disk at `reincarnated-demo/public/assets/Deathbringer VFX/`. Per gandalf DECISION [2026-05-18 00:00Z], this pack is a CONDITIONAL ACCEPT.
+
+**Manifest changes (shadow.supplementary_packs[0] — frostwindz-deathbringer):**
+- `acquisition_status`: `pending-matt` → `on-disk`
+- `path`: `Deathbringer VFX` (Matt's placement path)
+- `derived_register`: `16-bit-shaped-pixel` (CONFIRMED retro-pixel by visual inspection)
+- `register_verified`: `true`
+- `register_risk`: `CONFIRMED-retro-pixel` (field updated from `likely-retro-pixel`)
+- `gandalf_decision_ref`: added reference to DECISION [2026-05-18 00:00Z]
+- `permitted_uses`: `["ui_thumbnail", "loadout_static", "substrate_browser_thumbnail", "trial_cinematic_redraw_source"]`
+- `denied_uses`: `["in_combat_vfx", "court_portrait_full_screen"]`
+- `animation_count`: 6, `total_frames`: 99
+
+**Critical constraint — TODO(drax) guard reinforced:**
+```
+TODO(drax): Do NOT wire Frostwindz Deathbringer to in-combat VFX.
+Register CONFIRMED retro-pixel (16-bit-shaped). Explicit gandalf register-exception
+required to override DECISION [2026-05-18 00:00Z]. UI-thumbnail ONLY.
+```
+This guard is present in both vfx-manifest.json AND in the pack's metadata.json.
+
+**Frostwindz does NOT appear in any geometry_animation_map.** Smoke test verified this. In-combat routing is prevented at the data layer (no entry exists to wire from).
+
+**Shadow combat_vfx_ready: remains false** — the Frostwindz addition is supplementary UI-only. Shadow's tendency/creep/drain geometry PREFER affinities are still not covered by HD-2D-conformant VFX. CreativeKind shadow-tendril (catalogue-only) remains the path to full shadow combat readiness.
+
+**New metadata.json:** `reincarnated-demo/public/assets/Deathbringer VFX/metadata.json` authored (pack_slug, license summary from embedded docx, register_verified, permitted_uses/denied_uses, 6 animation slugs with geometry_type and explicit TODO guard).
+
+**License verified:** Frostwindz Asset License Agreement.docx (embedded in pack) — commercial use permitted, no attribution required, no redistribution.
+
+#### 3. Earth substrate — CraftPix + Fellor deferral disposition
+
+**Change type:** Status update — `pending-matt` → `deferred-post-phase-1-p1` for two supplementary packs.
+
+Matt L3 disposition 2026-05-17: CraftPix Premium wood-nature and Fellor Crystal Gem are DEFERRED to Phase-2 post-ship polish. Biological-organic and crystal-gem earth sub-registers ship Phase-1 P1 with stone-VFX fallback (pimen earth-spell-effect-03). This is graceful degradation, not a defect — chierit leaf_ranger + crystal_mauler entity sprites carry sub-register visual identity at character level.
+
+**Manifest changes (earth.supplementary_packs):**
+- `craftpix-wood-nature.acquisition_status`: `pending-matt` → `deferred-post-phase-1-p1`
+- `craftpix-wood-nature.phase_2_followup`: added (Phase-2 acquisition + fallback documentation)
+- `fellor-crystal.acquisition_status`: `pending-matt` → `deferred-post-phase-1-p1`
+- `fellor-crystal.phase_2_followup`: added (Phase-2 acquisition + macOS Gatekeeper download note)
+- `earth.combat_vfx_notes`: updated to document stone-VFX fallback chain
+
+**Earth combat_vfx_ready: remains true** — stone sub-register (pimen earth-spell-effect-03, 11 animation groups) provides functional combat coverage for Phase-1 P1 ship.
+
+**Phase-2 followup queue (captured in manifest notes):**
+1. CraftPix Premium wood-nature acquisition (earth biological-organic VFX) — DEFERRED 2026-05-17 per Matt; revisit after Phase-1 P1 ship
+2. Fellor Crystal Gem cluster acquisition (earth crystal-gem VFX) — DEFERRED 2026-05-17 per Matt; download issue likely macOS Gatekeeper quarantine (try Firefox or `xattr -d com.apple.quarantine` on retry)
+
+#### 4. Schema version bump v1.0 → v1.1
+
+**New fields in v1.1:**
+- `permitted_uses: [...]` — array of allowed use-contexts for register-gated packs (Frostwindz)
+- `denied_uses: [...]` — array of denied use-contexts (Frostwindz in-combat guard)
+- `register_risk: "CONFIRMED-retro-pixel"` — replaces `"likely-retro-pixel"` now that visual inspection is complete
+- `phase_2_followup: "<string>"` — deferred-acquisition documentation for earth supplementary packs
+- `gandalf_decision_ref: "<string>"` — explicit reference to the gandalf DECISION entry governing conditional-accept packs
+- `animation_preview: "<path>"` — optional GIF preview path alongside `animation_dir` spritesheet path (holy geometry_animation_map entries)
+- `acquisition_status` value additions: `deferred-post-phase-1-p1` (earth supplementary packs)
+
+**Notes field updates:**
+- `acquisition_status` values list updated to include `deferred-post-phase-1-p1`
+- `permitted_uses` / `denied_uses` / `register_risk` / `phase_2_followup` fields documented in notes
+- Previous `TODO(drax): remove acquisition_status:pending-matt entries when Matt downloads CraftPix/Fellor/Frostwindz packs` removed; replaced with Phase-2 TODO for earth supplementary pack revisit
+
+**Schema is backward-compatible** — new fields are additive. Existing v1.0 consumers reading substrates with no new fields are unaffected. `acquisition_status: deferred-post-phase-1-p1` is a new value; consumers that switch on this field need to handle the new value (treat as "not available").
+
+### Downstream consumer responsibilities
+
+#### star-lord (D15 LLM flavor diversifier)
+
+- `substrates.holy.primary_spell_pack.derived_register: "hand-drawn-pixel"` — holy is now HD-2D-conformant; `visual_prompt` LLM generation can now reference radiant/shaft/nova VFX language for holy archetypes. Previously blocked (null primary_spell_pack).
+- `substrates.holy.geometry_animation_map` — 8 keys now available. Geometry vocabulary for holy VFX-register-aware prompt building (D15 manifest cipher integration) is now complete.
+- No change to star-lord's star-lord D15 already-shipped manifest consumption logic — additive changes only.
+
+#### rocket (D17 Court of Forms browser)
+
+- `substrates.holy.thumbnail_frame.file` → updated to `Holy_Spell_Effects_Creativekind/Preview/Spell 4_gold_red.gif`. Court browser holy thumbnail surface UNBLOCKED.
+- `substrates.holy.acquisition_status: "on-disk"` + `combat_vfx_ready: true` → holy placeholder/pending state can be replaced with real thumbnail.
+- `substrates.shadow.supplementary_packs[0]` (Frostwindz) → `acquisition_status: "on-disk"`. UI thumbnail use is permitted; shadow browser thumbnail can reference `Deathbringer VFX/VFX 2/gif.gif` as a secondary shadow VFX preview (retro-pixel; acceptable for UI-only context).
+- `substrates.earth.supplementary_packs` → two entries now `deferred-post-phase-1-p1`; earth stone-fallback VFX is what surfaces in Court browser earth thumbnail. No Court browser code changes needed.
+
+#### drax (D21 substrate browser + D22 embodiment display)
+
+- D21 substrate browser: holy thumbnail now points to a real holy spell VFX GIF (`Spell 4_gold_red.gif`). Previously pointed to chierit/light_valkyrie entity idle. Update in D21 implementation.
+- D22 embodiment display: no change from v1.0 — light_valkyrie still in entity_packs[0] for holy embodiment display.
+- D22 QUESTION (carried from Sub-phase A QUESTION entry at hive-log line 3382): star-lord geometry key naming alignment — verify before Sub-phase C demo wiring.
+- New `deferred-post-phase-1-p1` acquisition_status value: D21/D22 implementations should treat this like `pending-matt` (not available; fallback to stone VFX for earth sub-registers).
+
+### Combat VFX readiness summary (v1.1 state)
+
+| substrate | combat_vfx_ready | change from v1.0 | notes |
+|---|---|---|---|
+| fire | true | no change | pimen + chierit fire_knight |
+| water | true | no change | pimen + chierit water_priestess |
+| earth | true | no change (fallback clarified) | stone sub-register; crystal/organic fallback to stone per Phase-2 deferral |
+| wind | true | no change | pimen + chierit wind_hashashin |
+| lightning | true | no change | pimen thunder pack + chierit lightning_ronin |
+| holy | **true** | **false → true** | CreativeKind Holy Spell Effects on-disk; full geometry coverage |
+| shadow | false | no change | void_pool only (Dark_Hole); tendril/creep absent; Frostwindz UI-only |
+
+---
+
+*MIGRATION.md created 2026-05-18. First entry: §v1.0-vfx-manifest (D19 Sub-phase A).*
 *Previous sessions (v0.5 through v0.21) did not require a MIGRATION.md entry; the engine's*
 *`reincarnated-engine/src/reincarnated/export/MIGRATION.md` was the upstream contract drax consumed.*
 *This file is the loadout-seam's outbound contract for data drax authors and cross-seam consumers read.*
