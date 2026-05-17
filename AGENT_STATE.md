@@ -1,10 +1,49 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-16
-**Last tag:** drax/v0.21-form-bias-stage-3-cipher-consumption (commit 84487ea)
+**Last updated:** 2026-05-17
+**Last tag:** drax/v0.21-form-bias-stage-3-cipher-consumption (commit 84487ea) — loadout seam; no new loadout tag this session (planning only)
 **Branch:** main
+**Hive-mind mode:** ACTIVE (Phase-1 P1; distributed authority L1 in-seam)
 
 ## Session summary
+
+### D19-vfx-library-extension-plan (completed 2026-05-17 — PLANNING ONLY; no code changes)
+
+**Hive-mode Track B.** Deliverable 19 VFX library extension — planning phase.
+**Planning doc:** `agentic_orchestration/hive-mind/d19-vfx-library-extension-plan.md`
+**Hive log entries:** 4 appended (STATE start, STATE complete, OBSERVATION x2, HANDOFF)
+**Implementation status:** BLOCKED on Matt vendor acquisitions (CraftPix premium wood-nature + Fellor Crystal + Frostwindz Deathbringer)
+
+**Key findings:**
+
+On-disk VFX inventory (all 7 substrates assessed):
+- Fire: ADEQUATE — pimen fire-spell-effect-3 (9 animation groups) + CreativeKind entities + chierit fire_knight ZIP
+- Water: ADEQUATE — pimen water-spell-effect-03 (7 groups) + chierit water_priestess ZIP
+- Earth: MODERATE GAP — stone adequate; crystal = Fellor pending; biological = CraftPix pending
+- Wind: ADEQUATE — pimen wind-spell-effect-03 (12 groups, richest pack) + chierit ZIP
+- Lightning: STRONG — pimen thunder-spell-effect-03 (~30 blur/no-blur variants) + CreativeKind Lightning x2 VFX + God_of_Lightning x2 + Lich lightning + chierit lightning_ronin ZIP
+- Holy: SIGNIFICANT GAP — entity sprites only (Angel_Guardian, Angel_Mage, angel_v1; chierit light_valkyrie ZIP); ZERO holy spell VFX on-disk
+- Shadow: PARTIAL — Dark_Hole VFX + entity sprites; tendril/drain geometry absent; Frostwindz Deathbringer pending with RETRO register RISK
+
+**Critical observations:**
+1. Frostwindz Deathbringer is likely RETRO-pixel (not HD-2D-conformant); wiring to combat VFX requires gandalf register exception — documented in plan § 2.3 + hive log OBSERVATION
+2. Holy spell VFX is NOT covered by Matt's three authorized acquisitions; CreativeKind Holy Spell Effects (~$5-15) needed for holy combat rendering — surfaced as L3 OBSERVATION to knight-rider for Matt routing
+3. Lightning is the best-covered new substrate — pimen thunder pack alone provides adequate geometry coverage; no additional acquisition blocking
+
+**Sub-phase A READY (no Matt acquisitions required):**
+- Chierit Elementals ZIP extraction (10 ZIPs: fire_knight, water_priestess, ground_monk, crystal_mauler, leaf_ranger, wind_hashashin, lightning_ronin, light_valkyrie, shadow_stalker, metal_bladekeeper)
+- Author `reincarnated-demo/public/assets/vfx-manifest.json` per schema in plan § 4.4
+- 1-2 day effort; dispatchable by knight-rider now
+
+**VFX manifest schema proposed:** per-substrate JSON with `geometry_animation_map` keyed to substrate-identity-declarations geometry_affinities; `thumbnail_frame` for loadout substrate browser; `acquisition_status` field. Star-lord coordination needed (D17/D22/D15 key naming alignment).
+
+**Effort estimate (implementation phase):** 6-9 days post-acquisitions:
+- Sub-phase A: 1-2 days (now)
+- Sub-phase B (acquisition intake + register verify): 0.5-1 day when Matt downloads
+- Sub-phase C (demo VFX wiring + loadout D21/D22 + element badges): 4-6 days
+
+**No production code modified.** Planning only.
+**No tag cut** (doc-only session; no substantive loadout code change to tag per dispatch instruction: "skip tag if doc-only").
 
 ### v0.21-form-bias-stage-3-cipher-consumption (completed 2026-05-16)
 
@@ -222,9 +261,32 @@ All 6 surfaces from dispatch `2026-05-16-drax-encounters-page-explanatory-conten
 
 ## Next session pick-up
 
-Open items remaining:
+**Phase-1 P1 hive-mode active. Next loadout-seam tasks:**
+
+Priority 1 (DISPATCHABLE NOW — no Matt acquisitions required):
+- **D19 Sub-phase A:** Extract chierit Elementals ZIPs (10 packs in `Elementals_bundle/`); author `reincarnated-demo/public/assets/vfx-manifest.json` per schema in d19-vfx-library-extension-plan.md § 4.4
+- Smoke-test: demo launches without console errors using new manifest reference (or demo does not reference manifest yet — the manifest is authored in advance of wiring; no demo code change in Sub-phase A)
+
+Priority 2 (BLOCKED on Matt acquisitions + holy gap resolution):
+- **D19 Sub-phase B:** Intake CraftPix/Fellor/Frostwindz packs when Matt downloads; register verification on Frostwindz (likely RETRO); update vfx-manifest.json acquisition_status fields
+- **D19 Sub-phase C:** Demo VFX wiring (element-keyed routing + geometry-affinity dispatch); loadout D21 substrate browser; D22 embodiment display; element badges for lightning/holy/shadow
+
+Priority 3 (parallel; blocked on engine D1 landing):
+- **D17 Court of Forms browser surface:** Loadout browsable Court surface; blocked on rocket D1 SubstrateIdentity loader + court persistence data structure
+
+Priority 4 (open pre-hive items, lower priority during Phase-1 P1):
 - **encounter_analytics.json regen** — tier-1 columns (duration_seconds) still only 3% populated; regenerate once star-lord or gamora ensures full coverage per fight row. Switch projection label to Damage×TTK when ready.
 - **Milestone tag `v0.7-encounter-analytics`** — on hold per dispatch (Matt must review preview). Once Matt approves, cut milestone tag at commit 3f2fca6 and push to origin.
+
+**Cross-seam dependencies to watch:**
+- Gandalf ruling on Frostwindz register exception (L2 OBSERVATION in hive log)
+- Matt authorization for CreativeKind Holy Spell Effects (L3 OBSERVATION via knight-rider)
+- Star-lord D17/D22/D15 manifest schema key naming (coordinate before Sub-phase C VFX wiring)
+- Rocket D1 SubstrateIdentity loader (unblocks D17 + D22 loadout surfaces)
+
+**TODO(drax): Frostwindz Deathbringer** — do NOT wire to combat VFX until gandalf register disposition lands. Track as pre-integration gate item.
+
+**Outstanding pre-hive open items (unchanged from v0.21):**
 
 ### Milestone tag: v0.8-gear-wiring (2026-05-16, Pattern A subagent)
 
