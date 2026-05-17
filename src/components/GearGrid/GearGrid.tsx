@@ -2,6 +2,14 @@ import type { GearStats, GearRolledEffect, LoadoutSlot } from '../../data/types'
 import { Card } from '../ui/Card';
 import { FlavorTip } from '../ui/FlavorTip';
 
+// Stage 3 cipher migration: resolve the player-visible element name for a gear item.
+// Uses seasonal_dominant_element (v1.5+) first; falls back to dominant_element (pre-v1.5).
+// Returns null if the item has no element (physical / null).
+function resolveGearElementName(item: LoadoutSlot['item']): string | null {
+  const name = item.seasonal_dominant_element ?? item.dominant_element;
+  return name ?? null;
+}
+
 const TIER_BADGE: Record<string, string> = {
   legendary: 'text-amber-400 border-amber-600',
   epic:      'text-purple-400 border-purple-700',
@@ -109,6 +117,9 @@ export function GearGrid({ mode = 'empty', synthesized = [] }: GearGridProps) {
       <div className="grid grid-cols-5 gap-2">
         {EMPTY_SLOTS.map(({ label, tip }) => {
           const slot = mode === 'sample' ? synthMap[label] : undefined;
+          // L-06/L-07 fix (cipher migration): resolve seasonal name first (v1.5+),
+          // fall back to canonical dominant_element for pre-Stage-3 seasons.
+          const resolvedElName = slot ? resolveGearElementName(slot.item) : null;
           const elColor = slot?.item.dominant_element
             ? (ELEMENT_COLORS[slot.item.dominant_element] ?? 'text-gray-400')
             : null;
@@ -155,12 +166,14 @@ export function GearGrid({ mode = 'empty', synthesized = [] }: GearGridProps) {
                           </span>
 
                           {/* Tier badge + element — Bug B: element already shown here in modal */}
+                          {/* L-06 fix: display seasonal name (v1.5+) or canonical (pre-v1.5);
+                              resolvedElName is null for physical/no-element items. */}
                           <span className={`inline-block text-xs font-mono not-italic border rounded px-1.5 py-0.5 mb-3 ${tierColor}`}>
                             {tierLabel}
                           </span>
-                          {slot.item.dominant_element && (
+                          {resolvedElName && (
                             <span className={`ml-2 text-xs font-mono not-italic ${elColor}`}>
-                              {slot.item.dominant_element}
+                              {resolvedElName}
                             </span>
                           )}
 
@@ -227,9 +240,12 @@ export function GearGrid({ mode = 'empty', synthesized = [] }: GearGridProps) {
               )}
 
               {/* Bug B fix: element on card cell — small colored text below tier */}
-              {slot && slot.item.dominant_element && (
-                <span className={`text-[8px] font-mono ${ELEMENT_COLORS[slot.item.dominant_element] ?? 'text-gray-400'}`}>
-                  {slot.item.dominant_element.slice(0, 4)}
+              {/* L-07 fix: display seasonal name (v1.5+) or canonical (pre-v1.5);
+                  slice(0,4) kept for compact cell display — seasonal names may be
+                  longer than 4 chars but the cell is narrow; player sees full name in modal. */}
+              {slot && resolvedElName && (
+                <span className={`text-[8px] font-mono ${ELEMENT_COLORS[slot.item.dominant_element ?? ''] ?? 'text-gray-400'}`}>
+                  {resolvedElName.slice(0, 4)}
                 </span>
               )}
 

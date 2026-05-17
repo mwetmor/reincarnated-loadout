@@ -1,4 +1,5 @@
 import type { Skill, SeasonManifest } from '../../data/types';
+import { resolveElementDisplay } from '../../data/types';
 import { ROLE_LABEL, ELEMENT_COLORS } from '../../data/constants';
 import { Button } from '../ui/Button';
 import { Tag } from '../ui/Tag';
@@ -16,8 +17,15 @@ interface SkillDetailPanelProps {
   onClose: () => void;
 }
 
-function resolveElementName(canonical: string, manifest: SeasonManifest): string {
-  return manifest.elements[canonical]?.name ?? canonical;
+// L-02 fix (cipher migration): resolve player-visible element name for a skill.
+// Prefers skill.seasonal_element (v1.5+ direct; no manifest lookup needed).
+// Falls back to resolveElementDisplay() which checks manifest.seasonal_elements
+// then manifest.elements, then fails-loud with "Unknown" (never leaks canonical-four).
+function resolveSkillElementName(skill: Skill, manifest: SeasonManifest): string {
+  // Direct seasonal field (v1.5+ export: no manifest lookup needed)
+  if (skill.seasonal_element) return skill.seasonal_element;
+  // Fallback via manifest lookup (pre-v1.5 seasons use canonical_element as key)
+  return resolveElementDisplay(skill.canonical_element, manifest, `skill:${skill.id}`);
 }
 
 function formatParam(key: string, val: number | string): string {
@@ -60,7 +68,7 @@ export function SkillDetailPanel({
     );
   }
 
-  const elName = resolveElementName(skill.canonical_element, manifest);
+  const elName = resolveSkillElementName(skill, manifest);
   const elColors = ELEMENT_COLORS[skill.canonical_element] ?? ELEMENT_COLORS['physical'];
   const displayName = skill.name ?? skill.id;
   const roleLabel = ROLE_LABEL[skill.role] ?? skill.role.replace(/_/g, ' ');

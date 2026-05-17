@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { ClassData, Skill, SeasonManifest } from '../../data/types';
+import { resolveElementDisplay } from '../../data/types';
 import { SkillNode } from './SkillNode';
 import { SkillDetailPanel } from './SkillDetailPanel';
 
@@ -18,8 +19,11 @@ const TIERS = [1, 2, 3, 4];
 const CHAINS = ['chain_A', 'chain_B', 'chain_C', 'chain_D'];
 const CHAIN_LABELS = { chain_A: 'A', chain_B: 'B', chain_C: 'C', chain_D: 'D' };
 
+// L-02 pattern fix (cipher migration): same hardening as SkillDetailPanel.
+// Uses seasonal_elements first (v1.5+), then elements (pre-v1.5), then "Unknown".
+// Never returns raw canonical-four string on failure.
 function resolveElementName(canonical: string, manifest: SeasonManifest): string {
-  return manifest.elements[canonical]?.name ?? canonical;
+  return resolveElementDisplay(canonical, manifest, `SkillTree:${canonical}`);
 }
 
 type NodeState = 'locked' | 'available' | 'selected' | 'invested';

@@ -9,6 +9,9 @@ export interface Skill {
   flavor_text: string | null;
   role: string;
   canonical_element: string;
+  // Stage 3 cipher migration additive field (MIGRATION.md v1.2). Present on manifest v1.5+
+  // seasons. null / absent on pre-Stage-3 seasons. Use: seasonal_element ?? canonical_element.
+  seasonal_element?: string | null;
   effect_category: string;
   effects: SkillEffect[];
   tier: number;
@@ -47,6 +50,9 @@ export interface ClassData {
   role_orientation: string;
   range_profile: string;
   dominant_element: string;
+  // Stage 3 cipher migration additive field (MIGRATION.md v1.2). Present on manifest v1.5+
+  // seasons. null / absent on pre-Stage-3 seasons. Use: seasonal_dominant_element ?? dominant_element.
+  seasonal_dominant_element?: string | null;
   color_palette: number[];
   stat_distribution: StatDistribution;
   skills: Skill[];
@@ -67,19 +73,78 @@ export interface ElementMapping {
   is_new?: boolean;
 }
 
+// Stage 3 cipher migration: grouping-layer keyed entry (MIGRATION.md v1.2).
+// Present in manifest.seasonal_elements on manifest_version 1.5+ seasons.
+// Keyed by "ignition" | "suffusion" | "bulwark" | "displacement".
+// canonical_slot links back to the internal canonical-four key (internal use only).
+export interface SeasonalElementMapping extends ElementMapping {
+  canonical_slot: string;
+}
+
 export interface SeasonManifest {
   manifest_version: string;
   season_id: string;
   generated_at: string;
   season_theme_element: string;
   anchor: SeasonAnchor;
+  // Canonical-four keyed element map. DEPRECATED for player-visible display (MIGRATION.md v1.2).
+  // Still present for backward compat. Use seasonal_elements for player-visible rendering
+  // when manifest_version >= "1.5".
   elements: Record<string, ElementMapping>;
+  // Stage 3 additive: grouping-layer keyed (ignition/suffusion/bulwark/displacement).
+  // Present on manifest_version 1.5+ seasons. Null / absent on older seasons.
+  // This is the primary lookup for player-visible element name resolution on v1.5+ seasons.
+  seasonal_elements?: Record<string, SeasonalElementMapping> | null;
   summary?: {
     classes_generated: number;
     convergence_failures?: number;
     trial_defeat_rate_actual?: number;
   };
   validation_passed?: boolean;
+}
+
+// ---- Field-presence assertion helpers (R11(b) JSON load boundary) ----
+// Fail-loud if a v1.5+ manifest is missing seasonal_elements.
+// Logs a WARN but does not throw (degraded rendering is preferable to crash).
+export function assertManifestSeasonalFields(manifest: SeasonManifest): void {
+  const v = manifest.manifest_version;
+  // Compare as strings: "1.5" >= "1.5" check via numeric parse
+  const majorMinor = parseFloat(v ?? '0');
+  if (majorMinor >= 1.5 && !manifest.seasonal_elements) {
+    console.warn(
+      `[drax cipher] WARN: manifest_version=${v} (>= 1.5) is missing seasonal_elements. ` +
+      'Player-visible element names will fall back to canonical-four. ' +
+      'Verify engine export re-generated with Stage 3 code (star-lord/v1.3-form-bias-stage-3-cipher-migration).'
+    );
+  }
+}
+
+// Resolve player-visible element name from a manifest.
+// For v1.5+ manifests: looks up seasonal name by canonical slot key via manifest.seasonal_elements.
+// Fallback chain: seasonal_elements lookup → elements lookup → "Unknown".
+// NEVER returns a raw canonical-four string when a manifest is provided — hardened per L-02/L-13 fix.
+export function resolveElementDisplay(
+  canonical: string,
+  manifest: SeasonManifest,
+  context = 'element'
+): string {
+  // Prefer seasonal_elements (v1.5+): find the entry whose canonical_slot matches
+  if (manifest.seasonal_elements) {
+    const seasonal = Object.values(manifest.seasonal_elements).find(
+      (e) => e.canonical_slot === canonical
+    );
+    if (seasonal?.name) return seasonal.name;
+  }
+  // Fallback: manifest.elements (pre-v1.5 or when seasonal not found)
+  const classic = manifest.elements[canonical]?.name;
+  if (classic) return classic;
+  // Fail-loud: both missing
+  console.warn(
+    `[drax cipher] WARN: resolveElementDisplay(${context}="${canonical}") — ` +
+    'both seasonal_elements and elements lookups failed. Rendering "Unknown". ' +
+    'Verify season data includes element mapping for this canonical slot.'
+  );
+  return 'Unknown';
 }
 
 export interface SeasonData {
@@ -114,6 +179,9 @@ export interface GearPoolEntry {
   handedness: string;
   tier: string;
   dominant_element: string | null;
+  // Stage 3 cipher migration additive field (MIGRATION.md v1.2). Present on manifest v1.5+
+  // seasons. null / absent on pre-Stage-3 seasons. Use: seasonal_dominant_element ?? dominant_element.
+  seasonal_dominant_element?: string | null;
   power_score: number;
   fit_energy_type: Record<string, number>;
   fit_range_profile: Record<string, number>;

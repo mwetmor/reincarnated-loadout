@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import type { ClassData, GearPoolEntry, SeasonManifest } from '../data/types';
-import { ARCHETYPE_LABEL, ELEMENT_COLORS, SP_BUDGET } from '../data/constants';
+import { resolveElementDisplay } from '../data/types';
+import { ELEMENT_COLORS, SP_BUDGET, resolveArchetypeLabel } from '../data/constants';
 import { useSeasonData } from '../hooks/useSeasonData';
 import { synthesizeSampleLoadout } from '../utils/synthesizeSampleLoadout';
 import { SkillTree } from '../components/SkillTree/SkillTree';
@@ -25,27 +26,50 @@ function baselineAllocations(classData: ClassData): Record<string, number> {
   return Object.fromEntries(classData.skills.map((s) => [s.id, 1]));
 }
 
+// Parallel L-12 fix: build display entries from seasonal_elements (v1.5+)
+// or canonical elements (pre-v1.5 fallback). Same logic as buildElementBadgeEntries
+// in Loadout.tsx — kept local to Sample.tsx to avoid a premature abstraction.
+function buildSampleElementEntries(manifest: SeasonManifest): Array<{
+  groupingKey: string;
+  canonicalKey: string;
+  name: string;
+  tags: string[];
+}> {
+  if (manifest.seasonal_elements && Object.keys(manifest.seasonal_elements).length > 0) {
+    return Object.entries(manifest.seasonal_elements).map(([groupingKey, entry]) => ({
+      groupingKey,
+      canonicalKey: entry.canonical_slot,
+      name: entry.name,
+      tags: entry.tags ?? [],
+    }));
+  }
+  const CANONICAL_ORDER = ['fire', 'wind', 'water', 'earth'] as const;
+  return CANONICAL_ORDER.flatMap((canonical) => {
+    const entry = manifest.elements[canonical];
+    if (!entry) return [];
+    return [{ groupingKey: canonical, canonicalKey: canonical, name: entry.name, tags: entry.tags ?? [] }];
+  });
+}
+
 function ElementMappingRow({ manifest }: { manifest: SeasonManifest }) {
-  const canonicals = ['fire', 'wind', 'water', 'earth'];
+  const entries = buildSampleElementEntries(manifest);
   return (
     <div className="flex flex-wrap gap-1.5 items-center">
       <span className="text-xs text-gray-600 font-mono mr-0.5">Season elements:</span>
-      {canonicals.map((canonical) => {
-        const mapped = manifest.elements[canonical];
-        if (!mapped) return null;
-        const colors = ELEMENT_COLORS[canonical] ?? ELEMENT_COLORS['physical'];
-        const tagList = mapped.tags?.join(' · ');
+      {entries.map(({ groupingKey, canonicalKey, name, tags }) => {
+        const colors = ELEMENT_COLORS[canonicalKey] ?? ELEMENT_COLORS['physical'];
+        const tagList = tags.join(' · ');
         return (
           <span
-            key={canonical}
+            key={groupingKey}
             className={`inline-flex items-center gap-1 px-2 py-0.5 rounded border text-xs font-mono ${colors.bg} ${colors.text} ${colors.border}`}
           >
-            <span className="text-gray-600">{canonical}</span>
+            <span className="text-gray-600">{groupingKey}</span>
             <span className="text-gray-600 mx-0.5">→</span>
-            <span className="font-semibold">{mapped.name}</span>
+            <span className="font-semibold">{name}</span>
             {tagList && (
               <span onClick={(e) => e.stopPropagation()}>
-                <FlavorTip mode="modal" title={`${mapped.name} — ${canonical}`} className="ml-0.5">
+                <FlavorTip mode="modal" title={`${name} — ${groupingKey}`} className="ml-0.5">
                   {tagList}
                 </FlavorTip>
               </span>
@@ -68,8 +92,10 @@ function SampleClassHeader({
   allClasses: ClassData[];
   onClassChange: (id: string) => void;
 }) {
-  const dominantElementName =
-    manifest.elements[classData.dominant_element]?.name ?? classData.dominant_element;
+  // Parallel L-13 fix (same pattern): prefer seasonal_dominant_element (v1.5+);
+  // fall through resolveElementDisplay (never returns raw canonical-four).
+  const dominantElementName = classData.seasonal_dominant_element
+    ?? resolveElementDisplay(classData.dominant_element, manifest, `class:${classData.id}`);
   const bm = classData.balance_metadata;
   const anchor = manifest.anchor;
 
@@ -88,8 +114,9 @@ function SampleClassHeader({
               </FlavorTip>
             )}
           </div>
+          {/* L-11 parallel fix: resolveArchetypeLabel substitutes seasonal name for v1.5+ */}
           <div className="flex flex-wrap gap-1.5 mt-2">
-            <Tag>{ARCHETYPE_LABEL[classData.archetype_tag] ?? classData.archetype_tag}</Tag>
+            <Tag>{resolveArchetypeLabel(classData.archetype_tag, manifest)}</Tag>
             <Tag element={classData.dominant_element}>{dominantElementName}</Tag>
             <Tag>{classData.role_orientation}</Tag>
             <Tag>{classData.range_profile}</Tag>
@@ -163,7 +190,8 @@ function SampleClassHeader({
           >
             {allClasses.map((c) => (
               <option key={c.id} value={c.id}>
-                {c.name ?? c.id} — {ARCHETYPE_LABEL[c.archetype_tag] ?? c.archetype_tag}
+                {/* L-11 parallel fix: resolveArchetypeLabel for class picker */}
+                {c.name ?? c.id} — {resolveArchetypeLabel(c.archetype_tag, manifest)}
               </option>
             ))}
           </select>

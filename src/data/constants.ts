@@ -44,6 +44,13 @@ export const STAT_LABELS: Record<string, string> = {
   vitality:     'VIT',
 };
 
+// L-11 fix (cipher migration): archetype display labels with canonical-four embedded.
+// These static values are used as FALLBACK for pre-v1.5 seasons and as the lookup
+// structure for resolveArchetypeLabel(). The canonical element names in the display
+// values ("Fire Mage", "Water Mage", etc.) are acceptable for pre-Stage-3 seasons
+// where canonical = player-visible. For v1.5+ seasons, resolveArchetypeLabel() below
+// substitutes the seasonal name dynamically.
+// Keys are INTENDED-INTERNAL per paths-audit §5.3 — do NOT render keys as player text.
 export const ARCHETYPE_LABEL: Record<string, string> = {
   hybrid_mage:          'Hybrid Mage',
   fire_mage:            'Fire Mage',
@@ -60,5 +67,59 @@ export const ARCHETYPE_LABEL: Record<string, string> = {
   hunter:               'Hunter',
   experimental:         'Experimental',
 };
+
+// Archetype tag → which canonical-four element is embedded in the display label.
+// Used by resolveArchetypeLabel() to substitute the seasonal name for v1.5+ seasons.
+// INTENDED-INTERNAL: these canonical keys are routing infrastructure, not player text.
+const ARCHETYPE_CANONICAL_ELEMENT: Record<string, string> = {
+  fire_mage:        'fire',
+  water_mage:       'water',
+  earth_caster:     'earth',
+  wind_caster:      'wind',
+  wind_controller:  'wind',
+  fire_controller:  'fire',
+  earth_controller: 'earth',
+  water_controller: 'water',
+};
+
+// Archetype tag → the role suffix (the part after the element name in the display label).
+// Used by resolveArchetypeLabel() to reconstruct the label with a seasonal element name.
+const ARCHETYPE_ROLE_SUFFIX: Record<string, string> = {
+  fire_mage:        'Mage',
+  water_mage:       'Mage',
+  earth_caster:     'Caster',
+  wind_caster:      'Caster',
+  wind_controller:  'Controller',
+  fire_controller:  'Controller',
+  earth_controller: 'Controller',
+  water_controller: 'Controller',
+};
+
+// L-11 fix: resolve a player-visible archetype label using the seasonal manifest.
+// For v1.5+ manifests: substitutes the seasonal element name for the canonical-four
+// label embedded in the static ARCHETYPE_LABEL values.
+// For pre-v1.5 manifests (no seasonal_elements): returns the static ARCHETYPE_LABEL value.
+// For archetype tags without a canonical element (hybrid_mage, rogue, etc.): static label.
+// manifest is optional — when absent falls back to static label.
+export function resolveArchetypeLabel(
+  archetypeTag: string,
+  manifest?: { seasonal_elements?: Record<string, { canonical_slot: string; name: string }> | null }
+): string {
+  const staticLabel = ARCHETYPE_LABEL[archetypeTag] ?? archetypeTag.replace(/_/g, ' ');
+
+  if (!manifest?.seasonal_elements) return staticLabel;
+
+  const canonical = ARCHETYPE_CANONICAL_ELEMENT[archetypeTag];
+  const suffix = ARCHETYPE_ROLE_SUFFIX[archetypeTag];
+  if (!canonical || !suffix) return staticLabel;
+
+  // Find the seasonal entry whose canonical_slot matches this archetype's element
+  const seasonalEntry = Object.values(manifest.seasonal_elements).find(
+    (e) => e.canonical_slot === canonical
+  );
+  if (!seasonalEntry?.name) return staticLabel;
+
+  return `${seasonalEntry.name} ${suffix}`;
+}
 
 export const LS_KEY = 'reincarnated-loadout-build';
