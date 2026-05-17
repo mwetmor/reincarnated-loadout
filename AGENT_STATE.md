@@ -1,10 +1,82 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-16
-**Last tag:** drax/v0.8-gear-wiring (commit fe8b810)
+**Last tag:** drax/v0.21-form-bias-stage-3-cipher-consumption (commit 84487ea)
 **Branch:** main
 
 ## Session summary
+
+### v0.21-form-bias-stage-3-cipher-consumption (completed 2026-05-16)
+
+**Dispatch:** `2026-05-16-drax-form-bias-stage-3-cipher-consumption.md`
+**Commit:** `84487ea`
+**Tag:** `drax/v0.21-form-bias-stage-3-cipher-consumption`
+**Upstream:** `star-lord/v1.3-form-bias-stage-3-cipher-migration @ 19d8ba0`
+**MIGRATION.md:** v1.2
+
+**What changed:**
+
+6 LEAK-RISK sites closed. Cipher migration consumption for star-lord Stage 3.
+
+**L-06, L-07 — GearGrid.tsx:**
+- Added `resolveGearElementName(item)` helper: `seasonal_dominant_element ?? dominant_element`
+- Modal display (L-06) now renders `resolvedElName` (seasonal for v1.5+, canonical for pre-v1.5)
+- Card cell display (L-07) now renders `resolvedElName.slice(0,4)` — same resolution
+- `seasonal_dominant_element?: string | null` added to `GearPoolEntry` type
+
+**L-12 — Loadout.tsx + Sample.tsx (ElementMappingBadges/ElementMappingRow):**
+- Both components now call `buildElementBadgeEntries()` / `buildSampleElementEntries()`
+- v1.5+ manifests: iterates `manifest.seasonal_elements` (grouping-layer keyed: ignition/suffusion/bulwark/displacement)
+- Pre-v1.5 manifests: falls back to `CANONICAL_ORDER` iteration over `manifest.elements`
+- Grouping key shown to player (not the canonical key) — semantic slot label
+- Color lookup uses `canonicalKey` from `canonical_slot` (INTERNAL; not rendered as text)
+- `assertManifestSeasonalFields(manifest)` called at entry point — field-presence assertion
+
+**L-02 — SkillDetailPanel.tsx + SkillTree.tsx (resolveElementName hardening):**
+- Added `resolveSkillElementName(skill, manifest)` in SkillDetailPanel: prefers `skill.seasonal_element` (v1.5+ direct), falls back to `resolveElementDisplay()`
+- `resolveElementDisplay(canonical, manifest, context)` in types.ts: checks `seasonal_elements` (canonical_slot match), then `elements`, then warns + returns "Unknown" — never returns raw canonical-four
+- Both SkillDetailPanel and SkillTree now use hardened resolver
+- `seasonal_element?: string | null` added to `Skill` type
+
+**L-13 — Loadout.tsx + Sample.tsx (dominantElementName):**
+- `dominantElementName` now: `classData.seasonal_dominant_element ?? resolveElementDisplay(classData.dominant_element, manifest, ...)`
+- Prefer direct field (v1.5+); fall through hardened resolver; never return raw canonical-four
+- `seasonal_dominant_element?: string | null` added to `ClassData` type
+
+**L-11 — constants.ts (archetype display labels):**
+- Added `resolveArchetypeLabel(archetypeTag, manifest?)` function
+- v1.5+ manifests: finds seasonal entry by `canonical_slot`, returns `{seasonalName} {RoleSuffix}` (e.g. "Pressure-Release Mage")
+- Pre-v1.5 or non-elemental archetypes: returns static `ARCHETYPE_LABEL` value
+- Loadout.tsx + Sample.tsx: all `ARCHETYPE_LABEL[...]` call sites replaced with `resolveArchetypeLabel(...)`. Unused `ARCHETYPE_LABEL` import removed.
+
+**Types.ts additions:**
+- `Skill.seasonal_element?: string | null`
+- `ClassData.seasonal_dominant_element?: string | null`
+- `GearPoolEntry.seasonal_dominant_element?: string | null`
+- `SeasonManifest.seasonal_elements?: Record<string, SeasonalElementMapping> | null`
+- `SeasonalElementMapping` interface (extends ElementMapping + adds `canonical_slot: string`)
+- `assertManifestSeasonalFields(manifest)`: fail-loud WARN for v1.5+ missing seasonal_elements
+- `resolveElementDisplay(canonical, manifest, context)`: hardened resolver (WARN + "Unknown" on both-missing)
+
+**Test file written:** `src/__tests__/cipher-no-leak.test.ts` — 18 drax-side cipher guard tests.
+BLOCKED on vitest devDependency (jack-ryan approval required before adding).
+Type-level correctness enforced via `tsc -b` (0 errors).
+
+**Smoke results:**
+- All pre-v1.5 season manifests (v1.2 season_001001, v1.3 season_002328): 0 canonical-four leaks via resolveElementDisplay (fire→pitch/lantern, water→brine, earth→basalt/bone, wind→thrum/miasma)
+- Simulated v1.5 fixture: fire→Pressure-Release, wind→Veil, water→Churn, earth→Grit (all via seasonal_elements)
+- Gear items (74/200 with element): pre-v1.5 fallback shows canonical-four — EXPECTED for pre-Stage-3 season data. Will resolve to seasonal names when v1.5 export ships.
+- Build: clean (687 modules, 0 TS errors)
+
+**Known follow-on (NOT in this dispatch scope):**
+- `reincarnated-demo/src/ui/classSelector.ts:147` — `cls.dominant_element` rendered as player-visible text (discovered during audit; outside the 6 enumerated L-sites). Track as demo-side LEAK-RISK for next cipher dispatch.
+- Loadout vitest gap — add to jack-ryan approval queue when sequencing allows.
+- v1.5 season data not yet exported — star-lord Stage 3 shipped code but no regen yet. Gear items will show canonical-four until a v1.5 season export replaces season_002328 data.
+
+**Spirit Guide voice audio unblocked:** YES — all 6 player-visible canonical-four LEAK-RISK sites on the loadout app are closed. gandalf audio framework dependency D2 is satisfied.
+
+**Build:** Clean (0 TS errors, 687 modules)
+**Tag:** `drax/v0.21-form-bias-stage-3-cipher-consumption` (commit 84487ea) — intermediate
 
 ### v0.8-gear-wiring (completed, this session)
 
