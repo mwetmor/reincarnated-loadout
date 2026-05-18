@@ -37,7 +37,7 @@ export function Pitch() {
         </p>
 
         {/* Working-title experiment — playable-concept name, dynamically populated from Hero of the Engine */}
-        <div className="mb-10 border-l-2 border-amber-700/40 pl-4 max-w-prose">
+        <div className="mb-4 border-l-2 border-amber-700/40 pl-4 max-w-prose">
           <p className="font-mono uppercase tracking-wide text-[10px] text-gray-500 mb-1.5">
             Working title — playable concept
           </p>
@@ -47,6 +47,26 @@ export function Pitch() {
           </p>
           <p className="text-xs text-gray-500 leading-relaxed">
             The fill-in-the-blank rotates per season — the engine's per-season Hero of the Engine selection populates the title each cycle.
+          </p>
+        </div>
+
+        {/* Live demo link — paired callout (same visual register) for the playable thing */}
+        <div className="mb-10 border-l-2 border-amber-700/40 pl-4 max-w-prose">
+          <p className="font-mono uppercase tracking-wide text-[10px] text-gray-500 mb-1.5">
+            Live playable demo
+          </p>
+          <p className="text-base mb-2 leading-snug">
+            <a
+              href="https://reincarnated-demo.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-100 hover:text-amber-200 underline underline-offset-2 transition-colors font-medium"
+            >
+              → reincarnated-demo.vercel.app
+            </a>
+          </p>
+          <p className="text-xs text-gray-500 leading-relaxed">
+            Best on mobile — open the link in your phone's browser, then add it to your homescreen as a web app for full-screen play.
           </p>
         </div>
       </div>
