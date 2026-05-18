@@ -91,7 +91,7 @@ export const HERO_OF_ENGINE: HeroOfEngine = {
   // TODO(drax): swap portraitPath for star-lord manifest path when Phase 2 lands
   portraitPath: null,
   whyThisHero:
-    "This name should stop a marketing director mid-sentence. The LLM took a fire substrate and authored it through the lens of a coal-mining underworld — fusing mining-mortality folklore (the canary as harbinger), industrial disaster (the drowned seam as flooded coal-vein), and fantasy elemental magic into a single coherent identity. No human authored \"Canary of the Drowned Seam\" as a class concept. The LLM constructed the whole compound metaphor from the season's substrate grammar and the anchor's narrative register. That is the engine's argument made flesh.",
+    "This is what the engine does on a good day. The LLM took a fire substrate and authored it through the lens of a coal-mining underworld — fusing mining-mortality folklore (the canary as harbinger), industrial disaster (the drowned seam as flooded coal-vein), and fantasy elemental magic into a single coherent identity. No human named this class. The whole compound metaphor was composed by the LLM from the season's substrate grammar and the anchor's narrative register.",
   featuredPairLabel: 'Thermal pair',
   featuredPairRationale:
     'Seam Pressure builds in pockets until the coal-vein ruptures outward in cascading release, while Damp Creep is the slow wet air that seeps through abandoned corridors and settles into lungs and joints without ever announcing itself.',
