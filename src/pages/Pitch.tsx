@@ -66,7 +66,7 @@ export function Pitch() {
             </a>
           </p>
           <p className="text-xs text-gray-500 leading-relaxed">
-            Best on mobile — open the link in your phone's browser, then add it to your homescreen as a web app for full-screen play.
+            Best on PC — for mobile, open the link in your phone's browser, then add it to your homescreen as a web app for full-screen play.
           </p>
         </div>
       </div>
