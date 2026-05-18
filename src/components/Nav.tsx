@@ -6,15 +6,18 @@ export function Nav() {
       className="sticky top-0 z-50 border-b border-gray-800 bg-gray-950/90 backdrop-blur"
       style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
     >
-      <div className="max-w-6xl mx-auto px-4 h-12 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-1.5">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 h-12 flex items-center justify-between gap-2 sm:gap-4">
+        <div className="flex items-center gap-1.5 flex-shrink-0">
           <span className="text-gray-600 text-lg leading-none">⚙</span>
           <span className="text-sm font-semibold text-gray-300 tracking-wide hidden sm:block">
             Reincarnated
           </span>
         </div>
 
-        <div className="flex items-center gap-1">
+        <div
+          className="flex items-center gap-0.5 sm:gap-1 overflow-x-auto [&::-webkit-scrollbar]:hidden"
+          style={{ scrollbarWidth: 'none' }}
+        >
           <NavItem to="/pitch">Summary</NavItem>
           <NavItem to="/">Loadout</NavItem>
           <NavItem to="/sample">Sample</NavItem>
@@ -33,7 +36,7 @@ function NavItem({ to, children }: { to: string; children: React.ReactNode }) {
       to={to}
       end
       className={({ isActive }) =>
-        `px-4 py-2.5 rounded text-sm font-medium transition-colors min-h-[44px] flex items-center ${
+        `px-2.5 sm:px-4 py-2.5 rounded text-xs sm:text-sm font-medium transition-colors min-h-[44px] flex items-center flex-shrink-0 ${
           isActive
             ? 'bg-gray-800 text-gray-100'
             : 'text-gray-500 hover:text-gray-300 hover:bg-gray-900'
