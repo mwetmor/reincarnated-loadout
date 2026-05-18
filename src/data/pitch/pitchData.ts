@@ -89,7 +89,7 @@ export const HERO_OF_ENGINE: HeroOfEngine = {
   substrate: 'fire',
   archetype: 'fire_mage',
   // TODO(drax): swap portraitPath for star-lord manifest path when Phase 2 lands
-  portraitPath: null,
+  portraitPath: '/pitch/heroes/season_002013/canary-of-the-drowned-seam.png',
   whyThisHero:
     "This is what the engine does on a good day. The LLM took a fire substrate and authored it through the lens of a coal-mining underworld — fusing mining-mortality folklore (the canary as harbinger), industrial disaster (the drowned seam as flooded coal-vein), and fantasy elemental magic into a single coherent identity. No human named this class. The whole compound metaphor was composed by the LLM from the season's substrate grammar and the anchor's narrative register.",
   featuredPairLabel: 'Thermal pair',
@@ -125,11 +125,11 @@ export const SEASONS: SeasonData[] = [
     featuredPairRationale:
       'Contraband Ignition is what accumulates in hidden pockets and detonates at the moment of inspection — volatile, cascading, exposed; Tar Immersion is what coats every surface at the crossing and never fully dries, binding travelers in slow, ambient arrest rather than sudden rupture.',
     heroes: [
-      { className: 'Wall-Shocked Smuggler',  substrate: 'lightning', archetype: 'lightning_mage',    position: 'center',      portraitPath: null },
-      { className: 'Wall Warden',            substrate: 'physical',  archetype: 'physical_grappler', position: 'left-flank',  portraitPath: null },
-      { className: 'Border Canoness',        substrate: 'holy',      archetype: 'holy_controller',   position: 'right-flank', portraitPath: null },
-      { className: 'Pitch Smuggler',         substrate: 'fire',      archetype: 'fire_mage',         position: 'back-left',   portraitPath: null },
-      { className: 'Brine Cartographer',     substrate: 'water',     archetype: 'experimental',      position: 'back-right',  portraitPath: null },
+      { className: 'Wall-Shocked Smuggler',  substrate: 'lightning', archetype: 'lightning_mage',    position: 'center',      portraitPath: '/pitch/heroes/season_002011/wall-shocked-smuggler.png' },
+      { className: 'Wall Warden',            substrate: 'physical',  archetype: 'physical_grappler', position: 'left-flank',  portraitPath: '/pitch/heroes/season_002011/wall-warden.png' },
+      { className: 'Border Canoness',        substrate: 'holy',      archetype: 'holy_controller',   position: 'right-flank', portraitPath: '/pitch/heroes/season_002011/border-canoness.png' },
+      { className: 'Pitch Smuggler',         substrate: 'fire',      archetype: 'fire_mage',         position: 'back-left',   portraitPath: '/pitch/heroes/season_002011/pitch-smuggler.png' },
+      { className: 'Brine Cartographer',     substrate: 'water',     archetype: 'experimental',      position: 'back-right',  portraitPath: '/pitch/heroes/season_002011/brine-cartographer.png' },
     ],
   },
   // ── S12 The Cartographer's Tower ─────────────────────────────────────────
@@ -154,11 +154,11 @@ export const SEASONS: SeasonData[] = [
     featuredPairRationale:
       'True Survey floods a region with authoritative measurement — what is named is amplified, what contradicts the record is exposed and harmed — while Terra Incognita withdraws the territory from all known charts, draining presence and leaving targets in an unmapped void that cannot be reached or reinforced.',
     heroes: [
-      { className: 'Unmapped Cartographer',       substrate: 'shadow',    archetype: 'shadow_mage',       position: 'center',      portraitPath: null },
-      { className: 'Salt-Charted Cartomancer',    substrate: 'water',     archetype: 'water_mage',        position: 'left-flank',  portraitPath: null },
-      { className: 'Cartographer of Sacred Winds',substrate: 'holy',      archetype: 'holy_controller',   position: 'right-flank', portraitPath: null },
-      { className: 'Chartbound Stormscribe',      substrate: 'lightning', archetype: 'lightning_mage',    position: 'back-left',   portraitPath: null },
-      { className: 'Charcoal-Handed Surveyor',    substrate: 'physical',  archetype: 'physical_warrior',  position: 'back-right',  portraitPath: null },
+      { className: 'Unmapped Cartographer',       substrate: 'shadow',    archetype: 'shadow_mage',       position: 'center',      portraitPath: '/pitch/heroes/season_002012/unmapped-cartographer.png' },
+      { className: 'Salt-Charted Cartomancer',    substrate: 'water',     archetype: 'water_mage',        position: 'left-flank',  portraitPath: '/pitch/heroes/season_002012/salt-charted-cartomancer.png' },
+      { className: 'Cartographer of Sacred Winds',substrate: 'holy',      archetype: 'holy_controller',   position: 'right-flank', portraitPath: '/pitch/heroes/season_002012/cartographer-of-sacred-winds.png' },
+      { className: 'Chartbound Stormscribe',      substrate: 'lightning', archetype: 'lightning_mage',    position: 'back-left',   portraitPath: '/pitch/heroes/season_002012/chartbound-stormscribe.png' },
+      { className: 'Charcoal-Handed Surveyor',    substrate: 'physical',  archetype: 'physical_warrior',  position: 'back-right',  portraitPath: '/pitch/heroes/season_002012/charcoal-handed-surveyor.png' },
     ],
   },
   // ── S13 The Dwarves' Empty Halls ─────────────────────────────────────────
@@ -183,11 +183,11 @@ export const SEASONS: SeasonData[] = [
     featuredPairRationale:
       'Forge Remembrance is the residual heat-glow of a hearth not yet cold — the hall\'s last testament to what was built here, which consecrates the ground and exposes what stands in it — while Withdrawal Soot is the residue of extinguished industry that coats perception, dims presence, and quietly claims what the living left behind.',
     heroes: [
-      { className: 'Candlewright of the Sunken Forge', substrate: 'holy',     archetype: 'holy_caster',     position: 'center',      portraitPath: null },
-      { className: 'Canary of the Drowned Seam',       substrate: 'fire',     archetype: 'fire_mage',       position: 'left-flank',  portraitPath: null },
-      { className: 'Salt-Keeper of the Sunken Seam',   substrate: 'water',    archetype: 'water_controller',position: 'right-flank', portraitPath: null },
-      { className: 'Collapsed Shaft Warden',           substrate: 'earth',    archetype: 'earth_controller',position: 'back-left',   portraitPath: null },
-      { className: 'Shaft Diver',                      substrate: 'physical', archetype: 'hunter',          position: 'back-right',  portraitPath: null },
+      { className: 'Candlewright of the Sunken Forge', substrate: 'holy',     archetype: 'holy_caster',     position: 'center',      portraitPath: '/pitch/heroes/season_002013/candlewright-of-the-sunken-forge.png' },
+      { className: 'Canary of the Drowned Seam',       substrate: 'fire',     archetype: 'fire_mage',       position: 'left-flank',  portraitPath: '/pitch/heroes/season_002013/canary-of-the-drowned-seam.png' },
+      { className: 'Salt-Keeper of the Sunken Seam',   substrate: 'water',    archetype: 'water_controller',position: 'right-flank', portraitPath: '/pitch/heroes/season_002013/salt-keeper-of-the-sunken-seam.png' },
+      { className: 'Collapsed Shaft Warden',           substrate: 'earth',    archetype: 'earth_controller',position: 'back-left',   portraitPath: '/pitch/heroes/season_002013/collapsed-shaft-warden.png' },
+      { className: 'Shaft Diver',                      substrate: 'physical', archetype: 'hunter',          position: 'back-right',  portraitPath: '/pitch/heroes/season_002013/shaft-diver.png' },
     ],
   },
   // ── S14 The Plague City ───────────────────────────────────────────────────
@@ -212,11 +212,11 @@ export const SEASONS: SeasonData[] = [
     featuredPairRationale:
       'Chalk Ward is the mark on the door that says this threshold holds and nothing crosses it, while Pall Surge is the momentum of the dying crowd that swept barriers aside and carried everything — the living, the dead, the meaning of streets — somewhere else entirely.',
     heroes: [
-      { className: 'Plague Wind Censer',              substrate: 'wind',      archetype: 'wind_caster',         position: 'center',      portraitPath: null },
-      { className: 'Plague Lantern Bearer',           substrate: 'holy',      archetype: 'holy_caster',         position: 'left-flank',  portraitPath: null },
-      { className: 'Chalk-Handed Quarantine Warden',  substrate: 'earth',     archetype: 'earth_controller',    position: 'right-flank', portraitPath: null },
-      { className: 'Quarantine Lector',               substrate: 'lightning', archetype: 'lightning_controller',position: 'back-left',   portraitPath: null },
-      { className: 'Plague Diver',                    substrate: 'physical',  archetype: 'hunter',              position: 'back-right',  portraitPath: null },
+      { className: 'Plague Wind Censer',              substrate: 'wind',      archetype: 'wind_caster',         position: 'center',      portraitPath: '/pitch/heroes/season_002014/plague-wind-censer.png' },
+      { className: 'Plague Lantern Bearer',           substrate: 'holy',      archetype: 'holy_caster',         position: 'left-flank',  portraitPath: '/pitch/heroes/season_002014/plague-lantern-bearer.png' },
+      { className: 'Chalk-Handed Quarantine Warden',  substrate: 'earth',     archetype: 'earth_controller',    position: 'right-flank', portraitPath: '/pitch/heroes/season_002014/chalk-handed-quarantine-warden.png' },
+      { className: 'Quarantine Lector',               substrate: 'lightning', archetype: 'lightning_controller',position: 'back-left',   portraitPath: '/pitch/heroes/season_002014/quarantine-lector.png' },
+      { className: 'Plague Diver',                    substrate: 'physical',  archetype: 'hunter',              position: 'back-right',  portraitPath: '/pitch/heroes/season_002014/plague-diver.png' },
     ],
   },
   // ── S15 The Throne Room of the Mad King ──────────────────────────────────
@@ -241,11 +241,11 @@ export const SEASONS: SeasonData[] = [
     featuredPairRationale:
       'The Sovereign Seal fixes a target beneath the full weight of legitimate authority — an immovable stamp of jurisdiction — while the Exile Writ tears that same authority away and casts its subject beyond the court\'s borders entirely.',
     heroes: [
-      { className: 'Marble-Tongued Royal Scribe',          substrate: 'earth',     archetype: 'earth_caster',      position: 'center',      portraitPath: null },
-      { className: 'Banished Royal Herald',                substrate: 'wind',      archetype: 'wind_controller',   position: 'left-flank',  portraitPath: null },
-      { className: 'Windborne Herald of the Fractured Court', substrate: 'holy',   archetype: 'holy_controller',   position: 'right-flank', portraitPath: null },
-      { className: "Mad King's Lector",                    substrate: 'lightning', archetype: 'lightning_mage',    position: 'back-left',   portraitPath: null },
-      { className: "Exile's Gauntlet",                     substrate: 'physical',  archetype: 'hunter',            position: 'back-right',  portraitPath: null },
+      { className: 'Marble-Tongued Royal Scribe',          substrate: 'earth',     archetype: 'earth_caster',      position: 'center',      portraitPath: '/pitch/heroes/season_002015/marble-tongued-royal-scribe.png' },
+      { className: 'Banished Royal Herald',                substrate: 'wind',      archetype: 'wind_controller',   position: 'left-flank',  portraitPath: '/pitch/heroes/season_002015/banished-royal-herald.png' },
+      { className: 'Windborne Herald of the Fractured Court', substrate: 'holy',   archetype: 'holy_controller',   position: 'right-flank', portraitPath: '/pitch/heroes/season_002015/windborne-herald-of-the-fractured-court.png' },
+      { className: "Mad King's Lector",                    substrate: 'lightning', archetype: 'lightning_mage',    position: 'back-left',   portraitPath: '/pitch/heroes/season_002015/mad-kings-lector.png' },
+      { className: "Exile's Gauntlet",                     substrate: 'physical',  archetype: 'hunter',            position: 'back-right',  portraitPath: '/pitch/heroes/season_002015/exiles-gauntlet.png' },
     ],
   },
 ];
