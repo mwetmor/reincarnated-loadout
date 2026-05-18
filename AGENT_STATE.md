@@ -1,11 +1,26 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-17
-**Last tag:** drax/v1.1-loadout-website-refresh-new-seasons-and-analytics-1 — loadout seam
+**Last updated:** 2026-05-18
+**Last tag:** drax/v1.17-auto-cast-plus-dungeon-objects-plus-is-retired-1 — demo seam; loadout is_retired filter also wired
 **Branch:** main
 **Hive-mind mode:** ACTIVE (Phase-1 P1; distributed authority L1 in-seam)
 
 ## Session summary
+
+### v1.17 loadout side-car — is_retired filter (completed 2026-05-18)
+
+**Dispatch:** `2026-05-18-drax-v1-17-auto-cast-plus-dungeon-objects-plus-is-retired-filter.md` Block 3
+**Source:** rocket v1.17 canonical-6 is_retired backfill (17 hybrid_mage instances across seasons 002011-002015)
+
+**Changes:**
+- `src/data/types.ts`: added `is_retired?: boolean` and `retirement_reason?: string` to ClassData interface
+- `src/pages/Loadout.tsx`: `classes` filtered to exclude `is_retired === true` before class-select
+- `src/pages/Sample.tsx`: same filter applied
+- `npm run build` clean (loadout)
+
+**Effect:** hybrid_mage classes (17 instances) no longer appear in the loadout class selector for affected seasons.
+
+---
 
 ### v1.1 Website refresh — new seasons + seasonal analytics (completed 2026-05-17)
 

@@ -295,7 +295,8 @@ export function Loadout() {
     ? (selectableSeasons.find((s) => s.seasonId === selectedSeasonId) ?? defaultSeason)
     : defaultSeason;
 
-  const classes = season?.classes ?? [];
+  // Block 3: filter retired classes from class-select UI (canonical-6 transition, drax v1.17)
+  const classes = (season?.classes ?? []).filter((c) => !c.is_retired);
 
   const defaultClassId = searchParams.get('class') ?? classes[0]?.id ?? null;
   const [selectedClassId, setSelectedClassId] = useState<string | null>(defaultClassId);

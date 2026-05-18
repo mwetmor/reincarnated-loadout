@@ -57,6 +57,11 @@ export interface ClassData {
   stat_distribution: StatDistribution;
   skills: Skill[];
   balance_metadata: BalanceMetadata;
+  // is_retired: canonical-6 transition flag — rocket v1.17 backfilled on hybrid_mage classes.
+  // When true: class is excluded from class-select UI in Loadout.tsx and Sample.tsx.
+  // Optional for older seasons; missing === false (not retired).
+  is_retired?: boolean;
+  retirement_reason?: string;
 }
 
 export interface SeasonAnchor {
