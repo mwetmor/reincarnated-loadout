@@ -7,6 +7,43 @@
 
 ## Session summary
 
+### /pitch page Phase-1 scaffold (completed 2026-05-18)
+
+**Dispatch:** `agentic_orchestration/gandalf/requests/2026-05-18-star-lord-pitch-to-life-vercel-automation-sprint.md` § 2.3
+**Commit:** `fda1a2a` — `feat(drax-loadout): /pitch page scaffold (Pattern A)`
+**Preview URL:** https://reincarnated-loadout-9p1dedmlh-matthew-wetmore-s-projects.vercel.app/pitch
+**Pitch URL:** https://reincarnated-loadout-9p1dedmlh-matthew-wetmore-s-projects.vercel.app/pitch
+
+**New files:**
+- `src/pages/Pitch.tsx` — page composition
+- `src/components/pitch/HeroOfEngineSpotlight.tsx`
+- `src/components/pitch/SeasonHypePiece.tsx`
+- `src/components/pitch/CosmologyPairBlock.tsx`
+- `src/components/pitch/SlotFillChipRow.tsx`
+- `src/components/pitch/HeroPortraitPlaceholder.tsx`
+- `src/components/pitch/PathsCards.tsx`
+- `src/data/pitch/pitchData.ts`
+
+**Modified:** `src/App.tsx` (route), `src/components/Nav.tsx` (nav item)
+
+**Data sources used:**
+- Hero class names + season assignments: gandalf curation `agentic_orchestration/gandalf/findings/2026-05-18-pitch-top-hero-curation.md`
+- Cosmological pair-rationale prose + slot-fills: real engine output `reincarnated-engine/output/standard-demo-regen-2026-05-17/season_00201{1..5}/cosmological_vocabulary.json`
+- star-lord's `seasons.json` included (already at `src/data/pitch/seasons.json` when commit ran)
+
+**Phase 2 requirements (for star-lord):**
+- Portrait pipeline to produce `public/pitch/heroes/<season_id>/<class_slug>.png` + `public/pitch/heroes-manifest.json`
+- On manifest delivery: drax Phase 2 swaps HeroPortraitPlaceholder for real `<img>` at all TODO(drax) swap-points
+
+**TODO(drax) entries (all Phase 2 swap-points):**
+- `src/components/pitch/HeroPortraitPlaceholder.tsx` — swap for `<img>` when portraits land
+- `src/pages/Pitch.tsx` — Phase 2 swap comment at import block
+- `src/data/pitch/pitchData.ts` — replace inline data with seasons.json import + heroes-manifest.json consumption
+
+**Smoke:** `npm run build` clean — 768 modules, 0 TypeScript errors
+
+---
+
 ### v1.17 loadout side-car — is_retired filter (completed 2026-05-18)
 
 **Dispatch:** `2026-05-18-drax-v1-17-auto-cast-plus-dungeon-objects-plus-is-retired-filter.md` Block 3
