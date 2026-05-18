@@ -32,9 +32,23 @@ export function Pitch() {
         <h1 className="text-lg md:text-2xl font-semibold text-gray-100 leading-snug mb-1">
           Summary (internal)
         </h1>
-        <p className="text-sm text-gray-500 max-w-prose mb-10">
+        <p className="text-sm text-gray-500 max-w-prose mb-6">
           A snapshot of what the engine has built so far — substrate identities, per-season worlds, the team running it. Internal preview; notes shared with informed readers.
         </p>
+
+        {/* Working-title experiment — playable-concept name, dynamically populated from Hero of the Engine */}
+        <div className="mb-10 border-l-2 border-amber-700/40 pl-4 max-w-prose">
+          <p className="font-mono uppercase tracking-wide text-[10px] text-gray-500 mb-1.5">
+            Working title — playable concept
+          </p>
+          <p className="text-base text-gray-200 leading-snug mb-2 italic">
+            This Week I Was Re-incarnated as a{' '}
+            <span className="not-italic font-semibold text-gray-100">{HERO_OF_ENGINE.className}</span>.
+          </p>
+          <p className="text-xs text-gray-500 leading-relaxed">
+            The fill-in-the-blank rotates per season — the engine's per-season Hero of the Engine selection populates the title each cycle.
+          </p>
+        </div>
       </div>
 
       <HeroOfEngineSpotlight hero={HERO_OF_ENGINE} />
