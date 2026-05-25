@@ -1,11 +1,78 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-25
-**Last tag:** drax/v0.0-cycle-11-m4-attribute-coupling-labels-2026-05-25-refire — Cycle 11 M4 attribute coupling labels
+**Last tag:** drax/v0.1-cycle-11-m3-m6-t4-display-wave-3b-2026-05-25 — Cycle 11 Wave 3b M3+M6 T4 alteration display
 **Branch:** main
-**Hive-mind mode:** ACTIVE (Cycle 11 Wave 3a; distributed authority L1 in-seam)
+**Hive-mind mode:** ACTIVE (Cycle 11 Wave 3b COMPLETE; Cycle 12 open)
 
 ## Session summary
+
+### Cycle 11 M3 + M6 — T4 alteration display + comparison panel (completed 2026-05-25, Wave 3b)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-25-drax-cycle-11-m3-m6-t4-display-wave-3b.md`
+**Tag:** `drax/v0.1-cycle-11-m3-m6-t4-display-wave-3b-2026-05-25` @ commit `b948d3d`
+**Intermediate tag:** `drax/v0.0-cycle-11-m3-t4-alteration-display-2026-05-25` @ `b948d3d`
+**Upstream:** `star-lord/v0.1-cycle-11-schema-extensions-2026-05-25` (79/79 PASS)
+**MIGRATION.md:** v1.3 (t4_alteration_output field; 4 additive nullable fields)
+**Preview URL:** https://reincarnated-loadout-bc7s9pqpu-matthew-wetmore-s-projects.vercel.app
+**Push status:** PUSHED — main + both tags pushed to origin
+
+**What shipped:**
+
+1. **`src/data/types.ts`** — T4AlterationOutput interface + T4StrategyType:
+   - `T4StrategyType` union covering all 5 v1 strategies + forward-compat `string`
+   - `T4AlterationOutput` interface: `strategy_type`, `strategy_params`, `applied_axis_targets?`, `eta_score?`, `thematic_rationale?`
+   - `ClassData.t4_alteration_output` typed as `T4AlterationOutput | null` (was loose `Record<string,any>`)
+
+2. **`src/components/SkillTree/T4AlterationPanel.tsx`** (M3):
+   - Renders `t4_alteration_output` intent metadata below SkillTree grid
+   - Header: strategy label (human-readable, not raw enum) + "Build Identity" badge + η-score
+   - Body: mechanical strategy description (static template per strategy_type)
+   - Parameters rendered as `label: value` pairs (friendly key labels)
+   - BC axis tags rendered as small chips
+   - Spirit-guide narration box (◈ icon): uses `thematic_rationale` from class JSON when present;
+     falls back to § 9 template voice ("Summoner, you may have noticed...")
+   - Null-safe: component returns null when alteration is null
+
+3. **`src/components/SkillTree/T4ComparisonPanel.tsx`** (M6):
+   - TOGGLE panel per Q2 RATIFIED (button with ▶ chevron; closed by default)
+   - Current strategy shown with violet "selected" badge + η-score
+   - 4 alternative strategies shown with static descriptions + "v1.1" placeholder for η-scores
+   - Footer note: v1.1 will surface actual candidate scores when rocket §8 multi-candidate ships
+   - Null-safe: toggle hidden entirely when alteration is null
+
+4. **`src/components/SkillTree/SkillTree.tsx`** — wiring:
+   - Imports T4AlterationPanel + T4ComparisonPanel
+   - `t4Alteration = classData.t4_alteration_output ?? null` — null-safe extraction
+   - Both panels conditionally rendered below tree/detail-panel row
+   - Outer wrapper `<div className="flex flex-col gap-4">` wraps the full component
+
+5. **`data/sample-season/classes/class_0001.json`** — smoke fixture:
+   - Added `t4_alteration_output: RESOURCE_CONVERSION` with `strategy_params`, `applied_axis_targets`, `eta_score: 0.82`, and `thematic_rationale` (spirit-guide narration text)
+   - This exercises the full render path for M3 + M6 + spirit-guide narration
+
+**Tier 2 framing honored:** "Build Identity" badge on M3 header strip; "Intent Metadata" label in M6 panel header; M6 footer cites "Cycle 12 Layer 6" for combat wire-up.
+
+**Design decisions made:**
+- M3 goes BELOW the tree/detail-panel row (not inside the tree grid) — keeps the grid clean; alteration is a class-level identity, not per-skill
+- Spirit-guide narration WOVEN INTO M3 panel (not a separate affordance) — per dispatch § 9 pattern; uses ◈ icon consistent with existing SpiritGuide component
+- M6 toggle trigger: text button with ▶ chevron (`rotate-90` when open) — mobile-friendly tap target
+- M6 comparison: current-only with static alternative descriptions (dispatch: lean toward current-only for v1 simplicity; multi-candidate deferred to v1.1)
+- Violet accent color for T4 badge + current-alteration row in M6 — consistent with existing skill tier color register
+
+**Smoke results:**
+- `npm run build`: 773 modules, 0 TypeScript errors — PASS
+- Vercel preview: `reincarnated-loadout-bc7s9pqpu-matthew-wetmore-s-projects.vercel.app` — READY
+- Cycle-11+ path (class_0001, sample-season): RESOURCE_CONVERSION alteration renders M3 panel + M6 toggle + spirit-guide narration
+- Null-case path: all 11 real seasons (no `t4_alteration_output`) — both panels hidden, no broken UI (null-guard verified by TypeScript type constraint)
+- No regression: M1 (WeaponSlot), M2 (OffHandSlot), M4 (attribute coupling), M5 (ProvenanceBadge) all unaffected
+- Q5 RATIFIED: preview-only; production NOT promoted
+
+**TODO(drax): remove sample-season T4 fixture** — `data/sample-season/classes/class_0001.json` now has `t4_alteration_output` manually patched. When rocket §8 ships and season is regenerated, replace with real output. Track until star-lord confirms regen + export complete.
+
+**TODO(drax): review M3 panel position** — currently M3 + M6 render below the SkillTree component's full row. Post-mortem: if Matt wants them in a different position in Loadout.tsx (e.g., as a separate section with its own header), easy to move — wiring is in SkillTree.tsx return, but could be lifted to Loadout.tsx instead.
+
+---
 
 ### Cycle 11 M4 — Attribute coupling labels (completed 2026-05-25, Wave 3a refire)
 
@@ -663,11 +730,14 @@ M4 is NOT zero-dependency. It requires star-lord schema extension to emit `attri
 
 ## Next session pick-up
 
-**Cycle 11 Wave 2 hive-mode active. Next loadout-seam tasks:**
+**Cycle 11 COMPLETE (Wave 3b done). Cycle 12 open. Next loadout-seam tasks:**
+
+Priority 0 (COMPLETE — Cycle 11 Wave 3b):
+- **M3+M6 T4 alteration display:** T4AlterationPanel + T4ComparisonPanel. Tag: `drax/v0.1-cycle-11-m3-m6-t4-display-wave-3b-2026-05-25`
+- Preview: https://reincarnated-loadout-bc7s9pqpu-matthew-wetmore-s-projects.vercel.app
 
 Priority 0 (COMPLETE — Cycle 11 Wave 3a):
 - **M4 attribute coupling labels:** StatsPanel `Coupled: INT + WIS` display. Tag: `drax/v0.0-cycle-11-m4-attribute-coupling-labels-2026-05-25-refire`
-- M3+M6: BLOCKED on rocket §8 + BC-shift sweep PASS (Wave 3b)
 
 Priority 0 (COMPLETE — Cycle 11 Wave 2):
 - **M1/M2/M5 loadout display:** WeaponSlot + OffHandSlot + ProvenanceBadge. Tag: `drax/v0.1-cycle-11-m1-m2-m5-loadout-display-2026-05-25`
