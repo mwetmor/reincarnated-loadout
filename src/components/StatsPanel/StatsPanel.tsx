@@ -7,7 +7,13 @@ import {
 } from 'recharts';
 import type { ClassData } from '../../data/types';
 import { STAT_LABELS, SP_BUDGET } from '../../data/constants';
+
 import { Card } from '../ui/Card';
+
+// Cycle 11 M4: format a single coupling stat name → abbreviated label (INT, WIS, etc.)
+function formatCoupledStat(statName: string): string {
+  return STAT_LABELS[statName] ?? statName.slice(0, 3).toUpperCase();
+}
 
 interface StatsPanelProps {
   classData: ClassData;
@@ -18,6 +24,8 @@ interface StatsPanelProps {
 export function StatsPanel({ classData, totalSP, remainingSP }: StatsPanelProps) {
   const stats = classData.stat_distribution;
   const statEntries = Object.entries(stats) as [keyof typeof stats, number][];
+  // Cycle 11 M4: null-safe — absent key on pre-Cycle-11 legacy seasons resolves to []
+  const attributeCoupling: string[] = classData.attribute_coupling ?? [];
 
   const radarData = statEntries.map(([key, value]) => ({
     stat: STAT_LABELS[key] ?? key.toUpperCase(),
@@ -77,6 +85,16 @@ export function StatsPanel({ classData, totalSP, remainingSP }: StatsPanelProps)
               </div>
             );
           })}
+
+          {/* Attribute coupling label — Cycle 11 M4; absent on pre-Cycle-11 seasons */}
+          {attributeCoupling.length > 0 && (
+            <div className="pt-2 mt-1 flex items-center gap-2">
+              <span className="text-xs font-mono text-gray-500">Coupled:</span>
+              <span className="text-xs font-mono text-violet-400">
+                {attributeCoupling.map(formatCoupledStat).join(' + ')}
+              </span>
+            </div>
+          )}
 
           {/* SP Budget */}
           <div className="pt-3 border-t border-gray-800 mt-3">

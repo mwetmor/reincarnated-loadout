@@ -1,11 +1,45 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-25
-**Last tag:** drax/v0.1-cycle-11-m1-m2-m5-loadout-display-2026-05-25 — Cycle 11 M1+M2+M5 loadout display
+**Last tag:** drax/v0.0-cycle-11-m4-attribute-coupling-labels-2026-05-25-refire — Cycle 11 M4 attribute coupling labels
 **Branch:** main
-**Hive-mind mode:** ACTIVE (Cycle 11 Wave 2; distributed authority L1 in-seam)
+**Hive-mind mode:** ACTIVE (Cycle 11 Wave 3a; distributed authority L1 in-seam)
 
 ## Session summary
+
+### Cycle 11 M4 — Attribute coupling labels (completed 2026-05-25, Wave 3a refire)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-25-drax-cycle-11-m4-attribute-coupling-labels-refire.md`
+**Tag:** `drax/v0.0-cycle-11-m4-attribute-coupling-labels-2026-05-25-refire`
+**Upstream:** `rocket/v0.0-cycle-11-attribute-coupling-field-2026-05-25` @ `eef66b1` (5/5 PASS)
+**MIGRATION.md:** `~/Games/reincarnated-engine/src/reincarnated/generation/MIGRATION.md` § [2026-05-25]
+
+**What shipped:**
+
+1. **`src/data/types.ts`** — `attribute_coupling?: string[]` optional field added to `ClassData` interface:
+   - Field comment cites MIGRATION.md [2026-05-25] + null-safety pattern
+   - Optional (absent key on pre-Cycle-11 legacy seasons)
+
+2. **`src/components/StatsPanel/StatsPanel.tsx`** — Coupling label row:
+   - `formatCoupledStat()` helper: maps lowercase stat name → `STAT_LABELS` abbreviation (INT, WIS, etc.)
+   - `attributeCoupling = classData.attribute_coupling ?? []` — null-safe for absent-key legacy seasons
+   - Renders `Coupled: INT + WIS` row (using `text-violet-400` for stat values; `text-gray-500` for "Coupled:" label)
+   - Conditionally rendered: `{attributeCoupling.length > 0 && (...)}` — renders nothing for legacy classes
+   - Placement: between stat bars block and SP Budget section within StatsPanel card
+
+3. **`data/sample-season/classes/class_0001.json`** — Added `attribute_coupling: ["intelligence", "wisdom"]` for Cycle-11+ smoke path verification (derived from stat_distribution top-2: INT=101, WIS=98)
+
+**Label phrasing design decision:** `"Coupled: INT + WIS"` — abbreviated form using existing `STAT_LABELS` constants (3-letter uppercase codes). Matches the terse monospace font register of the stat bar labels. Avoids expanded form ("Couples with Intelligence + Wisdom") which would be wider than the stat block column on mobile. Rendered in violet-400 to match the stat bar fill color (`bg-violet-600`), creating visual cohesion.
+
+**Smoke results:**
+- `npm run build`: 771 modules, 0 TypeScript errors (clean) — PASS
+- Cycle-11+ path: `class_0001.json` (sample-season) now has `attribute_coupling: ["intelligence", "wisdom"]` → renders `Coupled: INT + WIS` (confirmed by type-safe build + logic trace)
+- Legacy path: season_001001 class_0001 has no `attribute_coupling` key → `?? []` → `length === 0` → no label, no broken UI (confirmed by empirical key-check: `'attribute_coupling' in d == False`)
+- No regression: all 11 existing seasons' classes have absent field → null-guard path exercises cleanly
+
+**TODO(drax): remove sample-season fixture patch** — `data/sample-season/classes/class_0001.json` manually patched with `attribute_coupling`. When engine regen fires post-Cycle-11, replace with real output. Track until star-lord confirms regen + export complete.
+
+---
 
 ### Cycle 11 M1 + M2 + M5 — Weapon slots + provenance badge (completed 2026-05-25)
 
@@ -631,10 +665,12 @@ M4 is NOT zero-dependency. It requires star-lord schema extension to emit `attri
 
 **Cycle 11 Wave 2 hive-mode active. Next loadout-seam tasks:**
 
+Priority 0 (COMPLETE — Cycle 11 Wave 3a):
+- **M4 attribute coupling labels:** StatsPanel `Coupled: INT + WIS` display. Tag: `drax/v0.0-cycle-11-m4-attribute-coupling-labels-2026-05-25-refire`
+- M3+M6: BLOCKED on rocket §8 + BC-shift sweep PASS (Wave 3b)
+
 Priority 0 (COMPLETE — Cycle 11 Wave 2):
 - **M1/M2/M5 loadout display:** WeaponSlot + OffHandSlot + ProvenanceBadge. Tag: `drax/v0.1-cycle-11-m1-m2-m5-loadout-display-2026-05-25`
-- M3+M6: BLOCKED on rocket §8 + BC-shift sweep PASS (Wave 3)
-- M4: BLOCKED on rocket attribute_coupling field (Wave 3a)
 
 Priority 0 (COMPLETE — Phase-1 P1 prior wave):
 - **v1.1 website refresh:** 10 new seasons exposed (001005 + 002011-002015), analytics refreshed, season pickers live. Tag: `drax/v1.1-loadout-website-refresh-new-seasons-and-analytics-1`

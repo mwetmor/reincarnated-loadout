@@ -70,6 +70,11 @@ export interface ClassData {
   // t4_alteration_output: null until rocket §8 ships. M3 consumption gated — DO NOT render yet.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   t4_alteration_output?: Record<string, any> | null;
+  // Cycle 11 rocket Wave 2a field (MIGRATION.md [2026-05-25]).
+  // Derived from stat_distribution top-2 stats at generation time.
+  // Always exactly 2 stat name strings on newly-generated (Cycle-11+) classes.
+  // ABSENT KEY (not null) on pre-Cycle-11 legacy seasons — guard with ?? [].
+  attribute_coupling?: string[];
 }
 
 export interface SeasonAnchor {
