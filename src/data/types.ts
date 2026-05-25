@@ -67,9 +67,10 @@ export interface ClassData {
   main_weapon?: WeaponDescriptor | null;
   secondary_item?: WeaponDescriptor | null;
   source_library?: string | null;
-  // t4_alteration_output: null until rocket §8 ships. M3 consumption gated — DO NOT render yet.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  t4_alteration_output?: Record<string, any> | null;
+  // t4_alteration_output: Algorithm §8 alteration descriptor. Null until rocket §8 ships.
+  // Shape per star-lord MIGRATION.md v1.3. All subfields optional-guarded — null is always valid.
+  // Tier 2 framing: INTENT METADATA only; not combat-arithmetic until Cycle 12 Layer 6.
+  t4_alteration_output?: T4AlterationOutput | null;
   // Cycle 11 rocket Wave 2a field (MIGRATION.md [2026-05-25]).
   // Derived from stat_distribution top-2 stats at generation time.
   // Always exactly 2 stat name strings on newly-generated (Cycle-11+) classes.
@@ -244,4 +245,24 @@ export interface WeaponDescriptor {
   cultural_register: string;
   period: string;
   lineage: string | null;     // nullable per schema
+}
+
+// T4 alteration output — Algorithm §8 intent metadata (MIGRATION.md v1.3).
+// Tier 2 framing: INTENT METADATA only. Not wired to combat arithmetic until Cycle 12 Layer 6.
+// All fields optional-guarded; consumer must null-check before use.
+// strategy_type enum values per rocket §8 dispatch (v1 strategies).
+export type T4StrategyType =
+  | 'RESOURCE_CONVERSION'
+  | 'TRADE_OFF'
+  | 'ELEMENT_CONVERSION'
+  | 'DEFENSIVE_CONVERSION'
+  | 'GEOMETRY_COLLAPSE'
+  | string; // forward-compat: allow unknown strategies from future rocket versions
+
+export interface T4AlterationOutput {
+  strategy_type: T4StrategyType;
+  strategy_params: Record<string, string | number | boolean | null>;
+  applied_axis_targets?: string[];             // BC axes predicted to shift
+  eta_score?: number;                          // η-coefficient (0.0–1.0 range)
+  thematic_rationale?: string | null;          // human-readable rationale; used as spirit-guide narration
 }

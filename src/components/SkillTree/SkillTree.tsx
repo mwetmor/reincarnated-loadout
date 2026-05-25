@@ -3,6 +3,9 @@ import type { ClassData, Skill, SeasonManifest } from '../../data/types';
 import { resolveElementDisplay } from '../../data/types';
 import { SkillNode } from './SkillNode';
 import { SkillDetailPanel } from './SkillDetailPanel';
+// Cycle 11 Wave 3b — M3 + M6 T4 alteration display (MIGRATION.md v1.3)
+import { T4AlterationPanel } from './T4AlterationPanel';
+import { T4ComparisonPanel } from './T4ComparisonPanel';
 
 interface SkillTreeProps {
   classData: ClassData;
@@ -74,7 +77,12 @@ export function SkillTree({
     setSelectedSkillId((prev) => (prev === skillId ? null : skillId));
   }
 
+  // M3 + M6: t4_alteration_output from class JSON (MIGRATION.md v1.3)
+  // Null-safe: panels hide themselves when alteration is null/absent.
+  const t4Alteration = classData.t4_alteration_output ?? null;
+
   return (
+    <div className="flex flex-col gap-4">
     <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
       {/* Tree Grid — horizontal scroll fallback at very small widths */}
       <div className="flex-1 min-w-0 overflow-x-auto">
@@ -168,6 +176,21 @@ export function SkillTree({
           onClose={() => setSelectedSkillId(null)}
         />
       </div>
+    </div>
+
+    {/* M3 — T4 alteration panel (Cycle 11 Wave 3b, MIGRATION.md v1.3).
+        Null-safe: hides when t4_alteration_output is null (pre-§8 seasons / no alteration).
+        Tier 2 framing: INTENT METADATA — not combat-affecting until Cycle 12 Layer 6. */}
+    {t4Alteration && (
+      <T4AlterationPanel alteration={t4Alteration} />
+    )}
+
+    {/* M6 — T4 comparison panel (TOGGLE per Q2 RATIFIED; mobile-friendly).
+        Null-safe: toggle hidden when t4_alteration_output is null.
+        Per Q3 RATIFIED: main-weapon-only context; no off-hand surface here. */}
+    {t4Alteration && (
+      <T4ComparisonPanel alteration={t4Alteration} />
+    )}
     </div>
   );
 }
