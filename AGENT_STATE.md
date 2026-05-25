@@ -1,11 +1,76 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-18
-**Last tag:** drax/v1.17-auto-cast-plus-dungeon-objects-plus-is-retired-1 — demo seam; loadout is_retired filter also wired
+**Last updated:** 2026-05-25
+**Last tag:** drax/v0.1-cycle-11-m1-m2-m5-loadout-display-2026-05-25 — Cycle 11 M1+M2+M5 loadout display
 **Branch:** main
-**Hive-mind mode:** ACTIVE (Phase-1 P1; distributed authority L1 in-seam)
+**Hive-mind mode:** ACTIVE (Cycle 11 Wave 2; distributed authority L1 in-seam)
 
 ## Session summary
+
+### Cycle 11 M1 + M2 + M5 — Weapon slots + provenance badge (completed 2026-05-25)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-25-drax-cycle-11-m1-m2-m5-loadout-display.md`
+**Tag:** `drax/v0.1-cycle-11-m1-m2-m5-loadout-display-2026-05-25` @ commit `f22a61f`
+**Upstream:** `star-lord/v0.1-cycle-11-schema-extensions-2026-05-25` (79/79 PASS)
+**MIGRATION.md:** v1.3 (star-lord Wave 1, 4 additive nullable fields)
+
+**Intermediate tags:**
+- `drax/v0.0-cycle-11-m5-provenance-badge-2026-05-25` @ `2823dc1`
+- `drax/v0.0-cycle-11-m1-weapon-slot-2026-05-25` @ `e402f7b`
+- `drax/v0.0-cycle-11-m2-off-hand-slot-2026-05-25` @ `e402f7b`
+
+**What shipped:**
+
+1. **M5 — ProvenanceBadge** (`src/components/ui/ProvenanceBadge.tsx`):
+   - Consumes `source_library` string field (class-level)
+   - `engine_authored_gap_fill_v1` → amber badge with "Engine fill" label (distinct per Q1 RATIFIED)
+   - All other substrate libraries (met_museum, fextralife_ds2, odin_army_tradoc, wikidata_named_weapon) → neutral gray badge
+   - Null-safe: returns null when source_library is null/undefined
+
+2. **M1 — WeaponSlot** (`src/components/WeaponSlot/WeaponSlot.tsx`):
+   - Consumes `main_weapon` WeaponDescriptor from class JSON
+   - Renders: slot label, weapon name, category badge, cultural_register, period (underscore-replaced), lineage (nullable)
+   - Embeds ProvenanceBadge from weapon.source_library (weapon-level provenance)
+   - Null-safe: returns null when weapon is null
+
+3. **M2 — OffHandSlot** (`src/components/WeaponSlot/OffHandSlot.tsx`):
+   - Consumes `secondary_item` WeaponDescriptor from class JSON
+   - Wraps WeaponSlot with "Off-Hand" label
+   - Q3 UI-staging: `SHOW_OFF_HAND_SLOT = false` during T4 post-mortem; component is fully built
+   - Null-safe: returns null when secondary_item is null (ALWAYS-VALID null per schema)
+
+4. **types.ts** — `WeaponDescriptor` interface + Cycle 11 optional fields on ClassData:
+   - `main_weapon?: WeaponDescriptor | null`
+   - `secondary_item?: WeaponDescriptor | null`
+   - `source_library?: string | null`
+   - `t4_alteration_output?: Record<string, any> | null` (M3 gated — DO NOT render yet)
+
+5. **Loadout.tsx wiring:**
+   - ProvenanceBadge added to archetype tag row in ClassHeader (class-level source_library)
+   - WeaponSlot + OffHandSlot section between ClassHeader and SkillTree; collapses when both null
+   - Section renders only when `classData.main_weapon || classData.secondary_item` is truthy
+
+6. **Smoke fixtures** (sample-season):
+   - `class_0001`: met_museum main_weapon (polearm), null secondary_item, met_museum source_library
+   - `class_0002`: engine_authored_gap_fill_v1 main_weapon + secondary_item (melee + talisman), gap-fill source_library
+
+**Smoke results:**
+- `npm run build`: 771 modules, 0 TypeScript errors (clean)
+- Dev server: starts in 197ms, no console errors
+- All pre-Cycle-11 classes (no main_weapon/secondary_item/source_library fields) handled by optional typing — null-guard paths verified
+- Chunk size warning is pre-existing (Recharts); no new issue
+
+**TODO(drax): SHOW_OFF_HAND_SLOT = true for v1.0 production launch** (Q3 RATIFIED)
+- File: `src/components/WeaponSlot/OffHandSlot.tsx`, line 18
+- Flip constant to `true` when v1.0 production launch authorized
+- Remove TODO comment and staging gate comment at same time
+
+**Deferred (out of scope this Wave):**
+- M3 (T4 alteration panel): gated on rocket §8 + BC-shift sweep PASS
+- M4 (attribute_coupling labels): gated on rocket attribute_coupling field landing
+- M6 (T4 comparison panel): gates on M3
+
+---
 
 ### /pitch page Phase-1 scaffold (completed 2026-05-18)
 
@@ -564,9 +629,14 @@ M4 is NOT zero-dependency. It requires star-lord schema extension to emit `attri
 
 ## Next session pick-up
 
-**Phase-1 P1 hive-mode active. Next loadout-seam tasks:**
+**Cycle 11 Wave 2 hive-mode active. Next loadout-seam tasks:**
 
-Priority 0 (COMPLETE — this session):
+Priority 0 (COMPLETE — Cycle 11 Wave 2):
+- **M1/M2/M5 loadout display:** WeaponSlot + OffHandSlot + ProvenanceBadge. Tag: `drax/v0.1-cycle-11-m1-m2-m5-loadout-display-2026-05-25`
+- M3+M6: BLOCKED on rocket §8 + BC-shift sweep PASS (Wave 3)
+- M4: BLOCKED on rocket attribute_coupling field (Wave 3a)
+
+Priority 0 (COMPLETE — Phase-1 P1 prior wave):
 - **v1.1 website refresh:** 10 new seasons exposed (001005 + 002011-002015), analytics refreshed, season pickers live. Tag: `drax/v1.1-loadout-website-refresh-new-seasons-and-analytics-1`
 
 Priority 1 (READY — D17 Court browser COMPLETE):
