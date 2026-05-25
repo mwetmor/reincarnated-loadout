@@ -541,6 +541,27 @@ All 6 surfaces from dispatch `2026-05-16-drax-encounters-page-explanatory-conten
 **Tag:** `drax/v0.7-encounter-analytics-legends` (commit 3f2fca6) — intermediate
 **Preview:** https://reincarnated-loadout-1tj6lewiv-matthew-wetmore-s-projects.vercel.app
 
+### Cycle 11 M4 — attribute_coupling field NOT PRESENT (escalation, 2026-05-25)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-25-drax-cycle-11-m4-attribute-coupling-labels.md`
+**Status:** ESCALATED TO KR — field not present in class JSON; merges into star-lord schema extensions dispatch
+
+**Pre-implementation verification result:**
+- Searched `attribute_coupling` across all 11 seasons in `reincarnated-loadout/data/` — ZERO matches
+- Searched across `reincarnated-engine/` source — ZERO matches
+- `ClassData` interface in `src/data/types.ts` — no `attribute_coupling` field
+- Sampled class JSON keys from seasons 001001, 001005, 002015, 002328 — field absent in all
+- Class JSON top-level keys are: `id`, `name`, `title_completion`, `flavor_text`, `archetype_tag`, `energy_type`, `role_orientation`, `range_profile`, `dominant_element`, `color_palette`, `stat_distribution`, `skills`, `balance_metadata`, `convergence_report` (plus per-season additive fields)
+
+**Conclusion:** drax memo § 4.3 claim "data already present / no schema change needed" was incorrect.
+M4 is NOT zero-dependency. It requires star-lord schema extension to emit `attribute_coupling` from the engine.
+
+**Action taken:** NO implementation fired. Per dispatch protocol, escalated to KR for routing to star-lord schema extensions dispatch. Completion record appended to dispatch file.
+
+**No code changed. No tag cut.**
+
+---
+
 ## Next session pick-up
 
 **Phase-1 P1 hive-mode active. Next loadout-seam tasks:**
