@@ -62,6 +62,14 @@ export interface ClassData {
   // Optional for older seasons; missing === false (not retired).
   is_retired?: boolean;
   retirement_reason?: string;
+  // Cycle 11 schema extensions (star-lord Wave 1, MIGRATION.md v1.3). All nullable.
+  // null = pre-substrate-binding season. Guard all access with null-check.
+  main_weapon?: WeaponDescriptor | null;
+  secondary_item?: WeaponDescriptor | null;
+  source_library?: string | null;
+  // t4_alteration_output: null until rocket §8 ships. M3 consumption gated — DO NOT render yet.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  t4_alteration_output?: Record<string, any> | null;
 }
 
 export interface SeasonAnchor {
@@ -216,4 +224,19 @@ export interface BuildState {
   seasonId: string;
   allocations: Record<string, number>;
   savedAt: string;
+}
+
+// ---- Cycle 11 schema extensions (star-lord Wave 1, MIGRATION.md v1.3) ----
+// Additive fields on ClassData — all nullable; guard every access with null-check.
+// Pre-substrate-binding seasons emit null for main_weapon / secondary_item / source_library.
+
+// Weapon descriptor (main_weapon / secondary_item). Shape per ExportWeaponDescriptor.
+export interface WeaponDescriptor {
+  weapon_id: string;
+  name: string;
+  category: string;           // melee | polearm | ranged | firearm | shield | tome | banner | focus | horn | talisman
+  source_library: string;     // substrate source (see source_library below)
+  cultural_register: string;
+  period: string;
+  lineage: string | null;     // nullable per schema
 }

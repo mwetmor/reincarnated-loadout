@@ -14,6 +14,10 @@ import { ActionBar } from '../components/ActionBar';
 import { Tag } from '../components/ui/Tag';
 import { FlavorTip } from '../components/ui/FlavorTip';
 import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
+// Cycle 11 M1/M2/M5 — weapon slots + provenance badge (MIGRATION.md v1.3)
+import { WeaponSlot } from '../components/WeaponSlot/WeaponSlot';
+import { OffHandSlot } from '../components/WeaponSlot/OffHandSlot';
+import { ProvenanceBadge } from '../components/ui/ProvenanceBadge';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 import gearPoolRaw from '../../data/season_002328/gear_pool.json';
 const gearPool = gearPoolRaw as unknown as GearPoolEntry[];
@@ -209,6 +213,9 @@ function ClassHeader({
             <Tag>{classData.role_orientation}</Tag>
             <Tag>{classData.range_profile}</Tag>
             <Tag>{classData.energy_type}</Tag>
+            {/* M5 — class-level provenance badge (source_library, MIGRATION.md v1.3).
+                Null-safe: null for pre-substrate-binding seasons. */}
+            <ProvenanceBadge sourceLibrary={classData.source_library} />
           </div>
 
           {/* Color palette */}
@@ -360,6 +367,22 @@ export function Loadout() {
         allClasses={classes}
         onClassChange={setSelectedClassId}
       />
+
+      {/* M1 / M2 — Weapon slots (Cycle 11, MIGRATION.md v1.3).
+          WeaponSlot + OffHandSlot are null-safe: render nothing when fields are null
+          (pre-substrate-binding seasons). Section collapses entirely when both null. */}
+      {(classData.main_weapon || classData.secondary_item) && (
+        <section className="space-y-2">
+          <h2 className="text-xs font-mono text-gray-500 uppercase tracking-wide">
+            Weapons
+          </h2>
+          {/* M1 — main weapon */}
+          <WeaponSlot weapon={classData.main_weapon} label="Main Weapon" />
+          {/* M2 — off-hand (UI-staged: SHOW_OFF_HAND_SLOT=false during T4 post-mortem;
+              flip to true at v1.0 production launch per Q3 RATIFIED) */}
+          <OffHandSlot secondaryItem={classData.secondary_item} />
+        </section>
+      )}
 
       <section>
         <h2 className="text-xs font-mono text-gray-500 uppercase tracking-wide mb-3">
