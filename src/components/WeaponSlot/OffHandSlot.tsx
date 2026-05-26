@@ -9,10 +9,12 @@
 import type { WeaponDescriptor } from '../../data/types';
 import { WeaponSlot } from './WeaponSlot';
 
-// Q3 UI-staging gate: T4 post-mortem = main-weapon-only; off-hand surfaced for v1.0 production launch.
-// Flip to true when v1.0 production launch is authorized.
-// TODO(drax): remove this staging flag at v1.0 production launch — set to true and delete this comment.
-export const SHOW_OFF_HAND_SLOT = false;
+// M2 gate-flip decision (engine generation run dispatch, 2026-05-25):
+// Cycle 12 closed with v1.0-new-engine-ready tag. Rocket engine generation run lands ~30-40 forms
+// with off_hand_contract populated (Wave 5 round-trip 42/42 PASS). Off-hand data is production-shape.
+// Rationale for flip: T4 post-mortem benefits from seeing full kit (main + off-hand). Amendment 2
+// cultural/period/quality badges apply to off-hand cards too. Null-safe for classes without off-hand.
+export const SHOW_OFF_HAND_SLOT = true;
 
 interface OffHandSlotProps {
   secondaryItem: WeaponDescriptor | null | undefined;

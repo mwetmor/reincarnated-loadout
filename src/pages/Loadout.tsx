@@ -18,6 +18,11 @@ import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
 import { WeaponSlot } from '../components/WeaponSlot/WeaponSlot';
 import { OffHandSlot } from '../components/WeaponSlot/OffHandSlot';
 import { ProvenanceBadge } from '../components/ui/ProvenanceBadge';
+// Amendment 1 — design-mode toggle + panel (engine generation run, 2026-05-25)
+import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignMode/DesignModeToggle';
+import { DesignModePanel } from '../components/DesignMode/DesignModePanel';
+// Tier 3 — strategy badge (engine generation run, 2026-05-25)
+import { StrategyBadge } from '../components/ui/StrategyBadge';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 import gearPoolRaw from '../../data/season_002328/gear_pool.json';
 const gearPool = gearPoolRaw as unknown as GearPoolEntry[];
@@ -160,11 +165,15 @@ function ClassHeader({
   manifest,
   allClasses,
   onClassChange,
+  designMode,
+  onDesignModeToggle,
 }: {
   classData: ClassData;
   manifest: SeasonManifest;
   allClasses: ClassData[];
   onClassChange: (id: string) => void;
+  designMode: boolean;
+  onDesignModeToggle: (next: boolean) => void;
 }) {
   // L-13 fix (cipher migration): prefer seasonal_dominant_element (v1.5+ direct field);
   // then resolveElementDisplay (manifest.seasonal_elements → manifest.elements → "Unknown").
@@ -216,6 +225,9 @@ function ClassHeader({
             {/* M5 — class-level provenance badge (source_library, MIGRATION.md v1.3).
                 Null-safe: null for pre-substrate-binding seasons. */}
             <ProvenanceBadge sourceLibrary={classData.source_library} />
+            {/* Tier 3 — § 8 strategy badge (engine generation run, 2026-05-25).
+                Shows in both Player-mode + Design-mode. Null-safe. */}
+            <StrategyBadge strategyType={classData.t4_alteration_output?.strategy_type} />
           </div>
 
           {/* Color palette */}
@@ -256,24 +268,33 @@ function ClassHeader({
         </div>
       </div>
 
-      {/* Class picker */}
-      {allClasses.length > 1 && (
-        <div className="flex items-center gap-2">
-          <label className="text-xs text-gray-600 font-mono flex-shrink-0">Class:</label>
-          <select
-            value={classData.id}
-            onChange={(e) => onClassChange(e.target.value)}
-            className="flex-1 max-w-xs bg-gray-900 border border-gray-700 text-gray-300 text-sm rounded px-2 py-1 focus:outline-none focus:border-violet-500"
-          >
-            {allClasses.map((c) => (
-              <option key={c.id} value={c.id}>
-                {/* L-11 fix: resolveArchetypeLabel for class picker dropdown */}
-                {c.name ?? c.id} — {resolveArchetypeLabel(c.archetype_tag, manifest)}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
+      {/* Class picker + design-mode toggle row */}
+      <div className="flex flex-wrap items-center gap-3">
+        {allClasses.length > 1 && (
+          <div className="flex items-center gap-2 flex-1 min-w-0">
+            <label className="text-xs text-gray-600 font-mono flex-shrink-0">Class:</label>
+            <select
+              value={classData.id}
+              onChange={(e) => onClassChange(e.target.value)}
+              className="flex-1 max-w-xs bg-gray-900 border border-gray-700 text-gray-300 text-sm rounded px-2 py-1 focus:outline-none focus:border-violet-500"
+            >
+              {allClasses.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {/* L-11 fix: resolveArchetypeLabel for class picker dropdown */}
+                  {c.name ?? c.id} — {resolveArchetypeLabel(c.archetype_tag, manifest)}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+        {/* Amendment 1 — design-mode toggle (engine generation run, 2026-05-25).
+            Global toggle: Player-mode (default) vs Design-mode (engine-layer fields visible). */}
+        <DesignModeToggle
+          designMode={designMode}
+          onToggle={onDesignModeToggle}
+          className="flex-shrink-0"
+        />
+      </div>
     </div>
   );
 }
@@ -292,6 +313,25 @@ function StatPill({ label, value, dim }: { label: string; value: string; dim?: b
 export function Loadout() {
   const [searchParams] = useSearchParams();
   const { defaultSeason, selectableSeasons } = useSeasonData();
+
+  // Amendment 1 — design-mode toggle state (engine generation run, 2026-05-25).
+  // Default: Player-mode (false). Persisted via localStorage across sessions.
+  const [designMode, setDesignMode] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem(DESIGN_MODE_STORAGE_KEY) === 'true';
+    } catch {
+      return false; // SSR / storage unavailable — default Player-mode
+    }
+  });
+
+  function handleDesignModeToggle(next: boolean) {
+    setDesignMode(next);
+    try {
+      localStorage.setItem(DESIGN_MODE_STORAGE_KEY, String(next));
+    } catch {
+      // Storage unavailable — in-memory only (still works for session)
+    }
+  }
 
   // Season picker: default to sample-season; user can switch to any real season.
   const [selectedSeasonId, setSelectedSeasonId] = useState<string | null>(
@@ -366,6 +406,8 @@ export function Loadout() {
         manifest={season.manifest}
         allClasses={classes}
         onClassChange={setSelectedClassId}
+        designMode={designMode}
+        onDesignModeToggle={handleDesignModeToggle}
       />
 
       {/* M1 / M2 — Weapon slots (Cycle 11, MIGRATION.md v1.3).
@@ -376,12 +418,18 @@ export function Loadout() {
           <h2 className="text-xs font-mono text-gray-500 uppercase tracking-wide">
             Weapons
           </h2>
-          {/* M1 — main weapon */}
+          {/* M1 — main weapon (Amendment 2: WeaponBadges woven into WeaponSlot) */}
           <WeaponSlot weapon={classData.main_weapon} label="Main Weapon" />
-          {/* M2 — off-hand (UI-staged: SHOW_OFF_HAND_SLOT=false during T4 post-mortem;
-              flip to true at v1.0 production launch per Q3 RATIFIED) */}
+          {/* M2 — off-hand (SHOW_OFF_HAND_SLOT flipped true per M2 gate-flip 2026-05-25;
+              Amendment 2: WeaponBadges woven into WeaponSlot via OffHandSlot) */}
           <OffHandSlot secondaryItem={classData.secondary_item} />
         </section>
+      )}
+
+      {/* Amendment 1 — Design-mode panel (engine generation run, 2026-05-25).
+          Only rendered when design-mode is active. Null-safe for pre-v2.0 classes. */}
+      {designMode && (
+        <DesignModePanel classData={classData} />
       )}
 
       <section>

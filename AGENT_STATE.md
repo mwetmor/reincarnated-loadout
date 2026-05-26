@@ -1,11 +1,71 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-25
-**Last tag:** drax/cycle-12-wave-5-spirit-guide-narration-update-2026-05-25 — Cycle 12 Wave 5 Spirit Guide narration L6 enrichment
+**Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
-**Hive-mind mode:** ACTIVE (Cycle 12 Wave 5 COMPLETE; awaiting KR integration smoke + Gate-2)
+**Hive-mind mode:** ACTIVE (engine generation run amendments COMPLETE; jack-ryan Gate-2 pending)
 
 ## Session summary
+
+### Engine generation run loadout amendments (completed 2026-05-25)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-25-drax-engine-generation-run-loadout-amendments.md`
+**Tag:** `drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25` (pending tag cut)
+**Authority:** Matt 2026-05-25 parallel-fire with rocket engine generation run
+**Push status:** PUSHED per skip-confirmation re-auth
+
+**What shipped (4 items):**
+
+1. **Amendment 1 — Design-mode toggle** (`src/components/DesignMode/DesignModePanel.tsx` + `DesignModeToggle.tsx`):
+   - Global toggle in class picker row: "Player" / "Design" segmented button
+   - Persisted via `localStorage` key `drax_design_mode`; default Player-mode always
+   - Design-mode surfaces: `named_bearer` / `named_mythological_match` / `bc_target_cell` / `mechanical_substrate_triple` / `source_library` (labeled) / `converged_modifier` / `t4_alteration_output` raw struct (collapsible)
+   - Cyan/teal visual treatment — distinct from violet (T4) and amber (M5 provenance)
+   - Null-safe throughout (pre-v2.0 classes degrade to "—")
+   - New types in `types.ts`: `BcTargetCell`, `MechanicalSubstrateTriple`, new optional ClassData fields
+
+2. **Amendment 2 — Cultural / period / quality-tier badges** (`src/components/WeaponSlot/WeaponBadges.tsx`):
+   - Woven into `WeaponSlot.tsx` below the weapon meta-row
+   - Cultural badge: teal chip (`cultural_lineage_canonical`)
+   - Period badge: slate chip (`historical_period_canonical`)
+   - Quality-tier badge: emerald/lime/yellow/orange per S/A/B/C (`quality_tier`) — INFORMATIONAL only
+   - Visually distinct from M5 ProvenanceBadge (amber/gray library provenance)
+   - Always visible in Player-mode + Design-mode
+   - Null-safe (pre-Cycle-12 weapons lack these fields; renders nothing when all three absent)
+   - WeaponDescriptor in `types.ts` extended with 3 new optional nullable fields
+
+3. **M1/M2/M5 verification + M2 gate-flip** (empirical inspection + flag flip):
+   - M1 (`WeaponSlot.tsx`) VERIFIED shipped @ `f22a61f`
+   - M2 (`OffHandSlot.tsx`) VERIFIED shipped; `SHOW_OFF_HAND_SLOT` flipped from `false` → `true`
+   - M5 (`ProvenanceBadge.tsx`) VERIFIED shipped
+   - **M2 gate-flip decision: FLIPPED** — Cycle 12 closed `v1.0-new-engine-ready`; rocket engine generation run lands v2.0 forms with `off_hand_contract` (Wave 5 42/42 PASS); T4 post-mortem benefits from full kit view
+
+4. **Tier 3 — § 8 strategy badge** (`src/components/ui/StrategyBadge.tsx`):
+   - Compact badge in ClassHeader archetype tag row; shows in both Player-mode + Design-mode
+   - `§8` prefix + strategy label; color-coded per strategy type
+   - Source: `classData.t4_alteration_output?.strategy_type` — null-safe
+   - Included (not deferred): supports T4 post-mortem strategy distribution review
+
+**Smoke results:**
+- `npm run build`: 777 modules, 0 TypeScript errors — PASS
+- Dev server: launches in 75ms, HTTP 200 — PASS
+- Null-case: 11 real seasons (no new engine fields) — all degrade cleanly (design-mode shows "—"; WeaponBadges hides; StrategyBadge hides)
+- Populated-case: class_0001 (sample-season, met_museum weapon + RESOURCE_CONVERSION): cultural badge (East Asian) + period badge (Medieval) + quality Tier S badge visible; design-mode shows bc_target_cell 5-tuple + mechanical_substrate_triple chips + converged_modifier + t4 raw expander
+- Sketch F anchor case: class_0002 (Hattori Hanzo named_bearer): named_bearer visible in design-mode; WeaponBadges shows European / Classical / Tier A
+- No regression: M3/M4/M5/M6 Spirit Guide narration chain unaffected; all pre-Cycle-12 classes null-safe
+
+**Design decisions made:**
+- Toggle placement: in class picker row (not top-of-page header, not per-card) — co-located with class picker for discoverability without visual dominance
+- Toggle persistence: localStorage (session + cross-session); default Player-mode enforced by initial state
+- `source_library` in design-mode: labeled row (explicit; distinct from M5 badge); M5 badge still shows in header (two surfaces, distinct framing)
+- `mechanical_substrate_triple`: structured chips (element/weapon_kind/profile) — more scannable than raw object dump
+- Quality-tier visual: emerald (S) / lime (A) / yellow (B) / orange (C) — clearly distinct from amber (M5 gap-fill) and teal (cultural badge)
+- Strategy badge: color-coded per strategy type (red=resource, orange=trade-off, blue=element, green=defensive, violet=geometry, amber=def-tradeoff)
+- Tier 3 INCLUDED: ~15min work, directly serves T4 post-mortem strategy distribution review, bundles cleanly
+
+**TODO(drax): remove sample-season design-mode fixture enrichment** — class_0001 and class_0002 updated with synthesized v2.0 engine fields (bc_target_cell, mechanical_substrate_triple, converged_modifier, cultural_lineage_canonical, etc.). When rocket engine generation run completes and star-lord exports new forms, replace with real engine emission. Extends prior TODO(drax) for narration_metadata fixture.
+
+---
 
 ### Cycle 12 Wave 5 — Spirit Guide narration L6 enrichment (completed 2026-05-25)
 

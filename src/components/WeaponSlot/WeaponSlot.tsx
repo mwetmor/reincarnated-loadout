@@ -1,9 +1,15 @@
 // WeaponSlot — M1 (Cycle 11, MIGRATION.md v1.3)
 // Consumes main_weapon from class JSON. Renders weapon name, category, cultural context.
 // Null-safe: renders nothing when weapon is null (pre-substrate-binding season).
+//
+// Amendment 2 (engine generation run, 2026-05-25):
+// WeaponBadges added below weapon meta-row — cultural_lineage_canonical / historical_period_canonical
+// / quality_tier badges. Always visible in Player-mode + Design-mode. Null-safe (pre-Cycle-12
+// weapons lack these fields; WeaponBadges renders nothing when all three absent).
 
 import type { WeaponDescriptor } from '../../data/types';
 import { ProvenanceBadge } from '../ui/ProvenanceBadge';
+import { WeaponBadges } from './WeaponBadges';
 
 // Human-readable category labels for weapon_kind values from substrate.
 const CATEGORY_LABELS: Record<string, string> = {
@@ -68,6 +74,14 @@ export function WeaponSlot({ weapon, label = 'Main Weapon', className = '' }: We
               {weapon.lineage}
             </p>
           )}
+          {/* Amendment 2 — cultural / period / quality-tier badges.
+              Always visible (Player-mode + Design-mode). Null-safe via WeaponBadges. */}
+          <WeaponBadges
+            culturalLineage={weapon.cultural_lineage_canonical}
+            historicalPeriod={weapon.historical_period_canonical}
+            qualityTier={weapon.quality_tier}
+            className="mt-1.5"
+          />
         </div>
         {/* Right: provenance badge (M5 — source_library on the weapon descriptor) */}
         <ProvenanceBadge sourceLibrary={weapon.source_library} className="flex-shrink-0 self-start mt-0.5" />

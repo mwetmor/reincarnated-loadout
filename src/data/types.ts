@@ -76,6 +76,28 @@ export interface ClassData {
   // Always exactly 2 stat name strings on newly-generated (Cycle-11+) classes.
   // ABSENT KEY (not null) on pre-Cycle-11 legacy seasons — guard with ?? [].
   attribute_coupling?: string[];
+
+  // ---- Engine generation run design-mode fields (Amendment 1, 2026-05-25) ----
+  // PlayerClassV2 engine-layer fields (MIGRATION.md § v1.4-layer-2). All nullable.
+  // Absent on pre-Cycle-12 classes (engine_version != "v2.0"). Design-mode degrades to "—".
+
+  // Named bearer + mythological match (Sketch F anchor forms; engine-internal identity).
+  // Populated only on 4 Sketch F anchor forms (Hattori Hanzō / Lu Bu / Moctezuma / Gilgamesh).
+  named_bearer?: string | null;
+  named_mythological_match?: string | null;
+
+  // BC-target cell identity (Layer 2 subspace generator output; 5-tuple).
+  bc_target_cell?: BcTargetCell | null;
+
+  // Mechanical substrate triple (Layer 9 L9 opportunity-scan; element + weapon_kind + profile).
+  mechanical_substrate_triple?: MechanicalSubstrateTriple | null;
+
+  // Converged modifier (Layer 4 W1.13 multi-dim convergence output; float).
+  // None pre-Layer-4; always float post-Layer-4 on v2.0 classes.
+  converged_modifier?: number | null;
+
+  // Engine version discriminator — "v2.0" on new-engine classes, absent/null on legacy.
+  engine_version?: string | null;
 }
 
 export interface SeasonAnchor {
@@ -245,6 +267,33 @@ export interface WeaponDescriptor {
   cultural_register: string;
   period: string;
   lineage: string | null;     // nullable per schema
+  // Amendment 2 — cultural / period / quality-tier badges (engine generation run, 2026-05-25).
+  // Populated on v2.0 forms; absent on pre-Cycle-12 weapons. All nullable.
+  cultural_lineage_canonical?: string | null;    // e.g. "european" / "east_asian" / "mesoamerican"
+  historical_period_canonical?: string | null;   // e.g. "classical" / "medieval" / "contemporary" / "mythological"
+  quality_tier?: string | null;                  // S / A / B / C — INFORMATIONAL quality grade, NOT ARPG drop rarity
+}
+
+// ---- Engine generation run schema extensions (Amendment 1 — design-mode fields, 2026-05-25) ----
+// PlayerClassV2 engine-layer fields (MIGRATION.md § v1.4-layer-2). All nullable.
+// Pre-Cycle-12 classes (engine_version != "v2.0") lack these fields; design-mode degrades to "—".
+
+// BC-target cell identity — frozen(range, tempo, amplitude, attribute, proxy_density).
+// See MIGRATION.md § v1.4-layer-2 BcTargetCell dataclass.
+export interface BcTargetCell {
+  range: string;
+  tempo: string;
+  amplitude: string;
+  attribute: string;
+  proxy_density?: string | null;
+}
+
+// Mechanical substrate triple — typed (element, weapon_kind, weapon_mechanical_profile).
+// See MIGRATION.md § v1.4-layer-2 MechanicalSubstrateTriple. WARN-2: element only (not cultural).
+export interface MechanicalSubstrateTriple {
+  element: string;
+  weapon_kind: string;
+  weapon_mechanical_profile: string;
 }
 
 // T4 alteration output — Algorithm §8 intent metadata (MIGRATION.md v1.3).
