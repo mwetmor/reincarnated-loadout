@@ -1,12 +1,65 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-26
-**Last commit:** aa6abc0 — fix(drax): null-safety for v2_narrow_phase_5 schema drift — blank-page runtime crash
+**Last commit:** dbb77c4 — fix(drax): WeaponDescriptor schema alignment — source_library + lineage optional for v2 engine canonical contract
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### WeaponDescriptor schema alignment — Fix 2 (completed 2026-05-26)
+
+**Dispatch:** KR route — Matt Phase 5 regen review fast-follow Fix 2 (WeaponSlot blank main_weapon)
+**Authority:** Matt 2026-05-26 via KR routing; hive-mind § 4.3
+**Commit:** dbb77c4
+**Push status:** PUSHED — Vercel auto-deploy fired
+
+**Root cause (confirmed via empirical investigation):**
+
+WeaponDescriptor interface declared `source_library: string` and `lineage: string | null` as
+NON-OPTIONAL required fields. The v2 engine canonical contract (L9 substrate refactor) only
+guarantees: `weapon_id`, `name`, `category`, `period`, `cultural_register`. Phase 5 regen output
+per Matt's empirical sample omits `source_library` and `lineage`. Also `weapon_id` may emit as
+integer (206975) rather than string ("206975").
+
+Investigation also revealed that blank main_weapon on the current production app was the
+CONSEQUENCE of the blank-page crash (aa6abc0 fix) — the entire React tree unmounted when
+ClassHeader threw TypeError on `bm.final_modifier.toFixed(4)`. After aa6abc0, WeaponSlot
+renders correctly for the current v2_narrow_phase_5 data (which has all 7 fields). This fix
+is FORWARD-LOOKING: makes WeaponDescriptor robust to the next rocket regen output shape.
+
+**Fix approach: Option A (UI-side adaptation to v2 engine canonical contract)**
+
+- `types.ts`: `source_library: string` → `source_library?: string | null` (optional)
+- `types.ts`: `lineage: string | null` → `lineage?: string | null` (optional)
+- `types.ts`: `weapon_id: string` → `weapon_id: string | number` (integer forward-compat)
+- Both fields are already null-safe at render: ProvenanceBadge accepts undefined; WeaponSlot
+  guards `weapon.lineage` with `&&` already
+- No WeaponSlot.tsx changes required — type relaxation is sufficient
+
+**Bonus: v2_narrow_phase_5 analytics presentation corrected:**
+
+- `SeasonSummaryCards.tsx`: `isEngineV2Season` now includes `'v2_narrow_phase_5'` (previously
+  fell through to "Historical (canonical-4)" section — wrong label)
+- `useAnalytics.ts`: `seasonLabel` maps `'v2_narrow_phase_5'` → `'Narrow v1.0 P5'` (was
+  rendering raw ID string in analytics cards)
+
+**Validation:**
+- Both datasets (v2_narrow + v2_narrow_phase_5): all 35 forms have source_library + lineage
+  present — no regression on current rendering
+- `npm run build`: 849 modules, 0 TS errors — PASS
+- Vercel auto-deploy fired on push
+
+**TODO(drax) overrides added:**
+1. `types.ts` — `weapon_id: string | number` union with "remove when engine normalizes to string (Cycle 13+)"
+
+**Files changed:**
+- `src/data/types.ts` — WeaponDescriptor field optionality + weapon_id type relaxation
+- `src/components/analytics/SeasonSummaryCards.tsx` — isEngineV2Season includes phase_5
+- `src/hooks/useAnalytics.ts` — seasonLabel for v2_narrow_phase_5
+
+---
 
 ### v2_narrow_phase_5 blank-page runtime crash fix (completed 2026-05-26)
 
