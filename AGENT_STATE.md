@@ -1,11 +1,63 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-25
-**Last tag:** drax/v0.1-cycle-11-m3-m6-t4-display-wave-3b-2026-05-25 — Cycle 11 Wave 3b M3+M6 T4 alteration display
+**Last tag:** drax/cycle-12-wave-5-spirit-guide-narration-update-2026-05-25 — Cycle 12 Wave 5 Spirit Guide narration L6 enrichment
 **Branch:** main
-**Hive-mind mode:** ACTIVE (Cycle 11 Wave 3b COMPLETE; Cycle 12 open)
+**Hive-mind mode:** ACTIVE (Cycle 12 Wave 5 COMPLETE; awaiting KR integration smoke + Gate-2)
 
 ## Session summary
+
+### Cycle 12 Wave 5 — Spirit Guide narration L6 enrichment (completed 2026-05-25)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-25-drax-cycle-12-wave-5-spirit-guide-narration-update.md`
+**Tag:** `drax/cycle-12-wave-5-spirit-guide-narration-update-2026-05-25` @ commit `7699690`
+**Upstream:** rocket Layer 6 `t4_wireup.py` emit_cross_seam_fields() + `rocket/v0.1-cycle-12-layer-6-section-8-wireup-and-l9-refactor-2026-05-25`
+**MIGRATION.md:** v1.4-layer-6 (spirit_guide_narration_metadata emission shape)
+**Preview URL:** https://reincarnated-loadout-bxdfu3igb-matthew-wetmore-s-projects.vercel.app
+**Push status:** PUSHED — main + tag pushed to origin
+
+**What shipped:**
+
+1. **`src/data/types.ts`** — NarrationMetadata interface + T4AlterationOutput extension:
+   - New `NarrationMetadata` interface per MIGRATION.md § v1.4-layer-6 / t4_wireup.py `_build_spirit_guide_narration()` shape:
+     - `has_mechanic_alteration: boolean`
+     - `alteration_type?: string | null`
+     - `thematic_rationale?: string | null` (engine-generated, richer than Cycle 11 static)
+     - `manifestation?: string | null`
+     - `spirit_guide_explainer_template?: string | null`
+     - `narrative_hooks?: string[]`
+     - `secondary_alteration_types?: string[]`
+   - `T4AlterationOutput.spirit_guide_narration_metadata?: NarrationMetadata | null` — additive nullable field
+   - All null-safe; pre-L6 classes (absent field) degrade cleanly to Cycle 11 behavior
+
+2. **`src/components/SkillTree/T4AlterationPanel.tsx`** — Spirit Guide narration fallback chain:
+   - Fallback chain: L6 `narration_metadata.thematic_rationale` → Cycle 11 `thematic_rationale` → § 9 template voice
+   - L6 explainer template label rendered as `text-[9px]` micro-label in Spirit Guide header row when present (e.g., "resource cost shift")
+   - L6 narrative hooks rendered as small context chips below narration text when present (e.g., "sacrifice", "blood magic", "life wager")
+   - Tier 2 framing maintained: "Build Identity" badge + "Intent Metadata" header — no Cycle 11 framing changed
+   - Null-safe throughout: `narrationMeta?.thematic_rationale` pattern; `?? []` for hooks array
+
+3. **`data/sample-season/classes/class_0001.json`** — fixture extended with `spirit_guide_narration_metadata`:
+   - Populated with realistic L6-shape content for RESOURCE_CONVERSION: `has_mechanic_alteration: true`, `alteration_type`, `thematic_rationale` (richer prose than Cycle 11 `thematic_rationale`), `manifestation: "rank3_passive"`, `spirit_guide_explainer_template: "resource_cost_shift"`, `narrative_hooks: ["sacrifice", "blood_magic", "life_wager"]`, `secondary_alteration_types: []`
+   - Exercises the populated-case path (L6 enrichment narration + explainer template label + narrative hook chips)
+
+**Smoke results:**
+- `npm run build`: 773 modules, 0 TypeScript errors — PASS (parity with Cycle 11 baseline)
+- Null-case smoke: all 11 real seasons (no `t4_alteration_output`, no `spirit_guide_narration_metadata`) — T4AlterationPanel returns null, no broken UI (TypeScript type constraint + null guard verified)
+- Populated-case smoke: `class_0001.json` (sample-season) with `spirit_guide_narration_metadata` → L6 narration path (richer prose renders), explainer template label visible, narrative hook chips render below narration text
+- Tier 2 framing: "Build Identity" badge maintained; "Intent Metadata" label in M6 panel unaffected; no over-promising language introduced
+- No regression: M1 (WeaponSlot), M2 (OffHandSlot), M4 (attribute coupling), M5 (ProvenanceBadge), M6 (T4ComparisonPanel) all unaffected
+- Q5 RATIFIED: preview-only; production NOT promoted
+
+**Design decisions made:**
+- L6 explainer template rendered as informational micro-label (text-[9px], muted gray) in Spirit Guide header — visible but non-intrusive; doesn't compete with narration prose
+- Narrative hooks rendered as small chips below narration text only when hooks array is non-empty — degrades cleanly to no chips for pre-L6 classes
+- Fallback chain preserves Cycle 11 behavior exactly for pre-L6 classes: `narrationMeta` is null → `spiritGuideNarration` falls through to `alteration.thematic_rationale` → same behavior as Cycle 11 v1.0
+- No new UI affordances beyond narration enrichment; all changes woven into existing M3 Spirit Guide box
+
+**TODO(drax): remove sample-season narration_metadata fixture** — updated with synthesized L6-shape content. When rocket §8 + Layer 6 ships and season is regenerated, replace with real engine emission. Track until star-lord confirms regen + export complete. (Extends prior TODO for T4 fixture.)
+
+---
 
 ### Cycle 11 M3 + M6 — T4 alteration display + comparison panel (completed 2026-05-25, Wave 3b)
 
