@@ -259,10 +259,26 @@ export type T4StrategyType =
   | 'GEOMETRY_COLLAPSE'
   | string; // forward-compat: allow unknown strategies from future rocket versions
 
+// Cycle 12 Layer 6 — Spirit Guide narration metadata (MIGRATION.md § v1.4-layer-6).
+// Emitted by t4_wireup.py emit_cross_seam_fields() per § 9 explainer pattern.
+// All fields optional-guarded — null is always valid for pre-L6 classes.
+export interface NarrationMetadata {
+  has_mechanic_alteration: boolean;
+  alteration_type?: string | null;               // primary strategy type
+  thematic_rationale?: string | null;            // engine-generated rationale (richer than Cycle 11 static)
+  manifestation?: string | null;                 // e.g. "rank3_passive"
+  spirit_guide_explainer_template?: string | null; // e.g. "resource_cost_shift"
+  narrative_hooks?: string[];                    // thematic tags (e.g. ["sacrifice", "blood_magic"])
+  secondary_alteration_types?: string[];         // non-signature alteration types
+}
+
 export interface T4AlterationOutput {
   strategy_type: T4StrategyType;
   strategy_params: Record<string, string | number | boolean | null>;
   applied_axis_targets?: string[];             // BC axes predicted to shift
   eta_score?: number;                          // η-coefficient (0.0–1.0 range)
-  thematic_rationale?: string | null;          // human-readable rationale; used as spirit-guide narration
+  thematic_rationale?: string | null;          // human-readable rationale; Cycle 11 static-template
+  // Cycle 12 Layer 6 enrichment (MIGRATION.md § v1.4-layer-6). Null on pre-L6 classes.
+  // Fallback chain in T4AlterationPanel: narration_metadata → thematic_rationale → § 9 template voice.
+  spirit_guide_narration_metadata?: NarrationMetadata | null;
 }

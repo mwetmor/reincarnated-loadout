@@ -3,6 +3,11 @@
 // Per Tier 2 framing: INTENT METADATA only — not combat-affecting until Cycle 12 Layer 6.
 // Includes spirit-guide narration surface (§ 9 explainer pattern woven into panel).
 // Null-safe: renders nothing when t4_alteration_output is null/absent.
+//
+// Cycle 12 Wave 5: Spirit Guide narration fallback chain (MIGRATION.md § v1.4-layer-6):
+//   1. spirit_guide_narration_metadata.thematic_rationale (L6 enrichment — richer engine prose)
+//   2. thematic_rationale (Cycle 11 field — static engine-generated rationale)
+//   3. § 9 template voice (Cycle 11 static fallback — pre-engine-narration)
 
 import type { T4AlterationOutput, T4StrategyType } from '../../data/types';
 
@@ -75,8 +80,21 @@ export function T4AlterationPanel({ alteration, className = '' }: T4AlterationPa
   const strategyLabel = getStrategyLabel(alteration.strategy_type);
   const strategyDescription = getStrategyDescription(alteration.strategy_type);
 
-  // Thematic rationale from class JSON = spirit-guide narration (takes precedence over static template).
-  const spiritGuideNarration = alteration.thematic_rationale ?? null;
+  // Spirit Guide narration — fallback chain (Cycle 12 Wave 5, MIGRATION.md § v1.4-layer-6):
+  //   1. L6 narration_metadata.thematic_rationale — engine-generated prose, richer + context-aware
+  //   2. Cycle 11 thematic_rationale field — engine-generated static rationale
+  //   3. null — triggers § 9 template voice fallback in JSX below
+  const narrationMeta = alteration.spirit_guide_narration_metadata ?? null;
+  const spiritGuideNarration: string | null =
+    narrationMeta?.thematic_rationale       // L6 enrichment path
+    ?? alteration.thematic_rationale        // Cycle 11 fallback
+    ?? null;                                // triggers § 9 template voice
+
+  // L6 narrative hooks (optional enhancement — rendered as context chips when present).
+  const narrativeHooks: string[] = narrationMeta?.narrative_hooks ?? [];
+
+  // L6 explainer template (informational — rendered as small label when present).
+  const explainerTemplate: string | null = narrationMeta?.spirit_guide_explainer_template ?? null;
 
   // Extract non-trivial strategy params for display
   const paramRows = Object.entries(alteration.strategy_params ?? {})
@@ -154,14 +172,24 @@ export function T4AlterationPanel({ alteration, className = '' }: T4AlterationPa
         )}
 
         {/* Spirit-guide narration surface (§ 9 explainer pattern).
-            Uses thematic_rationale from class JSON when present;
-            falls back to a generic intro voice for this kit. */}
+            Fallback chain (Cycle 12 Wave 5, MIGRATION.md § v1.4-layer-6):
+              1. L6 spirit_guide_narration_metadata.thematic_rationale (engine prose, richer)
+              2. Cycle 11 thematic_rationale field (engine static rationale)
+              3. § 9 template voice (pre-engine static fallback) */}
         <div className="rounded border border-gray-800 bg-gray-950/60 px-3 py-2.5">
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span className="text-gray-600 text-base">◈</span>
-            <span className="text-[10px] font-mono text-gray-600 uppercase tracking-wide">
-              Spirit Guide
-            </span>
+          <div className="flex items-center justify-between gap-1.5 mb-1.5">
+            <div className="flex items-center gap-1.5">
+              <span className="text-gray-600 text-base">◈</span>
+              <span className="text-[10px] font-mono text-gray-600 uppercase tracking-wide">
+                Spirit Guide
+              </span>
+            </div>
+            {/* L6 explainer template label — shown when narration_metadata is present */}
+            {explainerTemplate && (
+              <span className="text-[9px] font-mono text-gray-700 italic">
+                {explainerTemplate.replace(/_/g, ' ')}
+              </span>
+            )}
           </div>
           {spiritGuideNarration ? (
             <p className="text-xs text-gray-500 leading-relaxed italic">
@@ -174,6 +202,18 @@ export function T4AlterationPanel({ alteration, className = '' }: T4AlterationPa
               operates at its peak. If you would like a walkthrough, I can explain how to help
               them make the most out of it."
             </p>
+          )}
+          {/* L6 narrative hooks — rendered as context chips when L6 narration_metadata present */}
+          {narrativeHooks.length > 0 && (
+            <div className="flex flex-wrap gap-1 mt-2">
+              {narrativeHooks.map((hook, i) => (
+                <span key={i}
+                  className="inline-flex items-center px-1.5 py-0.5 rounded border text-[9px] font-mono bg-gray-900 text-gray-600 border-gray-800"
+                  title="Narrative theme from Layer 6 Spirit Guide narration metadata">
+                  {hook.replace(/_/g, ' ')}
+                </span>
+              ))}
+            </div>
           )}
         </div>
       </div>
