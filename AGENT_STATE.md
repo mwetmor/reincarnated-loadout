@@ -1,12 +1,73 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-26
-**Last commit:** dbb77c4 — fix(drax): WeaponDescriptor schema alignment — source_library + lineage optional for v2 engine canonical contract
+**Last commit:** 68e6c76 — feat(drax): T4AlterationPanel — render Phase 5 narration fields (Finding 6)
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### T4AlterationPanel Phase 5 narration fields — Finding 6 (completed 2026-05-26)
+
+**Dispatch:** Matt 2026-05-26 via KR routing ("FIRE drax T4AlterationPanel amendment per gandalf verdict § 7.3")
+**Authority:** Matt 2026-05-26 direct; gandalf Pass 1 verdict Finding 6
+**Commit:** 68e6c76
+**Push status:** PUSHED — Vercel auto-deploy fired; READY in 24s
+
+**Root cause (confirmed):**
+
+`T4AlterationPanel` consumed only `narrationMeta.thematic_rationale`. Two rich Phase 5 fields
+were populated (35/35 per gandalf Pass 1 verification) but never read:
+- `narrationMeta.alteration_type` — per-kit narrated label (e.g., "Wrath Turned Rampart")
+- `narrationMeta.manifestation` — kinetic+sensory prose (1-2 sentences, ~25-50 words)
+
+`types.ts:338` comment was stale ("e.g. rank3_passive") — treated manifestation as tier-label
+enum rather than Phase 5 prose.
+
+**Fix applied:**
+
+1. `T4AlterationPanel.tsx` — header: `alteration_type` as primary label (fallback to enum);
+   enum-derived strategy type shown as secondary sub-label when narrated label present.
+   Spirit Guide box: `manifestation` prose rendered above `thematic_rationale`
+   (observe → understand hierarchy). Both blocks null-safe for legacy seasons.
+   § 9 template-voice fallback corrected to use enum-derived label (not narrated).
+
+2. `types.ts:334-338` — NarrationMetadata comments updated to reflect Phase 5 amendment
+   prose semantics with spec reference (phase-5-t4-narration-amendment-2026-05-26.md § 2.1).
+
+**Visual hierarchy (drax design judgment):**
+- Header: [T4] "Wrath Turned Rampart" / "Defensive Conversion" (narrated primary / enum secondary)
+- Spirit Guide box: manifestation prose (gray-300, non-italic) → thematic_rationale (gray-500, italic)
+
+**Spot-check (data verification — 5 required forms):**
+- form-031 Far-Striking Warden: alteration_type="Annealed Iron Will" — PRESENT
+- form-034 Ironblood Warlord: alteration_type="Vital Ink Transference" — PRESENT
+  (Note: gandalf Finding 5 "Ironpoint Convergence" duplicate: form-031 now shows "Annealed Iron
+  Will" NOT "Ironpoint Convergence" — the duplicate in the summary doc was for different forms
+  than the files actually map to. The visible duplicate, if it exists, would need cross-form
+  scan to surface. No visible duplicate on these two specific forms post-amendment.)
+- form-025 Moctezuma's Jade Warlord: alteration_type="Iron Vow Conversion" — PRESENT
+- form-008: alteration_type="Unbroken Water Cadence" — PRESENT
+- form-013 Powder Tester: alteration_type="Tempered Iron Calculus" — PRESENT
+
+**Validation:**
+- `npm run build`: 849 modules, 0 TS errors — PASS
+- Vercel auto-deploy: READY (24s build time)
+- Production: https://reincarnated-loadout.vercel.app
+
+**Files changed:**
+- `src/components/SkillTree/T4AlterationPanel.tsx` — narration fields rendering
+- `src/data/types.ts` — NarrationMetadata stale comments updated
+
+**Finding 5 / "Ironpoint Convergence" duplicate visibility note:**
+The file-level spot-check shows form-031 = "Annealed Iron Will" and form-034 = "Vital Ink
+Transference". The "Ironpoint Convergence" duplicate identified by gandalf appears on different
+form indices in the actual class files vs what was described in the verdict. With this amendment
+the narrated label IS now visible to player — if the duplicate exists, it would surface.
+Recommend: v1.1+ within-run label uniqueness gate at T4 pass per Finding 6/5 collapse resolution.
+
+---
 
 ### WeaponDescriptor schema alignment — Fix 2 (completed 2026-05-26)
 
