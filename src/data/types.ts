@@ -331,11 +331,14 @@ export type T4StrategyType =
 // Cycle 12 Layer 6 — Spirit Guide narration metadata (MIGRATION.md § v1.4-layer-6).
 // Emitted by t4_wireup.py emit_cross_seam_fields() per § 9 explainer pattern.
 // All fields optional-guarded — null is always valid for pre-L6 classes.
+//
+// Phase 5 amendment 2026-05-26: alteration_type and manifestation semantics updated.
+// See canonical/story/phase-5-t4-narration-amendment-2026-05-26.md § 2.1 for full disambiguation.
 export interface NarrationMetadata {
   has_mechanic_alteration: boolean;
-  alteration_type?: string | null;               // primary strategy type
-  thematic_rationale?: string | null;            // engine-generated rationale (richer than Cycle 11 static)
-  manifestation?: string | null;                 // e.g. "rank3_passive"
+  alteration_type?: string | null;               // Phase 5: per-kit narrated label (e.g. "Wrath Turned Rampart"); pre-Phase-5: strategy type enum pass-through
+  thematic_rationale?: string | null;            // engine-generated rationale prose (richer than Cycle 11 static); ~15-30 words; why this alteration fits this kit
+  manifestation?: string | null;                 // Phase 5 amendment 2026-05-26: kinetic+sensory prose (~25-50 words); what the T4 alteration looks/feels like in play. NOTE: semantically distinct from top-level t4_alteration_output.manifestation (tier-label enum); that field is preserved for tier-label semantics and is not mirrored here.
   spirit_guide_explainer_template?: string | null; // e.g. "resource_cost_shift"
   narrative_hooks?: string[];                    // thematic tags (e.g. ["sacrifice", "blood_magic"])
   secondary_alteration_types?: string[];         // non-signature alteration types

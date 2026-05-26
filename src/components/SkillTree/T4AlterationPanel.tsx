@@ -77,18 +77,26 @@ export function T4AlterationPanel({ alteration, className = '' }: T4AlterationPa
   // Null-safe per MIGRATION.md v1.3: t4_alteration_output null = pre-§8 season or no alteration.
   if (!alteration) return null;
 
-  const strategyLabel = getStrategyLabel(alteration.strategy_type);
+  // Phase 5 amendment 2026-05-26: prefer narrated alteration_type label over enum-derived label.
+  // Falls back to STRATEGY_LABELS enum for legacy seasons without Phase 5 narration data.
+  const narrationMeta = alteration.spirit_guide_narration_metadata ?? null;
+  const strategyLabel =
+    (narrationMeta?.alteration_type ?? '').trim() || getStrategyLabel(alteration.strategy_type);
   const strategyDescription = getStrategyDescription(alteration.strategy_type);
 
   // Spirit Guide narration — fallback chain (Cycle 12 Wave 5, MIGRATION.md § v1.4-layer-6):
   //   1. L6 narration_metadata.thematic_rationale — engine-generated prose, richer + context-aware
   //   2. Cycle 11 thematic_rationale field — engine-generated static rationale
   //   3. null — triggers § 9 template voice fallback in JSX below
-  const narrationMeta = alteration.spirit_guide_narration_metadata ?? null;
   const spiritGuideNarration: string | null =
     narrationMeta?.thematic_rationale       // L6 enrichment path
     ?? alteration.thematic_rationale        // Cycle 11 fallback
     ?? null;                                // triggers § 9 template voice
+
+  // Phase 5 amendment 2026-05-26: kinetic+sensory manifestation prose (1-2 sentences).
+  // Present only on Phase 5 forms; gracefully omitted when absent or empty.
+  const manifestationProse: string | null =
+    (narrationMeta?.manifestation ?? '').trim() || null;
 
   // L6 narrative hooks (optional enhancement — rendered as context chips when present).
   const narrativeHooks: string[] = narrationMeta?.narrative_hooks ?? [];
@@ -111,14 +119,23 @@ export function T4AlterationPanel({ alteration, className = '' }: T4AlterationPa
     <div className={`rounded-lg border border-gray-700 bg-gray-900/60 overflow-hidden ${className}`}>
       {/* Header strip */}
       <div className="flex items-center justify-between gap-2 px-3 py-2 border-b border-gray-800 bg-gray-900/80">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 min-w-0">
           {/* T4 badge */}
-          <span className="inline-flex items-center px-1.5 py-0.5 rounded border text-[10px] font-mono font-bold bg-violet-950 text-violet-300 border-violet-700">
+          <span className="inline-flex items-center flex-shrink-0 px-1.5 py-0.5 rounded border text-[10px] font-mono font-bold bg-violet-950 text-violet-300 border-violet-700">
             T4
           </span>
-          <span className="text-xs font-semibold text-gray-200 font-mono">
-            {strategyLabel}
-          </span>
+          {/* Phase 5 amendment 2026-05-26: narrated alteration_type label as primary heading;
+              enum-derived strategy type shown as secondary label below when narrated label is present. */}
+          <div className="flex flex-col min-w-0">
+            <span className="text-xs font-semibold text-gray-200 leading-tight">
+              {strategyLabel}
+            </span>
+            {(narrationMeta?.alteration_type ?? '').trim() && (
+              <span className="text-[10px] font-mono text-gray-500 leading-tight">
+                {getStrategyLabel(alteration.strategy_type)}
+              </span>
+            )}
+          </div>
         </div>
         <div className="flex items-center gap-2">
           {/* Tier 2 intent-metadata badge */}
@@ -191,6 +208,15 @@ export function T4AlterationPanel({ alteration, className = '' }: T4AlterationPa
               </span>
             )}
           </div>
+          {/* Phase 5 amendment 2026-05-26: manifestation prose — kinetic+sensory description of
+              what the T4 alteration looks/feels like in play. Rendered before thematic_rationale
+              to establish: observe (manifestation) → understand (rationale).
+              Null-safe: gracefully absent on legacy seasons without Phase 5 narration data. */}
+          {manifestationProse && (
+            <p className="text-xs text-gray-300 leading-relaxed mb-2">
+              {manifestationProse}
+            </p>
+          )}
           {spiritGuideNarration ? (
             <p className="text-xs text-gray-500 leading-relaxed italic">
               "{spiritGuideNarration}"
@@ -198,7 +224,7 @@ export function T4AlterationPanel({ alteration, className = '' }: T4AlterationPa
           ) : (
             <p className="text-xs text-gray-600 leading-relaxed italic">
               "Summoner, you may have noticed — your spirit has unlocked something truly unique
-              and meaningful. This {strategyLabel.toLowerCase()} defines how your entire kit
+              and meaningful. This {getStrategyLabel(alteration.strategy_type).toLowerCase()} defines how your entire kit
               operates at its peak. If you would like a walkthrough, I can explain how to help
               them make the most out of it."
             </p>
