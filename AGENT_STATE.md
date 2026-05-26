@@ -1,12 +1,56 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-26
-**Last commit:** 39bf39e — fix(drax): weapon rendering regression — remove from Loadout page, add to Sample page
+**Last commit:** a204310 — feat(drax): T4AlterationPanel — Mechanical Effects sub-section gated by design-mode toggle
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### T4 Mechanical Effects sub-section — design-mode extension (completed 2026-05-26)
+
+**Dispatch:** Matt 2026-05-26 via KR routing — T4 keystone mechanical fields not visible anywhere in UI
+**Authority:** Matt 2026-05-26 direct; KR routing per hive-mind § 4.3 always-channel
+**Commit:** a204310
+**Push status:** PUSHED — Vercel auto-deploy triggered
+
+**Problem confirmed:** T4AlterationPanel rendered narrative only (alteration_type label + manifestation prose + thematic_rationale + strategy_type sub-label). Four mechanical fields were emitted in engine output but never surfaced in UI: `strategy_params`, `gamora_combatant_fields`, `applied_axis_targets`, `eta_score`.
+
+**Design-mode toggle wiring confirmed:** toggle lives in Loadout.tsx (`designMode` state, localStorage key `drax_design_mode`). It was NOT propagating to SkillTree → T4AlterationPanel. Fixed by adding `designMode?: boolean` prop to SkillTree and T4AlterationPanel, with Loadout.tsx passing existing state down.
+
+**Engine data survey (v2_narrow_phase_5):**
+- `strategy_params`: always `{}` empty on all 35 forms — formatStrategyParams gracefully falls back to strategy-type-specific static descriptions
+- `gamora_combatant_fields`: populated on all forms; 4 known sub-keys: `defensive_conversion`, `resource_conversion`, `geometry_collapse`, `trade_off`
+- `applied_axis_targets`: always `[]` empty on all forms — row gracefully omitted
+- `eta_score`: always `0.0` on all forms — row shows "0.000"
+
+**Strategy type distribution (v2_narrow_phase_5, 35 forms):** DEFENSIVE_CONVERSION 13, TRADE_OFF 9, GEOMETRY_COLLAPSE 8, RESOURCE_CONVERSION 5. No ELEMENT_CONVERSION or DEFENSIVE_TRADEOFF in current data — formatters implemented per spec.
+
+**Changes:**
+
+1. `src/data/types.ts` — added `gamora_combatant_fields` to `T4AlterationOutput` interface (was emitted by engine but untyped in consumer).
+
+2. `src/components/SkillTree/T4AlterationPanel.tsx` — added `designMode?: boolean` prop (default false); added `formatStrategyParams()` (switch on 6 strategy_types + generic fallback); added `renderGamoraCombatantFields()` helper; added "Mechanical Effects" sub-section below Spirit Guide block, fully gated by `designMode`.
+
+3. `src/components/SkillTree/SkillTree.tsx` — added `designMode?: boolean` prop (default false); passes to T4AlterationPanel.
+
+4. `src/pages/Loadout.tsx` — passes existing `designMode` state to SkillTree.
+
+**Visual register:** cyan-900 border/accent (matches DesignModePanel register); "⚙ Mechanical Effects" header with cyan-950 badge; field rows: label w-28 gray-600, value cyan-300/cyan-400/cyan-600. Whole section hidden when all 4 fields absent.
+
+**Null-safety:** strategy_params empty → row hidden; gcf empty → Sim Integration row hidden; applied_axis_targets empty → BC Axis Targets row hidden; eta_score null → hidden; entire section hidden if all 4 absent.
+
+**Spot-check note:** `strategy_params` currently `{}` and `applied_axis_targets` currently `[]` across all 35 forms. gamora_combatant_fields is the primary mechanical data surface. eta_score shows as 0.000 (engine emits 0.0 on all current forms). When engine ships populated params/axis targets in future cycles, formatters are ready — no UI changes needed.
+
+**Validation:**
+- `npm run build`: tsc -b clean, 849 modules, 0 TS errors — PASS
+- Push fired, Vercel auto-deploy triggered
+- Production: https://reincarnated-loadout.vercel.app
+
+**T4 PM1 review surface status:** SUBSTANTIVELY COMPLETE after this lands (Matt framing confirmed).
+
+---
 
 ### Weapon rendering regression fix — Bug 1 + Bug 2 (completed 2026-05-26)
 
