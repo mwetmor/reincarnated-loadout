@@ -166,6 +166,8 @@ export function useAnalytics(): AnalyticsData | null {
       const bm = cls.balance_metadata;
       if (!bm) continue;
       const wr = bm.actual_winrate;
+      // Phase 5 classes have null actual_winrate — skip binning for those.
+      if (wr == null) continue;
       const isOutlier = bm.target_winrate != null && bm.target_winrate !== 0.5;
       for (const bin of binCounts) {
         if (wr >= bin.lo && wr < bin.hi) {

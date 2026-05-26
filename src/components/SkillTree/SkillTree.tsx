@@ -52,9 +52,10 @@ export function SkillTree({
     if (!grid.has(key)) grid.set(key, []);
     grid.get(key)!.push(skill);
   }
-  // Sort by chain_position
+  // Sort by chain_position — null-safe: absent on Phase 5 skills (fallback to 0 preserves order).
+  // TODO(drax): remove ?? 0 when engine unifies Skill.chain_position field.
   for (const [, cell] of grid) {
-    cell.sort((a, b) => a.chain_position - b.chain_position);
+    cell.sort((a, b) => (a.chain_position ?? 0) - (b.chain_position ?? 0));
   }
 
   // Determine which tiers actually have skills

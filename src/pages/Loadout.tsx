@@ -193,7 +193,7 @@ function ClassHeader({
             <h1 className="text-xl font-bold text-gray-100">
               {classData.name ?? classData.id}
             </h1>
-            {!bm.converged && (
+            {bm.converged === false && (
               <span className="text-xs bg-amber-900 text-amber-400 border border-amber-700 px-1.5 py-0.5 rounded font-mono">
                 ⚠ unconverged
               </span>
@@ -239,10 +239,16 @@ function ClassHeader({
         </div>
 
         {/* Balance stats */}
+        {/* Balance stats — null-safe: Phase 5 balance_metadata lacks these fields.
+            TODO(drax): remove ?? fallbacks when engine aligns Phase 5 balance_metadata. */}
         <div className="flex gap-3 text-right flex-shrink-0">
-          <StatPill label="WR" value={`${(bm.actual_winrate * 100).toFixed(1)}%`} />
-          <StatPill label="Iterations" value={String(bm.convergence_iterations)} />
-          <StatPill label="Modifier" value={bm.final_modifier.toFixed(4)} dim />
+          {bm.actual_winrate != null ? (
+            <StatPill label="WR" value={`${(bm.actual_winrate * 100).toFixed(1)}%`} />
+          ) : (
+            <StatPill label="WR" value="—" />
+          )}
+          <StatPill label="Iterations" value={bm.convergence_iterations != null ? String(bm.convergence_iterations) : '—'} />
+          <StatPill label="Modifier" value={bm.final_modifier != null ? bm.final_modifier.toFixed(4) : '—'} dim />
         </div>
       </div>
 

@@ -12,16 +12,23 @@ export interface Skill {
   // Stage 3 cipher migration additive field (MIGRATION.md v1.2). Present on manifest v1.5+
   // seasons. null / absent on pre-Stage-3 seasons. Use: seasonal_element ?? canonical_element.
   seasonal_element?: string | null;
-  effect_category: string;
-  effects: SkillEffect[];
+  effect_category?: string;
+  // Phase 5 skills emit effects as string[] (narrative descriptions) instead of SkillEffect[]
+  // (structured {name, params} objects). Guard at render time via isStringEffects() helper.
+  // TODO(drax): remove dual-type when engine unifies Skill.effects schema (rocket Cycle 13+).
+  effects: SkillEffect[] | string[];
   tier: number;
   chain_id: string;
-  chain_position: number;
-  parent_skill_ids: string[];
-  scaling_coefficient: number;
+  // chain_position absent on Phase 5 skills. Guard sort: a.chain_position ?? 0.
+  chain_position?: number | null;
+  // parent_skill_ids absent on Phase 5 skills. Guard: skill.parent_skill_ids ?? [].
+  parent_skill_ids?: string[];
+  // scaling_coefficient absent on Phase 5 skills. Guard: skill.scaling_coefficient ?? 0.
+  scaling_coefficient?: number | null;
   energy_cost: number;
   cooldown_seconds: number;
-  color_value: number;
+  // color_value absent on Phase 5 skills. Guard: skill.color_value ?? 0.
+  color_value?: number | null;
 }
 
 export interface StatDistribution {
@@ -33,11 +40,15 @@ export interface StatDistribution {
 }
 
 export interface BalanceMetadata {
-  final_modifier: number;
-  convergence_iterations: number;
-  converged: boolean;
-  actual_winrate: number;
-  target_winrate: number;
+  // All fields optional — Phase 5 generation run balance_metadata is a generation-params
+  // blob that does NOT include these fields. Guard all access: bm.final_modifier ?? 0.
+  // TODO(drax): remove optionality when engine aligns Phase 5 balance_metadata shape to
+  // BalanceMetadata contract (rocket seam; schema-completion Cycle 13+ queue item).
+  final_modifier?: number | null;
+  convergence_iterations?: number | null;
+  converged?: boolean | null;
+  actual_winrate?: number | null;
+  target_winrate?: number | null;
 }
 
 export interface ClassData {

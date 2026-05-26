@@ -47,10 +47,12 @@ export function SkillNode({ skill, state, rank, seasonElementName, onClick }: Sk
         {seasonElementName}
       </span>
 
-      {/* Scaling coef */}
-      <span className="text-[8px] sm:text-[9px] leading-none mt-0.5 text-gray-500 font-mono">
-        ×{skill.scaling_coefficient.toFixed(2)}
-      </span>
+      {/* Scaling coef — null-safe: absent on Phase 5 skills (TODO drax: remove when engine unifies schema) */}
+      {skill.scaling_coefficient != null && (
+        <span className="text-[8px] sm:text-[9px] leading-none mt-0.5 text-gray-500 font-mono">
+          ×{skill.scaling_coefficient.toFixed(2)}
+        </span>
+      )}
 
       {/* SP rank badge */}
       {rank > 0 && (

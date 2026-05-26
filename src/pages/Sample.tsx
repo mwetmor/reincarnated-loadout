@@ -135,22 +135,24 @@ function SampleClassHeader({
           )}
         </div>
 
+        {/* Balance stats — null-safe: Phase 5 balance_metadata lacks these fields.
+            TODO(drax): remove ?? fallbacks when engine aligns Phase 5 balance_metadata. */}
         <div className="flex gap-3 text-right flex-shrink-0">
           <div className="text-center">
             <p className="text-xs font-mono text-gray-100 font-semibold">
-              {(bm.actual_winrate * 100).toFixed(1)}%
+              {bm.actual_winrate != null ? `${(bm.actual_winrate * 100).toFixed(1)}%` : '—'}
             </p>
             <p className="text-[10px] font-mono text-gray-600">WR (baseline)</p>
           </div>
           <div className="text-center">
             <p className="text-xs font-mono text-gray-100 font-semibold">
-              {bm.convergence_iterations}
+              {bm.convergence_iterations != null ? bm.convergence_iterations : '—'}
             </p>
             <p className="text-[10px] font-mono text-gray-600">Iterations</p>
           </div>
           <div className="text-center">
             <p className="text-xs font-mono text-gray-400 font-semibold">
-              {bm.final_modifier.toFixed(4)}
+              {bm.final_modifier != null ? bm.final_modifier.toFixed(4) : '—'}
             </p>
             <p className="text-[10px] font-mono text-gray-600">Modifier</p>
           </div>

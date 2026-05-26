@@ -1,4 +1,4 @@
-import type { Skill, SeasonManifest } from '../../data/types';
+import type { Skill, SeasonManifest, SkillEffect } from '../../data/types';
 import { resolveElementDisplay } from '../../data/types';
 import { ROLE_LABEL, ELEMENT_COLORS } from '../../data/constants';
 import { Button } from '../ui/Button';
@@ -26,6 +26,13 @@ function resolveSkillElementName(skill: Skill, manifest: SeasonManifest): string
   if (skill.seasonal_element) return skill.seasonal_element;
   // Fallback via manifest lookup (pre-v1.5 seasons use canonical_element as key)
   return resolveElementDisplay(skill.canonical_element, manifest, `skill:${skill.id}`);
+}
+
+// Type guard: detect Phase 5 string-array effects vs structured SkillEffect[].
+// Phase 5 engine emits effects as narrative strings; legacy engine emits {name, params} objects.
+// TODO(drax): remove when engine unifies Skill.effects schema (rocket Cycle 13+).
+function isStringEffects(effects: SkillEffect[] | string[]): effects is string[] {
+  return effects.length === 0 || typeof effects[0] === 'string';
 }
 
 function formatParam(key: string, val: number | string): string {
@@ -116,19 +123,30 @@ export function SkillDetailPanel({
         )}
       </div>
 
-      {/* Stats row */}
+      {/* Stats row — scaling_coefficient null-safe: absent on Phase 5 skills.
+          TODO(drax): remove ?? fallback when engine unifies Skill schema. */}
       <div className="grid grid-cols-3 divide-x divide-gray-700 border-b border-gray-700">
         <StatCell label="Energy" value={`${skill.energy_cost.toFixed(1)}`} />
         <StatCell label="Cooldown" value={`${skill.cooldown_seconds.toFixed(1)}s`} />
-        <StatCell label="Scale ×" value={skill.scaling_coefficient.toFixed(4)} highlight />
+        <StatCell label="Scale ×" value={skill.scaling_coefficient != null ? skill.scaling_coefficient.toFixed(4) : '—'} highlight />
       </div>
 
-      {/* Effects */}
+      {/* Effects — dual-type: Phase 5 emits string[], legacy emits SkillEffect[].
+          TODO(drax): remove branch when engine unifies Skill.effects schema (rocket Cycle 13+). */}
       <div className="px-4 py-3 space-y-1.5 border-b border-gray-700">
         <p className="text-xs text-gray-500 uppercase tracking-wide font-mono">Effects</p>
         {skill.effects.length === 0 ? (
           <p className="text-xs text-gray-600">No effects data</p>
+        ) : isStringEffects(skill.effects) ? (
+          // Phase 5 path: effects are narrative description strings
+          skill.effects.map((desc, i) => (
+            <div key={i} className="text-xs text-gray-300">
+              <span className="text-gray-500">→</span>{' '}
+              {desc}
+            </div>
+          ))
         ) : (
+          // Legacy path: effects are structured {name, params} objects
           skill.effects.map((eff, i) => (
             <div key={i} className="text-xs text-gray-300">
               <span className="text-gray-500">→</span>{' '}
