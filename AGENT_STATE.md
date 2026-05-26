@@ -1,7 +1,7 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-26
-**Last commit:** a204310 — feat(drax): T4AlterationPanel — Mechanical Effects sub-section gated by design-mode toggle
+**Last commit:** 7c93209 — drax: wire designMode to Sample.tsx — T4 Mechanical Effects visible on Sample page
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
@@ -48,7 +48,27 @@
 - Push fired, Vercel auto-deploy triggered
 - Production: https://reincarnated-loadout.vercel.app
 
-**T4 PM1 review surface status:** SUBSTANTIVELY COMPLETE after this lands (Matt framing confirmed).
+**T4 PM1 review surface status:** FULLY UNBLOCKED — Sample.tsx designMode wiring landed (commit 7c93209).
+
+### Sample.tsx designMode bug fix — T4 Mechanical Effects on Sample page (completed 2026-05-26)
+
+**Dispatch:** Matt 2026-05-26 via KR routing — T4 Mechanical Effects disappear on navigation to Sample page
+**Root cause (KR pre-diagnostic):** Loadout.tsx had full designMode wiring; Sample.tsx had none. Navigation to Sample → SkillTree received no designMode prop → T4AlterationPanel Mechanical Effects section gated out.
+**Commit:** 7c93209
+**Push status:** PUSHED — Vercel auto-deploy triggered (Building at time of commit)
+
+**Fix applied:**
+1. `src/pages/Sample.tsx` — import DesignModeToggle + DESIGN_MODE_STORAGE_KEY from DesignMode module
+2. `Sample()` function — added designMode useState (lazy localStorage read on `drax_design_mode` key) + handleDesignModeToggle (write-on-change) — mirror of Loadout.tsx pattern exactly
+3. `SampleClassHeader` component — added designMode + onDesignModeToggle props; DesignModeToggle rendered in class-picker row (same visual position as Loadout.tsx)
+4. `SkillTree` on Sample.tsx — designMode prop now passed through
+
+**Shared localStorage key:** `drax_design_mode` — toggle state persists across Loadout ↔ Sample navigation as Matt expected.
+
+**Validation:**
+- `npm run build`: tsc -b clean, 849 modules, 0 TS errors — PASS
+- Push fired, Vercel auto-deploy triggered
+- Production: https://reincarnated-loadout.vercel.app
 
 ---
 
