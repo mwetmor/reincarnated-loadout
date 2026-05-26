@@ -1,12 +1,67 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-26
-**Last commit:** 68e6c76 — feat(drax): T4AlterationPanel — render Phase 5 narration fields (Finding 6)
+**Last commit:** 39bf39e — fix(drax): weapon rendering regression — remove from Loadout page, add to Sample page
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### Weapon rendering regression fix — Bug 1 + Bug 2 (completed 2026-05-26)
+
+**Dispatch:** Matt 2026-05-26 hands-on inspection of production deploy via KR routing
+**Authority:** Matt 2026-05-26 direct; T4 PM1 Block 1 pre-validation surface
+**Commit:** 39bf39e
+**Push status:** PUSHED — Vercel auto-deploy triggered
+
+**Root cause (confirmed via git log + file inspection):**
+
+Bug 1: `WeaponSlot` + `OffHandSlot` section was rendering on the Loadout (theorycrafting)
+page. Root trace: `f22a61f` (feat: wire M1/M2/M5 into Loadout.tsx) — components wired into
+Loadout.tsx, not Sample.tsx. The Loadout page is the theorycrafting page; weapon slot should
+be blank there per convention.
+
+Bug 2: `Sample.tsx` (display page) never had WeaponSlot rendering added. The engine-emitted
+`main_weapon` field was always present (100% of 35 Phase 5 forms; 100% of 35 v2_narrow
+legacy forms) but no component was wired to consume it on the display page.
+
+Cultural / period / quality-tier badges (Amendment 2) are woven inside `WeaponSlot` itself
+(committed in `9acff0d`). No badge migration was needed — badges travel with the component.
+
+**Fix applied:**
+
+1. `src/pages/Loadout.tsx` — removed Weapons section render block (WeaponSlot + OffHandSlot)
+   + removed WeaponSlot + OffHandSlot imports. ProvenanceBadge import retained (used in
+   ClassHeader for class-level M5 badge). Weapon slot at bottom of Loadout page remains blank
+   per theorycrafting intent.
+
+2. `src/pages/Sample.tsx` — added WeaponSlot + OffHandSlot imports; added Weapons section
+   after SampleClassHeader and before skill tree (class header → weapon kit → skill tree
+   hierarchy). Null-safe collapse guard preserves pre-substrate season behavior.
+
+**Spot-check (data verification — 5 required forms):**
+- form-000 Rampart Knight (class_0001): mw=shield / category=shield / period=early_modern — PRESENT
+- form-024 Shadowbane Standard-Bearer (class_0025): mw=Banner with Shaft / category=banner — PRESENT
+- form-025 Moctezuma's Jade Warlord (class_0026): mw=moctezuma_aztec_war_club / melee — PRESENT
+- form-031 Far-Striking Warden (class_0032): mw=Blaser R93 Tactical 7.62mm Sniper Rifle / firearm — PRESENT
+- form-034 Ironblood Warlord (class_0035): mw=Two-handed sword / melee — PRESENT
+- v2_narrow legacy (class_0002): mw=Sword of Attila / melee / lineage=Charlemagne — PRESENT (lineage path clean)
+
+Phase 5: cultural_lineage_canonical / historical_period_canonical / quality_tier are null on
+current Phase 5 forms (WeaponBadges renders nothing; null-safe per component design). Badges
+will render when engine populates those fields in a future cycle.
+
+**Validation:**
+- `npm run build`: tsc -b clean, 849 modules, 0 TS errors — PASS
+- Push fired, Vercel auto-deploy triggered
+- Production: https://reincarnated-loadout.vercel.app
+
+**Files changed:**
+- `src/pages/Loadout.tsx` — removed Weapons section + 2 imports
+- `src/pages/Sample.tsx` — added Weapons section + 2 imports
+
+---
 
 ### T4AlterationPanel Phase 5 narration fields — Finding 6 (completed 2026-05-26)
 
