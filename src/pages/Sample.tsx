@@ -15,6 +15,9 @@ import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
 // M1 / M2 — weapon slots (Cycle 11, MIGRATION.md v1.3). Display page renders engine-emitted kit.
 import { WeaponSlot } from '../components/WeaponSlot/WeaponSlot';
 import { OffHandSlot } from '../components/WeaponSlot/OffHandSlot';
+// Amendment 1 — design-mode toggle (engine generation run, 2026-05-25).
+// Shared key with Loadout.tsx so toggle state persists across Loadout ↔ Sample navigation.
+import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignMode/DesignModeToggle';
 // Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
 // Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
 // TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
@@ -87,11 +90,15 @@ function SampleClassHeader({
   manifest,
   allClasses,
   onClassChange,
+  designMode,
+  onDesignModeToggle,
 }: {
   classData: ClassData;
   manifest: SeasonManifest;
   allClasses: ClassData[];
   onClassChange: (id: string) => void;
+  designMode: boolean;
+  onDesignModeToggle: (next: boolean) => void;
 }) {
   // Parallel L-13 fix (same pattern): prefer seasonal_dominant_element (v1.5+);
   // fall through resolveElementDisplay (never returns raw canonical-four).
@@ -183,29 +190,59 @@ function SampleClassHeader({
         </div>
       </div>
 
-      {allClasses.length > 1 && (
-        <div className="flex items-center gap-2">
-          <label className="text-xs text-gray-600 font-mono flex-shrink-0">Class:</label>
-          <select
-            value={classData.id}
-            onChange={(e) => onClassChange(e.target.value)}
-            className="flex-1 max-w-xs bg-gray-900 border border-gray-700 text-gray-300 text-sm rounded px-2 py-1 focus:outline-none focus:border-violet-500"
-          >
-            {allClasses.map((c) => (
-              <option key={c.id} value={c.id}>
-                {/* L-11 parallel fix: resolveArchetypeLabel for class picker */}
-                {c.name ?? c.id} — {resolveArchetypeLabel(c.archetype_tag, manifest)}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
+      {/* Class picker + design-mode toggle row */}
+      <div className="flex flex-wrap items-center gap-3">
+        {allClasses.length > 1 && (
+          <div className="flex items-center gap-2 flex-1 min-w-0">
+            <label className="text-xs text-gray-600 font-mono flex-shrink-0">Class:</label>
+            <select
+              value={classData.id}
+              onChange={(e) => onClassChange(e.target.value)}
+              className="flex-1 max-w-xs bg-gray-900 border border-gray-700 text-gray-300 text-sm rounded px-2 py-1 focus:outline-none focus:border-violet-500"
+            >
+              {allClasses.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {/* L-11 parallel fix: resolveArchetypeLabel for class picker */}
+                  {c.name ?? c.id} — {resolveArchetypeLabel(c.archetype_tag, manifest)}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+        {/* Amendment 1 — design-mode toggle (engine generation run, 2026-05-25).
+            Shared key with Loadout.tsx: toggle state persists across Loadout ↔ Sample navigation. */}
+        <DesignModeToggle
+          designMode={designMode}
+          onToggle={onDesignModeToggle}
+          className="flex-shrink-0"
+        />
+      </div>
     </div>
   );
 }
 
 export function Sample() {
   const { defaultSeason, selectableSeasons } = useSeasonData();
+
+  // Amendment 1 — design-mode toggle state (engine generation run, 2026-05-25).
+  // Shared localStorage key with Loadout.tsx ("drax_design_mode") so toggle state
+  // persists when user navigates between Loadout and Sample pages.
+  const [designMode, setDesignMode] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem(DESIGN_MODE_STORAGE_KEY) === 'true';
+    } catch {
+      return false; // SSR / storage unavailable — default Player-mode
+    }
+  });
+
+  function handleDesignModeToggle(next: boolean) {
+    setDesignMode(next);
+    try {
+      localStorage.setItem(DESIGN_MODE_STORAGE_KEY, String(next));
+    } catch {
+      // Storage unavailable — in-memory only (still works for session)
+    }
+  }
 
   // Season picker: default to sample-season; user can switch to any real season.
   const [selectedSeasonId, setSelectedSeasonId] = useState<string | null>(
@@ -289,6 +326,8 @@ export function Sample() {
         manifest={season.manifest}
         allClasses={classes}
         onClassChange={setSelectedClassId}
+        designMode={designMode}
+        onDesignModeToggle={handleDesignModeToggle}
       />
 
       {/* M1 / M2 — Weapon slots (Cycle 11, MIGRATION.md v1.3).
@@ -323,6 +362,7 @@ export function Sample() {
           canDivestSkill={() => ({ ok: false, reason: 'Read-only baseline view' })}
           onInvest={() => {}}
           onDivest={() => {}}
+          designMode={designMode}
         />
       </section>
 
