@@ -14,9 +14,6 @@ import { ActionBar } from '../components/ActionBar';
 import { Tag } from '../components/ui/Tag';
 import { FlavorTip } from '../components/ui/FlavorTip';
 import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
-// Cycle 11 M1/M2/M5 — weapon slots + provenance badge (MIGRATION.md v1.3)
-import { WeaponSlot } from '../components/WeaponSlot/WeaponSlot';
-import { OffHandSlot } from '../components/WeaponSlot/OffHandSlot';
 import { ProvenanceBadge } from '../components/ui/ProvenanceBadge';
 // Amendment 1 — design-mode toggle + panel (engine generation run, 2026-05-25)
 import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignMode/DesignModeToggle';
@@ -416,22 +413,6 @@ export function Loadout() {
         designMode={designMode}
         onDesignModeToggle={handleDesignModeToggle}
       />
-
-      {/* M1 / M2 — Weapon slots (Cycle 11, MIGRATION.md v1.3).
-          WeaponSlot + OffHandSlot are null-safe: render nothing when fields are null
-          (pre-substrate-binding seasons). Section collapses entirely when both null. */}
-      {(classData.main_weapon || classData.secondary_item) && (
-        <section className="space-y-2">
-          <h2 className="text-xs font-mono text-gray-500 uppercase tracking-wide">
-            Weapons
-          </h2>
-          {/* M1 — main weapon (Amendment 2: WeaponBadges woven into WeaponSlot) */}
-          <WeaponSlot weapon={classData.main_weapon} label="Main Weapon" />
-          {/* M2 — off-hand (SHOW_OFF_HAND_SLOT flipped true per M2 gate-flip 2026-05-25;
-              Amendment 2: WeaponBadges woven into WeaponSlot via OffHandSlot) */}
-          <OffHandSlot secondaryItem={classData.secondary_item} />
-        </section>
-      )}
 
       {/* Amendment 1 — Design-mode panel (engine generation run, 2026-05-25).
           Only rendered when design-mode is active. Null-safe for pre-v2.0 classes. */}

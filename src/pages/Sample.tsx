@@ -12,6 +12,9 @@ import { SpiritGuide } from '../components/SpiritGuide/SpiritGuide';
 import { Tag } from '../components/ui/Tag';
 import { FlavorTip } from '../components/ui/FlavorTip';
 import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
+// M1 / M2 — weapon slots (Cycle 11, MIGRATION.md v1.3). Display page renders engine-emitted kit.
+import { WeaponSlot } from '../components/WeaponSlot/WeaponSlot';
+import { OffHandSlot } from '../components/WeaponSlot/OffHandSlot';
 // Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
 // Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
 // TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
@@ -287,6 +290,23 @@ export function Sample() {
         allClasses={classes}
         onClassChange={setSelectedClassId}
       />
+
+      {/* M1 / M2 — Weapon slots (Cycle 11, MIGRATION.md v1.3).
+          Display page shows engine-emitted weapon kit (main_weapon + secondary_item).
+          WeaponSlot + OffHandSlot are null-safe: section collapses when both null
+          (pre-substrate-binding seasons). Cultural / period / quality-tier badges
+          (Amendment 2) are woven into WeaponSlot — always visible on display page. */}
+      {(classData.main_weapon || classData.secondary_item) && (
+        <section className="space-y-2">
+          <h2 className="text-xs font-mono text-gray-500 uppercase tracking-wide">
+            Weapons
+          </h2>
+          {/* M1 — main weapon (Amendment 2: WeaponBadges woven into WeaponSlot) */}
+          <WeaponSlot weapon={classData.main_weapon} label="Main Weapon" />
+          {/* M2 — off-hand (null-safe; SHOW_OFF_HAND_SLOT gate in OffHandSlot) */}
+          <OffHandSlot secondaryItem={classData.secondary_item} />
+        </section>
+      )}
 
       <section>
         <h2 className="text-xs font-mono text-gray-500 uppercase tracking-wide mb-3">
