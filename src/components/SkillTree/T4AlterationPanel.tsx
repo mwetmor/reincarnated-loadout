@@ -8,6 +8,11 @@
 //   1. spirit_guide_narration_metadata.thematic_rationale (L6 enrichment — richer engine prose)
 //   2. thematic_rationale (Cycle 11 field — static engine-generated rationale)
 //   3. § 9 template voice (Cycle 11 static fallback — pre-engine-narration)
+//
+// 2026-05-26: "Mechanical Effects" sub-section added (Matt authorization via KR).
+// Gated by designMode prop — hidden in player-mode (default), visible in design-mode.
+// Fields: strategy_params (human-readable per-strategy_type), gamora_combatant_fields,
+//         applied_axis_targets, eta_score. All null-safe.
 
 import type { T4AlterationOutput, T4StrategyType } from '../../data/types';
 
@@ -68,12 +73,94 @@ function renderParamRow(key: string, value: string | number | boolean | null): s
   return `${label}: ${displayValue}`;
 }
 
+// ---- Mechanical Effects — design-mode sub-section ----
+// Formats strategy_params into a human-readable sentence per the 6 known strategy_types.
+// If strategy_type is unknown, falls back to a generic key:value list.
+function formatStrategyParams(
+  strategyType: T4StrategyType,
+  params: Record<string, string | number | boolean | null>
+): string | null {
+  const p = params ?? {};
+
+  switch (strategyType as string) {
+    case 'RESOURCE_CONVERSION': {
+      const cost = p['cost_resource'] ?? p['source'] ?? p['target'];
+      if (cost) return `Skill costs converted to ${String(cost).replace(/_/g, ' ')}`;
+      return 'Skill costs converted to alternate resource';
+    }
+    case 'DEFENSIVE_CONVERSION': {
+      const rate = p['rate'];
+      if (rate != null) return `Evasion ${String(rate)}:1 to Armor`;
+      return 'Evasion converted to Armor';
+    }
+    case 'GEOMETRY_COLLAPSE': {
+      const radius = p['collapse_radius'] ?? p['radius_multiplier'];
+      const dmg = p['amplitude_delta'] ?? p['damage_multiplier'];
+      if (radius != null && dmg != null)
+        return `AoE radius × ${String(radius)}, damage × ${String(dmg)}`;
+      if (radius != null) return `AoE radius × ${String(radius)}`;
+      return 'AoE radius collapsed, damage amplified';
+    }
+    case 'TRADE_OFF': {
+      const critRate = p['crit_rate'];
+      const hitChance = p['hit_modifier'] ?? p['hit_chance'];
+      if (critRate != null && hitChance != null)
+        return `Crit rate ${String(critRate)}%, Hit chance ${String(hitChance)}`;
+      if (critRate != null) return `Crit rate ${String(critRate)}%`;
+      return 'Crit rate 0%, Hit chance 100%';
+    }
+    case 'ELEMENT_CONVERSION': {
+      const target = p['target_element'] ?? p['target'];
+      if (target) return `All skills converted to ${String(target).replace(/_/g, ' ')}`;
+      return 'All skills converted to target element';
+    }
+    case 'DEFENSIVE_TRADEOFF': {
+      const trade = p['trade_property'] ?? p['trade'];
+      const dmgType = p['damage_type'] ?? p['nullified_element'] ?? 'Shadow';
+      if (trade) return `${String(dmgType).replace(/_/g, ' ')} damage nullified at cost of ${String(trade).replace(/_/g, ' ')}`;
+      return 'Elemental damage nullified at cost of trade property';
+    }
+    default: {
+      // Generic fallback: key:value list
+      const entries = Object.entries(p).filter(([, v]) => v != null);
+      if (entries.length === 0) return null;
+      return entries
+        .map(([k, v]) => `${k.replace(/_/g, ' ')}: ${String(v)}`)
+        .join(' · ');
+    }
+  }
+}
+
+// Render gamora_combatant_fields as a labeled "Sim Integration:" list.
+// Each sub-dict key is a strategy name (e.g. "defensive_conversion"); sub-values are params.
+function renderGamoraCombatantFields(
+  gcf: Record<string, Record<string, string | number | boolean>> | null | undefined
+): Array<{ label: string; value: string }> {
+  if (!gcf || Object.keys(gcf).length === 0) return [];
+  const rows: Array<{ label: string; value: string }> = [];
+  for (const [stratKey, params] of Object.entries(gcf)) {
+    const stratLabel = stratKey.replace(/_/g, ' ');
+    if (!params || Object.keys(params).length === 0) {
+      rows.push({ label: stratLabel, value: '—' });
+      continue;
+    }
+    const values = Object.entries(params)
+      .map(([k, v]) => `${k.replace(/_/g, ' ')}: ${String(v)}`)
+      .join(', ');
+    rows.push({ label: stratLabel, value: values });
+  }
+  return rows;
+}
+
 interface T4AlterationPanelProps {
   alteration: T4AlterationOutput | null | undefined;
+  // designMode: when true, renders the "Mechanical Effects" sub-section (design-mode only).
+  // Defaults to false (player-mode hides mechanical fields).
+  designMode?: boolean;
   className?: string;
 }
 
-export function T4AlterationPanel({ alteration, className = '' }: T4AlterationPanelProps) {
+export function T4AlterationPanel({ alteration, designMode = false, className = '' }: T4AlterationPanelProps) {
   // Null-safe per MIGRATION.md v1.3: t4_alteration_output null = pre-§8 season or no alteration.
   if (!alteration) return null;
 
@@ -242,6 +329,80 @@ export function T4AlterationPanel({ alteration, className = '' }: T4AlterationPa
             </div>
           )}
         </div>
+
+        {/* Mechanical Effects — design-mode sub-section (2026-05-26, Matt authorization via KR).
+            Visibility gated by designMode prop: hidden in player-mode (default).
+            Fields: strategy_params (human-readable), gamora_combatant_fields, applied_axis_targets, eta_score.
+            Null-safe: each field row omitted when absent/empty; entire section hidden when all four absent. */}
+        {designMode && (() => {
+          const stratParamLine = formatStrategyParams(alteration.strategy_type, alteration.strategy_params ?? {});
+          const gcfRows = renderGamoraCombatantFields(alteration.gamora_combatant_fields);
+          const axisTargets = (alteration.applied_axis_targets ?? []).filter(Boolean);
+          const eta = alteration.eta_score ?? null;
+          // Whole section: omit if all four are absent/empty.
+          if (!stratParamLine && gcfRows.length === 0 && axisTargets.length === 0 && eta === null) return null;
+
+          return (
+            <div className="rounded border border-cyan-900/40 bg-gray-950/70 px-3 py-2.5 space-y-2">
+              {/* Sub-section header */}
+              <div className="flex items-center gap-1.5 pb-1 border-b border-cyan-900/30">
+                <span className="inline-flex items-center px-1 py-0.5 rounded text-[9px] font-mono font-bold bg-cyan-950 text-cyan-500 border border-cyan-800">
+                  ⚙
+                </span>
+                <span className="text-[10px] font-mono text-cyan-700 uppercase tracking-wide">
+                  Mechanical Effects
+                </span>
+              </div>
+
+              {/* strategy_params — human-readable formatted line */}
+              {stratParamLine && (
+                <div className="flex items-start gap-2 min-w-0">
+                  <span className="text-[10px] font-mono text-gray-600 flex-shrink-0 w-28 pt-0.5">Strategy params</span>
+                  <span className="text-[11px] font-mono text-cyan-300">{stratParamLine}</span>
+                </div>
+              )}
+
+              {/* gamora_combatant_fields — Sim Integration */}
+              {gcfRows.length > 0 && (
+                <div className="flex items-start gap-2 min-w-0">
+                  <span className="text-[10px] font-mono text-gray-600 flex-shrink-0 w-28 pt-0.5">Sim Integration</span>
+                  <div className="space-y-0.5">
+                    {gcfRows.map(({ label, value }, i) => (
+                      <div key={i} className="flex items-start gap-1.5 flex-wrap">
+                        <span className="text-[10px] font-mono text-gray-500">{label}:</span>
+                        <span className="text-[10px] font-mono text-cyan-400">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* applied_axis_targets — BC Axis Targets */}
+              {axisTargets.length > 0 && (
+                <div className="flex items-start gap-2 min-w-0">
+                  <span className="text-[10px] font-mono text-gray-600 flex-shrink-0 w-28 pt-0.5">BC Axis Targets</span>
+                  <div className="flex flex-wrap gap-1">
+                    {axisTargets.map((axis, i) => (
+                      <span key={i}
+                        className="inline-flex items-center px-1.5 py-0.5 rounded border text-[9px] font-mono bg-gray-900 text-cyan-600 border-cyan-900/50"
+                        title="BC axis predicted to shift when alteration is active">
+                        {axis.replace(/_/g, ' ')}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* eta_score — Algorithm confidence */}
+              {eta !== null && (
+                <div className="flex items-start gap-2 min-w-0">
+                  <span className="text-[10px] font-mono text-gray-600 flex-shrink-0 w-28 pt-0.5">Algorithm η</span>
+                  <span className="text-[11px] font-mono text-cyan-400">{eta.toFixed(3)}</span>
+                </div>
+              )}
+            </div>
+          );
+        })()}
       </div>
     </div>
   );

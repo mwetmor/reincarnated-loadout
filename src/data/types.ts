@@ -353,4 +353,9 @@ export interface T4AlterationOutput {
   // Cycle 12 Layer 6 enrichment (MIGRATION.md § v1.4-layer-6). Null on pre-L6 classes.
   // Fallback chain in T4AlterationPanel: narration_metadata → thematic_rationale → § 9 template voice.
   spirit_guide_narration_metadata?: NarrationMetadata | null;
+  // gamora_combatant_fields: sim-integration parameters (MIGRATION.md v1.3).
+  // Keyed by strategy_type snake_case (e.g. "defensive_conversion", "resource_conversion").
+  // Each sub-dict contains numeric/boolean sim params. Null on pre-Phase-5 classes.
+  // Design-mode only: surfaced in T4AlterationPanel "Mechanical Effects" sub-section.
+  gamora_combatant_fields?: Record<string, Record<string, string | number | boolean>> | null;
 }

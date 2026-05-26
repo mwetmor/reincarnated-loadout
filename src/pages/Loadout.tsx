@@ -433,6 +433,7 @@ export function Loadout() {
           canDivestSkill={build.canDivestSkill}
           onInvest={(id) => build.invest(id)}
           onDivest={(id) => build.divest(id)}
+          designMode={designMode}
         />
       </section>
 

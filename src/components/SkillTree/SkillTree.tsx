@@ -16,6 +16,8 @@ interface SkillTreeProps {
   canDivestSkill: (id: string) => { ok: boolean; reason?: string };
   onInvest: (id: string) => void;
   onDivest: (id: string) => void;
+  // Design-mode: when true, T4AlterationPanel shows "Mechanical Effects" sub-section.
+  designMode?: boolean;
 }
 
 const TIERS = [1, 2, 3, 4];
@@ -40,6 +42,7 @@ export function SkillTree({
   canDivestSkill,
   onInvest,
   onDivest,
+  designMode = false,
 }: SkillTreeProps) {
   const [selectedSkillId, setSelectedSkillId] = useState<string | null>(null);
 
@@ -183,7 +186,7 @@ export function SkillTree({
         Null-safe: hides when t4_alteration_output is null (pre-§8 seasons / no alteration).
         Tier 2 framing: INTENT METADATA — not combat-affecting until Cycle 12 Layer 6. */}
     {t4Alteration && (
-      <T4AlterationPanel alteration={t4Alteration} />
+      <T4AlterationPanel alteration={t4Alteration} designMode={designMode} />
     )}
 
     {/* M6 — T4 comparison panel (TOGGLE per Q2 RATIFIED; mobile-friendly).
