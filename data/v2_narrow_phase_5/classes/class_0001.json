@@ -1,0 +1,483 @@
+{
+  "id": "v2-form-000",
+  "name": "Rampart Knight",
+  "title_completion": null,
+  "flavor_text": "Where others charge forward, the Rampart Knight stands immovable, a wall of iron between the living and oblivion.",
+  "archetype_tag": "physical_warrior",
+  "energy_type": "rage",
+  "role_orientation": "damage",
+  "range_profile": "close",
+  "dominant_element": "physical",
+  "seasonal_dominant_element": null,
+  "is_act_boss": false,
+  "color_palette": [
+    160,
+    140,
+    100
+  ],
+  "stat_distribution": {
+    "strength": 80,
+    "vitality": 60,
+    "dexterity": 20,
+    "intelligence": 10,
+    "wisdom": 10
+  },
+  "skills": [
+    {
+      "id": "chain_A_t1_0",
+      "name": "Shield Wall Command",
+      "role": "utility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 17.0,
+      "cooldown_seconds": 1.1,
+      "damage_multiplier": 1.0655414036780009,
+      "effects": [
+        "Spend rage to rally a companion into position, briefly rooting nearby enemies and recovering a portion of your rage."
+      ],
+      "flavor_text": "A knight's fury is best spent when it drives allies into formation. One bellowed order turns chaos into an iron line.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.0181,
+        "axis_2_geometry": 0.0249,
+        "axis_2A_proxy": 0.1527,
+        "axis_2B_control": 0.1627,
+        "axis_3A_tempo": -0.0451,
+        "axis_3B_variance": 0.0197,
+        "axis_4_defensive": 0.0391,
+        "axis_5_economy": 0.2442
+      },
+      "phase5_thematic_tags": [
+        "command",
+        "defensive formation",
+        "rage management"
+      ],
+      "phase5_cohesion_score": 0.95,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.75,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.95
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "chain_A_t2_0",
+      "name": "Advance the Line",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 36.0,
+      "cooldown_seconds": 4.7,
+      "damage_multiplier": 1.121,
+      "effects": [
+        "Charge forward a short distance, closing the gap with enemies and briefly increasing attack speed."
+      ],
+      "flavor_text": "The shield wall does not hold ground — it takes it. With a thunderous cry, the knights surge forward as one.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.3064,
+        "axis_2_geometry": -0.0912,
+        "axis_2A_proxy": 0.0869,
+        "axis_2B_control": 0.0693,
+        "axis_3A_tempo": 0.2259,
+        "axis_3B_variance": 0.0544,
+        "axis_4_defensive": -0.0227,
+        "axis_5_economy": -0.1273
+      },
+      "phase5_thematic_tags": [
+        "formation",
+        "charge",
+        "aggression"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "chain_A_t2_1",
+      "name": "Break Their Ranks",
+      "role": "damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 36.0,
+      "cooldown_seconds": 5.7,
+      "damage_multiplier": 1.131,
+      "effects": [
+        "Unleash a sweeping strike across a wide arc, dealing high variable damage to multiple enemies in front of you."
+      ],
+      "flavor_text": "The shield wall advances and then erupts — a controlled explosion of steel and fury that scatters the enemy formation like chaff.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.1888,
+        "axis_2_geometry": 0.2563,
+        "axis_2A_proxy": -0.0096,
+        "axis_2B_control": -0.3276,
+        "axis_3A_tempo": 0.3288,
+        "axis_3B_variance": 0.3653,
+        "axis_4_defensive": -0.1844,
+        "axis_5_economy": -0.254
+      },
+      "phase5_thematic_tags": [
+        "formation-breaking",
+        "rage",
+        "melee-sweep"
+      ],
+      "phase5_cohesion_score": 0.787,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.65,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.787
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "chain_A_t3_2",
+      "name": "Ironclad Bulwark",
+      "role": "defense",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 46.0,
+      "cooldown_seconds": 8.2,
+      "damage_multiplier": 1.21,
+      "effects": [
+        "Brace into an immovable defensive stance, drastically reducing incoming damage and generating rage over the duration."
+      ],
+      "flavor_text": "When the line holds, the battle is already half won. Plant your shield and let the enemy break upon your resolve like waves upon stone.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "bc_axis_contribution": {
+        "axis_1_engagement": -0.2361,
+        "axis_2_geometry": -0.0828,
+        "axis_2A_proxy": -0.0984,
+        "axis_2B_control": -0.0666,
+        "axis_3A_tempo": -0.162,
+        "axis_3B_variance": -0.2766,
+        "axis_4_defensive": 0.6655,
+        "axis_5_economy": 0.2618
+      },
+      "phase5_thematic_tags": [
+        "fortification",
+        "endurance",
+        "shield-mastery"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "chain_B_t1_1",
+      "name": "Crushing Advance",
+      "role": "damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 16.0,
+      "cooldown_seconds": 1.2,
+      "damage_multiplier": 1.0754295041085036,
+      "effects": [
+        "Charge forward, dealing high physical damage to all enemies in your path with a wide sweeping blow."
+      ],
+      "flavor_text": "The Rampart Knight surges forward with unstoppable fury, sweeping aside all who dare stand in the way of steel and rage.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.146,
+        "axis_2_geometry": 0.1859,
+        "axis_2A_proxy": 0.0339,
+        "axis_2B_control": -0.1768,
+        "axis_3A_tempo": 0.2204,
+        "axis_3B_variance": 0.2646,
+        "axis_4_defensive": -0.0242,
+        "axis_5_economy": -0.2028
+      },
+      "phase5_thematic_tags": [
+        "rage",
+        "melee",
+        "sweep"
+      ],
+      "phase5_cohesion_score": 1.0,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 1.0
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "chain_B_t2_0",
+      "name": "Stalwart Advance",
+      "role": "defense",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 35.0,
+      "cooldown_seconds": 2.3,
+      "damage_multiplier": 1.131,
+      "effects": [
+        "Spend rage to fortify your defenses while advancing, reducing incoming damage and recovering resources."
+      ],
+      "flavor_text": "The knight presses forward without yielding, shield locked and fury controlled, turning momentum into an unbreakable wall of iron and will.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "bc_axis_contribution": {
+        "axis_1_engagement": -0.0842,
+        "axis_2_geometry": -0.0924,
+        "axis_2A_proxy": 0.0643,
+        "axis_2B_control": 0.0498,
+        "axis_3A_tempo": -0.0769,
+        "axis_3B_variance": -0.3253,
+        "axis_4_defensive": 0.5365,
+        "axis_5_economy": 0.2268
+      },
+      "phase5_thematic_tags": [
+        "defense",
+        "momentum",
+        "iron_discipline"
+      ],
+      "phase5_cohesion_score": 1.0,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 1.0
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "chain_B_t2_1",
+      "name": "Unyielding Advance",
+      "role": "defense",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 25.0,
+      "cooldown_seconds": 5.5,
+      "damage_multiplier": 1.159,
+      "effects": [
+        "Spend rage to dramatically boost your defenses while slowing your advance, reducing incoming damage for several seconds."
+      ],
+      "flavor_text": "The knight becomes a fortress in motion, grinding forward with ironclad resolve. No blade, no blow, no desperate charge shall break this living wall.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "bc_axis_contribution": {
+        "axis_1_engagement": -0.2447,
+        "axis_2_geometry": -0.0167,
+        "axis_2A_proxy": 0.0641,
+        "axis_2B_control": -0.0521,
+        "axis_3A_tempo": -0.2032,
+        "axis_3B_variance": -0.2714,
+        "axis_4_defensive": 0.5077,
+        "axis_5_economy": 0.1307
+      },
+      "phase5_thematic_tags": [
+        "defense",
+        "steadfast",
+        "advance"
+      ],
+      "phase5_cohesion_score": 1.0,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 1.0
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "chain_B_t3_2",
+      "name": "Indomitable Advance",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 45.0,
+      "cooldown_seconds": 8.2,
+      "damage_multiplier": 1.245,
+      "effects": [
+        "Surge forward with unstoppable momentum, rapidly closing distance and greatly increasing action speed for a short duration."
+      ],
+      "flavor_text": "No wall of steel nor tide of flesh can halt the knight who refuses to yield. The battlefield bends to iron will.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.4557,
+        "axis_2_geometry": 0.0061,
+        "axis_2A_proxy": -0.0954,
+        "axis_2B_control": -0.0065,
+        "axis_3A_tempo": 0.4744,
+        "axis_3B_variance": -0.0816,
+        "axis_4_defensive": -0.0503,
+        "axis_5_economy": -0.0903
+      },
+      "phase5_thematic_tags": [
+        "momentum",
+        "unstoppable",
+        "european_knight"
+      ],
+      "phase5_cohesion_score": 1.0,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 1.0
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    }
+  ],
+  "carried_gear": null,
+  "balance_metadata": {
+    "engine_version": "v2.0",
+    "source_library": "generator_v2",
+    "generation_seed": 20250525,
+    "bc_target_cell": {
+      "range": "melee",
+      "tempo": "low",
+      "amplitude": "spiky",
+      "attribute": "STR",
+      "proxy_density": "none"
+    },
+    "mechanical_substrate_triple": {
+      "element": "physical",
+      "weapon_kind": "category",
+      "weapon_mechanical_profile": "armor_shield"
+    },
+    "substrate_binding_relaxation_level": 0,
+    "cell_routing_source": "default_heuristic",
+    "converged_modifier": 1.0,
+    "attribute_coupling": [
+      "STR",
+      "DEX"
+    ],
+    "cultural_tradition": "european",
+    "lineage": null,
+    "period": "early_modern",
+    "generation_params": {
+      "cell_routing_source": "default_heuristic",
+      "cell_id": 1,
+      "cell_label": "Heavy Barbarian",
+      "mechanical_cell": "str_heavy_barbarian_pair",
+      "matching_policy": "option_alpha",
+      "section_4_routing": null,
+      "substrate_row_id": 206975,
+      "substrate_canonical_name": "shield",
+      "substrate_tier": "A",
+      "substrate_register": "historical",
+      "relaxation_level": 0,
+      "relaxation_levels_tried": [
+        0
+      ],
+      "archetype_tag": "physical_warrior"
+    }
+  },
+  "movement_speed": 8.0,
+  "t4_alteration_output": {
+    "strategy_type": "DEFENSIVE_CONVERSION",
+    "strategy_params": {},
+    "applied_axis_targets": [],
+    "eta_score": 0.0,
+    "thematic_rationale": "",
+    "manifestation": null,
+    "off_hand_contract": null,
+    "spirit_guide_narration_metadata": {
+      "has_mechanic_alteration": true,
+      "alteration_type": "DEFENSIVE_CONVERSION",
+      "thematic_rationale": "",
+      "manifestation": null,
+      "spirit_guide_explainer_template": "stat_layer_remap",
+      "narrative_hooks": [
+        "iron_will",
+        "endurance",
+        "armor"
+      ],
+      "secondary_alteration_types": [
+        "GEOMETRY_COLLAPSE"
+      ]
+    },
+    "gamora_combatant_fields": {
+      "defensive_conversion": {
+        "evasion_to_armor": true
+      },
+      "geometry_collapse": {
+        "aoe_radius_multiplier": 0.5,
+        "damage_multiplier_bonus": 1.5
+      }
+    }
+  },
+  "main_weapon": {
+    "weapon_id": "206975",
+    "name": "shield",
+    "category": "shield",
+    "source_library": "royal_armouries",
+    "cultural_register": "historical",
+    "period": "early_modern",
+    "lineage": null
+  },
+  "secondary_item": null,
+  "source_library": "generator_v2",
+  "engine_version": "v2.0",
+  "mechanical_substrate_triple": {
+    "element": "physical",
+    "weapon_kind": "armor_shield",
+    "weapon_mechanical_profile": "armor_shield"
+  }
+}

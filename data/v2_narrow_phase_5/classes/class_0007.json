@@ -1,0 +1,484 @@
+{
+  "id": "v2-form-006",
+  "name": "Ironbolt Warden",
+  "title_completion": null,
+  "flavor_text": "Bearer of the baron's crossbow, they walk the old hunting grounds where mortal skill alone defies fate.",
+  "archetype_tag": "hunter",
+  "energy_type": "focus",
+  "role_orientation": "damage",
+  "range_profile": "long",
+  "dominant_element": "physical",
+  "seasonal_dominant_element": null,
+  "is_act_boss": false,
+  "color_palette": [
+    160,
+    140,
+    100
+  ],
+  "stat_distribution": {
+    "strength": 20,
+    "vitality": 50,
+    "dexterity": 80,
+    "intelligence": 10,
+    "wisdom": 10
+  },
+  "skills": [
+    {
+      "id": "chain_A_t1_0",
+      "name": "Swift Warden's Step",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 16.0,
+      "cooldown_seconds": 1.0,
+      "damage_multiplier": 1.0795106358249804,
+      "effects": [
+        "Dash forward quickly, closing distance to your target and briefly increasing your action speed."
+      ],
+      "flavor_text": "A warden knows that stillness invites death. Move with purpose, close the gap, and let iron follow.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.2481,
+        "axis_2_geometry": 0.0212,
+        "axis_2A_proxy": -0.0082,
+        "axis_2B_control": 0.048,
+        "axis_3A_tempo": 0.2425,
+        "axis_3B_variance": -0.0242,
+        "axis_4_defensive": -0.0984,
+        "axis_5_economy": -0.0852
+      },
+      "phase5_thematic_tags": [
+        "mobility",
+        "pursuit",
+        "hunter"
+      ],
+      "phase5_cohesion_score": 0.783,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.4,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 0.75,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.783
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "chain_A_t2_0",
+      "name": "Broadhead Volley",
+      "role": "damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 38.0,
+      "cooldown_seconds": 2.7,
+      "damage_multiplier": 1.149,
+      "effects": [
+        "Fire a spread of arrows in a wide arc, dealing high physical damage to multiple enemies at long range."
+      ],
+      "flavor_text": "The warden looses a spread of broadhead shafts, each one singing through the air with lethal purpose. Where one arrow falls short, another finds its mark.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.2543,
+        "axis_2_geometry": 0.3091,
+        "axis_2A_proxy": 0.0566,
+        "axis_2B_control": -0.1539,
+        "axis_3A_tempo": 0.3354,
+        "axis_3B_variance": 0.2963,
+        "axis_4_defensive": -0.1865,
+        "axis_5_economy": -0.1775
+      },
+      "phase5_thematic_tags": [
+        "archery",
+        "volley",
+        "area-damage"
+      ],
+      "phase5_cohesion_score": 0.705,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.65,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 0.45,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.705
+      },
+      "phase5_attempt_number": 2,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "chain_A_t3_1",
+      "name": "Iron Rampart Stance",
+      "role": "defense",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 58.0,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.234,
+      "effects": [
+        "Enter a defensive stance that greatly reduces incoming damage and restores focus, but limits movement and attack speed."
+      ],
+      "flavor_text": "The warden plants their feet like an oak, becoming an immovable bastion against all who dare advance. No arrow flies, but none shall pass.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "bc_axis_contribution": {
+        "axis_1_engagement": -0.1112,
+        "axis_2_geometry": -0.1612,
+        "axis_2A_proxy": 0.0416,
+        "axis_2B_control": -0.0753,
+        "axis_3A_tempo": -0.2426,
+        "axis_3B_variance": -0.249,
+        "axis_4_defensive": 0.631,
+        "axis_5_economy": 0.1316
+      },
+      "phase5_thematic_tags": [
+        "defense",
+        "stance",
+        "fortitude"
+      ],
+      "phase5_cohesion_score": 0.73,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.55,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 0.75,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.73
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "chain_B_t1_1",
+      "name": "Warden's Snare Shot",
+      "role": "utility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 11.0,
+      "cooldown_seconds": 0.8,
+      "damage_multiplier": 1.0734614677820575,
+      "effects": [
+        "Fire a snaring bolt that slows enemies and restores a portion of your focus on hit."
+      ],
+      "flavor_text": "A seasoned warden knows that the hunt is won before the quarry falls. Pin them fast, and let focus do the rest.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.0085,
+        "axis_2_geometry": 0.019,
+        "axis_2A_proxy": 0.0964,
+        "axis_2B_control": 0.1772,
+        "axis_3A_tempo": -0.0409,
+        "axis_3B_variance": -0.0041,
+        "axis_4_defensive": 0.0884,
+        "axis_5_economy": 0.1438
+      },
+      "phase5_thematic_tags": [
+        "crowd control",
+        "utility",
+        "hunter"
+      ],
+      "phase5_cohesion_score": 0.838,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.75,
+        "cultural_tradition": 0.75,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.838
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "chain_B_t2_0",
+      "name": "Warden's Iron Shield",
+      "role": "defense",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 29.0,
+      "cooldown_seconds": 4.2,
+      "damage_multiplier": 1.151,
+      "effects": [
+        "Brace defensively, reducing incoming damage and restoring focus while temporarily limiting movement and attack speed."
+      ],
+      "flavor_text": "The Warden plants their feet and raises a stalwart guard, deflecting blows with disciplined European martial tradition. No arrow flies when survival demands stillness.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "bc_axis_contribution": {
+        "axis_1_engagement": -0.2462,
+        "axis_2_geometry": -0.0438,
+        "axis_2A_proxy": -0.0098,
+        "axis_2B_control": 0.0241,
+        "axis_3A_tempo": -0.2489,
+        "axis_3B_variance": -0.3331,
+        "axis_4_defensive": 0.4975,
+        "axis_5_economy": 0.1757
+      },
+      "phase5_thematic_tags": [
+        "defense",
+        "bracing",
+        "focus-recovery"
+      ],
+      "phase5_cohesion_score": 0.925,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.925
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "chain_B_t3_1",
+      "name": "Warden's Siege Volley",
+      "role": "damage",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 58.0,
+      "cooldown_seconds": 5.7,
+      "damage_multiplier": 1.217,
+      "effects": [
+        "Fire a wide spread of bolts dealing high physical damage across a broad area at long range."
+      ],
+      "flavor_text": "When the forest falls silent, the Warden unleashes a storm of iron bolts that shatter formations and scatter the boldest of foes.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.3069,
+        "axis_2_geometry": 0.3257,
+        "axis_2A_proxy": -0.0227,
+        "axis_2B_control": -0.2858,
+        "axis_3A_tempo": 0.2427,
+        "axis_3B_variance": 0.366,
+        "axis_4_defensive": -0.1346,
+        "axis_5_economy": -0.1973
+      },
+      "phase5_thematic_tags": [
+        "ranged",
+        "area-denial",
+        "iron-mastery"
+      ],
+      "phase5_cohesion_score": 0.783,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.4,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 0.75,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.783
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "chain_C_t1_2",
+      "name": "Warden's Swift Advance",
+      "role": "mobility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 8.0,
+      "cooldown_seconds": 1.9,
+      "damage_multiplier": 1.0797102604952769,
+      "effects": [
+        "Dash forward quickly, increasing engagement range and boosting action tempo for a brief duration."
+      ],
+      "flavor_text": "A seasoned warden knows when to close the distance — swift boots and iron will carry them forward through the fray.",
+      "tier": 1,
+      "chain_id": "chain_C",
+      "bc_axis_contribution": {
+        "axis_1_engagement": 0.2728,
+        "axis_2_geometry": -0.032,
+        "axis_2A_proxy": 0.0634,
+        "axis_2B_control": -0.0695,
+        "axis_3A_tempo": 0.3332,
+        "axis_3B_variance": 0.0453,
+        "axis_4_defensive": -0.0632,
+        "axis_5_economy": -0.119
+      },
+      "phase5_thematic_tags": [
+        "mobility",
+        "advance",
+        "hunter"
+      ],
+      "phase5_cohesion_score": 0.783,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.4,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 0.75,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.783
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "chain_C_t2_0",
+      "name": "Warden's Hunting Call",
+      "role": "utility",
+      "canonical_element": "physical",
+      "seasonal_element": null,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "energy_cost": 33.0,
+      "cooldown_seconds": 5.0,
+      "damage_multiplier": 1.17,
+      "effects": [
+        "Summon a hunting companion that harasses nearby enemies, slowing their movement and restoring focus on each strike."
+      ],
+      "flavor_text": "A sharp whistle cuts through the forest air, rallying trained hounds and falcons to the Warden's side. The hunt is never fought alone.",
+      "tier": 2,
+      "chain_id": "chain_C",
+      "bc_axis_contribution": {
+        "axis_1_engagement": -0.0864,
+        "axis_2_geometry": -0.0538,
+        "axis_2A_proxy": 0.3012,
+        "axis_2B_control": 0.1407,
+        "axis_3A_tempo": 0.0305,
+        "axis_3B_variance": -0.0232,
+        "axis_4_defensive": 0.0651,
+        "axis_5_economy": 0.3176
+      },
+      "phase5_thematic_tags": [
+        "summon",
+        "crowd_control",
+        "focus_recovery"
+      ],
+      "phase5_cohesion_score": 0.738,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.4,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 0.45,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.738
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    }
+  ],
+  "carried_gear": null,
+  "balance_metadata": {
+    "engine_version": "v2.0",
+    "source_library": "generator_v2",
+    "generation_seed": 20256531,
+    "bc_target_cell": {
+      "range": "ranged",
+      "tempo": "low",
+      "amplitude": "spiky",
+      "attribute": "DEX",
+      "proxy_density": "none"
+    },
+    "mechanical_substrate_triple": {
+      "element": "physical",
+      "weapon_kind": "category",
+      "weapon_mechanical_profile": "handheld_weapon"
+    },
+    "substrate_binding_relaxation_level": 0,
+    "cell_routing_source": "default_heuristic",
+    "converged_modifier": 1.0,
+    "attribute_coupling": [
+      "DEX",
+      "STR"
+    ],
+    "cultural_tradition": "european",
+    "lineage": null,
+    "period": "early_modern",
+    "generation_params": {
+      "cell_routing_source": "default_heuristic",
+      "cell_id": 8,
+      "cell_label": "Crossbow Sniper",
+      "mechanical_cell": "dex_crossbow_sniper",
+      "matching_policy": "option_alpha",
+      "section_4_routing": null,
+      "substrate_row_id": 203371,
+      "substrate_canonical_name": "Large Crossbow (Ganze Rüstung) of Johann Georg, Baron von Rechenberg",
+      "substrate_tier": "S",
+      "substrate_register": "historical",
+      "relaxation_level": 0,
+      "relaxation_levels_tried": [
+        0
+      ],
+      "archetype_tag": "hunter"
+    }
+  },
+  "movement_speed": 8.0,
+  "t4_alteration_output": {
+    "strategy_type": "DEFENSIVE_CONVERSION",
+    "strategy_params": {},
+    "applied_axis_targets": [],
+    "eta_score": 0.0,
+    "thematic_rationale": "",
+    "manifestation": null,
+    "off_hand_contract": null,
+    "spirit_guide_narration_metadata": {
+      "has_mechanic_alteration": true,
+      "alteration_type": "DEFENSIVE_CONVERSION",
+      "thematic_rationale": "",
+      "manifestation": null,
+      "spirit_guide_explainer_template": "stat_layer_remap",
+      "narrative_hooks": [
+        "iron_will",
+        "endurance",
+        "armor"
+      ],
+      "secondary_alteration_types": [
+        "RESOURCE_CONVERSION",
+        "RESOURCE_CONVERSION"
+      ]
+    },
+    "gamora_combatant_fields": {
+      "defensive_conversion": {
+        "evasion_to_armor": true
+      },
+      "resource_conversion": {
+        "cost_resource": "HP",
+        "scope": "all_skills"
+      }
+    }
+  },
+  "main_weapon": {
+    "weapon_id": "203371",
+    "name": "Large Crossbow (Ganze Rüstung) of Johann Georg, Baron von Rechenberg",
+    "category": "ranged",
+    "source_library": "met-museum",
+    "cultural_register": "historical",
+    "period": "early_modern",
+    "lineage": null
+  },
+  "secondary_item": null,
+  "source_library": "generator_v2",
+  "engine_version": "v2.0",
+  "mechanical_substrate_triple": {
+    "element": "physical",
+    "weapon_kind": "handheld_weapon",
+    "weapon_mechanical_profile": "handheld_weapon"
+  }
+}
