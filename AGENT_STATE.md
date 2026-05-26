@@ -1,12 +1,40 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-26
-**Last commit:** 7c93209 — drax: wire designMode to Sample.tsx — T4 Mechanical Effects visible on Sample page
+**Last commit:** 15fff74 — fix(drax): T4 placeholder when season lacks t4_alteration_output — prevents T4 evaporation on season-change
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### T4 evaporation on season-change — root cause + fix (completed 2026-05-26)
+
+**Dispatch:** Matt 2026-05-26 — "T4 details still evaporate once I select a season" (same symptom after 7c93209)
+**Authority:** Matt 2026-05-26 via KR routing per hive-mind § 4.3
+**Commit:** 15fff74
+**Push status:** PENDING Matt authorization
+
+**Root cause confirmed (H1 ruled out, H4 ruled out, data-gap variant of H3):**
+
+H1 (deploy cache): RULED OUT. Production bundle `index-qkCRTOnd.js` matches local build — correct commit live.
+
+H4 (prop chain gap): RULED OUT. SkillTree.tsx line 189 correctly passes `designMode` to T4AlterationPanel.
+
+Actual root cause: **data availability gap**. Only `sample-season` and `v2_narrow*` directories have `t4_alteration_output` in their class JSON. All 11 real seasons (`season_001001` through `season_002328`) do NOT. When Matt selects any real season from the picker, `t4Alteration === null` in SkillTree, the T4AlterationPanel block (`{t4Alteration && ...}`) evaluates to false and the entire section collapses silently. designMode state in Sample.tsx was never lost — the panel had no data to render and returned null. The symptom ("T4 details evaporate") was correct: the data genuinely isn't there for pre-§8 seasons.
+
+**Fix applied:**
+
+`src/components/SkillTree/SkillTree.tsx` — changed `{t4Alteration && <T4AlterationPanel ...>}` to a ternary with an explicit design-mode placeholder: when `t4Alteration` is null AND `designMode` is true, renders a labeled `T4 | No T4 alteration data — this season predates §8 engine generation` pill. Null state is now visible rather than invisible. Player-mode (designMode false) behavior unchanged — section still collapses silently (correct for players who don't need to distinguish absence from presence).
+
+**Validation:**
+- `npm run build`: tsc -b clean, 849 modules, 0 TS errors — PASS
+- New bundle hash: `index-VidTab0e.js`
+
+**Verification flow (expected post-push):**
+- Sample page → toggle Design ON → season shows T4 details → select any real season → T4 row shows "No T4 alteration data — this season predates §8 engine generation" (stays visible; no evaporation)
+- Toggle Design OFF → T4 row collapses silently on real seasons (player-mode unchanged)
+- Return to sample-season → T4 data renders fully with Mechanical Effects visible
 
 ### T4 Mechanical Effects sub-section — design-mode extension (completed 2026-05-26)
 
