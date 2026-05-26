@@ -120,12 +120,22 @@ function SeasonCard({ card }: { card: SeasonSummaryCard }) {
   );
 }
 
+// Engine v2 milestone seasons: v2_narrow (2026-05-25 narrow generation run).
+// These are distinguished from historical canonical-4 seasons — they use the new engine
+// but are pre-elemental (physical-only) by design, not legacy limitation.
+function isEngineV2Season(id: string): boolean {
+  return id === 'v2_narrow';
+}
+
 export function SeasonSummaryCards({ cards }: Props) {
   if (!cards.length) return null;
 
-  const historicalCards = cards.filter((c) => !c.isCanonical7 && c.seasonId !== 'season_002328');
+  const historicalCards = cards.filter(
+    (c) => !c.isCanonical7 && c.seasonId !== 'season_002328' && !isEngineV2Season(c.seasonId)
+  );
   const canonical7Cards = cards.filter((c) => c.isCanonical7);
   const yomiCards = cards.filter((c) => c.seasonId === 'season_002328');
+  const engineV2Cards = cards.filter((c) => isEngineV2Season(c.seasonId));
 
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 md:p-6 space-y-4">
@@ -175,6 +185,23 @@ export function SeasonSummaryCards({ cards }: Props) {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
             {yomiCards.map((c) => <SeasonCard key={c.seasonId} card={c} />)}
+          </div>
+        </div>
+      )}
+
+      {/* Engine v2 milestone seasons (v2_narrow: pre-elemental, physical-only by design) */}
+      {engineV2Cards.length > 0 && (
+        <div>
+          <div className="flex items-center gap-2 mb-2">
+            <p className="text-[10px] font-mono text-amber-500 uppercase tracking-wide">
+              Engine v2 — Narrow Milestone
+            </p>
+            <span className="text-[9px] font-mono text-amber-700">
+              pre-elemental · physical-only · new engine architecture
+            </span>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+            {engineV2Cards.map((c) => <SeasonCard key={c.seasonId} card={c} />)}
           </div>
         </div>
       )}

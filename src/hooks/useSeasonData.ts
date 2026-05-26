@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import type { ClassData, SeasonData, SeasonManifest } from '../data/types';
+import type { ClassData, GearPoolEntry, SeasonData, SeasonManifest } from '../data/types';
 
 const manifestModules = import.meta.glob<{ default: SeasonManifest }>(
   '../../data/*/manifest.json',
@@ -10,6 +10,23 @@ const classModules = import.meta.glob<{ default: ClassData }>(
   '../../data/*/classes/*.json',
   { eager: true }
 );
+
+// TODO(drax): remove Yomi-fallback logic here when engine ships gear_pool.json for new seasons.
+// Per-season gear pool glob — only seasons with gear_pool.json appear as entries.
+// Yomi (season_002328) is the only real pool today; all other seasons fall back to empty array.
+const gearPoolModules = import.meta.glob<{ default: GearPoolEntry[] }>(
+  '../../data/*/gear_pool.json',
+  { eager: true }
+);
+
+// Extract per-folder gear pool. Key = folder name (e.g. "season_002328").
+// Seasons lacking gear_pool.json return an empty array — callers render no gear.
+function resolveGearPool(folderKey: string): GearPoolEntry[] {
+  const key = Object.keys(gearPoolModules).find((p) =>
+    p.includes(`/data/${folderKey}/gear_pool.json`)
+  );
+  return key ? (gearPoolModules[key].default as unknown as GearPoolEntry[]) : [];
+}
 
 function buildSeasonMap(): Map<string, SeasonData> {
   const seasons = new Map<string, SeasonData>();
@@ -32,7 +49,9 @@ function buildSeasonMap(): Map<string, SeasonData> {
     // Sort classes by id for consistent ordering
     classes.sort((a, b) => a.id.localeCompare(b.id));
 
-    seasons.set(folderKey, { seasonId: folderKey, manifest, classes });
+    const gearPool = resolveGearPool(folderKey);
+
+    seasons.set(folderKey, { seasonId: folderKey, manifest, classes, gearPool });
   }
 
   return seasons;

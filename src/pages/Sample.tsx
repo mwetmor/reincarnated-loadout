@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import type { ClassData, GearPoolEntry, SeasonManifest } from '../data/types';
+import type { ClassData, SeasonManifest } from '../data/types';
 import { resolveElementDisplay } from '../data/types';
 import { ELEMENT_COLORS, SP_BUDGET, resolveArchetypeLabel } from '../data/constants';
 import { useSeasonData } from '../hooks/useSeasonData';
@@ -12,11 +12,9 @@ import { SpiritGuide } from '../components/SpiritGuide/SpiritGuide';
 import { Tag } from '../components/ui/Tag';
 import { FlavorTip } from '../components/ui/FlavorTip';
 import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-import gearPoolRaw from '../../data/season_002328/gear_pool.json';
-// JSON import: use double-cast since TS infers specific literal types for JSON
-// that don't satisfy GearPoolEntry exactly (e.g. optional vs absent keys in ability_modifiers).
-const gearPool = gearPoolRaw as unknown as GearPoolEntry[];
+// Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
+// Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
+// TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
 
 function hexFromInt(n: number): string {
   return '#' + n.toString(16).padStart(6, '0');
@@ -231,10 +229,12 @@ export function Sample() {
 
   const allocations = baselineAllocations(classData);
   const totalSP = classData.skills.length;
+  // Per-season gear pool (season.gearPool). Empty array for seasons without gear_pool.json.
+  const gearPool = season?.gearPool ?? [];
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const synthesizedGear = useMemo(
     () => synthesizeSampleLoadout(classData, gearPool),
-    [classData.id]
+    [classData.id, season?.seasonId]
   );
 
   return (
@@ -266,9 +266,10 @@ export function Sample() {
         <div className="min-w-0">
           <p className="text-sm font-semibold text-violet-300">Engine Baseline View</p>
           <p className="text-xs text-violet-400/80 mt-1 leading-relaxed">
-            Every skill at rank 1. Gear shown is the highest fit-score selection from the Yomi
+            Every skill at rank 1. Gear shown is the highest fit-score selection from the
             season gear pool — real engine output, assigned by energy type × role orientation ×
-            range profile. This is the converged state the balance loop tuned against; win rate
+            range profile. Seasons without a gear pool show no gear (expected for milestone
+            generations). This is the converged state the balance loop tuned against; win rate
             was calculated from this configuration.{' '}
             <Link to="/" className="underline hover:text-violet-300 transition-colors">
               Switch to Loadout

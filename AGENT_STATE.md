@@ -3,9 +3,63 @@
 **Last updated:** 2026-05-25
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
-**Hive-mind mode:** ACTIVE (engine generation run amendments COMPLETE; jack-ryan Gate-2 pending)
+**Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### v2_narrow gear-pool + analytics fix (completed 2026-05-25)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-25-drax-v2-narrow-gear-pool-and-analytics-investigation.md`
+**Authority:** Matt 2026-05-25 ("gear is all from old Yomi season" + "data ready for analytics tab?")
+**Parallel:** Rocket weapon-category correction (no file contention)
+**Push status:** PUSHED per skip-confirmation re-auth
+
+**Item 1 — Gear-pool fix (Approach A chosen):**
+
+Root cause: `Loadout.tsx` line 27 + `Sample.tsx` line 16 both hardcoded `import gearPoolRaw from '../../data/season_002328/gear_pool.json'` — static regardless of selected season. v2_narrow has no `gear_pool.json` so it always showed Yomi gear.
+
+Approach A (per-season dynamic glob) chosen over B (v2_narrow placeholder):
+- `useSeasonData.ts`: added `gearPoolModules` glob (`../../data/*/gear_pool.json`, eager); `resolveGearPool(folderKey)` returns per-season pool or empty array when absent
+- `types.ts`: `SeasonData` extended with `gearPool: GearPoolEntry[]` field
+- `Loadout.tsx` + `Sample.tsx`: removed hardcoded Yomi import; use `season.gearPool` (empty for v2_narrow → GearGrid shows empty slots, correct behavior)
+- `GearGrid.tsx`: removed hardcoded "Yomi Season" subtitle from Gear Slots header (was misleading for non-Yomi seasons)
+- `Sample.tsx` banner text updated to not reference Yomi explicitly
+- TODO(drax) comments added in useSeasonData + both pages for cleanup when engine ships gear pools
+
+Rationale for Approach A over B: B only patches v2_narrow; A fixes the root cause for all future seasons. The glob infrastructure cost is minimal (Vite eager import), and the empty-array fallback is the correct behavior for pre-gear-pool seasons. No placeholder data needed.
+
+**Item 2 — Analytics investigation + fix:**
+
+Root cause (confirmed): v2_narrow WAS being collected by `useSeasonData` (globbed via manifest) and processed by `useAnalytics`. It fell into `historicalCards` in `SeasonSummaryCards.tsx` (not `isCanonical7`, not `season_002328`). But the section header was "Historical (canonical-4)" — misleading for v2_narrow, and `seasonLabel()` returned raw "v2_narrow" (no human-readable mapping).
+
+Data shape inspection: `dominant_element: "physical"` on all classes (present), `anchor.name: "Moctezuma"` (present), `validation_passed: true` (present), `convergence_failures: 0` (present). All required analytics fields valid. NOT a data-shape problem.
+
+Fix path chosen: (b) amend filter logic + (c) dedicated section:
+- `useAnalytics.ts`: added `if (id === 'v2_narrow') return 'Narrow v1.0';` to `seasonLabel()`
+- `SeasonSummaryCards.tsx`: added `isEngineV2Season(id)` predicate (`id === 'v2_narrow'`); v2_narrow excluded from historicalCards filter; new "Engine v2 — Narrow Milestone" section with amber styling + "pre-elemental · physical-only · new engine architecture" annotation
+- `ClassIcon.tsx`: added `'v2_narrow': 'season-v2-narrow'` to iconMap (onError hides gracefully if SVG absent)
+
+Why NOT Cycle 13 deferral (option d): the data is fully valid and v2_narrow IS being processed. The only issue was presentation — wrong section, raw label. A 5-line fix corrects both without touching data.
+
+**Files changed:**
+- `src/data/types.ts` — SeasonData.gearPool field added
+- `src/hooks/useSeasonData.ts` — gearPoolModules glob + resolveGearPool + SeasonData construction
+- `src/pages/Loadout.tsx` — hardcoded import removed; season.gearPool consumed
+- `src/pages/Sample.tsx` — hardcoded import removed; season.gearPool consumed; banner text
+- `src/components/GearGrid/GearGrid.tsx` — hardcoded "Yomi Season" subtitle removed
+- `src/hooks/useAnalytics.ts` — v2_narrow seasonLabel mapping
+- `src/components/analytics/SeasonSummaryCards.tsx` — isEngineV2Season predicate + dedicated section
+- `src/components/ui/ClassIcon.tsx` — v2_narrow iconMap entry
+
+**Smoke results:**
+- `npm run build`: 813 modules, 0 TypeScript errors — PASS (both runs)
+- Yomi (season_002328): gear pool unchanged — still resolved via glob, gearPool populated as before
+- v2_narrow loadout view: gearPool = [] → GearGrid shows empty slots (correct; no gear_pool.json)
+- Analytics page: v2_narrow appears in "Engine v2 — Narrow Milestone" section with label "Narrow v1.0", anchor "Moctezuma", theme "physical", validation PASS
+- 11 historical seasons: unaffected; analyticsSeasons count now +1 (v2_narrow visible)
+- No regression on historical gear display (Yomi gear pool still resolves correctly)
+
+---
 
 ### Engine generation run loadout amendments (completed 2026-05-25)
 

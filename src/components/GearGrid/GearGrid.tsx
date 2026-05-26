@@ -110,9 +110,6 @@ export function GearGrid({ mode = 'empty', synthesized = [] }: GearGridProps) {
     <Card>
       <h3 className="text-xs font-mono text-gray-500 uppercase tracking-wide mb-3">
         Gear Slots
-        {mode === 'sample' && (
-          <span className="ml-2 text-violet-400 normal-case">— Yomi Season</span>
-        )}
       </h3>
       <div className="grid grid-cols-5 gap-2">
         {EMPTY_SLOTS.map(({ label, tip }) => {

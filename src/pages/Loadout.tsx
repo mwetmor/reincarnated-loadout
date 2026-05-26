@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import type { ClassData, GearPoolEntry, SeasonManifest } from '../data/types';
+import type { ClassData, SeasonManifest } from '../data/types';
 import { assertManifestSeasonalFields, resolveElementDisplay } from '../data/types';
 import { ELEMENT_COLORS, resolveArchetypeLabel } from '../data/constants';
 import { useSeasonData } from '../hooks/useSeasonData';
@@ -23,9 +23,9 @@ import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignM
 import { DesignModePanel } from '../components/DesignMode/DesignModePanel';
 // Tier 3 — strategy badge (engine generation run, 2026-05-25)
 import { StrategyBadge } from '../components/ui/StrategyBadge';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-import gearPoolRaw from '../../data/season_002328/gear_pool.json';
-const gearPool = gearPoolRaw as unknown as GearPoolEntry[];
+// Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
+// Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
+// TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
 
 function hexFromInt(n: number): string {
   return '#' + n.toString(16).padStart(6, '0');
@@ -354,12 +354,13 @@ export function Loadout() {
   const seasonId = season?.manifest.season_id ?? 'sample-season';
   const build = useSkillBuild(classData, seasonId);
 
-  // Gear: best-fit selection from Yomi season pool, re-computed when class changes.
-  // Yomi (season_002328) is the only season with a gear pool currently.
+  // Gear: best-fit selection from per-season gear pool (season.gearPool).
+  // Seasons without gear_pool.json return empty array → GearGrid renders empty.
+  const gearPool = season?.gearPool ?? [];
   const synthesizedGear = useMemo(
     () => (classData ? synthesizeSampleLoadout(classData, gearPool) : []),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [classData?.id]
+    [classData?.id, season?.seasonId]
   );
 
   useEffect(() => {

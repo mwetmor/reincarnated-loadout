@@ -192,6 +192,10 @@ export interface SeasonData {
   seasonId: string;
   manifest: SeasonManifest;
   classes: ClassData[];
+  /** Per-season gear pool. Empty array for seasons without gear_pool.json.
+   *  Yomi (season_002328) is the only season with a real pool currently.
+   *  TODO(drax): remove Yomi-fallback logic in useSeasonData when engine ships gear_pool for new seasons. */
+  gearPool: GearPoolEntry[];
 }
 
 // v1.1 schema (star-lord/season-002328-gear-pool-stats, MIGRATION.md v1.1)

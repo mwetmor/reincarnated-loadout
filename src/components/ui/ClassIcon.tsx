@@ -24,6 +24,9 @@ export function SeasonIcon({ seasonKey, size = 24, className = '' }: { seasonKey
   const iconMap: Record<string, string> = {
     'season_002328': 'season-yomi',
     'sample-season': 'season-yomi',
+    // v2_narrow: engine v2 narrow milestone (physical-only, Moctezuma anchor).
+    // No dedicated icon yet — onError hides gracefully if file absent.
+    'v2_narrow': 'season-v2-narrow',
   };
   const iconName = iconMap[seasonKey];
   if (!iconName) return null;
