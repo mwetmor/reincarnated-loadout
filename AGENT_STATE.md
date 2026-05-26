@@ -1,11 +1,70 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-25
+**Last updated:** 2026-05-26
+**Last commit:** aa6abc0 — fix(drax): null-safety for v2_narrow_phase_5 schema drift — blank-page runtime crash
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### v2_narrow_phase_5 blank-page runtime crash fix (completed 2026-05-26)
+
+**Dispatch:** `agentic_orchestration/dispatches/` — KR route from Matt empirical observation (blank page on season click)
+**Authority:** Matt 2026-05-26 — route to drax via KR for diagnosis + fix
+**Commit:** aa6abc0
+**Push status:** PUSHED — Vercel auto-deploy fired
+
+**Root cause (confirmed via empirical inspection):**
+
+v2_narrow_phase_5 class schema is a generation-params shape divergent from the TS types the loadout expected. Identified via batch-checking all 35 class files:
+- `balance_metadata` is a generation-params blob — lacks `final_modifier`, `converged`, `actual_winrate`, `convergence_iterations`
+- `Skill` objects lack `scaling_coefficient`, `chain_position`, `effect_category`, `color_value`
+- `Skill.effects` is `string[]` (Phase 5 LLM narrative text) not `SkillEffect[]` ({name, params} structured objects)
+
+**Primary crash site:** `bm.final_modifier.toFixed(4)` in `Loadout.tsx` `ClassHeader` → `TypeError: Cannot read properties of undefined (reading 'toFixed')` → React error → blank page. This fired on every Phase 5 class click.
+
+**Secondary crash sites:** `skill.scaling_coefficient.toFixed(2)` in `SkillNode.tsx`; `skill.scaling_coefficient.toFixed(4)` in `SkillDetailPanel.tsx`; `eff.name` / `Object.entries(eff.params)` in `SkillDetailPanel.tsx` effects render (string array vs SkillEffect objects).
+
+**Fix approach chosen: Option A (UI-side null-safety)**
+
+- `types.ts`: `BalanceMetadata` fields → all optional/nullable; `Skill.scaling_coefficient` / `chain_position` / `parent_skill_ids` / `color_value` / `effect_category` → optional/nullable; `Skill.effects` typed `SkillEffect[] | string[]`
+- `Loadout.tsx`: balance stats null-guarded; `bm.converged === false` guard (not `!bm.converged`) prevents spurious "unconverged" badge on Phase 5 classes
+- `Sample.tsx`: same balance stats null guards
+- `SkillNode.tsx`: `scaling_coefficient` render conditional on `!= null`
+- `SkillDetailPanel.tsx`: `scaling_coefficient ?? '—'`; `isStringEffects()` type-guard for dual-path effects render (Phase 5 narrative strings vs legacy SkillEffect objects)
+- `SkillTree.tsx`: `chain_position ?? 0` sort guard
+- `useAnalytics.ts`: `actual_winrate` null-skip for WR bin (Phase 5 classes excluded from win-rate chart — correct)
+
+All `TODO(drax)` annotations added at each guarded site referencing rocket Cycle 13+ schema-unification queue item.
+
+**Validation:**
+- Batch-confirmed all 35 Phase 5 classes have same schema shape (consistent; no per-file variation)
+- v2_narrow backward-compat verified: `final_modifier`/`scaling_coefficient`/`chain_position` present; `effects` is SkillEffect[] — dual-type render branch correct
+- Phase 5 real skill names present: "Shield Wall Command", "Desert Wind Strike", "Galeborn Tempest Charge", "Shadow Bulwark", "War Cry" (spot-checked classes 1, 2, 22, 25, 35)
+- Effects as narrative strings verified (Phase 5 § 8 spec fulfilled — effect descriptions surface in SkillDetailPanel)
+- `npm run build`: 849 modules, 0 TypeScript errors — PASS
+
+**Files changed:**
+- `src/data/types.ts` — BalanceMetadata + Skill field optionality + effects dual-type
+- `src/pages/Loadout.tsx` — balance stats null guards
+- `src/pages/Sample.tsx` — balance stats null guards
+- `src/components/SkillTree/SkillNode.tsx` — scaling_coefficient conditional render
+- `src/components/SkillTree/SkillDetailPanel.tsx` — isStringEffects() guard + dual effects render
+- `src/components/SkillTree/SkillTree.tsx` — chain_position ?? 0 sort
+- `src/hooks/useAnalytics.ts` — actual_winrate null-skip
+
+**TODO(drax) overrides added (7 sites):**
+1. `types.ts` — BalanceMetadata optional fields
+2. `types.ts` — Skill.effects dual-type
+3. `types.ts` — Skill optional fields (scaling_coefficient, chain_position, etc.)
+4. `Loadout.tsx` — bm stats null fallbacks
+5. `Sample.tsx` — bm stats null fallbacks
+6. `SkillNode.tsx` — scaling_coefficient conditional render
+7. `SkillDetailPanel.tsx` — effects dual-path + scaling_coefficient fallback
+All reference: "TODO(drax): remove when engine unifies Phase 5 balance_metadata / Skill schema (rocket Cycle 13+)"
+
+---
 
 ### v2_narrow gear-pool + analytics fix (completed 2026-05-25)
 
