@@ -184,10 +184,24 @@ export function SkillTree({
 
     {/* M3 — T4 alteration panel (Cycle 11 Wave 3b, MIGRATION.md v1.3).
         Null-safe: hides when t4_alteration_output is null (pre-§8 seasons / no alteration).
-        Tier 2 framing: INTENT METADATA — not combat-affecting until Cycle 12 Layer 6. */}
-    {t4Alteration && (
+        Tier 2 framing: INTENT METADATA — not combat-affecting until Cycle 12 Layer 6.
+        2026-05-26 fix: when t4 data is absent AND designMode is on, render an explicit placeholder
+        rather than silently collapsing — prevents "T4 details evaporate on season change" symptom
+        (root cause: only sample-season and v2_narrow have t4_alteration_output; real seasons do not). */}
+    {t4Alteration ? (
       <T4AlterationPanel alteration={t4Alteration} designMode={designMode} />
-    )}
+    ) : designMode ? (
+      <div className="rounded-lg border border-gray-800 bg-gray-900/40 px-3 py-2.5">
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center px-1.5 py-0.5 rounded border text-[10px] font-mono font-bold bg-gray-900 text-gray-600 border-gray-700">
+            T4
+          </span>
+          <span className="text-[11px] font-mono text-gray-600">
+            No T4 alteration data — this season predates §8 engine generation
+          </span>
+        </div>
+      </div>
+    ) : null}
 
     {/* M6 — T4 comparison panel (TOGGLE per Q2 RATIFIED; mobile-friendly).
         Null-safe: toggle hidden when t4_alteration_output is null.
