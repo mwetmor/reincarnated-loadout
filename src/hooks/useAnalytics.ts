@@ -126,6 +126,7 @@ export interface AnalyticsData {
 function seasonLabel(id: string): string {
   if (id === 'season_002328') return 'Yomi';
   if (id === 'v2_narrow') return 'Narrow v1.0';
+  if (id === 'v2_narrow_phase_5') return 'Narrow v1.0 P5';
   const m = id.match(/season_0*(\d+)/);
   return m ? `S${parseInt(m[1], 10)}` : id;
 }

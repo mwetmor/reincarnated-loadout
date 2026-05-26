@@ -120,11 +120,12 @@ function SeasonCard({ card }: { card: SeasonSummaryCard }) {
   );
 }
 
-// Engine v2 milestone seasons: v2_narrow (2026-05-25 narrow generation run).
+// Engine v2 milestone seasons: v2_narrow + v2_narrow_phase_5 (2026-05-25/26 narrow generation runs).
 // These are distinguished from historical canonical-4 seasons — they use the new engine
 // but are pre-elemental (physical-only) by design, not legacy limitation.
+// v2_narrow_phase_5 = Phase 5 cohesion-judge calibration regen of the same narrow milestone seed.
 function isEngineV2Season(id: string): boolean {
-  return id === 'v2_narrow';
+  return id === 'v2_narrow' || id === 'v2_narrow_phase_5';
 }
 
 export function SeasonSummaryCards({ cards }: Props) {

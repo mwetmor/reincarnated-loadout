@@ -274,14 +274,19 @@ export interface BuildState {
 // Pre-substrate-binding seasons emit null for main_weapon / secondary_item / source_library.
 
 // Weapon descriptor (main_weapon / secondary_item). Shape per ExportWeaponDescriptor.
+// v2 engine canonical contract (L9 substrate refactor): weapon_id / name / category / period /
+// cultural_register are guaranteed. source_library and lineage are optional — absent on some
+// v2 engine emissions (e.g. Phase 5 regen output). weapon_id may be integer in engine emit
+// (rendered as string by JS; not displayed in UI so type is string | number for forward compat).
+// TODO(drax): remove string|number union when engine normalizes weapon_id to string (Cycle 13+).
 export interface WeaponDescriptor {
-  weapon_id: string;
+  weapon_id: string | number;
   name: string;
   category: string;           // melee | polearm | ranged | firearm | shield | tome | banner | focus | horn | talisman
-  source_library: string;     // substrate source (see source_library below)
+  source_library?: string | null;  // substrate source; optional — absent on some v2 engine emissions
   cultural_register: string;
   period: string;
-  lineage: string | null;     // nullable per schema
+  lineage?: string | null;    // nullable per schema; optional — absent on some v2 engine emissions
   // Amendment 2 — cultural / period / quality-tier badges (engine generation run, 2026-05-25).
   // Populated on v2.0 forms; absent on pre-Cycle-12 weapons. All nullable.
   cultural_lineage_canonical?: string | null;    // e.g. "european" / "east_asian" / "mesoamerican"
