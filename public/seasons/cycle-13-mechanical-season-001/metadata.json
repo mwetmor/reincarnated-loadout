@@ -1,0 +1,98 @@
+{
+  "manifest_version": "1.9",
+  "season_id": "cycle-13-mechanical-season-001",
+  "generated_at": "2026-05-27T11:07:15.271384+00:00",
+  "engine_git_sha": "cycle13",
+  "engine_version": "v1.30+cycle13",
+  "season_theme_element": "mixed",
+  "anchor": {
+    "id": "cycle-13-mechanical-substrate",
+    "name": "Cycle 13 Mechanical Season",
+    "category": "mechanical_substrate",
+    "description": "Mechanical substrate validation season — 16 endgame kits validated via 27,360-fight gauntlet simulation. Per-skill cohesion content (Phase 5) pending Cycle 14."
+  },
+  "elements": {
+    "fire": {
+      "element_id": "fire",
+      "name": "fire",
+      "tags": [
+        "canonical"
+      ]
+    },
+    "wind": {
+      "element_id": "wind",
+      "name": "wind",
+      "tags": [
+        "canonical"
+      ]
+    },
+    "water": {
+      "element_id": "water",
+      "name": "water",
+      "tags": [
+        "canonical"
+      ]
+    },
+    "earth": {
+      "element_id": "earth",
+      "name": "earth",
+      "tags": [
+        "canonical"
+      ]
+    }
+  },
+  "seasonal_elements": {
+    "ignition": {
+      "element_id": "fire",
+      "name": "fire",
+      "tags": [
+        "canonical"
+      ],
+      "canonical_slot": "fire"
+    },
+    "displacement": {
+      "element_id": "wind",
+      "name": "wind",
+      "tags": [
+        "canonical"
+      ],
+      "canonical_slot": "wind"
+    },
+    "suffusion": {
+      "element_id": "water",
+      "name": "water",
+      "tags": [
+        "canonical"
+      ],
+      "canonical_slot": "water"
+    },
+    "bulwark": {
+      "element_id": "earth",
+      "name": "earth",
+      "tags": [
+        "canonical"
+      ],
+      "canonical_slot": "earth"
+    }
+  },
+  "summary": {
+    "classes_generated": 16,
+    "convergence_failures": 0,
+    "trial_defeat_rate_actual": null,
+    "gauntlet_sim_pass": true,
+    "gauntlet_fight_count": 27360
+  },
+  "validation_passed": true,
+  "cycle_13_flags": {
+    "placeholder_skill_content": true,
+    "cycle_14_refresh_pending": true,
+    "cycle_14_refresh_rationale": "Per-skill content (names, damage_multiplier, cooldown_seconds, energy_cost, bc_axis_contribution, geometry_type, flavor_text, effects) comes from Phase 5 cohesion coalescence in Cycle 14 per doc 40 § 5 + closeout Block A.5. Current values are synthesized placeholders matching _SyntheticPlayerClass parameters used in the gauntlet sim that empirically validated this season (27,360 fights GAUNTLET_SIM_PASS=True).",
+    "phase5_stats": null,
+    "generation_mode": "cycle13_mechanical_substrate_validated",
+    "generation_seed": null,
+    "n_kits": 16,
+    "source_season_metadata": "cycle-13-mechanical-season-001"
+  },
+  "placeholder_skill_content": true,
+  "cycle_14_refresh_pending": true
+}

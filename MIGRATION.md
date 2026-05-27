@@ -9,6 +9,144 @@ contracts that star-lord, rocket, or future demo consumers may need to read.
 
 ---
 
+## [2026-05-27] §v2.2-cycle-13-normal-season-export — Cycle 13 Normal Season Schema Landing (Track C REVISED Step 1)
+
+**Author:** star-lord (engine-side transform pipeline)
+**Workstream:** Cycle 13 Track C REVISED Step 1 (drax Step 2 fires after this)
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-27-star-lord-cycle-13-track-c-revised-step-1-normal-season-export-transform.md`
+**Authority:** Matt 2026-05-27 Track C REVISED directive + per-cycle-push authorization
+**Engine cross-ref:** `reincarnated-engine/src/reincarnated/export/MIGRATION.md` § v1.9-cycle-13-normal-season-export
+**Sentinel:** `reincarnated-engine/src/reincarnated/export/cycle13_normal_season_export_landed.sentinel`
+**Transform script:** `reincarnated-engine/src/reincarnated/export/cycle13_normal_season_export.py`
+
+### Context
+
+Track B Step 2 (drax commit `4cf8312`) bypassed the loadout app's normal season-data flow.
+Matt directed the corrective move: integrate cycle-13-mechanical-season-001 as a NORMAL SEASON
+in the existing `useSeasonData` hook infrastructure so it flows to ALL 4 pages (Loadout / Sample
+/ Analytics / Encounters). Drax Step 2 retires the gap-fill tab.
+
+This entry documents what star-lord Step 1 emitted and what drax Step 2 must consume.
+
+### What changed
+
+#### New season directory: `data/cycle-13-mechanical-season-001/`
+
+Hook-discoverable season data following the existing `data/*/manifest.json + data/*/classes/*.json`
+convention. `useSeasonData.ts` discovers it automatically — no hook code changes required.
+
+**Files:**
+- `data/cycle-13-mechanical-season-001/manifest.json` — SeasonManifest (manifest_version: "1.9")
+- `data/cycle-13-mechanical-season-001/classes/S1_endgame_<attr>_<nn>_<class>.json` (16 files)
+
+#### New season directory: `public/seasons/cycle-13-mechanical-season-001/`
+
+Per Matt's spec (matches v2_narrow_phase_5 precedent — flat list):
+- `public/seasons/cycle-13-mechanical-season-001/metadata.json` — same content as manifest.json
+- `public/seasons/cycle-13-mechanical-season-001/classes.json` — flat array of 16 ClassData dicts
+
+#### SeasonManifest shape (manifest_version: "1.9")
+
+```json
+{
+  "manifest_version": "1.9",
+  "season_id": "cycle-13-mechanical-season-001",
+  "generated_at": "2026-05-27T11:07:15.271384+00:00",
+  "season_theme_element": "mixed",
+  "anchor": { "id": "cycle-13-mechanical-substrate", ... },
+  "elements": { "fire": {...}, "wind": {...}, "water": {...}, "earth": {...} },
+  "seasonal_elements": {
+    "ignition": { "canonical_slot": "fire", ... },
+    "displacement": { "canonical_slot": "wind", ... },
+    "suffusion": { "canonical_slot": "water", ... },
+    "bulwark": { "canonical_slot": "earth", ... }
+  },
+  "summary": { "classes_generated": 16, "gauntlet_sim_pass": true, ... },
+  "validation_passed": true,
+  "placeholder_skill_content": true,
+  "cycle_14_refresh_pending": true,
+  "cycle_13_flags": { ... }
+}
+```
+
+**Note:** `seasonal_elements` present → `assertManifestSeasonalFields()` in types.ts will not warn.
+Element names are canonical (fire/wind/water/earth) — no seasonal renaming for cycle-13.
+
+#### ClassData shape
+
+Matches v2_narrow_phase_5 schema fully. All v2 fields present. Key cycle-13 specifics:
+- `id`: canonical `char_id` (e.g., `S1_endgame_str_01_heavy_barbarian`)
+- `engine_version`: `"v1.30+cycle13"`
+- `source_library`: `"cycle-13-mechanical-substrate"`
+- `is_retired`: `false`
+- `flavor_text`: `"Cycle 14 Phase 5 will populate."`
+- `title_completion`: `null`
+
+#### Skill schema (placeholder synthesis)
+
+All skills are Phase 5 placeholders. The key drax discriminator field:
+
+```json
+{
+  "phase5_is_placeholder": true,
+  "phase5_cohesion_score": null,
+  "phase5_cohesion_breakdown": null,
+  "phase5_attempt_number": 0,
+  "phase5_cache_hit": false,
+  "phase5_thematic_tags": [],
+  "damage_multiplier": 3000.0,
+  "cooldown_seconds": 0.7,
+  "energy_cost": 0.0,
+  "effects": [{"placeholder": true, "cycle_14_refresh_pending": true}],
+  "flavor_text": "Cycle 14 Phase 5 will populate."
+}
+```
+
+Skill count: 20 skills per class × 16 classes = 320 total.
+Chains: t4_chain_1 (7 skills), t4_chain_2 (7 skills), supporting_chain_1 (6 skills).
+
+#### Gear pool: OMITTED
+
+`useSeasonData.ts` hook returns `[]` for seasons without `gear_pool.json` — correct behavior.
+Cycle-13 gear data remains in `data/cycle13_characters.db` (Track B gap-fill DB).
+Drax Step 2 can opt-in to emitting `gear_pool.json` if needed.
+
+### Drax Step 2 obligations
+
+#### Hook behavior (no code changes needed for discovery)
+
+`useSeasonData.ts` will automatically discover `cycle-13-mechanical-season-001` in
+`selectableSeasons` via the `data/cycle-13-mechanical-season-001/manifest.json` glob.
+No hook code changes required for Step 2 (unless drax wants to consolidate to public/seasons/).
+
+#### UI responsibilities
+
+1. **Retire gap-fill tab** — remove "Cycle 13 Characters" tab from Sample page (commit `4cf8312`)
+2. **Placeholder indicator** — show "Cycle 14 refresh pending" on any class where
+   `skills[0].phase5_is_placeholder === true` (all 16 cycle-13 classes qualify)
+   - Also check: `manifest.placeholder_skill_content === true` or
+     `manifest.cycle_13_flags?.cycle_14_refresh_pending === true`
+3. **Element display** — cycle-13 uses canonical names (fire/wind/water/earth);
+   `resolveElementDisplay()` fallback chain will render correctly
+4. **Analytics page** — season sorts chronologically by `generated_at`; cycle-13 lands after
+   all existing seasons (generated 2026-05-27)
+5. **Gear pool** — `gearPool` will be `[]` (empty); no gear render needed for cycle-13
+
+#### Convention consolidation (optional in Step 2)
+
+If drax updates `useSeasonData.ts` to read from `public/seasons/` flat convention, remove
+or deprecate the `data/cycle-13-mechanical-season-001/` dual-write path. Document in MIGRATION.
+If hook stays as-is, both paths remain active (no harm; redundant but correct).
+
+### Schema validation notes
+
+- `manifest_version: "1.9"` — next version after "1.7" used in season_002015
+- `assertManifestSeasonalFields()` will NOT warn (seasonal_elements is present)
+- All ClassData fields from types.ts interface are present (53 round-trip tests confirmed)
+- Pre-Stage-3 field guards (`seasonal_dominant_element ?? dominant_element`) apply correctly
+
+---
+
 ## [2026-05-27] §v2.1-cycle-13-sample-page-consumer — Cycle 13 Sample Page UI Consumer Landing
 
 **Author:** drax-loadout
