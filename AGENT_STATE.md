@@ -1,12 +1,50 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-27
-**Last commit:** (pending — Cycle 13 Track B Step 2 completion)
-**Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
+**Last commit:** Cycle 13 Track C REVISED Step 2 (pending push)
+**Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### Cycle 13 Track C REVISED Step 2 — Normal Season Consumer + Gap-Fill Retirement (completed 2026-05-27)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-27-drax-cycle-13-track-c-revised-step-2-consume-normal-season-plus-retire-gap-fill.md`
+**Authority:** Matt 2026-05-27 Track C REVISED directive + per-cycle-push authorization
+**Build result:** tsc -b clean + vite build clean; 81 tests passing (0 failures)
+
+**What landed:**
+
+- `src/data/types.ts` — additive optional fields: `Skill.phase5_is_placeholder`, `SeasonManifest.placeholder_skill_content`, `SeasonManifest.cycle_14_refresh_pending`
+- `src/pages/Sample.tsx` — gap-fill tab retired: removed `Cycle13SampleSection` import, `sampleView` state, view toggle UI; placeholder indicator banner added
+- `src/pages/Loadout.tsx` — placeholder indicator banner added (amber, with `data-testid="placeholder-season-indicator"`)
+- `src/__tests__/cycle13-normal-season.test.ts` — 31 new tests: hook discovery, 16-class data contract, placeholder flag detection, gap-fill retirement regression guard, indicator UX surface, manifest seasonal_elements
+- `src/__tests__/cipher-no-leak.test.ts` — fixed pre-existing `jest.spyOn` → `vi.spyOn` (enabled by vitest landing)
+- `package.json` — added `vitest@^3.2.4` devDep + `"test": "vitest run"` script
+- `vitest.config.ts` — new file (separate from vite.config.ts; avoids vite@8/vitest@3 plugin type conflict)
+- `MIGRATION.md` — § v2.3 documenting consumer landing, gap-fill retention decisions, gauntlet-sim deferral, vitest integration
+
+**Hook discovery:** CONFIRMED AUTOMATIC. `useSeasonData` glob picks up `cycle-13-mechanical-season-001` with no hook code changes. Cycle-13 appears in `selectableSeasons` on all 4 pages.
+
+**Gap-fill retirement summary:**
+- Removed from Sample.tsx: `Cycle13SampleSection` import, `sampleView` state (`SampleView = 'archive' | 'cycle13'`), view toggle UI (2 tabs)
+- Retained (deferred cleanup): `src/components/Cycle13/` (4 components), `src/hooks/useCycle13Data.ts`, `scripts/export_cycle13_json.py`, `public/data/cycle13/`, `data/cycle13_characters.db`
+- Rationale: gap-fill infrastructure may be reusable for gauntlet-sim visualization; deferred cleanup post-Cycle-14
+
+**Placeholder indicator:** amber banner at season-picker level on Loadout + Sample pages. Detection: `manifest.placeholder_skill_content === true` (primary) + `skills[0].phase5_is_placeholder === true` (fallback). All 16 cycle-13 classes qualify.
+
+**Gauntlet sim data:** DEFERRED. Schema mismatch between gauntlet results and existing encounter_analytics format requires a star-lord ingest transform. Flagged for follow-on dispatch.
+
+**Analytics + Encounters:** cycle-13 flows automatically to Analytics (16 classes added to aggregate charts; `actual_winrate: null` gracefully skipped). Encounters page unaffected (uses separate hook/data file).
+
+**WARN-pattern chain:** maintained. Existing cipher WARN patterns unchanged. New tests confirm no regressions.
+
+**TODO(drax): remove gap-fill infrastructure** — `src/components/Cycle13/`, `src/hooks/useCycle13Data.ts`, `scripts/export_cycle13_json.py`, `public/data/cycle13/` — post-Cycle-14 cleanup pass OR when gauntlet-sim visualization pattern is settled and gap-fill components either promoted or dropped.
+
+**TODO(drax): remove placeholder indicator** — `isPlaceholderSeason` logic in Loadout.tsx + Sample.tsx — when Cycle 14 Phase 5 cohesion coalescence lands and cycle-13 classes get real skill content.
+
+---
 
 ### Cycle 13 Option A Remediation Track B Step 2 — Sample Page UI Extensions (completed 2026-05-27)
 

@@ -9,6 +9,165 @@ contracts that star-lord, rocket, or future demo consumers may need to read.
 
 ---
 
+## [2026-05-27] §v2.3-cycle-13-normal-season-consumer — Cycle 13 Normal Season Consumer Landing + Gap-Fill Retirement (Track C REVISED Step 2)
+
+**Author:** drax-loadout
+**Workstream:** Cycle 13 Track C REVISED Step 2
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-27-drax-cycle-13-track-c-revised-step-2-consume-normal-season-plus-retire-gap-fill.md`
+**Authority:** Matt 2026-05-27 Track C REVISED directive + per-cycle-push authorization
+**Upstream contract:** §v2.2-cycle-13-normal-season-export (star-lord Step 1)
+**Cross-ref (types.ts):** `Skill.phase5_is_placeholder`, `SeasonManifest.placeholder_skill_content`, `SeasonManifest.cycle_14_refresh_pending` — all additive optional fields
+
+### What changed
+
+#### 1. Hook discovery: CONFIRMED AUTOMATIC (no code changes needed)
+
+`useSeasonData.ts` glob pattern `'../../data/*/manifest.json'` automatically discovers
+`data/cycle-13-mechanical-season-001/manifest.json`. No hook code changes were required.
+`selectableSeasons` includes `cycle-13-mechanical-season-001` automatically on all 4 pages.
+
+Empirical verification: 16 class files confirmed in `data/cycle-13-mechanical-season-001/classes/`;
+manifest `season_id` matches folder key; `manifest_version: "1.9"`; `placeholder_skill_content: true`.
+
+#### 2. TypeScript types — additive extensions (types.ts)
+
+New optional fields added to existing interfaces:
+
+**`Skill` interface:**
+- `phase5_is_placeholder?: boolean | null` — Cycle 13 placeholder flag per § v2.2 skill schema.
+  Present on all cycle-13 skills; absent on pre-cycle-13 skills. Guard: `=== true`.
+
+**`SeasonManifest` interface:**
+- `placeholder_skill_content?: boolean | null` — True when all skills are Phase 5 placeholders.
+  Present on `manifest_version: "1.9"` seasons. Absent on all prior seasons.
+- `cycle_14_refresh_pending?: boolean | null` — True when Cycle 14 cohesion coalescence is pending.
+  Same presence pattern as `placeholder_skill_content`.
+
+All fields are additive — backward-compatible with all prior seasons. No existing consumer code
+requires changes.
+
+#### 3. Gap-fill tab retired from Sample.tsx (dispatch target — commit `4cf8312` correction)
+
+**Removed from `Sample.tsx`:**
+- `Cycle13SampleSection` import and render
+- `sampleView` state variable (`SampleView = 'archive' | 'cycle13'`)
+- View toggle UI (tab row between "Season Archive" and "Cycle 13 Characters")
+
+**Sample.tsx returns to default season-picker view.** Cycle-13 is now accessible via the normal
+season picker (`selectableSeasons`), which includes all seasons discovered by the hook glob.
+
+**Gap-fill infrastructure RETAINED (deferred cleanup):**
+- `src/components/Cycle13/` — 4 components (`Cycle13SampleSection`, `Cycle13CharacterHeader`,
+  `Cycle13SkillTree`, `Cycle13GearDisplay`) — retained for potential Analytics/Encounters reuse
+- `src/hooks/useCycle13Data.ts` — retained (empirical-data rendering utility; may be reused
+  for gauntlet-sim visualization when star-lord ingest pipeline is established)
+- `scripts/export_cycle13_json.py` — retained (SQLite bridge; reusable for future DB seasons)
+- `public/data/cycle13/` — 33 static JSON files retained (deferred cleanup post-Cycle-14)
+- `data/cycle13_characters.db` — retained (star-lord may still consume; post-Cycle-14 cleanup)
+
+Deferred cleanup pass: post-Cycle-14 OR when empirical-data rendering pattern is settled.
+At that point, remove/consolidate gap-fill infrastructure or promote it to a reusable pattern.
+
+#### 4. Placeholder skill content indicator UX
+
+**Detection logic (shared across Loadout.tsx and Sample.tsx):**
+
+```typescript
+const isPlaceholderSeason =
+  season.manifest.placeholder_skill_content === true ||
+  (classData.skills.length > 0 && classData.skills[0].phase5_is_placeholder === true);
+```
+
+Primary: `manifest.placeholder_skill_content === true` (manifest-level flag).
+Fallback: `skills[0].phase5_is_placeholder === true` (skill-level flag per § v2.2).
+
+**UI placement:** season-picker level — amber banner above the Engine Baseline Banner /
+ClassHeader, visible as soon as a placeholder season is selected.
+
+**Banner copy:** "Skills pending Cycle 14 Phase 5 cohesion coalescence" with inline explanation
+that mechanical skeleton is validated (27,360-fight gauntlet pass) and win rates are real.
+
+**Marker:** `data-testid="placeholder-season-indicator"` on the banner div (testable).
+
+**Scope:** Loadout.tsx + Sample.tsx (2 pages with per-class skill/gear display). Analytics and
+Encounters pages are data-aggregate; placeholder indicator not required there.
+
+#### 5. Gauntlet sim data wiring: DEFERRED
+
+**Source:** `reincarnated-engine/src/reincarnated/simulation/output/cycle-13-gauntlet-sim-results-2026-05-27.json`
+**Schema:** `{gauntlet_metadata, kit_results (16), encounter_results (912)}`
+
+Wiring was assessed and DEFERRED. Rationale:
+- The canonical gauntlet results schema (`kit_results`, `encounter_results`) differs substantially
+  from the existing `encounter_analytics_*.json` format consumed by `useEncounterAnalytics` hook.
+- The existing Encounters page visualization (scatter plot per class × encounter slot) is designed
+  around the older encounter analytics format (avg_damage, std_damage, win_rate per slot type).
+- Wiring the new gauntlet format to Analytics or Encounters requires a new ingest pipeline,
+  new hook, or schema translation — not a "cheap" addition per dispatch § 2 Step 2 criteria.
+
+**Flag for star-lord follow-on:** Star-lord should author an ingest transform that converts
+`cycle-13-gauntlet-sim-results-2026-05-27.json` into the `encounter_analytics_*.json` format
+(or a new format), copy to `data/encounter_analytics_cycle13.json`, and coordinate with drax
+for Encounters page wiring. This is a separate dispatch post-Cycle-14.
+
+#### 6. Vitest integration (first-time)
+
+`vitest@^3.2.4` added to `devDependencies`. `"test": "vitest run"` script added to `package.json`.
+`vitest.config.ts` added (separate from `vite.config.ts` to avoid vite@8 / vitest@3 plugin
+type conflicts — vitest bundles vite@7 internally).
+
+**Pre-existing cipher-no-leak.test.ts fix:** 2 tests used `jest.spyOn` — updated to `vi.spyOn`
+(vitest equivalent). No test logic changed; this was a deferred fix enabled by vitest landing.
+
+**New test file:** `src/__tests__/cycle13-normal-season.test.ts` — 31 tests covering:
+- Hook discovery verification (data contract — 5 tests)
+- 16-class season data contract (6 tests)
+- Placeholder flag detection (6 tests)
+- Gap-fill tab retirement regression guard (4 tests)
+- Placeholder indicator UX surface (6 tests)
+- Manifest seasonal_elements (cipher-no-warn path — 4 tests)
+
+**Total test count:** 81 tests passing (23 cipher-no-leak + 27 cycle13-db + 31 cycle13-normal).
+
+#### 7. 4-page smoke test verification (hook auto-discovery)
+
+All 4 pages receive cycle-13 automatically via `useSeasonData`:
+- **Loadout.tsx**: season picker includes `cycle-13-mechanical-season-001`; 16 classes selectable;
+  placeholder indicator visible; skill tree renders placeholder skill names; gear renders empty
+  (no `gear_pool.json` for cycle-13 — correct per § v2.2 gear-pool-omitted note).
+- **Sample.tsx**: same as Loadout; gap-fill tab removed; season picker is the only entry point.
+- **Analytics.tsx**: cycle-13 appears in `analyticsSeasons` (generated_at 2026-05-27, sorts last);
+  adds 16 classes to all aggregate charts (element distribution, archetype bars, modifier ranges,
+  season timeline, etc.); `balance_metadata.actual_winrate` is null for cycle-13 classes →
+  gracefully skipped from WR histogram (null-guard already present in useAnalytics.ts).
+- **Encounters.tsx**: no change — this page uses `useEncounterAnalytics` which reads a
+  separate static JSON (encounter_analytics_*.json), not useSeasonData. Cycle-13 does not
+  affect Encounters page content until the gauntlet-sim ingest follow-on is complete.
+
+### Schema validation notes
+
+- `manifest_version: "1.9"` — `assertManifestSeasonalFields()` will NOT warn
+  (seasonal_elements IS present in cycle-13 manifest).
+- `resolveElementDisplay()` fallback chain works correctly — cycle-13 uses canonical names
+  (fire/wind/water/earth) and `seasonal_elements` maps them correctly to the same names.
+- `balance_metadata.actual_winrate` is null on cycle-13 classes — correctly skipped in
+  WR histogram binning (null guard in useAnalytics line 170: `if (wr == null) continue`).
+
+### Downstream consumer responsibilities
+
+#### star-lord
+
+- Gauntlet sim data ingest follow-on: convert `cycle-13-gauntlet-sim-results-2026-05-27.json`
+  to `encounter_analytics`-compatible format. See § 5 above. Flag: defer post-Cycle-14.
+- No other new obligations from this step.
+
+#### knight-rider
+
+- Close Cycle 13 Track C REVISED; update wind-down summary to reflect corrective architectural
+  pass (gap-fill retired; cycle-13 integrated as normal season).
+
+---
+
 ## [2026-05-27] §v2.2-cycle-13-normal-season-export — Cycle 13 Normal Season Schema Landing (Track C REVISED Step 1)
 
 **Author:** star-lord (engine-side transform pipeline)

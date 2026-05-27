@@ -18,9 +18,6 @@ import { OffHandSlot } from '../components/WeaponSlot/OffHandSlot';
 // Amendment 1 — design-mode toggle (engine generation run, 2026-05-25).
 // Shared key with Loadout.tsx so toggle state persists across Loadout ↔ Sample navigation.
 import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignMode/DesignModeToggle';
-// Cycle 13 Option A Remediation Track B — DB-sourced character section
-// Dispatch: 2026-05-27-drax-cycle-13-option-a-remediation-track-b-loadout-ui-extensions.md
-import { Cycle13SampleSection } from '../components/Cycle13/Cycle13SampleSection';
 // Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
 // Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
 // TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
@@ -224,14 +221,8 @@ function SampleClassHeader({
   );
 }
 
-// Top-level Sample page view: "archive" (existing season baseline) vs "cycle13" (DB-sourced characters)
-type SampleView = 'archive' | 'cycle13';
-
 export function Sample() {
   const { defaultSeason, selectableSeasons } = useSeasonData();
-
-  // Top-level view toggle: Season Archive vs Cycle 13 Characters
-  const [sampleView, setSampleView] = useState<SampleView>('archive');
 
   // Amendment 1 — design-mode toggle state (engine generation run, 2026-05-25).
   // Shared localStorage key with Loadout.tsx ("drax_design_mode") so toggle state
@@ -270,7 +261,7 @@ export function Sample() {
   const classData: ClassData | null =
     classes.find((c) => c.id === selectedClassId) ?? classes[0] ?? null;
 
-  // Archive-view computed values (only used when sampleView === 'archive' and season/classData exist)
+  // Computed values (only used when season/classData exist)
   const allocations = (season && classData) ? baselineAllocations(classData) : {};
   const totalSP = classData?.skills.length ?? 0;
   const gearPool = season?.gearPool ?? [];
@@ -281,45 +272,22 @@ export function Sample() {
     [classData?.id, season?.seasonId]
   );
 
+  // Placeholder indicator: detect cycle-13-style seasons with placeholder skill content.
+  // Detection per MIGRATION.md § v2.2: manifest.placeholder_skill_content === true
+  // OR (if present) skills[0].phase5_is_placeholder === true.
+  const isPlaceholderSeason =
+    season?.manifest?.placeholder_skill_content === true ||
+    (classData?.skills?.length > 0 && classData.skills[0].phase5_is_placeholder === true);
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
-      {/* View toggle: Season Archive vs Cycle 13 Characters */}
-      <div className="flex gap-1 border-b border-gray-800 pb-0">
-        <button
-          onClick={() => setSampleView('archive')}
-          className={`px-4 py-2.5 text-sm font-medium rounded-t border-b-2 transition-colors ${
-            sampleView === 'archive'
-              ? 'border-violet-500 text-gray-100 bg-gray-900/40'
-              : 'border-transparent text-gray-600 hover:text-gray-400'
-          }`}
-        >
-          Season Archive
-        </button>
-        <button
-          onClick={() => setSampleView('cycle13')}
-          className={`px-4 py-2.5 text-sm font-medium rounded-t border-b-2 transition-colors ${
-            sampleView === 'cycle13'
-              ? 'border-amber-500 text-gray-100 bg-gray-900/40'
-              : 'border-transparent text-gray-600 hover:text-gray-400'
-          }`}
-        >
-          Cycle 13 Characters
-          <span className="ml-1.5 text-[9px] font-mono text-amber-600 align-top">16 chars · DB</span>
-        </button>
-      </div>
-
-      {/* Cycle 13 view — DB-sourced characters */}
-      {sampleView === 'cycle13' && (
-        <Cycle13SampleSection />
-      )}
-
-      {/* Season archive view — existing baseline content */}
-      {sampleView === 'archive' && (!season || !classData) && (
+      {/* Season archive view */}
+      {(!season || !classData) && (
         <div className="py-16 text-center text-gray-600 font-mono">
           No season data found.
         </div>
       )}
-      {sampleView === 'archive' && season && classData && (
+      {season && classData && (
       <>
       {/* Season picker */}
       {selectableSeasons.length > 1 && (
@@ -339,6 +307,29 @@ export function Sample() {
               </option>
             ))}
           </select>
+        </div>
+      )}
+
+      {/* Placeholder skill content indicator (MIGRATION.md § v2.2 + § v2.3).
+          Visible when manifest.placeholder_skill_content === true (cycle-13 and any future
+          season with Phase 5 cohesion pending). All 16 cycle-13 classes qualify. */}
+      {isPlaceholderSeason && (
+        <div
+          className="rounded-lg border border-amber-800/60 bg-amber-950/30 px-4 py-3 flex items-start gap-3"
+          data-testid="placeholder-season-indicator"
+        >
+          <span className="text-amber-500 text-base flex-shrink-0 mt-0.5">◌</span>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-amber-400">
+              Skills pending Cycle 14 Phase 5 cohesion coalescence
+            </p>
+            <p className="text-xs text-amber-500/80 mt-1 leading-relaxed">
+              Mechanical skeleton validated (16 classes, 27,360-fight gauntlet pass). Skill names
+              and descriptions are synthesized placeholders — Phase 5 narrative cohesion content
+              will replace them in Cycle 14. Balance metadata reflects the gauntlet simulation
+              pass; win rates shown are real.
+            </p>
+          </div>
         </div>
       )}
 

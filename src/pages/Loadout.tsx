@@ -382,6 +382,13 @@ export function Loadout() {
 
   const shareUrl = buildShareUrl(classData, seasonId, build.allocations);
 
+  // Placeholder indicator: detect cycle-13-style seasons with placeholder skill content.
+  // Detection per MIGRATION.md § v2.2: manifest.placeholder_skill_content === true
+  // OR (if present) skills[0].phase5_is_placeholder === true.
+  const isPlaceholderSeason =
+    season.manifest.placeholder_skill_content === true ||
+    (classData.skills.length > 0 && classData.skills[0].phase5_is_placeholder === true);
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
       {/* Season picker */}
@@ -402,6 +409,29 @@ export function Loadout() {
               </option>
             ))}
           </select>
+        </div>
+      )}
+
+      {/* Placeholder skill content indicator (MIGRATION.md § v2.2 + § v2.3).
+          Visible when manifest.placeholder_skill_content === true (cycle-13 and any future
+          season with Phase 5 cohesion pending). All 16 cycle-13 classes qualify. */}
+      {isPlaceholderSeason && (
+        <div
+          className="rounded-lg border border-amber-800/60 bg-amber-950/30 px-4 py-3 flex items-start gap-3"
+          data-testid="placeholder-season-indicator"
+        >
+          <span className="text-amber-500 text-base flex-shrink-0 mt-0.5">◌</span>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-amber-400">
+              Skills pending Cycle 14 Phase 5 cohesion coalescence
+            </p>
+            <p className="text-xs text-amber-500/80 mt-1 leading-relaxed">
+              Mechanical skeleton validated (16 classes, 27,360-fight gauntlet pass). Skill names
+              and descriptions are synthesized placeholders — Phase 5 narrative cohesion content
+              will replace them in Cycle 14. Balance metadata reflects the gauntlet simulation
+              pass; win rates shown are real.
+            </p>
+          </div>
         </div>
       )}
 

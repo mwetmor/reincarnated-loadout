@@ -16,7 +16,7 @@
 
 // @ts-nocheck -- vitest not in devDeps yet; suppress type errors on describe/it/expect
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import {
   resolveElementDisplay,
   assertManifestSeasonalFields,
@@ -151,7 +151,7 @@ describe('resolveElementDisplay — v1.5 manifest (seasonal_elements primary)', 
 describe('assertManifestSeasonalFields — JSON load boundary assertion', () => {
   it('does not warn for v1.4 manifest without seasonal_elements (expected)', () => {
     const manifest = makeManifestV14();
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     assertManifestSeasonalFields(manifest);
     expect(warnSpy).not.toHaveBeenCalled();
     warnSpy.mockRestore();
@@ -160,7 +160,7 @@ describe('assertManifestSeasonalFields — JSON load boundary assertion', () => 
   it('warns for v1.5 manifest missing seasonal_elements (fail-loud)', () => {
     const manifest = makeManifestV15();
     delete (manifest as SeasonManifest & { seasonal_elements?: unknown }).seasonal_elements;
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     assertManifestSeasonalFields(manifest);
     expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('WARN'));
     expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('seasonal_elements'));

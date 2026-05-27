@@ -29,6 +29,10 @@ export interface Skill {
   cooldown_seconds: number;
   // color_value absent on Phase 5 skills. Guard: skill.color_value ?? 0.
   color_value?: number | null;
+  // Cycle 13 placeholder flag (MIGRATION.md § v2.2). True on all cycle-13 skills (Phase 5
+  // placeholder synthesis). Display a "Cycle 14 refresh pending" indicator when true.
+  // Absent on pre-cycle-13 skills — guard: skill.phase5_is_placeholder === true.
+  phase5_is_placeholder?: boolean | null;
 }
 
 export interface StatDistribution {
@@ -153,6 +157,11 @@ export interface SeasonManifest {
     trial_defeat_rate_actual?: number;
   };
   validation_passed?: boolean;
+  // Cycle 13 placeholder flags (MIGRATION.md § v2.2). Present on manifest_version "1.9" seasons.
+  // When true: all per-class skills are Phase 5 placeholders pending Cycle 14 cohesion coalescence.
+  // Absent on all prior seasons — guard: manifest.placeholder_skill_content === true.
+  placeholder_skill_content?: boolean | null;
+  cycle_14_refresh_pending?: boolean | null;
 }
 
 // ---- Field-presence assertion helpers (R11(b) JSON load boundary) ----
