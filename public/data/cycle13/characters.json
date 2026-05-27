@@ -1,0 +1,536 @@
+{
+  "season": {
+    "season_id": "cycle-13-mechanical-season-001",
+    "cycle": 13,
+    "wave": "5 Track B",
+    "scope": "endgame_only",
+    "node": "L45-50+",
+    "generated_at": "2026-05-27T11:07:15.271384+00:00",
+    "character_count": 16,
+    "wr_bracket_pass_rate": 0.8889,
+    "methodology_pattern": "Per-weapon-cohort-exhaustive with sub-option-B DOMINANT (~85-90% cohort-clear fraction); stratified by progression node (endgame-reference-encounter first per Block C \u00a7 1.5); tiered quick-estimate first validation with elevated Tier 1 for I1 edge cases; scope-dimension-aware KPM band calibration stratified by class chain count",
+    "raw_metadata_json": {
+      "season_id": "cycle-13-mechanical-season-001",
+      "cycle": 13,
+      "wave": "5 Track B",
+      "scope": "endgame_only",
+      "node": "L45-50+",
+      "generated_at": "2026-05-27T11:07:15.271384+00:00",
+      "kit_candidate_count": 18,
+      "wr_bracket_pass_count": 16,
+      "wr_bracket_fail_count": 2,
+      "wr_bracket_pass_rate": 0.8889,
+      "cohort_distribution_candidates": {
+        "dps_min_maxer": 6,
+        "balanced": 12,
+        "defensive": 0,
+        "hybrid": 0
+      },
+      "cohort_distribution_season": {
+        "dps_min_maxer": 4,
+        "balanced": 12,
+        "defensive": 0,
+        "hybrid": 0
+      },
+      "character_ids": [
+        "S1_endgame_str_01_heavy_barbarian",
+        "S1_endgame_str_02_light_fighter",
+        "S1_endgame_str_03_polearm_soldier",
+        "S1_endgame_dex_01_dagger_assassin",
+        "S1_endgame_dex_02_archer",
+        "S1_endgame_dex_03_crossbow_sniper",
+        "S1_endgame_dex_04_twin_blade_fencer",
+        "S1_endgame_int_01_standard_wizard",
+        "S1_endgame_int_03_pyromantic_caster",
+        "S1_endgame_int_04_red_mage_spellsword",
+        "S1_endgame_int_05_arcane_familiar_mage",
+        "S1_endgame_wis_01_channeling_cleric",
+        "S1_endgame_wis_02_holy_knight",
+        "S1_endgame_wis_03_ritual_mage",
+        "S1_endgame_wis_04_storm_caller",
+        "S1_endgame_wis_05_monk"
+      ],
+      "sim_cycling_quality_report": "sim_cycling_quality_report.json",
+      "methodology_pattern": "Per-weapon-cohort-exhaustive with sub-option-B DOMINANT (~85-90% cohort-clear fraction); stratified by progression node (endgame-reference-encounter first per Block C \u00a7 1.5); tiered quick-estimate first validation with elevated Tier 1 for I1 edge cases; scope-dimension-aware KPM band calibration stratified by class chain count",
+      "gamora_integration_mode": "coordinated",
+      "wave_4_architecture_consumed": [
+        "partition_schema.py",
+        "gear_instance_generator.py",
+        "t4_category_schema.py",
+        "t4_algorithm_wave2.py",
+        "t4_scope_selector.py",
+        "t4_option_f.py",
+        "t4_sim_cycling.py (gamora Wave 4 Track B)"
+      ],
+      "math_note": "generation/math/cycle-13-wave-5-season-generation-math-2026-05-27.md",
+      "dispatch": "agentic_orchestration/dispatches/2026-05-27-rocket-cycle-13-wave-5-initial-mechanical-season-generation.md",
+      "q10_amendment": "substrate-led; no pre-imposed N; all WR-bracket passing kits = season content"
+    }
+  },
+  "characters": [
+    {
+      "character_id": "S1_endgame_dex_01_dagger_assassin",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_dex_01_dagger_assassin",
+      "attribute": "DEX",
+      "element": "wind",
+      "resource_model": "mana",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "melee",
+        "tempo": "high",
+        "amplitude": "flat",
+        "attribute": "DEX",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_dex_02_archer",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_dex_02_archer",
+      "attribute": "DEX",
+      "element": "wind",
+      "resource_model": "mana",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "ranged",
+        "tempo": "high",
+        "amplitude": "flat",
+        "attribute": "DEX",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_dex_03_crossbow_sniper",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_dex_03_crossbow_sniper",
+      "attribute": "DEX",
+      "element": "wind",
+      "resource_model": "cooldown",
+      "cohort_archetype": "dps_min_maxer",
+      "class_chain_count": 3,
+      "t4_scope": "character_wide",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "ranged",
+        "tempo": "low",
+        "amplitude": "spiky",
+        "attribute": "DEX",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_dex_04_twin_blade_fencer",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_dex_04_twin_blade_fencer",
+      "attribute": "DEX",
+      "element": "wind",
+      "resource_model": "mana",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "mid",
+        "tempo": "high",
+        "amplitude": "flat",
+        "attribute": "DEX",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_int_01_standard_wizard",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_int_01_standard_wizard",
+      "attribute": "INT",
+      "element": "fire",
+      "resource_model": "energy",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "ranged",
+        "tempo": "medium",
+        "amplitude": "variable",
+        "attribute": "INT",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_int_03_pyromantic_caster",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_int_03_pyromantic_caster",
+      "attribute": "INT",
+      "element": "fire",
+      "resource_model": "cooldown",
+      "cohort_archetype": "dps_min_maxer",
+      "class_chain_count": 3,
+      "t4_scope": "character_wide",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "mid",
+        "tempo": "low",
+        "amplitude": "spiky",
+        "attribute": "INT",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_int_04_red_mage_spellsword",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_int_04_red_mage_spellsword",
+      "attribute": "INT",
+      "element": "fire",
+      "resource_model": "mana",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "melee",
+        "tempo": "high",
+        "amplitude": "flat",
+        "attribute": "INT",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_int_05_arcane_familiar_mage",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_int_05_arcane_familiar_mage",
+      "attribute": "INT",
+      "element": "fire",
+      "resource_model": "energy",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "ranged",
+        "tempo": "medium",
+        "amplitude": "variable",
+        "attribute": "INT",
+        "proxy_density": "light"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_str_01_heavy_barbarian",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_str_01_heavy_barbarian",
+      "attribute": "STR",
+      "element": "earth",
+      "resource_model": "cooldown",
+      "cohort_archetype": "dps_min_maxer",
+      "class_chain_count": 3,
+      "t4_scope": "character_wide",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "melee",
+        "tempo": "low",
+        "amplitude": "spiky",
+        "attribute": "STR",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_str_02_light_fighter",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_str_02_light_fighter",
+      "attribute": "STR",
+      "element": "earth",
+      "resource_model": "mana",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "melee",
+        "tempo": "high",
+        "amplitude": "flat",
+        "attribute": "STR",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_str_03_polearm_soldier",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_str_03_polearm_soldier",
+      "attribute": "STR",
+      "element": "earth",
+      "resource_model": "energy",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "melee",
+        "tempo": "medium",
+        "amplitude": "variable",
+        "attribute": "STR",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_wis_01_channeling_cleric",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_wis_01_channeling_cleric",
+      "attribute": "WIS",
+      "element": "water",
+      "resource_model": "energy",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "mid",
+        "tempo": "medium",
+        "amplitude": "variable",
+        "attribute": "WIS",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_wis_02_holy_knight",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_wis_02_holy_knight",
+      "attribute": "WIS",
+      "element": "water",
+      "resource_model": "energy",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "melee",
+        "tempo": "medium",
+        "amplitude": "variable",
+        "attribute": "WIS",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_wis_03_ritual_mage",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_wis_03_ritual_mage",
+      "attribute": "WIS",
+      "element": "water",
+      "resource_model": "cooldown",
+      "cohort_archetype": "dps_min_maxer",
+      "class_chain_count": 3,
+      "t4_scope": "character_wide",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "ranged",
+        "tempo": "low",
+        "amplitude": "spiky",
+        "attribute": "WIS",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_wis_04_storm_caller",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_wis_04_storm_caller",
+      "attribute": "WIS",
+      "element": "water",
+      "resource_model": "energy",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "ranged",
+        "tempo": "medium",
+        "amplitude": "variable",
+        "attribute": "WIS",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    },
+    {
+      "character_id": "S1_endgame_wis_05_monk",
+      "season_id": "cycle-13-mechanical-season-001",
+      "bc_cell_id": "endgame_wis_05_monk",
+      "attribute": "WIS",
+      "element": "water",
+      "resource_model": "mana",
+      "cohort_archetype": "balanced",
+      "class_chain_count": 3,
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "wr_bracket_pass": 1,
+      "bc_tuple": {
+        "range": "melee",
+        "tempo": "high",
+        "amplitude": "variable",
+        "attribute": "WIS",
+        "proxy_density": "none"
+      },
+      "chain_composition": {
+        "t4_chains": 2,
+        "supporting_chains": 1,
+        "total_chains": 3
+      },
+      "wr_bracket_details": {
+        "note": "pass inferred from generation_shipped + gamora validation",
+        "total_legendaries_validated": 23
+      }
+    }
+  ]
+}

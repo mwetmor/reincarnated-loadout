@@ -9,6 +9,117 @@ contracts that star-lord, rocket, or future demo consumers may need to read.
 
 ---
 
+## [2026-05-27] §v2.1-cycle-13-sample-page-consumer — Cycle 13 Sample Page UI Consumer Landing
+
+**Author:** drax-loadout
+**Workstream:** Cycle 13 Option A Remediation Track B Step 2 (drax UI extensions)
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-27-drax-cycle-13-option-a-remediation-track-b-loadout-ui-extensions.md`
+**Authority:** Matt 2026-05-27 + ratified framing brief § 4.1 autonomous scope
+**Upstream contract:** §v2.0-cycle-13-option-a-character-db (star-lord ingest)
+**Sentinel verified:** `reincarnated-engine/src/reincarnated/export/cycle13_option_a_loadout_schema_landed.sentinel` — confirmed present before building consumer
+
+### What changed
+
+#### New static export pipeline
+
+**Script:** `reincarnated-loadout/scripts/export_cycle13_json.py`
+
+SQLite → JSON export that bridges the browser-side React app (which cannot access SQLite directly)
+to the cycle13_characters.db. Reads all 4 tables, pre-parses all `_json` TEXT columns, and writes:
+
+- `public/data/cycle13/characters.json` — 16 chars + season metadata (all JSON columns pre-parsed)
+- `public/data/cycle13/gear/<character_id>.json` — 110 gear rows per character (all 11 slots × 10 tiers)
+- `public/data/cycle13/t4/<character_id>.json` — T4 candidates per character (1-2 per char)
+
+**Re-run trigger:** if cycle13_characters.db changes, re-run `python3 scripts/export_cycle13_json.py`
+from `reincarnated-loadout/` to regenerate. No schema change required for Cycle 14 additions
+(new season_id rows; same column structure).
+
+#### New TypeScript types
+
+**File:** `reincarnated-loadout/src/data/cycle13Types.ts`
+
+Complete TypeScript types for all 4 DB tables (post-JSON-parse):
+`Cycle13Season`, `Cycle13Character`, `Cycle13BcTuple`, `Cycle13ChainComposition`,
+`Cycle13T4Candidate`, `Cycle13ScopeProjectionData`, `Cycle13GearInstance`,
+`PartitionModifier`, `CapabilityModifier`, `T4Annotation`, `SetBonus`, `TriggeredPassive`.
+
+Display helpers: `RARITY_LABEL`, `RARITY_COLOR`, `SLOT_LABEL`, `SLOT_ORDER`, `RARITY_ORDER`,
+`hasCapabilityToolkit()`, `hasT4Annotation()`, `deriveCharacterDisplayName()`, `NODE_MAX`.
+
+`set_bonus` is typed as `SetBonus | null` (dict with `set_id`, `bonus_2pc_effect_tag`,
+`bonus_4pc_effect_tag`, `scope_preference`) — NOT a string. Per star-lord design decision.
+
+#### New hooks
+
+**File:** `reincarnated-loadout/src/hooks/useCycle13Data.ts`
+
+- `useCycle13Characters()` — loads `characters.json`; WARN-pattern on unexpected count
+- `useCycle13Gear(characterId)` — loads per-character gear JSON; WARN-pattern on unexpected count
+- `useCycle13T4(characterId)` — loads per-character T4 JSON
+- `buildInitialChainState(char)` — derives interactive chain state from chain_composition
+- `countUnlockedT4Chains(chains)` — Block A3 70% threshold counting
+- `hasSelectedT4(chains)` — Block A4 one-T4-at-a-time status
+- Constants: `PASSIVE_MAX=5`, `ACTIVE_MAX=15`, `CHAIN_INVESTMENT_MAX=20`, `T4_UNLOCK_THRESHOLD_POINTS=14`
+
+#### New components
+
+**Directory:** `reincarnated-loadout/src/components/Cycle13/`
+
+- `Cycle13CharacterHeader.tsx` — character stat header (attribute/element/resource_model/bc_tuple/WR pass)
+- `Cycle13SkillTree.tsx` — interactive chain investment tree (Block A3/A4)
+  - `InvestmentControl` — slider + badge per node (passive/active within max)
+  - `T4ThresholdBar` — progress bar at 70% threshold marker
+  - `T4CandidatePanel` — T4 candidate details + select/deselect button
+  - `ChainPanel` — per-chain wrapper (investment + threshold + T4 candidate)
+  - `Cycle13SkillTree` — main export: chain grid + summary row + respec notice
+- `Cycle13GearDisplay.tsx` — 11-slot × 10-rarity gear display (Block B1 capability toolkit)
+  - `SlotPanel` — per-slot rarity tier tabs + content
+  - `RarityTierPanel` — partition_modifiers + capability_modifiers + t4_annotation + set_bonus + triggered_passive
+- `Cycle13SampleSection.tsx` — top-level section embedding all the above
+  - `CharacterSelector` — sidebar grouped by attribute (STR/DEX/INT/WIS)
+
+#### Sample.tsx extension
+
+**Route:** `/sample` — existing route extended with a top-level tab toggle:
+- `Season Archive` tab — existing content unchanged (no regressions)
+- `Cycle 13 Characters` tab — renders `Cycle13SampleSection`
+
+The tab toggle is above the archive early-return guard; Cycle 13 view always accessible regardless
+of archive data availability.
+
+### Row count verification (empirical inspection at dispatch start)
+
+| Table | Expected | Confirmed |
+|---|---|---|
+| `character` | 16 | 16 |
+| `gear_instance` | 1,760 | 1,760 |
+| `character_t4_candidate` | 23 | 23 |
+| `season` | 1 | 1 |
+
+### Block A3/A4 constraint enforcement
+
+| Constraint | Implementation |
+|---|---|
+| Passive max = 5 | `<input type="range" max={PASSIVE_MAX}>`; PASSIVE_MAX=5 |
+| Active max = 15 | `<input type="range" max={ACTIVE_MAX}>`; ACTIVE_MAX=15 |
+| T4 binary (0/1) | `t4Selected: boolean`; select/deselect buttons |
+| T4 unlock at 70% | `passive+active >= T4_UNLOCK_THRESHOLD_POINTS(14)`; bar + label |
+| One-T4-at-a-time (Block A4) | `onT4Select` deselects all other chains before selecting; disabled state on non-selected T4 buttons |
+
+### Capability toolkit content (Block B1)
+
+Visible from `legendary_t0` tier up via `capability_modifiers` array.
+T4 attunement annotation visible from `legendary_t1` via `t4_annotation` dict.
+Set bonus visible for `set_t1`/`set_t2` via `set_bonus` dict (NOT string — per star-lord design decision).
+
+### WARN-pattern preservation
+
+Both `useCycle13Characters` and `useCycle13Gear` emit `WARN [hook]` console warnings
+when row counts don't match expected values (16 chars, 110 gear rows per char).
+
+---
+
 ## [2026-05-27] §v2.0-cycle-13-option-a-character-db — Cycle 13 Option A Remediation Track B: cycle13_characters.db (loadout consumer contract)
 
 **Author:** star-lord (engine-side ingest) / drax-loadout (UI consumer — fires after this sentinel lands)

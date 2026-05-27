@@ -1,12 +1,51 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-26
-**Last commit:** 15fff74 — fix(drax): T4 placeholder when season lacks t4_alteration_output — prevents T4 evaporation on season-change
+**Last updated:** 2026-05-27
+**Last commit:** (pending — Cycle 13 Track B Step 2 completion)
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 — engine generation run loadout amendments (design-mode toggle + cultural/period/quality badges + strategy badge + M2 gate-flip)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### Cycle 13 Option A Remediation Track B Step 2 — Sample Page UI Extensions (completed 2026-05-27)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-27-drax-cycle-13-option-a-remediation-track-b-loadout-ui-extensions.md`
+**Authority:** Matt 2026-05-27 verbatim per-cycle-push + ratified framing brief § 4.1 autonomous scope
+**Build result:** tsc -b clean, 855 modules, 0 TS errors
+
+**What landed:**
+
+- `scripts/export_cycle13_json.py` — SQLite → static JSON export (bridge for browser-side React)
+  - `public/data/cycle13/characters.json` (16 chars + season)
+  - `public/data/cycle13/gear/<id>.json` (110 rows per char)
+  - `public/data/cycle13/t4/<id>.json` (1-2 candidates per char)
+- `src/data/cycle13Types.ts` — complete TypeScript types for all DB tables
+- `src/hooks/useCycle13Data.ts` — hooks + helpers (useCycle13Characters, useCycle13Gear, useCycle13T4, buildInitialChainState, etc.)
+- `src/components/Cycle13/Cycle13CharacterHeader.tsx` — character stat header
+- `src/components/Cycle13/Cycle13SkillTree.tsx` — interactive chain skill tree (Block A3/A4)
+- `src/components/Cycle13/Cycle13GearDisplay.tsx` — 11 slots × 10 rarity tiers (Block B1)
+- `src/components/Cycle13/Cycle13SampleSection.tsx` — top-level section + character selector
+- `src/pages/Sample.tsx` — extended with top-level tab toggle (Season Archive / Cycle 13 Characters)
+- `src/__tests__/cycle13-db-integration.test.ts` — 28 tests (DB constants, chain state, T4 threshold, investment constraints, display name)
+- `MIGRATION.md` — §v2.1-cycle-13-sample-page-consumer added
+
+**Smoke-tested characters:**
+- `S1_endgame_str_01_heavy_barbarian` (STR/earth/cooldown): 11 legendary_t1 rows, caps + t4_ann verified, 11 set_t2 rows
+- `S1_endgame_int_03_pyromantic_caster` (INT/fire/cooldown): 1 T4 candidate (RESOURCE_CONVERSION, character_wide)
+- `S1_endgame_wis_02_holy_knight` (WIS/water/energy): 2 T4 candidates, 22 set gear rows, set_bonus dict verified
+
+**DB integration verified:**
+- Sentinel: `/Users/admin/Games/reincarnated-engine/src/reincarnated/export/cycle13_option_a_loadout_schema_landed.sentinel` — CONFIRMED PRESENT
+- Row counts: 16 chars, 1760 gear, 23 T4, 1 season — all match contract
+
+**WARN-pattern preservation:** useCycle13Characters + useCycle13Gear emit `WARN [hook]` on unexpected row counts. Existing cipher-no-leak WARN patterns unchanged.
+
+**Cross-seam follow-on:** None. Read-only DB consumption. Star-lord ingest pipeline closed.
+
+**TODO(drax): Cycle 14 integration** — when Cycle 14 characters are generated, re-run `python3 scripts/export_cycle13_json.py` (or extend to support multi-season) to regenerate static JSON. No schema changes needed per star-lord design decision (new season_id rows in same DB).
+
+
 
 ### T4 evaporation on season-change — root cause + fix (completed 2026-05-26)
 

@@ -18,6 +18,9 @@ import { OffHandSlot } from '../components/WeaponSlot/OffHandSlot';
 // Amendment 1 — design-mode toggle (engine generation run, 2026-05-25).
 // Shared key with Loadout.tsx so toggle state persists across Loadout ↔ Sample navigation.
 import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignMode/DesignModeToggle';
+// Cycle 13 Option A Remediation Track B — DB-sourced character section
+// Dispatch: 2026-05-27-drax-cycle-13-option-a-remediation-track-b-loadout-ui-extensions.md
+import { Cycle13SampleSection } from '../components/Cycle13/Cycle13SampleSection';
 // Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
 // Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
 // TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
@@ -221,8 +224,14 @@ function SampleClassHeader({
   );
 }
 
+// Top-level Sample page view: "archive" (existing season baseline) vs "cycle13" (DB-sourced characters)
+type SampleView = 'archive' | 'cycle13';
+
 export function Sample() {
   const { defaultSeason, selectableSeasons } = useSeasonData();
+
+  // Top-level view toggle: Season Archive vs Cycle 13 Characters
+  const [sampleView, setSampleView] = useState<SampleView>('archive');
 
   // Amendment 1 — design-mode toggle state (engine generation run, 2026-05-25).
   // Shared localStorage key with Loadout.tsx ("drax_design_mode") so toggle state
@@ -261,26 +270,57 @@ export function Sample() {
   const classData: ClassData | null =
     classes.find((c) => c.id === selectedClassId) ?? classes[0] ?? null;
 
-  if (!season || !classData) {
-    return (
-      <div className="max-w-6xl mx-auto px-4 py-16 text-center text-gray-600 font-mono">
-        No season data found.
-      </div>
-    );
-  }
-
-  const allocations = baselineAllocations(classData);
-  const totalSP = classData.skills.length;
-  // Per-season gear pool (season.gearPool). Empty array for seasons without gear_pool.json.
+  // Archive-view computed values (only used when sampleView === 'archive' and season/classData exist)
+  const allocations = (season && classData) ? baselineAllocations(classData) : {};
+  const totalSP = classData?.skills.length ?? 0;
   const gearPool = season?.gearPool ?? [];
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const synthesizedGear = useMemo(
-    () => synthesizeSampleLoadout(classData, gearPool),
-    [classData.id, season?.seasonId]
+    () => (classData ? synthesizeSampleLoadout(classData, gearPool) : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [classData?.id, season?.seasonId]
   );
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
+      {/* View toggle: Season Archive vs Cycle 13 Characters */}
+      <div className="flex gap-1 border-b border-gray-800 pb-0">
+        <button
+          onClick={() => setSampleView('archive')}
+          className={`px-4 py-2.5 text-sm font-medium rounded-t border-b-2 transition-colors ${
+            sampleView === 'archive'
+              ? 'border-violet-500 text-gray-100 bg-gray-900/40'
+              : 'border-transparent text-gray-600 hover:text-gray-400'
+          }`}
+        >
+          Season Archive
+        </button>
+        <button
+          onClick={() => setSampleView('cycle13')}
+          className={`px-4 py-2.5 text-sm font-medium rounded-t border-b-2 transition-colors ${
+            sampleView === 'cycle13'
+              ? 'border-amber-500 text-gray-100 bg-gray-900/40'
+              : 'border-transparent text-gray-600 hover:text-gray-400'
+          }`}
+        >
+          Cycle 13 Characters
+          <span className="ml-1.5 text-[9px] font-mono text-amber-600 align-top">16 chars · DB</span>
+        </button>
+      </div>
+
+      {/* Cycle 13 view — DB-sourced characters */}
+      {sampleView === 'cycle13' && (
+        <Cycle13SampleSection />
+      )}
+
+      {/* Season archive view — existing baseline content */}
+      {sampleView === 'archive' && (!season || !classData) && (
+        <div className="py-16 text-center text-gray-600 font-mono">
+          No season data found.
+        </div>
+      )}
+      {sampleView === 'archive' && season && classData && (
+      <>
       {/* Season picker */}
       {selectableSeasons.length > 1 && (
         <div className="flex items-center gap-2">
@@ -386,6 +426,8 @@ export function Sample() {
           → Open in Loadout
         </Link>
       </div>
+      </>
+      )}
     </div>
   );
 }
