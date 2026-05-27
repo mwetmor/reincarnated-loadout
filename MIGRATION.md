@@ -9,6 +9,184 @@ contracts that star-lord, rocket, or future demo consumers may need to read.
 
 ---
 
+## [2026-05-27] §v2.0-cycle-13-option-a-character-db — Cycle 13 Option A Remediation Track B: cycle13_characters.db (loadout consumer contract)
+
+**Author:** star-lord (engine-side ingest) / drax-loadout (UI consumer — fires after this sentinel lands)
+**Workstream:** Cycle 13 Option A Remediation Track B (loadout integration)
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-27-star-lord-cycle-13-option-a-remediation-track-b-loadout-schema-extension.md`
+**Authority:** Matt 2026-05-27 + ratified framing brief § 4.1 autonomous scope
+**Engine cross-ref:** `reincarnated-engine/src/reincarnated/export/MIGRATION.md` § v1.8-cycle-13-option-a-loadout-schema-extension
+**Sentinel:** `reincarnated-engine/src/reincarnated/export/cycle13_option_a_loadout_schema_landed.sentinel`
+**Ingest script:** `reincarnated-engine/src/reincarnated/export/cycle13_loadout_ingest.py`
+
+### What changed
+
+#### New SQLite DB: `reincarnated-loadout/data/cycle13_characters.db`
+
+A new SQLite database containing the 16 cycle-13 mechanical season characters with full gear sets.
+This is distinct from `telemetry.db` (the weapon/substrate elrond catalogue).
+
+**DB path:** `reincarnated-loadout/data/cycle13_characters.db`
+**Season:** `cycle-13-mechanical-season-001`
+**Source JSONs:** `reincarnated-engine/output/cycle-13-mechanical-season-001/` (IMMUTABLE)
+
+#### Schema — 4 tables
+
+##### `season`
+Top-level manifest row.
+
+| Column | Type | Notes |
+|---|---|---|
+| `season_id` | TEXT PK | `cycle-13-mechanical-season-001` |
+| `cycle` | INTEGER | 13 |
+| `wave` | TEXT | `5 Track B` |
+| `scope` | TEXT | `endgame_only` |
+| `node` | TEXT | `L45-50+` |
+| `generated_at` | TEXT | ISO-8601 |
+| `character_count` | INTEGER | 16 |
+| `wr_bracket_pass_rate` | REAL | 0.8889 |
+| `methodology_pattern` | TEXT | nullable |
+| `raw_metadata_json` | TEXT | full season_metadata.json blob |
+
+##### `character`
+One row per character (16 rows).
+
+| Column | Type | Notes |
+|---|---|---|
+| `character_id` | TEXT PK | e.g. `S1_endgame_str_01_heavy_barbarian` |
+| `season_id` | TEXT | FK → season |
+| `bc_cell_id` | TEXT | BC-tuple cell identifier |
+| `attribute` | TEXT | `STR` \| `DEX` \| `INT` \| `WIS` |
+| `element` | TEXT | canonical element |
+| `resource_model` | TEXT | `cooldown` \| `energy` \| `mana` \| `stamina` \| `ki` |
+| `cohort_archetype` | TEXT | `dps_min_maxer` \| `balanced` \| `defensive` \| `hybrid` |
+| `class_chain_count` | INTEGER | always 3 for cycle-13 |
+| `t4_scope` | TEXT | nullable; `character_wide` \| `chain_wide_own` \| `chain_wide_parallel` |
+| `scope_downscale_factor` | REAL | nullable |
+| `wr_bracket_pass` | INTEGER | `1` for all 16 ingested characters |
+| `bc_tuple_json` | TEXT | JSON: `{range, tempo, amplitude, attribute, proxy_density}` |
+| `chain_composition_json` | TEXT | JSON: `{t4_chains, supporting_chains, total_chains}` |
+| `wr_bracket_details_json` | TEXT | JSON or null |
+
+##### `character_t4_candidate`
+One row per T4 candidate per character (23 rows total; 1–2 per character).
+
+Key columns for drax T4 selection panel:
+
+| Column | Type | Notes |
+|---|---|---|
+| `candidate_id` | TEXT | composite PK with `character_id` |
+| `character_id` | TEXT | FK → character |
+| `category_a_strategy` | TEXT | e.g. `DEFENSIVE_CONVERSION` |
+| `category_bc_strategy` | TEXT | e.g. `ELEMENT_CONVERSION` |
+| `t4_category_bc` | TEXT | `A` \| `B` \| `C` |
+| `parallel_chain_mode` | TEXT | `own_chain` \| `parallel` |
+| `resolve_score` | REAL | |
+| `net_synergy_score` | REAL | |
+| `t4_scope` | TEXT | nullable scope dimension |
+| `scope_projection_data_json` | TEXT | JSON dict; per-cohort scope scores |
+| `category_a_params_json` | TEXT | JSON `{}` or strategy-specific params |
+| `category_bc_params_json` | TEXT | JSON `{}` or strategy-specific params |
+
+##### `gear_instance`
+One row per (character × slot × rarity_tier): 16 × 11 × 10 = 1760 rows.
+
+| Column | Type | Notes |
+|---|---|---|
+| `gear_instance_id` | TEXT PK | e.g. `S1_endgame_str_01_heavy_barbarian_main_weapon_legendary_t1` |
+| `character_id` | TEXT | FK → character |
+| `season_id` | TEXT | FK → season |
+| `slot` | TEXT | one of 11 canonical slots |
+| `rarity_tier` | TEXT | one of 10 rarity tiers |
+| `rarity_tier_order` | INTEGER | 0–9 (common=0 … set_t2=9); use for ORDER BY |
+| `partition_modifiers_json` | TEXT | JSON array of modifier dicts |
+| `capability_modifiers_json` | TEXT | JSON array; non-empty from `legendary_t0` up |
+| `t4_annotation_json` | TEXT | JSON or null; non-null from `legendary_t1` up |
+| `set_bonus_json` | TEXT | JSON dict or null; non-null for `set_t1`/`set_t2` only |
+| `set_bonus_rank` | INTEGER | 0 for non-set tiers |
+| `is_unique` | INTEGER | `0`\|`1` |
+| `triggered_passive_json` | TEXT | JSON dict or null |
+
+**Rarity tier ordering (rarity_tier_order 0–9):**
+`common(0), uncommon(1), rare(2), epic(3), legendary_t0(4), legendary_t0_5(5),
+legendary_t1(6), legendary_t2(7), set_t1(8), set_t2(9)`
+
+**Capability toolkit availability by tier:**
+- `capability_modifiers_json`: `[]` for common–epic; non-empty for `legendary_t0` and above
+- `t4_annotation_json`: `null` for common–legendary_t0_5; non-null for `legendary_t1` and above
+- `set_bonus_json`: `null` for all non-set tiers; JSON dict for `set_t1`/`set_t2`
+
+#### 5 Indexes
+`idx_character_season`, `idx_gear_character`, `idx_gear_character_slot`,
+`idx_t4_character`, `idx_gear_rarity`
+
+### Drax TypeScript consumer responsibilities
+
+#### Connection pattern (Node.js / Vite API route)
+
+```typescript
+import Database from 'better-sqlite3';
+const db = new Database('data/cycle13_characters.db', { readonly: true });
+```
+
+#### Canonical query patterns for Sample page extensions
+
+```typescript
+// Load all 16 characters for the season
+const characters = db.prepare(
+  "SELECT * FROM character WHERE season_id = ?"
+).all("cycle-13-mechanical-season-001");
+
+// Load T4 candidates for a selected character
+const t4Candidates = db.prepare(
+  "SELECT * FROM character_t4_candidate WHERE character_id = ? ORDER BY rowid"
+).all(characterId);
+
+// Load gear for a character slot, ordered by rarity tier
+const gearForSlot = db.prepare(
+  "SELECT * FROM gear_instance WHERE character_id = ? AND slot = ? ORDER BY rarity_tier_order"
+).all(characterId, slotName);
+
+// All gear for a character at once (for gear display panel)
+const allGear = db.prepare(
+  "SELECT * FROM gear_instance WHERE character_id = ? ORDER BY slot, rarity_tier_order"
+).all(characterId);
+```
+
+#### JSON column parsing
+
+All `_json` suffix columns must be `JSON.parse()`d:
+
+```typescript
+const partitionMods = JSON.parse(gearRow.partition_modifiers_json) as PartitionModifier[];
+const capMods = JSON.parse(gearRow.capability_modifiers_json) as CapabilityModifier[];
+const t4Ann = gearRow.t4_annotation_json ? JSON.parse(gearRow.t4_annotation_json) : null;
+const setBonusData = gearRow.set_bonus_json ? JSON.parse(gearRow.set_bonus_json) : null;
+const bcTuple = JSON.parse(charRow.bc_tuple_json);
+const scopeProj = t4Row.scope_projection_data_json
+  ? JSON.parse(t4Row.scope_projection_data_json)
+  : null;
+```
+
+#### Sentinel check (before wiring UI)
+
+```typescript
+import { existsSync } from 'fs';
+const SENTINEL = 'reincarnated-engine/src/reincarnated/export/cycle13_option_a_loadout_schema_landed.sentinel';
+if (!existsSync(SENTINEL)) throw new Error('Loadout schema not ready — wait for star-lord sentinel');
+```
+
+### Schema evolution notes
+
+- This DB is additive (new file; does not touch `telemetry.db`).
+- If drax needs additional computed columns (e.g. pre-parsed modifier counts), add them as
+  additive columns in a new migration entry. Do not break existing column names.
+- When Cycle 14 characters are generated: a new ingest run with a new season_id can populate
+  additional rows in the same DB (INSERT OR REPLACE + new season_id FK). No schema change needed
+  unless the gear structure changes.
+
+---
+
 ## [2026-05-18] §v1.0-vfx-manifest — VFX manifest schema definition (Phase-1 P1 D19 Sub-phase A)
 
 **Author:** drax-loadout
