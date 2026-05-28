@@ -1,7 +1,7 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-27
-**Last commit:** (pending Dispatch G commit)
+**Last commit:** d7b4a28 — Dispatch G UX bug fix (Court tab mobile + SkillTree dynamic chains + design toggle mobile-hide)
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25
 **Branch:** main
 **Hive-mind mode:** ACTIVE
