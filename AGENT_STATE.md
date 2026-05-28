@@ -1,12 +1,51 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-27
-**Last commit:** Cycle 13 Track C REVISED Step 2 (pending push)
+**Last commit:** af155be — Dispatch B Loadout Phase A (rank-0 + reset + persistence)
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### Dispatch B — Loadout Phase A: empty-state + true reset + build persistence (completed 2026-05-27)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-27-drax-dispatch-b-loadout-phase-a.md`
+**Authority:** Matt design call #3 + doc 49 § 1.1.1 (gandalf 35c2800) + Dispatch B 2026-05-27
+**Commit:** af155be
+**Build result:** tsc -b clean + vite build clean + 81 tests passing (0 failures)
+**Push status:** PENDING Matt push authorization (per per-cycle push pattern)
+
+**What landed:**
+
+**Part 1 — Rank-0 empty-state (doc 49 § 1.1.1):**
+- `src/data/constants.ts` — SP_BUDGET updated 120 → 70 (doc 49 § 1.1.1 + doc 41 § 4 endgame anchor)
+- `src/pages/Loadout.tsx` — Skill Tree header: "{n} / 70 SP" (was hardcoded "/ 120 SP"); `data-testid="rank-zero-init"` on section; SP_BUDGET imported from constants
+- `src/hooks/useSkillBuild.ts` — initializes as `{}` (absent key = rank 0; was already compliant; confirmed and documented)
+- TODO(drax): update SP_BUDGET to season_metadata.skill_points_budget_endgame when star-lord Track C ships season_metadata emission (doc 49 § 3)
+
+**Part 2 — True reset action:**
+- `src/components/ActionBar.tsx` — two-click inline confirmation: Reset → "Confirm reset?" (3s auto-cancel) → confirmed clears allocations to rank-0
+- Reset disabled when totalSP === 0 (hasInvestment gate passed from Loadout.tsx)
+- Reset does NOT clear savedBuilds; persisted snapshots survive reset until next save
+- No modal — mobile-first; two-click inline pattern
+
+**Part 3 — Per-kit build persistence:**
+- `src/hooks/useSkillBuild.ts` — version-2 localStorage schema: adds `savedBuilds` array for named snapshots; auto-save on invest/divest (debounced 800ms); version-1 migration transparent
+- `loadBuild(SavedBuild)` restores named snapshot as working state
+- `urlAllocations` optional param: parseBuildUrl() result wired from Loadout.tsx; overrides localStorage when ?build= URL param present (shareable links)
+- `src/components/ActionBar.tsx` — Share Build button enabled: clipboard copy (fallback: new tab open)
+
+**UX judgments made (Q-DB-1/2/3):**
+- Q-DB-1: localStorage (single-build auto + named savedBuilds) + URL params (shareable). Both.
+- Q-DB-2: Two-click inline confirmation (no modal). Mobile-first.
+- Q-DB-3: Auto-save on invest/divest (debounced) + manual named snapshots. Per-kit.
+
+**Discipline #45 audit:** clean — no new player-visible "class" vocabulary introduced.
+
+**Next dispatch:** Dispatch F (Analytics + Encounters Cycle 14 wiring; queued; gates on Phase 7 IMPL `eca0aa5` + star-lord Track C close)
+
+
 
 ### Cycle 13 Track C REVISED Step 2 — Normal Season Consumer + Gap-Fill Retirement (completed 2026-05-27)
 
