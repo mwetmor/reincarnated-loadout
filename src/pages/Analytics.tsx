@@ -27,7 +27,7 @@ export function Analytics() {
       {/* Summary strip */}
       <div className="flex flex-wrap gap-3">
         <StatBadge label="Seasons" value={analytics.totalSeasons} />
-        <StatBadge label="Classes" value={analytics.totalClasses} />
+        <StatBadge label="Kits" value={analytics.totalClasses} />
         <StatBadge label="Archetypes" value={analytics.allArchetypes.length} />
         {analytics.newSubstrateSet.length > 0 && (
           <NewSubstratesBadge substrates={analytics.newSubstrateSet} />

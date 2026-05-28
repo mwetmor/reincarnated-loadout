@@ -15,11 +15,11 @@ import { HeroOfEngineSpotlight } from '../components/pitch/HeroOfEngineSpotlight
 import { SeasonHypePiece } from '../components/pitch/SeasonHypePiece';
 import { PathsCards } from '../components/pitch/PathsCards';
 
-// Static stat counts — sourced from engine output (5 seasons, 7 substrates, 55 classes across 5 seasons)
+// Static stat counts — sourced from engine output (5 seasons, 7 substrates)
 // TODO(drax): pull from seasons.json when star-lord delivers it
+// Note: kit count removed — stale hardcoded value; Pitch.tsx interim pending Dispatch C /summary re-architecture
 const STATS = [
   { label: 'Seasons', value: 5 },
-  { label: 'Classes', value: 55 },
   { label: 'Substrates', value: 7 },
 ];
 

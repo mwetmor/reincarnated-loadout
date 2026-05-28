@@ -1371,6 +1371,45 @@ Priority 3 (Phase-2 followup — DO NOT start in Phase-1 P1):
 ✓ Vercel preview: READY (68dfceb) — https://reincarnated-loadout-odfuct08x-matthew-wetmore-s-projects.vercel.app
 ✓ Tags on main: `drax/v0.5.1-bug-fixes`, `drax/v0.6.5-analytics-tier3`, `drax/v0.5.2-stats-and-slot`, `drax/v0.7-encounter-analytics`, `drax/v0.7.1-skill-gate-fix`, `v0.7.1-skill-gate-fix` (milestone, pushed 2026-05-16)
 
+### Cycle 14 Dispatch A — Vocabulary lock redactions (completed 2026-05-27)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-27-drax-dispatch-a-vocabulary-lock-redactions.md`
+**Authority:** Matt 2026-05-27 verbatim ratification "RATIFY IMMEDIATE"; KR fired sub-agent
+**Build result:** tsc -b clean + vite build clean (866 modules; chunk size warning pre-existing)
+
+**What landed:**
+
+5 originally catalogued #45 player-facing violations + 11 additional player-facing violations discovered during grep audit:
+
+- `src/pages/Analytics.tsx:30` — `StatBadge label="Classes"` → `label="Kits"`
+- `src/pages/Encounters.tsx:454` — button label "Per-class" → "Per-kit"
+- `src/pages/Encounters.tsx:469` — description string "Each card = one class" → "Each card = one kit"
+- `src/pages/Encounters.tsx:470` — description string "classes' performance... color = class" → "kits' performance... color = kit"
+- `src/pages/Pitch.tsx:22` — `{ label: 'Classes', value: 55 }` STAT entry removed entirely (Q-DA-1 judgment: stale hardcoded count; page is interim pending Dispatch C /summary re-arch)
+- `src/pages/Encounters.tsx:348` — subtitle `classes ·` → `kits ·`
+- `src/pages/Encounters.tsx:355` — "class efficiency" → "kit efficiency" (tier-1 pending note)
+- `src/pages/Encounters.tsx:370-371` — "how one class performs... per-class view... every class performs" → "per-kit view" variants
+- `src/pages/Encounters.tsx:377` — "(11 classes · 22 encounter slots). Each (class × monster)" → kits variants
+- `src/pages/Encounters.tsx:383-384` — "AOE classes... non-AOE classes" → kits variants (good-looks panel)
+- `src/pages/Encounters.tsx:388,390` — "classes win or lose... zero spread across classes" → kits variants (bad-looks panel)
+- `src/pages/Encounters.tsx:418-419,423,428` — "AOE classes... single-target classes... AOE classes" → kits variants (design interpretation callout)
+- `src/pages/Encounters.tsx:435` — "classes have at least one encounter slot" → "kits have..."
+- `src/pages/Encounters.tsx:488` — "fraction of class's skill kit" → "fraction of the kit's skills"
+
+**Grep audit result:** CLEAN. Remaining "class" occurrences in these files are all exempt:
+- `className=` attributes (Tailwind CSS)
+- `class_0001`…`class_0011` key literals (internal data identifiers)
+- `CLASS_COLORS`, `classCards`, `flaggedClassCount`, `ClassLegend`, `classIds` (internal TypeScript identifiers)
+- `ViewMode = 'class'`, `view === 'class'`, `setView('class')` (internal state values, never rendered)
+- JSX comments (not player-facing)
+- Pitch.tsx lines 83/85/110 — narrative prose about engine capabilities ("class names" as engine output feature description, "Dungeon-of-Exile-class" quality comparison idiom); narrative output exemption applies per Discipline #45 canonical
+
+**Q-DA-1 resolution:** removed stale "Classes: 55" stat entry from Pitch.tsx STATS array. Count was hardcoded, stale by construction, page is interim pending Dispatch C.
+
+**Q-DA-2 resolution:** "Kits" used throughout. "Per-kit" for toggle button (parallel with "Per-encounter-slot"). Single-target/AOE qualifiers preserved as archetype descriptors.
+
+---
+
 ## Repo state (set by star-lord 2026-05-16)
 
 - **Remote:** `https://github.com/mwetmor/reincarnated-loadout.git` — configured and verified

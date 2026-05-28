@@ -345,14 +345,14 @@ export function Encounters() {
       <div className="space-y-1">
         <h1 className="text-lg font-bold text-gray-100">Encounter Analytics</h1>
         <p className="text-xs text-gray-500 font-mono">
-          season_001005 · {analytics.class_ids.length} classes · {analytics.encounter_slots.length} encounter slots
+          season_001005 · {analytics.class_ids.length} kits · {analytics.encounter_slots.length} encounter slots
         </p>
         {/* Surface 6: expanded tier-1 pending note */}
         {!analytics.tier1_populated && (
           <p className="text-[10px] font-mono text-amber-800/80 leading-relaxed">
             Tier-1 telemetry fields (duration, heals, potions) are pending the next Yomi regen.
             Once those land, the X-axis will switch from Avg Damage to a Damage × Time-to-Kill
-            projection that better captures class efficiency. Until then, treat damage values as
+            projection that better captures kit efficiency. Until then, treat damage values as
             directional and prefer Win Rate as the primary signal.
           </p>
         )}
@@ -367,27 +367,27 @@ export function Encounters() {
         <div className="px-4 pb-4 pt-1 space-y-2 text-[10px] font-mono text-gray-500 border-t border-gray-800/60">
           <p className="pt-2">
             <span className="text-gray-400">1. What this page shows.</span>{' '}
-            Each card visualizes how one class performs against every encounter slot the simulation
-            tested (per-class view), or how every class performs against one encounter slot
+            Each card visualizes how one kit performs against every encounter slot the simulation
+            tested (per-kit view), or how every kit performs against one encounter slot
             (per-encounter-slot view). Two orientations of the same underlying data.
           </p>
           <p>
             <span className="text-gray-400">2. The data.</span>{' '}
             Per-fight aggregates from <span className="text-gray-400">season_001005</span> telemetry
-            (11 classes · 22 encounter slots). Each (class × monster) pair is one point; the ellipse
+            (11 kits · 22 encounter slots). Each (kit × monster) pair is one point; the ellipse
             shows damage and outcome variance across multiple fights run during balance convergence.
           </p>
           <p>
             <span className="text-gray-400">3. What "good" looks like.</span>{' '}
             Differentiated archetype shapes — points spread <em>across</em> damage values within each
-            card, win rates clearly above 25% on every encounter slot, and AOE classes showing high WR
-            on swarm slots while non-AOE classes still hold a playable floor.
+            card, win rates clearly above 25% on every encounter slot, and AOE kits showing high WR
+            on swarm slots while non-AOE kits still hold a playable floor.
           </p>
           <p>
             <span className="text-gray-400">4. What "bad" looks like.</span>{' '}
-            Vertical stacking (damage barely varies across encounters — classes win or lose without
+            Vertical stacking (damage barely varies across encounters — kits win or lose without
             speed differentiation); red-flagged ellipses below 25% WR ⚑ (divergence-ceiling failure —
-            a helpless matchup); boss/mini-boss clusters with zero spread across classes
+            a helpless matchup); boss/mini-boss clusters with zero spread across kits
             (high-tier encounters that brick or trivialize uniformly).
           </p>
           <p>
@@ -415,24 +415,24 @@ export function Encounters() {
         <ul className="text-[10px] font-mono text-gray-500 space-y-1 list-none">
           <li>
             <span className="text-gray-400">·</span>{' '}
-            AOE classes clearing swarm slots faster than single-target classes is{' '}
+            AOE kits clearing swarm slots faster than single-target kits is{' '}
             <span className="text-emerald-500/80">genre-correct AOE payoff</span> — not a balance failure.
           </li>
           <li>
             <span className="text-gray-400">·</span>{' '}
-            Single-target classes showing reduced clear-speed on swarm slots is{' '}
+            Single-target kits showing reduced clear-speed on swarm slots is{' '}
             <span className="text-emerald-500/80">expected</span>; their payoff is boss/elite efficiency.
           </li>
           <li>
             <span className="text-gray-400">·</span>{' '}
-            AOE classes with wide dispersion on boss slots:{' '}
+            AOE kits with wide dispersion on boss slots:{' '}
             <span className="text-amber-500/80">diagnostic</span> — "less efficient" is acceptable;
             WR below 25% (⚑) is a playable-floor failure.
           </li>
         </ul>
         {flaggedClassCount > 0 && (
           <p className="text-[10px] font-mono text-red-400/80 pt-0.5">
-            ⚑ {flaggedClassCount} of {analytics.class_ids.length} classes have at least one encounter slot below 25% WR (divergence ceiling).
+            ⚑ {flaggedClassCount} of {analytics.class_ids.length} kits have at least one encounter slot below 25% WR (divergence ceiling).
           </p>
         )}
       </div>
@@ -451,7 +451,7 @@ export function Encounters() {
                   : 'bg-gray-900 border-gray-700 text-gray-500 hover:text-gray-400'
               }`}
             >
-              Per-class
+              Per-kit
             </button>
             <button
               onClick={() => setView('slot')}
@@ -466,8 +466,8 @@ export function Encounters() {
           </div>
           <p className="text-[9px] font-mono text-gray-600 self-center">
             {view === 'class'
-              ? `Each card = one class · points show its performance across all ${analytics.encounter_slots.length} encounter slots · color = encounter type`
-              : `Each card = one monster · points show all ${analytics.class_ids.length} classes' performance against it · color = class`
+              ? `Each card = one kit · points show its performance across all ${analytics.encounter_slots.length} encounter slots · color = encounter type`
+              : `Each card = one monster · points show all ${analytics.class_ids.length} kits' performance against it · color = kit`
             }
           </p>
         </div>
@@ -485,7 +485,7 @@ export function Encounters() {
         <>
           {/* Surface 4: AOE % context */}
           <p className="text-[9px] font-mono text-gray-600">
-            AOE % = fraction of class's skill kit that produces area damage
+            AOE % = fraction of the kit's skills that produce area damage
             &ensp;·&ensp;
             roster range in season_001005: {AOE_PCT_MIN}% to {AOE_PCT_MAX}%
           </p>
