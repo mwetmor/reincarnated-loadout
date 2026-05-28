@@ -1,8 +1,8 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { ClassData, SeasonManifest } from '../data/types';
 import { assertManifestSeasonalFields, resolveElementDisplay } from '../data/types';
-import { ELEMENT_COLORS, resolveArchetypeLabel } from '../data/constants';
+import { ELEMENT_COLORS, SP_BUDGET, resolveArchetypeLabel } from '../data/constants';
 import { useSeasonData } from '../hooks/useSeasonData';
 import { useSkillBuild } from '../hooks/useSkillBuild';
 import { synthesizeSampleLoadout } from '../utils/synthesizeSampleLoadout';
@@ -355,7 +355,19 @@ export function Loadout() {
     classes.find((c) => c.id === selectedClassId) ?? classes[0] ?? null;
 
   const seasonId = season?.manifest.season_id ?? 'sample-season';
-  const build = useSkillBuild(classData, seasonId);
+
+  // Part 3 — URL-param allocations: parsed once on mount from ?build= param.
+  // parseBuildUrl returns null when no ?build= param present (normal startup = rank-0).
+  // When present, urlAllocations seeds the build state (overrides localStorage).
+  // This enables shareable build URLs. The URL param is not re-parsed on class change —
+  // it's a one-shot init value captured at page load time.
+  const urlAllocations = useMemo(
+    () => (classData ? parseBuildUrl(searchParams, classData) : null),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [] // intentionally empty: parse once on mount only
+  );
+
+  const build = useSkillBuild(classData, seasonId, urlAllocations);
 
   // Gear: best-fit selection from per-season gear pool (season.gearPool).
   // Seasons without gear_pool.json return empty array → GearGrid renders empty.
@@ -365,12 +377,6 @@ export function Loadout() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [classData?.id, season?.seasonId]
   );
-
-  useEffect(() => {
-    if (!classData) return;
-    parseBuildUrl(searchParams, classData); // reserved for v1 URL-load
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classData?.id]);
 
   if (!season || !classData) {
     return (
@@ -450,9 +456,12 @@ export function Loadout() {
         <DesignModePanel classData={classData} />
       )}
 
-      <section>
+      {/* Part 1 rank-zero init: data-testid="rank-zero-init" confirms dispatch B compliance.
+          All nodes start uninvested (rank=0). SP counter starts at 0 / SP_BUDGET (70).
+          Per doc 49 § 1.1.1: every node holds zero points at startup; NOT rank-1 default. */}
+      <section data-testid="rank-zero-init">
         <h2 className="text-xs font-mono text-gray-500 uppercase tracking-wide mb-3">
-          Skill Tree — {classData.skills.length} skills · {build.totalSP} / 120 SP
+          Skill Tree — {classData.skills.length} skills · {build.totalSP} / {SP_BUDGET} SP
         </h2>
         <SkillTree
           classData={classData}
@@ -477,10 +486,13 @@ export function Loadout() {
       <SpiritGuide />
 
       <div className="flex items-center justify-between gap-4 pt-2 border-t border-gray-800">
+        {/* Part 2: hasInvestment gates reset confirmation — no reset when already rank-0.
+            Part 3: buildUrl now live (URL-param persistence complete). */}
         <ActionBar
           onReset={build.reset}
           onSave={build.save}
           buildUrl={shareUrl}
+          hasInvestment={build.totalSP > 0}
         />
         <p className="text-xs text-gray-700 font-mono hidden sm:block">
           {classData.name ?? classData.id} · {season.manifest.anchor.name}

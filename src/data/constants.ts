@@ -1,4 +1,11 @@
-export const SP_BUDGET = 120;
+// SP_BUDGET: ~70-point endgame anchor per doc 49 § 1.1.1 + doc 41 § 4 + doc 40 Block A3.
+// Rank-0 empty-state (Dispatch B Part 1) — all nodes start uninvested; player allocates
+// from zero. NOT the prior 120 placeholder (which was pre-doc-49 and violated the
+// ~70-point endgame budget infeasibility rationale in doc 49 § 1.1.1 reason 2).
+// TODO(drax): update to season_metadata.skill_points_budget_endgame when star-lord
+// Track C ships season_metadata emission (doc 49 § 3). Until then, 70 is the canonical
+// endgame anchor per doc 41 § 4.
+export const SP_BUDGET = 70;
 export const MAX_SKILL_RANK = 15;
 export const TIER_UNLOCK_THRESHOLDS: Record<number, number> = { 2: 3, 3: 5, 4: 8 };
 
