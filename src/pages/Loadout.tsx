@@ -291,11 +291,14 @@ function ClassHeader({
           </div>
         )}
         {/* Amendment 1 — design-mode toggle (engine generation run, 2026-05-25).
-            Global toggle: Player-mode (default) vs Design-mode (engine-layer fields visible). */}
+            Global toggle: Player-mode (default) vs Design-mode (engine-layer fields visible).
+            Dispatch G fix: hidden on mobile (sm:flex) — design tool not needed on player mobile
+            surface; was rendering mid-header on small screens, obscuring character/class name
+            focus area. Visible at sm+ (640px+) where layout has room for it. */}
         <DesignModeToggle
           designMode={designMode}
           onToggle={onDesignModeToggle}
-          className="flex-shrink-0"
+          className="flex-shrink-0 hidden sm:flex"
         />
       </div>
     </div>

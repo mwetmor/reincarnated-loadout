@@ -210,11 +210,14 @@ function SampleClassHeader({
           </div>
         )}
         {/* Amendment 1 — design-mode toggle (engine generation run, 2026-05-25).
-            Shared key with Loadout.tsx: toggle state persists across Loadout ↔ Sample navigation. */}
+            Shared key with Loadout.tsx: toggle state persists across Loadout ↔ Sample navigation.
+            Dispatch G fix: hidden on mobile (sm:flex) — design tool not needed on player mobile
+            surface; was rendering mid-header on small screens, obscuring character/class name
+            focus area. Visible at sm+ (640px+) where layout has room for it. */}
         <DesignModeToggle
           designMode={designMode}
           onToggle={onDesignModeToggle}
-          className="flex-shrink-0"
+          className="flex-shrink-0 hidden sm:flex"
         />
       </div>
     </div>

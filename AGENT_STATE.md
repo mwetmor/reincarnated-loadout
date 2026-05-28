@@ -1,12 +1,55 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-27
-**Last commit:** af155be — Dispatch B Loadout Phase A (rank-0 + reset + persistence)
+**Last commit:** (pending Dispatch G commit)
 **Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### Dispatch G — UX bug fix: Court tab + mobile blank column + mobile design button (completed 2026-05-27)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-27-drax-dispatch-g-ux-bug-fix-court-tab-mobile-layout.md`
+**Authority:** Matt 2026-05-27 verbatim + Dispatch G (knight-rider)
+**Build result:** tsc -b clean + vite build clean (866 modules, 0 TS errors) + 81 tests passing (0 failures)
+**Push status:** PENDING Matt push authorization (per ADR-006; will push with Dispatch B batch)
+
+**Discipline #42 framing-audit results:**
+
+- Q-DG-1 (Court tab regression cause): NOT caused by Dispatch A or B. Git diff `42e9393..HEAD` confirms only `ActionBar.tsx`, `constants.ts`, `useSkillBuild.ts`, `Loadout.tsx` changed in Dispatch B — no Nav.tsx or routing touched. Court tab is present in Nav.tsx and App.tsx unconditionally. Root cause: nav has 6 items in `overflow-x-auto` container; on mobile at 375px, last tab(s) require horizontal swipe that has no visual indicator. Bug is pre-existing (nav overflow discoverability).
+
+- Q-DG-2 (mobile blank column — Hypothesis): Hypothesis A was the wrong direction (Court tab not removed). Root cause was Hypothesis C (grid column adaptation) + a deeper schema mismatch: SkillTree hardcoded `CHAINS = ['chain_A','chain_B','chain_C','chain_D']`, but cycle-13 season uses chain IDs `t4_chain_1`, `t4_chain_2`, `supporting_chain_1`. 100% chain mismatch → entire SkillTree rendered only chain header labels (A/B/C/D) with no tier rows (all empty). Not merely "blank column" but a blank tree. Fixed by making SkillTree detect chains and tiers dynamically from skill data.
+
+- Q-DG-3 (design button positioning): NOT a fixed-position element — inline in ClassHeader. Issue was the design toggle rendering in the middle of the header section on mobile, in a `flex flex-wrap` row below the character name/stats/season block, appearing mid-page and mid-content. "Obscuring" in the sense of cluttering the character focus area on small screens. Fixed by hiding toggle on mobile (`hidden sm:flex`). Toggle remains fully functional on sm+ (640px+).
+
+**Q3 scope check:** All 3 root causes are CSS/component-level fixes. None required layout-anchor architecture rewrite. No Discipline #44 framing-refusal needed.
+
+**What landed:**
+
+**Part 1 — Court tab fix (nav scroll discoverability):**
+- `src/components/Nav.tsx` — added relative wrapper + right-fade gradient overlay (`pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-gray-950/90 to-transparent sm:hidden z-10`) to signal horizontal overflow on mobile. Court tab is present and reachable via swipe; fade confirms more content to the right. Tab strip itself unchanged.
+
+**Part 2 — Mobile blank column fix (SkillTree dynamic chain/tier detection):**
+- `src/components/SkillTree/SkillTree.tsx` — removed hardcoded `CHAINS = ['chain_A','chain_B','chain_C','chain_D']` and `TIERS = [1,2,3,4]` + `CHAIN_LABELS` constant. Replaced with dynamic detection:
+  - `chains = Array.from(new Set(skills.map(s => s.chain_id))).sort()` — alphabetical stable order
+  - `tiersRaw = Array.from(new Set(skills.map(s => s.tier))).sort((a,b) => Number(a)-Number(b))` — numeric ascending, string-safe
+  - `gridTemplateColumns` updated from `'2rem repeat(4, 1fr)'` to `'2rem repeat(${chains.length}, 1fr)'`
+  - Added `chainLabel(chainId)` function: `chain_X → X`, `t4_chain_N → T4-N`, `supporting_chain_N → S-N`, fallback = first 4 chars
+  - Added `Number(tier)` coercion in `getNodeState` and `allChainsLocked` computation (cycle-13 emits `tier:'1'` string; `isTierUnlocked` expects number)
+  - TODO(drax): remove string→number coercion when engine unifies `Skill.tier` type to number across all seasons
+
+**Part 3 — Mobile design button fix (hidden on mobile):**
+- `src/pages/Loadout.tsx` — `DesignModeToggle` className: `"flex-shrink-0"` → `"flex-shrink-0 hidden sm:flex"`
+- `src/pages/Sample.tsx` — same change; toggle hidden on mobile, visible at 640px+
+
+**Discipline #45 audit:** clean — no new player-visible vocabulary introduced in any of the 3 fixes.
+
+**TODOs added:**
+- `// TODO(drax): remove string→number coercion when engine unifies Skill.tier type to number` in SkillTree.tsx
+
+**Next dispatch:** Dispatch F (Analytics + Encounters Cycle 14 wiring; queued; gates on Phase 7 IMPL + star-lord Track C close)
+
 
 ### Dispatch B — Loadout Phase A: empty-state + true reset + build persistence (completed 2026-05-27)
 

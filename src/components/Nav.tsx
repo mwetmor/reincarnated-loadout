@@ -14,16 +14,25 @@ export function Nav() {
           </span>
         </div>
 
-        <div
-          className="flex items-center gap-0.5 sm:gap-1 overflow-x-auto [&::-webkit-scrollbar]:hidden"
-          style={{ scrollbarWidth: 'none' }}
-        >
-          <NavItem to="/pitch">Summary</NavItem>
-          <NavItem to="/">Loadout</NavItem>
-          <NavItem to="/sample">Sample</NavItem>
-          <NavItem to="/analytics">Analytics</NavItem>
-          <NavItem to="/encounters">Encounters</NavItem>
-          <NavItem to="/court">Court</NavItem>
+        {/* Tab strip: scrollable on mobile (hidden scrollbar). Fade-right gradient on mobile
+            signals overflow — all 6 tabs present; user swipes right to reach Court. */}
+        <div className="relative flex-1 min-w-0">
+          {/* Right-fade overflow indicator — visible only on mobile (hidden sm:block) */}
+          <div
+            className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-gray-950/90 to-transparent sm:hidden z-10"
+            aria-hidden="true"
+          />
+          <div
+            className="flex items-center gap-0.5 sm:gap-1 overflow-x-auto [&::-webkit-scrollbar]:hidden"
+            style={{ scrollbarWidth: 'none' }}
+          >
+            <NavItem to="/pitch">Summary</NavItem>
+            <NavItem to="/">Loadout</NavItem>
+            <NavItem to="/sample">Sample</NavItem>
+            <NavItem to="/analytics">Analytics</NavItem>
+            <NavItem to="/encounters">Encounters</NavItem>
+            <NavItem to="/court">Court</NavItem>
+          </div>
         </div>
       </div>
     </nav>

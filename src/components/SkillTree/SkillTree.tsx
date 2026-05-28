@@ -20,15 +20,35 @@ interface SkillTreeProps {
   designMode?: boolean;
 }
 
-const TIERS = [1, 2, 3, 4];
-const CHAINS = ['chain_A', 'chain_B', 'chain_C', 'chain_D'];
-const CHAIN_LABELS = { chain_A: 'A', chain_B: 'B', chain_C: 'C', chain_D: 'D' };
+// Dispatch G fix: CHAINS and TIERS are now derived dynamically from the skills data.
+// The previous hardcoded constants ['chain_A','chain_B','chain_C','chain_D'] and [1,2,3,4]
+// caused a blank-column bug with cycle-13 seasons that use chain IDs like 't4_chain_1',
+// 'supporting_chain_1', 't4_chain_2'. All 4 columns rendered as empty placeholder boxes.
+// Dynamic detection: sort chain IDs alphabetically for stable column order; sort tiers
+// numerically (coercing to number for string-tier safety, e.g. cycle-13 emits tier:'1').
+// TODO(drax): remove string→number coercion when engine unifies tier type to number.
 
 // L-02 pattern fix (cipher migration): same hardening as SkillDetailPanel.
 // Uses seasonal_elements first (v1.5+), then elements (pre-v1.5), then "Unknown".
 // Never returns raw canonical-four string on failure.
 function resolveElementName(canonical: string, manifest: SeasonManifest): string {
   return resolveElementDisplay(canonical, manifest, `SkillTree:${canonical}`);
+}
+
+// Produce a short display label for a chain ID.
+// 'chain_A' → 'A', 't4_chain_1' → 't4_1', 'supporting_chain_1' → 'sup_1', etc.
+function chainLabel(chainId: string): string {
+  // Standard format: chain_X → X
+  const standard = chainId.match(/^chain_([A-Za-z0-9]+)$/);
+  if (standard) return standard[1].toUpperCase();
+  // t4_chain_N → T4-N
+  const t4 = chainId.match(/^t4_chain_(\d+)$/);
+  if (t4) return `T4-${t4[1]}`;
+  // supporting_chain_N → S-N
+  const supporting = chainId.match(/^supporting_chain_(\d+)$/);
+  if (supporting) return `S-${supporting[1]}`;
+  // Fallback: first 4 chars uppercase
+  return chainId.slice(0, 4).toUpperCase();
 }
 
 type NodeState = 'locked' | 'available' | 'selected' | 'invested';
@@ -61,17 +81,26 @@ export function SkillTree({
     cell.sort((a, b) => (a.chain_position ?? 0) - (b.chain_position ?? 0));
   }
 
-  // Determine which tiers actually have skills
-  const tiersWithSkills = TIERS.filter((t) =>
-    CHAINS.some((c) => (grid.get(`${t}:${c}`) ?? []).length > 0)
+  // Detect actual chains and tiers from skills — no hardcoded constants.
+  // Chains: sorted alphabetically for stable column order across rerenders.
+  // Tiers: sorted numerically ascending; coerce to number for string-tier safety.
+  const chains = Array.from(new Set(skills.map((s) => s.chain_id))).sort();
+  const tiersRaw = Array.from(new Set(skills.map((s) => s.tier))).sort(
+    (a, b) => Number(a) - Number(b)
+  );
+
+  // Determine which tiers actually have skills in at least one known chain
+  const tiersWithSkills = tiersRaw.filter((t) =>
+    chains.some((c) => (grid.get(`${t}:${c}`) ?? []).length > 0)
   );
 
   const selectedSkill = selectedSkillId ? skills.find((s) => s.id === selectedSkillId) ?? null : null;
   const selectedRank = selectedSkillId ? (allocations[selectedSkillId] ?? 0) : 0;
 
   function getNodeState(skill: Skill): NodeState {
-    // Per-chain gate: a skill is locked if its chain hasn't met the tier threshold
-    if (!isTierUnlocked(skill.tier, skill.chain_id)) return 'locked';
+    // Per-chain gate: a skill is locked if its chain hasn't met the tier threshold.
+    // Number() coercion: cycle-13 emits tier as string; isTierUnlocked expects number.
+    if (!isTierUnlocked(Number(skill.tier), skill.chain_id)) return 'locked';
     if (skill.id === selectedSkillId) return 'selected';
     if ((allocations[skill.id] ?? 0) > 0) return 'invested';
     return 'available';
@@ -90,30 +119,36 @@ export function SkillTree({
     <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
       {/* Tree Grid — horizontal scroll fallback at very small widths */}
       <div className="flex-1 min-w-0 overflow-x-auto">
-        {/* Chain header */}
-        <div className="grid gap-1.5 sm:gap-2 mb-2 min-w-[280px]" style={{ gridTemplateColumns: '2rem repeat(4, 1fr)' }}>
+        {/* Chain header — dynamic column count from actual skill data (Dispatch G fix) */}
+        <div
+          className="grid gap-1.5 sm:gap-2 mb-2 min-w-[280px]"
+          style={{ gridTemplateColumns: `2rem repeat(${chains.length}, 1fr)` }}
+        >
           <div /> {/* tier label spacer */}
-          {CHAINS.map((chain) => (
+          {chains.map((chain) => (
             <div key={chain} className="text-center">
-              <span className="text-xs font-mono text-gray-500 uppercase">
-                {CHAIN_LABELS[chain as keyof typeof CHAIN_LABELS]}
+              <span className="text-xs font-mono text-gray-500 uppercase" title={chain}>
+                {chainLabel(chain)}
               </span>
             </div>
           ))}
         </div>
 
-        {/* Tier rows */}
+        {/* Tier rows — dynamic chain iteration (Dispatch G fix: no hardcoded CHAINS constant) */}
         <div className="space-y-1.5 sm:space-y-2 min-w-[280px]">
           {tiersWithSkills.map((tier) => {
             // Per-chain gates: tier row overlay only shows when EVERY chain with skills
             // in this tier is locked. Once any chain unlocks, individual SkillNode lock
             // icons handle the per-cell locked state.
-            const chainsWithSkillsInTier = CHAINS.filter(
+            const chainsWithSkillsInTier = chains.filter(
               (c) => (grid.get(`${tier}:${c}`) ?? []).length > 0
             );
+            // Coerce tier to number: cycle-13 emits tier as string ('1','2','3').
+            // isTierUnlockedForClass expects number; Number() coercion is safe here.
+            const tierNum = Number(tier);
             const allChainsLocked =
               chainsWithSkillsInTier.length > 0 &&
-              chainsWithSkillsInTier.every((c) => !isTierUnlocked(tier, c));
+              chainsWithSkillsInTier.every((c) => !isTierUnlocked(tierNum, c));
             return (
               <div key={tier} className="relative">
                 {/* Locked overlay — only when all chains in this tier are locked */}
@@ -126,7 +161,7 @@ export function SkillTree({
                 )}
                 <div
                   className={`grid gap-1.5 sm:gap-2 items-start ${allChainsLocked ? 'pointer-events-none' : ''}`}
-                  style={{ gridTemplateColumns: '2rem repeat(4, 1fr)' }}
+                  style={{ gridTemplateColumns: `2rem repeat(${chains.length}, 1fr)` }}
                 >
                   {/* Tier label */}
                   <div className="flex items-center justify-center">
@@ -139,8 +174,8 @@ export function SkillTree({
                     </span>
                   </div>
 
-                  {/* Chain cells */}
-                  {CHAINS.map((chain) => {
+                  {/* Chain cells — only columns that exist in data (no phantom blank columns) */}
+                  {chains.map((chain) => {
                     const cellSkills = grid.get(`${tier}:${chain}`) ?? [];
                     return (
                       <div key={chain} className="flex flex-col gap-1.5 items-center">
