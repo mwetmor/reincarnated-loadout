@@ -1893,12 +1893,12 @@ Per MIGRATION.md §v1.67:
 - `phase5_faction_clusters.json`: {metadata, clusters[]}; metadata.cluster_count absent in season-001 (remediation rewrite); cluster has 23 keys including faction_label_canonical, element_distribution
 - `phase5_faction_relationships.json`: {metadata, relationships[]}; ALL 6 items are empty {} — data unused in Phase α rendering
 - `wave_b_identities.json`: {season_id, kit_count, kits[]}; kit has parent_cluster_id (number), kit_name_canonical, kit_identity_narrative
-- `phase7_kit_verdicts.json`: pre-extracted from SQLite (no wasm-sqlite); verdict string is SHIPPED-WORTHY (all-caps hyphenated); 281 rows season-001 (multi-attempt), 33 rows each for season-002/003
+- `phase7_kit_verdicts.json`: canonical star-lord emit (v1.70+); { season_id, schema_version, kit_verdicts[], shipped_count, highest_cohesion_kit_id }; 281 rows season-001, 33 rows each season-002/003 (SHIPPED-WORTHY all-caps hyphenated)
 - `phase2_kit_candidates.json`: {metadata, kits[]}; 2.7 MB; kit uses character_id (not kit_id) as primary key — BC cell lookup required for BackwardTrace matching
 
 **Design decisions made:**
 - Mount-point: Option A — new `/state-of-engine` route; /planning/state-of-engine HTML kept as historical reference
-- SQLite: no wasm-sqlite; pre-extracted phase7_kit_verdicts.json per season from kit_archive.db (phase7_kit_verdict_log table, evaluation_attempt=0 filter)
+- SQLite: no wasm-sqlite; phase7_kit_verdicts.json now canonical star-lord emit (v1.70+); pre-extraction retired 2026-05-30
 - Data path: public/engine-state/season-{001,002,003}/ — 7 JSON files each, fetched at runtime
 - Lazy-load: phase2_kit_candidates.json fetched only when BackwardTrace renders (separate useEffect triggered by selected kit)
 - Tailwind: static ELEMENT_BORDER_LEFT record map for faction left-border colors (prevents purge of dynamic border-l-* classes); 8 colors added to safelist
@@ -1918,10 +1918,10 @@ Per MIGRATION.md §v1.67:
 **Public data files added:**
 - `public/engine-state/season-{001,002,003}/` — season_summary.json, phase4_archive_insertion.json, phase5_faction_clusters.json, phase5_faction_relationships.json, wave_b_identities.json, phase2_kit_candidates.json, phase7_kit_verdicts.json
 
-**SQLite extraction note:**
-- `phase7_kit_verdicts.json` pre-extracted from `kit_archive.db` (phase7_kit_verdict_log table) at session time
-- Files also written to collaboration repo: `agentic_orchestration/cycle-14-wave-5-season-{001,002,003}/phase7_kit_verdicts.json`
-- TODO(drax): when star-lord ships phase7_kit_verdicts.json as a first-class engine emit, replace these manually-extracted files and update public/ copies
+**SQLite extraction note (RETIRED 2026-05-30):**
+- `phase7_kit_verdicts.json` was pre-extracted from `kit_archive.db` at session time; collab-repo copies were written to `agentic_orchestration/cycle-14-wave-5-season-{001,002,003}/phase7_kit_verdicts.json`
+- Star-lord v1.70 now emits phase7_kit_verdicts.json as first-class canonical emit to exact same path — pre-extraction and collab-repo copies retired
+- Collab-repo copies deleted; public/engine-state/season-{001,002,003}/phase7_kit_verdicts.json now star-lord canonical; highest_cohesion_kit_id corrected to S1_endgame_bc_melee_high_flat_dex_none_s1
 
 **No-regression confirmation:** all existing routes /loadout, /sample, /analytics, /encounters, /pitch, /planning, /planning/state-of-engine, /planning/implementation-plan, /planning/engine-analysis return 200 on production
 
@@ -1960,4 +1960,32 @@ Per MIGRATION.md §v1.67:
 
 ### TODO(drax) added this session
 
-- `phase7_kit_verdicts.json` manual extraction — remove when star-lord ships this as first-class engine emit
+- `phase7_kit_verdicts.json` manual extraction — ~~remove when star-lord ships this as first-class engine emit~~ RETIRED 2026-05-30 (star-lord v1.70 landed; collab-repo copies deleted; canonical emit at public path)
+
+---
+
+### phase7 pre-extraction retirement (2026-05-30)
+
+**Dispatch:** KR Pattern A-light follow-on — star-lord v1.70 first-class emit retirement
+**Authority:** Knight-rider dispatch; auto-commit + auto-push per established 2026-05-30 session pattern; Vercel Production authorized per established 2026-05-30 session pattern
+**Tag:** `star-lord/v1.70-cycle-14-phase7-kit-verdicts-emit-1`
+
+**Disc #11 pre-action verification:**
+- Canonical star-lord emit files at `public/engine-state/season-{001,002,003}/phase7_kit_verdicts.json`: timestamps 17:44 (newer than collab-repo copies at 16:52)
+- Canonical files larger than stale copies (season-001: 145744 vs 145707; season-002: 17603 vs 17566; season-003: 17549 vs 17512) — confirm star-lord added schema_version + corrected highest_cohesion_kit_id
+- Season-001 canonical highest_cohesion_kit_id verified: `S1_endgame_bc_melee_high_flat_dex_none_s1` (correct per Disc #12)
+- Stale collab-repo season-001 had wrong value: `S1_endgame_bc_melee_low_spiky_str_none_s2` (unsorted first-row bug — confirmed stale)
+- No drax-side extraction script found — pre-extraction was inline session work; no script file to delete
+- No build-step or npm script reference to extraction
+- `useEngineStateData.ts` reads from `/engine-state/{seasonSlug}/phase7_kit_verdicts.json` — same path star-lord overwrites; no path change needed
+
+**Actions taken:**
+- Deleted 3 stale collab-repo JSONs: `agentic_orchestration/cycle-14-wave-5-season-{001,002,003}/phase7_kit_verdicts.json`
+- `src/data/engineStateTypes.ts`: updated 3 stale "pre-extracted" comments + added `schema_version?: string` to `Phase7KitVerdictsFile`
+- `AGENT_STATE.md` TODOs retired inline
+- Build smoke-test: `npm run build` clean (1049 modules, 0 TS errors, 0 type errors)
+
+**Canonical files PRESERVED (not touched):**
+- `public/engine-state/season-001/phase7_kit_verdicts.json` — star-lord canonical emit
+- `public/engine-state/season-002/phase7_kit_verdicts.json` — star-lord canonical emit
+- `public/engine-state/season-003/phase7_kit_verdicts.json` — star-lord canonical emit

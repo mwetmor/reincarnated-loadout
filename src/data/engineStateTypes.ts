@@ -6,7 +6,7 @@
 //   phase5_faction_clusters.json  — faction cluster labels + member kit IDs
 //   phase5_faction_relationships.json — cluster relationships (currently empty objects)
 //   wave_b_identities.json       — per-kit canonical names + narratives
-//   phase7_kit_verdicts.json     — pre-extracted Phase 7 verdict data from kit_archive.db
+//   phase7_kit_verdicts.json     — Phase 7 verdict data (canonical star-lord emit, v1.70+)
 //   phase2_kit_candidates.json   — Phase 2 kit generation data (2.7 MB; lazy-loaded for BackwardTrace)
 //
 // Disc #11 empirical spot-check (2026-05-30) findings:
@@ -18,7 +18,7 @@
 //   - phase5_faction_relationships.json: { metadata, relationships[] }; all items are empty {}
 //   - wave_b_identities.json: { season_id, kit_count, kits[] }; kit has kit_id, kit_name_canonical,
 //     parent_cluster_id, kit_identity_narrative, ai_tell_compliance_score
-//   - phase7_kit_verdicts.json: pre-extracted; { season_id, kit_verdicts[], shipped_count, highest_cohesion_kit_id }
+//   - phase7_kit_verdicts.json: { season_id, schema_version, kit_verdicts[], shipped_count, highest_cohesion_kit_id } (star-lord canonical emit v1.70+)
 //   - phase2_kit_candidates.json: { metadata, kits[] }; 2.7 MB; each kit has bc_tuple, element,
 //     chain_composition, gear_representative, skills[], cultural_lineage_canonical, etc.
 //
@@ -166,7 +166,7 @@ export interface WaveBIdentitiesFile {
   remediated_at?: string;
 }
 
-// ---- phase7_kit_verdicts.json (pre-extracted from SQLite) ----
+// ---- phase7_kit_verdicts.json (canonical star-lord emit, v1.70+) ----
 
 export interface Phase7KitVerdict {
   kit_id: string;
@@ -187,6 +187,7 @@ export interface Phase7KitVerdict {
 
 export interface Phase7KitVerdictsFile {
   season_id: string;
+  schema_version?: string;
   kit_verdicts: Phase7KitVerdict[];
   shipped_count: number;
   highest_cohesion_kit_id: string | null;
