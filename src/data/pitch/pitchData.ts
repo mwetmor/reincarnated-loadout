@@ -83,18 +83,19 @@ export interface HeroOfEngine {
 // Source: gandalf curation § 1
 // ---------------------------------------------------------------------------
 export const HERO_OF_ENGINE: HeroOfEngine = {
-  className: 'Canary of the Drowned Seam',
-  seasonId: 'season_002013',
-  anchorName: "The Dwarves' Empty Halls",
-  substrate: 'fire',
-  archetype: 'fire_mage',
-  // TODO(drax): swap portraitPath for star-lord manifest path when Phase 2 lands
-  portraitPath: '/pitch/heroes/season_002013/canary-of-the-drowned-seam.png',
+  className: 'Crushguard of the Shattered Gate',
+  seasonId: 'cycle-14-wave-5-season-001',
+  anchorName: 'Ironfield Vanguard',
+  substrate: 'physical',
+  archetype: 'physical_ironclad',
+  // Matt-curated portrait (2026-05-29) — replaces drax-generated season_001_hero.png at same path
+  // TODO(drax): swap portraitPath for Meshy animation URL when Matt § 12.3 handoff returns
+  portraitPath: '/pitch/heroes/season_001_hero.png',
   whyThisHero:
-    "This is what the engine does on a good day. The LLM took a fire substrate and authored it through the lens of a coal-mining underworld — fusing mining-mortality folklore (the canary as harbinger), industrial disaster (the drowned seam as flooded coal-vein), and fantasy elemental magic into a single coherent identity. No human named this class. The whole compound metaphor was composed by the LLM from the season's substrate grammar and the anchor's narrative register.",
-  featuredPairLabel: 'Thermal pair',
+    "This is what the engine does on a good day. The substrate spoke: a Cluster 3 european-medieval lineage with physical-dominant force (33%) carrying a holy secondary (22%) under a close-quarters large-AOE engagement profile and a STR + War Hammer signature. The LLM composed that into Crushguard of the Shattered Gate — an ironclad crusader who holds the line where it breaks widest. No human named this kit; the compound identity (Ironfield Vanguard faction + Crushguard role + Shattered Gate epithet) was composed by the LLM from the season's substrate grammar after the cascade-r4 aggregator fix surfaced physical truth at the player-facing layer.",
+  featuredPairLabel: 'Vanguard pair',
   featuredPairRationale:
-    'Seam Pressure builds in pockets until the coal-vein ruptures outward in cascading release, while Damp Creep is the slow wet air that seeps through abandoned corridors and settles into lungs and joints without ever announcing itself.',
+    'Where the line collapses and the breach opens widest, this fighter drives forward on raw strength alone, sustaining pressure across the close-quarters crush without relenting. The Ironfield Vanguard keeps them at the front not for finesse but for the grinding, unbroken weight they bring to every engagement.',
 };
 
 // ---------------------------------------------------------------------------
