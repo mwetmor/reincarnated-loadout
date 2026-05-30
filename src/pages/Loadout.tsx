@@ -20,6 +20,8 @@ import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignM
 import { DesignModePanel } from '../components/DesignMode/DesignModePanel';
 // Tier 3 — strategy badge (engine generation run, 2026-05-25)
 import { StrategyBadge } from '../components/ui/StrategyBadge';
+// Cycle 14 v1 kit identity browser (cascade-r4 v1-close; star-lord skill artifact deferred)
+import { Cycle14LoadoutSection } from '../components/Cycle14/Cycle14LoadoutSection';
 // Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
 // Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
 // TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
@@ -501,6 +503,13 @@ export function Loadout() {
           {classData.name ?? classData.id} · {season.manifest.anchor.name}
         </p>
       </div>
+
+      {/* Cycle 14 v1 — kit identity browser (cascade-r4 v1-close).
+          Skill tree integration deferred: Cycle 14 seasons have no manifest.json + classes/
+          in the loadout bundle. FactionCluster + WaveB data surfaces available identity info.
+          TODO(drax): replace Cycle14LoadoutSection with full skill-tree integration when
+                      star-lord emits manifest.json + classes/ per Cycle 14 season. */}
+      <Cycle14LoadoutSection />
     </div>
   );
 }
