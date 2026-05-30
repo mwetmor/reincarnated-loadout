@@ -85,17 +85,19 @@ export interface HeroOfEngine {
 // Source: gandalf curation § 1
 // ---------------------------------------------------------------------------
 export const HERO_OF_ENGINE: HeroOfEngine = {
-  className: 'Crusader of the Ember Cross',
+  className: 'Crushguard of the Shattered Gate',
   seasonId: 'cycle-14-wave-5-season-001',
   anchorName: 'Ironfield Vanguard',
   substrate: 'physical',
   archetype: 'physical_ironclad',
   // Matt-curated portrait (2026-05-29) + Meshy 3D animated model (Matt § 12.3 Meshy handoff returned 2026-05-29)
+  // Note: Meshy GLB source filename uses "Crusader_of_the_Ember" (Matt's Meshy iteration label); in-app
+  // display name is the engine-emitted substrate-honest name "Crushguard of the Shattered Gate".
   portraitPath: '/pitch/heroes/season_001_hero.png',
   modelPath:
     '/pitch/heroes/season_001_hero_animated/Meshy_AI_Crusader_of_the_Ember_biped_Animation_Idle_03_withSkin.glb',
   whyThisHero:
-    "This is what the engine does on a good day. The substrate spoke: a Cluster 3 european-medieval lineage with physical-dominant force (33%) carrying a holy secondary (22%) under a close-quarters large-AOE engagement profile and a STR + War Hammer signature. The LLM composed that into an ironclad crusader who holds the line where it breaks widest — engine-emitted as Crushguard of the Shattered Gate, designer-curated as Crusader of the Ember Cross. The compound identity (Ironfield Vanguard faction + crusader role + ember-cross epithet) reflects the substrate-led emergence + designer-naming layer composition: substrate is the engine; the name is the player-facing experience.",
+    "This is what the engine does on a good day. The substrate spoke: a Cluster 3 european-medieval lineage with physical-dominant force (33%) carrying a holy secondary (22%) under a close-quarters large-AOE engagement profile and a STR + War Hammer signature. The LLM composed that into Crushguard of the Shattered Gate — an ironclad crusader who holds the line where it breaks widest. No human named this kit; the compound identity (Ironfield Vanguard faction + Crushguard role + Shattered Gate epithet) was composed by the LLM from the season's substrate grammar after the cascade-r4 aggregator fix surfaced physical truth at the player-facing layer.",
   featuredPairLabel: 'Vanguard pair',
   featuredPairRationale:
     'Where the line collapses and the breach opens widest, this fighter drives forward on raw strength alone, sustaining pressure across the close-quarters crush without relenting. The Ironfield Vanguard keeps them at the front not for finesse but for the grinding, unbroken weight they bring to every engagement.',
