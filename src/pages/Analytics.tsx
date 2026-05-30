@@ -10,6 +10,7 @@ import { SeasonTimelineChart } from '../components/analytics/SeasonTimelineChart
 import { SkillTierChart } from '../components/analytics/SkillTierChart';
 import { SeasonSummaryCards } from '../components/analytics/SeasonSummaryCards';
 import { SubstrateHeatmap } from '../components/analytics/SubstrateHeatmap';
+import { Cycle14AnalyticsSection } from '../components/analytics/Cycle14AnalyticsSection';
 
 export function Analytics() {
   const analytics = useAnalytics();
@@ -89,6 +90,11 @@ export function Analytics() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <StatRadarChart entries={analytics.statRadarEntries} globalAvg={analytics.globalStatAvg} />
         <SkillTierChart data={analytics.skillTierBars} />
+      </div>
+
+      {/* Cycle 14 — Substrate-Led Generation analytics section */}
+      <div className="border-t border-gray-800 pt-6">
+        <Cycle14AnalyticsSection />
       </div>
     </div>
   );

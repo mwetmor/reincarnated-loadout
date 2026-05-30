@@ -20,6 +20,7 @@ import {
   useEncounterAnalytics,
   type EncounterPoint,
 } from '../hooks/useEncounterAnalytics';
+import { Cycle14EncountersNote } from '../components/analytics/Cycle14EncountersNote';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -545,6 +546,9 @@ export function Encounters() {
           · v0.7 · roll-in of v0.6 encounter-viz (drax/v0.6-encounter-viz tag retained as history)
         </p>
       </div>
+
+      {/* ── Cycle 14 encounter surface ────────────────────────────────────── */}
+      <Cycle14EncountersNote />
     </div>
   );
 }
