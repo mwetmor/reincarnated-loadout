@@ -22,6 +22,8 @@ import { DesignModePanel } from '../components/DesignMode/DesignModePanel';
 import { StrategyBadge } from '../components/ui/StrategyBadge';
 // Cycle 14 v1.68 — gear representative display (MIGRATION.md §v1.68, drax W2 2026-05-30)
 import { Cycle14GearDisplay } from '../components/Cycle14/Cycle14GearDisplay';
+// Cycle 14 v1.69 — T4 architecture panel (MIGRATION.md §v1.69, drax W4 2026-05-30)
+import { Cycle14T4Panel } from '../components/Cycle14/Cycle14T4Panel';
 // Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
 // Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
 // TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
@@ -531,6 +533,24 @@ export function Loadout() {
       ) : (
         <GearGrid mode="sample" synthesized={synthesizedGear} />
       )}
+
+      {/* Cycle 14 v1.69 — T4 Architecture (MIGRATION.md §v1.69, drax W4 2026-05-30).
+          Loadout mode: Layer 2 T4 candidates shown as radio-button toggleable unlockables
+          (ONE active at a time per D66; doc 40 § 8.3.1). Primary T4 is fixed non-toggleable.
+          CHAIN_WIDE_OWN kits: t4_candidates=[] → empty-state copy per doc 47 § 4.6.4.
+          Null-safe: Cycle14T4Panel hides itself when no v1.69 fields present (pre-v1.69 seasons). */}
+      {(classData.chain_composition || classData.primary_t4) && (
+        <section>
+          <Cycle14T4Panel
+            mode="loadout"
+            chainComposition={classData.chain_composition}
+            classChainCount={classData.class_chain_count}
+            primaryT4={classData.primary_t4}
+            t4Candidates={classData.t4_candidates}
+          />
+        </section>
+      )}
+
       <SpiritGuide />
 
       <div className="flex items-center justify-between gap-4 pt-2 border-t border-gray-800">

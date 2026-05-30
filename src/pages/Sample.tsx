@@ -15,6 +15,10 @@ import { ClassIcon, SeasonIcon } from '../components/ui/ClassIcon';
 // M1 / M2 — weapon slots (Cycle 11, MIGRATION.md v1.3). Display page renders engine-emitted kit.
 import { WeaponSlot } from '../components/WeaponSlot/WeaponSlot';
 import { OffHandSlot } from '../components/WeaponSlot/OffHandSlot';
+// Cycle 14 v1.68 — gear representative display (MIGRATION.md §v1.68)
+import { Cycle14GearDisplay } from '../components/Cycle14/Cycle14GearDisplay';
+// Cycle 14 v1.69 — T4 architecture panel (MIGRATION.md §v1.69, drax W4 2026-05-30)
+import { Cycle14T4Panel } from '../components/Cycle14/Cycle14T4Panel';
 // Amendment 1 — design-mode toggle (engine generation run, 2026-05-25).
 // Shared key with Loadout.tsx so toggle state persists across Loadout ↔ Sample navigation.
 import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignMode/DesignModeToggle';
@@ -405,7 +409,33 @@ export function Sample() {
         remainingSP={SP_BUDGET - totalSP}
       />
 
-      <GearGrid mode="sample" synthesized={synthesizedGear} />
+      {/* Gear: use gear_representative (§v1.68) when available; fall back to synthesized GearGrid.
+          Parallel to Loadout.tsx gear render path (drax W2 + W4). */}
+      {classData.gear_representative ? (
+        <section>
+          <Cycle14GearDisplay gear={classData.gear_representative} />
+        </section>
+      ) : (
+        <GearGrid mode="sample" synthesized={synthesizedGear} />
+      )}
+
+      {/* Cycle 14 v1.69 — T4 Architecture (MIGRATION.md §v1.69, drax W4 2026-05-30).
+          Sample mode: Layer 2 T4 shows AS-gauntlet-passed ACTIVE candidate read-only.
+          No toggle UI — Sample is immutable per doc 49 § 1.2.
+          Primary T4 fixed universal slot shown identically to Loadout (non-toggleable both modes).
+          CHAIN_WIDE_OWN kits: t4_candidates=[] → empty-state copy per doc 47 § 4.6.4. */}
+      {(classData.chain_composition || classData.primary_t4) && (
+        <section>
+          <Cycle14T4Panel
+            mode="sample"
+            chainComposition={classData.chain_composition}
+            classChainCount={classData.class_chain_count}
+            primaryT4={classData.primary_t4}
+            t4Candidates={classData.t4_candidates}
+          />
+        </section>
+      )}
+
       <SpiritGuide />
 
       <div className="pt-2 border-t border-gray-800 flex items-center justify-between gap-4">

@@ -118,6 +118,14 @@ export interface ClassData {
   // One gear item per slot at legendary_t1 rarity. Null on all pre-v1.68 seasons.
   // Consumer: Cycle14GearDisplay. NOT compatible with Cycle13GearDisplay or WeaponSlot.
   gear_representative?: GearRepresentative | null;
+
+  // Cycle 14 v1.69 — chain + T4 architecture (MIGRATION.md §v1.69).
+  // Additive fields. Null/absent on all pre-v1.69 seasons; guard every access with ??.
+  chain_composition?: ChainComposition | null;
+  class_chain_count?: number | null;
+  t4_scope?: string | null;
+  t4_candidates?: T4Candidate[] | null;
+  primary_t4?: PrimaryT4 | null;
 }
 
 export interface SeasonAnchor {
@@ -372,6 +380,61 @@ export interface T4AlterationOutput {
   // Each sub-dict contains numeric/boolean sim params. Null on pre-Phase-5 classes.
   // Design-mode only: surfaced in T4AlterationPanel "Mechanical Effects" sub-section.
   gamora_combatant_fields?: Record<string, Record<string, string | number | boolean>> | null;
+}
+
+// ---- Cycle 14 v1.69 schema extensions — chain + T4 architecture (MIGRATION.md §v1.69) ----
+// Additive fields on ClassData. Null on all pre-v1.69 seasons. Guard all access with ??.
+// Consumer: Cycle14T4Panel component. Skill.chain_id already present since §v1.68.
+
+// Kit-level chain composition summary (chain_composition field).
+export interface ChainComposition {
+  t4_chains: number;
+  supporting_chains: number;
+  total_chains: number;
+}
+
+// Layer 2 T4 candidate (one entry in t4_candidates[]).
+// Dispatch: category_a_strategy + category_bc_strategy + secondary_element + magnitude_tier
+// + t4_scope are the player-facing fields. is_active identifies gauntlet-selected candidate.
+export interface T4Candidate {
+  candidate_id: string;
+  category_a_strategy: string;
+  category_bc_strategy: string;
+  t4_category_bc: string;
+  is_class_wide_trade_off: boolean;
+  secondary_element: string | null;
+  magnitude_tier: string | null;
+  magnitude_midpoint: number | null;
+  parallel_chain_mode: string | null;
+  target_chain_id: string | null;
+  resolve_score: number;
+  create_score: number;
+  net_synergy_score: number;
+  synergy_eligible: boolean;
+  retries_used: number;
+  pattern_9_warn: boolean;
+  pattern_10_warn: boolean;
+  is_active: boolean;
+  separability_pass: boolean;
+  category_a_params: Record<string, unknown>;
+  category_bc_params: Record<string, unknown>;
+  t4_scope: string;
+  scope_downscale_factor: number | null;
+  scope_prior_weight: number | null;
+  scope_weighted_score: number | null;
+  scope_projection_data: Record<string, unknown> | null;
+}
+
+// Primary T4 universal slot (primary_t4 field).
+// Discipline #39 scaffold: DIRECT_DAMAGE_AMPLIFICATION 1.75× at preferred_encounter_type.
+// Cycle 15 retirement commit per MIGRATION.md §v1.69. Universal — emitted on every kit
+// INCLUDING CHAIN_WIDE_OWN kits (they still receive Primary T4 even with no Layer 2 candidates).
+export interface PrimaryT4 {
+  strategy: string;                // "DIRECT_DAMAGE_AMPLIFICATION"
+  magnitude: number;               // 1.75
+  applied_to: string;              // "preferred_encounter_type"
+  scope: string;                   // "universal"
+  discipline_anchor: string;       // doc 47 § 4.6 citation
 }
 
 // ---- Cycle 14 v1.68 schema extensions — gear_representative (MIGRATION.md §v1.68) ----
