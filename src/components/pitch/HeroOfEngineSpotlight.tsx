@@ -27,9 +27,10 @@ export function HeroOfEngineSpotlight({ hero }: HeroOfEngineSpotlightProps) {
       {/* Main layout: portrait left on desktop, prose right */}
       <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
         {/* Portrait — centered on mobile, left-anchored on desktop.
-            Sized to match the prose-area visual space per Matt 2026-05-29 directive:
-            wider on desktop (~480-540px) so the animated 3D model has visual weight
-            comparable to the prose card on the right. */}
+            Sized to match the prose-area visual space per Matt 2026-05-29 directives:
+            width: bumped to 480-540px (turn 1); height: extended via aspect 1/2 (lg)
+            to match the prose-card vertical extent next to it. The animated 3D model
+            gets full marquee real estate. */}
         <div className="w-full md:w-auto md:flex-shrink-0 flex justify-center md:justify-start">
           <div className="w-full max-w-[420px] sm:max-w-[480px] md:w-[480px] lg:w-[540px]">
             {hero.modelPath ? (
@@ -47,7 +48,9 @@ export function HeroOfEngineSpotlight({ hero }: HeroOfEngineSpotlightProps) {
                 reveal="auto"
                 style={{
                   width: '100%',
-                  aspectRatio: '3/4',
+                  // aspect-ratio 1/2 = height is 2x width. On lg (540px wide), renders ~1080px tall.
+                  // On mobile (max 420px), renders ~840px tall. Matches prose-card vertical space.
+                  aspectRatio: '1/2',
                   borderRadius: '0.5rem',
                   backgroundColor: '#0a0a0a',
                 }}
