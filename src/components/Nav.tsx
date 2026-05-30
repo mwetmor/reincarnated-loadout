@@ -33,6 +33,7 @@ export function Nav() {
             <NavItem to="/encounters">Encounters</NavItem>
             <NavItem to="/court">Court</NavItem>
             <NavItem to="/state-of-engine">Engine</NavItem>
+            <NavItem to="/planning">Planning</NavItem>
           </div>
         </div>
       </div>
