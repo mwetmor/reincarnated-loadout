@@ -1,12 +1,47 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-30
-**Last commit:** ca29dfa — feat(drax): Season 002 marquee reshape — /pitch shows Season of the Ironsoil Wide-Front only
-**Last tag:** drax/v1.0-cascade-r4-v1-season-002-marquee-reshape-1
+**Last commit:** 5a5530e — fix(drax): season 002 group portrait re-roll — legolas authored prompts + galadriel design
+**Last tag:** drax/v1.0-cascade-r4-v1-season-002-marquee-polish-1
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### cascade-r4-v1-season-002-marquee-polish-1 (2026-05-30)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-29-drax-cycle-14-season-002-marquee-reshape.md` — completion record appended
+**Authority:** Matt 2026-05-29 verbatim correction: "quality of all group photos are very poor"; cascade-r4 v1 close polish; auto-commit + auto-push
+**Build result:** tsc clean + vite clean (1036 modules, 0 TS errors)
+
+**Problem:** First-pass group portraits (commit ca29dfa) were poor quality — constructed from drax-self-authored prompts without legolas authored prompts or galadriel design guidance (those files landed after first-pass executed).
+
+**Re-roll — Phase 2 (Step 1):**
+- Source: legolas authored prompts from `agentic_orchestration/legolas/notes/2026-05-29-cycle-14-season-002-marquee-image-gen-prompts.md` (178-192 words each; HD-2D; D7 compliant)
+- Design guidance: galadriel §1 group composition designs applied — tri-band palette (Stormcallers), 5-7 member representative subset (Ironsoil), wind-primary anchoring + broken-cloud lighting (Gale-Blessed), dispersed-depth + shadow-thread tendrils (Duskchain)
+- Upgrade: quality="high" (vs "medium" first-pass); ~2× cost per image but higher render fidelity
+- Script: `public/pitch/season_002/generate_season002_group_reroll.py`
+- Batch cost: $0.32 (4 × $0.08); Ledger total: $3.52
+
+**Visual assessment (Step 2):**
+- Stormcallers: clear improvement — 3 distinct figures with correct elemental tri-band (lightning left, shadow-void center, fire right); pale storm sky; European medieval costuming; HD-2D register visible
+- Ironsoil: improved — low-angle mass-charge staging correct; dust-haze ambient; concentric-ring earth-impact visible; still soft per-figure detail at 9-body scale (inherent API limitation)
+- Gale-Blessed: BEST of four — wind-primary clearly dominant (swept grass, wind-bent cloaks, rain/gust sweeps); 13 figures broad-front; single holy-lit blade at center; pluralistic armor profile; reads correctly
+- Duskchain: improved significantly over first-pass — no literal metal chains; shadow-tendrils/filaments connecting figures at varying depths; twilight palette correct; dispersed-depth staging correct
+
+**Decision (Step 3): SHIP RE-ROLL.** All 4 re-rolled images materially better than first-pass "very poor." Group portraits will never match individual portrait per-character detail (compositional difference, not quality failure) but these clear the bar for a faction group scene in HD-2D style register.
+
+**Prior group images backed up:** `public/pitch/season_002/factions/prior/`
+
+**FALLBACK kit disposition:** `Gale-Blessed Physical Fighter Bearer` (`ranged_high_flat_dex_none_s2`) — FALLBACK_SUBSTRATE_DERIVED flag per galadriel. This kit is not in top-3 display for Cluster 3 (only top-3 by member_kit_ids order shown). The kit is NOT displayed in the current marquee. No KR surface required at this time. If individual kit display is extended to all 33, this kit should be excluded or regenerated.
+
+**Deploy:**
+- Commit: `5a5530e` — group images + re-roll script + ledger updated + prior backup
+- Tag: `drax/v1.0-cascade-r4-v1-season-002-marquee-polish-1` pushed
+- Vercel auto-deploy: `reincarnated-loadout-kdmcull1n` READY (29s)
+- Live image verify: `/pitch/season_002/factions/1_group.png` (2.7MB) + `3_group.png` (2MB) serving from Vercel CDN
+
+---
 
 ### cascade-r4-v1-season-002-marquee-reshape (2026-05-30)
 
