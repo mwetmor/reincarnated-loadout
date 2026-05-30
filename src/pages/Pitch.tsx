@@ -2,29 +2,31 @@
 // Structured per sprint dispatch § 6.2 sections:
 //   1. Headline + Hero of the Engine spotlight
 //   2. The Engine in One Paragraph + stat cards
-//   3. Cycle 14 — Substrate-Led Generation (§ 11.2 faction cluster tiles)
-//   4. Per-season worlds (historical seasons 002011–002015)
-//   5. The team paragraph
-//   6. Paths and Conversations
+//   3. Cycle 14 — Season 002 Marquee (Season of the Ironsoil Wide-Front)
+//   4. The team paragraph
+//   5. Paths and Conversations
 // Footer: handled by App.tsx global footer + transparency disclosure rendered here
 //
-// § 11.2 Cycle 14 section: surfaces season_001 4-cluster faction output (baseline NOW).
-// Iteration plan:
-//   - Wanderer tiles: post-gamora Amendment 1 close (cluster_id="SINGLETON")
-//   - season_002 + season_003: post-Track-A (rocket production)
-//   - Hero image + Meshy animation embed: post-§ 12.1 selection + § 12.2 complete
+// Season filter: Summary page shows ONLY cycle-14-wave-5-season-002.
+// Seasons 001 and 003 remain accessible via /loadout, /sample, /analytics, /encounters.
+// Historical seasons section removed from Summary (kept data in pitchData.ts for other routes).
+//
+// Marquee layout: 4 faction sections with group portraits + per-kit individuals.
+// Images: public/pitch/season_002/factions/{cluster_id}_group.png
+//         public/pitch/season_002/kits/{kit_id}.png
+// Image gen: drax cascade-r4-v1-season-002-marquee-reshape session (4 group + 12 individual)
+// Hero of Season: Crushguard of the Shattered Gate (season_001 cluster 3 — curated marquee hero)
+//                 Retained per KR dispatch out-of-scope clause; substrate-honest showcase.
 // TODO(drax): Phase 2 — swap HeroPortraitPlaceholder for <img> using heroes-manifest.json
 
-import { HERO_OF_ENGINE, SEASONS } from '../data/pitch/pitchData';
-import { CYCLE14_SEASONS } from '../data/cycle14SeasonData';
+import { HERO_OF_ENGINE } from '../data/pitch/pitchData';
+import { CYCLE14_SEASON_002 } from '../data/cycle14SeasonData';
 import { HeroOfEngineSpotlight } from '../components/pitch/HeroOfEngineSpotlight';
-import { SeasonHypePiece } from '../components/pitch/SeasonHypePiece';
 import { PathsCards } from '../components/pitch/PathsCards';
-import { Cycle14SeasonSection } from '../components/Cycle14/Cycle14SeasonSection';
+import { Season002Marquee } from '../components/Cycle14/Season002Marquee';
 
 // Static stat counts — sourced from engine output (5 seasons, 7 substrates)
 // TODO(drax): pull from seasons.json when star-lord delivers it
-// Note: kit count removed — stale hardcoded value; Pitch.tsx interim pending Dispatch C /summary re-architecture
 const STATS = [
   { label: 'Seasons', value: 5 },
   { label: 'Substrates', value: 7 },
@@ -106,40 +108,9 @@ export function Pitch() {
         </div>
       </section>
 
-      {/* ─── 3. Cycle 14 — Substrate-Led Generation ─────────────────────── */}
+      {/* ─── 3. Season 002 Marquee — Season of the Ironsoil Wide-Front ─────── */}
       <section className="border-t border-gray-800">
-        <div className="max-w-6xl mx-auto px-4 pt-10 mb-2">
-          <p className="font-mono uppercase tracking-wide text-xs text-gray-500 mb-1">
-            Cycle 14 — substrate-led generation
-          </p>
-          <p className="text-sm leading-relaxed text-gray-400 max-w-prose">
-            The engine's first substrate-led cohesion run across 3 seasons. No designer-imposed archetypes.
-            Factions emerged from Phase 5 GMM clustering — faction identities written by the LLM
-            from BC-axis signatures, cultural lineage, and element distribution.
-            Per-kit characters named from within each faction's thematic context.
-          </p>
-        </div>
-        {CYCLE14_SEASONS.map((season, idx) => (
-          <Cycle14SeasonSection key={season.season_id} season={season} displayIndex={idx + 1} />
-        ))}
-      </section>
-
-      {/* ─── 4. Per-season worlds (historical) ───────────────────────────── */}
-      <section>
-        <div className="max-w-6xl mx-auto px-4 pt-10">
-          <p className="font-mono uppercase tracking-wide text-xs text-gray-500 mb-1">
-            Historical seasons
-          </p>
-          <p className="text-sm leading-relaxed text-gray-400 max-w-prose">
-            Five prior seasons. Each is a complete world the engine's LLM layer authored
-            end-to-end — substrate vocabulary, cosmological slot-fills, class names, and
-            pair-rationale prose composed within a hand-authored grammar.
-          </p>
-        </div>
-
-        {SEASONS.map((season) => (
-          <SeasonHypePiece key={season.seasonId} season={season} />
-        ))}
+        <Season002Marquee season={CYCLE14_SEASON_002} />
       </section>
 
       {/* ─── 4. The team ─────────────────────────────────────────────────── */}
