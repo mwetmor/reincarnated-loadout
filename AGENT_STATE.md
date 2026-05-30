@@ -1784,3 +1784,56 @@ and `data/cycle-14-wave-5-season-{001,002,003}/classes/*.json` for `useSeasonDat
 
 **When it lands:** remove `Cycle14LoadoutSection` from both pages. The new seasons will
 auto-appear in the season picker via existing `useSeasonData` glob logic.
+
+---
+
+## Session: cascade-r4 v1 session-end — adapter cleanup (2026-05-30)
+
+**Commit:** `d97462f` — "drax(loadout): drop cycle14Adapter — surface real star-lord engine emission across all pages"
+**Tag:** `drax/v1.0-cascade-r4-v1-session-end-adapter-cleanup-1` (pushed to origin)
+**Push:** `32053b9..d97462f` pushed to `origin/main`
+**Vercel deploy:** `dpl_DSsWYePohEWkm3EsMwSHBaettY2o` — Production Ready ~1min build
+
+### What landed
+
+KR-deferred cleanup after star-lord landed manifest.json + classes/*.json for Cycle 14 Wave 5
+seasons (158 class files, 3 manifests; commit `fd4c0ae` loadout side).
+
+**Removed:**
+- `src/data/cycle14Adapter.ts` — 319-line drax-side bridge, entirely deleted
+- `useSeasonData.ts` lines 4-7 (CYCLE14_SEASON_DATA import + comment block)
+- `useSeasonData.ts` lines 67-73 (injection loop + comment)
+- `isCycle14AdapterSeason` variable in `Loadout.tsx` and `Sample.tsx`
+- Violet "engine-emission pending" banner block in `Loadout.tsx` and `Sample.tsx`
+- `TODO(star-lord)` annotations in `Loadout.tsx`, `Sample.tsx`, `useSeasonData.ts`
+
+**Updated:**
+- Placeholder banner in `Loadout.tsx` + `Sample.tsx`: consolidated to single amber banner
+  reading "Skills are substrate-derived placeholders" — applies correctly to both Cycle 13
+  and Cycle 14 Wave 5 (placeholder_skill_content: true in all real manifests)
+- Banner text updated: now accurately states "balance metadata (win rates, quality vectors,
+  cohort) are real engine output" — true for Cycle 14 real emission
+
+### Glob auto-discovery confirmed
+
+Cycle 14 seasons load via existing `../../data/*/manifest.json` glob:
+- `cycle-14-wave-5-season-001` → 54 class files, manifest_version=cycle14-v1
+- `cycle-14-wave-5-season-002` → 53 class files, manifest_version=cycle14-v1
+- `cycle-14-wave-5-season-003` → 51 class files, manifest_version=cycle14-v1
+
+### Data-contract notes (Cycle 14 real emission)
+
+Per MIGRATION.md §v1.67:
+- `balance_metadata.actual_winrate` populated (gauntlet_pass_rate from kit_archive.db)
+- `balance_metadata.quality_vector` populated ([q1..q5] from phase4_archive_insertion)
+- `balance_metadata.cohort` populated (phase7 verdict)
+- `balance_metadata.final_modifier` / `convergence_iterations` / `converged` — null (no convergence loop)
+- `skills` — single placeholder per kit; phase5_is_placeholder=true (Cycle 15+ full gen required)
+- `gearPool` — empty array (no gear_instance_generator run for Cycle 14 wave-5)
+- `range_profile` vocab: `melee`/`mid`/`ranged` (differs from legacy `close`/`medium`/`long`) — both string, no TS issue
+
+### Remaining TODO(drax) tracked
+
+- Yomi gear_pool fallback in useSeasonData.ts — remove when engine ships gear_pool.json for new seasons
+- placeholder banner on /loadout + /sample — remove `isPlaceholderSeason` banner when Cycle 15+ full
+  skill gen runs for Cycle 14 seasons (placeholder_skill_content will be false or absent)
