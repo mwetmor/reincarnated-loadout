@@ -1,19 +1,26 @@
-// /pitch — Pitch page (Phase 1 scaffold)
+// /pitch — Summary page
 // Structured per sprint dispatch § 6.2 sections:
 //   1. Headline + Hero of the Engine spotlight
 //   2. The Engine in One Paragraph + stat cards
-//   3. Season Hype Pieces (5 seasons)
-//   4. The Hive paragraph
-//   5. Paths and Conversations
+//   3. Cycle 14 — Substrate-Led Generation (§ 11.2 faction cluster tiles)
+//   4. Per-season worlds (historical seasons 002011–002015)
+//   5. The team paragraph
+//   6. Paths and Conversations
 // Footer: handled by App.tsx global footer + transparency disclosure rendered here
 //
-// Phase 1: placeholders throughout. Star-lord portrait pipeline + seasons.json → Phase 2.
+// § 11.2 Cycle 14 section: surfaces season_001 4-cluster faction output (baseline NOW).
+// Iteration plan:
+//   - Wanderer tiles: post-gamora Amendment 1 close (cluster_id="SINGLETON")
+//   - season_002 + season_003: post-Track-A (rocket production)
+//   - Hero image + Meshy animation embed: post-§ 12.1 selection + § 12.2 complete
 // TODO(drax): Phase 2 — swap HeroPortraitPlaceholder for <img> using heroes-manifest.json
 
 import { HERO_OF_ENGINE, SEASONS } from '../data/pitch/pitchData';
+import { CYCLE14_SEASONS } from '../data/cycle14SeasonData';
 import { HeroOfEngineSpotlight } from '../components/pitch/HeroOfEngineSpotlight';
 import { SeasonHypePiece } from '../components/pitch/SeasonHypePiece';
 import { PathsCards } from '../components/pitch/PathsCards';
+import { Cycle14SeasonSection } from '../components/Cycle14/Cycle14SeasonSection';
 
 // Static stat counts — sourced from engine output (5 seasons, 7 substrates)
 // TODO(drax): pull from seasons.json when star-lord delivers it
@@ -99,14 +106,32 @@ export function Pitch() {
         </div>
       </section>
 
-      {/* ─── 3. Per-season worlds ─────────────────────────────────────────── */}
+      {/* ─── 3. Cycle 14 — Substrate-Led Generation ─────────────────────── */}
+      <section className="border-t border-gray-800">
+        <div className="max-w-6xl mx-auto px-4 pt-10 mb-2">
+          <p className="font-mono uppercase tracking-wide text-xs text-gray-500 mb-1">
+            Cycle 14 — substrate-led generation
+          </p>
+          <p className="text-sm leading-relaxed text-gray-400 max-w-prose">
+            The engine's first substrate-led cohesion run. No designer-imposed archetypes.
+            Four factions emerged from Phase 5 GMM clustering across 34 validated kits —
+            faction identities written by the LLM from BC-axis signatures, cultural lineage,
+            and element distribution.
+          </p>
+        </div>
+        {CYCLE14_SEASONS.map(season => (
+          <Cycle14SeasonSection key={season.season_id} season={season} />
+        ))}
+      </section>
+
+      {/* ─── 4. Per-season worlds (historical) ───────────────────────────── */}
       <section>
         <div className="max-w-6xl mx-auto px-4 pt-10">
           <p className="font-mono uppercase tracking-wide text-xs text-gray-500 mb-1">
-            Per-season worlds
+            Historical seasons
           </p>
           <p className="text-sm leading-relaxed text-gray-400 max-w-prose">
-            Five seasons so far. Each one is a complete world the engine's LLM layer authored
+            Five prior seasons. Each is a complete world the engine's LLM layer authored
             end-to-end — substrate vocabulary, cosmological slot-fills, class names, and
             pair-rationale prose composed within a hand-authored grammar.
           </p>
