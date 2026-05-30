@@ -1,8 +1,8 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-30
-**Last commit:** f5d670d — drax(loadout): engine-state dashboard Phase α — /state-of-engine dynamic route
-**Last tag:** drax/v1.4-engine-state-dashboard-phase-alpha-1
+**Last commit:** 7359983 — drax: planning-suite refresh § 17 — implementation plan section 17 exact execution order
+**Last tag:** drax/v1.4-planning-suite-refresh-section-17-1
 **Branch:** main
 **Hive-mind mode:** N/A (Mode B Pattern B sustained dispatch)
 
@@ -1930,6 +1930,33 @@ Per MIGRATION.md §v1.67:
 **Vercel preview:** READY — `https://reincarnated-loadout-iu6apzjtf-matthew-wetmore-s-projects.vercel.app`
 **Vercel Production deploy:** READY — `https://reincarnated-loadout.vercel.app` (aliased; deployment id `dpl_3aP7NxRDH5Htmp16QWF76oK9HDVb`)
 **Push status:** auto-push per established 2026-05-30 session pattern; pending push after collab repo updates
+
+---
+
+### planning-suite refresh — § 17 execution order (2026-05-30)
+
+**Dispatch:** KR Disc #11 pre-fire follow-on (Pattern A short task); no dispatch file
+**Authority:** Matt 2026-05-30 "share a prompt to KR to wire to vercel" via gandalf; auto-commit + auto-push per cycle authorization; Vercel Production authorized per established 2026-05-30 session pattern
+
+**Disc #11 spot-check (pre-copy):**
+- Source: `agentic_orchestration/gandalf/notes/2026-05-30-physical-infrastructure-implementation-plan.html`
+- File size: 103,749 bytes (matches KR pre-fire spec exactly; ~12KB growth from prior PC-spec refresh confirmed)
+- § 17 structure verified: `h2.section-title` "§ 17 Exact implementation order — START HERE" at line 1582; Stage 1/2/3/4 `.phase-banner` blocks; 14 numbered `.step` elements in `.step-grid` containers; § 17.4 reference table; § 17.5 do-NOT callout (`.callout.warn`); § 17.6 post-close framing
+- step-grid CSS: `grid-template-columns: 40px 1fr` — 40px step-num column + fluid 1fr content; narrow-safe at 375px (40 + ~295px)
+- No refutation triggered
+
+**Actions:**
+- Re-copied source HTML to `public/planning/implementation-plan.html` (103,749 bytes verified post-copy)
+- Other 2 docs (engine-analysis, state-of-engine) unchanged
+- Build smoke-test: `npm run build` passed (1049 modules, 0 TS errors)
+- Nav tabs verified: Planning + Engine routes intact in Nav.tsx (commit 2b1f80c baseline)
+- Mobile render verification: step-grid `40px 1fr` grid is narrow-safe; `.phase-banner` full-width; do-NOT callout full-width; reference table scrollable via container padding at 768px breakpoint
+
+**Commit:** `7359983`
+**Tag:** `drax/v1.4-planning-suite-refresh-section-17-1`
+**Vercel Production deploy:** READY — `https://reincarnated-loadout.vercel.app` (aliased; deployment id `dpl_9xtWZe68aEecitbgHo6SxU79r6ZS`)
+**Post-deploy error scan:** clean — no runtime errors (vercel logs --level error --since 1h: "No logs found")
+**Push status:** pushed main + tag to origin
 
 ### TODO(drax) added this session
 
