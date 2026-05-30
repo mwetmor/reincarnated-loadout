@@ -1,12 +1,62 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-30
-**Last commit:** c268650 — loadout: cascade-r4 follow-on — Wave B per-kit names + season names + 3-season comparison
-**Last tag:** drax/v1.0-cascade-r4-followon-loadout-refresh-1 (to be applied)
+**Last commit:** c171214 — loadout: cascade-r4 v1-close — aggregator-fix data refresh + §12.2 hero + 11 gear images
+**Last tag:** drax/v1.0-cascade-r4-v1-close-comprehensive-1 (pending; to be applied post-push)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### cascade-r4 v1-close comprehensive — aggregator-fix data refresh + §12.2 hero + 11 gear images (2026-05-30)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-29-drax-cascade-r4-v1-close-comprehensive.md`
+**Authority:** Matt 2026-05-29 cascade-r4 v1-close; auto-commit + auto-push per cycle authorization
+**Build result:** tsc clean + vite clean (875 modules, 0 TS errors) + 81 tests passing (0 failures)
+
+**Work-item 1 — Data refresh (MIGRATION.md §v1.66; rocket 818a4ca):**
+- Updated 6 data JSON files (3× faction-clusters + 3× wave-b-identities) from collab repo post-remediation artifacts
+- New faction names: Earthbound Chain Wardens / Ashwind Vanguard / **Ironfield Vanguard** / Ashfield Ember Wardens (S001); Stormcallers of the Pale Reach / Ironsoil Vanguard / Gale-Blessed Wardens / Duskchain Ranging Compact (S002); Ironfield Wardens / Scattered Wind Skirmishers / Tidal Shadowmark Wardens (S003)
+- New season names: "Season of the Chain-Strike Pyre" / "Season of the Ironsoil Wide-Front" / "Season of the Broad-Front Shadow Warcraft"
+- Wave B: full 54-kit files with post-remediation names (up from 34/33)
+- Updated WAVE_S_*_INLINE constants in cycle14SeasonData.ts
+- Removed stale storm/lightning bias comment from Cycle14SeasonSection.tsx
+- hero_faction_cluster_id=3, hero_image_url='/pitch/heroes/season_001_hero.png' wired in CYCLE14_SEASON_001
+
+**Work-item 2 — §12.2 Hero image generation:**
+- Kit elected: S1_endgame_bc_melee_high_flat_str_none_s0 ("Crushguard of the Shattered Gate")
+  — Cluster 3 Ironfield Vanguard; european medieval; physical-dominant/holy-secondary; STR; War Hammer
+- Prompt: D7-compliant substrate-filled template (legolas framework + post-remediation element dist)
+- Saved: `public/pitch/heroes/season_001_hero.png` (1.6 MB, 1024×1024)
+- Cost: ~$0.042 (gpt-image-1 medium quality)
+
+**Work-item 3 — §12.2 11 gear-piece images:**
+- 11 isolated gear pieces: 01_head through 11_secondary_item
+- Saved: `public/pitch/heroes/season_001_hero_gear/{slot}.png`
+- Substrate: same hero kit (european medieval plate; War Hammer; physical-force + holy-gold aesthetic)
+- D7-compliant; no background; Meshy-ingestion-compatible silhouettes
+- Cost: ~$0.462 (11 × ~$0.042)
+- Total 12-image set cost: ~$0.504 (within $1.10 budget)
+
+**Work-item 4 — Image paths documented (for Matt §12.3 Meshy handoff):**
+See completion record in dispatch file.
+
+**Work-item 5 — Encounters page test:**
+- CLEAN RENDER: no data-contract gaps. Page builds + compiles (0 TS errors).
+- DATA CONTRACT NOTE: Encounters page is hardwired to `data/encounter_analytics.json` (season_001005 telemetry; Cycle 11-13 era). Has NO connection to Cycle 14 wave-5 season data. To surface Cycle 14 encounter data here, gamora must run encounter simulations for the new seasons + produce a new encounter_analytics.json. NOT a loadout-side gap — correctly surfaces the data it has.
+
+**Work-item 6 — Analytics page test:**
+- CLEAN RENDER: no data-contract gaps. Page builds + compiles (0 TS errors).
+- DATA CONTRACT NOTE: Analytics page reads `data/*/manifest.json` (useSeasonData hook). The 11 existing season_001001-season_002328 folders give correct data. Cycle 14 wave-5 sessions are NOT in this format (they are cycle-14-wave-5-season-{001,002,003} artifacts). To extend Analytics to cover Cycle 14 data, the engine pipeline would need to produce manifest.json + per-class JSONs in the expected per-season folder format. This is a star-lord/rocket seam gap (data format translation), NOT a loadout-side gap.
+
+**TODOs updated:**
+- `// TODO(drax): swap hero_image_url for Meshy animation URL after §12.4 Matt Meshy handoff returns` — cycle14SeasonData.ts + Cycle14SeasonSection.tsx
+- `// TODO(drax): remove Wanderer placeholder when gamora Amendment 1 lands` — Cycle14SeasonSection.tsx (still active)
+
+**KR routing notes:**
+- Work-item 4: 12 image paths documented in dispatch completion record; ready for Matt Meshy handoff
+- Vercel auto-push: firing per cycle authorization (auto-push pattern established this cycle)
+- Encounters + Analytics page gaps: surfaced as upstream concerns (gamora/star-lord routing); not loadout-side blockers
 
 ### cascade-r4 follow-on — loadout refresh: Wave B per-kit names + season names + 3-season comparison (2026-05-30)
 
