@@ -1307,6 +1307,72 @@
       "triggered_passive": null
     }
   },
+  "chain_composition": {
+    "t4_chains": 2,
+    "supporting_chains": 1,
+    "total_chains": 3
+  },
+  "class_chain_count": 3,
+  "t4_scope": "chain_wide_parallel",
+  "t4_candidates": [
+    {
+      "candidate_id": "physical_t4_chain_2_TRADE_OFF_ELEMENT_CONVERSION_chain_wide_parallel",
+      "category_a_strategy": "TRADE_OFF",
+      "category_bc_strategy": "ELEMENT_CONVERSION",
+      "t4_category_bc": "C",
+      "is_class_wide_trade_off": false,
+      "secondary_element": null,
+      "magnitude_tier": null,
+      "magnitude_midpoint": null,
+      "parallel_chain_mode": "parallel",
+      "target_chain_id": "t4_chain_1",
+      "resolve_score": 72.0,
+      "create_score": 62.0,
+      "net_synergy_score": 10.0,
+      "synergy_eligible": true,
+      "retries_used": 0,
+      "pattern_9_warn": false,
+      "pattern_10_warn": false,
+      "is_active": true,
+      "separability_pass": true,
+      "category_a_params": {},
+      "category_bc_params": {},
+      "t4_scope": "chain_wide_parallel",
+      "scope_downscale_factor": null,
+      "scope_prior_weight": 0.3,
+      "scope_weighted_score": 15.6,
+      "scope_projection_data": {
+        "chain_wide_parallel": {
+          "weighted_score": 15.6,
+          "net_synergy_score": 12.0,
+          "prior_weight": 0.3,
+          "scope_amplification_9_warn": false,
+          "scope_amplification_10_warn": false
+        },
+        "character_wide": {
+          "weighted_score": 15.6,
+          "net_synergy_score": 12.0,
+          "prior_weight": 0.3,
+          "scope_amplification_9_warn": false,
+          "scope_amplification_10_warn": false
+        },
+        "chain_wide_own": {
+          "weighted_score": 0.0,
+          "net_synergy_score": 0.0,
+          "prior_weight": 0.4,
+          "scope_amplification_9_warn": false,
+          "scope_amplification_10_warn": false
+        }
+      }
+    }
+  ],
+  "primary_t4": {
+    "strategy": "DIRECT_DAMAGE_AMPLIFICATION",
+    "magnitude": 1.75,
+    "applied_to": "preferred_encounter_type",
+    "scope": "universal",
+    "discipline_anchor": "doc 47 § 4.6 NEW two-layer T4 architecture; Matt 2026-05-28 late ratification"
+  },
   "bc_target_cell": {
     "range": "melee",
     "tempo": "high",
