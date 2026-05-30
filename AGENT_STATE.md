@@ -1658,3 +1658,33 @@ Priority 3 (Phase-2 followup — DO NOT start in Phase-1 P1):
 - **main:** up to date with `origin/main` (371493d)
 - **Tags:** 21 local / 21 remote — fully synced (`git push origin --tags` complete)
 - **Untracked `data/telemetry.db`** — present in working tree; not committed and not in .gitignore. Flag for drax: confirm whether this is intentional (local-only data file) or whether it should be gitignored.
+
+---
+
+## Session: cascade-r4 follow-on — /loadout + /sample Cycle 14 extension (2026-05-29)
+
+**Commit:** `ea7795e` — "loadout: cascade-r4 v1-close — Cycle 14 kit identity browser on Loadout + Sample pages"
+**Tag:** `drax/v1.0-cascade-r4-v1-close-loadout-sample-pages-extension-1` (pushed to origin)
+**Push:** `764cbbe..ea7795e` pushed to `origin/main`
+**Live bundle:** `index-DTt_mltz.js` (confirmed via curl; 878 modules, 0 TS errors, 81 tests pass)
+
+### What landed
+
+New component `src/components/Cycle14/Cycle14LoadoutSection.tsx`:
+- Cycle 14 v1 kit identity browser rendered below existing content on `/loadout` and `/sample`
+- Tabbed 3-season view (Season 001 / 002 / 003) with faction cluster tiles + per-kit names + narratives
+- Reuses `FactionClusterTile` from /pitch — no new tile component needed
+- Explicit skill-tree deferred note + data gap note with star-lord routing target
+- TODO(drax) annotations in component + Loadout.tsx + Sample.tsx
+
+### Data-emission gap surfaced to KR
+
+**Gap:** Cycle 14 seasons have no `manifest.json` + `classes/*.json` in the loadout bundle.
+Skill tree integration for `/loadout` and `/sample` requires star-lord to emit per-season
+class artifacts. Until then, the Cycle14LoadoutSection placeholder stands.
+
+**KR routing target:** star-lord — emit `data/cycle-14-wave-5-season-{001,002,003}/manifest.json`
+and `data/cycle-14-wave-5-season-{001,002,003}/classes/*.json` for `useSeasonData` glob.
+
+**When it lands:** remove `Cycle14LoadoutSection` from both pages. The new seasons will
+auto-appear in the season picker via existing `useSeasonData` glob logic.
