@@ -8,6 +8,7 @@ import { Encounters } from './pages/Encounters';
 import { CourtBrowser } from './pages/CourtBrowser';
 import { Planning } from './pages/Planning';
 import { PlanningDoc } from './pages/PlanningDoc';
+import { EngineState } from './pages/EngineState';
 
 function Footer() {
   return (
@@ -53,6 +54,7 @@ export default function App() {
             <Route path="/planning/implementation-plan" element={<PlanningDoc src="/planning/implementation-plan.html" title="Implementation Plan" />} />
             <Route path="/planning/engine-analysis" element={<PlanningDoc src="/planning/engine-analysis.html" title="Engine Analysis" />} />
             <Route path="/planning/state-of-engine" element={<PlanningDoc src="/planning/state-of-engine.html" title="State of Engine" />} />
+            <Route path="/state-of-engine" element={<EngineState />} />
           </Routes>
         </main>
         <Footer />

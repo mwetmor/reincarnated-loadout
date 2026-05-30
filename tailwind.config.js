@@ -13,6 +13,15 @@ export default {
     'bg-blue-600',   // water (bg-blue-950   → 600)
     'bg-amber-600',  // earth (bg-amber-950  → 600)
     'bg-slate-500',  // physical (bg-slate-800 → 500)
+    // EngineStateFactionEmergence: border-left colors from ELEMENT_BORDER_LEFT lookup map
+    'border-l-red-800',    // fire
+    'border-l-cyan-800',   // water
+    'border-l-stone-700',  // earth
+    'border-l-slate-700',  // wind
+    'border-l-yellow-700', // lightning
+    'border-l-amber-700',  // holy
+    'border-l-purple-900', // shadow
+    'border-l-gray-700',   // physical (fallback)
   ],
   theme: {
     extend: {},
