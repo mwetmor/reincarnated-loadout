@@ -29,7 +29,27 @@ export function HeroOfEngineSpotlight({ hero }: HeroOfEngineSpotlightProps) {
         {/* Portrait — centered on mobile, left-anchored on desktop */}
         <div className="w-full md:w-auto md:flex-shrink-0 flex justify-center md:justify-start">
           <div className="w-[200px] sm:w-[240px] md:w-[280px]">
-            {hero.portraitPath ? (
+            {hero.modelPath ? (
+              // Animated 3D hero via Google <model-viewer> web component (Meshy GLB export)
+              // Falls back to static portrait if model fails to load (poster attribute)
+              <model-viewer
+                src={hero.modelPath}
+                alt={hero.className}
+                poster={hero.portraitPath ?? undefined}
+                auto-rotate
+                camera-controls
+                shadow-intensity="1"
+                exposure="1"
+                loading="eager"
+                reveal="auto"
+                style={{
+                  width: '100%',
+                  aspectRatio: '3/4',
+                  borderRadius: '0.5rem',
+                  backgroundColor: '#0a0a0a',
+                }}
+              />
+            ) : hero.portraitPath ? (
               <img
                 src={hero.portraitPath}
                 alt={hero.className}
