@@ -1056,8 +1056,149 @@ sudo ufw status verbose</code></pre>
 
 <!-- =================================================================== -->
 <section id="pc-proc">
-<h2 class="section-title"><span class="num">§ 9</span> PC procurement (specs + considerations)</h2>
-<p class="section-lede">PC procurement is the largest budget decision in the rollout. Specs need to support Unreal Engine 5 + Reincarnated-specific requirements (Lumen + Nanite + Niagara per doc 38 D1).</p>
+<h2 class="section-title"><span class="num">§ 9</span> PC configuration (actual specs in hand)</h2>
+<p class="section-lede">PC is <strong>already in hand</strong> per <code>SYSTEM_SPECS_FOR_PIPELINE.md</code> (Matt 2026-05-30 spec gathering). MSI MAG Codex R2; specs sit between budget FLOOR and TARGET tier. This section pivots from procurement to <strong>configuration</strong> — three immediate hardware actions + two upgrade recommendations + spec-vs-target analysis.</p>
+
+<div class="callout ok">
+<span class="callout-title">PC already operational</span>
+<p>Hostname: MSI MAG Codex R2 · LAN IP 192.168.1.133 · Windows 11 Home (Build 26200, 24H2). <strong>Unreal Engine 5.4 + 5.5 already installed via Epic Launcher.</strong> Visual Studio 2022 + Python 3.12 + Node.js + Git + .NET SDK 10 already installed. Toolchain complete; no engine install step needed. Major time-saver — § 10 Unreal install section becomes "verify + configure" rather than "fresh install."</p>
+</div>
+
+<h3 class="subsection">9.1 Actual PC profile</h3>
+<table>
+<tr><th>Component</th><th>Spec</th><th>vs. § 9.3 target tiers</th></tr>
+<tr><td>CPU</td><td>Intel i7-14700F (20C/28T; 8P+12E; LGA1700; no iGPU)</td><td>✅ EXCEEDS even CEILING tier (i9-13900K target); 14th gen +2 cores over recommendation</td></tr>
+<tr><td>RAM</td><td>32GB DDR5 (2×16GB Kingston Fury KF556C40, rated 5600 MT/s)</td><td>✅ MEETS FLOOR target (32GB DDR5); ⚠️ running at ~4000 MT/s due to XMP/EXPO disabled in BIOS</td></tr>
+<tr><td>GPU</td><td>RTX 4060 Ti 8GB GDDR6 (Ada Lovelace; supports Lumen + Nanite + DLSS 3 + hardware RT)</td><td>⚠️ BELOW TARGET tier (RTX 4070 recommended); 8GB VRAM is the limiting factor for dense scenes</td></tr>
+<tr><td>Storage</td><td>MSI M482 2TB NVMe (PCIe); 289GB free on C:</td><td>✅ EXCEEDS budget recommendation (1TB target); 289GB free is workable but tight long-term</td></tr>
+<tr><td>Motherboard</td><td>MSI PRO B760-VC WIFI 7 (MS-7D98); BIOS AMI B.H5 dated 2024-01-11</td><td>⚠️ BIOS predates Intel 13/14th-gen microcode fixes (0x129/0x12B mid-2024); update needed for stability</td></tr>
+<tr><td>Network</td><td>Wi-Fi 7 active (1.2 Gbps; 192.168.1.133); wired Ethernet present but disconnected</td><td>⚠️ Pi share access works on Wi-Fi but wired ethernet recommended for Mac↔Pi↔PC pipeline determinism</td></tr>
+<tr><td>OS</td><td>Windows 11 Home Build 26200 (24H2)</td><td>✅ Compatible</td></tr>
+<tr><td>Engine + toolchain</td><td>Unreal 5.4 + 5.5 + VS 2022 + .NET 10 + Python 3.12 + Node.js + Git</td><td>✅ Already installed; no install work needed; § 10 becomes verification work</td></tr>
+</table>
+
+<h3 class="subsection">9.2 Three immediate hardware actions (per Matt 2026-05-30 Claude PC spec report)</h3>
+
+<div class="callout warn">
+<span class="callout-title">Three actions before sustained Pi infrastructure work</span>
+<p>Per Claude's spec report § 5 priority order, three hardware-side actions land before Phase 1 Pi integration cycles for stability + performance + reliability:</p>
+</div>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Enable XMP / EXPO profile in BIOS</strong>
+<p>DDR5 modules rated 5600 MT/s but currently running ~4000 MT/s — XMP/EXPO disabled. Reboot into BIOS (DEL key during POST on MSI); navigate to OC / Memory section; enable XMP Profile 1 (or EXPO if listed). Reclaim DDR5-5600 speed.</p>
+<p><strong>Impact:</strong> Free performance for Unreal asset streaming + cook performance + iteration loop responsiveness. Matters more when 64GB RAM upgrade lands.</p>
+<p><strong>Time:</strong> ~10 min including reboot verification</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Update motherboard BIOS</strong>
+<p>Current BIOS dates to Jan 2024; predates Intel's 13th/14th-gen voltage instability microcode fixes (0x129 / 0x12B from mid-to-late 2024). i7-14700F is exactly the chip family affected. Sustained heavy compiles + Unreal cooks + lightmap bakes are the workloads that exposed the defect originally.</p>
+<p><strong>Process:</strong> Download latest BIOS for MSI PRO B760-VC WIFI 7 from MSI support site; flash via USB drive per MSI's documented procedure; verify post-flash with HWiNFO or similar to confirm microcode revision.</p>
+<p><strong>Time:</strong> ~30-45 min including download + flash + verification</p>
+<p><strong>Risk:</strong> BIOS flash carries small bricking risk; backup current settings; ensure stable power; don't interrupt the flash process. Read MSI's specific guidance carefully.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Connect wired Ethernet from PC to router</strong>
+<p>Wi-Fi 7 at 1.2 Gbps is fast but variable in latency. For the Mac↔Pi↔PC pipeline (continuous JSON + 3D model transfers via Pi shared folder), wired ethernet is more deterministic. The PC's onboard NIC is present but disconnected (showing link-local 169.254.x.x address).</p>
+<p><strong>Process:</strong> Run ethernet cable from PC to router; Windows auto-configures via DHCP; verify with <code>ipconfig</code> that the ethernet interface gets a 192.168.1.x address; optionally disable Wi-Fi to force ethernet preference.</p>
+<p><strong>Time:</strong> ~5-15 min depending on cable routing distance</p>
+</div>
+</div>
+</div>
+
+<h3 class="subsection">9.3 Two upgrade recommendations (not pre-production blockers)</h3>
+
+<table>
+<tr><th>Upgrade</th><th>Cost</th><th>Impact</th><th>Timing</th></tr>
+<tr><td><strong>64GB RAM</strong> (add 2×16GB DDR5-5600 in DIMMA1 + DIMMB1)</td><td>$80-150</td><td>HIGH — removes the practical RAM ceiling for Unreal + ingest tooling + browser + IDE simultaneous; reduces swap pressure; smooths iteration loop</td><td>When budget permits; two slots free makes this cheap + reversible</td></tr>
+<tr><td><strong>Secondary NVMe SSD</strong> (1-2TB; second M.2 slot if available)</td><td>$80-150</td><td>MEDIUM — separates project data from OS; protects 289GB-free runway; faster cook + DDC operations</td><td>Triggered when C: drive crosses 75% full OR Unreal DDC growth becomes concerning</td></tr>
+</table>
+
+<h3 class="subsection">9.4 VRAM management for Reincarnated workflow</h3>
+<p>The 4060 Ti's 8GB VRAM is the architectural constraint. For Reincarnated's iteration loop specifically:</p>
+
+<table>
+<tr><th>Workflow</th><th>VRAM impact</th><th>Mitigation</th></tr>
+<tr><td>Single character loaded in Unreal editor (typical iteration)</td><td>Low; well within 8GB</td><td>None needed</td></tr>
+<tr><td>Multiple characters loaded for comparison (e.g., A/B test surface from earlier session)</td><td>Moderate; may approach 6-7GB</td><td>Target 1080p; rely on DLSS Quality mode; close other engines (Roblox Studio observed taking VRAM at scan time)</td></tr>
+<tr><td>Full season's shipped_worthy roster loaded simultaneously (~22 characters)</td><td>HIGH; may exceed 8GB</td><td>Texture pool tuning (<code>r.Streaming.PoolSize</code>); load characters in batches; render at 1080p with DLSS; reduce texture mip bias</td></tr>
+<tr><td>Form library across multiple seasons (Earth Self accumulated)</td><td>VERY HIGH</td><td>Stream-load only; don't materialize all forms in scene; level-of-detail (LOD) discipline; long-term: GPU upgrade to 16GB VRAM tier (RTX 4060 Ti 16GB / RTX 4070 Ti Super)</td></tr>
+<tr><td>Playtest at 1440p / 4K</td><td>CONSTRAINED</td><td>Lighter scenes only; aggressive DLSS Performance mode; reduce effects budget; target 1080p as primary playtest resolution</td></tr>
+</table>
+
+<h3 class="subsection">9.5 Unreal Engine 5.4 vs 5.5 — which version for Reincarnated?</h3>
+<p>Both 5.4 and 5.5 installed. Per doc 38 D1 (Unreal Engine + PC-first launch decision 2026-05-23), no specific UE version locked. Recommendation:</p>
+
+<table>
+<tr><th>Version</th><th>Pros</th><th>Cons</th><th>Recommendation</th></tr>
+<tr><td>UE 5.4</td><td>Stable; mature documentation; plugin compatibility solid; Lumen + Nanite production-ready</td><td>Slightly older feature set</td><td>Use for production Reincarnated work</td></tr>
+<tr><td>UE 5.5</td><td>Latest features; potential perf improvements</td><td>More recent release; some plugins may lag in compatibility</td><td>Use for experimentation; promote to production once 5.5 plugin ecosystem catches up</td></tr>
+</table>
+<p>Default to UE 5.4 for project work; reserve UE 5.5 for testing latest features without disrupting production iteration.</p>
+
+<h3 class="subsection">9.6 Original procurement spec discussion (preserved for reference)</h3>
+<p>The following tables were the original procurement specs authored before PC was confirmed in hand. Preserved for reference; superseded by actual PC profile in § 9.1.</p>
+
+<details>
+<summary style="cursor: pointer; padding: 0.5rem 0; font-weight: 600; color: var(--muted);">Click to expand original procurement spec discussion</summary>
+
+<h4 class="subsubsection">Unreal Engine 5 spec floors (Epic published)</h4>
+<table>
+<tr><th>Component</th><th>UE5 minimum</th><th>UE5 recommended</th></tr>
+<tr><td>OS</td><td>Windows 10 64-bit</td><td>Windows 10/11 64-bit (latest patches)</td></tr>
+<tr><td>CPU</td><td>Quad-core Intel/AMD, 2.5 GHz or faster</td><td>8+ core modern (Intel 12th gen / Ryzen 5000 series or newer)</td></tr>
+<tr><td>RAM</td><td>8GB (will struggle)</td><td>32GB+ for complex projects</td></tr>
+<tr><td>GPU</td><td>DirectX 12 compatible (e.g., GTX 1080)</td><td>RTX 3060 minimum; RTX 4070+ recommended for Lumen/Nanite efficiency</td></tr>
+<tr><td>Storage</td><td>SSD with 50GB free</td><td>NVMe SSD 1TB+ (UE5 install + per-project content)</td></tr>
+</table>
+
+<h4 class="subsubsection">Reincarnated-specific spec recommendations (pre-procurement target)</h4>
+<table>
+<tr><th>Component</th><th>Reincarnated-target spec</th></tr>
+<tr><td>CPU</td><td>8+ core modern (Intel i7-13700K / Ryzen 7 7700X or better) — <em>actual: i7-14700F EXCEEDS this</em></td></tr>
+<tr><td>RAM</td><td>32GB DDR5 minimum; 64GB if budget permits — <em>actual: 32GB DDR5 MEETS minimum; 64GB upgrade recommended</em></td></tr>
+<tr><td>GPU</td><td>RTX 4070 / 4070 Ti minimum; RTX 4080+ for headroom — <em>actual: RTX 4060 Ti BELOW target; viable at 1080p with DLSS</em></td></tr>
+<tr><td>Storage</td><td>1TB NVMe primary + 2TB SATA SSD secondary — <em>actual: 2TB NVMe EXCEEDS recommendation; secondary drive future upgrade</em></td></tr>
+</table>
+
+<h4 class="subsubsection">Budget tier recommendations (pre-procurement)</h4>
+<table>
+<tr><th>Tier</th><th>Budget</th><th>Spec target</th><th>Notes</th></tr>
+<tr><td>Floor</td><td>$1,200-1,500</td><td>i5-13400 + RTX 4060 + 16GB DDR5 + 1TB NVMe</td><td>Workable but Lumen will lag</td></tr>
+<tr><td>Target</td><td>$1,800-2,200</td><td>i7-13700K + RTX 4070 + 32GB DDR5 + 1TB NVMe</td><td>Smooth Lumen + Nanite</td></tr>
+<tr><td>Ceiling</td><td>$2,500-3,000+</td><td>i9-13900K + RTX 4080 + 64GB DDR5 + 2TB NVMe</td><td>Future-proof</td></tr>
+</table>
+
+<p><strong>Actual PC sits between Floor and Target tier:</strong> CPU exceeds Ceiling (i7-14700F > i9-13900K in core count + generation); RAM meets Floor (32GB DDR5); GPU below Target (4060 Ti vs 4070); Storage exceeds Target (2TB NVMe vs 1TB). Overall: capable 1080p UE5 integration node; GPU is the primary upgrade lever long-term.</p>
+
+</details>
+
+<h3 class="subsection">9.7 Implications for Pi rollout sequencing</h3>
+
+<div class="callout ok">
+<span class="callout-title">PC-in-hand validates fire-now decision</span>
+<p>Per Matt 2026-05-30 election #2 LOCKED (Phase 1 fire-now): PC procurement was originally election #5 LOCKED as "concurrent with Phase 1." With PC already in hand, the concurrency framing tightens — PC is ready waiting for Pi Phase 1 to land. Phase 2 HTTP API readiness depends only on:</p>
+<ul>
+<li>Pi Phase 1 Samba operational (in-flight per drax + KR coordination)</li>
+<li>Three immediate PC hardware actions complete (XMP + BIOS + ethernet — Matt + son direct execution)</li>
+<li>star-lord FastAPI service authoring (Phase 2 dispatch when triggered)</li>
+<li>Drax Unreal-side HTTP client integration (VaRest plugin install + endpoint wiring)</li>
+</ul>
+<p>The PC's LAN address (192.168.1.133) gives the rollout a natural static-IP candidate if .local mDNS proves flaky in practice (per election #4 .local-first decision with static-IP fallback).</p>
+</div>
+
+</section>
 
 <h3 class="subsection">9.1 Unreal Engine 5 spec floors (Epic published)</h3>
 <table>
@@ -1108,20 +1249,19 @@ sudo ufw status verbose</code></pre>
 
 <!-- =================================================================== -->
 <section id="unreal">
-<h2 class="section-title"><span class="num">§ 10</span> Unreal Engine installation + asset pipeline</h2>
-<p class="section-lede">PC arrival triggers Unreal Engine installation + asset pipeline setup. The Meshy → Control Rig → Unreal pipeline per doc 38 D1 takes specific shape on the PC.</p>
+<h2 class="section-title"><span class="num">§ 10</span> Unreal Engine configuration + asset pipeline</h2>
+<p class="section-lede">PC has Unreal Engine 5.4 + 5.5 ALREADY INSTALLED per § 9.1 actual PC profile. This section pivots from install to <strong>configuration + Reincarnated-specific setup + Meshy pipeline integration.</strong></p>
 
-<h3 class="subsection">10.1 Epic Games Launcher install (PC-side)</h3>
-<p>Reinstall Epic Games Launcher on PC (uninstalled from Mac 2026-05-30). Download from <code>https://www.epicgames.com/store/en-US/download</code>. Standard Windows installer.</p>
+<div class="callout ok">
+<span class="callout-title">Unreal already installed — skip install steps</span>
+<p>Per <code>SYSTEM_SPECS_FOR_PIPELINE.md</code> (Matt 2026-05-30): Epic Games Launcher, UE 5.4, UE 5.5, Visual Studio 2022, .NET SDK 10, Python 3.12, Node.js, Git — all installed. Sections 10.1 and 10.2 below preserved for historical reference; primary work is § 10.3 onward (plugin install + pipeline integration).</p>
+</div>
 
-<h3 class="subsection">10.2 Unreal Engine 5 install</h3>
-<ol>
-<li>Sign in to Epic Games Launcher with Epic account</li>
-<li>Navigate to Unreal Engine tab → Library</li>
-<li>Click + button to add engine version → choose UE 5.4 or latest stable (verify per doc 38 D1 target)</li>
-<li>Choose install location — recommend secondary SSD (UE5 install is ~50-80GB + content libraries can grow to 200GB+)</li>
-<li>Install runs 30-60 minutes depending on bandwidth</li>
-</ol>
+<h3 class="subsection">10.1 Epic Games Launcher (historical — already installed)</h3>
+<p><em>Status: COMPLETE</em>. Epic Games Launcher reinstalled on PC (uninstalled from Mac 2026-05-30).</p>
+
+<h3 class="subsection">10.2 Unreal Engine 5 install (historical — already installed)</h3>
+<p><em>Status: COMPLETE</em>. UE 5.4 + UE 5.5 both installed via Epic Launcher per § 9.5 version recommendation (default to 5.4 for production work; 5.5 for experimentation).</p>
 
 <h3 class="subsection">10.3 Marketplace plugins needed</h3>
 <table>
