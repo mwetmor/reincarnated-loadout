@@ -20,8 +20,6 @@ import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignM
 import { DesignModePanel } from '../components/DesignMode/DesignModePanel';
 // Tier 3 — strategy badge (engine generation run, 2026-05-25)
 import { StrategyBadge } from '../components/ui/StrategyBadge';
-// Cycle 14 v1 kit identity browser (cascade-r4 v1-close; star-lord skill artifact deferred)
-import { Cycle14LoadoutSection } from '../components/Cycle14/Cycle14LoadoutSection';
 // Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
 // Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
 // TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
@@ -400,6 +398,11 @@ export function Loadout() {
     season.manifest.placeholder_skill_content === true ||
     (classData.skills.length > 0 && classData.skills[0].phase5_is_placeholder === true);
 
+  // Cycle 14 adapter seasons: manifest_version "cycle14-adapter-v1" identifies drax-side bridge.
+  // These seasons have engine-emission-pending placeholders rather than Cycle-13-style Phase 5 placeholders.
+  // TODO(star-lord): when manifest.json + classes/*.json emitted, this check becomes unreachable.
+  const isCycle14AdapterSeason = season.manifest.manifest_version === 'cycle14-adapter-v1';
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
       {/* Season picker */}
@@ -424,9 +427,35 @@ export function Loadout() {
       )}
 
       {/* Placeholder skill content indicator (MIGRATION.md § v2.2 + § v2.3).
-          Visible when manifest.placeholder_skill_content === true (cycle-13 and any future
-          season with Phase 5 cohesion pending). All 16 cycle-13 classes qualify. */}
-      {isPlaceholderSeason && (
+          Visible when manifest.placeholder_skill_content === true.
+          Two variants:
+          - Cycle 14 adapter seasons: engine-emission pending (star-lord Cycle 15+ pipeline)
+          - Cycle 13 seasons: Phase 5 cohesion coalescence pending */}
+      {isPlaceholderSeason && isCycle14AdapterSeason && (
+        <div
+          className="rounded-lg border border-violet-800/60 bg-violet-950/20 px-4 py-3 flex items-start gap-3"
+          data-testid="placeholder-season-indicator"
+        >
+          <span className="text-violet-500 text-base flex-shrink-0 mt-0.5">◌</span>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-violet-300">
+              Cycle 14 Wave 5 — engine-emission pending
+              {/* TODO(star-lord): remove this indicator when manifest.json + classes/*.json
+                  emitted for this season. Season will then load via useSeasonData glob. */}
+            </p>
+            <p className="text-xs text-violet-400/70 mt-1 leading-relaxed">
+              Kit identities and faction clusters are live (Wave A/B LLM output). Skill trees,
+              balance metadata, and gear pool require star-lord to emit per-season class artifacts
+              (Cycle 15+ pipeline). The class picker shows all {season.classes.filter(c => !c.is_retired).length} kits
+              from this season; skill slots show substrate-derived placeholders.
+            </p>
+            <p className="text-[10px] font-mono text-violet-600/60 mt-1.5">
+              Adapter: drax/cycle14Adapter.ts · Source: Wave 5 faction clusters + Wave B kit identities
+            </p>
+          </div>
+        </div>
+      )}
+      {isPlaceholderSeason && !isCycle14AdapterSeason && (
         <div
           className="rounded-lg border border-amber-800/60 bg-amber-950/30 px-4 py-3 flex items-start gap-3"
           data-testid="placeholder-season-indicator"
@@ -504,12 +533,6 @@ export function Loadout() {
         </p>
       </div>
 
-      {/* Cycle 14 v1 — kit identity browser (cascade-r4 v1-close).
-          Skill tree integration deferred: Cycle 14 seasons have no manifest.json + classes/
-          in the loadout bundle. FactionCluster + WaveB data surfaces available identity info.
-          TODO(drax): replace Cycle14LoadoutSection with full skill-tree integration when
-                      star-lord emits manifest.json + classes/ per Cycle 14 season. */}
-      <Cycle14LoadoutSection />
     </div>
   );
 }

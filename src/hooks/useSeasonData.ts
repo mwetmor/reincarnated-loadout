@@ -1,5 +1,10 @@
 import { useMemo } from 'react';
 import type { ClassData, GearPoolEntry, SeasonData, SeasonManifest } from '../data/types';
+// Cycle 14 adapter: transforms Wave 5 faction cluster + kit identity data → SeasonData shape.
+// TODO(star-lord): remove CYCLE14_SEASON_DATA import when star-lord emits manifest.json + classes/*.json
+//                  for cycle-14-wave-5-season-{001,002,003} (Cycle 15+ pipeline). At that point
+//                  the seasons will appear via the existing glob patterns automatically.
+import { CYCLE14_SEASON_DATA } from '../data/cycle14Adapter';
 
 const manifestModules = import.meta.glob<{ default: SeasonManifest }>(
   '../../data/*/manifest.json',
@@ -58,6 +63,15 @@ function buildSeasonMap(): Map<string, SeasonData> {
 }
 
 const seasonMap = buildSeasonMap();
+
+// Inject Cycle 14 adapter seasons into the season map.
+// These are bridge entries: drax-side adapter output, not engine-emitted manifest+classes artifacts.
+// TODO(star-lord): remove injection when engine emits manifest.json + classes/ for Cycle 14 seasons.
+for (const cycle14Season of CYCLE14_SEASON_DATA) {
+  if (!seasonMap.has(cycle14Season.seasonId)) {
+    seasonMap.set(cycle14Season.seasonId, cycle14Season);
+  }
+}
 
 export function useSeasonData() {
   return useMemo(() => {
