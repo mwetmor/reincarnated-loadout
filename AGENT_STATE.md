@@ -1,10 +1,10 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-30
-**Last commit:** 51c6e83 — drax(loadout): cycle-14-v1-1-w4 — wire chain×tier T4 architecture on /loadout + /sample
-**Last tag:** drax/v1.1-cycle-14-v1-1-w4-ui-wiring-1
+**Last commit:** f5d670d — drax(loadout): engine-state dashboard Phase α — /state-of-engine dynamic route
+**Last tag:** drax/v1.4-engine-state-dashboard-phase-alpha-1
 **Branch:** main
-**Hive-mind mode:** ACTIVE (W4 closed; wind-down pending)
+**Hive-mind mode:** N/A (Mode B Pattern B sustained dispatch)
 
 ## Session summary
 
@@ -1878,3 +1878,59 @@ Per MIGRATION.md §v1.67:
 - Yomi gear_pool fallback in useSeasonData.ts — remove when engine ships gear_pool.json for new seasons
 - placeholder banner on /loadout + /sample — remove `isPlaceholderSeason` banner when Cycle 15+ full
   skill gen runs for Cycle 14 seasons (placeholder_skill_content will be false or absent)
+
+---
+
+### engine-state-dashboard-phase-alpha (2026-05-30)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-30-drax-engine-state-dashboard-phase-alpha.md` — completion record appended
+**Authority:** Matt 2026-05-30 verbatim "draft the work for KR to begin sending drax out for phase α now." via gandalf routing
+**Build:** 1049 modules, 0 TS errors. Tests: 81/81 PASS
+
+**Disc #11 empirical inspection (pre-execution):**
+- `season_summary.json`: flat dict, 32 keys; season-001 has 4 clusters (not 3 as in gandalf HTML scaffolding for season-003); wave_s fields present
+- `phase4_archive_insertion.json`: wrapped dict {season_id, phase, accepted_count, ..., insertion_results[]}; each result has disposition/quality_vector/mg1-4 fields
+- `phase5_faction_clusters.json`: {metadata, clusters[]}; metadata.cluster_count absent in season-001 (remediation rewrite); cluster has 23 keys including faction_label_canonical, element_distribution
+- `phase5_faction_relationships.json`: {metadata, relationships[]}; ALL 6 items are empty {} — data unused in Phase α rendering
+- `wave_b_identities.json`: {season_id, kit_count, kits[]}; kit has parent_cluster_id (number), kit_name_canonical, kit_identity_narrative
+- `phase7_kit_verdicts.json`: pre-extracted from SQLite (no wasm-sqlite); verdict string is SHIPPED-WORTHY (all-caps hyphenated); 281 rows season-001 (multi-attempt), 33 rows each for season-002/003
+- `phase2_kit_candidates.json`: {metadata, kits[]}; 2.7 MB; kit uses character_id (not kit_id) as primary key — BC cell lookup required for BackwardTrace matching
+
+**Design decisions made:**
+- Mount-point: Option A — new `/state-of-engine` route; /planning/state-of-engine HTML kept as historical reference
+- SQLite: no wasm-sqlite; pre-extracted phase7_kit_verdicts.json per season from kit_archive.db (phase7_kit_verdict_log table, evaluation_attempt=0 filter)
+- Data path: public/engine-state/season-{001,002,003}/ — 7 JSON files each, fetched at runtime
+- Lazy-load: phase2_kit_candidates.json fetched only when BackwardTrace renders (separate useEffect triggered by selected kit)
+- Tailwind: static ELEMENT_BORDER_LEFT record map for faction left-border colors (prevents purge of dynamic border-l-* classes); 8 colors added to safelist
+
+**New files:**
+- `src/data/engineStateTypes.ts` — all 7 data source types + SeasonId + EngineSeasonData
+- `src/hooks/useEngineStateData.ts` — parallel-fetch hook for 5 JSON files per season; refresh via rev counter
+- `src/pages/EngineState.tsx` — dashboard page; season picker (3 seasons); refresh button; sticky control bar
+- `src/components/EngineState/EngineStatePageHeader.tsx` — season name + AI-tell compliance + thematic tags
+- `src/components/EngineState/EngineStateKpiGrid.tsx` — 6 KPI tiles (Phase 2/4/5/7 counts + LLM cost + compliance)
+- `src/components/EngineState/EngineStatePipelineFlow.tsx` — 9-stage CSS Grid pipeline; phases 6+8 deferred
+- `src/components/EngineState/EngineStatePhaseDeepDive.tsx` — 9 phase cards (0–8); deferred phases styled at 60% opacity
+- `src/components/EngineState/EngineStateFactionEmergence.tsx` — N clusters per season; element distribution pills; phase7 gate status badges
+- `src/components/EngineState/EngineStateBackwardTrace.tsx` — 8-step journey; shipped kit drop-down; Phase 2 data lazy-loaded; highest-cohesion kit default
+- `src/components/EngineState/EngineStateObservations.tsx` — dynamic callouts per season data (defensive cohort 0% ship rate, substrate-led discipline)
+
+**Public data files added:**
+- `public/engine-state/season-{001,002,003}/` — season_summary.json, phase4_archive_insertion.json, phase5_faction_clusters.json, phase5_faction_relationships.json, wave_b_identities.json, phase2_kit_candidates.json, phase7_kit_verdicts.json
+
+**SQLite extraction note:**
+- `phase7_kit_verdicts.json` pre-extracted from `kit_archive.db` (phase7_kit_verdict_log table) at session time
+- Files also written to collaboration repo: `agentic_orchestration/cycle-14-wave-5-season-{001,002,003}/phase7_kit_verdicts.json`
+- TODO(drax): when star-lord ships phase7_kit_verdicts.json as a first-class engine emit, replace these manually-extracted files and update public/ copies
+
+**No-regression confirmation:** all existing routes /loadout, /sample, /analytics, /encounters, /pitch, /planning, /planning/state-of-engine, /planning/implementation-plan, /planning/engine-analysis return 200 on production
+
+**Commit:** `f5d670d`
+**Tag:** `drax/v1.4-engine-state-dashboard-phase-alpha-1`
+**Vercel preview:** READY — `https://reincarnated-loadout-iu6apzjtf-matthew-wetmore-s-projects.vercel.app`
+**Vercel Production deploy:** READY — `https://reincarnated-loadout.vercel.app` (aliased; deployment id `dpl_3aP7NxRDH5Htmp16QWF76oK9HDVb`)
+**Push status:** auto-push per established 2026-05-30 session pattern; pending push after collab repo updates
+
+### TODO(drax) added this session
+
+- `phase7_kit_verdicts.json` manual extraction — remove when star-lord ships this as first-class engine emit
