@@ -20,6 +20,8 @@ import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignM
 import { DesignModePanel } from '../components/DesignMode/DesignModePanel';
 // Tier 3 — strategy badge (engine generation run, 2026-05-25)
 import { StrategyBadge } from '../components/ui/StrategyBadge';
+// Cycle 14 v1.68 — gear representative display (MIGRATION.md §v1.68, drax W2 2026-05-30)
+import { Cycle14GearDisplay } from '../components/Cycle14/Cycle14GearDisplay';
 // Gear pool is now sourced per-season from useSeasonData (via season.gearPool).
 // Hardcoded Yomi import removed — see useSeasonData.ts for per-season resolution logic.
 // TODO(drax): remove this comment block when all seasons ship their own gear_pool.json.
@@ -394,9 +396,20 @@ export function Loadout() {
   // Placeholder indicator: detect seasons with placeholder skill content.
   // Detection per MIGRATION.md § v2.2: manifest.placeholder_skill_content === true
   // OR (if present) skills[0].phase5_is_placeholder === true.
+  // §v1.68: Cycle 14 wave-5 seasons emit placeholder_skill_content: false (real skills).
+  // Banner removes for Loadout tab when false — skills are real substrate-derived content.
   const isPlaceholderSeason =
     season.manifest.placeholder_skill_content === true ||
     (classData.skills.length > 0 && classData.skills[0].phase5_is_placeholder === true);
+
+  // Rank-0 / investment note: display when skills are real but investment commits not yet landed.
+  // Derived from cycle_14_refresh_pending flag (present and true on Cycle 14 v1 seasons).
+  // Per Amendment 2: investment_state field NOT emitted; rank-0 is the Loadout tab default mode.
+  // Per doc 49 § 1.1.1: every node starts at zero points at startup.
+  const showRank0Note = !isPlaceholderSeason && season.manifest.cycle_14_refresh_pending === true;
+
+  // Gear source: use gear_representative (§v1.68) when available; fall back to synthesized pool.
+  const gearRepresentative = classData.gear_representative ?? null;
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
@@ -423,7 +436,8 @@ export function Loadout() {
 
       {/* Placeholder skill content indicator (MIGRATION.md § v2.2 + § v2.3 + § v1.67).
           Visible when manifest.placeholder_skill_content === true.
-          Applies to Cycle 13 (Phase 5 pending) and Cycle 14 Wave 5 (skill gen pending Cycle 15+). */}
+          Applies to Cycle 13 (Phase 5 pending). NOT shown for Cycle 14 wave-5 seasons
+          (placeholder_skill_content: false per §v1.68 — skills are real substrate-derived). */}
       {isPlaceholderSeason && (
         <div
           className="rounded-lg border border-amber-800/60 bg-amber-950/30 px-4 py-3 flex items-start gap-3"
@@ -438,6 +452,28 @@ export function Loadout() {
               Kit identities, faction clusters, and balance metadata (win rates, quality vectors,
               cohort) are real engine output. Skill names and descriptions are substrate-derived
               placeholders — full skill tree generation requires a Cycle 15+ engine run.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Rank-0 uninvested note — shown for Cycle 14 v1 seasons with real skills.
+          cycle_14_refresh_pending: true signals investment commits not yet landed (Cycle 15+).
+          Per doc 49 § 1.1.1: all nodes start at rank-0 (zero SP); this is the correct
+          Loadout-tab mode per Amendment 2 (investment_state field not emitted by engine). */}
+      {showRank0Note && (
+        <div
+          className="rounded-lg border border-violet-800/40 bg-violet-950/20 px-4 py-3 flex items-start gap-3"
+          data-testid="rank-zero-note"
+        >
+          <span className="text-violet-400 text-base flex-shrink-0 mt-0.5">◈</span>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-violet-300">
+              12 real skills — rank-0 uninvested
+            </p>
+            <p className="text-xs text-violet-400/80 mt-1 leading-relaxed">
+              Skills are substrate-derived engine output. All nodes start at rank 0 — invest SP
+              to explore the skill tree. Investment commits and full gear catalog land Cycle 15+.
             </p>
           </div>
         </div>
@@ -484,7 +520,17 @@ export function Loadout() {
         remainingSP={build.remainingSP}
       />
 
-      <GearGrid mode="sample" synthesized={synthesizedGear} />
+      {/* Gear: use gear_representative (§v1.68) for Cycle 14 v1 seasons;
+          fall back to synthesized GearGrid for legacy seasons.
+          Amendment 1 render path: Cycle14GearDisplay consumes gear_representative object —
+          NOT WeaponSlot (incompatible schema) and NOT Cycle13GearDisplay (wrong array shape). */}
+      {gearRepresentative ? (
+        <section>
+          <Cycle14GearDisplay gear={gearRepresentative} />
+        </section>
+      ) : (
+        <GearGrid mode="sample" synthesized={synthesizedGear} />
+      )}
       <SpiritGuide />
 
       <div className="flex items-center justify-between gap-4 pt-2 border-t border-gray-800">

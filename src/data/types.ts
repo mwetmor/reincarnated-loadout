@@ -113,6 +113,11 @@ export interface ClassData {
 
   // Engine version discriminator — "v2.0" on new-engine classes, absent/null on legacy.
   engine_version?: string | null;
+
+  // Cycle 14 v1.68 — 11-slot gear representative (MIGRATION.md §v1.68).
+  // One gear item per slot at legendary_t1 rarity. Null on all pre-v1.68 seasons.
+  // Consumer: Cycle14GearDisplay. NOT compatible with Cycle13GearDisplay or WeaponSlot.
+  gear_representative?: GearRepresentative | null;
 }
 
 export interface SeasonAnchor {
@@ -367,4 +372,67 @@ export interface T4AlterationOutput {
   // Each sub-dict contains numeric/boolean sim params. Null on pre-Phase-5 classes.
   // Design-mode only: surfaced in T4AlterationPanel "Mechanical Effects" sub-section.
   gamora_combatant_fields?: Record<string, Record<string, string | number | boolean>> | null;
+}
+
+// ---- Cycle 14 v1.68 schema extensions — gear_representative (MIGRATION.md §v1.68) ----
+// New top-level field on ClassData. One gear item per slot (11 slots) at legendary_t1 rarity.
+// Distinct from Cycle13GearInstance: uses `rarity` (not `rarity_tier`), includes `substrate_binding`,
+// no `character_id`/`season_id`/`rarity_tier_order`. Null on all pre-v1.68 seasons.
+// Consumer: Cycle14GearDisplay component. Do NOT pass to Cycle13GearDisplay or WeaponSlot.
+
+// Reuse partition/capability modifier shapes from cycle13Types (same contract per MIGRATION.md §v1.68).
+import type {
+  PartitionModifier,
+  CapabilityModifier,
+  T4Annotation,
+  SetBonus,
+  TriggeredPassive,
+} from './cycle13Types';
+
+export interface GearRepresentativeSubstrateBinding {
+  substrate_weapon_id: number | string;
+  substrate_canonical_name: string;
+  base_physical_damage: number;
+  spell_damage_modifier: number;
+  element_affinity_modifiers: Record<string, number>;
+  to_skill_level_modifiers: Record<string, number>;
+  attribute_requirement: string;
+  weapon_type_family: string;
+  cultural_lineage_canonical: string;
+  historical_period_canonical: string;
+  register_canonical: string;
+  cultural_lineage_confidence: number;
+  named_mythological_match: string | null;
+  _sc6b_sources?: Record<string, string>;
+}
+
+// One gear item emitted by the engine at gear_representative[slot].
+// Shares modifier shape with Cycle13GearInstance but uses `rarity` (not `rarity_tier`).
+export interface GearRepresentativeItem {
+  gear_instance_id: string;
+  slot: string;
+  rarity: string;                               // e.g. "legendary_t1"
+  partition_modifiers: PartitionModifier[];
+  capability_modifiers: CapabilityModifier[];
+  t4_annotation: T4Annotation | null;
+  set_bonus: SetBonus | null;
+  set_bonus_rank: number;
+  is_unique: 0 | 1;
+  triggered_passive: TriggeredPassive | null;
+  substrate_binding?: GearRepresentativeSubstrateBinding | null;  // present on main_weapon slot
+}
+
+// 11-slot gear representative object. Null for pre-v1.68 seasons.
+export interface GearRepresentative {
+  main_weapon: GearRepresentativeItem | null;
+  secondary_item: GearRepresentativeItem | null;
+  head: GearRepresentativeItem | null;
+  chest: GearRepresentativeItem | null;
+  hands: GearRepresentativeItem | null;
+  feet: GearRepresentativeItem | null;
+  legs: GearRepresentativeItem | null;
+  amulet: GearRepresentativeItem | null;
+  ring_1: GearRepresentativeItem | null;
+  ring_2: GearRepresentativeItem | null;
+  belt: GearRepresentativeItem | null;
 }
