@@ -1,7 +1,7 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-30
-**Last commit:** (pending commit in this session)
+**Last commit:** c268650 — loadout: cascade-r4 follow-on — Wave B per-kit names + season names + 3-season comparison
 **Last tag:** drax/v1.0-cascade-r4-followon-loadout-refresh-1 (to be applied)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
