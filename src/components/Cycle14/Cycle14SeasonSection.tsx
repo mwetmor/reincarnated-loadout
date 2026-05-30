@@ -66,10 +66,6 @@ export function Cycle14SeasonSection({ season, displayIndex }: Props) {
             ))}
           </div>
         )}
-        {/* NOTE: season names have storm/lightning bias due to element_distribution
-            aggregator drift (Matt 2026-05-29); corrected names land post-gandalf-remediation
-            + rocket-re-fire. NOT v1 blocking — surface current names now, iterate later.
-            TODO(drax): remove this note when corrected season names land. */}
         <p className="text-sm text-gray-500 max-w-prose">
           Substrate-led generation. {integerClusters.length} faction{integerClusters.length !== 1 ? 's' : ''} emerged
           from Phase 5 cohesion coalescence. No designer-imposed archetypes — identity from the substrate.
@@ -168,8 +164,8 @@ export function Cycle14SeasonSection({ season, displayIndex }: Props) {
             Seasonal hero image
           </p>
           <p className="text-[10px] text-gray-700">
-            Pending § 12.2 image generation (hero elected: Cluster 3 Stormcallers of the Pale Keep, season_001).
-            {/* TODO(drax): wire hero_image_url after § 12.2 image extraction completes */}
+            Pending § 12.4 Meshy animation wire-up (hero elected: Cluster 3 Ironfield Vanguard, season_001; image generated at § 12.2).
+            {/* TODO(drax): wire hero_image_url after § 12.4 Meshy animation URL returns from Matt */}
           </p>
         </div>
       )}

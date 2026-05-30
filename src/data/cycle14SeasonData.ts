@@ -12,11 +12,11 @@
 //   DONE:   4-cluster faction baseline (season_001) + Wave B per-kit names (all 3 seasons)
 //   DONE:   season_002 + season_003 (Track A output now available)
 //   DONE:   Wave-S season name headers (all 3 seasons)
+//   DONE:   Aggregator-fix data refresh (cascade-r4; rocket 818a4ca; MIGRATION.md §v1.66)
+//           — corrected faction names + season names + wave_b kit names (54 kits per season)
+//   NEXT:   hero image wire-up (§ 12.2 image gen — Cluster 3 Ironfield Vanguard season_001)
 //   NEXT:   Wanderer per-faction tiles (post-gamora Amendment 1 close)
-//   LATER:  hero image + Meshy animation embed (post-§ 12.1 selection + § 12.2-12.4)
-//   LATER:  Post-aggregator-fix data refresh (corrected element_distribution +
-//           substrate-grounded faction/season names after gandalf-remediation +
-//           rocket-re-fire); automatic on data file re-read — no structural code change needed.
+//   LATER:  Meshy animation embed (post-§ 12.3-12.4 Matt Meshy handoff)
 //
 // TODO(drax): remove Wanderer placeholder and surface Wanderer tiles when gamora Amendment 1 lands.
 // TODO(drax): wire hero_image_url after § 12.2 image extraction completes (hero = Cluster 3 season_001).
@@ -79,30 +79,29 @@ function extractWaveS(raw: Record<string, unknown>): WaveSSeasonMeta | null {
 // wave_s_* fields on the season_summary.json files in the collab repo.
 // For the loadout, those fields are inlined here from the known engine output.
 //
-// Post-aggregator-fix refresh: update these values when gandalf-remediation
-// + rocket-re-fire produces corrected substrate-grounded season names.
-// Known upstream concern (Matt 2026-05-29): storm/lightning theme bias in
-// current names due to element_distribution aggregator drift. NOT v1 blocking.
+// Updated: cascade-r4 aggregator remediation (rocket 818a4ca; MIGRATION.md §v1.66).
+// Prior names had storm/lightning theme bias due to element_distribution aggregator
+// drift (physical element mapped to lightning). Now corrected from substrate truth.
 const WAVE_S_001_INLINE: WaveSSeasonMeta = {
-  wave_s_season_name_canonical: 'Season of the Lightning-Scorched Chain',
+  wave_s_season_name_canonical: 'Season of the Chain-Strike Pyre',
   wave_s_season_name_narrative_short: null,
-  wave_s_season_name_thematic_tags: ['lightning', 'chain-damage', 'medieval-scorched-earth', 'fire-dominance'],
+  wave_s_season_name_thematic_tags: ['chain-strike', 'fire'],
   wave_s_pattern_used: 'A',
   wave_s_final_compliance_status: 'ACCEPT',
-  wave_s_ai_tell_compliance_score: 0.85,
+  wave_s_ai_tell_compliance_score: 0.88,
 };
 const WAVE_S_002_INLINE: WaveSSeasonMeta = {
-  wave_s_season_name_canonical: 'Season of the Storm-Shadowed Siege',
+  wave_s_season_name_canonical: 'Season of the Ironsoil Wide-Front',
   wave_s_season_name_narrative_short: null,
-  wave_s_season_name_thematic_tags: ['lightning', 'shadow', 'ranged-siege', 'ranged-attrition'],
+  wave_s_season_name_thematic_tags: ['ironsoil', 'broad-front-combat'],
   wave_s_pattern_used: 'A',
   wave_s_final_compliance_status: 'ACCEPT',
   wave_s_ai_tell_compliance_score: 0.85,
 };
 const WAVE_S_003_INLINE: WaveSSeasonMeta = {
-  wave_s_season_name_canonical: 'Season of the Grounded Arcs',
+  wave_s_season_name_canonical: 'Season of the Broad-Front Shadow Warcraft',
   wave_s_season_name_narrative_short: null,
-  wave_s_season_name_thematic_tags: ['grounded-surge', 'arc-discharge', 'lightning', 'ranged-arcing'],
+  wave_s_season_name_thematic_tags: ['broad-front combat', 'shadow-water duality'],
   wave_s_pattern_used: 'A',
   wave_s_final_compliance_status: 'ACCEPT',
   wave_s_ai_tell_compliance_score: 0.85,
@@ -117,11 +116,14 @@ export const CYCLE14_SEASON_001: Cycle14SeasonSummary = {
   faction_clusters: clusters001.clusters,
   wave_b_kits_by_id: buildKitMap(waveB001),
   wave_s: WAVE_S_001_INLINE,
-  // Hero: pending § 12.1 drax+galadriel pair consensus.
-  // Elected kit: Cluster 3 Stormcallers of the Pale Keep (drax §12.1 selection).
-  // TODO(drax): set hero_faction_cluster_id=3 + wire hero_image_url after § 12.2 completes.
-  hero_faction_cluster_id: null,
-  hero_image_url: null,
+  // Hero: pair-elected by drax+galadriel §12.1 consensus — Cluster 3 Ironfield Vanguard.
+  // Post-aggregator-fix: faction was formerly "Stormveil Ironclad Surge"; now substrate-honest
+  // "Ironfield Vanguard" (physical 33% dominant + holy 22% + close-AOE; european lineage).
+  // Kit elected: S1_endgame_bc_melee_high_flat_str_none_s0 ("Crushguard of the Shattered Gate")
+  // Hero image generated at § 12.2 (drax; cascade-r4-v1-close-comprehensive; 2026-05-30)
+  // TODO(drax): swap hero_image_url for Meshy animation URL after § 12.4 Matt Meshy handoff returns.
+  hero_faction_cluster_id: 3,
+  hero_image_url: '/pitch/heroes/season_001_hero.png',
 };
 
 export const CYCLE14_SEASON_002: Cycle14SeasonSummary = {
