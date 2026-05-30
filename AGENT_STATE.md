@@ -1,12 +1,54 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-27
-**Last commit:** d7b4a28 — Dispatch G UX bug fix (Court tab mobile + SkillTree dynamic chains + design toggle mobile-hide)
-**Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25
+**Last updated:** 2026-05-29
+**Last commit:** 9ceeb40 — cycle-14 §11.2 loadout Summary tab (faction cluster tiles + cluster_id type union)
+**Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 (tag update pending: drax/v1.0-cascade-r4-track-b-loadout-plus-12-1-pair-1)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
+
+### cascade-r4 Track B §11.2 + §12.1 drax half (in progress 2026-05-29)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-29-drax-cycle-14-cascade-r4-track-b-loadout-refresh-plus-12-1-hero-pair-drax-half.md`
+**Authority:** Matt 2026-05-29 cascade-r4 Step 7 CONFIRM-FIRE + Amendment 2 hero pair delegation
+**Build result:** tsc clean + vite clean (870 modules, 0 TS errors) + 81 tests passing (0 failures)
+
+**Track B §11.2 completed:**
+- `cluster_id: number | "SINGLETON"` type union in `src/data/cycle14Types.ts` (gamora Amendment 1 contract)
+- `src/data/cycle14SeasonData.ts`: CYCLE14_SEASONS module wired to phase5_faction_clusters.json
+- `src/components/Cycle14/FactionClusterTile.tsx`: per-faction tile (name, narrative, BC signature, element distribution, thematic tags)
+- `src/components/Cycle14/Cycle14SeasonSection.tsx`: season wrapper (4 faction tiles + Wanderer placeholder + hero slot placeholder)
+- `src/pages/Pitch.tsx`: Cycle 14 substrate-led section injected between stat cards and historical seasons
+- `data/cycle14-season-001-faction-clusters.json`: copied from phase5 output (read-only engine data)
+- Vercel preview: PENDING (push requires Matt authorization per ADR-006)
+
+**Iteration plan documented (in Pitch.tsx + Cycle14SeasonSection.tsx comments):**
+- Wanderer tiles: post-gamora Amendment 1 (cluster_id="SINGLETON")
+- season_002 + season_003: post-Track-A rocket production
+- hero image + Meshy animation embed: post-§12.1 pair consensus + §12.2
+
+**§12.1 drax half completed:**
+- UX-fit reads: 4 clusters assessed (Cluster 3 rated 5/5; others 2-3/5)
+- Image-extraction feasibility: Cluster 3 (european + lightning/holy + close-AOE) rated richest substrate for image-gen prompt construction
+- Drax election: Cluster 3 — Stormveil Ironclad Surge
+- Selection notes at: `agentic_orchestration/drax/notes/2026-05-29-cycle-14-v1-seasonal-hero-selection.md`
+- Pair status: DRAX-SIDE COMPLETE — AWAITING GALADRIEL
+
+**TODOs added:**
+- `// TODO(drax): remove null when engine ships Wave B per-kit naming (rocket seam)` in cycle14SeasonData.ts
+- `// TODO(drax): surface per-Wanderer tiles when gamora Amendment 1 Wanderer architecture lands` in cycle14Types.ts
+- `// TODO(drax): set hero_faction_cluster_id + hero_image_url after §12.2 completes` in cycle14SeasonData.ts
+- `// TODO(drax): wire hero_image_url after §12.2 image extraction completes` in Cycle14SeasonSection.tsx
+- `// TODO(drax): remove placeholder and surface Wanderer tiles when gamora Amendment 1 lands` in Cycle14SeasonSection.tsx
+- `// TODO(drax): add CYCLE14_SEASON_002, CYCLE14_SEASON_003 when Track A lands` in cycle14SeasonData.ts
+
+**KR routing notes:**
+- Vercel preview deploy: PENDING push authorization (Matt)
+- §12.1 pair consensus: galadriel parallel session outstanding; awaiting KR return of galadriel reads
+- §12.2-12.4: DEFERRED until pair consensus + Matt Meshy handoff authorization
+
+**Next dispatch:** PENDING galadriel return + KR routing of pair consensus → §12.2 fires post-hero-selection-close
 
 ### Dispatch G — UX bug fix: Court tab + mobile blank column + mobile design button (completed 2026-05-27)
 
