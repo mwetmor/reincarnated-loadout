@@ -275,16 +275,12 @@ export function Sample() {
     [classData?.id, season?.seasonId]
   );
 
-  // Placeholder indicator: detect cycle-13-style seasons with placeholder skill content.
+  // Placeholder indicator: detect seasons with placeholder skill content.
   // Detection per MIGRATION.md § v2.2: manifest.placeholder_skill_content === true
   // OR (if present) skills[0].phase5_is_placeholder === true.
   const isPlaceholderSeason =
     season?.manifest?.placeholder_skill_content === true ||
     (classData?.skills?.length > 0 && classData.skills[0].phase5_is_placeholder === true);
-
-  // Cycle 14 adapter seasons: identified by manifest_version "cycle14-adapter-v1".
-  // TODO(star-lord): when manifest.json + classes/*.json emitted, this check becomes unreachable.
-  const isCycle14AdapterSeason = season?.manifest?.manifest_version === 'cycle14-adapter-v1';
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
@@ -317,35 +313,10 @@ export function Sample() {
         </div>
       )}
 
-      {/* Placeholder skill content indicator (MIGRATION.md § v2.2 + § v2.3).
-          Two variants:
-          - Cycle 14 adapter seasons: engine-emission pending (star-lord Cycle 15+ pipeline)
-          - Cycle 13 seasons: Phase 5 cohesion coalescence pending */}
-      {isPlaceholderSeason && isCycle14AdapterSeason && (
-        <div
-          className="rounded-lg border border-violet-800/60 bg-violet-950/20 px-4 py-3 flex items-start gap-3"
-          data-testid="placeholder-season-indicator"
-        >
-          <span className="text-violet-500 text-base flex-shrink-0 mt-0.5">◌</span>
-          <div className="min-w-0">
-            <p className="text-sm font-semibold text-violet-300">
-              Cycle 14 Wave 5 — engine-emission pending
-              {/* TODO(star-lord): remove this indicator when manifest.json + classes/*.json
-                  emitted for this season. */}
-            </p>
-            <p className="text-xs text-violet-400/70 mt-1 leading-relaxed">
-              Kit identities and faction clusters are live (Wave A/B LLM output). Skill trees,
-              balance metadata, and gear pool require star-lord to emit per-season class artifacts
-              (Cycle 15+ pipeline). The class picker shows all {classes.filter(c => !c.is_retired).length} kits
-              from this season; skill slots show substrate-derived placeholders.
-            </p>
-            <p className="text-[10px] font-mono text-violet-600/60 mt-1.5">
-              Adapter: drax/cycle14Adapter.ts · Source: Wave 5 faction clusters + Wave B kit identities
-            </p>
-          </div>
-        </div>
-      )}
-      {isPlaceholderSeason && !isCycle14AdapterSeason && (
+      {/* Placeholder skill content indicator (MIGRATION.md § v2.2 + § v2.3 + § v1.67).
+          Visible when manifest.placeholder_skill_content === true.
+          Applies to Cycle 13 (Phase 5 pending) and Cycle 14 Wave 5 (skill gen pending Cycle 15+). */}
+      {isPlaceholderSeason && (
         <div
           className="rounded-lg border border-amber-800/60 bg-amber-950/30 px-4 py-3 flex items-start gap-3"
           data-testid="placeholder-season-indicator"
@@ -353,13 +324,12 @@ export function Sample() {
           <span className="text-amber-500 text-base flex-shrink-0 mt-0.5">◌</span>
           <div className="min-w-0">
             <p className="text-sm font-semibold text-amber-400">
-              Skills pending Cycle 14 Phase 5 cohesion coalescence
+              Skills are substrate-derived placeholders
             </p>
             <p className="text-xs text-amber-500/80 mt-1 leading-relaxed">
-              Mechanical skeleton validated (16 classes, 27,360-fight gauntlet pass). Skill names
-              and descriptions are synthesized placeholders — Phase 5 narrative cohesion content
-              will replace them in Cycle 14. Balance metadata reflects the gauntlet simulation
-              pass; win rates shown are real.
+              Kit identities, faction clusters, and balance metadata (win rates, quality vectors,
+              cohort) are real engine output. Skill names and descriptions are substrate-derived
+              placeholders — full skill tree generation requires a Cycle 15+ engine run.
             </p>
           </div>
         </div>
