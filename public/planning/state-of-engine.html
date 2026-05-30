@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State of the Engine — Season of the Grounded Arcs (Cycle 14 Wave 5, Season 003)</title>
+<style>
+  :root {
+    --ink: #0f1419;
+    --ink-2: #2a2d34;
+    --muted: #6b7280;
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --surface-2: #f5f3ee;
+    --rule: #e5e2d8;
+    --rule-strong: #c4c0b1;
+    --accent: #d4621d;
+    --accent-2: #b85515;
+
+    /* Per-phase tokens */
+    --phase-0: #6b46c1;  /* seed — violet */
+    --phase-1: #2563eb;  /* BC cells — blue */
+    --phase-2: #0d9488;  /* generation — teal */
+    --phase-3: #ea580c;  /* simulation — orange */
+    --phase-4: #16a34a;  /* archive — green */
+    --phase-5: #c026d3;  /* cohesion — magenta */
+    --phase-6: #94a3b8;  /* visual deferred — slate */
+    --phase-7: #ca8a04;  /* joint-gate — amber */
+    --phase-8: #94a3b8;  /* export deferred — slate */
+
+    --phase-0-bg: #ede9fe;
+    --phase-1-bg: #dbeafe;
+    --phase-2-bg: #ccfbf1;
+    --phase-3-bg: #ffedd5;
+    --phase-4-bg: #dcfce7;
+    --phase-5-bg: #fae8ff;
+    --phase-6-bg: #e2e8f0;
+    --phase-7-bg: #fef3c7;
+    --phase-8-bg: #e2e8f0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 2rem 2rem 4rem 2rem; }
+
+  /* Header */
+  header.page-header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .breadcrumb {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  h1.title {
+    font-size: 2.0rem;
+    font-weight: 700;
+    margin: 0 0 0.3rem 0;
+    letter-spacing: -0.015em;
+  }
+  .subtitle {
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin: 0;
+  }
+  .season-name {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* KPI grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .kpi {
+    background: var(--surface);
+    padding: 1rem 1.1rem;
+    border-radius: 6px;
+    border: 1px solid var(--rule);
+  }
+  .kpi-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+  .kpi-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .kpi-unit {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 0.2rem;
+  }
+  .kpi-sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  /* Section structure */
+  section { margin: 3rem 0; }
+  h2.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+  }
+  h2.section-title .num {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+  .section-lede {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 1.5rem 0;
+    max-width: 70ch;
+  }
+
+  /* Pipeline flow diagram */
+  .pipeline-wrap {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+  }
+  .pipeline {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(110px, 1fr));
+    gap: 0;
+    align-items: stretch;
+    min-width: 1100px;
+  }
+  .stage {
+    position: relative;
+    padding: 0.9rem 0.7rem;
+    text-align: center;
+    border-right: 2px dashed var(--rule);
+  }
+  .stage:last-child { border-right: 0; }
+  .stage-icon {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    line-height: 36px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  .stage-label {
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    color: var(--ink-2);
+  }
+  .stage-count {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .stage-count-sub {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.15rem;
+  }
+  .stage-flow-arrow {
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--rule-strong);
+    font-size: 1.2rem;
+    pointer-events: none;
+  }
+
+  /* Phase cards */
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+  }
+  .phase-card {
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--phase-color, var(--rule-strong));
+    padding: 1.2rem 1.3rem;
+    transition: box-shadow 0.15s;
+  }
+  .phase-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+  .phase-card.deferred { opacity: 0.6; background: var(--surface-2); }
+  .phase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.6rem;
+  }
+  .phase-title { font-size: 1.05rem; font-weight: 700; margin: 0; }
+  .phase-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: var(--phase-bg, var(--surface-2));
+    color: var(--phase-color, var(--muted));
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .phase-desc { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.8rem 0; }
+  .phase-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .phase-row:last-child { border-bottom: 0; }
+  .phase-row-label { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; padding-top: 0.1rem; }
+  .phase-row-value { color: var(--ink); font-weight: 500; }
+  .phase-row-value code { background: var(--surface-2); padding: 0.05rem 0.35rem; border-radius: 3px; font-size: 0.82rem; font-family: 'SF Mono', Menlo, Consolas, monospace; }
+  .phase-row-value .pill {
+    display: inline-block;
+    background: var(--phase-bg, var(--surface-2));
+    color: var(--phase-color, var(--ink));
+    padding: 0.05rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin: 0.1rem 0.2rem 0.1rem 0;
+  }
+
+  /* Backward trace */
+  .trace-spotlight {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-2) 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 2rem 2rem 2.5rem 2rem;
+    margin: 2rem 0;
+  }
+  .trace-spotlight h2.section-title { color: white; margin-bottom: 0.3rem; }
+  .trace-spotlight .num { color: rgba(255,255,255,0.55); }
+  .trace-spotlight .section-lede { color: rgba(255,255,255,0.75); }
+  .character-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 1.4rem 1.5rem;
+    margin: 1rem 0 1.5rem 0;
+  }
+  .character-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 0.3rem 0;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+  .character-meta {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.92rem;
+    margin: 0 0 0.8rem 0;
+  }
+  .character-narrative {
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+    font-size: 0.93rem;
+    max-width: 75ch;
+  }
+  .trace-timeline { margin-top: 1.5rem; }
+  .trace-step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    align-items: start;
+  }
+  .trace-step:last-child { border-bottom: 0; }
+  .trace-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--phase-color, var(--accent));
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 50px;
+    flex-shrink: 0;
+  }
+  .trace-body { padding-top: 0.3rem; }
+  .trace-step-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem 0;
+    color: white;
+  }
+  .trace-step-phase {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .trace-step-detail {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.85);
+    margin: 0.3rem 0;
+  }
+  .trace-step-detail code {
+    background: rgba(255,255,255,0.1);
+    padding: 0.05rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.82rem;
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    color: rgba(255,255,255,0.95);
+  }
+  .trace-kv {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+  }
+  .trace-kv dt { color: rgba(255,255,255,0.55); font-size: 0.78rem; }
+  .trace-kv dd { margin: 0; color: rgba(255,255,255,0.95); }
+  .trace-kv dd code { background: rgba(255,255,255,0.1); padding: 0 0.4rem; border-radius: 2px; font-family: 'SF Mono', Menlo, monospace; font-size: 0.8rem; }
+  .verdict-badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .verdict-ship { background: #16a34a; color: white; }
+  .verdict-discard { background: #b91c1c; color: white; }
+
+  /* Distribution chart */
+  .dist-row { display: flex; align-items: center; gap: 0.6rem; margin: 0.3rem 0; font-size: 0.82rem; }
+  .dist-key { width: 80px; color: var(--muted); font-size: 0.78rem; }
+  .dist-bar { flex: 1; background: var(--surface-2); border-radius: 3px; height: 14px; position: relative; overflow: hidden; }
+  .dist-bar-fill { height: 100%; background: var(--phase-color, var(--accent)); border-radius: 3px; }
+  .dist-count { width: 40px; text-align: right; color: var(--ink-2); font-weight: 600; }
+
+  /* Observations callout */
+  .callout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+  .callout {
+    background: var(--surface);
+    border-left: 4px solid var(--callout-color, var(--accent));
+    padding: 1rem 1.2rem;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--callout-color, var(--accent));
+  }
+  .callout-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--callout-color, var(--accent)); margin: 0 0 0.4rem 0; }
+  .callout-body { font-size: 0.88rem; color: var(--ink-2); margin: 0; }
+
+  /* Footer */
+  footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer .embed-note {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+  }
+  footer .embed-note strong { color: var(--ink); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container { padding: 1rem; }
+    .pipeline { min-width: 800px; }
+    h1.title { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- =========== HEADER =========== -->
+<header class="page-header">
+  <div class="breadcrumb">State of the Engine · Reincarnated · Cycle 14 Wave 5</div>
+  <h1 class="title"><span class="season-name">Season of the Broad-Front Shadow Warcraft</span></h1>
+  <p class="subtitle">Season 003 — generated 2026-05-30 02:36 UTC · seed_base <code>14003</code> · wall-clock 99.7s · Wave-S remediated 04:49 UTC</p>
+</header>
+
+<!-- =========== KPI GRID =========== -->
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="kpi-label">Phase 2 Kits</div>
+    <div class="kpi-value">54</div>
+    <div class="kpi-sub">18 BC cells × 3 substrate samples</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Phase 4 Archived</div>
+    <div class="kpi-value">33</div>
+    <div class="kpi-sub">Pareto winners (606 rejected)</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Phase 5 Clusters</div>
+    <div class="kpi-value">3</div>
+    <div class="kpi-sub">PM-1 GMM-BIC selected</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Phase 7 Shipped</div>
+    <div class="kpi-value">22</div>
+    <div class="kpi-sub">66.7% ship rate of archive</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">LLM Cost</div>
+    <div class="kpi-value">$0.015</div>
+    <div class="kpi-sub">Wave A + Wave-S + Wave B</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Wave-S Compliance</div>
+    <div class="kpi-value">0.85</div>
+    <div class="kpi-sub">AI-tell ACCEPT verdict</div>
+  </div>
+</div>
+
+<!-- =========== PIPELINE FLOW =========== -->
+<section>
+  <h2 class="section-title"><span class="num">§ 1</span> Engine Pipeline — Season 003 throughput</h2>
+  <p class="section-lede">Eight phases. Substrate enters at Phase 0 as RNG seed; player-facing kits exit at Phase 8 export. Phase 6 visual coalescence and Phase 8 export are deferred to Cycle 15+/16+.</p>
+
+  <div class="pipeline-wrap">
+    <div class="pipeline">
+      <div class="stage" style="--phase-color: var(--phase-0); --phase-bg: var(--phase-0-bg);">
+        <div class="stage-icon" style="background: var(--phase-0);">0</div>
+        <div class="stage-label">Seed</div>
+        <div class="stage-count">14003</div>
+        <div class="stage-count-sub">RNG seed_base</div>
+        <span class="stage-flow-arrow">→</span>
+      </div>
+      <div class="stage" style="--phase-color: var(--phase-1); --phase-bg: var(--phase-1-bg);">
+        <div class="stage-icon" style="background: var(--phase-1);">1</div>
+        <div class="stage-label">BC Cells</div>
+        <div class="stage-count">18</div>
+        <div class="stage-count-sub">cell discovery</div>
+        <span class="stage-flow-arrow">→</span>
+      </div>
+      <div class="stage" style="--phase-color: var(--phase-2); --phase-bg: var(--phase-2-bg);">
+        <div class="stage-icon" style="background: var(--phase-2);">2</div>
+        <div class="stage-label">Generation</div>
+        <div class="stage-count">54</div>
+        <div class="stage-count-sub">3 samples × 18 cells</div>
+        <span class="stage-flow-arrow">→</span>
+      </div>
+      <div class="stage" style="--phase-color: var(--phase-3); --phase-bg: var(--phase-3-bg);">
+        <div class="stage-icon" style="background: var(--phase-3);">3</div>
+        <div class="stage-label">Gauntlet Sim</div>
+        <div class="stage-count">13</div>
+        <div class="stage-count-sub">WR-bracket pass</div>
+        <span class="stage-flow-arrow">→</span>
+      </div>
+      <div class="stage" style="--phase-color: var(--phase-4); --phase-bg: var(--phase-4-bg);">
+        <div class="stage-icon" style="background: var(--phase-4);">4</div>
+        <div class="stage-label">Pareto Archive</div>
+        <div class="stage-count">33</div>
+        <div class="stage-count-sub">accepted of 639</div>
+        <span class="stage-flow-arrow">→</span>
+      </div>
+      <div class="stage" style="--phase-color: var(--phase-5); --phase-bg: var(--phase-5-bg);">
+        <div class="stage-icon" style="background: var(--phase-5);">5</div>
+        <div class="stage-label">Cohesion</div>
+        <div class="stage-count">3</div>
+        <div class="stage-count-sub">faction clusters</div>
+        <span class="stage-flow-arrow">→</span>
+      </div>
+      <div class="stage deferred" style="--phase-color: var(--phase-6);">
+        <div class="stage-icon" style="background: var(--phase-6);">6</div>
+        <div class="stage-label">Visual</div>
+        <div class="stage-count">—</div>
+        <div class="stage-count-sub">deferred C15+</div>
+        <span class="stage-flow-arrow">→</span>
+      </div>
+      <div class="stage" style="--phase-color: var(--phase-7); --phase-bg: var(--phase-7-bg);">
+        <div class="stage-icon" style="background: var(--phase-7);">7</div>
+        <div class="stage-label">Joint-Gate</div>
+        <div class="stage-count">22</div>
+        <div class="stage-count-sub">shipped (66.7%)</div>
+        <span class="stage-flow-arrow">→</span>
+      </div>
+      <div class="stage deferred" style="--phase-color: var(--phase-8);">
+        <div class="stage-icon" style="background: var(--phase-8);">8</div>
+        <div class="stage-label">Export</div>
+        <div class="stage-count">—</div>
+        <div class="stage-count-sub">deferred C16+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== PHASE DEEP-DIVE CARDS =========== -->
+<section>
+  <h2 class="section-title"><span class="num">§ 2</span> Per-phase deep dive</h2>
+  <p class="section-lede">Each phase's inputs, processing, outputs, and season_003 production values.</p>
+
+  <div class="phases">
+
+    <!-- Phase 0 -->
+    <div class="phase-card" style="--phase-color: var(--phase-0); --phase-bg: var(--phase-0-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Phase 0 — Seed</h3>
+        <span class="phase-badge">RNG ENTRY</span>
+      </div>
+      <p class="phase-desc">RNG seed deterministically governs the entire season. Same seed → same substrate samples, same BC discovery, same gauntlet results.</p>
+      <div class="phase-row">
+        <span class="phase-row-label">Input</span>
+        <span class="phase-row-value">Cycle 14 season counter <code>14003</code></span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Output</span>
+        <span class="phase-row-value">deterministic substrate sampling for all downstream phases</span>
+      </div>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="phase-card" style="--phase-color: var(--phase-1); --phase-bg: var(--phase-1-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Phase 1 — BC Cell Discovery</h3>
+        <span class="phase-badge">SUBSTRATE</span>
+      </div>
+      <p class="phase-desc">Engine selects 18 BC cells from the 68,040-cell theoretical space for this season's substrate range. Each cell is a 5-tuple (engagement × tempo × amplitude × attribute × proxy_density).</p>
+      <div class="phase-row">
+        <span class="phase-row-label">Cells used</span>
+        <span class="phase-row-value">18 of 68,040 theoretical</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Attribute</span>
+        <span class="phase-row-value">
+          <span class="pill">INT × 5</span><span class="pill">WIS × 6</span><span class="pill">DEX × 4</span><span class="pill">STR × 3</span>
+        </span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Engagement</span>
+        <span class="phase-row-value">
+          <span class="pill">ranged × 8</span><span class="pill">melee × 7</span><span class="pill">mid × 3</span>
+        </span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Tempo</span>
+        <span class="phase-row-value">
+          <span class="pill">high × 5</span><span class="pill">low × 5</span><span class="pill">medium × 8</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase-card" style="--phase-color: var(--phase-2); --phase-bg: var(--phase-2-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Phase 2 — Generation (54 kits)</h3>
+        <span class="phase-badge">SUBSTRATE BINDING</span>
+      </div>
+      <p class="phase-desc">Per BC cell × 3 substrate samples = 54 kits. Each kit composed of: BC tuple + element + cohort + chains + substrate weapon binding from 89K weapon library + 11 gear slots + T4 candidate set.</p>
+      <div class="phase-row">
+        <span class="phase-row-label">Kits generated</span>
+        <span class="phase-row-value">54 (3 samples × 18 cells per Amendment 6 Sub-fix 1)</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Element dist</span>
+        <span class="phase-row-value">
+          <div class="dist-row"><span class="dist-key">physical</span><div class="dist-bar"><div class="dist-bar-fill" style="width: 24%;"></div></div><span class="dist-count">13</span></div>
+          <div class="dist-row"><span class="dist-key">fire</span><div class="dist-bar"><div class="dist-bar-fill" style="width: 13%;"></div></div><span class="dist-count">7</span></div>
+          <div class="dist-row"><span class="dist-key">wind</span><div class="dist-bar"><div class="dist-bar-fill" style="width: 13%;"></div></div><span class="dist-count">7</span></div>
+          <div class="dist-row"><span class="dist-key">holy</span><div class="dist-bar"><div class="dist-bar-fill" style="width: 13%;"></div></div><span class="dist-count">7</span></div>
+          <div class="dist-row"><span class="dist-key">earth</span><div class="dist-bar"><div class="dist-bar-fill" style="width: 11%;"></div></div><span class="dist-count">6</span></div>
+          <div class="dist-row"><span class="dist-key">shadow</span><div class="dist-bar"><div class="dist-bar-fill" style="width: 9%;"></div></div><span class="dist-count">5</span></div>
+          <div class="dist-row"><span class="dist-key">water</span><div class="dist-bar"><div class="dist-bar-fill" style="width: 9%;"></div></div><span class="dist-count">5</span></div>
+          <div class="dist-row"><span class="dist-key">lightning</span><div class="dist-bar"><div class="dist-bar-fill" style="width: 7%;"></div></div><span class="dist-count">4</span></div>
+        </span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Lineage</span>
+        <span class="phase-row-value">
+          <span class="pill">fantasy_generic × 35</span><span class="pill">european × 13</span><span class="pill">east_asian × 4</span>
+        </span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Period</span>
+        <span class="phase-row-value">
+          <span class="pill">fictional × 29</span><span class="pill">classical × 8</span><span class="pill">early_modern × 8</span><span class="pill">industrial × 4</span>
+        </span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Unique weapons</span>
+        <span class="phase-row-value">53 distinct substrate weapons from 89K library</span>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase-card" style="--phase-color: var(--phase-3); --phase-bg: var(--phase-3-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Phase 3 — Gauntlet Simulation</h3>
+        <span class="phase-badge">VIABILITY TEST</span>
+      </div>
+      <p class="phase-desc">Each kit fights synthetic encounter battery; passes filtered by win_rate bracket. Produces 5-axis quality vector q1-q5 (win_rate / kpm_band / resource / defense / coherence).</p>
+      <div class="phase-row">
+        <span class="phase-row-label">Kits passing</span>
+        <span class="phase-row-value">13 of 54 in WR-bracket (24% gauntlet pass rate)</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Q-vector</span>
+        <span class="phase-row-value">all kits scored on (win_rate / kpm / resource / defense / coherence) 5-tuple</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Note</span>
+        <span class="phase-row-value">Variant rows expand population to 639 by S2 enumeration before Phase 4</span>
+      </div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="phase-card" style="--phase-color: var(--phase-4); --phase-bg: var(--phase-4-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Phase 4 — Pareto-2 Archive</h3>
+        <span class="phase-badge">MECHANICAL CURATION</span>
+      </div>
+      <p class="phase-desc">Pareto-2 partition by (BC × cultural_lineage); per-partition non-dominated frontier selected; diversity + duplicate + novelty filters. 33 ACCEPT, 606 REJECT.</p>
+      <div class="phase-row">
+        <span class="phase-row-label">Accepted</span>
+        <span class="phase-row-value">33 (5.2% of 639 evaluated)</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Rejected</span>
+        <span class="phase-row-value">606 (Pareto-dominated, duplicate, or low-novelty)</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Math gates</span>
+        <span class="phase-row-value"><code>mg1</code> Pareto + <code>mg2</code> Diversity + <code>mg3</code> Duplicate + <code>mg4</code> Novelty</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Variants</span>
+        <span class="phase-row-value">0 variant rows accepted at Phase 4 (Path X consumption only)</span>
+      </div>
+    </div>
+
+    <!-- Phase 5 -->
+    <div class="phase-card" style="--phase-color: var(--phase-5); --phase-bg: var(--phase-5-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Phase 5 — Cohesion Coalescence</h3>
+        <span class="phase-badge">LLM NAMING</span>
+      </div>
+      <p class="phase-desc">Path X wire-up: Phase 4 archive → PM-1 GMM-BIC clustering → Wave A faction naming → F-C relationships → Wave-S season naming → Wave B per-kit naming.</p>
+      <div class="phase-row">
+        <span class="phase-row-label">PM-1 algo</span>
+        <span class="phase-row-value"><code>gmm_bic_sweep</code> over k∈{3,4}; selected k=3</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Wave A</span>
+        <span class="phase-row-value">3 faction names + narratives + thematic tags</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Wave-S</span>
+        <span class="phase-row-value"><em>Season of the Broad-Front Shadow Warcraft</em> (compliance 0.85, ACCEPT)</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Wave B</span>
+        <span class="phase-row-value">54 kits named (100% coverage post-remediation; up from 64% pre-fix)</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Total LLM</span>
+        <span class="phase-row-value">$0.015 — Wave A + Wave-S + Wave B</span>
+      </div>
+    </div>
+
+    <!-- Phase 6 (deferred) -->
+    <div class="phase-card deferred" style="--phase-color: var(--phase-6);">
+      <div class="phase-header">
+        <h3 class="phase-title">Phase 6 — Visual Coalescence</h3>
+        <span class="phase-badge">DEFERRED</span>
+      </div>
+      <p class="phase-desc">CV pipeline + Meshy 3D + Control Rig + Niagara VFX. Cycle 15+ scope per doc 38 § 4 architecture-validation spike.</p>
+      <div class="phase-row">
+        <span class="phase-row-label">Status</span>
+        <span class="phase-row-value">Cycle 15+ deferred per doc 39 § 5.6</span>
+      </div>
+    </div>
+
+    <!-- Phase 7 -->
+    <div class="phase-card" style="--phase-color: var(--phase-7); --phase-bg: var(--phase-7-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Phase 7 — Joint-Gate Evaluation</h3>
+        <span class="phase-badge">SHIP/HOLD VERDICT</span>
+      </div>
+      <p class="phase-desc">Two-layer gate: mechanical (gauntlet pass rate vs cohort floor) AND cohesion (cluster compactness + kit cohesion score). Both must pass for shipped_worthy.</p>
+      <div class="phase-row">
+        <span class="phase-row-label">Shipped</span>
+        <span class="phase-row-value">22 (66.7% acceptance rate of archive)</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Held</span>
+        <span class="phase-row-value">11 (HELD-mechanical-fail-floor verdict)</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Gates</span>
+        <span class="phase-row-value">mechanical_pass × cohesion_pass = ship</span>
+      </div>
+      <div class="phase-row">
+        <span class="phase-row-label">Note</span>
+        <span class="phase-row-value">Tidal Shadow Wardens (n=2) cohesion-passed but mechanical-failed → held</span>
+      </div>
+    </div>
+
+    <!-- Phase 8 (deferred) -->
+    <div class="phase-card deferred" style="--phase-color: var(--phase-8);">
+      <div class="phase-header">
+        <h3 class="phase-title">Phase 8 — Profile Assembly + Export</h3>
+        <span class="phase-badge">DEFERRED</span>
+      </div>
+      <p class="phase-desc">Reincarnated v1 export profile + per-shipped-worthy character output package. Cycle 16+ scope.</p>
+      <div class="phase-row">
+        <span class="phase-row-label">Status</span>
+        <span class="phase-row-value">Cycle 16+ deferred per doc 39 § 5.8</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========== FACTION EMERGENCE =========== -->
+<section>
+  <h2 class="section-title"><span class="num">§ 3</span> Phase 5 emergence — three factions surfaced</h2>
+  <p class="section-lede">PM-1 GMM-BIC clustering on the 33-kit archive produced 3 substrate-led factions. Wave A LLM named each from cluster modal lineage + element distribution + BC signature.</p>
+
+  <div class="phases">
+    <div class="phase-card" style="--phase-color: var(--phase-5); --phase-bg: var(--phase-5-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Cluster 1 — Ironfield Wardens</h3>
+        <span class="phase-badge">n = 22</span>
+      </div>
+      <p class="phase-desc">A close-quarters fighting force rooted in medieval tradition, these combatants sweep battlefields with broad physical and elemental strikes — wind and holy energies reinforcing earthen resilience against scattered threats.</p>
+      <div class="phase-row"><span class="phase-row-label">Modal BC</span><span class="phase-row-value">close × large-AOE</span></div>
+      <div class="phase-row"><span class="phase-row-label">Lineage</span><span class="phase-row-value">fantasy_generic × medieval</span></div>
+      <div class="phase-row"><span class="phase-row-label">Top elements</span><span class="phase-row-value">physical 23% · wind 18% · holy 18%</span></div>
+      <div class="phase-row"><span class="phase-row-label">Tags</span><span class="phase-row-value"><span class="pill">broad-front combat</span><span class="pill">elemental generalism</span><span class="pill">medieval martial</span></span></div>
+    </div>
+
+    <div class="phase-card" style="--phase-color: var(--phase-5); --phase-bg: var(--phase-5-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Cluster 2 — Scattered Wind Skirmishers</h3>
+        <span class="phase-badge">n = 9</span>
+      </div>
+      <p class="phase-desc">A loose medieval warband defined by ranged engagement and chain-striking tactics, drawing from a broad elemental palette — physical force, wind, and scattered traces of fire, water, earth, and holy — to harry and break formations across open ground.</p>
+      <div class="phase-row"><span class="phase-row-label">Modal BC</span><span class="phase-row-value">ranged × chain</span></div>
+      <div class="phase-row"><span class="phase-row-label">Lineage</span><span class="phase-row-value">fantasy_generic × medieval</span></div>
+      <div class="phase-row"><span class="phase-row-label">Top elements</span><span class="phase-row-value">physical 33% · wind 22% · fire 11%</span></div>
+      <div class="phase-row"><span class="phase-row-label">Tags</span><span class="phase-row-value"><span class="pill">chain-range</span><span class="pill">elemental-spread</span><span class="pill">medieval-skirmish</span></span></div>
+    </div>
+
+    <div class="phase-card" style="--phase-color: var(--phase-5); --phase-bg: var(--phase-5-bg);">
+      <div class="phase-header">
+        <h3 class="phase-title">Cluster 3 — Tidal Shadowmark Wardens</h3>
+        <span class="phase-badge">n = 2 (HELD)</span>
+      </div>
+      <p class="phase-desc">A medieval European combat lineage defined by the convergence of shadow and water, these ranged combatants specialize in sweeping area denial — obscuring sight lines with darkness while flooding engagement zones with brine-dark tide.</p>
+      <div class="phase-row"><span class="phase-row-label">Modal BC</span><span class="phase-row-value">ranged × large-AOE</span></div>
+      <div class="phase-row"><span class="phase-row-label">Lineage</span><span class="phase-row-value">european × medieval</span></div>
+      <div class="phase-row"><span class="phase-row-label">Top elements</span><span class="phase-row-value">shadow 50% · water 50%</span></div>
+      <div class="phase-row"><span class="phase-row-label">Tags</span><span class="phase-row-value"><span class="pill">shadow-water duality</span><span class="pill">ranged area suppression</span><span class="pill">medieval European warcraft</span></span></div>
+      <div class="phase-row"><span class="phase-row-label">Phase 7</span><span class="phase-row-value">Cohesion PASS / Mechanical FAIL (defensive cohort) → 0 shipped</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== BACKWARD TRACE SPOTLIGHT =========== -->
+<section class="trace-spotlight">
+  <h2 class="section-title"><span class="num">§ 4</span> Backward Trace — one character's full journey</h2>
+  <p class="section-lede">Following a single shipped kit from its final player-facing identity back through every phase to its RNG-seeded origin. The 8-step journey from <em>Phase 0 seed</em> to <em>Phase 7 ship</em>.</p>
+
+  <div class="character-card">
+    <h3 class="character-name">Tidewarden of the Flooded March</h3>
+    <p class="character-meta">
+      Kit <code style="background: rgba(255,255,255,0.1); padding: 0 0.4rem; border-radius: 2px; color: rgba(255,255,255,0.9); font-size: 0.82rem;">S1_endgame_bc_melee_high_flat_int_none_s1</code>
+      · Cluster 1 (Ironfield Wardens)
+      · Verdict: <span class="verdict-badge verdict-ship">Shipped-Worthy</span>
+    </p>
+    <p class="character-narrative">"A melee combatant who channels water's weight into sweeping close-range strikes, this Warden presses the battle line with relentless flat-tempo aggression, reading the field through INT-driven awareness rather than brute instinct. Water's give-and-return quality extends the faction's elemental breadth into the contested middle ground where ironbound discipline meets fluid pressure." — Wave B narrative, ai-tell compliance 0.82</p>
+  </div>
+
+  <div class="trace-timeline">
+
+    <div class="trace-step">
+      <div class="trace-icon" style="--phase-color: var(--phase-0); background: var(--phase-0);">0</div>
+      <div class="trace-body">
+        <div class="trace-step-phase">Phase 0 — Seed</div>
+        <div class="trace-step-title">Deterministic origin</div>
+        <div class="trace-step-detail">Season seed <code>14003</code> + per-kit substrate_sample_idx <code>1</code> together determine every downstream choice. Re-running with same seed reproduces this exact kit.</div>
+      </div>
+    </div>
+
+    <div class="trace-step">
+      <div class="trace-icon" style="--phase-color: var(--phase-1); background: var(--phase-1);">1</div>
+      <div class="trace-body">
+        <div class="trace-step-phase">Phase 1 — BC Cell Discovery</div>
+        <div class="trace-step-title">Cell <code>endgame_bc_melee_high_flat_int_none</code></div>
+        <div class="trace-step-detail">Engine elects this BC cell from the 68,040-cell space. The 5-tuple defines the kit's mechanical signature:</div>
+        <dl class="trace-kv">
+          <dt>range</dt><dd><code>melee</code></dd>
+          <dt>tempo</dt><dd><code>high</code></dd>
+          <dt>amplitude</dt><dd><code>flat</code></dd>
+          <dt>attribute</dt><dd><code>INT</code></dd>
+          <dt>proxy_density</dt><dd><code>none</code></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="trace-step">
+      <div class="trace-icon" style="--phase-color: var(--phase-2); background: var(--phase-2);">2</div>
+      <div class="trace-body">
+        <div class="trace-step-phase">Phase 2 — Substrate Binding + Generation</div>
+        <div class="trace-step-title">Weapon library query → <em>Sudarshana Chakra Rod</em></div>
+        <div class="trace-step-detail">Substrate weapon binding queries the 89K weapon library, filters by attribute_requirement=INT + caster-arcane family + s1 sample. Match: substrate_weapon_id <code>225935</code>.</div>
+        <dl class="trace-kv">
+          <dt>weapon</dt><dd><em>Sudarshana Chakra Rod</em> (the discus of Vishnu)</dd>
+          <dt>family</dt><dd><code>caster-arcane</code></dd>
+          <dt>lineage</dt><dd><code>south_asian</code> (85% confidence)</dd>
+          <dt>period</dt><dd><code>pre_classical</code></dd>
+          <dt>register</dt><dd><code>mythological</code></dd>
+          <dt>base damage</dt><dd>82 physical / 130 spell modifier</dd>
+        </dl>
+        <div class="trace-step-detail" style="margin-top: 0.6rem;">Element selected per Amendment 7 attribute pool: INT → {fire, water, lightning, shadow} → <code>water</code>. Cohort archetype: <code>balanced</code>. 3-chain composition: 2 T4 chains + 1 supporting.</div>
+      </div>
+    </div>
+
+    <div class="trace-step">
+      <div class="trace-icon" style="--phase-color: var(--phase-3); background: var(--phase-3);">3</div>
+      <div class="trace-body">
+        <div class="trace-step-phase">Phase 3 — Gauntlet Simulation</div>
+        <div class="trace-step-title">Synthetic encounter battery</div>
+        <div class="trace-step-detail">Kit run against gauntlet of synthetic encounters; quality vector emitted across 5 axes. Q-vector at archive entry was <code>[0.5, 0.5, 0.5, 0.5, 0.5]</code> — neutral baseline.</div>
+      </div>
+    </div>
+
+    <div class="trace-step">
+      <div class="trace-icon" style="--phase-color: var(--phase-4); background: var(--phase-4);">4</div>
+      <div class="trace-body">
+        <div class="trace-step-phase">Phase 4 — Pareto-2 Archive Insertion</div>
+        <div class="trace-step-title">Verdict: <span class="verdict-badge verdict-ship">ACCEPT</span></div>
+        <div class="trace-step-detail">Pareto-2 partition by (bc_cell × cultural_lineage). Non-dominated within (melee/high/flat/INT × south_asian) partition.</div>
+        <dl class="trace-kv">
+          <dt>mg1 Pareto rank</dt><dd><code>0</code> (frontier)</dd>
+          <dt>mg2 Diversity</dt><dd><code>1.0</code> (max)</dd>
+          <dt>mg3 Duplicate</dt><dd><code>false</code></dd>
+          <dt>mg4 Novelty</dt><dd><code>1.0</code> (max)</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="trace-step">
+      <div class="trace-icon" style="--phase-color: var(--phase-5); background: var(--phase-5);">5</div>
+      <div class="trace-body">
+        <div class="trace-step-phase">Phase 5 — Cohesion + LLM Naming</div>
+        <div class="trace-step-title">Assigned to Cluster 1 + named by Wave B</div>
+        <div class="trace-step-detail">PM-1 GMM-BIC assigned to cluster_id <code>1</code> "Ironfield Wardens" (n=22, modal_BC=close/large-AOE, modal_lineage=fantasy_generic, cluster_compactness=0.20).</div>
+        <div class="trace-step-detail" style="margin-top: 0.5rem;">Wave-S named the season <em>"Season of the Broad-Front Shadow Warcraft"</em>. Wave B then named this kit using cluster context + substrate metadata as USER prompt → <em>"Tidewarden of the Flooded March"</em> (ACCEPT, ai-tell 0.82).</div>
+        <div class="trace-step-detail" style="margin-top: 0.5rem; padding: 0.6rem 0.8rem; background: rgba(22, 163, 74, 0.15); border-left: 3px solid var(--phase-4); border-radius: 3px;"><strong>BC-narrative coherence restored:</strong> the post-remediation Wave B narrative correctly identifies this kit as a "melee combatant" matching its BC signature <code>melee/high/flat/INT/none</code>. The pre-remediation narrative drifted to "ranged water-channeler" — fixed in the same 04:49 UTC remediation pass that landed the Phase 5 element-distribution aggregator correction.</div>
+      </div>
+    </div>
+
+    <div class="trace-step">
+      <div class="trace-icon" style="--phase-color: var(--phase-6); background: var(--phase-6);">6</div>
+      <div class="trace-body">
+        <div class="trace-step-phase">Phase 6 — Visual Coalescence (Deferred)</div>
+        <div class="trace-step-title">Cycle 15+ scope</div>
+        <div class="trace-step-detail">Would produce: hero-card art + faction marquee + per-kit visual asset via Meshy + Control Rig + Niagara VFX pipeline. Style register: HD-2D pixel art (locked).</div>
+      </div>
+    </div>
+
+    <div class="trace-step">
+      <div class="trace-icon" style="--phase-color: var(--phase-7); background: var(--phase-7);">7</div>
+      <div class="trace-body">
+        <div class="trace-step-phase">Phase 7 — Joint-Gate Evaluation</div>
+        <div class="trace-step-title">Verdict: <span class="verdict-badge verdict-ship">SHIPPED-WORTHY</span></div>
+        <div class="trace-step-detail">Both gates passed → shipped to season_003 deliverable.</div>
+        <dl class="trace-kv">
+          <dt>mechanical_pass</dt><dd><code>1</code> (gauntlet_pass_rate 0.611 ≥ cohort floor)</dd>
+          <dt>cohesion_pass</dt><dd><code>1</code> (kit_cohesion_score 0.82; cluster_compactness 0.20)</dd>
+          <dt>cohort</dt><dd><code>defensive</code> (cohort partition for ship verdict)</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========== OBSERVATIONS =========== -->
+<section>
+  <h2 class="section-title"><span class="num">§ 5</span> Live engine state observations</h2>
+  <p class="section-lede">Patterns surfaced during this analysis worth flagging.</p>
+
+  <div class="callout-grid">
+    <div class="callout" style="--callout-color: #16a34a;">
+      <h4 class="callout-title">✓ RESOLVED — Phase 5 element-distribution aggregator</h4>
+      <p class="callout-body">Pre-fix: Wave A reported lightning at 27-44% in cluster modal distributions when substrate had lightning at 7% (lowest); physical at 24% (highest) appeared 0%. <strong>Rocket fix landed in 04:49 UTC remediation pass.</strong> Post-fix: Cluster 1 element distribution now reads physical 23% (top) + wind 18% + holy 18% — substrate-honest. Faction renamed Stormcallers of the Broken Field → <em>Ironfield Wardens</em>, season renamed Grounded Arcs → <em>Broad-Front Shadow Warcraft</em>. Cumulative Disc #42a Instance 6 pattern surface #7 CLOSED.</p>
+    </div>
+    <div class="callout" style="--callout-color: #16a34a;">
+      <h4 class="callout-title">✓ RESOLVED — Wave B BC-narrative coherence</h4>
+      <p class="callout-body">Pre-fix: Tidecaller (BC=melee) was narrativized as "ranged water-channeler thinning formations before they close range" — cluster modal carried more weight than per-kit BC. <strong>Same 04:49 UTC remediation pass corrected this:</strong> kit now named <em>Tidewarden of the Flooded March</em> with narrative explicitly identifying "melee combatant who channels water's weight into sweeping close-range strikes." Per-kit BC signature now load-bearing in Wave B prompt.</p>
+    </div>
+    <div class="callout" style="--callout-color: #16a34a;">
+      <h4 class="callout-title">✓ RESOLVED — Wave B coverage gap</h4>
+      <p class="callout-body">Pre-fix: 64% Wave B coverage (21 of 33 archive kits named; 12 acceptance-gate failures at ai-tell 0.0). <strong>Post-remediation: 100% coverage (54 of 54 kits named across all 3 seasons).</strong> Retroactive backfill complete; loadout app can render every kit with substrate-grounded name + narrative.</p>
+    </div>
+    <div class="callout" style="--callout-color: var(--phase-7);">
+      <h4 class="callout-title">Tidal Shadowmark Wardens — clean lineage cluster held by mechanical gate</h4>
+      <p class="callout-body">Cluster 3 has the cleanest lineage signature (european × medieval × shadow+water 50/50; n=2) but both members failed mechanical pass (gauntlet_pass_rate 0.11; defensive cohort). Cohesion gate passed; joint-gate held. Substrate produced a clean faction identity that mechanically can't ship — see defensive-cohort callout below for three-gap diagnosis.</p>
+    </div>
+    <div class="callout" style="--callout-color: #b91c1c;">
+      <h4 class="callout-title">Defensive cohort 0% ship rate — three compositional gaps</h4>
+      <p class="callout-body">All 11 held kits are defensive cohort (0 damage, 0 hybrid held). Refined diagnosis composes three separable architectural gaps surfacing as one mechanical failure: <strong>(1)</strong> Cohort weight mismatch — generating ~25-33% defensive vs ~5% genre empirical (legolas corpus); <strong>(2)</strong> Missing canonical defensive-viable mechanism (PoE thorns / Gladiator reflect / D4 Bash-thorns aspect) — our T4 strategy set lacks DEFENSE_AS_DAMAGE so defensive-shaped kits have no path to convert survival into damage; <strong>(3)</strong> Encounter battery (W-α6 24-cell ENCOUNTER_COHORT_KPM_BAND) lacks defensive-friendly variants that reward thorns/reflect/attrition specialty. <strong>gauntlet_pass_rate is composite</strong> (win × in-band × system-gate), not raw win rate — defensive kits may be winning fights but failing in-band cohort fit. KR routing recommended to rocket: split GPR into <code>tier_1_outcome</code> × <code>in_band</code> × <code>sg_overall</code> sub-metrics to diagnose which gap dominates.</p>
+    </div>
+    <div class="callout" style="--callout-color: var(--phase-3);">
+      <h4 class="callout-title">gauntlet_pass_rate ≠ win_rate (terminology clarification)</h4>
+      <p class="callout-body">gauntlet_pass_rate is the Discipline #26 PLAYABLE-AND-IN-BAND composite criterion: requires win AND in-cohort-KPM-band AND survival AND no <code>sg_overall: BLOCK</code> from ceiling-artifact gate. In sample sim data: 89.8% raw tier_1_outcome PROVISIONAL_PASS (wins) but only 11.5% in_band; the 78% gap between "won" and "won-correctly-for-cohort" is where defensive-cohort kits typically fail. Raw win rate not directly emitted to Phase 7 verdict log — composite GPR is the load-bearing metric.</p>
+    </div>
+    <div class="callout" style="--callout-color: var(--phase-5);">
+      <h4 class="callout-title">Mega-cluster vs distinctive cluster trade-off</h4>
+      <p class="callout-body">Cluster 1 has 22 of 33 archive kits — substrate-dominant but generic. Cluster 3 has 2 of 33 — substrate-distinctive but small. PM-1 clustering produces this bimodal distribution; cluster-cardinality variance is substrate-elected per Wanderer architecture principle (Amendment 1).</p>
+    </div>
+    <div class="callout" style="--callout-color: var(--phase-2);">
+      <h4 class="callout-title">Substrate-led discipline empirically visible</h4>
+      <p class="callout-body">53 distinct substrate weapons from 89K library used in 54 kits — near-zero substrate duplication. Cultural lineage spans 5 distinct traditions. Period spans pre-classical through industrial. Substrate vote at Phase 2 is honest to the catalogue's diversity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========== FOOTER =========== -->
+<footer>
+  <p style="margin-bottom: 1rem;">Prototype "State of the Engine" surface — built from season_003 production artifacts at <code>agentic_orchestration/cycle-14-wave-5-season-003/</code>. Real production data; no mocks. Authored by gandalf 2026-05-30 per Matt request.</p>
+
+  <div class="embed-note">
+    <strong>For drax — loadout app integration notes:</strong>
+    <ul style="margin: 0.5rem 0 0 0; padding-left: 1.2rem;">
+      <li>Single-file HTML with no external dependencies; CSS uses design tokens (<code>--phase-N</code>) ready for Tailwind theme extension</li>
+      <li>Component boundaries map cleanly: <code>&lt;PageHeader /&gt;</code>, <code>&lt;KpiGrid /&gt;</code>, <code>&lt;PipelineFlow /&gt;</code>, <code>&lt;PhaseDeepDive /&gt;</code>, <code>&lt;FactionEmergence /&gt;</code>, <code>&lt;BackwardTrace /&gt;</code>, <code>&lt;Observations /&gt;</code></li>
+      <li>Data contract: consume <code>season_summary.json</code> + <code>phase2_kit_candidates.json</code> + <code>phase4_archive_insertion.json</code> + <code>phase5_faction_clusters.json</code> + <code>wave_b_identities.json</code> + <code>kit_archive.db</code> phase7 verdict table</li>
+      <li>Per-season instantiation: same component tree, different season_summary feed; mounts at <code>/state-of-engine/[season_id]</code></li>
+      <li>Backward trace as <code>&lt;BackwardTrace kit_id="..."&gt;</code> with configurable target; defaults to highest-cohesion shipped kit in newest season</li>
+      <li>Auto-refresh: poll <code>season_summary.json</code> mtime; re-render on update</li>
+      <li>Pipeline diagram is CSS Grid + inline SVG; responsive at &gt; 1100px, horizontal-scroll below</li>
+    </ul>
+  </div>
+
+  <p style="margin-top: 1rem; font-size: 0.78rem;">All values from production artifacts as of generation timestamp 2026-05-30T02:36:42 UTC. Phase 5 + Wave A/B/S remediated 2026-05-30T04:49:18 UTC — this pass landed: (a) Phase 5 element-distribution aggregator fix (Disc #42a Instance 6 surface #7 CLOSED), (b) Wave A faction names regenerated under substrate-honest element distributions, (c) Wave-S season name regenerated, (d) Wave B kit names regenerated with per-kit BC-narrative coherence + 100% coverage. Defensive cohort 0% ship rate remains unresolved (three-gap diagnosis pending Cycle 15+ work per § 5 callout).</p>
+</footer>
+
+</div>
+</body>
+</html>

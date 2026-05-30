@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Community Substrate Analytics — Axis Expansion + T4 Capstone Design Implications</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --ink: #1a1814;
+    --muted: #5e574e;
+    --rule: #e0dcd4;
+    --highlight: #fff8e6;
+    --mechanical: #2a5d9f;
+    --mechanical-bg: #e8f0fa;
+    --experiential: #b8650f;
+    --experiential-bg: #fbede0;
+    --player-facing: #6d3b9c;
+    --player-facing-bg: #f1e9f8;
+    --t4: #2a7d3e;
+    --t4-bg: #e6f3ea;
+    --risk: #a8281d;
+    --risk-bg: #fae8e6;
+    --substrate: #c9c0a5;
+    --substrate-bg: #f5f0df;
+    --code-bg: #f3efe7;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 1080px; margin: 2rem auto; padding: 0 2rem; background: var(--bg); color: var(--ink); line-height: 1.55; }
+  h1, h2, h3, h4 { font-family: 'Helvetica Neue', sans-serif; font-weight: 600; letter-spacing: -0.01em; }
+  h1 { font-size: 2.0rem; border-bottom: 3px solid var(--ink); padding-bottom: 0.6rem; margin-bottom: 0.4rem; }
+  h2 { font-size: 1.5rem; margin-top: 2.4rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; margin-top: 1.6rem; color: var(--muted); }
+  h4 { font-size: 1rem; margin-top: 1.2rem; }
+  header.meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+  header.meta span { margin-right: 1rem; }
+  nav.toc { background: var(--substrate-bg); border-left: 4px solid var(--substrate); padding: 1rem 1.5rem; margin: 1.5rem 0 2rem 0; }
+  nav.toc h3 { margin-top: 0; font-family: Georgia, serif; color: var(--ink); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  nav.toc ol { columns: 2; column-gap: 2rem; padding-left: 1.2rem; }
+  nav.toc a { color: var(--ink); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.92rem; }
+  th { background: #f0ece2; text-align: left; padding: 0.5rem 0.7rem; border-bottom: 2px solid var(--rule); font-family: 'Helvetica Neue', sans-serif; font-weight: 600; }
+  td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr:hover td { background: var(--highlight); }
+  .callout { padding: 1rem 1.2rem; margin: 1.2rem 0; border-radius: 4px; border-left: 4px solid var(--muted); background: #f3efe7; }
+  .callout-mech { border-left-color: var(--mechanical); background: var(--mechanical-bg); }
+  .callout-exp { border-left-color: var(--experiential); background: var(--experiential-bg); }
+  .callout-pf { border-left-color: var(--player-facing); background: var(--player-facing-bg); }
+  .callout-t4 { border-left-color: var(--t4); background: var(--t4-bg); }
+  .callout-risk { border-left-color: var(--risk); background: var(--risk-bg); }
+  .callout strong:first-child { display: block; font-family: 'Helvetica Neue', sans-serif; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+  .callout-mech strong:first-child { color: var(--mechanical); }
+  .callout-exp strong:first-child { color: var(--experiential); }
+  .callout-pf strong:first-child { color: var(--player-facing); }
+  .callout-t4 strong:first-child { color: var(--t4); }
+  .callout-risk strong:first-child { color: var(--risk); }
+  .tag { display: inline-block; padding: 0.1rem 0.5rem; font-family: 'Helvetica Neue', sans-serif; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 3px; vertical-align: middle; margin-right: 0.3rem; }
+  .tag-mech { background: var(--mechanical-bg); color: var(--mechanical); border: 1px solid var(--mechanical); }
+  .tag-exp { background: var(--experiential-bg); color: var(--experiential); border: 1px solid var(--experiential); }
+  .tag-pf { background: var(--player-facing-bg); color: var(--player-facing); border: 1px solid var(--player-facing); }
+  .tag-t4 { background: var(--t4-bg); color: var(--t4); border: 1px solid var(--t4); }
+  .tag-strong { background: var(--ink); color: var(--bg); }
+  .tag-moderate { background: var(--muted); color: var(--bg); }
+  .tag-weak { background: var(--rule); color: var(--ink); }
+  code, pre { font-family: 'SF Mono', Menlo, Consolas, monospace; }
+  code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.88rem; }
+  pre { background: var(--code-bg); padding: 1rem 1.2rem; overflow-x: auto; border-left: 3px solid var(--muted); font-size: 0.85rem; line-height: 1.4; }
+  blockquote { border-left: 3px solid var(--muted); margin: 1rem 0; padding: 0.4rem 1rem; font-style: italic; color: var(--muted); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .axis-card { background: white; border: 1px solid var(--rule); border-radius: 4px; padding: 1rem 1.2rem; }
+  .axis-card h4 { margin-top: 0; }
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 2px solid var(--ink); color: var(--muted); font-size: 0.88rem; }
+  .seal { font-family: Georgia, serif; font-style: italic; }
+  .anchor-link { color: var(--muted); text-decoration: none; font-weight: normal; margin-left: 0.4rem; opacity: 0; transition: opacity 0.2s; }
+  h2:hover .anchor-link, h3:hover .anchor-link { opacity: 1; }
+  ul.compact { margin: 0.5rem 0; padding-left: 1.4rem; }
+  ul.compact li { margin-bottom: 0.3rem; }
+  .figure-num { font-family: 'Helvetica Neue', sans-serif; font-size: 0.78rem; text-transform: uppercase; color: var(--muted); letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+
+<h1>Community Substrate Analytics: Axis Expansion + T4 Capstone Algorithm Design Implications</h1>
+
+<header class="meta">
+  <span><strong>Status:</strong> CURRENT</span>
+  <span><strong>Date:</strong> 2026-05-29 late</span>
+  <span><strong>Author:</strong> gandalf (story-and-design steward)</span>
+  <span><strong>Authority:</strong> Matt 2026-05-29 verbatim request</span>
+</header>
+
+<p><strong>Source data:</strong> <code>agentic_orchestration/research/arpg-community-axes-2026-05-29/research.db</code> (104 builds × 6 sites × 4 games; 92 loot substrate vocab; 37 vocabulary convergence; 30 composite-archetype assessments; 9 statistical findings); <code>statistical-analysis-findings.md</code> (elrond statistical operationalization); <code>synthesis-verdict.md</code> (R4 gandalf qualitative synthesis); <code>analysis-findings.md</code> (legolas Mode A surfaces 1–5); <code>acquisition-log.md</code> (legolas Mode B).</p>
+
+<p><strong>Anchored against:</strong> <code>canonical/story/qd-engine-bc-axes-lock-2026-05-20.md</code> (8 BC axes, 68,040 cells); <code>canonical/47-damage-scaling-architecture-2026-05-27.md</code> (three-path routing + § 4.6 two-layer T4); <code>canonical/50-bounded-viability-with-specialization-design-directive-2026-05-28.md</code> (BVV); <code>canonical/51-investment-scaling-6-pattern-architecture-2026-05-28.md</code> (6 patterns); <code>canonical/story/2026-05-29-designer-writes-substrate-player-names-experience-principle.md</code> (foundational); <code>canonical/story/2026-05-29-experiential-cascade-architecture-recognition.md</code> (recognition record).</p>
+
+<nav class="toc">
+<h3>Contents</h3>
+<ol>
+  <li><a href="#exec">Executive summary — top 7 actionable findings</a></li>
+  <li><a href="#corpus">Corpus + epistemic standing</a></li>
+  <li><a href="#current">What we currently track — the active axis set</a></li>
+  <li><a href="#community">What the community tracks — the empirical axis set</a></li>
+  <li><a href="#gaps">Axis gap analysis — community has, we don't</a></li>
+  <li><a href="#mechanical">Mechanical axis expansion candidates</a></li>
+  <li><a href="#experiential">Experiential axis expansion candidates</a></li>
+  <li><a href="#playerfacing">Player-facing axis expansion candidates</a></li>
+  <li><a href="#coordinate">The expanded coordinate space</a></li>
+  <li><a href="#t4-overview">T4 capstone — current architecture + community-substrate enrichment</a></li>
+  <li><a href="#t4-candidates">Specific T4 capstone candidates (15 new strategies)</a></li>
+  <li><a href="#algorithm">Algorithmic implementation — how axes drive T4 generation</a></li>
+  <li><a href="#composite">The coupling-architecture constraint (Layer 1.5)</a></li>
+  <li><a href="#wanderer">Composition with Wanderer architecture</a></li>
+  <li><a href="#pathway">Cycle 14 → Cycle 15+ pathway</a></li>
+  <li><a href="#risks">Risk register</a></li>
+  <li><a href="#openq">Open questions for Pattern B</a></li>
+  <li style="list-style: none; padding-top: 0.5rem; border-top: 1px dashed var(--rule); margin-top: 0.4rem;"><strong style="color: var(--risk); font-family: 'Helvetica Neue', sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">Amendment 2026-05-29 late (build-defining research)</strong></li>
+  <li><a href="#bd-research">Genre build-defining mechanism research findings</a></li>
+  <li><a href="#bd-families">The 7 mechanism families — family taxonomy</a></li>
+  <li><a href="#bd-verdict">T4 architectural verdict — is T4 the right abstraction?</a></li>
+  <li><a href="#bd-amendments">Amendments to this doc per build-defining research</a></li>
+  <li><a href="#substrate-of-build-defining">22. The substrate of build-defining — 5-property framework</a></li>
+  <li><a href="#hidden-spirit">23. Hidden-Spirit-Discovery as P4 acquisition surface — recognition record</a></li>
+</ol>
+</nav>
+
+<!-- =================================================================================== -->
+<h2 id="exec">1. Executive summary — top 7 actionable findings <a class="anchor-link" href="#exec">§</a></h2>
+
+<div class="callout callout-risk" style="margin-bottom: 1.5rem;">
+<strong>Amendment 2026-05-29 late — build-defining research findings landed</strong>
+A second research commission (legolas Mode A; 31 mechanisms × 9 ARPG games; sourced at <code>agentic_orchestration/research/arpg-build-defining-mechanisms-2026-05-29/</code>) substantially refines this doc's framing. The original findings below remain valid for axis-expansion + T4 strategy candidates. <strong>But the genre research reveals T4 is one of 7 mechanism families, not the singular surface for build-defining moments.</strong> Family B (extractable/imbue-able power — D2 Runewords, D3 Kanai's Cube, D4 Legendary Aspects) is the DOMINANT genre family by primary-crystallization moments and is ABSENT from Reincarnated's current architecture. See § <a href="#bd-research">18</a>–§ <a href="#bd-amendments">21</a> for the full verdict + amendments. <strong>Verdict in brief:</strong> T4 architecture is preserved and is genuinely novel — but is insufficient alone. Family B is the highest-leverage Cycle 15+ architectural addition, surfacing as a design call BEFORE the T4 strategy set expansion proposed in § 11.
+</div>
+
+<ol>
+  <li><strong>Three axis classes exist, our engine canonicalizes only one fully.</strong> Mechanical (BC 8-axis + damage-scaling + cohort) is canonical and load-bearing. Experiential (Bossing/Speedfarm/Push/Generalist/Leveling/LeagueStart + Investment Tier + Playstyle Geometry) is empirically validated at 91% Skill+Class spine + 4 game-source breadth, ready for canonical promotion. Player-facing (the "feel" lexicon: Gear Dependent, Buff Management, Don't Get Hit, Difficult to Play Optimally, etc.) is unmeasured and ungoverned — community names it; we don't model it.</li>
+
+  <li><strong>The composite-vs-single-axis result is the most architecturally consequential finding of the sprint.</strong> Game determines composite-restriction pattern at Cramér's V=0.74 (bias-corrected; q_BH=3e-4 surviving Bonferroni). Causal mechanism: <em>multiplicative loot substrate layer count</em> (PoE 6 layers → 100% composite-required; LE 3 layers → 100% single-axis-viable). This is a Layer 1.5 architectural variable Reincarnated must explicitly choose. <strong>Recommendation: ≤3 layers, LE-style.</strong></li>
+
+  <li><strong>The Skill+Class naming spine is universal (91%); the activity-suffix is Maxroll-D4-editorial-specific.</strong> Community vocabulary lives at <code>[skill_identity] + [class_vestigial_reference]</code> level. Build identity is <em>not</em> at the item/gear level (Apriori produced zero rules at min_support=0.10 — gear is too sparse and diverse). <strong>Implication: kit identity at our generation layer should match this spine — substrate-led skill identity + vestigial archetypal anchor.</strong></li>
+
+  <li><strong>"Allround / Endgame Generalist" is the modal variant at 41% — larger than Push (22) or Speedfarm (9).</strong> The Speedfarm↔Push binary is real but the middle pole (Generalist) is the dominant player position. Variant cycling at our engine should reflect a <em>trinary</em>: Speedfarm / Generalist / Push, not just binary.</li>
+
+  <li><strong>The skill-role taxonomy is 7-fold and converges across games.</strong> Community organizes skill bars as Core (36) + Amp (73, 2-4 per build) + Mobility (21) + Defense (18) + Resource (8) + CC (7) + Grouping (1). Our flat-8-actives architecture has the budget; we don't enforce role-balance at generation. <strong>Doc 40 D82 (max-8-actives) preserved; role-distribution as kit-emergence vote candidate.</strong></li>
+
+  <li><strong>Magic Find is a multi-temporal-scale mechanic, not a primary archetype.</strong> D2-legacy primary identity is dead. D4 retired explicit MF (Torment Tier replaces). PoE2 EA elevated to first-class explicit stat target (150% IIR endgame). Our engine has no MF analog; this is a <em>deliberate</em> architectural choice — the substrate signal is that the mechanic is either single-layer-difficulty-gate (D4) or 6-layer-cascade (PoE). We should pick a side or invent a third path.</li>
+
+  <li><strong>T4 capstones are the highest-leverage surface for absorbing the community vocabulary at the generative layer.</strong> The Layer 2 cycling slot in doc 47 § 4.6 (currently 6 strategies: 3 ELEMENT_CONVERSION + TRADE_OFF_REVERSED + GEOMETRY_COLLAPSE + RESOURCE_CONVERSION) is the natural locus for experiential-axis T4 expansion. <strong>This doc proposes 15 new candidate strategies, each anchored to community-validated experiential vocabulary, designed to compose with substrate-led discipline and Wanderer architecture.</strong></li>
+</ol>
+
+<!-- =================================================================================== -->
+<h2 id="corpus">2. Corpus + epistemic standing <a class="anchor-link" href="#corpus">§</a></h2>
+
+<table>
+<tr><th>Source site</th><th>n_builds</th><th>Game(s) covered</th><th>Notable signal</th></tr>
+<tr><td>maxroll_d4</td><td>21</td><td>D4</td><td>5-axis structured ratings (Push/Speed/Bossing/Survivability/Playability); 95% [Skill][Class][Activity] naming</td></tr>
+<tr><td>maxroll_le</td><td>20</td><td>LE</td><td>Bossing-dominant; 0% activity-suffix in names; cleanest single-axis-viable corpus</td></tr>
+<tr><td>maxroll_poe</td><td>20</td><td>PoE</td><td>14-entry augmentation layer (richest); 6-layer multiplicative cascade signal</td></tr>
+<tr><td>maxroll_poe2</td><td>20</td><td>PoE 2 EA</td><td>IIR as first-class stat target (150% endgame); composite restriction stronger than stated intent</td></tr>
+<tr><td>icy_veins_d4</td><td>18</td><td>D4</td><td>89% [Skill][Class][Activity] naming convention; D4 editorial pattern confirmation</td></tr>
+<tr><td>poe_vault</td><td>5</td><td>PoE</td><td>"Extreme Budget" 5th investment tier; "Clear Speed" as named single-axis archetype</td></tr>
+</table>
+
+<p><strong>Epistemic standing.</strong> Three findings validate at publication-grade rigor (Cramér's V=0.74 + Spearman ρ=0.79 + chi-square q_BH<1e-3, all surviving Bonferroni). Two findings refine the qualitative synthesis (Skill+Class spine universal but strict 3-way naming Maxroll-specific; Push universal but Speedfarm D4/PoE-specific). Three findings are uncertain due to corpus thinness (multi-layer causal mechanism n=4 games; stat-target clustering n=13; investment-tier signal extraction 8% coverage). One finding refutes (Apriori 0 rules at min_support=0.10 — gear is too sparse for market-basket discovery). The corpus is Maxroll-heavy (78%) so per-source weighting matters.</p>
+
+<div class="callout">
+<strong>Substrate-led discipline check.</strong> All vocabulary below was extracted <em>verbatim</em> from community sources per Discipline #41. No pre-imposed taxonomy by gandalf or elrond. The axes that surface here are community-elected; our job is to decide which of them we integrate at the generative layer.
+</div>
+
+<!-- =================================================================================== -->
+<h2 id="current">3. What we currently track — the active axis set <a class="anchor-link" href="#current">§</a></h2>
+
+<p>Cycle 14 v1 architecture canonicalizes kit identity at three axis-classes, all <em>mechanical:</em></p>
+
+<table>
+<tr><th>Axis layer</th><th>Components</th><th>Cells/range</th><th>Canonical doc</th></tr>
+<tr>
+  <td><span class="tag tag-mech">MECH</span> BC 8-axis substrate</td>
+  <td>engagement_profile (5) × damage_geometry (4) × proxy_density (3) × control_density (3) × damage_tempo (5) × damage_amplitude_variance (3) × defensive_profile (4) × resource_economy (3)</td>
+  <td>68,040 cells</td>
+  <td>qd-engine-bc-axes-lock-2026-05-20</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH</span> Damage scaling path</td>
+  <td>physical / magical / hybrid; 3 ELEMENT_CONVERSION variants; Layer 2 T4 cycling</td>
+  <td>3 paths × 8 elements × variants</td>
+  <td>doc 47</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH</span> Investment scaling pattern</td>
+  <td>6 patterns (active scaling decay=0.65; passive scaling decay=0.50; threshold unlocks; QoL modifiers; synergy bonuses; resource economy modifiers)</td>
+  <td>6 patterns; ~384-cell calibration space</td>
+  <td>doc 51</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH</span> Cultural lineage substrate</td>
+  <td>14-enum lineage_canonical + 9-enum period_canonical + 6-enum register_canonical + cultural_lineage_confidence + named_mythological_match</td>
+  <td>≥5 lineages × 9 periods × 6 registers = ~270 combinations</td>
+  <td>weapon-substrate-composition-policy-v1-2026-05-24</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH</span> Cohort archetype</td>
+  <td>DPS-min-maxer / Balanced / Defensive / Hybrid</td>
+  <td>4 cohorts</td>
+  <td>doc 50 BVV</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH</span> Faction clustering</td>
+  <td>Phase 5 PM-1 emergent; Wave A LLM-named; cluster_id ∈ {1..K} or "SINGLETON" (per Wanderer amendment)</td>
+  <td>K=2-7 per season substrate-elected</td>
+  <td>cascade-r4 + Wanderer amendment</td>
+</tr>
+</table>
+
+<p>This is a comprehensive mechanical-substrate axis set. The empirical analysis says it's <em>not enough</em> to enumerate the design space the community recognizes as distinct, thematically rich, fun, and playable. Two axis classes are missing entirely: experiential and player-facing.</p>
+
+<!-- =================================================================================== -->
+<h2 id="community">4. What the community tracks — the empirical axis set <a class="anchor-link" href="#community">§</a></h2>
+
+<h3>4.1 Experiential archetype dimension (validated, ready for canonical promotion)</h3>
+
+<table>
+<tr><th>Concept</th><th>Convergence</th><th>Sites</th><th>Layer in synthesis verdict</th></tr>
+<tr><td>Bossing / Boss Killer / Boss Fights</td><td><span class="tag tag-strong">STRONG</span></td><td>6</td><td>primary archetype</td></tr>
+<tr><td>Speedfarming / Speed Farming</td><td><span class="tag tag-strong">STRONG</span></td><td>6</td><td>primary archetype</td></tr>
+<tr><td>[Skill] × [Class] × [Activity] naming pattern</td><td><span class="tag tag-strong">STRONG</span> (refined: Skill+Class spine 91%, Activity-suffix per-source)</td><td>6</td><td>naming convention</td></tr>
+<tr><td>Class/Ascendancy as vestigial reference</td><td><span class="tag tag-strong">STRONG</span></td><td>6</td><td>designer-vestigial layer</td></tr>
+<tr><td>Endgame Generalist / All-Rounder</td><td><span class="tag tag-strong">STRONG</span></td><td>5</td><td>primary archetype</td></tr>
+<tr><td>Push / Pit Push (depth-progression)</td><td><span class="tag tag-strong">STRONG</span></td><td>4</td><td>primary archetype</td></tr>
+<tr><td>Leveling</td><td><span class="tag tag-strong">STRONG</span></td><td>4</td><td>progression-stage</td></tr>
+<tr><td>League Starter (PoE-origin; LE adopted)</td><td><span class="tag tag-strong">STRONG</span></td><td>4</td><td>progression-stage</td></tr>
+<tr><td>Mapper / Mapping (PoE-genre)</td><td><span class="tag tag-moderate">MODERATE</span></td><td>3</td><td>game-specific archetype</td></tr>
+<tr><td>Magic Find / IIR as sub-axis (not primary)</td><td><span class="tag tag-moderate">MODERATE</span></td><td>3</td><td>sub-axis</td></tr>
+<tr><td>Currency Farmer</td><td><span class="tag tag-weak">WEAK</span></td><td>2</td><td>game-specific archetype</td></tr>
+<tr><td>Mageblood-required / Extreme Budget</td><td><span class="tag tag-weak">WEAK</span></td><td>2</td><td>investment-tier sub-tier</td></tr>
+</table>
+
+<h3>4.2 Investment-tier sub-axis (5-tier scale)</h3>
+
+<p>From PoE-Vault verbatim: Extreme / Low / Medium / High / Mageblood-required. Per-genre granularity: PoE-richest (5 tiers); LE-mid (3 tiers); D4 absent (replaced by Paragon level + Pit progression).</p>
+
+<h3>4.3 Maxroll 5-axis structured rating</h3>
+
+<p>Maxroll publishes structured per-build ratings on five axes: <strong>Push, Speed, Bossing, Survivability, Playability</strong>. Only 24 of 104 builds have these ratings extracted (JS-rendered; headless browser would expand). The five axes are conceptually convergent at 5+ sites even where the structured-rating instrument is Maxroll-specific.</p>
+
+<div class="callout callout-exp">
+<strong>Architectural observation</strong>
+The Maxroll 5-axis rating is the cleanest community-side enumeration of experiential-axis. Push + Speed are the two-pole variant axis (per synthesis verdict §4). Bossing + Survivability + Playability are three more independent dimensions. Together: 5 orthogonal experiential coordinates per kit, community-validated.
+</div>
+
+<h3>4.4 Playstyle geometry tags (PoE-Vault)</h3>
+
+<p>PoE-Vault tags builds as <strong>Ranged / Melee / All-Rounder</strong>. This is a 3-class engagement-distance categorical that overlaps but is not identical to our BC engagement_profile axis. The empirical signal: community organizes around discrete engagement-pose categories at the player-naming layer; our BC continuous-axis is more granular but doesn't surface the discrete category.</p>
+
+<h3>4.5 Skill-role taxonomy (7-fold)</h3>
+
+<table>
+<tr><th>Skill role</th><th>n in corpus</th><th>Function</th><th>Avg per build (estimated)</th></tr>
+<tr><td>amp</td><td>73</td><td>damage/utility amplifier; multiplicative buffs; pre-conditions</td><td>2.0-2.5</td></tr>
+<tr><td>core</td><td>36</td><td>primary damage delivery; the "main skill" identity</td><td>1.0-1.2</td></tr>
+<tr><td>mobility</td><td>21</td><td>movement/traversal; positioning</td><td>0.5-0.7</td></tr>
+<tr><td>defense</td><td>18</td><td>survivability proc; damage mitigation</td><td>0.5-0.6</td></tr>
+<tr><td>resource</td><td>8</td><td>resource generation/regeneration</td><td>0.2-0.3</td></tr>
+<tr><td>cc</td><td>7</td><td>crowd control; debilitation</td><td>0.2-0.3</td></tr>
+<tr><td>grouping</td><td>1</td><td>multi-target consolidation</td><td>0.03 (niche)</td></tr>
+</table>
+
+<p>The skill bar architecture across games converges on: <strong>1 Core + 2-3 Amp + 0-1 Mobility + 0-1 Defense + 0-1 Resource + 0-1 CC</strong>. Our doc 40 D82 (flat 8 actives) provides the budget; we don't currently enforce role-distribution at kit generation. The role taxonomy is a vote-eligible kit-emergence dimension we don't track.</p>
+
+<h3>4.6 Player-facing "feel" lexicon (pros/cons extract — top markers by frequency)</h3>
+
+<table>
+<tr><th>Marker (verbatim)</th><th>Polarity</th><th>n</th><th>Inferred axis</th></tr>
+<tr><td>Gear Dependent</td><td>con</td><td>9</td><td><strong>Gear Dependency Index</strong> — kit identity requires specific legendaries</td></tr>
+<tr><td>Limited AoE</td><td>con</td><td>5</td><td>Geometry-Specialization (negative for clear)</td></tr>
+<tr><td>Great Damage / Amazing Damage / High Damage</td><td>pro</td><td>9 (combined)</td><td>Damage-Feel-Tier (subjective magnitude)</td></tr>
+<tr><td>Amazing Tankiness</td><td>pro</td><td>3</td><td>Defensive-Feel</td></tr>
+<tr><td>Buff Management / Buff Upkeep / Buff Micromanagement</td><td>con</td><td>5 (combined)</td><td><strong>Cognitive Load Index</strong></td></tr>
+<tr><td>Don't Get Hit Playstyle</td><td>con</td><td>2</td><td>Squishy-vs-Tanky Defensive Style</td></tr>
+<tr><td>Easy to play</td><td>pro</td><td>2</td><td>Execution-Skill-Floor</td></tr>
+<tr><td>Difficult to Play Optimally</td><td>con</td><td>1</td><td>Execution-Skill-Ceiling</td></tr>
+<tr><td>Extremely Mobile / High Movement Speed</td><td>pro</td><td>4 (combined)</td><td>Mobility-Feel</td></tr>
+<tr><td>Strong AoE Clear / Fast Clear Speed</td><td>pro</td><td>4 (combined)</td><td>Clear-Throughput</td></tr>
+<tr><td>Long Range / Close Range Required</td><td>both</td><td>3 (combined)</td><td>Engagement-Distance (overlaps BC engagement)</td></tr>
+<tr><td>Needs Legendaries to Shine</td><td>con</td><td>2</td><td>Gear Dependency Index (sub-marker)</td></tr>
+<tr><td>Exceptional Sustain</td><td>pro</td><td>2</td><td>Resource-Sustain (overlaps BC resource_economy)</td></tr>
+<tr><td>Deals Damage While Moving</td><td>pro</td><td>2</td><td><strong>Mobile-Damage capability</strong> (orthogonal to mobility skills)</td></tr>
+</table>
+
+<p>These markers are how players describe what a kit <em>feels like</em>. Many of them are at the seam between mechanical substrate (gear, geometry, resource) and experiential layer (cognitive load, execution skill, gear dependency). Several are orthogonal to anything we currently model.</p>
+
+<!-- =================================================================================== -->
+<h2 id="gaps">5. Axis gap analysis — community has, we don't <a class="anchor-link" href="#gaps">§</a></h2>
+
+<table>
+<tr><th>Axis</th><th>Community evidence</th><th>Our current modeling</th><th>Gap</th><th>Priority</th></tr>
+<tr>
+  <td><span class="tag tag-exp">EXP</span> Experiential archetype</td>
+  <td>Bossing/Speedfarm/Push/Generalist/Leveling/LeagueStarter — 6-site STRONG</td>
+  <td>None directly; cohort_archetype overlaps partially</td>
+  <td><strong>Major</strong></td>
+  <td>HIGH (doc 52 promotion candidate)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-exp">EXP</span> Investment tier</td>
+  <td>5-tier (Extreme/Low/Medium/High/Mageblood)</td>
+  <td>Node-to-level-band mapping (doc 41); per-attribute investment profile (doc 51)</td>
+  <td><strong>Moderate</strong> — our investment-profile maps roughly but doesn't surface the 5-tier player vocab</td>
+  <td>MEDIUM</td>
+</tr>
+<tr>
+  <td><span class="tag tag-exp">EXP</span> Push↔Generalist↔Speedfarm trinary</td>
+  <td>Allround 41% / Push 27% / Speedfarm 11% / others 21%</td>
+  <td>Variant cycling at S2 but not axis-explicit</td>
+  <td><strong>Major</strong></td>
+  <td>HIGH (variant axis explicit)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-exp">EXP</span> Maxroll 5-axis rating</td>
+  <td>Push/Speed/Bossing/Survivability/Playability</td>
+  <td>Cohort partial overlap; no Playability or Speed dimensions</td>
+  <td><strong>Major</strong> — Playability + Speed are untracked</td>
+  <td>HIGH</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF</span> Playstyle geometry</td>
+  <td>Ranged/Melee/All-Rounder categorical</td>
+  <td>BC engagement_profile (5-bin continuous)</td>
+  <td><strong>Minor</strong> — derivable but not surfaced</td>
+  <td>LOW (post-hoc derivation)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF</span> Skill-role distribution</td>
+  <td>Core+Amp+Mobility+Defense+Resource+CC+Grouping</td>
+  <td>D82 flat 8 actives; no role enforcement</td>
+  <td><strong>Moderate</strong></td>
+  <td>MEDIUM (kit-emergence vote candidate)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF</span> Gear Dependency Index</td>
+  <td>"Gear Dependent" (n=9) + "Needs Legendaries to Shine" (n=2) + "Buff Management" — strongest con</td>
+  <td>None; D55/D56 triggered-passive infrastructure exists but no kit-level dependency metric</td>
+  <td><strong>Major</strong></td>
+  <td>HIGH (T4 design rule + ship-discipline)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF</span> Cognitive Load Index</td>
+  <td>Buff Management/Upkeep/Micromanagement; Cooldown Management; Buff Window</td>
+  <td>None; mechanic_focus tags but not load-metric</td>
+  <td><strong>Major</strong></td>
+  <td>HIGH (T4 design + Playability rating proxy)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF</span> Execution Skill Floor/Ceiling</td>
+  <td>Easy to play / Difficult to Play Optimally / Demands multiple active buttons</td>
+  <td>None</td>
+  <td><strong>Moderate</strong></td>
+  <td>MEDIUM</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF</span> Mobile-Damage capability</td>
+  <td>"Deals Damage While Moving" pro (n=2)</td>
+  <td>None; orthogonal to mobility skills</td>
+  <td><strong>Minor</strong> — niche but distinctive</td>
+  <td>LOW (T4 candidate)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH</span> Loot substrate layer count</td>
+  <td>≤3 layers preserves single-axis viability (LE pattern)</td>
+  <td>Not yet decided architecturally</td>
+  <td><strong>Major (Layer 1.5)</strong></td>
+  <td>HIGH (Cycle 15+ architectural design call)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH</span> Magic Find / loot quality</td>
+  <td>D2 primary-archetype-dead; D4 difficulty-tier-only; PoE 6-layer cascade; PoE2 first-class stat</td>
+  <td>None; deliberate gap</td>
+  <td><strong>Architectural choice</strong></td>
+  <td>MEDIUM (Cycle 15+ design call; lean D4-style single-layer per ≤3 recommendation)</td>
+</tr>
+</table>
+
+<div class="callout callout-risk">
+<strong>The shape of the gap</strong>
+The mechanical axis set we built is rigorous and substrate-led. What's missing is everything <em>downstream</em> of mechanical: the experiential dimensions that determine which mechanical kits feel <em>distinct, thematically rich, fun, and playable</em> in player hands. The community has done the work — they have the vocabulary. Our generation pipeline operates one floor below where the player-facing differentiation actually lives.
+</div>
+
+<!-- =================================================================================== -->
+<h2 id="mechanical">6. Mechanical axis expansion candidates <a class="anchor-link" href="#mechanical">§</a></h2>
+
+<p>Two mechanical-axis expansions surface from the corpus that we currently underspecify:</p>
+
+<h3>6.1 Loot Substrate Layer Architecture (Layer 1.5 — coupling architecture)</h3>
+
+<div class="callout callout-mech">
+<strong>Architectural variable + recommendation</strong>
+Reincarnated must explicitly choose its <strong>loot substrate layer count + coupling pattern</strong> at Cycle 15+ architectural design call. Per synthesis verdict + statistical analysis:
+<ul class="compact">
+<li>≤3 multiplicative layers (LE-style simpler-multiplication) → preserves single-axis archetype viability; matches the recommendation</li>
+<li>3 layers with mid-multiplication (D4-style) → mid-restriction; viable but constrains</li>
+<li>≥5 layers with multiplicative cascade (PoE-style) → composite-required at endgame; player community pushback documented</li>
+</ul>
+<strong>Recommendation:</strong> Reincarnated commits to ≤3 multiplicative loot substrate layers with additive-or-simpler-multiplicative coupling.
+</div>
+
+<h3>6.2 Skill-Role Distribution as kit-emergence vote</h3>
+
+<p>Doc 40 D82 sets max 8 active skills per kit. Doc 47 has T4 routing. Neither enforces the skill-role distribution the community has converged on (Core + Amp + Mobility + Defense + Resource + CC). Adding role-distribution to Phase 3 quality vectors (q-vector) creates a substrate-led vote on whether a kit's mechanical composition resembles community-recognized "playable skill bar" patterns.</p>
+
+<p>Proposed q-vector extension: <code>q_role_balance</code> = goodness-of-fit of kit's skill-role distribution against community-empirical role-distribution prior. Kits whose Phase 2 skill composition is degenerate (e.g., 6 Amp + 0 Core; or 4 Core + 0 Mobility) score low; community-empirical distributions score high. Pareto-2 archive selection inherits this.</p>
+
+<!-- =================================================================================== -->
+<h2 id="experiential">7. Experiential axis expansion candidates <a class="anchor-link" href="#experiential">§</a></h2>
+
+<div class="grid-2">
+
+<div class="axis-card">
+<h4><span class="tag tag-exp">EXP</span> A. Experiential Archetype</h4>
+<p><strong>Type:</strong> Categorical, multi-select with primary + secondary.<br>
+<strong>Values:</strong> Bossing / Speedfarm / Push / Generalist / Leveling / LeagueStarter / Mapper (game-specific).<br>
+<strong>Source:</strong> 6-site STRONG convergence (Bossing + Speedfarm); 4-5-site STRONG (Push, Generalist, Leveling, LeagueStarter).<br>
+<strong>Emergence layer:</strong> Phase 5 cohesion-judge with Wave A LLM consumption of <code>experiential_archetype_modal</code> per cluster + <code>experiential_archetype_distribution</code>.<br>
+<strong>Composition with mechanical:</strong> orthogonal to BC. The same BC coordinates can produce Bossing-flavored OR Speedfarm-flavored kits via the experiential layer choice.</p>
+</div>
+
+<div class="axis-card">
+<h4><span class="tag tag-exp">EXP</span> B. Investment Tier</h4>
+<p><strong>Type:</strong> Ordinal, 5-tier (Extreme / Low / Medium / High / Mageblood).<br>
+<strong>Source:</strong> 6-site STRONG with per-genre granularity (PoE 5 / LE 3 / D4 absent-replaced).<br>
+<strong>Composition with doc 51:</strong> investment-profile (low/mid/max) maps roughly; refine to 5-tier with explicit player-facing labels per genre.<br>
+<strong>T4 implications:</strong> investment-tier-elastic T4 capstones (kit performs viably at low investment OR scales at high investment).</p>
+</div>
+
+<div class="axis-card">
+<h4><span class="tag tag-exp">EXP</span> C. Maxroll 5-Axis Rating</h4>
+<p><strong>Type:</strong> 5 orthogonal 0-1 scales: Push / Speed / Bossing / Survivability / Playability.<br>
+<strong>Source:</strong> 1-site structural (Maxroll); 5+-site conceptual convergence.<br>
+<strong>Emergence layer:</strong> derived metric at Phase 4 archive insertion from kit's mechanical + experiential composition. Could become a published per-kit rating in loadout app summary.<br>
+<strong>Cohort_archetype mapping:</strong> Push ≈ DPS-min-maxer; Bossing ≈ Defensive (sub); Speed ≈ Hybrid (sub); Survivability ≈ Defensive; Playability ≈ inverse Cognitive Load Index.</p>
+</div>
+
+<div class="axis-card">
+<h4><span class="tag tag-exp">EXP</span> D. Push↔Generalist↔Speedfarm Variant Trinary</h4>
+<p><strong>Type:</strong> Trinary categorical (was synthesis-verdict's "binary" — empirically modal is Generalist at 41%).<br>
+<strong>Source:</strong> 4-game universal variant-splitting axis (Allround 34 / Push 22 / Speedfarm 9 / others 18).<br>
+<strong>Composition with S2 variant cycling:</strong> S2's <code>variant_passing_rows</code> currently produces (t4_strategy × investment_tier) variants. Add <code>variant_experiential_focus ∈ {push, generalist, speedfarm}</code> as a third variant dimension. Cube of variants: <code>t4 × tier × focus</code>.</p>
+</div>
+
+</div>
+
+<h3>7.1 Composition with the no-classes architectural recommitment</h3>
+
+<p>The community's "Class as vestigial reference" finding (6-site STRONG) directly validates Matt's 2026-05-27 no-classes Path (ii) recommitment. The community already treats class/ascendancy as a <em>descriptive anchor</em>, not a primary categorical axis. Our engine's no-classes architecture is consistent with the community direction; the experiential-archetype axis becomes the player-facing categorical that does the work class used to do (incorrectly).</p>
+
+<!-- =================================================================================== -->
+<h2 id="playerfacing">8. Player-facing axis expansion candidates <a class="anchor-link" href="#playerfacing">§</a></h2>
+
+<div class="grid-2">
+
+<div class="axis-card">
+<h4><span class="tag tag-pf">PF</span> E. Gear Dependency Index (GDI)</h4>
+<p><strong>Type:</strong> Continuous 0-1.<br>
+<strong>Definition:</strong> fraction of kit's effective DPS+survival that requires specific legendaries to manifest. GDI=0 means kit builds-from-base; GDI=1 means kit requires Mageblood-equivalent to function.<br>
+<strong>Computation:</strong> measured at gear-spec generation via per-kit damage-without-legendaries vs damage-with-legendaries ratio.<br>
+<strong>Source:</strong> "Gear Dependent" (n=9, top con) + "Needs Legendaries to Shine" (n=2).<br>
+<strong>T4 design rule:</strong> T4 capstones contribute to kit identity at GDI=0 (T4 fires at intrinsic level; legendaries amplify but don't gate).</p>
+</div>
+
+<div class="axis-card">
+<h4><span class="tag tag-pf">PF</span> F. Cognitive Load Index (CLI)</h4>
+<p><strong>Type:</strong> Ordinal 1-5.<br>
+<strong>Definition:</strong> active maintenance burden of the kit. Counts: buff windows to track + cooldowns to manage + resource thresholds to maintain + position-conditional damage windows + trigger-condition awareness.<br>
+<strong>Computation:</strong> sum of D40 D55 triggered-passive count + active-skill count requiring sub-second timing + buff-condition gates.<br>
+<strong>Source:</strong> "Buff Management" / "Buff Upkeep" / "Cooldown Management" / "Buff Micromanagement" (n=5+ across markers).<br>
+<strong>T4 design rule:</strong> CLI≤3 kits get "easy to play" Playability rating; CLI≥4 kits should get "execution skill ceiling" reward (higher peak damage in skilled hands).</p>
+</div>
+
+<div class="axis-card">
+<h4><span class="tag tag-pf">PF</span> G. Execution Skill Floor / Ceiling</h4>
+<p><strong>Type:</strong> Paired ordinal (floor 1-3 / ceiling 1-5).<br>
+<strong>Definition:</strong> floor = minimum skill required to execute the kit competently; ceiling = peak performance reward for skilled execution.<br>
+<strong>Source:</strong> "Easy to play" (floor=1) vs "Difficult to Play Optimally" (ceiling=5) vs "Demands multiple active buttons" (floor=3, ceiling=4).<br>
+<strong>T4 design rule:</strong> opportunity for skill-gated T4 capstones (Critical-Timing-Window T4 that rewards perfectly-timed execution with 2-3× damage spike).</p>
+</div>
+
+<div class="axis-card">
+<h4><span class="tag tag-pf">PF</span> H. Playstyle Geometry Tag</h4>
+<p><strong>Type:</strong> Categorical 3-class (Ranged / Melee / All-Rounder).<br>
+<strong>Definition:</strong> discrete categorical derived from BC engagement_profile (close/medium/wide).<br>
+<strong>Source:</strong> PoE-Vault verbatim.<br>
+<strong>Computation:</strong> deterministic from BC: close → Melee; wide → Ranged; medium → All-Rounder.<br>
+<strong>Surface:</strong> loadout app categorical filter; player-facing tag in kit identity card.</p>
+</div>
+
+<div class="axis-card">
+<h4><span class="tag tag-pf">PF</span> I. Mobile-Damage Capability</h4>
+<p><strong>Type:</strong> Boolean + magnitude.<br>
+<strong>Definition:</strong> kit can deal damage during movement (vs damage requires stand-still channel).<br>
+<strong>Source:</strong> "Deals Damage While Moving" pro (n=2); orthogonal to mobility skills (a mobility skill provides traversal; mobile-damage is the kit's ability to keep DPS active during traversal).<br>
+<strong>T4 design rule:</strong> distinctive T4 candidate — MOBILE_FORM T4 (kit's core skill auto-fires while moving).</p>
+</div>
+
+<div class="axis-card">
+<h4><span class="tag tag-pf">PF</span> J. Skill-Role Distribution Vector</h4>
+<p><strong>Type:</strong> 7-vector (Core, Amp, Mobility, Defense, Resource, CC, Grouping counts).<br>
+<strong>Definition:</strong> distribution of kit's 8 active skill slots across community-empirical role taxonomy.<br>
+<strong>Computation:</strong> tag each emitted skill by role at Phase 2 generation; sum per kit.<br>
+<strong>Source:</strong> 7-fold convergent taxonomy across all 4 games.<br>
+<strong>Quality vector extension:</strong> <code>q_role_balance</code> = fitness against community-empirical prior; Pareto archive selection inherits.</p>
+</div>
+
+</div>
+
+<!-- =================================================================================== -->
+<h2 id="coordinate">9. The expanded coordinate space <a class="anchor-link" href="#coordinate">§</a></h2>
+
+<p>Current kit identity = (BC 8-vector) × (cultural lineage) × (cohort_archetype) × (faction_id or SINGLETON). Five mechanical-class axes.</p>
+
+<p>Proposed Cycle 15+ kit identity = current + (experiential archetype × investment tier × variant focus) × (gear dependency index × cognitive load index × execution skill floor/ceiling × playstyle geometry × mobile damage capability × skill role distribution). Total: 5 mechanical-class + 3 experiential-class + 6 player-facing-class = <strong>14 axis classes.</strong></p>
+
+<h3>9.1 Dimensional structure</h3>
+
+<table>
+<tr><th>Axis class</th><th>Components</th><th>Cardinality</th><th>Continuity</th><th>Emergence layer</th></tr>
+<tr>
+  <td><span class="tag tag-mech">MECH-1</span> BC</td>
+  <td>8 sub-axes</td>
+  <td>68,040 cells</td>
+  <td>discrete-binned</td>
+  <td>Phase 2 substrate binding</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH-2</span> Damage scaling path</td>
+  <td>3 paths × element × variant</td>
+  <td>~144 combos</td>
+  <td>categorical</td>
+  <td>Phase 2 routing</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH-3</span> Cultural lineage</td>
+  <td>(14 × 9 × 6)</td>
+  <td>~270 viable</td>
+  <td>categorical</td>
+  <td>Phase 2 substrate</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH-4</span> Cohort</td>
+  <td>4 cohorts</td>
+  <td>4</td>
+  <td>categorical</td>
+  <td>Phase 3 sim verdict</td>
+</tr>
+<tr>
+  <td><span class="tag tag-mech">MECH-5</span> Faction or SINGLETON</td>
+  <td>K clusters + SINGLETON</td>
+  <td>K=2-7 per season</td>
+  <td>categorical, substrate-elected</td>
+  <td>Phase 5 PM-1 (post-Wanderer)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-exp">EXP-A</span> Experiential archetype</td>
+  <td>6 primary + game-specific</td>
+  <td>~10</td>
+  <td>multi-select primary+secondary</td>
+  <td>Phase 5 Wave A (proposed)</td>
+</tr>
+<tr>
+  <td><span class="tag tag-exp">EXP-B</span> Investment tier</td>
+  <td>5 ordinal</td>
+  <td>5</td>
+  <td>ordinal</td>
+  <td>Phase 4 archive + per-variant</td>
+</tr>
+<tr>
+  <td><span class="tag tag-exp">EXP-C</span> Variant focus trinary</td>
+  <td>Push / Generalist / Speedfarm</td>
+  <td>3 per kit</td>
+  <td>categorical</td>
+  <td>S2 variant emission</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF-E</span> Gear Dependency Index</td>
+  <td>0-1 continuous</td>
+  <td>continuous</td>
+  <td>continuous</td>
+  <td>Phase 4 + gear-gen</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF-F</span> Cognitive Load Index</td>
+  <td>1-5 ordinal</td>
+  <td>5</td>
+  <td>ordinal</td>
+  <td>Phase 2 + skill-role tag</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF-G</span> Execution Skill F/C</td>
+  <td>floor 1-3 + ceiling 1-5</td>
+  <td>15 pairs</td>
+  <td>ordinal pair</td>
+  <td>Phase 3 sim metadata</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF-H</span> Playstyle geometry</td>
+  <td>Melee / All-Rounder / Ranged</td>
+  <td>3</td>
+  <td>derived from BC</td>
+  <td>derived</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF-I</span> Mobile damage</td>
+  <td>0/1 + magnitude</td>
+  <td>2 + scale</td>
+  <td>boolean + cont</td>
+  <td>Phase 2 skill mechanic</td>
+</tr>
+<tr>
+  <td><span class="tag tag-pf">PF-J</span> Skill-role distribution</td>
+  <td>7-vector</td>
+  <td>~30 viable patterns</td>
+  <td>integer vector</td>
+  <td>Phase 2</td>
+</tr>
+</table>
+
+<h3>9.2 Vector zones</h3>
+
+<p>The 14-axis space defines <em>regions</em> of player-experience that the substrate's coordinate position picks out. Example zones:</p>
+
+<table>
+<tr><th>Zone name</th><th>Coordinate signature</th><th>Player-narrative</th></tr>
+<tr><td><strong>The Glass Pusher</strong></td><td>BC: close/medium-tempo; EXP-A: Push; EXP-C: Push; PF-E: high GDI; PF-F: CLI≥4; PF-G: floor 3/ceiling 5</td><td>"Deep-pit-class character that hits like a truck but folds if you mis-time; demands the legendaries; rewards skill"</td></tr>
+<tr><td><strong>The Wandering Speed</strong></td><td>BC: wide/fast-tempo; EXP-A: Speedfarm; EXP-C: Speedfarm; PF-E: low GDI; PF-F: CLI≤2; PF-I: Mobile damage = TRUE; faction: SINGLETON</td><td>"Lone wanderer who clears packs at the speed of movement; no faction; no gear-gate"</td></tr>
+<tr><td><strong>The Easy Generalist</strong></td><td>BC: medium engagement/medium tempo; EXP-A: Generalist; EXP-C: Generalist; PF-E: low GDI; PF-F: CLI=1; PF-G: floor 1/ceiling 3</td><td>"Reliable mid-game character; works in any content; easy to play; consistent"</td></tr>
+<tr><td><strong>The League-Starter Bossing</strong></td><td>BC: close/burst-tempo; EXP-A: Bossing + LeagueStarter; EXP-B: Extreme/Low; PF-E: GDI=0 (intrinsically viable); PF-F: CLI=2</td><td>"Day-one character for the season; can solo bosses on basic gear"</td></tr>
+<tr><td><strong>The Buffstacker</strong></td><td>BC: medium engagement/slow-tempo; PF-F: CLI=5; PF-G: floor 3/ceiling 5; EXP-C: Push</td><td>"Buff-window-orchestrator; rewards complex setup with massive damage spike"</td></tr>
+<tr><td><strong>The Wave-Clearer</strong></td><td>BC: wide engagement/AOE damage geometry; EXP-A: Speedfarm; PF-I: Mobile damage = TRUE; PF-G: floor 2/ceiling 3</td><td>"Maps-on-rails clear-speed character; smooth mid-tier farmer"</td></tr>
+</table>
+
+<p>These zones are <em>not designer-imposed</em>. They are the natural attractors in the 14-axis substrate-led space. The substrate votes; the cohesion-judge labels. The zones become a navigation aid for kit-emergence interpretation but the kit identities themselves emerge from substrate votes, not from pre-imposed zone definitions.</p>
+
+<!-- =================================================================================== -->
+<h2 id="t4-overview">10. T4 capstone — current architecture + community-substrate enrichment <a class="anchor-link" href="#t4-overview">§</a></h2>
+
+<h3>10.1 Current Layer 2 T4 strategy set (doc 47 § 4.6)</h3>
+
+<table>
+<tr><th>Strategy</th><th>Layer</th><th>Mechanism</th><th>Axis served (current)</th></tr>
+<tr><td>DIRECT_DAMAGE_AMPLIFICATION (Primary universal)</td><td>Primary</td><td>1.75× preferred-encounter-type damage</td><td>BVV Target 4 universal satisfaction</td></tr>
+<tr><td>ELEMENT_CONVERSION Variant A</td><td>Layer 2</td><td>+50% (Matt 2026-05-28 D3)</td><td>Mechanical element shift</td></tr>
+<tr><td>ELEMENT_CONVERSION Variant B</td><td>Layer 2</td><td>+25%</td><td>Mechanical element shift</td></tr>
+<tr><td>ELEMENT_CONVERSION Variant C</td><td>Layer 2</td><td>+0.25 additive + ailment</td><td>Mechanical element shift</td></tr>
+<tr><td>TRADE_OFF_REVERSED</td><td>Layer 2</td><td>Frenzy-class trade-off inversion</td><td>Mechanical risk-reward</td></tr>
+<tr><td>GEOMETRY_COLLAPSE</td><td>Layer 2</td><td>Multi-target → single-target focus shift</td><td>Mechanical geometry shift</td></tr>
+<tr><td>RESOURCE_CONVERSION</td><td>Layer 2</td><td>Resource-economy substitution</td><td>Mechanical resource shift</td></tr>
+</table>
+
+<p><strong>Pattern observation:</strong> all 6 Layer 2 strategies operate at the mechanical axis. None operate at experiential or player-facing axes. The strategy set is mechanically rich but experientially flat — every T4 capstone shifts a mechanical parameter; none deliver a distinct player-experience archetype.</p>
+
+<h3>10.2 The opportunity</h3>
+
+<p>The Layer 2 T4 cycling slot is the highest-leverage surface for absorbing the community-validated experiential + player-facing axes into the generative layer. Each Layer 2 T4 strategy is a vote-shift in 14-axis coordinate space; expanding the strategy set extends the directions the substrate can vote in.</p>
+
+<div class="callout callout-t4">
+<strong>T4 design philosophy refinement</strong>
+T4 capstones are not just mechanical-parameter shifts. They are <strong>coordinate-translations in the 14-axis space</strong> — each T4 strategy moves the kit from one zone to another. The community substrate identifies the zones worth occupying; the T4 strategy set is the engine's vocabulary for moving kits to those zones.
+</div>
+
+<!-- =================================================================================== -->
+<h2 id="t4-candidates">11. Specific T4 capstone candidates — 15 new Layer 2 strategies <a class="anchor-link" href="#t4-candidates">§</a></h2>
+
+<div class="callout callout-risk">
+<strong>Refinement per § 18–21 build-defining research</strong>
+The 15 T4 strategies below remain valid as Family D (passive-tree capstone) extensions. <strong>But several strategies have stronger Family B (extractable/imbue-able power) or Family A (intra-skill transformation) genre analogs and may belong in those families instead of (or in addition to) Layer 2 T4.</strong> Specifically: T4-ROLE-3 MOBILITY_AS_DAMAGE has closest analog in LE intra-skill nodes + D4 Whirlwind aspect (Family A + B); T4-PF-1 GEAR_INDEPENDENT has closest analog in D2 base-tier Runewords + LE day-1 Skill Trees (Family B + A); T4-EXP-1 SPEEDFARM_MODE has direct analog in D4 movement-speed aspects (Family B). See § 21 for the family-mapping verdict per strategy and which should potentially re-architect into other families when Reincarnated adds Family B + Family A depth.
+</div>
+
+<p>Each strategy: <strong>name + mechanism + axis served + community-substrate citation + composition note.</strong></p>
+
+<h3>11.1 Experiential-archetype T4 strategies (4 new)</h3>
+
+<div class="callout callout-t4">
+<strong>T4-EXP-1: SPEEDFARM_MODE</strong>
+<strong>Mechanism:</strong> kit's effective DPS scales with movement velocity; mobility skills receive 1.5× cooldown reduction; non-boss enemies take 30% additional damage; boss enemies take -20% damage (specialization tax). <br>
+<strong>Axis served:</strong> EXP-A Speedfarm + EXP-C variant focus.<br>
+<strong>Community-substrate citation:</strong> 6-site STRONG Speedfarm convergence; modal Speedfarm at PoE-Vault verbatim "Clear Speed."<br>
+<strong>Composition:</strong> can co-fire with Wanderer architecture — Wanderer kits with SPEEDFARM_MODE T4 are the "lone speedfarmer" zone.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-EXP-2: BOSSING_MODE</strong>
+<strong>Mechanism:</strong> kit's single-target damage receives 2.0× multiplier vs boss-tagged enemies; non-boss enemies take base damage (no penalty); cooldown skills get 25% CDR vs bosses (positioning + survival aid).<br>
+<strong>Axis served:</strong> EXP-A Bossing.<br>
+<strong>Community-substrate citation:</strong> 6-site STRONG Bossing convergence; verbatim convergence across Maxroll/Icy-Veins/PoE-Vault.<br>
+<strong>Composition:</strong> direct pair-orthogonal to SPEEDFARM_MODE. Push-variant of same kit gets BOSSING_MODE; Speedfarm-variant gets SPEEDFARM_MODE.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-EXP-3: PUSH_MODE</strong>
+<strong>Mechanism:</strong> kit gains scaling damage multiplier vs enemy tier/level (1.0× at content-tier-matched; up to 1.8× at +5 tiers above kit's calibrated tier); +30% damage reduction vs tier-elevated enemies; -10% damage at content-tier-matched (specialization tax for depth-pushers).<br>
+<strong>Axis served:</strong> EXP-A Push + EXP-C variant focus + Maxroll Push rating.<br>
+<strong>Community-substrate citation:</strong> 4-site STRONG Push convergence; Pit pushing at D4 + LE Monolith corruption-level + PoE Atlas-progression.<br>
+<strong>Composition:</strong> high-skill-ceiling T4; PF-G Execution ceiling 5; PF-F CLI tends ≥3.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-EXP-4: LEAGUE_STARTER_MODE</strong>
+<strong>Mechanism:</strong> kit's effectiveness at Investment Tier 1-2 (Extreme/Low) gets +40% multiplier; tier-up scaling reduced (-15% at Mageblood). Kit is intrinsically strong from day-one; flattens the gear-curve.<br>
+<strong>Axis served:</strong> EXP-A LeagueStarter + EXP-B Investment Tier elasticity + PF-E low GDI.<br>
+<strong>Community-substrate citation:</strong> 4-site STRONG LeagueStarter convergence; LE adopted vocabulary from PoE.<br>
+<strong>Composition:</strong> low-GDI archetype anchor. PF-E GDI design rule satisfied (kit identity at base-gear); PF-F CLI tends ≤2 (gentle on-ramp).
+</div>
+
+<h3>11.2 Skill-role T4 strategies (5 new)</h3>
+
+<div class="callout callout-t4">
+<strong>T4-ROLE-1: AMP_FUSION</strong>
+<strong>Mechanism:</strong> kit's 2-3 Amp skills merge into single high-magnitude single-press; cumulative multipliers fire as one trigger; reduces Cognitive Load.<br>
+<strong>Axis served:</strong> PF-F CLI reduction (4→2); PF-J skill-role redistribution (Amp slots → Core); PF-G floor reduction.<br>
+<strong>Community-substrate citation:</strong> "Buff Management" / "Buff Upkeep" / "Buff Micromanagement" (n=5+ cons). The pain point is real; this T4 strategy answers it.<br>
+<strong>Composition:</strong> Playability-rating optimization; Easy-to-play archetype anchor.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-ROLE-2: CORE_DUPLICATION</strong>
+<strong>Mechanism:</strong> kit's core skill fires twice per cast (one at click-location, one auto-targeted to nearest enemy) OR at 2 simultaneous locations; effective DPS = 1.8× (penalty for double-cast efficiency).<br>
+<strong>Axis served:</strong> EXP-A Speedfarm + Bossing dual viability; PF-H Playstyle Geometry breadth.<br>
+<strong>Community-substrate citation:</strong> derivative of D4 Necromancer corpse-explosion-double-cast patterns + PoE Cast-on-Crit auto-fire patterns; D4 Necromancer cluster (n=3) in stat-target analysis.<br>
+<strong>Composition:</strong> medium GDI; medium CLI; ranged-friendly.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-ROLE-3: MOBILITY_AS_DAMAGE</strong>
+<strong>Mechanism:</strong> kit's mobility-skill use proc damage; movement velocity multiplies core-skill damage by up to 1.5×; while moving, core-skill auto-fires at 50% rate.<br>
+<strong>Axis served:</strong> PF-I Mobile-damage capability; EXP-A Speedfarm; PF-G floor reduction; PF-J role-redistribution (Mobility slots → Damage).<br>
+<strong>Community-substrate citation:</strong> "Deals Damage While Moving" pro (n=2); "Extremely Mobile" + "High Movement Speed" (n=4 pros).<br>
+<strong>Composition:</strong> the canonical Wanderer-Speedfarm T4. Wanderer + MOBILITY_AS_DAMAGE produces the "Lone Roaming Wanderer" zone.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-ROLE-4: DEFENSE_AS_DAMAGE</strong>
+<strong>Mechanism:</strong> kit's defensive-trigger skills (block, dodge, parry, immunity proc) proc damage; damage taken converts to damage dealt at 0.5× ratio; defensive proc rate sets damage proc rate.<br>
+<strong>Axis served:</strong> PF-F CLI reduction (defense and damage become same action); EXP-A Bossing (defensive identity that also kills); PF-G execution floor 2/ceiling 4.<br>
+<strong>Community-substrate citation:</strong> "Amazing Tankiness" (n=3) + "Don't Get Hit Playstyle" (n=2; INVERTED — this T4 makes "get hit" the win condition); PoE Gladiator/Champion thorns-class patterns.<br>
+<strong>Composition:</strong> defensive-cohort identity with offensive teeth. Composes with Wanderer-Defensive zone.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-ROLE-5: RESOURCE_AS_AMP</strong>
+<strong>Mechanism:</strong> kit's resource surplus auto-spends as damage amplifier; resource at >75% capacity triggers +30% damage; resource at >50% triggers +15% damage; resource at <25% triggers Cognitive-Load penalty (-10% damage; warns player to spend or build resource).<br>
+<strong>Axis served:</strong> PF-F CLI moderate (resource awareness required); EXP-A Push/Bossing (sustained damage); BC resource_economy emergence.<br>
+<strong>Community-substrate citation:</strong> resource role count (n=8); "Resource Cost Reduction" / "Resource management" / "Early resource management" markers.<br>
+<strong>Composition:</strong> sustained-DPS profile; rewards smooth play.
+</div>
+
+<h3>11.3 Player-facing T4 strategies (4 new)</h3>
+
+<div class="callout callout-t4">
+<strong>T4-PF-1: GEAR_INDEPENDENT</strong>
+<strong>Mechanism:</strong> kit's effective DPS+survival floor is +50% at Investment Tier 1 (Extreme); legendaries amplify but don't gate; GDI explicitly = 0; works with white-grade base gear at L50.<br>
+<strong>Axis served:</strong> PF-E GDI=0 anchor; EXP-A LeagueStarter; EXP-B Investment Tier elasticity at low end.<br>
+<strong>Community-substrate citation:</strong> "Gear Dependent" is top-frequency con (n=9); inverse is the design correction.<br>
+<strong>Composition:</strong> LeagueStarter-canonical T4; Wanderer-friendly (Wanderers don't have faction-mate gear sharing; intrinsic viability matters more).
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-PF-2: SKILL_TIMING_WINDOW</strong>
+<strong>Mechanism:</strong> kit gains skill-timing window: pressing core skill within 0.5sec of a precondition (parry, dodge, perfect-timing-on-cooldown) grants 2.0-2.5× damage spike; missing timing = base damage. Execution-ceiling reward.<br>
+<strong>Axis served:</strong> PF-G floor 3/ceiling 5; PF-F CLI 3-4; EXP-A Push.<br>
+<strong>Community-substrate citation:</strong> "Difficult to Play Optimally" (n=1); "Demands multiple active buttons" (n=1); high-skill-floor PoE Hierophant Penance Brand timing-window patterns.<br>
+<strong>Composition:</strong> rewards skilled execution; pairs with Push-mode for end-of-curve depth.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-PF-3: COGNITIVE_SIMPLIFIER</strong>
+<strong>Mechanism:</strong> kit's required active maintenance becomes one-button play; buff windows auto-extend on use; cooldowns auto-fire at optimal moments; resource auto-manages within threshold; PF-F CLI explicitly clamped to ≤2.<br>
+<strong>Axis served:</strong> PF-F CLI floor; PF-G floor 1; EXP-A LeagueStarter + Generalist.<br>
+<strong>Community-substrate citation:</strong> "Easy to play" (n=2 pros); "Demands multiple active buttons" (con — this T4 negates).<br>
+<strong>Composition:</strong> mobile-platform-friendly anchor (per doc 38 D8 mobile-design); Easy-Generalist zone.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-PF-4: WANDERER_STANDALONE</strong>
+<strong>Mechanism:</strong> kit's effective identity strengthens when SINGLETON-marked (cluster_id = "SINGLETON"); standalone-cohesion gate at Phase 7 receives +20% confidence boost; kit ships at lower mechanical compactness; Wave B name treats kit as singular identity.<br>
+<strong>Axis served:</strong> MECH-5 SINGLETON state; EXP-A any (Wanderer can be any archetype); cross-seasonal re-clustering eligibility.<br>
+<strong>Community-substrate citation:</strong> Wanderer architecture (Matt 2026-05-29 late); isekai-canon Solo Leveling / Mushoku Tensei lone-traveler precedent.<br>
+<strong>Composition:</strong> the Wanderer-canonical T4 that makes lone-bearer identity stronger, not weaker; cross-seasonal accumulation produces emergent-faction-founder narrative reward.
+</div>
+
+<h3>11.4 Coupling-architecture T4 strategies (2 new)</h3>
+
+<div class="callout callout-t4">
+<strong>T4-COUPLE-1: LOOT_LAYER_DECOUPLE</strong>
+<strong>Mechanism:</strong> kit's drop-rate gain from accumulated multipliers (gear IIR + content quality + investment-tier) caps at 1.5× total; preserves drop-rate viability at low investment; saturates fast at high investment. Architecturally enforces Layer 1.5 ≤3-multiplicative-layer recommendation per-kit.<br>
+<strong>Axis served:</strong> MECH-Layer-1.5 coupling constraint; EXP-B Investment Tier flatness; PF-E GDI=0 alignment.<br>
+<strong>Community-substrate citation:</strong> synthesis verdict § 7.5 recommendation (≤3 layers preserves single-axis viability).<br>
+<strong>Composition:</strong> player-narrative — "this kit ignores the loot-multiplier game; just plays the build." Anti-min-max identity anchor.
+</div>
+
+<div class="callout callout-t4">
+<strong>T4-COUPLE-2: SINGLE_AXIS_ANCHOR</strong>
+<strong>Mechanism:</strong> kit's identity locks to one axis-of-optimization (chosen at T4 fire: damage / clear-speed / survival / utility / control); single-axis investment receives +60% scaling; off-axis investment receives no bonus. Prevents composite-min-max obligation; rewards single-axis specialists.<br>
+<strong>Axis served:</strong> Layer 1.5 architectural; EXP-A any single-archetype; PF-J skill-role focus.<br>
+<strong>Community-substrate citation:</strong> PoE-Vault "Clear Speed" verbatim named-but-economically-disincentivized archetype; the design correction for the composite-restriction pattern.<br>
+<strong>Composition:</strong> a deliberate Layer 1.5 design statement at the T4 layer — players who choose this kit are choosing the non-composite path.
+</div>
+
+<!-- =================================================================================== -->
+<h2 id="algorithm">12. Algorithmic implementation — how axes drive T4 generation <a class="anchor-link" href="#algorithm">§</a></h2>
+
+<h3>12.1 Two-phase T4 generation flow (proposed Cycle 15+)</h3>
+
+<pre>
+PHASE A: Substrate-coordinate-driven T4 candidate enumeration
+  for each kit k in Phase 4 archive:
+    coord_k = (BC, lineage, cohort, faction_or_singleton,
+               EXP_archetype_modal, EXP_investment_tier,
+               PF_GDI, PF_CLI, PF_skill_ceil, PF_role_dist)
+    eligible_T4s = []
+    for each T4_strategy T in {6 current + 15 new = 21}:
+      T_target_coord = T4_target_zone[T]
+      distance_from_target = euclidean(coord_k, T_target_coord)
+      eligibility_score = inverse(distance_from_target)
+      eligible_T4s.append((T, eligibility_score))
+
+PHASE B: Cohesion-judge-driven T4 selection
+  for each kit k:
+    rank eligible_T4s by eligibility_score
+    apply experiential-archetype consistency filter:
+      if kit's EXP_archetype_modal = "Bossing":
+        boost BOSSING_MODE, PUSH_MODE, AMP_FUSION, SKILL_TIMING_WINDOW
+        suppress SPEEDFARM_MODE, MOBILITY_AS_DAMAGE
+      (etc per archetype)
+    apply player-facing consistency filter:
+      if kit's PF_GDI > 0.5:
+        suppress GEAR_INDEPENDENT (kit fights its identity)
+        boost SKILL_TIMING_WINDOW (high-GDI rewards skill)
+      (etc per PF axis)
+    select top-3 candidates; emit as kit's T4 set (Primary + Layer-2 + 3rd-slot)
+</pre>
+
+<h3>12.2 Cohesion-judge extension at Wave A</h3>
+
+<p>Wave A LLM currently consumes substrate fields (BC + lineage + element + weapon family + faction context). Cycle 15+ extension: Wave A USER prompt adds:</p>
+<ul class="compact">
+<li><code>experiential_archetype_modal</code> per cluster + <code>experiential_archetype_distribution</code> (similar to current <code>element_distribution</code>)</li>
+<li><code>investment_tier_target</code> per cluster (low / mid / high / mageblood; Wave A names a "League Start cluster" vs "Endgame Push cluster")</li>
+<li><code>cognitive_load_index_distribution</code> (cluster's CLI spread — low-CLI cluster names like "Approachable" / "Effortless"; high-CLI cluster names like "Master-Class" / "Disciplined")</li>
+<li><code>variant_focus_balance</code> (cluster's Push/Generalist/Speedfarm distribution)</li>
+</ul>
+
+<p>Wave B USER prompt adds per-kit:</p>
+<ul class="compact">
+<li><code>kit_experiential_archetype</code> (Bossing-flavored / Speedfarm-flavored / etc. naming token)</li>
+<li><code>kit_investment_tier_target</code> (kit identity scoped to tier; "Extreme Budget Pyromancer" vs "Mageblood-Tier Lightning Sage")</li>
+<li><code>kit_T4_strategy_set</code> (Wave B can reference the T4 in the kit name; "The Cogwheel Bossman" — kit with BOSSING_MODE + AMP_FUSION T4)</li>
+<li><code>kit_singleton_status</code> (SINGLETON gets "Wanderer of [region]" naming; cluster-membered gets faction-affiliated naming)</li>
+</ul>
+
+<h3>12.3 Quality vector extension at Phase 3 sim</h3>
+
+<p>Current Phase 3 q-vector: (q1..q5 mechanical quality). Cycle 15+ extension:</p>
+<table>
+<tr><th>Component</th><th>Definition</th><th>Source axis</th></tr>
+<tr><td>q_role_balance</td><td>fitness against community-empirical skill-role distribution prior</td><td>PF-J</td></tr>
+<tr><td>q_archetype_coherence</td><td>kit's BC + skill composition coherence with declared experiential archetype</td><td>EXP-A</td></tr>
+<tr><td>q_cognitive_load</td><td>inverted CLI score; lower CLI = higher q (more playable)</td><td>PF-F</td></tr>
+<tr><td>q_gear_independence</td><td>inverted GDI score; lower GDI = higher q (more day-one viable)</td><td>PF-E</td></tr>
+<tr><td>q_variant_versatility</td><td>kit's coverage across Push/Generalist/Speedfarm variant trinary</td><td>EXP-C</td></tr>
+</table>
+
+<p>Pareto-2 archive selection inherits these new q-components. Substrate-led discipline preserved: the Pareto operator votes on combinatorial quality; we're extending what counts as quality.</p>
+
+<h3>12.4 Investment-tier-elastic per-T4 magnitude scaling</h3>
+
+<p>Several T4 strategies (GEAR_INDEPENDENT, LEAGUE_STARTER_MODE, LOOT_LAYER_DECOUPLE) explicitly target Investment Tier elasticity. Their magnitude formula should be inverse-monotonic with investment-tier:</p>
+
+<pre>
+T4_magnitude_at_tier(t, kit, T4_strategy) = base_magnitude × tier_elasticity_curve(t, T4_strategy)
+
+where tier_elasticity_curve:
+  GEAR_INDEPENDENT:    [1.50, 1.30, 1.10, 1.00, 0.95] for tiers [Extreme,Low,Med,High,Mageblood]
+  LEAGUE_STARTER_MODE: [1.40, 1.25, 1.05, 0.95, 0.85]
+  AMP_FUSION:          [1.00, 1.00, 1.05, 1.10, 1.15]  (modest tier-up scaling)
+  PUSH_MODE:           [0.90, 1.00, 1.15, 1.30, 1.50]  (tier-up rewarded)
+</pre>
+
+<p>This is the algorithmic encoding of "Investment Tier elasticity is real and players differentiate kits along it."</p>
+
+<!-- =================================================================================== -->
+<h2 id="composite">13. The coupling-architecture constraint (Layer 1.5) <a class="anchor-link" href="#composite">§</a></h2>
+
+<div class="callout callout-mech">
+<strong>Architectural commitment proposed for Cycle 15+ design call</strong>
+Reincarnated's loot substrate uses <strong>≤3 multiplicative layers</strong> with additive-or-simpler-multiplicative coupling. Recommended layers: (1) character_substrate (gear stats including investment-tier sensitivity); (2) content_instance (encounter modifiers including playability-rating-affecting); (3) season_mechanic (seasonal flavor + form-library entries). NO atlas-meta layer; NO augmentation cascade layer; NO party-scale multiplier (deferred to multiplayer Phase 1).
+</div>
+
+<p>This commitment has downstream implications for T4 capstone design:</p>
+<ul class="compact">
+<li>T4 strategies CAN add additive damage / utility / experience-mode shifts</li>
+<li>T4 strategies CANNOT add multiplicative loot-amplification layers</li>
+<li>T4-COUPLE-1 (LOOT_LAYER_DECOUPLE) and T4-COUPLE-2 (SINGLE_AXIS_ANCHOR) are architectural-statement T4s that lock in the commitment</li>
+<li>The community-validated single-axis archetype (PoE-Vault "Clear Speed") becomes a viable, named, supported zone in Reincarnated</li>
+</ul>
+
+<!-- =================================================================================== -->
+<h2 id="wanderer">14. Composition with Wanderer architecture <a class="anchor-link" href="#wanderer">§</a></h2>
+
+<p>The Wanderer amendment (cascade-r4 commit <code>acb8b5f</code>) locked in the substrate-elected SINGLETON marker + player-facing Wanderer surface. The axis expansion + T4 enrichment in this doc composes with Wanderer:</p>
+
+<table>
+<tr><th>Composition surface</th><th>Wanderer integration</th></tr>
+<tr><td>SINGLETON Wanderers as anchor for PF-E GDI=0 design rule</td><td>Wanderers don't have faction-mate gear sharing; gear independence matters more; PF-E priority elevated for SINGLETON-marked kits</td></tr>
+<tr><td>T4-PF-4 WANDERER_STANDALONE</td><td>Direct Wanderer-specific T4 strategy; makes lone-bearer identity mechanically stronger</td></tr>
+<tr><td>T4-ROLE-3 MOBILITY_AS_DAMAGE pairs naturally with Wanderer</td><td>"Lone Roaming Wanderer" zone — wandering + damage-on-move</td></tr>
+<tr><td>Cross-seasonal re-clustering of Wanderers (Cycle 15+)</td><td>Accumulated Wanderers in form-library may cluster across seasons; emergent faction names retroactively; players who held Wanderers get founding-figure narrative reward</td></tr>
+<tr><td>Wave A skip-fire for SINGLETON kits preserved</td><td>SINGLETON Wanderers don't get faction labels; only Wave B per-kit naming; Wanderer-as-hero (galadriel + drax pair selection) valid alternative</td></tr>
+<tr><td>EXP-A archetype × SINGLETON</td><td>Wanderers can be Bossing-Wanderers, Speedfarm-Wanderers, Push-Wanderers, etc. — full experiential range available to SINGLETON state</td></tr>
+</table>
+
+<!-- =================================================================================== -->
+<h2 id="pathway">15. Cycle 14 → Cycle 15+ pathway <a class="anchor-link" href="#pathway">§</a></h2>
+
+<h3>15.1 Cycle 14 v1 (current scope)</h3>
+
+<p>Cycle 14 v1 is mid-flight with cascade-r4 + Wanderer amendment. No axis-expansion landings; no T4 strategy additions. Current mechanical-axis architecture continues; current 6-strategy Layer 2 T4 set continues.</p>
+
+<p><strong>What lands at wave-close (gandalf canonical-write targets per cascade-r4 § 8 + Wanderer amendment + this doc):</strong></p>
+<ul class="compact">
+<li>Wanderer architecture principle doc (#13 wave-close target)</li>
+<li>Galadriel-drax hero selection pattern doc (#14)</li>
+<li>Doc 52 promotion candidate vocabulary doc (experiential archetype dimension — was queued; now ready for canonical authoring)</li>
+<li>Layer 1.5 coupling architecture commitment doc (≤3 loot substrate layers; LE-style)</li>
+<li>Skill-role taxonomy doc (7-fold; quality vector extension <code>q_role_balance</code>)</li>
+<li>This doc (canonical-promotion candidate: "Community Substrate Axis Expansion Synthesis")</li>
+</ul>
+
+<h3>15.2 Cycle 15+ (axis + T4 expansion execution)</h3>
+
+<p><strong>Sequential canonical-write + implementation pass:</strong></p>
+<ol>
+  <li><strong>Doc 52 promotion</strong> (experiential archetype dimension as load-bearing canonical doc) — gandalf authorship; Matt ratification</li>
+  <li><strong>Layer 1.5 coupling architecture lock</strong> — Matt + gandalf design call; binds future loot architecture work</li>
+  <li><strong>Phase 5 Wave A + Wave B prompt extension</strong> — star-lord + gandalf coordination; adds experiential / investment-tier / CLI distribution fields</li>
+  <li><strong>Phase 3 quality vector extension</strong> — gamora coordination; adds <code>q_role_balance</code> + <code>q_archetype_coherence</code> + <code>q_cognitive_load</code> + <code>q_gear_independence</code> + <code>q_variant_versatility</code></li>
+  <li><strong>S2 variant emission trinary extension</strong> — rocket coordination; adds <code>variant_experiential_focus ∈ {push, generalist, speedfarm}</code> as third variant axis</li>
+  <li><strong>T4 capstone strategy set expansion</strong> — rocket + gandalf coordination; adds 15 new Layer 2 strategies (4 experiential + 5 skill-role + 4 player-facing + 2 coupling)</li>
+  <li><strong>T4 strategy selection algorithm refinement</strong> — gamora coordination; per-strategy target-coordinate + eligibility-score + archetype/PF consistency filter</li>
+  <li><strong>Investment-tier elasticity curves</strong> — rocket + gandalf calibration; per-T4 tier-elasticity table</li>
+  <li><strong>Cross-seasonal Wanderer re-clustering pass</strong> — elrond + gamora coordination; periodic engine cycle; emergent multi-seasonal factions</li>
+  <li><strong>Loadout app experiential-axis surface</strong> — drax coordination; 5-axis rating display per kit; experiential archetype filter; Wanderer tab; investment-tier guidance</li>
+</ol>
+
+<p><strong>Rough effort estimate:</strong> ~4-6 weeks engine work across rocket + gamora + star-lord + elrond + drax. Maps to "Cycle 15+ engine integration work" per synthesis verdict § 7.</p>
+
+<h3>15.3 Empirical-evidence triggers (recognition → validate → commit)</h3>
+
+<p>Per the recognition-validate-commit discipline (Disc #21 + gandalf OP § 3.4), architectural commitments deferred to Cycle 15+ should be gated by empirical evidence triggers. Proposed:</p>
+
+<table>
+<tr><th>Cycle 15+ commitment</th><th>Empirical trigger</th></tr>
+<tr><td>Doc 52 promotion</td><td>Cycle 14 v1 closes with substrate-led emergent factions + Wanderers visible; community vocabulary validated in production</td></tr>
+<tr><td>Layer 1.5 ≤3 layers lock</td><td>Cycle 14 v1 substrate distribution analyzed for natural-layer-count; player-facing alpha (Track B loadout app) provides initial play feedback</td></tr>
+<tr><td>Wave A/B prompt extension</td><td>Cycle 14 v1 Wave A/B baseline operational; LLM cost projection at scale verified</td></tr>
+<tr><td>15 new T4 strategies</td><td>Each strategy gated by per-strategy spec authoring + gamora simulation validation + Pareto-archive performance verification; staged 3-5 strategies per Cycle 15 sub-cycle</td></tr>
+<tr><td>Cross-seasonal Wanderer re-clustering</td><td>≥3 seasons of accumulated form-library; ≥10 Wanderers in library; substrate-density threshold cleared</td></tr>
+</table>
+
+<!-- =================================================================================== -->
+<h2 id="risks">16. Risk register <a class="anchor-link" href="#risks">§</a></h2>
+
+<div class="callout callout-risk">
+<strong>R1: Axis-expansion taxonomy drift</strong>
+Adding 9 new axis classes (3 experiential + 6 player-facing) is a substantial expansion of the design space. Risk: future cycles drift toward designer-imposed taxonomy at the new axes (Disc #41 violation at the expanded layer).
+<br><br>
+<strong>Mitigation:</strong> apply same substrate-led discipline at expanded axes. Community vocabulary at expansion time was extracted verbatim; future axis additions must also originate from substrate evidence, not from designer intuition. Continue ARPG community research sprints at each Cycle to refresh empirical anchor.
+</div>
+
+<div class="callout callout-risk">
+<strong>R2: T4 strategy combinatorial explosion</strong>
+6 current + 15 new = 21 Layer 2 T4 strategies. Per-kit T4 selection space grows; risk of incoherent T4 combinations producing degenerate kits (e.g., SPEEDFARM_MODE + BOSSING_MODE simultaneously — contradictory axis-shifts).
+<br><br>
+<strong>Mitigation:</strong> per-kit T4 selection algorithm (§ 12.1) applies experiential-archetype consistency filter — kits with EXP_archetype_modal = Bossing get BOSSING_MODE boost + SPEEDFARM_MODE suppression. Two-pass synergy scan per Disc #32 applies at the T4 layer.
+</div>
+
+<div class="callout callout-risk">
+<strong>R3: Coupling-architecture commitment underspecification</strong>
+Commit to ≤3 loot layers is architecturally significant but Cycle 14 v1 doesn't yet have a loot-system architecture authored. Risk: Cycle 15+ loot-system work overrides the ≤3-layer commitment under pressure.
+<br><br>
+<strong>Mitigation:</strong> the Layer 1.5 commitment lives as canonical doc with jack-ryan ratification; future loot-system work-product is gated by Layer 1.5 consistency check at Gate-2 review. T4-COUPLE-1 + T4-COUPLE-2 become architectural-statement T4s that lock the commitment at the generative layer.
+</div>
+
+<div class="callout callout-risk">
+<strong>R4: Statistical-rigor regression at corpus-thin claims</strong>
+Three findings remain UNCERTAIN at the statistical sprint (multi-layer causal mechanism n=4 games; stat-target clustering n=13; investment-tier signal extraction 8% coverage). Building T4 strategies anchored on these claims (especially Investment Tier elasticity in T4-PF-1 + T4-COUPLE-1) means we're committing to architectural directions that haven't received publication-grade empirical validation.
+<br><br>
+<strong>Mitigation:</strong> sprint+1 research target (per synthesis verdict § 7.6) — headless browser pass on Maxroll structured ratings + investment-tier schema extension + corpus expansion to n>50 stat-targets. Validate or refute claims before committing T4 strategies derived from UNCERTAIN claims to canonical commit.
+</div>
+
+<div class="callout callout-risk">
+<strong>R5: Cycle 14 v1 ship pressure delaying axis expansion</strong>
+Cycle 14 v1 close criteria gate on shipped_worthy ≥ ~60-75 across 3 seasons. Axis expansion + T4 strategy additions belong to Cycle 15+. Risk: scope creep pulls expansion work forward, delaying v1 ship.
+<br><br>
+<strong>Mitigation:</strong> this doc explicitly scopes axis expansion + 15 new T4 strategies as <strong>Cycle 15+ work</strong>. Cycle 14 v1 wave-close consumes this as input for canonical-promotion candidates list; execution stays Cycle 15+. Discipline preserved by recognizing the work, scheduling it post-ship.
+</div>
+
+<div class="callout callout-risk">
+<strong>R6: Player-facing axis subjectivity</strong>
+Player-facing axes (Cognitive Load Index, Execution Skill Floor/Ceiling, Gear Dependency Index) are inherently subjective. Risk: our metric definitions diverge from player perception; community pushback at launch ("this kit is labeled CLI=2 but actually requires constant buff management").
+<br><br>
+<strong>Mitigation:</strong> all PF-axis definitions in § 8 anchor on community-substrate vocabulary verbatim. PF metric values become Wave B + loadout-app surface; player feedback at Track B alpha provides calibration signal. Galadriel CV-pipeline scoring against genre-peer references provides external benchmark.
+</div>
+
+<!-- =================================================================================== -->
+<h2 id="openq">17. Open questions for Pattern B <a class="anchor-link" href="#openq">§</a></h2>
+
+<ol>
+  <li><strong>Coupling architecture sub-decisions.</strong> If ≤3 multiplicative layers is the commitment, which 3 layers do we pick? Recommendation: character_substrate + content_instance + season_mechanic (per § 13 callout). Open: does season_mechanic count as a "layer" or as a per-season substrate-flavor reset? Need Pattern B framing call with Matt.</li>
+
+  <li><strong>Magic Find architectural choice.</strong> D4-style single-layer-difficulty-gate vs LE-style 3-layer-simpler vs a-novel-third-path. Community signal is bimodal (D4 retired vs PoE elevated to first-class). Reincarnated lean per ≤3-layer recommendation is D4-style single-layer; but does the form-library across seasons naturally produce a multi-layer MF emergent mechanism that breaks the single-layer commitment?</li>
+
+  <li><strong>Investment Tier integration with doc 51 profiles.</strong> Doc 51 has investment-profile (low/mid/max/mixed). Community has 5-tier vocabulary (Extreme/Low/Med/High/Mageblood). Map: low ≈ Extreme+Low; mid ≈ Med; max ≈ High+Mageblood. Or: extend doc 51 to 5-tier explicitly. Pattern B design call.</li>
+
+  <li><strong>Skill-role enforcement vs emergence.</strong> Adding <code>q_role_balance</code> to Phase 3 q-vector creates substrate-led vote on role distribution. Open: should we ENFORCE role-distribution minimums (kit must have ≥1 Core + ≥1 Mobility + ≥1 Defense)? Or let Pareto-2 selection do the work? Lean: emergence-only; substrate votes.</li>
+
+  <li><strong>5-axis Maxroll rating as engine output.</strong> Should kits get a published 5-axis Push/Speed/Bossing/Survivability/Playability rating in the loadout app summary? Computes from BC + PF axes deterministically. Player UX-positive (familiar from genre); design call on whether to publish or keep internal.</li>
+
+  <li><strong>T4 strategy set staging.</strong> 15 new strategies is substantial. Stage in Cycle 15+ sub-cycles (3-5 per sub-cycle)? Which strategies have highest leverage to fire first? Lean: experiential-archetype set (4 strategies) first; then skill-role set (5); then player-facing set (4); then coupling set (2).</li>
+
+  <li><strong>Loadout-app axis-surface UX.</strong> 14 axis classes is more than current loadout-app shows. Drax + galadriel design call on how to present (faceted filter? tag set? rating panel? hover-tooltip layers?). Composes with Track B loadout app refresh in cascade-r4 § 11.2.</li>
+
+  <li><strong>Wave A + Wave B prompt budget.</strong> Adding ~5 new fields per Wave A USER prompt + ~4 per Wave B USER prompt extends token usage. Cycle 15+ LLM cost projection: ~$0.50-0.80 per season (vs current ~$0.37). Pattern B design call on whether to compress prompt structure or absorb cost.</li>
+
+  <li><strong>Cohesion-judge calibration at expanded axis space.</strong> Wave A cohesion judge currently calibrated on mechanical-axis substrate. Adding experiential + PF axes shifts the judge's task scope. Needs P5 calibration sprint at Cycle 15+. Star-lord owns; gandalf consults.</li>
+
+  <li><strong>Cross-cycle substrate-led-discipline drift detection.</strong> 14 axis classes is a lot of dimensions to keep substrate-led. Periodic ARPG community research re-sprints (annual?) provide drift detection. Routine cadence for Cycle 15+/16+ design calls.</li>
+</ol>
+
+<!-- =================================================================================== -->
+<!-- ============= AMENDMENT 2026-05-29 LATE — BUILD-DEFINING RESEARCH ================= -->
+<!-- =================================================================================== -->
+
+<h2 id="bd-research" style="margin-top: 4rem; padding-top: 1.5rem; border-top: 3px solid var(--risk);">18. Build-defining mechanism research findings <a class="anchor-link" href="#bd-research">§</a></h2>
+
+<p><span class="figure-num">Amendment 2026-05-29 late.</span> Second research commission anchored on Matt's directive: "send agents to find which ARPG games have build-defining [mechanism] and whether T4 is the right abstraction or whether we should delete T4 nodes altogether." Legolas Mode A executed; findings at <code>agentic_orchestration/research/arpg-build-defining-mechanisms-2026-05-29/findings.md</code> + <code>mechanisms.csv</code>; data ingested into <code>agentic_orchestration/research/arpg-community-axes-2026-05-29/research.db</code> as three new tables (<code>build_defining_mechanisms</code> with 31 rows; <code>mechanism_families</code> with 7 rows; <code>t4_genre_analog_mapping</code> with 24 rows). This section synthesizes the verdict.</p>
+
+<h3>18.1 Research scope</h3>
+
+<p>Enumerated build-defining mechanisms across 9 ARPG games: Path of Exile 1 + 2 EA, Diablo 2 + D2R, Diablo 3, Diablo 4, Last Epoch, Grim Dawn, Lost Ark, Wolcen. Per mechanism captured: name, mechanism class, magnitude pattern, stackability, trigger condition, scope, gating, reversibility, resource cost, build-defining axis, investment-tier coupling, genre lineage, source URL.</p>
+
+<table>
+<tr><th>Game</th><th>Mechanisms enumerated</th><th>Primary crystallization moment</th></tr>
+<tr><td>Path of Exile 1</td><td>9</td><td>6-link acquisition; Ascendancy completion</td></tr>
+<tr><td>Path of Exile 2 EA</td><td>2 new + 3 inherited</td><td>Spirit reservation lock-in; Ascendancy</td></tr>
+<tr><td>Diablo 2 / D2R</td><td>3</td><td><strong>Runeword acquisition</strong> (Enigma/Infinity totemic)</td></tr>
+<tr><td>Diablo 3</td><td>3</td><td><strong>Class Set 6-piece completion</strong></td></tr>
+<tr><td>Diablo 4</td><td>5</td><td><strong>Legendary Aspect assembly</strong></td></tr>
+<tr><td>Last Epoch</td><td>4</td><td>Skill specialization tree completion</td></tr>
+<tr><td>Grim Dawn</td><td>2</td><td>Dual Mastery selection (permanent)</td></tr>
+<tr><td>Lost Ark</td><td>3</td><td>Class engraving + general engraving stack</td></tr>
+<tr><td>Wolcen</td><td>1</td><td>Gate of Fates path alignment</td></tr>
+</table>
+
+<p><strong>Per-character simultaneous build-defining mechanism count: 3–5 (genre tendency).</strong> D2 and GD are the strongest 1-2-mega-moment outliers; PoE is the 5-8 outlier; all others cluster at 3-5. <strong>The genre does NOT converge on a "single dominant build-defining moment" model.</strong></p>
+
+<!-- =================================================================================== -->
+<h2 id="bd-families">19. The 7 mechanism families — family taxonomy <a class="anchor-link" href="#bd-families">§</a></h2>
+
+<p>Cross-game pattern extraction yields 7 distinct mechanism families. The HTML colors mark our gap-severity at each.</p>
+
+<table>
+<tr><th>Family</th><th>Members</th><th>Game coverage</th><th>Reincarnated equivalent</th><th>Gap severity</th></tr>
+<tr style="background: var(--mechanical-bg);">
+  <td><strong>A — Intra-skill transformation</strong></td>
+  <td>LE Skill Specialization Tree; PoE Support Gem Links (5 supports stack); LA Tripod (3 tiers per skill); PoE2 Meta Gem</td>
+  <td>LE + PoE + LA + PoE2</td>
+  <td>Partial (skill geometry + T4 scope expansion approximates)</td>
+  <td><span class="tag tag-moderate">MODERATE</span></td>
+</tr>
+<tr style="background: var(--risk-bg);">
+  <td><strong>B — Extractable / imbue-able power</strong><br><em>DOMINANT BY PRIMARY CRYSTALLIZATION</em></td>
+  <td>D2 Rune Words (Enigma/Infinity/Spirit); D3 Kanai's Cube (extracted legendary powers); D4 Legendary Aspect (Codex of Power); D4 Tempering</td>
+  <td>D2 + D3 + D4 — three of the most commercially successful ARPGs all center build-defining here</td>
+  <td><strong>NONE</strong></td>
+  <td><span style="background: var(--risk); color: var(--bg); padding: 0.1rem 0.5rem; font-family: 'Helvetica Neue', sans-serif; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 3px;">MAJOR GAP</span></td>
+</tr>
+<tr style="background: var(--mechanical-bg);">
+  <td><strong>C — Class-identity combo</strong></td>
+  <td>GD Dual Mastery (66 combinations); D3 Class Set 6pc; LA Class Engraving; PoE Ascendancy Class</td>
+  <td>GD + D3 + LA + PoE</td>
+  <td>Partial (spirit-swap is temporal not simultaneous-synergy)</td>
+  <td><span class="tag tag-moderate">MODERATE</span></td>
+</tr>
+<tr style="background: var(--t4-bg);">
+  <td><strong>D — Passive-tree capstone node</strong><br><em>Reincarnated's current T4 family</em></td>
+  <td>PoE Keystone; PoE Ascendancy Capstone; GD Devotion Celestial (terminal); D4 Paragon Legendary Glyph (level 51)</td>
+  <td>PoE + PoE2 + GD + D4 Paragon (3 of 9 games as primary)</td>
+  <td><strong>YES — T4 architecture (Primary + Layer 2 cycling)</strong></td>
+  <td>No gap — preserved + extended</td>
+</tr>
+<tr style="background: var(--mechanical-bg);">
+  <td><strong>E — Item-slot anchor (unique/mythic)</strong></td>
+  <td>Mageblood; Headhunter; Enigma; Infinity; Tyrael's Might; The Grandfather</td>
+  <td>PoE + D2 + D4</td>
+  <td>Partial (legendary system exists; no Mageblood-class)</td>
+  <td><span class="tag tag-moderate">MODERATE</span></td>
+</tr>
+<tr>
+  <td><strong>F — Consumable / inventory-resident passive</strong></td>
+  <td>D2 Charms (Grand Charm Skiller); LE Idols; LE Blessing</td>
+  <td>D2 + LE</td>
+  <td>None</td>
+  <td><span class="tag tag-weak">MINOR</span></td>
+</tr>
+<tr style="background: var(--mechanical-bg);">
+  <td><strong>G — Proc-attached celestial / secondary effect</strong></td>
+  <td>GD Devotion Celestial Power (linked to skill); PoE Watcher's Eye conditional mod; D3 Legendary Gem Rank 25 secondary</td>
+  <td>GD + PoE + D3</td>
+  <td>None (T4 proc-on-condition is partial analog)</td>
+  <td><span class="tag tag-moderate">MODERATE</span></td>
+</tr>
+</table>
+
+<h3>19.1 The architectural distinction that matters</h3>
+
+<p><strong>Family count by raw mechanism quantity differs from family count by primary-crystallization weight.</strong> By raw count, Family D (passive-tree capstone) has 9 mechanisms in our ingestion — the most. By primary-crystallization weight (which mechanism do players cite as "the build came online" moment in each game?), <strong>Family B is dominant</strong> — D2 (Enigma/Infinity), D3 (Class Set / Kanai's Cube), D4 (Legendary Aspect assembly) all center the crystallization moment in Family B. Family D mechanisms are numerous in PoE (Keystones + Ascendancy + Cluster Jewel notables + Devotion terminals + Glyph) but represent <em>distributed</em> build-defining moments, not the singular crystallization.</p>
+
+<div class="callout callout-mech">
+<strong>The headline insight</strong>
+The genre's most-beloved canonical build-defining moments — Enigma in D2, Marauder 6pc in D3, Aspect assembly in D4 — all live in <strong>Family B</strong>. Reincarnated has <strong>zero Family B mechanisms</strong>. T4 architecture is preserved as a genuine Family D innovation, but Family B is the highest-leverage missing surface. Adding T4 strategies (the § 11 proposal) extends Family D coverage; <strong>adding a Family B mechanism is the more architecturally consequential Cycle 15+ design call.</strong>
+</div>
+
+<h3>19.2 Mathematical-property summary by family</h3>
+
+<table>
+<tr><th>Family</th><th>Magnitude pattern</th><th>Stackability</th><th>Trigger</th><th>Scales with investment</th></tr>
+<tr><td>A (intra-skill)</td><td>Transformative (type change) OR +20-50% multiplicative per support</td><td>Additive within family; "more" multiplicative</td><td>Always-on or trigger-linked</td><td>Gem level / node point count</td></tr>
+<tr><td>B (extractable/imbue)</td><td>Fixed power set; aspect scales with item stat (life, crit%, item-power)</td><td>Single per slot; no double-up</td><td>Always-on (imprinted)</td><td>Flat or scales with item power level</td></tr>
+<tr><td>C (class-combo)</td><td>Large flat bonus or mechanic unlock (D3 Marauder: 12,000% per active Sentry)</td><td>Single-instance per choice</td><td>Always-on when complete</td><td>Scales with class mechanic count</td></tr>
+<tr><td>D (capstone-node)</td><td>Binary two-sided mechanic swap; +25-50% large bonus typical</td><td>Single-instance</td><td>Always-on (allocated)</td><td>Flat OR scales with adjacent investment</td></tr>
+<tr><td>E (item-slot anchor)</td><td>Large unique effect not otherwise achievable</td><td>Single per slot</td><td>Always-on or on-kill (Headhunter)</td><td>Does not scale — power is fixed per item tier</td></tr>
+<tr><td>F (consumable/inventory)</td><td>+1 skill / +% resist / flat stats; small per piece, cumulative</td><td>Additive unlimited up to inventory space</td><td>Always-on (held)</td><td>Scales with count (fill inventory)</td></tr>
+<tr><td>G (proc-attached)</td><td>Chance-to-proc new skill on attack</td><td>Single attachment per skill (GD)</td><td>Proc-on-event</td><td>Scales with attached skill's attack frequency</td></tr>
+</table>
+
+<!-- =================================================================================== -->
+<h2 id="bd-verdict">20. T4 architectural verdict — is T4 the right abstraction? <a class="anchor-link" href="#bd-verdict">§</a></h2>
+
+<h3>20.1 The headline verdict</h3>
+
+<div class="callout callout-t4">
+<strong>T4 architecture is preserved. T4 is genuinely novel. T4 is incomplete alone.</strong>
+The proposal in Matt's prompt — "the answer could be delete T4 nodes altogether and create build-defining events in a different way" — surfaced as a deliberate open door. The research closes that door but adds a wider one: T4 is correct for Family D and is genuinely architecturally novel in its MECHANICAL STRATEGY cycling design. But Family D alone is insufficient to capture the genre's build-defining design space. Three additional families need representation in Reincarnated's architecture: <strong>Family B (extractable/imbue-able power; MAJOR gap), Family A (intra-skill transformation depth; moderate gap), and Family C (class-combo combinatorial; moderate gap).</strong>
+</div>
+
+<h3>20.2 Cheapest-empirical-refutation tested</h3>
+
+<p>If T4 were the canonical dominant pattern, all major ARPGs would center build identity on tree-terminal nodes. Refutation evidence:</p>
+<ul class="compact">
+<li><strong>D2:</strong> no passive tree capstone of note. Build identity = Runewords + skill tree. <em>Refutes "T4 is canonical."</em></li>
+<li><strong>D3:</strong> primary crystallization = Class Set 6pc (Family C). <em>Refutes.</em></li>
+<li><strong>D4:</strong> primary crystallization = Legendary Aspect assembly (Family B). <em>Refutes.</em></li>
+<li><strong>LE:</strong> primary = skill specialization tree completion (Family A — intra-skill). <em>Refutes.</em></li>
+<li><strong>GD:</strong> primary = Dual Mastery selection (Family C). <em>Refutes.</em></li>
+<li><strong>PoE:</strong> only game centering on capstone nodes — and even there, 6-link acquisition (Family A skill-link) is cited as the more salient moment than Keystone allocation. <em>Partial support only.</em></li>
+</ul>
+
+<p><strong>Refuted in 5 of 6 cases. T4 is a minority-family abstraction, not the canonical genre default.</strong></p>
+
+<h3>20.3 What this means for the 15 new T4 strategies proposed in § 11</h3>
+
+<p>The 15 strategies remain valid as Family D extensions. But several have stronger Family B / Family A genre analogs and would be better-architected in those families:</p>
+
+<table>
+<tr><th>T4 Strategy</th><th>Closest genre analog</th><th>Best family fit</th><th>Architectural verdict</th></tr>
+<tr><td>T4-EXP-1 SPEEDFARM_MODE</td><td>D4 movement-speed aspect; PoE Tailwind ascendancy</td><td>B + D hybrid</td><td>Could live in Family B (Reincarnated Aspect equivalent) when introduced</td></tr>
+<tr><td>T4-EXP-2 BOSSING_MODE</td><td>D3 Roland's 6pc + LA Grudge engraving</td><td>C + D</td><td>Could live in Family C (Reincarnated class-combo equivalent)</td></tr>
+<tr><td>T4-EXP-3 PUSH_MODE</td><td>PoE Awakened-tier + D4 Greater Affix Pit-pushing</td><td>B + E</td><td>Family B + E; T4 valid but late-game scaling pattern</td></tr>
+<tr><td>T4-EXP-4 LEAGUE_STARTER_MODE</td><td>D2 Spirit runeword + LE day-1 Skill Tree</td><td>B + A</td><td>Family B (early-tier crafting); T4 partial fit</td></tr>
+<tr><td>T4-ROLE-1 AMP_FUSION</td><td>PoE Trigger-class support gems (Cast on Crit; Cast When Stunned)</td><td>A</td><td>BETTER as Family A intra-skill link than as T4</td></tr>
+<tr><td>T4-ROLE-2 CORE_DUPLICATION</td><td>D4 Necromancer corpse double-cast + PoE Cast-on-Crit</td><td>A + B</td><td>Family A + B hybrid</td></tr>
+<tr><td>T4-ROLE-3 MOBILITY_AS_DAMAGE</td><td>LE Tempest Strike skill tree nodes + D4 Dust Devils aspect</td><td>A + B</td><td>STRONGEST candidate for re-architecture — better as intra-skill (Family A) per LE precedent</td></tr>
+<tr><td>T4-ROLE-4 DEFENSE_AS_DAMAGE</td><td>PoE Gladiator/Champion + D4 Bash-thorns aspect</td><td>B + D</td><td>Family B (Aspect) + Family D (Ascendancy)</td></tr>
+<tr><td>T4-ROLE-5 RESOURCE_AS_AMP</td><td>D3 Wrath of the Berserker + PoE Berserker rage</td><td>C + D</td><td>Class-set + capstone hybrid</td></tr>
+<tr><td>T4-PF-1 GEAR_INDEPENDENT</td><td>D2 base-rune Spirit/Stealth; LE day-1 Skill Tree</td><td>B + A</td><td>Family B early-tier crafting + Family A; T4 fit partial</td></tr>
+<tr><td>T4-PF-2 SKILL_TIMING_WINDOW</td><td>PoE Hierophant Penance Brand timing + LA Awakening burst</td><td>D + C</td><td>Capstone + class-engraving anchor; T4 valid</td></tr>
+<tr><td>T4-PF-3 COGNITIVE_SIMPLIFIER</td><td>D3 simulacrum-class one-button builds + LA Reflux</td><td>C + D</td><td>Class-set + class-engraving; T4 valid</td></tr>
+<tr><td><strong>T4-PF-4 WANDERER_STANDALONE</strong></td><td>No direct genre analog</td><td><strong>Reincarnated novel</strong></td><td>Stay as T4 — genuinely original mechanism</td></tr>
+<tr><td><strong>T4-COUPLE-1 LOOT_LAYER_DECOUPLE</strong></td><td>No direct genre analog</td><td><strong>Reincarnated novel</strong></td><td>Stay as T4 — architectural statement mechanism</td></tr>
+<tr><td><strong>T4-COUPLE-2 SINGLE_AXIS_ANCHOR</strong></td><td>PoE-Vault "Clear Speed" named-but-disincentivized</td><td>derived (Reincarnated first to enforce)</td><td>Stay as T4 — genre signal exists, no engine enforces</td></tr>
+</table>
+
+<p><strong>3 of 15 stay T4 unconditionally</strong> (Wanderer + 2 Couple strategies — all Reincarnated novel). <strong>5 of 15 are stronger candidates in Family A / B / C once those families are introduced</strong> (T4-ROLE-1 / T4-ROLE-3 / T4-PF-1 / T4-EXP-1 / T4-EXP-4). <strong>7 of 15 are hybrid-family</strong> (could live in T4 or split across families).</p>
+
+<h3>20.4 Three actionable signals from the research</h3>
+
+<ol>
+  <li><strong>Family B gap is the most architecturally significant.</strong> Reincarnated has no extractable/portable power mechanism. The genre's most-beloved build crystallization moments all live here. <strong>Family B architectural design call is recommended PRIORITY 1 for Cycle 15+ — before T4 strategy set expansion.</strong></li>
+  <li><strong>Intra-skill transformation (Family A) is underweighted.</strong> LE's per-skill 20-node trees are the canonical "skill comes online" moment. Reincarnated's skill geometry + T4 partially approximates but doesn't replicate. <strong>Family A depth via per-skill specialization investment is a Cycle 15+ priority 2.</strong></li>
+  <li><strong>T4 mechanical strategy cycling is genuinely novel.</strong> No single mechanism in the genre does "pick one of N strategy archetypes" at a unified abstraction layer. <strong>This is worth preserving even as we add Family B + A.</strong></li>
+</ol>
+
+<!-- =================================================================================== -->
+<h2 id="bd-amendments">21. Amendments to this doc per build-defining research <a class="anchor-link" href="#bd-amendments">§</a></h2>
+
+<h3>21.1 Amendment to § 11 (T4 capstone candidates)</h3>
+
+<p><strong>§ 11 remains canonically authored but reframed:</strong> the 15 strategies are Family D Layer 2 T4 extensions, valid for kits whose architectural anchor is the passive-tree capstone family. 5 of 15 (T4-ROLE-1, T4-ROLE-3, T4-PF-1, T4-EXP-1, T4-EXP-4) are candidates for re-architecture into Family A or Family B once those families are introduced — the same mechanical intent can manifest at a different architectural layer. § 11 stays operational; § 20.3 table provides the per-strategy family-mapping verdict.</p>
+
+<h3>21.2 New § 15 pathway insertion — Family B architectural design call as priority 1</h3>
+
+<p>Per § 19.2 verdict, the Cycle 15+ pathway in § 15.2 should insert a new step 0 BEFORE step 1 (doc 52 promotion):</p>
+
+<div class="callout callout-mech">
+<strong>Cycle 15+ Pathway Step 0 (NEW) — Family B architectural design call</strong>
+Author canonical doc <code>canonical/story/2026-05-29-family-b-extractable-power-architecture.md</code> proposing Reincarnated's equivalent of D4 Legendary Aspect / D3 Kanai's Cube / D2 Runeword. Candidate mechanisms to explore in Pattern B with Matt:
+<ul class="compact">
+<li><strong>Spirit-Kit Aspect Extraction:</strong> at end of season, player can extract one mechanical property from the season's spirit-kit to add to a "Codex of Aspects" carried into future seasons (composes with Earth Self / form library architecture)</li>
+<li><strong>Seasonal Glyph Cubes:</strong> 3 extracted-power slots per character carried across seasons; each slot holds one mechanism from a prior season's kit; cross-seasonal build assembly</li>
+<li><strong>Inscribed Rune Sequence:</strong> multi-component "rune words" assembled from substrate-elected components; each season produces new components; assembly creates trans-seasonal build identity</li>
+</ul>
+This design call lands BEFORE the 15-strategy T4 expansion to ensure the T4 architecture composes cleanly with Family B rather than duplicating its design space.
+</div>
+
+<h3>21.3 New § 15 pathway insertion — Family A per-skill specialization depth as priority 2</h3>
+
+<div class="callout callout-mech">
+<strong>Cycle 15+ Pathway Step 0.5 (NEW) — Family A architectural design call</strong>
+Extend Reincarnated's per-skill investment depth to support intra-skill transformation. LE's 20-node-per-skill trees are the canonical pattern. Doc 51's investment scaling currently scales skill magnitude; Family A extension introduces per-skill TRANSFORMATION nodes (change damage type, alter geometry, add targeting behavior, modify resource cost) inside the skill's own investment space. Candidate naming: "Skill Refinement Tree" or "Skill Affinity Path." Anchors to substrate-led discipline — the transformation nodes available per skill are substrate-elected per the skill's BC + element + cultural lineage.
+</div>
+
+<h3>21.3.5 New § 15 pathway insertion — T4-ROLE-4 DEFENSE_AS_DAMAGE as Cycle 15+ priority 1.5</h3>
+
+<div class="callout callout-t4">
+<strong>Cycle 15+ Pathway Step 0.7 (NEW) — T4-ROLE-4 DEFENSE_AS_DAMAGE as load-bearing for defensive cohort viability</strong>
+Empirical surface 2026-05-30 (season_003 production data): defensive cohort 0% ship rate across all 11 defensive-shaped kits. Refined diagnosis composes three architectural gaps:
+<ul class="compact">
+<li><strong>Gap 1 — Cohort weight mismatch:</strong> generating ~25-33% defensive vs ~5% empirical genre signal (legolas community corpus 2026-05-29). Designer-writes-substrate principle violated at the cohort distribution layer. <em>Cycle 15+ Phase 3 cohort-weight calibration target.</em></li>
+<li><strong>Gap 2 — Missing canonical defensive-viable mechanism:</strong> the genre uses thorns/reflect/parry mechanics (PoE Crest of Perandus + Vengeance support + Gladiator Versatile Combatant + Champion Worthy Foe; D2 Paladin Thorns Aura + Edge runeword; D3 Iceblink + Maximus thorns weapon; D4 Barbarian Bash-thorns aspect; LE Sentinel reflect skill tree; GD Tortoise Shell devotion + reflect). The unifying pattern: <strong>defense IS the damage source</strong> — hits taken proc damage dealt; survival rewards offense. Without this mechanism, defensive-shaped kits have no path to convert survival into damage. <strong>This is T4-ROLE-4 DEFENSE_AS_DAMAGE per § 11.</strong></li>
+<li><strong>Gap 3 — Missing defensive-friendly encounter variants:</strong> W-α6 24-cell ENCOUNTER_COHORT_KPM_BAND structure likely lacks reflect-favorable / survival-reward / counter-attack encounter shapes that defensive specialty pays off in. <em>Cycle 15+ encounter battery extension target.</em></li>
+</ul>
+<strong>Compositional priority ordering:</strong> Gap 2 (DEFENSE_AS_DAMAGE landing) is highest leverage — without the mechanic, Gap 1 and Gap 3 fixes don't matter; defensive-shaped kits remain mechanically inert regardless of cohort weight or encounter battery. T4-ROLE-4 elevates from "one of 15 proposed Layer 2 strategies" to <strong>load-bearing for defensive cohort viability</strong>; priority 1.5 between Family B (priority 1; § 21.2) and Family A per-skill depth (priority 2; § 21.3). Substrate framework scoring (§ 22): 4/5 — identity-axis transformation (defense → damage axis) + multiplicative composition (defensive investments now multiplicatively damaging) + system-substitution (defensive resources now offensive output) + composition unlock (defensive-viable archetype enabled) — genuinely build-defining per the 5-property substrate framework.
+<br><br>
+<strong>Composition with build-defining family taxonomy:</strong> T4-ROLE-4 closest genre analogs span Family B (D4 Bash-thorns aspect = extractable power) + Family D (PoE Gladiator/Champion ascendancy = passive-tree capstone) + Family G (Vengeance support gem = proc-attached secondary). Implementation could land as Layer 2 T4 strategy initially (Family D); Cycle 16+ re-architecture into Family B (extractable thorns aspects in Codex of Aspects pattern) per § 23.6 Hidden-Spirit-Discovery recognition record composition.
+<br><br>
+<strong>Empirical-evidence triggers for Cycle 15+ commitment</strong> (per recognition-validate-commit Disc #21):
+<ol>
+  <li>KR-routed rocket investigation into defensive cohort gauntlet_pass_rate sub-metric decomposition (tier_1_outcome × in_band × sg_overall) — distinguishes which of Gap 1/2/3 dominates and informs DEFENSE_AS_DAMAGE spec calibration</li>
+  <li>Genre corpus extension: confirm thorns/reflect mechanism prevalence in defensive-archetype builds within legolas community corpus (sprint+1 candidate)</li>
+  <li>Bounded-viability validation post-DEFENSE_AS_DAMAGE landing: does defensive cohort ship rate clear 30% cohort median floor per BVV doc 50 Target #5?</li>
+</ol>
+</div>
+
+<h3>21.4 New § 16 risk addition — R7 single-family-architecture-bias</h3>
+
+<div class="callout callout-risk">
+<strong>R7: Single-family-architecture-bias risk</strong>
+Reincarnated's current architecture centers on Family D (passive-tree capstone) via T4. Adding 15 more T4 strategies extends Family D coverage but does NOT broaden the architectural family base. Risk: kits emerge that fit Family D but feel architecturally narrow vs the genre canon where the same kit might also have Family B + A + C + E build-defining surfaces simultaneously.<br><br>
+<strong>Mitigation:</strong> § 21.2 + § 21.3 introduce Family B + A as Cycle 15+ priority 1 + 2 design calls BEFORE T4 expansion. Family C (class-combo) and Family E (item-slot anchor) become Cycle 16+ candidates. Reincarnated's architecture moves toward genre-canonical 3-5 simultaneous build-defining surfaces per kit instead of 1 (current).
+</div>
+
+<h3>21.5 Composition with Wanderer architecture</h3>
+
+<p>Wanderer architecture (cascade-r4 amendment <code>acb8b5f</code>) introduces SINGLETON substrate-elected state + Wanderer player-facing surface. Composition with Family B + A:</p>
+<ul class="compact">
+<li>Cross-seasonal Wanderer re-clustering (Cycle 15+ deferred work) composes with Family B Codex-of-Aspects accumulation — Wanderers contribute substrate components that may cluster into emergent multi-seasonal factions</li>
+<li>Family A per-skill specialization depth allows Wanderer kits to express identity more richly via per-skill transformation nodes — the "Lone Wanderer's Skill Refinement" becomes a player-narrative surface</li>
+<li>T4-PF-4 WANDERER_STANDALONE remains Family D Reincarnated-novel — but pairs naturally with Family B accumulated aspects giving the Wanderer additional standalone power</li>
+</ul>
+
+<h3>21.6 Genre-canonical simultaneous build-defining count target</h3>
+
+<p>Per § 18 finding "3-5 simultaneous build-defining mechanisms is the genre tendency," Reincarnated should target an architecture where each kit experiences <strong>3-5 simultaneous build-defining moments</strong>:</p>
+
+<table>
+<tr><th>Surface</th><th>Family</th><th>Reincarnated status</th></tr>
+<tr><td>Substrate-elected kit identity (Phase 2-7 cascade)</td><td>—</td><td>✅ operational (cascade-r4)</td></tr>
+<tr><td>T4 capstone strategy selection (Layer 2)</td><td>D</td><td>✅ operational (6 strategies); Cycle 15+ → 21 strategies per § 11</td></tr>
+<tr><td>Per-skill specialization investment (skill tree depth)</td><td>A</td><td>⏳ partial (doc 51 magnitude scaling); Cycle 15+ priority 2 (§ 21.3)</td></tr>
+<tr><td>Extractable Aspect / Cube / Rune slot</td><td>B</td><td>❌ Cycle 15+ priority 1 (§ 21.2)</td></tr>
+<tr><td>Class-combo or spirit-combo synergy</td><td>C</td><td>⏳ partial (spirit-swap is temporal); Cycle 16+ candidate</td></tr>
+<tr><td>Item-slot anchor unique (Mageblood-equivalent)</td><td>E</td><td>❌ Cycle 16+ candidate</td></tr>
+<tr><td>Proc-attached celestial / secondary trigger</td><td>G</td><td>❌ partial (T4 proc-on-condition); Cycle 16+ candidate</td></tr>
+</table>
+
+<p>Post-Cycle-15+ target: each kit has 3-4 simultaneous build-defining surfaces (substrate-elected identity + T4 + skill specialization + Aspect). Post-Cycle-16+ target: 5-6 surfaces by adding class-combo + item-anchor + proc-attached.</p>
+
+<h3>21.7 Schema extension landed at <code>research.db</code></h3>
+
+<p>Build-defining mechanism research data is durable + queryable at <code>agentic_orchestration/research/arpg-community-axes-2026-05-29/research.db</code>:</p>
+<ul class="compact">
+<li><code>build_defining_mechanisms</code> — 31 rows; one per mechanism × game; full mathematical/mechanical properties</li>
+<li><code>mechanism_families</code> — 7 rows; family taxonomy with game-coverage + dominant-flag + gap-severity</li>
+<li><code>t4_genre_analog_mapping</code> — 24 rows; closest-genre-analog mapping for each Reincarnated T4 strategy (9 current + 15 proposed)</li>
+</ul>
+
+<p>Future cross-referenceability with the community-axes data (104 builds; 92 loot vocab; 37 convergence; 30 composite assessments) enables joined analyses — e.g., "which build-defining family is most associated with the Bossing archetype across the build corpus?" Cycle 15+ analytical work can compose.</p>
+
+<h3>21.8 What our knowledge changed about our approach</h3>
+
+<div class="callout callout-t4">
+<strong>The summary verdict — what changed, what stayed.</strong>
+<ul class="compact">
+<li><strong>STAYED:</strong> T4 capstone architecture is preserved. Two-Layer T4 (Primary universal + Layer 2 cycling) is genuinely novel and architecturally correct for Family D. The 15 proposed Layer 2 strategies in § 11 remain canonical-authoring candidates.</li>
+<li><strong>STAYED:</strong> Substrate-led discipline + Wanderer architecture + Designer-writes-substrate principle + Layer 1.5 coupling architecture commitment (≤3 loot layers) — all unchanged.</li>
+<li><strong>CHANGED — major:</strong> T4 is one of 7 mechanism families, not the singular surface. Genre tendency is 3-5 simultaneous build-defining surfaces per kit. Reincarnated currently has 1 (T4 = Family D). Architecture should broaden.</li>
+<li><strong>CHANGED — major:</strong> Family B (extractable/imbue-able power) is the genre's dominant build-defining family by primary-crystallization moments. Reincarnated has zero Family B mechanisms. <strong>Family B design call is the highest-leverage Cycle 15+ architectural addition.</strong></li>
+<li><strong>CHANGED — moderate:</strong> Cycle 15+ pathway re-prioritized. Family B design call (priority 1) + Family A per-skill depth (priority 2) land BEFORE T4 strategy set expansion. 5 of 15 proposed T4 strategies are candidates for re-architecture into Family A / B when those families are introduced.</li>
+<li><strong>CHANGED — moderate:</strong> Architecture target shifts from "T4 as the build-defining surface" to "3-5 simultaneous build-defining surfaces per kit." § 21.6 specifies the per-surface family mapping + Cycle progression.</li>
+<li><strong>DID NOT DELETE T4:</strong> Matt's open door was real and considered. The research closed it. T4's MECHANICAL STRATEGY cycling design is genuinely novel and worth preserving. T4 is not wrong; T4 is correct + insufficient. The fix is ADD families, not REMOVE T4.</li>
+</ul>
+</div>
+
+<!-- =================================================================================== -->
+<!-- ============= AMENDMENT 2026-05-29 LATE EVENING — 5-PROPERTY SUBSTRATE ============ -->
+<!-- =================================================================================== -->
+
+<h2 id="substrate-of-build-defining" style="margin-top: 4rem; padding-top: 1.5rem; border-top: 3px solid var(--substrate);">22. The substrate of build-defining — 5-property framework <a class="anchor-link" href="#substrate-of-build-defining">§</a></h2>
+
+<p><span class="figure-num">Amendment 2026-05-29 late evening (Matt framing-audit catch).</span> Matt pushed back on § 18–21 with a sharp framing-audit observation: we listed 31 build-defining mechanisms across 9 games and grouped them into 7 families, but we never defined what <em>makes</em> a mechanism build-defining in the first place. We treated the term as a primitive imported from community vocabulary. This is a Disc #42a framing-audit catch. This section does the work the prior research framing should have started with: define the substrate properties that compose to produce the player experience of "build-defining."</p>
+
+<h3>22.1 The 5 properties</h3>
+
+<table>
+<tr><th>Property</th><th>Definition</th><th>Example present</th><th>Example absent</th></tr>
+<tr><td><strong>P1 — Identity-axis transformation</strong></td><td>The mechanism changes WHICH axis the character operates on; qualitative shift, not quantitative magnitude</td><td>Chaos Inoculation (life → ES axis); Enigma (adds teleport-mobility axis)</td><td>+5% Fire Damage affix (same axis, more of it)</td></tr>
+<tr><td><strong>P2 — Multiplicative composition with existing investment</strong></td><td>Mechanism multiplies prior player investments rather than adding fixed value; rewards what the player has built</td><td>Marauder 6pc (12,000% per Sentry count); Class Set scaling per-construct</td><td>Flat stat affix; fixed +50 health</td></tr>
+<tr><td><strong>P3 — System-substitution / decision-elimination</strong></td><td>Once active, some other game-system becomes irrelevant; player stops playing a previous game</td><td>Mageblood (eliminates flask cycling); CI (eliminates chaos-resist + life-gear decisions)</td><td>Sword with slightly better DPS</td></tr>
+<tr><td><strong>P4 — Acquisition memorability</strong></td><td>Discrete event the player can name and remember — drop, set completion, capstone earned, mastery selected, power extracted</td><td>"The day Enigma dropped"; Dual Mastery selection event</td><td>Routine stat affix on a yellow drop</td></tr>
+<tr><td><strong>P5 — Composition unlock</strong></td><td>Enables a build that wasn't viable without it; "newly possible" not "previously possible just stronger"</td><td>Enigma enables Teleport Hammerdin; Marauder 6pc enables Sentry-DH</td><td>Higher-rolled affix on existing build</td></tr>
+</table>
+
+<p><strong>Composition rule:</strong> mechanisms with 4–5 properties = canonical "build came online" moments. 2–3 = sub-axis or significant build choice. 0–1 = QoL / routine progression.</p>
+
+<h3>22.2 Empirical validation</h3>
+
+<p>Tested against 15 genre mechanisms (sampled from the 31-mechanism corpus):</p>
+
+<table>
+<tr><th>Mechanism</th><th>Game</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>Score</th><th>Community framing</th></tr>
+<tr><td>Enigma</td><td>D2</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td><strong>5/5</strong></td><td>THE canonical "build came online"</td></tr>
+<tr><td>Marauder 6pc</td><td>D3</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td><strong>5/5</strong></td><td>"the moment my DH worked"</td></tr>
+<tr><td>Mageblood</td><td>PoE</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td><strong>5/5</strong></td><td>"endgame transformation"</td></tr>
+<tr><td>GD Dual Mastery selection</td><td>GD</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td><strong>5/5</strong></td><td>"the permanent character decision"</td></tr>
+<tr><td>D4 Aspect <em>assembly</em></td><td>D4</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td><strong>5/5</strong></td><td>"build crystallization moment"</td></tr>
+<tr><td>Chaos Inoculation</td><td>PoE</td><td>✅</td><td>◐</td><td>✅</td><td>❌</td><td>✅</td><td>3.5/5</td><td>"strong identity but not memorable"</td></tr>
+<tr><td>Kanai's Cube 3-power set</td><td>D3</td><td>◐</td><td>✅</td><td>◐</td><td>✅</td><td>✅</td><td>3.5/5</td><td>"important pillar, not single moment"</td></tr>
+<tr><td>LE Skill Tree (15-pt threshold)</td><td>LE</td><td>✅</td><td>◐</td><td>◐</td><td>◐</td><td>✅</td><td>3/5</td><td>"the build comes online"</td></tr>
+<tr><td>D2 Spirit runeword</td><td>D2</td><td>◐</td><td>✅</td><td>◐</td><td>✅</td><td>✅</td><td>3.5/5</td><td>"early caster moment"</td></tr>
+<tr><td>PoE 6-link acquisition</td><td>PoE</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>◐</td><td>2.5/5</td><td>"build came online" — <em>but P4 weight is amplified by acquisition friction</em></td></tr>
+<tr><td>D4 Single Legendary Aspect</td><td>D4</td><td>◐</td><td>◐</td><td>◐</td><td>◐</td><td>◐</td><td>2.5/5</td><td>"incremental"</td></tr>
+<tr><td>D4 Mythic Unique (Tyrael's)</td><td>D4</td><td>◐</td><td>❌</td><td>◐</td><td>✅</td><td>❌</td><td>1.5/5</td><td>"powerful but optional"</td></tr>
+<tr><td>D2 Charm Skiller</td><td>D2</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>0/5</td><td>"inventory padding"</td></tr>
+<tr><td>+5% Fire Damage affix</td><td>Generic</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>0/5</td><td>"stat"</td></tr>
+</table>
+
+<p><strong>Framework validates against community framing in 13 of 15 cases.</strong> Two interesting tensions: (a) PoE 6-link scores 2.5/5 but community-cites as "build came online" — because P4 acquisition difficulty (thousands of fusings) amplifies P4 weight beyond binary; (b) Single D4 Aspect scores 2.5/5 but Aspect ASSEMBLY scores 5/5 — build-defining is sometimes a property of COMPOSITION of multiple sub-mechanisms, not of any single one.</p>
+
+<h3>22.3 T4 strategies scored under the framework</h3>
+
+<p>All 21 Reincarnated T4 strategies (6 current + 15 proposed) scored:</p>
+
+<table>
+<tr><th>T4 Strategy</th><th>Score</th><th>Profile read</th></tr>
+<tr><td>ELEMENT_CONVERSION variants</td><td><strong>4/5</strong></td><td>Build-defining (P1+P2+P3+P5; missing P4 by T4 design)</td></tr>
+<tr><td>TRADE_OFF_REVERSED</td><td><strong>4/5</strong></td><td>Build-defining</td></tr>
+<tr><td>RESOURCE_CONVERSION</td><td><strong>4/5</strong></td><td>Build-defining</td></tr>
+<tr><td>T4-EXP-1/2/3 (SPEEDFARM / BOSSING / PUSH)</td><td><strong>4/5</strong></td><td>Build-defining experiential archetype</td></tr>
+<tr><td>T4-ROLE-1/3/4 (AMP_FUSION / MOBILITY_AS_DAMAGE / DEFENSE_AS_DAMAGE)</td><td><strong>4/5</strong></td><td>Build-defining skill-role transformation</td></tr>
+<tr><td>T4-COUPLE-2 SINGLE_AXIS_ANCHOR</td><td><strong>4/5</strong></td><td>Build-defining single-axis specialization</td></tr>
+<tr><td>GEOMETRY_COLLAPSE</td><td>3.5/5</td><td>Strong build-shaping</td></tr>
+<tr><td>DIRECT_DAMAGE_AMPLIFICATION (Primary)</td><td>3/5</td><td>Significant build choice; partial transformation</td></tr>
+<tr><td>T4-ROLE-2 CORE_DUPLICATION; T4-PF-2 SKILL_TIMING_WINDOW</td><td>3/5</td><td>Significant choice</td></tr>
+<tr><td>T4-EXP-4 LEAGUE_STARTER_MODE</td><td>2/5</td><td>Mid-tier elasticity; intentionally not crystallization</td></tr>
+<tr><td><strong>T4-PF-4 WANDERER_STANDALONE</strong></td><td><strong>1/5</strong></td><td><strong>NOT build-defining</strong> — identity-anchor by design intent</td></tr>
+<tr><td><strong>T4-COUPLE-1 LOOT_LAYER_DECOUPLE</strong></td><td><strong>1/5</strong></td><td><strong>NOT build-defining</strong> — architectural-statement strategy</td></tr>
+<tr><td><strong>T4-PF-3 COGNITIVE_SIMPLIFIER</strong></td><td><strong>1/5</strong></td><td><strong>NOT build-defining</strong> — approachable / low-cognitive-load anchor</td></tr>
+<tr><td><strong>T4-PF-1 GEAR_INDEPENDENT</strong></td><td><strong>0.5/5</strong></td><td><strong>NOT build-defining</strong> — anti-build-defining; intrinsic viability anchor</td></tr>
+</table>
+
+<div class="callout callout-mech">
+<strong>Architectural finding — the 4 low-scoring T4 strategies should be canonically reframed</strong>
+T4-PF-1, T4-PF-3, T4-PF-4, T4-COUPLE-1 are NOT Layer 2 build-defining strategies. They are <strong>identity-anchor / architectural-statement T4 strategies</strong> that explicitly mark a kit as "no build-defining mechanism active." Different design category. Their low substrate-property score is correct AND intentional — not every kit needs build-defining mechanisms; the "approachable / vanilla / anti-min-max" archetype derives identity precisely from the absence of build-defining mechanism profile. § 11 should canonically separate these from the build-defining cluster.
+</div>
+
+<h3>22.4 The P4 gap in T4 architecture — and why it has an elegant existing answer</h3>
+
+<p><strong>All T4 strategies score 4/5 maximum.</strong> P4 (acquisition memorability) is structurally absent at the per-kit T4 layer because T4 is set at generation — the player never has an acquisition event for T4. T4 is the kit's identity from L1.</p>
+
+<p><strong>Reincarnated's existing P4 surface is meta-level: receiving the new spirit each season.</strong> The seasonal-transition IS the memorable acquisition event. Each season's spirit-acquisition is the P4 that combines with per-kit T4's 4/5 profile to deliver the full 5/5 player experience across the seasonal arc. This is elegant in retrospect — and § 23 below proposes a refinement that makes the seasonal-acquisition P4 substantially more memorable than it currently is.</p>
+
+<h3>22.5 Six refinements to the framework — for Pattern B re-engagement</h3>
+
+<ol>
+  <li><strong>P4 weight may scale with acquisition friction.</strong> PoE 6-link feels canonical despite 2.5/5 score because thousand-fusing crafting struggle amplifies P4. Refinement candidate: P4 = 0 / 0.5 / 1 / 2 by acquisition friction tier.</li>
+  <li><strong>Build-defining is sometimes a COMPOSITION property, not a single-mechanism property.</strong> D4 single Aspect = 2.5/5; Aspect assembly = 5/5. Design implication for our Family B work.</li>
+  <li><strong>Sixth-property candidate: community legibility / shared-vocabulary anchor.</strong> "I play Enigma Hammerdin" communicates the build. Maybe downstream of P1+P5, maybe genuinely independent. Pattern B clarification needed.</li>
+  <li><strong>Different archetypes have different EXPECTED build-defining profiles.</strong> Push/Bossing kits expect 4–5; Generalist/Easy-to-play kits expect 0–2. The framework should accommodate per-archetype baseline.</li>
+  <li><strong>Mechanism family is the container; substrate properties are what matter.</strong> Family B mechanisms tend to score 4–5 because P4 is naturally present (extraction is memorable); Family D mechanisms max at 4 because P4 is naturally absent (allocation isn't memorable). We can engineer high-scoring mechanisms in any family if we design P1+P2+P3+P5 well and add P4 via acquisition-event design.</li>
+  <li><strong>The 5 properties combine multiplicatively, not additively.</strong> A 0/5 + 5/5 doesn't average to 2.5/5 — it's just "the canonical mechanism feels canonical." Player perception is gestalt, not summed.</li>
+</ol>
+
+<!-- =================================================================================== -->
+<!-- ============= AMENDMENT 2026-05-29 LATE EVENING — HIDDEN SPIRIT DISCOVERY ========= -->
+<!-- =================================================================================== -->
+
+<h2 id="hidden-spirit" style="margin-top: 4rem; padding-top: 1.5rem; border-top: 3px solid var(--experiential);">23. Hidden-Spirit-Discovery as P4 acquisition surface — recognition record <a class="anchor-link" href="#hidden-spirit">§</a></h2>
+
+<div class="callout" style="background: var(--substrate-bg); border-left: 4px solid var(--substrate);">
+<strong>RECOGNITION RECORD — architectural commitments deferred</strong>
+Per Matt 2026-05-29 late evening verbatim design sidebar: this section captures a substantial design proposal that emerged from § 22 analysis but is explicitly framed as <strong>"big if"</strong> exploratory at Matt's direction. Architectural commitments to character-discovery-as-acquisition are <em>deferred</em> pending: (a) Pattern B deep-dive session on gesture vocabulary + coordinate-mapping fidelity model + player-onboarding arc; (b) substantial axis-expansion + skill/movement/geometry/timing expansion work landing (per Matt premise); (c) engine pipeline scale-up to support 2,000–4,000 pre-generated characters; (d) cross-platform UX prototype demonstrating gesture-mapping fidelity across PC + mobile + console. This recognition record preserves the idea durably; canonical promotion to <code>canonical/story/</code> waits on the empirical-evidence triggers. NOT a Cycle 14 v1 commitment. NOT a Cycle 15+ commitment without Pattern B. <strong>Recognition NOW; architectural commitment AFTER empirical evidence + Pattern B deep-dive validates.</strong>
+</div>
+
+<h3>23.1 The proposal — Matt 2026-05-29 late evening verbatim</h3>
+
+<blockquote>
+"At the start of the game, you are presented with a spirit. Based on the way that you tug/pull/push, add elemental auras, wooshing wind, drop coins/gems into, add a weapon type to, add ornamentation to (linearity of culture), change temporally (linear of period), alter the geometrical shape of and generally play with the geometric surface of....you will have actually landed on a coordinate within the BC cell + vector space + tagged/flagged/categorized range. Once distilled, the spirit will evaporate into your character for the season (as pre-generated by the JSON→Meshy→Unreal pipeline). The player will have no idea that there were a bounded 2K–4K options, but after discovering enough times and remembering how to recreate fun/memorable characters, they will start to get the hang of it."
+</blockquote>
+
+<p><strong>Conceptual lineage</strong> (Matt-cited):</p>
+<ul class="compact">
+<li><strong>Chernoff Faces</strong> — multivariate data visualization where each variable maps to a facial feature; player reads the data visually. Provides the mapping principle: visual/interaction modality maps to underlying numerical/categorical substrate.</li>
+<li><strong>Mario 64 Start Screen</strong> — playful Mario face manipulation; the play-feel of low-stakes exploratory interaction. Mobile-friendly long before mobile existed.</li>
+<li><strong>MMO Character Creation</strong> — sliders, customization, dropdowns; deep customization with real mechanical consequence.</li>
+</ul>
+
+<p><strong>The synthesis:</strong> MMO depth layered onto Mario 64 play-feel onto Chernoff mapping principles. Each interaction modality maps to a substrate dimension; the player's gesture sequence resolves to a specific coordinate in the 14-axis space + nearest-neighbor pre-generated character. The bounded 2K–4K character pool is invisible to the player; discovery is genuine but the destination is curated.</p>
+
+<h3>23.2 Matt's premise assumptions</h3>
+
+<ol>
+  <li>All new vector spaces, categories/labels enumerated in § 5–8 are landed</li>
+  <li>All necessary skills/movements/geometries/timings/etc. to power the expanded coordinate space are landed</li>
+  <li>The engine operates in "maximal distinct characters mode" — unsquashing the kit diversity across BC + vector cell quasi-mirror-doppelgangers which are different enough to have true playable feel-distinction</li>
+  <li>The pre-generation pipeline produces 2,000–4,000 characters/kits</li>
+</ol>
+
+<h3>23.3 5-property substrate scoring</h3>
+
+<table>
+<tr><th>Property</th><th>Score</th><th>Reasoning</th></tr>
+<tr><td>P1 — Identity-axis transformation</td><td>✅</td><td>Each discovered spirit IS a new identity</td></tr>
+<tr><td>P2 — Multiplicative composition with existing investment</td><td>◐ → ✅</td><td>Partial at character level (new character); ✅ at meta-level (player's accumulated gesture knowledge multiplies across seasons; mastery of the coordinate space multiplies discovery quality)</td></tr>
+<tr><td>P3 — System-substitution / decision-elimination</td><td>✅</td><td>New spirit = entirely new game-system per season; prior season's playstyle becomes irrelevant</td></tr>
+<tr><td>P4 — Acquisition memorability</td><td>✅✅</td><td><strong>Maximal — the discovery IS the memorable event.</strong> "The season I pulled the spirit toward water and it became a Tidecaller" is player-authored narrative anchor</td></tr>
+<tr><td>P5 — Composition unlock</td><td>✅</td><td>Discovered character enables a build that wasn't viable in prior season</td></tr>
+</table>
+
+<p><strong>Score: 5/5 at the seasonal-acquisition layer.</strong> This is the canonical "build came online" moment, but for character selection itself — a structurally novel pattern that no commercial ARPG has executed.</p>
+
+<h3>23.4 Direct mapping — interaction modality → substrate axis</h3>
+
+<p>Matt's modality list maps almost 1:1 to existing substrate axes. This validates the Chernoff Face principle — each manipulation modality maps to one substrate dimension:</p>
+
+<table>
+<tr><th>Gesture modality (Matt's terms)</th><th>Substrate dimension (engine canon)</th><th>Notes</th></tr>
+<tr><td>Tug / pull / push</td><td>BC engagement_profile (close / medium / wide) + BC tempo</td><td>Spatial gesture maps to engagement; gesture velocity to tempo</td></tr>
+<tr><td>Add elemental aura</td><td>Element (8-pool from Amendment 7)</td><td>Direct paint-on-spirit gesture for element selection</td></tr>
+<tr><td>Wooshing wind</td><td>BC damage_geometry (AoE shape) + BC damage_amplitude_variance</td><td>Wind-pattern manipulation</td></tr>
+<tr><td>Drop coins/gems into</td><td>Substrate enrichment — possibly investment tier (Extreme / Low / Mid / High / Mageblood)</td><td>Quantity dropped → investment-tier signal</td></tr>
+<tr><td>Add weapon type</td><td>weapon_family + cultural lineage hint</td><td>Direct weapon-family selection</td></tr>
+<tr><td>Add ornamentation</td><td>cultural_lineage_canonical (14-enum) + register_canonical (6-enum)</td><td>Visual ornamentation style maps to lineage + register</td></tr>
+<tr><td>Change temporally</td><td>historical_period_canonical (9-enum)</td><td>Temporal slider; ancient → modern range</td></tr>
+<tr><td>Alter geometric shape</td><td>BC damage_geometry + BC defensive_profile</td><td>Shape manipulation maps to attack + defense geometry</td></tr>
+<tr><td>Play with surface texture</td><td>BC resource_economy + experiential archetype (Bossing / Speedfarm / Push / Generalist)</td><td>Surface treatment maps to resource model + play-archetype</td></tr>
+</table>
+
+<p><strong>Every existing substrate dimension has a natural interaction modality.</strong> The 14-axis coordinate space sketched in § 9 becomes the discovery space; the 6 vector zones (Glass Pusher / Wandering Speed / Easy Generalist / League-Starter Bossing / Buffstacker / Wave-Clearer) become natural exploration destinations that players learn to recreate through gesture pattern memory.</p>
+
+<h3>23.5 Composition with existing canonical architecture</h3>
+
+<div class="callout callout-mech">
+<strong>This idea is the most-aligned proposal yet seen with Reincarnated's existing canon.</strong>
+It doesn't fight any architectural commitment — it makes multiple of them more legible and player-facing simultaneously.
+</div>
+
+<table>
+<tr><th>Existing canon</th><th>Composition with hidden-spirit-discovery</th></tr>
+<tr><td><strong>Earth Self / form library (doc 38 D4)</strong></td><td>The discovery moment IS the spirit's "arrival into the form library." Each season's gesture-sequence becomes a stored memento in the library — players can review prior discoveries and re-trace gesture patterns. The form library gains a player-narrative surface beyond gacha-style accumulation.</td></tr>
+<tr><td><strong>Designer-writes-substrate / Player-names-experience principle</strong></td><td>Designer writes the 2–4K substrate (the bounded coordinate space + pre-generated characters). Player names the experience through gesture (the interaction IS the experience layer). The principle achieves architectural unity — made literal in UX rather than abstract.</td></tr>
+<tr><td><strong>Wanderer architecture (cascade-r4 Amendment 1)</strong></td><td>Some discovery paths land on SINGLETON regions of the coordinate space — the spirit becomes a Wanderer. "The season the spirit didn't join any faction" becomes a discovery-rare narrative anchor. Wanderers as substrate-elected discovery destinations.</td></tr>
+<tr><td><strong>D7 AI-tell line</strong></td><td>Wave A faction + Wave B kit + Wave-S season naming all flow from the discovered coordinate as substrate input. No raw LLM at character-discovery moment. Composes cleanly with our existing infrastructure.</td></tr>
+<tr><td><strong>D8 mobile-friendly design</strong></td><td>Tug/pull/push + paint elemental auras + tap-to-add ornamentation are all touch-native gestures. <strong>This may actually be MORE natural on mobile than on PC.</strong> Mario 64 face-pull is canonical mobile-friendly precedent.</td></tr>
+<tr><td><strong>D10 isekai-framing checkpoint</strong></td><td>"The reincarnated discovers what they've become" is isekai-canonical narrative. Solo Leveling-class "the System reveals your essence" pattern. The discovery surface naturally supports isekai framing without forcing it.</td></tr>
+<tr><td><strong>Variant C engine-as-general-product (canonical 37)</strong></td><td>The same discovery model works for any seasonal substrate. The engine can host different game profiles by changing the discovered substrate set; the interaction layer is product-agnostic. Variant C reinforced.</td></tr>
+<tr><td><strong>Two-Layer T4 architecture (doc 47 § 4.6)</strong></td><td>T4 isn't selected — T4 emerges from the discovered character's identity. <strong>T4 becomes invisible to the player as a discrete decision.</strong> The kit's T4 strategy is part of what makes the discovered character distinctive; the player feels the consequence of T4 without naming it as a separate choice.</td></tr>
+<tr><td><strong>Cycle 15+ Family B (Codex of Aspects)</strong></td><td>Family B repositions: instead of "extracted portable powers carried forward," Family B becomes <strong>"carried-forward biases that shape next season's discovery."</strong> Accumulated aspects nudge the gesture-space — a Wanderer-tagged aspect from season 4 biases the season-7 discovery toward Wanderer territory. <strong>More elegant than D4 Codex; more thematic for reincarnation; preserves seasonal-fresh-start while enabling cross-seasonal narrative.</strong></td></tr>
+</table>
+
+<h3>23.6 Architectural implications if adopted</h3>
+
+<ol>
+  <li><strong>The P4 gap in T4 architecture dissolves.</strong> Every character has P4 by virtue of how it's acquired. T4 architecture per-kit is still 4/5 mechanically; combined with discovery-acquisition P4, the player experience hits 5/5 every season. The seasonal-acquisition layer carries P4 for the entire kit.</li>
+  <li><strong>Family C (class-combo combinatorial) is satisfied differently.</strong> GD's Dual Mastery = 66 combinations from 9 masteries; discovery-from-gesture = 2,000–4,000 combinations from interaction-space. The combinatorial identity emerges through player exploration, not designer-curated class lists. <strong>Family C gap from § 21.6 reduces from MAJOR to MINOR.</strong></li>
+  <li><strong>Family B (extractable power) repositions.</strong> Per § 23.5 row 8 — Family B becomes carried-forward discovery biases. The Cycle 15+ Family B design call (§ 21.2) gets a third candidate mechanism beyond the three originally proposed.</li>
+  <li><strong>T4 becomes player-invisible as discrete decision.</strong> No L50 "pick your capstone" moment. T4 is part of what the discovered character IS from L1. <strong>This is a better player-experience than the genre's pattern — no decision-paralysis at endgame; the character's identity is consistent from acquisition.</strong></li>
+  <li><strong>The 4 low-scoring T4 strategies (§ 22.3) achieve their design intent more cleanly.</strong> WANDERER_STANDALONE / COGNITIVE_SIMPLIFIER / GEAR_INDEPENDENT / LOOT_LAYER_DECOUPLE were designed as identity-anchor strategies. Under discovery-acquisition, they become discoverable identity zones — "the season the gesture pattern landed in the approachable-Wanderer region." Their non-build-defining nature is part of their discovery distinctiveness.</li>
+  <li><strong>The axis-expansion + skill/movement/geometry/timing expansion work in § 5–11 becomes load-bearing for character distinctiveness.</strong> 2,000–4,000 distinct characters requires the axis-expansion be substantially complete; 14-axis space + 6+ zones provide the substrate for that scale. Matt's premise #1–3 are the prerequisites; this section formally registers them as gating empirical-evidence triggers for re-engagement.</li>
+</ol>
+
+<h3>23.7 Genuine design challenges</h3>
+
+<table>
+<tr><th>Challenge</th><th>Risk</th><th>Mitigation candidate</th></tr>
+<tr><td>Coordinate-mapping fidelity</td><td>Same gestures must reproduce → same coordinates; otherwise feels random</td><td>Determinism-from-gesture-sequence; explicit input → coordinate mapping; player can verify reproducibility</td></tr>
+<tr><td>Player agency vs guidance balance</td><td>Too random feels like loot box; too predictable feels like menu</td><td>Layered interaction depth — basic 5–7 gestures reach all coordinates broadly; refining gestures land precise zones; optional spirit-guide hint system</td></tr>
+<tr><td>"Fast summon" question</td><td>Some players want to play, not ritual; ritual fatigue across seasons</td><td>Optional "let the spirit choose" path for randomized discovery; interaction is opt-in depth</td></tr>
+<tr><td>Mobile-platform fidelity (D8)</td><td>PC mouse, console controller, mobile touch all need same gesture vocabulary with same coordinate-mapping fidelity</td><td>Per-platform gesture mapping; the Mario 64 face-pull lineage is canonical mobile-friendly; touch may actually be the natural input</td></tr>
+<tr><td>The 2K–4K coverage requirement</td><td>68,040 BC cells theoretical × axis expansion = ~3–6% coverage at 2K–4K characters; per-cell ~30–40 distinct kit variants required for genuine discovery without same-as-neighbor feel</td><td>Axis-expansion + Wanderer + Experiential + Player-Facing axes scale the effective coordinate space substantially; likely 4K+ richly without forcing per-cell artificial diversity</td></tr>
+<tr><td>Pre-generation pipeline scale</td><td>JSON → Meshy → Unreal for 2K–4K characters is significant pipeline lift</td><td>Cycle 15+/16+ scale-up; pipeline architecture-validation spike per doc 38 § 4 already gates on related infrastructure</td></tr>
+<tr><td>Player memorization-and-recreation arc</td><td>50–200 hour learning curve from discover-by-accident → master-the-coordinate-space</td><td>This is GOOD for retention but requires onboarding patience; spirit-guide as in-game memory aid; "record this gesture sequence" feature</td></tr>
+<tr><td>D7 AI-tell discipline</td><td>Names + lore + spirit-guide dialogue must flow from discovered coordinate without feeling templated</td><td>Substrate-led naming (Wave A + Wave B + Wave-S) handles this — discovered substrate IS the input to all naming layers; existing infrastructure composes</td></tr>
+<tr><td>Cross-cohort balance</td><td>Discovery may bias toward popular zones, leaving substrate territory under-explored; BVV (doc 50) targets may suffer</td><td>Spirit-guide nudges toward under-explored coordinates; "rare spirits" become valuable discovery prizes; substrate-led discipline preserved at design layer</td></tr>
+</table>
+
+<h3>23.8 Empirical-evidence triggers for full architectural commitment</h3>
+
+<p>Per recognition-validate-commit discipline (gandalf OP § 3.4 + Disc #21), full architectural commitment to discovery-as-acquisition is gated by these empirical evidence triggers:</p>
+
+<ol>
+  <li><strong>Pattern B deep-dive session</strong> on gesture vocabulary + coordinate-mapping fidelity model + player-onboarding arc (Matt + gandalf; ~2 hours)</li>
+  <li><strong>Axis-expansion + skill/movement/geometry/timing infrastructure landed</strong> in Cycle 15+ engine work (per Matt premise #1 + #2; gated on doc 52 promotion + Cycle 15+ engine cycles)</li>
+  <li><strong>Engine pipeline scale-up validated</strong> at 2,000–4,000 character generation throughput (per Matt premise #4; gated on architecture-validation spike completion + Meshy pipeline scale tests)</li>
+  <li><strong>Cross-platform UX prototype</strong> demonstrating gesture-mapping fidelity across PC + mobile + console (drax + galadriel coordination; prototype scope to be authored at Pattern B session)</li>
+  <li><strong>Coverage-density analysis</strong> showing 2K–4K characters at axis-expanded coordinate space produces genuinely distinctive per-cell experiences (no same-as-neighbor feel; gated on substrate analysis post-axis-expansion landing)</li>
+  <li><strong>Wave A + Wave B + Wave-S LLM naming validated at discovered-coordinate substrate input</strong> — confirms naming infrastructure scales to per-discovery character identity (gated on cascade-r4 Wave-S landing + Cycle 15+ Wave B prompt extension)</li>
+</ol>
+
+<p>When triggers 1–6 are satisfied, the proposal moves from recognition record to canonical promotion candidate at <code>canonical/story/2026-XX-XX-hidden-spirit-discovery-character-acquisition-architecture.md</code>. Until then, this section preserves the idea durably; no Cycle 14 v1 commitment; no Cycle 15+ commitment without Pattern B.</p>
+
+<h3>23.9 Cycle pathway impact</h3>
+
+<table>
+<tr><th>Cycle</th><th>What changes if this proposal advances</th></tr>
+<tr><td><strong>Cycle 14 v1</strong></td><td>No change. Proposal does NOT modify v1 ship.</td></tr>
+<tr><td><strong>Cycle 14 wave-close canonical-write queue</strong></td><td>Add #15: this recognition record formalized at <code>canonical/story/</code>-level as deferred-commitment record</td></tr>
+<tr><td><strong>Cycle 15+ priority 1 (Family B design call per § 21.2)</strong></td><td>Reframe: Family B candidates now include "carried-forward discovery biases" as third option alongside Spirit-Kit Aspect Extraction + Seasonal Glyph Cubes + Inscribed Rune Sequence. The discovery-bias option composes natively with hidden-spirit-discovery.</td></tr>
+<tr><td><strong>Cycle 15+ priority 2 (Family A per-skill depth per § 21.3)</strong></td><td>Reframe: skill specialization tree depth becomes part of the discovered character's intrinsic identity — discovered via gesture, not allocated post-acquisition. Family A landing enables discovery-fidelity at skill-level granularity.</td></tr>
+<tr><td><strong>Cycle 16+ architecture-validation spike</strong></td><td>Adds: gesture-input UX prototype + coordinate-mapping fidelity validation + 2K–4K character pre-generation pipeline scale test</td></tr>
+<tr><td><strong>Cycle 17+ Reincarnated v1 character-selection surface</strong></td><td>If proposal fully validated by then: shipping character-selection IS hidden-spirit-discovery. If not yet validated: ship with menu-based selection; discovery surface as v1.1+ post-launch feature.</td></tr>
+</table>
+
+<h3>23.10 Post-materialization cosmetic personalization (Matt addendum 2026-05-29 late evening)</h3>
+
+<p><strong>Matt addendum verbatim:</strong></p>
+
+<blockquote>
+"Not a bad idea also to add that, once your seasonal spirit materializes, you should have further opportunity to customize that character: add war paint, change hairstyle, tattoos, etc. (of course based on feasibility of dev work nearly exclusively)."
+</blockquote>
+
+<p><strong>Architectural layer separation.</strong> Hidden-spirit-discovery (§ 23.1–23.9) operates at the <strong>mechanical-identity layer</strong> — gesture sequence resolves to BC + vector coordinate + substrate-led pre-generated character. Post-materialization cosmetic personalization operates at the <strong>cosmetic-identity layer</strong> — pure visual/aesthetic customization on top of the mechanically-resolved character. The two layers are orthogonal; cosmetic personalization does NOT shift coordinates, does NOT alter substrate, does NOT change T4 or any mechanical property. <strong>Substrate-led discipline preserved at the mechanical layer; player creative agency operates at the cosmetic layer.</strong></p>
+
+<p><strong>Why this composes well:</strong></p>
+
+<table>
+<tr><th>Composition surface</th><th>Note</th></tr>
+<tr><td>Player ownership / pride of character</td><td>The discovered spirit is mechanically substrate-determined; the cosmetic pass makes the character "mine" in a way no other player's discovery shares exactly. Each seasonal character becomes a player-owned identity, not just a substrate-resolved instance.</td></tr>
+<tr><td>P4 acquisition-memorability stacking</td><td>The mechanical-discovery P4 (§ 23.3) gets reinforced by the cosmetic-personalization moment. "The season I discovered Tidecaller AND gave her blue war paint and a long braid" is even more memorable than discovery alone. The two-layer acquisition lands at full 5/5 P4 plus emotional investment.</td></tr>
+<tr><td>Genre precedent (MMO-canonical)</td><td>WoW transmogrification, FF14 glamour, GW2 wardrobe — players invest dozens of hours on cosmetic identity. The genre signal is well-validated; we're consuming established player-psychology infrastructure.</td></tr>
+<tr><td>Mobile-platform compatible (D8)</td><td>Cosmetic-customization UI is widely deployed on mobile (Genshin, Honkai, etc.); touch-native interaction patterns; canonical mobile-friendly precedent.</td></tr>
+<tr><td>Meshy + Unreal Control Rig pipeline supports modular cosmetic layers</td><td>Decals, hair meshes, tattoo overlays — all already supported in the Meshy 6 → Control Rig → Unreal pipeline architecture per doc 38 D1. Cosmetic customization adds art-asset scope, not pipeline rework. Composes cleanly with existing pipeline commitments.</td></tr>
+<tr><td>Form library accumulation gains cosmetic-uniqueness layer</td><td>Each form in the player's accumulated library carries its cosmetic state — the form library becomes not just "spirits I've discovered" but "characters I've personalized." Cross-seasonal narrative continuity strengthens.</td></tr>
+</table>
+
+<p><strong>Matt's feasibility-gated scope framing.</strong> Matt explicitly flags this as "based on feasibility of dev work nearly exclusively." Scope-elastic by design:</p>
+
+<ul class="compact">
+<li><strong>MVP scope (minimal cosmetic options):</strong> 3–5 hairstyles + 3–5 war paint patterns + 2–3 tattoo templates + basic color palette per cosmetic layer. ~5–10 dev-days of art work; fits in pipeline architecture without scope-creep risk.</li>
+<li><strong>v1.1+ expansion:</strong> seasonal cosmetic packs (5 hairstyles + 5 war-paints per season; thematic to the season's element / cultural lineage); cosmetic unlocks via gameplay progression; community-curated cosmetic options.</li>
+<li><strong>v1.2+ deep customization:</strong> sliders for body proportions; advanced facial customization; layered tattoo composition; armor-piece color-channel customization. MMO-tier depth.</li>
+</ul>
+
+<p><strong>Empirical-evidence trigger for inclusion in v1:</strong> art-asset budget at MVP scope (3–5 hairstyles + 3–5 war paints + 2–3 tattoo templates) is verified to fit within doc 38 § 5 timeline floor (200–220 effective dev-days). If yes, ship at v1; if scope-pressure surfaces, defer to v1.1+. <strong>Pattern B design call at § 23.8 trigger 1 evaluates this scope question alongside the gesture vocabulary deep-dive.</strong></p>
+
+<p><strong>Composition with Wave A + Wave B + Wave-S LLM naming:</strong> Wave B kit naming consumes mechanical substrate. Cosmetic state does NOT modify naming inputs. The discovered character keeps its substrate-led name regardless of cosmetic customization. <strong>The kit's identity is mechanically-anchored; the cosmetic layer is the player's personal expression on top.</strong></p>
+
+<h3>23.11 Why this matters — design honesty observation</h3>
+
+<p>This proposal is the kind of design move where multiple architectural threads converge into a single elegant surface. It doesn't fight the existing canon; it makes multiple commitments simultaneously more legible. It solves the P4 gap I just identified in § 22. It produces a genuinely differentiated player experience that no commercial ARPG has executed. It composes with mobile-platform-first design (D8). It aligns with isekai-genre narrative (D10). It validates the substantial axis-expansion work in § 5–11 by making the axes player-facing.</p>
+
+<p>It's also exactly the kind of idea that emerges from sustained design conversation — the convergence of Chernoff + Mario 64 + MMO references is not a thing that surfaces from reading the canon alone. This is Matt's creative work. Captured here for durability, not for commitment.</p>
+
+<p><strong>The honest read:</strong> if Pattern B deep-dive validates the gesture vocabulary + coordinate-mapping fidelity, this becomes the defining player-facing architectural surface for Reincarnated v1. Worth doing the Pattern B session when Matt is ready.</p>
+
+<!-- =================================================================================== -->
+<footer>
+<p class="seal">Authored by gandalf, story-and-design steward, on the 29th day of May, 2026, in the late evening hours, in service of Matt's request to ultra-think the use cases for community substrate analytics in axis expansion and T4 capstone algorithm design.</p>
+
+<p>Composes with cascade-resumption-4 fire + Wanderer architecture amendment + the Designer-writes-substrate principle + the Experiential Cascade recognition record + the Bounded-Viability-with-Specialization design directive + the Investment Scaling 6-Pattern Architecture + the Two-Layer T4 Architecture (Primary universal + Layer 2 cycling). All canonical anchors preserved; no architectural commitments fired at this doc; this is recognition + synthesis + Cycle 15+ candidate-list authoring.</p>
+
+<p>Empirical foundation: 104 builds × 6 sites × 4 games × 92 loot vocab × 37 convergence × 30 composite assessments × 9 statistical findings × 5 Mode A surfaces × 6 Mode B surfaces. All vocabulary extracted verbatim from community sources per Discipline #41 substrate-led discipline. Three findings at publication-grade rigor; two refined; three uncertain pending corpus expansion.</p>
+
+<p>This doc is itself a canonical-promotion candidate for Cycle 14 wave-close; gandalf authorship; jack-ryan ratification pending; Matt design-call lands the architectural commitments.</p>
+</footer>
+
+</body>
+</html>

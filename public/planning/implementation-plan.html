@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical Infrastructure Implementation Plan — Reincarnated</title>
+<style>
+  :root {
+    --ink: #0f1419;
+    --ink-2: #2a2d34;
+    --muted: #6b7280;
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --surface-2: #f5f3ee;
+    --rule: #e5e2d8;
+    --rule-strong: #c4c0b1;
+    --accent: #d4621d;
+    --accent-2: #b85515;
+    --mac: #2563eb;       /* blue */
+    --pi:  #16a34a;       /* green */
+    --pc:  #c026d3;       /* magenta */
+    --mac-bg: #dbeafe;
+    --pi-bg: #dcfce7;
+    --pc-bg: #fae8ff;
+    --warn: #ca8a04;
+    --warn-bg: #fef3c7;
+    --risk: #b91c1c;
+    --risk-bg: #fae8e6;
+    --ok: #16a34a;
+    --ok-bg: #dcfce7;
+    --code: #f3efe7;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 2rem 2rem 5rem 2rem; }
+
+  header.page-header {
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .breadcrumb { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+  h1.title { font-size: 2.2rem; font-weight: 700; margin: 0 0 0.6rem 0; letter-spacing: -0.02em; line-height: 1.15; }
+  .subtitle { font-size: 1.05rem; color: var(--muted); margin: 0; max-width: 70ch; }
+
+  .charter-panel {
+    margin: 1.5rem 0 0 0;
+    padding: 1.5rem 1.8rem;
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+  }
+  .charter-panel h3 { margin: 0 0 0.5rem 0; color: var(--accent); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .charter-panel p { margin: 0.3rem 0; }
+  .charter-panel .roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .charter-panel .role { background: var(--surface-2); padding: 0.8rem 1rem; border-radius: 5px; }
+  .charter-panel .role strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-2); margin-bottom: 0.2rem; }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0 2.5rem 0;
+    border-radius: 6px;
+  }
+  nav.toc h3 { margin: 0 0 0.8rem 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  nav.toc ol { columns: 2; column-gap: 2rem; margin: 0; padding-left: 1.4rem; }
+  nav.toc li { margin-bottom: 0.4rem; font-size: 0.93rem; }
+  nav.toc a { color: var(--ink); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; color: var(--accent); }
+
+  section { margin: 3.5rem 0 0 0; scroll-margin-top: 1rem; }
+  h2.section-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+    letter-spacing: -0.015em;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+  }
+  h2.section-title .num { font-size: 0.85rem; color: var(--muted); font-weight: 500; letter-spacing: 0.1em; }
+  .section-lede { color: var(--muted); font-size: 1rem; margin: 0.6rem 0 1.8rem 0; max-width: 75ch; }
+
+  h3.subsection { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.6rem 0; }
+  h4.subsubsection { font-size: 1rem; font-weight: 700; margin: 1.3rem 0 0.4rem 0; color: var(--ink-2); }
+
+  p, li { font-size: 0.94rem; }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  th { background: var(--surface-2); text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--rule); font-weight: 600; }
+  td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr:hover td { background: #fffced; }
+
+  code { background: var(--code); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; font-family: 'SF Mono', Menlo, Consolas, monospace; color: var(--ink-2); }
+  pre { background: var(--ink); color: #e5e7eb; padding: 1rem 1.2rem; border-radius: 6px; overflow-x: auto; font-size: 0.83rem; line-height: 1.5; font-family: 'SF Mono', Menlo, Consolas, monospace; }
+  pre code { background: none; color: inherit; padding: 0; font-size: inherit; }
+  pre .comment { color: #94a3b8; }
+  pre .keyword { color: #fcd34d; }
+  pre .string { color: #86efac; }
+
+  .machine-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    padding: 1.1rem 1.3rem;
+    border-radius: 6px;
+    margin: 0.6rem 0;
+    border: 1px solid var(--rule);
+  }
+  .machine-card.mac { background: var(--mac-bg); border-left: 4px solid var(--mac); }
+  .machine-card.pi { background: var(--pi-bg); border-left: 4px solid var(--pi); }
+  .machine-card.pc { background: var(--pc-bg); border-left: 4px solid var(--pc); }
+  .machine-card h4 { margin: 0 0 0.3rem 0; font-size: 1rem; }
+  .machine-card .role-tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .machine-card.mac .role-tag { color: var(--mac); }
+  .machine-card.pi .role-tag { color: var(--pi); }
+  .machine-card.pc .role-tag { color: var(--pc); }
+  .machines-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0; }
+
+  .callout {
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 5px;
+    border-left: 4px solid var(--accent);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+  }
+  .callout.warn { border-left-color: var(--warn); background: var(--warn-bg); }
+  .callout.risk { border-left-color: var(--risk); background: var(--risk-bg); }
+  .callout.ok { border-left-color: var(--ok); background: var(--ok-bg); }
+  .callout-title { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 0.4rem; color: var(--accent); }
+  .callout.warn .callout-title { color: var(--warn); }
+  .callout.risk .callout-title { color: var(--risk); }
+  .callout.ok .callout-title { color: var(--ok); }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .checklist {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+  }
+  .checklist ul { list-style: none; padding: 0; margin: 0; }
+  .checklist li { padding: 0.4rem 0; border-bottom: 1px dotted var(--rule); padding-left: 1.8rem; position: relative; }
+  .checklist li:last-child { border-bottom: 0; }
+  .checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 0.3rem;
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+  .checklist h4 { margin: 0 0 0.6rem 0; font-size: 0.95rem; }
+
+  .step-grid { display: grid; gap: 0.8rem; margin: 1rem 0; }
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 5px;
+    padding: 0.9rem 1.1rem;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 0.9rem;
+    align-items: start;
+  }
+  .step-num {
+    background: var(--ink);
+    color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .step-body strong { display: block; margin-bottom: 0.2rem; font-size: 0.95rem; }
+  .step-body p { margin: 0.3rem 0; font-size: 0.88rem; }
+
+  .phase-banner {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-2) 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 1.5rem 1.8rem;
+    margin: 2rem 0 1.5rem 0;
+  }
+  .phase-banner h3 { color: white; margin: 0 0 0.3rem 0; font-size: 1.1rem; }
+  .phase-banner p { color: rgba(255,255,255,0.85); margin: 0.3rem 0; font-size: 0.95rem; }
+  .phase-banner .badge { display: inline-block; background: var(--accent); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 0.5rem; }
+
+  .pill { display: inline-block; background: var(--surface-2); padding: 0.1rem 0.5rem; border-radius: 3px; font-size: 0.78rem; font-weight: 600; margin: 0.1rem 0.2rem 0.1rem 0; color: var(--ink-2); border: 1px solid var(--rule); }
+  .pill.mac { background: var(--mac-bg); color: var(--mac); border-color: var(--mac); }
+  .pill.pi { background: var(--pi-bg); color: var(--pi); border-color: var(--pi); }
+  .pill.pc { background: var(--pc-bg); color: var(--pc); border-color: var(--pc); }
+
+  .bundle-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 1rem;
+    align-items: center;
+  }
+  .bundle-card .bundle-icon {
+    width: 60px; height: 60px;
+    background: var(--surface-2);
+    border-radius: 8px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .bundle-card .bundle-meta strong { display: block; font-size: 1rem; margin-bottom: 0.3rem; }
+  .bundle-card .bundle-meta p { margin: 0; font-size: 0.85rem; color: var(--muted); }
+
+  footer { margin-top: 5rem; padding: 2rem 0; border-top: 2px solid var(--ink); color: var(--muted); font-size: 0.88rem; }
+  footer .seal { font-family: Georgia, serif; font-style: italic; }
+
+  @media (max-width: 768px) {
+    .container { padding: 1.2rem; }
+    nav.toc ol { columns: 1; }
+    h1.title { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- =================================================================== -->
+<header class="page-header">
+  <div class="breadcrumb">Reincarnated Project · Physical Infrastructure Implementation Plan</div>
+  <h1 class="title">Reincarnated Three-Machine Development Infrastructure</h1>
+  <p class="subtitle">Exhaustive implementation plan for transitioning the Reincarnated project from single-machine development to a three-machine workflow: Mac (content engine), Pi (always-on middleware), PC (Unreal Engine 5). Authored as the load-bearing reference document for the physical implementation team.</p>
+
+  <div class="charter-panel">
+    <h3>Physical Implementation Team</h3>
+    <p>Per Matt 2026-05-30 verbatim assignment, the physical spec implementations consultants and managers are:</p>
+    <div class="roles">
+      <div class="role">
+        <strong>Matt</strong>
+        Primary implementation owner; hardware procurement authority; final architectural decisions; Pi setup execution; PC procurement decisions
+      </div>
+      <div class="role">
+        <strong>Matt's son (11)</strong>
+        Co-implementation collaborator per established father-son project dynamic; hands-on hardware assembly + configuration; gameplay perspective on iteration workflow needs
+      </div>
+      <div class="role">
+        <strong>Knight-rider</strong>
+        Implementations consultant / manager — practical advice, blocker surfacing, dependency tracking, hardware procurement timing, process refinement during execution (does NOT execute infrastructure work directly per ADR-006)
+      </div>
+      <div class="role">
+        <strong>Gandalf</strong>
+        Design steward — canonical doc maintenance, design escalation, plan refinement when hurdles surface
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- =================================================================== -->
+<nav class="toc">
+<h3>Contents</h3>
+<ol>
+  <li><a href="#architecture">Three-machine architectural overview</a></li>
+  <li><a href="#hardware">Hardware inventory + spec table</a></li>
+  <li><a href="#network">Network architecture</a></li>
+  <li><a href="#phase1">Phase 1: Samba file sharing (exhaustive)</a></li>
+  <li><a href="#phase2">Phase 2: HTTP API service (exhaustive)</a></li>
+  <li><a href="#phase3">Phase 3: SSD migration (exhaustive)</a></li>
+  <li><a href="#backup">Backup strategy (exhaustive)</a></li>
+  <li><a href="#security">Security considerations</a></li>
+  <li><a href="#pc-proc">PC procurement (specs + considerations)</a></li>
+  <li><a href="#unreal">Unreal Engine installation + asset pipeline</a></li>
+  <li><a href="#iteration">Iteration workflow</a></li>
+  <li><a href="#failure">Failure modes + recovery procedures</a></li>
+  <li><a href="#hurdles">Implementation hurdles checklist</a></li>
+  <li><a href="#docs-strategy">Documentation strategy</a></li>
+  <li><a href="#acceptance">Acceptance criteria + checkpoints</a></li>
+  <li><a href="#bundled">Bundled planning suite (engine analysis + state-of-engine)</a></li>
+</ol>
+</nav>
+
+<!-- =================================================================== -->
+<section id="architecture">
+<h2 class="section-title"><span class="num">§ 1</span> Three-machine architectural overview</h2>
+<p class="section-lede">The Reincarnated project has outgrown single-machine development. Three distinct machines, each playing to its hardware/software strengths, connected by a Pi-hosted middleware layer.</p>
+
+<div class="machines-grid">
+  <div class="machine-card mac">
+    <div class="role-tag">CONTENT ENGINE</div>
+    <h4>Mac (8GB RAM)</h4>
+    <p>Python content engine. Agent orchestration via CLI. Design work + canonical doc authorship. JSON output generation from engine pipeline runs. Git commits. Vercel deploys for loadout app.</p>
+    <p><strong>Strengths consumed:</strong> high developer productivity, mature Python toolchain, agent CLI affordances, Git velocity.</p>
+    <p><strong>Constraints respected:</strong> 8GB RAM insufficient for Unreal Engine; no Windows-native UE5 tooling.</p>
+  </div>
+  <div class="machine-card pi">
+    <div class="role-tag">MIDDLEWARE — ALWAYS ON</div>
+    <h4>Pi 5 (8GB / 128GB SD)</h4>
+    <p>Samba file share (Phase 1). FastAPI HTTP service (Phase 2). PostgreSQL host (existing per D1 ratification 2026-05-25). Always-on; both Mac and PC interact via the Pi rather than direct Mac↔PC communication.</p>
+    <p><strong>Strengths consumed:</strong> low power consumption, always-on operation, headless deployment, network-resident services.</p>
+    <p><strong>Constraints respected:</strong> 8GB RAM modest for FastAPI + PostgreSQL but adequate for solo-dev workload; SD card I/O sufficient for JSON file serving.</p>
+  </div>
+  <div class="machine-card pc">
+    <div class="role-tag">GAME ENGINE</div>
+    <h4>PC (specs TBD — § 9)</h4>
+    <p>Unreal Engine 5 development. Game runtime integration. Character creation system implementation. Consumes engine outputs from Pi shared folder (Phase 1) + via HTTP API (Phase 2).</p>
+    <p><strong>Strengths required:</strong> Windows-native UE5 tooling, RTX-class GPU for Lumen + Nanite + Niagara, ample RAM for engine work, NVMe SSD for Unreal install + content.</p>
+    <p><strong>Status:</strong> PROCUREMENT GATED — see § 9 for detailed spec discussion.</p>
+  </div>
+</div>
+
+<h3 class="subsection">1.1 The augmentation-not-replacement principle</h3>
+<p>The Pi is <strong>additive infrastructure</strong> for the Mac↔PC seam, NOT a replacement of the existing Mac↔Vercel flow. Content takes the route that matches its consumption pattern:</p>
+
+<table>
+<tr><th>Content type</th><th>Path</th><th>Rationale</th></tr>
+<tr><td>Canonical docs, design artifacts, code</td><td><span class="pill mac">Mac</span> → <span class="pill">Git</span> → distributed</td><td>Versioned, distributed, multi-agent; existing pattern</td></tr>
+<tr><td>Loadout app data (class JSONs, manifests)</td><td><span class="pill mac">Mac</span> → <span class="pill">Git</span> → <span class="pill">Vercel</span></td><td>Vite glob auto-discovery; SPA served to web users</td></tr>
+<tr><td>Engine-output artifacts for Unreal consumption</td><td><span class="pill mac">Mac</span> → <span class="pill pi">Pi share</span> → <span class="pill pc">PC reads</span></td><td><strong>NEW</strong> — Pi's primary role for Phase 1</td></tr>
+<tr><td>§ 12 hero+gear Meshy artifacts</td><td><span class="pill mac">Mac</span> → <span class="pill pi">Pi share</span> → <span class="pill pc">PC reads</span></td><td><strong>NEW</strong> — composes naturally with Phase 2 Unreal integration</td></tr>
+<tr><td>PostgreSQL engine-internal data</td><td><span class="pill pi">Pi (already)</span></td><td>D1 ratified 2026-05-25; continues</td></tr>
+<tr><td>Telemetry from sim</td><td><span class="pill pi">Pi PostgreSQL</span></td><td>Queryable, structured; better than file-based for analytics</td></tr>
+<tr><td>Research artifacts (legolas)</td><td><span class="pill mac">Mac</span> → <span class="pill">Git</span></td><td>Multi-agent consumption via git checkout; no Pi routing needed</td></tr>
+</table>
+
+<div class="callout ok">
+<span class="callout-title">Core principle</span>
+<p>No central Pi monopoly on the project's data. Pi handles the new Mac↔PC seam; everything else stays on its existing path. This decouples Pi rollout risk from the rest of the project — if Phase 1 hits issues, the loadout app + canonical docs + design workflow are unaffected.</p>
+</div>
+</section>
+
+<!-- =================================================================== -->
+<section id="hardware">
+<h2 class="section-title"><span class="num">§ 2</span> Hardware inventory + spec table</h2>
+<p class="section-lede">Current inventory + procurement requirements for full three-machine workflow.</p>
+
+<h3 class="subsection">2.1 Current inventory (Matt has)</h3>
+<table>
+<tr><th>Item</th><th>Spec</th><th>Status</th></tr>
+<tr><td>Mac mini (development machine)</td><td>8GB unified memory; macOS; existing dev environment</td><td>✅ In production use</td></tr>
+<tr><td>Raspberry Pi 5</td><td>8GB RAM; 128GB SD card; PostgreSQL installed per D1</td><td>✅ Running; PostgreSQL service active</td></tr>
+<tr><td>Home network (router + LAN)</td><td>Typical residential ISP setup with WiFi + ethernet</td><td>✅ Functional; specifics need confirmation (§ 3.4)</td></tr>
+</table>
+
+<h3 class="subsection">2.2 Procurement required</h3>
+<table>
+<tr><th>Item</th><th>Recommended spec</th><th>Budget</th><th>Timing</th></tr>
+<tr><td>USB 3 SSD (for Pi Phase 3 migration)</td><td>500GB-1TB; USB 3.0 or 3.1; powered if drive size large</td><td>$50-100</td><td>When Phase 3 triggered (SD 70-80% full OR write-wear concerns OR 6mo elapsed OR I/O errors)</td></tr>
+<tr><td>PC (for Unreal Engine 5)</td><td>See § 9 — exhaustive discussion</td><td>$1,200-2,500 typical</td><td>Recommended: concurrent with Pi Phase 1 (concurrent procurement, parallel setup)</td></tr>
+<tr><td>Optional: USB ethernet adapter for Mac mini</td><td>USB-C to gigabit ethernet, $15-30</td><td>$15-30</td><td>If Mac WiFi proves flaky for Pi share access</td></tr>
+<tr><td>Optional: UPS for Pi (uninterruptible power supply)</td><td>Small consumer UPS, ~$50-80; protects against brownouts</td><td>$50-80</td><td>Phase 4 (post initial rollout); not Phase 1 requirement</td></tr>
+<tr><td>Optional: Pi case + active cooling fan</td><td>Aluminum case with fan; ~$15-25</td><td>$15-25</td><td>If Pi runs hot under load (FastAPI + PostgreSQL + Samba concurrent)</td></tr>
+<tr><td>Optional: external HDD for backup</td><td>1TB external USB; ~$50</td><td>$50</td><td>Alternative to Mac local rsync for backup target; not required Phase 1</td></tr>
+</table>
+
+<h3 class="subsection">2.3 Pi 5 capability assessment</h3>
+<table>
+<tr><th>Capability</th><th>Pi 5 spec</th><th>Adequate for use case?</th></tr>
+<tr><td>RAM</td><td>8GB</td><td>✅ Yes — Samba (~50MB) + PostgreSQL (~500MB-1GB tuned) + FastAPI (~200MB) leaves 5+GB headroom</td></tr>
+<tr><td>CPU</td><td>Quad-core Cortex-A76 @ 2.4 GHz (ARM64)</td><td>✅ Yes — sufficient for I/O-bound workloads (file serving + DB queries)</td></tr>
+<tr><td>Network</td><td>Gigabit ethernet + WiFi 802.11ac</td><td>✅ Yes — wired ethernet recommended; gigabit far exceeds JSON file transfer needs</td></tr>
+<tr><td>USB</td><td>2× USB 3.0 + 2× USB 2.0</td><td>✅ Yes — USB 3.0 sufficient for external SSD (Phase 3)</td></tr>
+<tr><td>Storage (initial)</td><td>128GB SD card</td><td>⚠️ Adequate for weeks; migration to SSD triggered per § 7</td></tr>
+<tr><td>Thermals</td><td>Passively cooled by default</td><td>⚠️ May benefit from active cooling under concurrent load; monitor + add fan if needed</td></tr>
+</table>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="network">
+<h2 class="section-title"><span class="num">§ 3</span> Network architecture</h2>
+<p class="section-lede">The three machines must share a LAN. Network reliability is load-bearing for the iteration workflow.</p>
+
+<h3 class="subsection">3.1 Network topology requirement</h3>
+<p>All three machines (Mac, Pi, PC) connected to the same LAN. Same subnet. No NAT or VPN traversal required. Typical home network setup:</p>
+
+<pre><code>Internet
+   │
+   └── Modem/Router
+         │
+         ├── (wired) Pi 5         ← recommended: wired ethernet for reliability
+         ├── (wired) PC           ← recommended: wired ethernet for Unreal asset transfer speed
+         └── (WiFi)  Mac mini     ← acceptable: WiFi sufficient for JSON file sizes; USB ethernet upgrade if flaky</code></pre>
+
+<h3 class="subsection">3.2 Mac connection method — WiFi vs wired ethernet</h3>
+<div class="callout">
+<span class="callout-title">Mac connection decision</span>
+<p><strong>Default: WiFi.</strong> Mac mini typically has built-in WiFi but no built-in ethernet (depends on model). For solo dev iteration with JSON file sizes typically &lt; 5MB per artifact, WiFi 802.11ac is sufficient.</p>
+<p><strong>Upgrade trigger:</strong> if Mac → Pi share access proves flaky (frequent reconnections, slow file write/read, intermittent timeouts), add USB-C to gigabit ethernet adapter ($15-30). Plug into router; configure macOS network preferences to prefer ethernet.</p>
+</div>
+
+<h3 class="subsection">3.3 Pi connection method — wired ethernet recommended</h3>
+<div class="callout warn">
+<span class="callout-title">Pi network reliability</span>
+<p>The Pi is the always-on middleware. If Pi disconnects from the network, both Mac and PC lose access to shared infrastructure. <strong>Wired ethernet recommended over WiFi for reliability.</strong> Plug ethernet cable from Pi to router. WiFi acceptable as fallback if cable routing impractical.</p>
+</div>
+
+<h3 class="subsection">3.4 Address resolution — static IP vs .local mDNS</h3>
+<p>Two options for how Mac and PC find the Pi on the LAN:</p>
+
+<table>
+<tr><th>Option</th><th>Pros</th><th>Cons</th><th>Recommended?</th></tr>
+<tr><td><strong>.local mDNS</strong> (e.g., <code>raspberrypi.local</code> or custom hostname like <code>reincarnated-pi.local</code>)</td><td>Zero setup; built-in on Pi + macOS; Bonjour installable on Windows</td><td>Occasionally flaky depending on router; some routers block mDNS broadcasts</td><td><strong>START HERE</strong> — simplest path; upgrade only if flaky in practice</td></tr>
+<tr><td><strong>Static IP</strong> via router DHCP reservation (e.g., <code>192.168.1.50</code> reserved for Pi MAC address)</td><td>More reliable; predictable address; survives router DNS quirks</td><td>Requires router admin access + DHCP reservation config; address changes if router replaced</td><td>Upgrade option if .local unreliable</td></tr>
+<tr><td><strong>Static IP</strong> via Pi-side config (set in <code>/etc/dhcpcd.conf</code>)</td><td>Pi controls own address; router-independent</td><td>Risk of address conflict with other DHCP devices; harder to debug if Pi misconfigures</td><td>Not recommended — DHCP reservation cleaner</td></tr>
+</table>
+
+<h3 class="subsection">3.5 Windows + .local resolution</h3>
+<div class="callout warn">
+<span class="callout-title">Windows mDNS gotcha</span>
+<p>Windows historically didn't support mDNS / Bonjour out of the box. Modern Windows 10/11 should handle <code>raspberrypi.local</code> via built-in support, but if PC can't resolve, install <strong>Apple Bonjour Print Services</strong> from Apple (free; included with iTunes for Windows historically; standalone download available). This makes <code>.local</code> resolution work consistently from Windows.</p>
+</div>
+
+<h3 class="subsection">3.6 Recommended Pi hostname</h3>
+<p>Default Pi OS hostname is <code>raspberrypi</code>. Recommend changing to a project-specific hostname:</p>
+<pre><code><span class="comment"># On Pi, run:</span>
+sudo hostnamectl set-hostname reincarnated-pi
+sudo reboot
+<span class="comment"># Verify after reboot:</span>
+hostname  <span class="comment"># should print: reincarnated-pi</span></code></pre>
+<p>Mac and PC will then access via <code>reincarnated-pi.local</code> — clearer than generic <code>raspberrypi.local</code> if multiple Pi devices exist on network.</p>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="phase1">
+<h2 class="section-title"><span class="num">§ 4</span> Phase 1 — Samba file sharing (exhaustive)</h2>
+<p class="section-lede">Goal: Mac engine outputs accessible to PC via Pi network share. ~4-8 hours focused execution session. Phase 1 is the foundation; subsequent phases extend.</p>
+
+<div class="phase-banner">
+<span class="badge">Phase 1</span>
+<h3>Samba file sharing</h3>
+<p>Pi exposes shared folder via Samba. Mac mounts share via Finder + macOS SMB client. PC mounts share via File Explorer + Windows SMB client. Engine outputs flow Mac → Pi → PC for Unreal consumption.</p>
+</div>
+
+<h3 class="subsection">4.1 Pre-flight checklist</h3>
+<div class="checklist">
+<h4>Before starting Phase 1 work</h4>
+<ul>
+<li>Pi powered on, ethernet connected, accessible via SSH (verify: <code>ssh matt@reincarnated-pi.local</code> from Mac)</li>
+<li>Pi PostgreSQL service running (verify: <code>systemctl status postgresql</code> on Pi)</li>
+<li>Mac can reach Pi via mDNS (verify: <code>ping reincarnated-pi.local</code> from Mac terminal)</li>
+<li>SD card has at least 5GB free for new install + working space</li>
+<li>Mac firewall not blocking SMB ports 139/445 (typically not blocked by default)</li>
+<li>Plan ~4-8 hour focused window; partial execution can leave system in awkward state</li>
+<li>Mac local clone of collab repo current; commit any in-progress work before starting</li>
+</ul>
+</div>
+
+<h3 class="subsection">4.2 Step-by-step Pi setup</h3>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Update Pi OS</strong>
+<p>Ensure Pi OS package list current + system updated.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y</code></pre>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Install Samba</strong>
+<pre><code>sudo apt install samba samba-common-bin -y</code></pre>
+<p>Samba service installs but won't be configured yet.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Create the shared folder with explicit path</strong>
+<p>Per canonical migration-readiness principle, use explicit path NOT default Samba locations:</p>
+<pre><code>sudo mkdir -p /home/matt/data/shared
+sudo chown matt:matt /home/matt/data/shared
+chmod 755 /home/matt/data/shared</code></pre>
+<p>Also create subdirs for clarity:</p>
+<pre><code>mkdir -p /home/matt/data/shared/engine-output
+mkdir -p /home/matt/data/shared/visual-artifacts
+mkdir -p /home/matt/data/shared/meshy-handoff</code></pre>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>Set Samba user password for the matt account</strong>
+<p>Samba auth is independent of Pi OS auth. Set a Samba-specific password:</p>
+<pre><code>sudo smbpasswd -a matt
+<span class="comment"># Enter password twice; this is the Samba auth for Mac+PC access</span></code></pre>
+<p>The username <code>matt</code> and password set here are what Mac/PC will use to connect — independent of Pi OS user password.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-body">
+<strong>Edit smb.conf to expose the share</strong>
+<p>Open with sudo:</p>
+<pre><code>sudo nano /etc/samba/smb.conf</code></pre>
+<p>Scroll to bottom; add new share definition:</p>
+<pre><code>[reincarnated]
+   path = /home/matt/data/shared
+   browseable = yes
+   writable = yes
+   only guest = no
+   create mask = 0664
+   directory mask = 0775
+   valid users = matt
+   <span class="comment"># Suppress macOS metadata noise:</span>
+   veto files = /.DS_Store/.AppleDouble/.AppleDB/.AppleDesktop/Network Trash Folder/Temporary Items/TheVolumeSettingsFolder/
+   delete veto files = yes
+   <span class="comment"># Suppress Windows thumbnail cache noise:</span>
+   veto files = /Thumbs.db/
+   <span class="comment"># SMB3 protocol (modern; macOS deprecates older SMB versions):</span>
+   <span class="comment"># Note: smb.conf protocol selection lives in [global] not per-share</span></code></pre>
+<p>Also ensure [global] section sets SMB3 minimum:</p>
+<pre><code><span class="comment"># In [global] section, add or verify:</span>
+   server min protocol = SMB2_10
+   server max protocol = SMB3
+   <span class="comment"># Mitigates legacy SMB1 vulnerabilities; macOS prefers SMB3</span></code></pre>
+<p>Save (Ctrl+O, Enter, Ctrl+X in nano).</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-body">
+<strong>Test smb.conf syntax</strong>
+<pre><code>testparm</code></pre>
+<p>Should print parsed config with no errors. Press Enter when prompted to dump service definitions.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">7</div>
+<div class="step-body">
+<strong>Restart Samba service</strong>
+<pre><code>sudo systemctl restart smbd
+sudo systemctl enable smbd  <span class="comment"># auto-start on boot</span></code></pre>
+<p>Verify running:</p>
+<pre><code>systemctl status smbd</code></pre>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">8</div>
+<div class="step-body">
+<strong>Confirm port 445 (SMB) listening</strong>
+<pre><code>sudo ss -tlnp | grep 445
+<span class="comment"># Should show smbd listening on port 445</span></code></pre>
+</div>
+</div>
+</div>
+
+<h3 class="subsection">4.3 Mac-side mount</h3>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Open Finder → Connect to Server (Cmd+K)</strong>
+<p>Address: <code>smb://reincarnated-pi.local/reincarnated</code></p>
+<p>(or substitute static IP if .local resolution fails)</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Authenticate as matt + the smbpasswd you set</strong>
+<p>Check "Remember password in Keychain" so future mounts are seamless.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Verify mount</strong>
+<p>Finder shows the <code>reincarnated</code> share. The path on Mac is typically <code>/Volumes/reincarnated/</code>.</p>
+<p>Test file write from Mac:</p>
+<pre><code>echo "test from mac" > /Volumes/reincarnated/test.txt</code></pre>
+<p>SSH to Pi, verify file appeared:</p>
+<pre><code>cat /home/matt/data/shared/test.txt
+<span class="comment"># should print: test from mac</span></code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>Configure auto-mount on Mac login (optional but recommended)</strong>
+<p>System Settings → Users & Groups → Login Items → add the mounted share. macOS auto-mounts on login.</p>
+</div>
+</div>
+</div>
+
+<h3 class="subsection">4.4 PC-side mount (when PC arrives)</h3>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Install Bonjour if .local resolution failing</strong>
+<p>Apple Bonjour Print Services for Windows (free; standalone download).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Open File Explorer → This PC → Map network drive</strong>
+<p>Path: <code>\\reincarnated-pi.local\reincarnated</code></p>
+<p>Check "Connect using different credentials" → username <code>matt</code>, password from smbpasswd.</p>
+<p>Check "Reconnect at sign-in" for auto-mount.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Verify bidirectional</strong>
+<p>Create file on Mac side; PC sees it. Create file on PC side; Mac sees it.</p>
+</div>
+</div>
+</div>
+
+<h3 class="subsection">4.5 Engine output routing — Mac side</h3>
+<p>Once mount is working, configure engine to write outputs to Pi share. Two approaches:</p>
+
+<table>
+<tr><th>Approach</th><th>Description</th><th>Pro/Con</th></tr>
+<tr><td><strong>A. Env var</strong></td><td><code>export REINCARNATED_ENGINE_OUTPUT_DIR=/Volumes/reincarnated/engine-output</code> in <code>~/.zshrc</code> or per-session</td><td>+ Simple, opt-in. − Per-session unless set in shell init.</td></tr>
+<tr><td><strong>B. Settings.json</strong></td><td>Add <code>engine_output_dir</code> field to project settings; engine reads at startup</td><td>+ Persistent, version-controllable. − Requires star-lord seam refactor to read.</td></tr>
+<tr><td><strong>C. Symlink</strong></td><td><code>ln -s /Volumes/reincarnated/engine-output ~/Games/reincarnated-engine/output</code></td><td>+ Zero engine-code change. − Symlink fragility if share unmounted; surprising for new developers.</td></tr>
+</table>
+<p>Recommended: <strong>A first, B later when star-lord seam-owner ready</strong>. C as quick fallback.</p>
+
+<h3 class="subsection">4.6 Phase 1 acceptance criteria</h3>
+<div class="checklist">
+<h4>Phase 1 complete when ALL of:</h4>
+<ul>
+<li>Samba service running on Pi; survives reboot (verified via reboot test)</li>
+<li>Mac mounts <code>smb://reincarnated-pi.local/reincarnated</code> via Finder; auto-mount configured</li>
+<li>PC mounts <code>\\reincarnated-pi.local\reincarnated</code> via File Explorer; auto-reconnect configured (PC step deferred if PC not yet acquired)</li>
+<li>Engine writes JSON to Pi share; same JSON readable from Pi SSH within seconds</li>
+<li>Bidirectional file ops verified (write from Mac, read from PC + reverse) — PC step deferred if PC not yet acquired</li>
+<li>Mac config persists across reboot (share automounts on Mac login)</li>
+<li>Pi config persists across reboot (Samba autostarts via systemd enable)</li>
+<li>Backup script + cron + first successful test restore (§ 7)</li>
+<li>Documentation of paths, credentials, configs in collab repo or Pi-local doc</li>
+</ul>
+</div>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="phase2">
+<h2 class="section-title"><span class="num">§ 5</span> Phase 2 — HTTP API service (exhaustive)</h2>
+<p class="section-lede">Goal: dynamic queries from Unreal to Pi-backed data via HTTP. Triggered by PC + Unreal Engine readiness. ~8-16 hours execution.</p>
+
+<div class="phase-banner">
+<span class="badge">Phase 2</span>
+<h3>FastAPI HTTP service on Pi</h3>
+<p>Pi runs FastAPI service exposing endpoints for Unreal dynamic queries. Backed by PostgreSQL. systemd-managed. LAN-only access.</p>
+</div>
+
+<h3 class="subsection">5.1 Pre-flight</h3>
+<div class="checklist">
+<h4>Before starting Phase 2</h4>
+<ul>
+<li>Phase 1 closed (file sharing working reliably)</li>
+<li>PC acquired + Unreal Engine 5 installed</li>
+<li>Initial Unreal integration test scoped (what to query first)</li>
+<li>star-lord coordination on API spec (which endpoints, schemas)</li>
+<li>elrond coordination on PostgreSQL read-only role (HTTP service shouldn't have write access to engine data)</li>
+</ul>
+</div>
+
+<h3 class="subsection">5.2 Step-by-step</h3>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Install Python venv tooling</strong>
+<pre><code>sudo apt install python3-pip python3-venv -y</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Create venv for the service</strong>
+<pre><code>cd /home/matt/data
+python3 -m venv api-venv
+source api-venv/bin/activate</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Install FastAPI + dependencies</strong>
+<pre><code>pip install fastapi uvicorn[standard] asyncpg python-dotenv</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>Author the service</strong>
+<p>star-lord seam: author <code>/home/matt/data/api/main.py</code> with FastAPI endpoints per per-agent doc § 2.2. Coordinate endpoint spec with drax (Unreal consumer) + elrond (PostgreSQL schema).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-body">
+<strong>Test service locally</strong>
+<pre><code>cd /home/matt/data
+source api-venv/bin/activate
+uvicorn api.main:app --host 0.0.0.0 --port 8000</code></pre>
+<p>From Mac: <code>curl http://reincarnated-pi.local:8000/v1/health</code></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-body">
+<strong>Create systemd service file</strong>
+<p>Author <code>/etc/systemd/system/reincarnated-api.service</code>:</p>
+<pre><code>[Unit]
+Description=Reincarnated FastAPI service
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=matt
+WorkingDirectory=/home/matt/data
+ExecStart=/home/matt/data/api-venv/bin/uvicorn api.main:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">7</div>
+<div class="step-body">
+<strong>Enable + start the service</strong>
+<pre><code>sudo systemctl daemon-reload
+sudo systemctl enable reincarnated-api
+sudo systemctl start reincarnated-api
+sudo systemctl status reincarnated-api</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">8</div>
+<div class="step-body">
+<strong>PC-side integration</strong>
+<p>Install VaRest plugin in Unreal (free, Marketplace). Configure HTTP requests against <code>http://reincarnated-pi.local:8000/v1/...</code>.</p>
+</div>
+</div>
+</div>
+
+<h3 class="subsection">5.3 Phase 2 acceptance criteria</h3>
+<div class="checklist">
+<h4>Phase 2 complete when ALL of:</h4>
+<ul>
+<li>FastAPI service responds to <code>GET /v1/health</code> from Mac + PC</li>
+<li>At least one substantive endpoint (e.g., <code>GET /v1/character/{id}</code>) returns real PostgreSQL data</li>
+<li>systemd service survives Pi reboot (autostart verified)</li>
+<li>Service logs to journald; log inspection workflow documented</li>
+<li>Unreal HTTP client (VaRest or equivalent) successfully consumes at least one endpoint</li>
+<li>Schema version field on every response; version-check pattern documented for Unreal client</li>
+<li>Authentication strategy decided + implemented (LAN-only OR API token; documented)</li>
+</ul>
+</div>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="phase3">
+<h2 class="section-title"><span class="num">§ 6</span> Phase 3 — SSD migration (exhaustive)</h2>
+<p class="section-lede">Goal: move data from SD card to USB 3 SSD before SD card limits become problems. ~2-4 hours execution.</p>
+
+<div class="phase-banner">
+<span class="badge">Phase 3</span>
+<h3>SD → USB 3 SSD migration</h3>
+<p>Triggered by SD card 70-80% full OR write-wear concerns OR 6 months elapsed OR I/O errors in system logs. Migration is execution of the explicit-paths principle from Day 1.</p>
+</div>
+
+<h3 class="subsection">6.1 SSD selection</h3>
+<table>
+<tr><th>Spec</th><th>Recommendation</th><th>Notes</th></tr>
+<tr><td>Capacity</td><td>500GB-1TB</td><td>Budget per usage projection: ~50GB engine outputs/year, PostgreSQL ~10-50GB, backup space ~2x data size</td></tr>
+<tr><td>Interface</td><td>USB 3.0 or USB 3.1</td><td>Pi 5 has 2× USB 3.0 ports</td></tr>
+<tr><td>Power</td><td>Bus-powered acceptable for SSDs &lt;1TB; check power budget if Pi running multiple USB peripherals</td><td>Powered USB hub option if power-budget concerns surface</td></tr>
+<tr><td>Form factor</td><td>External 2.5" SATA SSD via USB enclosure, OR NVMe-to-USB enclosure</td><td>SATA simpler, cheaper; NVMe faster but bottlenecked by USB 3.0 bandwidth anyway</td></tr>
+<tr><td>Filesystem</td><td>ext4 (Linux native)</td><td>Avoid exFAT/NTFS unless cross-platform direct-mount needed; ext4 is right for Pi-only consumption</td></tr>
+</table>
+
+<h3 class="subsection">6.2 Migration steps</h3>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Connect SSD to Pi USB 3 port</strong>
+<p>Use blue (USB 3) port, not black (USB 2). Verify recognition:</p>
+<pre><code>lsblk
+<span class="comment"># SSD typically appears as /dev/sda or /dev/sdb</span></code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Partition + format SSD with ext4</strong>
+<pre><code>sudo fdisk /dev/sda
+<span class="comment"># Create one partition spanning the disk; primary; default sizes</span>
+<span class="comment"># Save with 'w'</span>
+sudo mkfs.ext4 /dev/sda1
+sudo e2label /dev/sda1 reincarnated-data</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Mount at /data</strong>
+<pre><code>sudo mkdir -p /data
+sudo mount /dev/sda1 /data
+<span class="comment"># Verify:</span>
+df -h /data</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>Add to /etc/fstab for permanent mount</strong>
+<p>Get UUID:</p>
+<pre><code>sudo blkid /dev/sda1
+<span class="comment"># Note the UUID value</span></code></pre>
+<p>Edit fstab:</p>
+<pre><code>sudo nano /etc/fstab</code></pre>
+<p>Add line:</p>
+<pre><code>UUID=&lt;uuid-from-blkid&gt; /data ext4 defaults,noatime 0 2</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-body">
+<strong>Stop services before data move</strong>
+<pre><code>sudo systemctl stop reincarnated-api  <span class="comment"># Phase 2 service</span>
+sudo systemctl stop postgresql
+sudo systemctl stop smbd</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-body">
+<strong>Copy data to SSD</strong>
+<pre><code>sudo rsync -avP /home/matt/data/ /data/matt-data/
+<span class="comment"># -a archive mode preserves permissions/timestamps</span>
+<span class="comment"># -v verbose; -P progress + partial-resume</span>
+
+<span class="comment"># For PostgreSQL specifically:</span>
+sudo rsync -avP /var/lib/postgresql /data/</code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">7</div>
+<div class="step-body">
+<strong>Update paths in service configs</strong>
+<p>For Samba: edit smb.conf path from <code>/home/matt/data/shared</code> to <code>/data/matt-data/shared</code> OR create symlink:</p>
+<pre><code>sudo mv /home/matt/data /home/matt/data.old
+sudo ln -s /data/matt-data /home/matt/data
+<span class="comment"># Symlink approach lets existing configs work without edits</span></code></pre>
+<p>For PostgreSQL: edit <code>/etc/postgresql/*/main/postgresql.conf</code> setting <code>data_directory = '/data/postgresql/*/main'</code> (path varies by PG version).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">8</div>
+<div class="step-body">
+<strong>Restart services + verify</strong>
+<pre><code>sudo systemctl start postgresql
+sudo systemctl start smbd
+sudo systemctl start reincarnated-api
+
+<span class="comment"># Test all three:</span>
+psql -U matt -h localhost -d reincarnated -c 'SELECT version();'
+<span class="comment"># Mac: check share access</span>
+<span class="comment"># Mac: curl http://reincarnated-pi.local:8000/v1/health</span></code></pre>
+</div>
+</div>
+<div class="step">
+<div class="step-num">9</div>
+<div class="step-body">
+<strong>Reclaim SD card space</strong>
+<pre><code><span class="comment"># Only after extensive verification that SSD is working:</span>
+sudo rm -rf /home/matt/data.old
+sudo rm -rf /var/lib/postgresql.old  <span class="comment"># if you backed up first</span></code></pre>
+</div>
+</div>
+</div>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="backup">
+<h2 class="section-title"><span class="num">§ 7</span> Backup strategy (exhaustive)</h2>
+<p class="section-lede">SD card can fail without warning. Backup discipline is non-negotiable from Day 1, even for the "temporary" SD card phase. Per canonical risk register R1.</p>
+
+<h3 class="subsection">7.1 Day-1 backup minimum</h3>
+<div class="callout risk">
+<span class="callout-title">Non-negotiable</span>
+<p>Weekly automated rsync of Pi's <code>/home/matt/data</code> + PostgreSQL pg_dump to Mac local disk. Period.</p>
+</div>
+
+<h3 class="subsection">7.2 Backup script (Pi-side)</h3>
+<p>Author <code>/home/matt/bin/backup.sh</code>:</p>
+<pre><code>#!/bin/bash
+<span class="comment"># Pi-side backup script — run nightly via cron</span>
+
+BACKUP_DIR=/home/matt/data/backup
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+LOG=$BACKUP_DIR/backup.log
+
+mkdir -p $BACKUP_DIR
+
+echo "[$TIMESTAMP] Backup starting" >> $LOG
+
+<span class="comment"># PostgreSQL dump</span>
+pg_dump -U matt -h localhost reincarnated > $BACKUP_DIR/postgres_${TIMESTAMP}.sql
+echo "[$TIMESTAMP] pg_dump complete: $(ls -la $BACKUP_DIR/postgres_${TIMESTAMP}.sql)" >> $LOG
+
+<span class="comment"># Retention: keep last 14 days of pg_dumps</span>
+find $BACKUP_DIR -name "postgres_*.sql" -mtime +14 -delete
+
+echo "[$TIMESTAMP] Backup complete" >> $LOG</code></pre>
+<p>Make executable + add to cron:</p>
+<pre><code>chmod +x /home/matt/bin/backup.sh
+crontab -e
+<span class="comment"># Add line:</span>
+0 2 * * * /home/matt/bin/backup.sh
+<span class="comment"># Runs nightly at 2am</span></code></pre>
+
+<h3 class="subsection">7.3 Mac-side weekly rsync pull</h3>
+<p>On Mac, author <code>~/bin/weekly-pi-backup.sh</code>:</p>
+<pre><code>#!/bin/bash
+<span class="comment"># Mac-side weekly rsync from Pi</span>
+
+BACKUP_DEST=~/reincarnated-pi-backups
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+
+mkdir -p $BACKUP_DEST
+
+rsync -avz --delete matt@reincarnated-pi.local:/home/matt/data/ $BACKUP_DEST/current/
+
+<span class="comment"># Snapshot the current backup state weekly</span>
+tar -czf $BACKUP_DEST/snapshot_${TIMESTAMP}.tar.gz -C $BACKUP_DEST current/
+
+<span class="comment"># Retention: keep last 8 weekly snapshots</span>
+ls -t $BACKUP_DEST/snapshot_*.tar.gz | tail -n +9 | xargs rm -f 2>/dev/null
+
+echo "Weekly Pi backup complete: $BACKUP_DEST/snapshot_${TIMESTAMP}.tar.gz"</code></pre>
+<p>Schedule via Mac launchd or cron. Sundays at noon recommended (low-activity window).</p>
+
+<h3 class="subsection">7.4 Test restore (non-negotiable)</h3>
+<div class="callout warn">
+<span class="callout-title">Test the restore at least once before declaring backup discipline "operational"</span>
+<p>An untested backup is hope, not infrastructure. Day-1 task: <strong>verify backup restores</strong>.</p>
+</div>
+<p>Test restore steps:</p>
+<pre><code><span class="comment"># Create a test database from a backup:</span>
+psql -U matt -h localhost -c 'CREATE DATABASE reincarnated_restore_test;'
+psql -U matt -h localhost -d reincarnated_restore_test &lt; /home/matt/data/backup/postgres_&lt;timestamp&gt;.sql
+
+<span class="comment"># Query something:</span>
+psql -U matt -h localhost -d reincarnated_restore_test -c 'SELECT COUNT(*) FROM &lt;some_table&gt;;'
+
+<span class="comment"># Compare counts to production:</span>
+psql -U matt -h localhost -d reincarnated -c 'SELECT COUNT(*) FROM &lt;some_table&gt;;'
+
+<span class="comment"># If counts match, backup is restorable. Drop test:</span>
+psql -U matt -h localhost -c 'DROP DATABASE reincarnated_restore_test;'</code></pre>
+
+<h3 class="subsection">7.5 Backup retention</h3>
+<table>
+<tr><th>What</th><th>Frequency</th><th>Retention</th><th>Where</th></tr>
+<tr><td>pg_dump SQL</td><td>Nightly</td><td>14 days on Pi</td><td>Pi <code>/home/matt/data/backup/</code></td></tr>
+<tr><td>Pi rsync to Mac</td><td>Weekly</td><td>Last 8 weekly snapshots</td><td>Mac <code>~/reincarnated-pi-backups/</code></td></tr>
+<tr><td>Quarterly archive (optional)</td><td>Quarterly</td><td>Last 4 quarters</td><td>External HDD or cloud (Phase 4)</td></tr>
+</table>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="security">
+<h2 class="section-title"><span class="num">§ 8</span> Security considerations</h2>
+<p class="section-lede">LAN-only infrastructure. Solo-dev project. Reasonable security without enterprise overhead.</p>
+
+<h3 class="subsection">8.1 Threat model</h3>
+<table>
+<tr><th>Threat</th><th>Likelihood</th><th>Mitigation</th></tr>
+<tr><td>Internet attacker accessing Pi services</td><td>Low IF Pi not exposed via router port forwarding</td><td>DO NOT forward ports 22/80/443/445/8000 to Pi. Pi remains LAN-internal.</td></tr>
+<tr><td>Compromised LAN device accessing Pi data</td><td>Low for solo home LAN</td><td>Samba auth required for share access; PostgreSQL requires password; FastAPI can add API token if desired</td></tr>
+<tr><td>SD card theft (physical access)</td><td>Very low</td><td>Pi physically secured in residence; no encryption at rest typically warranted for solo dev project</td></tr>
+<tr><td>Weak Pi user password</td><td>Moderate</td><td>Use strong password for matt account; SSH key auth recommended (disable password SSH after key works)</td></tr>
+<tr><td>Outdated Pi OS / Samba / PostgreSQL</td><td>Moderate over time</td><td>Quarterly <code>sudo apt update && sudo apt upgrade</code></td></tr>
+</table>
+
+<h3 class="subsection">8.2 Hardening recommendations</h3>
+<div class="checklist">
+<h4>Day-1 hardening</h4>
+<ul>
+<li>SSH key auth from Mac to Pi; disable password SSH after key works (<code>PasswordAuthentication no</code> in <code>/etc/ssh/sshd_config</code>)</li>
+<li>Strong Pi user password (even if SSH disabled, sudo still needs it)</li>
+<li>Pi firewall (ufw) configured to allow only LAN subnet for SMB + FastAPI + PostgreSQL ports</li>
+<li>Verify router does NOT forward any ports to Pi</li>
+<li>Verify router admin password is not default</li>
+</ul>
+</div>
+
+<h3 class="subsection">8.3 Optional ufw setup</h3>
+<pre><code>sudo apt install ufw -y
+
+<span class="comment"># Allow SSH from LAN only (adjust subnet to match yours):</span>
+sudo ufw allow from 192.168.1.0/24 to any port 22
+
+<span class="comment"># Allow Samba from LAN only:</span>
+sudo ufw allow from 192.168.1.0/24 to any port 445
+sudo ufw allow from 192.168.1.0/24 to any port 139
+
+<span class="comment"># Allow FastAPI from LAN only:</span>
+sudo ufw allow from 192.168.1.0/24 to any port 8000
+
+<span class="comment"># Allow PostgreSQL from LAN only (if accessed remotely; otherwise skip):</span>
+sudo ufw allow from 192.168.1.0/24 to any port 5432
+
+sudo ufw default deny incoming
+sudo ufw enable
+sudo ufw status verbose</code></pre>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="pc-proc">
+<h2 class="section-title"><span class="num">§ 9</span> PC procurement (specs + considerations)</h2>
+<p class="section-lede">PC procurement is the largest budget decision in the rollout. Specs need to support Unreal Engine 5 + Reincarnated-specific requirements (Lumen + Nanite + Niagara per doc 38 D1).</p>
+
+<h3 class="subsection">9.1 Unreal Engine 5 spec floors (Epic published)</h3>
+<table>
+<tr><th>Component</th><th>UE5 minimum</th><th>UE5 recommended</th></tr>
+<tr><td>OS</td><td>Windows 10 64-bit</td><td>Windows 10/11 64-bit (latest patches)</td></tr>
+<tr><td>CPU</td><td>Quad-core Intel/AMD, 2.5 GHz or faster</td><td>8+ core modern (Intel 12th gen / Ryzen 5000 series or newer)</td></tr>
+<tr><td>RAM</td><td>8GB (will struggle)</td><td>32GB+ for complex projects</td></tr>
+<tr><td>GPU</td><td>DirectX 12 compatible (e.g., GTX 1080)</td><td>RTX 3060 minimum; RTX 4070+ recommended for Lumen/Nanite efficiency</td></tr>
+<tr><td>Storage</td><td>SSD with 50GB free</td><td>NVMe SSD 1TB+ (UE5 install + per-project content)</td></tr>
+</table>
+
+<h3 class="subsection">9.2 Reincarnated-specific spec recommendations</h3>
+<p>Per doc 38 D1, Reincarnated uses Lumen (real-time global illumination), Nanite (virtualized geometry), Niagara VFX. These are GPU + RAM hungry:</p>
+<table>
+<tr><th>Component</th><th>Reincarnated-target spec</th><th>Why</th></tr>
+<tr><td>CPU</td><td>8+ core modern (Intel i7-13700K / Ryzen 7 7700X or better)</td><td>Multi-thread for Unreal compile + asset import; Niagara emitter sims</td></tr>
+<tr><td>RAM</td><td>32GB DDR5 minimum; 64GB if budget permits</td><td>Lumen + Nanite cache + Unreal Editor + open-project content all RAM-hungry; Reincarnated will load many characters into editor simultaneously</td></tr>
+<tr><td>GPU</td><td>RTX 4070 / 4070 Ti minimum; RTX 4080+ for headroom</td><td>Lumen real-time GI + Nanite virtualized geometry require modern RT/mesh-shader hardware; aging GPU = unusable iteration loop</td></tr>
+<tr><td>Storage</td><td>1TB NVMe primary + 2TB SATA SSD secondary</td><td>Primary for UE5 install + active project; secondary for content cache + Meshy/glTF assets transferred from Pi</td></tr>
+<tr><td>Motherboard / chipset</td><td>Modern Intel/AMD with DDR5 support</td><td>DDR5 RAM bandwidth materially helps Lumen perf</td></tr>
+<tr><td>Power supply</td><td>750W+ 80+ Gold</td><td>RTX 4070-4080 + modern CPU draws 400-600W peak; UPS-stable</td></tr>
+<tr><td>Case + cooling</td><td>Mid-tower with at least 2 case fans; CPU cooler appropriate for chip</td><td>Sustained Unreal compiles run hot; thermal throttling kills iteration velocity</td></tr>
+</table>
+
+<h3 class="subsection">9.3 Build vs prebuilt</h3>
+<table>
+<tr><th>Option</th><th>Pro</th><th>Con</th></tr>
+<tr><td>Custom build</td><td>Spec exactly to need; better $/perf; upgradeable</td><td>Time investment to research + build; troubleshoot first-boot</td></tr>
+<tr><td>Prebuilt (gaming PC)</td><td>Plug-and-play; warranty; vendor support</td><td>Often markup on components; sometimes proprietary parts; limited upgrade path</td></tr>
+<tr><td>Used / refurbished</td><td>Lower cost; ex-mining-rig GPUs occasionally great $/perf</td><td>Warranty concerns; unknown component age; GPU-specifically risky if from mining</td></tr>
+</table>
+
+<h3 class="subsection">9.4 Budget tier recommendations</h3>
+<table>
+<tr><th>Tier</th><th>Budget</th><th>Spec target</th><th>Reincarnated iteration experience</th></tr>
+<tr><td><strong>Floor</strong></td><td>$1,200-1,500</td><td>i5-13400 / Ryzen 5 7600 + RTX 4060 + 16GB DDR5 + 1TB NVMe</td><td>Workable but Lumen will lag; consider 32GB RAM upgrade later</td></tr>
+<tr><td><strong>Target</strong></td><td>$1,800-2,200</td><td>i7-13700K / Ryzen 7 7700X + RTX 4070 + 32GB DDR5 + 1TB NVMe</td><td>Smooth Lumen + Nanite; comfortable iteration loop</td></tr>
+<tr><td><strong>Ceiling</strong></td><td>$2,500-3,000+</td><td>i9-13900K / Ryzen 9 7900X + RTX 4080 + 64GB DDR5 + 2TB NVMe</td><td>Future-proof; UE6+ comfortable; large open-world project capability</td></tr>
+</table>
+
+<h3 class="subsection">9.5 Procurement timing</h3>
+<div class="callout">
+<span class="callout-title">Recommended: concurrent with Pi Phase 1</span>
+<p>Pi Phase 1 + PC procurement can fire in parallel since they're independent work-streams. Pi Phase 1 doesn't require PC to test (Mac alone proves the file share). PC arrival accelerates Phase 2 HTTP API + Unreal integration readiness.</p>
+</div>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="unreal">
+<h2 class="section-title"><span class="num">§ 10</span> Unreal Engine installation + asset pipeline</h2>
+<p class="section-lede">PC arrival triggers Unreal Engine installation + asset pipeline setup. The Meshy → Control Rig → Unreal pipeline per doc 38 D1 takes specific shape on the PC.</p>
+
+<h3 class="subsection">10.1 Epic Games Launcher install (PC-side)</h3>
+<p>Reinstall Epic Games Launcher on PC (uninstalled from Mac 2026-05-30). Download from <code>https://www.epicgames.com/store/en-US/download</code>. Standard Windows installer.</p>
+
+<h3 class="subsection">10.2 Unreal Engine 5 install</h3>
+<ol>
+<li>Sign in to Epic Games Launcher with Epic account</li>
+<li>Navigate to Unreal Engine tab → Library</li>
+<li>Click + button to add engine version → choose UE 5.4 or latest stable (verify per doc 38 D1 target)</li>
+<li>Choose install location — recommend secondary SSD (UE5 install is ~50-80GB + content libraries can grow to 200GB+)</li>
+<li>Install runs 30-60 minutes depending on bandwidth</li>
+</ol>
+
+<h3 class="subsection">10.3 Marketplace plugins needed</h3>
+<table>
+<tr><th>Plugin</th><th>Purpose</th><th>Cost</th></tr>
+<tr><td>VaRest</td><td>HTTP client for Blueprints/C++; consumes Pi FastAPI</td><td>Free</td></tr>
+<tr><td>glTFRuntime (if asset workflow needs runtime glTF)</td><td>Runtime glTF import (Meshy outputs glTF)</td><td>Free or paid version</td></tr>
+<tr><td>Editor Scripting Utilities (built-in)</td><td>Python scripting for batch asset import</td><td>Free; enable in plugin settings</td></tr>
+</table>
+
+<h3 class="subsection">10.4 Meshy → Control Rig → Unreal pipeline</h3>
+<p>Per doc 38 D1 + cascade-r4 § 12 hero+gear flow:</p>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Meshy generates character + Control Rig export</strong>
+<p>Matt loads images into Meshy via web app (per cascade-r4 § 12.2). Meshy 6 exports FBX with Control Rig data specifically for Unreal compatibility.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Meshy URL → Pi handoff</strong>
+<p>Drax + galadriel route Meshy URLs to Pi share for PC pickup (per per-agent doc § 5.1 + § 6.1).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>PC downloads glTF/FBX from Meshy via URL</strong>
+<p>Either manually or via VaRest-driven download. Save to PC's project content directory.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>Unreal FBX import with Control Rig</strong>
+<p>File → Import. Select FBX. Unreal auto-detects Control Rig data. Verify skeleton + rig hierarchy.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-body">
+<strong>Weapon attachment via hand socket</strong>
+<p>Per the workflow gandalf documented in earlier session: add socket to <code>hand_r</code> bone; attach weapon mesh to socket via Blueprint or character setup. Animation plays naturally with weapon following hand.</p>
+</div>
+</div>
+</div>
+
+<h3 class="subsection">10.5 First-fire smoke test</h3>
+<div class="checklist">
+<h4>PC Unreal readiness verification</h4>
+<ul>
+<li>Unreal Engine 5 launches without errors</li>
+<li>Sample project (UE5 template) loads and previews</li>
+<li>Lumen + Nanite enabled in render settings; preview frame rate &gt;30fps</li>
+<li>VaRest plugin enabled; test HTTP request to <code>http://reincarnated-pi.local:8000/v1/health</code> succeeds</li>
+<li>Pi share mounted on PC; test glTF or FBX file copied from share into project content imports correctly</li>
+<li>Meshy-exported FBX with Control Rig imports + previews skeleton</li>
+</ul>
+</div>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="iteration">
+<h2 class="section-title"><span class="num">§ 11</span> Iteration workflow</h2>
+<p class="section-lede">The completed Pi infrastructure supports a tight iteration cycle. ~30-90 second loop depending on engine generation time.</p>
+
+<table>
+<tr><th>Step</th><th>Where</th><th>Time</th></tr>
+<tr><td>1. Matt makes engine change</td><td>Mac (Python edit)</td><td>varies</td></tr>
+<tr><td>2. Engine generates JSON outputs → Pi shared folder via Samba</td><td>Mac engine run</td><td>10-60s typical</td></tr>
+<tr><td>3. PC's Unreal sees updated files immediately (network share)</td><td>PC mount</td><td>&lt;1s</td></tr>
+<tr><td>4. Unreal reimports (manually triggered or via directory watcher)</td><td>PC Unreal</td><td>2-20s</td></tr>
+<tr><td>5. Matt evaluates result in Unreal on PC</td><td>PC</td><td>visual</td></tr>
+</table>
+
+<p>Without the Pi, this iteration requires either both machines on simultaneously and sharing directly, or manual file copying between machines, or cloud sync with sync latency. The Pi removes these friction points.</p>
+
+<h3 class="subsection">11.1 Critical iteration considerations</h3>
+
+<h4 class="subsubsection">Atomic file writes</h4>
+<p>When engine writes JSON to shared folder, write to temporary file first, then rename to final filename. Prevents Unreal from reading partially-written files. Standard pattern:</p>
+<pre><code><span class="comment"># Python pattern in engine emit code:</span>
+import os
+with open(f'{path}.tmp', 'w') as f:
+    json.dump(data, f, indent=2)
+os.rename(f'{path}.tmp', path)
+<span class="comment"># Rename is atomic from reader perspective</span></code></pre>
+
+<h4 class="subsubsection">Schema versioning</h4>
+<p>Every JSON file includes <code>manifest_version</code> or <code>schema_version</code> field. Unreal reader checks before parse. Prevents Unreal from crashing on unexpected JSON structure.</p>
+
+<h4 class="subsubsection">File naming conventions</h4>
+<p>Include identifying information in filenames: character ID, iteration counter, timestamp. Tracks which version produced which Unreal behavior.</p>
+<pre><code><span class="comment"># Good:</span>
+character_form_021_v3_20260530.json
+
+<span class="comment"># Bad (ambiguous):</span>
+output.json</code></pre>
+
+<h4 class="subsubsection">Logging on both sides</h4>
+<p>Engine logs what JSON it generated (with version, timestamp, source data). Unreal logs what it imported (with version, timestamp, any parse errors). When iteration produces unexpected results, logs on both sides enable diagnosis.</p>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="failure">
+<h2 class="section-title"><span class="num">§ 12</span> Failure modes + recovery procedures</h2>
+<p class="section-lede">Anticipated failure modes with concrete recovery procedures. Reference during incident response.</p>
+
+<table>
+<tr><th>#</th><th>Failure mode</th><th>Symptoms</th><th>Recovery</th></tr>
+<tr><td>F1</td><td>SD card failure</td><td>Pi unbootable, kernel errors, fsck errors</td><td>Boot Pi from new SD card with fresh Pi OS; restore from latest weekly Mac rsync backup; rebuild Samba + PostgreSQL configs from documented setup</td></tr>
+<tr><td>F2</td><td>Pi power loss</td><td>Mac + PC lose share access; ping fails</td><td>Power Pi back on; share auto-remounts on Mac/PC; verify postgresql + samba services restarted via systemd</td></tr>
+<tr><td>F3</td><td>Network outage (Pi WiFi/ethernet down)</td><td>Mac + PC can't reach Pi share</td><td>Check Pi network cable; check router; reboot Pi if needed; verify <code>ip addr show</code> on Pi shows interface up</td></tr>
+<tr><td>F4</td><td>Samba auth failing from macOS</td><td>Mac can't mount share; auth dialog rejects credentials</td><td>Verify smbpasswd set on Pi (<code>sudo pdbedit -L</code> lists Samba users); re-run smbpasswd if missing; clear macOS Keychain entry for share; reconnect with explicit password</td></tr>
+<tr><td>F5</td><td>Samba auth failing from Windows</td><td>PC can't mount share; "access denied" error</td><td>Verify Bonjour installed if using .local; try IP address explicitly; verify smbpasswd; check Windows credential manager for stale entry; try with explicit <code>net use \\reincarnated-pi.local\reincarnated /user:matt</code></td></tr>
+<tr><td>F6</td><td>File corruption (Unreal reads partial JSON)</td><td>Unreal parse errors; unexpected character state</td><td>Verify atomic write pattern in emit code (write .tmp then rename); add file-locking if writes are concurrent; re-run engine to regenerate</td></tr>
+<tr><td>F7</td><td>Schema mismatch (engine emits v3; Unreal expects v2)</td><td>Unreal parse error citing field or version</td><td>Verify schema_version check in Unreal code; update Unreal reader to handle v3; OR roll back engine version emitter; document MIGRATION.md</td></tr>
+<tr><td>F8</td><td>PostgreSQL data corruption</td><td>pg_dump errors; query failures; consistent crashes</td><td>Stop PostgreSQL; restore from latest pg_dump backup; verify with test query; investigate root cause (disk failure, killed process mid-write)</td></tr>
+<tr><td>F9</td><td>USB 3 SSD failure (Phase 3+)</td><td>Pi can't mount SSD; I/O errors</td><td>Disconnect SSD; verify on another machine; if dead, fall back to SD card mount; restore from backup; replace SSD</td></tr>
+<tr><td>F10</td><td>PC hardware failure during dev</td><td>UE5 won't launch; system instability</td><td>Engine work continues on Mac; Pi infrastructure unaffected; PC repair/replace; restore Unreal project from git (project files version-controlled)</td></tr>
+<tr><td>F11</td><td>Mac hardware failure</td><td>Cannot edit engine or run agent CLI</td><td>Agent CLI usable from any machine that can clone git + run Python; Pi infrastructure unaffected; restore from git; Mac repair/replace</td></tr>
+<tr><td>F12</td><td>SD card 90%+ full (Phase 3 trigger)</td><td>Pi disk-full warnings; new writes fail</td><td>Execute Phase 3 SSD migration immediately; clean up old artifacts on SD card meanwhile</td></tr>
+<tr><td>F13</td><td>Time sync drift (NTP not working)</td><td>Timestamps inconsistent between machines; backup retention issues</td><td>Verify NTP running: <code>timedatectl</code> on Pi; <code>sudo timedatectl set-ntp true</code> if needed; same on Mac</td></tr>
+<tr><td>F14</td><td>Permission propagation issues (uid/gid mismatch)</td><td>Mac writes file as one user; Pi shows different ownership</td><td>Samba <code>force user = matt</code> + <code>force group = matt</code> directive in smb.conf; restart smbd</td></tr>
+</table>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="hurdles">
+<h2 class="section-title"><span class="num">§ 13</span> Implementation hurdles checklist</h2>
+<p class="section-lede">Specific hurdles to anticipate during execution, in rough probability order.</p>
+
+<div class="checklist">
+<h4>Phase 1 likely hurdles</h4>
+<ul>
+<li><strong>macOS deprecating SMBv1/v2</strong> — modern macOS prefers SMB3; ensure smb.conf sets <code>server min protocol = SMB2_10</code> minimum</li>
+<li><strong>Windows mDNS resolution flaky</strong> — install Apple Bonjour Print Services as fallback; or use static IP if cleaner</li>
+<li><strong>Mac WiFi flaky for share access</strong> — USB ethernet adapter $15-30 fixes; recommend at first sign of flakiness</li>
+<li><strong>Pi SD card I/O slow on first Samba use</strong> — typical first-mount caching; subsequent ops fast; not a hurdle, just expectation</li>
+<li><strong>macOS .DS_Store noise</strong> — smb.conf veto files directive suppresses; documented in § 4.2 step 5</li>
+<li><strong>Permission propagation between macOS and Pi</strong> — Samba <code>force user = matt</code> directive solves; documented in § 12 F14</li>
+<li><strong>Forgetting to enable systemd autostart</strong> — <code>sudo systemctl enable smbd</code> after install; verify with reboot test</li>
+<li><strong>NTP not synced between machines</strong> — timestamps drift; backup retention buggy; documented in § 12 F13</li>
+</ul>
+</div>
+
+<div class="checklist">
+<h4>Phase 2 likely hurdles</h4>
+<ul>
+<li><strong>Python venv path confusion</strong> — explicit absolute paths in systemd ExecStart; documented in § 5.2 step 6</li>
+<li><strong>PostgreSQL connection refused</strong> — verify pg_hba.conf allows localhost connections; reload <code>sudo systemctl reload postgresql</code></li>
+<li><strong>FastAPI service crashes on first request</strong> — check journalctl logs: <code>sudo journalctl -u reincarnated-api -n 100</code></li>
+<li><strong>Unreal VaRest plugin not finding HTTP service</strong> — verify firewall allows 8000; verify service binding 0.0.0.0 not 127.0.0.1</li>
+<li><strong>Schema version mismatch between engine + Unreal</strong> — document MIGRATION.md per emit; Unreal reader validates before parse</li>
+</ul>
+</div>
+
+<div class="checklist">
+<h4>Phase 3 likely hurdles</h4>
+<ul>
+<li><strong>SSD not detected on first connect</strong> — try other USB 3 port; lsblk verify; possibly USB cable issue</li>
+<li><strong>SSD power-budget issues</strong> — if Pi USB ports brownout, use powered USB hub or smaller SSD or SSD with external power</li>
+<li><strong>PostgreSQL data_directory move requires PG restart in maintenance mode</strong> — stop service before copy; update conf; restart</li>
+<li><strong>UUID-based fstab entry stale after SSD replacement</strong> — update with new UUID via blkid</li>
+<li><strong>Symlink confusion if mixing /home/matt/data and /data paths</strong> — clear documentation; choose one canonical path</li>
+</ul>
+</div>
+
+<div class="checklist">
+<h4>PC-specific likely hurdles</h4>
+<ul>
+<li><strong>Unreal install failures on Windows</strong> — Epic Games Launcher install logs at <code>%LOCALAPPDATA%\EpicGamesLauncher\Saved\Logs\</code></li>
+<li><strong>Antivirus interfering with UE5 compile</strong> — exclude UE5 install dir + project dir from real-time scanning</li>
+<li><strong>GPU driver outdated for Lumen</strong> — NVIDIA Studio driver recommended for UE5; install latest</li>
+<li><strong>Insufficient RAM for large project loads</strong> — 16GB will struggle; 32GB target</li>
+<li><strong>Windows network discovery slow</strong> — Pi share via static IP usually faster than .local on Windows; SMB protocol negotiation occasionally takes a few seconds first time</li>
+</ul>
+</div>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="docs-strategy">
+<h2 class="section-title"><span class="num">§ 14</span> Documentation strategy</h2>
+<p class="section-lede">How to document the Pi setup so future-Matt (and future agents) can understand it months later when modifications become necessary.</p>
+
+<h3 class="subsection">14.1 What to document</h3>
+<table>
+<tr><th>Artifact</th><th>Location</th><th>Update frequency</th></tr>
+<tr><td>Pi setup README (what's installed where, why)</td><td>Pi local at <code>/home/matt/pi-setup-README.md</code> + copy in git collab repo</td><td>On any config change</td></tr>
+<tr><td>smb.conf full file (with comments)</td><td>Git at <code>infrastructure/pi/smb.conf</code></td><td>On any config change</td></tr>
+<tr><td>FastAPI service code</td><td>Git at <code>infrastructure/pi/api/</code></td><td>Per code change</td></tr>
+<tr><td>Backup scripts</td><td>Git at <code>infrastructure/pi/backup/</code></td><td>Per script change</td></tr>
+<tr><td>Network configuration (static IP, hostname)</td><td>Pi setup README</td><td>On any network change</td></tr>
+<tr><td>Credentials (NEVER plaintext)</td><td>Documented credential strategy (password manager); credentials themselves NOT in git</td><td>Reviewed quarterly</td></tr>
+<tr><td>Recovery procedures (this doc § 12)</td><td>This HTML doc + git collab repo</td><td>When new failure modes discovered</td></tr>
+</table>
+
+<h3 class="subsection">14.2 Recommended structure for `infrastructure/pi/` directory in collab repo</h3>
+<pre><code>infrastructure/pi/
+├── README.md                  <span class="comment"># Master doc; cross-references this HTML</span>
+├── setup-script.sh            <span class="comment"># Idempotent setup script (future enhancement)</span>
+├── smb.conf                   <span class="comment"># Samba config with explanatory comments</span>
+├── api/
+│   ├── main.py                <span class="comment"># FastAPI service</span>
+│   ├── requirements.txt
+│   └── reincarnated-api.service  <span class="comment"># systemd unit</span>
+├── backup/
+│   ├── pi-backup.sh           <span class="comment"># Pi-side nightly backup</span>
+│   ├── mac-weekly-rsync.sh    <span class="comment"># Mac-side weekly pull</span>
+│   └── retention-policy.md
+└── recovery-procedures.md     <span class="comment"># Detailed recovery for each failure mode</span></code></pre>
+
+<h3 class="subsection">14.3 Living-doc principle</h3>
+<p>Per gandalf canonical doc format: <strong>this HTML implementation plan is a CURRENT artifact; update it when reality diverges from plan.</strong> If Phase 1 reveals a step needs refinement, gandalf authors the plan update; KR consumes; execution continues. Don't let the plan and reality drift apart.</p>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="acceptance">
+<h2 class="section-title"><span class="num">§ 15</span> Acceptance criteria + checkpoints</h2>
+<p class="section-lede">Per-phase explicit acceptance criteria. Don't declare "complete" without verification.</p>
+
+<h3 class="subsection">15.1 Phase 1 acceptance gate</h3>
+<div class="checklist">
+<h4>All of:</h4>
+<ul>
+<li>Samba service running on Pi; survives reboot</li>
+<li>Mac mounts share via Finder; auto-mount on login configured</li>
+<li>PC mounts share via File Explorer; auto-reconnect configured (deferred if PC not yet)</li>
+<li>Engine emit pipeline writes to Pi share when env var set; backward compat preserved</li>
+<li>Bidirectional file ops verified</li>
+<li>Backup script + cron operational; first test restore successful</li>
+<li>Pi setup README authored + committed to git</li>
+<li>Recovery procedures (§ 12) reviewed; team familiar with at least F1-F5</li>
+</ul>
+</div>
+
+<h3 class="subsection">15.2 Phase 2 acceptance gate</h3>
+<div class="checklist">
+<h4>All of:</h4>
+<ul>
+<li>FastAPI service runs as systemd service; survives reboot</li>
+<li>Substantive endpoints respond with real PostgreSQL data</li>
+<li>Unreal HTTP client successfully consumes at least one endpoint</li>
+<li>Schema versioning implemented + tested</li>
+<li>Service logs queryable via journalctl</li>
+<li>Authentication strategy decided + implemented</li>
+</ul>
+</div>
+
+<h3 class="subsection">15.3 Phase 3 acceptance gate</h3>
+<div class="checklist">
+<h4>All of:</h4>
+<ul>
+<li>SSD mounted at <code>/data</code>; fstab persistent</li>
+<li>All services running from SSD-resident data</li>
+<li>SD card freed of large data; primarily OS + boot</li>
+<li>Backup scripts updated to new paths if needed</li>
+<li>Verified read/write performance acceptable for ongoing workflow</li>
+</ul>
+</div>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="bundled">
+<h2 class="section-title"><span class="num">§ 16</span> Bundled planning suite</h2>
+<p class="section-lede">This implementation plan is one of three docs in the planning suite. Drax deploys all three to Vercel under <code>/planning</code> route for unified access.</p>
+
+<div class="bundle-card">
+<div class="bundle-icon">📋</div>
+<div class="bundle-meta">
+<strong>Physical Infrastructure Implementation Plan (this document)</strong>
+<p>Exhaustive plan for the Pi-middleware three-machine rollout. Primary reference for Matt + son as physical implementation team.</p>
+</div>
+<a href="/planning/implementation-plan" style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 600;">/planning/implementation-plan</a>
+</div>
+
+<div class="bundle-card">
+<div class="bundle-icon">🎮</div>
+<div class="bundle-meta">
+<strong>Community Substrate Axis Expansion + T4 Capstone Design Implications</strong>
+<p>Engine analysis substrate doc (2026-05-29). Identifies 9 axis expansion candidates across 3 classes; proposes 15 new Layer 2 T4 strategies; § 18-21 build-defining mechanism research (7 family taxonomy); § 22 5-property substrate framework; § 23 Hidden-Spirit-Discovery recognition record + cosmetic personalization addendum. <strong>Foundation for understanding WHAT the infrastructure is being built for.</strong></p>
+</div>
+<a href="/planning/engine-analysis" style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 600;">/planning/engine-analysis</a>
+</div>
+
+<div class="bundle-card">
+<div class="bundle-icon">⚙️</div>
+<div class="bundle-meta">
+<strong>State of the Engine — Season of the Broad-Front Shadow Warcraft</strong>
+<p>State-of-engine flow diagram doc (2026-05-30). Full 8-phase pipeline view for season_003 with real production data; backward trace of "Tidewarden of the Flooded March" from Wave B name to Phase 0 seed; live engine observations including defensive cohort 0% ship rate three-gap diagnosis. <strong>Shows what the engine is currently producing and the data the PC will eventually consume via Pi.</strong></p>
+</div>
+<a href="/planning/state-of-engine" style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 600;">/planning/state-of-engine</a>
+</div>
+
+<h3 class="subsection">16.1 How the three docs compose</h3>
+<p>Each doc serves a distinct purpose; together they give the implementation team complete context:</p>
+<ul>
+<li><strong>This doc (Physical Infrastructure)</strong> — what to BUILD physically; how to assemble it; failure mode catalog; checklists</li>
+<li><strong>Engine Analysis</strong> — what the engine IS architecturally; what new capabilities need infrastructure support over time; design recognition records for Cycle 15+ planning</li>
+<li><strong>State of Engine</strong> — what the engine PRODUCES today as concrete data flowing through the pipeline; what the PC will consume from Pi via Unreal once the infrastructure lands</li>
+</ul>
+
+</section>
+
+<!-- =================================================================== -->
+<footer>
+<p style="margin-bottom: 1rem;">Comprehensive implementation plan for the Reincarnated three-machine development infrastructure. Authored by gandalf 2026-05-30 per Matt's directive to provide exhaustive scope for planning every implementation-related and system-spec hurdle in advance. Living-doc per canonical doc format § 14.3 — refined when reality diverges from plan.</p>
+
+<p class="seal" style="font-size: 0.95rem; margin: 1rem 0;">For Matt and his son, as physical spec implementations consultants and managers, this plan is the load-bearing reference for the work ahead. May the network be reliable, the SD card endure, and the iteration loop run smoothly.</p>
+
+<p style="margin-top: 1rem; font-size: 0.78rem;">Composes with: canonical/story/2026-05-30-pi-middleware-mac-to-pc-architecture.md (canonical commitment); 2026-05-30-pi-infrastructure-rollout-per-agent-per-seam-directions.md (KR + per-agent orchestration); pi-infrastructure-transition.md (Matt's design intent doc 2026-05-30); doc 38 D1 (Unreal Engine + PC-first launch commitment 2026-05-23); D1 ratification 2026-05-25 (Pi-Postgres for engine-internal); ADR-006 (read-only-by-default external systems rule applies — Matt + son execute infrastructure work directly).</p>
+</footer>
+
+</div>
+</body>
+</html>

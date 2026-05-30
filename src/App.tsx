@@ -6,6 +6,8 @@ import { Pitch } from './pages/Pitch';
 import { Analytics } from './pages/Analytics';
 import { Encounters } from './pages/Encounters';
 import { CourtBrowser } from './pages/CourtBrowser';
+import { Planning } from './pages/Planning';
+import { PlanningDoc } from './pages/PlanningDoc';
 
 function Footer() {
   return (
@@ -47,6 +49,10 @@ export default function App() {
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/encounters" element={<Encounters />} />
             <Route path="/court" element={<CourtBrowser />} />
+            <Route path="/planning" element={<Planning />} />
+            <Route path="/planning/implementation-plan" element={<PlanningDoc src="/planning/implementation-plan.html" title="Implementation Plan" />} />
+            <Route path="/planning/engine-analysis" element={<PlanningDoc src="/planning/engine-analysis.html" title="Engine Analysis" />} />
+            <Route path="/planning/state-of-engine" element={<PlanningDoc src="/planning/state-of-engine.html" title="State of Engine" />} />
           </Routes>
         </main>
         <Footer />
