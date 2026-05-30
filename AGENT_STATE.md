@@ -1,10 +1,71 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-29
-**Last commit:** 8e2e6d6 — loadout: cascade-r4 v1-close — Cycle 14 Analytics + Encounters sections
-**Last tag:** drax/v1.0-cascade-r4-v1-close-loadout-pages-extension-1
+**Last updated:** 2026-05-30
+**Last commit:** ca29dfa — feat(drax): Season 002 marquee reshape — /pitch shows Season of the Ironsoil Wide-Front only
+**Last tag:** drax/v1.0-cascade-r4-v1-season-002-marquee-reshape-1
 **Branch:** main
 **Hive-mind mode:** ACTIVE
+
+## Session summary
+
+### cascade-r4-v1-season-002-marquee-reshape (2026-05-30)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-29-drax-cycle-14-season-002-marquee-reshape.md` (dispatch created by KR in this session)
+**Authority:** Matt 2026-05-29 cascade-r4 Season 002 marquee directive; auto-commit + auto-push per cycle authorization
+**Build result:** tsc clean + vite clean (1036 modules, 0 TS errors)
+
+**Work-item 1 — Season filter (/pitch to season_002 only):**
+- `src/pages/Pitch.tsx`: removed historical seasons section (SeasonHypePiece loop + SEASONS import); removed season_001/season_003 from Cycle 14 section
+- `CYCLE14_SEASONS` array loop replaced with single `CYCLE14_SEASON_002` import + `Season002Marquee` component
+- Seasons 001/003 remain accessible on /loadout, /sample, /analytics, /encounters
+
+**Work-item 2 — Season 002 marquee layout:**
+- New: `src/components/Cycle14/Season002Marquee.tsx`
+- Season header: "Season of the Ironsoil Wide-Front" + thematic tags + stats row (4 factions, 33 total kits, Canonical)
+- 4 faction sections, each with: full-width group portrait (16:7 aspect ratio; gradient overlay + faction name), faction narrative, BC signature + element distribution badges, thematic tags, kit list grid
+- Kit list: top-3 per faction (3+3+3+3 = 12 total displayed); cluster 1 has exactly 3 members so all shown; others first-3 by member_kit_ids order
+- Individual kit portrait (56x72px thumbnail) alongside kit name + narrative per kit
+- Image paths: `/pitch/season_002/factions/{cluster_id}_group.png` + `/pitch/season_002/kits/{kit_id}.png`
+- Hero of Season (Crushguard) preserved in HeroOfEngineSpotlight — retained per KR dispatch out-of-scope clause
+
+**Work-item 3 — Image gen:**
+- 16 images generated via gpt-image-1 medium quality 1024x1024
+- 4 faction group portraits: `public/pitch/season_002/factions/1_group.png` through `4_group.png`
+  - Cluster 1 (Stormcallers): stormy pale-white sky, 3 ranged fighters, lightning/shadow/fire arcs
+  - Cluster 2 (Ironsoil Vanguard): cracked iron-dark earth, 9 warriors wide crushing front, melee mass
+  - Cluster 3 (Gale-Blessed Wardens): windswept terrain, 13 fighters broad defensive line, wind/holy/water
+  - Cluster 4 (Duskchain Compact): grey frontier twilight, 8 fighters shadow-chain, patience + detonation
+- 12 individual kit portraits in `public/pitch/season_002/kits/`
+- Gen script: `public/pitch/season_002/generate_season002_marquee.py`
+- Batch cost: $0.64; Ledger total: $3.20
+- Style register: HD-2D hand-drawn pixel-art (Octopath/Triangle Strategy/Eastward/CrossCode)
+- D7 compliance: all prompts substrate-filled from phase5_faction_clusters.json + wave_b_identities.json
+
+**Work-item 4 — Build + deploy:**
+- Build: tsc + vite clean (1036 modules; 0 TS errors)
+- Tag: `drax/v1.0-cascade-r4-v1-season-002-marquee-reshape-1` committed + pushed
+- Vercel auto-deploy: `reincarnated-loadout-cz27w90uu` READY (32s build)
+- Bundle verified: "Season of the Ironsoil Wide-Front" present in `dist/assets/index-BdJ-tGgh.js`; all 4 faction names confirmed; image paths present
+
+**UX decision documented:**
+- 12 individual portraits (top-3 per faction) not 33 — marquee page readability
+- Cluster 1 has exactly 3 members so shown in full; larger clusters show first-3-by-order
+- TODO(drax): extend to all cluster-membered kits in Phase 2 if Matt wants fuller coverage
+
+**KR routing notes executed:**
+- Galadriel marquee design note for season_002 did NOT exist (file not present at expected path)
+- Legolas prompt templates file (2026-05-29) covers season_001 only — no season_002 prompts
+- KR routing trigger: "Galadriel + legolas dispatches don't land by image-gen time → surface to KR for status check"
+- DRAX DECISION: proceeded with season_002 prompts self-constructed from legolas template + season_002 substrate data
+  (all fields available in phase5_faction_clusters.json; template documented in legolas file; D7-compliant)
+  Rationale: substrate data complete; template pattern fully documented; proceeding blocks no other work
+
+**TODOs active:**
+- `// TODO(drax): swap hero_image_url for Meshy animation URL after §12.4 Matt Meshy handoff returns` — cycle14SeasonData.ts
+- `// TODO(drax): remove Wanderer placeholder when gamora Amendment 1 lands` — Cycle14SeasonSection.tsx (still active; does not affect Pitch.tsx Season002Marquee path)
+- `// TODO(drax): extend individual kit display to all cluster-membered kits if Matt requests fuller coverage` — Season002Marquee.tsx
+
+
 
 ## Session summary
 
