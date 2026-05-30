@@ -6,8 +6,10 @@
 //   - integer (1,2,3,...) = faction cluster from Phase 5 GMM clustering
 //   - "SINGLETON" = Wanderer architecture (gamora dispatch; post-gamora close integration)
 //
-// TODO(drax): surface per-Wanderer tiles when gamora Amendment 1 Wanderer architecture lands.
-// TODO(drax): surface Wave B per-kit names when engine Wave B implementation ships.
+// MIGRATION.md §v1.64 + §v1.65 (2026-05-29/30): wave_b_identities.json now available per season.
+//   wave_s_* fields now available in season_summary.json per season.
+//
+// TODO(drax): remove Wanderer placeholder and surface Wanderer tiles when gamora Amendment 1 lands.
 
 export type ClusterId = number | 'SINGLETON';
 
@@ -60,14 +62,58 @@ export interface FactionClustersFile {
   clusters: FactionCluster[];
 }
 
+/** Per-kit identity record from wave_b_identities.json (MIGRATION.md §v1.64) */
+export interface WaveBKit {
+  season_id: string;
+  kit_id: string;
+  parent_cluster_id: ClusterId;  // number | "SINGLETON"
+  kit_name_canonical: string;
+  kit_identity_narrative: string;
+  ai_tell_compliance_score: number;
+  cohesion_judge_confidence: number;
+  final_compliance_status: 'ACCEPT' | 'FALLBACK_SUBSTRATE_DERIVED' | string;
+  grep_compliance_pass: boolean;
+  // other engine telemetry fields omitted; not displayed
+}
+
+/** Top-level wrapper for wave_b_identities.json (MIGRATION.md §v1.64) */
+export interface WaveBIdentitiesFile {
+  season_id: string;
+  kit_count: number;
+  generated_at: string;
+  kits: WaveBKit[];
+  remediated_at?: string;
+  remediation_summary?: {
+    nameless_before: number;
+    accept_on_retry: number;
+    fallback_substrate_derived: number;
+    still_nameless: number;
+    estimated_cost_usd: number;
+  };
+}
+
+/** Wave-S season name fields from season_summary.json (MIGRATION.md §v1.64) */
+export interface WaveSSeasonMeta {
+  wave_s_season_name_canonical: string;
+  /** Wanderer sub-narrative or null when wanderer_count == 0 */
+  wave_s_season_name_narrative_short: string | null;
+  wave_s_season_name_thematic_tags: string[];
+  wave_s_pattern_used: string;
+  wave_s_final_compliance_status: string;
+  wave_s_ai_tell_compliance_score: number;
+}
+
 /** Season-level summary used by Summary tab */
 export interface Cycle14SeasonSummary {
   season_id: string;
   faction_clusters: FactionCluster[];
-  /** Wave B kit names per cluster: pending engine Wave B implementation.
-   *  TODO(drax): remove null when engine ships Wave B per-kit naming.
+  /**
+   * Per-kit identities from wave_b_identities.json (MIGRATION.md §v1.64).
+   * Indexed by kit_id for O(1) lookup in FactionClusterTile.
    */
-  wave_b_kit_names: null;
+  wave_b_kits_by_id: Map<string, WaveBKit>;
+  /** Wave-S season name and metadata from season_summary.json (MIGRATION.md §v1.64) */
+  wave_s: WaveSSeasonMeta | null;
   /** Hero selection: elected after § 12.1 drax+galadriel pair consensus.
    *  TODO(drax): wire hero image URL after § 12.2 completes.
    */

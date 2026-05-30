@@ -1,14 +1,47 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-29
-**Last commit:** 9ceeb40 — cycle-14 §11.2 loadout Summary tab (faction cluster tiles + cluster_id type union)
-**Last tag:** drax/v0.1-engine-generation-run-loadout-amendments-2026-05-25 (tag update pending: drax/v1.0-cascade-r4-track-b-loadout-plus-12-1-pair-1)
+**Last updated:** 2026-05-30
+**Last commit:** (pending commit in this session)
+**Last tag:** drax/v1.0-cascade-r4-followon-loadout-refresh-1 (to be applied)
 **Branch:** main
 **Hive-mind mode:** ACTIVE
 
 ## Session summary
 
-### cascade-r4 Track B §11.2 + §12.1 drax half (in progress 2026-05-29)
+### cascade-r4 follow-on — loadout refresh: Wave B per-kit names + season names + 3-season comparison (2026-05-30)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-29-drax-cascade-r4-followon-loadout-refresh.md`
+**Authority:** Matt 2026-05-29 "Once retroactive fix is in, unblock drax for the loadout app"
+**Build result:** tsc clean + vite clean (875 modules, 0 TS errors) + 81 tests passing (0 failures)
+
+**Completed (MIGRATION.md §v1.64 + §v1.65 consumed):**
+- `data/cycle14-season-001-wave-b-identities.json`: Wave B kit names + narratives for season_001 (34 kits)
+- `data/cycle14-season-002-faction-clusters.json` + `data/cycle14-season-002-wave-b-identities.json`: season_002 fully wired (33 kits, 4 clusters)
+- `data/cycle14-season-003-faction-clusters.json` + `data/cycle14-season-003-wave-b-identities.json`: season_003 fully wired (33 kits, 3 clusters)
+- `src/data/cycle14Types.ts`: `WaveBKit`, `WaveBIdentitiesFile`, `WaveSSeasonMeta` types added; `Cycle14SeasonSummary` updated to use `wave_b_kits_by_id: Map<string,WaveBKit>` and `wave_s: WaveSSeasonMeta | null`
+- `src/data/cycle14SeasonData.ts`: all 3 seasons imported + `buildKitMap()` + inline Wave-S names; CYCLE14_SEASONS now 3 entries
+- `src/components/Cycle14/FactionClusterTile.tsx`: per-kit names + 1-line narratives displayed (replaces "pending Wave B" placeholder); kit count badge uses wave_b authoritative count
+- `src/components/Cycle14/Cycle14SeasonSection.tsx`: season-name header from `wave_s_season_name_canonical`; `displayIndex` prop; Wanderer kits from wave_b rendered when present; `kitsForCluster()` lookup passed to tiles
+- `src/pages/Pitch.tsx`: `displayIndex` prop threaded; section intro updated for 3-season scope
+- Style register: honored (dark palette, mono-uppercase labels, pixel-register typography)
+- 3-season comparison: all 3 seasons rendered in sequence on /pitch route
+
+**TODOs active:**
+- `// TODO(drax): remove Wanderer placeholder and surface Wanderer tiles when gamora Amendment 1 lands` — cycle14Types.ts, Cycle14SeasonSection.tsx
+- `// TODO(drax): wire hero_image_url after §12.2 completes (hero = Cluster 3 season_001)` — cycle14SeasonData.ts, Cycle14SeasonSection.tsx
+- `// TODO(drax): remove this note when corrected season names land` — Cycle14SeasonSection.tsx (aggregator-fix followup)
+
+**Iteration plan:**
+- Post-aggregator-fix data refresh: update WAVE_S_*_INLINE values in cycle14SeasonData.ts when gandalf-remediation + rocket-re-fire produces corrected substrate-grounded names; no structural change needed
+- Post-§12 hero image: set `hero_faction_cluster_id=3` + `hero_image_url` in CYCLE14_SEASON_001 when §12.2 completes
+- Wanderer full tiles: post-gamora Amendment 1 (SINGLETON cluster_id in faction JSON)
+- Future seasons (Cycle 15+): add new season JSON files to `/data/` and extend CYCLE14_SEASONS array
+
+**KR routing notes:**
+- Vercel preview deploy: PENDING push authorization (Matt per ADR-006)
+- Wave-S name bias: upstream concern (aggregator drift) acknowledged; NOT v1 blocking; noted in code comment
+
+### cascade-r4 Track B §11.2 + §12.1 drax half (completed 2026-05-29)
 
 **Dispatch:** `agentic_orchestration/dispatches/2026-05-29-drax-cycle-14-cascade-r4-track-b-loadout-refresh-plus-12-1-hero-pair-drax-half.md`
 **Authority:** Matt 2026-05-29 cascade-r4 Step 7 CONFIRM-FIRE + Amendment 2 hero pair delegation

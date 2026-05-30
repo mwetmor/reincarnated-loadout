@@ -1,13 +1,16 @@
 // FactionClusterTile — single faction cluster presentation tile
 // Used in: Summary tab (Pitch.tsx § 11.2)
 // Style register: hand-drawn pixel-art HD-2D-shaped (canonical/story/style-register.md)
-// Data: read-only engine output from phase5_faction_clusters.json via cycle14SeasonData.ts
+// Data: read-only engine output from phase5_faction_clusters.json + wave_b_identities.json
+// MIGRATION.md §v1.64: per-kit names now displayed (replaces "pending Wave B" placeholder).
 
-import type { FactionCluster } from '../../data/cycle14Types';
+import type { FactionCluster, WaveBKit } from '../../data/cycle14Types';
 import { ELEMENT_ACCENT, ELEMENT_ACCENT_FALLBACK } from '../../data/cycle14SeasonData';
 
 interface Props {
   cluster: FactionCluster;
+  /** Per-kit identity records for this cluster's members (from wave_b_identities.json). */
+  kitsByCluster: WaveBKit[];
 }
 
 /** Format a fractional share (0.0–1.0) as a percentage string. */
@@ -23,7 +26,7 @@ function dominantElement(dist: Record<string, number | undefined>): string {
     .sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'unknown';
 }
 
-export function FactionClusterTile({ cluster }: Props) {
+export function FactionClusterTile({ cluster, kitsByCluster }: Props) {
   const dominant = dominantElement(cluster.element_distribution);
   const accent = ELEMENT_ACCENT[dominant] ?? ELEMENT_ACCENT_FALLBACK;
 
@@ -31,6 +34,8 @@ export function FactionClusterTile({ cluster }: Props) {
   const sortedElements = (Object.entries(cluster.element_distribution) as [string, number | undefined][])
     .filter((e): e is [string, number] => e[1] !== undefined)
     .sort((a, b) => b[1] - a[1]);
+
+  const isWanderer = cluster.cluster_id === 'SINGLETON';
 
   return (
     <article
@@ -41,15 +46,17 @@ export function FactionClusterTile({ cluster }: Props) {
       <header className="flex items-start justify-between gap-2">
         <div className="flex-1 min-w-0">
           <p className="font-mono uppercase tracking-wide text-[9px] text-gray-600 mb-0.5">
-            Cluster {cluster.cluster_id}
+            {isWanderer ? 'Wanderer' : `Cluster ${cluster.cluster_id}`}
           </p>
           <h3 className={`text-sm font-semibold leading-snug ${accent.text}`}>
             {cluster.faction_label_canonical}
           </h3>
         </div>
-        {/* Member count badge */}
+        {/* Member count badge: use wave_b kit count as authoritative display count
+            (wave_b parent_cluster_id is authoritative per MIGRATION.md §v1.64;
+             SINGLETON kits may be excluded from faction member_count). */}
         <span className="flex-shrink-0 text-[10px] font-mono text-gray-600 bg-gray-900/60 border border-gray-800 rounded px-1.5 py-0.5">
-          {cluster.member_count} kits
+          {kitsByCluster.length > 0 ? kitsByCluster.length : cluster.member_count} kits
         </span>
       </header>
 
@@ -113,11 +120,31 @@ export function FactionClusterTile({ cluster }: Props) {
         </div>
       )}
 
-      {/* Wave B kit names: pending engine Wave B implementation */}
-      <p className="text-[9px] font-mono text-gray-700 italic">
-        Per-kit names: pending Wave B engine implementation
-        {/* TODO(drax): replace with Wave B kit name list when engine ships Wave B (rocket seam) */}
-      </p>
+      {/* Per-kit names and 1-line narratives (Wave B — MIGRATION.md §v1.64) */}
+      {kitsByCluster.length > 0 ? (
+        <div>
+          <p className="font-mono uppercase tracking-wide text-[9px] text-gray-600 mb-1.5">
+            Kits
+          </p>
+          <ul className="flex flex-col gap-2">
+            {kitsByCluster.map(kit => (
+              <li key={kit.kit_id} className="border-l border-gray-800 pl-2">
+                <p className={`text-[11px] font-semibold leading-snug ${accent.text} mb-0.5`}>
+                  {kit.kit_name_canonical}
+                </p>
+                <p className="text-[10px] text-gray-500 leading-relaxed">
+                  {kit.kit_identity_narrative}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        // No wave_b kits matched this cluster (should not occur post-remediation)
+        <p className="text-[9px] font-mono text-gray-800 italic">
+          No per-kit names matched for this cluster.
+        </p>
+      )}
     </article>
   );
 }

@@ -113,14 +113,14 @@ export function Pitch() {
             Cycle 14 — substrate-led generation
           </p>
           <p className="text-sm leading-relaxed text-gray-400 max-w-prose">
-            The engine's first substrate-led cohesion run. No designer-imposed archetypes.
-            Four factions emerged from Phase 5 GMM clustering across 34 validated kits —
-            faction identities written by the LLM from BC-axis signatures, cultural lineage,
-            and element distribution.
+            The engine's first substrate-led cohesion run across 3 seasons. No designer-imposed archetypes.
+            Factions emerged from Phase 5 GMM clustering — faction identities written by the LLM
+            from BC-axis signatures, cultural lineage, and element distribution.
+            Per-kit characters named from within each faction's thematic context.
           </p>
         </div>
-        {CYCLE14_SEASONS.map(season => (
-          <Cycle14SeasonSection key={season.season_id} season={season} />
+        {CYCLE14_SEASONS.map((season, idx) => (
+          <Cycle14SeasonSection key={season.season_id} season={season} displayIndex={idx + 1} />
         ))}
       </section>
 
