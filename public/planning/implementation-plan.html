@@ -293,6 +293,8 @@
   <li><a href="#docs-strategy">Documentation strategy</a></li>
   <li><a href="#acceptance">Acceptance criteria + checkpoints</a></li>
   <li><a href="#bundled">Bundled planning suite (engine analysis + state-of-engine)</a></li>
+  <li style="list-style: none; padding-top: 0.4rem; border-top: 1px dashed var(--rule); margin-top: 0.3rem;"><strong style="color: var(--accent); font-family: 'Helvetica Neue', sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">Implementation execution</strong></li>
+  <li><a href="#exec-order">17. Exact implementation order — START HERE</a></li>
 </ol>
 </nav>
 
@@ -1572,6 +1574,224 @@ output.json</code></pre>
 <li><strong>Engine Analysis</strong> — what the engine IS architecturally; what new capabilities need infrastructure support over time; design recognition records for Cycle 15+ planning</li>
 <li><strong>State of Engine</strong> — what the engine PRODUCES today as concrete data flowing through the pipeline; what the PC will consume from Pi via Unreal once the infrastructure lands</li>
 </ul>
+
+</section>
+
+<!-- =================================================================== -->
+<section id="exec-order">
+<h2 class="section-title"><span class="num">§ 17</span> Exact implementation order — START HERE</h2>
+<p class="section-lede">The sections above are organized by topic for reference. This section linearizes them into actual execution order. <strong>Follow these steps in order. Reference sections only when needed (failure modes § 12, hurdles § 13).</strong></p>
+
+<div class="callout">
+<span class="callout-title">Total focused time estimate</span>
+<p><strong>~4-6 hours total.</strong> Can span one long session or two medium sessions (PC actions one session; Pi + backup another). Do NOT attempt in fragmented 30-minute slots — Phase 1 execution wants sustained focus.</p>
+</div>
+
+<h3 class="subsection">17.1 Pre-implementation read (~20 min before starting)</h3>
+
+<div class="checklist">
+<h4>Read these sections for context before touching anything</h4>
+<ul>
+<li>§ 1 Architectural overview (three-machine model + augmentation principle)</li>
+<li>§ 2.3 Pi 5 capability assessment (quick scan; confirms adequacy)</li>
+<li>§ 3.1 + 3.3 + 3.4 + 3.6 (network topology + Pi wired ethernet + .local resolution + Pi hostname decision)</li>
+<li>§ 9.1 Actual PC profile (confirm PC ready)</li>
+<li>§ 9.2 Three immediate PC hardware actions (read fully — these execute alongside or before Pi work)</li>
+</ul>
+</div>
+
+<h3 class="subsection">17.2 Decisions to lock BEFORE starting any physical work</h3>
+
+<div class="checklist">
+<h4>Confirm these decisions match locked elections per canonical doc § 7</h4>
+<ul>
+<li><strong>Pi hostname:</strong> recommend <code>reincarnated-pi</code> (per § 3.6) — confirm OR pick alternative</li>
+<li><strong>Address resolution:</strong> <code>.local</code> mDNS first per locked election #4 — only fall back to static IP if .local proves flaky</li>
+<li><strong>Augmentation framing locked:</strong> Pi handles Mac↔PC engine-output flow ONLY; git+Vercel continues for everything else (locked election #1)</li>
+<li><strong>Backup target:</strong> Mac local rsync as Day-1 minimum per locked election #3 — confirm Mac has disk space for backups</li>
+<li><strong>Engine output routing approach:</strong> recommend <strong>Option A env var</strong> per § 4.5 (simplest; opt-in)</li>
+</ul>
+</div>
+
+<h3 class="subsection">17.3 Execution order (sequential)</h3>
+
+<div class="phase-banner">
+<span class="badge">Stage 1</span>
+<h3>PC hardware actions (~45-75 min; do FIRST for risk management)</h3>
+<p>Highest-risk action (BIOS update) wants standalone focus. Once complete, PC is stable for rest of rollout.</p>
+</div>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Update motherboard BIOS</strong> (§ 9.2 step 2)
+<p>~30-45 min. Highest-risk single action — bricking risk small but real. Read MSI guidance carefully. Stable power. Don't interrupt the flash. Verify post-flash with HWiNFO confirming new microcode revision.</p>
+<p><em>Critical: BIOS predates Intel 13/14th-gen voltage stability microcode fixes (0x129/0x12B). Required before sustained heavy compiles.</em></p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Enable XMP/EXPO in BIOS</strong> (§ 9.2 step 1)
+<p>~10 min. Do during same BIOS session as step 1. Reclaim DDR5-5600 speed from current ~4000 MT/s. Reboot to verify in OS via HWiNFO or Task Manager → Performance → Memory.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Connect wired Ethernet from PC to router</strong> (§ 9.2 step 3)
+<p>~5-15 min depending on cable routing. Verify with <code>ipconfig</code> that ethernet interface gets 192.168.1.x address. Optionally disable Wi-Fi to force ethernet preference.</p>
+</div>
+</div>
+</div>
+
+<div class="phase-banner">
+<span class="badge">Stage 2</span>
+<h3>Pi physical setup (~2-3 hours focused; § 4)</h3>
+<p>The main Phase 1 work. Follow § 4.2 steps 1-8 in exact order.</p>
+</div>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>Pi pre-flight checklist</strong> (§ 4.1)
+<p>~5 min. Verify Pi reachable via SSH, PostgreSQL running, mDNS resolution from Mac (<code>ping reincarnated-pi.local</code>), SD card has 5GB+ free.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-body">
+<strong>Pi setup steps 1-8</strong> (§ 4.2)
+<p>~30-45 min. Follow exactly: <code>apt update + upgrade</code> → install Samba → create shared folder with explicit path → smbpasswd → edit smb.conf → testparm → systemctl restart + enable → verify port 445 listening.</p>
+<p><strong>Don't skip the <code>veto files</code> directive in step 5</strong> — suppresses .DS_Store + Thumbs.db noise.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-body">
+<strong>Mac-side mount</strong> (§ 4.3 steps 1-4)
+<p>~10-15 min. Finder Cmd+K → <code>smb://reincarnated-pi.local/reincarnated</code> → auth with smbpasswd credentials → check "Remember in Keychain" → write+read test file → System Settings configure auto-mount on login.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">7</div>
+<div class="step-body">
+<strong>PC-side mount</strong> (§ 4.4 steps 1-3)
+<p>~10-15 min. Install Apple Bonjour Print Services if .local resolution flaky → File Explorer Map network drive → <code>\\reincarnated-pi.local\reincarnated</code> → "Reconnect at sign-in" → verify bidirectional file ops with Mac.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">8</div>
+<div class="step-body">
+<strong>Engine output routing on Mac</strong> (§ 4.5 Option A)
+<p>~5-10 min. Add to <code>~/.zshrc</code>: <code>export REINCARNATED_ENGINE_OUTPUT_DIR=/Volumes/reincarnated/engine-output</code>. Source the shell. Verify env var set. Star-lord + rocket engine emit will respect this when their env-var refactors land via in-flight KR dispatch.</p>
+</div>
+</div>
+</div>
+
+<div class="phase-banner">
+<span class="badge">Stage 3</span>
+<h3>Backup discipline — non-negotiable Day-1 (~30-45 min; § 7)</h3>
+<p>"An untested backup is hope, not infrastructure." Do not declare Phase 1 complete without backup + test restore.</p>
+</div>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">9</div>
+<div class="step-body">
+<strong>Pi-side backup script + cron</strong> (§ 7.2)
+<p>~15 min. Author <code>/home/matt/bin/backup.sh</code> per § 7.2 template. <code>chmod +x</code>. Add to crontab via <code>crontab -e</code>: <code>0 2 * * * /home/matt/bin/backup.sh</code>. Verify cron service active.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">10</div>
+<div class="step-body">
+<strong>Mac-side weekly rsync</strong> (§ 7.3)
+<p>~10 min. Author <code>~/bin/weekly-pi-backup.sh</code> per § 7.3 template. Schedule via macOS launchd or cron. Sundays at noon recommended.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">11</div>
+<div class="step-body">
+<strong>Test restore (CRITICAL)</strong> (§ 7.4)
+<p>~10-15 min. Follow § 7.4 exactly — create test database from backup → query → compare counts to production → drop test database. <strong>If restore fails OR data doesn't match, do NOT proceed to Stage 4. Debug backup first.</strong></p>
+</div>
+</div>
+</div>
+
+<div class="phase-banner">
+<span class="badge">Stage 4</span>
+<h3>Verification + close (~15 min; § 4.6 + § 15.1)</h3>
+<p>Don't declare Phase 1 complete until every acceptance criterion is verified.</p>
+</div>
+
+<div class="step-grid">
+<div class="step">
+<div class="step-num">12</div>
+<div class="step-body">
+<strong>Run § 4.6 Phase 1 acceptance checklist</strong>
+<p>~10 min. Walk through every box. Verify Samba survives Pi reboot. Verify Mac auto-mount works. Verify PC auto-reconnect works. Verify engine writes to Pi share. Verify bidirectional ops.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">13</div>
+<div class="step-body">
+<strong>Pi setup README authored + committed to git</strong> (§ 14.2)
+<p>~10-15 min. Document what was installed where + credentials strategy (NOT credentials themselves) + paths + hostname + IP + any deviations from this plan. Commit to <code>infrastructure/pi/README.md</code> in collab repo so future-Matt + future-agents have the source of truth.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">14</div>
+<div class="step-body">
+<strong>Update KR with Phase 1 closure</strong>
+<p>~5 min. Surface to KR: Phase 1 acceptance achieved; backup discipline operational; engine output routing live; documentation committed. KR appends to hive-mind state file + closes Pi Phase 1 work-item. Workstream 1 (substrate / T4 / legendary design) gates now release.</p>
+</div>
+</div>
+</div>
+
+<h3 class="subsection">17.4 Reference sections — consult ONLY as needed</h3>
+
+<table>
+<tr><th>If you hit...</th><th>Go to</th></tr>
+<tr><td>Something breaks during Pi setup</td><td>§ 12 Failure modes F1-F14 (specific symptoms → recovery procedures)</td></tr>
+<tr><td>Want to anticipate likely gotchas before they hit</td><td>§ 13 Implementation hurdles checklist (Phase 1 specific list)</td></tr>
+<tr><td>Mac WiFi proves flaky</td><td>§ 3.2 (USB-C ethernet adapter recommendation)</td></tr>
+<tr><td>PC can't resolve .local</td><td>§ 3.5 (install Apple Bonjour Print Services for Windows)</td></tr>
+<tr><td>Samba auth issues</td><td>§ 12 F4 (Mac) or F5 (Windows)</td></tr>
+<tr><td>Documentation strategy for capturing what was built</td><td>§ 14 (recommended infrastructure/pi/ directory structure)</td></tr>
+</table>
+
+<h3 class="subsection">17.5 What NOT to do during Phase 1</h3>
+
+<div class="callout warn">
+<span class="callout-title">Defer these until later</span>
+<ul style="margin: 0.5rem 0 0 1.2rem; padding: 0;">
+<li><strong>Do NOT attempt Phase 2 HTTP API</strong> (§ 5) — Cycle 15+ work; gated on Pattern B + Pi Phase 1 mature use</li>
+<li><strong>Do NOT attempt Phase 3 SSD migration</strong> (§ 6) — capacity-triggered later (SD card 70-80% full OR write-wear OR 6mo elapsed)</li>
+<li><strong>Do NOT install Unreal plugins / Meshy pipeline</strong> (§ 10.3+) — Phase 2-gated work; comes after Phase 1 stable use</li>
+<li><strong>Do NOT scope-expand to Pi LLM proxy or dashboard control plane</strong> — preserved as recognition records (<code>canonical/story/2026-05-30-pi-llm-proxy-architecture-recognition.md</code> + <code>canonical/story/2026-05-30-pi-engine-control-dashboard-recognition.md</code>); Pattern B sessions after Phase 1 stable use</li>
+<li><strong>Do NOT skip backup discipline</strong> — non-negotiable Day-1 per § 7</li>
+<li><strong>Do NOT declare Phase 1 complete without test restore</strong> — § 7.4 is the proof; § 4.6 acceptance criteria gate it</li>
+</ul>
+</div>
+
+<h3 class="subsection">17.6 Once Phase 1 is closed</h3>
+
+<p>Return to gandalf session for <strong>Workstream 1A Pattern B design conversation</strong> (substrate / vector / categorical axis expansion + measurement architecture, including flavor elements as new measured axis + Phase 5 LLM call architecture amendment per recent design proposal). Gates release once Pi Phase 1 closes.</p>
+
+<p>Drax Phase α dashboard at <a href="https://reincarnated-loadout.vercel.app/state-of-engine">/state-of-engine</a> becomes operational tool during workstream 1+2 sessions. Drax Phase β (control plane) + Phase γ (runner decentralization) preserved as recognition records for later Pattern B engagement after Pi Phase 2 matures.</p>
 
 </section>
 
