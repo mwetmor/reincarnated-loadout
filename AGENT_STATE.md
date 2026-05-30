@@ -1,12 +1,53 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-05-30
-**Last commit:** 5a5530e — fix(drax): season 002 group portrait re-roll — legolas authored prompts + galadriel design
-**Last tag:** drax/v1.0-cascade-r4-v1-season-002-marquee-polish-1
+**Last commit:** 51c6e83 — drax(loadout): cycle-14-v1-1-w4 — wire chain×tier T4 architecture on /loadout + /sample
+**Last tag:** drax/v1.1-cycle-14-v1-1-w4-ui-wiring-1
 **Branch:** main
-**Hive-mind mode:** ACTIVE
+**Hive-mind mode:** ACTIVE (W4 closed; wind-down pending)
 
 ## Session summary
+
+### cycle-14-v1-1-w4-ui-wiring-chain-t4 (2026-05-30)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-05-30-drax-cycle-14-v1-1-w4-ui-wiring-chain-t4.md` — completion record appended
+**Authority:** Matt 2026-05-30 follow-on verbatim "wire in T4 nodes...emit the hidden secondary T4" (via gandalf consolidated follow-on Stage 2); auto-commit + auto-push per cycle authorization
+**Build:** 1037 modules, 0 TS errors. Tests: 81/81 PASS
+
+**Disc #11 empirical inspection (pre-execution):**
+- Spot-checked `ashwind_ember_scout.json` (chain_wide_parallel, 2 candidates) and `stonecaller_of_the_fractured_reach.json` (CHAIN_WIDE_OWN, 0 candidates, primary_t4 present).
+- Schema confirmed: chain_composition {t4_chains, supporting_chains, total_chains}, class_chain_count, t4_scope, t4_candidates[], primary_t4 {strategy, magnitude, applied_to, scope, discipline_anchor}. Matches MIGRATION.md §v1.69 description exactly. No refutation triggered.
+
+**New TypeScript types (types.ts):**
+- `ChainComposition`, `T4Candidate`, `PrimaryT4` interfaces added
+- New optional fields on `ClassData`: `chain_composition?`, `class_chain_count?`, `t4_scope?`, `t4_candidates?`, `primary_t4?`
+
+**New component:**
+- `src/components/Cycle14/Cycle14T4Panel.tsx` — dual-mode (loadout/sample):
+  - Chain composition structural summary (t4_chains / supporting_chains / total)
+  - Primary T4 fixed universal slot (non-toggleable; Discipline #39 scaffold surfaced)
+  - Layer 2 T4 Loadout mode: radio-button D66 per doc 40 § 8.3.1 (one active at a time)
+  - Layer 2 T4 Sample mode: AS-gauntlet-passed active read-only (no toggle per doc 49 § 1.2)
+  - CHAIN_WIDE_OWN empty-state: doc 47 § 4.6.4 anchored copy — NOT "coming soon"
+
+**Page updates:**
+- `Loadout.tsx`: import Cycle14T4Panel, render after gear section with mode="loadout"
+- `Sample.tsx`: import Cycle14T4Panel + Cycle14GearDisplay (W2 render path gap — Sample was still using GearGrid; upgraded to gear_representative when present); render T4 panel with mode="sample"
+
+**Render path decisions:**
+- Layer 2 T4 toggle: radio-button group with `role="radiogroup"` aria attribute; each candidate card is clickable in loadout mode, non-interactive in sample mode
+- Primary T4 player-facing copy: "Direct Damage Amplification 1.75× preferred encounter type · universal" + Discipline #39 scaffold note (Cycle 15 retirement)
+- CHAIN_WIDE_OWN copy (Loadout): "No Layer 2 T4 unlocks — this kit's T4 capability is provided by the Primary T4 universal guarantee alone. Canonically complete at v1.1 per doc 47 § 4.6.4."
+- CHAIN_WIDE_OWN copy (Sample): "No Layer 2 T4 — gauntlet passed via Primary T4 universal guarantee alone. Canonically complete at v1.1 per doc 47 § 4.6.4."
+- Component is null-safe for pre-v1.69 seasons (returns null when no chain_composition OR primary_t4)
+
+**Commit:** `51c6e83`
+**Tag:** `drax/v1.1-cycle-14-v1-1-w4-ui-wiring-1` (pushed to origin)
+**Vercel Production deploy:** READY — `https://reincarnated-loadout.vercel.app` (aliased; deployment id `dpl_HSUY8xjjL3HsAEthvEvH3VbyePsJ`)
+**Post-deploy error scan:** clean (no runtime errors in log scan)
+**Push status:** origin/main at `51c6e83`; tag pushed
+
+---
 
 ### cascade-r4-v1-season-002-marquee-polish-1 (2026-05-30)
 
