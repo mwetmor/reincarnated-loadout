@@ -1,0 +1,793 @@
+{
+  "id": "class_0002",
+  "name": "Brine-Soaked Warden",
+  "title_completion": "a Brine-Soaked Warden",
+  "flavor_text": "Where the sea retreated, it left behind its memory \u2014 and you. You hold the flats together with salt-crusted patience, letting the slow seep of ancient brine do what no blade ever could. Those who rush across your ground find themselves swallowed not by waves, but by the quiet, unforgiving weight of what water leaves behind.",
+  "archetype_tag": "water_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "medium",
+  "dominant_element": "water",
+  "seasonal_dominant_element": "brine",
+  "color_palette": [
+    291264,
+    488106,
+    366042,
+    617386,
+    655521,
+    596035,
+    581791,
+    682819,
+    588470,
+    571021,
+    660844,
+    572471,
+    685405
+  ],
+  "stat_distribution": {
+    "strength": 15,
+    "dexterity": 9,
+    "intelligence": 158,
+    "wisdom": 5,
+    "vitality": 83
+  },
+  "skills": [
+    {
+      "id": "skill_000038",
+      "name": "Salt-Crust Warding Stillness",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "vortex_pull",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 19.9,
+      "cooldown_seconds": 13.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 11.8
+          }
+        }
+      ],
+      "color_value": 291264,
+      "flavor_text": "The brine rises through cracked earth and crystallizes around every living thing within reach, locking them in place as surely as the sea once locked salt into stone. Nothing moves here \u2014 the flats have decided.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0592
+    },
+    {
+      "id": "skill_000039",
+      "name": "Flat-Wind Salt Blink",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 21.8,
+      "cooldown_seconds": 8.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.8
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.3,
+            "duration_seconds": 9.9
+          }
+        }
+      ],
+      "color_value": 488106,
+      "flavor_text": "The fighter vanishes in a burst of scattered brine crystals, reappearing behind a shell of hardened salt-wind that shimmers with the pale gleam of sun-scorched flats. For a breathless moment, nothing can find them \u2014 they exist only as a dry hiss across the open white.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0725
+    },
+    {
+      "id": "skill_000040",
+      "name": "Salt Crust Collapse",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "ground_targeted_circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 16.0,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 1.9
+          }
+        }
+      ],
+      "color_value": 366042,
+      "flavor_text": "Where the flats remember the sea, the crust gives way all at once \u2014 a dry bed fracture that swallows footing and holds it fast in crystalline ruin. What stands here stands in the earth's white grip.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0536
+    },
+    {
+      "id": "skill_000041",
+      "name": "Salt-Crust Warding Seep",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 24.2,
+      "cooldown_seconds": 11.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.9
+          }
+        }
+      ],
+      "color_value": 617386,
+      "flavor_text": "The brine rises through cracked earth and settles across the skin in a crystalline shell, slow and inevitable as the tide receding. For a breath, the flats remember being an ocean and offer what little armor a dry sea still knows.",
+      "tier": 1,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0626
+    },
+    {
+      "id": "skill_000042",
+      "name": "Tidal Seeping Brine Ring",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "aura",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 26.5,
+      "cooldown_seconds": 15.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.35,
+            "duration_seconds": 4.6
+          }
+        }
+      ],
+      "color_value": 655521,
+      "flavor_text": "A slow tide of cold salt seeps outward across the cracked flat, dragging at movement like wet sediment pulling at bare feet. Nothing caught in its reach escapes the creeping weight of a sea that has already left.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000038"
+      ],
+      "scaling_coefficient": 1.0872
+    },
+    {
+      "id": "skill_000043",
+      "name": "Tidal Seeping Flats",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 23.6,
+      "cooldown_seconds": 7.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.22,
+            "duration_seconds": 2.0
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 596035,
+      "flavor_text": "Brine rises slow through cracked earth, reclaiming the dry bed with cold salt memory. What the sea left behind still knows how to drown.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000039"
+      ],
+      "scaling_coefficient": 1.1014
+    },
+    {
+      "id": "skill_000044",
+      "name": "Tidal Seeping Ring",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "aura",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 22.9,
+      "cooldown_seconds": 10.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.23,
+            "duration_seconds": 4.0
+          }
+        }
+      ],
+      "color_value": 581791,
+      "flavor_text": "Brine rises through cracked earth in a slow, cold circle, soaking into bone before the mind registers the cold. Movement becomes memory here, sluggish as tide retreating across white stone.",
+      "tier": 2,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000041"
+      ],
+      "scaling_coefficient": 1.106
+    },
+    {
+      "id": "skill_000045",
+      "name": "Tidal Seeping Brine",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/water/control",
+      "energy_cost": 17.3,
+      "cooldown_seconds": 4.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.29,
+            "duration_seconds": 2.9
+          }
+        }
+      ],
+      "color_value": 682819,
+      "flavor_text": "Salt-laden cold saturates the target from within, drawn up through cracked earth and old waterlines. The body slows as the flats remember their drowned past.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000042"
+      ],
+      "scaling_coefficient": 1.1442
+    },
+    {
+      "id": "skill_000046",
+      "name": "Tidal Seeping Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 26.1,
+      "cooldown_seconds": 7.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "water"
+          }
+        },
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.48,
+            "duration_seconds": 2.1
+          }
+        }
+      ],
+      "color_value": 588470,
+      "flavor_text": "Brine rises through cracked earth in a slow, suffusing circle \u2014 not a wave, but an arrival. The salt remembers the sea, and the sea remembers how to drown.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000042"
+      ],
+      "scaling_coefficient": 1.1272
+    },
+    {
+      "id": "skill_000092",
+      "name": "Salt-Crust Warding",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 22.9,
+      "cooldown_seconds": 12.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.8
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.29,
+            "duration_seconds": 8.5
+          }
+        }
+      ],
+      "color_value": 664307,
+      "flavor_text": "The brine seeps inward before it hardens, layering the skin in pale mineral silence. What the flat gives, the flat keeps.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000043"
+      ],
+      "scaling_coefficient": 1.1409
+    },
+    {
+      "id": "skill_000048",
+      "name": "Tidal Seeping Ring",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "aura",
+      "spatial_geometry_type": "circle",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 25.6,
+      "cooldown_seconds": 18.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.41,
+            "duration_seconds": 4.2
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 660844,
+      "flavor_text": "A slow bloom of brine seeps outward from cracked earth, soaking into the bones of those caught within its reach. The cold is not sharp \u2014 it is patient, the way the sea reclaims what the salt flats forgot.",
+      "tier": 3,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000044"
+      ],
+      "scaling_coefficient": 1.1578
+    },
+    {
+      "id": "skill_000049",
+      "name": "Tidal Seeping Bloom",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/water/utility",
+      "energy_cost": 15.6,
+      "cooldown_seconds": 17.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 5.8
+          }
+        }
+      ],
+      "color_value": 572471,
+      "flavor_text": "Salt-heavy air draws inward in a slow, saturating ring, the flat's residue soaking into every surface it touches. For a breath's span, what strikes from within that circle strikes harder \u2014 steeped through with the sea's old pressure.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000045"
+      ],
+      "scaling_coefficient": 1.2268
+    },
+    {
+      "id": "skill_000050",
+      "name": "Salt-Crust Warding Shift",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/water/defensive",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 9.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.5
+          }
+        }
+      ],
+      "color_value": 685405,
+      "flavor_text": "The caster vanishes into the shimmer above the flats, reappearing encased in a shell of crystallized brine that drinks the force of any blow. For a breathless moment, the salt holds everything at bay.",
+      "tier": 4,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000048"
+      ],
+      "scaling_coefficient": 1.2259
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.4,
+    "actual_winrate": 0.3861,
+    "convergence_winrate": 0.3861,
+    "pack_winrate": 0.0,
+    "convergence_iterations": 4,
+    "converged": true,
+    "final_modifier": 0.3812,
+    "gauntlet_results": {
+      "monster_00001": 0.0,
+      "monster_00002": 0.0,
+      "monster_00003": 0.0,
+      "monster_00004": 0.0,
+      "monster_00005": 0.0,
+      "monster_00006": 0.0,
+      "monster_00015": 1.0,
+      "monster_00016": 1.0,
+      "monster_00036": 0.0,
+      "monster_00037": 0.6333,
+      "monster_00039": 1.0,
+      "monster_00043": 1.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.3812
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false,
+    "element_coverage_tax": {},
+    "hybrid_mage_dps_scale_factor": 1.0,
+    "hybrid_mage_lever_b": {
+      "scale_factor": 1.0,
+      "dps_scale_applied": false,
+      "damage_bearing_skills_scaled": 0,
+      "combined_effective_multiplier": 1.0
+    },
+    "hybrid_mage_composite_d_active": false,
+    "r1_per_tier_win_rates": {
+      "swarm": 0.0,
+      "magic": 1.0,
+      "elite": 0.3167,
+      "mini_boss": 0.7333,
+      "boss": 0.5
+    },
+    "r1_per_tier_pass": {
+      "swarm": false,
+      "magic": false,
+      "elite": false,
+      "mini_boss": false,
+      "boss": false
+    },
+    "r1_convergence_gate_passed": false,
+    "r1_failing_tiers": [
+      "swarm",
+      "magic",
+      "elite",
+      "mini_boss",
+      "boss"
+    ],
+    "r1_aggregate_wr_legacy": 0.51,
+    "r1_boss_kill_rate": 0.5,
+    "r1_mini_boss_kill_rate": 0.7333
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.3861,
+      "overall_winrate": 0.3861,
+      "pack_winrate": 0.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 4,
+      "converged": true,
+      "final_modifier": 0.3812,
+      "dimensions_explored": [
+        "energy_type_calibration",
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00001": 0.0,
+        "monster_00002": 0.0,
+        "monster_00003": 0.0,
+        "monster_00004": 0.0,
+        "monster_00005": 0.0,
+        "monster_00006": 0.0,
+        "monster_00015": 1.0,
+        "monster_00016": 1.0,
+        "monster_00036": 0.0,
+        "monster_00037": 0.6333,
+        "monster_00039": 1.0,
+        "monster_00043": 1.0
+      },
+      "r1_per_tier_win_rates": {
+        "swarm": 0.0,
+        "magic": 1.0,
+        "elite": 0.3167,
+        "mini_boss": 0.7333,
+        "boss": 0.5
+      },
+      "r1_convergence_gate_passed": false,
+      "r1_failing_tiers": [
+        "swarm",
+        "magic",
+        "elite",
+        "mini_boss",
+        "boss"
+      ],
+      "r1_boss_kill_rate": 0.5,
+      "r1_mini_boss_kill_rate": 0.7333
+    },
+    "mid_band_L33": null,
+    "early_band_L17": null,
+    "variance_check_L50": null,
+    "doppelganger_validation": null,
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000047",
+          "swapped_from_role": "area_damage",
+          "swapped_to_role": "defensive",
+          "swapped_to_id": "skill_000092",
+          "role": "area_damage",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.5139,
+        "after_winrate": 0.3472,
+        "delta": -0.1667,
+        "accepted": true,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "no_swappable_candidates"
+        },
+        "attempt": 2,
+        "before_winrate": 0.3472,
+        "after_winrate": 0.3472,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000040",
+          "role": "area_damage",
+          "from_geometry": "ground_targeted_circle",
+          "to_geometry": "ring",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.3472,
+        "after_winrate": 0.3472,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "skill_id": "skill_000045",
+          "role": "damage_over_time",
+          "param": "cooldown_seconds",
+          "from_cd": 4.6,
+          "to_cd": 5.06,
+          "from_cost": 17.3,
+          "to_cost": 19.03,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.3472,
+        "after_winrate": 0.3472,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "energy_type_calibration",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "energy_type_not_physical",
+          "energy_type": "mana",
+          "recompose_energy_calibration_applied": false
+        },
+        "attempt": 1,
+        "before_winrate": 0.3472,
+        "after_winrate": 0.3472,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      }
+    ],
+    "recompose_outcome": "primary_loop_converged",
+    "composition_pre_modifier_wr": 0.7194,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "water",
+        "to_element": "wind",
+        "n_swapped": 1,
+        "eval_modifier": 0.2575,
+        "modifier_dist_from_1": 0.7425,
+        "baseline_dist": 0.7425,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.3812,
+      "would_pass_clamp": true
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.3812
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "control",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1",
+  "attribute_coupling": [
+    "intelligence",
+    "vitality"
+  ]
+}

@@ -1,0 +1,721 @@
+{
+  "id": "class_0001",
+  "name": "Saltfire Hermit",
+  "title_completion": "a Saltfire Hermit",
+  "flavor_text": "Where the sea retreated, they stayed \u2014 alone on the cracked white expanse, learning to coax flame from brine and heat from nothing. They wear a crust of crystallized salt like armor, and when they raise their hands, the flat horizon ignites in a shimmer of evaporant scorch. Do not confuse their solitude for weakness; the flats have made them patient, and patient fire burns longest.",
+  "archetype_tag": "fire_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "long",
+  "dominant_element": "fire",
+  "seasonal_dominant_element": "brine",
+  "color_palette": [
+    318264,
+    63967,
+    73729,
+    79359,
+    462181,
+    22857,
+    38099,
+    27164,
+    315935,
+    14419,
+    364577
+  ],
+  "stat_distribution": {
+    "strength": 9,
+    "dexterity": 26,
+    "intelligence": 159,
+    "wisdom": 17,
+    "vitality": 59
+  },
+  "skills": [
+    {
+      "id": "skill_000001",
+      "name": "Salt-Crust Warding Vanish",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 21.2,
+      "cooldown_seconds": 11.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.4
+          }
+        }
+      ],
+      "color_value": 318264,
+      "flavor_text": "The defender steps sideways into the blinding white, reappearing wrapped in a shell of crystallized brine that drinks the force of any blow. Where they stood, a ghost of salt dust lingers, slow to settle.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0744
+    },
+    {
+      "id": "skill_000002",
+      "name": "Evaporant Scorch Flat",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "ground_targeted_circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 20.1,
+      "cooldown_seconds": 7.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 4.2
+          }
+        }
+      ],
+      "color_value": 63967,
+      "flavor_text": "Where the sea once lay, the salt remembers its heat \u2014 a circle of white crust ignites from below, breathing slow fire into anything that dares stand still. The air above shimmers with mineral burn, thick and patient as drought.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0796
+    },
+    {
+      "id": "skill_000003",
+      "name": "Evaporant Scorch Flat",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "ground_targeted_circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "damage_over_time",
+      "canonical_pair_ref": "canonical/fire/damage_over_time",
+      "energy_cost": 17.6,
+      "cooldown_seconds": 4.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 5.7
+          }
+        }
+      ],
+      "color_value": 73729,
+      "flavor_text": "Where the sea once lay, the salt remembers its fury \u2014 a circle of superheated brine mist ignites against the cracked earth, searing anything caught within its white-hot veil. The air itself peels away in layers, leaving only heat and the ghost of the tide.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0637
+    },
+    {
+      "id": "skill_000004",
+      "name": "Evaporant Scorch Volley",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 30.4,
+      "cooldown_seconds": 5.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.08
+          }
+        }
+      ],
+      "color_value": 79359,
+      "flavor_text": "Where the sea once breathed, the flats now exhale in fire \u2014 a held breath released as searing salt-smoke that chars the air into ribbons. Each burning mote drinks what little life remains in the cracked earth, pulling it inward.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000001"
+      ],
+      "scaling_coefficient": 1.1074
+    },
+    {
+      "id": "skill_000005",
+      "name": "Flat-Wind Salt Scatter",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "blink",
+      "spatial_geometry_type": "none",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/wind/mobility",
+      "energy_cost": 16.6,
+      "cooldown_seconds": 7.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.9,
+            "stagger_seconds": 0.9
+          }
+        }
+      ],
+      "color_value": 462181,
+      "flavor_text": "The air splits like cracked basin floor and you are elsewhere, a dry gust where you stood sending everything nearby stumbling. The flats remember the sea's last breath and fling it outward.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000001"
+      ],
+      "scaling_coefficient": 1.1135
+    },
+    {
+      "id": "skill_000006",
+      "name": "Evaporant Scorch Volley",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "multi_projectile",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 8.3,
+      "cooldown_seconds": 0.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "lifesteal",
+          "params": {
+            "percent": 0.09
+          }
+        }
+      ],
+      "color_value": 22857,
+      "flavor_text": "Where the sea once breathed, fire now exhales in its place \u2014 a scatter of scorched salt-light that pulls something vital from whatever it touches. The flats remember water by burning.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 3,
+      "parent_skill_ids": [
+        "skill_000001"
+      ],
+      "scaling_coefficient": 1.0945
+    },
+    {
+      "id": "skill_000007",
+      "name": "Evaporant Scorch Crack",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 21.2,
+      "cooldown_seconds": 5.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 38099,
+      "flavor_text": "Where the last tide retreated, heat remembers. A charge builds across the bleached crust until it shatters outward in a chain of scorching, salt-bright arcs that leap from body to body like lightning finding the sea it lost.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000003"
+      ],
+      "scaling_coefficient": 1.0855
+    },
+    {
+      "id": "skill_000008",
+      "name": "Salt-Crust Warding Evaporant",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/defensive",
+      "energy_cost": 23.7,
+      "cooldown_seconds": 9.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 5.8
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.27,
+            "duration_seconds": 6.6
+          }
+        }
+      ],
+      "color_value": 27164,
+      "flavor_text": "A shell of scorched mineral rises in an instant, drinking the heat of the flats into its pale, crystalline face. What strikes it finds nothing \u2014 the wind has already carried you elsewhere.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000003"
+      ],
+      "scaling_coefficient": 1.0907
+    },
+    {
+      "id": "skill_000009",
+      "name": "Dry Bed Fracture Burst",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 29.8,
+      "cooldown_seconds": 8.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 4.0
+          }
+        }
+      ],
+      "color_value": 315935,
+      "flavor_text": "Where the sea once pressed its full weight, the salt-hardened crust remembers every inch of that pressure. It releases all of it at once, splitting the flats into shards that pin everything standing to the cracked and breathless earth.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000004"
+      ],
+      "scaling_coefficient": 1.1639
+    },
+    {
+      "id": "skill_000010",
+      "name": "Evaporant Scorch Flats",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "ground_targeted_circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/fire/area_damage",
+      "energy_cost": 16.1,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        },
+        {
+          "name": "burn",
+          "params": {
+            "tick_damage": 750,
+            "duration_seconds": 3.4
+          }
+        }
+      ],
+      "color_value": 14419,
+      "flavor_text": "Where the sea once lay, a cone of superheated brine-mist ignites the bleached crust in a single scalding breath. The salt burns long after the flame is gone, crackling and spitting in the dry air.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000007"
+      ],
+      "scaling_coefficient": 1.1475
+    },
+    {
+      "id": "skill_000088",
+      "name": "Salt-Crust Warding Pall",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "vortex_pull",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 25.0,
+      "cooldown_seconds": 15.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.8
+          }
+        }
+      ],
+      "color_value": 371742,
+      "flavor_text": "A cone of crystallized brine erupts from cracked earth, encasing everything it touches in a rigid salt shell that holds fast as stone. The flats remember every tide that ever left them, and they do not let go easily.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000009"
+      ],
+      "scaling_coefficient": 1.1868
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4778,
+    "convergence_winrate": 0.4778,
+    "pack_winrate": 0.0,
+    "convergence_iterations": 8,
+    "converged": true,
+    "final_modifier": 0.0332,
+    "gauntlet_results": {
+      "monster_00001": 0.0,
+      "monster_00002": 0.0,
+      "monster_00003": 0.0,
+      "monster_00004": 1.0,
+      "monster_00005": 0.0,
+      "monster_00006": 0.0,
+      "monster_00015": 1.0,
+      "monster_00016": 1.0,
+      "monster_00036": 0.0,
+      "monster_00037": 0.7333,
+      "monster_00039": 1.0,
+      "monster_00043": 1.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0332
+    },
+    "modifier_extreme_low": true,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false,
+    "element_coverage_tax": {},
+    "hybrid_mage_dps_scale_factor": 1.0,
+    "hybrid_mage_lever_b": {
+      "scale_factor": 1.0,
+      "dps_scale_applied": false,
+      "damage_bearing_skills_scaled": 0,
+      "combined_effective_multiplier": 1.0
+    },
+    "hybrid_mage_composite_d_active": false,
+    "r1_per_tier_win_rates": {
+      "swarm": 0.1667,
+      "magic": 1.0,
+      "elite": 0.3667,
+      "mini_boss": 0.8333,
+      "boss": 0.3333
+    },
+    "r1_per_tier_pass": {
+      "swarm": false,
+      "magic": false,
+      "elite": false,
+      "mini_boss": false,
+      "boss": true
+    },
+    "r1_convergence_gate_passed": false,
+    "r1_failing_tiers": [
+      "swarm",
+      "magic",
+      "elite",
+      "mini_boss"
+    ],
+    "r1_aggregate_wr_legacy": 0.54,
+    "r1_boss_kill_rate": 0.3333,
+    "r1_mini_boss_kill_rate": 0.8333
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.4778,
+      "overall_winrate": 0.4778,
+      "pack_winrate": 0.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 8,
+      "converged": true,
+      "final_modifier": 0.0332,
+      "dimensions_explored": [
+        "energy_type_calibration",
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00001": 0.0,
+        "monster_00002": 0.0,
+        "monster_00003": 0.0,
+        "monster_00004": 1.0,
+        "monster_00005": 0.0,
+        "monster_00006": 0.0,
+        "monster_00015": 1.0,
+        "monster_00016": 1.0,
+        "monster_00036": 0.0,
+        "monster_00037": 0.7333,
+        "monster_00039": 1.0,
+        "monster_00043": 1.0
+      },
+      "r1_per_tier_win_rates": {
+        "swarm": 0.1667,
+        "magic": 1.0,
+        "elite": 0.3667,
+        "mini_boss": 0.8333,
+        "boss": 0.3333
+      },
+      "r1_convergence_gate_passed": false,
+      "r1_failing_tiers": [
+        "swarm",
+        "magic",
+        "elite",
+        "mini_boss"
+      ],
+      "r1_boss_kill_rate": 0.3333,
+      "r1_mini_boss_kill_rate": 0.8333
+    },
+    "mid_band_L33": null,
+    "early_band_L17": null,
+    "variance_check_L50": null,
+    "doppelganger_validation": null,
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "burst_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000011",
+          "swapped_from_role": "burst_damage",
+          "swapped_to_role": "control",
+          "swapped_to_id": "skill_000088",
+          "role": "burst_damage",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.575,
+        "after_winrate": 0.3639,
+        "delta": -0.2111,
+        "accepted": true,
+        "eval_modifier": 0.0255,
+        "working_modifier": 0.0255,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000002",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "utility",
+          "swapped_to_id": "skill_000089",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 2,
+        "before_winrate": 0.3639,
+        "after_winrate": 0.3639,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0255,
+        "working_modifier": 0.0255,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "skill_id": "skill_000002",
+          "role": "damage_over_time",
+          "from_geometry": "ground_targeted_circle",
+          "to_geometry": "totem",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.3639,
+        "after_winrate": 0.3639,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0255,
+        "working_modifier": 0.0255,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000006",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.3,
+          "to_cd": 0.33,
+          "from_cost": 8.3,
+          "to_cost": 9.13,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.3639,
+        "after_winrate": 0.3639,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0255,
+        "working_modifier": 0.0255,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "energy_type_calibration",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "energy_type_not_physical",
+          "energy_type": "mana",
+          "recompose_energy_calibration_applied": false
+        },
+        "attempt": 1,
+        "before_winrate": 0.3639,
+        "after_winrate": 0.3639,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.0255,
+        "working_modifier": 0.0255,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      }
+    ],
+    "recompose_outcome": "primary_loop_converged",
+    "composition_pre_modifier_wr": 0.9972,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "fire",
+        "to_element": "wind",
+        "n_swapped": 1,
+        "eval_modifier": 0.0255,
+        "modifier_dist_from_1": 0.9745,
+        "baseline_dist": 0.9745,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.0332,
+      "would_pass_clamp": false
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.0332
+    },
+    "modifier_extreme_low": true,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "burst",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1",
+  "attribute_coupling": [
+    "intelligence",
+    "vitality"
+  ]
+}

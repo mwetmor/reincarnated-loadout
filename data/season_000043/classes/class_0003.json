@@ -1,0 +1,745 @@
+{
+  "id": "class_0003",
+  "name": "Salt-Crusted Tide Warden",
+  "title_completion": "a Salt-Crusted Tide Warden",
+  "flavor_text": "Where the sea retreated and left only its bones behind, you learned to read the memory of water in cracked earth. You do not summon waves \u2014 you coax the brine still sleeping beneath the flats to rise, fracture, and seep through enemy lines like a tide that never truly left. The salt remembers the ocean, and through you, it still hungers.",
+  "archetype_tag": "earth_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "close",
+  "dominant_element": "earth",
+  "seasonal_dominant_element": "brine",
+  "color_palette": [
+    647127,
+    598820,
+    260951,
+    632067,
+    260762,
+    297104,
+    293683,
+    325354,
+    699855,
+    374244,
+    265673,
+    251708
+  ],
+  "stat_distribution": {
+    "strength": 16,
+    "dexterity": 17,
+    "intelligence": 5,
+    "wisdom": 159,
+    "vitality": 73
+  },
+  "skills": [
+    {
+      "id": "skill_000051",
+      "name": "Tidal Seeping Fracture",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 24.7,
+      "cooldown_seconds": 7.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 647127,
+      "flavor_text": "Where the sea once pressed its full weight, the salt remembers. Brine bleeds upward through cracked earth and swallows everything it touches.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0783
+    },
+    {
+      "id": "skill_000052",
+      "name": "Tidal Seeping Rush",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "blink",
+      "spatial_geometry_type": "none",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/water/mobility",
+      "energy_cost": 18.4,
+      "cooldown_seconds": 10.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.13,
+            "duration_seconds": 9.2
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 598820,
+      "flavor_text": "Salt water memory surges through cracked earth, carrying the body forward on a current that no longer exists. For a breath, the flats remember the tide, and evasion comes as easily as dissolution.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0522
+    },
+    {
+      "id": "skill_000053",
+      "name": "Salt-Crust Warding",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 21.5,
+      "cooldown_seconds": 13.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.2
+          }
+        }
+      ],
+      "color_value": 260951,
+      "flavor_text": "The flats remember every tide that ever left them \u2014 that memory hardens now into a shell of crystallized absence, white and absolute. Nothing passes through what the sea calcified on its way out.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0595
+    },
+    {
+      "id": "skill_000054",
+      "name": "Tidal Seeping Mend",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/water/sustain",
+      "energy_cost": 33.9,
+      "cooldown_seconds": 10.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.3,
+            "duration_seconds": 8.8
+          }
+        }
+      ],
+      "color_value": 632067,
+      "flavor_text": "Brine draws inward through cracked earth, carrying old salt back into the wound. The body remembers the sea long after the sea has gone.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0734
+    },
+    {
+      "id": "skill_000055",
+      "name": "Dry Bed Fracture Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 28.7,
+      "cooldown_seconds": 9.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 2.6
+          }
+        }
+      ],
+      "color_value": 260762,
+      "flavor_text": "The salt crust splits in a wide arc as if the vanished sea remembers its own weight, dragging anything caught in the break into the cracked earth below. What the tide once softened, the absence of it has made merciless.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0553
+    },
+    {
+      "id": "skill_000056",
+      "name": "Brine-Soaked Clarity",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 18.3,
+      "cooldown_seconds": 13.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.31,
+            "duration_seconds": 5.9
+          }
+        },
+        {
+          "name": "buff_mana_regen",
+          "params": {
+            "percent": 0.29,
+            "duration_seconds": 8.3
+          }
+        }
+      ],
+      "color_value": 297104,
+      "flavor_text": "The salt draws out what is hidden, sharpening the mind like a blade left in the tide. For a breath, thought moves faster than the wind across the flats.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000051"
+      ],
+      "scaling_coefficient": 1.111
+    },
+    {
+      "id": "skill_000057",
+      "name": "Salt-Crust Warding Circle",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/earth/control",
+      "energy_cost": 13.7,
+      "cooldown_seconds": 10.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.26,
+            "duration_seconds": 8.2
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.1
+          }
+        }
+      ],
+      "color_value": 293683,
+      "flavor_text": "A ring of crystallized brine rises from the cracked earth, humming with compressed silence \u2014 those within strike harder, their voices swallowed by the flat's ancient stillness. The salt remembers every tide that once filled this place, and it does not forgive sound.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000054"
+      ],
+      "scaling_coefficient": 1.1
+    },
+    {
+      "id": "skill_000058",
+      "name": "Salt-Crust Warding",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 10.8,
+      "cooldown_seconds": 13.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.2,
+            "duration_seconds": 7.4
+          }
+        }
+      ],
+      "color_value": 325354,
+      "flavor_text": "The residue of a vanished sea hardens around the target, concentrating ancient pressure into a single crystalline purpose. What strikes next will find the flats have remembered how to break.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000054"
+      ],
+      "scaling_coefficient": 1.1018
+    },
+    {
+      "id": "skill_000059",
+      "name": "Tidal Seeping Hollow",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/water/area_damage",
+      "energy_cost": 15.4,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.48,
+            "duration_seconds": 4.4
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 699855,
+      "flavor_text": "Brine rises through cracked earth in a slow, suffusing circle, pulling warmth from bone and breath alike. What the sea left behind still remembers how to drown.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000056"
+      ],
+      "scaling_coefficient": 1.1489
+    },
+    {
+      "id": "skill_000060",
+      "name": "Dry Bed Fracture",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "melee_strike",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 6.8,
+      "cooldown_seconds": 1.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 374244,
+      "flavor_text": "Where the sea once pressed its full weight, the cracked earth remembers. A strike that carries the violence of that absence \u2014 the ground splitting not from force alone, but from ancient, salt-hardened grief.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000057"
+      ],
+      "scaling_coefficient": 1.1695
+    },
+    {
+      "id": "skill_000061",
+      "name": "Salt-Crust Warding Seep",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/earth/sustain",
+      "energy_cost": 22.1,
+      "cooldown_seconds": 6.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        },
+        {
+          "name": "heal_over_time",
+          "params": {
+            "tick_heal": 375,
+            "duration_seconds": 10.0
+          }
+        }
+      ],
+      "color_value": 265673,
+      "flavor_text": "Where the sea once breathed, a slow brine rises through cracked earth and closes what was opened. The wound drinks deep and quiets, sealed beneath a crust the tide left behind.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000057"
+      ],
+      "scaling_coefficient": 1.1514
+    },
+    {
+      "id": "skill_000062",
+      "name": "Salt-Crust Warding Gyre",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "ground_slam",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 25.2,
+      "cooldown_seconds": 4.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 251708,
+      "flavor_text": "Where the sea abandoned its bed, the crust remembers \u2014 grinding upward in a slow, furious column that scours everything within reach to pale mineral dust. The flats do not forgive what walks upon them.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000059"
+      ],
+      "scaling_coefficient": 1.2211
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.575,
+    "convergence_winrate": 0.575,
+    "pack_winrate": 0.0,
+    "convergence_iterations": 3,
+    "converged": true,
+    "final_modifier": 0.2575,
+    "gauntlet_results": {
+      "monster_00001": 0.0,
+      "monster_00002": 1.0,
+      "monster_00003": 0.0,
+      "monster_00004": 1.0,
+      "monster_00005": 0.0,
+      "monster_00006": 1.0,
+      "monster_00015": 1.0,
+      "monster_00016": 1.0,
+      "monster_00036": 0.3,
+      "monster_00037": 0.9333,
+      "monster_00039": 0.6667,
+      "monster_00043": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.2575
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false,
+    "element_coverage_tax": {},
+    "hybrid_mage_dps_scale_factor": 1.0,
+    "hybrid_mage_lever_b": {
+      "scale_factor": 1.0,
+      "dps_scale_applied": false,
+      "damage_bearing_skills_scaled": 0,
+      "combined_effective_multiplier": 1.0
+    },
+    "hybrid_mage_composite_d_active": false,
+    "r1_per_tier_win_rates": {
+      "swarm": 0.5,
+      "magic": 1.0,
+      "elite": 0.6167,
+      "mini_boss": 0.6667,
+      "boss": 0.0
+    },
+    "r1_per_tier_pass": {
+      "swarm": false,
+      "magic": false,
+      "elite": false,
+      "mini_boss": false,
+      "boss": false
+    },
+    "r1_convergence_gate_passed": false,
+    "r1_failing_tiers": [
+      "swarm",
+      "magic",
+      "elite",
+      "mini_boss",
+      "boss"
+    ],
+    "r1_aggregate_wr_legacy": 0.5567,
+    "r1_boss_kill_rate": 0.0,
+    "r1_mini_boss_kill_rate": 0.6667
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.575,
+      "overall_winrate": 0.575,
+      "pack_winrate": 0.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 3,
+      "converged": true,
+      "final_modifier": 0.2575,
+      "dimensions_explored": [
+        "energy_type_calibration",
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00001": 0.0,
+        "monster_00002": 1.0,
+        "monster_00003": 0.0,
+        "monster_00004": 1.0,
+        "monster_00005": 0.0,
+        "monster_00006": 1.0,
+        "monster_00015": 1.0,
+        "monster_00016": 1.0,
+        "monster_00036": 0.3,
+        "monster_00037": 0.9333,
+        "monster_00039": 0.6667,
+        "monster_00043": 0.0
+      },
+      "r1_per_tier_win_rates": {
+        "swarm": 0.5,
+        "magic": 1.0,
+        "elite": 0.6167,
+        "mini_boss": 0.6667,
+        "boss": 0.0
+      },
+      "r1_convergence_gate_passed": false,
+      "r1_failing_tiers": [
+        "swarm",
+        "magic",
+        "elite",
+        "mini_boss",
+        "boss"
+      ],
+      "r1_boss_kill_rate": 0.0,
+      "r1_mini_boss_kill_rate": 0.6667
+    },
+    "mid_band_L33": null,
+    "early_band_L17": null,
+    "variance_check_L50": null,
+    "doppelganger_validation": null,
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "burst_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000055",
+          "swapped_from_role": "burst_damage",
+          "swapped_to_role": "sustain",
+          "swapped_to_id": "skill_000095",
+          "role": "burst_damage",
+          "rationale": "fine_tune_reduce"
+        },
+        "attempt": 1,
+        "before_winrate": 0.575,
+        "after_winrate": 0.575,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.3812,
+        "working_modifier": 0.3812,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "burst_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000055",
+          "role": "burst_damage",
+          "from_geometry": "melee_arc",
+          "to_geometry": "single_target",
+          "rationale": "geometry_rebias_fine_tune"
+        },
+        "attempt": 1,
+        "before_winrate": 0.575,
+        "after_winrate": 0.575,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.3812,
+        "working_modifier": 0.3812,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000060",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 1.0,
+          "to_cd": 1.1,
+          "from_cost": 6.8,
+          "to_cost": 7.48,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.575,
+        "after_winrate": 0.575,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.3812,
+        "working_modifier": 0.3812,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "energy_type_calibration",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "energy_type_not_physical",
+          "energy_type": "mana",
+          "recompose_energy_calibration_applied": false
+        },
+        "attempt": 1,
+        "before_winrate": 0.575,
+        "after_winrate": 0.575,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.3812,
+        "working_modifier": 0.3812,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      }
+    ],
+    "recompose_outcome": "modifier_fallback",
+    "composition_pre_modifier_wr": 0.9667,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "earth",
+        "to_element": "water",
+        "n_swapped": 1,
+        "eval_modifier": 0.3812,
+        "modifier_dist_from_1": 0.6188,
+        "baseline_dist": 0.6188,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.2575,
+      "would_pass_clamp": true
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.2575
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "burst",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1",
+  "attribute_coupling": [
+    "wisdom",
+    "vitality"
+  ]
+}
