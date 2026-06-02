@@ -9,6 +9,7 @@ import { CourtBrowser } from './pages/CourtBrowser';
 import { Planning } from './pages/Planning';
 import { PlanningDoc } from './pages/PlanningDoc';
 import { EngineState } from './pages/EngineState';
+import { KitSpace } from './pages/KitSpace';
 
 function Footer() {
   return (
@@ -55,6 +56,7 @@ export default function App() {
             <Route path="/planning/engine-analysis" element={<PlanningDoc src="/planning/engine-analysis.html" title="Engine Analysis" />} />
             <Route path="/planning/state-of-engine" element={<PlanningDoc src="/planning/state-of-engine.html" title="State of Engine" />} />
             <Route path="/state-of-engine" element={<EngineState />} />
+            <Route path="/kit-space" element={<KitSpace />} />
           </Routes>
         </main>
         <Footer />

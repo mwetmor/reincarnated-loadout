@@ -1,0 +1,513 @@
+{
+  "schema_version": "1.0",
+  "kit_id": "kit_fire_000002",
+  "primary_element": "fire",
+  "cultural_tradition": null,
+  "period": null,
+  "chain_composition": {
+    "chain_count": 2
+  },
+  "t4_selection": null,
+  "supporting_chain": null,
+  "skills": [
+    {
+      "id": "skill_000272",
+      "name": "Ember Burst",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 25.4,
+      "cooldown_seconds": 8.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.058,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Even the smallest spark carries the promise of devastation. A fire mage's first lesson is that fire does not ask permission.",
+      "effects": [
+        "Hurl a concentrated burst of fire at a target, dealing moderate fire damage on impact."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "burst",
+        "foundational"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000273",
+      "name": "Flame Dash",
+      "role": "mobility",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 16.6,
+      "cooldown_seconds": 9.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0781,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "blaze",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A mage who stands still is a mage who burns. Propel yourself forward on a burst of ignited air.",
+      "effects": [
+        "Dash a short distance in your chosen direction, leaving a brief trail of fire behind you."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "mobility",
+        "dash"
+      ],
+      "phase5_cohesion_score": 0.955,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.955
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000274",
+      "name": "Ember Ward",
+      "role": "utility",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 10.4,
+      "cooldown_seconds": 15.0,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0776,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A mage's first lesson: fire can shield as well as burn. Wrap yourself in smoldering embers and let the heat do its work.",
+      "effects": [
+        "Surround yourself with a brief ember barrier that absorbs minor damage and reduces incoming effects."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "protection",
+        "utility"
+      ],
+      "phase5_cohesion_score": 0.875,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.6,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.875
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000275",
+      "name": "Scorching Trail",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 12.2,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1142,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000272"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "scorch",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Where the mage treads, fire lingers. The ground itself remembers the heat long after the flames have passed.",
+      "effects": [
+        "Leaves a burning trail that deals fire damage over time to enemies who pass through it."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "persistent",
+        "ground-effect"
+      ],
+      "phase5_cohesion_score": 0.845,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.845
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000276",
+      "name": "Inferno Surge",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 26.4,
+      "cooldown_seconds": 8.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0919,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000272"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Where embers scatter and flames dash, the inferno follows — a roiling surge of heat that consumes all in its path.",
+      "effects": [
+        "Release a burst of concentrated fire energy dealing moderate damage to enemies in a medium-range area."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "burst",
+        "inferno"
+      ],
+      "phase5_cohesion_score": 0.89,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.89
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000277",
+      "name": "Ember Ward Burst",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 26.3,
+      "cooldown_seconds": 3.5,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0965,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000274"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The protective embers ignite in a violent outburst, scorching all who dare encroach upon the mage's domain.",
+      "effects": [
+        "Expend stored ember energy to release a burst of fire damage in a medium area around you."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "area_damage",
+        "ember"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000278",
+      "name": "Ember Ward Strike",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 5.5,
+      "cooldown_seconds": 1.0,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1061,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000274"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The smoldering ward fractures outward, each ember a burning shard launched with focused intent. Fire answers the mage's call.",
+      "effects": [
+        "Strike with concentrated ember energy, dealing moderate fire damage at medium range for low mana cost."
+      ],
+      "phase5_thematic_tags": [
+        "ember",
+        "ward",
+        "fire"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000279",
+      "name": "Blazing Vortex Rush",
+      "role": "utility",
+      "canonical_element": "fire",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "energy_cost": 17.7,
+      "cooldown_seconds": 11.5,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1449,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000275"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The mage becomes one with the inferno, tearing through the battlefield as a spiraling column of superheated flame that consumes all resistance.",
+      "effects": [
+        "Surge forward in a blazing vortex, leaving a trail of fire that burns and slows enemies caught within."
+      ],
+      "phase5_thematic_tags": [
+        "movement",
+        "fire",
+        "vortex"
+      ],
+      "phase5_cohesion_score": 0.805,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.6,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.805
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000280",
+      "name": "Ember Ward Inferno",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "energy_cost": 18.4,
+      "cooldown_seconds": 10.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.167,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000277"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The ember ward reaches its blazing apex, wreathing the mage in a roaring shell of protective flame that scorches all who dare approach.",
+      "effects": [
+        "Surround yourself with an inferno ward that absorbs damage and burns nearby enemies for a brief duration."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "defensive",
+        "ward"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000281",
+      "name": "Cinder Storm Veil",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "energy_cost": 10.2,
+      "cooldown_seconds": 6.3,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.2328,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000279"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "inferno",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The mage weaves a curtain of smoldering ash and ember, leaving enemies to choke and burn in its relentless, swirling wake.",
+      "effects": [
+        "Envelop the target area in a storm of cinders, dealing continuous fire damage over time."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "damage_over_time",
+        "area_control"
+      ],
+      "phase5_cohesion_score": 0.815,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.5,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.815
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000282",
+      "name": "Ember Ward Cataclysm",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "energy_cost": 30.7,
+      "cooldown_seconds": 7.0,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1937,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000280"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "combustion",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The ember ward shatters in a final, catastrophic release, unleashing a torrent of concentrated fire that reduces all before it to ash.",
+      "effects": [
+        "Expend the ember ward in a massive burst, dealing heavy fire damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "burst",
+        "destruction"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    }
+  ],
+  "emergent_kit_concept": "Fire Mage",
+  "substrate_trace": {
+    "source": "class_generator",
+    "generation_seed": 20260610,
+    "archetype_tag": "fire_mage",
+    "energy_type": "mana",
+    "role_orientation": "damage",
+    "range_profile": "medium",
+    "cultural_tradition": null,
+    "period": null
+  },
+  "kit_space_expansion_event_id": "kse_20260602_001",
+  "engine_version": "23b42ed",
+  "engine_version_full": "23b42edd295385517933d4f2dd448806d9c2d65d",
+  "generation_timestamp": "2026-06-02T20:05:42.716Z",
+  "lineage_tags": {
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_001",
+    "engine_provenance": "engine-23b42ed-kse_20260602_001",
+    "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
+    "generation_cohort_date": "2026-06-02"
+  }
+}

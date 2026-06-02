@@ -1,0 +1,513 @@
+{
+  "schema_version": "1.0",
+  "kit_id": "kit_lightning_000001",
+  "primary_element": "lightning",
+  "cultural_tradition": null,
+  "period": null,
+  "chain_composition": {
+    "chain_count": 2
+  },
+  "t4_selection": null,
+  "supporting_chain": null,
+  "skills": [
+    {
+      "id": "skill_000057",
+      "name": "Arc Bolt",
+      "role": "primary_attack",
+      "canonical_element": "lightning",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 8.0,
+      "cooldown_seconds": 0.2,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.054,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The first lesson of lightning: reach out and strike. Even the smallest spark carries the storm's intent.",
+      "effects": [
+        "Hurl a bolt of lightning at a target, dealing moderate lightning damage at medium range."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "mana",
+        "basic_attack"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000058",
+      "name": "Static Discharge",
+      "role": "utility",
+      "canonical_element": "earth",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 19.1,
+      "cooldown_seconds": 14.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0502,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A controlled release of built-up arcane charge, dispersing excess energy into the surrounding air with a sharp crack.",
+      "effects": [
+        "Release stored mana as a burst of static energy, providing a minor utility effect to reposition or recover."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "utility",
+        "foundational"
+      ],
+      "phase5_cohesion_score": 0.95,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.75,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.95
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000059",
+      "name": "Crackling Current",
+      "role": "damage_over_time",
+      "canonical_element": "lightning",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 19.6,
+      "cooldown_seconds": 5.8,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0677,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A persistent arc of electricity clings to the target, searing flesh and fraying nerves with relentless, buzzing energy.",
+      "effects": [
+        "Afflicts a target with a lingering electrical current, dealing minor lightning damage over time."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "damage_over_time",
+        "foundational"
+      ],
+      "phase5_cohesion_score": 0.893,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.893
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000060",
+      "name": "Chain Lightning",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 17.3,
+      "cooldown_seconds": 3.3,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.12,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000057"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "thunder",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The arc finds its first mark, then hungers for more. Electricity leaps between foes like a living thing, indiscriminate and relentless.",
+      "effects": [
+        "Releases a bolt of lightning that chains between nearby enemies, dealing area damage to multiple targets."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "chain",
+        "area_damage"
+      ],
+      "phase5_cohesion_score": 0.823,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.823
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000061",
+      "name": "Storm Surge",
+      "role": "burst_damage",
+      "canonical_element": "lightning",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 29.4,
+      "cooldown_seconds": 8.5,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1147,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000057"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "surge",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The arcanist draws ambient static into a single devastating point, releasing it in a crackling burst that splits the air itself.",
+      "effects": [
+        "Unleash a concentrated surge of lightning energy that deals burst damage to a target in medium range."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "burst",
+        "arcane"
+      ],
+      "phase5_cohesion_score": 0.89,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.89
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000062",
+      "name": "Galvanic Burn",
+      "role": "damage_over_time",
+      "canonical_element": "lightning",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 14.6,
+      "cooldown_seconds": 6.2,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1156,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000058"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Where lightning lingers, flesh smolders. The current does not merely strike—it seeps, scorching from within.",
+      "effects": [
+        "Channels crackling electricity into the target, dealing sustained lightning damage over several seconds."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "damage_over_time",
+        "electricity"
+      ],
+      "phase5_cohesion_score": 0.748,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.748
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000063",
+      "name": "Thunderstep Surge",
+      "role": "mobility",
+      "canonical_element": "lightning",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "energy_cost": 19.8,
+      "cooldown_seconds": 9.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1568,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000060"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "flash",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The arcanist becomes living lightning, dissolving into crackling energy and reforming elsewhere in a blinding instant. The storm does not walk — it arrives.",
+      "effects": [
+        "Dash a medium distance in any direction, leaving a brief trail of electrified energy that damages enemies."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "mobility",
+        "arcane"
+      ],
+      "phase5_cohesion_score": 1.0,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 1.0
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000064",
+      "name": "Tempest Surge Cascade",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "energy_cost": 24.7,
+      "cooldown_seconds": 7.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1443,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000060"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "plasma",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The storm no longer strikes — it consumes. Lightning cascades outward in a relentless surge, reducing all it touches to smoldering ruin.",
+      "effects": [
+        "Unleash a cascading tempest of lightning that deals area damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "area_damage",
+        "storm"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000065",
+      "name": "Galvanic Surge Nova",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "energy_cost": 16.4,
+      "cooldown_seconds": 3.6,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1763,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000062"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "thunder",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The accumulated charge erupts outward in a blinding corona, scorching everything within reach with raw galvanic fury.",
+      "effects": [
+        "Release a burst of galvanic energy that deals lightning damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "area_damage",
+        "galvanic"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000066",
+      "name": "Maelstrom Surge Apex",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "energy_cost": 22.0,
+      "cooldown_seconds": 7.6,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1956,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000063"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "volt",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The storm reaches its zenith, a howling vortex of lightning that consumes all within its terrible embrace. Nothing endures the full fury of the tempest.",
+      "effects": [
+        "Unleash a massive lightning maelstrom dealing area damage to all nearby enemies within medium range."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "storm",
+        "area_damage"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000067",
+      "name": "Galvanic Shield Pulse",
+      "role": "defensive",
+      "canonical_element": "lightning",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "energy_cost": 20.7,
+      "cooldown_seconds": 12.8,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.2015,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000065"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The arcanist wraps themselves in a crackling membrane of galvanic energy, letting raw voltage repel harm before it can take hold.",
+      "effects": [
+        "Spend mana to surround yourself with a galvanic barrier that absorbs incoming damage for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "defensive",
+        "galvanic"
+      ],
+      "phase5_cohesion_score": 0.785,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.5,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.785
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    }
+  ],
+  "emergent_kit_concept": "Lightning Arcanist",
+  "substrate_trace": {
+    "source": "class_generator",
+    "generation_seed": 20260606,
+    "archetype_tag": "lightning_mage",
+    "energy_type": "mana",
+    "role_orientation": "damage",
+    "range_profile": "medium",
+    "cultural_tradition": null,
+    "period": null
+  },
+  "kit_space_expansion_event_id": "kse_20260602_001",
+  "engine_version": "23b42ed",
+  "engine_version_full": "23b42edd295385517933d4f2dd448806d9c2d65d",
+  "generation_timestamp": "2026-06-02T20:05:42.716Z",
+  "lineage_tags": {
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_001",
+    "engine_provenance": "engine-23b42ed-kse_20260602_001",
+    "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
+    "generation_cohort_date": "2026-06-02"
+  }
+}
