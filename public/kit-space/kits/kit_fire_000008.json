@@ -1,0 +1,594 @@
+{
+  "schema_version": "1.0",
+  "kit_id": "kit_fire_000008",
+  "primary_element": "fire",
+  "cultural_tradition": null,
+  "period": null,
+  "chain_composition": {
+    "chain_count": 2,
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none"
+  },
+  "t4_selection": {
+    "candidate_id": "fire_kit_chain_A_RESOURCE_CONVERSION_ELEMENT_CONVERSION_chain_wide_parallel",
+    "category_a_strategy": "RESOURCE_CONVERSION",
+    "category_bc_strategy": "ELEMENT_CONVERSION",
+    "t4_category_bc": "C",
+    "is_class_wide_trade_off": false,
+    "secondary_element": null,
+    "magnitude_tier": null,
+    "magnitude_midpoint": null,
+    "parallel_chain_mode": "parallel",
+    "target_chain_id": "chain_B",
+    "resolve_score": 88.0,
+    "create_score": 62.0,
+    "net_synergy_score": 26.0,
+    "synergy_eligible": true,
+    "retries_used": 0,
+    "pattern_9_warn": false,
+    "pattern_10_warn": false,
+    "is_active": true,
+    "separability_pass": true,
+    "category_a_params": {},
+    "category_bc_params": {},
+    "t4_scope": "chain_wide_parallel",
+    "scope_downscale_factor": null,
+    "scope_prior_weight": 0.3,
+    "scope_weighted_score": -0.325,
+    "scope_projection_data": {
+      "chain_wide_parallel": {
+        "weighted_score": -0.325,
+        "net_synergy_score": -0.25,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "character_wide": {
+        "weighted_score": -0.325,
+        "net_synergy_score": -0.25,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "chain_wide_own": {
+        "weighted_score": -17.15,
+        "net_synergy_score": -12.25,
+        "prior_weight": 0.4,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      }
+    },
+    "spirit_guide_narration_metadata": {
+      "has_mechanic_alteration": true,
+      "alteration_type": "Mana-Fed Ember Chain",
+      "thematic_rationale": "This kit was always about variable heat at range — converting mana into reach and force across the whole chain at once is the natural culmination of that restless, searching fire.",
+      "manifestation": "Every ranged ember you release pulls a thread of mana back through the air behind it — a faint blue-orange filament that snaps taut across the chain's full width simultaneously, feeding each active ember a pulse of raw amplitude at the same instant.",
+      "spirit_guide_explainer_template": null,
+      "narrative_hooks": [],
+      "secondary_alteration_types": []
+    },
+    "thematic_rationale": "This kit was always about variable heat at range — converting mana into reach and force across the whole chain at once is the natural culmination of that restless, searching fire.",
+    "phase5_t4_narration_cohesion_score": 1.0,
+    "phase5_t4_narration_cohesion_breakdown": {
+      "kit_identity": 1.0,
+      "thematic_rationale_fit": 1.0,
+      "element_hits": 1,
+      "cultural_score_contrib": 0.5,
+      "strat_hits": 2,
+      "el_in_rationale": true,
+      "manifest_word_count": 43,
+      "rationale_word_count": 31,
+      "aggregate": 1.0
+    },
+    "phase5_t4_narration_attempt_number": 1,
+    "phase5_t4_narration_is_fallback": false,
+    "phase5_t4_narration_cache_hit": false
+  },
+  "supporting_chain": null,
+  "skills": [
+    {
+      "id": "skill_001053",
+      "name": "Ember Ward",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 17.7,
+      "cooldown_seconds": 14.2,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0532,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Even the weakest flame can keep the darkness at bay. A mage's first lesson is surviving long enough to cast the next spell.",
+      "effects": [
+        "Surround yourself with a brief shell of fire energy that absorbs a small amount of incoming damage."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "protection",
+        "beginner"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001054",
+      "name": "Ember Strike",
+      "role": "primary_attack",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 6.5,
+      "cooldown_seconds": 0.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0739,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The mage channels raw heat into their fist, igniting the air with each practiced blow. Even the smallest flame can start a wildfire.",
+      "effects": [
+        "Strike an enemy at medium range with a burst of fire, dealing minor fire damage."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "basic_attack",
+        "mana"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001055",
+      "name": "Ember Burst",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 29.0,
+      "cooldown_seconds": 3.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0625,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A pulse of raw fire erupts outward, scorching all who dare stand too close. Even the weakest flame can ignite a conflagration.",
+      "effects": [
+        "Release a burst of fire energy that deals area damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "area_damage",
+        "ember"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001056",
+      "name": "Ember Cinders",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 23.3,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0598,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "ignite",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Where the burst fades, the cinders remain — small flames that gnaw and smolder, patient as coals waiting for wind.",
+      "effects": [
+        "Ignites the target, dealing fire damage over time for several seconds."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "damage_over_time",
+        "ember"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001057",
+      "name": "Ember Dash",
+      "role": "mobility",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 15.5,
+      "cooldown_seconds": 10.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0627,
+      "bc_axis_contribution": {},
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A mage who stands still is a mage who burns. Sometimes the wisest spell is simply moving through the fire.",
+      "effects": [
+        "Dash a short distance in the targeted direction, leaving a brief trail of embers behind you."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "mobility",
+        "ember"
+      ],
+      "phase5_cohesion_score": 1.0,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 1.0
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001058",
+      "name": "Ember Brand",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 17.8,
+      "cooldown_seconds": 5.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1076,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001053"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "scorch",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Where the ember strikes, it leaves a burning mark that festers and spreads. The wound smolders long after the initial flame has faded.",
+      "effects": [
+        "Brands the target with smoldering fire, dealing moderate damage over time for several seconds."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "burning",
+        "damage_over_time"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001059",
+      "name": "Ember Veil",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 21.5,
+      "cooldown_seconds": 10.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1011,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001053"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The mage wraps themselves in a shroud of smoldering cinders, letting the heat turn aside blade and spell alike.",
+      "effects": [
+        "Surround yourself with a veil of embers that absorbs a portion of incoming damage briefly."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "defense",
+        "ember"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001060",
+      "name": "Ember Flare",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 20.4,
+      "cooldown_seconds": 8.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1149,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001055"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The smoldering cinders ignite into a sudden, blinding flare — a burst of concentrated flame that consumes all in its path.",
+      "effects": [
+        "Release a concentrated burst of fire energy that deals heavy damage to enemies in medium range."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "burst",
+        "ember"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001061",
+      "name": "Ember Surge",
+      "role": "burst_damage",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 34.0,
+      "cooldown_seconds": 4.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0863,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001055"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "scorch",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The embers ignite into a furious surge, unleashing a concentrated burst of flame that scorches all in its path.",
+      "effects": [
+        "Release a powerful burst of fire energy, dealing heavy damage to a target within medium range."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "burst",
+        "ember"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 2,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001062",
+      "name": "Ember Conflagration",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "energy_cost": 27.9,
+      "cooldown_seconds": 7.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1505,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001060"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "inferno",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "What began as a spark has grown into a roaring inferno. The ember's patience is finally rewarded with total devastation.",
+      "effects": [
+        "Unleash a massive wave of fire energy that scorches all enemies in a wide area around you."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "area_damage",
+        "conflagration"
+      ],
+      "phase5_cohesion_score": 0.94,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.9,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.94
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001063",
+      "name": "Ember Bastion",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 12.3,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1848,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001062"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The fire mage draws the inferno inward, wreathing themselves in a fortress of living flame that turns aside the blows of enemies.",
+      "effects": [
+        "Envelop yourself in protective embers, reducing incoming damage and briefly absorbing hits for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "defense",
+        "ember"
+      ],
+      "phase5_cohesion_score": 0.86,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.5,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.86
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    }
+  ],
+  "emergent_kit_concept": "Ember Caster of the Scattered Range",
+  "substrate_trace": {
+    "source": "class_generator_option_b",
+    "generation_seed": 20260620,
+    "archetype_tag": "fire_mage",
+    "energy_type": "mana",
+    "element": "fire",
+    "season_id": "qdx5_20260602",
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none",
+    "cultural_tradition": null,
+    "period": null,
+    "option_b4_5": true
+  },
+  "kit_space_expansion_event_id": "kse_20260602_008",
+  "engine_version": "d89d23e",
+  "engine_version_full": "d89d23eebac30d8d278213123380dce04716c245",
+  "generation_timestamp": "2026-06-02T23:00:32.005Z",
+  "lineage_tags": {
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_008",
+    "engine_provenance": "engine-d89d23e-kse_20260602_008",
+    "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
+    "generation_cohort_date": "2026-06-02"
+  }
+}

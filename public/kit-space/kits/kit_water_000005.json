@@ -1,0 +1,640 @@
+{
+  "schema_version": "1.0",
+  "kit_id": "kit_water_000005",
+  "primary_element": "water",
+  "cultural_tradition": null,
+  "period": null,
+  "chain_composition": {
+    "chain_count": 2,
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none"
+  },
+  "t4_selection": {
+    "candidate_id": "water_kit_chain_A_RESOURCE_CONVERSION_ELEMENT_CONVERSION_chain_wide_parallel",
+    "category_a_strategy": "RESOURCE_CONVERSION",
+    "category_bc_strategy": "ELEMENT_CONVERSION",
+    "t4_category_bc": "C",
+    "is_class_wide_trade_off": false,
+    "secondary_element": null,
+    "magnitude_tier": null,
+    "magnitude_midpoint": null,
+    "parallel_chain_mode": "parallel",
+    "target_chain_id": "chain_B",
+    "resolve_score": 88.0,
+    "create_score": 62.0,
+    "net_synergy_score": 26.0,
+    "synergy_eligible": true,
+    "retries_used": 0,
+    "pattern_9_warn": false,
+    "pattern_10_warn": false,
+    "is_active": true,
+    "separability_pass": true,
+    "category_a_params": {},
+    "category_bc_params": {},
+    "t4_scope": "chain_wide_parallel",
+    "scope_downscale_factor": null,
+    "scope_prior_weight": 0.3,
+    "scope_weighted_score": 49.4,
+    "scope_projection_data": {
+      "chain_wide_parallel": {
+        "weighted_score": 49.4,
+        "net_synergy_score": 38.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "character_wide": {
+        "weighted_score": 49.4,
+        "net_synergy_score": 38.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "chain_wide_own": {
+        "weighted_score": 36.4,
+        "net_synergy_score": 26.0,
+        "prior_weight": 0.4,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      }
+    },
+    "spirit_guide_narration_metadata": {
+      "has_mechanic_alteration": true,
+      "alteration_type": "Depth-Charge Conversion",
+      "thematic_rationale": "This kit's identity has always lived in the rhythm between accumulation and release — converting the residual pull of each cast into raw amplitude is the only honest conclusion to that cycle.",
+      "manifestation": "Every ranged cast pulls mana back through the chain — the amplitude of each prior wave collapses inward, feeding the next projectile until the water pressure reaches a breaking point and releases in a variable, concussive surge that visibly distorts the surface tension of the air itself.",
+      "spirit_guide_explainer_template": null,
+      "narrative_hooks": [],
+      "secondary_alteration_types": []
+    },
+    "thematic_rationale": "This kit's identity has always lived in the rhythm between accumulation and release — converting the residual pull of each cast into raw amplitude is the only honest conclusion to that cycle.",
+    "phase5_t4_narration_cohesion_score": 0.9,
+    "phase5_t4_narration_cohesion_breakdown": {
+      "kit_identity": 1.0,
+      "thematic_rationale_fit": 0.75,
+      "element_hits": 2,
+      "cultural_score_contrib": 0.5,
+      "strat_hits": 1,
+      "el_in_rationale": false,
+      "manifest_word_count": 47,
+      "rationale_word_count": 32,
+      "aggregate": 0.9
+    },
+    "phase5_t4_narration_attempt_number": 1,
+    "phase5_t4_narration_is_fallback": false,
+    "phase5_t4_narration_cache_hit": false
+  },
+  "supporting_chain": null,
+  "skills": [
+    {
+      "id": "skill_001075",
+      "name": "Water Bolt",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 10.0,
+      "cooldown_seconds": 1.0,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0776,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The channeler draws moisture from the air itself, shaping it into a focused projectile of pure aquatic force.",
+      "effects": [
+        "Launch a bolt of water at a target, dealing minor water damage at medium range."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "projectile",
+        "basic attack"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001076",
+      "name": "Tidal Surge",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 21.0,
+      "cooldown_seconds": 5.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0647,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "tide",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A rushing wave of channeled water crashes outward, sweeping enemies from their footing. The sea answers to those who know how to ask.",
+      "effects": [
+        "Release a burst of water energy that deals damage to all enemies in a medium area around the target."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "area",
+        "burst"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001077",
+      "name": "Rippling Torrent",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 27.3,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0693,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Water answers the channeler's call, spreading outward in churning rings that batter all who stand within reach.",
+      "effects": [
+        "Release a burst of water energy that deals area damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "area",
+        "burst"
+      ],
+      "phase5_cohesion_score": 0.818,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.818
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001078",
+      "name": "Flowing Tide",
+      "role": "sustain",
+      "canonical_element": "water",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 22.8,
+      "cooldown_seconds": 6.8,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0605,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The water answers your call, a steady current that sustains and renews. Even the gentlest stream carves stone given time.",
+      "effects": [
+        "Channel a continuous flow of water energy, providing minor sustained healing or resource recovery over time."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "sustain",
+        "flow"
+      ],
+      "phase5_cohesion_score": 0.893,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.893
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001079",
+      "name": "Drowning Current",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 16.2,
+      "cooldown_seconds": 5.6,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1011,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001075"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "brine",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Water finds its way into every crack, every breath, every wound. The current does not stop until there is nothing left to erode.",
+      "effects": [
+        "Engulfs the target in swirling water, dealing continuous damage over several seconds."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "erosion",
+        "sustained_damage"
+      ],
+      "phase5_cohesion_score": 0.815,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.815
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001080",
+      "name": "Crashing Wave",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 7.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0928,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001075"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The tide answers no master, sweeping all before it in a relentless surge of churning water and foam.",
+      "effects": [
+        "Release a crashing wave of water that deals area damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "area",
+        "wave"
+      ],
+      "phase5_cohesion_score": 0.89,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.89
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001081",
+      "name": "Surging Current",
+      "role": "sustain",
+      "canonical_element": "water",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 23.3,
+      "cooldown_seconds": 9.3,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1041,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001077"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "mist",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The water finds its rhythm, flowing endlessly through the channeler's veins and outward in a steady, sustaining stream.",
+      "effects": [
+        "Channel a continuous flow of water energy, sustaining minor combat presence while gradually restoring resources."
+      ],
+      "phase5_thematic_tags": [
+        "flow",
+        "sustain",
+        "current"
+      ],
+      "phase5_cohesion_score": 0.748,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.748
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001082",
+      "name": "Eddying Shield",
+      "role": "defensive",
+      "canonical_element": "water",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 18.8,
+      "cooldown_seconds": 12.6,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0843,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001077"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The channeler bends the river's flow inward, wrapping themselves in a swirling barrier of churning water that deflects incoming harm.",
+      "effects": [
+        "Summon a swirling water barrier that absorbs a moderate amount of incoming damage for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "defensive",
+        "barrier"
+      ],
+      "phase5_cohesion_score": 0.748,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.748
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001083",
+      "name": "Rippling Undercurrent",
+      "role": "sustain",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 23.7,
+      "cooldown_seconds": 6.2,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0983,
+      "bc_axis_contribution": {},
+      "chain_position": 3,
+      "parent_skill_ids": [
+        "skill_001077"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "tide",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Beneath the surface, water moves in quiet, endless cycles — a steady pulse that sustains the channeler's resolve.",
+      "effects": [
+        "Continuously restores a minor amount of mana and health over a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "sustain",
+        "flow"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001084",
+      "name": "Abyssal Deluge",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "energy_cost": 39.7,
+      "cooldown_seconds": 9.6,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1341,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001079"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "torrent",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The ocean's wrath knows no mercy. Where lesser waves crash and recede, this torrent swallows all in its path whole.",
+      "effects": [
+        "Unleash a massive surge of water that deals heavy burst damage to enemies in a medium-range area."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "burst",
+        "overwhelming_force"
+      ],
+      "phase5_cohesion_score": 0.89,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.89
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001085",
+      "name": "Turbulent Vortex",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "energy_cost": 25.8,
+      "cooldown_seconds": 4.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1452,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001081"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "torrent",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The water answers with fury, coiling into a churning maelstrom that tears through all who stand within its reach.",
+      "effects": [
+        "Summon a swirling vortex of water that deals area damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "area_damage",
+        "vortex"
+      ],
+      "phase5_cohesion_score": 0.748,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.748
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001086",
+      "name": "Tidal Aegis",
+      "role": "defensive",
+      "canonical_element": "water",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "energy_cost": 20.2,
+      "cooldown_seconds": 14.8,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.2459,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001084"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The ocean does not merely destroy — it also shields, enveloping the faithful in walls of churning water that swallow all harm.",
+      "effects": [
+        "Surround yourself with a defensive tidal barrier that absorbs incoming damage for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "defense",
+        "barrier"
+      ],
+      "phase5_cohesion_score": 0.785,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.5,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.785
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    }
+  ],
+  "emergent_kit_concept": "Tidecaller of the Scattered Reach",
+  "substrate_trace": {
+    "source": "class_generator_option_b",
+    "generation_seed": 20260622,
+    "archetype_tag": "water_caster",
+    "energy_type": "mana",
+    "element": "water",
+    "season_id": "qdx5_20260602",
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none",
+    "cultural_tradition": null,
+    "period": null,
+    "option_b4_5": true
+  },
+  "kit_space_expansion_event_id": "kse_20260602_008",
+  "engine_version": "d89d23e",
+  "engine_version_full": "d89d23eebac30d8d278213123380dce04716c245",
+  "generation_timestamp": "2026-06-02T23:00:32.005Z",
+  "lineage_tags": {
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_008",
+    "engine_provenance": "engine-d89d23e-kse_20260602_008",
+    "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
+    "generation_cohort_date": "2026-06-02"
+  }
+}

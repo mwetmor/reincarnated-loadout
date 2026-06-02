@@ -1,0 +1,592 @@
+{
+  "schema_version": "1.0",
+  "kit_id": "kit_water_000006",
+  "primary_element": "water",
+  "cultural_tradition": null,
+  "period": null,
+  "chain_composition": {
+    "chain_count": 2,
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none"
+  },
+  "t4_selection": {
+    "candidate_id": "water_kit_chain_A_RESOURCE_CONVERSION_ELEMENT_CONVERSION_chain_wide_parallel",
+    "category_a_strategy": "RESOURCE_CONVERSION",
+    "category_bc_strategy": "ELEMENT_CONVERSION",
+    "t4_category_bc": "C",
+    "is_class_wide_trade_off": false,
+    "secondary_element": null,
+    "magnitude_tier": null,
+    "magnitude_midpoint": null,
+    "parallel_chain_mode": "parallel",
+    "target_chain_id": "chain_B",
+    "resolve_score": 88.0,
+    "create_score": 62.0,
+    "net_synergy_score": 26.0,
+    "synergy_eligible": true,
+    "retries_used": 0,
+    "pattern_9_warn": false,
+    "pattern_10_warn": false,
+    "is_active": true,
+    "separability_pass": true,
+    "category_a_params": {},
+    "category_bc_params": {},
+    "t4_scope": "chain_wide_parallel",
+    "scope_downscale_factor": null,
+    "scope_prior_weight": 0.3,
+    "scope_weighted_score": 49.4,
+    "scope_projection_data": {
+      "chain_wide_parallel": {
+        "weighted_score": 49.4,
+        "net_synergy_score": 38.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "character_wide": {
+        "weighted_score": 49.4,
+        "net_synergy_score": 38.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "chain_wide_own": {
+        "weighted_score": 36.4,
+        "net_synergy_score": 26.0,
+        "prior_weight": 0.4,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      }
+    },
+    "spirit_guide_narration_metadata": {
+      "has_mechanic_alteration": true,
+      "alteration_type": "Tidal Conversion Current",
+      "thematic_rationale": "This kit was always about water's refusal to be spent — it recedes to return, and the variable amplitude was never waste, only the tide measuring how much it could give back.",
+      "manifestation": "Every ranged cast across the chain begins pulling mana back through the wake of its own trajectory — water threading inward as the amplitude swells and collapses, each parallel stream feeding the next until the whole chain breathes like a single tide cycling through itself.",
+      "spirit_guide_explainer_template": null,
+      "narrative_hooks": [],
+      "secondary_alteration_types": []
+    },
+    "thematic_rationale": "This kit was always about water's refusal to be spent — it recedes to return, and the variable amplitude was never waste, only the tide measuring how much it could give back.",
+    "phase5_t4_narration_cohesion_score": 0.84,
+    "phase5_t4_narration_cohesion_breakdown": {
+      "kit_identity": 1.0,
+      "thematic_rationale_fit": 0.6,
+      "element_hits": 3,
+      "cultural_score_contrib": 0.5,
+      "strat_hits": 0,
+      "el_in_rationale": true,
+      "manifest_word_count": 45,
+      "rationale_word_count": 32,
+      "aggregate": 0.84
+    },
+    "phase5_t4_narration_attempt_number": 1,
+    "phase5_t4_narration_is_fallback": false,
+    "phase5_t4_narration_cache_hit": false
+  },
+  "supporting_chain": null,
+  "skills": [
+    {
+      "id": "skill_001087",
+      "name": "Tidal Mending Flow",
+      "role": "sustain",
+      "canonical_element": "earth",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 26.1,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0692,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The channeler draws water's gentle current inward, letting its steady rhythm restore what battle has worn away.",
+      "effects": [
+        "Spend mana to sustain a flowing water aura that gradually restores health over time."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "sustain",
+        "regeneration"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001088",
+      "name": "Surging Wave Burst",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 27.6,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0602,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "tide",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The channeler summons a cresting surge of water, unleashing it outward to batter all who stand in its path.",
+      "effects": [
+        "Release a wave of water energy that deals area damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "area_damage",
+        "wave"
+      ],
+      "phase5_cohesion_score": 0.818,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.818
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001089",
+      "name": "Flowing Tide Step",
+      "role": "mobility",
+      "canonical_element": "water",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 13.3,
+      "cooldown_seconds": 8.8,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0732,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The channeler becomes one with the current, letting water's endless motion carry them swiftly across the battlefield.",
+      "effects": [
+        "Spend 13 mana to dash a short distance in your movement direction, briefly accelerating your speed."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "mobility",
+        "flow"
+      ],
+      "phase5_cohesion_score": 1.0,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 1.0
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001090",
+      "name": "Ebb Tide Guard",
+      "role": "defensive",
+      "canonical_element": "water",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 20.5,
+      "cooldown_seconds": 13.2,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0723,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "As the tide pulls back before the wave, so too does the channeler draw water around them, forming a brief but steadfast shield.",
+      "effects": [
+        "Summon a swirling water barrier that absorbs incoming damage for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "defense",
+        "barrier"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001091",
+      "name": "Tide's Breaking Strike",
+      "role": "burst_damage",
+      "canonical_element": "water",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 30.6,
+      "cooldown_seconds": 8.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0569,
+      "bc_axis_contribution": {},
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "torrent",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Where the tide meets the shore, it does not ask permission — it simply breaks, releasing all its gathered force in one crashing moment.",
+      "effects": [
+        "Release a burst of water energy at medium range, dealing moderate damage to a single target."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "burst",
+        "tide"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001092",
+      "name": "Rushing Current Dash",
+      "role": "mobility",
+      "canonical_element": "water",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 13.3,
+      "cooldown_seconds": 9.2,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1103,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001087"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "mist",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The channeler becomes one with the river's relentless pull, surging forward like water finding its inevitable path downstream.",
+      "effects": [
+        "Propel yourself swiftly in a chosen direction, briefly riding a rushing current of conjured water."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "mobility",
+        "current"
+      ],
+      "phase5_cohesion_score": 0.787,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 0.65,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.787
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001093",
+      "name": "Cresting Tide Surge",
+      "role": "mobility",
+      "canonical_element": "water",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 11.5,
+      "cooldown_seconds": 8.3,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1044,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001087"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Ride the crest of a conjured wave, letting the water carry you swiftly beyond reach of your foes.",
+      "effects": [
+        "Dash forward on a wave of water, briefly increasing your movement speed after landing."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "mobility",
+        "wave"
+      ],
+      "phase5_cohesion_score": 0.93,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.93
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001094",
+      "name": "Ebb Tide Erosion",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 15.3,
+      "cooldown_seconds": 6.3,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1156,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001089"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "brine",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "As the tide recedes, it carves away stone and flesh alike, wearing down all resistance with patient, relentless water.",
+      "effects": [
+        "Channels tidal energy into the target, dealing continuous water damage over several seconds."
+      ],
+      "phase5_thematic_tags": [
+        "tide",
+        "erosion",
+        "damage_over_time"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001095",
+      "name": "Ebb Tide Corrosion",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 21.5,
+      "cooldown_seconds": 4.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1198,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001089"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "frost",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The receding tide leaves more than emptiness in its wake — it leaves a relentless, gnawing erosion that wears all things down to nothing.",
+      "effects": [
+        "Channels water energy into the target, dealing sustained damage over time as tidal forces erode their defenses."
+      ],
+      "phase5_thematic_tags": [
+        "erosion",
+        "tidal",
+        "damage_over_time"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001096",
+      "name": "Abyssal Tide Dissolution",
+      "role": "primary_attack",
+      "canonical_element": "water",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "energy_cost": 12.7,
+      "cooldown_seconds": 0.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1323,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001094"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Where the deep tides recede, they leave nothing behind. The ocean's patient hunger consumes all it touches, wearing stone to sand.",
+      "effects": [
+        "Strike with concentrated tidal force, dealing water damage and applying a stacking corrosion effect that amplifies subsequent hits."
+      ],
+      "phase5_thematic_tags": [
+        "erosion",
+        "deep water",
+        "corrosion"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001097",
+      "name": "Tidal Barrier Crest",
+      "role": "defensive",
+      "canonical_element": "water",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "energy_cost": 16.6,
+      "cooldown_seconds": 9.6,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.2346,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "At the peak of the tide's fury, the water channeler raises a wall of surging current, deflecting all that would harm them.",
+      "effects": [
+        "Summon a defensive barrier of rushing water that absorbs incoming damage for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "water",
+        "defense",
+        "barrier"
+      ],
+      "phase5_cohesion_score": 0.86,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.5,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.86
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    }
+  ],
+  "emergent_kit_concept": "Tide Caster of Broken Range",
+  "substrate_trace": {
+    "source": "class_generator_option_b",
+    "generation_seed": 20260623,
+    "archetype_tag": "water_caster",
+    "energy_type": "mana",
+    "element": "water",
+    "season_id": "qdx5_20260602",
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none",
+    "cultural_tradition": null,
+    "period": null,
+    "option_b4_5": true
+  },
+  "kit_space_expansion_event_id": "kse_20260602_008",
+  "engine_version": "d89d23e",
+  "engine_version_full": "d89d23eebac30d8d278213123380dce04716c245",
+  "generation_timestamp": "2026-06-02T23:00:32.005Z",
+  "lineage_tags": {
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_008",
+    "engine_provenance": "engine-d89d23e-kse_20260602_008",
+    "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
+    "generation_cohort_date": "2026-06-02"
+  }
+}

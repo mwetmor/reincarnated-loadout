@@ -47,12 +47,67 @@ export interface KitSkill {
 // ---------------------------------------------------------------------------
 // Kit-space per-kit chain composition summary (subset of ClassGenerator output)
 // NOTE: chain_composition in kit JSON = { chain_count: number } (ClassGenerator path)
-// This differs from Cycle14 ClassData.chain_composition { t4_chains, supporting_chains, total_chains }.
+// QDX-5 additive: bc_range / bc_tempo / bc_amplitude / bc_attribute / bc_proxy_density fields.
 // Guard access: kitChainComposition?.chain_count ?? null
 // ---------------------------------------------------------------------------
 
 export interface KitChainComposition {
   chain_count: number;
+  // QDX-5 additive — present on ClassGenerator Option B kits; absent on EAA-5 v2 kits
+  bc_range?: string | null;
+  bc_tempo?: string | null;
+  bc_amplitude?: string | null;
+  bc_attribute?: string | null;
+  bc_proxy_density?: string | null;
+}
+
+// ---------------------------------------------------------------------------
+// T4 selection shape (QDX-5 additive — multi-T4 per kit)
+// CRITICAL per Note 2: always check is_active before rendering T4 as "selected"
+// ---------------------------------------------------------------------------
+
+export interface KitT4NarrationMetadata {
+  has_mechanic_alteration?: boolean | null;
+  alteration_type?: string | null;
+  thematic_rationale?: string | null;
+  manifestation?: string | null;
+  spirit_guide_explainer_template?: string | null;
+  narrative_hooks?: string[];
+  secondary_alteration_types?: string[];
+}
+
+export interface KitT4Selection {
+  candidate_id: string;
+  category_a_strategy?: string | null;
+  category_bc_strategy?: string | null;
+  t4_category_bc?: string | null;
+  is_class_wide_trade_off?: boolean | null;
+  secondary_element?: string | null;
+  magnitude_tier?: string | null;
+  magnitude_midpoint?: number | null;
+  parallel_chain_mode?: string | null;
+  target_chain_id?: string | null;
+  resolve_score?: number | null;
+  create_score?: number | null;
+  net_synergy_score?: number | null;
+  synergy_eligible?: boolean | null;
+  retries_used?: number | null;
+  pattern_9_warn?: boolean | null;
+  pattern_10_warn?: boolean | null;
+  // NOTE 2 — CRITICAL: is_active=false means T4 is suppressed from player display
+  // Rendering MUST check is_active === true before showing T4 details
+  is_active: boolean;
+  separability_pass?: boolean | null;
+  t4_scope?: string | null;
+  scope_downscale_factor?: number | null;
+  scope_prior_weight?: number | null;
+  scope_weighted_score?: number | null;
+  spirit_guide_narration_metadata?: KitT4NarrationMetadata | null;
+  thematic_rationale?: string | null;
+  phase5_t4_narration_cohesion_score?: number | null;
+  phase5_t4_narration_attempt_number?: number | null;
+  phase5_t4_narration_is_fallback?: boolean | null;
+  phase5_t4_narration_cache_hit?: boolean | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -94,8 +149,9 @@ export interface KitData {
   period: string | null;
   // chain_composition: present with { chain_count } in ClassGenerator path
   chain_composition: KitChainComposition | null;
-  // t4_selection and supporting_chain: null in ClassGenerator path (EAA-8 INFO-1)
-  t4_selection: unknown | null;
+  // t4_selection: null when BC-axis gap prevents T4 narration (4/37 kits in QDX-5)
+  // QDX-5 additive: KitT4Selection shape; check is_active before rendering as active T4
+  t4_selection: KitT4Selection | null;
   supporting_chain: unknown | null;
   skills: KitSkill[];
   emergent_kit_concept?: string | null;
@@ -127,13 +183,39 @@ export interface KitSpaceChronicleGenerationParameters {
   element_assignment?: string | null;
   elements_rr?: string[] | null;
   ws1a4_lite_active?: boolean | null;
+  ws1a4_active?: boolean | null;
   skip_theme_coalescence?: boolean | null;
   skip_cosmological_vocabulary?: boolean | null;
   generator?: string | null;
   ws1a4_flavor_rate?: number | null;
   ws1a4_total_cost_usd?: number | null;
+  ws1a4_flavor_count?: number | null;
+  ws1a4_canonical_count?: number | null;
+  ws1a4_fallback_count?: number | null;
+  ws1a4_physical_opt_out?: number | null;
   phase5_total_cost_usd?: number | null;
   total_llm_cost_usd?: number | null;
+  // QDX-5 additive — QD-engine workflow fire parameters
+  fire_script?: string | null;
+  fire_mode?: string | null;
+  generator_path?: string | null;
+  n_kits_emitted?: number | null;
+  n_pareto_survivors?: number | null;
+  n_phase7_pass?: number | null;
+  n_factions?: number | null;
+  cohesion_min_factions?: number | null;
+  wave_a_llm_active?: boolean | null;
+  wave_b_llm_active?: boolean | null;
+  t4_selection_active?: boolean | null;
+  pm1_algorithm?: string | null;
+  wave_b_template_repeat_detected?: boolean | null;
+  pct_physical_actual?: number | null;
+  pct_physical_target?: string | null;
+  distribution_actual?: Record<string, number> | null;
+  distribution_target?: Record<string, number> | null;
+  llm_cost_breakdown?: Record<string, number> | null;
+  qdx5_option_b4_5?: boolean | null;
+  matt_gandalf_ratified_2026_06_02?: boolean | null;
 }
 
 export interface KitSpaceChronicleEvent {

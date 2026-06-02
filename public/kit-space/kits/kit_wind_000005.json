@@ -1,0 +1,554 @@
+{
+  "schema_version": "1.0",
+  "kit_id": "kit_wind_000005",
+  "primary_element": "wind",
+  "cultural_tradition": null,
+  "period": null,
+  "chain_composition": {
+    "chain_count": 2,
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none"
+  },
+  "t4_selection": {
+    "candidate_id": "wind_kit_chain_A_RESOURCE_CONVERSION_ELEMENT_CONVERSION_chain_wide_parallel",
+    "category_a_strategy": "RESOURCE_CONVERSION",
+    "category_bc_strategy": "ELEMENT_CONVERSION",
+    "t4_category_bc": "C",
+    "is_class_wide_trade_off": false,
+    "secondary_element": null,
+    "magnitude_tier": null,
+    "magnitude_midpoint": null,
+    "parallel_chain_mode": "parallel",
+    "target_chain_id": "chain_B",
+    "resolve_score": 88.0,
+    "create_score": 62.0,
+    "net_synergy_score": 26.0,
+    "synergy_eligible": true,
+    "retries_used": 0,
+    "pattern_9_warn": false,
+    "pattern_10_warn": false,
+    "is_active": true,
+    "separability_pass": true,
+    "category_a_params": {},
+    "category_bc_params": {},
+    "t4_scope": "chain_wide_parallel",
+    "scope_downscale_factor": null,
+    "scope_prior_weight": 0.3,
+    "scope_weighted_score": -0.325,
+    "scope_projection_data": {
+      "chain_wide_parallel": {
+        "weighted_score": -0.325,
+        "net_synergy_score": -0.25,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "character_wide": {
+        "weighted_score": -0.325,
+        "net_synergy_score": -0.25,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "chain_wide_own": {
+        "weighted_score": -17.15,
+        "net_synergy_score": -12.25,
+        "prior_weight": 0.4,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      }
+    },
+    "spirit_guide_narration_metadata": {
+      "has_mechanic_alteration": true,
+      "alteration_type": "Parallel Pressure Conversion",
+      "thematic_rationale": "This kit was always about stacking pressure at range and spending it precisely — the T4 simply lets every layer pay in at once, turning patience into a single breath of variable force.",
+      "manifestation": "Every active wind layer — ward, barrier, shield — collapses inward simultaneously, the air pressure folding into a dense mana current that hums through the fingers before dispersing outward in a wide, variable pulse. The amplitude shifts with how many layers fed the collapse.",
+      "spirit_guide_explainer_template": null,
+      "narrative_hooks": [],
+      "secondary_alteration_types": []
+    },
+    "thematic_rationale": "This kit was always about stacking pressure at range and spending it precisely — the T4 simply lets every layer pay in at once, turning patience into a single breath of variable force.",
+    "phase5_t4_narration_cohesion_score": 0.9,
+    "phase5_t4_narration_cohesion_breakdown": {
+      "kit_identity": 1.0,
+      "thematic_rationale_fit": 0.75,
+      "element_hits": 2,
+      "cultural_score_contrib": 0.5,
+      "strat_hits": 1,
+      "el_in_rationale": false,
+      "manifest_word_count": 44,
+      "rationale_word_count": 33,
+      "aggregate": 0.9
+    },
+    "phase5_t4_narration_attempt_number": 1,
+    "phase5_t4_narration_is_fallback": false,
+    "phase5_t4_narration_cache_hit": false
+  },
+  "supporting_chain": null,
+  "skills": [
+    {
+      "id": "skill_001143",
+      "name": "Gust Ward",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 23.7,
+      "cooldown_seconds": 12.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0669,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The wind drifter shapes the air into a protective barrier, letting currents deflect what steel cannot.",
+      "effects": [
+        "Surround yourself with swirling winds that briefly reduce incoming damage from nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "defense",
+        "barrier"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001144",
+      "name": "Breeze Barrier",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 19.8,
+      "cooldown_seconds": 13.5,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0507,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "gust",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A swirling veil of wind wraps around the caster, deflecting harm before it can land. Even the gentlest gust can turn a blade aside.",
+      "effects": [
+        "Surround yourself with a brief wind barrier that reduces incoming damage for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "defense",
+        "barrier"
+      ],
+      "phase5_cohesion_score": 0.915,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.915
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001145",
+      "name": "Zephyr Shield",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 19.1,
+      "cooldown_seconds": 13.8,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0579,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A gentle but persistent wind wraps around the caster, deflecting incoming blows with a cushion of swirling air.",
+      "effects": [
+        "Summon a brief wind barrier that absorbs a small amount of incoming damage."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "defense",
+        "barrier"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001146",
+      "name": "Cyclone Surge",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 22.9,
+      "cooldown_seconds": 6.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0969,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001143"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "cyclone",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "What began as a ward against the wind now becomes its weapon. The drifter releases gathered currents in a violent, spiraling burst.",
+      "effects": [
+        "Release a swirling cyclone that deals wind damage to all enemies in a medium-range area around you."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "area_damage",
+        "cyclone"
+      ],
+      "phase5_cohesion_score": 0.845,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.845
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001147",
+      "name": "Tempest Strike",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 8.2,
+      "cooldown_seconds": 1.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0835,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001143"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The wind drifter channels the restless sky into a focused blow, sending currents of air slicing through the air.",
+      "effects": [
+        "Strike a medium-range target with a wind-infused attack, spending 8 mana to deal moderate damage."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "attack",
+        "tempest"
+      ],
+      "phase5_cohesion_score": 0.845,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.845
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001148",
+      "name": "Zephyr Veil",
+      "role": "utility",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 12.4,
+      "cooldown_seconds": 19.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0913,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001145"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "zephyr",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The wind wraps around you like a second skin, deflecting harm and whispering secrets of the open sky.",
+      "effects": [
+        "Envelop yourself in swirling winds, granting minor evasion and reducing incoming damage for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "defense",
+        "utility"
+      ],
+      "phase5_cohesion_score": 0.95,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.75,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.95
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001149",
+      "name": "Zephyr Burst",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 32.5,
+      "cooldown_seconds": 4.5,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.112,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001145"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The gentle veil tears asunder, releasing a torrent of compressed wind that strikes with sudden, devastating force.",
+      "effects": [
+        "Unleash a burst of concentrated wind energy that deals moderate damage to enemies in medium range."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "burst",
+        "zephyr"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001150",
+      "name": "Maelstrom Unleashed",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "energy_cost": 34.4,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1592,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001146"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "tempest",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "When the storm reaches its peak, even the sky must yield. The wind drifter channels every gust into a single devastating eruption.",
+      "effects": [
+        "Unleash a massive burst of wind energy that deals heavy damage to all enemies in a medium radius."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "burst",
+        "maelstrom"
+      ],
+      "phase5_cohesion_score": 0.845,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.845
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001151",
+      "name": "Zephyr Gale Rush",
+      "role": "mobility",
+      "canonical_element": "fire",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "energy_cost": 16.7,
+      "cooldown_seconds": 11.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1349,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001148"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "gale",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The zephyr reaches its fullest fury, carrying the caster on a howling surge of wind that tears through any obstacle.",
+      "effects": [
+        "Propel yourself rapidly in a target direction, briefly phasing through enemies and gaining increased movement speed."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "mobility",
+        "zephyr"
+      ],
+      "phase5_cohesion_score": 1.0,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 1.0
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001152",
+      "name": "Zephyr Tempest Dash",
+      "role": "mobility",
+      "canonical_element": "wind",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "energy_cost": 16.1,
+      "cooldown_seconds": 6.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1824,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001151"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The wind drifter becomes one with the storm, riding a furious zephyr across the battlefield with breathtaking speed.",
+      "effects": [
+        "Dash swiftly in a chosen direction, briefly phasing through obstacles on a moderate cooldown."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "mobility",
+        "zephyr"
+      ],
+      "phase5_cohesion_score": 0.9,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.5,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.9
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    }
+  ],
+  "emergent_kit_concept": "Scattered Wind Fighter Bearer",
+  "substrate_trace": {
+    "source": "class_generator_option_b",
+    "generation_seed": 20260628,
+    "archetype_tag": "wind_caster",
+    "energy_type": "mana",
+    "element": "wind",
+    "season_id": "qdx5_20260602",
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none",
+    "cultural_tradition": null,
+    "period": null,
+    "option_b4_5": true
+  },
+  "kit_space_expansion_event_id": "kse_20260602_008",
+  "engine_version": "d89d23e",
+  "engine_version_full": "d89d23eebac30d8d278213123380dce04716c245",
+  "generation_timestamp": "2026-06-02T23:00:32.005Z",
+  "lineage_tags": {
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_008",
+    "engine_provenance": "engine-d89d23e-kse_20260602_008",
+    "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
+    "generation_cohort_date": "2026-06-02"
+  }
+}

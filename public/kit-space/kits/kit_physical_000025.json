@@ -1,0 +1,348 @@
+{
+  "schema_version": "1.0",
+  "kit_id": "kit_physical_000025",
+  "primary_element": "physical",
+  "cultural_tradition": null,
+  "period": null,
+  "chain_composition": {
+    "chain_count": 1,
+    "bc_range": "melee",
+    "bc_tempo": "medium",
+    "bc_amplitude": "flat",
+    "bc_attribute": "STR",
+    "bc_proxy_density": "none"
+  },
+  "t4_selection": {
+    "candidate_id": "physical_kit_chain_A_RESOURCE_CONVERSION_ELEMENT_CONVERSION_chain_wide_parallel",
+    "category_a_strategy": "RESOURCE_CONVERSION",
+    "category_bc_strategy": "ELEMENT_CONVERSION",
+    "t4_category_bc": "C",
+    "is_class_wide_trade_off": false,
+    "secondary_element": null,
+    "magnitude_tier": null,
+    "magnitude_midpoint": null,
+    "parallel_chain_mode": "parallel",
+    "target_chain_id": "chain_B",
+    "resolve_score": 81.0,
+    "create_score": 62.0,
+    "net_synergy_score": 19.0,
+    "synergy_eligible": true,
+    "retries_used": 0,
+    "pattern_9_warn": false,
+    "pattern_10_warn": false,
+    "is_active": true,
+    "separability_pass": true,
+    "category_a_params": {},
+    "category_bc_params": {},
+    "t4_scope": "chain_wide_parallel",
+    "scope_downscale_factor": null,
+    "scope_prior_weight": 0.3,
+    "scope_weighted_score": 40.3,
+    "scope_projection_data": {
+      "chain_wide_parallel": {
+        "weighted_score": 40.3,
+        "net_synergy_score": 31.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "character_wide": {
+        "weighted_score": 40.3,
+        "net_synergy_score": 31.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "chain_wide_own": {
+        "weighted_score": 26.6,
+        "net_synergy_score": 19.0,
+        "prior_weight": 0.4,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      }
+    },
+    "spirit_guide_narration_metadata": {
+      "has_mechanic_alteration": true,
+      "alteration_type": "Rage-Forged Parallel Drive",
+      "thematic_rationale": "A body built on raw strength doesn't taper off; it converts everything it burns into something it can use again, across the whole chain at once.",
+      "manifestation": "Every blow in the chain lands with equal weight — no peak, no fade — and the rage spent across all three strikes feeds back simultaneously, a flat wall of returned force that shakes the arms to the shoulder socket.",
+      "spirit_guide_explainer_template": null,
+      "narrative_hooks": [],
+      "secondary_alteration_types": []
+    },
+    "thematic_rationale": "A body built on raw strength doesn't taper off; it converts everything it burns into something it can use again, across the whole chain at once.",
+    "phase5_t4_narration_cohesion_score": 0.9,
+    "phase5_t4_narration_cohesion_breakdown": {
+      "kit_identity": 1.0,
+      "thematic_rationale_fit": 0.75,
+      "element_hits": 2,
+      "cultural_score_contrib": 0.5,
+      "strat_hits": 1,
+      "el_in_rationale": true,
+      "manifest_word_count": 40,
+      "rationale_word_count": 26,
+      "aggregate": 0.9
+    },
+    "phase5_t4_narration_attempt_number": 1,
+    "phase5_t4_narration_is_fallback": false,
+    "phase5_t4_narration_cache_hit": false
+  },
+  "supporting_chain": null,
+  "skills": [
+    {
+      "id": "skill_000779",
+      "name": "Savage Strike",
+      "role": "primary_attack",
+      "canonical_element": "physical",
+      "tier": 1,
+      "chain_id": null,
+      "energy_cost": 27.3,
+      "cooldown_seconds": 0.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0,
+      "bc_axis_contribution": {},
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "flavor_text": "Rage fuels every blow. A warrior's first lesson is simple: hit hard, hit often.",
+      "effects": [
+        "Unleash a powerful melee strike that deals physical damage to a single target."
+      ],
+      "phase5_thematic_tags": [
+        "physical",
+        "rage",
+        "melee"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000780",
+      "name": "Crushing Blow",
+      "role": "burst_damage",
+      "canonical_element": "physical",
+      "tier": 1,
+      "chain_id": null,
+      "energy_cost": 34.8,
+      "cooldown_seconds": 6.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0,
+      "bc_axis_contribution": {},
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "flavor_text": "Rage surges through your arm as you bring your weapon down with bone-shattering force. The battlefield trembles beneath the weight of your fury.",
+      "effects": [
+        "Spend rage to deliver a powerful strike that deals heavy burst physical damage to a single target."
+      ],
+      "phase5_thematic_tags": [
+        "rage",
+        "physical",
+        "melee"
+      ],
+      "phase5_cohesion_score": 0.818,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.818
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000781",
+      "name": "Brutal Cleave",
+      "role": "area_damage",
+      "canonical_element": "physical",
+      "tier": 1,
+      "chain_id": null,
+      "energy_cost": 37.7,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0,
+      "bc_axis_contribution": {},
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "flavor_text": "Rage fuels the arm, and the arm fuels destruction. Every foe within reach learns the cost of standing too close.",
+      "effects": [
+        "Unleash a sweeping strike that deals physical damage to all nearby enemies in a wide arc."
+      ],
+      "phase5_thematic_tags": [
+        "rage",
+        "melee",
+        "area"
+      ],
+      "phase5_cohesion_score": 0.713,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.4,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.713
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000782",
+      "name": "Rending Wound",
+      "role": "damage_over_time",
+      "canonical_element": "physical",
+      "tier": 1,
+      "chain_id": null,
+      "energy_cost": 42.2,
+      "cooldown_seconds": 4.6,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0,
+      "bc_axis_contribution": {},
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "flavor_text": "A savage tear through flesh and sinew, leaving wounds that refuse to close. Rage fuels the relentless bleeding.",
+      "effects": [
+        "Deal a strike that causes the target to bleed, taking physical damage over time."
+      ],
+      "phase5_thematic_tags": [
+        "bleed",
+        "rage",
+        "melee"
+      ],
+      "phase5_cohesion_score": 0.713,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.4,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.713
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000783",
+      "name": "Iron Stance",
+      "role": "defensive",
+      "canonical_element": "physical",
+      "tier": 1,
+      "chain_id": null,
+      "energy_cost": 41.9,
+      "cooldown_seconds": 8.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0,
+      "bc_axis_contribution": {},
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "flavor_text": "A warrior's rage hardens into resolve. Plant your feet and let the blows come — you will not fall.",
+      "effects": [
+        "Spend rage to brace yourself, reducing incoming damage and briefly improving your physical resistance."
+      ],
+      "phase5_thematic_tags": [
+        "defensive",
+        "physical",
+        "rage"
+      ],
+      "phase5_cohesion_score": 0.893,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.893
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_000784",
+      "name": "Warrior's Resolve",
+      "role": "sustain",
+      "canonical_element": "physical",
+      "tier": 1,
+      "chain_id": null,
+      "energy_cost": 34.4,
+      "cooldown_seconds": 5.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0,
+      "bc_axis_contribution": {},
+      "chain_position": null,
+      "parent_skill_ids": [],
+      "flavor_text": "A seasoned fighter knows that endurance outlasts fury. Through sheer will, the warrior steadies their breath and pushes through the pain.",
+      "effects": [
+        "Channel rage to sustain yourself in battle, recovering a small amount of health over a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "sustain",
+        "endurance",
+        "rage"
+      ],
+      "phase5_cohesion_score": 0.893,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.893
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    }
+  ],
+  "emergent_kit_concept": "Crushweight of the Mudline",
+  "substrate_trace": {
+    "source": "class_generator_option_b",
+    "generation_seed": 20260614,
+    "archetype_tag": "physical_warrior",
+    "energy_type": "rage",
+    "element": "physical",
+    "season_id": "qdx5_20260602",
+    "bc_range": "melee",
+    "bc_tempo": "medium",
+    "bc_amplitude": "flat",
+    "bc_attribute": "STR",
+    "bc_proxy_density": "none",
+    "cultural_tradition": null,
+    "period": null,
+    "option_b4_5": true
+  },
+  "kit_space_expansion_event_id": "kse_20260602_008",
+  "engine_version": "d89d23e",
+  "engine_version_full": "d89d23eebac30d8d278213123380dce04716c245",
+  "generation_timestamp": "2026-06-02T23:00:32.005Z",
+  "lineage_tags": {
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_008",
+    "engine_provenance": "engine-d89d23e-kse_20260602_008",
+    "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
+    "generation_cohort_date": "2026-06-02"
+  }
+}

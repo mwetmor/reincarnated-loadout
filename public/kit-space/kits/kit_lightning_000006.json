@@ -1,0 +1,592 @@
+{
+  "schema_version": "1.0",
+  "kit_id": "kit_lightning_000006",
+  "primary_element": "lightning",
+  "cultural_tradition": null,
+  "period": null,
+  "chain_composition": {
+    "chain_count": 2,
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none"
+  },
+  "t4_selection": {
+    "candidate_id": "lightning_kit_chain_B_DEFENSIVE_TRADEOFF_ELEMENT_CONVERSION_chain_wide_parallel",
+    "category_a_strategy": "DEFENSIVE_TRADEOFF",
+    "category_bc_strategy": "ELEMENT_CONVERSION",
+    "t4_category_bc": "C",
+    "is_class_wide_trade_off": false,
+    "secondary_element": null,
+    "magnitude_tier": null,
+    "magnitude_midpoint": null,
+    "parallel_chain_mode": "parallel",
+    "target_chain_id": "chain_A",
+    "resolve_score": 74.0,
+    "create_score": 62.0,
+    "net_synergy_score": 12.0,
+    "synergy_eligible": true,
+    "retries_used": 0,
+    "pattern_9_warn": false,
+    "pattern_10_warn": false,
+    "is_active": true,
+    "separability_pass": true,
+    "category_a_params": {},
+    "category_bc_params": {},
+    "t4_scope": "chain_wide_parallel",
+    "scope_downscale_factor": null,
+    "scope_prior_weight": 0.3,
+    "scope_weighted_score": 31.2,
+    "scope_projection_data": {
+      "chain_wide_parallel": {
+        "weighted_score": 31.2,
+        "net_synergy_score": 24.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "character_wide": {
+        "weighted_score": 31.2,
+        "net_synergy_score": 24.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "chain_wide_own": {
+        "weighted_score": 16.8,
+        "net_synergy_score": 12.0,
+        "prior_weight": 0.4,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      }
+    },
+    "spirit_guide_narration_metadata": {
+      "has_mechanic_alteration": true,
+      "alteration_type": "Grounded Arc Lattice",
+      "thematic_rationale": "This kit's power was never in raw speed but in sustained amplitude; trading reach and variability for a synchronized lattice is the form admitting what it actually is — a controlled storm, not a wild one.",
+      "manifestation": "Every active lightning thread in the chain pulls inward simultaneously — the air between them goes white, voltage visible as rigid geometric lines, and the crackling drops half a register in pitch as the field locks into a slower, harder rhythm.",
+      "spirit_guide_explainer_template": null,
+      "narrative_hooks": [],
+      "secondary_alteration_types": []
+    },
+    "thematic_rationale": "This kit's power was never in raw speed but in sustained amplitude; trading reach and variability for a synchronized lattice is the form admitting what it actually is — a controlled storm, not a wild one.",
+    "phase5_t4_narration_cohesion_score": 0.78,
+    "phase5_t4_narration_cohesion_breakdown": {
+      "kit_identity": 1.0,
+      "thematic_rationale_fit": 0.45,
+      "element_hits": 3,
+      "cultural_score_contrib": 0.5,
+      "strat_hits": 0,
+      "el_in_rationale": false,
+      "manifest_word_count": 41,
+      "rationale_word_count": 36,
+      "aggregate": 0.78
+    },
+    "phase5_t4_narration_attempt_number": 1,
+    "phase5_t4_narration_is_fallback": false,
+    "phase5_t4_narration_cache_hit": false
+  },
+  "supporting_chain": null,
+  "skills": [
+    {
+      "id": "skill_001219",
+      "name": "Static Charge",
+      "role": "utility",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 13.3,
+      "cooldown_seconds": 13.5,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0544,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Every storm begins with a single spark. The arcanist learns to hold lightning in their very bones.",
+      "effects": [
+        "Channel mana to build a static charge, granting a minor buff to lightning damage and movement speed briefly."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "utility",
+        "foundation"
+      ],
+      "phase5_cohesion_score": 1.0,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 1.0,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 1.0
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001220",
+      "name": "Bolt Strike",
+      "role": "burst_damage",
+      "canonical_element": "lightning",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 35.2,
+      "cooldown_seconds": 9.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0741,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The gathered static erupts in a single violent discharge, arcing through the air with crackling fury. Even novice arcanists learn quickly: lightning waits for no one.",
+      "effects": [
+        "Release stored static energy in a focused lightning bolt, dealing moderate burst damage to a single target."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "burst",
+        "foundational"
+      ],
+      "phase5_cohesion_score": 0.893,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.893
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001221",
+      "name": "Crackling Current",
+      "role": "damage_over_time",
+      "canonical_element": "lightning",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 18.8,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0602,
+      "bc_axis_contribution": {},
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "spark",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Electricity courses through the target's body, refusing to dissipate. Every nerve becomes a conductor for arcane lightning.",
+      "effects": [
+        "Deals continuous lightning damage over time to a single target for several seconds."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "persistent",
+        "arcane"
+      ],
+      "phase5_cohesion_score": 0.893,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.893
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001222",
+      "name": "Static Ward",
+      "role": "defensive",
+      "canonical_element": "lightning",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 15.2,
+      "cooldown_seconds": 9.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0765,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A crackling field of static electricity surrounds the arcanist, repelling incoming forces with a sharp discharge of mana.",
+      "effects": [
+        "Spend 15 mana to briefly surround yourself with a protective static field, reducing incoming damage."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "defense",
+        "static"
+      ],
+      "phase5_cohesion_score": 0.893,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.893
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001223",
+      "name": "Static Burst",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 26.4,
+      "cooldown_seconds": 4.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0657,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The air crackles with pent-up charge before erupting outward in a blinding flash of raw static energy.",
+      "effects": [
+        "Release a burst of static electricity around you, dealing lightning damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "area",
+        "static"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001224",
+      "name": "Arc Discharge",
+      "role": "area_damage",
+      "canonical_element": "water",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 20.7,
+      "cooldown_seconds": 3.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1122,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001219"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Pent-up static erupts outward in a violent surge, scorching the air and leaving enemies stunned by cascading arcs of raw lightning.",
+      "effects": [
+        "Release stored electrical energy in a burst, dealing lightning damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "area_damage",
+        "discharge"
+      ],
+      "phase5_cohesion_score": 0.823,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.823
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001225",
+      "name": "Surge Cascade",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 22.6,
+      "cooldown_seconds": 3.5,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1006,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001219"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "When lightning finds no single path, it branches outward in a cascading surge, scorching all who stand within its crackling reach.",
+      "effects": [
+        "Release a burst of electrical energy that damages all enemies in a medium area around you."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "area",
+        "cascade"
+      ],
+      "phase5_cohesion_score": 0.823,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.55,
+        "aggregate": 0.823
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001226",
+      "name": "Static Aegis",
+      "role": "defensive",
+      "canonical_element": "lightning",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 22.9,
+      "cooldown_seconds": 8.8,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0988,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001222"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The arcanist wraps themselves in crackling static energy, a living shield of charged particles that repels incoming threats.",
+      "effects": [
+        "Spend mana to erect a defensive barrier of static energy, reducing incoming damage for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "defense",
+        "static"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001227",
+      "name": "Static Strike",
+      "role": "primary_attack",
+      "canonical_element": "lightning",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 10.2,
+      "cooldown_seconds": 0.2,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.104,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001222"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The arcanist channels static energy through their weapon, each blow crackling with restrained lightning that seeks to discharge.",
+      "effects": [
+        "Strike an enemy with a lightning-infused attack, dealing moderate damage and building static charge."
+      ],
+      "phase5_thematic_tags": [
+        "static",
+        "lightning",
+        "melee"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001228",
+      "name": "Tempest Surge Cascade",
+      "role": "burst_damage",
+      "canonical_element": "lightning",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "energy_cost": 23.9,
+      "cooldown_seconds": 6.5,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1675,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001224"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "volt",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The storm reaches its apex, unleashing a torrent of cascading lightning that overwhelms all resistance. What began as a crackle becomes an unstoppable tempest.",
+      "effects": [
+        "Unleash a powerful burst of chained lightning that surges through multiple targets, dealing heavy lightning damage."
+      ],
+      "phase5_thematic_tags": [
+        "lightning",
+        "burst",
+        "storm"
+      ],
+      "phase5_cohesion_score": 0.885,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 0.75,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.885
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001229",
+      "name": "Static Detonation",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "energy_cost": 15.3,
+      "cooldown_seconds": 6.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1825,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The accumulated static energy reaches a breaking point, erupting outward in a violent discharge that scorches the air and shatters the calm.",
+      "effects": [
+        "Release built-up static energy in a burst, dealing lightning damage to all enemies in the surrounding area."
+      ],
+      "phase5_thematic_tags": [
+        "static",
+        "area_damage",
+        "explosion"
+      ],
+      "phase5_cohesion_score": 0.86,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.5,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.86
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    }
+  ],
+  "emergent_kit_concept": "Stormcaller of the Scattered Reach",
+  "substrate_trace": {
+    "source": "class_generator_option_b",
+    "generation_seed": 20260632,
+    "archetype_tag": "lightning_caster",
+    "energy_type": "mana",
+    "element": "lightning",
+    "season_id": "qdx5_20260602",
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none",
+    "cultural_tradition": null,
+    "period": null,
+    "option_b4_5": true
+  },
+  "kit_space_expansion_event_id": "kse_20260602_008",
+  "engine_version": "d89d23e",
+  "engine_version_full": "d89d23eebac30d8d278213123380dce04716c245",
+  "generation_timestamp": "2026-06-02T23:00:32.005Z",
+  "lineage_tags": {
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_008",
+    "engine_provenance": "engine-d89d23e-kse_20260602_008",
+    "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
+    "generation_cohort_date": "2026-06-02"
+  }
+}

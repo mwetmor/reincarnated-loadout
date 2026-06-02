@@ -2,22 +2,26 @@
  * KitSpace — /kit-space route
  *
  * EAA-6: loadout app consumes kit_space output from public/kit-space/.
+ * QDX-7: refreshed to consume QDX-5 kse_20260602_008 (37 kits with full richness).
  *
  * LOCK O compliance: reuses existing component patterns (CourtBrowser card grid,
  * inline detail pattern from existing skill/gear detail views).
  * No new bespoke UI component shells created.
  *
  * Data: fetched at runtime from public/kit-space/ via useKitSpaceData hook.
- * Backward-compat: V1/V2 historical seasons unaffected (Path α preserved).
- * Null-field rendering: cultural_tradition / period / t4_selection / supporting_chain
- * may all be null (ClassGenerator path). Render gracefully — placeholder or omission.
+ * Backward-compat: historical kits (kse_001 EAA-5 v2) accessible via toggle.
  *
- * Kit_space_expansion event ID format: kse_YYYYMMDD_seq3 (per CHRONICLE_SCHEMA.md § 3).
+ * QDX-7 routing notes implemented:
+ *   Note 1 — faction data source confirmed (chronicle generation_parameters.n_factions;
+ *             per-kit faction assignment NOT in per-kit JSON; faction view DEFERRED per LOCK O
+ *             escape — existing components don't consume cluster membership per kit)
+ *   Note 2 — t4_selection.is_active check applied before rendering T4 detail
+ *   Note 3 — filter to kse_20260602_008 by default; historical accessible via toggle
  */
 
 import { useState, useMemo, useCallback } from 'react';
-import { useKitSpaceData } from '../hooks/useKitSpaceData';
-import type { KitData, KitSkill } from '../data/kitSpaceTypes';
+import { useKitSpaceData, CURRENT_KIT_EVENT_ID, HISTORICAL_KIT_EVENT_ID } from '../hooks/useKitSpaceData';
+import type { KitData, KitSkill, KitT4Selection } from '../data/kitSpaceTypes';
 import { SUBSTRATE_COLORS, SUBSTRATE_GROUPING_LABEL } from '../data/courtTypes';
 
 // ---------------------------------------------------------------------------
@@ -71,6 +75,11 @@ function computeMeanCohesion(skills: KitSkill[]): number | null {
   if (!scored.length) return null;
   const sum = scored.reduce((acc, s) => acc + (s.phase5_cohesion_score as number), 0);
   return sum / scored.length;
+}
+
+// Note 2 guard: check both non-null AND is_active === true before showing T4
+function isT4Active(t4: KitT4Selection | null | undefined): t4 is KitT4Selection {
+  return t4 != null && t4.is_active === true;
 }
 
 // ---------------------------------------------------------------------------
@@ -167,6 +176,8 @@ function KitCard({
   const meanCohesion = computeMeanCohesion(kit.skills);
   const displayName = kit.emergent_kit_concept ?? formatKitId(kit.kit_id);
   const chainCount = kit.chain_composition?.chain_count ?? null;
+  // Note 2: only show T4 indicator when is_active === true
+  const hasActiveT4 = isT4Active(kit.t4_selection);
 
   return (
     <button
@@ -181,9 +192,14 @@ function KitCard({
           <span className={`text-[9px] font-mono uppercase tracking-widest ${colors.text} opacity-70`}>
             {elementLabel(kit.primary_element)}
           </span>
-          <span className="text-[9px] font-mono text-gray-600 truncate ml-1">
-            {kit.kit_id}
-          </span>
+          <div className="flex items-center gap-1.5">
+            {hasActiveT4 && (
+              <span className="text-[9px] font-mono text-orange-400 opacity-80">T4</span>
+            )}
+            <span className="text-[9px] font-mono text-gray-600 truncate ml-1">
+              {kit.kit_id}
+            </span>
+          </div>
         </div>
         <p className={`text-sm font-semibold ${colors.text} leading-snug`}>
           {displayName}
@@ -233,6 +249,46 @@ function KitCard({
         )}
       </div>
     </button>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// T4SelectionPanel — renders active T4 selection (Note 2: only when is_active)
+// ---------------------------------------------------------------------------
+
+function T4SelectionPanel({ t4 }: { t4: KitT4Selection }) {
+  const narration = t4.spirit_guide_narration_metadata;
+  const alterationType = narration?.alteration_type ?? null;
+  const rationale = t4.thematic_rationale ?? narration?.thematic_rationale ?? null;
+  const manifestation = narration?.manifestation ?? null;
+  const cohesion = t4.phase5_t4_narration_cohesion_score;
+
+  return (
+    <div className="mt-3 pt-3 border-t border-gray-800">
+      <div className="flex items-center justify-between gap-2 mb-2">
+        <div className="flex items-center gap-2">
+          <span className="text-[10px] font-mono uppercase tracking-wider text-orange-400">T4 Selection</span>
+          {alterationType && (
+            <span className="text-[10px] font-mono text-gray-300 font-medium">{alterationType}</span>
+          )}
+        </div>
+        <div className="flex items-center gap-2 text-[9px] font-mono text-gray-600">
+          {t4.category_a_strategy && <span>{t4.category_a_strategy}</span>}
+          {t4.category_bc_strategy && <span className="text-gray-700">/ {t4.category_bc_strategy}</span>}
+          {cohesion != null && (
+            <span className={cohesion >= 0.9 ? 'text-green-500' : cohesion >= 0.8 ? 'text-yellow-500' : 'text-gray-500'}>
+              {cohesion.toFixed(2)}
+            </span>
+          )}
+        </div>
+      </div>
+      {rationale && (
+        <p className="text-[10px] text-gray-400 leading-relaxed mb-1.5 italic">{rationale}</p>
+      )}
+      {manifestation && (
+        <p className="text-[10px] text-gray-500 leading-relaxed line-clamp-3" title={manifestation}>{manifestation}</p>
+      )}
+    </div>
   );
 }
 
@@ -295,6 +351,8 @@ function KitDetailPanel({ kit, onClose }: { kit: KitData; onClose: () => void })
   const colors = getColors(kit.primary_element);
   const displayName = kit.emergent_kit_concept ?? formatKitId(kit.kit_id);
   const chainCount = kit.chain_composition?.chain_count ?? null;
+  // Note 2: guard — only show T4 panel when is_active === true
+  const activeT4 = isT4Active(kit.t4_selection) ? kit.t4_selection : null;
 
   // Group skills by tier
   const skillsByTier = useMemo(() => {
@@ -355,15 +413,19 @@ function KitDetailPanel({ kit, onClose }: { kit: KitData; onClose: () => void })
               flavor {Math.round(flavorRate * 100)}%
             </span>
           )}
+          {/* Note 2: is_active=false gets a different label than null */}
+          {kit.t4_selection != null && !isT4Active(kit.t4_selection) && (
+            <span className="text-gray-700 italic">t4 selected (inactive)</span>
+          )}
         </div>
 
-        {/* Null-field notices — graceful omission per Gate-1 INFO-1 */}
+        {/* Null-field notices — graceful omission */}
         <div className="flex flex-wrap gap-2 mt-2">
           {kit.cultural_tradition == null && (
-            <span className="text-[9px] font-mono text-gray-700 italic">cultural tradition: pending EAA-8</span>
+            <span className="text-[9px] font-mono text-gray-700 italic">cultural tradition: pending substrate enrichment</span>
           )}
           {kit.t4_selection == null && (
-            <span className="text-[9px] font-mono text-gray-700 italic">t4 selection: pending EAA-8</span>
+            <span className="text-[9px] font-mono text-gray-700 italic">t4 selection: BC-axis coverage gap</span>
           )}
         </div>
       </div>
@@ -385,6 +447,9 @@ function KitDetailPanel({ kit, onClose }: { kit: KitData; onClose: () => void })
             </div>
           </div>
         ))}
+
+        {/* T4 selection panel — Note 2: only when is_active */}
+        {activeT4 && <T4SelectionPanel t4={activeT4} />}
 
         {/* Provenance footer */}
         <div className="mt-3 pt-3 border-t border-gray-800">
@@ -413,7 +478,9 @@ function KitDetailPanel({ kit, onClose }: { kit: KitData; onClose: () => void })
 // ---------------------------------------------------------------------------
 
 export function KitSpace() {
-  const { kits, status, error, refresh } = useKitSpaceData();
+  // Note 3: default to current event (kse_20260602_008); toggle for historical
+  const [showHistorical, setShowHistorical] = useState(false);
+  const { kits, status, error, refresh, currentEventId, isHistorical } = useKitSpaceData({ showHistorical });
 
   const [elementFilter, setElementFilter] = useState<ElementFilter>('all');
   const [sortKey, setSortKey] = useState<SortKey>('element');
@@ -459,19 +526,47 @@ export function KitSpace() {
 
   const handleDetailClose = useCallback(() => setSelectedKitId(null), []);
 
+  const handleHistoricalToggle = useCallback(() => {
+    setShowHistorical((prev) => !prev);
+    setSelectedKitId(null);
+    setElementFilter('all');
+  }, []);
+
   // ---- Render states ----
 
   if (status === 'idle' || status === 'loading') return <LoadingSpinner />;
   if (status === 'error') return <ErrorState message={error ?? 'Unknown error'} onRetry={refresh} />;
 
+  const eventLabel = isHistorical
+    ? `${HISTORICAL_KIT_EVENT_ID} (EAA-5 v2 — 25 kits)`
+    : `${CURRENT_KIT_EVENT_ID} (QDX-5 full fire — ${kits.length} kits)`;
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-5">
       {/* Page header */}
-      <div>
-        <h1 className="text-lg font-semibold text-gray-200 tracking-wide">Kit Space</h1>
-        <p className="text-xs text-gray-600 mt-0.5">
-          {kits.length} kit{kits.length !== 1 ? 's' : ''} — kse_20260602_001 (EAA-5 first expansion fire)
-        </p>
+      <div className="flex items-start justify-between gap-3 flex-wrap">
+        <div>
+          <h1 className="text-lg font-semibold text-gray-200 tracking-wide">Kit Space</h1>
+          <p className="text-xs text-gray-600 mt-0.5">
+            {kits.length} kit{kits.length !== 1 ? 's' : ''} — {eventLabel}
+          </p>
+          {!isHistorical && (
+            <p className="text-[10px] text-gray-700 mt-0.5">
+              QDX-5 — B4.5 distribution · 3 factions · WS1A.4-lite flavor · multi-T4 selection
+            </p>
+          )}
+        </div>
+        {/* Note 3: historical access toggle — Path α preservation */}
+        <button
+          onClick={handleHistoricalToggle}
+          className={`px-3 py-1.5 rounded text-xs font-mono transition-colors shrink-0 ${
+            isHistorical
+              ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+              : 'bg-gray-900 text-gray-500 hover:text-gray-300 hover:bg-gray-800 border border-gray-800'
+          }`}
+        >
+          {isHistorical ? 'Back to current (QDX-5)' : 'Historical (EAA-5 v2)'}
+        </button>
       </div>
 
       {/* Controls strip */}
@@ -546,9 +641,17 @@ export function KitSpace() {
       {/* Footer — provenance note */}
       <footer className="pt-4 border-t border-gray-800">
         <p className="text-[10px] text-gray-700 font-mono leading-relaxed">
-          Kit space — Phase 3 EAA-6. Data from{' '}
+          Kit space — QDX-7 refresh. Data from{' '}
           <code className="bg-gray-900 px-1 rounded">public/kit-space/kits/</code>
-          . Historical seasons (V1/V2) accessible via Loadout and Sample pages (Path α preserved).
+          . Showing event{' '}
+          <code className="bg-gray-900 px-1 rounded">{currentEventId}</code>
+          . Historical seasons (EAA-5 v2) accessible via toggle above.{' '}
+          {/* Note 1: faction grouping deferred — data lives in chronicle generation_parameters
+              (n_factions=3; wave A: Iron Ground Crushers / Scattered Meridian Cannons / Earthen Siege Wardens)
+              but per-kit faction assignment is not in individual kit JSON files.
+              Faction view deferred per LOCK O escape clause (existing components don't support).
+              TODO(drax): remove when engine ships per-kit faction_id field or separate cluster-membership endpoint */}
+          Faction grouping: visible in Engine page chronicle (3 factions). Per-kit faction view deferred per LOCK O escape.
         </p>
       </footer>
     </div>

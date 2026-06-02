@@ -1,0 +1,592 @@
+{
+  "schema_version": "1.0",
+  "kit_id": "kit_wind_000004",
+  "primary_element": "wind",
+  "cultural_tradition": null,
+  "period": null,
+  "chain_composition": {
+    "chain_count": 2,
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none"
+  },
+  "t4_selection": {
+    "candidate_id": "wind_kit_chain_A_DEFENSIVE_CONVERSION_ELEMENT_CONVERSION_chain_wide_parallel",
+    "category_a_strategy": "DEFENSIVE_CONVERSION",
+    "category_bc_strategy": "ELEMENT_CONVERSION",
+    "t4_category_bc": "C",
+    "is_class_wide_trade_off": false,
+    "secondary_element": null,
+    "magnitude_tier": null,
+    "magnitude_midpoint": null,
+    "parallel_chain_mode": "parallel",
+    "target_chain_id": "chain_B",
+    "resolve_score": 74.0,
+    "create_score": 62.0,
+    "net_synergy_score": 12.0,
+    "synergy_eligible": true,
+    "retries_used": 0,
+    "pattern_9_warn": false,
+    "pattern_10_warn": false,
+    "is_active": true,
+    "separability_pass": true,
+    "category_a_params": {},
+    "category_bc_params": {},
+    "t4_scope": "chain_wide_parallel",
+    "scope_downscale_factor": null,
+    "scope_prior_weight": 0.3,
+    "scope_weighted_score": 31.2,
+    "scope_projection_data": {
+      "chain_wide_parallel": {
+        "weighted_score": 31.2,
+        "net_synergy_score": 24.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "character_wide": {
+        "weighted_score": 31.2,
+        "net_synergy_score": 24.0,
+        "prior_weight": 0.3,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      },
+      "chain_wide_own": {
+        "weighted_score": 16.8,
+        "net_synergy_score": 12.0,
+        "prior_weight": 0.4,
+        "scope_amplification_9_warn": false,
+        "scope_amplification_10_warn": false
+      }
+    },
+    "spirit_guide_narration_metadata": {
+      "has_mechanic_alteration": true,
+      "alteration_type": "Pressure Front Conversion",
+      "thematic_rationale": "Wind that reaches outward in variable measure learns, at its fullest expression, to answer force with the same breath it sent forward — distance and amplitude turned back into shelter.",
+      "manifestation": "Every ranged strike landing across the chain simultaneously reverses its drag coefficient — the air that was peeling away from you folds inward instead, each variable gust compressing into a layered shell of deflective pressure that holds for a breath before dispersing.",
+      "spirit_guide_explainer_template": null,
+      "narrative_hooks": [],
+      "secondary_alteration_types": []
+    },
+    "thematic_rationale": "Wind that reaches outward in variable measure learns, at its fullest expression, to answer force with the same breath it sent forward — distance and amplitude turned back into shelter.",
+    "phase5_t4_narration_cohesion_score": 0.84,
+    "phase5_t4_narration_cohesion_breakdown": {
+      "kit_identity": 1.0,
+      "thematic_rationale_fit": 0.6,
+      "element_hits": 2,
+      "cultural_score_contrib": 0.5,
+      "strat_hits": 0,
+      "el_in_rationale": true,
+      "manifest_word_count": 42,
+      "rationale_word_count": 30,
+      "aggregate": 0.84
+    },
+    "phase5_t4_narration_attempt_number": 1,
+    "phase5_t4_narration_is_fallback": false,
+    "phase5_t4_narration_cache_hit": false
+  },
+  "supporting_chain": null,
+  "skills": [
+    {
+      "id": "skill_001132",
+      "name": "Cutting Gale",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 24.4,
+      "cooldown_seconds": 6.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0753,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "squall",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The wind does not strike once — it wears away, patient and relentless, until nothing remains standing.",
+      "effects": [
+        "Summon a persistent gale around the target, dealing wind damage over time for several seconds."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "persistent",
+        "attrition"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001133",
+      "name": "Wind Veil",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 23.8,
+      "cooldown_seconds": 11.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0569,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The drifter wraps themselves in a sheath of swirling air, letting blows glance away like leaves in a gust.",
+      "effects": [
+        "Surround yourself with a wind barrier that briefly reduces incoming damage."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "defense",
+        "barrier"
+      ],
+      "phase5_cohesion_score": 0.915,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.915
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001134",
+      "name": "Gale Ward",
+      "role": "defensive",
+      "canonical_element": "fire",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "energy_cost": 20.7,
+      "cooldown_seconds": 8.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0509,
+      "bc_axis_contribution": {},
+      "chain_position": 3,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The wind does not merely cut — it also shields, wrapping the caster in a constant, whispering barrier of moving air.",
+      "effects": [
+        "Surround yourself with swirling winds, briefly reducing incoming damage and deflecting minor projectiles."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "defense",
+        "barrier"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001135",
+      "name": "Wind Step",
+      "role": "utility",
+      "canonical_element": "wind",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 17.8,
+      "cooldown_seconds": 12.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0563,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "zephyr",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The drifter reads the currents before moving, letting the wind carry them where instinct alone cannot.",
+      "effects": [
+        "Harness a gust of wind to briefly enhance your movement and positioning for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "mobility",
+        "utility"
+      ],
+      "phase5_cohesion_score": 0.95,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.75,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.95
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001136",
+      "name": "Wind Strike",
+      "role": "primary_attack",
+      "canonical_element": "wind",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 8.4,
+      "cooldown_seconds": 1.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0776,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A swift gust channeled through the fist, the Wind Drifter's most basic expression of elemental mastery.",
+      "effects": [
+        "Strike a nearby enemy with a focused burst of wind, dealing moderate damage."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "melee",
+        "basic_attack"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001137",
+      "name": "Gale Burst",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 22.7,
+      "cooldown_seconds": 3.4,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1063,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001132"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The wind coils and then releases in a sudden explosive rush, scattering all who stand within its reach.",
+      "effects": [
+        "Release a burst of wind energy that deals area damage to all nearby enemies."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "area_damage",
+        "burst"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001138",
+      "name": "Gale Surge",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 32.1,
+      "cooldown_seconds": 7.2,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0819,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001132"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The wind that once shielded you now tears outward in a violent rush, scattering foes like leaves in a storm.",
+      "effects": [
+        "Release a burst of wind energy that deals moderate damage to nearby enemies within medium range."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "burst",
+        "release"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    },
+    {
+      "id": "skill_001139",
+      "name": "Wind Lash",
+      "role": "damage_over_time",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 22.6,
+      "cooldown_seconds": 4.3,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0915,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001135"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "squall",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Each cutting gust leaves wounds that linger, the air itself becoming a relentless tormentor that refuses to let injuries heal.",
+      "effects": [
+        "Lashes the target with razor winds, dealing wind damage over time for several seconds."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "damage_over_time",
+        "sustained_pressure"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001140",
+      "name": "Wind Slash",
+      "role": "burst_damage",
+      "canonical_element": "wind",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "energy_cost": 33.1,
+      "cooldown_seconds": 9.1,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.1188,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_001135"
+      ],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "gale",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A focused blade of wind cuts through the air with sudden, devastating force. Where it passes, the calm is shattered.",
+      "effects": [
+        "Unleash a sharp burst of wind energy that deals moderate damage to a single target at medium range."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "burst",
+        "slash"
+      ],
+      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001141",
+      "name": "Wind Cleave",
+      "role": "utility",
+      "canonical_element": "fire",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "energy_cost": 13.2,
+      "cooldown_seconds": 15.9,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.133,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_001139"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A masterful sweep of condensed air, honed through years of practice into a blade that cuts through resistance itself.",
+      "effects": [
+        "Unleash a sweeping wind arc that disrupts enemies and briefly reduces their movement and attack speed."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "utility",
+        "disruption"
+      ],
+      "phase5_cohesion_score": 0.9,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.9,
+        "mechanical_narration": 0.6,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.9
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_001142",
+      "name": "Gale Tempest",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "energy_cost": 26.7,
+      "cooldown_seconds": 6.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.2288,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "cyclone",
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "The wind no longer whispers — it roars. A spiraling tempest tears through the air, scattering all who dare stand before it.",
+      "effects": [
+        "Unleash a sweeping gale that deals wind damage to all enemies in a wide area around you."
+      ],
+      "phase5_thematic_tags": [
+        "wind",
+        "area_damage",
+        "tempest"
+      ],
+      "phase5_cohesion_score": 0.86,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.5,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.86
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": true
+    }
+  ],
+  "emergent_kit_concept": "Scattered Wind Fighter Bearer",
+  "substrate_trace": {
+    "source": "class_generator_option_b",
+    "generation_seed": 20260627,
+    "archetype_tag": "wind_caster",
+    "energy_type": "mana",
+    "element": "wind",
+    "season_id": "qdx5_20260602",
+    "bc_range": "ranged",
+    "bc_tempo": "medium",
+    "bc_amplitude": "variable",
+    "bc_attribute": "INT",
+    "bc_proxy_density": "none",
+    "cultural_tradition": null,
+    "period": null,
+    "option_b4_5": true
+  },
+  "kit_space_expansion_event_id": "kse_20260602_008",
+  "engine_version": "d89d23e",
+  "engine_version_full": "d89d23eebac30d8d278213123380dce04716c245",
+  "generation_timestamp": "2026-06-02T23:00:32.005Z",
+  "lineage_tags": {
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_008",
+    "engine_provenance": "engine-d89d23e-kse_20260602_008",
+    "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
+    "generation_cohort_date": "2026-06-02"
+  }
+}

@@ -125,6 +125,73 @@ function ChronicleEventCard({ event, index }: EventCardProps) {
         </div>
       )}
 
+      {/* QDX-5 distribution summary — present on event_008 */}
+      {event.generation_parameters?.distribution_actual != null && (
+        <div className="px-4 py-3 border-b border-gray-100">
+          <p className="text-[11px] text-gray-500 font-mono uppercase tracking-wider mb-1.5">
+            Element distribution
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            {Object.entries(event.generation_parameters.distribution_actual).sort().map(([el, count]) => (
+              <span key={el} className="text-[11px] font-mono text-gray-600">
+                {el}: <span className="text-gray-800 font-semibold">{count}</span>
+              </span>
+            ))}
+            {event.generation_parameters.pct_physical_actual != null && (
+              <span className="text-[11px] font-mono text-gray-400 ml-auto">
+                {event.generation_parameters.pct_physical_actual}% physical
+              </span>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* QDX-5 pipeline metrics — present on event_008 */}
+      {(event.generation_parameters?.n_factions != null ||
+        event.generation_parameters?.pm1_algorithm != null ||
+        event.generation_parameters?.wave_b_template_repeat_detected != null ||
+        event.generation_parameters?.ws1a4_flavor_rate != null) && (
+        <div className="px-4 py-3 border-b border-gray-100">
+          <p className="text-[11px] text-gray-500 font-mono uppercase tracking-wider mb-1.5">
+            Pipeline metrics
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            {event.generation_parameters?.n_factions != null && (
+              <span className="text-[11px] font-mono text-gray-600">
+                factions: <span className="text-gray-800 font-semibold">{event.generation_parameters.n_factions}</span>
+              </span>
+            )}
+            {event.generation_parameters?.pm1_algorithm != null && (
+              <span className="text-[11px] font-mono text-gray-600">
+                clustering: <span className="text-gray-800">{event.generation_parameters.pm1_algorithm}</span>
+              </span>
+            )}
+            {event.generation_parameters?.ws1a4_flavor_rate != null && (
+              <span className="text-[11px] font-mono text-gray-600">
+                flavor rate: <span className="text-gray-800">{(event.generation_parameters.ws1a4_flavor_rate * 100).toFixed(1)}%</span>
+              </span>
+            )}
+            {event.generation_parameters?.ws1a4_physical_opt_out != null && (
+              <span className="text-[11px] font-mono text-gray-600">
+                physical opt-out: <span className="text-gray-800">{event.generation_parameters.ws1a4_physical_opt_out}</span>
+              </span>
+            )}
+            {event.generation_parameters?.wave_b_template_repeat_detected != null && (
+              <span className="text-[11px] font-mono text-gray-600">
+                wave-b repeat: <span className={event.generation_parameters.wave_b_template_repeat_detected ? 'text-red-500' : 'text-green-600'}>
+                  {event.generation_parameters.wave_b_template_repeat_detected ? 'detected' : 'none'}
+                </span>
+              </span>
+            )}
+            {event.generation_parameters?.t4_selection_active != null && (
+              <span className="text-[11px] font-mono text-gray-600">
+                t4 selection: <span className="text-gray-800">{event.generation_parameters.t4_selection_active ? 'active' : 'off'}</span>
+              </span>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Provenance strip */}
       <div className="px-4 py-2.5 bg-gray-50 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-gray-400 font-mono">
         <span>engine: {event.engine_version_sha}</span>
@@ -134,14 +201,22 @@ function ChronicleEventCard({ event, index }: EventCardProps) {
         {event.generation_parameters?.seed != null && (
           <span>seed: {event.generation_parameters.seed}</span>
         )}
-        {event.generation_parameters?.generator && (
-          <span>generator: {event.generation_parameters.generator}</span>
+        {(event.generation_parameters?.generator ?? event.generation_parameters?.generator_path) && (
+          <span>generator: {event.generation_parameters?.generator ?? event.generation_parameters?.generator_path}</span>
+        )}
+        {event.generation_parameters?.fire_mode != null && (
+          <span>mode: {event.generation_parameters.fire_mode}</span>
         )}
         {event.skip_flags_active && event.skip_flags_active.length > 0 && (
           <span>skip: {event.skip_flags_active.join(', ')}</span>
         )}
-        {event.generation_parameters?.total_llm_cost_usd != null && (
-          <span>llm cost: ${event.generation_parameters.total_llm_cost_usd.toFixed(4)}</span>
+        {/* QDX-5: use llm_cost_breakdown.total_usd when available; fall back to total_llm_cost_usd */}
+        {(event.generation_parameters?.llm_cost_breakdown?.total_usd ?? event.generation_parameters?.total_llm_cost_usd) != null && (
+          <span>
+            llm cost: ${(
+              (event.generation_parameters?.llm_cost_breakdown?.total_usd ?? event.generation_parameters?.total_llm_cost_usd) as number
+            ).toFixed(4)}
+          </span>
         )}
       </div>
     </div>
