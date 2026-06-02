@@ -1,0 +1,782 @@
+{
+  "id": "class_0004",
+  "name": "Bellows Monk",
+  "title_completion": "a Bellows Monk",
+  "flavor_text": "In the Bronze Bull Pit, where the forge-breath never sleeps, the Bellows Monk has learned to breathe with the furnace itself. Each exhale becomes a Bellows Gust that scatters enemies like cinders, and each inhale draws the Pit-Flame back into patient stillness. They do not fight \u2014 they redirect, letting the forge's own fury do the work.",
+  "archetype_tag": "wind_controller",
+  "energy_type": "mana",
+  "role_orientation": "control",
+  "range_profile": "medium",
+  "dominant_element": "wind",
+  "seasonal_dominant_element": "forge",
+  "color_palette": [
+    452542,
+    431965,
+    496661,
+    445381,
+    484758,
+    452860,
+    55579,
+    491782,
+    87093,
+    451222,
+    479962,
+    579210,
+    506848
+  ],
+  "stat_distribution": {
+    "strength": 17,
+    "dexterity": 5,
+    "intelligence": 5,
+    "wisdom": 160,
+    "vitality": 83
+  },
+  "skills": [
+    {
+      "id": "skill_000081",
+      "name": "Bellows Gust Roar",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "vortex_pull",
+      "spatial_geometry_type": "circle",
+      "effect_category": "area_damage",
+      "canonical_pair_ref": "canonical/wind/area_damage",
+      "energy_cost": 25.2,
+      "cooldown_seconds": 7.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 6.9,
+            "stagger_seconds": 0.5
+          }
+        }
+      ],
+      "color_value": 452542,
+      "flavor_text": "The Bronze Bull Pit breathes out in one tremendous exhalation, a circular wall of scorching wind that flings everything outward from its molten heart. Those caught in the surge tumble across the soot-black ground, ears ringing with the groan of ancient iron.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0525
+    },
+    {
+      "id": "skill_000082",
+      "name": "Bellows Gust Ring",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "vortex_pull",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 19.2,
+      "cooldown_seconds": 14.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 7.4,
+            "stagger_seconds": 0.9
+          }
+        }
+      ],
+      "color_value": 431965,
+      "flavor_text": "A sudden roar of displaced air erupts outward from the pit's great bellows, hurling everything at the rim into staggering retreat. The forge breathes once, and the world moves.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0729
+    },
+    {
+      "id": "skill_000083",
+      "name": "Bellows Gust Ring",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "vortex_pull",
+      "spatial_geometry_type": "circle",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 29.9,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 496661,
+      "flavor_text": "The pit's great bellows exhale in a sudden violent ring, scattering embers and rivals alike across the scorched bronze floor. What the forge breathes out, nothing nearby can stand against.",
+      "tier": 1,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0777
+    },
+    {
+      "id": "skill_000084",
+      "name": "Bellows Gust Vortex",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "vortex_pull",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 22.2,
+      "cooldown_seconds": 9.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.8,
+            "stagger_seconds": 0.4
+          }
+        }
+      ],
+      "color_value": 445381,
+      "flavor_text": "The Bronze Bull Pit exhales in a single violent breath, dragging everything inward before hurling it away in a tide of scorched air. Those caught in its pull find their footing ripped from beneath them before they can register the roar.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000081"
+      ],
+      "scaling_coefficient": 1.1098
+    },
+    {
+      "id": "skill_000085",
+      "name": "Bellows Gust Within",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 15.8,
+      "cooldown_seconds": 11.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 9.2
+          }
+        }
+      ],
+      "color_value": 484758,
+      "flavor_text": "The forge-breath fills the fighter from within, stoking something older than muscle or bone. For a fleeting moment, every blow lands as if the Bull Pit itself swings through their arm.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000082"
+      ],
+      "scaling_coefficient": 1.1034
+    },
+    {
+      "id": "skill_000117",
+      "name": "Bellows Gust Temper",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/wind/utility",
+      "energy_cost": 15.9,
+      "cooldown_seconds": 14.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.16,
+            "duration_seconds": 6.8
+          }
+        }
+      ],
+      "color_value": 461193,
+      "flavor_text": "A breath from the Bronze Bull Pit's great bellows rushes through the fighter, stoking the heat behind every blow. For a few crackling seconds, each strike carries the hunger of a freshly fed forge.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000082"
+      ],
+      "scaling_coefficient": 1.119
+    },
+    {
+      "id": "skill_000087",
+      "name": "Pit-Flame Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "ground_targeted_circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 21.3,
+      "cooldown_seconds": 6.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 55579,
+      "flavor_text": "The Bronze Bull Pit breathes in, and everything near it does not. Molten air spirals inward in a hungry column, dragging cinders and screaming metal into a single roaring throat of fire.",
+      "tier": 2,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000083"
+      ],
+      "scaling_coefficient": 1.1003
+    },
+    {
+      "id": "skill_000088",
+      "name": "Bellows Gust Bulwark",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/wind/defensive",
+      "energy_cost": 16.5,
+      "cooldown_seconds": 13.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.8
+          }
+        }
+      ],
+      "color_value": 491782,
+      "flavor_text": "The forge-breath of the Bronze Bull Pit surges outward in a rushing wall, hardening the air itself into a shield of compressed heat and displaced force. For a breathless moment, nothing reaches you through the roar.",
+      "tier": 2,
+      "chain_id": "chain_C",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000083"
+      ],
+      "scaling_coefficient": 1.0907
+    },
+    {
+      "id": "skill_000089",
+      "name": "Quench Flood Maelstrom",
+      "composition_mode": "single",
+      "role": "control",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "ring",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/fire/control",
+      "energy_cost": 27.8,
+      "cooldown_seconds": 9.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.4
+          }
+        }
+      ],
+      "color_value": 87093,
+      "flavor_text": "The pit's cooling waters spiral inward in a sudden suffusing vortex, dragging foes toward the center and sealing their throats with pressurized steam. For a breathless moment, the Bull Pit swallows every voice whole.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000084"
+      ],
+      "scaling_coefficient": 1.1589
+    },
+    {
+      "id": "skill_000090",
+      "name": "Bellows Gust Maelstrom",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "vortex_pull",
+      "spatial_geometry_type": "circle",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/wind/single_target_damage",
+      "energy_cost": 24.7,
+      "cooldown_seconds": 5.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "wind"
+          }
+        },
+        {
+          "name": "knockback",
+          "params": {
+            "distance": 5.9,
+            "stagger_seconds": 0.5
+          }
+        }
+      ],
+      "color_value": 451222,
+      "flavor_text": "The Bronze Bull Pit exhales in one terrible breath, dragging enemies inward before hurling them like slag from an overfull ladle. The air tastes of scorched iron long after the vortex dies.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000085"
+      ],
+      "scaling_coefficient": 1.1359
+    },
+    {
+      "id": "skill_000091",
+      "name": "Bellows Gust Temper",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "control",
+      "canonical_pair_ref": "canonical/wind/control",
+      "energy_cost": 12.5,
+      "cooldown_seconds": 19.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.19,
+            "duration_seconds": 7.2
+          }
+        },
+        {
+          "name": "silence",
+          "params": {
+            "duration_seconds": 2.8
+          }
+        }
+      ],
+      "color_value": 479962,
+      "flavor_text": "A sudden rush of superheated air from the Pit silences the target mid-breath, their voice swallowed by the roar of the forge. In that stolen moment, your strikes carry the full weight of molten intent.",
+      "tier": 3,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000087"
+      ],
+      "scaling_coefficient": 1.1705
+    },
+    {
+      "id": "skill_000092",
+      "name": "Quench Flood Totem",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "water",
+      "seasonal_element": null,
+      "geometry_type": "circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/water/single_target_damage",
+      "energy_cost": 17.8,
+      "cooldown_seconds": 5.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "chill",
+          "params": {
+            "slow_percent": 0.25,
+            "duration_seconds": 13.3
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "water"
+          }
+        }
+      ],
+      "color_value": 579210,
+      "flavor_text": "A pillar of slag-cooled water erupts from the pit floor, drenching everything nearby in a slow, creeping deluge that saps heat and will alike. The Bronze Bull Pit remembers every quench \u2014 and so does the wound.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000089"
+      ],
+      "scaling_coefficient": 1.2217
+    },
+    {
+      "id": "skill_000093",
+      "name": "Bellows Gust Slip",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "blink",
+      "spatial_geometry_type": "none",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/wind/mobility",
+      "energy_cost": 13.1,
+      "cooldown_seconds": 6.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.21,
+            "duration_seconds": 4.9
+          }
+        }
+      ],
+      "color_value": 506848,
+      "flavor_text": "The forge breath erupts beneath your feet and you vanish between the bellows' exhale and the next strike. For a heartbeat, you move like hot air through iron grates \u2014 present, then not.",
+      "tier": 4,
+      "chain_id": "chain_C",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000091"
+      ],
+      "scaling_coefficient": 1.2053
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.475,
+    "convergence_winrate": 0.475,
+    "pack_winrate": 0.0,
+    "convergence_iterations": 5,
+    "converged": true,
+    "final_modifier": 0.4431,
+    "gauntlet_results": {
+      "monster_00001": 0.0,
+      "monster_00002": 0.0,
+      "monster_00003": 0.0,
+      "monster_00004": 0.0,
+      "monster_00005": 0.0,
+      "monster_00006": 0.0,
+      "monster_00015": 1.0,
+      "monster_00016": 1.0,
+      "monster_00036": 0.7,
+      "monster_00037": 1.0,
+      "monster_00039": 1.0,
+      "monster_00043": 1.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.4431
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false,
+    "element_coverage_tax": {},
+    "hybrid_mage_dps_scale_factor": 1.0,
+    "hybrid_mage_lever_b": {
+      "scale_factor": 1.0,
+      "dps_scale_applied": false,
+      "damage_bearing_skills_scaled": 0,
+      "combined_effective_multiplier": 1.0
+    },
+    "hybrid_mage_composite_d_active": false,
+    "r1_per_tier_win_rates": {
+      "swarm": 0.0,
+      "magic": 1.0,
+      "elite": 0.85,
+      "mini_boss": 0.9,
+      "boss": 0.7333
+    },
+    "r1_per_tier_pass": {
+      "swarm": false,
+      "magic": false,
+      "elite": false,
+      "mini_boss": false,
+      "boss": false
+    },
+    "r1_convergence_gate_passed": false,
+    "r1_failing_tiers": [
+      "swarm",
+      "magic",
+      "elite",
+      "mini_boss",
+      "boss"
+    ],
+    "r1_aggregate_wr_legacy": 0.6967,
+    "r1_boss_kill_rate": 0.7333,
+    "r1_mini_boss_kill_rate": 0.9
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.475,
+      "overall_winrate": 0.475,
+      "pack_winrate": 0.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 5,
+      "converged": true,
+      "final_modifier": 0.4431,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy",
+        "energy_type_calibration"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00001": 0.0,
+        "monster_00002": 0.0,
+        "monster_00003": 0.0,
+        "monster_00004": 0.0,
+        "monster_00005": 0.0,
+        "monster_00006": 0.0,
+        "monster_00015": 1.0,
+        "monster_00016": 1.0,
+        "monster_00036": 0.7,
+        "monster_00037": 1.0,
+        "monster_00039": 1.0,
+        "monster_00043": 1.0
+      },
+      "r1_per_tier_win_rates": {
+        "swarm": 0.0,
+        "magic": 1.0,
+        "elite": 0.85,
+        "mini_boss": 0.9,
+        "boss": 0.7333
+      },
+      "r1_convergence_gate_passed": false,
+      "r1_failing_tiers": [
+        "swarm",
+        "magic",
+        "elite",
+        "mini_boss",
+        "boss"
+      ],
+      "r1_boss_kill_rate": 0.7333,
+      "r1_mini_boss_kill_rate": 0.9
+    },
+    "mid_band_L33": null,
+    "early_band_L17": null,
+    "variance_check_L50": null,
+    "doppelganger_validation": null,
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000086",
+          "swapped_from_role": "damage_over_time",
+          "swapped_to_role": "utility",
+          "swapped_to_id": "skill_000117",
+          "role": "damage_over_time",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.5611,
+        "after_winrate": 0.4361,
+        "delta": -0.125,
+        "accepted": true,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000090",
+          "swapped_from_role": "area_damage",
+          "swapped_to_role": "utility",
+          "swapped_to_id": "skill_000118",
+          "role": "area_damage",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 2,
+        "before_winrate": 0.4361,
+        "after_winrate": 0.4361,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "geometry_unchanged"
+        },
+        "attempt": 1,
+        "before_winrate": 0.4361,
+        "after_winrate": 0.4361,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "damage_over_time",
+        "lever_specifics": {
+          "skill_id": "skill_000092",
+          "role": "damage_over_time",
+          "param": "cooldown_seconds",
+          "from_cd": 5.0,
+          "to_cd": 5.5,
+          "from_cost": 17.8,
+          "to_cost": 19.58,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.4361,
+        "after_winrate": 0.4361,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "energy_type_calibration",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "energy_type_not_physical",
+          "energy_type": "mana",
+          "recompose_energy_calibration_applied": false
+        },
+        "attempt": 1,
+        "before_winrate": 0.4361,
+        "after_winrate": 0.4361,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.2575,
+        "working_modifier": 0.2575,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      }
+    ],
+    "recompose_outcome": "primary_loop_converged",
+    "composition_pre_modifier_wr": 1.0,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "wind",
+        "to_element": "water",
+        "n_swapped": 1,
+        "eval_modifier": 0.2575,
+        "modifier_dist_from_1": 0.7425,
+        "baseline_dist": 0.7425,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.4431,
+      "would_pass_clamp": true
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.4431
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "control",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1",
+  "attribute_coupling": [
+    "wisdom",
+    "vitality"
+  ]
+}

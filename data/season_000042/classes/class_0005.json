@@ -1,0 +1,751 @@
+{
+  "id": "class_0005",
+  "name": "Forge-Struck Thunderwright",
+  "title_completion": "a Forge-Struck Thunderwright",
+  "flavor_text": "They say lightning never strikes the same anvil twice \u2014 but no one told that to the soul reborn inside the Bronze Bull Pit, where every Hammer Strike rings out like a god clearing its throat. You do not cast spells so much as you conduct the forge itself, coaxing Anvil Crack and Pit-Flame into a single roaring argument between heat and voltage. The smiths here call it reckless; you call it resonance.",
+  "archetype_tag": "lightning_mage",
+  "energy_type": "mana",
+  "role_orientation": "hybrid",
+  "range_profile": "medium",
+  "dominant_element": "lightning",
+  "seasonal_dominant_element": "forge",
+  "color_palette": [
+    578461,
+    556210,
+    558958,
+    564011,
+    545456,
+    532576,
+    554678,
+    558119,
+    538051,
+    569473,
+    476272,
+    545304
+  ],
+  "stat_distribution": {
+    "strength": 6,
+    "dexterity": 24,
+    "intelligence": 161,
+    "wisdom": 18,
+    "vitality": 61
+  },
+  "skills": [
+    {
+      "id": "skill_000094",
+      "name": "Furnace Gleam Dash",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "holy",
+      "seasonal_element": null,
+      "geometry_type": "dash_attack",
+      "spatial_geometry_type": "none",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 13.4,
+      "cooldown_seconds": 7.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "holy"
+          }
+        }
+      ],
+      "color_value": 578461,
+      "flavor_text": "The pit's holy light surges through the fighter's veins, launching them forward in a blinding arc of forge-blessed radiance. Where they stood, only heat-shimmer remains.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0536
+    },
+    {
+      "id": "skill_000095",
+      "name": "Slag Wall Tempering",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 20.3,
+      "cooldown_seconds": 11.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 8.0
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.13,
+            "duration_seconds": 9.5
+          }
+        }
+      ],
+      "color_value": 556210,
+      "flavor_text": "The heat of the Bronze Bull Pit fuses around you in a shell of cooling slag, hardening with every breath into something the hammer cannot break. You become the anvil.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0796
+    },
+    {
+      "id": "skill_000096",
+      "name": "Pit-Flame Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "chain_lightning",
+      "spatial_geometry_type": "line",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 20.5,
+      "cooldown_seconds": 4.3,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "lightning"
+          }
+        }
+      ],
+      "color_value": 558958,
+      "flavor_text": "The Bronze Bull Pit exhales a breath of living lightning, scattering molten sparks in every direction like a forge god clearing its throat. Each bolt finds iron, finds bone, finds the hollow resonance of something that cannot withstand the heat.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0632
+    },
+    {
+      "id": "skill_000097",
+      "name": "Quench Flood Mending",
+      "composition_mode": "single",
+      "role": "sustain",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "sustain",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 22.2,
+      "cooldown_seconds": 10.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "heal",
+          "params": {
+            "magnitude": 1250
+          }
+        }
+      ],
+      "color_value": 564011,
+      "flavor_text": "The Bull Pit's cooling waters surge through cracked flesh and scorched bone, sealing wounds the way a smith seals a blade \u2014 sudden, total, and permanent. What the forge broke, the flood restores.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.072
+    },
+    {
+      "id": "skill_000098",
+      "name": "Pit-Flame Anvil Crack",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "chain_lightning",
+      "spatial_geometry_type": "line",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 29.3,
+      "cooldown_seconds": 5.0,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "lightning"
+          }
+        },
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.2
+          }
+        }
+      ],
+      "color_value": 545456,
+      "flavor_text": "A bolt of searing current leaps from target to target across the Bronze Bull Pit, each strike ringing out like a hammer on hot iron. The air smells of scorched metal long after the last body stops twitching.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000094"
+      ],
+      "scaling_coefficient": 1.1125
+    },
+    {
+      "id": "skill_000099",
+      "name": "Pit-Flame Anvil Crack",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "chain_lightning",
+      "spatial_geometry_type": "line",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 28.4,
+      "cooldown_seconds": 4.2,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "lightning"
+          }
+        },
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 0.9
+          }
+        }
+      ],
+      "color_value": 532576,
+      "flavor_text": "Deep in the Bronze Bull Pit, the channel hums before it breaks \u2014 a sustained roar of forged lightning that leaps molten from body to body. The air smells of scorched copper and seized muscle long after the last arc dies.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000094"
+      ],
+      "scaling_coefficient": 1.0973
+    },
+    {
+      "id": "skill_000100",
+      "name": "Anvil Crack Totem",
+      "composition_mode": "single",
+      "role": "damage_over_time",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "circle",
+      "spatial_geometry_type": "circle",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 18.4,
+      "cooldown_seconds": 4.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 10.4
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 750,
+            "element": "lightning"
+          }
+        }
+      ],
+      "color_value": 554678,
+      "flavor_text": "A molten spike driven into the earth hums with the deep resonance of the Bull Pit's forge, releasing crackling arcs that lock muscle and char bone. The air smells of scorched iron long after the last bolt fades.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 3,
+      "parent_skill_ids": [
+        "skill_000094"
+      ],
+      "scaling_coefficient": 1.0906
+    },
+    {
+      "id": "skill_000101",
+      "name": "Anvil Crack Bolt",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "multi_projectile",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 14.3,
+      "cooldown_seconds": 0.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "lightning"
+          }
+        },
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 1.5
+          }
+        }
+      ],
+      "color_value": 558119,
+      "flavor_text": "The Bronze Bull Pit hums before the strike lands \u2014 a resonance that splits the air like metal meeting metal at the forge's peak. Lightning finds the seam between thought and impact, and the target staggers in the ringing silence after.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000096"
+      ],
+      "scaling_coefficient": 1.1156
+    },
+    {
+      "id": "skill_000102",
+      "name": "Anvil Crack Volley",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "chain_lightning",
+      "spatial_geometry_type": "line",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 22.0,
+      "cooldown_seconds": 7.1,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "lightning"
+          }
+        },
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 0.5
+          }
+        }
+      ],
+      "color_value": 538051,
+      "flavor_text": "The pit's heat finds the air's hidden seams and splits them open all at once, sending jagged tongues of lightning outward like cracks racing through overworked metal. Whatever stands in the Bronze Bull Pit learns the sound a forge makes when it finally loses patience.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000096"
+      ],
+      "scaling_coefficient": 1.1148
+    },
+    {
+      "id": "skill_000103",
+      "name": "Pit-Flame Anvil Crack",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "chain_lightning",
+      "spatial_geometry_type": "line",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 34.3,
+      "cooldown_seconds": 7.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "lightning"
+          }
+        },
+        {
+          "name": "shock",
+          "params": {
+            "duration_seconds": 0.8
+          }
+        }
+      ],
+      "color_value": 569473,
+      "flavor_text": "A bolt of forge-born lightning descends like a god's hammer onto a single point, the air splitting with the resonant shriek of the Bronze Bull Pit at full roar. The strike locks the target rigid, nerves seared and singing with current that smells of hot copper and char.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000098"
+      ],
+      "scaling_coefficient": 1.1283
+    },
+    {
+      "id": "skill_000104",
+      "name": "Bellows Gust Leap",
+      "composition_mode": "single",
+      "role": "mobility",
+      "canonical_element": "wind",
+      "seasonal_element": null,
+      "geometry_type": "blink",
+      "spatial_geometry_type": "none",
+      "effect_category": "mobility",
+      "canonical_pair_ref": "canonical/wind/mobility",
+      "energy_cost": 10.5,
+      "cooldown_seconds": 9.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.35,
+            "duration_seconds": 9.6
+          }
+        },
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 0,
+            "element": "wind"
+          }
+        }
+      ],
+      "color_value": 476272,
+      "flavor_text": "The forge breathes out and you are already elsewhere, riding the Bull Pit's exhaled roar through scorched air. For a breath's span, nothing in this world can find the shape you left behind.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000101"
+      ],
+      "scaling_coefficient": 1.1319
+    },
+    {
+      "id": "skill_000105",
+      "name": "Slag Wall Rising",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "lightning",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 22.1,
+      "cooldown_seconds": 13.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 6.7
+          }
+        }
+      ],
+      "color_value": 545304,
+      "flavor_text": "The heat of the Bronze Bull Pit hardens around you in an instant, layers of cooling metal fusing into an unyielding shell. Nothing passes through while the forge still breathes.",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000104"
+      ],
+      "scaling_coefficient": 1.1938
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.6,
+    "actual_winrate": 0.6528,
+    "convergence_winrate": 0.6528,
+    "pack_winrate": 0.0,
+    "convergence_iterations": 10,
+    "converged": true,
+    "final_modifier": 0.1773,
+    "gauntlet_results": {
+      "monster_00001": 0.0,
+      "monster_00002": 1.0,
+      "monster_00003": 0.0,
+      "monster_00004": 1.0,
+      "monster_00005": 0.0,
+      "monster_00006": 0.0,
+      "monster_00015": 1.0,
+      "monster_00016": 1.0,
+      "monster_00036": 0.8333,
+      "monster_00037": 1.0,
+      "monster_00039": 1.0,
+      "monster_00043": 1.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.1773
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false,
+    "element_coverage_tax": {},
+    "hybrid_mage_dps_scale_factor": 1.0,
+    "hybrid_mage_lever_b": {
+      "scale_factor": 1.0,
+      "dps_scale_applied": false,
+      "damage_bearing_skills_scaled": 0,
+      "combined_effective_multiplier": 1.0
+    },
+    "hybrid_mage_composite_d_active": false,
+    "r1_per_tier_win_rates": {
+      "swarm": 0.3333,
+      "magic": 1.0,
+      "elite": 0.9167,
+      "mini_boss": 0.9667,
+      "boss": 1.0
+    },
+    "r1_per_tier_pass": {
+      "swarm": false,
+      "magic": false,
+      "elite": false,
+      "mini_boss": false,
+      "boss": false
+    },
+    "r1_convergence_gate_passed": false,
+    "r1_failing_tiers": [
+      "swarm",
+      "magic",
+      "elite",
+      "mini_boss",
+      "boss"
+    ],
+    "r1_aggregate_wr_legacy": 0.8433,
+    "r1_boss_kill_rate": 1.0,
+    "r1_mini_boss_kill_rate": 0.9667
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.6528,
+      "overall_winrate": 0.6528,
+      "pack_winrate": 0.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 10,
+      "converged": true,
+      "final_modifier": 0.1773,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy",
+        "energy_type_calibration"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00001": 0.0,
+        "monster_00002": 1.0,
+        "monster_00003": 0.0,
+        "monster_00004": 1.0,
+        "monster_00005": 0.0,
+        "monster_00006": 0.0,
+        "monster_00015": 1.0,
+        "monster_00016": 1.0,
+        "monster_00036": 0.8333,
+        "monster_00037": 1.0,
+        "monster_00039": 1.0,
+        "monster_00043": 1.0
+      },
+      "r1_per_tier_win_rates": {
+        "swarm": 0.3333,
+        "magic": 1.0,
+        "elite": 0.9167,
+        "mini_boss": 0.9667,
+        "boss": 1.0
+      },
+      "r1_convergence_gate_passed": false,
+      "r1_failing_tiers": [
+        "swarm",
+        "magic",
+        "elite",
+        "mini_boss",
+        "boss"
+      ],
+      "r1_boss_kill_rate": 1.0,
+      "r1_mini_boss_kill_rate": 0.9667
+    },
+    "mid_band_L33": null,
+    "early_band_L17": null,
+    "variance_check_L50": null,
+    "doppelganger_validation": null,
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000099",
+          "swapped_from_role": "area_damage",
+          "swapped_to_role": "mobility",
+          "swapped_to_id": "skill_000121",
+          "role": "area_damage",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.55,
+        "after_winrate": 0.55,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.1956,
+        "working_modifier": 0.1956,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "skill_id": "skill_000099",
+          "role": "area_damage",
+          "from_geometry": "chain_lightning",
+          "to_geometry": "ground_targeted_circle",
+          "rationale": "geometry_rebias_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.55,
+        "after_winrate": 0.55,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.1956,
+        "working_modifier": 0.1956,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000101",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 0.9,
+          "to_cd": 0.99,
+          "from_cost": 14.3,
+          "to_cost": 15.73,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.55,
+        "after_winrate": 0.55,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.1956,
+        "working_modifier": 0.1956,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "energy_type_calibration",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "energy_type_not_physical",
+          "energy_type": "mana",
+          "recompose_energy_calibration_applied": false
+        },
+        "attempt": 1,
+        "before_winrate": 0.55,
+        "after_winrate": 0.55,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.1956,
+        "working_modifier": 0.1956,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      }
+    ],
+    "recompose_outcome": "modifier_fallback",
+    "composition_pre_modifier_wr": 1.0,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "lightning",
+        "to_element": "wind",
+        "n_swapped": 1,
+        "eval_modifier": 0.1956,
+        "modifier_dist_from_1": 0.8044,
+        "baseline_dist": 0.8044,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.1773,
+      "would_pass_clamp": true
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.1773
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "burst",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1",
+  "attribute_coupling": [
+    "intelligence",
+    "vitality"
+  ]
+}

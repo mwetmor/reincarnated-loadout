@@ -1,0 +1,731 @@
+{
+  "id": "class_0003",
+  "name": "Pit-Slag Warden",
+  "title_completion": "a Pit-Slag Warden",
+  "flavor_text": "They did not choose the Bronze Bull Pit \u2014 the Pit chose them, and now its molten walls answer to their will. Where others flee the surge of superheated slag, the Warden plants their feet and raises a barrier of cooling fury, letting the earth itself remember every blow it has ever endured. The forge does not burn them; it listens.",
+  "archetype_tag": "earth_caster",
+  "energy_type": "mana",
+  "role_orientation": "damage",
+  "range_profile": "close",
+  "dominant_element": "earth",
+  "seasonal_dominant_element": "forge",
+  "color_palette": [
+    367558,
+    314775,
+    360541,
+    250826,
+    83290,
+    370594,
+    274984,
+    347415,
+    83777,
+    279117,
+    340242,
+    253713
+  ],
+  "stat_distribution": {
+    "strength": 19,
+    "dexterity": 16,
+    "intelligence": 5,
+    "wisdom": 156,
+    "vitality": 74
+  },
+  "skills": [
+    {
+      "id": "skill_000069",
+      "name": "Pit-Flame Surge",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 19.7,
+      "cooldown_seconds": 15.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.11,
+            "duration_seconds": 5.6
+          }
+        }
+      ],
+      "color_value": 367558,
+      "flavor_text": "The Bronze Bull Pit exhales in a ring of living heat, and every blade within its breath bites harder. Wisdom reads the forge's hunger before the strike even falls.",
+      "tier": 1,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.061
+    },
+    {
+      "id": "skill_000070",
+      "name": "Slag Wall Grounding",
+      "composition_mode": "single",
+      "role": "primary_attack",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "melee_strike",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 6.6,
+      "cooldown_seconds": 1.4,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 625,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.4
+          }
+        }
+      ],
+      "color_value": 314775,
+      "flavor_text": "The forge floor answers the blow, slag and stone rising to lock the target in place. Wisdom knows where the earth is thickest, where the pit's crust holds fast.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0593
+    },
+    {
+      "id": "skill_000071",
+      "name": "Crucible Ring Surge",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 17.0,
+      "cooldown_seconds": 11.7,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.3,
+            "duration_seconds": 6.5
+          }
+        }
+      ],
+      "color_value": 360541,
+      "flavor_text": "The Bronze Bull Pit breathes outward in a scorching circle, every ally inside drinking deep of the forge's fury. For a breath of molten seconds, their strikes carry the weight of the anvil itself.",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "scaling_coefficient": 1.0653
+    },
+    {
+      "id": "skill_000072",
+      "name": "Slag Wall Heave",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 36.9,
+      "cooldown_seconds": 7.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 250826,
+      "flavor_text": "The pit floor cracks open and a molten slab of compressed earth surges upward, slamming into a single target with the weight of every pour the Bronze Bull has ever swallowed. Wisdom shapes the strike \u2014 the longer the charge, the deeper the ruin.",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000069"
+      ],
+      "scaling_coefficient": 1.1135
+    },
+    {
+      "id": "skill_000073",
+      "name": "Pit-Flame Surge",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/fire/utility",
+      "energy_cost": 19.4,
+      "cooldown_seconds": 18.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.28,
+            "duration_seconds": 9.2
+          }
+        }
+      ],
+      "color_value": 83290,
+      "flavor_text": "The Bronze Bull Pit exhales and every blade in the circle drinks its heat, edges trembling with borrowed fury. For a breath, the air itself becomes the forge.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000070"
+      ],
+      "scaling_coefficient": 1.1037
+    },
+    {
+      "id": "skill_000074",
+      "name": "Pit-Flame Surge",
+      "composition_mode": "single",
+      "role": "burst_damage",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "single_target",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 39.8,
+      "cooldown_seconds": 9.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 2500,
+            "element": "earth"
+          }
+        },
+        {
+          "name": "root",
+          "params": {
+            "duration_seconds": 3.3
+          }
+        },
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.25,
+            "duration_seconds": 8.5
+          }
+        }
+      ],
+      "color_value": 370594,
+      "flavor_text": "The Bronze Bull Pit exhales its oldest heat in a single, crushing column \u2014 stone splits, limbs lock, and the air tastes of molten earth for a breath that stretches into eternity. Those who survive carry the weight of the strike in their bones long after the glow fades.",
+      "tier": 2,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000070"
+      ],
+      "scaling_coefficient": 1.0978
+    },
+    {
+      "id": "skill_000075",
+      "name": "Pit-Flame Groundswell",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "ground_slam",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 16.5,
+      "cooldown_seconds": 6.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 274984,
+      "flavor_text": "The floor of the Bronze Bull Pit heaves as molten earth answers the forgemaster's will, splitting stone and scattering all who stand within reach. Heat rises not from above but from below, as if the ground itself has been waiting to burn.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000072"
+      ],
+      "scaling_coefficient": 1.1645
+    },
+    {
+      "id": "skill_000076",
+      "name": "Slag Wall Rising",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 16.9,
+      "cooldown_seconds": 9.5,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 7.3
+          }
+        },
+        {
+          "name": "buff_dodge",
+          "params": {
+            "percent": 0.33,
+            "duration_seconds": 9.9
+          }
+        }
+      ],
+      "color_value": 347415,
+      "flavor_text": "Molten refuse surges upward from the pit floor, hardening into a dense barrier that deflects every blow with the indifference of cooled iron. The forge remembers every strike it has ever absorbed, and none of them broke it.",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000072"
+      ],
+      "scaling_coefficient": 1.178
+    },
+    {
+      "id": "skill_000077",
+      "name": "Pit-Flame Surge",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "fire",
+      "seasonal_element": null,
+      "geometry_type": "ground_slam",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/fire/single_target_damage",
+      "energy_cost": 21.7,
+      "cooldown_seconds": 5.8,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "fire"
+          }
+        }
+      ],
+      "color_value": 83777,
+      "flavor_text": "The Bronze Bull Pit exhales its oldest rage in a single scorching arc, and every surface it kisses remembers the heat for a long, breathless moment. Flesh and steel alike learn the same lesson \u2014 the forge does not ask permission.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000073"
+      ],
+      "scaling_coefficient": 1.1792
+    },
+    {
+      "id": "skill_000078",
+      "name": "Slag Wall Temper",
+      "composition_mode": "single",
+      "role": "utility",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "utility",
+      "canonical_pair_ref": "canonical/earth/utility",
+      "energy_cost": 10.4,
+      "cooldown_seconds": 18.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "buff_damage",
+          "params": {
+            "percent": 0.12,
+            "duration_seconds": 8.4
+          }
+        }
+      ],
+      "color_value": 279117,
+      "flavor_text": "The pit's residual heat seeps into the target's bones, hardening resolve like slag cooling against the Bull's iron flanks. Each blow they land carries the weight of the forge's deepest fire.",
+      "tier": 3,
+      "chain_id": "chain_B",
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000073"
+      ],
+      "scaling_coefficient": 1.164
+    },
+    {
+      "id": "skill_000079",
+      "name": "Slag Wall Rising",
+      "composition_mode": "single",
+      "role": "defensive",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "self_buff",
+      "spatial_geometry_type": "none",
+      "effect_category": "defensive",
+      "canonical_pair_ref": "canonical/earth/defensive",
+      "energy_cost": 21.0,
+      "cooldown_seconds": 12.6,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "shield",
+          "params": {
+            "magnitude": 1000,
+            "duration_seconds": 4.4
+          }
+        },
+        {
+          "name": "buff_defense",
+          "params": {
+            "percent": 0.17,
+            "duration_seconds": 6.5
+          }
+        }
+      ],
+      "color_value": 340242,
+      "flavor_text": "Molten runoff hardens in an instant around the defender, a crust of spent bronze thick enough to swallow a charging bull whole. The pit's oldest castings remember this shape \u2014 unyielding, scorched, immovable.",
+      "tier": 4,
+      "chain_id": "chain_A",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000075"
+      ],
+      "scaling_coefficient": 1.2292
+    },
+    {
+      "id": "skill_000080",
+      "name": "Slag Wall Shatter",
+      "composition_mode": "single",
+      "role": "area_damage",
+      "canonical_element": "earth",
+      "seasonal_element": null,
+      "geometry_type": "ground_slam",
+      "spatial_geometry_type": "point",
+      "effect_category": "single_target_damage",
+      "canonical_pair_ref": "canonical/earth/single_target_damage",
+      "energy_cost": 20.2,
+      "cooldown_seconds": 7.9,
+      "damage_multiplier": 1.0,
+      "effects": [
+        {
+          "name": "damage",
+          "params": {
+            "magnitude": 1500,
+            "element": "earth"
+          }
+        }
+      ],
+      "color_value": 253713,
+      "flavor_text": "The forge floor buckles and splits in a brutal arc, sending jagged plates of cooled slag tearing through everything within reach. The Bronze Bull Pit does not yield \u2014 it breaks what stands before it.",
+      "tier": 4,
+      "chain_id": "chain_B",
+      "chain_position": 1,
+      "parent_skill_ids": [
+        "skill_000077"
+      ],
+      "scaling_coefficient": 1.1961
+    }
+  ],
+  "balance_metadata": {
+    "target_winrate": 0.5,
+    "actual_winrate": 0.4806,
+    "convergence_winrate": 0.4806,
+    "pack_winrate": 0.0,
+    "convergence_iterations": 5,
+    "converged": true,
+    "final_modifier": 0.1956,
+    "gauntlet_results": {
+      "monster_00001": 0.0,
+      "monster_00002": 1.0,
+      "monster_00003": 0.0,
+      "monster_00004": 1.0,
+      "monster_00005": 0.0,
+      "monster_00006": 0.0,
+      "monster_00015": 1.0,
+      "monster_00016": 1.0,
+      "monster_00036": 0.5667,
+      "monster_00037": 0.9667,
+      "monster_00039": 0.2333,
+      "monster_00043": 0.0
+    },
+    "use_room_evaluation": false,
+    "room_winrate": 0.0,
+    "room_pack_winrate": 0.0,
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.1956
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false,
+    "element_coverage_tax": {},
+    "hybrid_mage_dps_scale_factor": 1.0,
+    "hybrid_mage_lever_b": {
+      "scale_factor": 1.0,
+      "dps_scale_applied": false,
+      "damage_bearing_skills_scaled": 0,
+      "combined_effective_multiplier": 1.0
+    },
+    "hybrid_mage_composite_d_active": false,
+    "r1_per_tier_win_rates": {
+      "swarm": 0.3333,
+      "magic": 1.0,
+      "elite": 0.7667,
+      "mini_boss": 0.2333,
+      "boss": 0.0
+    },
+    "r1_per_tier_pass": {
+      "swarm": false,
+      "magic": false,
+      "elite": false,
+      "mini_boss": true,
+      "boss": false
+    },
+    "r1_convergence_gate_passed": false,
+    "r1_failing_tiers": [
+      "swarm",
+      "magic",
+      "elite",
+      "boss"
+    ],
+    "r1_aggregate_wr_legacy": 0.4667,
+    "r1_boss_kill_rate": 0.0,
+    "r1_mini_boss_kill_rate": 0.2333
+  },
+  "convergence_report": {
+    "endgame_L50": {
+      "winrate": 0.4806,
+      "overall_winrate": 0.4806,
+      "pack_winrate": 0.0,
+      "use_room_evaluation": false,
+      "room_winrate": 0.0,
+      "room_pack_winrate": 0.0,
+      "iterations": 5,
+      "converged": true,
+      "final_modifier": 0.1956,
+      "dimensions_explored": [
+        "geometry_mix",
+        "skill_swap",
+        "cooldown_energy",
+        "energy_type_calibration"
+      ],
+      "optimal_distribution": null,
+      "gauntlet_results": {
+        "monster_00001": 0.0,
+        "monster_00002": 1.0,
+        "monster_00003": 0.0,
+        "monster_00004": 1.0,
+        "monster_00005": 0.0,
+        "monster_00006": 0.0,
+        "monster_00015": 1.0,
+        "monster_00016": 1.0,
+        "monster_00036": 0.5667,
+        "monster_00037": 0.9667,
+        "monster_00039": 0.2333,
+        "monster_00043": 0.0
+      },
+      "r1_per_tier_win_rates": {
+        "swarm": 0.3333,
+        "magic": 1.0,
+        "elite": 0.7667,
+        "mini_boss": 0.2333,
+        "boss": 0.0
+      },
+      "r1_convergence_gate_passed": false,
+      "r1_failing_tiers": [
+        "swarm",
+        "magic",
+        "elite",
+        "boss"
+      ],
+      "r1_boss_kill_rate": 0.0,
+      "r1_mini_boss_kill_rate": 0.2333
+    },
+    "mid_band_L33": null,
+    "early_band_L17": null,
+    "variance_check_L50": null,
+    "doppelganger_validation": null,
+    "recompose_attempts": [
+      {
+        "lever": "skill_swap",
+        "band_id": "L50",
+        "role": "area_damage",
+        "lever_specifics": {
+          "swapped_from_id": "skill_000080",
+          "swapped_from_role": "area_damage",
+          "swapped_to_role": "control",
+          "swapped_to_id": "skill_000114",
+          "role": "area_damage",
+          "rationale": "reduce_damage_output"
+        },
+        "attempt": 1,
+        "before_winrate": 0.3528,
+        "after_winrate": 0.3528,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.1956,
+        "working_modifier": 0.1956,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "geometry_mix",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "geometry_unchanged"
+        },
+        "attempt": 1,
+        "before_winrate": 0.3528,
+        "after_winrate": 0.3528,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.1956,
+        "working_modifier": 0.1956,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "cooldown_energy",
+        "band_id": "L50",
+        "role": "primary_attack",
+        "lever_specifics": {
+          "skill_id": "skill_000070",
+          "role": "primary_attack",
+          "param": "cooldown_seconds",
+          "from_cd": 1.4,
+          "to_cd": 1.54,
+          "from_cost": 6.6,
+          "to_cost": 7.26,
+          "rationale": "cd_increase_reduce_dps"
+        },
+        "attempt": 1,
+        "before_winrate": 0.3528,
+        "after_winrate": 0.3528,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.1956,
+        "working_modifier": 0.1956,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      },
+      {
+        "lever": "energy_type_calibration",
+        "band_id": "L50",
+        "role": null,
+        "lever_specifics": {
+          "rationale": "energy_type_not_physical",
+          "energy_type": "mana",
+          "recompose_energy_calibration_applied": false
+        },
+        "attempt": 1,
+        "before_winrate": 0.3528,
+        "after_winrate": 0.3528,
+        "delta": 0.0,
+        "accepted": false,
+        "eval_modifier": 0.1956,
+        "working_modifier": 0.1956,
+        "floor_lock_detected": false,
+        "recompose_energy_calibration_applied": false
+      }
+    ],
+    "recompose_outcome": "modifier_fallback",
+    "composition_pre_modifier_wr": 0.9361,
+    "composition_sufficient_for_055": false,
+    "secondary_loop_attempts": [
+      {
+        "variant": 1,
+        "from_element": "earth",
+        "to_element": "fire",
+        "n_swapped": 1,
+        "eval_modifier": 0.1956,
+        "modifier_dist_from_1": 0.8044,
+        "baseline_dist": 0.8044,
+        "accepted": false
+      }
+    ],
+    "secondary_loop_outcome": "secondary_reverted",
+    "modifier_clamp_observation": {
+      "clamp_range": [
+        0.15,
+        2.5
+      ],
+      "final_modifier": 0.1956,
+      "would_pass_clamp": true
+    },
+    "modifier_flag": {
+      "tier": null,
+      "threshold": 3.0,
+      "final_modifier": 0.1956
+    },
+    "modifier_extreme_low": false,
+    "floor_lock_recompose": false,
+    "recompose_energy_calibration_applied": false
+  },
+  "embodiment_tag": "humanoid",
+  "embodiment_anatomy_tags": [
+    "bipedal",
+    "arms_2",
+    "hands_2",
+    "head",
+    "torso"
+  ],
+  "embodiment_action_register": "arcane_channel",
+  "class_role_function": "burst",
+  "gear_slot_labels": {
+    "main_hand": "Weapon",
+    "off_hand": "Off-hand",
+    "head": "Helm",
+    "chest": "Chest",
+    "hands": "Gloves",
+    "feet": "Boots",
+    "belt": "Belt",
+    "ring_1": "Ring",
+    "ring_2": "Ring",
+    "amulet": "Amulet"
+  },
+  "movement_speed": 8.0,
+  "grouping_pair_structure": {
+    "fire": "ignition",
+    "water": "suffusion",
+    "earth": "bulwark",
+    "wind": "displacement",
+    "physical": "impact"
+  },
+  "grouping_season_id": "vs2a",
+  "grouping_layer_version": "v1.1",
+  "attribute_coupling": [
+    "wisdom",
+    "vitality"
+  ]
+}

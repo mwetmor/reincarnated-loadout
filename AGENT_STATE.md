@@ -1,12 +1,37 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-05-30
-**Last commit:** 7359983 — drax: planning-suite refresh § 17 — implementation plan section 17 exact execution order
-**Last tag:** drax/v1.4-planning-suite-refresh-section-17-1
+**Last updated:** 2026-06-01
+**Last commit:** [IA-3-P1 commit] — drax: IA-3 P1 — season_000042 data-loading layer + component wiring
+**Last tag:** drax/v1.0-ia-3-phase-1-mvp-1
 **Branch:** main
-**Hive-mind mode:** N/A (Mode B Pattern B sustained dispatch)
+**Hive-mind mode:** N/A (IA-3 P1 MVP integration dispatch)
 
 ## Session summary
+
+### IA-3 Phase 1 MVP Integration (2026-06-01)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-01-drax-ia-3-phase-1-mvp-integration-v1.md`
+**Authority:** Matt 2026-06-01 strategic reset + LOCK F (MVP-discipline) + LOCK G (Vercel preview autonomous)
+**Build:** `tsc -b && vite build` CLEAN (0 TS errors; 1056 modules)
+
+**Data-loading layer added:**
+- `data/season_000042/manifest.json` — adapted from engine manifest.json; `elements` stub + `seasonal_elements` built from cosmological_vocabulary slot_fills
+- `data/season_000042/classes/class_0001.json` through `class_0005.json` — 5 playable classes
+- `data/season_000042/gear_pool.json` — adapted from gear_pool_staged.json (id→gear_id rename; fit_* empty dicts)
+
+**Component wiring:** Existing `useSeasonData.ts` glob picks up season_000042 automatically. No new components.
+
+**Type additions:** None in loadout (no GeometryType union in loadout types.ts).
+
+**TODO(drax)s added:**
+- TODO(drax): remove MVP class-staging workaround (class_0006–class_0011 excluded) when engine ships is_act_boss correctly
+- TODO(drax): add null-guard to resolveElementDisplay for manifest.elements when engine emits elements:null consistently
+
+**Integration verdict:** SUCCESS — season_000042 renders via existing Loadout + Sample pages
+
+---
+
+
 
 ### cycle-14-v1-1-w4-ui-wiring-chain-t4 (2026-05-30)
 
