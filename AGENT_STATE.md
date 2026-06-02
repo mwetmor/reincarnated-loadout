@@ -1,12 +1,42 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-06-01
-**Last commit:** [IA-3-P1 commit] — drax: IA-3 P1 — season_000042 data-loading layer + component wiring
-**Last tag:** drax/v1.0-ia-3-phase-1-mvp-1
+**Last updated:** 2026-06-02
+**Last commit:** `42a0a0b` — drax: EAA-7 — engine page renders kit-space chronicle events
+**Last tag:** `drax/v1.4-eaa-7-engine-page-chronicle-1`
 **Branch:** main
-**Hive-mind mode:** N/A (IA-3 P1 MVP integration dispatch)
+**Hive-mind mode:** N/A (EAA-7 sequential-within-drax dispatch)
 
 ## Session summary
+
+### EAA-7 — Engine page chronicle render (2026-06-02)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-02-eaa-6-eaa-7-drax-mvp-reframe-sequential.md` § 7
+**Authority:** Matt 2026-06-02 + LOCK O + LOCK G + cycle-push pattern
+**Build:** `npm run build` PASS — 1067 modules, 0 TS errors
+
+**Stacks on:** EAA-6 (commit `2f5fec4`, tag `drax/v1.4-eaa-6-loadout-kit-space-1`)
+
+**New files:**
+- `src/components/EngineState/EngineStateChronicle.tsx` — chronicle section component; adapts `EngineStatePipelineFlow` section pattern (§ heading + description + card); renders `events[]` array with all 5 required AC-2 fields (event_id, timestamp, event_scope, kit_count, substrate_inputs_changed) + provenance strip
+- `src/hooks/useKitSpaceChronicleData.ts` — chronicle-only fetch hook (lighter than `useKitSpaceData`; engine page only needs chronicle, not all 25 kit JSONs); reuses `fetchJson` + `useState` + `useEffect` + `useCallback` pattern from `useEngineStateData` and `useKitSpaceData`
+
+**Modified:**
+- `src/pages/EngineState.tsx` — `ChronicleSection` inserted between `EngineStatePipelineFlow` (§ 1) and `EngineStatePhaseDeepDive`; imports `EngineStateChronicle` + `useKitSpaceChronicleData`; chronicle fetch is season-independent
+
+**Type extensions inventory:** none — reuses `KitSpaceChronicle` + `KitSpaceChronicleEvent` from `src/data/kitSpaceTypes.ts` (EAA-6)
+
+**Commit:** `42a0a0b`
+**Tag:** `drax/v1.4-eaa-7-engine-page-chronicle-1` (pushed to origin)
+**Vercel preview:** `https://reincarnated-loadout-madl8913m-matthew-wetmore-s-projects.vercel.app` — READY
+**Gate-2:** PASS (INFO severity) — `agentic_orchestration/qa/findings/2026-06-02-eaa-7-engine-page-chronicle-gate-2.md`
+
+**Gate-2 INFOs queued for EAA-8:**
+- INFO-1: `ChronicleSection` is inside `DashboardContent` (season-gated); invisible under season-data error state. EAA-8 candidate: hoist above season-gated block.
+- INFO-2: `useKitSpaceChronicleData` refresh not wired to control-bar Refresh button directly; remount-via-key provides functional equivalent. EAA-8 candidate if explicit wire-up desired.
+
+**No TODO(drax) overrides added** — no engine gaps compensated; consuming locked schema.
+
+---
 
 ### IA-3 Phase 1 MVP Integration (2026-06-01)
 
