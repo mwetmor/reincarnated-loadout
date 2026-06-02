@@ -1,12 +1,41 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-02
-**Last commit:** `42a0a0b` — drax: EAA-7 — engine page renders kit-space chronicle events
-**Last tag:** `drax/v1.4-eaa-7-engine-page-chronicle-1`
+**Last commit:** `eca9349` — drax: QDX-7 loadout + engine page consume QDX-5 kit_space output
+**Last tag:** `drax/v1.5-qdx-7-loadout-engine-page-kit-space-1`
 **Branch:** main
-**Hive-mind mode:** N/A (EAA-7 sequential-within-drax dispatch)
+**Hive-mind mode:** N/A (QDX-7 sequential drax dispatch)
 
 ## Session summary
+
+### QDX-7 — Loadout + engine page consume QDX-5 kit_space output (2026-06-02)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-02-qdx-7-drax-mvp-refresh.md`
+**Authority:** Matt 2026-06-02 + LOCK O + LOCK T + LOCK G + cycle-push pattern
+**Build:** `tsc -b && vite build` PASS — 1067 modules, 0 TS errors, 81/81 tests
+
+**Routing notes:**
+- Note 1 (faction): DEFERRED per LOCK O escape. Faction data confirmed in chronicle `generation_parameters` (n_factions=3; Wave A names in chronicle notes). Per-kit faction assignment absent from individual kit JSONs. `TODO(drax)` annotated in KitSpace.tsx footer comment. Faction count visible in engine page chronicle pipeline metrics.
+- Note 2 (is_active): IMPLEMENTED. `isT4Active()` helper checks both `t4 != null` AND `t4.is_active === true`. Used in KitCard (T4 badge) and KitDetailPanel (T4SelectionPanel render gate). kit_lightning_000005 correctly suppressed. Kits with populated-but-inactive T4 show "t4 selected (inactive)" notice.
+- Note 3 (event_008 filter): IMPLEMENTED. `useKitSpaceData` now derives kit IDs from chronicle event `kit_ids_generated` for `CURRENT_KIT_EVENT_ID = kse_20260602_008`. Hardcoded KIT_IDS array removed. Historical toggle switches to `HISTORICAL_KIT_EVENT_ID = kse_20260602_001` (EAA-5 v2 25 kits).
+
+**New/modified files:**
+- `public/kit-space/kit_space_chronicle.json` — synced from engine (8 events; kse_001 through kse_008)
+- `public/kit-space/kits/` — 37 QDX-5 kits added (kit_physical_000013-000028 + fire/water/earth/wind/lightning/holy/shadow 000004-000006/007-009)
+- `src/hooks/useKitSpaceData.ts` — rewritten: chronicle-driven kit IDs, event filter, historical toggle option, exports CURRENT/HISTORICAL constants
+- `src/data/kitSpaceTypes.ts` — additive: KitChainComposition BC fields; KitT4Selection typed (replaces unknown); KitT4NarrationMetadata; KitSpaceChronicleGenerationParameters QDX-5 fields
+- `src/pages/KitSpace.tsx` — Note 2/3 implemented; historical toggle UI; T4SelectionPanel (reuses detail pattern, no new component shell); isT4Active guard; page header shows event_id + QDX-5 metadata
+- `src/components/EngineState/EngineStateChronicle.tsx` — QDX-5 generation_parameters surfaced: element distribution table, pipeline metrics (n_factions, pm1_algorithm, ws1a4_flavor_rate, wave_b_template_repeat), llm_cost_breakdown
+
+**TODO(drax) overrides:**
+- KitSpace.tsx footer: faction per-kit view deferred; note engine needs per-kit `faction_id` field or cluster-membership endpoint
+
+**Commit:** `eca9349`
+**Tag:** `drax/v1.5-qdx-7-loadout-engine-page-kit-space-1` (pushed to origin)
+**Vercel preview:** `https://reincarnated-loadout-i5lk3kop7-matthew-wetmore-s-projects.vercel.app` — READY (build PASS; preview-protection 401 on unauthenticated fetch is expected)
+**Gate-2:** pending (jack-ryan QDX-8 wave-close)
+
+---
 
 ### EAA-7 — Engine page chronicle render (2026-06-02)
 
