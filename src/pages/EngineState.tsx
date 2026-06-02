@@ -9,9 +9,13 @@
 //
 // Data: fetched from public/engine-state/season-{001,002,003}/ at runtime.
 // phase2_kit_candidates.json is lazy-loaded by EngineStateBackwardTrace only.
+//
+// EAA-7: Kit-Space Chronicle section added below season pipeline.
+// Chronicle data: public/kit-space/kit_space_chronicle.json (single fetch; schema v1.0).
 
 import { useState } from 'react';
 import { useEngineStateData } from '../hooks/useEngineStateData';
+import { useKitSpaceChronicleData } from '../hooks/useKitSpaceChronicleData';
 import { EngineStatePageHeader } from '../components/EngineState/EngineStatePageHeader';
 import { EngineStateKpiGrid } from '../components/EngineState/EngineStateKpiGrid';
 import { EngineStatePipelineFlow } from '../components/EngineState/EngineStatePipelineFlow';
@@ -19,6 +23,7 @@ import { EngineStatePhaseDeepDive } from '../components/EngineState/EngineStateP
 import { EngineStateFactionEmergence } from '../components/EngineState/EngineStateFactionEmergence';
 import { EngineStateBackwardTrace } from '../components/EngineState/EngineStateBackwardTrace';
 import { EngineStateObservations } from '../components/EngineState/EngineStateObservations';
+import { EngineStateChronicle } from '../components/EngineState/EngineStateChronicle';
 import type { SeasonId } from '../data/engineStateTypes';
 import { ENGINE_SEASON_IDS, ENGINE_SEASON_LABELS } from '../data/engineStateTypes';
 
@@ -75,6 +80,52 @@ function SeasonSelector({ selected, onChange }: SeasonSelectorProps) {
   );
 }
 
+// ---------------------------------------------------------------------------
+// ChronicleSection — renders kit_space_chronicle.json; season-independent
+// ---------------------------------------------------------------------------
+
+function ChronicleSection() {
+  const { chronicle, status, error } = useKitSpaceChronicleData();
+
+  if (status === 'idle' || status === 'loading') {
+    return (
+      <section className="my-8">
+        <div className="flex items-baseline gap-3 mb-1">
+          <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">§ 2</span>
+          <h2 className="text-lg font-bold text-gray-900 tracking-tight">Kit-Space Chronicle</h2>
+        </div>
+        <div className="flex items-center gap-2 py-4">
+          <div className="w-5 h-5 rounded-full border-2 border-teal-500 border-t-transparent animate-spin" />
+          <p className="text-sm text-gray-500 font-mono">Loading chronicle...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (status === 'error' || !chronicle) {
+    return (
+      <section className="my-8">
+        <div className="flex items-baseline gap-3 mb-1">
+          <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">§ 2</span>
+          <h2 className="text-lg font-bold text-gray-900 tracking-tight">Kit-Space Chronicle</h2>
+        </div>
+        <div className="bg-white border border-red-200 rounded-lg p-4">
+          <p className="text-sm text-red-400 font-mono">
+            Chronicle load error: {error ?? 'Unknown error'}
+          </p>
+          <p className="text-xs text-gray-500 mt-1">
+            Ensure public/kit-space/kit_space_chronicle.json is present.
+          </p>
+        </div>
+      </section>
+    );
+  }
+
+  return <EngineStateChronicle chronicle={chronicle} />;
+}
+
+// ---------------------------------------------------------------------------
+
 interface DashboardContentProps {
   seasonSlug: SeasonId;
   onRefresh: () => void;
@@ -99,6 +150,7 @@ function DashboardContent({ seasonSlug, onRefresh }: DashboardContentProps) {
         <EngineStatePageHeader summary={summary} />
         <EngineStateKpiGrid summary={summary} />
         <EngineStatePipelineFlow summary={summary} />
+        <ChronicleSection />
         <EngineStatePhaseDeepDive summary={summary} phase4={phase4} clusters={clusters} />
         <EngineStateFactionEmergence
           clusters={clusters}
