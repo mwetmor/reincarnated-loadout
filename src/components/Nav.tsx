@@ -28,6 +28,8 @@ export function Nav() {
           >
             <NavItem to="/pitch">Summary</NavItem>
             <NavItem to="/loadout">Loadout</NavItem>
+            {/* cycle-18 recovery-2: Kits nav item for kit browser surface */}
+            <NavItem to="/kits">Kits</NavItem>
             {/* cycle-18 recovery Fix B: Sample removed from active nav per Matt B1; /sample route preserved for historical access */}
             <NavItem to="/analytics">Analytics</NavItem>
             <NavItem to="/encounters">Encounters</NavItem>
