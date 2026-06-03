@@ -11,13 +11,13 @@
 //   - historical = kse_20260602_001 (EAA-5 v2; 25 kits) + smoke events 002-007
 //   - Historical event kits preserved via Path α (pass showHistorical=true to hook)
 //
-// QDX-7 (Note 2): t4_selection.is_active guard applied at KitSpace render layer (KitSpace.tsx).
+// QDX-7 (Note 2): t4_selection.is_active guard applied at Loadout render layer (Loadout.tsx).
 //   The hook loads raw data; rendering checks is_active before displaying T4 as active.
 //
 // LOCK O: this hook is the ONLY new non-UI code added for EAA-6; QDX-7 extends it minimally.
 
 import { useState, useEffect, useCallback } from 'react';
-import type { KitData, KitSpaceChronicle } from '../data/kitSpaceTypes';
+import type { KitData, KitSpaceChronicle, FactionAssignments, KitFactionMap } from '../data/kitSpaceTypes';
 
 // Current canonical event ID — QDX-5 full fire (37 kits)
 // TODO(drax): update this constant when a future expansion event becomes canonical
@@ -37,6 +37,7 @@ export interface UseKitSpaceDataOptions {
 export interface UseKitSpaceDataResult {
   kits: KitData[];
   chronicle: KitSpaceChronicle | null;
+  factionMap: KitFactionMap;
   status: KitSpaceLoadStatus;
   error: string | null;
   refresh: () => void;
@@ -50,9 +51,28 @@ async function fetchJson<T>(url: string): Promise<T> {
   return res.json() as Promise<T>;
 }
 
-async function loadKitSpaceData(eventId: string): Promise<{ kits: KitData[]; chronicle: KitSpaceChronicle }> {
-  // Fetch chronicle first; derive kit IDs from the target event
-  const chronicle = await fetchJson<KitSpaceChronicle>('/kit-space/kit_space_chronicle.json');
+// Build kit_id → { faction_id, faction_name } reverse map from faction_assignments.json
+function buildFactionMap(assignments: FactionAssignments): KitFactionMap {
+  const map: KitFactionMap = {};
+  for (const faction of assignments.factions) {
+    for (const kitId of faction.kit_ids) {
+      map[kitId] = { faction_id: faction.faction_id, faction_name: faction.faction_name };
+    }
+  }
+  return map;
+}
+
+async function loadKitSpaceData(eventId: string): Promise<{ kits: KitData[]; chronicle: KitSpaceChronicle; factionMap: KitFactionMap }> {
+  // Fetch chronicle + faction assignments in parallel
+  const [chronicle, factionAssignments] = await Promise.all([
+    fetchJson<KitSpaceChronicle>('/kit-space/kit_space_chronicle.json'),
+    fetchJson<FactionAssignments>('/kit-space/faction_assignments.json').catch((err: unknown) => {
+      console.warn('[useKitSpaceData] Failed to load faction_assignments.json:', err);
+      return null;
+    }),
+  ]);
+
+  const factionMap = factionAssignments ? buildFactionMap(factionAssignments) : {};
 
   // Note 3: filter to the specified event — historical kits (events 001-007) have
   // different schema shapes; mixing them causes render errors on QDX-5-only fields.
@@ -74,7 +94,7 @@ async function loadKitSpaceData(eventId: string): Promise<{ kits: KitData[]; chr
   const settled = await Promise.all(kitPromises);
   const kits = settled.filter((k): k is KitData => k !== null);
 
-  return { kits, chronicle };
+  return { kits, chronicle, factionMap };
 }
 
 export function useKitSpaceData(options: UseKitSpaceDataOptions = {}): UseKitSpaceDataResult {
@@ -83,6 +103,7 @@ export function useKitSpaceData(options: UseKitSpaceDataOptions = {}): UseKitSpa
 
   const [kits, setKits] = useState<KitData[]>([]);
   const [chronicle, setChronicle] = useState<KitSpaceChronicle | null>(null);
+  const [factionMap, setFactionMap] = useState<KitFactionMap>({});
   const [status, setStatus] = useState<KitSpaceLoadStatus>('idle');
   const [error, setError] = useState<string | null>(null);
   const [rev, setRev] = useState(0);
@@ -95,10 +116,11 @@ export function useKitSpaceData(options: UseKitSpaceDataOptions = {}): UseKitSpa
     setError(null);
 
     loadKitSpaceData(eventId)
-      .then(({ kits: loadedKits, chronicle: loadedChronicle }) => {
+      .then(({ kits: loadedKits, chronicle: loadedChronicle, factionMap: loadedFactionMap }) => {
         if (cancelled) return;
         setKits(loadedKits);
         setChronicle(loadedChronicle);
+        setFactionMap(loadedFactionMap);
         setStatus('success');
       })
       .catch((err: unknown) => {
@@ -116,6 +138,7 @@ export function useKitSpaceData(options: UseKitSpaceDataOptions = {}): UseKitSpa
   return {
     kits,
     chronicle,
+    factionMap,
     status,
     error,
     refresh,

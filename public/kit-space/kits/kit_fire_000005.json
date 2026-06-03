@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "kit_id": "kit_wind_000004",
-  "primary_element": "wind",
+  "kit_id": "kit_fire_000005",
+  "primary_element": "fire",
   "cultural_tradition": null,
   "period": null,
   "chain_composition": {
@@ -13,8 +13,8 @@
     "bc_proxy_density": "none"
   },
   "t4_selection": {
-    "candidate_id": "wind_kit_chain_A_DEFENSIVE_CONVERSION_ELEMENT_CONVERSION_chain_wide_parallel",
-    "category_a_strategy": "DEFENSIVE_CONVERSION",
+    "candidate_id": "fire_kit_chain_A_DEFENSIVE_TRADEOFF_ELEMENT_CONVERSION_chain_wide_parallel",
+    "category_a_strategy": "DEFENSIVE_TRADEOFF",
     "category_bc_strategy": "ELEMENT_CONVERSION",
     "t4_category_bc": "C",
     "is_class_wide_trade_off": false,
@@ -63,24 +63,24 @@
     },
     "spirit_guide_narration_metadata": {
       "has_mechanic_alteration": true,
-      "alteration_type": "Pressure Front Conversion",
-      "thematic_rationale": "Wind that reaches outward in variable measure learns, at its fullest expression, to answer force with the same breath it sent forward \u2014 distance and amplitude turned back into shelter.",
-      "manifestation": "Every ranged strike landing across the chain simultaneously reverses its drag coefficient \u2014 the air that was peeling away from you folds inward instead, each variable gust compressing into a layered shell of deflective pressure that holds for a breath before dispersing.",
+      "alteration_type": "Controlled Burn Threshold",
+      "thematic_rationale": "A fire that cannot be directed is just destruction; this form earns its range by trading wild amplitude for the disciplined burn of a mind that knows exactly how much heat is enough.",
+      "manifestation": "The heat around you dims — not extinguished, but pulled inward. Your ranged fire locks into a narrower, steadier arc, each shot carrying less variable bloom but landing with a denser, more predictable heat signature. The air between you and the target feels taut, like drawn wire.",
       "spirit_guide_explainer_template": null,
       "narrative_hooks": [],
       "secondary_alteration_types": []
     },
-    "thematic_rationale": "Wind that reaches outward in variable measure learns, at its fullest expression, to answer force with the same breath it sent forward \u2014 distance and amplitude turned back into shelter.",
+    "thematic_rationale": "A fire that cannot be directed is just destruction; this form earns its range by trading wild amplitude for the disciplined burn of a mind that knows exactly how much heat is enough.",
     "phase5_t4_narration_cohesion_score": 0.84,
     "phase5_t4_narration_cohesion_breakdown": {
       "kit_identity": 1.0,
       "thematic_rationale_fit": 0.6,
-      "element_hits": 2,
+      "element_hits": 3,
       "cultural_score_contrib": 0.5,
       "strat_hits": 0,
       "el_in_rationale": true,
-      "manifest_word_count": 42,
-      "rationale_word_count": 30,
+      "manifest_word_count": 47,
+      "rationale_word_count": 33,
       "aggregate": 0.84
     },
     "phase5_t4_narration_attempt_number": 1,
@@ -90,60 +90,60 @@
   "supporting_chain": null,
   "skills": [
     {
-      "id": "skill_001132",
-      "name": "Cutting Gale",
-      "role": "damage_over_time",
+      "id": "skill_000060",
+      "name": "Ember Dash",
+      "role": "mobility",
       "canonical_element": "fire",
       "tier": 1,
       "chain_id": "chain_A",
-      "energy_cost": 24.4,
-      "cooldown_seconds": 6.9,
+      "energy_cost": 20.0,
+      "cooldown_seconds": 9.4,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
-      "scaling_coefficient": 1.0753,
+      "scaling_coefficient": 1.0577,
       "bc_axis_contribution": {},
       "chain_position": 1,
       "parent_skill_ids": [],
       "ws1a4_flavor_decision": true,
-      "ws1a4_flavor_word_used": "squall",
+      "ws1a4_flavor_word_used": "blaze",
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The wind does not strike once \u2014 it wears away, patient and relentless, until nothing remains standing.",
+      "flavor_text": "A burst of flame propels the mage forward, leaving a trail of smoldering embers in their wake. Even novice fire mages learn to let fire carry them.",
       "effects": [
-        "Summon a persistent gale around the target, dealing wind damage over time for several seconds."
+        "Dash a short distance in your movement direction, consuming 20 mana with a 9.4 second cooldown."
       ],
       "phase5_thematic_tags": [
-        "wind",
-        "persistent",
-        "attrition"
+        "mobility",
+        "fire",
+        "dash"
       ],
-      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_score": 1.0,
       "phase5_cohesion_breakdown": {
         "kit_identity": 1.0,
         "chain_progression": 1.0,
-        "mechanical_narration": 0.8,
+        "mechanical_narration": 1.0,
         "cultural_tradition": 1.0,
         "cross_tree_thematic": 1.0,
-        "aggregate": 0.96
+        "aggregate": 1.0
       },
       "phase5_attempt_number": 1,
       "phase5_is_placeholder": false,
-      "phase5_cache_hit": true
+      "phase5_cache_hit": false
     },
     {
-      "id": "skill_001133",
-      "name": "Wind Veil",
-      "role": "defensive",
-      "canonical_element": "wind",
+      "id": "skill_000061",
+      "name": "Smoldering Trail",
+      "role": "damage_over_time",
+      "canonical_element": "fire",
       "tier": 1,
       "chain_id": "chain_A",
-      "energy_cost": 23.8,
-      "cooldown_seconds": 11.9,
+      "energy_cost": 23.2,
+      "cooldown_seconds": 6.9,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
-      "scaling_coefficient": 1.0569,
+      "scaling_coefficient": 1.065,
       "bc_axis_contribution": {},
       "chain_position": 2,
       "parent_skill_ids": [],
@@ -151,14 +151,14 @@
       "ws1a4_flavor_word_used": null,
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The drifter wraps themselves in a sheath of swirling air, letting blows glance away like leaves in a gust.",
+      "flavor_text": "Where the mage dashes, embers linger and hunger. The ground itself remembers the passage of flame.",
       "effects": [
-        "Surround yourself with a wind barrier that briefly reduces incoming damage."
+        "Leaves a burning trail that deals fire damage over time to enemies who pass through it."
       ],
       "phase5_thematic_tags": [
-        "wind",
-        "defense",
-        "barrier"
+        "fire",
+        "persistent",
+        "ground-effect"
       ],
       "phase5_cohesion_score": 0.915,
       "phase5_cohesion_breakdown": {
@@ -171,252 +171,243 @@
       },
       "phase5_attempt_number": 1,
       "phase5_is_placeholder": false,
-      "phase5_cache_hit": true
+      "phase5_cache_hit": false
     },
     {
-      "id": "skill_001134",
-      "name": "Gale Ward",
+      "id": "skill_000062",
+      "name": "Flame Ward",
       "role": "defensive",
       "canonical_element": "fire",
       "tier": 1,
-      "chain_id": "chain_A",
-      "energy_cost": 20.7,
-      "cooldown_seconds": 8.9,
+      "chain_id": "chain_B",
+      "energy_cost": 23.8,
+      "cooldown_seconds": 10.1,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
-      "scaling_coefficient": 1.0509,
+      "scaling_coefficient": 1.0795,
+      "bc_axis_contribution": {},
+      "chain_position": 1,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "A mage worth their salt knows when to shield themselves. A brief mantle of fire turns aside the worst of incoming blows.",
+      "effects": [
+        "Briefly surround yourself with protective flames, reducing incoming damage for a short duration."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
+        "defense",
+        "mana"
+      ],
+      "phase5_cohesion_score": 0.915,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 1.0,
+        "mechanical_narration": 0.8,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.915
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_000063",
+      "name": "Empower",
+      "role": "utility",
+      "canonical_element": "earth",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 10.7,
+      "cooldown_seconds": 18.5,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0745,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "",
+      "effects": [
+        "A tier-1 utility ability."
+      ],
+      "phase5_thematic_tags": [
+        "utility"
+      ],
+      "phase5_cohesion_score": 0.0,
+      "phase5_cohesion_breakdown": {},
+      "phase5_attempt_number": 3,
+      "phase5_is_placeholder": true,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_000064",
+      "name": "Scorching Brand",
+      "role": "damage_over_time",
+      "canonical_element": "earth",
+      "tier": 1,
+      "chain_id": "chain_B",
+      "energy_cost": 12.4,
+      "cooldown_seconds": 4.0,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0791,
       "bc_axis_contribution": {},
       "chain_position": 3,
       "parent_skill_ids": [],
-      "ws1a4_flavor_decision": false,
-      "ws1a4_flavor_word_used": null,
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "scorch",
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The wind does not merely cut \u2014 it also shields, wrapping the caster in a constant, whispering barrier of moving air.",
+      "flavor_text": "A mark of fire seared into flesh and spirit alike, burning long after the initial flame has faded.",
       "effects": [
-        "Surround yourself with swirling winds, briefly reducing incoming damage and deflecting minor projectiles."
+        "Brand the target with fire, dealing damage over time for several seconds."
       ],
       "phase5_thematic_tags": [
-        "wind",
-        "defense",
-        "barrier"
+        "fire",
+        "burning",
+        "mark"
       ],
-      "phase5_cohesion_score": 0.96,
+      "phase5_cohesion_score": 0.915,
       "phase5_cohesion_breakdown": {
         "kit_identity": 1.0,
         "chain_progression": 1.0,
         "mechanical_narration": 0.8,
         "cultural_tradition": 1.0,
-        "cross_tree_thematic": 1.0,
-        "aggregate": 0.96
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.915
       },
       "phase5_attempt_number": 1,
       "phase5_is_placeholder": false,
-      "phase5_cache_hit": true
+      "phase5_cache_hit": false
     },
     {
-      "id": "skill_001135",
-      "name": "Wind Step",
-      "role": "utility",
-      "canonical_element": "wind",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "energy_cost": 17.8,
-      "cooldown_seconds": 12.7,
+      "id": "skill_000065",
+      "name": "Blazing Surge",
+      "role": "mobility",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 17.4,
+      "cooldown_seconds": 9.4,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
-      "scaling_coefficient": 1.0563,
+      "scaling_coefficient": 1.1011,
       "bc_axis_contribution": {},
       "chain_position": 1,
-      "parent_skill_ids": [],
-      "ws1a4_flavor_decision": true,
-      "ws1a4_flavor_word_used": "zephyr",
+      "parent_skill_ids": [
+        "skill_000060"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The drifter reads the currents before moving, letting the wind carry them where instinct alone cannot.",
+      "flavor_text": "The mage becomes a living comet, trailing scorched air and cinders as they tear through the battlefield with blazing momentum.",
       "effects": [
-        "Harness a gust of wind to briefly enhance your movement and positioning for a short duration."
+        "Surge forward in a burst of flame, leaving a brief trail of fire in your wake."
       ],
       "phase5_thematic_tags": [
-        "wind",
+        "fire",
+        "mobility",
+        "momentum"
+      ],
+      "phase5_cohesion_score": 0.835,
+      "phase5_cohesion_breakdown": {
+        "kit_identity": 1.0,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.75,
+        "cultural_tradition": 1.0,
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.835
+      },
+      "phase5_attempt_number": 1,
+      "phase5_is_placeholder": false,
+      "phase5_cache_hit": false
+    },
+    {
+      "id": "skill_000066",
+      "name": "Cinder Step",
+      "role": "utility",
+      "canonical_element": "fire",
+      "tier": 2,
+      "chain_id": "chain_A",
+      "energy_cost": 12.4,
+      "cooldown_seconds": 16.7,
+      "damage_multiplier": 1.0,
+      "geometry_type": null,
+      "spatial_geometry_type": null,
+      "scaling_coefficient": 1.0944,
+      "bc_axis_contribution": {},
+      "chain_position": 2,
+      "parent_skill_ids": [
+        "skill_000060"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
+      "ws1a4_attempt_number": 1,
+      "ws1a4_is_fallback": false,
+      "flavor_text": "Where the mage treads, embers linger — a smoldering path that speaks of power barely contained.",
+      "effects": [
+        "Dash forward leaving a trail of cinders that briefly slow and singe enemies who cross it."
+      ],
+      "phase5_thematic_tags": [
+        "fire",
         "mobility",
         "utility"
       ],
-      "phase5_cohesion_score": 0.95,
+      "phase5_cohesion_score": 0.805,
       "phase5_cohesion_breakdown": {
         "kit_identity": 1.0,
-        "chain_progression": 1.0,
-        "mechanical_narration": 0.75,
+        "chain_progression": 0.65,
+        "mechanical_narration": 0.6,
         "cultural_tradition": 1.0,
-        "cross_tree_thematic": 1.0,
-        "aggregate": 0.95
+        "cross_tree_thematic": 0.7,
+        "aggregate": 0.805
       },
       "phase5_attempt_number": 1,
       "phase5_is_placeholder": false,
-      "phase5_cache_hit": true
+      "phase5_cache_hit": false
     },
     {
-      "id": "skill_001136",
-      "name": "Wind Strike",
-      "role": "primary_attack",
-      "canonical_element": "wind",
-      "tier": 1,
-      "chain_id": "chain_B",
-      "energy_cost": 8.4,
-      "cooldown_seconds": 1.4,
-      "damage_multiplier": 1.0,
-      "geometry_type": null,
-      "spatial_geometry_type": null,
-      "scaling_coefficient": 1.0776,
-      "bc_axis_contribution": {},
-      "chain_position": 2,
-      "parent_skill_ids": [],
-      "ws1a4_flavor_decision": false,
-      "ws1a4_flavor_word_used": null,
-      "ws1a4_attempt_number": 1,
-      "ws1a4_is_fallback": false,
-      "flavor_text": "A swift gust channeled through the fist, the Wind Drifter's most basic expression of elemental mastery.",
-      "effects": [
-        "Strike a nearby enemy with a focused burst of wind, dealing moderate damage."
-      ],
-      "phase5_thematic_tags": [
-        "wind",
-        "melee",
-        "basic_attack"
-      ],
-      "phase5_cohesion_score": 0.96,
-      "phase5_cohesion_breakdown": {
-        "kit_identity": 1.0,
-        "chain_progression": 1.0,
-        "mechanical_narration": 0.8,
-        "cultural_tradition": 1.0,
-        "cross_tree_thematic": 1.0,
-        "aggregate": 0.96
-      },
-      "phase5_attempt_number": 1,
-      "phase5_is_placeholder": false,
-      "phase5_cache_hit": true
-    },
-    {
-      "id": "skill_001137",
-      "name": "Gale Burst",
+      "id": "skill_000067",
+      "name": "Scorching Eruption",
       "role": "area_damage",
-      "canonical_element": "wind",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "energy_cost": 22.7,
-      "cooldown_seconds": 3.4,
-      "damage_multiplier": 1.0,
-      "geometry_type": null,
-      "spatial_geometry_type": null,
-      "scaling_coefficient": 1.1063,
-      "bc_axis_contribution": {},
-      "chain_position": 1,
-      "parent_skill_ids": [
-        "skill_001132"
-      ],
-      "ws1a4_flavor_decision": false,
-      "ws1a4_flavor_word_used": null,
-      "ws1a4_attempt_number": 1,
-      "ws1a4_is_fallback": false,
-      "flavor_text": "The wind coils and then releases in a sudden explosive rush, scattering all who stand within its reach.",
-      "effects": [
-        "Release a burst of wind energy that deals area damage to all nearby enemies."
-      ],
-      "phase5_thematic_tags": [
-        "wind",
-        "area_damage",
-        "burst"
-      ],
-      "phase5_cohesion_score": 0.96,
-      "phase5_cohesion_breakdown": {
-        "kit_identity": 1.0,
-        "chain_progression": 1.0,
-        "mechanical_narration": 0.8,
-        "cultural_tradition": 1.0,
-        "cross_tree_thematic": 1.0,
-        "aggregate": 0.96
-      },
-      "phase5_attempt_number": 1,
-      "phase5_is_placeholder": false,
-      "phase5_cache_hit": true
-    },
-    {
-      "id": "skill_001138",
-      "name": "Gale Surge",
-      "role": "burst_damage",
-      "canonical_element": "wind",
-      "tier": 2,
-      "chain_id": "chain_A",
-      "energy_cost": 32.1,
-      "cooldown_seconds": 7.2,
-      "damage_multiplier": 1.0,
-      "geometry_type": null,
-      "spatial_geometry_type": null,
-      "scaling_coefficient": 1.0819,
-      "bc_axis_contribution": {},
-      "chain_position": 2,
-      "parent_skill_ids": [
-        "skill_001132"
-      ],
-      "ws1a4_flavor_decision": false,
-      "ws1a4_flavor_word_used": null,
-      "ws1a4_attempt_number": 1,
-      "ws1a4_is_fallback": false,
-      "flavor_text": "The wind that once shielded you now tears outward in a violent rush, scattering foes like leaves in a storm.",
-      "effects": [
-        "Release a burst of wind energy that deals moderate damage to nearby enemies within medium range."
-      ],
-      "phase5_thematic_tags": [
-        "wind",
-        "burst",
-        "release"
-      ],
-      "phase5_cohesion_score": 0.96,
-      "phase5_cohesion_breakdown": {
-        "kit_identity": 1.0,
-        "chain_progression": 1.0,
-        "mechanical_narration": 0.8,
-        "cultural_tradition": 1.0,
-        "cross_tree_thematic": 1.0,
-        "aggregate": 0.96
-      },
-      "phase5_attempt_number": 1,
-      "phase5_is_placeholder": false,
-      "phase5_cache_hit": true
-    },
-    {
-      "id": "skill_001139",
-      "name": "Wind Lash",
-      "role": "damage_over_time",
-      "canonical_element": "wind",
+      "canonical_element": "fire",
       "tier": 2,
       "chain_id": "chain_B",
-      "energy_cost": 22.6,
-      "cooldown_seconds": 4.3,
+      "energy_cost": 17.0,
+      "cooldown_seconds": 4.6,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
-      "scaling_coefficient": 1.0915,
+      "scaling_coefficient": 1.0811,
       "bc_axis_contribution": {},
       "chain_position": 1,
       "parent_skill_ids": [
-        "skill_001135"
+        "skill_000062"
       ],
-      "ws1a4_flavor_decision": true,
-      "ws1a4_flavor_word_used": "squall",
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "Each cutting gust leaves wounds that linger, the air itself becoming a relentless tormentor that refuses to let injuries heal.",
+      "flavor_text": "The branded earth answers with fury, splitting open to release a geyser of molten fire that scorches all who stand near.",
       "effects": [
-        "Lashes the target with razor winds, dealing wind damage over time for several seconds."
+        "Release a burst of fire energy that deals area damage to all nearby enemies."
       ],
       "phase5_thematic_tags": [
-        "wind",
-        "damage_over_time",
-        "sustained_pressure"
+        "fire",
+        "area",
+        "eruption"
       ],
       "phase5_cohesion_score": 0.96,
       "phase5_cohesion_breakdown": {
@@ -432,35 +423,35 @@
       "phase5_cache_hit": false
     },
     {
-      "id": "skill_001140",
-      "name": "Wind Slash",
+      "id": "skill_000068",
+      "name": "Inferno Cinder Blast",
       "role": "burst_damage",
-      "canonical_element": "wind",
-      "tier": 2,
-      "chain_id": "chain_B",
-      "energy_cost": 33.1,
-      "cooldown_seconds": 9.1,
+      "canonical_element": "fire",
+      "tier": 3,
+      "chain_id": "chain_A",
+      "energy_cost": 36.4,
+      "cooldown_seconds": 9.2,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
-      "scaling_coefficient": 1.1188,
+      "scaling_coefficient": 1.1412,
       "bc_axis_contribution": {},
-      "chain_position": 2,
+      "chain_position": 1,
       "parent_skill_ids": [
-        "skill_001135"
+        "skill_000065"
       ],
       "ws1a4_flavor_decision": true,
-      "ws1a4_flavor_word_used": "gale",
+      "ws1a4_flavor_word_used": "inferno",
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "A focused blade of wind cuts through the air with sudden, devastating force. Where it passes, the calm is shattered.",
+      "flavor_text": "The embers you leave behind ignite into a roaring inferno, consuming all in a catastrophic surge of scorching flame.",
       "effects": [
-        "Unleash a sharp burst of wind energy that deals moderate damage to a single target at medium range."
+        "Detonate lingering cinders in a burst of fire, dealing heavy damage to all nearby enemies."
       ],
       "phase5_thematic_tags": [
-        "wind",
+        "fire",
         "burst",
-        "slash"
+        "explosion"
       ],
       "phase5_cohesion_score": 0.96,
       "phase5_cohesion_breakdown": {
@@ -476,77 +467,79 @@
       "phase5_cache_hit": false
     },
     {
-      "id": "skill_001141",
-      "name": "Wind Cleave",
-      "role": "utility",
+      "id": "skill_000069",
+      "name": "Scorching Leap",
+      "role": "mobility",
       "canonical_element": "fire",
       "tier": 3,
       "chain_id": "chain_B",
-      "energy_cost": 13.2,
-      "cooldown_seconds": 15.9,
+      "energy_cost": 10.7,
+      "cooldown_seconds": 11.1,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
-      "scaling_coefficient": 1.133,
+      "scaling_coefficient": 1.1218,
       "bc_axis_contribution": {},
       "chain_position": 1,
       "parent_skill_ids": [
-        "skill_001139"
+        "skill_000067"
       ],
-      "ws1a4_flavor_decision": false,
-      "ws1a4_flavor_word_used": null,
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "blaze",
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "A masterful sweep of condensed air, honed through years of practice into a blade that cuts through resistance itself.",
+      "flavor_text": "The mage erupts forward in a burst of searing flame, leaving devastation in their wake. Fire obeys no boundary.",
       "effects": [
-        "Unleash a sweeping wind arc that disrupts enemies and briefly reduces their movement and attack speed."
+        "Leap a medium distance, igniting the ground at your destination and consuming 10 mana."
       ],
       "phase5_thematic_tags": [
-        "wind",
-        "utility",
-        "disruption"
+        "fire",
+        "mobility",
+        "eruption"
       ],
-      "phase5_cohesion_score": 0.9,
+      "phase5_cohesion_score": 0.98,
       "phase5_cohesion_breakdown": {
         "kit_identity": 1.0,
         "chain_progression": 0.9,
-        "mechanical_narration": 0.6,
+        "mechanical_narration": 1.0,
         "cultural_tradition": 1.0,
         "cross_tree_thematic": 1.0,
-        "aggregate": 0.9
+        "aggregate": 0.98
       },
       "phase5_attempt_number": 1,
       "phase5_is_placeholder": false,
       "phase5_cache_hit": false
     },
     {
-      "id": "skill_001142",
-      "name": "Gale Tempest",
-      "role": "area_damage",
+      "id": "skill_000070",
+      "name": "Scorching Inferno Strike",
+      "role": "primary_attack",
       "canonical_element": "fire",
       "tier": 4,
-      "chain_id": "chain_A",
-      "energy_cost": 26.7,
-      "cooldown_seconds": 6.7,
+      "chain_id": "chain_B",
+      "energy_cost": 7.1,
+      "cooldown_seconds": 1.5,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
-      "scaling_coefficient": 1.2288,
+      "scaling_coefficient": 1.1802,
       "bc_axis_contribution": {},
       "chain_position": 1,
-      "parent_skill_ids": [],
-      "ws1a4_flavor_decision": true,
-      "ws1a4_flavor_word_used": "cyclone",
+      "parent_skill_ids": [
+        "skill_000069"
+      ],
+      "ws1a4_flavor_decision": false,
+      "ws1a4_flavor_word_used": null,
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The wind no longer whispers \u2014 it roars. A spiraling tempest tears through the air, scattering all who dare stand before it.",
+      "flavor_text": "The mage channels weeks of smoldering fury into a single devastating blow, leaving nothing but ash and scorched earth in its wake.",
       "effects": [
-        "Unleash a sweeping gale that deals wind damage to all enemies in a wide area around you."
+        "Unleash a powerful fiery melee strike that deals moderate fire damage to a target at medium range."
       ],
       "phase5_thematic_tags": [
-        "wind",
-        "area_damage",
-        "tempest"
+        "fire",
+        "strike",
+        "scorching"
       ],
       "phase5_cohesion_score": 0.86,
       "phase5_cohesion_breakdown": {
@@ -559,16 +552,16 @@
       },
       "phase5_attempt_number": 1,
       "phase5_is_placeholder": false,
-      "phase5_cache_hit": true
+      "phase5_cache_hit": false
     }
   ],
-  "emergent_kit_concept": "Veilsinger of the Wandering Breath",
+  "emergent_kit_concept": "Ember without Mapped Ground",
   "substrate_trace": {
     "source": "class_generator_option_b",
-    "generation_seed": 20260627,
-    "archetype_tag": "wind_caster",
+    "generation_seed": 20260603,
+    "archetype_tag": "fire_mage",
     "energy_type": "mana",
-    "element": "wind",
+    "element": "fire",
     "season_id": "qdx5_20260602",
     "bc_range": "ranged",
     "bc_tempo": "medium",
@@ -579,13 +572,13 @@
     "period": null,
     "option_b4_5": true
   },
-  "kit_space_expansion_event_id": "kse_20260602_008",
-  "engine_version": "d89d23e",
-  "engine_version_full": "d89d23eebac30d8d278213123380dce04716c245",
-  "generation_timestamp": "2026-06-02T23:00:32.005Z",
+  "kit_space_expansion_event_id": "kse_20260602_007",
+  "engine_version": "cd3b10c",
+  "engine_version_full": "cd3b10cffea7090956258d2f1298528ce990cb69",
+  "generation_timestamp": "2026-06-02T22:33:50.625Z",
   "lineage_tags": {
-    "kit_space_lineage": "kit-space-expansion-kse_20260602_008",
-    "engine_provenance": "engine-d89d23e-kse_20260602_008",
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_007",
+    "engine_provenance": "engine-cd3b10c-kse_20260602_007",
     "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
     "generation_cohort_date": "2026-06-02"
   }

@@ -241,3 +241,24 @@ export interface KitSpaceChronicle {
   schema_notes?: string | null;
   events: KitSpaceChronicleEvent[];
 }
+
+// ---------------------------------------------------------------------------
+// Faction assignments (Issue 5A — public/kit-space/faction_assignments.json)
+// Source: reincarnated-engine/data/kit_space/faction_assignments.json
+// Schema v1.0; synced from engine at data-staging time.
+// ---------------------------------------------------------------------------
+
+export interface FactionEntry {
+  faction_id: string;
+  faction_name: string;
+  kit_ids: string[];
+}
+
+export interface FactionAssignments {
+  event_id: string;
+  schema_version: string;
+  factions: FactionEntry[];
+}
+
+// Reverse map: kit_id → { faction_id, faction_name }
+export type KitFactionMap = Record<string, { faction_id: string; faction_name: string }>;

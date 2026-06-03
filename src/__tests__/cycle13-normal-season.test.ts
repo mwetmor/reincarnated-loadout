@@ -223,12 +223,19 @@ describe('Gap-fill tab retirement — Sample.tsx regression guard', () => {
 // ── § Step 4 — Placeholder indicator UX surface verification ─────────────────
 
 describe('Placeholder indicator UX — Loadout.tsx and Sample.tsx surface', () => {
-  it('Loadout.tsx contains placeholder-season-indicator data-testid', () => {
+  // cycle-18 Issue 1: Loadout.tsx has been repurposed as the kit-space view (QDX-5 37-kit output).
+  // Old season-data placeholder indicator tests for Loadout.tsx retired — the page no longer
+  // hosts season data. Season data / placeholder handling remains in Sample.tsx (all passing below).
+  // Loadout.tsx now renders public/kit-space/ data (no placeholder_skill_content concept applies).
+
+  it('Loadout.tsx does NOT contain season-data placeholder indicator (kit-space page now)', () => {
     const loadoutSrc = readFileSync(
       join(process.cwd(), 'src/pages/Loadout.tsx'),
       'utf-8'
     );
-    expect(loadoutSrc).toContain('data-testid="placeholder-season-indicator"');
+    // Verify Loadout.tsx is the kit-space page (cycle-18 repoint confirmed)
+    expect(loadoutSrc).toContain('kit-space');
+    expect(loadoutSrc).toContain('useKitSpaceData');
   });
 
   it('Sample.tsx contains placeholder-season-indicator data-testid', () => {
@@ -239,28 +246,12 @@ describe('Placeholder indicator UX — Loadout.tsx and Sample.tsx surface', () =
     expect(sampleSrc).toContain('data-testid="placeholder-season-indicator"');
   });
 
-  it('Loadout.tsx checks manifest.placeholder_skill_content for indicator', () => {
-    const loadoutSrc = readFileSync(
-      join(process.cwd(), 'src/pages/Loadout.tsx'),
-      'utf-8'
-    );
-    expect(loadoutSrc).toContain('placeholder_skill_content');
-  });
-
   it('Sample.tsx checks manifest.placeholder_skill_content for indicator', () => {
     const sampleSrc = readFileSync(
       join(process.cwd(), 'src/pages/Sample.tsx'),
       'utf-8'
     );
     expect(sampleSrc).toContain('placeholder_skill_content');
-  });
-
-  it('Loadout.tsx checks phase5_is_placeholder as fallback indicator', () => {
-    const loadoutSrc = readFileSync(
-      join(process.cwd(), 'src/pages/Loadout.tsx'),
-      'utf-8'
-    );
-    expect(loadoutSrc).toContain('phase5_is_placeholder');
   });
 
   it('Sample.tsx checks phase5_is_placeholder as fallback indicator', () => {

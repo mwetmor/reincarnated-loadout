@@ -27,12 +27,12 @@ export function Nav() {
             style={{ scrollbarWidth: 'none' }}
           >
             <NavItem to="/pitch">Summary</NavItem>
-            <NavItem to="/">Loadout</NavItem>
+            <NavItem to="/loadout">Loadout</NavItem>
             <NavItem to="/sample">Sample</NavItem>
             <NavItem to="/analytics">Analytics</NavItem>
             <NavItem to="/encounters">Encounters</NavItem>
             <NavItem to="/court">Court</NavItem>
-            <NavItem to="/kit-space">Kit Space</NavItem>
+            {/* Kit Space removed (cycle-18 Issue 1): /kit-space redirects to /loadout */}
             <NavItem to="/state-of-engine">Engine</NavItem>
             <NavItem to="/planning">Planning</NavItem>
           </div>

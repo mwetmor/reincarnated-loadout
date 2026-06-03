@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "kit_id": "kit_holy_000005",
-  "primary_element": "holy",
+  "kit_id": "kit_shadow_000006",
+  "primary_element": "shadow",
   "cultural_tradition": null,
   "period": null,
   "chain_composition": {
@@ -13,8 +13,8 @@
     "bc_proxy_density": "none"
   },
   "t4_selection": {
-    "candidate_id": "holy_kit_chain_A_RESOURCE_CONVERSION_ELEMENT_CONVERSION_chain_wide_parallel",
-    "category_a_strategy": "RESOURCE_CONVERSION",
+    "candidate_id": "shadow_kit_chain_A_DEFENSIVE_CONVERSION_ELEMENT_CONVERSION_chain_wide_parallel",
+    "category_a_strategy": "DEFENSIVE_CONVERSION",
     "category_bc_strategy": "ELEMENT_CONVERSION",
     "t4_category_bc": "C",
     "is_class_wide_trade_off": false,
@@ -23,39 +23,39 @@
     "magnitude_midpoint": null,
     "parallel_chain_mode": "parallel",
     "target_chain_id": "chain_B",
-    "resolve_score": 88.0,
+    "resolve_score": 74.0,
     "create_score": 62.0,
-    "net_synergy_score": 26.0,
+    "net_synergy_score": 12.0,
     "synergy_eligible": true,
     "retries_used": 0,
     "pattern_9_warn": false,
     "pattern_10_warn": false,
-    "is_active": true,
+    "is_active": false,
     "separability_pass": true,
     "category_a_params": {},
     "category_bc_params": {},
     "t4_scope": "chain_wide_parallel",
     "scope_downscale_factor": null,
     "scope_prior_weight": 0.3,
-    "scope_weighted_score": -0.325,
+    "scope_weighted_score": 31.2,
     "scope_projection_data": {
       "chain_wide_parallel": {
-        "weighted_score": -0.325,
-        "net_synergy_score": -0.25,
+        "weighted_score": 31.2,
+        "net_synergy_score": 24.0,
         "prior_weight": 0.3,
         "scope_amplification_9_warn": false,
         "scope_amplification_10_warn": false
       },
       "character_wide": {
-        "weighted_score": -0.325,
-        "net_synergy_score": -0.25,
+        "weighted_score": 31.2,
+        "net_synergy_score": 24.0,
         "prior_weight": 0.3,
         "scope_amplification_9_warn": false,
         "scope_amplification_10_warn": false
       },
       "chain_wide_own": {
-        "weighted_score": -17.15,
-        "net_synergy_score": -12.25,
+        "weighted_score": 16.8,
+        "net_synergy_score": 12.0,
         "prior_weight": 0.4,
         "scope_amplification_9_warn": false,
         "scope_amplification_10_warn": false
@@ -63,25 +63,25 @@
     },
     "spirit_guide_narration_metadata": {
       "has_mechanic_alteration": true,
-      "alteration_type": "Verdict Into Light",
-      "thematic_rationale": "This kit has always spoken in sentences that build toward a ruling; the T4 simply teaches that the sentence and the punishment can arrive at once, drawn from the same breath of mana.",
-      "manifestation": "Every active judgment in the chain ignites simultaneously \u2014 a lattice of pale gold threads pulling taut across the field, each strand converting spent mana into radiant amplitude before the light collapses inward to a single blinding point.",
+      "alteration_type": "Penumbral Inversion Lattice",
+      "thematic_rationale": "This kit was always about casting outward to control distance, so the truest defense it can offer is turning that reach back on itself — your own shadow-work becoming the shield.",
+      "manifestation": "Every ranged thread you've cast — bolt, pulse, burst — folds inward simultaneously, their trajectories reversing into a lattice of absorbed shadow that hardens against incoming force. The air smells of cold ink. Damage that would land instead feeds the dark.",
       "spirit_guide_explainer_template": null,
       "narrative_hooks": [],
       "secondary_alteration_types": []
     },
-    "thematic_rationale": "This kit has always spoken in sentences that build toward a ruling; the T4 simply teaches that the sentence and the punishment can arrive at once, drawn from the same breath of mana.",
-    "phase5_t4_narration_cohesion_score": 0.9,
+    "thematic_rationale": "This kit was always about casting outward to control distance, so the truest defense it can offer is turning that reach back on itself — your own shadow-work becoming the shield.",
+    "phase5_t4_narration_cohesion_score": 1.0,
     "phase5_t4_narration_cohesion_breakdown": {
       "kit_identity": 1.0,
-      "thematic_rationale_fit": 0.75,
-      "element_hits": 2,
+      "thematic_rationale_fit": 1.0,
+      "element_hits": 3,
       "cultural_score_contrib": 0.5,
-      "strat_hits": 1,
-      "el_in_rationale": false,
-      "manifest_word_count": 38,
-      "rationale_word_count": 33,
-      "aggregate": 0.9
+      "strat_hits": 2,
+      "el_in_rationale": true,
+      "manifest_word_count": 41,
+      "rationale_word_count": 31,
+      "aggregate": 1.0
     },
     "phase5_t4_narration_attempt_number": 1,
     "phase5_t4_narration_is_fallback": false,
@@ -90,14 +90,14 @@
   "supporting_chain": null,
   "skills": [
     {
-      "id": "skill_001346",
-      "name": "Sacred Verdict",
+      "id": "skill_000126",
+      "name": "Shadow Bolt",
       "role": "primary_attack",
-      "canonical_element": "holy",
+      "canonical_element": "shadow",
       "tier": 1,
       "chain_id": null,
-      "energy_cost": 8.0,
-      "cooldown_seconds": 0.5,
+      "energy_cost": 10.8,
+      "cooldown_seconds": 1.3,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
@@ -109,14 +109,14 @@
       "ws1a4_flavor_word_used": null,
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "Every soul stands before judgment. The Arbiter's hand delivers the first word of holy law upon the unworthy.",
+      "flavor_text": "From the void between worlds, darkness takes form and flies at your command. The necromancer's most basic weapon is the shadow itself.",
       "effects": [
-        "Strike a target with a pulse of holy energy, dealing minor holy damage at medium range."
+        "Hurl a bolt of shadow energy at an enemy, dealing minor shadow damage."
       ],
       "phase5_thematic_tags": [
-        "judgment",
-        "holy",
-        "foundational"
+        "shadow",
+        "necromancer",
+        "projectile"
       ],
       "phase5_cohesion_score": 0.96,
       "phase5_cohesion_breakdown": {
@@ -132,14 +132,14 @@
       "phase5_cache_hit": false
     },
     {
-      "id": "skill_001347",
-      "name": "Divine Sentence",
+      "id": "skill_000127",
+      "name": "Dark Pulse",
       "role": "burst_damage",
-      "canonical_element": "holy",
+      "canonical_element": "shadow",
       "tier": 1,
       "chain_id": null,
-      "energy_cost": 31.8,
-      "cooldown_seconds": 5.1,
+      "energy_cost": 24.7,
+      "cooldown_seconds": 4.6,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
@@ -148,40 +148,40 @@
       "chain_position": null,
       "parent_skill_ids": [],
       "ws1a4_flavor_decision": true,
-      "ws1a4_flavor_word_used": "radiant",
+      "ws1a4_flavor_word_used": "soul",
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The Arbiter speaks and the heavens answer. A single word of holy judgment crashes down upon the guilty.",
+      "flavor_text": "The necromancer draws shadows into a concentrated mass and releases it in a violent burst. Darkness hungers, and it will feed.",
       "effects": [
-        "Call down a burst of holy energy on a target, dealing moderate holy damage."
+        "Unleash a pulse of shadow energy that deals burst damage to a single target at medium range."
       ],
       "phase5_thematic_tags": [
-        "judgment",
-        "holy",
-        "burst"
+        "shadow",
+        "burst",
+        "necromancy"
       ],
-      "phase5_cohesion_score": 0.915,
+      "phase5_cohesion_score": 0.96,
       "phase5_cohesion_breakdown": {
         "kit_identity": 1.0,
         "chain_progression": 1.0,
         "mechanical_narration": 0.8,
         "cultural_tradition": 1.0,
-        "cross_tree_thematic": 0.7,
-        "aggregate": 0.915
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
       },
       "phase5_attempt_number": 1,
       "phase5_is_placeholder": false,
       "phase5_cache_hit": false
     },
     {
-      "id": "skill_001348",
-      "name": "Holy Decree",
+      "id": "skill_000128",
+      "name": "Void Shadow Burst",
       "role": "area_damage",
-      "canonical_element": "holy",
+      "canonical_element": "shadow",
       "tier": 1,
       "chain_id": null,
-      "energy_cost": 25.2,
-      "cooldown_seconds": 7.3,
+      "energy_cost": 21.8,
+      "cooldown_seconds": 5.8,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
@@ -189,41 +189,41 @@
       "bc_axis_contribution": {},
       "chain_position": null,
       "parent_skill_ids": [],
-      "ws1a4_flavor_decision": false,
-      "ws1a4_flavor_word_used": null,
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "void",
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The Arbiter's word carries the weight of divine law, searing all who stand in defiance with sacred light.",
+      "flavor_text": "Darkness erupts outward in a consuming wave, swallowing light and life alike. The shadows hunger for all who stand within their reach.",
       "effects": [
-        "Release a burst of holy energy that deals area damage to all nearby enemies."
+        "Release a burst of shadow energy that deals area damage to all nearby enemies."
       ],
       "phase5_thematic_tags": [
-        "holy",
-        "judgment",
-        "area"
+        "shadow",
+        "area_damage",
+        "necromancer"
       ],
-      "phase5_cohesion_score": 0.915,
+      "phase5_cohesion_score": 0.96,
       "phase5_cohesion_breakdown": {
         "kit_identity": 1.0,
         "chain_progression": 1.0,
         "mechanical_narration": 0.8,
         "cultural_tradition": 1.0,
-        "cross_tree_thematic": 0.7,
-        "aggregate": 0.915
+        "cross_tree_thematic": 1.0,
+        "aggregate": 0.96
       },
       "phase5_attempt_number": 1,
       "phase5_is_placeholder": false,
       "phase5_cache_hit": false
     },
     {
-      "id": "skill_001349",
-      "name": "Celestial Judgment",
+      "id": "skill_000129",
+      "name": "Creeping Darkness",
       "role": "damage_over_time",
-      "canonical_element": "holy",
+      "canonical_element": "shadow",
       "tier": 1,
       "chain_id": null,
-      "energy_cost": 24.7,
-      "cooldown_seconds": 7.2,
+      "energy_cost": 15.4,
+      "cooldown_seconds": 7.0,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
@@ -231,17 +231,17 @@
       "bc_axis_contribution": {},
       "chain_position": null,
       "parent_skill_ids": [],
-      "ws1a4_flavor_decision": false,
-      "ws1a4_flavor_word_used": null,
+      "ws1a4_flavor_decision": true,
+      "ws1a4_flavor_word_used": "necrotic",
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The light of the heavens does not strike once \u2014 it lingers, burning away impurity with patient, relentless radiance.",
+      "flavor_text": "Shadows cling to the wound like hungry spirits, gnawing at the soul long after the initial strike fades.",
       "effects": [
-        "Calls down holy light that burns the target, dealing damage over time for several seconds."
+        "Infects the target with shadow energy, dealing minor damage over several seconds."
       ],
       "phase5_thematic_tags": [
-        "holy",
-        "judgment",
+        "shadow",
+        "decay",
         "persistent"
       ],
       "phase5_cohesion_score": 0.96,
@@ -258,14 +258,14 @@
       "phase5_cache_hit": false
     },
     {
-      "id": "skill_001350",
-      "name": "Sacred Ward",
+      "id": "skill_000130",
+      "name": "Shadow Veil",
       "role": "defensive",
-      "canonical_element": "holy",
+      "canonical_element": "shadow",
       "tier": 1,
       "chain_id": null,
-      "energy_cost": 16.5,
-      "cooldown_seconds": 14.0,
+      "energy_cost": 16.3,
+      "cooldown_seconds": 14.6,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
@@ -277,14 +277,14 @@
       "ws1a4_flavor_word_used": null,
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The Arbiter raises a hand, and holy light coalesces into a barrier that turns aside the unworthy blow.",
+      "flavor_text": "The necromancer wraps themselves in a shroud of living darkness, letting shadows absorb the blows of enemies.",
       "effects": [
-        "Channel mana to create a brief holy shield that absorbs incoming damage for a short duration."
+        "Envelop yourself in shadow energy, briefly reducing incoming damage and obscuring your presence."
       ],
       "phase5_thematic_tags": [
-        "holy",
-        "protection",
-        "judgment"
+        "shadow",
+        "defense",
+        "necromancy"
       ],
       "phase5_cohesion_score": 0.96,
       "phase5_cohesion_breakdown": {
@@ -300,14 +300,14 @@
       "phase5_cache_hit": false
     },
     {
-      "id": "skill_001351",
-      "name": "Divine Sanction",
+      "id": "skill_000131",
+      "name": "Umbral Shroud",
       "role": "utility",
-      "canonical_element": "holy",
+      "canonical_element": "shadow",
       "tier": 1,
       "chain_id": null,
-      "energy_cost": 19.7,
-      "cooldown_seconds": 14.9,
+      "energy_cost": 16.0,
+      "cooldown_seconds": 12.9,
       "damage_multiplier": 1.0,
       "geometry_type": null,
       "spatial_geometry_type": null,
@@ -319,14 +319,14 @@
       "ws1a4_flavor_word_used": null,
       "ws1a4_attempt_number": 1,
       "ws1a4_is_fallback": false,
-      "flavor_text": "The Arbiter's word carries the weight of celestial law, binding the unworthy in radiant light and sacred purpose.",
+      "flavor_text": "The necromancer draws the darkness close, wrapping themselves in living shadow. What cannot be seen cannot be struck.",
       "effects": [
-        "Channel holy energy to briefly empower yourself, restoring a small amount of mana and granting minor damage reduction."
+        "Envelop yourself in shadow energy, briefly reducing enemy detection and granting a minor defensive boost."
       ],
       "phase5_thematic_tags": [
-        "holy",
+        "shadow",
         "utility",
-        "divine authority"
+        "stealth"
       ],
       "phase5_cohesion_score": 1.0,
       "phase5_cohesion_breakdown": {
@@ -342,13 +342,13 @@
       "phase5_cache_hit": false
     }
   ],
-  "emergent_kit_concept": "Verdictbringer of the Hallowed Tribunal",
+  "emergent_kit_concept": "Void-Drawn Ranged, Unmapped",
   "substrate_trace": {
     "source": "class_generator_option_b",
-    "generation_seed": 20260634,
-    "archetype_tag": "holy_caster",
+    "generation_seed": 20260604,
+    "archetype_tag": "shadow_caster",
     "energy_type": "mana",
-    "element": "holy",
+    "element": "shadow",
     "season_id": "qdx5_20260602",
     "bc_range": "ranged",
     "bc_tempo": "medium",
@@ -359,13 +359,13 @@
     "period": null,
     "option_b4_5": true
   },
-  "kit_space_expansion_event_id": "kse_20260602_008",
-  "engine_version": "d89d23e",
-  "engine_version_full": "d89d23eebac30d8d278213123380dce04716c245",
-  "generation_timestamp": "2026-06-02T23:00:32.005Z",
+  "kit_space_expansion_event_id": "kse_20260602_007",
+  "engine_version": "cd3b10c",
+  "engine_version_full": "cd3b10cffea7090956258d2f1298528ce990cb69",
+  "generation_timestamp": "2026-06-02T22:33:50.626Z",
   "lineage_tags": {
-    "kit_space_lineage": "kit-space-expansion-kse_20260602_008",
-    "engine_provenance": "engine-d89d23e-kse_20260602_008",
+    "kit_space_lineage": "kit-space-expansion-kse_20260602_007",
+    "engine_provenance": "engine-cd3b10c-kse_20260602_007",
     "substrate_provenance": "pool-v1.1+ws2.p2-magic-weapons",
     "generation_cohort_date": "2026-06-02"
   }
