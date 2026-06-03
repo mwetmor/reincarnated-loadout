@@ -1,10 +1,67 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-02
-**Last commit:** `8c790cb` — drax: cycle-18 Issues 1+2+3+5B — kit-space consolidated loadout view
-**Last tag:** `drax/v1.6-cycle-18-issues-1-2-3-5b-loadout-consolidated-1`
+**Last commit:** `a60b900` — drax: cycle-18 recovery-2 — restore rich per-character Loadout + fix Issues 1 + 2
+**Last tag:** `drax/v1.6-cycle-18-recovery-2-rich-loadout-restored`
 **Branch:** main
-**Hive-mind mode:** N/A (cycle-18 Phase 2 consolidated dispatch)
+**Hive-mind mode:** N/A (SECOND LOCK L recovery — Matt 2026-06-02 directive)
+
+## Session summary
+
+### cycle-18 recovery-2 — Restore rich per-character Loadout (2026-06-02)
+
+**Authority:** Matt 2026-06-02 verbatim directive. BLOCK #2 for cycle-18. Matt-directed scope correction supersedes LOCK L 2+-BLOCK escalation.
+**Build:** `tsc -b && vite build` PASS — 1062 modules, 0 TS errors.
+**Preview:** `https://reincarnated-loadout-g3hh07izp-matthew-wetmore-s-projects.vercel.app` — READY
+
+**Scope corrected from cycle-18:** cycle-18 replaced the rich per-character Loadout view with a kit-grid/browser. Matt wanted the rich view PRESERVED and kit-space data SWAPPED IN, not the view deleted.
+
+**Loadout.tsx (/loadout, /):**
+- Restored rich per-character view mirroring Sample.tsx structure
+- Consumes kit-space data via `useKitSpaceData` (NOT `useSeasonData`)
+- Default kit = `kit_shadow_000007` ("Duskweaver of the Eclipsed Meridian")
+- Kit selector dropdown at top for all 37 kits
+- URL param `?kit=<id>` supported — KitBrowser links here
+- DesignModeToggle preserved with shared localStorage key
+- SpiritGuide placeholder rendered (no kit data needed — it's a no-data placeholder card)
+- Skill tree: tiered display (inline SkillRow adapted from cycle-18; SkillTree component
+  incompatible — requires SeasonManifest for element resolution)
+- T4: inline T4SelectionPanel adapted from cycle-18 (Cycle14T4Panel incompatible —
+  requires T4Candidate[] array shape; kit has KitT4Selection flat object)
+
+**Issue 1 fix (element selector):**
+- All element flags now use canonical-7+1 primary names: Fire/Water/Earth/Wind/Lightning/Holy/Shadow/Physical
+- Applied throughout Loadout.tsx + KitBrowser.tsx (not flavor pool words)
+- `CANONICAL_ELEMENT_LABEL` map drives display
+
+**Issue 2 fix (equipment):**
+- Equipment section restored with `SubstratePanel` component (inline, no new shell)
+- Surfaces substrate_trace: archetype_tag, energy_type, bc_range (from chain_composition), bc_attribute
+- Gear representative: graceful "pending EAA-8" placeholder (gear_representative not in kit JSON)
+
+**KitBrowser.tsx (/kits) — NEW PAGE:**
+- Preserves cycle-18 kit-browser surface (grid + Featured Characters + faction filter)
+- Cards link to `/loadout?kit=<id>` to open rich detail view
+- Element filter: canonical-7+1 primary names (Issue 1 fix carried through)
+- Faction filter: preserved (f001/f002/f003)
+- Historical EAA-5 v2 toggle: preserved (Path α)
+
+**App.tsx:** `/kits` route added. `/kit-space` redirect updated to `/kits`.
+**Nav.tsx:** "Kits" nav item added between "Loadout" and "Analytics".
+**/sample:** Unchanged (historical season-manifest view preserved).
+
+**TODO(drax) overrides (EAA-8 pending):**
+- `gear_representative` absent from kit JSON → "pending EAA-8" placeholder shown
+- `main_weapon`/`secondary_item` WeaponDescriptor absent → substrate_trace proxy shown
+- `stat_distribution` absent → StatsPanel not rendered
+- `balance_metadata` (winrate/modifier) absent → omitted gracefully
+
+**Commit:** `a60b900`
+**Tag:** `drax/v1.6-cycle-18-recovery-2-rich-loadout-restored`
+
+---
+
+
 
 ## Session summary
 
