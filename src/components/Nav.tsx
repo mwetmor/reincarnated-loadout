@@ -28,7 +28,7 @@ export function Nav() {
           >
             <NavItem to="/pitch">Summary</NavItem>
             <NavItem to="/loadout">Loadout</NavItem>
-            <NavItem to="/sample">Sample</NavItem>
+            {/* cycle-18 recovery Fix B: Sample removed from active nav per Matt B1; /sample route preserved for historical access */}
             <NavItem to="/analytics">Analytics</NavItem>
             <NavItem to="/encounters">Encounters</NavItem>
             <NavItem to="/court">Court</NavItem>

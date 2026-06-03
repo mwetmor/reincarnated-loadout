@@ -46,6 +46,8 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Loadout />} />
+            {/* cycle-18 recovery Fix A: explicit /loadout route so direct URL navigation resolves */}
+            <Route path="/loadout" element={<Loadout />} />
             <Route path="/sample" element={<Sample />} />
             <Route path="/pitch" element={<Pitch />} />
             <Route path="/analytics" element={<Analytics />} />
