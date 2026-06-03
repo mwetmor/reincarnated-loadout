@@ -1,10 +1,59 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-02
-**Last commit:** `eca9349` — drax: QDX-7 loadout + engine page consume QDX-5 kit_space output
-**Last tag:** `drax/v1.5-qdx-7-loadout-engine-page-kit-space-1`
+**Last commit:** `8c790cb` — drax: cycle-18 Issues 1+2+3+5B — kit-space consolidated loadout view
+**Last tag:** `drax/v1.6-cycle-18-issues-1-2-3-5b-loadout-consolidated-1`
 **Branch:** main
-**Hive-mind mode:** N/A (QDX-7 sequential drax dispatch)
+**Hive-mind mode:** N/A (cycle-18 Phase 2 consolidated dispatch)
+
+## Session summary
+
+### cycle-18 Issues 1+2+3+5B — Consolidated loadout repoint (2026-06-02)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-02-cycle-18-issues-1-2-3-5b-drax-consolidated.md`
+**Authority:** Matt 2026-06-02 "yes, let's do it all" + gandalf transmission + LOCK O AMENDED 2026-06-02
+**Build:** `tsc -b && vite build` PASS — 1061 modules, 0 TS errors, 79/79 tests
+
+**Issue 1 — UX fragmentation fix:**
+- `public/kit-space/kits/` synced from engine (37 event_008 kits with Issue-4 renamed emergent_kit_concept)
+- `public/kit-space/faction_assignments.json` synced from engine (Issue 5A output)
+- `src/pages/KitSpace.tsx` DELETED — features merged into Loadout.tsx
+- `/kit-space` route replaced with `<Navigate to="/loadout" replace />` (redirect)
+- "Kit Space" nav item removed from Nav.tsx
+- `/loadout` now default entry point for QDX-5 kit_space output
+
+**Issue 2 — Visual hierarchy:**
+- Primary canonical element: bright bordered flag via `SUBSTRATE_COLORS` at kit-card level AND per-skill level
+- Flavor word: demoted to `text-[9px] font-mono text-gray-600 italic` inline annotation (NOT orange/symbol)
+- `SkillElementFlag` + `FlavorWordAnnotation` inline helper functions (no new component shells — LOCK O compliant)
+
+**Issue 3 — Featured Characters section:**
+- At top of `/loadout` above main 37-kit grid
+- 5 cards from stable `FEATURED_KIT_IDS` array (kit_ids only — names read from JSON at render time)
+- Top-1 (`kit_shadow_000007`) has ★ TOP PICK gold badge + double border ring
+- `FeaturedKitCard` inline function (reuses all KitCard visual patterns; no new shell)
+
+**Issue 5B — Faction badge + filter:**
+- `faction_assignments.json` loaded in `useKitSpaceData` alongside chronicle + kits (parallel fetch)
+- `buildFactionMap()` builds kit_id → { faction_id, faction_name } reverse map
+- `FactionBadge` inline component (click = filter to faction; click again = clear)
+- Faction filter strip in controls (3 colored buttons; all / f001 / f002 / f003)
+- Combined element filter + faction filter applied to `displayKits`
+
+**Test update:** `cycle13-normal-season.test.ts` — 3 stale tests (checking Loadout.tsx for placeholder-season-indicator from old season-data view) retired and replaced with cycle-18 repoint-verification tests. 79/79 pass.
+
+**TODO(drax) retired:** KitSpace.tsx faction deferred note — faction now fully implemented via faction_assignments.json (Issue 5B). No remaining TODO(drax) overrides.
+
+**Files added:** `public/kit-space/faction_assignments.json`; 12 new kit JSONs added to public/kit-space/kits/ (previously engine-only)
+**Files amended:** `src/App.tsx`; `src/__tests__/cycle13-normal-season.test.ts`; `src/components/Nav.tsx`; `src/data/kitSpaceTypes.ts`; `src/hooks/useKitSpaceData.ts`; `src/pages/Loadout.tsx`; 37 kit JSONs (emergent_kit_concept renames synced)
+**Files deleted:** `src/pages/KitSpace.tsx`
+
+**Commit:** `8c790cb`
+**Tag:** `drax/v1.6-cycle-18-issues-1-2-3-5b-loadout-consolidated-1` (pushed to origin)
+**Vercel production:** `https://reincarnated-loadout-lro7681sz-matthew-wetmore-s-projects.vercel.app` — READY (30s build; LOCK G auto-deploy fired on push)
+**Gate-2:** READY for jack-ryan Phase 3 10-criteria acceptance verification
+
+---
 
 ## Session summary
 
