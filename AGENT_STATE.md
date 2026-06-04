@@ -2179,3 +2179,28 @@ Per MIGRATION.md §v1.67:
 - `public/engine-state/season-001/phase7_kit_verdicts.json` — star-lord canonical emit
 - `public/engine-state/season-002/phase7_kit_verdicts.json` — star-lord canonical emit
 - `public/engine-state/season-003/phase7_kit_verdicts.json` — star-lord canonical emit
+
+---
+
+### cycle-18 recovery #2 production deploy (2026-06-03)
+
+**Dispatch:** Matt 2026-06-03 directive — promote cycle-18 recovery #2 commit to production
+**Authority:** Matt explicit prod-push authorization; per-workstream push pattern extended to include prod-promotion for this commit
+**Commit:** `a60b900` (drax: cycle-18 recovery #2 — rich Loadout restored + KitBrowser at /kits)
+**Tag:** `drax/v1.6-cycle-18-recovery-2-rich-loadout-restored`
+
+**Deploy record:**
+- Deployment ID: `dpl_7Xs8xFvjRACNWKVtUea17aQTVDMh`
+- Production URL: `https://reincarnated-loadout.vercel.app`
+- Deployment-specific URL: `https://reincarnated-loadout-5kzdkr87j-matthew-wetmore-s-projects.vercel.app`
+- Status: READY
+- Build: 1062 modules, 0 TS errors, 3.22s build time
+- Region: iad1 (Washington D.C.)
+
+**Verification:**
+- `/` returns HTTP 200; SPA shell confirmed (title "Reincarnated Loadout", assets loaded)
+- `/loadout` returns HTTP 200 (SPA rewrite active)
+- `/kits` returns HTTP 200 (SPA rewrite active)
+- `/sample` returns HTTP 200 (SPA rewrite active)
+- Post-deploy error scan: no errors found in runtime logs
+- Observability: no drains configured (known state; no external monitoring in scope for this project)
