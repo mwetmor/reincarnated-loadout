@@ -1,8 +1,8 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-06
-**Last commit:** `(pending Phase 2 commit)` — drax: cosmograph Phase A — Phase 2 star rendering
-**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-2` (pending)
+**Last commit:** `689d3cf` — drax: cosmograph Phase A — Phase 2 star rendering
+**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-2`
 **Branch:** main
 **Hive-mind mode:** N/A
 
