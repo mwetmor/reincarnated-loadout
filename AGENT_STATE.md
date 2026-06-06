@@ -1,12 +1,79 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-06
-**Last commit:** `689d3cf` — drax: cosmograph Phase A — Phase 2 star rendering
-**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-2`
+**Last commit:** `b9e9401` — drax: cosmograph Phase A — Phase 3 constellation + faction halo + region-label rendering
+**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-3`
 **Branch:** main
 **Hive-mind mode:** N/A
 
 ## Session summary
+
+### cosmograph-phase-a Phase 3 — constellation MST lines + faction halos + region-label overlays (2026-06-06)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-06-drax-cosmograph-phase-a-rendering.md` § 4
+**Authority:** gandalf 2026-06-06 design-state record commit `2af1a2e` (Phase 3 unblocked) + knight-rider Phase 3 fire authorization 2026-06-06
+**Build:** `tsc -b && vite build` PASS — 1494 modules, 0 TS errors, 1,340 KB gzipped. 79/79 tests pass.
+
+**Phase 3 acceptance criteria — ALL MET (per dispatch § 4.6):**
+- 1000 constellation centroids visible at default zoom as dim-points (alpha=0.28, color=0x6677AA, radius=1.5px)
+- MST-derived constellation lines render on Z-key trigger (viewport-culled) + faction halo click trigger; lasso hook is Phase 4
+- All constellation lines DOTTED (DASH_LEN=2.5/GAP_LEN=4.0 via `drawDashedLine`); PROVISIONAL status communicated
+- 7 faction halos as translucent convex-hull polygons (opacity 0.12 fill, 0.35 stroke); attribute-group color mapping:
+  STR=0xCC8833 (amber), INT=0x6655CC (blue-violet), WIS=0x779944 (green-gold)
+- Faction labels with "[Emergent] " prefix at faction centroid coordinates
+- 6 emergent mechanic-family centroid labels at cluster centroid_x/y from region_labels.json (alpha=0.45)
+- Tier annotation block at skill-tree-position cluster canvas position (x≈17.2, y≈1.3 UMAP)
+- Chain architecture labels (3-Chain / 4-Chain) at chain_architecture primitive coordinates
+- Substrate-honest disclosure at bottom-left: faction structure disclosure + PROVISIONAL constellation disclosure
+- Attribute-group factional structure rendered as substrate says (NOT per-element) — Discipline #41 + #59
+
+**Discipline #11 empirical inspection findings (BEFORE implementation):**
+- faction centroid is a nested {x,y} object (Python inspection first showed `centroid_x: None` — that was top-level; actual is `centroid: {x: 13.83, y: 4.94}` — all populated)
+- member_kit_ids: 89-194 per faction (all 7 factions; faction-highlight click interaction fully functional)
+- Total k-means member assignments: 1000 (each kit in exactly one faction)
+- MST edge count empirically verified: 33,318 total (33.3 mean/kit) — matches gandalf design-state record exactly
+- Mechanic primitive cluster: x=[7.33, 10.52] y=[12.13, 14.59] — emergent mechanic labels positioned within this region
+- Skill-tree-position + chain-architecture primitives: isolated cluster at x≈16.8-17.4, y≈0.75-1.5 — tier annotation block anchored there
+- dominant_effect_category (not dominant_effect) — cosmographTypes.ts type fixed
+- member_primitive_ids field present in cluster data — type updated to include
+
+**Phase 3 implementation notes:**
+- `mstConstellation.ts`: Kruskal's algorithm with Union-Find (path compression); pre-computes all 33K edges at mount (~1ms on M1)
+- `coordinateProjection.ts`: extracted from CosmographCanvas to shared module (all Phase 3 layers import from here)
+- `ConstellationLayer.ts`: `renderConstellationCentroids` (1000 dim-points) + `drawConstellationLines` (cull-by-default) + `getKitsInViewport` (bounding-box viewport test)
+- `FactionHaloLayer.ts`: `renderFactionHalos` (Pixi Graphics.drawPolygon per hull) + `renderFactionLabels` (centroid from packet)
+- `RegionLabelLayer.ts`: `renderEmergentMechanicLabels` (6 clusters with effect-color tinting) + `renderTierAnnotationBlock` (positioned annotation box) + `renderChainArchitectureLabels`
+- `SubstrateDisclosure.ts`: 3-line disclosure at canvas bottom-left, alpha=0.35
+- `CosmographCanvas.tsx`: MST pre-compute at mount, refs for line layer + kit map + faction member map, Z-key handler, stage.pointerdown faction-click handler, `pointInConvexHull` utility
+
+**Layer order (back to front):**
+bg → vignette → faction halos → emergent mechanic labels → tier block → chain labels → constellation centroids → constellation lines → star layer → element labels → faction labels → substrate disclosure → PROVISIONAL badge → interaction hint
+
+**Files authored in Phase 3:**
+- `src/utils/mstConstellation.ts`
+- `src/components/Cosmograph/coordinateProjection.ts`
+- `src/components/Cosmograph/ConstellationLayer.ts`
+- `src/components/Cosmograph/FactionHaloLayer.ts`
+- `src/components/Cosmograph/RegionLabelLayer.ts`
+- `src/components/Cosmograph/SubstrateDisclosure.ts`
+
+**Files amended in Phase 3:**
+- `src/components/Cosmograph/CosmographCanvas.tsx` — Phase 3 full wiring
+- `src/data/cosmographTypes.ts` — EmergentMechanicCluster field corrections
+
+**STOP — Phase 4 gate:** notify knight-rider. Tag: `drax/v1.7-cosmograph-phase-a-phase-3`.
+
+**Next session (Phase 4 — lasso interaction + side panel):**
+1. Click-drag lasso polygon rendering (Pixi Graphics.drawPolygon on stage pointerdown/pointermove/pointerup)
+2. Lasso resolution: `lassoResolution.ts` already written in Phase 1 — wire to lasso close event; returns top-3 matched kits
+3. MST lines for lasso-resolved kits (reuse `drawConstellationLines` with lasso-matched kit set)
+4. Side panel React component (right-side fixed column or overlay): shows matched kit(s) with PROVISIONAL badge + identity_narrative + surface_B_element_class + flag-family chips
+5. Flag-enum chip grouping per dispatch § 5.4 (Substrate / T4 / Kit-architecture / Validation / Coupling / Variant / Investment / Power plane / Target pattern / Cell shape / Emergent label)
+6. Heuristic-derived disclosure footnote at bottom of flag panel
+7. No q-scores / no pareto_rank / no gauntlet_pass_rate anywhere
+8. Edge cases: empty lasso (0 primitives), ambiguous match (top-2 within 5%), no match ≥ 0.3
+
+---
 
 ### cosmograph-phase-a Phase 2 — 570 primitive stars with brightness + color + provenance encoding (2026-06-06)
 
