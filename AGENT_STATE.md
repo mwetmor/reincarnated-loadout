@@ -1,7 +1,7 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-06
-**Last commit:** (pending — cosmograph Phase A Phase 1 commit)
+**Last commit:** `ec894b8` — drax: cosmograph Phase A — Phase 1 scaffold
 **Last tag:** `drax/v1.6-cycle-18-recovery-2-rich-loadout-restored` (prior)
 **Branch:** main
 **Hive-mind mode:** N/A
