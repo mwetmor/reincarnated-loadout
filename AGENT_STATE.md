@@ -35,8 +35,10 @@ for LassoLayer's federated events.
 
 **Phase 5c commits:**
 - `add8303` — drax: cosmograph Phase 5c — pointer-mode pan bug fix (native DOM events)
-- (AGENT_STATE + tag — this commit)
+- `4d29049` — drax: AGENT_STATE — Phase 5c checkpoint (pointer-mode pan bug fix)
 - Tag: `drax/v1.7-cosmograph-phase-a-phase-5c`
+- **Vercel preview URL:** `https://reincarnated-loadout-q2l5ed9va-matthew-wetmore-s-projects.vercel.app`
+  Status: Ready (32s build; auto-deployed from push to `origin/cosmograph/phase-a-preview`)
 
 ---
 
