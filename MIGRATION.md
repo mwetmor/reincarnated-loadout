@@ -1260,7 +1260,7 @@ Validated 2026-06-06 before Phase 1 implementation:
 - Phase 5: COMPLETE — commit `721c82a` + tag `drax/v1.7-cosmograph-phase-a-phase-5` — scroll-to-zoom + viewport culling + Vercel preview deploy
 
 **Branch:** `cosmograph/phase-a-preview` — pushed to `origin/cosmograph/phase-a-preview`
-**Vercel preview URL:** captured in AGENT_STATE.md Phase 5 entry after deploy
+**Vercel preview URL:** `https://reincarnated-loadout-oxr4og67a-matthew-wetmore-s-projects.vercel.app` (Ready; 34s build; Preview environment; production untouched)
 
 ### Phase 5 additional files
 

@@ -58,8 +58,9 @@ Performance numbers are captured via the Pixi ticker FPS logger that runs inside
 
 **Criterion 14 (Vercel preview URL):** URL captured below after push + auto-deploy.
 
-**Vercel preview URL:** captured after push to `origin/cosmograph/phase-a-preview`
-(Vercel auto-deploys on push to non-main branches — URL format: `https://reincarnated-loadout-<hash>-matthew-wetmore-s-projects.vercel.app`)
+**Vercel preview URL:** `https://reincarnated-loadout-oxr4og67a-matthew-wetmore-s-projects.vercel.app`
+Status: Ready (34s build; auto-deployed from push to `origin/cosmograph/phase-a-preview`)
+Branch alias: `https://reincarnated-loadout-git-cosmograph-phase-a-preview-matthew-wetmore-s-projects.vercel.app` (Vercel branch alias; may also work)
 
 ---
 
