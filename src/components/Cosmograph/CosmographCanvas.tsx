@@ -8,7 +8,19 @@
  * Phase 3: 1000 PROVISIONAL constellation centroid dim-points + MST lines (cull-by-default)
  *           + 7 faction halos + region-label overlays + substrate disclosure.
  * Phase 4: Lasso interaction + composite-score resolution + side panel integration.
- * Phase 5: Perf pass + zoom + viewport culling + Vercel deploy.
+ * Phase 5: Perf pass + zoom + viewport culling + Vercel preview deploy.
+ *
+ * Phase 5 zoom architecture:
+ * - Scroll wheel / trackpad pinch → app.stage.scale adjustment (0.5× min, 4× max)
+ * - At zoom > 1.5×: drillLayer (493 drill stars) becomes visible
+ * - Pixi cullable=true on star containers → GPU skips off-screen geometry
+ * - Stage pivot anchored at zoom point (zoom-to-cursor semantics)
+ * - FPS measured via Pixi ticker (console.info per Phase 5 Discipline #11)
+ *
+ * Performance projections vs measured (Phase 5 — Discipline #11):
+ * - Default zoom: 77 stars + 1000 centroid points → projected 60fps; measured: see console
+ * - Zoom-in 1.5-2×: 570 stars visible + culling active → projected 60fps; measured: see console
+ * - Faction highlight (max ~143 kits × 33 edges ≈ 4700 segments): projected 30fps+; measured: see console
  *
  * Painterly cosmic aesthetic (register-locked per cosmograph-pivot § 3 + § 4):
  * - Deep-space background: near-black → navy at edges
@@ -66,6 +78,12 @@ import type { LassoResolutionResult } from '../../utils/lassoResolution';
 
 // Minimum pointer travel distance (px) to classify as a drag (lasso) vs a click (faction)
 const MIN_CLICK_PX = 6;
+
+// Phase 5 zoom constants
+const ZOOM_MIN = 0.5;
+const ZOOM_MAX = 4.0;
+const ZOOM_DRILL_THRESHOLD = 1.5; // zoom level at which drillLayer becomes visible
+const ZOOM_FACTOR = 0.0012;        // wheel delta → scale multiplier sensitivity
 
 interface CosmographCanvasProps {
   data: CosmographData;
@@ -329,6 +347,12 @@ function renderStarLayer(
   const drillLayer = new PIXI.Container();
   drillLayer.visible = false; // hidden at default zoom — Phase 5 zoom logic shows these
 
+  // Phase 5: enable Pixi viewport culling on both layers.
+  // cullable=true: Pixi skips rendering geometry whose bounding box is outside viewport.
+  // This keeps frame rate high when zoomed in (most drill stars off-screen).
+  firstClassLayer.cullable = true;
+  drillLayer.cullable = true;
+
   // Use a single Graphics object per layer for batching (performance)
   const firstClassG = new PIXI.Graphics();
   const drillG = new PIXI.Graphics();
@@ -427,7 +451,7 @@ function renderInteractionHint(app: PIXI.Application): PIXI.Text {
     letterSpacing: 0.4,
   });
   const text = new PIXI.Text(
-    '[Z] constellation lines · click faction · drag to lasso',
+    '[Z] constellation lines · click faction · drag to lasso · scroll to zoom',
     style
   );
   text.x = 12;
@@ -580,7 +604,7 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
     constellationLineLayerRef.current = constellationLineLayer;
 
     // Phase 2: 570 stars (rendered ABOVE constellation layers so stars read clearly)
-    renderStarLayer(app, data, proj);
+    const { drillLayer: starDrill } = renderStarLayer(app, data, proj);
 
     // Phase 2: element labels (orientation aid at default zoom)
     renderElementLabels(app, data, proj);
@@ -751,6 +775,86 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
     lassoGraphicsRef.current = lassoGraphics;
     lassoDetachRef.current = detachLasso;
 
+    // ── Phase 5: Wheel zoom (scroll to zoom + zoom-to-cursor) ────────────────
+    // Zoom anchored at cursor position (zoom-to-cursor semantics):
+    //   1. Convert cursor position to stage-local coords BEFORE scale change
+    //   2. Apply new scale
+    //   3. Shift stage position so cursor stays at same world point
+    //
+    // drill stars expose at zoom > ZOOM_DRILL_THRESHOLD per Phase 2 + Phase 5 spec.
+    const onWheel = (event: WheelEvent) => {
+      event.preventDefault();
+      if (!appRef.current) return;
+      const stage = appRef.current.stage;
+
+      // Current scale (stage.scale.x === stage.scale.y always)
+      const oldScale = stage.scale.x;
+
+      // Wheel delta → scale multiplier (negative deltaY = zoom in)
+      const delta = event.deltaY;
+      const scaleDelta = 1 - delta * ZOOM_FACTOR;
+      const newScale = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, oldScale * scaleDelta));
+
+      if (newScale === oldScale) return; // already at min or max
+
+      // Cursor position in stage-local coords (before scale change)
+      const bounds = container.getBoundingClientRect();
+      const cursorX = event.clientX - bounds.left;
+      const cursorY = event.clientY - bounds.top;
+
+      // Zoom-to-cursor: shift stage so cursor world point remains fixed
+      const ratio = newScale / oldScale;
+      stage.position.x = cursorX - (cursorX - stage.position.x) * ratio;
+      stage.position.y = cursorY - (cursorY - stage.position.y) * ratio;
+      stage.scale.set(newScale);
+
+      // Expose/hide drill stars based on zoom threshold
+      starDrill.visible = newScale > ZOOM_DRILL_THRESHOLD;
+    };
+
+    container.addEventListener('wheel', onWheel, { passive: false });
+
+    // ── Phase 5: FPS measurement via Pixi ticker ──────────────────────────────
+    // Samples FPS over 5-second windows; logs at 5s, 10s, 60s marks.
+    // Condition: measure at each ticker update; track min/median/mean.
+    let fpsWindow: number[] = [];
+    let fpsLogCount = 0;
+    const FPS_WINDOW_SECONDS = 5;
+    const FPS_LOG_MARKS = [1, 2, 12]; // log at window 1, 2, 12 (5s, 10s, 60s)
+
+    // Pixi v7 ticker.add passes dt (deltaTime number), not the Ticker object.
+    // Access FPS via the shared app.ticker.FPS property inside the callback.
+    const fpsTicker = () => {
+      const currentFPS = app.ticker.FPS;
+      fpsWindow.push(currentFPS);
+
+      // Log every FPS_WINDOW_SECONDS worth of frames (~60fps × 5s = ~300 frames)
+      if (fpsWindow.length >= Math.round(Math.max(currentFPS, 30) * FPS_WINDOW_SECONDS)) {
+        fpsLogCount++;
+        const sorted = [...fpsWindow].sort((a, b) => a - b);
+        const min = sorted[0];
+        const median = sorted[Math.floor(sorted.length / 2)];
+        const mean = sorted.reduce((s, v) => s + v, 0) / sorted.length;
+        const p95 = sorted[Math.floor(sorted.length * 0.95)];
+
+        if (FPS_LOG_MARKS.includes(fpsLogCount)) {
+          const zoomLevel = app.stage.scale.x.toFixed(2);
+          const drillVisible = starDrill.visible;
+          console.info(
+            `[CosmographCanvas Phase 5] FPS window ${fpsLogCount} ` +
+            `(~${fpsLogCount * FPS_WINDOW_SECONDS}s elapsed) — ` +
+            `zoom=${zoomLevel}× drill=${drillVisible ? 'visible' : 'hidden'} — ` +
+            `min=${min.toFixed(1)} median=${median.toFixed(1)} mean=${mean.toFixed(1)} p95=${p95.toFixed(1)}`
+          );
+        }
+
+        // Reset for next window (but retain last few frames for overlap continuity)
+        fpsWindow = fpsWindow.slice(-10);
+      }
+    };
+
+    app.ticker.add(fpsTicker);
+
     // Expose clear function to parent (for SidePanel "Clear" button)
     if (clearLassoRef) {
       clearLassoRef.current = () => {
@@ -768,13 +872,15 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
     const visibleCount = data.primitives.filter(p => p.visibility_at_default_zoom).length;
     const drillCount = data.primitives.filter(p => !p.visibility_at_default_zoom).length;
     console.info(
-      `[CosmographCanvas Phase 4] Pixi.js ${PIXI.VERSION} — ${w}×${h}px — ` +
+      `[CosmographCanvas Phase 5] Pixi.js ${PIXI.VERSION} — ${w}×${h}px — ` +
       `scale ${proj.scale.toFixed(2)}px/UMAP-unit — ` +
-      `${visibleCount} first-class stars · ${drillCount} drill stars · ` +
+      `${visibleCount} first-class stars (default zoom) · ${drillCount} drill stars (zoom>${ZOOM_DRILL_THRESHOLD}×) · ` +
       `MST pre-computed in ${mstMs.toFixed(1)}ms · ` +
       `${data.kits.length} constellation centroids · ` +
       `${data.factionOverlays.factions.length} faction halos · ` +
-      `lasso layer active`
+      `lasso active · wheel zoom active (range ${ZOOM_MIN}×–${ZOOM_MAX}×) · ` +
+      `viewport culling active (cullable=true on star layers) · ` +
+      `FPS measurement active (logs at 5s/10s/60s)`
     );
 
     // Register keyboard handler
@@ -783,6 +889,8 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
     // Cleanup on unmount
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      container.removeEventListener('wheel', onWheel);
+      app.ticker.remove(fpsTicker);
       lassoDetachRef.current?.();
       lassoDetachRef.current = null;
       lassoGraphicsRef.current = null;
