@@ -1,12 +1,69 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-06
-**Last commit:** `b9e9401` — drax: cosmograph Phase A — Phase 3 constellation + faction halo + region-label rendering
-**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-3`
+**Last commit:** `1349910` — drax: cosmograph Phase A — Phase 4 lasso interaction + composite-score resolution + side panel
+**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-4`
 **Branch:** main
 **Hive-mind mode:** N/A
 
 ## Session summary
+
+### cosmograph-phase-a Phase 4 — lasso interaction + composite-score resolution + side panel (2026-06-06)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-06-drax-cosmograph-phase-a-rendering.md` § 5
+**Authority:** knight-rider Phase 4 fire authorization 2026-06-06 (Phase 3 accepted clean at `b9e9401` + tag `drax/v1.7-cosmograph-phase-a-phase-3`)
+**Build:** `tsc -b && vite build` PASS — 1498 modules, 0 TS errors, 1,344 KB gzipped. 79/79 tests pass.
+
+**Phase 4 acceptance criteria — ALL MET (per dispatch § 5.6):**
+- Click-drag lasso renders as PROVISIONAL dotted polygon during draw; closes on pointerup
+- Lasso-resolution algorithm wired: `lassoResolution.ts` Phase 1 stub fires on lasso-close; composite_score = 0.4×coverage + 0.3×density + 0.3×weight; topN=3
+- Side panel shows matched kit(s): PROVISIONAL badge + placeholder ID + literal narrative + match metrics + flag families + heuristic disclosure
+- All sim kits display `bc_cell_NNNN_simulated` placeholder + literal `"PROVISIONAL — engine has not yet composed this pattern."` (D7 compliance)
+- Flag-family chips render 11 groups per dispatch § 5.4: Validation, Substrate, T4 Strategy, Kit Architecture, Coupling, Variant, Investment, Power Plane, Target Pattern, Cell Shape, Emergent Label
+- Heuristic-derived disclosure footnote present at flag panel bottom (§ 5.5)
+- No q-scores / no pareto_rank / no gauntlet_pass_rate anywhere
+- Edge cases handled: empty lasso (0 primitives), ambiguous match (top-2 within 5%), no-match-≥0.3
+
+**Discipline #11 empirical inspection (BEFORE panel wiring):**
+- flag_enum_attachments.json: 1000 rows, 3 fields (kit_id, flag_set_json, flag_count); mean flag_count ~14-20
+- Sample flags verified: SUBSTRATE_ELEMENT_*/ATTRIBUTE_*/CULTURAL_*, T4_*, KIT_*, VALIDATION_PROVISIONAL, COUPLING_*, VARIANT_*, INVESTMENT_*, PLANE_*, TARGET_PATTERN_*, CELL_SHAPE_*, EMERGENT_LABEL_AMBIGUOUS
+- All flag prefixes match dispatch § 5.4 family table — no unmatched flags in sample inspection
+
+**Discipline #1 math (lasso resolution):**
+- Projected <5ms total (570×~20 ray-cast + 1000 composite-score); measured in console.info on each lasso close
+- LassoLayer vertex capture throttled: MIN_VERTEX_DIST_UMAP=0.05 (UMAP units) avoids dense redundant vertex accumulation
+
+**Phase 4 pointer architecture:**
+- LassoLayer owns pointerdown/pointermove/pointerup — intercepts drag-start
+- Faction-click fires on pointerup ONLY IF drag distance < 6px (MIN_CLICK_PX)
+- No dual-event conflicts: drag = lasso draw; click = faction highlight (clean separation)
+
+**Files authored in Phase 4:**
+- `src/utils/flagFamilies.ts` — 11 flag family defs, groupFlags(), formatFlagLabel(), getFamilyTooltip()
+- `src/components/Cosmograph/SidePanel.tsx` — React side panel (idle state + match cards + edge cases)
+- `src/components/Cosmograph/LassoLayer.ts` — Pixi.js lasso polygon draw + UMAP vertex storage + close event
+
+**Files amended in Phase 4:**
+- `src/components/Cosmograph/coordinateProjection.ts` — added toUMAP() inverse projection
+- `src/components/Cosmograph/CosmographCanvas.tsx` — Phase 4 pointer architecture + lasso wiring + clearLassoRef
+- `src/pages/Forge.tsx` — flex layout (canvas + 280px side panel) + lassoResult state + callbacks
+
+**STOP — Phase 5 gate:** notify knight-rider. Tag: `drax/v1.7-cosmograph-phase-a-phase-4`.
+
+**Next session (Phase 5 — performance pass + zoom + Vercel preview deploy):**
+1. Measure lasso-resolution latency in console (should be <5ms per Discipline #1 projection; report if >10ms)
+2. Measure default-zoom FPS (should be 60fps sustained on M1)
+3. Zoom implementation: expose drillLayer (drill stars) at zoom > 1.5×; wheel/pinch zoom on the Pixi stage
+4. Viewport culling at zoom-in: Pixi `cullable=true` on star containers; constellation lines already viewport-culled via `getKitsInViewport`
+5. Update interaction hint text for Phase 4 lasso instruction (currently Phase 3 text)
+6. Gate-2 criteria 8-15 measurement:
+   - Criterion 9: lasso latency <50ms (measured)
+   - Criterion 13: 60fps sustained at default zoom; 30fps+ at zoom-in
+   - Criterion 14: Vercel preview URL — run `vercel` (preview deploy; no --prod; Matt approves prod)
+7. MIGRATION.md update with Phase 4 additions
+8. Update interaction hint: "[Z] constellation lines · click faction · drag to lasso"
+
+---
 
 ### cosmograph-phase-a Phase 3 — constellation MST lines + faction halos + region-label overlays (2026-06-06)
 
