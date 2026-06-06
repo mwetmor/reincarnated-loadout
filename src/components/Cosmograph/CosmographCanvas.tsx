@@ -5,7 +5,8 @@
  * Phase 2: 570 primitive stars with bdi_weight brightness + element-coupling color +
  *           provenance-tag visual encoding. 77 first-class stars at default zoom;
  *           493 drill stars hidden until zoom > 1.5×.
- * Phase 3: 1000 PROVISIONAL constellation MST lines + 7 faction halos + region-label overlays.
+ * Phase 3: 1000 PROVISIONAL constellation centroid dim-points + MST lines (cull-by-default)
+ *           + 7 faction halos + region-label overlays + substrate disclosure.
  * Phase 4: Lasso interaction + side panel + flag-enum visualization.
  * Phase 5: Perf pass + zoom + viewport culling + Vercel deploy.
  *
@@ -14,74 +15,49 @@
  * - Stars: soft-glow radial alpha falloff (NOT crisp pixel disks)
  * - Avoid: solar-system / orbital-path / hexagonal-grid reflexes
  *
+ * Phase 3 cull-by-default architecture (Discipline #1 math; gandalf design-state record):
+ * - Default zoom: 1000 centroid dim-points (near-zero render cost)
+ * - Zoom-in (Z key): MST lines for in-viewport kits (~4,950 segments max)
+ * - Faction halo click: MST lines for selected faction's kits (~4,700 segments max)
+ * - Lasso: MST lines for lasso-resolved kits (Phase 4)
+ *
  * Discipline #11 — empirical inspection: all visual encoding decisions validated
- * against actual substrate data (provenance tags, bdi_weight ranges, element couplings)
- * before implementation. See Phase 2 inspection notes in AGENT_STATE.md.
+ * against actual substrate data (provenance tags, bdi_weight ranges, element couplings,
+ * faction centroid nulls, mechanic cluster positions) before implementation.
+ * See Phase 2+3 inspection notes in AGENT_STATE.md.
  */
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import * as PIXI from 'pixi.js';
 import type { CosmographData } from '../../data/cosmographData';
 import type { PrimitiveEntry } from '../../data/cosmographTypes';
+import {
+  computeProjection,
+  toCanvas,
+  type ProjectionState,
+} from './coordinateProjection';
+import {
+  buildAllMSTEdges,
+} from '../../utils/mstConstellation';
+import {
+  renderConstellationCentroids,
+  createConstellationLineLayer,
+  drawConstellationLines,
+  getKitsInViewport,
+} from './ConstellationLayer';
+import {
+  renderFactionHalos,
+  renderFactionLabels,
+} from './FactionHaloLayer';
+import {
+  renderEmergentMechanicLabels,
+  renderTierAnnotationBlock,
+  renderChainArchitectureLabels,
+} from './RegionLabelLayer';
+import { renderSubstrateDisclosure } from './SubstrateDisclosure';
 
 interface CosmographCanvasProps {
   data: CosmographData;
-}
-
-// ─── Coordinate Projection ───────────────────────────────────────────────────
-
-interface ProjectionState {
-  scale: number;
-  offsetX: number;
-  offsetY: number;
-  umapMinX: number;
-  umapMinY: number;
-}
-
-function computeProjection(
-  canvasW: number,
-  canvasH: number,
-  data: CosmographData,
-  paddingFraction = 0.07
-): ProjectionState {
-  const allX = data.primitives.map(p => p.embedding_x);
-  const allY = data.primitives.map(p => p.embedding_y);
-  const minX = Math.min(...allX);
-  const maxX = Math.max(...allX);
-  const minY = Math.min(...allY);
-  const maxY = Math.max(...allY);
-  const rangeX = maxX - minX;
-  const rangeY = maxY - minY;
-
-  const padX = rangeX * paddingFraction;
-  const padY = rangeY * paddingFraction;
-
-  const scaleX = canvasW / (rangeX + padX * 2);
-  const scaleY = canvasH / (rangeY + padY * 2);
-  // Uniform scale preserves UMAP aspect ratio
-  const scale = Math.min(scaleX, scaleY);
-
-  const renderW = (rangeX + padX * 2) * scale;
-  const renderH = (rangeY + padY * 2) * scale;
-
-  return {
-    scale,
-    offsetX: (canvasW - renderW) / 2 + padX * scale,
-    offsetY: (canvasH - renderH) / 2 + padY * scale,
-    umapMinX: minX,
-    umapMinY: minY,
-  };
-}
-
-function toCanvas(
-  ux: number,
-  uy: number,
-  proj: ProjectionState
-): { x: number; y: number } {
-  return {
-    x: proj.offsetX + (ux - proj.umapMinX) * proj.scale,
-    y: proj.offsetY + (uy - proj.umapMinY) * proj.scale,
-  };
 }
 
 // ─── Element Color Palette ────────────────────────────────────────────────────
@@ -422,11 +398,80 @@ function renderProvisionalBadge(app: PIXI.Application): void {
   app.stage.addChild(text);
 }
 
+// ─── Phase 3: Interaction hint ────────────────────────────────────────────────
+
+function renderInteractionHint(app: PIXI.Application): PIXI.Text {
+  const style = new PIXI.TextStyle({
+    fontFamily: 'ui-monospace, monospace',
+    fontSize: 9,
+    fill: 0x445566,
+    align: 'left',
+    letterSpacing: 0.4,
+  });
+  const text = new PIXI.Text(
+    '[Z] toggle constellation lines · click faction halo to highlight',
+    style
+  );
+  text.x = 12;
+  text.y = 12;
+  text.alpha = 0.45;
+  app.stage.addChild(text);
+  return text;
+}
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export function CosmographCanvas({ data }: CosmographCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<PIXI.Application | null>(null);
+
+  // Phase 3 interaction state (refs to avoid React re-renders on animation)
+  const constellationLineLayerRef = useRef<PIXI.Graphics | null>(null);
+  const mstEdgeMapRef = useRef<Map<string, import('../../utils/mstConstellation').MSTEdge[]>>(new Map());
+  const kitMapRef = useRef<Map<string, import('../../data/cosmographTypes').KitConstellation>>(new Map());
+  const projRef = useRef<ProjectionState | null>(null);
+  const showingLinesRef = useRef<boolean>(false);
+  const selectedFactionRef = useRef<string | null>(null);
+  const factionMemberMapRef = useRef<Map<string, string[]>>(new Map()); // faction_id → kit_ids
+
+  // Key handler for [Z] toggle
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key !== 'z' && e.key !== 'Z') return;
+    const lineLayer = constellationLineLayerRef.current;
+    const app = appRef.current;
+    const proj = projRef.current;
+    if (!lineLayer || !app || !proj) return;
+
+    showingLinesRef.current = !showingLinesRef.current;
+
+    if (!showingLinesRef.current) {
+      // Clear lines
+      lineLayer.clear();
+      return;
+    }
+
+    // Render viewport-culled constellation lines (zoom-in mode)
+    const viewportKits = getKitsInViewport(
+      data.kits,
+      proj,
+      app.screen.width,
+      app.screen.height,
+      80
+    );
+
+    drawConstellationLines(
+      lineLayer,
+      viewportKits,
+      kitMapRef.current,
+      mstEdgeMapRef.current,
+      proj
+    );
+
+    console.info(
+      `[CosmographCanvas Phase 3] Z-toggle: rendering ${viewportKits.size} constellation MST sets ` +
+      `(~${viewportKits.size * 33} segments)`
+    );
+  }, [data.kits]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -449,42 +494,173 @@ export function CosmographCanvas({ data }: CosmographCanvasProps) {
     container.appendChild(app.view as HTMLCanvasElement);
 
     // Compute UMAP → canvas projection
-    const proj = computeProjection(w, h, data);
+    const proj = computeProjection(w, h, data.primitives);
+    projRef.current = proj;
 
-    // Layer order (back to front):
+    // Pre-compute MST edges for all 1000 kits (Kruskal; ~33 edges/kit)
+    const t0 = performance.now();
+    const mstEdgeMap = buildAllMSTEdges(data.kits, data.primitives);
+    const mstMs = performance.now() - t0;
+    mstEdgeMapRef.current = mstEdgeMap;
+
+    // Build kit lookup map
+    const kitMap = new Map<string, import('../../data/cosmographTypes').KitConstellation>();
+    for (const kit of data.kits) {
+      kitMap.set(kit.kit_id, kit);
+    }
+    kitMapRef.current = kitMap;
+
+    // Build faction member map for faction-highlight interaction
+    const factionMemberMap = new Map<string, string[]>();
+    for (const faction of data.factionOverlays.factions) {
+      // member_kit_ids may be present; if not, we'll need to resolve by assignment
+      if (faction.member_kit_ids && faction.member_kit_ids.length > 0) {
+        factionMemberMap.set(faction.faction_id, faction.member_kit_ids);
+      }
+    }
+    factionMemberMapRef.current = factionMemberMap;
+
+    // ── Layer order (back to front) ──────────────────────────────────────────
     // 1. Deep-space background
     // 2. Edge vignette
-    // 3. Star layer (first-class + drill)
-    // 4. Element orientation labels
-    // 5. Provisional badge
+    // 3. Faction halos (translucent polygons — behind stars for depth)
+    // 4. Region labels (emergent mechanic families + tier block)
+    // 5. Constellation centroid dim-points (1000 dim points at default zoom)
+    // 6. Constellation MST lines (empty at start; populated on zoom/lasso/faction)
+    // 7. Star layer (first-class + drill)
+    // 8. Element orientation labels
+    // 9. Faction labels
+    // 10. Substrate disclosure
+    // 11. PROVISIONAL watermark
+    // 12. Interaction hint
 
     const bg = drawDeepSpaceBackground(app);
     app.stage.addChildAt(bg, 0);
     drawEdgeVignette(app);
 
-    // Phase 2: 570 stars
+    // Phase 3: Faction halos (behind everything else for depth)
+    renderFactionHalos(app, data.factionOverlays.factions, proj);
+
+    // Phase 3: Region labels — emergent mechanic families
+    renderEmergentMechanicLabels(app, data.regionLabels, proj);
+
+    // Phase 3: Tier annotation block + chain architecture
+    renderTierAnnotationBlock(app, proj);
+    renderChainArchitectureLabels(app, proj);
+
+    // Phase 3: Constellation centroid dim-points (default zoom state)
+    renderConstellationCentroids(app, data.kits, proj);
+
+    // Phase 3: MST line layer (empty at start — populated via Z-key or faction click)
+    const constellationLineLayer = createConstellationLineLayer(app);
+    constellationLineLayerRef.current = constellationLineLayer;
+
+    // Phase 2: 570 stars (rendered ABOVE constellation layers so stars read clearly)
     renderStarLayer(app, data, proj);
 
     // Phase 2: element labels (orientation aid at default zoom)
     renderElementLabels(app, data, proj);
 
+    // Phase 3: Faction labels (above stars so they're readable)
+    renderFactionLabels(app, data.factionOverlays.factions, proj);
+
+    // Phase 3: Substrate-honest disclosure (bottom-left)
+    renderSubstrateDisclosure(app);
+
     // Phase 2: subtle PROVISIONAL watermark
     renderProvisionalBadge(app);
+
+    // Phase 3: Interaction hint
+    renderInteractionHint(app);
+
+    // Phase 3: Faction halo click interaction
+    // Make the stage interactive so we can detect faction halo region clicks
+    app.stage.eventMode = 'static';
+    app.stage.hitArea = new PIXI.Rectangle(0, 0, w, h);
+    app.stage.on('pointerdown', (event: PIXI.FederatedPointerEvent) => {
+      const lineLayer = constellationLineLayerRef.current;
+      if (!lineLayer) return;
+
+      const clickX = event.globalX;
+      const clickY = event.globalY;
+
+      // Find which faction's halo the click falls in (point-in-convex-hull test)
+      let clickedFaction: string | null = null;
+      for (const faction of data.factionOverlays.factions) {
+        if (pointInConvexHull(clickX, clickY, faction.polygon_convex_hull, proj)) {
+          clickedFaction = faction.faction_id;
+          break;
+        }
+      }
+
+      if (clickedFaction === null) {
+        // Click outside all halos — clear lines
+        if (selectedFactionRef.current !== null) {
+          selectedFactionRef.current = null;
+          showingLinesRef.current = false;
+          lineLayer.clear();
+        }
+        return;
+      }
+
+      if (clickedFaction === selectedFactionRef.current) {
+        // Toggle off — deselect faction
+        selectedFactionRef.current = null;
+        showingLinesRef.current = false;
+        lineLayer.clear();
+        return;
+      }
+
+      selectedFactionRef.current = clickedFaction;
+      showingLinesRef.current = true;
+
+      // Get member kits for this faction
+      const memberIds = factionMemberMapRef.current.get(clickedFaction);
+      if (!memberIds || memberIds.length === 0) {
+        // No member list in packet — skip for Phase 3; Phase 4 can wire lasso-based matching
+        console.info(`[CosmographCanvas Phase 3] Faction ${clickedFaction} has no member_kit_ids in packet — cannot highlight constellations`);
+        lineLayer.clear();
+        return;
+      }
+
+      const factionKitSet = new Set<string>(memberIds);
+      drawConstellationLines(
+        lineLayer,
+        factionKitSet,
+        kitMapRef.current,
+        mstEdgeMapRef.current,
+        proj
+      );
+
+      console.info(
+        `[CosmographCanvas Phase 3] Faction ${clickedFaction} highlighted: ` +
+        `${factionKitSet.size} kits (~${factionKitSet.size * 33} segments)`
+      );
+    });
 
     const visibleCount = data.primitives.filter(p => p.visibility_at_default_zoom).length;
     const drillCount = data.primitives.filter(p => !p.visibility_at_default_zoom).length;
     console.info(
-      `[CosmographCanvas Phase 2] Pixi.js ${PIXI.VERSION} — ${w}×${h}px — ` +
+      `[CosmographCanvas Phase 3] Pixi.js ${PIXI.VERSION} — ${w}×${h}px — ` +
       `scale ${proj.scale.toFixed(2)}px/UMAP-unit — ` +
-      `${visibleCount} first-class stars visible · ${drillCount} drill stars hidden`
+      `${visibleCount} first-class stars · ${drillCount} drill stars · ` +
+      `MST pre-computed in ${mstMs.toFixed(1)}ms · ` +
+      `${data.kits.length} constellation centroids · ` +
+      `${data.factionOverlays.factions.length} faction halos`
     );
+
+    // Register keyboard handler
+    window.addEventListener('keydown', handleKeyDown);
 
     // Cleanup on unmount
     return () => {
+      window.removeEventListener('keydown', handleKeyDown);
       app.destroy(true, { children: true, texture: true, baseTexture: true });
       appRef.current = null;
+      constellationLineLayerRef.current = null;
+      projRef.current = null;
     };
-  }, [data]);
+  }, [data, handleKeyDown]);
 
   return (
     <div
@@ -493,4 +669,38 @@ export function CosmographCanvas({ data }: CosmographCanvasProps) {
       style={{ cursor: 'crosshair' }}
     />
   );
+}
+
+// ─── Geometry utilities ────────────────────────────────────────────────────────
+
+/**
+ * Point-in-convex-hull test using the cross-product sign method.
+ * Hull vertices are in UMAP space; point is in canvas space.
+ * Converts hull to canvas space before testing.
+ *
+ * Used for faction halo click interaction.
+ */
+function pointInConvexHull(
+  canvasX: number,
+  canvasY: number,
+  hull: [number, number][],
+  proj: ProjectionState
+): boolean {
+  if (hull.length < 3) return false;
+
+  // Convert hull to canvas coords
+  const canvasHull = hull.map(([hx, hy]) => toCanvas(hx, hy, proj));
+
+  // Cross-product sign test for convex polygon containment
+  let sign = 0;
+  for (let i = 0; i < canvasHull.length; i++) {
+    const p1 = canvasHull[i];
+    const p2 = canvasHull[(i + 1) % canvasHull.length];
+    const cross = (p2.x - p1.x) * (canvasY - p1.y) - (p2.y - p1.y) * (canvasX - p1.x);
+    if (cross === 0) continue; // on edge
+    const s = cross > 0 ? 1 : -1;
+    if (sign === 0) sign = s;
+    else if (sign !== s) return false;
+  }
+  return true;
 }

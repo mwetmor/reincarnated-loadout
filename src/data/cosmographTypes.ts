@@ -88,14 +88,15 @@ export interface FlagEnumAttachment {
 
 export interface EmergentMechanicCluster {
   cluster_id: number;
-  label: string;          // e.g. "emergent::damage|close|high"
+  label: string;                    // e.g. "emergent::damage|close|high"
   centroid_x: number;
   centroid_y: number;
   member_count: number;
-  dominant_effect: string;
+  dominant_effect_category: string; // Discipline #11 empirical: actual field name
   dominant_range: string;
   dominant_tempo: string;
   purity: number;
+  member_primitive_ids: string[];
 }
 
 export interface RegionLabels {
