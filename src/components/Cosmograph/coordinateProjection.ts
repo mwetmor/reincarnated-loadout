@@ -60,3 +60,19 @@ export function toCanvas(
     y: proj.offsetY + (uy - proj.umapMinY) * proj.scale,
   };
 }
+
+/**
+ * Inverse of toCanvas — converts canvas pixel coordinates back to UMAP space.
+ * Used by LassoLayer to store lasso vertices in UMAP space (the coordinate
+ * system lassoResolution.ts operates in).
+ */
+export function toUMAP(
+  cx: number,
+  cy: number,
+  proj: ProjectionState
+): { x: number; y: number } {
+  return {
+    x: (cx - proj.offsetX) / proj.scale + proj.umapMinX,
+    y: (cy - proj.offsetY) / proj.scale + proj.umapMinY,
+  };
+}

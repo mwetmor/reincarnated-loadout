@@ -7,7 +7,7 @@
  *           493 drill stars hidden until zoom > 1.5×.
  * Phase 3: 1000 PROVISIONAL constellation centroid dim-points + MST lines (cull-by-default)
  *           + 7 faction halos + region-label overlays + substrate disclosure.
- * Phase 4: Lasso interaction + side panel + flag-enum visualization.
+ * Phase 4: Lasso interaction + composite-score resolution + side panel integration.
  * Phase 5: Perf pass + zoom + viewport culling + Vercel deploy.
  *
  * Painterly cosmic aesthetic (register-locked per cosmograph-pivot § 3 + § 4):
@@ -21,13 +21,18 @@
  * - Faction halo click: MST lines for selected faction's kits (~4,700 segments max)
  * - Lasso: MST lines for lasso-resolved kits (Phase 4)
  *
+ * Phase 4 pointer event architecture:
+ * - LassoLayer owns pointerdown/move/up — intercepts drag-start
+ * - Faction-click fires on pointerup ONLY IF drag distance < MIN_CLICK_PX
+ * - This avoids dual-event conflicts: drag = lasso; click = faction highlight
+ *
  * Discipline #11 — empirical inspection: all visual encoding decisions validated
  * against actual substrate data (provenance tags, bdi_weight ranges, element couplings,
  * faction centroid nulls, mechanic cluster positions) before implementation.
  * See Phase 2+3 inspection notes in AGENT_STATE.md.
  */
 
-import { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import * as PIXI from 'pixi.js';
 import type { CosmographData } from '../../data/cosmographData';
 import type { PrimitiveEntry } from '../../data/cosmographTypes';
@@ -55,9 +60,22 @@ import {
   renderChainArchitectureLabels,
 } from './RegionLabelLayer';
 import { renderSubstrateDisclosure } from './SubstrateDisclosure';
+import { attachLassoLayer, clearLasso } from './LassoLayer';
+import { resolveLasso } from '../../utils/lassoResolution';
+import type { LassoResolutionResult } from '../../utils/lassoResolution';
+
+// Minimum pointer travel distance (px) to classify as a drag (lasso) vs a click (faction)
+const MIN_CLICK_PX = 6;
 
 interface CosmographCanvasProps {
   data: CosmographData;
+  /** Called when lasso resolves — Forge.tsx shows SidePanel with result. */
+  onLassoResult: (result: LassoResolutionResult | null) => void;
+  /**
+   * Ref that Forge.tsx stores — the canvas populates it with a clear function
+   * so the SidePanel "Clear" button can trigger a visual lasso clear.
+   */
+  clearLassoRef?: React.MutableRefObject<(() => void) | null>;
 }
 
 // ─── Element Color Palette ────────────────────────────────────────────────────
@@ -421,7 +439,7 @@ function renderInteractionHint(app: PIXI.Application): PIXI.Text {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-export function CosmographCanvas({ data }: CosmographCanvasProps) {
+export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: CosmographCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<PIXI.Application | null>(null);
 
@@ -433,6 +451,12 @@ export function CosmographCanvas({ data }: CosmographCanvasProps) {
   const showingLinesRef = useRef<boolean>(false);
   const selectedFactionRef = useRef<string | null>(null);
   const factionMemberMapRef = useRef<Map<string, string[]>>(new Map()); // faction_id → kit_ids
+
+  // Phase 4 lasso refs
+  const lassoGraphicsRef = useRef<PIXI.Graphics | null>(null);
+  const lassoDetachRef = useRef<(() => void) | null>(null);
+  const onLassoResultRef = useRef(onLassoResult);
+  onLassoResultRef.current = onLassoResult; // keep current without re-triggering useEffect
 
   // Key handler for [Z] toggle
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -570,21 +594,49 @@ export function CosmographCanvas({ data }: CosmographCanvasProps) {
     // Phase 2: subtle PROVISIONAL watermark
     renderProvisionalBadge(app);
 
-    // Phase 3: Interaction hint
+    // Phase 4: Update interaction hint to include lasso
     renderInteractionHint(app);
 
-    // Phase 3: Faction halo click interaction
-    // Make the stage interactive so we can detect faction halo region clicks
+    // Phase 4: Unified pointer event architecture
+    // LassoLayer owns pointerdown/pointermove/pointerup for drag (lasso).
+    // Faction-click fires on pointerup ONLY IF drag distance < MIN_CLICK_PX.
+    //
+    // Pointer-down tracking for click vs drag discrimination:
+    let pointerDownX = 0;
+    let pointerDownY = 0;
+    let isDragging = false;
+
     app.stage.eventMode = 'static';
     app.stage.hitArea = new PIXI.Rectangle(0, 0, w, h);
-    app.stage.on('pointerdown', (event: PIXI.FederatedPointerEvent) => {
+
+    // Track pointer-down position (LassoLayer will also receive this event)
+    const onStagePointerDown = (event: PIXI.FederatedPointerEvent) => {
+      pointerDownX = event.globalX;
+      pointerDownY = event.globalY;
+      isDragging = false;
+    };
+
+    const onStagePointerMove = (event: PIXI.FederatedPointerEvent) => {
+      if (!isDragging) {
+        const dx = event.globalX - pointerDownX;
+        const dy = event.globalY - pointerDownY;
+        if (Math.sqrt(dx * dx + dy * dy) >= MIN_CLICK_PX) {
+          isDragging = true;
+        }
+      }
+    };
+
+    const onStagePointerUp = (event: PIXI.FederatedPointerEvent) => {
+      // Only fire faction-click if this was a true click (not a drag/lasso)
+      if (isDragging) return;
+
       const lineLayer = constellationLineLayerRef.current;
       if (!lineLayer) return;
 
       const clickX = event.globalX;
       const clickY = event.globalY;
 
-      // Find which faction's halo the click falls in (point-in-convex-hull test)
+      // Find which faction's halo the click falls in
       let clickedFaction: string | null = null;
       for (const faction of data.factionOverlays.factions) {
         if (pointInConvexHull(clickX, clickY, faction.polygon_convex_hull, proj)) {
@@ -594,7 +646,7 @@ export function CosmographCanvas({ data }: CosmographCanvasProps) {
       }
 
       if (clickedFaction === null) {
-        // Click outside all halos — clear lines
+        // Click outside all halos — clear constellation lines (but keep lasso result)
         if (selectedFactionRef.current !== null) {
           selectedFactionRef.current = null;
           showingLinesRef.current = false;
@@ -604,7 +656,7 @@ export function CosmographCanvas({ data }: CosmographCanvasProps) {
       }
 
       if (clickedFaction === selectedFactionRef.current) {
-        // Toggle off — deselect faction
+        // Toggle off
         selectedFactionRef.current = null;
         showingLinesRef.current = false;
         lineLayer.clear();
@@ -614,11 +666,9 @@ export function CosmographCanvas({ data }: CosmographCanvasProps) {
       selectedFactionRef.current = clickedFaction;
       showingLinesRef.current = true;
 
-      // Get member kits for this faction
       const memberIds = factionMemberMapRef.current.get(clickedFaction);
       if (!memberIds || memberIds.length === 0) {
-        // No member list in packet — skip for Phase 3; Phase 4 can wire lasso-based matching
-        console.info(`[CosmographCanvas Phase 3] Faction ${clickedFaction} has no member_kit_ids in packet — cannot highlight constellations`);
+        console.info(`[CosmographCanvas Phase 4] Faction ${clickedFaction} has no member_kit_ids`);
         lineLayer.clear();
         return;
       }
@@ -633,20 +683,98 @@ export function CosmographCanvas({ data }: CosmographCanvasProps) {
       );
 
       console.info(
-        `[CosmographCanvas Phase 3] Faction ${clickedFaction} highlighted: ` +
+        `[CosmographCanvas Phase 4] Faction ${clickedFaction} highlighted: ` +
         `${factionKitSet.size} kits (~${factionKitSet.size * 33} segments)`
       );
+    };
+
+    app.stage.on('pointerdown', onStagePointerDown);
+    app.stage.on('pointermove', onStagePointerMove);
+    app.stage.on('pointerup', onStagePointerUp);
+    app.stage.on('pointerupoutside', onStagePointerUp);
+
+    // Phase 4: Attach lasso layer (added to stage ABOVE constellation lines)
+    // LassoLayer adds its graphics to stage automatically.
+    const { lassoGraphics, detach: detachLasso } = attachLassoLayer(app, proj, {
+      onLassoClose: (verticesUMAP) => {
+        const t0 = performance.now();
+
+        const result = resolveLasso({
+          lassoPolygon: verticesUMAP,
+          primitives: data.primitives,
+          kits: data.kits,
+          primitiveById: data.primitiveById,
+          topN: 3,
+        });
+
+        const resolveMs = performance.now() - t0;
+
+        console.info(
+          `[CosmographCanvas Phase 4] Lasso resolved in ${resolveMs.toFixed(2)}ms — ` +
+          `${result.lassoPrimitiveIds.size} primitives enclosed · ` +
+          `${result.matches.length} matches · ` +
+          `emptyLasso=${result.emptyLasso} · ambiguous=${result.ambiguous} · noBestMatch=${result.noBestMatch}`
+        );
+
+        // Draw constellation MST lines for matched kits
+        const lineLayer = constellationLineLayerRef.current;
+        if (lineLayer && result.matches.length > 0) {
+          const matchedKitIds = new Set(result.matches.map(m => m.kit.kit_id));
+          drawConstellationLines(
+            lineLayer,
+            matchedKitIds,
+            kitMapRef.current,
+            mstEdgeMapRef.current,
+            proj
+          );
+          showingLinesRef.current = true;
+        } else if (lineLayer && result.emptyLasso) {
+          lineLayer.clear();
+          showingLinesRef.current = false;
+        }
+
+        // Notify Forge.tsx for side panel
+        onLassoResultRef.current(result);
+      },
+      onLassoClear: () => {
+        // Clear constellation lines when new lasso starts
+        const lineLayer = constellationLineLayerRef.current;
+        if (lineLayer && showingLinesRef.current) {
+          lineLayer.clear();
+          showingLinesRef.current = false;
+        }
+        // Clear side panel
+        onLassoResultRef.current(null);
+      },
     });
+
+    lassoGraphicsRef.current = lassoGraphics;
+    lassoDetachRef.current = detachLasso;
+
+    // Expose clear function to parent (for SidePanel "Clear" button)
+    if (clearLassoRef) {
+      clearLassoRef.current = () => {
+        clearLasso(lassoGraphics);
+        const lineLayer = constellationLineLayerRef.current;
+        if (lineLayer) {
+          lineLayer.clear();
+          showingLinesRef.current = false;
+        }
+        selectedFactionRef.current = null;
+        onLassoResultRef.current(null);
+      };
+    }
 
     const visibleCount = data.primitives.filter(p => p.visibility_at_default_zoom).length;
     const drillCount = data.primitives.filter(p => !p.visibility_at_default_zoom).length;
     console.info(
-      `[CosmographCanvas Phase 3] Pixi.js ${PIXI.VERSION} — ${w}×${h}px — ` +
+      `[CosmographCanvas Phase 4] Pixi.js ${PIXI.VERSION} — ${w}×${h}px — ` +
       `scale ${proj.scale.toFixed(2)}px/UMAP-unit — ` +
       `${visibleCount} first-class stars · ${drillCount} drill stars · ` +
       `MST pre-computed in ${mstMs.toFixed(1)}ms · ` +
       `${data.kits.length} constellation centroids · ` +
-      `${data.factionOverlays.factions.length} faction halos`
+      `${data.factionOverlays.factions.length} faction halos · ` +
+      `lasso layer active`
     );
 
     // Register keyboard handler
@@ -655,6 +783,9 @@ export function CosmographCanvas({ data }: CosmographCanvasProps) {
     // Cleanup on unmount
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      lassoDetachRef.current?.();
+      lassoDetachRef.current = null;
+      lassoGraphicsRef.current = null;
       app.destroy(true, { children: true, texture: true, baseTexture: true });
       appRef.current = null;
       constellationLineLayerRef.current = null;
