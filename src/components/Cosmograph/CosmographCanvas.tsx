@@ -9,6 +9,7 @@
  *           + 7 faction halos + region-label overlays + substrate disclosure.
  * Phase 4: Lasso interaction + composite-score resolution + side panel integration.
  * Phase 5: Perf pass + zoom + viewport culling + Vercel preview deploy.
+ * Phase 5c: Pointer-mode pan bug fix — migrate pan to native DOM events (bypass Pixi hit-test).
  *
  * Phase 5 zoom architecture:
  * - Scroll wheel / trackpad pinch → app.stage.scale adjustment (0.5× min, 4× max)
@@ -642,6 +643,25 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
     // Mode = 'lasso':             drag = lasso (LassoLayer), click = clear, scroll = zoom.
     // modeRef is shared with toolbar toggle — no useEffect re-run needed on mode change.
     //
+    // Phase 5c pan fix: pan now uses native DOM events on `container` instead of Pixi
+    // federated stage events. Root cause of the Phase 5b bug: Pixi dispatches `pointermove`
+    // only to objects that pass the hit-test (moveOnAll=false). The stage hitArea
+    // [0,0,w,h] is in stage-LOCAL coordinates. After any pan (stage.position shifts),
+    // the hitArea's CSS-pixel coverage shifts with the stage. If the cursor enters the
+    // region that falls outside [0,0,w,h] in stage-local space, the hit test fails and
+    // pointermove stops reaching the handler mid-drag — causing the "pushes off screen" effect.
+    //
+    // Native DOM events bypass Pixi's hit-test entirely: pointermove fires on document
+    // regardless of stage transform. This matches the wheel-zoom handler pattern already
+    // used for scroll-to-zoom (which also uses container.addEventListener, not Pixi events).
+    //
+    // Faction-click also migrated to native events so click-detection shares the same
+    // drag-state as pan. Stage-local conversion for hull test is unchanged:
+    //   stageLocalX = (clientX - rect.left - stage.position.x) / stage.scale.x
+    //
+    // Lasso mode: LassoLayer continues to use Pixi federated events on stage (gated by
+    // isLassoModeActive). Stage must remain eventMode='static' for LassoLayer.
+
     // Pointer-down tracking for click vs drag discrimination + pan:
     let pointerDownX = 0;
     let pointerDownY = 0;
@@ -650,57 +670,81 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
     let isDragging = false;
     let isPanning = false;
 
+    // Stage still needs eventMode='static' so LassoLayer's federated events work.
     app.stage.eventMode = 'static';
     app.stage.hitArea = new PIXI.Rectangle(0, 0, w, h);
 
-    // Track pointer-down position (LassoLayer will also receive this event; it self-gates on mode)
-    const onStagePointerDown = (event: PIXI.FederatedPointerEvent) => {
-      pointerDownX = event.globalX;
-      pointerDownY = event.globalY;
-      panLastX = event.globalX;
-      panLastY = event.globalY;
+    // ── Native DOM pan + click handlers (Phase 5c) ────────────────────────────
+    // canvasRelativeX: convert native clientX to canvas-relative CSS px (same as Pixi globalX)
+    const getCanvasPos = (e: PointerEvent): { cx: number; cy: number } => {
+      const rect = container.getBoundingClientRect();
+      return { cx: e.clientX - rect.left, cy: e.clientY - rect.top };
+    };
+
+    const onNativePointerDown = (e: PointerEvent) => {
+      const { cx, cy } = getCanvasPos(e);
+      pointerDownX = cx;
+      pointerDownY = cy;
+      panLastX = cx;
+      panLastY = cy;
       isDragging = false;
       isPanning = false;
     };
 
-    const onStagePointerMove = (event: PIXI.FederatedPointerEvent) => {
-      const dx = event.globalX - pointerDownX;
-      const dy = event.globalY - pointerDownY;
+    const onNativePointerMove = (e: PointerEvent) => {
+      // Only process if a button is held (button 0 = primary; buttons bitmask)
+      if (e.buttons === 0) return;
+
+      const { cx, cy } = getCanvasPos(e);
+      const dx = cx - pointerDownX;
+      const dy = cy - pointerDownY;
+
       if (!isDragging && Math.sqrt(dx * dx + dy * dy) >= MIN_CLICK_PX) {
         isDragging = true;
-        // In pointer mode, a drag initiates pan
         if (modeRef.current === 'pointer') {
           isPanning = true;
         }
       }
 
-      // Pan: move stage position by delta in global space
+      // Pan: move stage position by frame-by-frame delta in screen-space CSS pixels.
+      // stage.position is screen-space CSS px; delta is screen-space CSS px → 1:1, no scale factor.
       if (isPanning && modeRef.current === 'pointer') {
-        const deltaX = event.globalX - panLastX;
-        const deltaY = event.globalY - panLastY;
+        const deltaX = cx - panLastX;
+        const deltaY = cy - panLastY;
         app.stage.position.x += deltaX;
         app.stage.position.y += deltaY;
-        panLastX = event.globalX;
-        panLastY = event.globalY;
+        panLastX = cx;
+        panLastY = cy;
       }
     };
 
-    const onStagePointerUp = (event: PIXI.FederatedPointerEvent) => {
+    const onNativePointerUp = (e: PointerEvent) => {
+      const wasPanning = isPanning;
       isPanning = false;
 
-      // Only fire faction-click if this was a true click (not a drag/pan/lasso)
-      if (isDragging) return;
+      // In lasso mode: lasso handled entirely by LassoLayer (Pixi federated). No-op here.
+      if (modeRef.current === 'lasso') {
+        isDragging = false;
+        return;
+      }
+
+      // In pointer mode: only fire faction-click if this was a true click (not a drag/pan)
+      if (isDragging || wasPanning) {
+        isDragging = false;
+        return;
+      }
+      isDragging = false;
 
       const lineLayer = constellationLineLayerRef.current;
       if (!lineLayer) return;
 
-      // Phase 5b fix: convert to stage-local coords before hull test.
-      // pointInConvexHull converts hull UMAP → canvas via toCanvas (stage-local space).
-      // event.globalX/Y is Pixi global (CSS-pixel, pre-stage-transform).
-      // Must match spaces: both must be stage-local.
+      // Convert native client coords to stage-local for hull test.
+      // Hull vertices are in UMAP space → toCanvas → stage-local space.
+      // stageLocalX = (canvas-relative CSS px - stage.position) / stage.scale
+      const { cx, cy } = getCanvasPos(e);
       const stage = app.stage;
-      const clickX = (event.globalX - stage.position.x) / stage.scale.x;
-      const clickY = (event.globalY - stage.position.y) / stage.scale.y;
+      const clickX = (cx - stage.position.x) / stage.scale.x;
+      const clickY = (cy - stage.position.y) / stage.scale.y;
 
       // Find which faction's halo the click falls in
       let clickedFaction: string | null = null;
@@ -754,10 +798,11 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
       );
     };
 
-    app.stage.on('pointerdown', onStagePointerDown);
-    app.stage.on('pointermove', onStagePointerMove);
-    app.stage.on('pointerup', onStagePointerUp);
-    app.stage.on('pointerupoutside', onStagePointerUp);
+    // pointermove on document (not container) so drag continues outside canvas bounds.
+    // pointerdown/up on container (restricts drag initiation to canvas).
+    container.addEventListener('pointerdown', onNativePointerDown);
+    document.addEventListener('pointermove', onNativePointerMove);
+    document.addEventListener('pointerup', onNativePointerUp);
 
     // Phase 4 + 5b: Attach lasso layer (added to stage ABOVE constellation lines)
     // LassoLayer adds its graphics to stage automatically.
@@ -933,6 +978,9 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
       container.removeEventListener('wheel', onWheel);
+      container.removeEventListener('pointerdown', onNativePointerDown);
+      document.removeEventListener('pointermove', onNativePointerMove);
+      document.removeEventListener('pointerup', onNativePointerUp);
       app.ticker.remove(fpsTicker);
       lassoDetachRef.current?.();
       lassoDetachRef.current = null;
