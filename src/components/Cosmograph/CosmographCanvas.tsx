@@ -416,7 +416,7 @@ function renderProvisionalBadge(app: PIXI.Application): void {
   app.stage.addChild(text);
 }
 
-// ─── Phase 3: Interaction hint ────────────────────────────────────────────────
+// ─── Phase 4: Interaction hint ────────────────────────────────────────────────
 
 function renderInteractionHint(app: PIXI.Application): PIXI.Text {
   const style = new PIXI.TextStyle({
@@ -427,7 +427,7 @@ function renderInteractionHint(app: PIXI.Application): PIXI.Text {
     letterSpacing: 0.4,
   });
   const text = new PIXI.Text(
-    '[Z] toggle constellation lines · click faction halo to highlight',
+    '[Z] constellation lines · click faction · drag to lasso',
     style
   );
   text.x = 12;
