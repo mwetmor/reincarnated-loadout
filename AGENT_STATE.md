@@ -1,12 +1,51 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-06
-**Last commit:** (see Phase 5 entry below — tag drax/v1.7-cosmograph-phase-a-phase-5)
-**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-5`
+**Last commit:** `add8303` Phase 5c pointer-mode pan bug fix
+**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-5c`
 **Branch:** `cosmograph/phase-a-preview` (feature branch; main unchanged per Matt Phase 5 push directive)
 **Hive-mind mode:** N/A
 
 ## Session summary
+
+### cosmograph-phase-a Phase 5c — pointer-mode pan bug fix (2026-06-06)
+
+**Authority:** Matt 2026-06-06 direct preview-inspection feedback. Follow-up fire 2 from knight-rider.
+**Build:** `tsc -b && vite build` PASS — 1498 modules, 0 TS errors. 79/79 tests pass.
+
+**Root cause (confirmed via Pixi EventSystem/EventBoundary source inspection):**
+Phase 5b implemented pan via Pixi federated stage events (`app.stage.on('pointermove')`).
+Pixi's EventBoundary dispatches `pointermove` only to objects passing the hit-test
+(`moveOnAll=false` default). The stage `hitArea = new PIXI.Rectangle(0, 0, w, h)` is
+in stage-LOCAL coordinates. After any pan (stage.position.x shifts), the hitArea's
+CSS-pixel coverage shifts with the stage. If the cursor enters the region where
+stage-local coord is outside [0,0,w,h], the hit test fails and pointermove stops
+reaching the handler mid-drag — causing content to snap off screen before pointer
+events resume.
+
+**Fix:** Migrated pan + faction-click from Pixi federated events to native DOM events
+on `container` (pointerdown) and `document` (pointermove, pointerup). Native DOM
+`pointermove` on document fires regardless of stage transform — no hit-test involved.
+Same pattern as the existing wheel-zoom handler. Delta math unchanged: frame-by-frame
+CSS px delta applied to stage.position (no scale factor). Stage remains `eventMode='static'`
+for LassoLayer's federated events.
+
+**Files amended in Phase 5c:**
+- `src/components/Cosmograph/CosmographCanvas.tsx` — pan migrated to native DOM events
+
+**Phase 5c commits:**
+- `add8303` — drax: cosmograph Phase 5c — pointer-mode pan bug fix (native DOM events)
+- (AGENT_STATE + tag — this commit)
+- Tag: `drax/v1.7-cosmograph-phase-a-phase-5c`
+
+---
+
+### cosmograph-phase-a Phase 5b — lasso coord-transform fix + pointer/lasso mode toggle (2026-06-06)
+
+Phase 5b implemented in commit `e99cc22`. Phase 5b lasso coord-transform fix is preserved
+unchanged in Phase 5c. Phase 5c only changes pan handling; lasso mode is unaffected.
+
+---
 
 ### cosmograph-phase-a Phase 5 — scroll-to-zoom + viewport culling + Vercel preview deploy (2026-06-06)
 
