@@ -2534,3 +2534,45 @@ Per MIGRATION.md §v1.67:
 - `/sample` returns HTTP 200 (SPA rewrite active)
 - Post-deploy error scan: no errors found in runtime logs
 - Observability: no drains configured (known state; no external monitoring in scope for this project)
+
+---
+
+### cosmograph Phase 5b — lasso coord-transform fix + pointer/lasso mode toggle (2026-06-06)
+
+**Dispatch:** Matt 2026-06-06 direct preview-inspection feedback on `cosmograph/phase-a-preview` branch; routed by knight-rider.
+**Authority:** Post-Gate-2-PASS bug fix + new feature within authorized cosmograph Phase A commission scope. Auto-commit per CLAUDE.md team discipline.
+**Tag:** `drax/v1.7-cosmograph-phase-a-phase-5b`
+**Branch:** `cosmograph/phase-a-preview` (main + production unchanged pending Matt merge decision)
+
+**Issue 1 — Lasso coord-transform bug (MAJOR BUG FIX):**
+
+Root cause (Discipline #1 math-before-code verified):
+`FederatedPointerEvent.globalX/Y` is in Pixi global space = CSS-pixel space relative to the canvas element, pre-stage-transform. Phase 5 added `app.stage.scale` (zoom) and `app.stage.position` (pan). `lassoGraphics` is a child of `app.stage` and draws in stage-local space. `toCanvas` outputs stage-local coords (proj was computed from stage-local canvas dimensions). But `toUMAP(event.globalX, event.globalY, proj)` was converting global (pre-transform) coords as if they were stage-local — so at zoom=1, pan=0 this coincidentally worked; at any other zoom/pan state, the lasso polygon drifted.
+
+Fix: Added `toStageLocal(globalX, globalY, stage)` helper in `LassoLayer.ts` that applies the inverse stage transform: `x = (globalX - stage.position.x) / stage.scale.x`. All pointer event coord conversions now go through this before `toUMAP`. The drag-distance threshold check (`MIN_DRAG_PX`) intentionally stays in global (screen-pixel) space — it's a screen-space threshold.
+
+Same fix applied in `CosmographCanvas.tsx` faction-click handler: `pointInConvexHull` receives stage-local coords (converted from `event.globalX/Y` before the test), matching the stage-local space that `toCanvas` outputs for hull vertices.
+
+**Issue 2 — Pointer/lasso mode toggle (OPTION A: toolbar):**
+
+UX pattern chosen: Option A (mode toggle toolbar). Reasoning: Matt is the primary user; toolbar is immediately visible and self-documenting. Modifier-key (Option B) is less discoverable. One-shot lasso (Option C) requires mode-exit after each lasso which is awkward for exploration.
+
+Implementation:
+- `InteractionMode = 'pointer' | 'lasso'` type added to `CosmographCanvas.tsx`.
+- `modeRef` (React ref) readable inside Pixi event handlers without closure issues; `interactionMode` (React state) drives toolbar re-render.
+- `handleModeToggle` callback updates both simultaneously.
+- Pointer mode: drag fires pan (stage position += drag delta in global space); faction click works; scroll zoom works.
+- Lasso mode: drag fires lasso (existing LassoLayer); faction click works on pointerup if no drag; scroll zoom works.
+- `LassoLayer.ts` updated: `attachLassoLayer` accepts optional `isLassoModeActive: () => boolean` param (defaults to `() => true` for backward compat); all lasso pointer handlers self-gate on this.
+- Toolbar: absolutely positioned top-left above the canvas; `bg-gray-900/85 backdrop-blur-sm` register; `text-[10px] font-mono`; active mode highlighted `bg-indigo-700/80 text-indigo-100`; minimal SVG icons (arrow + lasso loop).
+- Cursor: `crosshair` in lasso mode, `grab` in pointer mode.
+- Interaction hint text updated to reflect mode-toggle workflow.
+- Forge.tsx status bar text updated.
+
+**Files changed:**
+- `/Users/admin/Games/reincarnated-loadout/src/components/Cosmograph/LassoLayer.ts` — coord-transform fix + `isLassoModeActive` gate
+- `/Users/admin/Games/reincarnated-loadout/src/components/Cosmograph/CosmographCanvas.tsx` — coord-transform fix + InteractionMode + toolbar JSX + pan behavior
+- `/Users/admin/Games/reincarnated-loadout/src/pages/Forge.tsx` — status bar text
+
+**Build verification:** `tsc -b && vite build` — 0 TS errors, build clean.
+**Tests:** 79/79 pass (unchanged).
