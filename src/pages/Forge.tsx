@@ -137,7 +137,7 @@ export function Forge() {
             {data.primitives.length} substrate primitives &middot;{' '}
             {data.kits.length} PROVISIONAL constellations &middot;{' '}
             {data.factionOverlays.factions.length} emergent faction halos &middot;{' '}
-            Phase 5 — scroll to zoom &middot; [Z] constellation lines &middot; drag to lasso
+            scroll to zoom &middot; [Z] constellation lines &middot; pointer mode: drag to pan &middot; lasso mode: drag to select
           </p>
         </div>
       )}

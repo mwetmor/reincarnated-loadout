@@ -44,7 +44,7 @@
  * See Phase 2+3 inspection notes in AGENT_STATE.md.
  */
 
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import * as PIXI from 'pixi.js';
 import type { CosmographData } from '../../data/cosmographData';
 import type { PrimitiveEntry } from '../../data/cosmographTypes';
@@ -451,7 +451,7 @@ function renderInteractionHint(app: PIXI.Application): PIXI.Text {
     letterSpacing: 0.4,
   });
   const text = new PIXI.Text(
-    '[Z] constellation lines · click faction · drag to lasso · scroll to zoom',
+    '[Z] constellation lines · click faction · scroll to zoom · use toolbar above to switch pointer/lasso',
     style
   );
   text.x = 12;
@@ -463,9 +463,18 @@ function renderInteractionHint(app: PIXI.Application): PIXI.Text {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
+// Interaction modes: pointer (pan+click) vs lasso (draw selection polygon)
+type InteractionMode = 'pointer' | 'lasso';
+
 export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: CosmographCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<PIXI.Application | null>(null);
+
+  // Phase 5b: mode toggle — pointer (default) vs lasso.
+  // modeRef is readable inside Pixi event handlers (closure over ref, not state).
+  // interactionMode is React state for toolbar re-render only.
+  const [interactionMode, setInteractionMode] = useState<InteractionMode>('pointer');
+  const modeRef = useRef<InteractionMode>('pointer');
 
   // Phase 3 interaction state (refs to avoid React re-renders on animation)
   const constellationLineLayerRef = useRef<PIXI.Graphics | null>(null);
@@ -481,6 +490,13 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
   const lassoDetachRef = useRef<(() => void) | null>(null);
   const onLassoResultRef = useRef(onLassoResult);
   onLassoResultRef.current = onLassoResult; // keep current without re-triggering useEffect
+
+  // Phase 5b: mode toggle handler — updates both React state (toolbar render) and modeRef
+  // (readable by Pixi event handlers without closure issues).
+  const handleModeToggle = useCallback((newMode: InteractionMode) => {
+    modeRef.current = newMode;
+    setInteractionMode(newMode);
+  }, []);
 
   // Key handler for [Z] toggle
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -621,44 +637,70 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
     // Phase 4: Update interaction hint to include lasso
     renderInteractionHint(app);
 
-    // Phase 4: Unified pointer event architecture
-    // LassoLayer owns pointerdown/pointermove/pointerup for drag (lasso).
-    // Faction-click fires on pointerup ONLY IF drag distance < MIN_CLICK_PX.
+    // Phase 4 + 5b: Unified pointer event architecture
+    // Mode = 'pointer' (default): drag = pan, click = faction-select, scroll = zoom.
+    // Mode = 'lasso':             drag = lasso (LassoLayer), click = clear, scroll = zoom.
+    // modeRef is shared with toolbar toggle — no useEffect re-run needed on mode change.
     //
-    // Pointer-down tracking for click vs drag discrimination:
+    // Pointer-down tracking for click vs drag discrimination + pan:
     let pointerDownX = 0;
     let pointerDownY = 0;
+    let panLastX = 0;
+    let panLastY = 0;
     let isDragging = false;
+    let isPanning = false;
 
     app.stage.eventMode = 'static';
     app.stage.hitArea = new PIXI.Rectangle(0, 0, w, h);
 
-    // Track pointer-down position (LassoLayer will also receive this event)
+    // Track pointer-down position (LassoLayer will also receive this event; it self-gates on mode)
     const onStagePointerDown = (event: PIXI.FederatedPointerEvent) => {
       pointerDownX = event.globalX;
       pointerDownY = event.globalY;
+      panLastX = event.globalX;
+      panLastY = event.globalY;
       isDragging = false;
+      isPanning = false;
     };
 
     const onStagePointerMove = (event: PIXI.FederatedPointerEvent) => {
-      if (!isDragging) {
-        const dx = event.globalX - pointerDownX;
-        const dy = event.globalY - pointerDownY;
-        if (Math.sqrt(dx * dx + dy * dy) >= MIN_CLICK_PX) {
-          isDragging = true;
+      const dx = event.globalX - pointerDownX;
+      const dy = event.globalY - pointerDownY;
+      if (!isDragging && Math.sqrt(dx * dx + dy * dy) >= MIN_CLICK_PX) {
+        isDragging = true;
+        // In pointer mode, a drag initiates pan
+        if (modeRef.current === 'pointer') {
+          isPanning = true;
         }
+      }
+
+      // Pan: move stage position by delta in global space
+      if (isPanning && modeRef.current === 'pointer') {
+        const deltaX = event.globalX - panLastX;
+        const deltaY = event.globalY - panLastY;
+        app.stage.position.x += deltaX;
+        app.stage.position.y += deltaY;
+        panLastX = event.globalX;
+        panLastY = event.globalY;
       }
     };
 
     const onStagePointerUp = (event: PIXI.FederatedPointerEvent) => {
-      // Only fire faction-click if this was a true click (not a drag/lasso)
+      isPanning = false;
+
+      // Only fire faction-click if this was a true click (not a drag/pan/lasso)
       if (isDragging) return;
 
       const lineLayer = constellationLineLayerRef.current;
       if (!lineLayer) return;
 
-      const clickX = event.globalX;
-      const clickY = event.globalY;
+      // Phase 5b fix: convert to stage-local coords before hull test.
+      // pointInConvexHull converts hull UMAP → canvas via toCanvas (stage-local space).
+      // event.globalX/Y is Pixi global (CSS-pixel, pre-stage-transform).
+      // Must match spaces: both must be stage-local.
+      const stage = app.stage;
+      const clickX = (event.globalX - stage.position.x) / stage.scale.x;
+      const clickY = (event.globalY - stage.position.y) / stage.scale.y;
 
       // Find which faction's halo the click falls in
       let clickedFaction: string | null = null;
@@ -717,8 +759,9 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
     app.stage.on('pointerup', onStagePointerUp);
     app.stage.on('pointerupoutside', onStagePointerUp);
 
-    // Phase 4: Attach lasso layer (added to stage ABOVE constellation lines)
+    // Phase 4 + 5b: Attach lasso layer (added to stage ABOVE constellation lines)
     // LassoLayer adds its graphics to stage automatically.
+    // isLassoModeActive gates all lasso pointer handlers — no-ops in pointer mode.
     const { lassoGraphics, detach: detachLasso } = attachLassoLayer(app, proj, {
       onLassoClose: (verticesUMAP) => {
         const t0 = performance.now();
@@ -770,7 +813,7 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
         // Clear side panel
         onLassoResultRef.current(null);
       },
-    });
+    }, () => modeRef.current === 'lasso');
 
     lassoGraphicsRef.current = lassoGraphics;
     lassoDetachRef.current = detachLasso;
@@ -902,11 +945,54 @@ export function CosmographCanvas({ data, onLassoResult, clearLassoRef }: Cosmogr
   }, [data, handleKeyDown]);
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full h-full"
-      style={{ cursor: 'crosshair' }}
-    />
+    <div className="relative w-full h-full">
+      {/* Mode toggle toolbar — absolutely positioned over the canvas (top-left) */}
+      <div
+        className="absolute top-3 left-3 z-10 flex items-center gap-1 rounded border border-gray-700/60 bg-gray-900/85 px-1.5 py-1 backdrop-blur-sm"
+        style={{ pointerEvents: 'auto' }}
+      >
+        <button
+          onClick={() => handleModeToggle('pointer')}
+          title="Pointer mode: drag to pan, click faction, scroll to zoom"
+          className={
+            'flex items-center gap-1 rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+            (interactionMode === 'pointer'
+              ? 'bg-indigo-700/80 text-indigo-100'
+              : 'text-gray-500 hover:text-gray-300')
+          }
+        >
+          {/* Simple arrow cursor icon */}
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
+            <polygon points="1,1 1,9 4,6 6,9 7,8.5 5,5.5 8,5" />
+          </svg>
+          pointer
+        </button>
+        <button
+          onClick={() => handleModeToggle('lasso')}
+          title="Lasso mode: drag to draw selection polygon"
+          className={
+            'flex items-center gap-1 rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+            (interactionMode === 'lasso'
+              ? 'bg-indigo-700/80 text-indigo-100'
+              : 'text-gray-500 hover:text-gray-300')
+          }
+        >
+          {/* Simple lasso loop icon */}
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <ellipse cx="5" cy="4.5" rx="3.5" ry="3" />
+            <line x1="5" y1="7.5" x2="5" y2="9.5" />
+          </svg>
+          lasso
+        </button>
+      </div>
+
+      {/* Pixi canvas container */}
+      <div
+        ref={containerRef}
+        className="w-full h-full"
+        style={{ cursor: interactionMode === 'lasso' ? 'crosshair' : 'grab' }}
+      />
+    </div>
   );
 }
 
