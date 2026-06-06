@@ -1,10 +1,53 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-06-02
-**Last commit:** `a60b900` — drax: cycle-18 recovery-2 — restore rich per-character Loadout + fix Issues 1 + 2
-**Last tag:** `drax/v1.6-cycle-18-recovery-2-rich-loadout-restored`
+**Last updated:** 2026-06-06
+**Last commit:** (pending — cosmograph Phase A Phase 1 commit)
+**Last tag:** `drax/v1.6-cycle-18-recovery-2-rich-loadout-restored` (prior)
 **Branch:** main
-**Hive-mind mode:** N/A (SECOND LOCK L recovery — Matt 2026-06-02 directive)
+**Hive-mind mode:** N/A
+
+## Session summary
+
+### cosmograph-phase-a Phase 1 — /forge route + Pixi.js scaffold + ingestion-contract validation (2026-06-06)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-06-drax-cosmograph-phase-a-rendering.md`
+**Authority:** gandalf 2026-06-06 + jack-ryan Gate-1 PASS-WITH-AMENDMENTS + Matt 2026-06-06 directive
+**Build:** `tsc -b && vite build` PASS — 1488 modules, 0 TS errors, 1,336 KB gzipped. 79/79 tests pass.
+
+**Phase 1 acceptance criteria — ALL MET:**
+- /forge route resolves in dev server (Forge.tsx registered in App.tsx)
+- Pixi.js ^7.4.2 + @pixi/react ^7.1.2 installed; build passes
+- All 5 substrate data files served from /public/data/cosmograph/ (primitive_registry.json, kit_constellations.json, flag_enum_attachments.json, region_labels.json, faction_overlays.json)
+- Ingestion-contract validation ALL PASS (see MIGRATION.md § cosmograph-phase-a)
+- Framing-audit Q1-Q3 captured (no Pattern-A query fired — all framing locked)
+- MIGRATION.md updated with full Phase 1 documentation
+
+**Bundle-size delta: +142 KB gzipped (under 400 KB threshold — no Pattern-A needed)**
+
+**Ingestion-contract deviation noted (non-blocking):**
+primitive_set_size mean is 34.3 (not 13 as dispatch § 4.2 estimated). MST math still holds (33K edges vs 12K projected); Pixi perf envelope unaffected. Phase 3 MST implementation should use actual mean of 33-34 edges/kit.
+
+**Phase 1 files authored:**
+- `src/pages/Forge.tsx` — page host with PROVISIONAL demarcation header + data load state machine
+- `src/components/Cosmograph/CosmographCanvas.tsx` — Pixi.js Application mount, deep-space background, 77 first-class star positions (projection validation)
+- `src/data/cosmographTypes.ts` — TypeScript types for all 5 data artifacts
+- `src/data/cosmographData.ts` — parallel fetch + primitive/flag indexes
+- `src/utils/lassoResolution.ts` — point-in-polygon + composite-score lasso resolution (Phase 4 ready)
+- `scripts/convert-cosmograph-data.py` — build-time parquet → JSON converter
+
+**Nav.tsx:** "Forge" item added between "Engine" and "Planning".
+**App.tsx:** /forge route registered. Existing routes unchanged (Option B amendment compliance).
+
+**STOP — Phase 2 gate:** awaiting gandalf amendment confirmation via knight-rider before Phase 2 fire.
+Amendments in flight: Discipline #11→#1 citation; #58→#57 citation; primitive count 350-400→570; Gate-2 criteria count 10/15→18.
+
+**Next session (Phase 2 — star rendering):**
+1. Resume at `src/components/Cosmograph/CosmographCanvas.tsx` — replace Phase 1 placeholder with full star rendering
+2. Implement brightness (alpha = 0.35 + 0.65 × bdi_weight), size (T4 capstone 5-6px bloom), color (element-coupling hue)
+3. Implement provenance-tag visual encoding (B11_EXPANSION cyan-shift; retired DEFENSIVE_TRADEOFF ghost; VIT faint-outline; etc.)
+4. Verify 77 first-class stars at all zooms; 493 drill stars hidden until zoom > 1.5×
+5. Verify 60fps on M1-class hardware at default zoom
+Await knight-rider relay of gandalf amendment confirmation before firing.
 
 ## Session summary
 

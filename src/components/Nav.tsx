@@ -36,6 +36,8 @@ export function Nav() {
             <NavItem to="/court">Court</NavItem>
             {/* Kit Space removed (cycle-18 Issue 1): /kit-space redirects to /loadout */}
             <NavItem to="/state-of-engine">Engine</NavItem>
+            {/* cosmograph Phase A (2026-06-06): Forge = forward-looking future-engine surface; adjacency after Engine reads correctly */}
+            <NavItem to="/forge">Forge</NavItem>
             <NavItem to="/planning">Planning</NavItem>
           </div>
         </div>

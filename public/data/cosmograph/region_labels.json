@@ -1,0 +1,254 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "phase": "Phase 3 \u2014 region labels final (emergent mechanic-family labels populated from KMeans clustering on UMAP coordinates)",
+    "note": "Per dispatch \u00a7 2.6 \u2014 ambient navigation overlays, NOT first-class stars. Emergent mechanic-family labels DEFERRED to Phase 3 (read from clustering)."
+  },
+  "bc_bin_labels": {
+    "source": "canonical/story/qd-engine-bc-axes-lock-2026-05-20.md \u00a7 2",
+    "total_bins": 34,
+    "axes": {
+      "axis_1_engagement_profile": [
+        "close-fast",
+        "close-slow",
+        "mid-fast",
+        "mid-slow",
+        "ranged-fast",
+        "ranged-slow"
+      ],
+      "axis_2_damage_geometry": [
+        "single-target",
+        "small-AOE",
+        "large-AOE",
+        "chain",
+        "multi-spawn"
+      ],
+      "axis_2A_proxy_density": [
+        "solo",
+        "proxy-light",
+        "proxy-heavy"
+      ],
+      "axis_2B_control_density": [
+        "damage-pure",
+        "mixed",
+        "control-pure"
+      ],
+      "axis_3A_damage_tempo": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "axis_3B_damage_amplitude_variance": [
+        "flat",
+        "variable",
+        "spiky"
+      ],
+      "axis_4_defensive_profile": [
+        "tank",
+        "mitigator",
+        "dodger",
+        "glass"
+      ],
+      "axis_5_resource_economy": [
+        "HP-economy",
+        "charge-stack",
+        "damage-taken-converts",
+        "starved",
+        "overflow",
+        "generator-spender",
+        "steady"
+      ]
+    },
+    "total_cells": 68040
+  },
+  "skill_tree_tier_labels": {
+    "source": "canonical/47-damage-scaling-architecture-2026-05-27.md",
+    "tiers": [
+      "T1_rotation",
+      "T2_beta_pair",
+      "T3_build_defining",
+      "T4_capstone"
+    ]
+  },
+  "scaling_pattern_per_tier_labels": {
+    "source": "canonical/47-damage-scaling-architecture-2026-05-27.md \u00a7 1.7",
+    "patterns": [
+      "additive (T1)",
+      "additive_plus_multiplicative (T2)",
+      "multiplicative (T3)",
+      "transformative (T4)"
+    ]
+  },
+  "emergent_mechanic_family_labels": {
+    "status": "POPULATED",
+    "methodology": {
+      "algorithm": "KMeans",
+      "k": 6,
+      "k_chosen_via": "diagnostic sweep over k=5..8; k=6 lands in dispatch expected range (5-12) with maximum interpretable cluster separation",
+      "rejected_alternative": "DBSCAN(eps=0.6, min_samples=3) tried first per dispatch \u00a7 5.3 wording; collapsed to 2 mega-clusters because UMAP embedding of mechanic substrate vectors is tight (~3 unit pairwise max diameter)",
+      "random_state": 20260606,
+      "purity_summary": {
+        "mean_purity": 0.9500000000000001,
+        "min_purity": 0.7,
+        "max_purity": 1.0
+      },
+      "discipline_18_consultation_status": "NOT_FIRED \u2014 methodology lands within dispatch \u00a7 5.3 expected envelope (5-12 emergent labels; \u2265 70% per-cluster purity); methodology choice documented for jack-ryan Gate-2 review trail"
+    },
+    "cluster_count": 6,
+    "clusters": [
+      {
+        "cluster_id": 0,
+        "member_count": 10,
+        "member_primitive_ids": [
+          "mechanic_area_sustain_aura",
+          "mechanic_radiant_aura_zone",
+          "mechanic_shield_absorb_self",
+          "mechanic_lifesteal_aura_moderate",
+          "mechanic_melee_single_backstab",
+          "mechanic_melee_finisher_high",
+          "mechanic_melee_strike_rage_high_dmg",
+          "mechanic_melee_arc_cleave",
+          "mechanic_ground_slam_rage_wide",
+          "mechanic_whirlwind_sustained_aoe"
+        ],
+        "centroid_x": 9.660231590270996,
+        "centroid_y": 13.411180400848389,
+        "dominant_effect_category": "damage",
+        "dominant_tempo": "high",
+        "dominant_range": "close",
+        "label": "emergent::damage|close|high",
+        "purity": 0.7
+      },
+      {
+        "cluster_id": 1,
+        "member_count": 19,
+        "member_primitive_ids": [
+          "mechanic_vortex_pull_center",
+          "mechanic_cone_aoe_stun_medium",
+          "mechanic_circle_aoe_freeze",
+          "mechanic_projectile_slow_single",
+          "mechanic_ground_targeted_root",
+          "mechanic_circle_aoe_silence",
+          "mechanic_bolt_fear_single",
+          "mechanic_nova_knockback_aoe",
+          "mechanic_wave_root_ground",
+          "mechanic_pillar_stun_single",
+          "mechanic_vortex_slow_pull",
+          "mechanic_tendril_root_grab",
+          "mechanic_creep_slow_zone",
+          "mechanic_blind_flash_aoe",
+          "mechanic_chain_freeze_bounce",
+          "mechanic_arc_stun_sweep",
+          "mechanic_focus_slow_shot",
+          "mechanic_vortex_grapple_pull",
+          "mechanic_rage_stun_slam"
+        ],
+        "centroid_x": 7.483158588409424,
+        "centroid_y": 12.292655041343288,
+        "dominant_effect_category": "control",
+        "dominant_tempo": "low",
+        "dominant_range": "mid",
+        "label": "emergent::control|mid|low",
+        "purity": 1.0
+      },
+      {
+        "cluster_id": 2,
+        "member_count": 15,
+        "member_primitive_ids": [
+          "mechanic_projectile_single_high_dmg",
+          "mechanic_projectile_single_spam",
+          "mechanic_beam_channel_sustained",
+          "mechanic_chain_arc_bouncing",
+          "mechanic_chain_arc_fork",
+          "mechanic_multi_projectile_spread",
+          "mechanic_bolt_line_piercing",
+          "mechanic_shaft_vertical_strike",
+          "mechanic_branching_cascade",
+          "mechanic_line_aoe_sweep",
+          "mechanic_ranged_physical_single_high",
+          "mechanic_ranged_physical_spam",
+          "mechanic_multi_shot_spread",
+          "mechanic_fork_piercing_ranged",
+          "mechanic_projectile_stamina_sustained"
+        ],
+        "centroid_x": 8.79528751373291,
+        "centroid_y": 14.466363906860352,
+        "dominant_effect_category": "damage",
+        "dominant_tempo": "medium",
+        "dominant_range": "ranged",
+        "label": "emergent::damage|ranged|medium",
+        "purity": 1.0
+      },
+      {
+        "cluster_id": 3,
+        "member_count": 7,
+        "member_primitive_ids": [
+          "mechanic_dash_blink_escape",
+          "mechanic_blink_strike_combo",
+          "mechanic_roll_dodge_combo",
+          "mechanic_dash_attack_gap_closer",
+          "mechanic_leap_strike_rage",
+          "mechanic_blink_teleport_short",
+          "mechanic_dash_forward_mana"
+        ],
+        "centroid_x": 10.467686516898018,
+        "centroid_y": 13.520982469831194,
+        "dominant_effect_category": "mobility",
+        "dominant_tempo": "low",
+        "dominant_range": "close",
+        "label": "emergent::mobility|close|low",
+        "purity": 1.0
+      },
+      {
+        "cluster_id": 4,
+        "member_count": 9,
+        "member_primitive_ids": [
+          "mechanic_circle_aoe_large",
+          "mechanic_ground_targeted_circle_burst",
+          "mechanic_nova_burst_high_dmg",
+          "mechanic_burst_self_centered",
+          "mechanic_pillar_ground_impact",
+          "mechanic_ring_burst_aoe",
+          "mechanic_void_pool_persistent",
+          "mechanic_creep_ground_dot",
+          "mechanic_ground_slam_wide"
+        ],
+        "centroid_x": 10.220479329427084,
+        "centroid_y": 13.937268045213488,
+        "dominant_effect_category": "damage",
+        "dominant_tempo": "low",
+        "dominant_range": "mid",
+        "label": "emergent::damage|mid|low",
+        "purity": 1.0
+      },
+      {
+        "cluster_id": 5,
+        "member_count": 7,
+        "member_primitive_ids": [
+          "mechanic_cone_aoe_medium",
+          "mechanic_circle_aoe_medium",
+          "mechanic_arc_sweep_medium",
+          "mechanic_swirl_vortex_aoe",
+          "mechanic_wave_ground_roll",
+          "mechanic_tendril_reach",
+          "mechanic_circle_stamina_aoe"
+        ],
+        "centroid_x": 9.661786488124303,
+        "centroid_y": 14.211281095232282,
+        "dominant_effect_category": "damage",
+        "dominant_tempo": "medium",
+        "dominant_range": "mid",
+        "label": "emergent::damage|mid|medium",
+        "purity": 1.0
+      }
+    ],
+    "note": "Per Matt 2026-06-06 substrate-led correction: no pre-imposed family taxonomy. Labels read from clustering \u2014 substrate spoke; we transcribed. Each label encodes dominant effect_category | range | tempo of the cluster's mechanic membership. Methodology choice (KMeans k=6) documented in the `methodology` block for downstream review."
+  },
+  "chain_architecture_labels": {
+    "source": "canonical/40-gear-balance-guide-architecture-2026-05-26.md D83",
+    "architectures": [
+      "3_chain (2 T4 capstone chains + 1 supporting T3-only)",
+      "4_chain (3 T4 capstone chains + 1 supporting T3-only)"
+    ]
+  }
+}

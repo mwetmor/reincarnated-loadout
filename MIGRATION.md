@@ -1152,6 +1152,112 @@ Full thumbnail rendering requires demo assets served at the same origin — Phas
 
 ---
 
+## [2026-06-06] §cosmograph-phase-a — Cosmograph Phase A Scaffold at /forge
+
+**Author:** drax
+**Workstream:** Cosmograph Phase A rendering commission (Phase 1)
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-06-drax-cosmograph-phase-a-rendering.md`
+**Authority:** gandalf 2026-06-06 dispatch + jack-ryan Gate-1 PASS-WITH-AMENDMENTS + Matt 2026-06-06 multi-iteration design call
+**Upstream contract:** elrond Phase 4 cosmograph packet (`agentic_orchestration/elrond/research/cosmograph-substrate-trace-2026-06-06/cosmograph_README.md`)
+
+### What changed (Phase 1 scope)
+
+#### 1. New route — `/forge`
+
+- New React page at `src/pages/Forge.tsx`.
+- Registered in `src/App.tsx` as `<Route path="/forge" element={<Forge />} />`.
+- "Forge" nav item added to `src/components/Nav.tsx` between "Engine" and "Planning".
+- No changes to any existing routes (`/loadout`, `/kits`, `/analytics`, `/encounters`, `/court`, `/pitch`, `/state-of-engine`, `/planning`, `/sample`).
+- `/forge` is FORWARD-LOOKING future-engine surface per Option B amendment. Cycle 14 corpus STAYS at `/loadout` per amendment — `/forge` and `/loadout` coexist.
+
+#### 2. New dependency — `pixi.js@^7.4.2` + `@pixi/react@^7.1.2`
+
+- Pixi.js v7 added to `package.json` dependencies.
+- `@pixi/react@^7.1.2` added (React bindings for Pixi v7).
+- Version matches `reincarnated-demo` (which already pins `^7.4.2`) — consistent across both seams.
+- Bundle delta: **+142 KB gzipped** (below 400 KB threshold flagged by jack-ryan INFO-2). Tree-shaking reduces from full v7 install.
+- No impact on existing pages — Pixi.js is only imported by `/forge` components.
+
+#### 3. New data files — `/public/data/cosmograph/`
+
+Five elrond Phase 4 packet artifacts copied to `public/data/cosmograph/`:
+
+| File | Source | Contents | Gzip size |
+|---|---|---|---|
+| `primitive_registry.json` | Converted from `primitive_registry.parquet` | 570 substrate primitives with bdi_weight + embedding coords + provenance tags | ~27 KB |
+| `kit_constellations.json` | Converted from `kit_constellations.parquet` | 1000 PROVISIONAL simulated kit constellations (all `is_simulated=true`, `q_scores=null`, `kit_name==kit_id`) | ~174 KB |
+| `flag_enum_attachments.json` | Converted from `flag_enum_attachments.parquet` | 1000 per-kit flag enum sets (mean 15.6 flags/kit) | ~17 KB |
+| `region_labels.json` | Elrond-authored JSON | BC bin labels (34) + skill-tier labels + emergent mechanic-family labels (6 clusters) | ~3 KB |
+| `faction_overlays.json` | Elrond-authored JSON | 7 emergent faction halos with convex-hull polygon vertices + modal_attribute | ~7 KB |
+| `primitive_registry.parquet` | Elrond source | Source parquet (build-time reference; not fetched by browser) | ~42 KB |
+| `kit_constellations.parquet` | Elrond source | Source parquet (build-time reference; not fetched by browser) | ~339 KB |
+| `flag_enum_attachments.parquet` | Elrond source | Source parquet (build-time reference; not fetched by browser) | ~56 KB |
+
+Parquet → JSON conversion: `scripts/convert-cosmograph-data.py` (build-time; Python + pyarrow). Run once per elrond packet update.
+
+**Total browser-fetched payload (gzip): ~228 KB** across 5 JSON files loaded on `/forge` mount.
+
+#### 4. New source files
+
+| Path | Purpose |
+|---|---|
+| `src/pages/Forge.tsx` | /forge page — data loading + Pixi.js canvas host + PROVISIONAL demarcation header |
+| `src/components/Cosmograph/CosmographCanvas.tsx` | Pixi.js Application mount + deep-space background + Phase 1 placeholder (77 first-class star positions, correct projection) |
+| `src/data/cosmographTypes.ts` | TypeScript types for all 5 data files |
+| `src/data/cosmographData.ts` | Data loader — parallel fetch + primitive + flag indexes |
+| `src/utils/lassoResolution.ts` | Point-in-polygon + composite-score lasso resolution (Phase 4 ready) |
+| `scripts/convert-cosmograph-data.py` | Build-time parquet → JSON converter |
+
+### Ingestion-contract validation results (Discipline #11 — empirical inspection)
+
+Validated 2026-06-06 before Phase 1 implementation:
+
+| Check | Result |
+|---|---|
+| primitive_registry: 570 rows | PASS |
+| primitive_registry: bdi_weight ∈ [0.10, 1.00] | PASS |
+| primitive_registry: embedding_x/y populated (0 nulls) | PASS |
+| primitive_registry: 77 visibility_at_default_zoom=True | PASS |
+| kit_constellations: 1000 rows | PASS |
+| kit_constellations: all is_simulated=True | PASS |
+| kit_constellations: all cell_status="PROVISIONAL" | PASS |
+| kit_constellations: all kit_name==kit_id | PASS |
+| kit_constellations: q_scores/pareto_rank/archive_status/gauntlet_pass_rate all null | PASS |
+| flag_enum_attachments: 1000 rows | PASS |
+| flag_enum_attachments: flag_count mean=15.6, range 14-20 | PASS |
+| region_labels: bc_bin_labels.total_bins=34 | PASS |
+| region_labels: emergent_mechanic_family_labels.cluster_count=6 | PASS |
+| faction_overlays: 7 factions with non-empty polygon_convex_hull | PASS |
+
+**Validation status: ALL PASS. No Pattern-A stop-and-surface needed.**
+
+**Deviation from dispatch math projection:** dispatch § 4.2 estimated mean ~13 primitives/kit for MST line calculation. Actual `primitive_set_size` mean is **34.3** (range 27-43). Each kit composes from all 17 primitive families including weapon-form tokens and sub-element flavors. MST math (N-1 edges per kit) still holds: 1000 kits × 33 mean edges = 33,000 edges (vs dispatch's 12,000 projection). Still well within Pixi.js v7 batch-render performance envelope at 60fps. Noted for Phase 3 implementation.
+
+### Bundle-size validation (jack-ryan INFO-2)
+
+- Baseline gzip: 1,194 KB
+- With Pixi.js + @pixi/react: 1,336 KB gzip
+- **Delta: +142 KB gzip — UNDER 400 KB threshold. No Pattern-A escalation.**
+
+### What drax does NOT touch (Option B amendment compliance)
+
+- `/loadout`, `/kits`, `/analytics`, `/encounters`, `/court`, `/pitch`, `/state-of-engine`, `/planning`, `/sample` pages: UNCHANGED
+- Cycle 14 named-bearer corpus (Duskweaver + 36 others): STAYS at `/loadout` — untouched
+- `reincarnated-demo/` seam: UNCHANGED
+
+### Consumers
+
+- **Browser:** fetches 5 JSON files from `/data/cosmograph/` on `/forge` mount — lazy load (only when user navigates to `/forge`)
+- **elrond (future packet updates):** re-run `scripts/convert-cosmograph-data.py` after any elrond packet replacement; JSON files update; no code changes needed unless schema changes
+- **jack-ryan (Gate-2):** cosmograph-phase-a Gate-2 acceptance verification applies after Phase 5 Vercel deploy (18 criteria per dispatch § 8 + § 10)
+
+### Phase status
+
+- Phase 1: COMPLETE (this entry)
+- Phase 2-5: pending subsequent sessions (star rendering, constellation lines, lasso interaction, perf + deploy)
+
+---
+
 *MIGRATION.md created 2026-05-18. First entry: §v1.0-vfx-manifest (D19 Sub-phase A).*
 *Previous sessions (v0.5 through v0.21) did not require a MIGRATION.md entry; the engine's*
 *`reincarnated-engine/src/reincarnated/export/MIGRATION.md` was the upstream contract drax consumed.*

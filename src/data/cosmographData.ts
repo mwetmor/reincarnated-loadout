@@ -1,0 +1,70 @@
+/**
+ * cosmographData.ts
+ * Loads and indexes elrond's Phase 4 cosmograph packet for use at /forge.
+ *
+ * Data source: /public/data/cosmograph/*.json
+ * (Pre-converted from parquet by scripts/convert-cosmograph-data.py)
+ *
+ * All fetches happen once on /forge mount; results cached in module-level state
+ * via the useCosmographData hook.
+ */
+
+import type {
+  PrimitiveEntry,
+  KitConstellation,
+  FlagEnumAttachment,
+  RegionLabels,
+  FactionOverlays,
+} from './cosmographTypes';
+
+export interface CosmographData {
+  primitives: PrimitiveEntry[];
+  kits: KitConstellation[];
+  flagAttachments: FlagEnumAttachment[];
+  regionLabels: RegionLabels;
+  factionOverlays: FactionOverlays;
+
+  // Derived indexes for O(1) lookup
+  primitiveById: Map<string, PrimitiveEntry>;
+  flagsByKitId: Map<string, string[]>; // kit_id → parsed flag list
+}
+
+async function loadJson<T>(path: string): Promise<T> {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status} ${res.statusText}`);
+  return res.json() as Promise<T>;
+}
+
+export async function loadCosmographData(): Promise<CosmographData> {
+  const base = '/data/cosmograph';
+
+  const [primitives, kits, flagAttachments, regionLabels, factionOverlays] = await Promise.all([
+    loadJson<PrimitiveEntry[]>(`${base}/primitive_registry.json`),
+    loadJson<KitConstellation[]>(`${base}/kit_constellations.json`),
+    loadJson<FlagEnumAttachment[]>(`${base}/flag_enum_attachments.json`),
+    loadJson<RegionLabels>(`${base}/region_labels.json`),
+    loadJson<FactionOverlays>(`${base}/faction_overlays.json`),
+  ]);
+
+  // Build primitive index
+  const primitiveById = new Map<string, PrimitiveEntry>();
+  for (const p of primitives) {
+    primitiveById.set(p.primitive_id, p);
+  }
+
+  // Build flag index: parse flag_set_json once
+  const flagsByKitId = new Map<string, string[]>();
+  for (const fa of flagAttachments) {
+    flagsByKitId.set(fa.kit_id, JSON.parse(fa.flag_set_json) as string[]);
+  }
+
+  return {
+    primitives,
+    kits,
+    flagAttachments,
+    regionLabels,
+    factionOverlays,
+    primitiveById,
+    flagsByKitId,
+  };
+}
