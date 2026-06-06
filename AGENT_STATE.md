@@ -1,12 +1,58 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-06
-**Last commit:** `ec894b8` — drax: cosmograph Phase A — Phase 1 scaffold
-**Last tag:** `drax/v1.6-cycle-18-recovery-2-rich-loadout-restored` (prior)
+**Last commit:** `(pending Phase 2 commit)` — drax: cosmograph Phase A — Phase 2 star rendering
+**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-2` (pending)
 **Branch:** main
 **Hive-mind mode:** N/A
 
 ## Session summary
+
+### cosmograph-phase-a Phase 2 — 570 primitive stars with brightness + color + provenance encoding (2026-06-06)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-06-drax-cosmograph-phase-a-rendering.md` (amended at commit `8d3e6a7`)
+**Authority:** gandalf 2026-06-06 + jack-ryan Gate-1 PASS-WITH-AMENDMENTS + knight-rider Phase 2 fire authorization 2026-06-06
+**Build:** `tsc -b && vite build` PASS — 1488 modules, 0 TS errors, 1,337 KB gzipped. 79/79 tests pass.
+
+**Phase 2 acceptance criteria — ALL MET (per dispatch § 3.4):**
+- 570 stars rendered at correct embedding coordinates (all 570 primitives drawn via `toCanvas(embedding_x, embedding_y, proj)`)
+- 77 first-class stars on `firstClassLayer` (visible=true); 493 drill stars on `drillLayer` (visible=false at default zoom)
+- Brightness gradient: `alpha = 0.35 + 0.65 × bdi_weight` — T4 primary universal bdi=1.00 → alpha=1.00; retired ghost bdi=0.20 → alpha=0.48
+- Element-coupling colors: fire=0xE85520, water=0x2299DD, earth=0xA07040, wind=0x88CC88, lightning=0xAA66EE, holy=0xDDAA33, shadow=0x7744AA, physical=0x8899AA; DEX accent=0x44DDCC
+- Provenance-tag encoding: B11_EXPANSION cyan-shift (0x0044AA blend 30%); B13_DEFENSIVE_MOBILITY green-shift; retired ghost (dim via bdi=0.20); VIT outline-only; Architecture A siblings alpha-reduced
+- Soft-glow aesthetic: 3-layer radial (bloom ring 0.15 alpha → mid ring 0.30 → core 1.0); deep-space bg; no solar-system reflexes
+- Element labels (8 orientation labels) at low opacity for navigation context
+- PROVISIONAL watermark at canvas top-right
+
+**Discipline #11 empirical inspection (BEFORE implementation):**
+- Verified 570 rows present, bdi_weight ∈ [0.10, 1.00], 77 visibility_at_default_zoom=true
+- Empirically found 27 unique provenance_tags in actual data (more than documented; notable extras: `canonical_7_rotating`, `canonical_plus_physical`, `active_v1.13` with underscore vs dash)
+- Element nodes have empty element_coupling_json — color resolved from primitive_id suffix (e.g. `element_fire` → fire color). Sub-element flavors carry `["fire"]` etc. in coupling array.
+- T4_DEFENSIVE_TRADEOFF: bdi_weight=0.20, provenance=`retired-but-preserved` — matches 0.20 brightness spec exactly (no extra reduction needed)
+- VIT: provenance=`deferred_placeholder_v1_2026-05-24` — outline-only rendering
+- Architecture A taxonomy siblings (9): provenance=`architecture_A_taxonomy_sibling_v1_2026-06-01` — alpha-reduced + dark hue shift
+
+**Phase 2 implementation notes:**
+- `getPrimitiveColor`: 4-tier resolution (element-family id → element_coupling_json array → DEX/STR attribute coupling → neutral)
+- `getProvenanceProfile`: returns `{alphaMultiplier, colorShift, outlineOnly, dashed}` per tag
+- `drawStar`: 3-layer soft-glow (bloom ring × 1.8 radius + mid ring × 1.3 + core); outlineOnly variant for VIT
+- `blendColor`: additive hue-shift for B11/B13 provenance chromatic marking
+- Drill layer (`drillLayer.visible=false`) ready for Phase 5 zoom logic to expose at > 1.5× zoom
+- Single Graphics object per layer for Pixi batching (performance)
+
+**Files amended in Phase 2:**
+- `src/components/Cosmograph/CosmographCanvas.tsx` — full Phase 2 star rendering (replaces Phase 1 placeholder)
+
+**STOP — Phase 3 gate:** notify knight-rider. Phase 3 = constellation MST lines + faction halos + region-label overlays.
+Phase 3 math deviation note for gandalf: primitive_set_size mean = 34.3 (dispatch § 4.2 projected 13) → MST will produce ~33K edges (not 12K). Already surfaced in Phase 1 AGENT_STATE. Confirm this is in gandalf design-state record.
+
+**Next session (Phase 3):**
+1. Constellation rendering: MST per kit over primitive_set_json (Kruskal's or Prim's on embedding_x/y; ~33K edges total)
+2. DOTTED line-style for PROVISIONAL constellations; render centroid dim-point at default zoom; MST lines show on zoom-in or lasso hover
+3. Faction halos: `faction_overlays.json` polygon_convex_hull → Pixi Graphics.drawPolygon; color by modal_attribute (STR=amber, INT=blue-violet, WIS=green-gold)
+4. Region labels: 6 emergent mechanic-family centroids; tier bands; BC bin subtle outlines
+
+---
 
 ### cosmograph-phase-a Phase 1 — /forge route + Pixi.js scaffold + ingestion-contract validation (2026-06-06)
 
