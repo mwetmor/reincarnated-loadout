@@ -127,3 +127,75 @@ export function resolveLasso(input: LassoResolutionInput): LassoResolutionResult
     noBestMatch,
   };
 }
+
+/**
+ * Score all kits against a pre-computed primitive set.
+ * Used by Mode B (kit-as-constellation) lasso resolution — drax Phase 2 2026-06-07.
+ *
+ * Mode B detects per-kit instance nodes in world-space lasso (not primitive galaxy positions),
+ * dedupes to unique primitive_ids, then calls this function for composite-score scoring.
+ * This avoids the Mode A primitive-detection step (which uses UMAP embedding_x/y positions
+ * that are only valid for Mode A's primitive-galaxy render).
+ *
+ * Same composite-score algorithm as resolveLasso() § Step 2:
+ *   0.4 × coverage_fraction + 0.3 × density_score + 0.3 × weight_score
+ */
+export function scoreKitsByPrimitiveSet(
+  primitiveIds: Set<string>,
+  kits: KitConstellation[],
+  primitiveById: Map<string, PrimitiveEntry>,
+  topN = 3,
+): LassoResolutionResult {
+  if (primitiveIds.size === 0) {
+    return {
+      lassoPrimitiveIds: primitiveIds,
+      matches: [],
+      emptyLasso: true,
+      ambiguous: false,
+      noBestMatch: false,
+    };
+  }
+
+  const scored: LassoMatch[] = [];
+
+  for (const kit of kits) {
+    const primitiveSet = JSON.parse(kit.primitive_set_json) as string[];
+
+    const intersectionCount = primitiveSet.filter(id => primitiveIds.has(id)).length;
+    if (intersectionCount === 0) continue;
+
+    const coverage_fraction = intersectionCount / primitiveSet.length;
+    const density_score = intersectionCount / primitiveIds.size;
+
+    let intersectWeightSum = 0;
+    let totalWeightSum = 0;
+    for (const id of primitiveSet) {
+      const prim = primitiveById.get(id);
+      if (!prim) continue;
+      totalWeightSum += prim.bdi_weight;
+      if (primitiveIds.has(id)) intersectWeightSum += prim.bdi_weight;
+    }
+    const weight_score = totalWeightSum > 0 ? intersectWeightSum / totalWeightSum : 0;
+    const composite_score = 0.4 * coverage_fraction + 0.3 * density_score + 0.3 * weight_score;
+
+    scored.push({ kit, coverage_fraction, density_score, weight_score, composite_score });
+  }
+
+  scored.sort((a, b) => b.composite_score - a.composite_score);
+  const topMatches = scored.slice(0, topN);
+
+  const noBestMatch = topMatches.length === 0 || topMatches[0].composite_score < 0.3;
+  const ambiguous =
+    !noBestMatch &&
+    topMatches.length >= 2 &&
+    Math.abs(topMatches[0].composite_score - topMatches[1].composite_score) /
+      topMatches[0].composite_score < 0.05;
+
+  return {
+    lassoPrimitiveIds: primitiveIds,
+    matches: topMatches,
+    emptyLasso: false,
+    ambiguous,
+    noBestMatch,
+  };
+}

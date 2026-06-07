@@ -17,22 +17,25 @@
  * Phase 4: lasso interaction + composite-score resolution + side panel.
  * Phase 5: scroll-to-zoom + viewport culling (drillLayer at zoom>1.5×) + Vercel preview deploy.
  *
- * A/B spike (2026-06-07): ?view=primitive (Mode A, default) vs ?view=constellation (Mode B, Phase 1 sample).
+ * A/B spike Phase 2 (2026-06-07): ?view=primitive (Mode A, default) vs ?view=constellation (Mode B, full corpus).
  *   Mode A: primitive-galaxy — each unique primitive is one star; 570 stars; kit membership non-local.
- *   Mode B: kit-as-bounded-constellation — per-kit primitive instances in local force-directed cluster.
- *           Phase 1: 10-kit sample only; rest hidden. Phase 2: full 1000-kit corpus if GREEN.
+ *   Mode B: kit-as-bounded-constellation — 1000 kit clusters, pre-computed layout (Python build-time).
+ *           LOD: centroid dots at 1.0× zoom; full star clusters at ≥2× zoom.
+ *           Layout loaded lazily from constellation_layout.json (2MB) on first constellation toggle.
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { loadCosmographData } from '../data/cosmographData';
+import { loadCosmographData, loadConstellationLayout } from '../data/cosmographData';
 import type { CosmographData } from '../data/cosmographData';
+import type { ConstellationLayoutData } from '../data/cosmographTypes';
 import { CosmographCanvas } from '../components/Cosmograph/CosmographCanvas';
 import { ConstellationModeCanvas } from '../components/Cosmograph/ConstellationModeCanvas';
 import { SidePanel } from '../components/Cosmograph/SidePanel';
 import type { LassoResolutionResult } from '../utils/lassoResolution';
 
 type LoadState = 'idle' | 'loading' | 'ready' | 'error';
+type LayoutLoadState = 'idle' | 'loading' | 'ready' | 'error';
 type ViewMode = 'primitive' | 'constellation';
 
 export function Forge() {
@@ -43,6 +46,13 @@ export function Forge() {
   const loadStartRef = useRef<number>(0);
   const clearLassoRef = useRef<(() => void) | null>(null);
 
+  // Constellation layout — lazy-loaded when constellation mode is first selected.
+  // Separate from cosmograph data load to avoid 2MB payload for Mode A users.
+  const [layoutData, setLayoutData] = useState<ConstellationLayoutData | null>(null);
+  const [layoutLoadState, setLayoutLoadState] = useState<LayoutLoadState>('idle');
+  const [layoutLoadError, setLayoutLoadError] = useState<string | null>(null);
+  const layoutLoadStartRef = useRef<number>(0);
+
   // A/B toggle: ?view=primitive (Mode A) | ?view=constellation (Mode B)
   const [searchParams, setSearchParams] = useSearchParams();
   const viewParam = searchParams.get('view');
@@ -50,10 +60,33 @@ export function Forge() {
 
   const setViewMode = useCallback((mode: ViewMode) => {
     setSearchParams(mode === 'primitive' ? {} : { view: 'constellation' });
-    // Clear lasso when switching modes
     clearLassoRef.current?.();
     setLassoResult(null);
   }, [setSearchParams]);
+
+  // Lazy-load constellation layout when constellation mode is selected
+  useEffect(() => {
+    if (viewMode !== 'constellation') return;
+    if (layoutLoadState !== 'idle') return;   // already loading or loaded
+    setLayoutLoadState('loading');
+    layoutLoadStartRef.current = performance.now();
+    loadConstellationLayout()
+      .then((d) => {
+        const ms = performance.now() - layoutLoadStartRef.current;
+        console.info(
+          `[Forge] Constellation layout loaded in ${ms.toFixed(0)} ms — ` +
+          `${d.centroids.length} kits, world ${d.meta.world_w}×${d.meta.world_h} px`
+        );
+        setLayoutData(d);
+        setLayoutLoadState('ready');
+      })
+      .catch((err: unknown) => {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error('[Forge] Constellation layout load failed:', msg);
+        setLayoutLoadError(msg);
+        setLayoutLoadState('error');
+      });
+  }, [viewMode, layoutLoadState]);
 
   useEffect(() => {
     setLoadState('loading');
@@ -118,7 +151,7 @@ export function Forge() {
             </button>
             <button
               onClick={() => setViewMode('constellation')}
-              title="Mode B: kit-as-bounded-constellation — per-kit primitive instances in local clusters (Phase 1: 10-kit sample)"
+              title="Mode B: kit-as-bounded-constellation — 1000 constellation clusters (Phase 2 full corpus). Scroll to zoom, zoom to 2× to see stars."
               className={
                 'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
                 (viewMode === 'constellation'
@@ -129,7 +162,7 @@ export function Forge() {
               constellation
             </button>
             {viewMode === 'constellation' && (
-              <span className="text-[9px] text-amber-600/70 font-mono ml-1">SPIKE·P1·10 kits</span>
+              <span className="text-[9px] text-amber-600/70 font-mono ml-1">SPIKE·P2·1000 kits</span>
             )}
           </div>
         </div>
@@ -153,10 +186,12 @@ export function Forge() {
         ) : (
           <p className="text-xs text-amber-500/80 bg-amber-900/20 border border-amber-800/40 rounded px-3 py-2 font-mono leading-relaxed max-w-3xl">
             <span className="text-amber-300 font-bold">Mode B — Kit-as-Bounded-Constellation</span>
-            {' '}(A/B spike Phase 1): 10-kit sample. Each constellation = one kit, rendered as a
-            bounded local cluster of per-kit primitive instances. All{' '}
-            <span className="font-bold text-amber-400">PROVISIONAL</span>.
-            Toggle back to &quot;primitive&quot; to see Mode A side-by-side.
+            {' '}(A/B spike Phase 2, full corpus): 1000 constellation clusters.
+            Each cluster = one kit's primitives in a bounded local arrangement.
+            <strong className="text-amber-300"> Scroll to zoom</strong> — centroid dots at 1×,
+            full star clusters reveal at 2×+. Use lasso (2×+ only) to select a constellation.
+            All <span className="font-bold text-amber-400">PROVISIONAL</span>.
+            Toggle &quot;primitive&quot; for Mode A.
           </p>
         )}
       </div>
@@ -179,12 +214,17 @@ export function Forge() {
                 onLassoResult={handleLassoResult}
                 clearLassoRef={clearLassoRef}
               />
-            ) : (
+            ) : layoutLoadState === 'error' ? (
+              <ErrorState message={layoutLoadError ?? 'Constellation layout load failed'} />
+            ) : layoutLoadState === 'ready' && layoutData ? (
               <ConstellationModeCanvas
                 data={data}
+                layoutData={layoutData}
                 onLassoResult={handleLassoResult}
                 clearLassoRef={clearLassoRef}
               />
+            ) : (
+              <LayoutLoadingState />
             )
           ) : null}
         </div>
@@ -217,8 +257,9 @@ export function Forge() {
               </>
             ) : (
               <>
-                MODE B · 10-kit sample · per-kit primitive instances · force-directed constellation layout &middot;
-                scroll to zoom &middot; lasso to select constellation &middot; toggle &quot;primitive&quot; above to see Mode A
+                MODE B · {layoutData?.centroids.length ?? '…'} constellations (1000 kits) ·
+                {' '}{layoutData ? '18k first-class stars' : 'loading layout…'} &middot;
+                dots at 1× · stars at 2×+ · lasso at 2×+ · toggle &quot;primitive&quot; above for Mode A
               </>
             )}
           </p>
@@ -235,6 +276,19 @@ function LoadingState() {
         <div className="text-gray-500 font-mono text-sm mb-2">Loading substrate data...</div>
         <div className="text-gray-700 font-mono text-xs">
           primitive_registry &middot; kit_constellations &middot; flag_enum_attachments &middot; region_labels &middot; faction_overlays
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LayoutLoadingState() {
+  return (
+    <div className="flex items-center justify-center h-full">
+      <div className="text-center">
+        <div className="text-gray-500 font-mono text-sm mb-2">Loading constellation layout…</div>
+        <div className="text-gray-700 font-mono text-xs">
+          constellation_layout.json · 1000 kits · 34k instance nodes · pre-computed by Python
         </div>
       </div>
     </div>
