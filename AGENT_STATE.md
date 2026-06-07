@@ -57,7 +57,11 @@ fire×2 / water×2 (cross-element pairs) + physical/STR hybrid×2 + STR rep + WI
 - `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-1-toggle-operational.md`
 
 **Phase 1 commits:**
-- (pending — see git log)
+- `0077e9e` — drax: cosmograph A/B spike Phase 1 — Mode B kit-as-bounded-constellation (GREEN verdict)
+- Tag: `drax/v1.8-cosmograph-ab-spike-phase-1`
+- **Vercel production deploy:** `https://reincarnated-loadout.vercel.app` — Ready (33s build)
+- **Preview URL:** `https://reincarnated-loadout-39mcl6gfw-matthew-wetmore-s-projects.vercel.app`
+- `/forge?view=primitive` (Mode A) and `/forge?view=constellation` (Mode B) both live at production
 
 ---
 
