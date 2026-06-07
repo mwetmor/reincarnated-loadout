@@ -1,12 +1,67 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-06
-**Last commit:** `add8303` Phase 5c pointer-mode pan bug fix
-**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-5c`
+**Last commit:** `fd98567` Phase 5d — uncharted sky UX copy (center-lasso root cause fix)
+**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-5d`
 **Branch:** `cosmograph/phase-a-preview` (feature branch; main unchanged per Matt Phase 5 push directive)
 **Hive-mind mode:** N/A
 
 ## Session summary
+
+### cosmograph-phase-a Phase 5d — uncharted sky UX copy (2026-06-06)
+
+**Authority:** Matt 2026-06-06 preview-inspection feedback after Phase 5c. Follow-up fire 3 from knight-rider.
+**Build:** `tsc -b && vite build` PASS — 1498 modules, 0 TS errors. 79/79 tests pass.
+
+**Root cause investigation (Discipline #11 — empirical inspection):**
+
+Performed Python analysis against actual substrate data files in `public/data/cosmograph/`:
+
+- UMAP primitive space spans X=[-10.1, 25.7], Y=[-21.8, 16.0]
+- Kit centroids tightly clustered at X=[12.2, 15.1], Y=[2.9, 6.6] — upper-right quadrant
+- Canvas center (visual midpoint of UMAP bounding box) = UMAP (7.80, -2.90)
+- Nearest primitive to canvas center: `element_earth` at 1.94 UMAP units away
+- The 8 element stars form a tight cluster at UMAP (~9.8, -3.1) — appears as "center cluster" to user
+- No kit centroids within 5+ UMAP units of canvas center
+
+When user lassos the element-star cluster or canvas center region:
+- All 1000 kits have intersection (every kit uses at least 1 element primitive)
+- BUT coverage_fraction is ~0.06-0.09 (only 1-3 element matches / 34 kit primitives)
+- Composite scores peak at 0.10-0.13 — all below the 0.300 match threshold
+- Result: noBestMatch=true, matches=3 (below-threshold kits returned as topN)
+
+**Root cause confirmed:** Possibility 1 — substrate-honest empty region (Matt's hypothesis correct).
+The 0.300 threshold is load-bearing per dispatch § 5.2 and was NOT changed.
+
+**UX problem in previous implementation:**
+The old noBestMatch banner read "Your lasso falls between charted constellations. Nearest match (provisional): bc_cell_XXXX" — bare kit_id only, no score, no context. The banner implied no useful result. Three KitMatchCards were rendered below but required scrolling. User stopped reading at the banner.
+
+**Fix — UX copy improvement (Discipline #41 substrate-led — render honest):**
+- `noBestMatch` banner → "Uncharted sky" with indigo color scheme
+- Shows N primitives enclosed + best composite score vs 0.300 threshold inline
+- Explains low-confidence cards below as "substrate-honest signals, not confirmed compositions"
+- KitMatchCard: `isLowConfidence` prop → `opacity-70` + "LOW CONFIDENCE" badge
+- Idle state hint: clarifies lasso mode switch + warns "center regions may be uncharted sky"
+- Added explicit `noBestMatch+matches=0` branch (previously unreachable edge case)
+
+**Files amended in Phase 5d:**
+- `src/components/Cosmograph/SidePanel.tsx`
+
+**Phase 5d commits:**
+- `fd98567` — drax: cosmograph Phase 5d — uncharted sky UX copy (center-lasso root cause fix)
+- Tag: `drax/v1.7-cosmograph-phase-a-phase-5d`
+
+**Regression check:**
+- Populated-cluster lasso: unaffected (noBestMatch=false path unchanged; cards render normally)
+- Empty lasso: unaffected (emptyLasso path unchanged)
+- Ambiguous match: unaffected (ambiguous && !noBestMatch path unchanged)
+- Lasso coord-transform (Phase 5b): unchanged
+- Pan DOM events (Phase 5c): unchanged
+- Mode toggle / faction click / zoom (Phase 5b/5c): unchanged
+
+**Ready for Matt's final ratification.** Needs push to origin (Matt push authorization per ADR-006).
+
+---
 
 ### cosmograph-phase-a Phase 5c — pointer-mode pan bug fix (2026-06-06)
 
