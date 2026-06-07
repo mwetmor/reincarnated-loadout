@@ -1,10 +1,65 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-06-06
-**Last commit:** `fd98567` Phase 5d — uncharted sky UX copy (center-lasso root cause fix)
-**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-5d`
-**Branch:** `cosmograph/phase-a-preview` (feature branch; main unchanged per Matt Phase 5 push directive)
+**Last updated:** 2026-06-07
+**Last commit:** (cosmograph A/B spike Phase 1 — see below)
+**Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1`
+**Branch:** `main` (cosmograph Phase A merged; spike Phase 1 goes directly to main)
 **Hive-mind mode:** N/A
+
+## Session summary
+
+### cosmograph-ab-spike Phase 1 — Kit-as-Bounded-Constellation Mode B (2026-06-07)
+
+**Authority:** Matt + gandalf 2026-06-07 ratification of Option α-prime staged spike + c1 global-bound starting parameter, per dispatch `2026-06-07-drax-cosmograph-a-b-spike.md`.
+**Build:** `tsc -b && vite build` PASS — 1500 modules, 0 TS errors. 79/79 tests pass.
+
+**Verdict: GREEN — proceed to Phase 2.**
+Scope: RENDERING-UNIT READABILITY only per § 8 Q1 Finding 3 amendment. NOT substrate-coverage validation.
+
+**Critical empirical finding — UMAP centroid degenerate for Mode B:**
+All 1000 kit centroids span 43×56 px on canvas at 1.0× zoom — smaller than one MAX_CONSTELLATION_RADIUS (70px). Mean NN distance between kit centroids = 1.3 px. UMAP centroid_x/y CANNOT be used as Mode B constellation placement seeds. This is a structural consequence of all kits sharing the same primitive vocabulary (all centroids converge to primitive-space center).
+
+**Solution:** Two-stage force-directed layout:
+1. Stage 1: Spring-embed N constellation NODES using shared-primitive-fraction as edge weight → spreads constellations across canvas with similar kits adjacent.
+2. Stage 2: Per-kit primitive instances placed within MAX_CONSTELLATION_RADIUS using repulsion + centroid attraction.
+
+**TODO(drax): remove centroid-position override** when engine ships UMAP coordinates valid for Mode B (or elrond commissions kit-to-kit similarity 2D embedding separate from primitive-space UMAP). Tracked in `constellationModeLayout.ts` header comment.
+
+**Force config c1 global bound landing values:**
+- MAX_CONSTELLATION_RADIUS: 70 px
+- INTRA_KIT_SPRING_STRENGTH: 0.9
+- Stage 1 repulsion constant: 15000 px²
+- Stage 1 rest_len: 320 px
+- CENTROID_ATTRACTION spring modifier: 0.2 × 0.004
+- REPULSION_FLOOR: 10 px (target spacing 20 px)
+
+**Sample cohort (10 kits per dispatch § 3.1):**
+fire×2 / water×2 (cross-element pairs) + physical/STR hybrid×2 + STR rep + WIS wind rep + small(27) + large(43)
+
+**A/B toggle deployed:**
+- `/forge?view=primitive` — Mode A (unchanged Phase A primitive-galaxy)
+- `/forge?view=constellation` — Mode B (Phase 1: 10-kit sample)
+- Toggle UI in Forge header (top-right)
+
+**Phase 2 scale concerns (surfaced for Phase 2 planning):**
+- 1000 kits × Stage 1 force layout = O(N²) × 800 iters — too slow in main thread. Needs Web Worker or pre-computed static JSON.
+- 1000 constellations × π × 70² px = 15M px² (15× canvas area) — LOD needed at full corpus. Zoom-culling: show centroid dots at 1.0×, full clusters at 2×+.
+
+**Files added in Phase 1:**
+- `src/utils/constellationModeLayout.ts` — two-stage layout engine + dedupeInstanceNodes()
+- `src/components/Cosmograph/ConstellationModeCanvas.tsx` — Mode B Pixi.js renderer
+- `src/pages/Forge.tsx` — A/B toggle + URL sync (amended)
+
+**Deliverables committed to meta-repo:**
+- `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-1-sample-findings.md`
+- `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-1-screenshot-primitive-mode.png`
+- `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-1-screenshot-constellation-mode.png`
+- `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-1-toggle-operational.md`
+
+**Phase 1 commits:**
+- (pending — see git log)
+
+---
 
 ## Session summary
 
