@@ -15,6 +15,7 @@
  * Phase 2: primitive star rendering with brightness + color + provenance encoding.
  * Phase 3: constellation MST lines + faction halos + region-label overlays.
  * Phase 4: lasso interaction + composite-score resolution + side panel.
+ * Phase 5: scroll-to-zoom + viewport culling (drillLayer at zoom>1.5×) + Vercel preview deploy.
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
@@ -136,7 +137,7 @@ export function Forge() {
             {data.primitives.length} substrate primitives &middot;{' '}
             {data.kits.length} PROVISIONAL constellations &middot;{' '}
             {data.factionOverlays.factions.length} emergent faction halos &middot;{' '}
-            Phase 4 — lasso interaction active
+            scroll to zoom &middot; [Z] constellation lines &middot; pointer mode: drag to pan &middot; lasso mode: drag to select
           </p>
         </div>
       )}

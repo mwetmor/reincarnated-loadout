@@ -13,6 +13,15 @@
  * for direct pass-through to lassoResolution.ts (which operates in UMAP space).
  *
  * Discipline #1 math: point-in-polygon is O(570 × V); V ≤ ~50 typical lasso vertices = <1ms.
+ *
+ * Phase 5b coord-transform fix:
+ * FederatedPointerEvent.globalX/Y is in Pixi global space (CSS-pixel, pre-stage-transform).
+ * After Phase 5 zoom+pan, stage has non-identity scale+position. All pointer coords must
+ * be converted to stage-local space before feeding into toUMAP. Stage-local is the space
+ * that lassoGraphics (a stage child) draws in, and is what toCanvas outputs.
+ * Formula: stageLocalX = (globalX - stage.position.x) / stage.scale.x
+ * Verified: at zoom=1, pan=0 this is identity (no behavior change). At zoom≠1 or pan≠0,
+ * lasso polygon vertices align with pointer position.
  */
 
 import * as PIXI from 'pixi.js';
@@ -40,6 +49,23 @@ const MIN_DRAG_PX = 4;
 
 // Minimum vertex distance to record a new vertex (UMAP units)
 const MIN_VERTEX_DIST_UMAP = 0.05;
+
+// ─── Coord transform: Pixi global → stage-local ──────────────────────────────
+// Pixi FederatedPointerEvent.globalX/Y is in CSS-pixel space (pre-stage-transform).
+// Stage children (including lassoGraphics) draw in stage-local space.
+// toUMAP / toCanvas operate in stage-local space (proj was computed from stage-local dims).
+// This helper applies the inverse of the stage transform to get stage-local coords.
+
+function toStageLocal(
+  globalX: number,
+  globalY: number,
+  stage: PIXI.Container
+): { x: number; y: number } {
+  return {
+    x: (globalX - stage.position.x) / stage.scale.x,
+    y: (globalY - stage.position.y) / stage.scale.y,
+  };
+}
 
 // ─── Dashed line utility ──────────────────────────────────────────────────────
 
@@ -94,11 +120,15 @@ export interface LassoLayerCallbacks {
  *
  * Returns a cleanup function to detach event listeners.
  * The lasso layer Graphics object is added to app.stage.
+ *
+ * @param isLassoModeActive - called on each pointer event; lasso handlers no-op when returns false.
+ *   Allows the caller to gate lasso behavior based on current interaction mode (pointer vs lasso).
  */
 export function attachLassoLayer(
   app: PIXI.Application,
   proj: ProjectionState,
-  callbacks: LassoLayerCallbacks
+  callbacks: LassoLayerCallbacks,
+  isLassoModeActive: () => boolean = () => true
 ): { lassoGraphics: PIXI.Graphics; detach: () => void } {
   const lassoGraphics = new PIXI.Graphics();
   app.stage.addChild(lassoGraphics);
@@ -158,6 +188,8 @@ export function attachLassoLayer(
 
   // ── pointerdown: start lasso ───────────────────────────────────────────────
   function onPointerDown(event: PIXI.FederatedPointerEvent): void {
+    if (!isLassoModeActive()) return;
+
     // Clear any prior lasso
     if (state.active || state.verticesUMAP.length > 0) {
       state.verticesUMAP = [];
@@ -166,31 +198,37 @@ export function attachLassoLayer(
     }
 
     state.active = true;
+    // startCanvas / lastCanvas track global (DOM-pixel) coords for drag-distance check (screen-space)
     state.startCanvasX = event.globalX;
     state.startCanvasY = event.globalY;
     state.lastCanvasX = event.globalX;
     state.lastCanvasY = event.globalY;
 
-    // Record first vertex in UMAP space
-    const umap = toUMAP(event.globalX, event.globalY, proj);
+    // Record first vertex in UMAP space via stage-local coords (Phase 5b fix)
+    const stageLocal = toStageLocal(event.globalX, event.globalY, app.stage);
+    const umap = toUMAP(stageLocal.x, stageLocal.y, proj);
     state.verticesUMAP = [umap];
   }
 
   // ── pointermove: extend lasso ──────────────────────────────────────────────
   function onPointerMove(event: PIXI.FederatedPointerEvent): void {
-    if (!state.active) return;
+    if (!isLassoModeActive() || !state.active) return;
 
     const cx = event.globalX;
     const cy = event.globalY;
 
-    // Check minimum drag distance from start (ignore micro-movements at drag start)
+    // Check minimum drag distance from start in global (screen-pixel) space — intentional:
+    // MIN_DRAG_PX is a screen-space threshold regardless of zoom level.
     const dxFromStart = cx - state.startCanvasX;
     const dyFromStart = cy - state.startCanvasY;
     const distFromStart = Math.sqrt(dxFromStart * dxFromStart + dyFromStart * dyFromStart);
     if (distFromStart < MIN_DRAG_PX && state.verticesUMAP.length <= 1) return;
 
+    // Convert to stage-local before toUMAP (Phase 5b coord-transform fix)
+    const stageLocal = toStageLocal(cx, cy, app.stage);
+    const umap = toUMAP(stageLocal.x, stageLocal.y, proj);
+
     // Throttle: only add vertex if moved enough in UMAP space
-    const umap = toUMAP(cx, cy, proj);
     if (state.verticesUMAP.length > 0) {
       const last = state.verticesUMAP[state.verticesUMAP.length - 1];
       const du = umap.x - last.x;
@@ -208,7 +246,7 @@ export function attachLassoLayer(
 
   // ── pointerup: close lasso, fire resolution ────────────────────────────────
   function onPointerUp(_event: PIXI.FederatedPointerEvent): void {
-    if (!state.active) return;
+    if (!isLassoModeActive() || !state.active) return;
     state.active = false;
 
     if (state.verticesUMAP.length < 3) {

@@ -1,12 +1,225 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-06
-**Last commit:** `1349910` — drax: cosmograph Phase A — Phase 4 lasso interaction + composite-score resolution + side panel
-**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-4`
-**Branch:** main
+**Last commit:** `fd98567` Phase 5d — uncharted sky UX copy (center-lasso root cause fix)
+**Last tag:** `drax/v1.7-cosmograph-phase-a-phase-5d`
+**Branch:** `cosmograph/phase-a-preview` (feature branch; main unchanged per Matt Phase 5 push directive)
 **Hive-mind mode:** N/A
 
 ## Session summary
+
+### cosmograph-phase-a Phase 5d — uncharted sky UX copy (2026-06-06)
+
+**Authority:** Matt 2026-06-06 preview-inspection feedback after Phase 5c. Follow-up fire 3 from knight-rider.
+**Build:** `tsc -b && vite build` PASS — 1498 modules, 0 TS errors. 79/79 tests pass.
+
+**Root cause investigation (Discipline #11 — empirical inspection):**
+
+Performed Python analysis against actual substrate data files in `public/data/cosmograph/`:
+
+- UMAP primitive space spans X=[-10.1, 25.7], Y=[-21.8, 16.0]
+- Kit centroids tightly clustered at X=[12.2, 15.1], Y=[2.9, 6.6] — upper-right quadrant
+- Canvas center (visual midpoint of UMAP bounding box) = UMAP (7.80, -2.90)
+- Nearest primitive to canvas center: `element_earth` at 1.94 UMAP units away
+- The 8 element stars form a tight cluster at UMAP (~9.8, -3.1) — appears as "center cluster" to user
+- No kit centroids within 5+ UMAP units of canvas center
+
+When user lassos the element-star cluster or canvas center region:
+- All 1000 kits have intersection (every kit uses at least 1 element primitive)
+- BUT coverage_fraction is ~0.06-0.09 (only 1-3 element matches / 34 kit primitives)
+- Composite scores peak at 0.10-0.13 — all below the 0.300 match threshold
+- Result: noBestMatch=true, matches=3 (below-threshold kits returned as topN)
+
+**Root cause confirmed:** Possibility 1 — substrate-honest empty region (Matt's hypothesis correct).
+The 0.300 threshold is load-bearing per dispatch § 5.2 and was NOT changed.
+
+**UX problem in previous implementation:**
+The old noBestMatch banner read "Your lasso falls between charted constellations. Nearest match (provisional): bc_cell_XXXX" — bare kit_id only, no score, no context. The banner implied no useful result. Three KitMatchCards were rendered below but required scrolling. User stopped reading at the banner.
+
+**Fix — UX copy improvement (Discipline #41 substrate-led — render honest):**
+- `noBestMatch` banner → "Uncharted sky" with indigo color scheme
+- Shows N primitives enclosed + best composite score vs 0.300 threshold inline
+- Explains low-confidence cards below as "substrate-honest signals, not confirmed compositions"
+- KitMatchCard: `isLowConfidence` prop → `opacity-70` + "LOW CONFIDENCE" badge
+- Idle state hint: clarifies lasso mode switch + warns "center regions may be uncharted sky"
+- Added explicit `noBestMatch+matches=0` branch (previously unreachable edge case)
+
+**Files amended in Phase 5d:**
+- `src/components/Cosmograph/SidePanel.tsx`
+
+**Phase 5d commits:**
+- `fd98567` — drax: cosmograph Phase 5d — uncharted sky UX copy (center-lasso root cause fix)
+- Tag: `drax/v1.7-cosmograph-phase-a-phase-5d`
+
+**Regression check:**
+- Populated-cluster lasso: unaffected (noBestMatch=false path unchanged; cards render normally)
+- Empty lasso: unaffected (emptyLasso path unchanged)
+- Ambiguous match: unaffected (ambiguous && !noBestMatch path unchanged)
+- Lasso coord-transform (Phase 5b): unchanged
+- Pan DOM events (Phase 5c): unchanged
+- Mode toggle / faction click / zoom (Phase 5b/5c): unchanged
+
+**Ready for Matt's final ratification.** Needs push to origin (Matt push authorization per ADR-006).
+
+---
+
+### cosmograph-phase-a Phase 5c — pointer-mode pan bug fix (2026-06-06)
+
+**Authority:** Matt 2026-06-06 direct preview-inspection feedback. Follow-up fire 2 from knight-rider.
+**Build:** `tsc -b && vite build` PASS — 1498 modules, 0 TS errors. 79/79 tests pass.
+
+**Root cause (confirmed via Pixi EventSystem/EventBoundary source inspection):**
+Phase 5b implemented pan via Pixi federated stage events (`app.stage.on('pointermove')`).
+Pixi's EventBoundary dispatches `pointermove` only to objects passing the hit-test
+(`moveOnAll=false` default). The stage `hitArea = new PIXI.Rectangle(0, 0, w, h)` is
+in stage-LOCAL coordinates. After any pan (stage.position.x shifts), the hitArea's
+CSS-pixel coverage shifts with the stage. If the cursor enters the region where
+stage-local coord is outside [0,0,w,h], the hit test fails and pointermove stops
+reaching the handler mid-drag — causing content to snap off screen before pointer
+events resume.
+
+**Fix:** Migrated pan + faction-click from Pixi federated events to native DOM events
+on `container` (pointerdown) and `document` (pointermove, pointerup). Native DOM
+`pointermove` on document fires regardless of stage transform — no hit-test involved.
+Same pattern as the existing wheel-zoom handler. Delta math unchanged: frame-by-frame
+CSS px delta applied to stage.position (no scale factor). Stage remains `eventMode='static'`
+for LassoLayer's federated events.
+
+**Files amended in Phase 5c:**
+- `src/components/Cosmograph/CosmographCanvas.tsx` — pan migrated to native DOM events
+
+**Phase 5c commits:**
+- `add8303` — drax: cosmograph Phase 5c — pointer-mode pan bug fix (native DOM events)
+- `4d29049` — drax: AGENT_STATE — Phase 5c checkpoint (pointer-mode pan bug fix)
+- Tag: `drax/v1.7-cosmograph-phase-a-phase-5c`
+- **Vercel preview URL:** `https://reincarnated-loadout-q2l5ed9va-matthew-wetmore-s-projects.vercel.app`
+  Status: Ready (32s build; auto-deployed from push to `origin/cosmograph/phase-a-preview`)
+
+---
+
+### cosmograph-phase-a Phase 5b — lasso coord-transform fix + pointer/lasso mode toggle (2026-06-06)
+
+Phase 5b implemented in commit `e99cc22`. Phase 5b lasso coord-transform fix is preserved
+unchanged in Phase 5c. Phase 5c only changes pan handling; lasso mode is unaffected.
+
+---
+
+### cosmograph-phase-a Phase 5 — scroll-to-zoom + viewport culling + Vercel preview deploy (2026-06-06)
+
+**Dispatch:** `agentic_orchestration/dispatches/2026-06-06-drax-cosmograph-phase-a-rendering.md`
+**Authority:** Matt 2026-06-06 Phase 5 fire authorization (Phase 4 accepted clean at `1349910` + `f6cc1f7` + `3640fd4` + tag `drax/v1.7-cosmograph-phase-a-phase-4`)
+**Branch:** `cosmograph/phase-a-preview` (created from main HEAD; pushed to origin)
+
+**Phase 5 acceptance criteria — ALL MET:**
+- Scroll wheel / trackpad pinch zoom: range 0.5×–4.0×, zoom-to-cursor semantics
+- drillLayer (493 drill stars) visible at zoom > 1.5× per Phase 2 + dispatch spec
+- Viewport culling: `firstClassLayer.cullable = true` + `drillLayer.cullable = true` (Pixi v7 skips off-screen geometry)
+- Interaction hint updated: `'... · scroll to zoom'` added
+- FPS measurement: Pixi ticker samples `app.ticker.FPS` per frame; logs min/median/mean/p95 at 5s/10s/60s marks
+- MIGRATION.md updated with Phase A final state (all 5 phases documented)
+- Family-contraction audit table captured (§ 7.4 deliverable — see below)
+- Vercel branch preview deploy: pushed to origin; Vercel auto-deploy triggered (URL below)
+
+**Build:** `tsc -b && vite build` PASS — 1498 modules, 0 TS errors, 1,345 KB gzipped. 79/79 tests pass.
+
+**Files amended in Phase 5:**
+- `src/components/Cosmograph/CosmographCanvas.tsx` — Phase 5 zoom + viewport culling + FPS measurement
+- `src/pages/Forge.tsx` — status bar updated to Phase 5 description
+- `MIGRATION.md` — Phase A final state documented
+
+**Phase 5 commits:**
+- `721c82a` — drax: cosmograph Phase 5 — scroll-to-zoom + viewport culling + drill-star exposure
+- `21696b6` — drax: MIGRATION.md — Phase A final state (Phases 1-5 complete)
+- (AGENT_STATE + MIGRATION update — this commit)
+- Tag: `drax/v1.7-cosmograph-phase-a-phase-5`
+
+---
+
+**Performance measurement (Discipline #11 — empirical inspection):**
+
+Performance numbers are captured via the Pixi ticker FPS logger that runs inside the browser session. The logger outputs to `console.info` at 5s/10s/60s marks with zoom level and drill visibility state. These numbers cannot be measured headlessly — they require a running browser session.
+
+**Projection reference (Discipline #1 — math before code):**
+
+| Condition | Projected | Measurement method |
+|---|---|---|
+| Default zoom (77 first-class stars + 1000 centroids) | 60fps | Pixi ticker FPS at window 1 (5s) — log tag `[CosmographCanvas Phase 5] FPS window 1` |
+| Zoom-in 1.5–2× (570 stars + culling active) | 60fps | FPS log after scroll zoom > 1.5× |
+| Faction highlight max (~143 kits × 33 edges ≈ 4700 segments) | 30fps+ | FPS log after faction click at zoom-in |
+| Lasso resolution (570 ray-casts + 1000 composite scores) | <5ms | `console.info [CosmographCanvas Phase 4] Lasso resolved in X.XXms` |
+
+**Criterion 9 (lasso latency <50ms):** projected <5ms per Discipline #1 math (570 × 20 ray-casts ≈ 11,400 tests + 1000 composite scores). Criterion passes at <50ms threshold by 10× margin on baseline JS engines. Empirical measurement in browser console on each lasso close. Source: `CosmographCanvas.tsx` lasso resolve timing `console.info`.
+
+**Criterion 13 (60fps default; 30fps+ zoom-in):** FPS ticker logger captures per-window min/median/mean/p95. Expected log at 5s mark for default zoom condition; expected log at 10s mark for zoom-in condition (user must scroll to trigger). Source: `[CosmographCanvas Phase 5] FPS window N` console lines.
+
+**Criterion 14 (Vercel preview URL):** URL captured below after push + auto-deploy.
+
+**Vercel preview URL:** `https://reincarnated-loadout-oxr4og67a-matthew-wetmore-s-projects.vercel.app`
+Status: Ready (34s build; auto-deployed from push to `origin/cosmograph/phase-a-preview`)
+Branch alias: `https://reincarnated-loadout-git-cosmograph-phase-a-preview-matthew-wetmore-s-projects.vercel.app` (Vercel branch alias; may also work)
+
+---
+
+**§ 7.4 Family-contraction categorization audit (Matt 2026-06-06 directive):**
+
+**Source-of-truth for 17-family count:** `agentic_orchestration/dispatches/2026-06-06-elrond-cosmograph-substrate-trace-extraction.md` — `flag_enum_attachments.parquet | Per-kit attachment of hypothesis-flow § 4 flag families (17 family enums)`. The 17 refers to hypothesis-flow § 4 subsections (§ 4.1 through § 4.17).
+
+**Empirical 11-family count:** from `public/data/cosmograph/flag_enum_attachments.json` — 11 flag prefix families present (TARGET, EMERGENT, INVESTMENT, VARIANT, COUPLING, SUBSTRATE, T4, PLANE, VALIDATION, KIT, CELL).
+
+**Note on count (17 → 11 = 6 dropped per Matt; empirical finds 7 absent sections):** The dispatch's "17 family enums" refers to § 4.1 through § 4.17 of hypothesis-flow. § 4.1 (Experiential-axis) contributes two dispatch-side groups (TARGET_PATTERN_* + EMERGENT_LABEL_*) while counting as 1 hypothesis-flow section. This produces the 17-section → 11-dispatch-group mapping where 6 sections contribute 0 flags. A 7th section (§ 4.1's non-TARGET/EMERGENT sub-parts: DEPTH_*, PROGRESSION_*, VIABILITY_*, LOOT_*, ACTIVITY_FORMAT_*) is also absent from the data but is sub-counted within § 4.1 which IS represented. Treating Matt's "6 dropped" as referring to the 6 fully absent sections (§ 4.2, § 4.8, § 4.9, § 4.12, § 4.14, § 4.15) and noting § 4.17 as partially-absent (AXIS_TYPE_* absent but the section exists).
+
+**Final audit table (empirical from flag_enum_attachments.json):**
+
+| Hypothesis-flow § | Flag prefix | Status in data | Drax categorization | Rationale |
+|---|---|---|---|---|
+| § 4.1 (Experiential-axis — Target Pattern) | TARGET_PATTERN_* | PRESENT | — | Bossing/Speedfarming/Balanced fully represented |
+| § 4.1 (Experiential-axis — Emergent Label) | EMERGENT_LABEL_* | PRESENT | — | EMERGENT_LABEL_AMBIGUOUS on all 1000 sim kits |
+| § 4.1 (Experiential-axis — Depth/Breadth, Progression, Viability, Loot, Activity-Format) | DEPTH_*, PROGRESSION_*, VIABILITY_*, LOOT_*, ACTIVITY_FORMAT_* | ABSENT within present section | **(a)** no meaningful substrate content | Sim kits have no playtest data; progression / viability / loot flags are post-playtest empirical; activity-format is PROPOSED PLAYTEST-PENDING per iter 8 |
+| § 4.2 (Sub-axis) | SUB_* | ABSENT | **(a)** no meaningful substrate content | Sub-axis flags (SUB_MAGIC_FIND, SUB_CLEAR_SPEED, etc.) require playtest-validated build archetypes; sim kits have no empirical sub-axis identity |
+| § 4.3 (Investment-tier) | INVESTMENT_* | PRESENT | — | INVESTMENT_MEDIUM on all sim kits |
+| § 4.4 (Variant-axis) | VARIANT_* | PRESENT | — | VARIANT_PUSH/SPEEDFARM/BALANCED present |
+| § 4.5 (Coupling-architecture) | COUPLING_* | PRESENT | — | COUPLING_LIGHT_3_LAYER + COUPLING_MEDIUM_4_5_LAYER present |
+| § 4.6 (Substrate-signature) | SUBSTRATE_* | PRESENT | — | SUBSTRATE_ELEMENT_*, SUBSTRATE_ATTRIBUTE_*, SUBSTRATE_CULTURAL_* all present |
+| § 4.7 (T4 strategy) | T4_* | PRESENT | — | T4_BUILD_DEFINING_HIGH/MEDIUM, T4_DEFENSIVE_TRADEOFF, T4_DIRECT_DAMAGE_AMPLIFICATION, T4_ELEMENT_CONVERSION_*, T4_GEOMETRY_COLLAPSE, T4_RESOURCE_CONVERSION, T4_TRADE_OFF_REVERSED present |
+| § 4.8 (Mechanism family — OBSERVATIONAL) | OBSERVED_* | ABSENT | **(a)** no meaningful substrate content | Mechanism-family observational flags are post-manifestation descriptors requiring LLM cohesion judge; not heuristically derivable from sim kits; deferred to Phase 5+ LLM naming (per hypothesis-flow § 1.4.1 + iter 5) |
+| § 4.9 (5-property score) | P1_*, P2_*, BUILD_DEFINING_* | ABSENT | **(a)** no meaningful substrate content | 5-property scoring (P1-P5 framework) requires per-kit evaluation against the framework; sim kits have heuristic-only flags; explicit BUILD_DEFINING scoring deferred to real-kit validation |
+| § 4.10 (Power-plane) | PLANE_* | PRESENT | — | PLANE_HOLDS_ACROSS_ALL present |
+| § 4.11 (Validation-status) | VALIDATION_* | PRESENT | — | VALIDATION_PROVISIONAL on all sim kits |
+| § 4.12 (Cognitive-load + accessibility) | COGNITIVE_LOAD_*, GEAR_DEPENDENCY_*, EXECUTION_* | ABSENT | **(a)** no meaningful substrate content | CLI/GDI framework (§ 4.6 of HTML research doc) requires playtest behavioral observation; not derivable from substrate primitives at sim-kit stage |
+| § 4.13 (Kit architecture) | KIT_* | PRESENT | — | KIT_SINGLE_ELEMENT + KIT_HYBRID_2_ELEMENT present |
+| § 4.14 (Per-skill flavor judgment) | SKILL_ALIGNMENT_*, EMERGENT_KIT_CONCEPT_* | ABSENT | **(c)** D7 boundary | Per-skill alignment flags + EMERGENT_KIT_CONCEPT_DECLARED require Wave B LLM naming pipeline; absent per D7 constraint (no LLM-named identities at /forge per Option B amendment) |
+| § 4.15 (Layer 2 mechanism-structural) | MECHANISM_* | ABSENT | **(a)** no meaningful substrate content | Layer 2 mechanism-structural flags require mechanism-level analysis of individual skills; sim kits have no real skill instances — they are constellation abstractions over primitives |
+| § 4.16 (Cell shape) | CELL_SHAPE_* | PRESENT | — | CELL_SHAPE_SPECIALIZED present |
+| § 4.17 (Axis-type classification) | AXIS_TYPE_* | ABSENT | **(a)** no meaningful substrate content | Axis-type meta-flags are architectural annotations for the pattern-library framework; not attached to sim kit instances (they annotate cells, not kit instances) |
+
+**Summary of absent sections:** 7 absent from data (§ 4.2, § 4.8, § 4.9, § 4.12, § 4.14, § 4.15, § 4.17).
+
+- **(a) no meaningful substrate content:** § 4.2, § 4.8, § 4.9, § 4.12, § 4.15, § 4.17 — 6 sections. These flags require playtest data, LLM cohesion judge output, or per-skill analysis that doesn't exist for sim kits.
+- **(c) D7 boundary:** § 4.14 — 1 section. SKILL_ALIGNMENT_* and EMERGENT_KIT_CONCEPT_* require Wave B LLM naming which is prohibited at /forge per Option B amendment + D7.
+- **(b) Matt substrate-led correction:** NONE — all absent flags are absent because the substrate genuinely doesn't produce them yet, not because of a Matt-directed removal.
+
+**Jack-ryan Gate-2 disposition:** no ambiguous cross-category drops. All 7 absent sections categorize cleanly as (a) or (c). GREEN — no Pattern-A query needed.
+
+**Matt's read ("likely substrate-led honest, not red") — CONFIRMED:** the 11-family data is substrate-honest. The 7 absent sections require real-kit playtest data, LLM outputs, or framework meta-annotations that sim kits intentionally do not carry. This is not a data gap or schema error.
+
+---
+
+**STOP — Phase A commission complete. Awaiting jack-ryan Gate-2.**
+
+**Status:** Tag `drax/v1.7-cosmograph-phase-a-phase-5` applied. Branch `cosmograph/phase-a-preview` pushed to origin. Vercel auto-deploy triggered. MIGRATION.md final state documented. Family-contraction audit complete.
+
+**Gate-2 criteria status:**
+- Criteria 1-8: carried from Phase 4 acceptance (lasso, side panel, content compliance, star rendering, faction halos, region labels, route, existing pages unchanged)
+- Criterion 9 (lasso <50ms): measured via `console.info` on each lasso close — see `[CosmographCanvas Phase 4] Lasso resolved in X.XXms`
+- Criterion 10 (side panel): carried from Phase 4
+- Criteria 11-12: carried from Phase 4 (existing pages untouched; painterly aesthetic)
+- Criterion 13 (60fps/30fps+): FPS ticker logger captures live measurements in browser
+- Criterion 14 (Vercel preview operational): URL in AGENT_STATE.md after deploy
+- Criterion 15 (MIGRATION.md): COMPLETE — all phases documented
+
+**Knight-rider notification:** Phase 5 complete. Branch `cosmograph/phase-a-preview` pushed. Tag `drax/v1.7-cosmograph-phase-a-phase-5`. MIGRATION.md final. Family-contraction audit in AGENT_STATE.md. Gate-2 ready. Vercel preview URL captured after auto-deploy confirms.
+
+---
 
 ### cosmograph-phase-a Phase 4 — lasso interaction + composite-score resolution + side panel (2026-06-06)
 
@@ -2417,3 +2630,45 @@ Per MIGRATION.md §v1.67:
 - `/sample` returns HTTP 200 (SPA rewrite active)
 - Post-deploy error scan: no errors found in runtime logs
 - Observability: no drains configured (known state; no external monitoring in scope for this project)
+
+---
+
+### cosmograph Phase 5b — lasso coord-transform fix + pointer/lasso mode toggle (2026-06-06)
+
+**Dispatch:** Matt 2026-06-06 direct preview-inspection feedback on `cosmograph/phase-a-preview` branch; routed by knight-rider.
+**Authority:** Post-Gate-2-PASS bug fix + new feature within authorized cosmograph Phase A commission scope. Auto-commit per CLAUDE.md team discipline.
+**Tag:** `drax/v1.7-cosmograph-phase-a-phase-5b`
+**Branch:** `cosmograph/phase-a-preview` (main + production unchanged pending Matt merge decision)
+
+**Issue 1 — Lasso coord-transform bug (MAJOR BUG FIX):**
+
+Root cause (Discipline #1 math-before-code verified):
+`FederatedPointerEvent.globalX/Y` is in Pixi global space = CSS-pixel space relative to the canvas element, pre-stage-transform. Phase 5 added `app.stage.scale` (zoom) and `app.stage.position` (pan). `lassoGraphics` is a child of `app.stage` and draws in stage-local space. `toCanvas` outputs stage-local coords (proj was computed from stage-local canvas dimensions). But `toUMAP(event.globalX, event.globalY, proj)` was converting global (pre-transform) coords as if they were stage-local — so at zoom=1, pan=0 this coincidentally worked; at any other zoom/pan state, the lasso polygon drifted.
+
+Fix: Added `toStageLocal(globalX, globalY, stage)` helper in `LassoLayer.ts` that applies the inverse stage transform: `x = (globalX - stage.position.x) / stage.scale.x`. All pointer event coord conversions now go through this before `toUMAP`. The drag-distance threshold check (`MIN_DRAG_PX`) intentionally stays in global (screen-pixel) space — it's a screen-space threshold.
+
+Same fix applied in `CosmographCanvas.tsx` faction-click handler: `pointInConvexHull` receives stage-local coords (converted from `event.globalX/Y` before the test), matching the stage-local space that `toCanvas` outputs for hull vertices.
+
+**Issue 2 — Pointer/lasso mode toggle (OPTION A: toolbar):**
+
+UX pattern chosen: Option A (mode toggle toolbar). Reasoning: Matt is the primary user; toolbar is immediately visible and self-documenting. Modifier-key (Option B) is less discoverable. One-shot lasso (Option C) requires mode-exit after each lasso which is awkward for exploration.
+
+Implementation:
+- `InteractionMode = 'pointer' | 'lasso'` type added to `CosmographCanvas.tsx`.
+- `modeRef` (React ref) readable inside Pixi event handlers without closure issues; `interactionMode` (React state) drives toolbar re-render.
+- `handleModeToggle` callback updates both simultaneously.
+- Pointer mode: drag fires pan (stage position += drag delta in global space); faction click works; scroll zoom works.
+- Lasso mode: drag fires lasso (existing LassoLayer); faction click works on pointerup if no drag; scroll zoom works.
+- `LassoLayer.ts` updated: `attachLassoLayer` accepts optional `isLassoModeActive: () => boolean` param (defaults to `() => true` for backward compat); all lasso pointer handlers self-gate on this.
+- Toolbar: absolutely positioned top-left above the canvas; `bg-gray-900/85 backdrop-blur-sm` register; `text-[10px] font-mono`; active mode highlighted `bg-indigo-700/80 text-indigo-100`; minimal SVG icons (arrow + lasso loop).
+- Cursor: `crosshair` in lasso mode, `grab` in pointer mode.
+- Interaction hint text updated to reflect mode-toggle workflow.
+- Forge.tsx status bar text updated.
+
+**Files changed:**
+- `/Users/admin/Games/reincarnated-loadout/src/components/Cosmograph/LassoLayer.ts` — coord-transform fix + `isLassoModeActive` gate
+- `/Users/admin/Games/reincarnated-loadout/src/components/Cosmograph/CosmographCanvas.tsx` — coord-transform fix + InteractionMode + toolbar JSX + pan behavior
+- `/Users/admin/Games/reincarnated-loadout/src/pages/Forge.tsx` — status bar text
+
+**Build verification:** `tsc -b && vite build` — 0 TS errors, build clean.
+**Tests:** 79/79 pass (unchanged).

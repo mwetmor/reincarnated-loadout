@@ -1253,8 +1253,42 @@ Validated 2026-06-06 before Phase 1 implementation:
 
 ### Phase status
 
-- Phase 1: COMPLETE (this entry)
-- Phase 2-5: pending subsequent sessions (star rendering, constellation lines, lasso interaction, perf + deploy)
+- Phase 1: COMPLETE — commit `ec894b8` / tag: none (Phase 1 only; Phase 4 tag is terminal Phase A tag)
+- Phase 2: COMPLETE — commit `689d3cf` — 570 stars with bdi_weight brightness + element-coupling color + provenance-tag encoding
+- Phase 3: COMPLETE — commit `b9e9401` + tag `drax/v1.7-cosmograph-phase-a-phase-3` — MST constellation lines + 7 faction halos + region-label overlays
+- Phase 4: COMPLETE — commit `1349910` + tag `drax/v1.7-cosmograph-phase-a-phase-4` — lasso interaction + composite-score resolution + side panel
+- Phase 5: COMPLETE — commit `721c82a` + tag `drax/v1.7-cosmograph-phase-a-phase-5` — scroll-to-zoom + viewport culling + Vercel preview deploy
+
+**Branch:** `cosmograph/phase-a-preview` — pushed to `origin/cosmograph/phase-a-preview`
+**Vercel preview URL:** `https://reincarnated-loadout-oxr4og67a-matthew-wetmore-s-projects.vercel.app` (Ready; 34s build; Preview environment; production untouched)
+
+### Phase 5 additional files
+
+| Path | Purpose | Phase |
+|---|---|---|
+| `src/utils/flagFamilies.ts` | 11 flag family defs, `groupFlags()`, `formatFlagLabel()`, `getFamilyTooltip()` | 4 |
+| `src/components/Cosmograph/SidePanel.tsx` | React side panel — idle / match cards / edge cases / flag-family chips / heuristic disclosure | 4 |
+| `src/components/Cosmograph/LassoLayer.ts` | Pixi.js lasso polygon draw + UMAP vertex storage + close event | 4 |
+| `src/components/Cosmograph/coordinateProjection.ts` | Shared UMAP→canvas projection + inverse `toUMAP()` (extracted Phase 3) | 3 |
+| `src/components/Cosmograph/ConstellationLayer.ts` | 1000 centroid dim-points + dotted MST lines + `getKitsInViewport` viewport culling | 3 |
+| `src/components/Cosmograph/FactionHaloLayer.ts` | 7 convex-hull faction halos + attribute-group labels | 3 |
+| `src/components/Cosmograph/RegionLabelLayer.ts` | Emergent mechanic-family labels + tier annotation block + chain architecture labels | 3 |
+| `src/components/Cosmograph/SubstrateDisclosure.ts` | Substrate-honest disclosure (3-line bottom-left canvas text) | 3 |
+| `src/utils/mstConstellation.ts` | Kruskal's algorithm + Union-Find path compression + `hullCentroid` | 3 |
+
+### Phase 5 zoom + viewport culling
+
+**Zoom:** scroll wheel / trackpad pinch, range 0.5×–4.0×. Zoom-to-cursor semantics (stage pivot shifts so cursor world point remains fixed). Implemented via `wheel` event on canvas container → `app.stage.scale` + position adjustment.
+
+**Drill star exposure:** `drillLayer.visible = newScale > 1.5` inside wheel handler — 493 drill stars (weapon-form tokens, sub-element flavors, etc.) appear at zoom > 1.5×.
+
+**Viewport culling:** `firstClassLayer.cullable = true` + `drillLayer.cullable = true` — Pixi.js v7 skips GPU geometry for containers whose bounding box lies outside the current viewport. Effective when zoomed in past 2× (most drill stars off-screen).
+
+**FPS measurement:** Pixi ticker samples `app.ticker.FPS` per frame; logs min/median/mean/p95 at 5s, 10s, 60s windows. Zoom level + drill visibility captured per log entry.
+
+### Gate-2 verification target
+
+18 criteria per dispatch § 8. Branch preview URL operational after Phase 5 deploy. Criterion 9 (lasso <50ms), 13 (60fps default / 30fps+ zoom-in), 14 (preview URL) measured against preview URL. Results captured in AGENT_STATE.md Phase 5.
 
 ---
 

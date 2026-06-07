@@ -98,11 +98,13 @@ function KitMatchCard({
   data,
   rank,
   isAmbiguous,
+  isLowConfidence = false,
 }: {
   match: import('../../data/cosmographTypes').LassoMatch;
   data: CosmographData;
   rank: number;
   isAmbiguous: boolean;
+  isLowConfidence?: boolean;
 }) {
   const { kit, coverage_fraction, density_score, composite_score } = match;
 
@@ -126,7 +128,7 @@ function KitMatchCard({
   );
 
   return (
-    <div className="border border-gray-700/40 rounded mb-3 overflow-hidden">
+    <div className={`border rounded mb-3 overflow-hidden ${isLowConfidence ? 'border-gray-700/20 opacity-70' : 'border-gray-700/40'}`}>
       {/* Card header */}
       <div className="bg-gray-900/60 px-3 py-2 border-b border-gray-700/40">
         <div className="flex items-start justify-between gap-2">
@@ -135,6 +137,11 @@ function KitMatchCard({
             <span className="inline-block text-[8px] font-mono font-bold text-amber-400 bg-amber-900/30 border border-amber-700/40 px-1.5 py-0.5 rounded mb-1">
               PROVISIONAL
             </span>
+            {isLowConfidence && (
+              <span className="inline-block ml-1 text-[8px] font-mono text-indigo-400/80 bg-indigo-900/20 border border-indigo-700/30 px-1.5 py-0.5 rounded mb-1">
+                LOW CONFIDENCE
+              </span>
+            )}
             {isAmbiguous && (
               <span className="inline-block ml-1 text-[8px] font-mono text-purple-400 bg-purple-900/20 border border-purple-700/40 px-1.5 py-0.5 rounded mb-1">
                 AMBIGUOUS MATCH
@@ -283,8 +290,15 @@ export function SidePanel({ result, data, onClear }: SidePanelProps) {
       <div className="flex flex-col items-center justify-center h-full text-center px-4">
         <div className="text-gray-700 font-mono text-[10px] leading-relaxed">
           <div className="mb-2 text-gray-600">Lasso — draw to resolve</div>
-          <div>Click-drag on the cosmograph to draw a lasso.</div>
-          <div>The engine will match the enclosed stars to charted constellations.</div>
+          <div>Switch to <span className="text-gray-500">lasso mode</span> (toolbar top-left),</div>
+          <div>then drag to draw a selection polygon.</div>
+          <div className="mt-2 text-gray-700">The substrate will match enclosed stars</div>
+          <div className="text-gray-700">to the nearest charted constellations.</div>
+          <div className="mt-2 text-gray-700/60 text-[9px]">
+            Lasso a bright star cluster for best results.
+            <br />
+            Center regions may be uncharted sky.
+          </div>
         </div>
       </div>
     );
@@ -321,14 +335,32 @@ export function SidePanel({ result, data, onClear }: SidePanelProps) {
           </div>
         )}
 
-        {/* Edge case: no match ≥ 0.3 */}
+        {/* Edge case: no match ≥ 0.3 — "Uncharted sky" signal */}
+        {/* Substrate-honest: do NOT manufacture matches. Render the signal clearly. */}
         {!result.emptyLasso && result.noBestMatch && result.matches.length > 0 && (
+          <div className="mb-3 text-[10px] font-mono bg-indigo-950/30 border border-indigo-800/30 rounded p-2">
+            <div className="text-indigo-300/80 font-semibold mb-1">Uncharted sky</div>
+            <div className="text-gray-500 leading-relaxed">
+              Your lasso enclosed{' '}
+              <span className="text-gray-400">{result.lassoPrimitiveIds.size} primitive{result.lassoPrimitiveIds.size !== 1 ? 's' : ''}</span>,
+              but no constellation scores above the match threshold (best:{' '}
+              <span className="text-gray-400">{result.matches[0].composite_score.toFixed(3)}</span> of 0.300 required).
+            </div>
+            <div className="text-gray-600 mt-1 text-[9px] leading-relaxed">
+              This region sits between the charted constellation clusters. The low-confidence
+              nearest matches are shown below for reference — they are substrate-honest signals,
+              not confirmed compositions.
+            </div>
+          </div>
+        )}
+
+        {/* No matches at all when noBestMatch + matches empty */}
+        {!result.emptyLasso && result.noBestMatch && result.matches.length === 0 && (
           <div className="mb-3 text-[10px] font-mono text-gray-500 bg-gray-900/60 border border-gray-700/30 rounded p-2">
-            Your lasso falls between charted constellations.
-            <br />
-            <span className="text-gray-600">Nearest match (provisional):</span>
-            <br />
-            <span className="text-gray-400 text-[9px]">{result.matches[0].kit.kit_id}</span>
+            <div className="text-indigo-300/70 font-semibold mb-1">Uncharted sky</div>
+            Your lasso enclosed{' '}
+            <span className="text-gray-400">{result.lassoPrimitiveIds.size} primitive{result.lassoPrimitiveIds.size !== 1 ? 's' : ''}</span>{' '}
+            with no constellation overlap. Try a wider region or lasso a visible star cluster.
           </div>
         )}
 
@@ -341,15 +373,15 @@ export function SidePanel({ result, data, onClear }: SidePanelProps) {
           </div>
         )}
 
-        {/* Lasso primitive count */}
-        {!result.emptyLasso && (
+        {/* Lasso primitive count — omit when noBestMatch (count shown inline in uncharted-sky banner) */}
+        {!result.emptyLasso && !result.noBestMatch && (
           <div className="mb-2 text-[9px] font-mono text-gray-600">
             {result.lassoPrimitiveIds.size} primitive{result.lassoPrimitiveIds.size !== 1 ? 's' : ''} enclosed
             {result.matches.length > 0 && ` · ${result.matches.length} constellation${result.matches.length !== 1 ? 's' : ''} matched`}
           </div>
         )}
 
-        {/* Match cards */}
+        {/* Match cards — rendered for both normal and noBestMatch (low-confidence) states */}
         {result.matches.map((match, idx) => (
           <KitMatchCard
             key={match.kit.kit_id}
@@ -357,11 +389,12 @@ export function SidePanel({ result, data, onClear }: SidePanelProps) {
             data={data}
             rank={idx + 1}
             isAmbiguous={result.ambiguous && idx < 2}
+            isLowConfidence={result.noBestMatch}
           />
         ))}
 
-        {/* No matches at all */}
-        {!result.emptyLasso && result.matches.length === 0 && (
+        {/* No matches at all — only show when not noBestMatch (noBestMatch+empty case handled above) */}
+        {!result.emptyLasso && !result.noBestMatch && result.matches.length === 0 && (
           <div className="text-[10px] font-mono text-gray-600 text-center py-4">
             No constellations matched the lasso region.
           </div>
