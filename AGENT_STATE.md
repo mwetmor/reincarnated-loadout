@@ -1,10 +1,64 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-07
-**Last commit:** (cosmograph A/B spike Phase 1 — see below)
-**Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1`
-**Branch:** `main` (cosmograph Phase A merged; spike Phase 1 goes directly to main)
+**Last commit:** `e63f667` (dot-size fix) atop `bb7176c` (Phase 2 main deliverables)
+**Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1` (Phase 2 not yet separately tagged — awaiting gandalf mode-disposition verdict)
+**Branch:** `main` (cosmograph Phase A merged; spike Phase 1 + Phase 2 both on main)
 **Hive-mind mode:** N/A
+
+---
+
+## Session summary
+
+### cosmograph-ab-spike Phase 2 — Full 1000-Kit Corpus + LOD Toggle (2026-06-07)
+
+**Authority:** Gandalf Phase 1 GREEN ratification + Matt 2026-06-07 → Phase 2 fires per dispatch § 4.
+**Build:** `tsc -b && vite build` PASS — 1499 modules, 0 TS errors.
+
+**Verdict: GREEN — full corpus rendering confirmed. Toggle operational on Vercel preview.**
+Scope: RENDERING-UNIT READABILITY at scale per § 8 Q1 Finding 3 amendment. NOT substrate-coverage validation.
+
+**Critical Phase 2 architectural finding — Force-directed layout abandoned at full corpus:**
+F-R repulsion + Jaccard-spring collapses all 1000 centroids to ~40px separation at full corpus.
+Jaccard similarity is uniformly ~0.224 (all kits share ~22% of vocabulary) — no force-layout gradient to exploit. Grid layout with element-sort adopted instead. Min NN distance: 172.5px > 140px threshold. Element-regional clustering visible at initial 1.0× zoom.
+
+**Phase 2 LOD architecture:**
+- Normalized zoom = stage.scale.x / initialScale
+- < 2.0 → dotsLayer (1000 centroid dots, element-colored) — overview
+- ≥ 2.0 → starsLayer + boundsLayer (18,607 first-class stars pre-drawn at mount) — constellation clusters
+
+**Force-config Phase 2 lock:**
+Grid: 32×32, WORLD_W=9000, WORLD_H=7000, JITTER=20px, MAX_CONSTELLATION_RADIUS=70px.
+Sunflower spiral Stage 2. Centroid dots: 16px inner / 32px outer world-space radius. LOD_ZOOM_THRESHOLD = 2.0.
+
+**TODO(drax): ACTIVE OVERRIDES**
+1. Grid layout substitutes for kit-to-kit similarity 2D embedding — remove when elrond commissions proper Mode B placement embedding (separate from primitive-space UMAP). See `compute-constellation-layout.py` meta.umap_caveat.
+2. `constellationModeLayout.ts` centroid-position override note — still valid (Phase 2 doesn't use that file for layout, but it's kept for the dedupeInstanceNodes() utility).
+
+**Files added/amended in Phase 2 (reincarnated-loadout):**
+- `scripts/compute-constellation-layout.py` — Python pre-compute (gandalf-endorsed over Web Worker)
+- `public/data/cosmograph/constellation_layout.json` — Pre-computed layout (2.04MB; 1000 centroids, 34,318 nodes)
+- `src/components/Cosmograph/ConstellationModeCanvas.tsx` — Phase 2 full rewrite (LOD, world-space lasso)
+- `src/data/cosmographTypes.ts` — ConstellationLayoutData + ConstellationCentroid + ConstellationLayoutNode types
+- `src/data/cosmographData.ts` — loadConstellationLayout() lazy loader
+- `src/utils/lassoResolution.ts` — scoreKitsByPrimitiveSet() (Mode B correct scoring, fixes Phase 1 bug)
+- `src/pages/Forge.tsx` — lazy layout load, Phase 2 badge + descriptor
+
+**Phase 2 commits:**
+- `bb7176c` — drax: cosmograph A/B spike Phase 2 — full 1000-kit corpus + LOD toggle + Vercel preview
+- `e63f667` — drax: cosmograph P2 dot-size fix — 16px inner / 32px outer for initial-scale visibility
+
+**Vercel preview:** `https://reincarnated-loadout-krulytb91-matthew-wetmore-s-projects.vercel.app`
+*(Behind Vercel auth. Mode A + Mode B toggle both operational.)*
+
+**Deliverables committed to meta-repo:**
+- `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-2-full-corpus-findings.md`
+- `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-2-screenshot-primitive-full.png`
+- `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-2-screenshot-constellation-full.png`
+
+**Routing:** Surfaced to gandalf for mode-disposition verdict. jack-ryan Gate-2 at spike close per dispatch § 5.2.
+
+---
 
 ## Session summary
 
