@@ -17,11 +17,11 @@
  * Phase 4: lasso interaction + composite-score resolution + side panel.
  * Phase 5: scroll-to-zoom + viewport culling (drillLayer at zoom>1.5×) + Vercel preview deploy.
  *
- * A/B spike Phase 2 (2026-06-07): ?view=primitive (Mode A, default) vs ?view=constellation (Mode B, full corpus).
- *   Mode A: primitive-galaxy — each unique primitive is one star; 570 stars; kit membership non-local.
- *   Mode B: kit-as-bounded-constellation — 1000 kit clusters, pre-computed layout (Python build-time).
- *           LOD: centroid dots at 1.0× zoom; full star clusters at ≥2× zoom.
- *           Layout loaded lazily from constellation_layout.json (2MB) on first constellation toggle.
+ * View modes (gandalf mode-disposition 2026-06-07):
+ *   Default (no param / ?view=constellation): kit-galaxy — 1000 constellation clusters (player-facing).
+ *     LOD: centroid dots at 1.0× zoom; full star clusters at ≥2× zoom.
+ *     Layout loaded lazily from constellation_layout.json (2MB) on first load.
+ *   ?view=primitive: substrate-analysis view — 570 unique primitives as stars (analyst diagnostic).
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
@@ -53,13 +53,15 @@ export function Forge() {
   const [layoutLoadError, setLayoutLoadError] = useState<string | null>(null);
   const layoutLoadStartRef = useRef<number>(0);
 
-  // A/B toggle: ?view=primitive (Mode A) | ?view=constellation (Mode B)
+  // Default view: constellation (Mode B, player-facing).
+  // Analyst primitive view: ?view=primitive
+  // ?view=constellation also supported (redundant; same as default)
   const [searchParams, setSearchParams] = useSearchParams();
   const viewParam = searchParams.get('view');
-  const viewMode: ViewMode = viewParam === 'constellation' ? 'constellation' : 'primitive';
+  const viewMode: ViewMode = viewParam === 'primitive' ? 'primitive' : 'constellation';
 
   const setViewMode = useCallback((mode: ViewMode) => {
-    setSearchParams(mode === 'primitive' ? {} : { view: 'constellation' });
+    setSearchParams(mode === 'constellation' ? {} : { view: 'primitive' });
     clearLassoRef.current?.();
     setLassoResult(null);
   }, [setSearchParams]);
@@ -134,47 +136,46 @@ export function Forge() {
             </p>
           </div>
 
-          {/* A/B view toggle — spike Phase 1 */}
+          {/* View toggle: constellation (default, player-facing) ↔ primitive (analyst) */}
           <div className="flex items-center gap-1 rounded border border-gray-700/60 bg-gray-900/60 px-1.5 py-1">
             <span className="text-[9px] text-gray-600 font-mono mr-1 uppercase tracking-wider">View:</span>
             <button
-              onClick={() => setViewMode('primitive')}
-              title="Mode A: primitive-galaxy — each unique primitive is a star; 570 stars; kit membership non-local"
-              className={
-                'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
-                (viewMode === 'primitive'
-                  ? 'bg-indigo-700/70 text-indigo-100'
-                  : 'text-gray-500 hover:text-gray-300')
-              }
-            >
-              primitive
-            </button>
-            <button
               onClick={() => setViewMode('constellation')}
-              title="Mode B: kit-as-bounded-constellation — 1000 constellation clusters (Phase 2 full corpus). Scroll to zoom, zoom to 2× to see stars."
+              title="Kit-galaxy view — 1000 constellation clusters, element neighborhoods, scroll to zoom"
               className={
                 'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
                 (viewMode === 'constellation'
-                  ? 'bg-amber-700/70 text-amber-100'
+                  ? 'bg-indigo-700/70 text-indigo-100'
                   : 'text-gray-500 hover:text-gray-300')
               }
             >
               constellation
             </button>
-            {viewMode === 'constellation' && (
-              <span className="text-[9px] text-amber-600/70 font-mono ml-1">SPIKE·P2·1000 kits</span>
-            )}
+            <button
+              onClick={() => setViewMode('primitive')}
+              title="Substrate analysis view — each unique primitive is a star; 570 stars; kit membership non-local"
+              className={
+                'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+                (viewMode === 'primitive'
+                  ? 'bg-amber-700/70 text-amber-100'
+                  : 'text-gray-500 hover:text-gray-300')
+              }
+            >
+              substrate
+            </button>
           </div>
         </div>
 
         {/* Mode descriptor */}
         {viewMode === 'primitive' ? (
           <p className="text-xs text-amber-500/80 bg-amber-900/20 border border-amber-800/40 rounded px-3 py-2 font-mono leading-relaxed max-w-3xl">
-            <span className="text-amber-300 font-bold">Mode A — Primitive Galaxy</span>
-            {' '}(current Phase A): All constellations on this page are{' '}
-            <span className="font-bold text-amber-400">SIMULATED placeholders</span>.
-            They show the future-engine substrate vocabulary, not real kits.
-            Cycle 14 real kits live at{' '}
+            <span className="text-amber-300 font-bold">Substrate Analysis View</span>
+            {' '}— 570 unique primitives, each rendered as one star. Brightness = rarity weight; color = element.
+            Kit membership is non-local (a kit's primitives scatter across the canvas).
+            Useful for substrate-coverage analysis and element over-representation diagnostics.
+            All constellations are{' '}
+            <span className="font-bold text-amber-400">PROVISIONAL</span> — future-engine kits, not real cycle-14 kits.
+            Real kits at{' '}
             <Link to="/loadout" className="text-amber-300 underline underline-offset-2 hover:text-amber-200">
               Loadout
             </Link>{' '}
@@ -184,14 +185,16 @@ export function Forge() {
             </Link>.
           </p>
         ) : (
-          <p className="text-xs text-amber-500/80 bg-amber-900/20 border border-amber-800/40 rounded px-3 py-2 font-mono leading-relaxed max-w-3xl">
-            <span className="text-amber-300 font-bold">Mode B — Kit-as-Bounded-Constellation</span>
-            {' '}(A/B spike Phase 2, full corpus): 1000 constellation clusters.
-            Each cluster = one kit's primitives in a bounded local arrangement.
-            <strong className="text-amber-300"> Scroll to zoom</strong> — centroid dots at 1×,
-            full star clusters reveal at 2×+. Use lasso (2×+ only) to select a constellation.
-            All <span className="font-bold text-amber-400">PROVISIONAL</span>.
-            Toggle &quot;primitive&quot; for Mode A.
+          <p className="text-xs text-gray-400 bg-gray-900/40 border border-gray-800/50 rounded px-3 py-2 font-mono leading-relaxed max-w-3xl">
+            A galaxy of every possible kit — 1000 builds, each a bounded star cluster.
+            Element neighborhoods visible at overview:{' '}
+            <span className="text-orange-400">fire / lightning</span> left ·{' '}
+            <span className="text-blue-400">water / wind</span> center ·{' '}
+            <span className="text-gray-500">physical / shadow / holy</span> right.
+            <strong className="text-gray-300"> Scroll to zoom</strong> into a region —
+            full star clusters reveal at 2×.
+            <strong className="text-gray-300"> Lasso</strong> a cluster at 2×+ to identify a kit.
+            All <span className="font-bold text-amber-500">PROVISIONAL</span> — future-engine kits.
           </p>
         )}
       </div>
@@ -257,9 +260,9 @@ export function Forge() {
               </>
             ) : (
               <>
-                MODE B · {layoutData?.centroids.length ?? '…'} constellations (1000 kits) ·
-                {' '}{layoutData ? '18k first-class stars' : 'loading layout…'} &middot;
-                dots at 1× · stars at 2×+ · lasso at 2×+ · toggle &quot;primitive&quot; above for Mode A
+                {layoutData?.centroids.length ?? '…'} constellation clusters ·{' '}
+                {layoutData ? '18k first-class stars' : 'loading layout…'} &middot;
+                dots at 1× · stars at 2×+ · lasso at 2×+ · &quot;substrate&quot; above for primitive analysis
               </>
             )}
           </p>
