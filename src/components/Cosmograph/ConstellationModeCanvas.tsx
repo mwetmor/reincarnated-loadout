@@ -226,16 +226,22 @@ export function ConstellationModeCanvas({
     worldStage.addChild(bg);
 
     // ── Dots layer (LOD: zoom < 2.0) — 1000 centroid dots ───────────────────
+    // World-space radius chosen to remain visible at initialScale.
+    // initialScale ≈ 0.069 (9000×7000 world in 980×480 container).
+    // DOT_OUTER = 32px → 2.2px screen at 1.0×; DOT_INNER = 16px → 1.1px screen.
+    // Min inter-centroid = 172px world → 11.9px screen; no collision risk.
+    const DOT_OUTER_R = 32;  // world px — outer glow radius
+    const DOT_INNER_R = 16;  // world px — inner dot radius
     const dotsLayer = new PIXI.Graphics();
     for (const c of layoutData.centroids) {
       const color = elementColor(c.element);
       // Outer soft glow
-      dotsLayer.beginFill(color, 0.12);
-      dotsLayer.drawCircle(c.cx, c.cy, 6);
+      dotsLayer.beginFill(color, 0.18);
+      dotsLayer.drawCircle(c.cx, c.cy, DOT_OUTER_R);
       dotsLayer.endFill();
       // Inner dot
-      dotsLayer.beginFill(color, 0.70);
-      dotsLayer.drawCircle(c.cx, c.cy, 3.5);
+      dotsLayer.beginFill(color, 0.80);
+      dotsLayer.drawCircle(c.cx, c.cy, DOT_INNER_R);
       dotsLayer.endFill();
     }
     worldStage.addChild(dotsLayer);
