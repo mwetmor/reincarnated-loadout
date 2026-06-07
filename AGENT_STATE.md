@@ -1,9 +1,9 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-07
-**Last commit:** `e63f667` (dot-size fix) atop `bb7176c` (Phase 2 main deliverables)
-**Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1` (Phase 2 not yet separately tagged — awaiting gandalf mode-disposition verdict)
-**Branch:** `main` (cosmograph Phase A merged; spike Phase 1 + Phase 2 both on main)
+**Last commit:** `7d411a2` (Mode B as default + player-facing copy)
+**Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1` (Phase 2 not yet separately tagged — pending jack-ryan Gate-2 PASS)
+**Branch:** `main` — 5 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
 **Hive-mind mode:** N/A
 
 ---
@@ -56,7 +56,24 @@ Sunflower spiral Stage 2. Centroid dots: 16px inner / 32px outer world-space rad
 - `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-2-screenshot-primitive-full.png`
 - `agentic_orchestration/drax/notes/2026-06-07-cosmograph-a-b-spike/phase-2-screenshot-constellation-full.png`
 
-**Routing:** Surfaced to gandalf for mode-disposition verdict. jack-ryan Gate-2 at spike close per dispatch § 5.2.
+**Routing:** Surfaced to gandalf → mode-disposition verdict received → Gate-2 dispatched to jack-ryan via knight-rider.
+
+### Mode-disposition verdict received (gandalf 2026-06-07)
+
+- **Mode B = player-facing default** at `/forge` (no query param). Done — commit `7d411a2`.
+- **Mode A = `?view=primitive`** — analyst diagnostic (substrate-coverage, faction halos). Done.
+- **"SPIKE·P2·1000 kits" badge retired**; player-facing kit-discovery copy installed. Done.
+- **Elrond Phase B commission deferred** — grid sufficient for PROVISIONAL kits; commission trigger at real cycle-15+ kits.
+- **`// TODO(drax)` annotation retained** in `compute-constellation-layout.py`.
+- **jack-ryan Gate-2 dispatched** by knight-rider — `agentic_orchestration/dispatches/2026-06-07-jack-ryan-gate-2-cosmograph-a-b-spike.md`.
+
+**Local commits awaiting push (Matt authorization per ADR-006):**
+- `bb7176c` — Phase 2 main: full corpus + LOD toggle + Vercel preview
+- `e63f667` — dot-size fix (16px inner / 32px outer)
+- `986334d` — AGENT_STATE Phase 2 checkpoint
+- `7d411a2` — Mode B as default; player-facing copy; spike badge retired
+
+**Vercel preview:** `https://reincarnated-loadout-krulytb91-matthew-wetmore-s-projects.vercel.app` (behind Vercel auth)
 
 ---
 
