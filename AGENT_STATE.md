@@ -2858,4 +2858,22 @@ Implementation:
 - `/Users/admin/Games/reincarnated-loadout/src/pages/Forge.tsx` — status bar text
 
 **Build verification:** `tsc -b && vite build` — 0 TS errors, build clean.
+
+---
+
+### classifyLasso() scaffold-value TODO (2026-06-09 — Discipline #40 / gandalf Gate-2-prep amendment)
+
+**Authority:** Authorized amendment cycle from gandalf empirical-inspection catch (2026-06-09 design review § 2 YELLOW 3 disposition). Close-report documentation drift fix + TODO tracking. Auto-commit per CLAUDE.md team discipline.
+
+**Finding:** Close-report Observation 3 incorrectly stated `classifyLasso()` uses `anchor.outer_glow_radius` as its spatial threshold. Actual code inspection (`TwoLayerCanvas.tsx` lines 178, 196, 199–200) shows four hardcoded scaffold constants with no per-anchor property reads.
+
+**Actual scaffold values in `classifyLasso()` (`TwoLayerCanvas.tsx`):**
+- `min_lasso_polygon_points=2` — degeneracy guard (line 178: `if (lassoVertices.length < 2) return 'buffer-only'`)
+- `nearby_anchor_threshold=1200` — anchor counted as "nearby" if `dist < 1200 + lassoR` (line 196)
+- `cross_buffer_min_lasso_radius=600` — cross-buffer fires when `nearAnchorCount >= 2 && lassoR > 600` (line 199)
+- `within_anchor_centroid_threshold=1100` — within-anchor fires when `minAnchorDist < 1100` (line 200)
+
+These are calibrated for 8 anchors at world size 11000×8500px (SPACING_X=2750px). None reads from `anchor.outer_glow_radius` or any per-anchor property.
+
+**TODO(drax): re-validate classifyLasso() thresholds when anchor count changes post-Legolas commission.** Current scaffold values: `within_anchor_centroid_threshold=1100`, `nearby_anchor_threshold=1200`, `cross_buffer_min_lasso_radius=600`, `min_lasso_polygon_points=2`. All four constants are fixed numerics in the function body — if world size or anchor spacing changes materially (e.g., 12-anchor zodiac layout), re-calibrate against new geometry before shipping. Discipline #40 scaffold-value flagging.
 **Tests:** 79/79 pass (unchanged).
