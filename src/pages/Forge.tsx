@@ -12,34 +12,39 @@
  * Data: elrond Phase 4 cosmograph packet (read-only, static JSON).
  *
  * View modes:
- *   Default (no param / ?view=twolayer): Phase 3 two-layer + buffer-space cosmograph (player-facing).
+ *   Default (no param / ?view=rune): Phase 4 rune-per-group + two-tier selection (player-facing).
+ *     6 primitive-group rune anchors (large atmospheric light-edge brush-stroke, no color).
+ *     Tier 1: tap or sign to select rune group. Tier 2: per-primitive icon selection.
+ *   ?view=twolayer: Phase 3 two-layer + buffer-space cosmograph.
  *     Layer 1: 8 element-family anchor nebulas. Layer 2: 1000 kit cluster dots.
- *     Buffer space: hybrid kits discoverable between element regions.
  *   ?view=constellation: Phase 2 kit-galaxy — 1000 constellation clusters.
  *     LOD: centroid dots at 1.0× zoom; full star clusters at ≥2× zoom.
  *   ?view=primitive: substrate-analysis view — 570 unique primitives as stars (analyst diagnostic).
  *
- * Phase 3 (2026-06-09): two-layer + buffer-space spatial architecture prototype.
- *   Per dispatch 2026-06-09-drax-forge-phase-3-two-layer-buffer-space-prototype.md.
- *   Criterion 12: NO glyph-as-primitive-anchor (Branch A deferred per Tal Rasha recognition record).
- *   Criterion 12b: lasso is spatial-selection only; no sign-gesture/symbol-tracing input model.
+ * Phase 4 (2026-06-09): rune-per-primitive-group + two-tier selection prototype.
+ *   Per dispatch 2026-06-09-drax-forge-phase-4-AMENDMENT-rune-per-group-two-tier.md.
+ *   Branch A ACTIVATED per Matt 2026-06-09 + Legolas N=423 + Elrond Hotspot A validation.
+ *   Tier 1 Options: α (tap) and β (sign/gesture) per Option γ both-supported.
+ *   Tier 2: placeholder icons; canonical icon design DEFERRED Pattern B.
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { loadCosmographData, loadConstellationLayout, loadTwoLayerLayout, loadTwoLayerLayoutAlt } from '../data/cosmographData';
+import { loadCosmographData, loadConstellationLayout, loadTwoLayerLayout, loadTwoLayerLayoutAlt, loadRuneLayerLayout } from '../data/cosmographData';
 import type { CosmographData } from '../data/cosmographData';
 import type { ConstellationLayoutData } from '../data/cosmographTypes';
 import type { TwoLayerLayoutData } from '../data/twoLayerTypes';
+import type { RuneLayerLayoutData } from '../data/runeAnchorTypes';
 import { CosmographCanvas } from '../components/Cosmograph/CosmographCanvas';
 import { ConstellationModeCanvas } from '../components/Cosmograph/ConstellationModeCanvas';
 import { TwoLayerCanvas } from '../components/Cosmograph/TwoLayerCanvas';
+import { RuneLayerCanvas } from '../components/Cosmograph/RuneLayerCanvas';
 import { SidePanel } from '../components/Cosmograph/SidePanel';
 import type { LassoResolutionResult } from '../utils/lassoResolution';
 
 type LoadState = 'idle' | 'loading' | 'ready' | 'error';
 type LayoutLoadState = 'idle' | 'loading' | 'ready' | 'error';
-type ViewMode = 'primitive' | 'constellation' | 'twolayer';
+type ViewMode = 'primitive' | 'constellation' | 'twolayer' | 'rune';
 
 /**
  * Phase 3.3 — algorithm comparison.
@@ -77,7 +82,13 @@ export function Forge() {
   const [twoLayerAltLoadState, setTwoLayerAltLoadState] = useState<LayoutLoadState>('idle');
   const [twoLayerAltLoadError, setTwoLayerAltLoadError] = useState<string | null>(null);
 
-  // Default view: twolayer (Phase 3, player-facing).
+  // Phase 4 rune-layer layout
+  const [runeLayerData, setRuneLayerData] = useState<RuneLayerLayoutData | null>(null);
+  const [runeLayerLoadState, setRuneLayerLoadState] = useState<LayoutLoadState>('idle');
+  const [runeLayerLoadError, setRuneLayerLoadError] = useState<string | null>(null);
+
+  // Default view: rune (Phase 4, player-facing).
+  // Phase 3 two-layer: ?view=twolayer
   // Phase 2 constellation: ?view=constellation
   // Analyst primitive: ?view=primitive
   const [searchParams, setSearchParams] = useSearchParams();
@@ -85,11 +96,12 @@ export function Forge() {
   const viewMode: ViewMode =
     viewParam === 'primitive' ? 'primitive' :
     viewParam === 'constellation' ? 'constellation' :
-    'twolayer';
+    viewParam === 'twolayer' ? 'twolayer' :
+    'rune';
 
   const setViewMode = useCallback((mode: ViewMode) => {
-    if (mode === 'twolayer') {
-      setSearchParams({});
+    if (mode === 'rune') {
+      setSearchParams({});  // rune is default
     } else {
       setSearchParams({ view: mode });
     }
@@ -170,6 +182,37 @@ export function Forge() {
       });
   }, [algorithmMode, twoLayerAltLoadState]);
 
+  // Lazy-load Phase 4 rune-layer layout (also pre-loads constellation layout for star instances)
+  useEffect(() => {
+    if (viewMode !== 'rune') return;
+    if (runeLayerLoadState !== 'idle') return;
+    setRuneLayerLoadState('loading');
+    Promise.all([
+      loadRuneLayerLayout(),
+      layoutLoadState === 'ready' && layoutData
+        ? Promise.resolve(layoutData)
+        : loadConstellationLayout(),
+    ])
+      .then(([rlData, clData]) => {
+        console.info(
+          `[Forge] Rune-layer layout loaded — ` +
+          `${rlData.rune_anchors.length} rune anchors · ${rlData.centroids.length} kits`
+        );
+        setRuneLayerData(rlData);
+        if (!layoutData) {
+          setLayoutData(clData);
+          setLayoutLoadState('ready');
+        }
+        setRuneLayerLoadState('ready');
+      })
+      .catch((err: unknown) => {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error('[Forge] Rune-layer layout load failed:', msg);
+        setRuneLayerLoadError(msg);
+        setRuneLayerLoadState('error');
+      });
+  }, [viewMode, runeLayerLoadState, layoutData, layoutLoadState]);
+
   // Load core cosmograph data (always)
   useEffect(() => {
     setLoadState('loading');
@@ -223,10 +266,22 @@ export function Forge() {
             </p>
           </div>
 
-          {/* View toggle: two-layer (default, Phase 3) ↔ constellation (Phase 2) ↔ primitive (analyst) */}
+          {/* View toggle: rune (default, Phase 4) ↔ two-layer (Phase 3) ↔ constellation (Phase 2) ↔ primitive (analyst) */}
           <div className="flex flex-wrap items-center gap-1.5">
             <div className="flex items-center gap-1 rounded border border-gray-700/60 bg-gray-900/60 px-1.5 py-1">
               <span className="text-[9px] text-gray-600 font-mono mr-1 uppercase tracking-wider">View:</span>
+              <button
+                onClick={() => setViewMode('rune')}
+                title="Phase 4 — rune-per-group. 6 primitive-group rune anchors (large atmospheric). Tier 1: tap/sign to select. Tier 2: per-primitive icons."
+                className={
+                  'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+                  (viewMode === 'rune'
+                    ? 'bg-violet-700/70 text-violet-100'
+                    : 'text-gray-500 hover:text-gray-300')
+                }
+              >
+                rune
+              </button>
               <button
                 onClick={() => setViewMode('twolayer')}
                 title="Phase 3 — two-layer + buffer-space cosmograph. Nebulas = element anchors. Dots = kit clusters. Hybrid kits in buffer space."
@@ -302,7 +357,17 @@ export function Forge() {
         </div>
 
         {/* Mode descriptor */}
-        {viewMode === 'twolayer' ? (
+        {viewMode === 'rune' ? (
+          <p className="text-xs text-violet-400/80 bg-violet-900/15 border border-violet-800/40 rounded px-3 py-2 font-mono leading-relaxed max-w-4xl">
+            <span className="text-violet-200 font-bold">Phase 4 — Rune-Per-Group + Two-Tier Selection</span>
+            {' '}— 6 primitive-group <span className="text-violet-300">rune anchors</span> (large atmospheric light-edge brush-stroke; no color; drawn by light) ·{' '}
+            1000 kit <span className="text-violet-300">clusters</span> spatially near their group ·{' '}
+            <span className="text-amber-300">Tier 1:</span> tap or sign a rune to select its primitive group ·{' '}
+            <span className="text-amber-300">Tier 2:</span> pick per-primitive values (placeholder icons; canonical design Pattern B).
+            <strong className="text-violet-200"> Scroll to zoom</strong> — stars reveal at 2×.
+            All <span className="text-amber-500 font-bold">PROVISIONAL</span>.
+          </p>
+        ) : viewMode === 'twolayer' ? (
           <p className="text-xs text-indigo-400/80 bg-indigo-900/15 border border-indigo-800/40 rounded px-3 py-2 font-mono leading-relaxed max-w-4xl">
             <span className="text-indigo-200 font-bold">Phase 3 — Two-Layer + Buffer-Space</span>
             {' '}— 8 element-anchor <span className="text-indigo-300">nebulas</span> (Layer 1; regional markers) ·{' '}
@@ -380,8 +445,24 @@ export function Forge() {
               ) : (
                 <LayoutLoadingState message="Loading constellation layout… (constellation_layout.json · 1000 kits · 34k instance nodes)" />
               )
+            ) : viewMode === 'rune' ? (
+              // Phase 4 — rune-per-group + two-tier selection
+              runeLayerLoadState === 'error' ? (
+                <ErrorState message={runeLayerLoadError ?? 'Rune-layer layout load failed'} />
+              ) : runeLayerLoadState === 'ready' && runeLayerData && layoutData ? (
+                <RuneLayerCanvas
+                  key="rune"
+                  data={data}
+                  runeLayoutData={runeLayerData}
+                  constellationLayoutData={layoutData}
+                  onLassoResult={handleTwoLayerLassoResult}
+                  clearLassoRef={clearLassoRef}
+                />
+              ) : (
+                <LayoutLoadingState message="Loading rune-layer layout… (rune_layer_layout.json · 6 primitive groups · 1000 kits)" />
+              )
             ) : (
-              // Two-layer (default, Phase 3) — baseline or force-directed alternative
+              // Two-layer (Phase 3) — baseline or force-directed alternative
               (() => {
                 // Pick layout based on algorithm toggle (Phase 3.3)
                 const activeLayout = algorithmMode === 'forcealt' ? twoLayerAltData : twoLayerData;
@@ -452,6 +533,12 @@ export function Forge() {
                 {layoutData?.centroids.length ?? '…'} constellation clusters ·{' '}
                 {layoutData ? '18k first-class stars' : 'loading layout…'} &middot;
                 dots at 1× · stars at 2×+ · lasso at 2×+ · &quot;substrate&quot; above for primitive analysis
+              </>
+            ) : viewMode === 'rune' ? (
+              <>
+                {runeLayerData?.rune_anchors.length ?? '…'} rune group anchors (Layer 1) &middot;{' '}
+                {runeLayerData?.centroids.length ?? '…'} kit clusters (Layer 2) &middot;{' '}
+                tap or sign rune = Tier 1 · icon select = Tier 2 · dots at 1× · stars at 2×+ · PROVISIONAL
               </>
             ) : (
               (() => {
