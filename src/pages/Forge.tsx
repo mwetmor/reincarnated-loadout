@@ -27,7 +27,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { loadCosmographData, loadConstellationLayout, loadTwoLayerLayout } from '../data/cosmographData';
+import { loadCosmographData, loadConstellationLayout, loadTwoLayerLayout, loadTwoLayerLayoutAlt } from '../data/cosmographData';
 import type { CosmographData } from '../data/cosmographData';
 import type { ConstellationLayoutData } from '../data/cosmographTypes';
 import type { TwoLayerLayoutData } from '../data/twoLayerTypes';
@@ -41,6 +41,13 @@ type LoadState = 'idle' | 'loading' | 'ready' | 'error';
 type LayoutLoadState = 'idle' | 'loading' | 'ready' | 'error';
 type ViewMode = 'primitive' | 'constellation' | 'twolayer';
 
+/**
+ * Phase 3.3 — algorithm comparison.
+ * 'baseline': fixed-anchor + radial projection (deterministic spiral zones)
+ * 'forcealt': force-directed (organic, anchor-spring + inter-kit repulsion)
+ */
+type AlgorithmMode = 'baseline' | 'forcealt';
+
 export function Forge() {
   const [loadState, setLoadState] = useState<LoadState>('idle');
   const [data, setData] = useState<CosmographData | null>(null);
@@ -50,6 +57,9 @@ export function Forge() {
   const [lassoMode, setLassoMode] = useState<string | null>(null);
   const loadStartRef = useRef<number>(0);
   const clearLassoRef = useRef<(() => void) | null>(null);
+
+  // Phase 3.3 algorithm comparison toggle
+  const [algorithmMode, setAlgorithmMode] = useState<AlgorithmMode>('baseline');
 
   // Phase 2 constellation layout — lazy-loaded when constellation mode is first selected.
   const [layoutData, setLayoutData] = useState<ConstellationLayoutData | null>(null);
@@ -61,6 +71,11 @@ export function Forge() {
   const [twoLayerData, setTwoLayerData] = useState<TwoLayerLayoutData | null>(null);
   const [twoLayerLoadState, setTwoLayerLoadState] = useState<LayoutLoadState>('idle');
   const [twoLayerLoadError, setTwoLayerLoadError] = useState<string | null>(null);
+
+  // Phase 3.3 alternative layout (force-directed)
+  const [twoLayerAltData, setTwoLayerAltData] = useState<TwoLayerLayoutData | null>(null);
+  const [twoLayerAltLoadState, setTwoLayerAltLoadState] = useState<LayoutLoadState>('idle');
+  const [twoLayerAltLoadError, setTwoLayerAltLoadError] = useState<string | null>(null);
 
   // Default view: twolayer (Phase 3, player-facing).
   // Phase 2 constellation: ?view=constellation
@@ -136,6 +151,25 @@ export function Forge() {
       });
   }, [viewMode, twoLayerLoadState, layoutData, layoutLoadState]);
 
+  // Lazy-load Phase 3.3 alternative layout (force-directed) on first toggle to forcealt
+  useEffect(() => {
+    if (algorithmMode !== 'forcealt') return;
+    if (twoLayerAltLoadState !== 'idle') return;
+    setTwoLayerAltLoadState('loading');
+    loadTwoLayerLayoutAlt()
+      .then((d) => {
+        console.info(`[Forge] Two-layer alt layout loaded — ${d.centroids.length} kits (force-directed)`);
+        setTwoLayerAltData(d);
+        setTwoLayerAltLoadState('ready');
+      })
+      .catch((err: unknown) => {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error('[Forge] Two-layer alt layout load failed:', msg);
+        setTwoLayerAltLoadError(msg);
+        setTwoLayerAltLoadState('error');
+      });
+  }, [algorithmMode, twoLayerAltLoadState]);
+
   // Load core cosmograph data (always)
   useEffect(() => {
     setLoadState('loading');
@@ -190,44 +224,80 @@ export function Forge() {
           </div>
 
           {/* View toggle: two-layer (default, Phase 3) ↔ constellation (Phase 2) ↔ primitive (analyst) */}
-          <div className="flex items-center gap-1 rounded border border-gray-700/60 bg-gray-900/60 px-1.5 py-1">
-            <span className="text-[9px] text-gray-600 font-mono mr-1 uppercase tracking-wider">View:</span>
-            <button
-              onClick={() => setViewMode('twolayer')}
-              title="Phase 3 — two-layer + buffer-space cosmograph. Nebulas = element anchors. Dots = kit clusters. Hybrid kits in buffer space."
-              className={
-                'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
-                (viewMode === 'twolayer'
-                  ? 'bg-indigo-700/70 text-indigo-100'
-                  : 'text-gray-500 hover:text-gray-300')
-              }
-            >
-              two-layer
-            </button>
-            <button
-              onClick={() => setViewMode('constellation')}
-              title="Phase 2 — kit-galaxy. 1000 constellation clusters, element neighborhoods."
-              className={
-                'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
-                (viewMode === 'constellation'
-                  ? 'bg-indigo-700/70 text-indigo-100'
-                  : 'text-gray-500 hover:text-gray-300')
-              }
-            >
-              constellation
-            </button>
-            <button
-              onClick={() => setViewMode('primitive')}
-              title="Substrate analysis view — each unique primitive is a star; 570 stars; kit membership non-local"
-              className={
-                'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
-                (viewMode === 'primitive'
-                  ? 'bg-amber-700/70 text-amber-100'
-                  : 'text-gray-500 hover:text-gray-300')
-              }
-            >
-              substrate
-            </button>
+          <div className="flex flex-wrap items-center gap-1.5">
+            <div className="flex items-center gap-1 rounded border border-gray-700/60 bg-gray-900/60 px-1.5 py-1">
+              <span className="text-[9px] text-gray-600 font-mono mr-1 uppercase tracking-wider">View:</span>
+              <button
+                onClick={() => setViewMode('twolayer')}
+                title="Phase 3 — two-layer + buffer-space cosmograph. Nebulas = element anchors. Dots = kit clusters. Hybrid kits in buffer space."
+                className={
+                  'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+                  (viewMode === 'twolayer'
+                    ? 'bg-indigo-700/70 text-indigo-100'
+                    : 'text-gray-500 hover:text-gray-300')
+                }
+              >
+                two-layer
+              </button>
+              <button
+                onClick={() => setViewMode('constellation')}
+                title="Phase 2 — kit-galaxy. 1000 constellation clusters, element neighborhoods."
+                className={
+                  'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+                  (viewMode === 'constellation'
+                    ? 'bg-indigo-700/70 text-indigo-100'
+                    : 'text-gray-500 hover:text-gray-300')
+                }
+              >
+                constellation
+              </button>
+              <button
+                onClick={() => setViewMode('primitive')}
+                title="Substrate analysis view — each unique primitive is a star; 570 stars; kit membership non-local"
+                className={
+                  'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+                  (viewMode === 'primitive'
+                    ? 'bg-amber-700/70 text-amber-100'
+                    : 'text-gray-500 hover:text-gray-300')
+                }
+              >
+                substrate
+              </button>
+            </div>
+
+            {/* Phase 3.3 — algorithm comparison toggle (two-layer mode only) */}
+            {viewMode === 'twolayer' && (
+              <div className="flex items-center gap-1 rounded border border-gray-700/40 bg-gray-900/40 px-1.5 py-1">
+                <span className="text-[9px] text-gray-600 font-mono mr-1 uppercase tracking-wider">Algo:</span>
+                <button
+                  onClick={() => { setAlgorithmMode('baseline'); clearLassoRef.current?.(); setLassoResult(null); }}
+                  title="Phase 3.1 baseline: fixed-anchor + radial projection (sunflower spiral zones). Deterministic, clean buffer by design."
+                  className={
+                    'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+                    (algorithmMode === 'baseline'
+                      ? 'bg-slate-600/70 text-slate-100'
+                      : 'text-gray-600 hover:text-gray-400')
+                  }
+                >
+                  radial
+                </button>
+                <button
+                  onClick={() => { setAlgorithmMode('forcealt'); clearLassoRef.current?.(); setLassoResult(null); }}
+                  title="Phase 3.3 alternative: force-directed (anchor-spring + inter-kit repulsion). Organic; buffer emerges from physics."
+                  className={
+                    'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+                    (algorithmMode === 'forcealt'
+                      ? 'bg-teal-700/70 text-teal-100'
+                      : 'text-gray-600 hover:text-gray-400')
+                  }
+                >
+                  force
+                </button>
+                {algorithmMode === 'forcealt' && twoLayerAltLoadState === 'loading' && (
+                  <span className="text-[8px] font-mono text-gray-600 ml-1">loading…</span>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
@@ -307,20 +377,33 @@ export function Forge() {
                 <LayoutLoadingState message="Loading constellation layout… (constellation_layout.json · 1000 kits · 34k instance nodes)" />
               )
             ) : (
-              // Two-layer (default, Phase 3)
-              twoLayerLoadState === 'error' ? (
-                <ErrorState message={twoLayerLoadError ?? 'Two-layer layout load failed'} />
-              ) : twoLayerLoadState === 'ready' && twoLayerData && layoutData ? (
-                <TwoLayerCanvas
-                  data={data}
-                  layoutData={twoLayerData}
-                  constellationLayoutData={layoutData}
-                  onLassoResult={handleTwoLayerLassoResult}
-                  clearLassoRef={clearLassoRef}
-                />
-              ) : (
-                <LayoutLoadingState message="Loading two-layer layout… (twolayer_layout.json · 8 anchors · 1000 kits · 3 zones)" />
-              )
+              // Two-layer (default, Phase 3) — baseline or force-directed alternative
+              (() => {
+                // Pick layout based on algorithm toggle (Phase 3.3)
+                const activeLayout = algorithmMode === 'forcealt' ? twoLayerAltData : twoLayerData;
+                const activeLoadState = algorithmMode === 'forcealt' ? twoLayerAltLoadState : twoLayerLoadState;
+                const activeError = algorithmMode === 'forcealt' ? twoLayerAltLoadError : twoLayerLoadError;
+
+                if (activeLoadState === 'error') {
+                  return <ErrorState message={activeError ?? 'Two-layer layout load failed'} />;
+                }
+                if (activeLoadState === 'ready' && activeLayout && layoutData) {
+                  return (
+                    <TwoLayerCanvas
+                      key={algorithmMode}  // Force re-mount on algorithm switch
+                      data={data}
+                      layoutData={activeLayout}
+                      constellationLayoutData={layoutData}
+                      onLassoResult={handleTwoLayerLassoResult}
+                      clearLassoRef={clearLassoRef}
+                    />
+                  );
+                }
+                const msg = algorithmMode === 'forcealt'
+                  ? 'Loading force-directed layout… (twolayer_layout_alt.json · force-directed alternative)'
+                  : 'Loading two-layer layout… (twolayer_layout.json · 8 anchors · 1000 kits · 3 zones)';
+                return <LayoutLoadingState message={msg} />;
+              })()
             )
           ) : null}
         </div>
@@ -359,12 +442,18 @@ export function Forge() {
                 dots at 1× · stars at 2×+ · lasso at 2×+ · &quot;substrate&quot; above for primitive analysis
               </>
             ) : (
-              <>
-                {twoLayerData?.anchors.length ?? '…'} element anchors (Layer 1) &middot;{' '}
-                {twoLayerData?.centroids.length ?? '…'} kit clusters (Layer 2) &middot;{' '}
-                {twoLayerData?.centroids.filter(c => c.zone === 'buffer').length ?? '…'} hybrid kits in buffer &middot;{' '}
-                dots at 1× · stars at 2×+ · lasso at 2×+ &middot; Phase 3 baseline
-              </>
+              (() => {
+                const activeData = algorithmMode === 'forcealt' ? twoLayerAltData : twoLayerData;
+                const algoLabel = algorithmMode === 'forcealt' ? 'force-directed' : 'radial-projection';
+                return (
+                  <>
+                    {activeData?.anchors.length ?? '…'} element anchors (Layer 1) &middot;{' '}
+                    {activeData?.centroids.length ?? '…'} kit clusters (Layer 2) &middot;{' '}
+                    {activeData?.centroids.filter(c => c.zone === 'buffer').length ?? '…'} buffer kits &middot;{' '}
+                    dots at 1× · stars at 2×+ · lasso at 2×+ &middot; algo: {algoLabel}
+                  </>
+                );
+              })()
             )}
           </p>
         </div>
