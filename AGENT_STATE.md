@@ -34,7 +34,7 @@
 - Tradeoff: baseline = guaranteed buffer by construction + deterministic; force = better NN, organic, adapts to corpus size
 
 **TODO(drax): ACTIVE OVERRIDES — Phase 3**
-1. `classifyLasso()` uses `anchor.outer_glow_radius` as spatial threshold — scaffold value (#40 per dispatch). Re-validate when anchor count changes post-Legolas commission. `// TODO(drax): re-validate classifyLasso() thresholds when anchor count changes post-Legolas commission`
+1. `classifyLasso()` uses hardcoded scaffold constants (1100/1200/600/2; see detailed entry below) as spatial thresholds — scaffold values (#40 per dispatch). Re-validate when anchor count changes post-Legolas commission. `// TODO(drax): re-validate classifyLasso() thresholds when anchor count changes post-Legolas commission`
 2. Buffer-zone content is hybrid kits (is_hybrid=True) as stand-in for rare-lineage kits. Remove stand-in framing when engine generates rare-lineage kits per 2026-05-23 marginal-lineage recognition records. `// TODO(drax): replace hybrid stand-ins with rare-lineage kits when engine corpus expands`
 3. Physical element dominance (428/1000 kits) creates visually larger physical cluster. Corpus imbalance is PROVISIONAL architecture fact. No override in code; surface for Matt call at Pattern B.
 
