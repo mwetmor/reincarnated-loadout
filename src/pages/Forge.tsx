@@ -11,74 +11,88 @@
  * Rendering: Pixi.js v7 + @pixi/react v7 (WebGL star-field canvas).
  * Data: elrond Phase 4 cosmograph packet (read-only, static JSON).
  *
- * Phase 1: route + scaffold + data loading + ingestion-contract validation.
- * Phase 2: primitive star rendering with brightness + color + provenance encoding.
- * Phase 3: constellation MST lines + faction halos + region-label overlays.
- * Phase 4: lasso interaction + composite-score resolution + side panel.
- * Phase 5: scroll-to-zoom + viewport culling (drillLayer at zoom>1.5×) + Vercel preview deploy.
- *
- * View modes (gandalf mode-disposition 2026-06-07):
- *   Default (no param / ?view=constellation): kit-galaxy — 1000 constellation clusters (player-facing).
+ * View modes:
+ *   Default (no param / ?view=twolayer): Phase 3 two-layer + buffer-space cosmograph (player-facing).
+ *     Layer 1: 8 element-family anchor nebulas. Layer 2: 1000 kit cluster dots.
+ *     Buffer space: hybrid kits discoverable between element regions.
+ *   ?view=constellation: Phase 2 kit-galaxy — 1000 constellation clusters.
  *     LOD: centroid dots at 1.0× zoom; full star clusters at ≥2× zoom.
- *     Layout loaded lazily from constellation_layout.json (2MB) on first load.
  *   ?view=primitive: substrate-analysis view — 570 unique primitives as stars (analyst diagnostic).
+ *
+ * Phase 3 (2026-06-09): two-layer + buffer-space spatial architecture prototype.
+ *   Per dispatch 2026-06-09-drax-forge-phase-3-two-layer-buffer-space-prototype.md.
+ *   Criterion 12: NO glyph-as-primitive-anchor (Branch A deferred per Tal Rasha recognition record).
+ *   Criterion 12b: lasso is spatial-selection only; no sign-gesture/symbol-tracing input model.
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { loadCosmographData, loadConstellationLayout } from '../data/cosmographData';
+import { loadCosmographData, loadConstellationLayout, loadTwoLayerLayout } from '../data/cosmographData';
 import type { CosmographData } from '../data/cosmographData';
 import type { ConstellationLayoutData } from '../data/cosmographTypes';
+import type { TwoLayerLayoutData } from '../data/twoLayerTypes';
 import { CosmographCanvas } from '../components/Cosmograph/CosmographCanvas';
 import { ConstellationModeCanvas } from '../components/Cosmograph/ConstellationModeCanvas';
+import { TwoLayerCanvas } from '../components/Cosmograph/TwoLayerCanvas';
 import { SidePanel } from '../components/Cosmograph/SidePanel';
 import type { LassoResolutionResult } from '../utils/lassoResolution';
 
 type LoadState = 'idle' | 'loading' | 'ready' | 'error';
 type LayoutLoadState = 'idle' | 'loading' | 'ready' | 'error';
-type ViewMode = 'primitive' | 'constellation';
+type ViewMode = 'primitive' | 'constellation' | 'twolayer';
 
 export function Forge() {
   const [loadState, setLoadState] = useState<LoadState>('idle');
   const [data, setData] = useState<CosmographData | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [lassoResult, setLassoResult] = useState<LassoResolutionResult | null>(null);
+  // Lasso mode (two-layer only): 'within-anchor' | 'cross-buffer' | 'buffer-only'
+  const [lassoMode, setLassoMode] = useState<string | null>(null);
   const loadStartRef = useRef<number>(0);
   const clearLassoRef = useRef<(() => void) | null>(null);
 
-  // Constellation layout — lazy-loaded when constellation mode is first selected.
-  // Separate from cosmograph data load to avoid 2MB payload for Mode A users.
+  // Phase 2 constellation layout — lazy-loaded when constellation mode is first selected.
   const [layoutData, setLayoutData] = useState<ConstellationLayoutData | null>(null);
   const [layoutLoadState, setLayoutLoadState] = useState<LayoutLoadState>('idle');
   const [layoutLoadError, setLayoutLoadError] = useState<string | null>(null);
   const layoutLoadStartRef = useRef<number>(0);
 
-  // Default view: constellation (Mode B, player-facing).
-  // Analyst primitive view: ?view=primitive
-  // ?view=constellation also supported (redundant; same as default)
+  // Phase 3 two-layer layout — lazy-loaded when twolayer mode is first selected.
+  const [twoLayerData, setTwoLayerData] = useState<TwoLayerLayoutData | null>(null);
+  const [twoLayerLoadState, setTwoLayerLoadState] = useState<LayoutLoadState>('idle');
+  const [twoLayerLoadError, setTwoLayerLoadError] = useState<string | null>(null);
+
+  // Default view: twolayer (Phase 3, player-facing).
+  // Phase 2 constellation: ?view=constellation
+  // Analyst primitive: ?view=primitive
   const [searchParams, setSearchParams] = useSearchParams();
   const viewParam = searchParams.get('view');
-  const viewMode: ViewMode = viewParam === 'primitive' ? 'primitive' : 'constellation';
+  const viewMode: ViewMode =
+    viewParam === 'primitive' ? 'primitive' :
+    viewParam === 'constellation' ? 'constellation' :
+    'twolayer';
 
   const setViewMode = useCallback((mode: ViewMode) => {
-    setSearchParams(mode === 'constellation' ? {} : { view: 'primitive' });
+    if (mode === 'twolayer') {
+      setSearchParams({});
+    } else {
+      setSearchParams({ view: mode });
+    }
     clearLassoRef.current?.();
     setLassoResult(null);
+    setLassoMode(null);
   }, [setSearchParams]);
 
-  // Lazy-load constellation layout when constellation mode is selected
+  // Lazy-load Phase 2 constellation layout
   useEffect(() => {
     if (viewMode !== 'constellation') return;
-    if (layoutLoadState !== 'idle') return;   // already loading or loaded
+    if (layoutLoadState !== 'idle') return;
     setLayoutLoadState('loading');
     layoutLoadStartRef.current = performance.now();
     loadConstellationLayout()
       .then((d) => {
         const ms = performance.now() - layoutLoadStartRef.current;
-        console.info(
-          `[Forge] Constellation layout loaded in ${ms.toFixed(0)} ms — ` +
-          `${d.centroids.length} kits, world ${d.meta.world_w}×${d.meta.world_h} px`
-        );
+        console.info(`[Forge] Constellation layout loaded in ${ms.toFixed(0)} ms — ${d.centroids.length} kits`);
         setLayoutData(d);
         setLayoutLoadState('ready');
       })
@@ -90,6 +104,39 @@ export function Forge() {
       });
   }, [viewMode, layoutLoadState]);
 
+  // Lazy-load Phase 3 two-layer layout (also pre-loads constellation layout for star instances)
+  useEffect(() => {
+    if (viewMode !== 'twolayer') return;
+    if (twoLayerLoadState !== 'idle') return;
+    setTwoLayerLoadState('loading');
+    Promise.all([
+      loadTwoLayerLayout(),
+      // Two-layer canvas reuses Phase 2 cluster geometry for star instances
+      layoutLoadState === 'ready' && layoutData
+        ? Promise.resolve(layoutData)
+        : loadConstellationLayout(),
+    ])
+      .then(([tlData, clData]) => {
+        console.info(
+          `[Forge] Two-layer layout loaded — ` +
+          `${tlData.anchors.length} anchors · ${tlData.centroids.length} kits`
+        );
+        setTwoLayerData(tlData);
+        if (!layoutData) {
+          setLayoutData(clData);
+          setLayoutLoadState('ready');
+        }
+        setTwoLayerLoadState('ready');
+      })
+      .catch((err: unknown) => {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error('[Forge] Two-layer layout load failed:', msg);
+        setTwoLayerLoadError(msg);
+        setTwoLayerLoadState('error');
+      });
+  }, [viewMode, twoLayerLoadState, layoutData, layoutLoadState]);
+
+  // Load core cosmograph data (always)
   useEffect(() => {
     setLoadState('loading');
     loadStartRef.current = performance.now();
@@ -117,9 +164,15 @@ export function Forge() {
     setLassoResult(result);
   }, []);
 
+  const handleTwoLayerLassoResult = useCallback((result: LassoResolutionResult | null, mode: string) => {
+    setLassoResult(result);
+    setLassoMode(mode === 'clear' ? null : mode);
+  }, []);
+
   const handleClearLasso = useCallback(() => {
     clearLassoRef.current?.();
     setLassoResult(null);
+    setLassoMode(null);
   }, []);
 
   return (
@@ -136,12 +189,24 @@ export function Forge() {
             </p>
           </div>
 
-          {/* View toggle: constellation (default, player-facing) ↔ primitive (analyst) */}
+          {/* View toggle: two-layer (default, Phase 3) ↔ constellation (Phase 2) ↔ primitive (analyst) */}
           <div className="flex items-center gap-1 rounded border border-gray-700/60 bg-gray-900/60 px-1.5 py-1">
             <span className="text-[9px] text-gray-600 font-mono mr-1 uppercase tracking-wider">View:</span>
             <button
+              onClick={() => setViewMode('twolayer')}
+              title="Phase 3 — two-layer + buffer-space cosmograph. Nebulas = element anchors. Dots = kit clusters. Hybrid kits in buffer space."
+              className={
+                'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+                (viewMode === 'twolayer'
+                  ? 'bg-indigo-700/70 text-indigo-100'
+                  : 'text-gray-500 hover:text-gray-300')
+              }
+            >
+              two-layer
+            </button>
+            <button
               onClick={() => setViewMode('constellation')}
-              title="Kit-galaxy view — 1000 constellation clusters, element neighborhoods, scroll to zoom"
+              title="Phase 2 — kit-galaxy. 1000 constellation clusters, element neighborhoods."
               className={
                 'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
                 (viewMode === 'constellation'
@@ -167,7 +232,17 @@ export function Forge() {
         </div>
 
         {/* Mode descriptor */}
-        {viewMode === 'primitive' ? (
+        {viewMode === 'twolayer' ? (
+          <p className="text-xs text-indigo-400/80 bg-indigo-900/15 border border-indigo-800/40 rounded px-3 py-2 font-mono leading-relaxed max-w-4xl">
+            <span className="text-indigo-200 font-bold">Phase 3 — Two-Layer + Buffer-Space</span>
+            {' '}— 8 element-anchor <span className="text-indigo-300">nebulas</span> (Layer 1; regional markers) ·{' '}
+            1000 kit <span className="text-indigo-300">clusters</span> (Layer 2; spatially near their element) ·{' '}
+            <span className="text-purple-300">310 hybrid kits</span> in buffer zones between anchors (discoverable cross-substrate content).
+            <strong className="text-indigo-200"> Scroll to zoom</strong> — stars reveal at 2×.
+            <strong className="text-indigo-200"> Lasso</strong> at 2×+: tight lasso = related kits · wide cross-buffer = unusual combinations · buffer-only = hybrid discovery.
+            All <span className="text-amber-500 font-bold">PROVISIONAL</span>.
+          </p>
+        ) : viewMode === 'primitive' ? (
           <p className="text-xs text-amber-500/80 bg-amber-900/20 border border-amber-800/40 rounded px-3 py-2 font-mono leading-relaxed max-w-3xl">
             <span className="text-amber-300 font-bold">Substrate Analysis View</span>
             {' '}— 570 unique primitives, each rendered as one star. Brightness = rarity weight; color = element.
@@ -186,7 +261,8 @@ export function Forge() {
           </p>
         ) : (
           <p className="text-xs text-gray-400 bg-gray-900/40 border border-gray-800/50 rounded px-3 py-2 font-mono leading-relaxed max-w-3xl">
-            A galaxy of every possible kit — 1000 builds, each a bounded star cluster.
+            <span className="text-gray-200 font-bold">Phase 2 — Kit-Galaxy</span>
+            {' '}— A galaxy of every possible kit — 1000 builds, each a bounded star cluster.
             Element neighborhoods visible at overview:{' '}
             <span className="text-orange-400">fire / lightning</span> left ·{' '}
             <span className="text-blue-400">water / wind</span> center ·{' '}
@@ -194,7 +270,7 @@ export function Forge() {
             <strong className="text-gray-300"> Scroll to zoom</strong> into a region —
             full star clusters reveal at 2×.
             <strong className="text-gray-300"> Lasso</strong> a cluster at 2×+ to identify a kit.
-            All <span className="font-bold text-amber-500">PROVISIONAL</span> — future-engine kits.
+            All <span className="font-bold text-amber-500">PROVISIONAL</span>.
           </p>
         )}
       </div>
@@ -202,7 +278,7 @@ export function Forge() {
       {/* Main content: canvas + side panel */}
       <div
         className="flex"
-        style={{ height: 'calc(100vh - 180px)', minHeight: 500 }}
+        style={{ height: 'calc(100vh - 195px)', minHeight: 480 }}
       >
         {/* Canvas area */}
         <div className="flex-1 min-w-0">
@@ -217,17 +293,34 @@ export function Forge() {
                 onLassoResult={handleLassoResult}
                 clearLassoRef={clearLassoRef}
               />
-            ) : layoutLoadState === 'error' ? (
-              <ErrorState message={layoutLoadError ?? 'Constellation layout load failed'} />
-            ) : layoutLoadState === 'ready' && layoutData ? (
-              <ConstellationModeCanvas
-                data={data}
-                layoutData={layoutData}
-                onLassoResult={handleLassoResult}
-                clearLassoRef={clearLassoRef}
-              />
+            ) : viewMode === 'constellation' ? (
+              layoutLoadState === 'error' ? (
+                <ErrorState message={layoutLoadError ?? 'Constellation layout load failed'} />
+              ) : layoutLoadState === 'ready' && layoutData ? (
+                <ConstellationModeCanvas
+                  data={data}
+                  layoutData={layoutData}
+                  onLassoResult={handleLassoResult}
+                  clearLassoRef={clearLassoRef}
+                />
+              ) : (
+                <LayoutLoadingState message="Loading constellation layout… (constellation_layout.json · 1000 kits · 34k instance nodes)" />
+              )
             ) : (
-              <LayoutLoadingState />
+              // Two-layer (default, Phase 3)
+              twoLayerLoadState === 'error' ? (
+                <ErrorState message={twoLayerLoadError ?? 'Two-layer layout load failed'} />
+              ) : twoLayerLoadState === 'ready' && twoLayerData && layoutData ? (
+                <TwoLayerCanvas
+                  data={data}
+                  layoutData={twoLayerData}
+                  constellationLayoutData={layoutData}
+                  onLassoResult={handleTwoLayerLassoResult}
+                  clearLassoRef={clearLassoRef}
+                />
+              ) : (
+                <LayoutLoadingState message="Loading two-layer layout… (twolayer_layout.json · 8 anchors · 1000 kits · 3 zones)" />
+              )
             )
           ) : null}
         </div>
@@ -242,6 +335,7 @@ export function Forge() {
               result={lassoResult}
               data={data}
               onClear={handleClearLasso}
+              lassoMode={viewMode === 'twolayer' ? lassoMode : undefined}
             />
           </div>
         )}
@@ -258,11 +352,18 @@ export function Forge() {
                 {data.factionOverlays.factions.length} emergent faction halos &middot;{' '}
                 scroll to zoom &middot; [Z] constellation lines &middot; pointer mode: drag to pan &middot; lasso mode: drag to select
               </>
-            ) : (
+            ) : viewMode === 'constellation' ? (
               <>
                 {layoutData?.centroids.length ?? '…'} constellation clusters ·{' '}
                 {layoutData ? '18k first-class stars' : 'loading layout…'} &middot;
                 dots at 1× · stars at 2×+ · lasso at 2×+ · &quot;substrate&quot; above for primitive analysis
+              </>
+            ) : (
+              <>
+                {twoLayerData?.anchors.length ?? '…'} element anchors (Layer 1) &middot;{' '}
+                {twoLayerData?.centroids.length ?? '…'} kit clusters (Layer 2) &middot;{' '}
+                {twoLayerData?.centroids.filter(c => c.zone === 'buffer').length ?? '…'} hybrid kits in buffer &middot;{' '}
+                dots at 1× · stars at 2×+ · lasso at 2×+ &middot; Phase 3 baseline
               </>
             )}
           </p>
@@ -285,14 +386,12 @@ function LoadingState() {
   );
 }
 
-function LayoutLoadingState() {
+function LayoutLoadingState({ message }: { message: string }) {
   return (
     <div className="flex items-center justify-center h-full">
       <div className="text-center">
-        <div className="text-gray-500 font-mono text-sm mb-2">Loading constellation layout…</div>
-        <div className="text-gray-700 font-mono text-xs">
-          constellation_layout.json · 1000 kits · 34k instance nodes · pre-computed by Python
-        </div>
+        <div className="text-gray-500 font-mono text-sm mb-2">Loading layout...</div>
+        <div className="text-gray-700 font-mono text-xs">{message}</div>
       </div>
     </div>
   );

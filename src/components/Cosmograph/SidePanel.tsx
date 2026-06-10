@@ -25,6 +25,8 @@ interface SidePanelProps {
   result: LassoResolutionResult | null;
   data: CosmographData;
   onClear: () => void;
+  /** Phase 3 two-layer lasso semantic mode. Absent for Phase 2 / Phase A modes. */
+  lassoMode?: string | null;
 }
 
 // ─── Chip style → Tailwind class mapping ─────────────────────────────────────
@@ -283,7 +285,27 @@ function MetaRow({ label, value }: { label: string; value: string }) {
 
 // ─── Side Panel (root export) ─────────────────────────────────────────────────
 
-export function SidePanel({ result, data, onClear }: SidePanelProps) {
+// ─── Lasso mode display (Phase 3 two-layer) ──────────────────────────────────
+
+const LASSO_MODE_DISPLAY: Record<string, { label: string; desc: string; cls: string }> = {
+  'within-anchor': {
+    label: 'Within-anchor',
+    desc: 'Lasso within one element region. Matches related kits with coherent substrate.',
+    cls: 'bg-indigo-900/40 border-indigo-700/40 text-indigo-300',
+  },
+  'cross-buffer': {
+    label: 'Cross-buffer',
+    desc: 'Lasso spans buffer between element regions. Surfaces unusual cross-substrate combinations.',
+    cls: 'bg-amber-900/40 border-amber-700/40 text-amber-300',
+  },
+  'buffer-only': {
+    label: 'Buffer-only',
+    desc: 'Lasso in empty buffer territory. Surfaces hybrid/rare discoverable content.',
+    cls: 'bg-purple-900/40 border-purple-700/40 text-purple-300',
+  },
+};
+
+export function SidePanel({ result, data, onClear, lassoMode }: SidePanelProps) {
   if (result === null) {
     // No lasso drawn yet — idle state
     return (
@@ -297,7 +319,7 @@ export function SidePanel({ result, data, onClear }: SidePanelProps) {
           <div className="mt-2 text-gray-700/60 text-[9px]">
             Lasso a bright star cluster for best results.
             <br />
-            Center regions may be uncharted sky.
+            Buffer space between nebulas = discoverable hybrid kits.
           </div>
         </div>
       </div>
@@ -323,6 +345,14 @@ export function SidePanel({ result, data, onClear }: SidePanelProps) {
           Clear
         </button>
       </div>
+
+      {/* Phase 3 lasso mode badge (two-layer only) */}
+      {lassoMode && LASSO_MODE_DISPLAY[lassoMode] && (
+        <div className={`mx-3 mt-2 px-2 py-1.5 rounded border text-[9px] font-mono ${LASSO_MODE_DISPLAY[lassoMode].cls}`}>
+          <span className="font-semibold">{LASSO_MODE_DISPLAY[lassoMode].label}</span>
+          <span className="block text-[8px] opacity-75 mt-0.5">{LASSO_MODE_DISPLAY[lassoMode].desc}</span>
+        </div>
+      )}
 
       {/* Scrollable results area */}
       <div className="flex-1 overflow-y-auto px-3 py-2">
