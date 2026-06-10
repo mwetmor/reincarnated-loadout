@@ -1,7 +1,7 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-10
-**Last commit:** `<phase-5-followon-sha>` (Phase 5 follow-on: tier1_commit voice template + Pixi ticker alpha interpolation)
+**Last commit:** `2d8d539` (Phase 5 follow-on: tier1_commit voice template + Pixi ticker alpha interpolation)
 **Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1` (Phase 2 not yet separately tagged — pending jack-ryan Gate-2 PASS)
 **Branch:** `main` — 11 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
 **Hive-mind mode:** N/A
@@ -31,7 +31,7 @@
 
 **TODO(drax) override #13: RESOLVED.** Sky overlay animated transition is now ticker-based alpha ramp, not instant Graphics redraw.
 
-**Vercel preview:** `<followon-preview-url>` (to be updated after deploy)
+**Vercel preview:** `https://reincarnated-loadout-3dvoomtsl-matthew-wetmore-s-projects.vercel.app`
 **Follow-on memo:** `agentic_orchestration/drax/notes/2026-06-10-forge-phase-5-followon-template-edit-pixi-ticker.md`
 
 ---
