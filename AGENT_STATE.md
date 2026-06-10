@@ -1,10 +1,92 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-09
-**Last commit:** `1207ab0` (Phase 3.4 mobile-responsive layout)
+**Last commit:** `1c2d12e` (Phase 4.4 mobile ergonomics)
 **Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1` (Phase 2 not yet separately tagged — pending jack-ryan Gate-2 PASS)
-**Branch:** `main` — 7 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
+**Branch:** `main` — 9 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
 **Hive-mind mode:** N/A
+
+---
+
+## Session summary
+
+### /forge Phase 4 AMENDED — Rune-Per-Group + Two-Tier Selection (2026-06-09)
+
+**Authority:** Matt 2026-06-09 directive (Branch A + rune-per-group + two-tier) → gandalf commission dispatch + Gate-1 PASS `ef5a564`.
+**Build:** `tsc -b && vite build` PASS — 1503 modules, 0 TS errors.
+
+**Verdict: GREEN — Phase 4 amended complete. All 12 acceptance criteria PASS. Falsifiable floor all met.**
+
+**Architecture shipped:**
+- Layer 1: 6 primitive-group rune anchors in 3×2 grid (world 11000×8500px)
+  - atmospheric_radius=1800px, stroke_radius=900px
+  - 4-layer atmospheric render (diffusion haze) + 4-layer glyph render (outer glow / mid glow / main body / edge highlight)
+  - No color — monochromatic luminous white/silver (Matt 2026-06-09 spec)
+- Tier 1 selection: Option γ (both tap + gesture-draw)
+  - Tap (Option α): click/touch in atmospheric region → selects/toggles group
+  - Gesture-draw (Option β): Input:[sign] mode → draw stroke in rune region → centroid-proximity recognition
+  - Input:[tap/sign] toggle in toolbar
+- Tier 2 selection: TierTwoPanel floating overlay
+  - Mobile (<640px): bottom-sheet (max-h 55%, min-h 44px touch targets)
+  - Desktop/iPad (≥640px): right-panel (w-[260px])
+  - icon_button + slider controls per primitive type
+  - Commit + Reset affordances
+  - PLACEHOLDER badge + TODO(drax) comments on all icons
+- Phase 3 baselines preserved: lasso + algo toggle + buffer + mobile + force-directed (View toggle)
+- Default view switched to rune; Phase 3 accessible at ?view=twolayer
+
+**classifyLasso() re-validation (Criterion 11 PRIORITY-ELEVATED):**
+- nearby_anchor_threshold: 1200 → 2000 (atmospheric_radius + 200px)
+- cross_buffer_min_lasso_radius: 600 → 950 (3×2 grid SPACING_X=3666px recalibration)
+- within_anchor_centroid_threshold: 1100 (unchanged)
+- min_lasso_polygon_points: 2 (unchanged)
+
+**Rune assignments (SCAFFOLD — canonical lock deferred Pattern B):**
+- Elements: I Ching Qián ☰ (heaven/creative principle)
+- Movement: Norse Raidho ᚱ (riding/journey)
+- Combat geometry: Norse Eihwaz ᛇ (yew/axis/form)
+- Resource economy: Norse Fehu ᚠ (wealth/resource flow)
+- Attributes: Norse Uruz ᚢ (aurochs/vital nature)
+- Mechanic-altering: Norse Othala ᛟ (ancestral heritage/inherited law)
+
+**TODO(drax): ACTIVE OVERRIDES — Phase 4 (additive to Phase 3 carry-forwards)**
+
+4. Rune registry (6 groups + rune assignments) is SCAFFOLD per Discipline #40. Canonical primitive-group lock + canonical rune-per-group lock DEFERRED to Pattern B with Matt post-Phase-4. `// TODO(drax): replace scaffold group structure with canonical group lock post-Pattern-B` (runeRegistry.ts)
+5. Tier 2 placeholder icons (29 across 6 groups) are SCAFFOLD per Discipline #40. Canonical per-primitive icon design DEFERRED to Pattern B. `// TODO(drax): replace placeholder icons with canonical icon design post-Pattern-B` (TierTwoPanel.tsx, runeRegistry.ts)
+6. visual_render_spec render parameters (atmospheric_radius, stroke_luminosity, etc.) are drax defaults. Canonical visual-register render-parameter lock DEFERRED to Pattern B. `// TODO(drax): replace scaffold render parameters with canonical visual-register lock post-Pattern-B` (runeRegistry.ts)
+7. Gesture-draw (Option β) uses centroid-proximity heuristic. Shape-recognition algorithm DEFERRED to post-Phase-4 Hotspot C elrond consultation per Discipline #18.2. `// TODO(drax): evaluate gesture-shape-matching algorithm with elrond post-Phase-4 if pain surfaces` (RuneLayerCanvas.tsx)
+8. Element→group scaffold mapping in compute-rune-layer-layout.py reuses Phase 3 element-anchor positions. Re-generate layout from canonical per-group assignments when group lock lands. `// TODO(drax): regenerate rune_layer_layout.json from canonical primitive-group assignments post-Pattern-B`
+
+**Phase 3 carry-forward overrides (1-3) unchanged — see Phase 3 session summary below.**
+
+**Files added in Phase 4 (reincarnated-loadout):**
+- `scripts/compute-rune-layer-layout.py` — layout compute (Criterion 11 analysis; classifyLasso threshold drift)
+- `public/data/cosmograph/rune_layer_layout.json` — 6 rune anchors + 1000 kit centroids (0.23MB)
+- `src/data/runeAnchorTypes.ts` — RuneAnchor / RuneLayerLayoutData / RunePrimitiveGroup types
+- `src/data/runeRegistry.ts` — RUNE_PRIMITIVE_GROUPS (6 groups + per-group rune definitions + primitives)
+- `src/components/Cosmograph/RuneLayerCanvas.tsx` — Phase 4 canvas (rune render + two-tier selection)
+- `src/components/Cosmograph/TierTwoPanel.tsx` — Tier 2 per-primitive selection UI shell
+
+**Files amended in Phase 4:**
+- `src/data/cosmographData.ts` — loadRuneLayerLayout() added
+- `src/pages/Forge.tsx` — rune view as default + all 4 view toggles + rune load effect + rune render branch
+
+**Phase 4 commits:**
+- `3bcd78d` — Phase 4.1+4.2+4.3: rune-anchor visual register + two-tier selection shell
+- `1c2d12e` — Phase 4.4: mobile + touch ergonomics (bottom-sheet + touch targets)
+
+**Vercel previews:**
+- Phase 4.1-4.3: `https://reincarnated-loadout-8vpofx1od-matthew-wetmore-s-projects.vercel.app`
+- Phase 4.4 (close): `https://reincarnated-loadout-ql329yk9u-matthew-wetmore-s-projects.vercel.app`
+
+**Close report:** `agentic_orchestration/drax/notes/2026-06-09-forge-phase-4-amended-close-report.md`
+
+**Routing:** Phase 4 GREEN → close report → gandalf design review (Discipline #25 rep-audit) + Matt architectural feedback → KR routing to canonical Branch A commitment per Tal Rasha recognition record § 4.1 + § 4.2.
+
+**Methodology hotspots queued:**
+- Hotspot A (Phase 3 carry-forward): substrate-vector proximity metric (criterion 2) — elrond consultation
+- Hotspot B (Phase 3 carry-forward): force-directed vs UMAP algorithm comparison — post-Hotspot A
+- Hotspot C (Phase 4 new): gesture-shape-matching algorithm (Tier 1 Option β) — elrond consultation post-Pattern-B
 
 ---
 
