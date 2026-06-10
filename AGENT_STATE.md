@@ -1,10 +1,67 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-06-07
-**Last commit:** `7d411a2` (Mode B as default + player-facing copy)
+**Last updated:** 2026-06-09
+**Last commit:** `1207ab0` (Phase 3.4 mobile-responsive layout)
 **Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1` (Phase 2 not yet separately tagged — pending jack-ryan Gate-2 PASS)
-**Branch:** `main` — 5 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
+**Branch:** `main` — 7 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
 **Hive-mind mode:** N/A
+
+---
+
+## Session summary
+
+### /forge Phase 3 — Two-Layer + Buffer-Space Cosmograph Prototype (2026-06-09)
+
+**Authority:** Matt 2026-06-09 directive (Options 1+2 sequence) → gandalf commission dispatch `2026-06-09-drax-forge-phase-3-two-layer-buffer-space-prototype.md` Gate-1 PASS.
+**Build:** `tsc -b && vite build` PASS — 1500 modules, 0 TS errors.
+
+**Verdict: GREEN — Phase 3 complete. All 12 acceptance criteria PASS. Three YELLOW observations tracked below.**
+
+**Architecture shipped:**
+- Layer 1: 8 element-family anchor nebulas (5-ring concentric glow, outer_glow_radius=260px). No glyphs (criterion 12a).
+- Layer 2: 1000 kit centroids in dot mode (1×) or star clusters (2×+), spatially proximate to element anchor
+- Buffer space: 310 hybrid kits at inter-anchor midpoints (dual overlapping circle render, two-element color encoding)
+- Lasso semantic classification: `classifyLasso()` returns within-anchor / cross-buffer / buffer-only based on centroid distance to anchors (no explicit mode-toggle)
+- Algorithm comparison: baseline (sunflower spiral, radial projection) + force-directed alternative (80 iterations, K_anchor=0.006, K_repel=8000, BUCKET=450px)
+- Mobile-responsive: `flex flex-col sm:flex-row`, side panel `w-full sm:w-[280px]`, hidden on mobile when no lasso result
+- Touch: native TouchEvents (pinch-zoom), PointerEvents (lasso), `touchAction: none`
+
+**World config:** 11000×8500px. Anchors: 4×2 grid, SPACING_X=2750, SPACING_Y=5700. PAD_X=1375, PAD_Y=1400.
+
+**Positioning algorithm findings:**
+- Baseline min NN: 40.7px primary zone, 29.7px buffer zone (physical element 428/1000 = 43% corpus imbalance; zone radius scaled dynamically)
+- Force-directed min NN: 94.5px (substantially better separation; organic buffer emergence)
+- Tradeoff: baseline = guaranteed buffer by construction + deterministic; force = better NN, organic, adapts to corpus size
+
+**TODO(drax): ACTIVE OVERRIDES — Phase 3**
+1. `classifyLasso()` uses `anchor.outer_glow_radius` as spatial threshold — scaffold value (#40 per dispatch). Re-validate when anchor count changes post-Legolas commission. `// TODO(drax): re-validate classifyLasso() thresholds when anchor count changes post-Legolas commission`
+2. Buffer-zone content is hybrid kits (is_hybrid=True) as stand-in for rare-lineage kits. Remove stand-in framing when engine generates rare-lineage kits per 2026-05-23 marginal-lineage recognition records. `// TODO(drax): replace hybrid stand-ins with rare-lineage kits when engine corpus expands`
+3. Physical element dominance (428/1000 kits) creates visually larger physical cluster. Corpus imbalance is PROVISIONAL architecture fact. No override in code; surface for Matt call at Pattern B.
+
+**Files added/amended in Phase 3 (reincarnated-loadout):**
+- `scripts/compute-twolayer-layout.py` — pre-computes baseline two-layer layout (radial projection)
+- `scripts/compute-twolayer-forcealt-layout.py` — pre-computes force-directed alternative
+- `public/data/cosmograph/twolayer_layout.json` — baseline layout (0.13MB, 8 anchors, 1000 centroids)
+- `public/data/cosmograph/twolayer_layout_alt.json` — force-directed alternative layout (0.15MB)
+- `src/data/twoLayerTypes.ts` — TwoLayerAnchor / TwoLayerCentroid / TwoLayerLayoutData types
+- `src/data/cosmographData.ts` — loadTwoLayerLayout() + loadTwoLayerLayoutAlt() loaders
+- `src/components/Cosmograph/TwoLayerCanvas.tsx` — Phase 3 canvas (anchor nebulas, dots, stars, lasso classification, touch)
+- `src/pages/Forge.tsx` — twolayer default view, Algo toggle, mobile-responsive layout, lasso mode state
+- `src/components/Cosmograph/SidePanel.tsx` — lassoMode prop, lasso mode badge, LASSO_MODE_DISPLAY
+
+**Phase 3 commits:**
+- `84dbdc6` — Phase 3.1+3.2+3.3: two-layer + buffer-space + force-directed alternative + Algo toggle
+- `1207ab0` — Phase 3.4: mobile-responsive layout
+
+**Vercel previews:**
+- Phase 3.1: `https://reincarnated-loadout-ju2baodhg-matthew-wetmore-s-projects.vercel.app`
+- Phase 3.2+3.3: `https://reincarnated-loadout-hjwd71s36-matthew-wetmore-s-projects.vercel.app`
+- Phase 3.4 (close): `https://reincarnated-loadout-bvy27r3hf-matthew-wetmore-s-projects.vercel.app`
+
+**Close report:** `agentic_orchestration/drax/notes/2026-06-09-forge-phase-3-close-report.md`
+
+**Routing:** Phase 3 GREEN → close report → gandalf design review + Matt architectural feedback.
+Next empirical trigger: elrond methodology consultation on substrate-vector proximity metric (Hotspot A in close report) per Discipline #18.2.
 
 ---
 
