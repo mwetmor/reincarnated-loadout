@@ -198,8 +198,11 @@ export const SPIRIT_GUIDE_VOICE = {
   tier1_opening: "What is most important for your journey this season?",
 
   /** Tier 1 commit response — templated; [anchor] filled at runtime */
+  // D31 neutral-data-oracle voice per canonical 40 D28-D32:
+  // "Your path projects toward" is oracle-narrated projection (substrate-emergent),
+  // not editorialized feeling ("You are drawn to"). Per gandalf design review 2026-06-10 § 5.2.
   tier1_commit: (anchorLabel: string, tier2Question: string) =>
-    `You are drawn to ${anchorLabel}. ${tier2Question}`,
+    `Your path projects toward ${anchorLabel}. ${tier2Question}`,
 
   /** Tier 2 commit response — templated; [tier2Label] and [tier3Question] filled at runtime */
   tier2_commit: (tier2Label: string, tier3Question: string) =>

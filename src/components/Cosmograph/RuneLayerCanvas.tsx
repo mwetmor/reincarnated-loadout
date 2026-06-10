@@ -52,6 +52,7 @@ import { scoreKitsByPrimitiveSet } from '../../utils/lassoResolution';
 import type { LassoResolutionResult } from '../../utils/lassoResolution';
 import { TierTwoPanel } from './TierTwoPanel';
 import { TIER1_ANCHOR_BY_ID } from '../../data/cascadeData';
+import { CYCLING_TRANSITION_DURATION_MS } from './CascadePanel';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -448,6 +449,12 @@ export function RuneLayerCanvas({
   const worldStageRef = useRef<PIXI.Container | null>(null);
   // Phase 5 — cascade highlight anchor ID (for reactive redraws outside the Pixi setup effect)
   const cascadeHighlightRef = useRef<string | null>(null);
+  // Phase 5 — alpha interpolation state for sky overlay animated transition.
+  // skyOverlayAlphaStartRef: the overlay alpha at the moment a new highlight fires.
+  // skyOverlayAlphaStartTimeRef: performance.now() timestamp when the current ramp started.
+  // A value of -1 means no active ramp (overlay is at stable alpha).
+  const skyOverlayAlphaStartRef = useRef<number>(0);
+  const skyOverlayAlphaStartTimeRef = useRef<number>(-1);
 
   const handleModeToggle = useCallback((m: 'pointer' | 'lasso') => {
     modeRef.current = m;
@@ -748,6 +755,31 @@ export function RuneLayerCanvas({
       }
     };
     app.ticker.add(fpsTicker);
+
+    // ── Phase 5 — Sky overlay alpha interpolation ticker ─────────────────────
+    // Ramps skyOverlayLayer.alpha from 0 → 1 over CYCLING_TRANSITION_DURATION_MS (400ms)
+    // whenever a new cascade highlight fires. The reactive useEffect draws the target
+    // graphic immediately and sets alpha=0; this ticker eases it in.
+    // Easing: ease-out cubic (t^(1/3)) — fast initial rise, gentle settle.
+    // Per § 12.4 CANONICAL ~0.3-0.5 sec smooth transition intent.
+    const skyAlphaTicker = () => {
+      const overlayLayer = skyOverlayLayerRef.current;
+      if (!overlayLayer) return;
+      const startTime = skyOverlayAlphaStartTimeRef.current;
+      if (startTime < 0) return; // no active ramp
+
+      const elapsed = performance.now() - startTime;
+      const t = Math.min(elapsed / CYCLING_TRANSITION_DURATION_MS, 1.0);
+      // ease-out cubic: fast rise, smooth settle
+      const eased = 1 - Math.pow(1 - t, 3);
+      overlayLayer.alpha = skyOverlayAlphaStartRef.current + (1.0 - skyOverlayAlphaStartRef.current) * eased;
+
+      if (t >= 1.0) {
+        overlayLayer.alpha = 1.0;
+        skyOverlayAlphaStartTimeRef.current = -1; // ramp complete
+      }
+    };
+    app.ticker.add(skyAlphaTicker);
 
     // ── Highlight layer ───────────────────────────────────────────────────────
     const highlightLayer = new PIXI.Graphics();
@@ -1162,6 +1194,8 @@ export function RuneLayerCanvas({
       container.removeEventListener('touchmove', onTouchMove);
       container.removeEventListener('touchend', onTouchEnd);
       app.ticker.remove(fpsTicker);
+      app.ticker.remove(skyAlphaTicker);
+      skyOverlayAlphaStartTimeRef.current = -1;
       app.destroy(true, { children: true, texture: true, baseTexture: true });
       appRef.current = null;
       runeGlyphContainersRef.current.clear();
@@ -1180,8 +1214,17 @@ export function RuneLayerCanvas({
   // Phase 5 — Reactive sky cluster highlight redraws for cascade mode.
   // Draws a radial glow at the highlighted sky region position in world space.
   // Other regions get a dim overlay.
-  // Timing: uses CYCLING_TRANSITION_DURATION_MS CSS var intent — actual transition via
-  // CSS on the overlay layer (PIXI alpha transitions are tick-based; see comment below).
+  //
+  // Alpha interpolation (INFO-1 close — jack-ryan Gate-2 carry-forward):
+  // The graphic is drawn immediately to represent the target state, then
+  // overlayLayer.alpha is set to the current partial-ramp alpha (preserving smooth
+  // continuity if a new highlight fires mid-ramp). skyAlphaTicker (in the Pixi init
+  // effect) ramps alpha → 1.0 over CYCLING_TRANSITION_DURATION_MS (400ms) via
+  // ease-out cubic. This realizes the § 12.4 CANONICAL ~0.3-0.5 sec smooth transition.
+  // Cycling != committing is preserved: highlight fires this ramp; commit is separate.
+  //
+  // TODO(drax): remove TODO(drax) override #13 from AGENT_STATE.md — this implements
+  // the Pixi ticker alpha interpolation that was deferred post-Phase-5.
   useEffect(() => {
     cascadeHighlightRef.current = cascadeHighlightAnchorId;
     const overlayLayer = skyOverlayLayerRef.current;
@@ -1189,13 +1232,23 @@ export function RuneLayerCanvas({
 
     overlayLayer.clear();
 
-    if (!cascadeMode) return;
+    if (!cascadeMode) {
+      // Not in cascade mode — alpha reset, no ramp needed
+      overlayLayer.alpha = 1.0;
+      skyOverlayAlphaStartTimeRef.current = -1;
+      return;
+    }
 
     if (!cascadeHighlightAnchorId) {
-      // No highlight: subtle dim-all overlay to signal cascade mode is active
+      // No highlight: subtle dim-all overlay to signal cascade mode is active.
+      // Fade in from current alpha rather than snapping.
       overlayLayer.beginFill(0x000008, 0.12);
       overlayLayer.drawRect(0, 0, runeLayoutData.meta.world_w, runeLayoutData.meta.world_h);
       overlayLayer.endFill();
+      // Start alpha ramp from current overlay alpha (smooth if mid-transition)
+      skyOverlayAlphaStartRef.current = overlayLayer.alpha;
+      overlayLayer.alpha = skyOverlayAlphaStartRef.current;
+      skyOverlayAlphaStartTimeRef.current = performance.now();
       return;
     }
 
@@ -1236,9 +1289,14 @@ export function RuneLayerCanvas({
     overlayLayer.drawCircle(cx, cy, r * 1.2);
     overlayLayer.lineStyle(0);
 
+    // Kick off alpha ramp: start from current alpha (handles mid-transition continuity)
+    skyOverlayAlphaStartRef.current = overlayLayer.alpha;
+    overlayLayer.alpha = skyOverlayAlphaStartRef.current;
+    skyOverlayAlphaStartTimeRef.current = performance.now();
+
     console.info(
       `[RuneLayer P5] Sky cluster highlight: ${cascadeHighlightAnchorId} ` +
-      `→ region (${cx.toFixed(0)}, ${cy.toFixed(0)}) r=${r}`
+      `→ region (${cx.toFixed(0)}, ${cy.toFixed(0)}) r=${r} — alpha ramp started`
     );
   }, [cascadeHighlightAnchorId, cascadeMode, runeLayoutData]);
 

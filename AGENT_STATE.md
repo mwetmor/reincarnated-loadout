@@ -1,10 +1,38 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-06-10
-**Last commit:** `31fb76e` (Phase 5.1-5.4 spirit-guide cascade + cycling text-list UI)
+**Last commit:** `<phase-5-followon-sha>` (Phase 5 follow-on: tier1_commit voice template + Pixi ticker alpha interpolation)
 **Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1` (Phase 2 not yet separately tagged — pending jack-ryan Gate-2 PASS)
-**Branch:** `main` — 10 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
+**Branch:** `main` — 11 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
 **Hive-mind mode:** N/A
+
+---
+
+## Session summary
+
+### Phase 5 Follow-on — tier1_commit voice template edit + Pixi ticker alpha interpolation (2026-06-10)
+
+**Authority:** Matt 2026-06-10 explicit authorization ("Fire drax follow-on — template edit + Pixi ticker alpha interpolation. Both within drax seam authority; both closes gate review carry-forwards.") + gandalf design review § 5.2 (D31 voice template recommendation) + jack-ryan Gate-2 INFO-1 (Pixi ticker carry-forward).
+**Build:** `tsc -b && vite build` PASS — 1505 modules, 0 TS errors.
+
+**Item 1 — tier1_commit voice template (cascadeData.ts):**
+- Before: `"You are drawn to ${anchorLabel}. ${tier2Question}"`
+- After: `"Your path projects toward ${anchorLabel}. ${tier2Question}"`
+- Rationale: D31 neutral-data-oracle voice per canonical 40 D28-D32. "Your path projects toward" is oracle-narrated substrate-emergent projection; "You are drawn to" was editorialized interior-state language. Gandalf design review 2026-06-10 § 5.2 named this explicitly.
+- Grep audit: no other "You are drawn to" instances in cascadeData.ts or related files.
+
+**Item 2 — Pixi ticker alpha interpolation (RuneLayerCanvas.tsx):**
+- Added refs: `skyOverlayAlphaStartRef` + `skyOverlayAlphaStartTimeRef` (track ramp state)
+- Added `skyAlphaTicker` to Pixi `app.ticker` in init effect: eases `overlayLayer.alpha` from current value → 1.0 over `CYCLING_TRANSITION_DURATION_MS` (400ms) using ease-out cubic (1 - (1-t)^3)
+- Modified reactive `useEffect`: draws target graphic immediately; kicks off ramp by setting `skyOverlayAlphaStartTimeRef.current = performance.now()`; continuity preserved if new highlight fires mid-ramp (starts from current alpha)
+- Ticker removed on cleanup alongside fpsTicker
+- Imported `CYCLING_TRANSITION_DURATION_MS` from `CascadePanel` (reuses named constant; no new literals)
+- Per § 12.4 CANONICAL ~0.3-0.5 sec smooth transition intent. Jack-ryan Gate-2 INFO-1 closed.
+
+**TODO(drax) override #13: RESOLVED.** Sky overlay animated transition is now ticker-based alpha ramp, not instant Graphics redraw.
+
+**Vercel preview:** `<followon-preview-url>` (to be updated after deploy)
+**Follow-on memo:** `agentic_orchestration/drax/notes/2026-06-10-forge-phase-5-followon-template-edit-pixi-ticker.md`
 
 ---
 
@@ -47,7 +75,7 @@
 
 12. Pre-display coverage filter not implemented per § 12.7. `// TODO(drax): implement pre-display coverage filter per § 12.7 post-elrond Hotspot D consultation` (CascadePanel.tsx)
 
-13. Sky overlay animation is instant Pixi.Graphics redraw (not animated 400ms transition). `// TODO(drax): animate sky overlay alpha interpolation via Pixi ticker post-Phase-5` (RuneLayerCanvas.tsx)
+13. ~~Sky overlay animation is instant Pixi.Graphics redraw (not animated 400ms transition).~~ RESOLVED 2026-06-10 Phase 5 follow-on: Pixi ticker alpha interpolation implemented. skyAlphaTicker in Pixi init effect ramps overlayLayer.alpha 0→1 over CYCLING_TRANSITION_DURATION_MS (400ms, ease-out cubic) on each highlight change. Jack-ryan Gate-2 INFO-1 closed.
 
 **Files added in Phase 5 (reincarnated-loadout):**
 - `src/data/cascadeData.ts` — 7 Tier 1 anchors + Tier 2/3 scaffold layers + spirit guide voice + sky region positions + scaffold emergence
