@@ -1,10 +1,73 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-06-09
-**Last commit:** `1c2d12e` (Phase 4.4 mobile ergonomics)
+**Last updated:** 2026-06-10
+**Last commit:** `31fb76e` (Phase 5.1-5.4 spirit-guide cascade + cycling text-list UI)
 **Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1` (Phase 2 not yet separately tagged — pending jack-ryan Gate-2 PASS)
-**Branch:** `main` — 9 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
+**Branch:** `main` — 10 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
 **Hive-mind mode:** N/A
+
+---
+
+## Session summary
+
+### /forge Phase 5 AMENDMENT — Spirit Guide Cascade + Cycling Text-List UI (2026-06-10)
+
+**Authority:** Matt 2026-06-10 directive + § 12 canonical lock (`861403d`) + gandalf dispatch `2026-06-10-drax-forge-phase-5-amendment-cycling-text-list-ui.md` + Gate-1 PASS-WITH-AMENDMENTS `a39c17f`.
+**Build:** `tsc -b && vite build` PASS — 1505 modules, 0 TS errors.
+
+**Verdict: GREEN — Phase 5 amendment complete. All 12 acceptance criteria PASS.**
+
+**Architecture shipped:**
+- New default view: `?view=cascade` (§ 12 canonical architecture)
+  - Spirit guide opening: "What is most important for your journey this season?" (CANONICAL per § 12.3)
+  - 7 Tier 1 anchors cycling text-list (Race/Element/Weapon/Power/Style/Harvest/Horizon)
+  - Sky cluster response animation (PIXI.Graphics dim-all + radial glow per highlighted anchor)
+  - Nested cascade 3+ layers (Tier 1 → Tier 2 → Tier 3 → final emergence)
+  - Final emergence: spirit guide narration + kit identity display
+  - CascadePanel.tsx: text-list cycling, touch swipe, keyboard nav, arrow nav, breadcrumb path
+  - cascadeData.ts: 7 Tier 1 anchors, Tier 2/3 scaffold layers, spirit guide voice templates, scaffold emergence descriptors
+- Phase 4 rune view preserved at `?view=rune` (unchanged — baseline fallback)
+  - TierTwoPanel with placeholder icons PRESERVED at `?view=rune` only
+  - Gesture-draw, lasso, tap modes preserved at `?view=rune`
+- RuneLayerCanvas extended: cascadeMode + cascadeHighlightAnchorId props; sky overlay PIXI layer
+
+**Gate-1 amendments applied:**
+- Discipline #40: All Tier 2/3 question strings carry scaffold flags per § 12.13
+- Discipline #41: Cluster spatial layout is SCAFFOLD; tradeoffs in close report; not presented as canonical
+- Discipline #42: CYCLING_TRANSITION_DURATION_MS=400ms as named const (not hardcoded literal)
+- Discipline #18.2: Pre-display coverage filter not implemented; flagged as Hotspot D in close report
+
+**TODO(drax): ACTIVE OVERRIDES — Phase 5 (additive to Phase 4 carry-forwards)**
+
+9. Cascade 7 sky region spatial positions are SCAFFOLD per Discipline #40/41. Canonical cosmograph spatial lock DEFERRED to Pattern B per § 12.13. `// TODO(drax): replace scaffold spatial layout with canonical cosmograph spatial lock post-Pattern-B` (cascadeData.ts)
+
+10. Cascade Tier 2/3 question vocabulary is SCAFFOLD per Discipline #40. `// <!-- SCAFFOLD: pending Pattern B canonical ratification per § 12.13 -->` (cascadeData.ts)
+
+11. Kit emergence descriptors in SCAFFOLD_KIT_EMERGENCE are synthesized for visualization. `// TODO(drax): replace synthesized emergence with real nearest-kit-centroid lookup post-engine-API` (cascadeData.ts)
+
+12. Pre-display coverage filter not implemented per § 12.7. `// TODO(drax): implement pre-display coverage filter per § 12.7 post-elrond Hotspot D consultation` (CascadePanel.tsx)
+
+13. Sky overlay animation is instant Pixi.Graphics redraw (not animated 400ms transition). `// TODO(drax): animate sky overlay alpha interpolation via Pixi ticker post-Phase-5` (RuneLayerCanvas.tsx)
+
+**Files added in Phase 5 (reincarnated-loadout):**
+- `src/data/cascadeData.ts` — 7 Tier 1 anchors + Tier 2/3 scaffold layers + spirit guide voice + sky region positions + scaffold emergence
+- `src/components/Cosmograph/CascadePanel.tsx` — text-list cycling UI (3-layer cascade; touch/keyboard/arrow nav; narration; emergence view)
+
+**Files amended in Phase 5:**
+- `src/components/Cosmograph/RuneLayerCanvas.tsx` — cascadeMode + cascadeHighlightAnchorId props; sky overlay PIXI layer; TierTwoPanel suppression in cascade mode
+- `src/pages/Forge.tsx` — cascade view as default; CascadePanel wired; sky cluster state management
+
+**Phase 5 commit:** `31fb76e`
+**Vercel preview:** `https://reincarnated-loadout-928tycwpa-matthew-wetmore-s-projects.vercel.app`
+**Close report:** `agentic_orchestration/drax/notes/2026-06-10-forge-phase-5-amendment-close-report.md`
+
+**Routing:** Phase 5 GREEN → gandalf design review (cascade text vocabulary + cluster spatial layout + § 12 fidelity) → jack-ryan Gate-2 (Discipline #40 scaffold flag verification + standard 5+6 principles + final acceptance criteria #1-#12)
+
+**Methodology hotspots queued:**
+- Hotspot A (Phase 3 carry-forward): substrate-vector proximity metric — elrond
+- Hotspot B (Phase 3 carry-forward): force-directed vs UMAP — post-Hotspot A
+- Hotspot C (Phase 4 carry-forward): gesture-shape-matching — elrond post-Pattern-B
+- Hotspot D (Phase 5 new): pre-display coverage filter § 12.7 — elrond post-star-lord cascade-dimension index
 
 ---
 
