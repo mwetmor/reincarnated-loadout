@@ -102,9 +102,15 @@ export function TierTwoPanel({ group, onClose }: TierTwoPanelProps) {
 
   return (
     <div
-      className="absolute right-3 top-3 z-20 w-[220px] sm:w-[260px] max-h-[calc(100%-24px)] overflow-y-auto
-                 rounded border border-gray-700/70 bg-gray-950/96 backdrop-blur-sm
-                 shadow-xl shadow-black/60 flex flex-col"
+      className={
+        // Mobile (< 640px): bottom sheet — full width, anchored to bottom of container
+        // iPad+ (≥ 640px): right-side panel — fixed width, top-anchored
+        'absolute z-20 flex flex-col ' +
+        'bottom-0 left-0 right-0 max-h-[55%] ' +            // mobile: bottom sheet
+        'sm:bottom-auto sm:top-3 sm:left-auto sm:right-3 sm:max-h-[calc(100%-24px)] sm:w-[260px] ' +  // sm+: right panel
+        'overflow-y-auto rounded-t sm:rounded border border-gray-700/70 ' +
+        'bg-gray-950/96 backdrop-blur-sm shadow-xl shadow-black/60'
+      }
       style={{ pointerEvents: 'auto' }}
     >
       {/* Header */}
@@ -201,7 +207,8 @@ export function TierTwoPanel({ group, onClose }: TierTwoPanelProps) {
                   onClick={() => handleIconSelect(prim.id, selection[prim.id])}
                   title={prim.label}
                   className={
-                    'flex flex-col items-center gap-0.5 rounded px-1 py-1.5 transition-colors ' +
+                    // min 44px touch target per D8 (min-h-[44px]) on mobile
+                    'flex flex-col items-center justify-center gap-0.5 rounded px-1 py-2 min-h-[44px] sm:py-1.5 sm:min-h-0 transition-colors ' +
                     (isSelected
                       ? 'bg-white/20 border border-white/40 text-white'
                       : 'bg-gray-800/60 border border-gray-700/40 text-gray-500 hover:text-gray-300 hover:border-gray-600/60')
