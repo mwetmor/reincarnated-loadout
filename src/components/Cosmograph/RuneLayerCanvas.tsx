@@ -51,6 +51,7 @@ import { RUNE_PRIMITIVE_GROUPS, RUNE_GROUP_BY_ID } from '../../data/runeRegistry
 import { scoreKitsByPrimitiveSet } from '../../utils/lassoResolution';
 import type { LassoResolutionResult } from '../../utils/lassoResolution';
 import { TierTwoPanel } from './TierTwoPanel';
+import { TIER1_ANCHOR_BY_ID } from '../../data/cascadeData';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -385,6 +386,19 @@ interface RuneLayerCanvasProps {
   clearLassoRef?: React.MutableRefObject<(() => void) | null>;
   /** Anchor render mode: 'nebula' = Phase 3, 'rune' = Phase 4. From Forge.tsx toggle. */
   anchorMode?: 'nebula' | 'rune';
+  /**
+   * Phase 5 — cascade mode flag.
+   * When true: TierTwoPanel is suppressed; CascadePanel manages the UI.
+   * The canvas shows sky cluster response animations based on cascadeHighlightAnchorId.
+   */
+  cascadeMode?: boolean;
+  /**
+   * Phase 5 — cascade highlight anchor id.
+   * When set: the corresponding sky cluster region illuminates; other regions dim.
+   * Uses TIER1_ANCHOR_BY_ID to look up region position.
+   * Null = no highlight (all regions normal brightness).
+   */
+  cascadeHighlightAnchorId?: string | null;
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────
@@ -395,6 +409,8 @@ export function RuneLayerCanvas({
   constellationLayoutData,
   onLassoResult,
   clearLassoRef,
+  cascadeMode = false,
+  cascadeHighlightAnchorId = null,
 }: RuneLayerCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<PIXI.Application | null>(null);
@@ -425,6 +441,13 @@ export function RuneLayerCanvas({
   const runeAtmosphereLayerRef = useRef<PIXI.Graphics | null>(null);
   const runeGlyphLayerRef = useRef<PIXI.Container | null>(null);
   const runeAnchorsRef = useRef<RuneAnchor[]>([]);
+
+  // Phase 5 — sky cluster overlay layer (cascade mode)
+  const skyOverlayLayerRef = useRef<PIXI.Graphics | null>(null);
+  // Phase 5 — world stage reference for coordinate transforms in cascade updates
+  const worldStageRef = useRef<PIXI.Container | null>(null);
+  // Phase 5 — cascade highlight anchor ID (for reactive redraws outside the Pixi setup effect)
+  const cascadeHighlightRef = useRef<string | null>(null);
 
   const handleModeToggle = useCallback((m: 'pointer' | 'lasso') => {
     modeRef.current = m;
@@ -551,6 +574,7 @@ export function RuneLayerCanvas({
     container.appendChild(app.view as HTMLCanvasElement);
 
     const worldStage = new PIXI.Container();
+    worldStageRef.current = worldStage;
     app.stage.addChild(worldStage);
     worldStage.scale.set(initialScale);
     worldStage.position.x = (containerW - worldW * initialScale) / 2;
@@ -750,6 +774,13 @@ export function RuneLayerCanvas({
     const gestureGraphics = new PIXI.Graphics();
     app.stage.addChild(gestureGraphics);
     gestureGraphicsRef.current = gestureGraphics;
+
+    // ── Phase 5 — Sky cluster overlay (cascade mode) ─────────────────────────
+    // Renders on top of everything; illuminates the highlighted sky cluster region.
+    // Redrawn reactively via the cascadeHighlightAnchorId effect below.
+    const skyOverlayLayer = new PIXI.Graphics();
+    skyOverlayLayerRef.current = skyOverlayLayer;
+    worldStage.addChild(skyOverlayLayer);
 
     // ── Watermark ─────────────────────────────────────────────────────────────
     const wmStyle = new PIXI.TextStyle({
@@ -1136,6 +1167,8 @@ export function RuneLayerCanvas({
       runeGlyphContainersRef.current.clear();
       runeAtmosphereLayerRef.current = null;
       runeGlyphLayerRef.current = null;
+      skyOverlayLayerRef.current = null;
+      worldStageRef.current = null;
     };
   }, [data, runeLayoutData, constellationLayoutData, redrawRuneLayer]);
 
@@ -1143,6 +1176,71 @@ export function RuneLayerCanvas({
   useEffect(() => {
     selectedGroupRef.current = selectedGroup;
   }, [selectedGroup]);
+
+  // Phase 5 — Reactive sky cluster highlight redraws for cascade mode.
+  // Draws a radial glow at the highlighted sky region position in world space.
+  // Other regions get a dim overlay.
+  // Timing: uses CYCLING_TRANSITION_DURATION_MS CSS var intent — actual transition via
+  // CSS on the overlay layer (PIXI alpha transitions are tick-based; see comment below).
+  useEffect(() => {
+    cascadeHighlightRef.current = cascadeHighlightAnchorId;
+    const overlayLayer = skyOverlayLayerRef.current;
+    if (!overlayLayer) return;
+
+    overlayLayer.clear();
+
+    if (!cascadeMode) return;
+
+    if (!cascadeHighlightAnchorId) {
+      // No highlight: subtle dim-all overlay to signal cascade mode is active
+      overlayLayer.beginFill(0x000008, 0.12);
+      overlayLayer.drawRect(0, 0, runeLayoutData.meta.world_w, runeLayoutData.meta.world_h);
+      overlayLayer.endFill();
+      return;
+    }
+
+    const anchor = TIER1_ANCHOR_BY_ID.get(cascadeHighlightAnchorId);
+    if (!anchor) return;
+
+    const worldW = runeLayoutData.meta.world_w;
+    const worldH = runeLayoutData.meta.world_h;
+
+    // Dim overlay across entire world
+    overlayLayer.beginFill(0x000008, 0.45);
+    overlayLayer.drawRect(0, 0, worldW, worldH);
+    overlayLayer.endFill();
+
+    // Punch-out glow at highlighted region (soft preview: cycling != committing)
+    // Three-layer radial: outer haze → mid glow → inner bright core
+    const cx = anchor.region_x;
+    const cy = anchor.region_y;
+    const r = anchor.region_radius;
+
+    // Outer atmospheric haze
+    overlayLayer.beginFill(0xCCBBFF, 0.06);
+    overlayLayer.drawCircle(cx, cy, r * 2.2);
+    overlayLayer.endFill();
+
+    // Mid glow — the "illuminates" effect per § 12.3
+    overlayLayer.beginFill(0xBBABEE, 0.12);
+    overlayLayer.drawCircle(cx, cy, r * 1.4);
+    overlayLayer.endFill();
+
+    // Inner bright core
+    overlayLayer.beginFill(0xFFFFFF, 0.07);
+    overlayLayer.drawCircle(cx, cy, r * 0.7);
+    overlayLayer.endFill();
+
+    // Ring boundary — "focus" effect per § 12.4
+    overlayLayer.lineStyle(1.5, 0xCCBBFF, 0.35);
+    overlayLayer.drawCircle(cx, cy, r * 1.2);
+    overlayLayer.lineStyle(0);
+
+    console.info(
+      `[RuneLayer P5] Sky cluster highlight: ${cascadeHighlightAnchorId} ` +
+      `→ region (${cx.toFixed(0)}, ${cy.toFixed(0)}) r=${r}`
+    );
+  }, [cascadeHighlightAnchorId, cascadeMode, runeLayoutData]);
 
   // Selected group object for Tier 2 panel
   const selectedGroupData: RunePrimitiveGroup | null = selectedGroup
@@ -1193,8 +1291,8 @@ export function RuneLayerCanvas({
           <span className="text-[9px] text-gray-600 font-mono ml-0.5">(zoom 2×+ to activate)</span>
         )}
 
-        {/* Tier 1 input mode toggle (pointer mode only) */}
-        {interactionMode === 'pointer' && (
+        {/* Tier 1 input mode toggle (pointer mode only; suppressed in cascade mode) */}
+        {interactionMode === 'pointer' && !cascadeMode && (
           <>
             <span className="text-[9px] text-gray-600 font-mono mx-0.5">|</span>
             <span className="text-[9px] text-gray-600 font-mono">Input:</span>
@@ -1229,6 +1327,12 @@ export function RuneLayerCanvas({
             )}
           </>
         )}
+        {/* Phase 5 cascade mode indicator */}
+        {cascadeMode && (
+          <span className="text-[9px] text-violet-400/70 font-mono ml-1">
+            spirit guide active
+          </span>
+        )}
 
         {/* Lasso mode indicator */}
         {lastLassoMode && interactionMode === 'lasso' && (
@@ -1252,8 +1356,12 @@ export function RuneLayerCanvas({
         )}
       </div>
 
-      {/* Tier 2 panel — per-primitive selection within selected rune group */}
-      {selectedGroupData && (
+      {/* Tier 2 panel — per-primitive selection within selected rune group.
+          Phase 5 cascade mode: TierTwoPanel SUPPRESSED (placeholder icons REMOVED per § 12.10
+          DEPRECATION + dispatch § 2 Phase 5.1 scope).
+          Cascade mode: CascadePanel manages the full cycling UI (rendered in Forge.tsx above canvas).
+          TODO: Phase 4 rune view (non-cascade) still shows TierTwoPanel as fallback. */}
+      {selectedGroupData && !cascadeMode && (
         <TierTwoPanel
           group={selectedGroupData}
           onClose={() => handleSelectGroup(null)}

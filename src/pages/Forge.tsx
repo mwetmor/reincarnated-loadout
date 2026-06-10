@@ -12,7 +12,11 @@
  * Data: elrond Phase 4 cosmograph packet (read-only, static JSON).
  *
  * View modes:
- *   Default (no param / ?view=rune): Phase 4 rune-per-group + two-tier selection (player-facing).
+ *   Default (no param / ?view=cascade): Phase 5 spirit-guide cascade + cycling text-list UI.
+ *     § 12 canonical architecture: iPad text-list cycling + sky-runes-only cosmograph.
+ *     Spirit guide elicitation cascade (3+ layers); cycling-preview sky response animation.
+ *     Per dispatch 2026-06-10-drax-forge-phase-5-amendment-cycling-text-list-ui.md.
+ *   ?view=rune: Phase 4 rune-per-group + two-tier selection (preserved baseline).
  *     6 primitive-group rune anchors (large atmospheric light-edge brush-stroke, no color).
  *     Tier 1: tap or sign to select rune group. Tier 2: per-primitive icon selection.
  *   ?view=twolayer: Phase 3 two-layer + buffer-space cosmograph.
@@ -21,11 +25,15 @@
  *     LOD: centroid dots at 1.0× zoom; full star clusters at ≥2× zoom.
  *   ?view=primitive: substrate-analysis view — 570 unique primitives as stars (analyst diagnostic).
  *
+ * Phase 5 (2026-06-10): spirit-guide-driven elicitation cascade + cycling text-list UI.
+ *   Per dispatch 2026-06-10-drax-forge-phase-5-amendment-cycling-text-list-ui.md.
+ *   Earth-Avatar Creation Moment Architecture § 12 (canonical lock 2026-06-10, commit 861403d).
+ *   iPad text-list cycling UI on panel; sky rune anchors PRESERVED per § 12.2.
+ *   Tier 2 placeholder icons REMOVED per § 12.10 DEPRECATION (29 icons deprecated).
+ *   Cosmograph sky cluster response animation per § 12.4 cycling-preview UX vocabulary.
+ *
  * Phase 4 (2026-06-09): rune-per-primitive-group + two-tier selection prototype.
- *   Per dispatch 2026-06-09-drax-forge-phase-4-AMENDMENT-rune-per-group-two-tier.md.
- *   Branch A ACTIVATED per Matt 2026-06-09 + Legolas N=423 + Elrond Hotspot A validation.
- *   Tier 1 Options: α (tap) and β (sign/gesture) per Option γ both-supported.
- *   Tier 2: placeholder icons; canonical icon design DEFERRED Pattern B.
+ *   Preserved at ?view=rune as baseline fallback.
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
@@ -40,11 +48,12 @@ import { ConstellationModeCanvas } from '../components/Cosmograph/ConstellationM
 import { TwoLayerCanvas } from '../components/Cosmograph/TwoLayerCanvas';
 import { RuneLayerCanvas } from '../components/Cosmograph/RuneLayerCanvas';
 import { SidePanel } from '../components/Cosmograph/SidePanel';
+import { CascadePanel } from '../components/Cosmograph/CascadePanel';
 import type { LassoResolutionResult } from '../utils/lassoResolution';
 
 type LoadState = 'idle' | 'loading' | 'ready' | 'error';
 type LayoutLoadState = 'idle' | 'loading' | 'ready' | 'error';
-type ViewMode = 'primitive' | 'constellation' | 'twolayer' | 'rune';
+type ViewMode = 'primitive' | 'constellation' | 'twolayer' | 'rune' | 'cascade';
 
 /**
  * Phase 3.3 — algorithm comparison.
@@ -87,7 +96,8 @@ export function Forge() {
   const [runeLayerLoadState, setRuneLayerLoadState] = useState<LayoutLoadState>('idle');
   const [runeLayerLoadError, setRuneLayerLoadError] = useState<string | null>(null);
 
-  // Default view: rune (Phase 4, player-facing).
+  // Default view: cascade (Phase 5, player-facing § 12 architecture).
+  // Phase 4 rune: ?view=rune (preserved baseline)
   // Phase 3 two-layer: ?view=twolayer
   // Phase 2 constellation: ?view=constellation
   // Analyst primitive: ?view=primitive
@@ -97,17 +107,22 @@ export function Forge() {
     viewParam === 'primitive' ? 'primitive' :
     viewParam === 'constellation' ? 'constellation' :
     viewParam === 'twolayer' ? 'twolayer' :
-    'rune';
+    viewParam === 'rune' ? 'rune' :
+    'cascade';
+
+  // Phase 5 — cascade state (for sky cluster response animation)
+  const [cascadeHighlightAnchorId, setCascadeHighlightAnchorId] = useState<string | null>(null);
 
   const setViewMode = useCallback((mode: ViewMode) => {
-    if (mode === 'rune') {
-      setSearchParams({});  // rune is default
+    if (mode === 'cascade') {
+      setSearchParams({});  // cascade is default (Phase 5)
     } else {
       setSearchParams({ view: mode });
     }
     clearLassoRef.current?.();
     setLassoResult(null);
     setLassoMode(null);
+    setCascadeHighlightAnchorId(null);
   }, [setSearchParams]);
 
   // Lazy-load Phase 2 constellation layout
@@ -182,9 +197,9 @@ export function Forge() {
       });
   }, [algorithmMode, twoLayerAltLoadState]);
 
-  // Lazy-load Phase 4 rune-layer layout (also pre-loads constellation layout for star instances)
+  // Lazy-load Phase 4/5 rune-layer layout (shared by both rune and cascade views)
   useEffect(() => {
-    if (viewMode !== 'rune') return;
+    if (viewMode !== 'rune' && viewMode !== 'cascade') return;
     if (runeLayerLoadState !== 'idle') return;
     setRuneLayerLoadState('loading');
     Promise.all([
@@ -266,10 +281,22 @@ export function Forge() {
             </p>
           </div>
 
-          {/* View toggle: rune (default, Phase 4) ↔ two-layer (Phase 3) ↔ constellation (Phase 2) ↔ primitive (analyst) */}
+          {/* View toggle: cascade (default, Phase 5) ↔ rune (Phase 4) ↔ two-layer (Phase 3) ↔ constellation (Phase 2) ↔ primitive (analyst) */}
           <div className="flex flex-wrap items-center gap-1.5">
             <div className="flex items-center gap-1 rounded border border-gray-700/60 bg-gray-900/60 px-1.5 py-1">
               <span className="text-[9px] text-gray-600 font-mono mr-1 uppercase tracking-wider">View:</span>
+              <button
+                onClick={() => setViewMode('cascade')}
+                title="Phase 5 — spirit guide cascade + cycling text-list UI. § 12 canonical architecture: iPad text + sky runes. 7 Tier 1 anchors cycling."
+                className={
+                  'rounded px-2 py-0.5 text-[10px] font-mono transition-colors ' +
+                  (viewMode === 'cascade'
+                    ? 'bg-violet-700/70 text-violet-100'
+                    : 'text-gray-500 hover:text-gray-300')
+                }
+              >
+                cascade
+              </button>
               <button
                 onClick={() => setViewMode('rune')}
                 title="Phase 4 — rune-per-group. 6 primitive-group rune anchors (large atmospheric). Tier 1: tap/sign to select. Tier 2: per-primitive icons."
@@ -357,7 +384,17 @@ export function Forge() {
         </div>
 
         {/* Mode descriptor */}
-        {viewMode === 'rune' ? (
+        {viewMode === 'cascade' ? (
+          <p className="text-xs text-violet-400/80 bg-violet-900/15 border border-violet-800/40 rounded px-3 py-2 font-mono leading-relaxed max-w-4xl">
+            <span className="text-violet-200 font-bold">Phase 5 — Spirit Guide Cascade + Cycling Text-List</span>
+            {' '}— § 12 canonical architecture: <span className="text-violet-300">iPad text-list cycling</span> + <span className="text-violet-300">sky runes only</span> ·{' '}
+            Spirit guide opens: <em>"What is most important for your journey this season?"</em> ·{' '}
+            7 Tier 1 anchors cycle; sky responds to attention (cycling ≠ committing) ·{' '}
+            Cascade 3+ layers deep; final form emerges.
+            <strong className="text-violet-200"> Scroll to zoom</strong> — stars reveal at 2×.
+            All <span className="text-amber-500 font-bold">PROVISIONAL</span>.
+          </p>
+        ) : viewMode === 'rune' ? (
           <p className="text-xs text-violet-400/80 bg-violet-900/15 border border-violet-800/40 rounded px-3 py-2 font-mono leading-relaxed max-w-4xl">
             <span className="text-violet-200 font-bold">Phase 4 — Rune-Per-Group + Two-Tier Selection</span>
             {' '}— 6 primitive-group <span className="text-violet-300">rune anchors</span> (large atmospheric light-edge brush-stroke; no color; drawn by light) ·{' '}
@@ -445,8 +482,43 @@ export function Forge() {
               ) : (
                 <LayoutLoadingState message="Loading constellation layout… (constellation_layout.json · 1000 kits · 34k instance nodes)" />
               )
+            ) : viewMode === 'cascade' ? (
+              // Phase 5 — spirit guide cascade + cycling text-list UI (§ 12 canonical architecture)
+              runeLayerLoadState === 'error' ? (
+                <ErrorState message={runeLayerLoadError ?? 'Rune-layer layout load failed'} />
+              ) : runeLayerLoadState === 'ready' && runeLayerData && layoutData ? (
+                // Canvas wrapper — position:relative so CascadePanel can overlay absolutely
+                <div className="relative w-full h-full">
+                  <RuneLayerCanvas
+                    key="cascade"
+                    data={data}
+                    runeLayoutData={runeLayerData}
+                    constellationLayoutData={layoutData}
+                    onLassoResult={handleTwoLayerLassoResult}
+                    clearLassoRef={clearLassoRef}
+                    cascadeMode={true}
+                    cascadeHighlightAnchorId={cascadeHighlightAnchorId}
+                  />
+                  {/* CascadePanel overlay — iPad text-list cycling UI per § 12.2 */}
+                  <CascadePanel
+                    onHighlight={(anchorId) => setCascadeHighlightAnchorId(anchorId)}
+                    onTier1Commit={(anchorId) => {
+                      setCascadeHighlightAnchorId(anchorId);
+                      console.info(`[Forge P5] Tier 1 committed: ${anchorId}`);
+                    }}
+                    onEmergence={(kitId) => {
+                      console.info(`[Forge P5] Final emergence: ${kitId}`);
+                    }}
+                    onReset={() => {
+                      setCascadeHighlightAnchorId(null);
+                    }}
+                  />
+                </div>
+              ) : (
+                <LayoutLoadingState message="Loading cascade layout… (rune_layer_layout.json · 7 sky regions · 1000 kits)" />
+              )
             ) : viewMode === 'rune' ? (
-              // Phase 4 — rune-per-group + two-tier selection
+              // Phase 4 — rune-per-group + two-tier selection (preserved baseline)
               runeLayerLoadState === 'error' ? (
                 <ErrorState message={runeLayerLoadError ?? 'Rune-layer layout load failed'} />
               ) : runeLayerLoadState === 'ready' && runeLayerData && layoutData ? (
@@ -457,6 +529,7 @@ export function Forge() {
                   constellationLayoutData={layoutData}
                   onLassoResult={handleTwoLayerLassoResult}
                   clearLassoRef={clearLassoRef}
+                  cascadeMode={false}
                 />
               ) : (
                 <LayoutLoadingState message="Loading rune-layer layout… (rune_layer_layout.json · 6 primitive groups · 1000 kits)" />
@@ -533,6 +606,13 @@ export function Forge() {
                 {layoutData?.centroids.length ?? '…'} constellation clusters ·{' '}
                 {layoutData ? '18k first-class stars' : 'loading layout…'} &middot;
                 dots at 1× · stars at 2×+ · lasso at 2×+ · &quot;substrate&quot; above for primitive analysis
+              </>
+            ) : viewMode === 'cascade' ? (
+              <>
+                7 sky cluster regions · spirit guide cascade (§ 12) &middot;{' '}
+                {runeLayerData?.rune_anchors.length ?? '…'} rune anchors (sky layer) &middot;{' '}
+                {runeLayerData?.centroids.length ?? '…'} kit clusters &middot;{' '}
+                cycle = preview · commit = advance · PROVISIONAL
               </>
             ) : viewMode === 'rune' ? (
               <>
