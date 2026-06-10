@@ -345,13 +345,17 @@ export function Forge() {
         )}
       </div>
 
-      {/* Main content: canvas + side panel */}
+      {/* Main content: canvas + side panel
+          Mobile layout (< 640px): column stack — canvas above, side panel below (when result present)
+          iPad+ (≥ 640px): row layout — canvas left, side panel right at 260px
+      */}
       <div
-        className="flex"
+        className="flex flex-col sm:flex-row"
         style={{ height: 'calc(100vh - 195px)', minHeight: 480 }}
       >
-        {/* Canvas area */}
-        <div className="flex-1 min-w-0">
+        {/* Canvas area — full width on mobile (min 60% of container), flex-1 on sm+
+            sm:min-h-0 re-enables flex shrink on desktop; on mobile 60% ensures canvas dominates */}
+        <div className="flex-1 min-w-0" style={{ minHeight: 'clamp(240px, 60%, 100%)' }}>
           {loadState === 'idle' || loadState === 'loading' ? (
             <LoadingState />
           ) : loadState === 'error' ? (
@@ -408,11 +412,19 @@ export function Forge() {
           ) : null}
         </div>
 
-        {/* Side panel */}
+        {/* Side panel
+            Mobile (< 640px): full-width, stacked below canvas.
+              When no lasso result: hidden (preserves canvas space).
+              When lasso result present: visible, min-h-[200px] to show content.
+            iPad+ (≥ 640px): fixed 280px column on the right, always visible (shows idle hint).
+            Border: top on mobile (column stack), left on sm+ (row layout).
+        */}
         {loadState === 'ready' && data && (
           <div
-            className="flex-shrink-0 border-l border-gray-800/60 bg-gray-950 overflow-hidden"
-            style={{ width: 280 }}
+            className={
+              'flex-shrink-0 w-full sm:w-[280px] border-t sm:border-t-0 sm:border-l border-gray-800/60 bg-gray-950 overflow-hidden min-h-[200px] sm:min-h-0 ' +
+              (lassoResult === null ? 'hidden sm:block' : '')
+            }
           >
             <SidePanel
               result={lassoResult}
