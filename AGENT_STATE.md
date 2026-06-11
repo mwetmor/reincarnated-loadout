@@ -1,9 +1,20 @@
 # AGENT_STATE — drax
 
-**Last updated:** 2026-06-10
-**Last commit:** `2d8d539` (Phase 5 follow-on: tier1_commit voice template + Pixi ticker alpha interpolation)
-**Last tag:** `drax/v1.8-cosmograph-ab-spike-phase-1` (Phase 2 not yet separately tagged — pending jack-ryan Gate-2 PASS)
-**Branch:** `main` — 11 local commits ahead of origin (push awaiting Matt authorization per ADR-006)
+> ## ⛔ REPO RETIRED — 2026-06-10
+>
+> This loadout/forge web app was **wound down** (Matt-authorized; it was always scaffolding toward the UE player-facing surface, now the single surface). Retirement, not deletion — history preserved.
+> - **Archive tag:** `drax/loadout-retired-2026-06-10` @ `3e538e0`
+> - **Wind-down dispatch + completion record:** `reincarnated-collaboration/agentic_orchestration/dispatches/2026-06-10-drax-forge-loadout-wind-down.md`
+> - **Salvage note:** `reincarnated-collaboration/agentic_orchestration/drax/notes/2026-06-10-forge-loadout-salvage-note.md`
+> - **Staged for Matt (ADR-006):** (a) push loadout repo + archive tag to origin; (b) Vercel disposition (DARK recommended). Exact commands in the dispatch completion record.
+> - **Post-wind-down drax mandate:** Matt's decision (advisory read in the completion record). The history below is the retired app's working record, retained for reference.
+
+# AGENT_STATE — drax
+
+**Last updated:** 2026-06-10 (REPO RETIRED — see banner above)
+**Last commit:** `3e538e0` (RETIRED marker — forge/loadout web-app wind-down)
+**Last tag:** `drax/loadout-retired-2026-06-10` @ `3e538e0` (annotated archive tag — permanent retired-state marker)
+**Branch:** `main` — 2 commits ahead of origin (`aae190a` rocket sidecar + `3e538e0` README RETIRED marker), push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10 at wind-down.
 **Hive-mind mode:** N/A
 
 ---
