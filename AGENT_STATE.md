@@ -1,20 +1,20 @@
 # AGENT_STATE — drax
 
-> ## ⛔ REPO RETIRED — 2026-06-10
+> ## SEAM FROZEN — no further roadmap (2026-06-10); app + cosmograph remain LIVE
 >
-> This loadout/forge web app was **wound down** (Matt-authorized; it was always scaffolding toward the UE player-facing surface, now the single surface). Retirement, not deletion — history preserved.
-> - **Archive tag:** `drax/loadout-retired-2026-06-10` @ `3e538e0`
-> - **Wind-down dispatch + completion record:** `reincarnated-collaboration/agentic_orchestration/dispatches/2026-06-10-drax-forge-loadout-wind-down.md`
-> - **Salvage note:** `reincarnated-collaboration/agentic_orchestration/drax/notes/2026-06-10-forge-loadout-salvage-note.md`
-> - **Staged for Matt (ADR-006):** (a) push loadout repo + archive tag to origin; (b) Vercel disposition (DARK recommended). Exact commands in the dispatch completion record.
-> - **Post-wind-down drax mandate:** Matt's decision (advisory read in the completion record). The history below is the retired app's working record, retained for reference.
+> Forward development on the loadout/forge web app is **paused** (no further active roadmap) now that Unreal Engine is the primary player-facing surface. This is **frozen, NOT retired and NOT dark.** The app — including the 2D cosmograph (`/forge`) — **stays live on Vercel as-is**, and the **original cosmograph form is explicitly retained** because Matt still plans to use it.
+> - **Disposition dispatch + completion record (with scope-correction note):** `reincarnated-collaboration/agentic_orchestration/dispatches/2026-06-10-drax-forge-loadout-wind-down.md`
+> - **Design-learnings (captured as the seam's roadmap pauses):** `reincarnated-collaboration/agentic_orchestration/drax/notes/2026-06-10-forge-loadout-salvage-note.md`
+> - **Vercel:** no action — deployment stays live. No takedown, no go-dark.
+> - **Reconciliation (retained, useful):** the prior "11 commits ahead of origin" line was a STALE checkpoint — those 11 commits were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. True ahead-of-origin at the time was 1 commit (`aae190a`, a rocket engine-sidecar update, NOT drax player-surface work).
+> - **Note:** an earlier annotated tag `drax/loadout-retired-2026-06-10` was created under the over-broad retirement framing and has since been DELETED (never pushed) — the retirement it implied is not happening.
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-06-10 (REPO RETIRED — see banner above)
-**Last commit:** `3e538e0` (RETIRED marker — forge/loadout web-app wind-down)
-**Last tag:** `drax/loadout-retired-2026-06-10` @ `3e538e0` (annotated archive tag — permanent retired-state marker)
-**Branch:** `main` — 2 commits ahead of origin (`aae190a` rocket sidecar + `3e538e0` README RETIRED marker), push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10 at wind-down.
+**Last updated:** 2026-06-10 (SEAM FROZEN — no further roadmap; app + cosmograph LIVE — see banner above)
+**Last commit:** scope-correction reversal of the over-broad retirement framing (frozen-not-retired)
+**Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
+**Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
 
 ---

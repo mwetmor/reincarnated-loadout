@@ -1,19 +1,18 @@
-# Reincarnated Loadout — RETIRED (2026-06-10)
+# Reincarnated Loadout
 
-> ## ⛔ RETIRED — archived, not deleted
+> ## Status — LIVE, forward development paused (2026-06-10)
 >
-> This web `/forge` + loadout app was **always scaffolding** toward the real Unreal Engine player-facing surface — never intended to ship as a player-facing companion. It served its purpose as a fast-iteration prototyping surface *before* UE was empirically proven (mantis spike GREEN; 15K stars @ ~92 FPS). With UE now the single player-facing surface, the app is **wound down** to dissolve the two-cosmograph cross-surface drift hazard (a star-sign that's a neighbor in the forge becoming a stranger in the sky). This is **retirement, not deletion** — full git history is preserved and the codebase is kept in place.
+> This app — including the 2D cosmograph (`/forge`) — is **live and stays live** on Vercel (`https://reincarnated-loadout.vercel.app`). What changed on 2026-06-10 is the **forward roadmap, not the deployment**: active feature development on the loadout web app is **paused** (no further roadmap) now that Unreal Engine is the primary player-facing surface. The app is **not retired, not archived, and not going dark.**
 >
-> - **Archive tag:** `drax/loadout-retired-2026-06-10` (annotated; on the final HEAD)
-> - **Wind-down dispatch:** `reincarnated-collaboration/agentic_orchestration/dispatches/2026-06-10-drax-forge-loadout-wind-down.md`
-> - **Rationale (the *why*):** `reincarnated-collaboration/agentic_orchestration/gandalf/notes/2026-06-10-forge-windown-recommendation-for-kr.md`
-> - **Migrate-forward salvage note:** `reincarnated-collaboration/agentic_orchestration/drax/notes/2026-06-10-forge-loadout-salvage-note.md`
+> The **original cosmograph form is explicitly retained** — Matt still plans to use it. Nothing is being torn down.
 >
-> Vercel deployment disposition (dark vs. frozen) is staged for Matt authorization (ADR-006). Everything below this banner is the historical README, retained for reference.
+> - **Disposition:** seam frozen (no further roadmap); app + cosmograph remain live on Vercel as-is.
+> - **Context dispatch:** `reincarnated-collaboration/agentic_orchestration/dispatches/2026-06-10-drax-forge-loadout-wind-down.md` (see the scope-correction note in its completion record).
+> - **Design-learnings (captured as the seam's roadmap pauses):** `reincarnated-collaboration/agentic_orchestration/drax/notes/2026-06-10-forge-loadout-salvage-note.md`
+>
+> Everything below this note is the standing app README.
 
 ---
-
-# Reincarnated Loadout
 
 Character build inspection and cross-season analytics for the Reincarnated RPG engine.
 
