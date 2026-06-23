@@ -53,6 +53,8 @@ import { SpiritGuide } from '../components/SpiritGuide/SpiritGuide';
 import { Tag } from '../components/ui/Tag';
 import { FlavorTip } from '../components/ui/FlavorTip';
 import { DesignModeToggle, DESIGN_MODE_STORAGE_KEY } from '../components/DesignMode/DesignModeToggle';
+import { EquippedSlotsGrid } from '../components/GearGrid/EquippedSlotsGrid';
+import type { SerializedLoadout } from '../data/serializedLoadout';
 
 // ---------------------------------------------------------------------------
 // Constants + helpers
@@ -616,6 +618,23 @@ export function Loadout() {
           Equipment
         </h2>
         <SubstratePanel kit={kit} designMode={designMode} />
+
+        {/* Path B Step 1a (drax seam 4): serialized 10-slot equipped surface.
+            Consumes the engine's serialize_loadout() form (10 canonical keys, empties → null);
+            tolerant of legacy 4-key shapes. Kit-space JSON does not yet carry a serialized
+            loadout (gear pending EAA-8), so this renders all 10 slots cleanly empty for now —
+            it activates automatically once the kit carries a serialized_loadout / loadout field.
+            TODO(drax): drop the `?? null` fallback once EAA-8 ships a serialized loadout per kit. */}
+        <EquippedSlotsGrid
+          loadout={
+            ((kit as unknown as {
+              serialized_loadout?: SerializedLoadout | null;
+              loadout?: SerializedLoadout | null;
+            }).serialized_loadout ??
+              (kit as unknown as { loadout?: SerializedLoadout | null }).loadout) ??
+            null
+          }
+        />
       </section>
 
       {/* Skill Tree — tiered display mirroring Sample.tsx SkillTree structure */}

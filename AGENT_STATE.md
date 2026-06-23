@@ -19,6 +19,48 @@
 
 ---
 
+## Path B Step 1a — loadout app surfaces 10 serialized slots (SEAM 4 of 4) — 2026-06-22
+
+**Dispatch:** `reincarnated-collaboration/agentic_orchestration/dispatches/2026-06-22-drax-pathb-1a-loadout-app.md`
+**Authority:** Matt-approved 2026-06-22 (seam 4, after seams 1-3 Gate-2 PASS). Fresh task authorization — reactivates the frozen seam for THIS scoped structural-presentation widening only (not a general forward-roadmap resumption).
+**Tag:** `drax/v-pathb-1a-loadout-app` (intermediate — NO milestone tag)
+**Push:** NOT pushed (Matt-gated; Vercel-deployed app — no deploy).
+
+### Empirical inspection (Discipline #11) — what the app actually did before
+
+The app had **NO consumer of the engine's `serialize_loadout` 10-key form** (no `EQUIPPED_SLOTS` const, no `serializeLoadout`/`serialized_loadout` reference; nothing read engine-serialized 4-key OR 10-key loadout data). Equipped-slot views were constructed **client-side** from three other sources:
+1. `GearGrid.tsx` — hardcoded `EMPTY_SLOTS` (10 display labels), filled by `synthesizeSampleLoadout` (labeled synthesized-for-visualization; maps to legacy 4-key engine slot names `weapon/off_hand/armor/accessory`). Used in `Sample.tsx`.
+2. `Cycle14GearDisplay.tsx` — consumes `class.gear_representative` (Cycle 14 v1.68, an **11-slot** object with `legs` + `main_weapon/secondary_item` naming — a DIFFERENT engine artifact from `serialize_loadout`, which has no `legs` and uses `main_hand/off_hand`). Used in `Sample.tsx`.
+3. `Loadout.tsx` (`/` + `/loadout`, kit-space data) — surfaced a substrate-weapon proxy + a "gear pending EAA-8" placeholder; **rendered no equipped-slot grid at all.**
+
+The canonical `main_hand`/.../`amulet` keys appeared in data only inside `gear_slot_labels` label maps in `data/season_000042|000043/` class JSONs — **not consumed by any `src/` code.**
+
+### What changed (files)
+- **NEW** `src/data/serializedLoadout.ts` — consumer-side mirror of the `serialize_loadout` contract: `EQUIPPED_SLOTS` (canonical 10-key order, single source of truth), `RESIST_CAPABLE_SLOTS` (= EQUIPPED_SLOTS minus `main_hand`, cardinality 9), `EQUIPPED_SLOT_LABEL`, `normalizeSerializedLoadout()` (brownfield-tolerant: folds legacy `weapon→main_hand`, `armor→chest`, `accessory→amulet`; `off_hand` already canonical; canonical key wins over legacy alias; unknown keys ignored; missing → null), `toEquippedSlotViews()`.
+- **NEW** `src/components/GearGrid/EquippedSlotsGrid.tsx` — renders all 10 slots in canonical order; `main_hand` distinguished with a "wpn / no-resist" marker; empty (null) slots render as clean placeholders. STRUCTURAL ONLY — no resist-magnitude/affix (1b), no budget/calibration (1c).
+- **EDIT** `src/pages/Loadout.tsx` — wired `EquippedSlotsGrid` into the Equipment section, fed tolerantly from `kit.serialized_loadout ?? kit.loadout ?? null`. Kit-space JSON carries no serialized loadout yet (gear pending EAA-8), so it renders all 10 slots cleanly empty for now; activates automatically when a serialized loadout field ships. `// TODO(drax): drop the `?? null` fallback once EAA-8 ships a serialized loadout per kit.`
+- **NEW** `src/__tests__/serialized-loadout-10slot.test.ts` — 12 tests: canonical-contract (10 keys + 9 resist-capable), 10-slot fixture (all 10 surface; main_hand non-resist; empties = null), legacy 4-key brownfield fixture (maps correctly; 6 unmapped slots empty), tolerance edges (null/undefined/{}, unknown keys, canonical-wins-over-alias).
+
+### Brownfield clause — APPLIED (not N/A)
+The app could not previously load engine-serialized 4-key data, but the dispatch's brownfield requirement is satisfied at the new consumer boundary: `normalizeSerializedLoadout()` accepts BOTH canonical 10-key and legacy 4-key shapes and is proven by the legacy-4-key fixture test. The new consumer is the path any historical 4-key serialized loadout would flow through, and it renders without breaking.
+
+### Smoke (Discipline #2)
+- `npm run build` (`tsc -b && vite build`): clean, 0 TS errors.
+- `npm run test`: **91/91 pass** (was 79; +12 new). Covers 10-slot fixture AND legacy 4-key fixture.
+- Dev server: `/` HTTP 200, `/loadout` HTTP 200, SPA shell + title render.
+- Lint: new files clean except `@ts-nocheck` on the test file — IDENTICAL to the established pattern on all 3 pre-existing test files (vitest type-suppression convention); `tsc -b` proves types are sound. 31 other lint errors are all pre-existing (Cosmograph/Sample/constellationModeLayout) — not touched.
+
+### Cross-seam contract
+Round-trip N/A — CONSUMER seam, authors no contract. `serializedLoadout.ts` mirrors rocket/star-lord's already-MIGRATION'd shape; it does not add/rename/remove a field another seam consumes.
+
+### For jack-ryan Gate-2
+- `serializedLoadout.ts` `EQUIPPED_SLOTS` order/cardinality matches rocket MIGRATION exactly (10 keys; 9 resist-capable; main_hand the non-resist weapon).
+- `EquippedSlotsGrid` surfacing is structural only — confirm no 1b/1c bleed (no resist magnitude, no budget).
+- Brownfield legacy mapping (`weapon→main_hand`, `armor→chest`, `accessory→amulet`) matches MIGRATION §28 (note: NOT `weapon→main_weapon` and NOT a `legs` fold — that's the gear_representative artifact, a different shape).
+- The kit-space wiring renders 10 empty slots today (kit JSON has no serialized loadout; gear pending EAA-8); TODO(drax) tracked. Post-1a all-empty/4-filled state is EXPECTED, NOT a balance signal (CONCERN-3).
+
+---
+
 ## Session summary
 
 ### Phase 5 Follow-on — tier1_commit voice template edit + Pixi ticker alpha interpolation (2026-06-10)
