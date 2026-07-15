@@ -11,11 +11,52 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-06-10 (SEAM FROZEN — no further roadmap; app + cosmograph LIVE — see banner above)
-**Last commit:** scope-correction reversal of the over-broad retirement framing (frozen-not-retired)
+**Last updated:** 2026-07-15 (atlas interactive wiring pass — /atlas Glance page bidirectional; Vercel PREVIEW shipped, prod HELD for gandalf verify)
+**Last commit:** atlas interactive wiring — 7 seams closed, r7 SVG inlined + hooked, legend highlight + chart↔table roundtrip + P-DF-1 runtime provenance
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
+
+---
+
+## Atlas interactive wiring pass — /atlas Glance page goes bidirectional (2026-07-15)
+
+**Spec:** `reincarnated-collaboration/agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md`
+**Authority:** Matt 2026-07-15 directive package (black-copy lead · legend highlight · pivot-chart wiring · PRD ship pre-authorized). Fresh scoped task; not a general roadmap resumption.
+**Builds on:** commit 90c8007 (data-slim + pivot + page skeleton). This pass closed the 7 `TODO(drax)` interactivity seams.
+**Push:** NOT pushed (Matt-gated). Deployed **Vercel PREVIEW only** (`npx vercel`, NOT --prod); production promotion HELD for gandalf verify.
+
+### What changed (files)
+- **VENDORED (uncommitted → committed this pass):** `public/atlas/atlas-edition2-{archive,instrument}.svg` + `render-provenance.json` (both `public/atlas/` and `data-src/atlas/`) — galadriel's r7 hooked artifacts (5 layer groups `layer-{ghosts,drillin,graveyard,live,chrome}`; 46,512 data-el marks = 383 live + 86 condensation + 37 graveyard + 46,006 ghost). Confirmed on disk against the SVG.
+- **NEW** `src/utils/atlasSelectPath.ts` — the chart↔table bridge: `hookToSelection` (data-el/kit/core → AtlasSelection; ruled seam B: drill-in ground with no data-core → null/unwirable), `itemToSelection`, `isSelectedItem`, `leafDomId` (id-safe), `ancestorPathsForItem` (mirrors `atlasPivot.groupChildren` path derivation exactly — verified against real data + reorder-safe).
+- **EDIT** `src/pages/Atlas.tsx` — replaced `<img>` with INLINED r7 SVG (`useAtlasSvg` → `dangerouslySetInnerHTML` under stable `rootId`; SVG is script-free per renderer law). Injects `<style>` = `buildHighlightCss(legend classes + selection)`. Click delegation on the SVG wrapper (chart→table). Selection summary with the ruled-seam-A aggregate caption ("N cells at this position" when data-mult>1). Provenance panel reading the P-DF-1 verdict from `render-provenance.json` at RUNTIME (never hardcoded).
+- **EDIT** `src/components/atlas/{AtlasPivotTable,LeafRow,VirtualizedLeafList,AtlasLegend}.tsx` — threaded `selection` + `openItem` (chart→table drill: expand ancestor paths + scrollIntoView the leaf); leaf-row focus ring (ring only, never a fill mutation) + stable DOM id; virtualized-list scroll-to-selected; legend stale-TODO comments retired.
+- **EDIT** `src/data/atlasTypes.ts` — typed `PDf1Verdict` + `RenderProvenance.p_df_1`/render/edition/iteration/emitted_at.
+- **NEW** `src/__tests__/atlas-highlight.test.ts` (8) + `src/__tests__/atlas-select-path.test.ts` (15).
+
+### Ruled data seams (gandalf) — IMPLEMENTED
+- **Seam A (aggregate-core representative):** 1,656 of 7,128 meso glyphs aggregate coincident cells with differing cores; data-core = first-emitted representative. Chart click on such a glyph opens the representative's row + surfaces "N cells at this position" (data-mult>1). Table ghost-row → halos by data-core match (positionally honest; 4,032 aggregated-away cores match no glyph — expected). VERIFIED live: clicked `ROOTED|NOVA|...` mult=4 → caption "4 cells at this position" + drilled to that ghost leaf.
+- **Seam B (drill-in not selection-wirable):** `layer-drillin` glyphs carry data-el=ghost but NO data-core → they join the Ghosts class toggle but never selection; clicks = deselect/no-op. VERIFIED live: clicking a drill-in glyph (no data-core) → selection cleared. Condensation members select by their OWN data-kit; data-kits member list is display-only.
+
+### Acceptance receipts (headless CDP render smoke, cached chromium; 0 console errors)
+- **#32 legend-highlight:** all four classes toggle; multi-select (Live+Graveyard) emits 2 blocks; `hasFill:false`; no bare opacity/display (zero dimming); maxStrokeWidth 0.75.
+- **#34 wiring-roundtrip:** BOTH directions on live single (`chr-arrow-storm-warden`), condensation member (`d2-bvc`/WHIRLWIND), graveyard (`d2-blade-sin`), meso ghost aggregate (representative rule fired, mult=4). Chart→table drills + focuses leaf (`aria-current`); table→chart leaf click re-establishes halo targeting `[data-kit=...]`.
+- **#35 black-lead:** archive (DARK) canvas is page default (resolved by canvas via provenance, never by skin name); skin toggle preserved; P-DF-1 read at runtime — `PASS`, `S_max 2.84105203`, `K_max 1.87424756` (matches expected sanity values; NOT hardcoded).
+
+### Smoke (Discipline #2)
+- `npm run test`: **120/120 pass** (was 97 in this suite; +23 new atlas tests).
+- `npm run build` (`tsc -b && vite build`): clean, 0 TS errors.
+- Routing smoke (vite preview, prod build): `/` 200 html; `/atlas` 200 (SPA rewrite → index.html); `/atlas/atlas-interactive.json` 200 application/json 1.9MB (NOT rewritten); both SVGs 200 image/svg+xml; provenance 200.
+- dist packaging: slim `atlas-interactive.json` + both SVGs + provenance PRESENT; fat `data-src/atlas/atlas-edition2.json` ABSENT (`.vercelignore`'d + outside public/).
+- Lint (my atlas files only): clean. Pre-existing lint errors elsewhere (Forge/Sample/constellationModeLayout) untouched.
+
+### Overrides / TODOs
+- No new `// TODO(drax)` overrides introduced. All 7 pre-existing atlas seams CLOSED (0 remaining in `src/pages/Atlas.tsx` + `src/components/atlas/`). The pre-existing `TODO(drax)` in `Loadout.tsx` (EAA-8 serialized loadout) is unrelated and untouched.
+
+### For gandalf verify (production promotion HELD)
+- P-DF-1 panel is runtime-read (edit `render-provenance.json` verdict → panel follows).
+- Aggregate caption is the ruled-A surface; drill-in click is the ruled-B no-op.
+- Preview URL in the completion record / commit context.
 
 ---
 

@@ -1,16 +1,44 @@
 {
-  "render": "galadriel/pipeline/atlas-edition2-e21-render.mjs",
+  "render": "galadriel/pipeline/atlas-edition2-r7-render.mjs",
   "edition": "II",
-  "iteration": "E2.1",
-  "iteration_authority": "spec §10.8 (Matt 2026-07-15 two rulings + gandalf DRIFT-CRITIC findings); presentation-only on FROZEN Edition-II data",
-  "iteration_precedes": "r7 (radius floor is geometry; lands before the r7 freeze baseline)",
+  "iteration": "r7",
+  "iteration_authority": "spec 2026-07-15-atlas-interactive-glance-spec §§1-3, §7 (acc 29-31); Matt 2026-07-15 directive package. Restyle + hooks on FROZEN e21 geometry.",
+  "freeze_baseline": "2026-07-15-atlas-edition2-e21 (fb951b39) — geometry byte-frozen vs this (acc-29); e21 pipeline + captures untouched as the freeze record",
   "prefix_baseline": "2026-07-15-atlas-edition2 (ebb18784) — the pre-fix record, untouched",
+  "restyle_whitelist": [
+    "single-kit fill grey→chartreuse-lime",
+    "five <g id=layer-*> wrappers",
+    "data-el/data-kit/data-kits/data-core/data-mult hooks",
+    "four pole title+gloss margin-band relocations",
+    "horizon-vs-drill hairline paint order"
+  ],
   "atlas_version": "Edition-II",
   "register_ref": "feasibility-cuts-register-v1.2",
   "input": "agentic_orchestration/research/curated/atlas/atlas-edition2.json",
   "emitted_at": "2026-07-15T19:20:12.237153+00:00",
   "emitter_script": "agentic_orchestration/research/scripts/build_atlas_json_edition2.py",
-  "fit_layer_frozen_vs": "r6 (2026-07-15-atlas-edition1-r6-legibility) AND ebb18784 (2026-07-15-atlas-edition2)",
+  "hook_reconciliation": {
+    "live": 383,
+    "condensation": 86,
+    "graveyard": 37,
+    "ghost": 46006,
+    "points_classed": 506,
+    "meso_ghost_glyphs": 7128,
+    "drill_glyphs": 38878,
+    "emitted": {
+      "neutral_single": 383,
+      "grouped_condensation": 86,
+      "supplementary": 37,
+      "total_points": 506,
+      "meso_glyph_positions": 7128,
+      "drill_glyph_field_entries": 38878
+    },
+    "live_single_hue": {
+      "instrument": "#50991f",
+      "archive": "#7cd143"
+    }
+  },
+  "fit_layer_frozen_vs": "r6 (2026-07-15-atlas-edition1-r6-legibility, coord+title tuple) AND e21 (2026-07-15-atlas-edition2-e21, geometry byte-freeze)",
   "skin_canvas_map": {
     "instrument": {
       "canvas": "light",
@@ -140,8 +168,8 @@
     "consequence_if_falsified": "INTERIOR-1 re-opens with new fuel (§9.4.4 trigger) — SURFACE to Matt, never auto-fire."
   },
   "acceptance": {
-    "pass": 54,
-    "total": 54,
+    "pass": 58,
+    "total": 58,
     "all_pass": true,
     "tests": [
       {
@@ -290,6 +318,22 @@
       },
       {
         "name": "E2.1-f-chrome-uniqueness+bottom-band-overlap",
+        "pass": true
+      },
+      {
+        "name": "r7-restyle-regression",
+        "pass": true
+      },
+      {
+        "name": "r7-overlap-zero",
+        "pass": true
+      },
+      {
+        "name": "r7-hooks-integrity",
+        "pass": true
+      },
+      {
+        "name": "r7-hooks-doctored-halt",
         "pass": true
       }
     ]

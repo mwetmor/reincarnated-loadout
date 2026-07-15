@@ -7,9 +7,11 @@
 //
 // Spec §5: "never a flat 11,160-row render; virtualized."
 
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import { leafKey, type PivotItem } from '../../utils/atlasPivot';
+import type { AtlasSelection } from '../../utils/atlasHighlight';
 import { LeafRow } from './LeafRow';
+import { isSelectedItem } from '../../utils/atlasSelectPath';
 
 const ROW_H = 22; // px per leaf row (must match LeafRow line-height footprint)
 const VIEW_H = 260; // px visible window
@@ -19,10 +21,12 @@ export function VirtualizedLeafList({
   items,
   indent,
   onSelectRow,
+  selection = null,
 }: {
   items: PivotItem[];
   indent: number;
   onSelectRow?: (item: PivotItem) => void;
+  selection?: AtlasSelection | null;
 }) {
   const [scrollTop, setScrollTop] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -39,6 +43,30 @@ export function VirtualizedLeafList({
   const slice = items.slice(first, last);
   const padTop = first * ROW_H;
 
+  // Chart -> table: when the selected item lives in THIS virtualized group but
+  // outside the current window, scroll it into the window so its row mounts (the
+  // outer page's scrollIntoView can then center it). Keyed on selection identity.
+  const selKey = selection
+    ? selection.kind === 'kit'
+      ? `k:${selection.kitId}`
+      : `g:${selection.core}`
+    : null;
+  useEffect(() => {
+    if (!selection) return;
+    const idx = items.findIndex((it) => isSelectedItem(it, selection));
+    if (idx < 0) return;
+    const box = scrollRef.current;
+    if (!box) return;
+    const rowTop = idx * ROW_H;
+    const rowBottom = rowTop + ROW_H;
+    // Only scroll if the row is outside the current visible window.
+    if (rowTop < box.scrollTop || rowBottom > box.scrollTop + VIEW_H) {
+      box.scrollTop = Math.max(0, rowTop - VIEW_H / 2 + ROW_H / 2);
+    }
+    // items excluded: selection identity drives the reveal; the list is stable per node.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selKey]);
+
   return (
     <div
       ref={scrollRef}
@@ -51,7 +79,12 @@ export function VirtualizedLeafList({
           <ul>
             {slice.map((it) => (
               <div key={leafKey(it)} style={{ height: ROW_H }}>
-                <LeafRow item={it} indent={indent} onSelectRow={onSelectRow} />
+                <LeafRow
+                  item={it}
+                  indent={indent}
+                  onSelectRow={onSelectRow}
+                  selected={isSelectedItem(it, selection)}
+                />
               </div>
             ))}
           </ul>

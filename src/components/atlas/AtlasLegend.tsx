@@ -1,15 +1,12 @@
-// AtlasLegend — basic top-left legend scaffold (spec §4).
+// AtlasLegend — basic top-left legend (spec §4).
 //
 // Four entries in Matt's vocabulary: Condensations, Live Kits, Graveyard, Ghosts.
-// Multi-select. This pass ships VISUAL SCAFFOLD + STATE ONLY.
-//
-// TODO(drax): r7 highlight wiring. The slim class-highlight CSS (stroke halo
-//   <= 0.75px, NO fill change, NO dimming of non-selected marks) targets the r7
-//   layer groups (<g id="layer-live"> etc.) / data-el attributes, which do NOT
-//   exist yet (r6 SVG is flat: zero class=, zero <g id=>). When galadriel's r7
-//   hooked SVG lands, this component's `selected` set drives a page-injected
-//   <style> targeting those groups. Until then, selection only updates state +
-//   the swatch active ring — no marks are touched. (spec §3, §4; acceptance #32)
+// Multi-select. The selected Set drives the page-injected class-highlight CSS
+// (atlasHighlight.buildHighlightCss) that targets the r7 SVG's data-el hooks:
+// a stroke halo <= 0.75px, NO fill change, NO dimming of non-selected marks
+// ("very slim, almost non-existent; dots never obscured"). r7 hooks have landed,
+// so selecting a class now lights its members on the inlined SVG. (spec §3, §4;
+// acceptance #32)
 
 import type { LegendClass } from '../../data/atlasTypes';
 import { LEGEND_ENTRIES } from '../../data/atlasTypes';
@@ -74,14 +71,13 @@ export function AtlasLegend({ selected, onToggle, canvas }: AtlasLegendProps) {
           </button>
         );
       })}
-      {/* TODO(drax): r7 highlight wiring seam — see file header. */}
       <p
         className={[
           'mt-0.5 max-w-[180px] text-[9px] leading-tight',
           dark ? 'text-gray-600' : 'text-gray-400',
         ].join(' ')}
       >
-        Highlight wiring lands with r7 hooks.
+        Toggle to halo a class. Slim stroke only — dots never obscured.
       </p>
     </div>
   );

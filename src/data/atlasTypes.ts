@@ -89,11 +89,32 @@ export interface SkinCanvasEntry {
   hex: string;
 }
 
+/**
+ * P-DF-1 falsification verdict, carried in render-provenance.json (renderer law).
+ * The page surfaces this at RUNTIME from the provenance JSON — never hardcoded
+ * (spec §6, acceptance #35). Fields mirror the emitted `p_df_1` block verbatim.
+ */
+export interface PDf1Verdict {
+  verdict: string;
+  falsified: boolean;
+  S_max: number;
+  K_max_beyond_horizon: number;
+  n_beyond_horizon_kits: number;
+  statement: string;
+}
+
 export interface RenderProvenance {
   skin_canvas_map: Record<SkinName, SkinCanvasEntry>;
   skins: SkinName[];
   counts: { active: number; supplementary: number; total: number; grouped: number };
-  // (other provenance fields exist but are not consumed by the page skeleton)
+  /** P-DF-1 verdict (existing renderer law) — surfaced in the provenance panel. */
+  p_df_1?: PDf1Verdict;
+  /** Render + interactive-data lineage stamps (surfaced in the provenance panel). */
+  render?: string;
+  edition?: string;
+  iteration?: string;
+  emitted_at?: string;
+  // (other provenance fields exist but are not consumed by the page)
   [k: string]: unknown;
 }
 

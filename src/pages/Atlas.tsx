@@ -1,34 +1,47 @@
-// Atlas — /atlas route: the interactive-atlas Glance page skeleton.
+// Atlas — /atlas route: the interactive-atlas Glance page (spec §§4-6).
 //
 // COMPOSITION (spec §6):
 //   - The BLACK COPY LEADS. The lead skin is resolved by CANVAS (dark) via the
 //     provenance skin_canvas_map — NEVER by skin name (the names are inverted:
 //     'archive' = dark, 'instrument' = light; caught + ratified 2026-07-15).
 //   - White ('instrument') sits behind the skin toggle.
-//   - Basic legend, top-left, over the chart (scaffold; highlight wiring = r7).
-//   - Hierarchical pivot table below the chart.
+//   - Basic legend, top-left, over the chart. Toggling a class halos its members.
+//   - Hierarchical pivot table below the chart, wired bidirectionally to the chart.
 //   - Edition-I stays as an archived second lens (current page structure).
 //
-// SVG SOURCE THIS PASS: the verified e21 Edition-II capture (per-canvas file),
-// vendored to public/atlas/. r7 supersedes it; we develop layout against e21
-// knowing the hooked r7 SVG lands later (spec §0 sequencing; out-of-scope: r7
-// SVG vendoring + all chart<->table + class-highlight wiring).
+// SVG SOURCE: the r7 hooked Edition-II SVG (per-canvas file), vendored to
+// public/atlas/. It is INLINED (not <img>) so the page-injected highlight CSS can
+// target its layer groups (<g id="layer-live"> …) and per-mark data-el / data-kit
+// / data-core hooks. The SVG is a print-grade static artifact carrying NO scripts
+// (renderer law §3.4) — inlining is inert at rest.
+//
+// WIRING (spec §5, acceptance #32/#34):
+//   - Legend classes -> buildHighlightCss(selectedClasses) -> injected <style>.
+//   - Single selection (kit_id or ghost core) -> buildHighlightCss(selection)
+//     halos that mark; table row click sets it (table->chart); chart mark click
+//     sets it AND drills the table to the leaf (chart->table).
+//   - Ruled seams: aggregate meso glyphs (data-mult>1) surface "N cells at this
+//     position"; drill-in ground (data-el=ghost, no data-core) is unwirable — a
+//     click deselects.
 //
 // Spec: agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback, useId, useRef } from 'react';
 import { useAtlasData } from '../hooks/useAtlasData';
+import { useAtlasSvg } from '../hooks/useAtlasSvg';
 import { AtlasLegend } from '../components/atlas/AtlasLegend';
 import { AtlasSkinToggle } from '../components/atlas/AtlasSkinToggle';
 import { AtlasPivotTable } from '../components/atlas/AtlasPivotTable';
-import type { LegendClass, SkinName, CanvasKind, RenderProvenance } from '../data/atlasTypes';
-
-// Per-canvas SVG file map (e21 capture, vendored). Keyed by SKIN name because
-// the files are named by skin; we only ever LOOK UP by resolving canvas->skin.
-const SVG_FOR_SKIN: Record<SkinName, string> = {
-  archive: '/atlas/atlas-edition2-archive.svg', // DARK — the lead
-  instrument: '/atlas/atlas-edition2-instrument.svg', // LIGHT
-};
+import { buildHighlightCss, type AtlasSelection } from '../utils/atlasHighlight';
+import { hookToSelection, itemToSelection } from '../utils/atlasSelectPath';
+import type { PivotItem } from '../utils/atlasPivot';
+import type {
+  LegendClass,
+  SkinName,
+  CanvasKind,
+  RenderProvenance,
+  AtlasInteractiveData,
+} from '../data/atlasTypes';
 
 /** Resolve the skin whose canvas is `dark` (the black-copy lead) from provenance. */
 function leadSkinForDark(prov: RenderProvenance): SkinName {
@@ -66,7 +79,10 @@ export function Atlas() {
     return provenance.skin_canvas_map[resolvedSkin]?.canvas ?? 'dark';
   }, [provenance, resolvedSkin]);
 
-  // Legend multi-select state (scaffold; highlight wiring = r7).
+  // Inlined r7 SVG markup for the active skin (fetched as text, cached per skin).
+  const { markup: svgMarkup, status: svgStatus } = useAtlasSvg(resolvedSkin);
+
+  // Legend multi-select state (§4) — drives the class-highlight CSS.
   const [selectedClasses, setSelectedClasses] = useState<Set<LegendClass>>(() => new Set());
   const toggleClass = (id: LegendClass) =>
     setSelectedClasses((prev) => {
@@ -75,6 +91,83 @@ export function Atlas() {
       else next.add(id);
       return next;
     });
+
+  // Single-mark selection (§5) — independent of the class toggles. Set from either
+  // a table row click OR a chart mark click. Null = nothing selected.
+  const [selection, setSelection] = useState<AtlasSelection | null>(null);
+  // Detail of an aggregate meso glyph the chart last surfaced (ruled seam A).
+  const [aggregateCells, setAggregateCells] = useState<number | null>(null);
+  // Chart->table drill request (item + bump token so repeat clicks re-scroll).
+  const [openItem, setOpenItem] = useState<{ item: PivotItem; token: number } | null>(null);
+  const openTokenRef = useRef(0);
+
+  // Stable root id for the inlined-SVG wrapper — highlight CSS is scoped to it.
+  const rootId = useId().replace(/:/g, '_'); // useId() emits ':' which is not id-safe
+  const svgRootId = `atlas-svg-${rootId}`;
+
+  // ---- TABLE -> CHART: a leaf row click halos its mark + pans it into view ----
+  const handleSelectRow = useCallback((item: PivotItem) => {
+    setSelection(itemToSelection(item));
+    setAggregateCells(null); // table-origin selection carries no aggregate caption
+  }, []);
+
+  // ---- CHART -> TABLE: a mark click reads its hooks, sets selection + drills ----
+  const handleChartClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!data) return;
+      const target = e.target as Element | null;
+      const mark = target?.closest?.('[data-el]') as Element | null;
+      if (!mark) {
+        // Empty canvas -> deselect (spec: clicking empty canvas deselects).
+        setSelection(null);
+        setAggregateCells(null);
+        return;
+      }
+      const el = mark.getAttribute('data-el');
+      const kit = mark.getAttribute('data-kit');
+      const core = mark.getAttribute('data-core');
+      const sel = hookToSelection({ el, kit, core });
+      if (!sel) {
+        // Unwirable mark (drill-in ground: data-el=ghost, no data-core) -> deselect.
+        setSelection(null);
+        setAggregateCells(null);
+        return;
+      }
+      setSelection(sel);
+
+      // Resolve the target PivotItem to drill the table to.
+      let item: PivotItem | null = null;
+      if (sel.kind === 'kit') {
+        const row = data.kits.find((k) => k.kit_id === sel.kitId);
+        if (row) item = { kind: 'kit', row };
+        setAggregateCells(null); // kits are single cells
+      } else {
+        // Ghost by representative core — drill the representative's row (seam A).
+        const row = data.ghosts.find((g) => g.core.join('|') === sel.core);
+        if (row) item = { kind: 'ghost', row };
+        // Aggregate caption: data-mult>1 => N coincident cells at this position.
+        const mult = Number(mark.getAttribute('data-mult') ?? '1');
+        setAggregateCells(Number.isFinite(mult) && mult > 1 ? mult : null);
+      }
+      if (item) {
+        openTokenRef.current += 1;
+        setOpenItem({ item, token: openTokenRef.current });
+      }
+    },
+    [data]
+  );
+
+  // ---- Highlight CSS: recomputed from legend classes + single selection ----
+  const highlightCss = useMemo(
+    () =>
+      buildHighlightCss({
+        rootId: svgRootId,
+        canvas: activeCanvas,
+        selectedClasses,
+        selection,
+      }),
+    [svgRootId, activeCanvas, selectedClasses, selection]
+  );
 
   if (status === 'loading' || status === 'idle') return <LoadingState />;
   if (status === 'error' || !data || !provenance || !resolvedSkin) {
@@ -92,10 +185,8 @@ export function Atlas() {
     );
   }
 
-  const svgUrl = SVG_FOR_SKIN[resolvedSkin];
   const canvasHex = provenance.skin_canvas_map[resolvedSkin].hex;
   // Honest order-of-magnitude of the loaded slim payload vs the 7.5MB source.
-  // (Re-serialization estimate; not byte-exact with the on-disk file.)
   const slimPayloadBytes = new Blob([JSON.stringify(data)]).size;
 
   return (
@@ -115,50 +206,149 @@ export function Atlas() {
         />
       </header>
 
-      {/* CHART STAGE — SVG background, legend overlaid top-left. */}
+      {/* CHART STAGE — inlined r7 SVG, legend overlaid top-left. */}
       <div
         className="relative w-full overflow-hidden rounded-lg border border-gray-800"
         style={{ backgroundColor: canvasHex }}
       >
+        {/* Page-injected highlight CSS — targets the inlined SVG's data-el hooks. */}
+        <style>{highlightCss}</style>
+
         {/*
-          The vendored SVG is a print-grade static artifact (hooks are inert at
-          rest; scripts are NOT inside the SVG). We render it as an <img> for the
-          layout skeleton. r7's hooked SVG will later be inlined so the
-          page-injected highlight CSS can target its layer groups / data-el.
-          TODO(drax): swap <img> for inlined r7 SVG when hooks land (spec §3/§4).
+          The vendored r7 SVG is inlined via dangerouslySetInnerHTML: it is a
+          print-grade static artifact with NO scripts inside (renderer law), so
+          inlining is inert at rest. Click delegation on this wrapper reads the
+          data-el / data-kit / data-core hooks off the event target (chart->table).
         */}
-        <img
-          src={svgUrl}
-          alt={`Kit atlas — Edition-${data.derived_from.atlas_version}, ${activeCanvas} canvas`}
-          className="block h-auto w-full"
-        />
-        <div className="pointer-events-auto absolute left-3 top-3">
-          <AtlasLegend
-            selected={selectedClasses}
-            onToggle={toggleClass}
-            canvas={activeCanvas}
+        {svgMarkup ? (
+          <div
+            id={svgRootId}
+            onClick={handleChartClick}
+            className="atlas-svg-host block w-full cursor-pointer [&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
+            // Inert static SVG — NO scripts inside (renderer law §3.4); safe to inline.
+            dangerouslySetInnerHTML={{ __html: svgMarkup }}
           />
+        ) : (
+          <div className="flex items-center justify-center py-24">
+            <div className="flex flex-col items-center gap-2">
+              <div className="h-6 w-6 animate-spin rounded-full border-2 border-indigo-500 border-t-transparent" />
+              <p className="font-mono text-[11px] text-gray-500">
+                {svgStatus === 'error' ? 'Failed to load atlas SVG' : 'Rendering atlas…'}
+              </p>
+            </div>
+          </div>
+        )}
+
+        <div className="pointer-events-auto absolute left-3 top-3">
+          <AtlasLegend selected={selectedClasses} onToggle={toggleClass} canvas={activeCanvas} />
         </div>
       </div>
 
-      {/* PIVOT TABLE — below the chart. */}
-      <div className="mt-4">
+      {/* SELECTION SUMMARY — the focused mark; aggregate caption (ruled seam A). */}
+      <SelectionSummary
+        selection={selection}
+        aggregateCells={aggregateCells}
+        onClear={() => {
+          setSelection(null);
+          setAggregateCells(null);
+        }}
+      />
+
+      {/* PIVOT TABLE — below the chart, wired bidirectionally. */}
+      <div className="mt-3">
         <AtlasPivotTable
           data={data}
-          // TODO(drax): r7 wiring — onSelectRow will drive chart slim-halo + pan
-          //   once the hooked SVG is inlined (acceptance #34). Inert this pass.
+          onSelectRow={handleSelectRow}
+          selection={selection}
+          openItem={openItem}
         />
       </div>
 
-      {/* ARCHIVED SECOND LENS — Edition-I (current page structure). */}
-      <footer className="mt-6 rounded border border-gray-800/70 bg-gray-900/30 p-3">
-        <p className="font-mono text-[11px] text-gray-500">
-          Archived lens · Edition-I remains available as the prior atlas record.
-          Provenance: emitted {data.derived_from.emitted_at.slice(0, 10)} · basis frozen 2026-07-14 ·{' '}
-          {(data.derived_from.source_bytes / 1024 / 1024).toFixed(1)}MB source →{' '}
-          {(slimPayloadBytes / 1024 / 1024).toFixed(2)}MB slim derivative.
-        </p>
-      </footer>
+      {/* PROVENANCE PANEL — P-DF-1 verdict read at RUNTIME (never hardcoded, #35). */}
+      <ProvenancePanel provenance={provenance} data={data} slimBytes={slimPayloadBytes} />
     </div>
+  );
+}
+
+// ---- Selection summary (single mark + ruled aggregate caption) ----
+
+function SelectionSummary({
+  selection,
+  aggregateCells,
+  onClear,
+}: {
+  selection: AtlasSelection | null;
+  aggregateCells: number | null;
+  onClear: () => void;
+}) {
+  if (!selection) return null;
+  const label =
+    selection.kind === 'kit'
+      ? `kit · ${selection.kitId}`
+      : `ghost · ${selection.core.split('|').join(' | ')}`;
+  return (
+    <div className="mt-2 flex flex-wrap items-center gap-2 rounded border border-indigo-500/30 bg-indigo-950/20 px-3 py-1.5">
+      <span className="font-mono text-[11px] text-indigo-200">Selected</span>
+      <span className="truncate font-mono text-[11px] text-gray-300">{label}</span>
+      {aggregateCells != null && (
+        // Ruled seam A: aggregate meso glyph — surface the coincident-cell count.
+        <span className="rounded bg-amber-500/15 px-1.5 py-0.5 font-mono text-[10px] text-amber-300">
+          {aggregateCells.toLocaleString()} cells at this position (representative shown)
+        </span>
+      )}
+      <button
+        onClick={onClear}
+        className="ml-auto rounded border border-gray-700 px-2 py-0.5 font-mono text-[10px] text-gray-400 hover:border-gray-500"
+      >
+        Clear
+      </button>
+    </div>
+  );
+}
+
+// ---- Provenance panel (P-DF-1 verdict, read at runtime) ----
+
+function ProvenancePanel({
+  provenance,
+  data,
+  slimBytes,
+}: {
+  provenance: RenderProvenance;
+  data: AtlasInteractiveData;
+  slimBytes: number;
+}) {
+  const pdf1 = provenance.p_df_1;
+  return (
+    <footer className="mt-6 space-y-2 rounded border border-gray-800/70 bg-gray-900/30 p-3">
+      {pdf1 && (
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span className="font-mono text-[11px] font-semibold text-gray-300">P-DF-1</span>
+          <span
+            className={[
+              'rounded px-1.5 py-0.5 font-mono text-[10px] font-bold',
+              pdf1.falsified ? 'bg-rose-500/20 text-rose-300' : 'bg-emerald-500/20 text-emerald-300',
+            ].join(' ')}
+          >
+            {pdf1.verdict}
+          </span>
+          <span className="font-mono text-[10px] text-gray-500">
+            S_max {pdf1.S_max} · K_max {pdf1.K_max_beyond_horizon} · {pdf1.n_beyond_horizon_kits}{' '}
+            kits beyond horizon
+          </span>
+        </div>
+      )}
+      {pdf1?.statement && (
+        <p className="max-w-3xl font-mono text-[10px] leading-relaxed text-gray-600">
+          {pdf1.statement}
+        </p>
+      )}
+      <p className="font-mono text-[11px] text-gray-500">
+        Archived lens · Edition-I remains available as the prior atlas record.
+        {provenance.render ? ` Render: ${provenance.render}.` : ''} Provenance: emitted{' '}
+        {data.derived_from.emitted_at.slice(0, 10)} · basis frozen 2026-07-14 ·{' '}
+        {(data.derived_from.source_bytes / 1024 / 1024).toFixed(1)}MB source →{' '}
+        {(slimBytes / 1024 / 1024).toFixed(2)}MB slim derivative.
+      </p>
+    </footer>
   );
 }
