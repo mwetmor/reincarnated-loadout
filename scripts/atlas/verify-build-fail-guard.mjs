@@ -19,22 +19,30 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, '..', '..');
 const BUILD = resolve(__dirname, 'build-atlas-interactive.mjs');
 const SOURCE = resolve(REPO_ROOT, 'data-src/atlas/atlas-edition2.json');
+const SIDECAR = resolve(__dirname, 'kit-provenance-sidecar.json');
 
 const tmp = mkdtempSync(join(tmpdir(), 'atlas-guard-'));
 const OUT = join(tmp, 'out.json');
 
 const atlas = JSON.parse(readFileSync(SOURCE, 'utf8'));
+const sidecar = JSON.parse(readFileSync(SIDECAR, 'utf8'));
 
 function clone(o) {
   return JSON.parse(JSON.stringify(o));
 }
 
-/** Run the build against `srcObj`; return true iff it HALTS (non-zero exit). */
-function buildHalts(label, srcObj) {
+/** Run the build against `srcObj` (+ optional doctored sidecar); true iff HALTS. */
+function buildHalts(label, srcObj, sidecarObj) {
   const p = join(tmp, `doctored-${label}.json`);
   writeFileSync(p, JSON.stringify(srcObj));
+  const args = [BUILD, p, '--out', OUT];
+  if (sidecarObj) {
+    const sp = join(tmp, `doctored-sidecar-${label}.json`);
+    writeFileSync(sp, JSON.stringify(sidecarObj));
+    args.push('--sidecar', sp);
+  }
   try {
-    execFileSync('node', [BUILD, p, '--out', OUT], { stdio: 'pipe' });
+    execFileSync('node', args, { stdio: 'pipe' });
     return false; // exit 0 => did NOT halt
   } catch {
     return true; // non-zero exit => halted (guard fired)
@@ -83,6 +91,19 @@ let ok = true;
 for (const c of cases) {
   const halted = buildHalts(c.label, c.make());
   console.log(`  [${halted ? 'PASS' : 'FAIL'}] doctored '${c.label}' -> guard ${halted ? 'HALTED' : 'did NOT halt'}`);
+  if (!halted) ok = false;
+}
+
+// D1-h: the corpus provenance-sidecar coverage floor. A sidecar that drops folk_name
+// on the atlas kit_ids must HALT (never degrade build names to slugs). We doctor the
+// sidecar (null every folk_name) against the CLEAN atlas source and assert the halt.
+{
+  const doctoredSidecar = clone(sidecar);
+  for (const r of doctoredSidecar.rows) r.folk_name = null;
+  const halted = buildHalts('sidecar-drop-folk_name', atlas, doctoredSidecar);
+  console.log(
+    `  [${halted ? 'PASS' : 'FAIL'}] doctored 'sidecar-drop-folk_name' -> guard ${halted ? 'HALTED' : 'did NOT halt'}`
+  );
   if (!halted) ok = false;
 }
 

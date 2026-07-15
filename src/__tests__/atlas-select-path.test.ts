@@ -14,18 +14,14 @@ import {
   isSelectedItem,
   leafDomId,
 } from '../utils/atlasSelectPath';
-import { buildDefaultLevels, groupChildren, type PivotItem } from '../utils/atlasPivot';
+import { buildDefaultLevels, groupChildren, poleGroupLabel, type PivotItem } from '../utils/atlasPivot';
 import type { AtlasKitRow, AtlasGhostRow } from '../data/atlasTypes';
 
-const CORE_ORDER = [
-  'movement',
-  'delivery',
-  'treatment',
-  'function',
-  'proxy',
-  'activation',
-  'dependency',
-];
+// D1-e pole labels used as pivot group KEYS (path segments).
+const E = poleGroupLabel('EAST'); // 'PERFORM · E'
+const W = poleGroupLabel('WEST'); // 'DEPLOY · W'
+const N = poleGroupLabel('NORTH'); // 'LAUNCH · N'
+const S = poleGroupLabel('SOUTH'); // 'EMBODY · S'
 
 function kit(partial: Partial<AtlasKitRow>): PivotItem {
   return {
@@ -38,6 +34,10 @@ function kit(partial: Partial<AtlasKitRow>): PivotItem {
       x: 1,
       y: 1,
       quadrant: 'EN',
+      folk_name: null,
+      game: null,
+      era_year: null,
+      stabilization_patch: null,
       ...partial,
     } as AtlasKitRow,
   };
@@ -118,7 +118,7 @@ describe('leafDomId — DOM-id-safe', () => {
 });
 
 describe('ancestorPathsForItem — mirrors groupChildren real node paths', () => {
-  const levels = buildDefaultLevels(CORE_ORDER);
+  const levels = buildDefaultLevels();
 
   // Walk the real tree following the derived paths; assert each is a real node.
   function walk(item: PivotItem, root: PivotItem[]) {
@@ -149,43 +149,44 @@ describe('ancestorPathsForItem — mirrors groupChildren real node paths', () =>
     }),
   ];
 
-  it('live single: EAST/NORTH/Kits/Live Kits/Single leaf mounts', () => {
+  it('live single (D1-e/i): PERFORM·E / LAUNCH·N / Builds / Live Builds / Single leaf mounts', () => {
     expect(walk(SAMPLE[0], SAMPLE)).toBe(true);
     expect(ancestorPathsForItem(SAMPLE[0], levels)).toEqual([
-      'EAST',
-      'EAST/NORTH',
-      'EAST/NORTH/Kits',
-      'EAST/NORTH/Kits/Live Kits',
-      'EAST/NORTH/Kits/Live Kits/Single',
+      `${E}`,
+      `${E}/${N}`,
+      `${E}/${N}/Builds`,
+      `${E}/${N}/Builds/Live Builds`,
+      `${E}/${N}/Builds/Live Builds/Single`,
     ]);
   });
 
-  it('condensation member: drills to Condensation: WHIRLWIND leaf', () => {
+  it('build-family member (D1-i): drills to Family: WHIRLWIND leaf', () => {
     expect(walk(SAMPLE[1], SAMPLE)).toBe(true);
     expect(ancestorPathsForItem(SAMPLE[1], levels).at(-1)).toBe(
-      'EAST/SOUTH/Kits/Live Kits/Condensation: WHIRLWIND'
+      `${E}/${S}/Builds/Live Builds/Family: WHIRLWIND`
     );
   });
 
-  it('graveyard kit: drills to the Graveyard leaf group', () => {
+  it('graveyard build: drills to the Graveyard leaf group', () => {
     expect(walk(SAMPLE[2], SAMPLE)).toBe(true);
-    expect(ancestorPathsForItem(SAMPLE[2], levels).at(-1)).toBe('WEST/NORTH/Kits/Graveyard');
+    expect(ancestorPathsForItem(SAMPLE[2], levels).at(-1)).toBe(`${W}/${N}/Builds/Graveyard`);
   });
 
-  it('meso ghost: drills through all 7 core axes to the cell leaf', () => {
+  it('meso ghost (D1-g): bottoms out at the Ghosts node — no core-axis levels', () => {
     expect(walk(SAMPLE[3], SAMPLE)).toBe(true);
     const paths = ancestorPathsForItem(SAMPLE[3], levels);
-    expect(paths.at(-1)).toBe(
-      'EAST/SOUTH/Ghosts/FREE-MOVE/BEAM/control/taunt/light/active/one-shot'
-    );
+    // D1-g: the seven ghost core axes are COLUMNS now, not pivot levels. The ghost
+    // leaf mounts directly under the entity=Ghosts node (a virtualized leaf block).
+    expect(paths.at(-1)).toBe(`${E}/${S}/Ghosts`);
+    expect(paths).toEqual([`${E}`, `${E}/${S}`, `${E}/${S}/Ghosts`]);
   });
 
-  it('respects drag-reorder: condensation ABOVE axes spans quadrants', () => {
-    const base = buildDefaultLevels(CORE_ORDER);
+  it('respects drag-reorder: build-family ABOVE axes spans quadrants (D1-i)', () => {
+    const base = buildDefaultLevels();
     const cond = base.find((l) => l.id === 'kit-condensation')!;
     const reordered = [cond, ...base.filter((l) => l.id !== 'kit-condensation')];
     const paths = ancestorPathsForItem(SAMPLE[1], reordered);
-    // Condensation keys FIRST now.
-    expect(paths[0]).toBe('Condensation: WHIRLWIND');
+    // Build-family keys FIRST now.
+    expect(paths[0]).toBe('Family: WHIRLWIND');
   });
 });

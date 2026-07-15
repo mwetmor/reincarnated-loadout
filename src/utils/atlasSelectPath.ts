@@ -60,6 +60,17 @@ export function isSelectedItem(item: PivotItem, selection: AtlasSelection | null
 }
 
 /**
+ * The leaf-selection key for a selection, in the SAME form as
+ * atlasPivot.leafSelectionKey(item) — so a row's key can be compared to the
+ * selection's key with string equality (O(1), no per-row isSelectedItem call).
+ * kit -> `k:<kit_id>`; ghost -> `g:<|-joined core>`.
+ */
+export function selectionKey(selection: AtlasSelection | null): string | null {
+  if (!selection) return null;
+  return selection.kind === 'kit' ? `k:${selection.kitId}` : `g:${selection.core}`;
+}
+
+/**
  * A stable DOM id for a leaf row, so the table can scrollIntoView the row when
  * a chart mark is clicked. Kits key by kit_id; ghosts by |-joined core.
  * Sanitised to a CSS/DOM-id-safe token (non [-\w] -> '_').

@@ -9,20 +9,17 @@ import { describe, it, expect } from 'vitest';
 import {
   buildDefaultLevels,
   groupChildren,
+  poleGroupLabel,
   type PivotItem,
   type PivotLevelDef,
 } from '../utils/atlasPivot';
 import type { AtlasKitRow, AtlasGhostRow } from '../data/atlasTypes';
 
-const CORE_ORDER = [
-  'movement',
-  'delivery',
-  'treatment',
-  'function',
-  'proxy',
-  'activation',
-  'dependency',
-];
+// D1-e pole labels used as pivot group KEYS.
+const E = poleGroupLabel('EAST'); // 'PERFORM · E'
+const W = poleGroupLabel('WEST'); // 'DEPLOY · W'
+const N = poleGroupLabel('NORTH'); // 'LAUNCH · N'
+const S = poleGroupLabel('SOUTH'); // 'EMBODY · S'
 
 function kit(partial: Partial<AtlasKitRow>): PivotItem {
   return {
@@ -35,6 +32,10 @@ function kit(partial: Partial<AtlasKitRow>): PivotItem {
       x: 1,
       y: 1,
       quadrant: 'EN',
+      folk_name: null,
+      game: null,
+      era_year: null,
+      stabilization_patch: null,
       ...partial,
     } as AtlasKitRow,
   };
@@ -72,90 +73,92 @@ const SAMPLE: PivotItem[] = [
   ghost(['WALK', 'NOVA', 'damage', 'none', 'solo', 'active', 'one-shot'], { x: -1, y: 1 }),
 ];
 
-describe('atlas pivot — default hierarchy', () => {
-  const levels = buildDefaultLevels(CORE_ORDER);
+describe('atlas pivot — default hierarchy (D1-g: five structural levels)', () => {
+  const levels = buildDefaultLevels();
 
-  it('exposes the 12 default levels in spec order', () => {
+  it('exposes EXACTLY the 5 structural levels (no ghost:* levels)', () => {
     const ids = levels.map((l) => l.id);
-    expect(ids).toEqual([
-      'axis-x',
-      'axis-y',
-      'entity',
-      'kit-liveness',
-      'kit-condensation',
-      'ghost:movement',
-      'ghost:delivery',
-      'ghost:treatment',
-      'ghost:function',
-      'ghost:proxy',
-      'ghost:activation',
-      'ghost:dependency',
-    ]);
+    // D1-g: the seven ghost core axes are COLUMNS now, not pivot levels.
+    expect(ids).toEqual(['axis-x', 'axis-y', 'entity', 'kit-liveness', 'kit-condensation']);
+    // Assert NO ghost:* level leaked into the default hierarchy / chip list.
+    expect(ids.some((id) => id.startsWith('ghost:'))).toBe(false);
   });
 
-  it('top level splits WEST | EAST', () => {
+  it('D1-e level labels carry the pole vocabulary', () => {
+    const byId = new Map(levels.map((l) => [l.id, l.label]));
+    expect(byId.get('axis-x')).toBe('Axis-X (DEPLOY | PERFORM)');
+    expect(byId.get('axis-y')).toBe('Axis-Y (LAUNCH | EMBODY)');
+    // D1-i community vocabulary on the structural levels.
+    expect(byId.get('entity')).toBe('Builds | Ghosts');
+    expect(byId.get('kit-liveness')).toBe('Live Builds | Graveyard');
+    expect(byId.get('kit-condensation')).toBe('Build Families | Single');
+  });
+
+  it('top level splits DEPLOY·W | PERFORM·E (x sign -> pole, D1-e)', () => {
     const { children } = groupChildren(SAMPLE, levels, 0, '');
     const labels = children.map((c) => c.label).sort();
-    expect(labels).toEqual(['EAST', 'WEST']);
+    expect(labels).toEqual([W, E].sort());
     // Counts reconcile with the sample.
     const total = children.reduce((n, c) => n + c.count, 0);
     expect(total).toBe(SAMPLE.length);
   });
 
-  it('second level (within EAST) splits NORTH | SOUTH', () => {
+  it('second level (within PERFORM·E) splits LAUNCH·N | EMBODY·S', () => {
     const { children } = groupChildren(SAMPLE, levels, 0, '');
-    const east = children.find((c) => c.label === 'EAST')!;
+    const east = children.find((c) => c.label === E)!;
     const { children: ns } = groupChildren(east.items, levels, 1, east.path);
-    expect(ns.map((c) => c.label).sort()).toEqual(['NORTH', 'SOUTH']);
+    expect(ns.map((c) => c.label).sort()).toEqual([N, S].sort());
   });
 
-  it('drills Kits -> Live Kits -> {Condensations, Single}', () => {
-    // Isolate one quadrant bucket with mixed kit kinds (EAST/NORTH: live-EN, whirl-EN).
-    const east = groupChildren(SAMPLE, levels, 0, '').children.find((c) => c.label === 'EAST')!;
+  it('drills Builds -> Live Builds -> {Build Families, Single} (D1-i)', () => {
+    // Isolate one quadrant bucket with mixed kit kinds (E/N: live-EN, whirl-EN).
+    const east = groupChildren(SAMPLE, levels, 0, '').children.find((c) => c.label === E)!;
     const north = groupChildren(east.items, levels, 1, east.path).children.find(
-      (c) => c.label === 'NORTH'
+      (c) => c.label === N
     )!;
     const entity = groupChildren(north.items, levels, 2, north.path).children;
-    const kits = entity.find((c) => c.label === 'Kits')!;
-    const liveness = groupChildren(kits.items, levels, 3, kits.path).children;
-    const liveKits = liveness.find((c) => c.label === 'Live Kits')!;
-    const cond = groupChildren(liveKits.items, levels, 4, liveKits.path).children;
-    const condLabels = cond.map((c) => c.label).sort();
-    // EN live kits: 'live-EN' (single) + 'whirl-EN' (WHIRLWIND).
-    expect(condLabels).toContain('Single');
-    expect(condLabels).toContain('Condensation: WHIRLWIND');
+    const builds = entity.find((c) => c.label === 'Builds')!;
+    const liveness = groupChildren(builds.items, levels, 3, builds.path).children;
+    const liveBuilds = liveness.find((c) => c.label === 'Live Builds')!;
+    const fam = groupChildren(liveBuilds.items, levels, 4, liveBuilds.path).children;
+    const famLabels = fam.map((c) => c.label).sort();
+    // EN live builds: 'live-EN' (single) + 'whirl-EN' (WHIRLWIND family).
+    expect(famLabels).toContain('Single');
+    expect(famLabels).toContain('Family: WHIRLWIND');
   });
 
-  it('ghost rows group by ghost core axes, not kit dimensions', () => {
-    // Take EAST/NORTH -> Ghosts branch.
-    const east = groupChildren(SAMPLE, levels, 0, '').children.find((c) => c.label === 'EAST')!;
+  it('D1-g: ghosts bottom out at the Ghosts node — no deeper core-axis grouping', () => {
+    // Take E/N -> Ghosts branch. With ghost levels removed, the Ghosts node's items
+    // have NO further applicable level => it is a LEAF group (columns render axes).
+    const east = groupChildren(SAMPLE, levels, 0, '').children.find((c) => c.label === E)!;
     const north = groupChildren(east.items, levels, 1, east.path).children.find(
-      (c) => c.label === 'NORTH'
+      (c) => c.label === N
     )!;
     const entity = groupChildren(north.items, levels, 2, north.path).children;
     const ghosts = entity.find((c) => c.label === 'Ghosts')!;
-    // kit-liveness + kit-condensation are null for ghosts => fall through to ghost:movement.
+    // No further grouping: groupChildren returns zero children (leaf frontier).
     const sub = groupChildren(ghosts.items, levels, 3, ghosts.path).children;
-    expect(sub.some((c) => c.label === 'FREE-MOVE')).toBe(true);
+    expect(sub.length).toBe(0);
+    expect(ghosts.isLeafGroup).toBe(true);
   });
 });
 
-describe('atlas pivot — drag-reorder: Condensations ABOVE axes (Matt case)', () => {
-  it('condensation groups span all quadrants when moved to top', () => {
-    const base = buildDefaultLevels(CORE_ORDER);
+describe('atlas pivot — drag-reorder: Build Families ABOVE axes (Matt case, D1-i)', () => {
+  it('build-family groups span all quadrants when moved to top', () => {
+    const base = buildDefaultLevels();
     const condLevel = base.find((l) => l.id === 'kit-condensation')!;
-    // Reordered: condensation FIRST, then axis-x, axis-y, then the rest.
+    // Reordered: build-family FIRST, then axis-x, axis-y, then the rest.
     const reordered: PivotLevelDef[] = [
       condLevel,
       ...base.filter((l) => l.id !== 'kit-condensation'),
     ];
     const { children } = groupChildren(SAMPLE, reordered, 0, '');
     // WHIRLWIND is a single top-level node containing BOTH its EN and WS members.
-    const whirl = children.find((c) => c.label === 'Condensation: WHIRLWIND');
+    const whirl = children.find((c) => c.label === 'Family: WHIRLWIND');
     expect(whirl).toBeDefined();
     expect(whirl!.count).toBe(2); // whirl-EN + whirl-WS — spans EN and WS quadrants
-    // Under WHIRLWIND, the NEXT level (axis-x) now splits its members by quadrant.
+    // Under WHIRLWIND, the NEXT level (axis-x) now splits its members by pole (D1-e).
     const byX = groupChildren(whirl!.items, reordered, 1, whirl!.path).children;
-    expect(byX.map((c) => c.label).sort()).toEqual(['EAST', 'WEST']);
+    expect(byX.map((c) => c.label).sort()).toEqual([W, E].sort());
   });
 });

@@ -33,14 +33,24 @@ const REPO_ROOT = resolve(__dirname, '..', '..');
 const DEFAULT_SOURCE = resolve(REPO_ROOT, 'data-src/atlas/atlas-edition2.json');
 const DEFAULT_OUT = resolve(REPO_ROOT, 'public/atlas/atlas-interactive.json');
 
+// D1-h: the READ-ONLY corpus provenance sidecar, vendored as a build input. Joined
+// on kit_id to add folk_name/game/era_year/stabilization_patch to kit rows so the
+// pivot's build leaf rows read `folk_name — game year (patch)` instead of the slug.
+// Exported one-shot from corpus.db canon_corpus; carries its own provenance header.
+// The FROZEN atlas-edition2.json is UNTOUCHED — this join happens at slim-build time.
+const DEFAULT_SIDECAR = resolve(__dirname, 'kit-provenance-sidecar.json');
+
 // ---- CLI ----
 const argv = process.argv.slice(2);
 let sourcePath = DEFAULT_SOURCE;
 let outPath = DEFAULT_OUT;
+let sidecarPath = DEFAULT_SIDECAR;
 for (let i = 0; i < argv.length; i++) {
   const a = argv[i];
   if (a === '--out') {
     outPath = resolve(argv[++i]);
+  } else if (a === '--sidecar') {
+    sidecarPath = resolve(argv[++i]);
   } else if (!a.startsWith('--')) {
     sourcePath = resolve(argv[i]);
   }
@@ -98,7 +108,32 @@ function quadrant(x, y) {
   return (x >= 0 ? 'E' : 'W') + (y >= 0 ? 'N' : 'S');
 }
 
-function build(source) {
+/**
+ * Build a kit_id -> provenance-row map from the vendored corpus sidecar (D1-h).
+ * The sidecar is `{ __provenance__, rows: [{kit_id, folk_name, game, era_year,
+ * stabilization_patch}] }`. Every atlas kit_id MUST resolve a row WITH a folk_name
+ * (build HALT otherwise — extends the verify:atlas-guard pattern). Other fields are
+ * optional; missing => null => the renderer shows nothing (zero invention).
+ */
+function loadProvenanceIndex(sidecar) {
+  const rows = requireArray(sidecar, 'rows', 'kit-provenance-sidecar');
+  const index = new Map();
+  for (const r of rows) {
+    const kitId = requireField(r, 'kit_id', 'kit-provenance-sidecar.rows[]');
+    // folk_name/game/era_year/stabilization_patch are read defensively — a MISSING
+    // key on a row is legal (the row simply carries less), but a full-column rename
+    // is caught by the atlas-side coverage floor (every atlas kit needs folk_name).
+    index.set(kitId, {
+      folk_name: readOptional(r, 'folk_name'),
+      game: readOptional(r, 'game'),
+      era_year: readOptional(r, 'era_year'),
+      stabilization_patch: readOptional(r, 'stabilization_patch'),
+    });
+  }
+  return index;
+}
+
+function build(source, provenanceIndex) {
   // --- Top-level fields we depend on (copy, never invent) ---
   const atlasVersion = requireField(source, 'atlas_version', 'atlas root');
   const emittedAt = requireField(source, 'emitted_at', 'atlas root');
@@ -134,6 +169,12 @@ function build(source) {
   let seenSupplementary = 0;
   let seenGrouped = 0;
   let seenGraveyardWithDeathClass = 0;
+  // D1-h provenance-join coverage counters (reported; folk_name is a HARD floor).
+  let covFolkName = 0;
+  let covGame = 0;
+  let covYear = 0;
+  let covPatch = 0;
+  const missingFolkName = [];
   for (const p of points) {
     // Universal fields — STRICT: a rename of any of these HALTS the build.
     const kitId = requireField(p, 'kit_id', 'atlas.points[]');
@@ -154,6 +195,19 @@ function build(source) {
     }
     if (gateAGroup != null) seenGrouped++;
 
+    // D1-h: JOIN the corpus provenance row on kit_id. folk_name is MANDATORY per the
+    // atlas coverage floor (probed 506/506); a missing folk_name => build HALT.
+    const prov = provenanceIndex.get(kitId) ?? null;
+    const folkName = prov?.folk_name ?? null;
+    if (folkName != null && folkName !== '') covFolkName++;
+    else missingFolkName.push(kitId);
+    const game = prov?.game ?? null;
+    if (game != null && game !== '') covGame++;
+    const eraYear = prov?.era_year ?? null;
+    if (eraYear != null && eraYear !== '') covYear++;
+    const patch = prov?.stabilization_patch ?? null;
+    if (patch != null && patch !== '') covPatch++;
+
     kits.push({
       kit_id: kitId,
       cls,
@@ -162,7 +216,24 @@ function build(source) {
       x,
       y,
       quadrant: quadrant(x, y),
+      // D1-h corpus provenance (copies of canon_corpus fields; null renders nothing).
+      folk_name: folkName,
+      game, // slug (e.g. 'chronicon'); title-cased for DISPLAY only, string traces to corpus
+      era_year: eraYear, // number|null
+      stabilization_patch: patch, // string|null
     });
+  }
+
+  // D1-h HARD FLOOR: every atlas kit must resolve a sidecar folk_name (probed 506/506).
+  // A miss means the sidecar is stale vs the atlas point set — HALT rather than ship
+  // slug fallbacks (extends the verify:atlas-guard never-degrade contract).
+  if (missingFolkName.length > 0) {
+    throw new BuildFailError(
+      `BUILD-FAIL GUARD: ${missingFolkName.length} atlas kit_id(s) resolved NO folk_name in the ` +
+        `corpus provenance sidecar (e.g. ${missingFolkName.slice(0, 5).join(', ')}). ` +
+        `The sidecar is stale vs the atlas point set. Re-export ` +
+        `scripts/atlas/kit-provenance-sidecar.json from corpus.db, then re-run. HALT.`
+    );
   }
 
   // Reconcile against emitted counts — drift => HALT (guard extends to counts).
@@ -288,6 +359,14 @@ function build(source) {
       ghosts: ghosts.length,
       ghosts_lit: ghosts.reduce((n, g) => n + (g.lit ? 1 : 0), 0),
     },
+    // D1-h provenance-join coverage on the atlas kit set (receipts; folk_name is a floor).
+    provenance_coverage: {
+      folk_name: covFolkName,
+      game: covGame,
+      era_year: covYear,
+      stabilization_patch: covPatch,
+      total: kits.length,
+    },
     pole_vocabulary: poleVocabulary,
     kits,
     ghosts,
@@ -313,9 +392,27 @@ function main() {
     process.exit(2);
   }
 
+  // D1-h: load the READ-ONLY corpus provenance sidecar (build HALT if absent —
+  // the build names depend on it; degrading to slugs is not allowed).
+  if (!existsSync(sidecarPath)) {
+    console.error(
+      `BUILD-FAIL: corpus provenance sidecar not found at ${sidecarPath}. ` +
+        `Export it from corpus.db (scripts/atlas/kit-provenance-sidecar.json) before building.`
+    );
+    process.exit(2);
+  }
+  let sidecar;
+  try {
+    sidecar = JSON.parse(readFileSync(sidecarPath, 'utf8'));
+  } catch (e) {
+    console.error(`BUILD-FAIL: provenance sidecar is not valid JSON — ${e.message}`);
+    process.exit(2);
+  }
+
   let out;
   try {
-    out = build(source);
+    const provenanceIndex = loadProvenanceIndex(sidecar);
+    out = build(source, provenanceIndex);
   } catch (e) {
     if (e instanceof BuildFailError) {
       console.error(e.message);
@@ -336,6 +433,11 @@ function main() {
   console.log(`  out    : ${outPath}`);
   console.log(`  kits   : ${out.counts.kits} (live ${out.counts.kits_live}, graveyard ${out.counts.kits_graveyard}, condensation-members ${out.counts.kits_condensation_members})`);
   console.log(`  ghosts : ${out.counts.ghosts} (lit ${out.counts.ghosts_lit})`);
+  const pc = out.provenance_coverage;
+  console.log(
+    `  provenance (D1-h corpus join, /${pc.total}): folk_name ${pc.folk_name}, game ${pc.game}, ` +
+      `era_year ${pc.era_year}, stabilization_patch ${pc.stabilization_patch}`
+  );
   console.log(
     `  size   : ${outBytes.toLocaleString()} B (${(outBytes / 1024 / 1024).toFixed(2)} MB) ` +
       `vs source ${srcBytes.toLocaleString()} B (${(srcBytes / 1024 / 1024).toFixed(2)} MB) ` +

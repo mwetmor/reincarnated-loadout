@@ -19,22 +19,34 @@
 //
 // Spec: agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md §5, §7 #33
 
-import { useMemo, useState, useCallback, useEffect, useRef } from 'react';
+import { memo, useMemo, useState, useCallback, useEffect, useRef } from 'react';
 import {
   buildDefaultLevels,
-  groupChildren,
   leafKey,
+  leafSelectionKey,
+  PivotGrouper,
   type PivotItem,
   type PivotLevelDef,
   type PivotLevelId,
   type PivotNode,
 } from '../../utils/atlasPivot';
-import { ancestorPathsForItem, leafDomId, isSelectedItem } from '../../utils/atlasSelectPath';
+import {
+  buildLeafColumns,
+  totalGrow as sumGrow,
+  gridMinWidthPx,
+  type AtlasColumn,
+} from '../../utils/atlasColumns';
+import { ancestorPathsForItem, leafDomId, selectionKey } from '../../utils/atlasSelectPath';
 import type { AtlasInteractiveData } from '../../data/atlasTypes';
 import type { AtlasSelection } from '../../utils/atlasHighlight';
 import { PivotLevelBar } from './PivotLevelBar';
 import { VirtualizedLeafList } from './VirtualizedLeafList';
 import { LeafRow } from './LeafRow';
+import { LeafGridHeader } from './LeafGridHeader';
+
+// Dev-only cache-hit counter proving D1-c memoization (#43). Vite statically
+// replaces import.meta.env.DEV; the whole readout is tree-shaken in prod builds.
+const DEV = import.meta.env.DEV;
 
 interface AtlasPivotTableProps {
   data: AtlasInteractiveData;
@@ -56,8 +68,13 @@ const VIRTUALIZE_THRESHOLD = 40;
 export function AtlasPivotTable({ data, onSelectRow, selection, openItem }: AtlasPivotTableProps) {
   const coreOrder = data.pole_vocabulary.core_order;
 
-  // Ordered pivot levels (drag-reorderable). Seed = default hierarchy.
-  const defaultLevels = useMemo(() => buildDefaultLevels(coreOrder), [coreOrder]);
+  // D1-g: the shared leaf-grid columns (build cols + 7 axis cols + metric cols).
+  const columns = useMemo(() => buildLeafColumns(coreOrder), [coreOrder]);
+  const gridGrow = useMemo(() => sumGrow(columns), [columns]);
+
+  // Ordered pivot levels (drag-reorderable). Seed = default hierarchy (D1-g: the
+  // five structural levels; ghost cores are columns now, not levels).
+  const defaultLevels = useMemo(() => buildDefaultLevels(), []);
   const [orderIds, setOrderIds] = useState<PivotLevelId[]>(() => defaultLevels.map((l) => l.id));
 
   const levels: PivotLevelDef[] = useMemo(() => {
@@ -71,6 +88,13 @@ export function AtlasPivotTable({ data, onSelectRow, selection, openItem }: Atla
     const ghosts: PivotItem[] = data.ghosts.map((row) => ({ kind: 'ghost', row }));
     return [...kits, ...ghosts];
   }, [data]);
+
+  // D1-c: ONE memoized grouper per (rootItems, level ORDER). Group-children are
+  // cached by (levelIndex, path); a selection/legend toggle re-renders WITHOUT
+  // re-walking the 11,666-item array. A new grouper is created ONLY when the items
+  // change (data) or the level ORDER changes (drag-reorder) — the exact D1-c
+  // invalidation law. `levels` identity changes iff orderIds changes (memo above).
+  const grouper = useMemo(() => new PivotGrouper(rootItems, levels), [rootItems, levels]);
 
   // Expansion state keyed by node path.
   const [expanded, setExpanded] = useState<Set<string>>(() => new Set());
@@ -121,7 +145,7 @@ export function AtlasPivotTable({ data, onSelectRow, selection, openItem }: Atla
         <div>
           <h3 className="text-sm font-semibold text-gray-200">Lattice pivot</h3>
           <p className="text-[11px] text-gray-500 font-mono">
-            {data.counts.kits.toLocaleString()} kits · {data.counts.ghosts.toLocaleString()} ghost
+            {data.counts.kits.toLocaleString()} builds · {data.counts.ghosts.toLocaleString()} ghost
             cells · progressive disclosure
           </p>
         </div>
@@ -147,10 +171,14 @@ export function AtlasPivotTable({ data, onSelectRow, selection, openItem }: Atla
 
       <div
         ref={scrollBoxRef}
+        // D1-c: contain the table's layout+style so its renders never invalidate the
+        // SVG region's style scope (Bomb-1 cross-contamination guard, page-level too).
+        style={{ contain: 'layout style' }}
         className="max-h-[560px] overflow-auto rounded border border-gray-800 bg-gray-950/50"
       >
         <PivotBranch
           items={rootItems}
+          grouper={grouper}
           levels={levels}
           levelIndex={0}
           parentPath=""
@@ -159,9 +187,33 @@ export function AtlasPivotTable({ data, onSelectRow, selection, openItem }: Atla
           onToggle={toggle}
           onSelectRow={onSelectRow}
           selection={selection ?? null}
+          columns={columns}
+          gridGrow={gridGrow}
         />
       </div>
+
+      {DEV && <PivotCacheReadout grouper={grouper} />}
     </section>
+  );
+}
+
+// ---- Dev-only cache-hit readout (D1-c, #43; tree-shaken in prod) ----
+// Reads the grouper's live hit/miss counters. This child is the LAST element in the
+// section, so by the time it renders, every PivotBranch above it has already called
+// grouper.group() this pass — the counters reflect the completed render. It renders
+// with the parent on every selection/legend/expand change (no effect, no forced
+// re-render): a selection/legend toggle re-renders the expanded tree producing cache
+// HITS (zero re-grouping); a drag-reorder swaps the grouper (fresh instance) => misses
+// reset, proving exact invalidation. Rendered only when import.meta.env.DEV.
+function PivotCacheReadout({ grouper }: { grouper: PivotGrouper }) {
+  const { hits, misses } = grouper.stats;
+  const total = hits + misses;
+  const rate = total > 0 ? Math.round((hits / total) * 100) : 0;
+  return (
+    <p className="mt-2 font-mono text-[10px] text-gray-600" data-testid="pivot-cache-readout">
+      dev · group-children cache: {hits} hits / {misses} misses ({rate}% hit) · re-group cost O(0)
+      on cache hit
+    </p>
   );
 }
 
@@ -169,6 +221,7 @@ export function AtlasPivotTable({ data, onSelectRow, selection, openItem }: Atla
 
 interface PivotBranchProps {
   items: PivotItem[];
+  grouper: PivotGrouper;
   levels: PivotLevelDef[];
   levelIndex: number;
   parentPath: string;
@@ -177,10 +230,13 @@ interface PivotBranchProps {
   onToggle: (path: string) => void;
   onSelectRow?: (item: PivotItem) => void;
   selection: AtlasSelection | null;
+  columns: AtlasColumn[];
+  gridGrow: number;
 }
 
 function PivotBranch({
   items,
+  grouper,
   levels,
   levelIndex,
   parentPath,
@@ -189,16 +245,25 @@ function PivotBranch({
   onToggle,
   onSelectRow,
   selection,
+  columns,
+  gridGrow,
 }: PivotBranchProps) {
-  // Group THIS level lazily. Only runs for mounted (i.e., expanded-ancestor) nodes.
-  const { children, nextLevelIndex } = useMemo(
-    () => groupChildren(items, levels, levelIndex, parentPath),
-    [items, levels, levelIndex, parentPath]
-  );
+  // D1-c: group via the MEMOIZING grouper — a cache hit returns the same children
+  // reference with ZERO re-walk. Only mounted (expanded-ancestor) nodes call this.
+  const { children, nextLevelIndex } = grouper.group(items, levelIndex, parentPath);
 
   if (children.length === 0) {
     // No further grouping — these items are leaves under the parent directly.
-    return <LeafGroup items={items} depth={depth} onSelectRow={onSelectRow} selection={selection} />;
+    return (
+      <LeafGroup
+        items={items}
+        depth={depth}
+        onSelectRow={onSelectRow}
+        selection={selection}
+        columns={columns}
+        gridGrow={gridGrow}
+      />
+    );
   }
 
   return (
@@ -207,6 +272,7 @@ function PivotBranch({
         <PivotRow
           key={node.path}
           node={node}
+          grouper={grouper}
           levels={levels}
           nextLevelIndex={nextLevelIndex}
           depth={depth}
@@ -214,6 +280,8 @@ function PivotBranch({
           onToggle={onToggle}
           onSelectRow={onSelectRow}
           selection={selection}
+          columns={columns}
+          gridGrow={gridGrow}
         />
       ))}
     </ul>
@@ -222,6 +290,7 @@ function PivotBranch({
 
 interface PivotRowProps {
   node: PivotNode;
+  grouper: PivotGrouper;
   levels: PivotLevelDef[];
   nextLevelIndex: number;
   depth: number;
@@ -229,10 +298,18 @@ interface PivotRowProps {
   onToggle: (path: string) => void;
   onSelectRow?: (item: PivotItem) => void;
   selection: AtlasSelection | null;
+  columns: AtlasColumn[];
+  gridGrow: number;
 }
 
-function PivotRow({
+// React.memo (D1-c): a group row re-renders only when its OWN props change. The
+// `expanded` Set + `selection` are shared refs that change on every toggle; memo
+// alone won't stop that, but combined with the grouper's cached children (stable
+// node refs) the subtree work collapses to the nodes whose open/selected state
+// actually flipped. Custom comparator keeps closed subtrees fully inert.
+const PivotRow = memo(function PivotRow({
   node,
+  grouper,
   levels,
   nextLevelIndex,
   depth,
@@ -240,6 +317,8 @@ function PivotRow({
   onToggle,
   onSelectRow,
   selection,
+  columns,
+  gridGrow,
 }: PivotRowProps) {
   const isOpen = expanded.has(node.path);
   const indent = 8 + depth * 14;
@@ -267,10 +346,13 @@ function PivotRow({
             depth={depth + 1}
             onSelectRow={onSelectRow}
             selection={selection}
+            columns={columns}
+            gridGrow={gridGrow}
           />
         ) : (
           <PivotBranch
             items={node.items}
+            grouper={grouper}
             levels={levels}
             levelIndex={nextLevelIndex}
             parentPath={node.path}
@@ -279,11 +361,13 @@ function PivotRow({
             onToggle={onToggle}
             onSelectRow={onSelectRow}
             selection={selection}
+            columns={columns}
+            gridGrow={gridGrow}
           />
         ))}
     </li>
   );
-}
+});
 
 // ---- Leaf group: inline for small, virtualized for large ----
 
@@ -292,36 +376,57 @@ function LeafGroup({
   depth,
   onSelectRow,
   selection,
+  columns,
+  gridGrow,
 }: {
   items: PivotItem[];
   depth: number;
   onSelectRow?: (item: PivotItem) => void;
   selection: AtlasSelection | null;
+  columns: AtlasColumn[];
+  gridGrow: number;
 }) {
   const indent = 8 + depth * 14;
+  const minWidthPx = gridMinWidthPx(columns);
+  const selKey = selectionKey(selection);
 
   if (items.length > VIRTUALIZE_THRESHOLD) {
     return (
       <VirtualizedLeafList
         items={items}
         indent={indent}
+        columns={columns}
+        totalGrow={gridGrow}
         onSelectRow={onSelectRow}
         selection={selection}
       />
     );
   }
 
+  // Small inline group: one shared header (D1-g) + rows in a horizontally
+  // scrollable band so the wide grid stays usable on narrow viewports.
   return (
-    <ul>
-      {items.map((it) => (
-        <LeafRow
-          key={leafKey(it)}
-          item={it}
+    <div className="overflow-x-auto">
+      <div style={{ minWidth: minWidthPx }}>
+        <LeafGridHeader
+          columns={columns}
+          totalGrow={gridGrow}
           indent={indent}
-          onSelectRow={onSelectRow}
-          selected={isSelectedItem(it, selection)}
+          minWidthPx={minWidthPx}
         />
-      ))}
-    </ul>
+        {items.map((it) => (
+          <LeafRow
+            key={leafKey(it)}
+            item={it}
+            indent={indent}
+            columns={columns}
+            totalGrow={gridGrow}
+            minWidthPx={minWidthPx}
+            onSelectRow={onSelectRow}
+            selected={selKey != null && leafSelectionKey(it) === selKey}
+          />
+        ))}
+      </div>
+    </div>
   );
 }

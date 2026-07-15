@@ -36,7 +36,7 @@ import { AtlasPivotTable } from '../components/atlas/AtlasPivotTable';
 import { AtlasZoomControls } from '../components/atlas/AtlasZoomControls';
 import { buildHighlightCss, type AtlasSelection } from '../utils/atlasHighlight';
 import { hookToSelection, itemToSelection } from '../utils/atlasSelectPath';
-import type { PivotItem } from '../utils/atlasPivot';
+import { buildProvenanceName, type PivotItem } from '../utils/atlasPivot';
 import type {
   LegendClass,
   SkinName,
@@ -219,12 +219,16 @@ export function Atlas() {
   const slimPayloadBytes = new Blob([JSON.stringify(data)]).size;
 
   return (
-    <div className="mx-auto max-w-6xl px-3 py-4 sm:px-4">
+    // D1-f FLUID WIDTH: no max-w cap on the atlas route — the page goes fluid to the
+    // browser window with 16–24px gutters. Chart, legend band, table, summary, and
+    // provenance all span this same fluid width. Scope: atlas route ONLY.
+    <div className="w-full px-4 py-4 sm:px-6">
       <header className="mb-4 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-lg font-semibold text-gray-100">Kit Atlas</h1>
+          {/* D1-i: Kit Atlas -> Build Atlas (community vocabulary). */}
+          <h1 className="text-lg font-semibold text-gray-100">Build Atlas</h1>
           <p className="font-mono text-[11px] text-gray-500">
-            Edition-{data.derived_from.atlas_version} lattice · {data.counts.kits} kits ·{' '}
+            Edition-{data.derived_from.atlas_version} lattice · {data.counts.kits} builds ·{' '}
             {data.counts.ghosts.toLocaleString()} ghost cells · black copy leads
           </p>
         </div>
@@ -235,7 +239,15 @@ export function Atlas() {
         />
       </header>
 
-      {/* CHART STAGE — inlined r7 SVG, legend overlaid top-left. */}
+      {/* D1-a LEGEND BAND: the legend lives in a NORMAL-FLOW band between the page
+          header and the chart, top-left aligned. It NEVER overlays the SVG at any
+          viewport width (the old `absolute left-3 top-3` covered the SVG banner). */}
+      <div className="mb-3">
+        <AtlasLegend selected={selectedClasses} onToggle={toggleClass} canvas={activeCanvas} />
+      </div>
+
+      {/* CHART STAGE — inlined r7 SVG. Zoom controls stay chart-affixed (map
+          convention); the legend is no longer here (D1-a). */}
       <div
         className="relative w-full overflow-hidden rounded-lg border border-gray-800"
         style={{ backgroundColor: canvasHex }}
@@ -261,7 +273,7 @@ export function Atlas() {
           onClick={handleChartClick}
           tabIndex={0}
           role="application"
-          aria-label="Kit atlas — scroll or pinch to zoom, drag to pan"
+          aria-label="Build atlas — scroll or pinch to zoom, drag to pan"
           className="atlas-svg-host block w-full cursor-grab select-none outline-none [&>svg]:block [&>svg]:h-auto [&>svg]:w-full active:cursor-grabbing"
           // The lens exposes canvas surround when the view exceeds the plane rect;
           // the wrapper background is the canvas hex so it blends (§8.3).
@@ -278,13 +290,14 @@ export function Atlas() {
           </div>
         )}
 
-        <div className="pointer-events-auto absolute left-3 top-3">
-          <AtlasLegend selected={selectedClasses} onToggle={toggleClass} canvas={activeCanvas} />
-        </div>
-
-        {/* ZOOM CONTROLS (§8.1) — top-right, opposite the legend. Bounds derived. */}
+        {/* ZOOM CONTROLS (§8.1) — chart-affixed, top-right (map convention). The r7
+            SVG banner headline runs along the TOP of the canvas; the emitted banner
+            strip is ~72px tall in the 1600×1200 frame (~6% of height). We drop the
+            controls' vertical offset to `top-16` (64px) so they sit BELOW the banner
+            strip at every tested width and never occlude the headline (D1-a
+            same-class check for the §8 controls). */}
         {lens.bounds && (
-          <div className="pointer-events-auto absolute right-3 top-3">
+          <div className="pointer-events-auto absolute right-3 top-16">
             <AtlasZoomControls
               canvas={activeCanvas}
               scale={lens.scale}
@@ -303,6 +316,7 @@ export function Atlas() {
       {/* SELECTION SUMMARY — the focused mark; aggregate caption (ruled seam A). */}
       <SelectionSummary
         selection={selection}
+        data={data}
         aggregateCells={aggregateCells}
         onClear={() => {
           setSelection(null);
@@ -330,18 +344,27 @@ export function Atlas() {
 
 function SelectionSummary({
   selection,
+  data,
   aggregateCells,
   onClear,
 }: {
   selection: AtlasSelection | null;
+  data: AtlasInteractiveData;
   aggregateCells: number | null;
   onClear: () => void;
 }) {
+  // D1-h + D1-i: resolve a kit selection to its community build name; ghost stays
+  // its core tuple. Prefix uses community vocabulary (build · … / ghost · …).
+  const label = useMemo(() => {
+    if (!selection) return '';
+    if (selection.kind === 'kit') {
+      const row = data.kits.find((k) => k.kit_id === selection.kitId);
+      const name = row ? buildProvenanceName(row) : selection.kitId;
+      return `build · ${name}`;
+    }
+    return `ghost · ${selection.core.split('|').join(' | ')}`;
+  }, [selection, data]);
   if (!selection) return null;
-  const label =
-    selection.kind === 'kit'
-      ? `kit · ${selection.kitId}`
-      : `ghost · ${selection.core.split('|').join(' | ')}`;
   return (
     <div className="mt-2 flex flex-wrap items-center gap-2 rounded border border-indigo-500/30 bg-indigo-950/20 px-3 py-1.5">
       <span className="font-mono text-[11px] text-indigo-200">Selected</span>

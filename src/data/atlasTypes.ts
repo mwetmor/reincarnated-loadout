@@ -16,7 +16,7 @@ export type KitClass = 'live' | 'graveyard';
 /** The four legend classes in Matt's vocabulary (spec §4). */
 export type LegendClass = 'condensations' | 'live' | 'graveyard' | 'ghosts';
 
-/** One live-or-graveyard kit row. */
+/** One live-or-graveyard kit row (INTERNAL id stays kit_id per Matt's split). */
 export interface AtlasKitRow {
   kit_id: string;
   cls: KitClass;
@@ -27,6 +27,16 @@ export interface AtlasKitRow {
   x: number;
   y: number;
   quadrant: Quadrant;
+  // ---- D1-h corpus provenance (joined at slim-build time from canon_corpus) ----
+  // Every field is a copy of a corpus column; null renders nothing (zero invention).
+  /** folk_name — the community-facing build name (atlas coverage 506/506). */
+  folk_name: string | null;
+  /** game slug (e.g. 'chronicon'); mechanically title-cased for display only. */
+  game: string | null;
+  /** era_year — release/era year; number or null (atlas coverage 506/506). */
+  era_year: number | null;
+  /** stabilization_patch — patch string, shown only where curated (atlas 15/506). */
+  stabilization_patch: string | null;
 }
 
 /** One feasible ghost-cell row (the meso lattice). */
@@ -132,25 +142,26 @@ export interface LegendEntry {
   hint: string;
 }
 
-/** Four entries, top-to-bottom order per spec §4. */
+/** Four entries, top-to-bottom order per spec §4. D1-i community vocabulary:
+ *  kit(s) -> build(s); condensation(s) -> build family / build families. */
 export const LEGEND_ENTRIES: LegendEntry[] = [
   {
     id: 'condensations',
-    label: 'Condensations',
+    label: 'Build Families',
     swatch: 'bg-indigo-400',
-    hint: 'the six named groups (WHIRLWIND, TOTEM-SENTRY, TRAP-MINE, CHANNELED-BEAM, AURA, MINION-PET)',
+    hint: 'the six named families (WHIRLWIND, TOTEM-SENTRY, TRAP-MINE, CHANNELED-BEAM, AURA, MINION-PET)',
   },
   {
     id: 'live',
-    label: 'Live Kits',
+    label: 'Live Builds',
     swatch: 'bg-emerald-400',
-    hint: 'all live marks — singles + condensation members',
+    hint: 'all live marks — singles + build-family members',
   },
   {
     id: 'graveyard',
     label: 'Graveyard',
     swatch: 'bg-rose-500/80',
-    hint: 'the death-classed † kits',
+    hint: 'the death-classed † builds',
   },
   {
     id: 'ghosts',

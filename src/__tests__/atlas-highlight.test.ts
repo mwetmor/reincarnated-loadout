@@ -143,12 +143,85 @@ describe('buildHighlightCss — stroke-only law (acceptance #32)', () => {
       selectedClasses: classes('live', 'ghosts'),
       selection: { kind: 'kit', kitId: 'k' },
     });
-    // 2 class blocks + 1 selection block = 3 rule blocks.
+    // 1 per-mark class block (live) + 1 ghost LAYER-GROUP block + 1 selection = 3.
     const blocks = css.split('}').filter((b) => b.includes('{')).length;
     expect(blocks).toBe(3);
     // Selection targets the kit by data-kit.
     expect(css).toContain('[data-kit="k"]');
-    // Ghost class targets data-el=ghost.
-    expect(css).toContain('[data-el="ghost"]');
+    // D1-b: the Ghosts class targets the LAYER GROUPS, NOT per-mark data-el=ghost.
+    expect(css).toContain('#layer-ghosts');
+    expect(css).toContain('#layer-drillin');
+    // The `live` per-mark block still targets data-el=live/condensation.
+    expect(css).toContain('[data-el="live"]');
+  });
+});
+
+describe('buildHighlightCss — D1-b highlight-cost law (acceptance #42)', () => {
+  it('Ghosts toggle emits ZERO per-mark stroke rules — layer-group filter ONLY', () => {
+    const css = buildHighlightCss({
+      rootId: ROOT,
+      canvas: 'dark',
+      selectedClasses: classes('ghosts'),
+      selection: null,
+    });
+    // NO per-mark ghost selector (the 46,006-mark stroke that caused Bomb 1).
+    expect(css).not.toContain('[data-el="ghost"]');
+    // Exactly ONE rule block, and it targets the two layer groups with a filter.
+    const blocks = css.split('}').filter((b) => b.includes('{'));
+    expect(blocks.length).toBe(1);
+    expect(css).toContain('#layer-ghosts');
+    expect(css).toContain('#layer-drillin');
+    expect(css).toMatch(/filter:\s*brightness/);
+    // The ghost class emits NO stroke halo (cost scales with class size, not marks).
+    expect(css).not.toMatch(/stroke-width/);
+  });
+
+  it('the three SMALL classes stay per-mark stroke halos (≤600 marks each)', () => {
+    for (const c of ['live', 'condensations', 'graveyard'] as LegendClass[]) {
+      const css = buildHighlightCss({
+        rootId: ROOT,
+        canvas: 'dark',
+        selectedClasses: classes(c),
+        selection: null,
+      });
+      // Small classes: per-mark stroke halo (data-el selector + stroke-width).
+      expect(css).toMatch(/\[data-el=/);
+      expect(css).toMatch(/stroke-width:\s*0\.75px/);
+      // And NEVER a layer-group filter (that's the ghost-only path).
+      expect(css).not.toMatch(/filter:/);
+    }
+  });
+
+  it('ghost layer filter is tuned PER CANVAS (dark != light values)', () => {
+    const dark = buildHighlightCss({
+      rootId: ROOT,
+      canvas: 'dark',
+      selectedClasses: classes('ghosts'),
+      selection: null,
+    });
+    const light = buildHighlightCss({
+      rootId: ROOT,
+      canvas: 'light',
+      selectedClasses: classes('ghosts'),
+      selection: null,
+    });
+    // Both use a filter; the values differ per canvas (dark wants more lift).
+    expect(dark).toMatch(/filter:/);
+    expect(light).toMatch(/filter:/);
+    expect(dark).not.toBe(light);
+  });
+
+  it('a single ghost-core selection STILL halos per-mark (1-few elements, not the class)', () => {
+    // Selection-by-core halos one glyph — that stays per-mark (D1-b: selection ≠ class).
+    const css = buildHighlightCss({
+      rootId: ROOT,
+      canvas: 'dark',
+      selectedClasses: classes(),
+      selection: { kind: 'ghost', core: 'WALK|NOVA|damage|none|solo|active|one-shot' },
+    });
+    expect(css).toContain('[data-core="WALK|NOVA|damage|none|solo|active|one-shot"]');
+    expect(css).toMatch(/stroke-width:\s*0\.75px/);
+    // The selection is NOT a layer-group filter.
+    expect(css).not.toMatch(/filter:/);
   });
 });

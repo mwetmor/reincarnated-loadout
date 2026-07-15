@@ -11,11 +11,53 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-15 (atlas v1 zoom pass — viewBox lens on the inlined artifact; acc 36–40 green; Vercel PREVIEW shipped, prod HELD for gandalf verify)
-**Last commit:** atlas v1 zoom — derived-bounds viewBox lens (S_min 0.85× / S_max 8.28×), gesture-perf transform-during-gesture + settle-write, clip-tracks-view, halo non-scaling-stroke, skin-flip preserves lens
+**Last updated:** 2026-07-15 (atlas D1 defect+features pass — legend band, highlight-cost law, pivot memoization, axis-pole vocab, fluid width, ghost-axes-as-columns, build provenance names, community vocabulary; acc 41–49 green; Vercel PREVIEW shipped, prod HELD for gandalf verify)
+**Last commit:** atlas D1 pass — D1-a…D1-i on top of the v1 zoom (421f98c); ghost legend highlights by layer-group filter (Bomb 1 defused: 0 per-mark rules), pivot grouper memoized (Bomb 2), legend moved to normal-flow band (Bomb 3), fluid width, ghost cores → grid columns, folk_name — game year (patch) build names from corpus sidecar, builds/build-families community vocabulary
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
+
+---
+
+## Atlas D1 defect+features pass — legend band + highlight-cost + pivot memoization + 6 features (2026-07-15)
+
+**Spec:** `reincarnated-collaboration/agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md` **§9 + §9.1** (D1-a…D1-i; acc 41–49).
+**Authority:** Matt 2026-07-15 live-page defect report (legend covers title; pivot stutters/freezes/times out) + 2nd message (axis-pole vocab, fluid width) + 3rd message (ghost axes → columns, build provenance names, builds/build-families vocabulary). Built on the v1 zoom (commit 421f98c); zoom lens NOT regressed (acc 44/36–40 re-demonstrated).
+**Push:** NOT pushed (Matt-gated). Deployed **Vercel PREVIEW only** (`npx vercel`, NOT --prod); production promotion HELD for gandalf verify (promote-command rebuilds are a known trap — promotion happens by ALIAS after verify).
+
+### The three bombs (diagnosed from shipped bytes) + fixes
+- **Bomb 1 (freeze):** the Ghosts legend class per-mark-haloed 46,006 `[data-el="ghost"]` circles; every toggle swapped the injected `<style>` → style-recalc across the 46.5k-node inlined SVG. **D1-b fix:** the Ghosts class now highlights by LAYER GROUP — ONE compositor rule on `#layer-ghosts, #layer-drillin` (`filter: brightness(1.35) saturate(1.2)` dark / `brightness(1.08) contrast(1.12) saturate(1.15)` light). ZERO per-mark ghost rules. The 3 small classes (live 383, condensations 86, graveyard 37) + single-selection stay per-mark (cheap). Profiled: ghost toggle **0.4ms** (was the freeze).
+- **Bomb 2 (stutter):** pivot grouping was lazy but UNCACHED — re-walked the 11,666-item array per expanded node per render; VirtualizedLeafList ran `items.findIndex` per selection. **D1-c fix:** `PivotGrouper` class memoizes group-children by (levelIndex, path), bound to (rootItems, level-order) — a selection/legend toggle re-renders with ZERO re-grouping (dev cache-hit counter proves it: legend toggle = +14 hits, +0 misses). `buildLeafIndexMap` replaces the findIndex sweep (O(1) reveal). React.memo on LeafRow + PivotRow. rAF-throttled virtualizer scroll. `contain: layout style` on the table region.
+- **Bomb 3 (legend covers banner):** legend was `absolute left-3 top-3` inside the chart stage. **D1-a fix:** moved to a normal-flow band between header and chart, top-left aligned; never overlays the SVG at any width. Zoom controls stay chart-affixed but dropped to `top-16` (below the banner strip; verified `zoomBelowBanner: true` at 375/1280).
+
+### Features (D1-e…D1-i)
+- **D1-e axis-pole vocabulary:** pivot compass labels ARE the pole names. EAST(x≥0)=PERFORM · WEST=DEPLOY · NORTH(world y≥0)=LAUNCH · SOUTH=EMBODY. Group labels `PERFORM · E`; level labels `Axis-X (DEPLOY | PERFORM)` / `Axis-Y (LAUNCH | EMBODY)`. **Inversion guard** (`atlas-axis-inversion-guard.test.ts`) derives the sign→pole mapping FROM the vendored SVG rails (PERFORM→ @ x=1546, ←DEPLOY @ x=54, ↑LAUNCH @ y=120, EMBODY↓ @ y=1119; screen-y inverted) and asserts the pivot mapping, and PROVES a flipped mapping fails.
+- **D1-f fluid width:** removed `max-w-6xl` on the atlas route ONLY; `w-full px-4 sm:px-6` (16/24px gutters). Verified rootW = viewportW − gutters, no h-scrollbar, at 360/768/1280/1920/1440/2560.
+- **D1-g ghost axes → columns:** the 7 `ghost:<axis>` levels REMOVED from the default hierarchy AND the drag-chip list → default = exactly 5 structural levels (axis-x → axis-y → entity → kit-liveness → kit-condensation). Ghost leaf rows render 7 core-axis columns (`core_order` verbatim: movement·delivery·treatment·function·proxy·activation·dependency) + depth/lit/builds; build rows show `—` in axis+metric cols; one shared header per leaf block. New `atlasColumns.ts` column model. This also erased the deep-tree grouping cost for the 11,160-ghost branch (composes with D1-c). Verified 8/8 ghost rows' 7 axis values match atlas-interactive.json.
+- **D1-h build provenance names:** build leaf rows read `folk_name — game year (patch)` (patch only when present, year omitted when absent). One-shot READ-ONLY sidecar exported from corpus.db → `scripts/atlas/kit-provenance-sidecar.json` (provenance header: source DB + exact query + export date); slim-builder joins on kit_id. Game slug mechanically title-cased for display (chronicon→Chronicon; NOT fabricated). **Coverage on the atlas 506: folk_name 506/506, game 506/506, era_year 506/506, stabilization_patch 15/506.** Build HALTS if any atlas kit_id resolves no folk_name (extends verify:atlas-guard; new doctored-sidecar case fires).
+- **D1-i community vocabulary:** ALL user-visible atlas strings kit(s)→build(s), condensation(s)→build family/families. Page title `Kit Atlas`→`Build Atlas`; legend `Live Builds`/`Build Families`; pivot `Builds | Ghosts` / `Live Builds | Graveyard` / `Build Families | Single` / group prefix `Family: X`; selection captions. INTERNAL identifiers UNTOUCHED (kit_id, data-kit, data-el CSS selectors, TS types, test ids). Baked SVG `CONDENSATIONS` plate LEFT ALONE (galadriel E2.2 relabel registered separately).
+
+### Acceptance receipts (headless CDP over prod build + dev; 0 console errors)
+- **41 legend-band:** `legendIntersectsSvg: false` at 360/768/1280/1920; `legendBelowSvgTop: true` (banner headline fully visible).
+- **42 highlight-cost:** Ghosts toggle injects ONLY `#layer-ghosts, #layer-drillin { filter: brightness(1.35) saturate(1.2); }` — 0 `[data-el="ghost"]` rules, 0 stroke-width. Budgets (D1-d): ghost toggle 0.4ms / live 0.1ms / selection 0.3ms (all «50ms); route-interactive 450ms («1.5s); long-tasks >200ms = 0.
+- **43 pivot-memo:** dev cache readout — selection change +16 hits/+4 misses (misses only new subtree nodes); legend toggle +14 hits / **+0 misses** (zero re-grouping); dev-gated (import.meta.env.DEV), tree-shaken in prod.
+- **44 no-regression:** #32 halo law live (`stroke-width:0.75px`, `vector-effect:non-scaling-stroke`, zero fill, zero dim); zoom #36–40 intact (zoom-in viewBox `266.67 200 1066.67 800` @ 1.50×, second zoom ×2.25, reset restores `0 0 1600 1200` verbatim, bounds `0.85–8.3` derived).
+- **45 axis-pole-vocabulary:** inversion-guard test passes + provably fails on a flipped mapping; labels DEPLOY/PERFORM/LAUNCH/EMBODY; quadrant leaf codes unchanged.
+- **46 fluid-width:** rootW=viewportW−gutter (34px@360, 65px@768–1920), no h-scrollbar at 360/768/1280/1440/1920/2560.
+- **47 ghost-axes-as-columns:** default levels = exactly the 5 structural (no ghost:* chip); 8/8 ghost rows' 7 axis values match atlas-interactive.json; build rows show `—` in axis cols.
+- **48 build-provenance-names:** live DOM `Frost Shatter Berserker — Chronicon 2020`, `Plague Mage / Desecrator Curse Warlock — Chronicon 2020 (1.52)`, `Berserker — D2 2000`; coverage 506/506·506/506·506/506·15/506; sidecar carries provenance header; every string traces to a corpus row (unit-asserted).
+- **49 community-vocabulary:** legend/pivot/level/column/leaf-label constants audited (no user-visible kit/condensation); internal identifiers unchanged.
+- **Table scroll fps (D1-d):** scrolled an 80,473px-tall virtualized ghost block — avg 12.12ms/frame → **82.5fps sustained**, max 12.3ms → **81.3fps min**, **0 frames >32ms** over 160 frames (budget ≥50fps met with margin).
+
+### Smoke (Discipline #2)
+- `npm run test`: **167/167 pass** (was 140; +27: 4 inversion-guard, 8 columns+provenance, 5 sidecar-join, 6 vocabulary, +4 D1-b highlight; updated pivot/select-path/highlight tests for the new labels/model).
+- `npm run build` (`tsc -b && vite build`): clean, 0 TS errors. `npm run build:atlas` + `verify:atlas-guard`: all pass (6 guard cases incl. new sidecar floor).
+- `/` + `/atlas` render (0 console errors); vercel.json unchanged (SPA rewrite intact).
+- Lint (my atlas files only): clean. Pre-existing repo-wide lint errors (Cosmograph/Sample/constellationModeLayout/hooks set-state-in-effect) untouched.
+
+### Data path (D1-h) + overrides
+- Sidecar exported one-shot: `sqlite3 -json .../corpus.db "SELECT kit_id, folk_name, game, era_year, stabilization_patch FROM canon_corpus;"` (644 corpus rows; 506 join the atlas). READ-ONLY; corpus.db never mutated. FROZEN `data-src/atlas/atlas-edition2.json` UNTOUCHED. Vendored SVGs UNTOUCHED (sha256 archive `29dc29f3…` / instrument `a5954a0e…` verified unchanged).
+- **No new `// TODO(drax)` overrides.** stabilization_patch 15/506 is a corpus-curation reality (elrond back-fill queue per spec), NOT a drax override — missing patches render nothing (zero invention), by design.
 
 ---
 

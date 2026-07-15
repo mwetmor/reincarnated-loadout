@@ -12,12 +12,16 @@
 //     dark ink stroke. Bound by CANVAS, never by skin name.
 //
 // SEMANTICS (spec §1 basic-legend vocabulary, verified against r7 hooks):
-//   - "Live Kits"    = ALL live marks = singles + condensation members
-//                      = [data-el="live"], [data-el="condensation"]
-//   - "Condensations"= the six groups' members = [data-el="condensation"]
-//   - "Graveyard"    = the †s = [data-el="graveyard"]
-//   - "Ghosts"       = meso + drill-in ground = [data-el="ghost"]
-//                      (both #layer-ghosts and #layer-drillin carry data-el=ghost)
+//   - "Live Builds"  = ALL live marks = singles + condensation members
+//                      = [data-el="live"], [data-el="condensation"]  (383+86 marks)
+//   - "Build Families"= the six groups' members = [data-el="condensation"]  (86)
+//   - "Graveyard"    = the †s = [data-el="graveyard"]  (37)
+//   - "Ghosts"       = meso + drill-in ground  (46,006 marks) — highlighted by
+//                      LAYER GROUP (#layer-ghosts, #layer-drillin) with ONE filter,
+//                      NEVER per-mark (D1-b highlight-cost law). The three small
+//                      classes above stay per-mark (cheap at ≤600 marks).
+// (D1-i: community vocabulary in this comment; the CSS SELECTORS still target the
+//  internal data-el values, which are unchanged.)
 //
 // The `paint-order:stroke` keeps the halo behind the fill so a filled dot is
 // never obscured — the halo reads as a faint rim only.
@@ -43,13 +47,35 @@ function haloStroke(canvas: CanvasKind): string {
   return canvas === 'dark' ? '#eef3ff' : '#0b0e14';
 }
 
-/** Per legend-class CSS selectors (rooted at the inlined-svg wrapper). */
-const CLASS_SELECTORS: Record<LegendClass, string[]> = {
+// ---- D1-b HIGHLIGHT-COST LAW ----
+// Class-highlight cost scales with CLASS SIZE, never artifact size. Per-mark stroke
+// halos are emitted ONLY for the small classes (≤ ~600 marks): live (383 singles +
+// 86 condensation members), condensations (86), graveyard (37). The GHOSTS class is
+// 46,006 marks — per-mark stroking it forces a style-recalc across the 46.5k-node
+// SVG on every toggle (Bomb 1: the stutter/freeze/timeout). So Ghosts highlights by
+// LAYER GROUP instead: ONE compositor-level filter rule on `#layer-ghosts,
+// #layer-drillin` — zero per-mark rules. The ground WAKES AS GROUND.
+//
+// PER-MARK classes (small — stroke halos are cheap here).
+const PER_MARK_CLASS_SELECTORS: Partial<Record<LegendClass, string[]>> = {
   live: ['[data-el="live"]', '[data-el="condensation"]'],
   condensations: ['[data-el="condensation"]'],
   graveyard: ['[data-el="graveyard"]'],
-  ghosts: ['[data-el="ghost"]'],
+  // NOTE: 'ghosts' is DELIBERATELY ABSENT — it is layer-group highlighted below.
 };
+
+/**
+ * The Ghosts layer-group emphasis filter, tuned per canvas (D1-b). One rule on the
+ * two ghost layer groups composites the whole ground layer on the GPU — no per-mark
+ * strokes. Dark canvas wants a touch more lift (the grey ground barely reads on
+ * #0e1016); light canvas needs less (ground is already visible on #f7f8fa) and a
+ * hair of contrast so it doesn't wash out.
+ */
+function ghostLayerFilter(canvas: CanvasKind): string {
+  return canvas === 'dark'
+    ? 'brightness(1.35) saturate(1.2)'
+    : 'brightness(1.08) contrast(1.12) saturate(1.15)';
+}
 
 /**
  * Escape a value for a CSS attribute selector `[attr="..."]`.
@@ -88,10 +114,10 @@ export function buildHighlightCss(args: AtlasHighlightArgs): string {
   const stroke = haloStroke(canvas);
   const blocks: string[] = [];
 
-  // ---- 1. Class highlights (multi-select) ----
+  // ---- 1a. Small-class highlights (per-mark stroke halos; ≤ ~600 marks each) ----
   for (const cls of selectedClasses) {
-    const sels = CLASS_SELECTORS[cls];
-    if (!sels) continue;
+    const sels = PER_MARK_CLASS_SELECTORS[cls];
+    if (!sels) continue; // 'ghosts' falls through here — handled by 1b (layer group)
     const scoped = sels.map((s) => `${root} svg ${s}`).join(',\n');
     blocks.push(
       `${scoped} {\n` +
@@ -100,6 +126,17 @@ export function buildHighlightCss(args: AtlasHighlightArgs): string {
         `  stroke-opacity: 0.85;\n` +
         `  paint-order: stroke;\n` +
         `  vector-effect: non-scaling-stroke;\n` +
+        `}`
+    );
+  }
+
+  // ---- 1b. GHOSTS class: LAYER-GROUP emphasis (D1-b) — ONE composited rule, no
+  // per-mark strokes across the 46,006 ghost marks. Filter lifts the whole ground
+  // layer on the GPU; zero style-recalc fan-out. ----
+  if (selectedClasses.has('ghosts')) {
+    blocks.push(
+      `${root} svg #layer-ghosts,\n${root} svg #layer-drillin {\n` +
+        `  filter: ${ghostLayerFilter(canvas)};\n` +
         `}`
     );
   }
