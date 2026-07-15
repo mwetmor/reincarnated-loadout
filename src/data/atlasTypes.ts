@@ -37,6 +37,11 @@ export interface AtlasKitRow {
   era_year: number | null;
   /** stabilization_patch — patch string, shown only where curated (atlas 15/506). */
   stabilization_patch: string | null;
+  // ---- D2-a: the FULL 14-axis engine-key coordinate (cell_key split; joined at
+  // slim-build time from canon_engine_key). Keys are the derived axis names; values are
+  // the authoritative cell_key parts. `null` (== the `blank` sentinel) renders `—`;
+  // `unknown` is a CURATED value preserved literally (D2-b). null for a kit with no key.
+  engine_key: Record<string, string | null> | null;
 }
 
 /** One feasible ghost-cell row (the meso lattice). */
@@ -56,10 +61,22 @@ export interface AtlasCoreAxis {
   values: string[];
 }
 
+/** D2-a: one derived engine-key axis (order + name + naming-column + grain + vocab). */
+export interface AtlasEngineKeyAxis {
+  pos: number;
+  axis: string;
+  column: string;
+  grain: string;
+  values: string[];
+}
+
 export interface AtlasPoleVocabulary {
   axis_names: { dim1: string; dim2: string };
   core_order: string[];
   core_axes: AtlasCoreAxis[];
+  /** D2-a: the DERIVED 14-axis engine-key schema (order/name/column/grain). Optional so
+   *  a pre-D2 JSON still type-checks; the column model degrades to ghost-only if absent. */
+  engine_key_axes?: AtlasEngineKeyAxis[];
   quadrant_regions: Record<Quadrant, string>;
 }
 
@@ -72,6 +89,15 @@ export interface AtlasInteractiveCounts {
   ghosts_lit: number;
 }
 
+/** D2-a: engine-key join coverage receipt (surfaced in the provenance panel). */
+export interface AtlasEngineKeyCoverage {
+  kits_with_engine_key: number;
+  per_axis: Record<string, number>;
+  total: number;
+  /** Carried-through sidecar derivation receipt (part-order + column correspondence). */
+  derivation?: unknown;
+}
+
 export interface AtlasInteractiveData {
   schema_version: string;
   derived_from: {
@@ -81,6 +107,10 @@ export interface AtlasInteractiveData {
     source_bytes: number;
   };
   counts: AtlasInteractiveCounts;
+  /** D1-h provenance-join coverage (optional; pre-D1-h JSON omits it). */
+  provenance_coverage?: Record<string, number>;
+  /** D2-a engine-key join coverage (optional; pre-D2 JSON omits it). */
+  engine_key_coverage?: AtlasEngineKeyCoverage;
   pole_vocabulary: AtlasPoleVocabulary;
   kits: AtlasKitRow[];
   ghosts: AtlasGhostRow[];

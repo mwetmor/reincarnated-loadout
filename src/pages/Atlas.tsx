@@ -59,7 +59,7 @@ function LoadingState() {
     <div className="flex items-center justify-center py-24">
       <div className="flex flex-col items-center gap-3">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-indigo-500 border-t-transparent" />
-        <p className="font-mono text-sm text-gray-500">Loading atlas…</p>
+        <p className="font-mono text-sm text-gray-500">Loading Build Horizon…</p>
       </div>
     </div>
   );
@@ -202,7 +202,7 @@ export function Atlas() {
   if (status === 'error' || !data || !provenance || !resolvedSkin) {
     return (
       <div className="mx-auto max-w-md py-24 text-center">
-        <p className="font-mono text-sm text-rose-400">Error loading atlas</p>
+        <p className="font-mono text-sm text-rose-400">Error loading Build Horizon</p>
         <p className="mt-2 text-xs text-gray-500">{error ?? 'missing data'}</p>
         <button
           onClick={refresh}
@@ -225,8 +225,12 @@ export function Atlas() {
     <div className="w-full px-4 py-4 sm:px-6">
       <header className="mb-4 flex flex-wrap items-end justify-between gap-3">
         <div>
-          {/* D1-i: Kit Atlas -> Build Atlas (community vocabulary). */}
-          <h1 className="text-lg font-semibold text-gray-100">Build Atlas</h1>
+          {/* D2-d (Matt-RULED): the community-facing surface name is "Build Horizon"
+              (avoids the PoE "Atlas of Worlds" collision; ties to the plate's CHARTED
+              HORIZON vocabulary). D1-i's "Build Atlas" was interim. ONE-string-class
+              change: internals (atlas* files, routes /atlas, kit_id, types, test ids)
+              stay `atlas`/kits per Matt's internal/community split. */}
+          <h1 className="text-lg font-semibold text-gray-100">Build Horizon</h1>
           <p className="font-mono text-[11px] text-gray-500">
             Edition-{data.derived_from.atlas_version} lattice · {data.counts.kits} builds ·{' '}
             {data.counts.ghosts.toLocaleString()} ghost cells · black copy leads
@@ -273,7 +277,7 @@ export function Atlas() {
           onClick={handleChartClick}
           tabIndex={0}
           role="application"
-          aria-label="Build atlas — scroll or pinch to zoom, drag to pan"
+          aria-label="Build Horizon — scroll or pinch to zoom, drag to pan"
           className="atlas-svg-host block w-full cursor-grab select-none outline-none [&>svg]:block [&>svg]:h-auto [&>svg]:w-full active:cursor-grabbing"
           // The lens exposes canvas surround when the view exceeds the plane rect;
           // the wrapper background is the canvas hex so it blends (§8.3).
@@ -284,7 +288,7 @@ export function Atlas() {
             <div className="flex flex-col items-center gap-2">
               <div className="h-6 w-6 animate-spin rounded-full border-2 border-indigo-500 border-t-transparent" />
               <p className="font-mono text-[11px] text-gray-500">
-                {svgStatus === 'error' ? 'Failed to load atlas SVG' : 'Rendering atlas…'}
+                {svgStatus === 'error' ? 'Failed to load the chart SVG' : 'Rendering the chart…'}
               </p>
             </div>
           </div>
@@ -411,8 +415,10 @@ function ProvenancePanel({
             {pdf1.verdict}
           </span>
           <span className="font-mono text-[10px] text-gray-500">
+            {/* Field NAMES (S_max, K_max) are machine-verbatim provenance keys; the
+                human label uses community vocab (kits -> builds) per the D1-i split. */}
             S_max {pdf1.S_max} · K_max {pdf1.K_max_beyond_horizon} · {pdf1.n_beyond_horizon_kits}{' '}
-            kits beyond horizon
+            builds beyond horizon
           </span>
         </div>
       )}
@@ -422,7 +428,7 @@ function ProvenancePanel({
         </p>
       )}
       <p className="font-mono text-[11px] text-gray-500">
-        Archived lens · Edition-I remains available as the prior atlas record.
+        Archived lens · Edition-I remains available as the prior chart record.
         {provenance.render ? ` Render: ${provenance.render}.` : ''} Provenance: emitted{' '}
         {data.derived_from.emitted_at.slice(0, 10)} · basis frozen 2026-07-14 ·{' '}
         {(data.derived_from.source_bytes / 1024 / 1024).toFixed(1)}MB source →{' '}

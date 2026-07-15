@@ -40,17 +40,28 @@ const DEFAULT_OUT = resolve(REPO_ROOT, 'public/atlas/atlas-interactive.json');
 // The FROZEN atlas-edition2.json is UNTOUCHED — this join happens at slim-build time.
 const DEFAULT_SIDECAR = resolve(__dirname, 'kit-provenance-sidecar.json');
 
+// D2-a: the READ-ONLY 14-axis ENGINE-KEY sidecar, vendored as a build input. Joined on
+// kit_id to add the FULL 14-axis coordinate (cell_key split) to build rows so the pivot
+// grid shows real per-build axis codes (not `—`, which D1-g emitted before this pass
+// superseded it). Exported one-shot from corpus.db canon_engine_key (+ canon_corpus
+// naming columns) by scripts/atlas/export-engine-key-sidecar.mjs; carries its own
+// provenance + derivation-receipt header. The FROZEN atlas-edition2.json is UNTOUCHED.
+const DEFAULT_ENGINE_KEY_SIDECAR = resolve(__dirname, 'engine-key-sidecar.json');
+
 // ---- CLI ----
 const argv = process.argv.slice(2);
 let sourcePath = DEFAULT_SOURCE;
 let outPath = DEFAULT_OUT;
 let sidecarPath = DEFAULT_SIDECAR;
+let engineKeySidecarPath = DEFAULT_ENGINE_KEY_SIDECAR;
 for (let i = 0; i < argv.length; i++) {
   const a = argv[i];
   if (a === '--out') {
     outPath = resolve(argv[++i]);
   } else if (a === '--sidecar') {
     sidecarPath = resolve(argv[++i]);
+  } else if (a === '--engine-key-sidecar') {
+    engineKeySidecarPath = resolve(argv[++i]);
   } else if (!a.startsWith('--')) {
     sourcePath = resolve(argv[i]);
   }
@@ -133,7 +144,39 @@ function loadProvenanceIndex(sidecar) {
   return index;
 }
 
-function build(source, provenanceIndex) {
+/**
+ * Build a kit_id -> engine-key-values map from the D2-a engine-key sidecar.
+ * The sidecar is `{ __provenance__, axes:[{pos,axis,column,grain}], rows:[{kit_id,
+ * cell_key, values:{<axis>:<value|null>}}] }`. Returns { axes, index } where index is
+ * kit_id -> { cell_key, values }. Not every atlas kit need have an engine key (kits
+ * absent show `—` per D2-b) — this is a SOFT join (unlike the D1-h folk_name floor).
+ * The `axes` schema is carried through to pole_vocabulary so the client renders the
+ * DERIVED axis names/order (never a hand-typed client constant).
+ */
+function loadEngineKeyIndex(sidecar) {
+  const axes = requireArray(sidecar, 'axes', 'engine-key-sidecar');
+  // Guard: the axes schema must carry pos/axis/column for each of the 14 (derivation
+  // truth). A missing/renamed field => the sidecar is malformed => HALT (never emit a
+  // silently-degraded axis schema).
+  for (const a of axes) {
+    requireField(a, 'pos', 'engine-key-sidecar.axes[]');
+    requireField(a, 'axis', 'engine-key-sidecar.axes[]');
+    requireField(a, 'column', 'engine-key-sidecar.axes[]');
+  }
+  const rows = requireArray(sidecar, 'rows', 'engine-key-sidecar');
+  const index = new Map();
+  for (const r of rows) {
+    const kitId = requireField(r, 'kit_id', 'engine-key-sidecar.rows[]');
+    const values = requireField(r, 'values', 'engine-key-sidecar.rows[]');
+    const cellKey = readOptional(r, 'cell_key');
+    index.set(kitId, { cell_key: cellKey, values });
+  }
+  // Carry the derivation receipt through for the provenance panel (audit trail).
+  const provenance = readOptional(sidecar, '__provenance__');
+  return { axes, index, provenance };
+}
+
+function build(source, provenanceIndex, engineKey) {
   // --- Top-level fields we depend on (copy, never invent) ---
   const atlasVersion = requireField(source, 'atlas_version', 'atlas root');
   const emittedAt = requireField(source, 'emitted_at', 'atlas root');
@@ -175,6 +218,12 @@ function build(source, provenanceIndex) {
   let covYear = 0;
   let covPatch = 0;
   const missingFolkName = [];
+  // D2-a engine-key join coverage (SOFT — kits absent show `—`). Per-axis non-null
+  // coverage on the atlas set is reported (acceptance 50). `blank`->null is already
+  // applied in the sidecar; `unknown` is a curated non-null value (counts as covered).
+  const engineAxes = engineKey?.axes ?? [];
+  let covEngineKey = 0; // kits that resolved ANY engine key
+  const covPerAxis = new Map(engineAxes.map((a) => [a.axis, 0]));
   for (const p of points) {
     // Universal fields — STRICT: a rename of any of these HALTS the build.
     const kitId = requireField(p, 'kit_id', 'atlas.points[]');
@@ -208,6 +257,19 @@ function build(source, provenanceIndex) {
     const patch = prov?.stabilization_patch ?? null;
     if (patch != null && patch !== '') covPatch++;
 
+    // D2-a: JOIN the 14-axis engine key on kit_id (SOFT — absent => null => renders —).
+    const ek = engineKey?.index?.get(kitId) ?? null;
+    const engineKeyValues = ek?.values ?? null; // { <axis>: <value|null> } or null
+    if (engineKeyValues != null) {
+      covEngineKey++;
+      for (const a of engineAxes) {
+        const v = engineKeyValues[a.axis];
+        // covered = a non-null value (blank was already normalised to null in the
+        // sidecar; 'unknown' is a curated value and DOES count as covered).
+        if (v != null && v !== '') covPerAxis.set(a.axis, covPerAxis.get(a.axis) + 1);
+      }
+    }
+
     kits.push({
       kit_id: kitId,
       cls,
@@ -221,6 +283,10 @@ function build(source, provenanceIndex) {
       game, // slug (e.g. 'chronicon'); title-cased for DISPLAY only, string traces to corpus
       era_year: eraYear, // number|null
       stabilization_patch: patch, // string|null
+      // D2-a engine-key: the full 14-axis coordinate (cell_key split, blank->null).
+      // null when the kit has no engine key; individual axes null when that part was
+      // `blank`; 'unknown' preserved literally (curated value, D2-b).
+      engine_key: engineKeyValues,
     });
   }
 
@@ -326,12 +392,35 @@ function build(source, provenanceIndex) {
       coreAxisValues[i].add(c.core[i]);
     }
   }
+  // D2-a: derive the engine-key axis VALUE vocabularies on the atlas set (scan of the
+  // joined engine_key values) so the client renders DERIVED names/order + can show the
+  // vocabulary without shipping the corpus. `null` values (blank sentinel) are skipped;
+  // `unknown` (curated) is included.
+  const engineAxisValues = new Map(engineAxes.map((a) => [a.axis, new Set()]));
+  for (const k of kits) {
+    if (k.engine_key == null) continue;
+    for (const a of engineAxes) {
+      const v = k.engine_key[a.axis];
+      if (v != null && v !== '') engineAxisValues.get(a.axis).add(v);
+    }
+  }
+
   const poleVocabulary = {
     axis_names: axisNames, // { dim1: "PERFORM <-> DEPLOY", dim2: "EMBODY <-> LAUNCH" }
     core_order: coreOrder,
     core_axes: coreOrder.map((name, i) => ({
       axis: name,
       values: [...coreAxisValues[i]].sort(),
+    })),
+    // D2-a: the DERIVED 14-axis engine-key schema (order + name + naming-column + grain)
+    // carried verbatim from the sidecar's receipt so the client NEVER hand-types axis
+    // names/order. Values are the derived-on-atlas vocabularies (audit + column headers).
+    engine_key_axes: engineAxes.map((a) => ({
+      pos: a.pos,
+      axis: a.axis,
+      column: a.column,
+      grain: a.grain ?? 'kit',
+      values: [...(engineAxisValues.get(a.axis) ?? new Set())].sort(),
     })),
     // Region-name legend so the pivot / quadrant labels never re-derive convention.
     quadrant_regions: {
@@ -366,6 +455,17 @@ function build(source, provenanceIndex) {
       era_year: covYear,
       stabilization_patch: covPatch,
       total: kits.length,
+    },
+    // D2-a engine-key join coverage on the atlas kit set (receipts; SOFT join).
+    // per_axis = kits with a NON-NULL value on that axis ('unknown' counts; blank/null
+    // does not). Reported for acceptance 50 (per-axis coverage on the atlas 506).
+    engine_key_coverage: {
+      kits_with_engine_key: covEngineKey,
+      per_axis: Object.fromEntries(engineAxes.map((a) => [a.axis, covPerAxis.get(a.axis)])),
+      total: kits.length,
+      // The derivation receipt from the sidecar (part-order + column correspondence),
+      // carried through so the provenance panel + audits can cite it without the corpus.
+      derivation: engineKey?.provenance ?? null,
     },
     pole_vocabulary: poleVocabulary,
     kits,
@@ -409,10 +509,30 @@ function main() {
     process.exit(2);
   }
 
+  // D2-a: load the READ-ONLY 14-axis engine-key sidecar (build HALT if absent — builds
+  // must show their real axis codes; the D1-g `—` state is superseded). This is a SOFT
+  // JOIN per kit (a kit absent from the sidecar shows `—`), but the sidecar FILE must
+  // exist and be well-formed, or the axis schema cannot be derived => HALT.
+  if (!existsSync(engineKeySidecarPath)) {
+    console.error(
+      `BUILD-FAIL: engine-key sidecar not found at ${engineKeySidecarPath}. ` +
+        `Export it from corpus.db (scripts/atlas/export-engine-key-sidecar.mjs) before building.`
+    );
+    process.exit(2);
+  }
+  let engineKeySidecar;
+  try {
+    engineKeySidecar = JSON.parse(readFileSync(engineKeySidecarPath, 'utf8'));
+  } catch (e) {
+    console.error(`BUILD-FAIL: engine-key sidecar is not valid JSON — ${e.message}`);
+    process.exit(2);
+  }
+
   let out;
   try {
     const provenanceIndex = loadProvenanceIndex(sidecar);
-    out = build(source, provenanceIndex);
+    const engineKey = loadEngineKeyIndex(engineKeySidecar);
+    out = build(source, provenanceIndex, engineKey);
   } catch (e) {
     if (e instanceof BuildFailError) {
       console.error(e.message);
@@ -437,6 +557,16 @@ function main() {
   console.log(
     `  provenance (D1-h corpus join, /${pc.total}): folk_name ${pc.folk_name}, game ${pc.game}, ` +
       `era_year ${pc.era_year}, stabilization_patch ${pc.stabilization_patch}`
+  );
+  const ec = out.engine_key_coverage;
+  console.log(
+    `  engine-key (D2-a 14-axis join, /${ec.total}): kits_with_key ${ec.kits_with_engine_key}`
+  );
+  console.log(
+    '    per-axis coverage: ' +
+      Object.entries(ec.per_axis)
+        .map(([ax, n]) => `${ax}=${n}`)
+        .join(' ')
   );
   console.log(
     `  size   : ${outBytes.toLocaleString()} B (${(outBytes / 1024 / 1024).toFixed(2)} MB) ` +

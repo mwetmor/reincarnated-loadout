@@ -67,9 +67,17 @@ const VIRTUALIZE_THRESHOLD = 40;
 
 export function AtlasPivotTable({ data, onSelectRow, selection, openItem }: AtlasPivotTableProps) {
   const coreOrder = data.pole_vocabulary.core_order;
+  // D2-a: the DERIVED 14-axis engine-key schema (from pole_vocabulary); undefined on a
+  // pre-D2 JSON (then the grid degrades to D1-g ghost-only axis columns).
+  const engineKeyAxes = data.pole_vocabulary.engine_key_axes;
 
-  // D1-g: the shared leaf-grid columns (build cols + 7 axis cols + metric cols).
-  const columns = useMemo(() => buildLeafColumns(coreOrder), [coreOrder]);
+  // D2-b/c: the UNION leaf-grid columns (build cols · shared(5)+meso(2)+kit(9) axis cols
+  // · metric cols). Both grains populate the shared columns; build rows fill the kit-only
+  // columns from engine_key; ghost rows fill the meso-only columns from core[i].
+  const columns = useMemo(
+    () => buildLeafColumns(coreOrder, engineKeyAxes),
+    [coreOrder, engineKeyAxes]
+  );
   const gridGrow = useMemo(() => sumGrow(columns), [columns]);
 
   // Ordered pivot levels (drag-reorderable). Seed = default hierarchy (D1-g: the

@@ -69,6 +69,15 @@ function LeafRowImpl({
       {columns.map((col) => {
         const v = col.cell(item);
         const isNa = v === NA;
+        // D2-c: tint axis cells by grain so the union bands read (shared=sky,
+        // ghost/meso=violet, build/kit=amber); non-axis populated cells stay neutral.
+        // D2-b: the curated literal 'unknown' is styled like any value (never as NA).
+        const axisTint =
+          col.axisGrain === 'meso'
+            ? 'text-violet-200/80'
+            : col.axisGrain === 'kit'
+              ? 'text-amber-200/85'
+              : 'text-sky-300/80';
         return (
           <span
             key={col.id}
@@ -79,7 +88,7 @@ function LeafRowImpl({
               isNa
                 ? 'text-gray-700'
                 : col.group === 'axis'
-                  ? 'text-sky-300/80'
+                  ? axisTint
                   : selected
                     ? 'text-gray-100'
                     : 'text-gray-400',

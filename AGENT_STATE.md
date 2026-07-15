@@ -11,11 +11,55 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-15 (atlas D1 defect+features pass — legend band, highlight-cost law, pivot memoization, axis-pole vocab, fluid width, ghost-axes-as-columns, build provenance names, community vocabulary; acc 41–49 green; Vercel PREVIEW shipped, prod HELD for gandalf verify)
-**Last commit:** atlas D1 pass — D1-a…D1-i on top of the v1 zoom (421f98c); ghost legend highlights by layer-group filter (Bomb 1 defused: 0 per-mark rules), pivot grouper memoized (Bomb 2), legend moved to normal-flow band (Bomb 3), fluid width, ghost cores → grid columns, folk_name — game year (patch) build names from corpus sidecar, builds/build-families community vocabulary
+**Last updated:** 2026-07-15 (atlas D2 extension pass — FULL 14-axis engine-key columns for builds + union-grid column law + Build Atlas → Build Horizon display name; acc 50–53 green; Vercel PREVIEW shipped, prod HELD for gandalf verify)
+**Last commit:** atlas D2 pass — 14-axis engine-key sidecar (derived w/ receipt, joined by kit_id) → union leaf grid (shared-5 both grains · meso-only-2 ghost · kit-only-9 build); Build Atlas → Build Horizon (Matt-RULED); on top of D1 (b297068)
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
+
+---
+
+## Atlas D2 extension pass — FULL 14-axis engine-key columns + union-grid + Build Horizon (2026-07-15)
+
+**Spec:** `reincarnated-collaboration/agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md` **§9.2** (D2-a…D2-d; acc 50–53).
+**Authority:** Matt 2026-07-15 4th message ("7 axes for ghosts and 14 for kits/builds… we need the 14 for the kits/builds") + 5th message RULING ("I like Build Horizon"). SUPERSEDES D1-g's "builds show —" ruling (that was scoped to the emitted atlas JSON — the wrong surface; the corpus `canon_engine_key.cell_key` IS the kit-grain 14-axis coding surface). Built on D1 (commit b297068).
+**Push:** NOT pushed (Matt-gated). Deployed **Vercel PREVIEW only** (`npx vercel`, NOT --prod); production promotion HELD for gandalf verify.
+
+### The derivation (D2-a) — axis NAMES + part-ORDER DERIVED WITH A RECEIPT, never hand-typed
+- Source (READ-ONLY): `corpus.db` `canon_engine_key` (618 rows; 600 with a full 14-part `cell_key`; all 506 atlas kits keyed). The `cell_key` column is the 14-part coordinate (part 0 = movement; kit_id is a SEPARATE column, NOT embedded — the brief's `d2-wl-fire|walk|…` example prepended kit_id for illustration).
+- **Part-order truth:** the emitter's OWN `CK_IDX` in `ghost_field_edition1.py` (`movement:0, delivery:1, treatment:4, function:5, proxy:8, activation:12, dependency:13` — the shared-7) EXTENDED to the full 14 by empirical positional correspondence.
+- **Correspondence receipt (100% on present-part rows):** each of the 14 positions re-proven at export time — the best-matching named column equals the cell_key part on 100% of rows where the part is present (`blank` sentinel excluded). Per pos: [0]movement=mob_policy_while_casting 469/469, [1]delivery=delivery_value 594/594, [2]amplitude=amp_val 574/574, [3]geometry=geometry_value 531/531, [4]treatment=ctrl_treatment 557/557, [5]function=ctrl_function 563/563, [6]defense=def_bin 467/467, [7]economy=economy_model 563/563, [8]proxy=proxy_val 599/599, [9]range=range_val 599/599, [10]tempo=tempo_val 598/598, [11]commit=commit_val 572/572, [12]activation=activation_val 600/600, [13]dependency=dependency_val 600/600. (proxy/range/tempo/amp/commit come from `canon_corpus`; the rest from `canon_engine_key`.)
+- **Sidecar:** NEW `scripts/atlas/export-engine-key-sidecar.mjs` (one-shot READ-ONLY exporter; carries the receipt in `__provenance__`) → NEW `scripts/atlas/engine-key-sidecar.json` (14 axes + 600 rows). Values = `cell_key.split('|')[pos]` (authoritative coordinate). `blank` → null (renders —); `unknown` = CURATED value preserved LITERALLY.
+- **Derivation guard:** the exporter re-proves correspondence at run time and HALTS (exit 1) if any position drops below 98% — a doctored part-order/column mapping fails loud (verified: swap pos-0→geometry_value = 0/469 → HALT). Extended `verify:atlas-guard` (2 doctored-exporter cases + 1 engine-key-drop-axes case).
+
+### The union grid (D2-b/c) — grain honesty
+- The leaf grid is now a UNION: BUILD cols · [shared-5 · meso-only-2 · kit-only-9] axis cols · METRIC cols.
+- **SHARED-COLUMN LAW (emitter-proven, NOT the brief's assumption):** an axis shares ONE column iff the emitter maps kit→meso IDENTITY (`fit2reg_direct2`). The emitter's `REG2FIT` crosswalk (`ghost_field_edition1.py`) proves: treatment/function/proxy/activation/dependency are IDENTITY (meso-only extras hybrid/silence never appear at kit grain) → **5 shared**. movement (`fit2reg_movement` renames full-move→FREE-MOVE) + delivery (`fit2reg_delivery` grain-collapses geometry+proxy) are TRANSFORMED → NOT shared → grain-separate columns.
+- **DEVIATION from brief flagged:** the brief's "expected shared six" listed movement; the emitter's own REG2FIT rename (`full-move` ≠ `FREE-MOVE`) proves movement's kit/meso vocabularies DIFFER → excluded. Shared set is **5, not 6**. (The brief explicitly authorized: "share a column only on exact-name + compatible-vocabulary match, and record which columns merged.")
+- **Merge list (RECORDED):** shared columns = {treatment, function, proxy, activation, dependency}. Ghost movement/delivery = meso-only columns (ghost populates, build —). Build movement/delivery/amplitude/geometry/defense/economy/range/tempo/commit = kit-only columns (build populates, ghost —).
+- `unknown` (curated) renders literally; `—` (NA) = NO DATA (blank sentinel / off-kind); the two are NEVER collapsed. Ghost rows show — in kit-only cols; build rows show — in meso-only + metric cols. All 506 atlas builds keyed (the 108 `unmapped_pending_curation` kits are NOT on the atlas surface).
+- **Presentation (D2-c):** grouped super-header (Build · Shared axes · Ghost-only (meso) · Build-only (14-axis key) · Ghost metrics; labels mechanically prettified from derived names — title-case/underscore-to-space only, no new words); per-column tooltips carry the derived axis name + grain verbatim (e.g. "geometry — build grain (build only; corpus column geometry_value)"); axis cells tinted by grain (shared=sky, meso=violet, kit=amber). Horizontal scroll INSIDE the table region (overflow-x-auto + gridMinWidthPx); page stays fluid (no h-scrollbar).
+
+### D2-d display name (Matt-RULED)
+- Page title `Build Atlas` → **`Build Horizon`** (h1 + aria-label + nav link "Build Horizon" + loading/error copy). Internals UNTOUCHED (`atlas*` files, route `/atlas`, `kit_id`, `data-kit`, types, test ids). The baked SVG plate `The Atlas of Kits` + `CONDENSATIONS` are the KNOWN-INTERIM E2.2 galadriel relabel (NOT touched — byte-frozen SVG).
+
+### Acceptance receipts (headless CDP over prod build; 0 console errors)
+- **50 build-14-axis-columns:** ≥5 build rows' emitted engine_key reconstruct to their corpus `cell_key` VERBATIM (JSON: d2-wl-fire/d2-trapsin/poe1-tornado-shot/d4-quill-volley/le-umbral-blades; live DOM: `Bot Summoner Engineer — Tl2 2012` = `full-move|at-target|flat|totem|damage|taunt|tank|reserve|heavy|ranged|med|instant|active|one-shot` = corpus cell_key). Per-axis coverage on the atlas 506: movement 469, delivery 500, amplitude 504, geometry 461, treatment 463, function 469, defense 463, economy 469, proxy 505, range 505, tempo 505, commit 502, activation 506, dependency 506.
+- **51 shared-column honesty:** no column mixes grain vocabularies — the 5 shared are emitter-REG2FIT-identity-proven; movement/delivery grain-separated (receipt in sidecar `__provenance__.shared_column_verdict` + the axis-name/part-order derivation receipt in `__provenance__.derivation_receipt`).
+- **52 no-regression:** 41–49 re-demonstrated (legend band; ghost toggle by layer-group; pivot cache; axis-pole labels `Axis-X (DEPLOY | PERFORM)` + inversion-guard test green; fluid width no-h-scrollbar; ghost 7-col values; provenance names; community vocab). All 173 tests green. **D1-d budgets with the WIDER grid (headless CDP, prod build, 1440×900):** route-interactive 565ms (<1500); legend toggles incl Ghosts 0.0–0.2ms (≤50); selection change 1.2ms (≤50); table scroll 165fps avg / 110fps min / **0 frames >32ms** over 3s (≥50fps); long-tasks >200ms after mount = 0.
+- **53 display-name:** h1 = `Build Horizon`; nav link = `Build Horizon`; case-insensitive DOM audit — ZERO drax-owned user-visible "Atlas"-as-surface-name or "kit/condensation" strings on the atlas body outside (a) baked SVG plate (E2.2-registered) and (b) machine-verbatim provenance receipts (render script path, P-DF-1 statement). Nav "Kits" = the SEPARATE /kits browser surface (out of atlas scope). Internals still `atlas*`.
+
+### Smoke (Discipline #2)
+- `npx vitest run`: **173/173 pass** (was 167; +6: the D2 column-model test rewritten from 8 D1-g assertions to 14 D2 union-grid assertions).
+- `npm run build` (`tsc -b && vite build`): clean, 0 TS errors. `npm run build:atlas`: 506 kits, engine-key 506/506, 2.04MB. `npm run verify:atlas-guard`: **9/9 PASS** (6 prior + 3 new D2-a: engine-key-drop-axes + 2 doctored-exporter derivation guards).
+- `/` + `/atlas` render (0 console errors); vercel.json unchanged (SPA rewrite intact).
+
+### Data path + ship discipline
+- Vendored SVGs BYTE-FROZEN (sha256 archive `29dc29f3…` / instrument `a5954a0e…` verified unchanged). FROZEN `data-src/atlas/atlas-edition2.json` UNTOUCHED. `corpus.db` READ-ONLY (never mutated).
+- **No new `// TODO(drax)` overrides.** The 108 `unmapped_pending_curation` kits are a corpus reality (not on the atlas surface); `blank`-token null-columns render — (zero invention), by design. The baked SVG plate vocabulary is the registered E2.2 galadriel follow-up, not a drax override.
+
+### Deviations flagged
+- **Shared columns = 5, not the brief's expected 6:** movement excluded (emitter REG2FIT proves `full-move`→`FREE-MOVE` token rename = grain-distinct vocabulary; not a shared column). Brief explicitly authorized VERIFY-then-record. Delivery also grain-separated (grain-collapse). Recorded above + in sidecar `__provenance__`.
 
 ---
 

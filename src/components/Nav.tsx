@@ -38,8 +38,11 @@ export function Nav() {
             <NavItem to="/state-of-engine">Engine</NavItem>
             {/* cosmograph Phase A (2026-06-06): Forge = forward-looking future-engine surface; adjacency after Engine reads correctly */}
             <NavItem to="/forge">Forge</NavItem>
-            {/* atlas Glance package (2026-07-15): interactive kit-atlas surface */}
-            <NavItem to="/atlas">Atlas</NavItem>
+            {/* atlas Glance package (2026-07-15): interactive build-lattice surface.
+                D2-d (Matt-RULED 2026-07-15): the community-facing NAME is "Build Horizon"
+                (avoids the PoE "Atlas of Worlds" collision). Route path /atlas is an
+                INTERNAL identifier and stays unchanged per the internal/community split. */}
+            <NavItem to="/atlas">Build Horizon</NavItem>
             <NavItem to="/planning">Planning</NavItem>
           </div>
         </div>

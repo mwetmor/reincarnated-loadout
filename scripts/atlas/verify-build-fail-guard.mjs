@@ -18,21 +18,24 @@ import { tmpdir } from 'node:os';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, '..', '..');
 const BUILD = resolve(__dirname, 'build-atlas-interactive.mjs');
+const EXPORT_EK = resolve(__dirname, 'export-engine-key-sidecar.mjs');
 const SOURCE = resolve(REPO_ROOT, 'data-src/atlas/atlas-edition2.json');
 const SIDECAR = resolve(__dirname, 'kit-provenance-sidecar.json');
+const ENGINE_KEY_SIDECAR = resolve(__dirname, 'engine-key-sidecar.json');
 
 const tmp = mkdtempSync(join(tmpdir(), 'atlas-guard-'));
 const OUT = join(tmp, 'out.json');
 
 const atlas = JSON.parse(readFileSync(SOURCE, 'utf8'));
 const sidecar = JSON.parse(readFileSync(SIDECAR, 'utf8'));
+const engineKeySidecar = JSON.parse(readFileSync(ENGINE_KEY_SIDECAR, 'utf8'));
 
 function clone(o) {
   return JSON.parse(JSON.stringify(o));
 }
 
-/** Run the build against `srcObj` (+ optional doctored sidecar); true iff HALTS. */
-function buildHalts(label, srcObj, sidecarObj) {
+/** Run the build against `srcObj` (+ optional doctored sidecars); true iff HALTS. */
+function buildHalts(label, srcObj, sidecarObj, engineKeyObj) {
   const p = join(tmp, `doctored-${label}.json`);
   writeFileSync(p, JSON.stringify(srcObj));
   const args = [BUILD, p, '--out', OUT];
@@ -41,11 +44,37 @@ function buildHalts(label, srcObj, sidecarObj) {
     writeFileSync(sp, JSON.stringify(sidecarObj));
     args.push('--sidecar', sp);
   }
+  if (engineKeyObj) {
+    const ep = join(tmp, `doctored-engine-key-${label}.json`);
+    writeFileSync(ep, JSON.stringify(engineKeyObj));
+    args.push('--engine-key-sidecar', ep);
+  }
   try {
     execFileSync('node', args, { stdio: 'pipe' });
     return false; // exit 0 => did NOT halt
   } catch {
     return true; // non-zero exit => halted (guard fired)
+  }
+}
+
+/** Run the engine-key EXPORTER with a doctored AXIS_SCHEMA (wrong column at a position);
+ *  true iff the DERIVATION GUARD halts (D2-a: a mis-derived part-order/column fails loud). */
+function exporterDerivationHalts(label, swapPosColumn) {
+  // Doctor the exporter source in-memory: replace the column at a position with a WRONG
+  // one, so the run-time correspondence proof drops below the floor and HALTS.
+  let src = readFileSync(EXPORT_EK, 'utf8');
+  const { pos, wrongColumn } = swapPosColumn;
+  // Find the AXIS_SCHEMA line for this pos and rewrite its column.
+  const re = new RegExp(`(\\{ pos: ${pos}, axis: '[^']+', column: ')[^']+(', grain: '[^']+' \\})`);
+  const doctored = src.replace(re, `$1${wrongColumn}$2`);
+  if (doctored === src) return false; // pattern didn't match => can't prove; fail the case
+  const dp = join(tmp, `doctored-exporter-${label}.mjs`);
+  writeFileSync(dp, doctored);
+  try {
+    execFileSync('node', [dp], { stdio: 'pipe' });
+    return false; // exit 0 => guard did NOT fire
+  } catch {
+    return true; // non-zero exit => derivation guard HALTED
   }
 }
 
@@ -103,6 +132,45 @@ for (const c of cases) {
   const halted = buildHalts('sidecar-drop-folk_name', atlas, doctoredSidecar);
   console.log(
     `  [${halted ? 'PASS' : 'FAIL'}] doctored 'sidecar-drop-folk_name' -> guard ${halted ? 'HALTED' : 'did NOT halt'}`
+  );
+  if (!halted) ok = false;
+}
+
+// D2-a: the ENGINE-KEY sidecar build-fail guard. A malformed engine-key sidecar (the
+// `axes` schema dropped/renamed) must HALT the build — the derived axis schema is
+// load-bearing; a silently-degraded axis header is not allowed.
+{
+  const doctoredEk = clone(engineKeySidecar);
+  doctoredEk.axis_schema = doctoredEk.axes; // rename `axes` -> `axis_schema`
+  delete doctoredEk.axes;
+  const halted = buildHalts('engine-key-drop-axes', atlas, null, doctoredEk);
+  console.log(
+    `  [${halted ? 'PASS' : 'FAIL'}] doctored 'engine-key-drop-axes' -> guard ${halted ? 'HALTED' : 'did NOT halt'}`
+  );
+  if (!halted) ok = false;
+}
+
+// D2-a: the DERIVATION GUARD in the EXPORTER — a doctored part-order/column mapping (a
+// WRONG column at a position) must fail the run-time correspondence proof and HALT,
+// never emit a mis-derived sidecar. Two cases: swap pos-0's column to a mismatched one,
+// and swap pos-3 (geometry) to a mismatched one.
+{
+  const halted = exporterDerivationHalts('swap-pos0-to-geometry', {
+    pos: 0,
+    wrongColumn: 'geometry_value',
+  });
+  console.log(
+    `  [${halted ? 'PASS' : 'FAIL'}] doctored exporter 'swap-pos0-to-geometry' -> derivation guard ${halted ? 'HALTED' : 'did NOT halt'}`
+  );
+  if (!halted) ok = false;
+}
+{
+  const halted = exporterDerivationHalts('swap-pos3-to-activation', {
+    pos: 3,
+    wrongColumn: 'activation_val',
+  });
+  console.log(
+    `  [${halted ? 'PASS' : 'FAIL'}] doctored exporter 'swap-pos3-to-activation' -> derivation guard ${halted ? 'HALTED' : 'did NOT halt'}`
   );
   if (!halted) ok = false;
 }
