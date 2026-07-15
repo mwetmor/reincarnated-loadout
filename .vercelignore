@@ -21,3 +21,8 @@ public/pitch/heroes/season_001_hero_take4.png
 
 # Phase 5 working data (not needed for deployment)
 public/seasons/v2_narrow_phase_5
+
+# Atlas build-time source (7.5MB) — build INPUT only, never a deploy artifact.
+# The slim derivative (public/atlas/atlas-interactive.json, ~1.9MB) ships; the
+# fat atlas-edition2.json must NEVER reach the client bundle (spec §5).
+data-src/

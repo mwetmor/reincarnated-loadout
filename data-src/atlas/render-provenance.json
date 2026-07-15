@@ -1,0 +1,302 @@
+{
+  "render": "galadriel/pipeline/atlas-edition2-e21-render.mjs",
+  "edition": "II",
+  "iteration": "E2.1",
+  "iteration_authority": "spec §10.8 (Matt 2026-07-15 two rulings + gandalf DRIFT-CRITIC findings); presentation-only on FROZEN Edition-II data",
+  "iteration_precedes": "r7 (radius floor is geometry; lands before the r7 freeze baseline)",
+  "prefix_baseline": "2026-07-15-atlas-edition2 (ebb18784) — the pre-fix record, untouched",
+  "atlas_version": "Edition-II",
+  "register_ref": "feasibility-cuts-register-v1.2",
+  "input": "agentic_orchestration/research/curated/atlas/atlas-edition2.json",
+  "emitted_at": "2026-07-15T19:20:12.237153+00:00",
+  "emitter_script": "agentic_orchestration/research/scripts/build_atlas_json_edition2.py",
+  "fit_layer_frozen_vs": "r6 (2026-07-15-atlas-edition1-r6-legibility) AND ebb18784 (2026-07-15-atlas-edition2)",
+  "skin_canvas_map": {
+    "instrument": {
+      "canvas": "light",
+      "hex": "#f7f8fa"
+    },
+    "archive": {
+      "canvas": "dark",
+      "hex": "#0e1016"
+    }
+  },
+  "basis": {
+    "frozen": true,
+    "ratified": "2026-07-14",
+    "inertia_pct": 8.36,
+    "retained_dims": 14,
+    "axis_names": {
+      "dim1": "PERFORM <-> DEPLOY",
+      "dim2": "EMBODY <-> LAUNCH"
+    }
+  },
+  "counts": {
+    "active": 469,
+    "supplementary": 37,
+    "total": 506,
+    "grouped": 86
+  },
+  "lattice": {
+    "meso_feasible": 11160,
+    "meso_sealed": 1314,
+    "lit_cells": 193,
+    "unmapped_pending_curation": 108,
+    "exact_post_red_law": 767411820,
+    "depth_sum_check": 767411820,
+    "ghost_glyph_positions": 7128,
+    "ghost_clipped": 27,
+    "charted_hull_vertex_count": 23,
+    "hull_vertex_count": 23,
+    "beyond_horizon_n": 0,
+    "beyond_horizon_n_meso_only": 14,
+    "charted_hull_east_world_x": 2.31,
+    "meso_hull_east_world_x": 1.25805961,
+    "settled_active_east_world_x": 1.3902523,
+    "drill_min_radius_px": 1.37,
+    "drill_radius_floor_px": 1.25,
+    "drill_radius_step": 0.12
+  },
+  "pull_slice": {
+    "meso_feasible": 1080,
+    "meso_sealed": 54,
+    "lit_cells": 2,
+    "new_law_needed": 0,
+    "halt": false,
+    "lit_core_tuples": [
+      [
+        "FREE-MOVE",
+        "ZONE",
+        "damage",
+        "pull",
+        "solo",
+        "active",
+        "one-shot"
+      ],
+      [
+        "WALK",
+        "NOVA",
+        "control",
+        "pull",
+        "solo",
+        "active",
+        "one-shot"
+      ]
+    ]
+  },
+  "drill_in": {
+    "region": "EAST-half (projected x>=0; PERFORM side) — slate #1 ES + #2 EN (one drill-in serves both)",
+    "promoted_pair": [
+      "geometry",
+      "commit"
+    ],
+    "n_east_parent_cells": 5068,
+    "n_sub_feasible": 172312,
+    "n_sub_sealed": 10136,
+    "sub_glyph_field_entries": 38878,
+    "sub_glyphs_rendered": 38878,
+    "sub_glyphs_west_overshoot": 10232,
+    "sub_clipped": 1130,
+    "sub_sealed_ledger": [
+      {
+        "commit": "channel",
+        "count": 5068,
+        "cut_id": "RED-3-movement-damage-carveout",
+        "geometry": "dash_attack"
+      },
+      {
+        "commit": "wind-up",
+        "count": 5068,
+        "cut_id": "RED-3-movement-damage-carveout",
+        "geometry": "dash_attack"
+      }
+    ]
+  },
+  "off_plane_corpus": {
+    "n": 94,
+    "disclosure": "94 gear-grain kits (mcd-) sit in the corpus off-plane — classless gear carries no movement identity at kit grain; admission is a deferred grain ruling."
+  },
+  "superseded_edition1": {
+    "exact_post_red_law": 693146160,
+    "meso_feasible": 10080,
+    "meso_sealed": 1260
+  },
+  "p_df_1": {
+    "verdict": "PASS",
+    "verdict_top_level": "PASS",
+    "falsified": false,
+    "S_max": 2.84105203,
+    "K_max_beyond_horizon": 1.87424756,
+    "S_argmax": {
+      "x": 1.85239877,
+      "y": -2.15412247
+    },
+    "u_direction": [
+      0.6501557402629432,
+      -0.7598009695987128
+    ],
+    "n_beyond_horizon_kits": 14,
+    "statement": "EAST drill-in (geometry×commit) extends the dark BEYOND the whirlwind/beam kits along û=normalize(mean(c_whirlwind, c_channel)).",
+    "consequence_if_falsified": "INTERIOR-1 re-opens with new fuel (§9.4.4 trigger) — SURFACE to Matt, never auto-fire."
+  },
+  "acceptance": {
+    "pass": 54,
+    "total": 54,
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "point-counts",
+        "pass": true
+      },
+      {
+        "name": "grouped-count",
+        "pass": true
+      },
+      {
+        "name": "ghost-counts",
+        "pass": true
+      },
+      {
+        "name": "ghost-lit-conformance",
+        "pass": true
+      },
+      {
+        "name": "ghost-depth-sum",
+        "pass": true
+      },
+      {
+        "name": "sealed-cut_id-conformance",
+        "pass": true
+      },
+      {
+        "name": "point-layout-equality",
+        "pass": true
+      },
+      {
+        "name": "ghost-layout-equality",
+        "pass": true
+      },
+      {
+        "name": "determinism",
+        "pass": true
+      },
+      {
+        "name": "R2-no-2.57-numeral",
+        "pass": true
+      },
+      {
+        "name": "R2ext-no-422445240",
+        "pass": true
+      },
+      {
+        "name": "R3-no-season-N",
+        "pass": true
+      },
+      {
+        "name": "RIDER-1-badge",
+        "pass": true
+      },
+      {
+        "name": "r2-pole-glosses",
+        "pass": true
+      },
+      {
+        "name": "r2-density-legend-line",
+        "pass": true
+      },
+      {
+        "name": "r2-derivation-gloss",
+        "pass": true
+      },
+      {
+        "name": "r3-census-line",
+        "pass": true
+      },
+      {
+        "name": "r3.2-clip-disclosure",
+        "pass": true
+      },
+      {
+        "name": "r3-coverage-callout",
+        "pass": true
+      },
+      {
+        "name": "r3-sealed-ledger",
+        "pass": true
+      },
+      {
+        "name": "ghost-glyphs-not-regions",
+        "pass": true
+      },
+      {
+        "name": "fit-layer-regression",
+        "pass": true
+      },
+      {
+        "name": "r4-horizon",
+        "pass": true
+      },
+      {
+        "name": "r4-headline-pair",
+        "pass": true
+      },
+      {
+        "name": "r5-beyond-horizon",
+        "pass": true
+      },
+      {
+        "name": "E2-belowplane-ledger-band",
+        "pass": true
+      },
+      {
+        "name": "register-v1.2-derivation",
+        "pass": true
+      },
+      {
+        "name": "lattice-integrity",
+        "pass": true
+      },
+      {
+        "name": "pull-slice-lit-integrity",
+        "pass": true
+      },
+      {
+        "name": "drill-in-conformance",
+        "pass": true
+      },
+      {
+        "name": "P-DF-1-scored",
+        "pass": true
+      },
+      {
+        "name": "edition-stamp+anti-stale-greps",
+        "pass": true
+      },
+      {
+        "name": "E2.1-b-drill-prominence-floor",
+        "pass": true
+      },
+      {
+        "name": "E2.1-c-banner-relabel",
+        "pass": true
+      },
+      {
+        "name": "E2.1-d-provenance-dedupe",
+        "pass": true
+      },
+      {
+        "name": "E2.1-e-skin-canvas-map",
+        "pass": true
+      },
+      {
+        "name": "E2.1-f-chrome-uniqueness+bottom-band-overlap",
+        "pass": true
+      }
+    ]
+  },
+  "skins": [
+    "instrument",
+    "archive"
+  ],
+  "determinism": "byte-identical double-render (both skins); sorted iteration; no RNG; no wall-clock"
+}

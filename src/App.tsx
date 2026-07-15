@@ -11,6 +11,7 @@ import { Planning } from './pages/Planning';
 import { PlanningDoc } from './pages/PlanningDoc';
 import { EngineState } from './pages/EngineState';
 import { Forge } from './pages/Forge';
+import { Atlas } from './pages/Atlas';
 // cycle-18 recovery-2: KitBrowser at /kits preserves cycle-18 grid surface.
 // /kit-space redirects to /kits (discovery surface); /loadout = rich per-character view.
 // cosmograph Phase A (2026-06-06): /forge = forward-looking future-engine substrate cosmograph.
@@ -64,6 +65,8 @@ export default function App() {
             <Route path="/state-of-engine" element={<EngineState />} />
             {/* cosmograph Phase A (2026-06-06): /forge = substrate cosmograph (PROVISIONAL future-engine view) */}
             <Route path="/forge" element={<Forge />} />
+            {/* atlas Glance package (2026-07-15): /atlas = interactive kit-atlas (black-copy lead, pivot table, legend scaffold) */}
+            <Route path="/atlas" element={<Atlas />} />
             {/* cycle-18 recovery-2: /kits = kit browser (grid/featured/faction filter) */}
             <Route path="/kits" element={<KitBrowser />} />
             {/* /kit-space redirects to /kits (kit discovery surface) */}

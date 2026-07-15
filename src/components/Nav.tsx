@@ -38,6 +38,8 @@ export function Nav() {
             <NavItem to="/state-of-engine">Engine</NavItem>
             {/* cosmograph Phase A (2026-06-06): Forge = forward-looking future-engine surface; adjacency after Engine reads correctly */}
             <NavItem to="/forge">Forge</NavItem>
+            {/* atlas Glance package (2026-07-15): interactive kit-atlas surface */}
+            <NavItem to="/atlas">Atlas</NavItem>
             <NavItem to="/planning">Planning</NavItem>
           </div>
         </div>
