@@ -26,12 +26,14 @@
 //
 // Spec: agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md
 
-import { useState, useMemo, useCallback, useId, useRef } from 'react';
+import { useState, useMemo, useCallback, useId, useRef, useEffect } from 'react';
 import { useAtlasData } from '../hooks/useAtlasData';
 import { useAtlasSvg } from '../hooks/useAtlasSvg';
+import { useAtlasLens } from '../hooks/useAtlasLens';
 import { AtlasLegend } from '../components/atlas/AtlasLegend';
 import { AtlasSkinToggle } from '../components/atlas/AtlasSkinToggle';
 import { AtlasPivotTable } from '../components/atlas/AtlasPivotTable';
+import { AtlasZoomControls } from '../components/atlas/AtlasZoomControls';
 import { buildHighlightCss, type AtlasSelection } from '../utils/atlasHighlight';
 import { hookToSelection, itemToSelection } from '../utils/atlasSelectPath';
 import type { PivotItem } from '../utils/atlasPivot';
@@ -105,11 +107,38 @@ export function Atlas() {
   const rootId = useId().replace(/:/g, '_'); // useId() emits ':' which is not id-safe
   const svgRootId = `atlas-svg-${rootId}`;
 
-  // ---- TABLE -> CHART: a leaf row click halos its mark + pans it into view ----
-  const handleSelectRow = useCallback((item: PivotItem) => {
-    setSelection(itemToSelection(item));
-    setAggregateCells(null); // table-origin selection carries no aggregate caption
-  }, []);
+  // ---- v1 ZOOM (spec §8): viewBox lens over the inlined SVG ----
+  // Both bounds are DERIVED from the mounted artifact (never hardcoded); the lens
+  // state lives in the hook's refs so a gesture never re-renders React.
+  const svgHostRef = useRef<HTMLDivElement>(null);
+
+  // Inline the r7 SVG markup IMPERATIVELY into the host div, keyed on the markup.
+  // This owns the host's innerHTML outside React's render path so the lens's
+  // runtime viewBox/planeClip mutations survive re-renders (React would otherwise
+  // revert them by re-applying dangerouslySetInnerHTML on an unrelated re-render).
+  // Skin flip changes svgMarkup → the effect re-inlines the new-canvas artifact.
+  useEffect(() => {
+    const host = svgHostRef.current;
+    if (!host) return;
+    if (svgMarkup) host.innerHTML = svgMarkup;
+    else host.replaceChildren();
+  }, [svgMarkup]);
+
+  const lens = useAtlasLens(svgHostRef, svgMarkup, svgStatus === 'success');
+
+  // ---- TABLE -> CHART: a leaf row click halos its mark + lens-pans it (§8.4) ----
+  const handleSelectRow = useCallback(
+    (item: PivotItem) => {
+      const sel = itemToSelection(item);
+      setSelection(sel);
+      setAggregateCells(null); // table-origin selection carries no aggregate caption
+      // Lens-pan (§8.4): center the mark at current S; raise S to its ease-scale
+      // if it renders below TARGET_D/2 (deterministic; ≤ S_max). Upgrades the old
+      // scrollIntoView-only behavior — the chart brings the mark to the eye.
+      lens.panToMark(sel);
+    },
+    [lens]
+  );
 
   // ---- CHART -> TABLE: a mark click reads its hooks, sets selection + drills ----
   const handleChartClick = useCallback(
@@ -215,21 +244,31 @@ export function Atlas() {
         <style>{highlightCss}</style>
 
         {/*
-          The vendored r7 SVG is inlined via dangerouslySetInnerHTML: it is a
-          print-grade static artifact with NO scripts inside (renderer law), so
-          inlining is inert at rest. Click delegation on this wrapper reads the
-          data-el / data-kit / data-core hooks off the event target (chart->table).
+          The vendored r7 SVG is inlined IMPERATIVELY (via the effect below), not
+          through dangerouslySetInnerHTML on the render path. This is load-bearing
+          for the zoom lens (§8): the lens mutates the SVG's viewBox + planeClip
+          rect as RUNTIME DOM STATE, and React must never revert those mutations by
+          re-applying the markup on an unrelated re-render. Owning the host div's
+          innerHTML in an effect (keyed on the markup) decouples the mutable SVG
+          from React reconciliation. The SVG is a print-grade static artifact with
+          NO scripts inside (renderer law §3.4) — inlining is inert at rest.
+          Click delegation on this wrapper reads the data-el / data-kit / data-core
+          hooks off the event target (chart->table).
         */}
-        {svgMarkup ? (
-          <div
-            id={svgRootId}
-            onClick={handleChartClick}
-            className="atlas-svg-host block w-full cursor-pointer [&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
-            // Inert static SVG — NO scripts inside (renderer law §3.4); safe to inline.
-            dangerouslySetInnerHTML={{ __html: svgMarkup }}
-          />
-        ) : (
-          <div className="flex items-center justify-center py-24">
+        <div
+          id={svgRootId}
+          ref={svgHostRef}
+          onClick={handleChartClick}
+          tabIndex={0}
+          role="application"
+          aria-label="Kit atlas — scroll or pinch to zoom, drag to pan"
+          className="atlas-svg-host block w-full cursor-grab select-none outline-none [&>svg]:block [&>svg]:h-auto [&>svg]:w-full active:cursor-grabbing"
+          // The lens exposes canvas surround when the view exceeds the plane rect;
+          // the wrapper background is the canvas hex so it blends (§8.3).
+          style={{ backgroundColor: canvasHex, touchAction: 'none' }}
+        />
+        {!svgMarkup && (
+          <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex flex-col items-center gap-2">
               <div className="h-6 w-6 animate-spin rounded-full border-2 border-indigo-500 border-t-transparent" />
               <p className="font-mono text-[11px] text-gray-500">
@@ -242,6 +281,23 @@ export function Atlas() {
         <div className="pointer-events-auto absolute left-3 top-3">
           <AtlasLegend selected={selectedClasses} onToggle={toggleClass} canvas={activeCanvas} />
         </div>
+
+        {/* ZOOM CONTROLS (§8.1) — top-right, opposite the legend. Bounds derived. */}
+        {lens.bounds && (
+          <div className="pointer-events-auto absolute right-3 top-3">
+            <AtlasZoomControls
+              canvas={activeCanvas}
+              scale={lens.scale}
+              sMin={lens.bounds.sMin}
+              sMax={lens.bounds.sMax}
+              canZoomIn={lens.canZoomIn}
+              canZoomOut={lens.canZoomOut}
+              onZoomIn={lens.zoomIn}
+              onZoomOut={lens.zoomOut}
+              onReset={lens.reset}
+            />
+          </div>
+        )}
       </div>
 
       {/* SELECTION SUMMARY — the focused mark; aggregate caption (ruled seam A). */}

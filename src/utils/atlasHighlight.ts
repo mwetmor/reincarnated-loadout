@@ -21,6 +21,13 @@
 //
 // The `paint-order:stroke` keeps the halo behind the fill so a filled dot is
 // never obscured — the halo reads as a faint rim only.
+//
+// ZOOM (spec §8.4, acceptance #37): every halo rule carries
+// `vector-effect: non-scaling-stroke` so the ≤0.75px cap is a SCREEN-perceptual
+// cap that holds at S_max (8×) exactly as at 1× — the halo never fattens as the
+// viewBox lens magnifies. Marks carry no native strokes (fills are group-
+// inherited), so this vector-effect touches halos ONLY. Stroke-only law carries;
+// zero fill mutation; zero dimming — at every zoom.
 
 import type { CanvasKind, LegendClass } from '../data/atlasTypes';
 
@@ -92,6 +99,7 @@ export function buildHighlightCss(args: AtlasHighlightArgs): string {
         `  stroke-width: ${CLASS_HALO_WIDTH}px;\n` +
         `  stroke-opacity: 0.85;\n` +
         `  paint-order: stroke;\n` +
+        `  vector-effect: non-scaling-stroke;\n` +
         `}`
     );
   }
@@ -113,6 +121,7 @@ export function buildHighlightCss(args: AtlasHighlightArgs): string {
         `  stroke-width: ${SELECT_HALO_WIDTH}px;\n` +
         `  stroke-opacity: 1;\n` +
         `  paint-order: stroke;\n` +
+        `  vector-effect: non-scaling-stroke;\n` +
         `}`
     );
   }

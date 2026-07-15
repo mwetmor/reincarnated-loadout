@@ -65,9 +65,33 @@ describe('buildHighlightCss — stroke-only law (acceptance #32)', () => {
       selectedClasses: classes('live'),
       selection: { kind: 'kit', kitId: 'k' },
     });
-    const allowed = new Set(['stroke', 'stroke-width', 'stroke-opacity', 'paint-order']);
+    // `vector-effect` (non-scaling-stroke) joins the whitelist for zoom (§8.4):
+    // it governs the STROKE's screen-constancy, never fill/dimming.
+    const allowed = new Set([
+      'stroke',
+      'stroke-width',
+      'stroke-opacity',
+      'paint-order',
+      'vector-effect',
+    ]);
     for (const p of declaredProps(css)) {
       expect(allowed.has(p), `unexpected CSS property "${p}"`).toBe(true);
+    }
+  });
+
+  it('adds vector-effect: non-scaling-stroke to every halo rule (§8.4 halo screen-constancy)', () => {
+    const css = buildHighlightCss({
+      rootId: ROOT,
+      canvas: 'dark',
+      selectedClasses: classes('live', 'ghosts'),
+      selection: { kind: 'kit', kitId: 'k' },
+    });
+    // Every rule block that sets a stroke must also pin non-scaling-stroke so the
+    // ≤0.75px halo is a SCREEN cap at all zooms (holds at S_max exactly as at 1×).
+    const strokeBlocks = css.split('}').filter((b) => /stroke:/.test(b));
+    expect(strokeBlocks.length).toBeGreaterThan(0);
+    for (const b of strokeBlocks) {
+      expect(b).toMatch(/vector-effect:\s*non-scaling-stroke/);
     }
   });
 

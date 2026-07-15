@@ -11,11 +11,54 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-15 (atlas interactive wiring pass — /atlas Glance page bidirectional; Vercel PREVIEW shipped, prod HELD for gandalf verify)
-**Last commit:** atlas interactive wiring — 7 seams closed, r7 SVG inlined + hooked, legend highlight + chart↔table roundtrip + P-DF-1 runtime provenance
+**Last updated:** 2026-07-15 (atlas v1 zoom pass — viewBox lens on the inlined artifact; acc 36–40 green; Vercel PREVIEW shipped, prod HELD for gandalf verify)
+**Last commit:** atlas v1 zoom — derived-bounds viewBox lens (S_min 0.85× / S_max 8.28×), gesture-perf transform-during-gesture + settle-write, clip-tracks-view, halo non-scaling-stroke, skin-flip preserves lens
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
+
+---
+
+## Atlas v1 zoom pass — viewBox lens on the inlined artifact (2026-07-15)
+
+**Spec:** `reincarnated-collaboration/agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md` **§8** (v1 zoom; acc 36–40).
+**Authority:** Matt 2026-07-15 two-bound ruling — "max zoom out would allow view of the full horizon-line and max zoom in would allow ease of selection for a single kit/ghost." Discrete pass AFTER the wiring pass verified (single-variable discipline).
+**Builds on:** the interactive wiring pass (commit cd7f387, live at /atlas). ZERO renderer changes; runtime DOM state only.
+**Push:** NOT pushed (Matt-gated). Deployed **Vercel PREVIEW only** (`npx vercel`, NOT --prod); production promotion HELD for gandalf verify.
+
+### What changed (files)
+- **NEW** `src/utils/atlasLens.ts` — the pure lens math (no React/DOM): parses viewBox / planeClip (numbers + VERBATIM strings) / hull polyline bbox (the ONLY dashed `7 5` polyline) / min selectable radius ([data-kit] ∪ [data-core], drill-in EXCLUDED) from the SVG SOURCE STRING; `deriveBounds` (S_min = aspect-fit of union(canvas ∪ hull)+24px; S_max = TARGET_D/(2·r_min)); viewBox arithmetic (clamp, cursor-anchored zoomAtPoint, panByScreen, screenToCanvas, viewBoxFor with pan-clamp, easeScaleForRadius, gestureTransform). ONE named constant: `TARGET_D = 24`.
+- **NEW** `src/hooks/useAtlasLens.ts` — runtime wiring: derives bounds from the mounted markup; wheel (rAF-throttled, cursor-anchored) · pinch · drag-pan · +/− (×1.5) · double-click · reset · keyboard +/−/0. Transform-during-gesture (compositor-only) + single settle-write. Clip-tracks-view on every settle; reset restores emitted viewBox+clip VERBATIM. Skin flip re-applies the current view to the fresh SVG (lens preserved). Live-queries the SVG from the container each commit (no stale ref). Render-visible readout published to STATE on settle only (gestures off the render path).
+- **NEW** `src/components/atlas/AtlasZoomControls.tsx` — +/−/reset chrome + `S× · sMin–sMax` readout (canvas-bound contrast).
+- **EDIT** `src/utils/atlasHighlight.ts` — added `vector-effect: non-scaling-stroke` to BOTH halo blocks (class + selection); the ≤0.75px halo is a SCREEN cap at all zooms (§8.4, acc 37).
+- **EDIT** `src/pages/Atlas.tsx` — **inlined SVG moved from `dangerouslySetInnerHTML` (render path) to an IMPERATIVE effect** (`host.innerHTML = svgMarkup`, keyed on markup) so the lens's runtime viewBox/clip mutations survive React re-renders (React was re-applying the markup and reverting them — root cause found via MutationObserver: `host-childList` on each publish). Wired `useAtlasLens`; zoom controls top-right; host bg = canvasHex (exposed surround blends, §8.3); `touch-action:none`; tabIndex for keyboard. Table→chart upgraded from scrollIntoView to lens-pan (`lens.panToMark`). Drag-pan captures the pointer LAZILY past a 4px threshold (not on pointerdown) so a click's target stays the actual mark (chart→table click delegation intact).
+- **NEW** `src/__tests__/atlas-lens.test.ts` (20) + `atlas-highlight.test.ts` +1 (vector-effect on halos).
+
+### Acceptance receipts (headless Playwright/CDP, cached chromium; 0 console errors)
+- **#36 zoom-bounds-derived:** readout `1.00× · 0.85–8.3`; title `0.85×–8.28×`. At S_min (viewBox `-79.24 -25.74 1884.01 1413.01`) canvasInside=TRUE + hullInside=TRUE (dashed line closes) + clip==viewBox. At S_max=8.2759 min selectable mark = 24.0 native px (= TARGET_D). Both buttons disable at their bound. Doctored-radius probe (r 1.45→0.725 in source) DOUBLES S_max with zero code change (unit-tested); doctored hull extreme shifts S_min (unit-tested).
+- **#37 halo-screen-constancy:** injected CSS `vector-effect: non-scaling-stroke` present + computed `non-scaling-stroke` on a live mark; stroke-width [0.75]; hasFillMutation=FALSE; hasDimming=FALSE.
+- **#38 gesture-perf:** during drag transform=`translate(-12px,-8px) scale(1)`, viewBox writes DURING gesture = 0, writes on settle = 1, transform cleared after settle.
+- **#39 state-independence + reset verbatim:** viewBox restored; planeClip restored VERBATIM (`96.00`==`96.00`, exact strings); selection survives zoom (halo `[data-kit=...]` present after zoom); legend survives zoom (aria-pressed + CSS persist); **skin flip PRESERVES the lens** (`444.44…`→`444.44…` unchanged).
+- **#40 clip-tracks-view:** clip tracks viewBox while zoomed/panned; both on-disk SVGs BYTE-IDENTICAL before/after headless zoom sessions (sha256 unchanged: archive `29dc29f3…`, instrument `a5954a0e…`).
+- **Interactions verified live:** double-click zoom-in at cursor; keyboard +/−/0; chart→table (kit-mark click sets selection + drills table); table→chart lens-pan (leaf click → viewBox `673.99 227.69 400 300`, centered + eased to S=4); mobile 375px pinch-zoom + tappable controls.
+
+### Smoke (Discipline #2)
+- `npm run test`: **140/140 pass** (was 120; +20 lens tests). All 120 prior tests green.
+- `npm run build` (`tsc -b && vite build`): clean, 0 TS errors.
+- Root `/` renders (0 console errors); `/atlas` renders SVG + zoom controls + legend (0 console errors). `vercel.json` unchanged (SPA rewrite intact); `/` + `/atlas` both 200 via preview.
+- Lint (my atlas files only): clean. Pre-existing lint errors elsewhere (Forge/Sample/constellationModeLayout) untouched.
+
+### Architecture note (within-seam, jack-ryan-approvable per ADR-002)
+The wiring pass inlined the SVG via `dangerouslySetInnerHTML` on the render path. The zoom lens mutates the SVG's `viewBox` + `planeClip` rect as runtime DOM state; React reverted those on each `publish` re-render by re-applying the markup (diagnosed: `host-childList` mutation, 4 nodes replaced, per publish). Fix: own the host div's innerHTML in an effect keyed on the markup — the inlined-artifact contract (same bytes, still inlined, print-grade) is preserved; only the inlining MECHANISM changed (render-path → imperative-effect) so mutable-DOM overlay state survives reconciliation. This is the correct architecture for a React-owned container with imperatively-mutated SVG children.
+
+### Overrides / TODOs
+- No new `// TODO(drax)` overrides introduced. No engine gaps compensated — v1 zoom is pure page-level capability on the already-shipped artifact.
+
+### For gandalf verify (production promotion HELD)
+- Bounds are DERIVED (readout shows `0.85–8.3`; a doctored SVG radius shifts S_max with no code change).
+- Reset is VERBATIM (emitted viewBox + emitted planeClip strings restored exactly).
+- On-disk SVG bytes UNTOUCHED (checksums identical before/after zoom sessions).
+- `vercel promote` rebuilds preview-target deployments → promotion is by alias; drax aliased NOTHING. Preview URL in the completion record / commit context.
 
 ---
 
