@@ -11,12 +11,32 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-15 (atlas **D6-b v2** — legend anchor bottom-LEFT → bottom-RIGHT to clear the in-artifact footer honesty block; §9.6 D6-b v2 law upgraded to CLASS-invariant [zero intersection with ANY `<text>` bbox]; probe adds per-text-node occlusion assertion at 1440 + 375 × both skins; 189/189 green; PREVIEW-untouched, NO deploy — promotion is gandalf-gated)
+**Last updated:** 2026-07-15 (**D6+D6-b-v2 PRODUCTION PROMOTION** — gandalf verify gate PASSED; prebuilt `vercel build --prod` + `vercel deploy --prebuilt --prod` from HEAD a4f29de; prod alias `reincarnated-loadout.vercel.app` moved to `dpl_FmT6CextADTAqzaYLdBSaypL7PZ2`; PRD `/atlas` now serves `index-D6X1Qz1d.js` [was pre-D6 `index-ylVnWeU_.js`])
 **Last commit:** (pending this session) D6-b v2 legend placement fix — anchor bottom-LEFT → bottom-RIGHT. On top of D6 (cf879e4).
 **Prior commit:** `cf879e4` atlas D6 — FRAME joins the mount write-set (fit box INSET 12u) via fail-loud STRUCTURAL identifyFrameRect; legend moves INSIDE the box (bottom-left in v1 — CORRECTED to bottom-right in D6-b v2 below); subtitle de-dupes "Edition-Edition-II" → "Edition-II"; region border → transparent. And `5f93cc9` D6-d re-vendor; `9e4bf4a` D5; `3aa1d66` D4.
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
+
+---
+
+## PROMOTION — D6+D6-b-v2 build goes to production (2026-07-15)
+
+**Authority:** PROMOTION charge from gandalf — verify gate PASSED (gandalf independent probe + eyes, both skins, both viewports: frame fit, legend bottom-right with zero in-artifact `<text>` occlusions, subtitle de-dupe, "Build Horizon — Edition II" plate title). Single production promotion authorized. This is the PRD half of the D6/D6-b-v2 work whose preview was held for verify.
+
+**Promoted commit:** HEAD `a4f29de` (D6-b v2 legend fix) — atop D6 (`cf879e4`), D6-d re-vendor (`5f93cc9`), D5 (`9e4bf4a`). Working tree clean for src/ + public/ at promotion time (only untracked `data/*.bak` + `public/pitch|seasons` artifacts, none in the write-set).
+
+**Mechanism (SAME as D5 — prebuilt + prod-deploy, NOT `vercel promote` [rebuild trap]):**
+1. `npx vercel build --prod --yes` — rebuilt from HEAD (removed any stale-dist doubt); emitted `.vercel/output` target=production; bundle `dist/assets/index-D6X1Qz1d.js` (deterministic content hash; matched the pre-existing dist, confirming it WAS current-HEAD).
+2. `npx vercel deploy --prebuilt --prod --yes` — deployed the prebuilt output; the `--prod` flag performed the single alias move automatically.
+
+**Deployment:** `https://reincarnated-loadout-j4tlz6nf4-matthew-wetmore-s-projects.vercel.app` — id `dpl_FmT6CextADTAqzaYLdBSaypL7PZ2`, readyState READY, target production.
+
+**Alias move (single):** `--prod` deploy auto-aliased. Confirmed via `npx vercel inspect …-j4tlz6nf4-…` → Aliases block lists `https://reincarnated-loadout.vercel.app`. Deploy stdout line: `▲ Aliased  https://reincarnated-loadout.vercel.app`.
+
+**Verify:** `curl -s "https://reincarnated-loadout.vercel.app/atlas?cb=<ts>"` → served bundle `/assets/index-D6X1Qz1d.js` (HTTP 200). DIFFERS from pre-D6 prod bundle `/assets/index-ylVnWeU_.js` (curled as baseline before promotion). Promotion confirmed live.
+
+**Not done (per charge scope):** no git push; no src/public file changes; no tag. This AGENT_STATE note is the only file change, auto-committed per CLAUDE.md team discipline.
 
 ---
 
