@@ -14,8 +14,12 @@
 **Last updated:** 2026-07-16 (**v1.12 ATLAS RE-HOME — /atlas RETIRED to a redirect**; the interactive
 Build-Horizon package ported to the Glance app @ Edition III; loadout atlas page/components/utils/hooks/
 build-step/probe + `public/atlas/` + `data-src/atlas/` DELETED, nav tab dropped, `/atlas` → redirect to
-`https://reincarnated-glance.vercel.app/#/atlas`. Build + 91 tests GREEN; preview UP; STOP at preview —
-no PRD deploy this pass, gandalf verify gates the glance promotion. See the v1.12 section below.)
+`https://reincarnated-glance.vercel.app/#/atlas`. Build + 91 tests GREEN. ~~STOP at preview~~
+**PROMOTED 2026-07-16: gandalf verify ACCEPT → gandalf executed the two-deploy promotion** — loadout
+`npx vercel build --prod --yes` + `npx vercel deploy --prebuilt --prod --yes` → deployment
+`reincarnated-loadout-llvusglzf` auto-aliased `https://reincarnated-loadout.vercel.app`; PRD `/atlas`
+serves redirect bundle `index-8NxI8Cbs.js` [was `index-D6X1Qz1d.js`]; redirect target verified in the
+served bundle. Glance PRD serves Edition III (see glance AGENT_STATE). See the v1.12 section below.)
 **Prior update:** 2026-07-15 (**D6+D6-b-v2 PRODUCTION PROMOTION** — gandalf verify gate PASSED; prebuilt `vercel build --prod` + `vercel deploy --prebuilt --prod` from HEAD a4f29de; prod alias `reincarnated-loadout.vercel.app` moved to `dpl_FmT6CextADTAqzaYLdBSaypL7PZ2`; PRD `/atlas` now serves `index-D6X1Qz1d.js` [was pre-D6 `index-ylVnWeU_.js`])
 **Last commit:** (pending this session) D6-b v2 legend placement fix — anchor bottom-LEFT → bottom-RIGHT. On top of D6 (cf879e4).
 **Prior commit:** `cf879e4` atlas D6 — FRAME joins the mount write-set (fit box INSET 12u) via fail-loud STRUCTURAL identifyFrameRect; legend moves INSIDE the box (bottom-left in v1 — CORRECTED to bottom-right in D6-b v2 below); subtitle de-dupes "Edition-Edition-II" → "Edition-II"; region border → transparent. And `5f93cc9` D6-d re-vendor; `9e4bf4a` D5; `3aa1d66` D4.
