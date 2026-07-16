@@ -1,44 +1,36 @@
-// atlas-lens.test.ts — the v1 zoom lens math (spec §8, acceptance #36).
+// atlas-lens.test.ts — the artifact-derived scale math (spec §8.2, §9.3, acc #57).
 //
-// PURE-PART coverage:
-//   - bound derivation from a SYNTHETIC SVG string (§8.2): S_min shows every hull
-//     point + the full canvas; S_max = TARGET_D/(2·r_min_selectable) with drill-in
-//     glyphs EXCLUDED; both bounds provably derived from the artifact — a doctored
-//     radius shifts S_max with ZERO code change (acceptance #36).
-//   - the lens arithmetic: clamp, aspect-fit, cursor-anchored zoom keeps the anchor
-//     fixed, pan stays honest, gesture transform reproduces the target view.
-//
-// These run under vitest's `node` env, so everything operates on strings/numbers
-// (no DOM) — the same derivation path the runtime uses on the fetched markup.
+// D3 (spec §9.3, Matt 2026-07-15): pivot grouping + lens interaction retired —
+// pivots→filters, zoom→fixed S_max. The v1 zoom INTERACTION math (clampScale /
+// scaleOf / viewBoxFor / zoomAtPoint / panByScreen / screenToCanvas / gestureTransform
+// / easeScaleForRadius / S_min / fitUnion / hull-union) is DELETED with its tests.
+// What SURVIVES + is asserted here: the BOUND-DERIVATION law (§8.2) — parseViewBox /
+// parsePlaneClipRect / parseHullBbox / pointsBbox / minSelectableRadius / deriveBounds
+// / the S_max formula + doctored-radius probe — PLUS the new fixed-mount navigation
+// arithmetic (§9.3 D3-b): renderedSize / canvasToRenderedPx / centerScroll /
+// planeCenterCanvas. All run under vitest's `node` env (strings/numbers, no DOM) —
+// the same derivation path the runtime uses on the fetched markup.
 
 import { describe, it, expect } from 'vitest';
 import {
   TARGET_D,
-  FIT_MARGIN,
   deriveBounds,
   parseViewBox,
   parsePlaneClipRect,
   parseHullBbox,
   pointsBbox,
   minSelectableRadius,
-  fitScale,
-  clampScale,
-  scaleOf,
-  viewBoxFor,
-  viewCenter,
-  zoomAtPoint,
-  panByScreen,
-  screenToCanvas,
-  gestureTransform,
-  easeScaleForRadius,
-  type ViewBox,
+  renderedSize,
+  canvasToRenderedPx,
+  centerScroll,
+  planeCenterCanvas,
 } from '../utils/atlasLens';
 
 /**
  * A synthetic SVG mirroring the real Edition-II r7 artifact's load-bearing shape:
  *   - viewBox 0 0 1600 1200 (native canvas)
- *   - a planeClip rect (the emitted trim), captured verbatim for reset
- *   - ONE dashed hull polyline (dasharray "7 5") exceeding the frame on all sides
+ *   - a planeClip rect (the emitted trim) x=96 y=132 w=1408 h=972 (the real values)
+ *   - ONE dashed hull polyline (dasharray "7 5") — parseHullBbox still exercised
  *   - kit circles (data-kit, r=3) + meso-ghost circles (data-core, r=1.45)
  *   - a drill-in ghost (data-el="ghost", NO data-core, r=1.37) — must be EXCLUDED
  */
@@ -70,14 +62,13 @@ describe('atlasLens — SVG-source parsing (§8.2, copy the artifact)', () => {
     expect(parseViewBox(SYNTH_SVG)).toEqual({ minx: 0, miny: 0, width: 1600, height: 1200 });
   });
 
-  it('captures the emitted planeClip rect — numbers AND verbatim strings (reset target, §8.3)', () => {
+  it('captures the emitted planeClip rect — numbers AND verbatim strings', () => {
     const clip = parsePlaneClipRect(SYNTH_SVG);
     expect(clip.x).toBe(96);
     expect(clip.y).toBe(132);
     expect(clip.width).toBe(1408);
     expect(clip.height).toBe(972);
-    // The RAW strings must be the exact emitted attribute text ("96.00", not "96")
-    // so reset restores byte-identically (acceptance #39 verbatim).
+    // The RAW strings must be the exact emitted attribute text ("96.00", not "96").
     expect(clip.raw).toEqual({ x: '96.00', y: '132.00', width: '1408.00', height: '972.00' });
   });
 
@@ -106,36 +97,12 @@ describe('atlasLens — SVG-source parsing (§8.2, copy the artifact)', () => {
   });
 });
 
-describe('atlasLens — the two bounds derived from the artifact (acceptance #36)', () => {
+describe('atlasLens — the FIXED mount scale derived from the artifact (acceptance #57)', () => {
   const bounds = deriveBounds(SYNTH_SVG);
 
-  it('S_min shows every hull point AND the full canvas in-viewport', () => {
-    // The fit-union must contain the canvas and every hull vertex (+ margin).
-    const u = bounds.fitUnion;
-    expect(u.x0).toBeLessThanOrEqual(Math.min(0, HULL.x0) - FIT_MARGIN + 1e-6);
-    expect(u.y0).toBeLessThanOrEqual(Math.min(0, HULL.y0) - FIT_MARGIN + 1e-6);
-    expect(u.x1).toBeGreaterThanOrEqual(Math.max(1600, HULL.x1) + FIT_MARGIN - 1e-6);
-    expect(u.y1).toBeGreaterThanOrEqual(Math.max(1200, HULL.y1) + FIT_MARGIN - 1e-6);
-
-    // At S_min the viewBox is the aspect-fit of that union: every hull point lands
-    // inside the viewBox (the dashed line closes on screen).
-    const c = viewCenter({ minx: u.x0, miny: u.y0, width: u.x1 - u.x0, height: u.y1 - u.y0 });
-    const vb = viewBoxFor(bounds.sMin, c.cx, c.cy, bounds);
-    const inside = (x: number, y: number) =>
-      x >= vb.minx - 1e-6 &&
-      x <= vb.minx + vb.width + 1e-6 &&
-      y >= vb.miny - 1e-6 &&
-      y <= vb.miny + vb.height + 1e-6;
-    // Canvas corners.
-    expect(inside(0, 0)).toBe(true);
-    expect(inside(1600, 1200)).toBe(true);
-    // Hull extremes.
-    expect(inside(HULL.x0, HULL.y0)).toBe(true);
-    expect(inside(HULL.x1, HULL.y1)).toBe(true);
-  });
-
-  it('S_min matches the spec reference (~0.85×) for the real extremes', () => {
-    expect(bounds.sMin).toBeCloseTo(0.849, 2);
+  it('deriveBounds returns native viewBox + planeClip numbers + sMax + rMinSelectable', () => {
+    expect(bounds.native).toEqual({ minx: 0, miny: 0, width: 1600, height: 1200 });
+    expect(bounds.planeClip).toEqual({ x: 96, y: 132, width: 1408, height: 972 });
   });
 
   it('S_max = TARGET_D / (2 · r_min_selectable) renders the min mark ≥ TARGET_D', () => {
@@ -147,133 +114,103 @@ describe('atlasLens — the two bounds derived from the artifact (acceptance #36
 
   it('DOCTORED-RADIUS PROBE: mutating the min selectable r shifts S_max, zero code change', () => {
     // Halve the meso-ghost radius in the SOURCE only. S_max must double — no code
-    // path changed; the bound is read from the artifact.
+    // path changed; the bound is read from the artifact (acceptance #57).
     const doctored = SYNTH_SVG.replace('r="1.45"', 'r="0.725"');
     const b2 = deriveBounds(doctored);
     expect(b2.rMinSelectable).toBeCloseTo(0.725, 3);
     expect(b2.sMax).toBeCloseTo(bounds.sMax * 2, 3);
-    // S_min is unaffected by a radius change (it derives from hull ∪ canvas).
-    expect(b2.sMin).toBeCloseTo(bounds.sMin, 6);
   });
 
-  it('a doctored HULL extreme shifts S_min, zero code change', () => {
-    // Push the east hull vertex further out; the union widens, S_min drops.
-    const doctored = SYNTH_SVG.replace('1725.54,625.81', '2400.00,625.81');
-    const b2 = deriveBounds(doctored);
-    expect(b2.hullBbox.x1).toBeCloseTo(2400, 2);
-    expect(b2.sMin).toBeLessThan(bounds.sMin);
-  });
-
-  it('carries VERBATIM reset targets: emitted viewBox string + planeClip raw strings (§8.3)', () => {
-    expect(bounds.nativeViewBoxRaw).toBe('0 0 1600 1200');
-    expect(bounds.planeClipRaw).toEqual({
-      x: '96.00',
-      y: '132.00',
-      width: '1408.00',
-      height: '972.00',
-    });
+  it('NO scale literal: sMax is never the ≈8.276 constant restated in the module', () => {
+    // The value derives ONLY from the artifact radius; deriving from a DIFFERENT
+    // radius yields a DIFFERENT sMax (proves it is not a hardcoded 8.276). Bump BOTH
+    // meso ghosts so the new min selectable radius is 2.90 (kit r=3 is larger).
+    const doctored = deriveBounds(
+      SYNTH_SVG.replace('r="1.45"', 'r="2.90"').replace('r="2.18"', 'r="2.95"')
+    );
+    expect(doctored.rMinSelectable).toBeCloseTo(2.9, 3);
+    expect(doctored.sMax).toBeCloseTo(TARGET_D / (2 * 2.9), 4); // ~4.138, not 8.276
+    expect(doctored.sMax).not.toBeCloseTo(bounds.sMax, 2);
   });
 });
 
-describe('atlasLens — lens arithmetic (§8.1)', () => {
+describe('atlasLens — fixed-mount navigation math (§9.3 D3-b)', () => {
   const bounds = deriveBounds(SYNTH_SVG);
-  const NATIVE: ViewBox = bounds.native;
+  const STAGE_W = 900;
 
-  it('clampScale holds S within [sMin, sMax]', () => {
-    expect(clampScale(0.001, bounds)).toBeCloseTo(bounds.sMin, 6);
-    expect(clampScale(999, bounds)).toBeCloseTo(bounds.sMax, 6);
-    expect(clampScale(2, bounds)).toBe(2);
+  it('renderedSize = stageWidth × S_max, height by intrinsic 4:3 aspect', () => {
+    const r = renderedSize(bounds.native, STAGE_W, bounds.sMax);
+    expect(r.width).toBeCloseTo(STAGE_W * bounds.sMax, 4);
+    // Aspect preserved: 1600:1200 = 4:3.
+    expect(r.width / r.height).toBeCloseTo(1600 / 1200, 6);
   });
 
-  it('fitScale is aspect-correct (height-constrained union here)', () => {
-    const s = fitScale(bounds.fitUnion, NATIVE);
-    expect(s).toBeCloseTo(bounds.sMin, 6);
-    // With the fit viewBox, the scale from native.width/vbWidth agrees.
-    const vbW = NATIVE.width / s;
-    expect(vbW).toBeGreaterThanOrEqual(bounds.fitUnion.x1 - bounds.fitUnion.x0 - 1e-6);
+  it('canvasToRenderedPx is a linear scale from native (origin 0,0) to rendered px', () => {
+    const rendered = renderedSize(bounds.native, STAGE_W, bounds.sMax);
+    // Canvas origin maps to (0,0); canvas far corner maps to (renderedW, renderedH).
+    expect(canvasToRenderedPx(0, 0, bounds.native, rendered)).toEqual({ px: 0, py: 0 });
+    const far = canvasToRenderedPx(1600, 1200, bounds.native, rendered);
+    expect(far.px).toBeCloseTo(rendered.width, 4);
+    expect(far.py).toBeCloseTo(rendered.height, 4);
+    // Canvas center maps to rendered center.
+    const mid = canvasToRenderedPx(800, 600, bounds.native, rendered);
+    expect(mid.px).toBeCloseTo(rendered.width / 2, 4);
+    expect(mid.py).toBeCloseTo(rendered.height / 2, 4);
   });
 
-  it('viewBoxFor preserves the native aspect ratio at every scale', () => {
-    for (const s of [bounds.sMin, 1, 2, 4, bounds.sMax]) {
-      const vb = viewBoxFor(s, 800, 600, bounds);
-      expect(vb.width / vb.height).toBeCloseTo(NATIVE.width / NATIVE.height, 6);
-      expect(scaleOf(vb, NATIVE)).toBeCloseTo(s, 6);
-    }
+  it('planeCenterCanvas = the emitted plane-rect center (96+1408/2, 132+972/2)', () => {
+    const c = planeCenterCanvas(bounds);
+    expect(c.cx).toBe(800); // 96 + 704
+    expect(c.cy).toBe(618); // 132 + 486
   });
 
-  it('zoomAtPoint keeps the cursor-anchored canvas point fixed on screen', () => {
-    // Start at S=2 centered, then zoom to S=4 anchored at a specific canvas point.
-    const start = viewBoxFor(2, 800, 600, bounds);
-    const rect = { width: 1600, height: 1200 };
-    // Pick a screen pixel, map to canvas under `start`.
-    const screenX = 1200;
-    const screenY = 300;
-    const anchor = screenToCanvas(screenX, screenY, rect, start);
-    const next = zoomAtPoint(start, 4, anchor, bounds);
-    // The same canvas anchor must map back to the SAME screen pixel under `next`
-    // (allowing for pan-clamp: if clamped, the invariant can shift — so choose an
-    // interior anchor away from the union edges, which this one is).
-    const backX = ((anchor.x - next.minx) / next.width) * rect.width;
-    const backY = ((anchor.y - next.miny) / next.height) * rect.height;
-    expect(backX).toBeCloseTo(screenX, 1);
-    expect(backY).toBeCloseTo(screenY, 1);
+  it('centerScroll puts a canvas point at the viewport center, clamped to [0, max]', () => {
+    const rendered = renderedSize(bounds.native, STAGE_W, bounds.sMax);
+    const viewport = { width: STAGE_W, height: 600 };
+    // A mid-content point: its rendered px minus half the viewport, clamped.
+    const cx = 800;
+    const cy = 600;
+    const { px, py } = canvasToRenderedPx(cx, cy, bounds.native, rendered);
+    const s = centerScroll(cx, cy, bounds.native, rendered, viewport);
+    expect(s.scrollLeft).toBeCloseTo(
+      Math.min(Math.max(px - viewport.width / 2, 0), rendered.width - viewport.width),
+      3
+    );
+    expect(s.scrollTop).toBeCloseTo(
+      Math.min(Math.max(py - viewport.height / 2, 0), rendered.height - viewport.height),
+      3
+    );
   });
 
-  it('panByScreen shifts the center opposite the drag delta', () => {
-    const start = viewBoxFor(4, 800, 600, bounds);
-    const rect = { width: 1600, height: 1200 };
-    const c0 = viewCenter(start);
-    // Drag right+down by 100px each: content follows the cursor, so the viewBox
-    // center moves LEFT+UP in canvas space (center.x decreases).
-    const panned = panByScreen(start, 100, 100, rect, bounds);
-    const c1 = viewCenter(panned);
-    expect(c1.cx).toBeLessThan(c0.cx);
-    expect(c1.cy).toBeLessThan(c0.cy);
+  it('centerScroll clamps to 0 at the top-left corner (never negative)', () => {
+    const rendered = renderedSize(bounds.native, STAGE_W, bounds.sMax);
+    const viewport = { width: STAGE_W, height: 600 };
+    const s = centerScroll(0, 0, bounds.native, rendered, viewport);
+    expect(s.scrollLeft).toBe(0);
+    expect(s.scrollTop).toBe(0);
   });
 
-  it('easeScaleForRadius targets TARGET_D/2 and clamps to [sMin, sMax]', () => {
-    // A mark of the min selectable radius eases to ~S_max/2 (TARGET_D/2 target),
-    // still within bounds.
-    const s = easeScaleForRadius(bounds.rMinSelectable, bounds);
-    expect(s).toBeGreaterThanOrEqual(bounds.sMin);
-    expect(s).toBeLessThanOrEqual(bounds.sMax);
-    // A tiny radius clamps UP to sMax (never beyond).
-    expect(easeScaleForRadius(0.001, bounds)).toBeCloseTo(bounds.sMax, 6);
-  });
-});
-
-describe('atlasLens — gesture transform reproduces the target view (§8.4)', () => {
-  const bounds = deriveBounds(SYNTH_SVG);
-  const rect = { width: 1600, height: 1200 };
-
-  it('transform maps every canvas point from `from`-render to `to`-render', () => {
-    const from = viewBoxFor(2, 800, 600, bounds);
-    const to = viewBoxFor(4, 700, 500, bounds);
-    const t = gestureTransform(from, to, rect);
-    // For a set of canvas points, screen-under-`from` * transform == screen-under-`to`.
-    const pts = [
-      [100, 100],
-      [800, 600],
-      [1500, 1100],
-    ];
-    for (const [px, py] of pts) {
-      const s0x = ((px - from.minx) / from.width) * rect.width;
-      const s0y = ((py - from.miny) / from.height) * rect.height;
-      const s1x = ((px - to.minx) / to.width) * rect.width;
-      const s1y = ((py - to.miny) / to.height) * rect.height;
-      // Apply the CSS transform (origin 0,0): scale then translate.
-      const mappedX = t.scale * s0x + t.translateX;
-      const mappedY = t.scale * s0y + t.translateY;
-      expect(mappedX).toBeCloseTo(s1x, 4);
-      expect(mappedY).toBeCloseTo(s1y, 4);
-    }
+  it('centerScroll clamps to the max scroll at the far corner (never overscroll)', () => {
+    const rendered = renderedSize(bounds.native, STAGE_W, bounds.sMax);
+    const viewport = { width: STAGE_W, height: 600 };
+    const s = centerScroll(1600, 1200, bounds.native, rendered, viewport);
+    expect(s.scrollLeft).toBeCloseTo(rendered.width - viewport.width, 3);
+    expect(s.scrollTop).toBeCloseTo(rendered.height - viewport.height, 3);
   });
 
-  it('identity view => identity transform', () => {
-    const vb = viewBoxFor(3, 800, 600, bounds);
-    const t = gestureTransform(vb, vb, rect);
-    expect(t.scale).toBeCloseTo(1, 6);
-    expect(t.translateX).toBeCloseTo(0, 6);
-    expect(t.translateY).toBeCloseTo(0, 6);
+  it('centerScroll returns 0 when content is smaller than the viewport (max < 0)', () => {
+    // Purpose-built artifact whose ONLY selectable radius is large (r=40 => sMax=0.3),
+    // so at stageWidth=100 the rendered content (30px) is narrower than the viewport.
+    const bigRadiusSvg = `<svg viewBox="0 0 1600 1200">
+<clipPath id="planeClip"><rect x="96.00" y="132.00" width="1408.00" height="972.00"/></clipPath>
+<polyline points="0,0 1600,1200" stroke-dasharray="7 5"/>
+<circle cx="800" cy="600" r="40" data-el="live" data-kit="only"/>
+</svg>`;
+    const smallBounds = deriveBounds(bigRadiusSvg);
+    expect(smallBounds.sMax).toBeCloseTo(24 / 80, 4); // 0.3
+    const rendered = renderedSize(smallBounds.native, 100, smallBounds.sMax); // width=30
+    const viewport = { width: 100, height: 600 };
+    const s = centerScroll(800, 600, smallBounds.native, rendered, viewport);
+    expect(s.scrollLeft).toBe(0); // rendered.width(30) - viewport.width(100) < 0 -> 0
   });
 });

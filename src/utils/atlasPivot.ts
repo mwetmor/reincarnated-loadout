@@ -1,47 +1,25 @@
-// atlasPivot.ts — the pivot-model engine for the hierarchical atlas pivot table.
+// atlasPivot.ts — the leaf-item model + filter engine for Build Horizon.
 //
-// Design: pivot levels are a flat ORDERED list of "dimensions". Each dimension
-// maps a leaf item -> a group key (or null = "not applicable to this item").
-// Grouping walks the ordered dimensions; null-keyed items fall through to the
-// next applicable dimension. This makes drag-to-reorder trivial (reorder the
-// list) AND supports Matt's named case: putting `kit-condensation` ABOVE the
-// axis dimensions yields condensation groups that span all four quadrants,
-// because the condensation dimension keys FIRST and the axis dimensions key
-// within each condensation group.
+// D3 (spec §9.3, Matt 2026-07-15): the hierarchical PIVOT engine is retired —
+// pivots→filters. The drag-reorderable ordered-dimension tree (PivotGrouper /
+// groupChildren / buildDefaultLevels / PivotLevelDef / PivotNode) is GONE with its
+// tests. In its place: FIVE simple filter controls (§9.3 D3-a), each a predicate on
+// a structural dimension, AND-composed over the flat 11,666-item array. What SURVIVES
+// is the leaf-item union (PivotItem), the axis-pole vocabulary + inversion guard
+// (AXIS_POLES / poleGroupLabel / pivotPoleMapping — the filter LABELS come from here,
+// never retyped), the build-provenance names, and the leaf key/index helpers (the
+// D2 union grid consumes them). This module is PURE — no React, unit-testable.
 //
-// Leaf items are a tagged union of kit rows and ghost rows. Progressive
-// disclosure only — the tree is built lazily per expanded node; the 11,160-row
-// ghost branch is never materialised flat (the component virtualises leaves).
+// Leaf items are a tagged union of kit rows and ghost rows. The body is ONE flat
+// table over the filtered items (builds first, then ghosts, each in emitted order).
 //
-// Spec: agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md §5
+// Spec: agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md §9.3
 
-import type { AtlasKitRow, AtlasGhostRow } from '../data/atlasTypes';
+import type { AtlasKitRow, AtlasGhostRow, AtlasInteractiveData } from '../data/atlasTypes';
 
 export type PivotItem =
   | { kind: 'kit'; row: AtlasKitRow }
   | { kind: 'ghost'; row: AtlasGhostRow };
-
-/**
- * A pivot dimension id. The DEFAULT hierarchy is exactly the FIVE STRUCTURAL levels
- * (D1-g): axis-x -> axis-y -> entity -> kit-liveness -> kit-condensation. The seven
- * ghost core axes are NO LONGER pivot levels — they became grid COLUMNS on ghost
- * leaf rows (D1-g). The `ghost:${string}` variant is retained in the union only so
- * a future opt-in re-add wouldn't be a type break; buildDefaultLevels never emits it.
- */
-export type PivotLevelId =
-  | 'axis-x'
-  | 'axis-y'
-  | 'entity'
-  | 'kit-liveness'
-  | 'kit-condensation'
-  | `ghost:${string}`;
-
-export interface PivotLevelDef {
-  id: PivotLevelId;
-  label: string;
-  /** Group key for this item under this dimension, or null if not applicable. */
-  keyOf: (item: PivotItem) => string | null;
-}
 
 // ---- Axis-pole vocabulary (D1-e) ----
 // The pivot's compass labels ARE the pole names. Ground truth = the r7 SVG rails
@@ -89,253 +67,111 @@ export function pivotPoleMapping(): {
   };
 }
 
-// ---- Dimension factories ----
-
-function axisXLevel(): PivotLevelDef {
-  return {
-    id: 'axis-x',
-    // D1-e: level label reads the pole pair, WEST-pole first (DEPLOY | PERFORM).
-    label: `Axis-X (${AXIS_POLES.WEST.name} | ${AXIS_POLES.EAST.name})`,
-    // Group KEY is the pole label; x>=0 => EAST pole (PERFORM), else WEST (DEPLOY).
-    keyOf: (it) => (it.row.x >= 0 ? poleGroupLabel('EAST') : poleGroupLabel('WEST')),
-  };
-}
-
-function axisYLevel(): PivotLevelDef {
-  return {
-    id: 'axis-y',
-    // D1-e: LAUNCH-pole first (world y>=0 pole), then EMBODY.
-    label: `Axis-Y (${AXIS_POLES.NORTH.name} | ${AXIS_POLES.SOUTH.name})`,
-    // world y>=0 => NORTH pole (LAUNCH); screen-y inversion is already baked into
-    // the emitted `y` sign, so the data comparison is direct.
-    keyOf: (it) => (it.row.y >= 0 ? poleGroupLabel('NORTH') : poleGroupLabel('SOUTH')),
-  };
-}
-
-function entityLevel(): PivotLevelDef {
-  return {
-    id: 'entity',
-    // D1-i community vocabulary: Kits -> Builds.
-    label: 'Builds | Ghosts',
-    keyOf: (it) => (it.kind === 'kit' ? 'Builds' : 'Ghosts'),
-  };
-}
-
-function kitLivenessLevel(): PivotLevelDef {
-  return {
-    id: 'kit-liveness',
-    // D1-i: Live Kits -> Live Builds.
-    label: 'Live Builds | Graveyard',
-    // Only applies to kit items; ghosts fall through (null).
-    keyOf: (it) =>
-      it.kind === 'kit' ? (it.row.cls === 'live' ? 'Live Builds' : 'Graveyard') : null,
-  };
-}
-
-function kitCondensationLevel(): PivotLevelDef {
-  return {
-    id: 'kit-condensation',
-    // D1-i: Condensations -> Build Families; Single stays.
-    label: 'Build Families | Single',
-    // Applies only to LIVE kit items (graveyard + ghosts fall through).
-    keyOf: (it) => {
-      if (it.kind !== 'kit') return null;
-      if (it.row.cls !== 'live') return null;
-      // D1-i group prefix: `Condensation: X` -> `Family: X`.
-      return it.row.condensation != null ? `Family: ${it.row.condensation}` : 'Single';
-    },
-  };
-}
-
-/**
- * The catalogue of DEFAULT pivot levels (D1-g). Exactly the FIVE STRUCTURAL levels:
- *   axis-x -> axis-y -> entity -> kit-liveness -> kit-condensation
- * The seven ghost core axes are NO LONGER levels — they render as grid COLUMNS on
- * ghost leaf rows (D1-g). The 11,160-ghost branch now bottoms out at the
- * `entity=Ghosts` node as a single virtualized leaf block with columns.
- * The component seeds its ordered level list from this and lets the user drag.
- * (No `coreOrder` parameter: the ghost axes are columns now — see buildLeafColumns.)
- */
-export function buildDefaultLevels(): PivotLevelDef[] {
-  return [
-    axisXLevel(),
-    axisYLevel(),
-    entityLevel(),
-    kitLivenessLevel(),
-    kitCondensationLevel(),
-  ];
-}
-
-// ---- Tree model (built lazily / progressively) ----
-
-export interface PivotNode {
-  /** Stable path key from root, '/'-joined group keys. */
-  path: string;
-  /** The group label at this node's own level. */
-  label: string;
-  /** The level id that produced this node ('__leaf__' for a leaf row). */
-  levelId: PivotLevelId | '__leaf__';
-  /** Number of leaf items under this node (recursive count). */
-  count: number;
-  /** Items in this node (only retained at the frontier; see groupChildren). */
-  items: PivotItem[];
-  /** True once this node has no further applicable dimension => its items are leaves. */
-  isLeafGroup: boolean;
-}
-
-/**
- * Group `items` by the FIRST applicable dimension at or after `levelIndex`.
- * Items whose key is null at a dimension fall through to the next dimension.
- * Returns the child nodes (one per distinct group key) plus, if some items had
- * no applicable dimension at all from levelIndex onward, a synthetic leaf bucket.
- *
- * This is called lazily per expanded node — the tree is never fully materialised.
- */
-export function groupChildren(
-  items: PivotItem[],
-  levels: PivotLevelDef[],
-  levelIndex: number,
-  parentPath: string
-): { children: PivotNode[]; nextLevelIndex: number } {
-  // Find the next dimension for which AT LEAST ONE item has a non-null key.
-  let li = levelIndex;
-  let activeLevel: PivotLevelDef | null = null;
-  while (li < levels.length) {
-    const lvl = levels[li];
-    if (items.some((it) => lvl.keyOf(it) != null)) {
-      activeLevel = lvl;
-      break;
-    }
-    li++;
-  }
-
-  if (activeLevel == null) {
-    // No further grouping applies — everything here is a leaf under one bucket.
-    return { children: [], nextLevelIndex: levels.length };
-  }
-
-  const groups = new Map<string, PivotItem[]>();
-  const passthrough: PivotItem[] = []; // items with null key at this active level
-  for (const it of items) {
-    const key = activeLevel.keyOf(it);
-    if (key == null) {
-      passthrough.push(it);
-      continue;
-    }
-    let bucket = groups.get(key);
-    if (!bucket) {
-      bucket = [];
-      groups.set(key, bucket);
-    }
-    bucket.push(it);
-  }
-
-  const children: PivotNode[] = [];
-  for (const [key, bucket] of groups) {
-    const path = parentPath ? `${parentPath}/${key}` : key;
-    // Is there any FURTHER applicable dimension for this bucket beyond li?
-    const hasDeeper = hasApplicableLevel(bucket, levels, li + 1);
-    children.push({
-      path,
-      label: key,
-      levelId: activeLevel.id,
-      count: bucket.length,
-      items: bucket,
-      isLeafGroup: !hasDeeper,
-    });
-  }
-
-  // Passthrough items (null at this active level) that STILL have a deeper
-  // applicable dimension get grouped there; if none, they are leaves in place.
-  if (passthrough.length > 0) {
-    const sub = groupChildren(passthrough, levels, li + 1, parentPath);
-    if (sub.children.length > 0) {
-      children.push(...sub.children);
-    } else {
-      // Genuinely ungroupable passthrough: attach as a leaf bucket.
-      const path = parentPath ? `${parentPath}/·` : '·';
-      children.push({
-        path,
-        label: '(ungrouped)',
-        levelId: '__leaf__',
-        count: passthrough.length,
-        items: passthrough,
-        isLeafGroup: true,
-      });
-    }
-  }
-
-  // Deterministic order: numeric-aware, then lexical.
-  children.sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
-  return { children, nextLevelIndex: li + 1 };
-}
-
-function hasApplicableLevel(items: PivotItem[], levels: PivotLevelDef[], from: number): boolean {
-  for (let i = from; i < levels.length; i++) {
-    if (items.some((it) => levels[i].keyOf(it) != null)) return true;
-  }
-  return false;
-}
-
-// ---- D1-c: group-children memoization (cache per level-order + node-path) ----
+// ---- D3-a: the FIVE filter controls (spec §9.3) ----
 //
-// groupChildren re-walks its `items` array on every call. Before D1-c the recursive
-// renderer called it once per MOUNTED node PER RENDER — re-grouping the 11,666-item
-// array on every selection/legend toggle (Bomb 2). The cache keys on (level-order
-// signature, node-path, levelIndex): a node's grouping is a pure function of those
-// three, so a cache hit returns the SAME children reference and does ZERO re-walk.
-// Invalidated ONLY when the level ORDER changes (drag-reorder) or the data changes
-// (new cache instance per items-array). A dev cache-hit counter proves it (#43).
+// Each control is a simple filter on ONE structural dimension — the five that were
+// pivot levels. Values 'all' pass everything; any non-All setting is a predicate on
+// the row. COMPOSITION LAW (§9.3, deterministic): AND across controls; a row a
+// non-All filter does NOT APPLY TO **fails** it. Concretely:
+//   - Liveness = graveyard  ⇒ ghosts drop (a ghost has no liveness).
+//   - Family   = <name>|single ⇒ ghosts + graveyard drop (only live kits carry a
+//                              family), and Single = live kit with condensation null.
+// Default = 'all' on every control. Enumerated-from-data: the Family options are the
+// distinct emitted `condensation` values among LIVE kits (never a hand-typed list).
 
-export interface GroupChildrenResult {
-  children: PivotNode[];
-  nextLevelIndex: number;
+export type AxisXFilter = 'all' | 'east' | 'west';
+export type AxisYFilter = 'all' | 'north' | 'south';
+export type EntityFilter = 'all' | 'builds' | 'ghosts';
+export type LivenessFilter = 'all' | 'live' | 'graveyard';
+/** 'all' | 'single' | a specific family name (enumerated from emitted condensations). */
+export type FamilyFilter = string;
+
+export interface AtlasFilterState {
+  axisX: AxisXFilter;
+  axisY: AxisYFilter;
+  entity: EntityFilter;
+  liveness: LivenessFilter;
+  family: FamilyFilter;
 }
 
-/** Cache-hit/miss telemetry — dev-only receipts for acceptance #43. */
-export interface PivotCacheStats {
-  hits: number;
-  misses: number;
+/** The all-pass default (every control 'all'). */
+export const DEFAULT_FILTERS: AtlasFilterState = {
+  axisX: 'all',
+  axisY: 'all',
+  entity: 'all',
+  liveness: 'all',
+  family: 'all',
+};
+
+/** True iff no filter is narrowing (used to short-circuit + drive the Clear button). */
+export function filtersAreDefault(f: AtlasFilterState): boolean {
+  return (
+    f.axisX === 'all' &&
+    f.axisY === 'all' &&
+    f.entity === 'all' &&
+    f.liveness === 'all' &&
+    f.family === 'all'
+  );
 }
 
 /**
- * A memoizing grouper bound to ONE root items array + ONE ordered level list.
- * Rebuild it (new instance) when EITHER the items array OR the level ORDER changes;
- * within a stable (items, order) it returns cached children by (path, levelIndex).
- * This is the D1-c "cache group-children per (level-order, node-path)" law made
- * concrete: identity of the memo instance encodes (items, order); the map key
- * encodes (path, levelIndex).
+ * The distinct emitted `condensation` values among LIVE kits, sorted — the Family
+ * control's dynamic options (enumerated FROM THE DATA, never hand-typed, §9.3 D3-a).
  */
-export class PivotGrouper {
-  /** Root items this grouper is bound to (identity IS the data-change invalidation
-   *  key — a new grouper is created iff the items array or the level order changes). */
-  readonly rootItems: PivotItem[];
-  private readonly levels: PivotLevelDef[];
-  private readonly cache = new Map<string, GroupChildrenResult>();
-  readonly stats: PivotCacheStats = { hits: 0, misses: 0 };
-
-  constructor(rootItems: PivotItem[], levels: PivotLevelDef[]) {
-    this.rootItems = rootItems;
-    this.levels = levels;
+export function familyOptions(data: AtlasInteractiveData): string[] {
+  const set = new Set<string>();
+  for (const k of data.kits) {
+    if (k.cls === 'live' && k.condensation != null) set.add(k.condensation);
   }
+  return [...set].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+}
 
-  /** Grouping key: a node is uniquely identified by its path + its start levelIndex. */
-  private keyFor(parentPath: string, levelIndex: number): string {
-    return `${levelIndex} ${parentPath}`;
-  }
-
-  group(items: PivotItem[], levelIndex: number, parentPath: string): GroupChildrenResult {
-    const key = this.keyFor(parentPath, levelIndex);
-    const cached = this.cache.get(key);
-    if (cached) {
-      this.stats.hits++;
-      return cached;
+/**
+ * The composed predicate for a filter state (spec §9.3 D3-a composition law). AND
+ * across the five controls; a control the row does NOT apply to FAILS any non-All
+ * setting. Pure — the component applies it in one linear pass over the flat array.
+ */
+export function makeFilterPredicate(f: AtlasFilterState): (item: PivotItem) => boolean {
+  return (item) => {
+    // Axis-X pole (world-x sign; label from AXIS_POLES). Applies to BOTH kinds.
+    if (f.axisX === 'east' && !(item.row.x >= 0)) return false;
+    if (f.axisX === 'west' && !(item.row.x < 0)) return false;
+    // Axis-Y pole (world-y sign; emitted sign already encodes screen-y inversion).
+    if (f.axisY === 'north' && !(item.row.y >= 0)) return false;
+    if (f.axisY === 'south' && !(item.row.y < 0)) return false;
+    // Entity: builds | ghosts.
+    if (f.entity === 'builds' && item.kind !== 'kit') return false;
+    if (f.entity === 'ghosts' && item.kind !== 'ghost') return false;
+    // Liveness: applies to KITS ONLY — a ghost FAILS any non-All liveness setting.
+    if (f.liveness !== 'all') {
+      if (item.kind !== 'kit') return false;
+      if (f.liveness === 'live' && item.row.cls !== 'live') return false;
+      if (f.liveness === 'graveyard' && item.row.cls !== 'graveyard') return false;
     }
-    this.stats.misses++;
-    const result = groupChildren(items, this.levels, levelIndex, parentPath);
-    this.cache.set(key, result);
-    return result;
+    // Family: applies to LIVE KITS ONLY — ghosts + graveyard FAIL any non-All family.
+    if (f.family !== 'all') {
+      if (item.kind !== 'kit') return false;
+      if (item.row.cls !== 'live') return false;
+      if (f.family === 'single') {
+        if (item.row.condensation != null) return false;
+      } else {
+        // A specific family name.
+        if (item.row.condensation !== f.family) return false;
+      }
+    }
+    return true;
+  };
+}
+
+/** The count readout for a filtered item list: builds shown + ghost cells shown. */
+export function countShown(items: PivotItem[]): { builds: number; ghosts: number } {
+  let builds = 0;
+  let ghosts = 0;
+  for (const it of items) {
+    if (it.kind === 'kit') builds++;
+    else ghosts++;
   }
+  return { builds, ghosts };
 }
 
 // ---- D1-c: leaf-index lookup map (kill VirtualizedLeafList findIndex sweeps) ----

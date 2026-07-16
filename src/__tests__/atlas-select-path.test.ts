@@ -1,27 +1,23 @@
-// atlas-select-path.test.ts — the chart<->table bridge helpers (spec §5, #34).
+// atlas-select-path.test.ts — the chart<->table bridge helpers (spec §5, §9.3, #56).
 //
-// Covers the ruled data seams (gandalf):
+// D3 (spec §9.3, Matt 2026-07-15): pivot grouping + lens interaction retired —
+// pivots→filters, zoom→fixed S_max. The ancestorPathsForItem drill-path derivation
+// (which expanded pivot node paths) is DELETED with its tests — the body is ONE flat
+// table now, so a chart→table reveal scrollIntoView's the flat leaf row by leafDomId.
+// What SURVIVES + is asserted here: the ruled data seams and the leaf-selection bridge.
 //   Seam A: aggregate meso glyph -> select by its representative data-core.
 //   Seam B: drill-in ground (data-el=ghost, NO data-core) is UNWIRABLE -> null.
-// And the path derivation used to drill the table open to a leaf (chart->table),
-// asserted to mirror atlasPivot.groupChildren's real node paths.
 
 import { describe, it, expect } from 'vitest';
 import {
   hookToSelection,
   itemToSelection,
-  ancestorPathsForItem,
   isSelectedItem,
+  selectionKey,
   leafDomId,
 } from '../utils/atlasSelectPath';
-import { buildDefaultLevels, groupChildren, poleGroupLabel, type PivotItem } from '../utils/atlasPivot';
+import type { PivotItem } from '../utils/atlasPivot';
 import type { AtlasKitRow, AtlasGhostRow } from '../data/atlasTypes';
-
-// D1-e pole labels used as pivot group KEYS (path segments).
-const E = poleGroupLabel('EAST'); // 'PERFORM · E'
-const W = poleGroupLabel('WEST'); // 'DEPLOY · W'
-const N = poleGroupLabel('NORTH'); // 'LAUNCH · N'
-const S = poleGroupLabel('SOUTH'); // 'EMBODY · S'
 
 function kit(partial: Partial<AtlasKitRow>): PivotItem {
   return {
@@ -95,7 +91,7 @@ describe('itemToSelection — table row -> selection', () => {
   });
 });
 
-describe('isSelectedItem', () => {
+describe('isSelectedItem + selectionKey', () => {
   it('matches kit by id, ghost by core; null selection => false', () => {
     const k = kit({ kit_id: 'a' });
     const g = ghost(['A', 'B', 'C', 'D', 'E', 'F', 'G']);
@@ -106,6 +102,12 @@ describe('isSelectedItem', () => {
     // Cross-kind never matches.
     expect(isSelectedItem(k, { kind: 'ghost', core: 'A|B|C|D|E|F|G' })).toBe(false);
   });
+
+  it('selectionKey mirrors leafSelectionKey form (k:<id> / g:<core>)', () => {
+    expect(selectionKey({ kind: 'kit', kitId: 'a' })).toBe('k:a');
+    expect(selectionKey({ kind: 'ghost', core: 'A|B|C' })).toBe('g:A|B|C');
+    expect(selectionKey(null)).toBeNull();
+  });
 });
 
 describe('leafDomId — DOM-id-safe', () => {
@@ -114,79 +116,5 @@ describe('leafDomId — DOM-id-safe', () => {
     expect(id).toMatch(/^atlas-leaf-[-\w]+$/); // only [-\w] after prefix
     expect(id).not.toContain('|');
     expect(id).not.toContain('→');
-  });
-});
-
-describe('ancestorPathsForItem — mirrors groupChildren real node paths', () => {
-  const levels = buildDefaultLevels();
-
-  // Walk the real tree following the derived paths; assert each is a real node.
-  function walk(item: PivotItem, root: PivotItem[]) {
-    const paths = ancestorPathsForItem(item, levels);
-    let items = root;
-    let levelIndex = 0;
-    let parentPath = '';
-    for (const expectPath of paths) {
-      const { children, nextLevelIndex } = groupChildren(items, levels, levelIndex, parentPath);
-      const node = children.find((c) => c.path === expectPath);
-      expect(node, `path "${expectPath}" should be a real node`).toBeTruthy();
-      items = node!.items;
-      levelIndex = nextLevelIndex;
-      parentPath = node!.path;
-      if (node!.isLeafGroup) break;
-    }
-    // The leaf must be present under the last opened node.
-    return items.some((it) => isSelectedItem(it, itemToSelection(item)));
-  }
-
-  const SAMPLE: PivotItem[] = [
-    kit({ kit_id: 'live-EN', x: 1, y: 1 }),
-    kit({ kit_id: 'whirl-ES', condensation: 'WHIRLWIND', x: 1, y: -1, quadrant: 'ES' }),
-    kit({ kit_id: 'grave-1', cls: 'graveyard', death_class: 'intrinsic-red', x: -1, y: 1 }),
-    ghost(['FREE-MOVE', 'BEAM', 'control', 'taunt', 'light', 'active', 'one-shot'], {
-      x: 1,
-      y: -1,
-    }),
-  ];
-
-  it('live single (D1-e/i): PERFORM·E / LAUNCH·N / Builds / Live Builds / Single leaf mounts', () => {
-    expect(walk(SAMPLE[0], SAMPLE)).toBe(true);
-    expect(ancestorPathsForItem(SAMPLE[0], levels)).toEqual([
-      `${E}`,
-      `${E}/${N}`,
-      `${E}/${N}/Builds`,
-      `${E}/${N}/Builds/Live Builds`,
-      `${E}/${N}/Builds/Live Builds/Single`,
-    ]);
-  });
-
-  it('build-family member (D1-i): drills to Family: WHIRLWIND leaf', () => {
-    expect(walk(SAMPLE[1], SAMPLE)).toBe(true);
-    expect(ancestorPathsForItem(SAMPLE[1], levels).at(-1)).toBe(
-      `${E}/${S}/Builds/Live Builds/Family: WHIRLWIND`
-    );
-  });
-
-  it('graveyard build: drills to the Graveyard leaf group', () => {
-    expect(walk(SAMPLE[2], SAMPLE)).toBe(true);
-    expect(ancestorPathsForItem(SAMPLE[2], levels).at(-1)).toBe(`${W}/${N}/Builds/Graveyard`);
-  });
-
-  it('meso ghost (D1-g): bottoms out at the Ghosts node — no core-axis levels', () => {
-    expect(walk(SAMPLE[3], SAMPLE)).toBe(true);
-    const paths = ancestorPathsForItem(SAMPLE[3], levels);
-    // D1-g: the seven ghost core axes are COLUMNS now, not pivot levels. The ghost
-    // leaf mounts directly under the entity=Ghosts node (a virtualized leaf block).
-    expect(paths.at(-1)).toBe(`${E}/${S}/Ghosts`);
-    expect(paths).toEqual([`${E}`, `${E}/${S}`, `${E}/${S}/Ghosts`]);
-  });
-
-  it('respects drag-reorder: build-family ABOVE axes spans quadrants (D1-i)', () => {
-    const base = buildDefaultLevels();
-    const cond = base.find((l) => l.id === 'kit-condensation')!;
-    const reordered = [cond, ...base.filter((l) => l.id !== 'kit-condensation')];
-    const paths = ancestorPathsForItem(SAMPLE[1], reordered);
-    // Build-family keys FIRST now.
-    expect(paths[0]).toBe('Family: WHIRLWIND');
   });
 });

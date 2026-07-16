@@ -6,12 +6,22 @@
 // emitted field names, test ids). This audits the string CONSTANTS that render to
 // the user (the runtime DOM audit is done live via CDP in the return receipts; this
 // locks the source constants so a regression is caught in CI).
+//
+// D3 (spec §9.3, Matt 2026-07-15): pivots→filters. The pivot LEVEL labels are gone;
+// the FILTER controls carry the user-visible structural vocabulary now. The pole
+// labels (AXIS_POLES / poleGroupLabel) + the community strings on the filter options
+// are audited here in their place; the column/legend/leaf-label audits are unchanged.
 
 import { describe, it, expect } from 'vitest';
 import { LEGEND_ENTRIES } from '../data/atlasTypes';
-import { buildDefaultLevels, leafLabel, poleGroupLabel, type PivotItem } from '../utils/atlasPivot';
+import {
+  leafLabel,
+  poleGroupLabel,
+  familyOptions,
+  type PivotItem,
+} from '../utils/atlasPivot';
 import { buildLeafColumns } from '../utils/atlasColumns';
-import type { AtlasKitRow, AtlasGhostRow } from '../data/atlasTypes';
+import type { AtlasKitRow, AtlasInteractiveData } from '../data/atlasTypes';
 
 const CORE_ORDER = [
   'movement',
@@ -47,13 +57,6 @@ function kit(partial: Partial<AtlasKitRow>): PivotItem {
     } as AtlasKitRow,
   };
 }
-function ghost(core: string[]): PivotItem {
-  return {
-    kind: 'ghost',
-    row: { core, depth: 1, lit: false, kit_count: 0, x: 1, y: 1, quadrant: 'EN' } as AtlasGhostRow,
-  };
-}
-
 describe('D1-i community vocabulary — user-visible strings (#49)', () => {
   it('legend labels + hints use build(s) / build families', () => {
     for (const e of LEGEND_ENTRIES) {
@@ -66,35 +69,44 @@ describe('D1-i community vocabulary — user-visible strings (#49)', () => {
     expect(labels).toContain('Build Families');
   });
 
-  it('pivot level labels use build / build-family vocabulary', () => {
-    for (const l of buildDefaultLevels()) {
-      expect(leaksInternalVocab(l.label), `level label "${l.label}"`).toBe(false);
+  it('D3 filter-control labels (D1-e pole vocab) carry no internal vocab', () => {
+    // The filter bar's Axis-X/Axis-Y controls label their poles via poleGroupLabel —
+    // the user-visible structural vocabulary now lives here (pivot levels are gone).
+    const poleLabels = [
+      poleGroupLabel('WEST'),
+      poleGroupLabel('EAST'),
+      poleGroupLabel('NORTH'),
+      poleGroupLabel('SOUTH'),
+    ];
+    for (const l of poleLabels) {
+      expect(leaksInternalVocab(l), `pole label "${l}"`).toBe(false);
     }
-    const byId = new Map(buildDefaultLevels().map((l) => [l.id, l.label]));
-    expect(byId.get('entity')).toBe('Builds | Ghosts');
-    expect(byId.get('kit-liveness')).toBe('Live Builds | Graveyard');
-    expect(byId.get('kit-condensation')).toBe('Build Families | Single');
-    // D1-e pole vocabulary rides along.
-    expect(byId.get('axis-x')).toBe('Axis-X (DEPLOY | PERFORM)');
+    // The exact rendered pole strings (D1-e).
+    expect(poleGroupLabel('WEST')).toBe('DEPLOY · W');
+    expect(poleGroupLabel('EAST')).toBe('PERFORM · E');
+    expect(poleGroupLabel('NORTH')).toBe('LAUNCH · N');
+    expect(poleGroupLabel('SOUTH')).toBe('EMBODY · S');
+    // The community-facing segmented option strings the filter bar renders (Entity /
+    // Liveness / Family) carry no internal vocab either.
+    for (const s of ['All', 'Builds', 'Ghosts', 'Live Builds', 'Graveyard', 'Single']) {
+      expect(leaksInternalVocab(s), `filter option "${s}"`).toBe(false);
+    }
   });
 
-  it('pivot group KEYS (the rendered path segments) carry no internal vocab', () => {
-    const levels = buildDefaultLevels();
-    const samples: PivotItem[] = [
-      kit({ x: 1, y: 1 }),
-      kit({ condensation: 'WHIRLWIND', x: -1, y: -1 }),
-      kit({ cls: 'graveyard', death_class: 'intrinsic-red', x: -1, y: 1 }),
-      ghost(['A', 'B', 'C', 'D', 'E', 'F', 'G']),
-    ];
-    for (const lvl of levels) {
-      for (const it of samples) {
-        const key = lvl.keyOf(it);
-        if (key != null) expect(leaksInternalVocab(key), `group key "${key}"`).toBe(false);
-      }
-    }
-    // The build-family group prefix is `Family: X`, never `Condensation: X`.
-    const cond = levels.find((l) => l.id === 'kit-condensation')!;
-    expect(cond.keyOf(kit({ condensation: 'WHIRLWIND' }))).toBe('Family: WHIRLWIND');
+  it('familyOptions enumerates emitted condensation names (community-visible; no leak)', () => {
+    const data = {
+      kits: [
+        kit({ condensation: 'WHIRLWIND', cls: 'live' }).row,
+        kit({ condensation: 'AURA', cls: 'live' }).row,
+        kit({ condensation: null, cls: 'live' }).row, // single -> excluded
+        kit({ condensation: 'GRAVE-ONLY', cls: 'graveyard' }).row, // graveyard -> excluded
+      ],
+    } as unknown as AtlasInteractiveData;
+    const opts = familyOptions(data);
+    // Sorted distinct LIVE condensations only.
+    expect(opts).toEqual(['AURA', 'WHIRLWIND']);
+    // These are the raw emitted family names (already community-facing); no leak.
+    for (const o of opts) expect(leaksInternalVocab(o), `family option "${o}"`).toBe(false);
   });
 
   it('column HEADER labels carry no internal vocab (axis labels are core_order terms)', () => {

@@ -11,11 +11,62 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-15 (atlas D2 extension pass — FULL 14-axis engine-key columns for builds + union-grid column law + Build Atlas → Build Horizon display name; acc 50–53 green; Vercel PREVIEW shipped, prod HELD for gandalf verify)
-**Last commit:** atlas D2 pass — 14-axis engine-key sidecar (derived w/ receipt, joined by kit_id) → union leaf grid (shared-5 both grains · meso-only-2 ghost · kit-only-9 build); Build Atlas → Build Horizon (Matt-RULED); on top of D1 (b297068)
+**Last updated:** 2026-07-15 (atlas D3 UX pass — simple filters REPLACE pivots + zoom REMOVED, fixed at derived S_max w/ native scroll; acc 54–59 green; D2 union grid untouched; Vercel PREVIEW shipped, prod HELD for gandalf verify)
+**Last commit:** atlas D3 pass — five filter controls (AND-composed, non-applicable-fails law, family enumerated from data) → ONE flat D2 grid; fixed S_max mount (derived, no scale literal) + native scroll (viewBox/planeClip verbatim); pivot engine + zoom lens retired w/ tests; on top of D2 (2bff3c2)
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
+
+---
+
+## Atlas D3 UX pass — filters REPLACE pivots · zoom REMOVED (fixed S_max + native scroll) (2026-07-15)
+
+**Spec:** `reincarnated-collaboration/agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md` **§9.3** (D3-a/D3-b; acc 54–59).
+**Authority:** Matt 2026-07-15 6th message — "change the pivots to simple filters? The table looks nice but the pivots are getting in the way." + "remove the zoom function and just have the zoom auto-set to the max zoom parameter available now… the zoom functionality is awkward on the browser and the screen square doesn't work right." SUPERSEDES §5 pivot-interaction model + §8 v1-zoom grammar. Built on D2 (commit 2bff3c2). Auto-commit per CLAUDE.md team discipline. PREVIEW-only deploy; prod alias HELD for gandalf verify.
+
+**What the D2 grid KEPT (Matt: "the table looks nice"):** the union leaf grid cell semantics are UNTOUCHED — `atlasColumns.ts`, `LeafGridHeader.tsx`, `LeafRow.tsx`, `VirtualizedLeafList.tsx` all stand verbatim (shared-5 · meso-2 · kit-9, grain tints, tooltips, `unknown` vs `—`). Legend + class-highlight CSS, SelectionSummary, ProvenancePanel, skin toggle: unchanged.
+
+**D3-a — filters replace pivots:**
+- `atlasPivot.ts` — the pivot GROUPING ENGINE retired (`PivotGrouper`, `groupChildren`, `buildDefaultLevels`, `PivotNode`, `PivotLevelDef`, `PivotLevelId`, `hasApplicableLevel`, all level factories, `GroupChildrenResult`, `PivotCacheStats`). In its place: the FIVE-control filter model — `AtlasFilterState`, `DEFAULT_FILTERS`, `filtersAreDefault`, `familyOptions(data)` (distinct emitted live condensations, sorted — enumerated from data), `makeFilterPredicate(f)` (AND composition + non-applicable-FAILS law), `countShown`. KEPT: `PivotItem`, `AXIS_POLES`, `poleGroupLabel`, `pivotPoleMapping` (inversion guard), `buildProvenanceName`, `displayGame`, `leafLabel`, `leafKey`, `leafSelectionKey`, `buildLeafIndexMap`.
+- `AtlasBuildTable.tsx` (NEW, replaces `AtlasPivotTable.tsx` DELETED) — filter bar (4 segmented + Family `<select>`) + live count readout (`N builds · M ghost cells shown of totals`) + HONEST zero-state (empty line + Clear filters) + ONE flat table (builds-then-ghosts, emitted order; single linear filter pass memoized on (items, filters)). Heading dropped "pivot" → "Build lattice". Filter state OWNED by the page (so chart→table can reset it).
+- Composition law (deterministic): AND across controls; a row a non-All filter does not apply to FAILS it. Liveness=Graveyard ⇒ ghosts drop; Family ⇒ ghosts + graveyard drop; Family=Single ⇒ live kit condensation null. Filter labels come from `AXIS_POLES`/`poleGroupLabel` (never retyped); family options from the data.
+- `PivotLevelBar.tsx` DELETED. `atlasSelectPath.ts` — `ancestorPathsForItem` DELETED (no pivot paths); `hookToSelection`/`itemToSelection`/`isSelectedItem`/`selectionKey`/`leafDomId` KEPT.
+
+**D3-b — zoom removed; fixed at derived S_max; native scroll:**
+- `AtlasZoomControls.tsx` DELETED; `useAtlasLens.ts` DELETED (wheel/pinch/dblclick/drag-pan/gesture-transform/clip-tracks-view/reset all gone).
+- `atlasLens.ts` — the INTERACTION math retired (`clampScale`, `scaleOf`, `viewBoxFor`, `viewCenter`, `zoomAtPoint`, `panByScreen`, `screenToCanvas`, `easeScaleForRadius`, `gestureTransform`, `viewBoxToAttr`, `viewBoxToRectAttrs`, `fitScale`, `unionBbox`, `padBbox`, `FIT_MARGIN`, `STEP_FACTOR`; `AtlasBounds` slimmed — dropped `sMin`/`fitUnion`/`hullBbox`/`planeClipRaw`/`nativeViewBoxRaw`). KEPT the §8.2 BOUND-DERIVATION law: `parseViewBox`, `parsePlaneClipRect`, `parseHullBbox`, `pointsBbox`, `minSelectableRadius`, `deriveBounds` (now returns native/planeClip/sMax/rMinSelectable), `TARGET_D`. ADDED the fixed-mount nav math: `renderedSize`, `canvasToRenderedPx`, `centerScroll`, `planeCenterCanvas` (all PURE, unit-tested).
+- `useAtlasStage.ts` (NEW, replaces `useAtlasLens.ts`) — mounts the SVG at fixed scale = S_max DERIVED at runtime (`deriveBounds` via `useMemo` on the markup STRING — no DOM needed; **no scale literal `8.276` anywhere in source** — a doctored radius shifts the mount with zero code change). Sizes the `<svg>` to (stage clientWidth × S_max) via CSS width only (viewBox untouched). Initial scroll = plane-rect center. Re-centers on skin flip; preserves scroll fraction on resize. Exposes `scrollToMark(sel)` (table→chart center-scroll; pan-only, no ease-scale — every wirable mark ≥ TARGET_D at S_max by construction).
+- `Atlas.tsx` — stage is a bounded-height (`h-[70vh] min-h-[480px]`) `overflow-auto` TWO-AXIS native-scroll div with `[overscroll-behavior:contain]`, canvas-hex bg. `touch-action` restored to normal (removed `touchAction:'none'` + cursor-grab + the "pinch to zoom / drag to pan" aria-label). The emitted `viewBox` + `planeClip` serve VERBATIM (byte-equal in DOM — stronger than §8.3's reset-restores-verbatim; the artifact stays byte-equal to the vendored file). Chart→table on a filtered-out drill RESETS filters to All FIRST (deterministic), THEN scrolls. A fixed-mount receipt (`S_max × · TARGET_D/(2·r_min) · native-scroll`) reads live from the derived bounds.
+
+**Files changed:**
+- MODIFIED: `src/pages/Atlas.tsx`, `src/utils/atlasLens.ts`, `src/utils/atlasPivot.ts`, `src/utils/atlasSelectPath.ts`
+- NEW: `src/components/atlas/AtlasBuildTable.tsx`, `src/hooks/useAtlasStage.ts`, `src/__tests__/atlas-filters.test.ts`
+- DELETED: `src/components/atlas/AtlasPivotTable.tsx`, `src/components/atlas/AtlasZoomControls.tsx`, `src/components/atlas/PivotLevelBar.tsx`, `src/hooks/useAtlasLens.ts`, `src/__tests__/atlas-pivot.test.ts`
+
+**Retired tests (superseded per §9.3, note at top of each touched file):**
+- `atlas-pivot.test.ts` DELETED (all 7 pivot-grouping-conformance tests — default hierarchy, drag-reorder condensations-above-axes, ghost-bottoms-out).
+- `atlas-lens.test.ts` — the lens-INTERACTION tests removed (lens arithmetic clamp/zoomAtPoint/panByScreen/gestureTransform/easeScale, S_min hull-union derivation); the bound-DERIVATION tests KEPT + fixed-mount nav tests ADDED.
+- `atlas-select-path.test.ts` — the `ancestorPathsForItem` drill-path block removed; seam A/B + itemToSelection + selectionKey + leafDomId KEPT.
+- `atlas-community-vocabulary.test.ts` — the pivot-level-label + group-key blocks removed; the filter-control-label (pole vocab) + `familyOptions` enumeration blocks ADDED in their place.
+
+**New tests:** `atlas-filters.test.ts` (19 tests — predicate composition incl. non-applicable-fails, ≥4 combined-filter hand-counts, family enumeration from data, zero-result, builds-then-ghosts order) + fixed-mount nav tests folded into `atlas-lens.test.ts` (renderedSize/canvasToRenderedPx/centerScroll/planeCenterCanvas + no-scale-literal doctored-radius probe).
+
+**Verification:**
+- **Full suite:** 178/178 green (was 173; +19 atlas-filters, lens 19→16, select-path 15→11, pivot -7, community-vocab 6). `npm run build` clean. Lint clean on all D3 files.
+- **SVG sha256 UNCHANGED** (guard held before + after): archive `29dc29f3…`, instrument `a5954a0e…`.
+- **CDP browser smoke (headless Chrome, preview build) — acc 54–59:**
+  - #54 five controls render; family options === `['all','single','AURA','CHANNELED-BEAM','MINION-PET','TOTEM-SENTRY','TRAP-MINE','WHIRLWIND']` (distinct emitted condensations + All/Single); combined-filter clean-state hand-counts EXACT: DEPLOY·W → 248b·6,092g; DEPLOY·W AND EMBODY·S → 121b·3,656g; Liveness=Graveyard → 37b·0g (ghosts drop); Family=WHIRLWIND → live-whirl·0g; Entity=Ghosts → 0b·11,160g; zero-state + Clear filters demonstrated.
+  - #55 D2 union grid grouped header intact (Shared axes / Ghost-only (meso) / Build-only (14-axis key) + Treatment/Function/Proxy/Movement×2/Delivery×2/Geometry); All/All readout 506b·11,160g virtualized ≥50fps.
+  - #56 table→chart row click sets Selected + halo CSS; chart→table mark click reveals; **filter-reset-then-scroll** demonstrated (Family=WHIRLWIND active + click a live-single mark → family resets to `all`, 506b restored, row selected).
+  - #57 ZERO zoom UI (no buttons/aria); SVG rendered width / stage width = 8.276× (= S_max); receipt shows `r_min_selectable 1.45` + formula; grep: no `8.276`/`8.27` scale literal in source (only in an atlasLens.ts comment documenting its absence).
+  - #58 DOM `viewBox` = `0 0 1600 1200` byte-equal to vendored; DOM planeClip rect `x=96.00 y=132.00 w=1408.00 h=972.00` byte-equal; `touch-action` computed = normal (not `none`); stage scrolls natively both axes; initial scroll non-zero (plane-center).
+  - #59 scroll on the ~8× surface: avg 16.95ms/frame ≈ **59fps** sustained (3/179 frames marginally >32ms at paint warmup, max 33.3ms); D1-d budgets hold.
+- **Mobile 375px:** no horizontal PAGE scroll (acc 46 holds); chart stage scrolls internally on the ~8× surface.
+
+**Deviations from brief:** none material. Two notes: (1) `parsePlaneClipRect` still returns its `raw` verbatim strings — harmless (the verbatim-reset consumer is gone, but the field + its test cost nothing and document the emitted precision); left in rather than churn the parser + test. (2) The new table component is `AtlasBuildTable.tsx` (fresh file) rather than an in-place rewrite of `AtlasPivotTable.tsx` — cleaner diff; the old file is DELETED. File names/types/ids all stay `atlas*`/kits per the internal/community split.
+
+**Preview URL:** _(filled after deploy)_
+**Commit:** _(filled after commit)_
 
 ---
 

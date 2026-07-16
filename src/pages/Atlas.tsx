@@ -1,13 +1,21 @@
-// Atlas — /atlas route: the interactive-atlas Glance page (spec §§4-6).
+// Atlas — /atlas route: the "Build Horizon" interactive page (spec §§4-6, §9.3).
 //
 // COMPOSITION (spec §6):
 //   - The BLACK COPY LEADS. The lead skin is resolved by CANVAS (dark) via the
 //     provenance skin_canvas_map — NEVER by skin name (the names are inverted:
 //     'archive' = dark, 'instrument' = light; caught + ratified 2026-07-15).
 //   - White ('instrument') sits behind the skin toggle.
-//   - Basic legend, top-left, over the chart. Toggling a class halos its members.
-//   - Hierarchical pivot table below the chart, wired bidirectionally to the chart.
+//   - Basic legend band, top-left (D1-a). Toggling a class halos its members.
+//   - A FILTER BAR + one flat build lattice below the chart (D3-a), wired
+//     bidirectionally to the chart.
 //   - Edition-I stays as an archived second lens (current page structure).
+//
+// D3 (spec §9.3, Matt 2026-07-15): pivots→filters, zoom→fixed S_max.
+//   - The chart mounts at a FIXED scale = S_max, DERIVED from the mounted artifact
+//     bytes at runtime (useAtlasStage → deriveBounds; NO scale literal in source).
+//     Navigation is NATIVE browser scrolling in a bounded-height overflow-auto stage;
+//     the SVG's emitted viewBox + planeClip serve VERBATIM (never mutated at runtime).
+//   - The pivot table is retired; a filter bar (five controls) drives a flat table.
 //
 // SVG SOURCE: the r7 hooked Edition-II SVG (per-canvas file), vendored to
 // public/atlas/. It is INLINED (not <img>) so the page-injected highlight CSS can
@@ -15,28 +23,26 @@
 // / data-core hooks. The SVG is a print-grade static artifact carrying NO scripts
 // (renderer law §3.4) — inlining is inert at rest.
 //
-// WIRING (spec §5, acceptance #32/#34):
-//   - Legend classes -> buildHighlightCss(selectedClasses) -> injected <style>.
-//   - Single selection (kit_id or ghost core) -> buildHighlightCss(selection)
-//     halos that mark; table row click sets it (table->chart); chart mark click
-//     sets it AND drills the table to the leaf (chart->table).
-//   - Ruled seams: aggregate meso glyphs (data-mult>1) surface "N cells at this
-//     position"; drill-in ground (data-el=ghost, no data-core) is unwirable — a
-//     click deselects.
-//
 // Spec: agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md
 
 import { useState, useMemo, useCallback, useId, useRef, useEffect } from 'react';
 import { useAtlasData } from '../hooks/useAtlasData';
 import { useAtlasSvg } from '../hooks/useAtlasSvg';
-import { useAtlasLens } from '../hooks/useAtlasLens';
+import { useAtlasStage } from '../hooks/useAtlasStage';
 import { AtlasLegend } from '../components/atlas/AtlasLegend';
 import { AtlasSkinToggle } from '../components/atlas/AtlasSkinToggle';
-import { AtlasPivotTable } from '../components/atlas/AtlasPivotTable';
-import { AtlasZoomControls } from '../components/atlas/AtlasZoomControls';
+import { AtlasBuildTable } from '../components/atlas/AtlasBuildTable';
+import { TARGET_D } from '../utils/atlasLens';
 import { buildHighlightCss, type AtlasSelection } from '../utils/atlasHighlight';
 import { hookToSelection, itemToSelection } from '../utils/atlasSelectPath';
-import { buildProvenanceName, type PivotItem } from '../utils/atlasPivot';
+import {
+  buildProvenanceName,
+  makeFilterPredicate,
+  filtersAreDefault,
+  DEFAULT_FILTERS,
+  type PivotItem,
+  type AtlasFilterState,
+} from '../utils/atlasPivot';
 import type {
   LegendClass,
   SkinName,
@@ -99,24 +105,30 @@ export function Atlas() {
   const [selection, setSelection] = useState<AtlasSelection | null>(null);
   // Detail of an aggregate meso glyph the chart last surfaced (ruled seam A).
   const [aggregateCells, setAggregateCells] = useState<number | null>(null);
-  // Chart->table drill request (item + bump token so repeat clicks re-scroll).
+  // Chart->table reveal request (item + bump token so repeat clicks re-scroll).
   const [openItem, setOpenItem] = useState<{ item: PivotItem; token: number } | null>(null);
   const openTokenRef = useRef(0);
+
+  // D3-a: filter state OWNED by the page so chart->table can reset it to All when a
+  // clicked mark is filtered out of the table (§9.3 D3-b deterministic reveal).
+  const [filters, setFilters] = useState<AtlasFilterState>(DEFAULT_FILTERS);
 
   // Stable root id for the inlined-SVG wrapper — highlight CSS is scoped to it.
   const rootId = useId().replace(/:/g, '_'); // useId() emits ':' which is not id-safe
   const svgRootId = `atlas-svg-${rootId}`;
 
-  // ---- v1 ZOOM (spec §8): viewBox lens over the inlined SVG ----
-  // Both bounds are DERIVED from the mounted artifact (never hardcoded); the lens
-  // state lives in the hook's refs so a gesture never re-renders React.
+  // ---- FIXED-SCALE STAGE (spec §9.3 D3-b): mount at S_max, native scroll ----
+  // S_max is DERIVED from the mounted artifact bytes (never hardcoded); the SVG's
+  // emitted viewBox + planeClip serve VERBATIM (never mutated). The stage owns the
+  // native scrollbars; the host div holds the inlined SVG.
+  const stageRef = useRef<HTMLDivElement>(null);
   const svgHostRef = useRef<HTMLDivElement>(null);
 
   // Inline the r7 SVG markup IMPERATIVELY into the host div, keyed on the markup.
-  // This owns the host's innerHTML outside React's render path so the lens's
-  // runtime viewBox/planeClip mutations survive re-renders (React would otherwise
-  // revert them by re-applying dangerouslySetInnerHTML on an unrelated re-render).
-  // Skin flip changes svgMarkup → the effect re-inlines the new-canvas artifact.
+  // Owning the host's innerHTML outside React's render path keeps the artifact
+  // byte-equal in the DOM (no dangerouslySetInnerHTML churn); the stage hook sizes
+  // it (CSS width only) without touching the viewBox. Skin flip changes svgMarkup →
+  // the effect re-inlines the new-canvas artifact and the hook re-centers.
   useEffect(() => {
     const host = svgHostRef.current;
     if (!host) return;
@@ -124,23 +136,22 @@ export function Atlas() {
     else host.replaceChildren();
   }, [svgMarkup]);
 
-  const lens = useAtlasLens(svgHostRef, svgMarkup, svgStatus === 'success');
+  const stage = useAtlasStage(stageRef, svgHostRef, svgMarkup, svgStatus === 'success');
 
-  // ---- TABLE -> CHART: a leaf row click halos its mark + lens-pans it (§8.4) ----
+  // ---- TABLE -> CHART: a leaf row click halos its mark + center-scrolls it (§9.3) ----
   const handleSelectRow = useCallback(
     (item: PivotItem) => {
       const sel = itemToSelection(item);
       setSelection(sel);
       setAggregateCells(null); // table-origin selection carries no aggregate caption
-      // Lens-pan (§8.4): center the mark at current S; raise S to its ease-scale
-      // if it renders below TARGET_D/2 (deterministic; ≤ S_max). Upgrades the old
-      // scrollIntoView-only behavior — the chart brings the mark to the eye.
-      lens.panToMark(sel);
+      // Center-scroll the mark at the FIXED S_max (pan-only; no ease-scale — every
+      // wirable mark renders ≥ TARGET_D at S_max by construction, §9.3 D3-b).
+      stage.scrollToMark(sel);
     },
-    [lens]
+    [stage]
   );
 
-  // ---- CHART -> TABLE: a mark click reads its hooks, sets selection + drills ----
+  // ---- CHART -> TABLE: a mark click reads its hooks, sets selection + reveals ----
   const handleChartClick = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!data) return;
@@ -164,14 +175,14 @@ export function Atlas() {
       }
       setSelection(sel);
 
-      // Resolve the target PivotItem to drill the table to.
+      // Resolve the target PivotItem to reveal in the flat table.
       let item: PivotItem | null = null;
       if (sel.kind === 'kit') {
         const row = data.kits.find((k) => k.kit_id === sel.kitId);
         if (row) item = { kind: 'kit', row };
         setAggregateCells(null); // kits are single cells
       } else {
-        // Ghost by representative core — drill the representative's row (seam A).
+        // Ghost by representative core — reveal the representative's row (seam A).
         const row = data.ghosts.find((g) => g.core.join('|') === sel.core);
         if (row) item = { kind: 'ghost', row };
         // Aggregate caption: data-mult>1 => N coincident cells at this position.
@@ -179,11 +190,18 @@ export function Atlas() {
         setAggregateCells(Number.isFinite(mult) && mult > 1 ? mult : null);
       }
       if (item) {
+        // §9.3 D3-b DETERMINISTIC REVEAL: if the item fails the active filters, RESET
+        // filters to All FIRST (so the flat row is present), THEN scroll. No silent
+        // non-reveal. A default filter state passes everything — skip the reset then.
+        const target2 = item;
+        if (!filtersAreDefault(filters) && !makeFilterPredicate(filters)(target2)) {
+          setFilters(DEFAULT_FILTERS);
+        }
         openTokenRef.current += 1;
-        setOpenItem({ item, token: openTokenRef.current });
+        setOpenItem({ item: target2, token: openTokenRef.current });
       }
     },
-    [data]
+    [data, filters]
   );
 
   // ---- Highlight CSS: recomputed from legend classes + single selection ----
@@ -227,9 +245,8 @@ export function Atlas() {
         <div>
           {/* D2-d (Matt-RULED): the community-facing surface name is "Build Horizon"
               (avoids the PoE "Atlas of Worlds" collision; ties to the plate's CHARTED
-              HORIZON vocabulary). D1-i's "Build Atlas" was interim. ONE-string-class
-              change: internals (atlas* files, routes /atlas, kit_id, types, test ids)
-              stay `atlas`/kits per Matt's internal/community split. */}
+              HORIZON vocabulary). Internals (atlas* files, routes /atlas, kit_id,
+              types, test ids) stay `atlas`/kits per Matt's internal/community split. */}
           <h1 className="text-lg font-semibold text-gray-100">Build Horizon</h1>
           <p className="font-mono text-[11px] text-gray-500">
             Edition-{data.derived_from.atlas_version} lattice · {data.counts.kits} builds ·{' '}
@@ -244,45 +261,37 @@ export function Atlas() {
       </header>
 
       {/* D1-a LEGEND BAND: the legend lives in a NORMAL-FLOW band between the page
-          header and the chart, top-left aligned. It NEVER overlays the SVG at any
-          viewport width (the old `absolute left-3 top-3` covered the SVG banner). */}
+          header and the chart, top-left aligned. It NEVER overlays the SVG. */}
       <div className="mb-3">
         <AtlasLegend selected={selectedClasses} onToggle={toggleClass} canvas={activeCanvas} />
       </div>
 
-      {/* CHART STAGE — inlined r7 SVG. Zoom controls stay chart-affixed (map
-          convention); the legend is no longer here (D1-a). */}
+      {/* CHART STAGE (§9.3 D3-b) — the inlined r7 SVG renders at a FIXED S_max inside a
+          bounded-height, overflow-auto TWO-AXIS native-scroll stage. No zoom UI, no
+          gesture wiring; touch/trackpad scroll the stage natively. The stage owns the
+          scrollbars; the SVG width is set by useAtlasStage (CSS width only — the
+          emitted viewBox is untouched). Canvas hex fills the surround. */}
       <div
-        className="relative w-full overflow-hidden rounded-lg border border-gray-800"
+        ref={stageRef}
+        onClick={handleChartClick}
+        className="relative h-[70vh] min-h-[480px] w-full overflow-auto rounded-lg border border-gray-800 [overscroll-behavior:contain]"
         style={{ backgroundColor: canvasHex }}
       >
-        {/* Page-injected highlight CSS — targets the inlined SVG's data-el hooks. */}
+        {/* Page-injected highlight CSS — targets the inlined SVG's data-el hooks. It is
+            scoped under #svgRootId; the SVG bytes are never mutated at rest. */}
         <style>{highlightCss}</style>
 
         {/*
-          The vendored r7 SVG is inlined IMPERATIVELY (via the effect below), not
-          through dangerouslySetInnerHTML on the render path. This is load-bearing
-          for the zoom lens (§8): the lens mutates the SVG's viewBox + planeClip
-          rect as RUNTIME DOM STATE, and React must never revert those mutations by
-          re-applying the markup on an unrelated re-render. Owning the host div's
-          innerHTML in an effect (keyed on the markup) decouples the mutable SVG
-          from React reconciliation. The SVG is a print-grade static artifact with
-          NO scripts inside (renderer law §3.4) — inlining is inert at rest.
-          Click delegation on this wrapper reads the data-el / data-kit / data-core
-          hooks off the event target (chart->table).
+          The vendored r7 SVG is inlined IMPERATIVELY (via the effect above), not
+          through dangerouslySetInnerHTML on the render path. The host div carries the
+          inlined <svg>; useAtlasStage sizes it to (stage width × S_max) via CSS width
+          only, so the emitted viewBox + planeClip stay byte-equal in the DOM (#58).
+          Click delegation on the STAGE reads the data-el / data-kit / data-core hooks
+          off the event target (chart->table). The SVG is a print-grade static artifact
+          with NO scripts inside (renderer law §3.4) — inlining is inert at rest.
         */}
-        <div
-          id={svgRootId}
-          ref={svgHostRef}
-          onClick={handleChartClick}
-          tabIndex={0}
-          role="application"
-          aria-label="Build Horizon — scroll or pinch to zoom, drag to pan"
-          className="atlas-svg-host block w-full cursor-grab select-none outline-none [&>svg]:block [&>svg]:h-auto [&>svg]:w-full active:cursor-grabbing"
-          // The lens exposes canvas surround when the view exceeds the plane rect;
-          // the wrapper background is the canvas hex so it blends (§8.3).
-          style={{ backgroundColor: canvasHex, touchAction: 'none' }}
-        />
+        <div id={svgRootId} ref={svgHostRef} className="atlas-svg-host block w-max select-none" />
+
         {!svgMarkup && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex flex-col items-center gap-2">
@@ -293,29 +302,18 @@ export function Atlas() {
             </div>
           </div>
         )}
-
-        {/* ZOOM CONTROLS (§8.1) — chart-affixed, top-right (map convention). The r7
-            SVG banner headline runs along the TOP of the canvas; the emitted banner
-            strip is ~72px tall in the 1600×1200 frame (~6% of height). We drop the
-            controls' vertical offset to `top-16` (64px) so they sit BELOW the banner
-            strip at every tested width and never occlude the headline (D1-a
-            same-class check for the §8 controls). */}
-        {lens.bounds && (
-          <div className="pointer-events-auto absolute right-3 top-16">
-            <AtlasZoomControls
-              canvas={activeCanvas}
-              scale={lens.scale}
-              sMin={lens.bounds.sMin}
-              sMax={lens.bounds.sMax}
-              canZoomIn={lens.canZoomIn}
-              canZoomOut={lens.canZoomOut}
-              onZoomIn={lens.zoomIn}
-              onZoomOut={lens.zoomOut}
-              onReset={lens.reset}
-            />
-          </div>
-        )}
       </div>
+
+      {/* FIXED-MOUNT RECEIPT (§9.3 acceptance #57): S_max derived at runtime from the
+          artifact — r_min_selectable + formula + resulting scale, no scale literal in
+          source. Read live from the stage hook's derived bounds. */}
+      {stage.bounds && (
+        <p className="mt-1.5 font-mono text-[10px] text-gray-600">
+          Fixed magnification {stage.bounds.sMax.toFixed(3)}× · derived from the artifact:
+          TARGET_D / (2 · r_min_selectable) = {TARGET_D} / (2 · {stage.bounds.rMinSelectable}) ·
+          native-scroll (no zoom)
+        </p>
+      )}
 
       {/* SELECTION SUMMARY — the focused mark; aggregate caption (ruled seam A). */}
       <SelectionSummary
@@ -328,13 +326,15 @@ export function Atlas() {
         }}
       />
 
-      {/* PIVOT TABLE — below the chart, wired bidirectionally. */}
+      {/* FILTER BAR + FLAT BUILD LATTICE — below the chart, wired bidirectionally. */}
       <div className="mt-3">
-        <AtlasPivotTable
+        <AtlasBuildTable
           data={data}
           onSelectRow={handleSelectRow}
           selection={selection}
           openItem={openItem}
+          filters={filters}
+          onFiltersChange={setFilters}
         />
       </div>
 
