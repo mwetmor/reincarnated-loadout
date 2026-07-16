@@ -19,6 +19,12 @@
 // the STATIC mount box — the fit view IS the ruled chart. S_max derivation is retired
 // with the scroll stage; the ≈8.276 ceiling is no longer load-bearing.)
 //
+// D5 (spec §9.5, Matt 2026-07-15): the fit box now ALSO governs the FRAME. D4 left the
+// canvas PLATE rect + the svg's width/height attrs at emitted canvas geometry; D5
+// extends the mount-time write to a WRITE-SET (viewBox · planeClip · plate · svg sizing)
+// so the "screen box" fits the ruled zoom. This module adds the pure, fail-loud
+// STRUCTURAL plate identifier (identifyPlateRect); the DOM write lives in useAtlasStage.
+//
 // LAWS IMPLEMENTED:
 //   §9.4  The fit box = padBbox(unionBbox(canvasBbox, hullBbox), FIT_MARGIN),
 //         aspect-pinned to native (widen the short dim symmetrically), centered on
@@ -235,12 +241,84 @@ export function deriveBounds(svg: string): AtlasBounds {
   };
 }
 
-// ---- Attribute serialization for the mount-time write (spec §9.4 D4-a) ----
+// ---- Structural plate identification (spec §9.5 D5-a) ----
 //
-// The fit box is written ONCE to the live SVG's `viewBox` attribute AND the planeClip
-// <rect> x/y/width/height at inline (initial mount + each skin flip). After that the
-// chart is static — no interaction-driven mutation. These pure serializers keep the
-// DOM-write helper (useAtlasStage) free of formatting logic and unit-testable here.
+// D5 (spec §9.5, Matt 2026-07-15): "the 'screen box' now needs to be resized to fit the
+// current zoom." D4 wrote viewBox + planeClip to the fit box but left the canvas PLATE
+// rect (the dark backdrop) at emitted canvas geometry — so marks/rails/footer render
+// off the plate and page-background bands sit inside the frame. The mount-time write-set
+// EXTENDS to the plate: same moment, same derived fit box, x/y/w/h set alongside.
+//
+// Identification is STRUCTURAL and FAIL-LOUD (spec §9.5 D5-a): the plate is the
+// direct-child <rect> of the <svg> whose width/height equal the parsed native canvas
+// dims (`bounds.native`) AND which carries a fill. NO fill-literal matching (the fill
+// differs per canvas: #0e1016 dark / #f7f8fa light), NO positional index, NO coordinate
+// literals. Zero OR >1 candidates → throw loudly (no guess). This pure predicate runs on
+// plain descriptors so it is node-testable (acceptance #65 ambiguous-candidate fixture
+// RAISES) and shares its logic with the DOM-write helper (useAtlasStage), which builds
+// the descriptors from the live svg's direct-child rects.
+
+/**
+ * A minimal, DOM-agnostic descriptor of a candidate <rect>: its numeric width/height
+ * (parsed from the attributes) and whether it carries a `fill`. The DOM helper builds
+ * one of these per direct-child rect of the svg; the pure identifier below selects the
+ * plate. Keeping the shape plain (no SVGRectElement) makes the identity logic unit-
+ * testable under vitest's `node` env with the SAME code path the runtime uses.
+ */
+export interface PlateRectCandidate {
+  /** Stable handle back to the source element (e.g., the SVGRectElement, or a test id). */
+  ref: unknown;
+  /** Parsed `width` attribute as a number (NaN if absent/malformed — never matches). */
+  width: number;
+  /** Parsed `height` attribute as a number (NaN if absent/malformed — never matches). */
+  height: number;
+  /** True iff the rect carries a non-empty `fill` attribute. */
+  hasFill: boolean;
+}
+
+/**
+ * Identify the canvas PLATE among the svg's direct-child rects, STRUCTURALLY and
+ * FAIL-LOUD (spec §9.5 D5-a). The plate is the candidate whose width/height equal the
+ * native canvas dims AND which carries a fill. Exactly ONE must match:
+ *   - 0 matches → throw (the artifact changed shape; do NOT guess a substitute).
+ *   - >1 matches → throw (ambiguous; do NOT pick by index or fill literal).
+ * Returns the single matching candidate (the caller writes the fit box to its `ref`).
+ *
+ * @param candidates the svg's direct-child rects as descriptors
+ * @param native     the parsed native viewBox (bounds.native) — the plate's emitted dims
+ */
+export function identifyPlateRect(
+  candidates: PlateRectCandidate[],
+  native: ViewBox
+): PlateRectCandidate {
+  const matches = candidates.filter(
+    (c) => c.hasFill && c.width === native.width && c.height === native.height
+  );
+  if (matches.length === 0) {
+    throw new Error(
+      `atlasLens: no canvas plate rect found (a direct-child <rect> of the svg with ` +
+        `width=${native.width} height=${native.height} and a fill). The artifact shape ` +
+        `changed — refusing to guess (spec §9.5 D5-a).`
+    );
+  }
+  if (matches.length > 1) {
+    throw new Error(
+      `atlasLens: ambiguous canvas plate — ${matches.length} direct-child rects match ` +
+        `native ${native.width}×${native.height} with a fill. Structural identity requires ` +
+        `exactly one; refusing to pick by index or fill literal (spec §9.5 D5-a).`
+    );
+  }
+  return matches[0];
+}
+
+// ---- Attribute serialization for the mount-time write (spec §9.5 D5 write-set) ----
+//
+// The fit box is written ONCE (as a WRITE-SET, spec §9.5 D5-c) to the live SVG at inline
+// (initial mount + each skin flip): the `viewBox` attribute, the planeClip <rect>
+// x/y/width/height, AND the canvas PLATE rect x/y/width/height (§9.5 D5-a) — plus the
+// removal of the svg's own width/height attrs (§9.5 D5-b). After that the chart is
+// static — no interaction-driven mutation. These pure serializers keep the DOM-write
+// helper (useAtlasStage) free of formatting logic and unit-testable here.
 
 /** Round a canvas coordinate for a DOM attribute (4 dp — sub-pixel, stable). */
 function fmt(n: number): string {

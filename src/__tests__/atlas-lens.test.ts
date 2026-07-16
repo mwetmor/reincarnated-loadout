@@ -1,4 +1,5 @@
-// atlas-lens.test.ts — the artifact-derived FIT-BOX math (spec §9.4, acc #60/#62).
+// atlas-lens.test.ts — the artifact-derived FIT-BOX math + the STRUCTURAL plate
+// identification (spec §9.4 + §9.5, acc #60/#62/#63/#65).
 //
 // D4 (spec §9.4, Matt 2026-07-15): the chart mounts at the FULL-HORIZON FIT view —
 // "just barely encompass all of the horizon" — NOT at S_max. This SUPERSEDES the D3-b
@@ -6,17 +7,26 @@
 // canvasToRenderedPx / centerScroll / planeCenterCanvas) and the S_max DERIVATION
 // (minSelectableRadius / TARGET_D / sMax / the doctored-RADIUS probe) are RETIRED with
 // the scroll stage — table→chart is now a page-level scrollIntoView of the chart region.
+//
+// D5 (spec §9.5, Matt 2026-07-15): the "screen box" resizes to the ruled zoom. The
+// mount-time write becomes a WRITE-SET (§9.5 D5-c): viewBox · planeClip · PLATE · svg
+// sizing, all to the SAME derived fit box. This test file adds the pure, FAIL-LOUD
+// STRUCTURAL plate identifier (identifyPlateRect) — happy path, the doctored-HULL probe
+// EXTENDED to the plate (wider fit box → what the plate is written to grows, via
+// viewBoxToRectAttrs(fitBox)), and the ambiguous/absent-candidate fixtures that RAISE.
+//
 // What SURVIVES + is asserted here: the SVG-source parsing (parseViewBox /
-// parsePlaneClipRect / parseHullBbox / pointsBbox) AND the new FIT-BOX derivation
-// (§9.4): unionBbox / padBbox / aspectPinToViewBox / deriveBounds's fitBox + sMin +
-// the doctored-HULL probe + the viewBox/rect attribute serializers. All run under
-// vitest's `node` env (strings/numbers, no DOM) — the same derivation path the runtime
-// uses on the fetched markup.
+// parsePlaneClipRect / parseHullBbox / pointsBbox) AND the FIT-BOX derivation (§9.4):
+// unionBbox / padBbox / aspectPinToViewBox / deriveBounds's fitBox + sMin + the
+// doctored-HULL probe + the viewBox/rect attribute serializers + (§9.5) identifyPlateRect.
+// All run under vitest's `node` env (strings/numbers/plain descriptors, no DOM) — the
+// SAME derivation + identity path the runtime uses on the fetched markup + live rects.
 
 import { describe, it, expect } from 'vitest';
 import {
   FIT_MARGIN,
   deriveBounds,
+  identifyPlateRect,
   parseViewBox,
   parsePlaneClipRect,
   parseHullBbox,
@@ -26,12 +36,16 @@ import {
   aspectPinToViewBox,
   viewBoxToAttr,
   viewBoxToRectAttrs,
+  type PlateRectCandidate,
 } from '../utils/atlasLens';
 
 /**
  * A synthetic SVG mirroring the real Edition-II r7 artifact's load-bearing shape:
  *   - viewBox 0 0 1600 1200 (native canvas)
  *   - a planeClip rect (the emitted trim) x=96 y=132 w=1408 h=972 (the real values)
+ *   - the canvas PLATE rect: DIRECT child of <svg>, x=0 y=0 w=1600 h=1200 fill=#0e1016
+ *     — native-dim + filled, the sole structural plate (spec §9.5 D5-a); every nested
+ *     rect (the planeClip rect inside <defs>) is NOT a direct child and/or not native-dim
  *   - ONE dashed hull polyline (dasharray "7 5") whose px bbox EXCEEDS the canvas on
  *     all four edges (x[43.10, 1725.54] × y[−1.74, 1363.27] — the real extremes)
  *   - kit circles (data-kit) + a meso-ghost circle (data-core) — present for realism
@@ -235,5 +249,117 @@ describe('atlasLens — mount-write attribute serializers (§9.4 D4-a)', () => {
     // The rect and the viewBox are the SAME box (D4-a: both written to the fit box).
     const vb = viewBoxToAttr(bounds.fitBox).split(' ');
     expect([r.x, r.y, r.width, r.height]).toEqual(vb);
+  });
+});
+
+// ---- §9.5 D5-a: structural, FAIL-LOUD plate identification ----
+//
+// The runtime enumerates the live svg's DIRECT-CHILD rects and describes each as a
+// PlateRectCandidate {ref, width, height, hasFill}; identifyPlateRect picks the single
+// native-dim + filled candidate (0 or >1 → throws). These tests mirror that shape with
+// plain descriptors (the SAME pure code path, no DOM). The "direct-child" scoping is the
+// hook's responsibility (Array.from(svg.children).filter(rect)); here we assert the
+// identity predicate ITSELF: native-dim + fill, exactly one, else raise.
+
+/**
+ * Extract the DIRECT-CHILD rects of the <svg> from a source string as plate candidates,
+ * mirroring the hook's `Array.from(svg.children).filter(rect)` scoping WITHOUT a DOM:
+ * grab only rects that are NOT inside <defs> (the planeClip rect lives in <defs> and is
+ * therefore not a direct child). This keeps the fixture honest to the runtime scoping.
+ */
+function directChildRectCandidates(svg: string): PlateRectCandidate[] {
+  const withoutDefs = svg.replace(/<defs>[\s\S]*?<\/defs>/g, '');
+  // Only rects that are NOT nested in a <g> … </g> (top-level rects). The synthetic +
+  // real artifacts place the plate as a top-level rect right after </defs>; every other
+  // rect is inside a layer group. A light structural filter: strip <g>…</g> blocks too.
+  const topLevel = withoutDefs.replace(/<g\b[\s\S]*?<\/g>/g, '');
+  const rects = topLevel.match(/<rect\b[^>]*\/?>/g) ?? [];
+  return rects.map((tag, i) => {
+    const attr = (name: string): string | null => {
+      const m = tag.match(new RegExp(`\\b${name}="([^"]*)"`));
+      return m ? m[1] : null;
+    };
+    const w = attr('width');
+    const h = attr('height');
+    const fill = attr('fill');
+    return {
+      ref: `rect#${i}`,
+      width: w == null ? NaN : Number(w),
+      height: h == null ? NaN : Number(h),
+      hasFill: (fill ?? '').trim() !== '',
+    };
+  });
+}
+
+describe('atlasLens — structural plate identification (§9.5 D5-a, acc #63/#65)', () => {
+  const native = parseViewBox(SYNTH_SVG);
+
+  it('picks the SINGLE native-dim, filled direct-child rect as the plate', () => {
+    const candidates = directChildRectCandidates(SYNTH_SVG);
+    // The synthetic artifact has exactly one top-level rect: the plate.
+    expect(candidates).toHaveLength(1);
+    const plate = identifyPlateRect(candidates, native);
+    expect(plate.ref).toBe('rect#0');
+    expect(plate.width).toBe(native.width);
+    expect(plate.height).toBe(native.height);
+    expect(plate.hasFill).toBe(true);
+  });
+
+  it('identifies by native dims + fill, NOT by fill literal or index', () => {
+    // Two direct-child rects, plate SECOND, different fill hex (mirrors dark vs light
+    // canvas: #0e1016 / #f7f8fa). Structural identity must pick the native-dim one
+    // regardless of order or fill value — a decoy non-native filled rect is ignored.
+    const candidates: PlateRectCandidate[] = [
+      { ref: 'decoy-footer', width: 400, height: 24, hasFill: true }, // non-native filled
+      { ref: 'plate', width: 1600, height: 1200, hasFill: true }, // the plate (2nd)
+    ];
+    expect(identifyPlateRect(candidates, native).ref).toBe('plate');
+
+    // Same plate, arbitrary fill value — still identified (no fill-literal matching).
+    const lightCanvas: PlateRectCandidate[] = [
+      { ref: 'plate-light', width: 1600, height: 1200, hasFill: true },
+    ];
+    expect(identifyPlateRect(lightCanvas, native).ref).toBe('plate-light');
+  });
+
+  it('FAIL-LOUD: ZERO candidates (no native-dim filled rect) RAISES', () => {
+    // A native-dim rect with NO fill is not a plate; a filled rect at non-native dims is
+    // not a plate. Neither matches → throw (the artifact shape changed; refuse to guess).
+    const noFillAtNative: PlateRectCandidate[] = [
+      { ref: 'unfilled-plate-slot', width: 1600, height: 1200, hasFill: false },
+      { ref: 'filled-but-small', width: 800, height: 600, hasFill: true },
+    ];
+    expect(() => identifyPlateRect(noFillAtNative, native)).toThrow(/no canvas plate rect/i);
+    // And the truly-empty case.
+    expect(() => identifyPlateRect([], native)).toThrow(/no canvas plate rect/i);
+  });
+
+  it('FAIL-LOUD: AMBIGUOUS (>1 native-dim filled rect) RAISES — no index/fill tiebreak', () => {
+    const ambiguous: PlateRectCandidate[] = [
+      { ref: 'plate-a', width: 1600, height: 1200, hasFill: true },
+      { ref: 'plate-b', width: 1600, height: 1200, hasFill: true },
+    ];
+    expect(() => identifyPlateRect(ambiguous, native)).toThrow(/ambiguous canvas plate/i);
+  });
+
+  it('DOCTORED-HULL PROBE extends to the PLATE: a wider fit box ⇒ the plate is written wider, zero code change', () => {
+    // The plate is written to viewBoxToRectAttrs(fitBox) — the SAME fit box as viewBox +
+    // planeClip. So the D4 doctored-hull probe (enlarge a hull vertex in the SOURCE →
+    // wider fit box) makes the plate follow with zero code change (acceptance #63/#65).
+    const baseline = deriveBounds(SYNTH_SVG);
+    const doctored = deriveBounds(SYNTH_SVG.replace('1725.54,625.81', '2600.00,625.81'));
+
+    // The plate is identified identically in both (structural; unchanged by the hull).
+    const basePlate = identifyPlateRect(directChildRectCandidates(SYNTH_SVG), native);
+    expect(basePlate.ref).toBe('rect#0');
+
+    // What the plate gets WRITTEN to (viewBoxToRectAttrs(fitBox)) grows with the fit box.
+    const baseAttrs = viewBoxToRectAttrs(baseline.fitBox);
+    const doctoredAttrs = viewBoxToRectAttrs(doctored.fitBox);
+    expect(Number(doctoredAttrs.width)).toBeGreaterThan(Number(baseAttrs.width));
+    // Plate write == planeClip write == viewBox (acceptance #63: all three the fit box).
+    expect([doctoredAttrs.x, doctoredAttrs.y, doctoredAttrs.width, doctoredAttrs.height]).toEqual(
+      viewBoxToAttr(doctored.fitBox).split(' ')
+    );
   });
 });
