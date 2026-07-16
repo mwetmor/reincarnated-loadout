@@ -11,11 +11,36 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-15 (atlas D3 UX pass — simple filters REPLACE pivots + zoom REMOVED, fixed at derived S_max w/ native scroll; acc 54–59 green; D2 union grid untouched; Vercel PREVIEW shipped, prod HELD for gandalf verify)
-**Last commit:** `0a09713` atlas D3 pass — five filter controls (AND-composed, non-applicable-fails law, family enumerated from data) → ONE flat D2 grid; fixed S_max mount (derived, no scale literal) + native scroll (viewBox/planeClip verbatim); pivot engine + zoom lens retired w/ tests; on top of D2 (2bff3c2). Vercel PREVIEW shipped (prod HELD for gandalf).
+**Last updated:** 2026-07-15 (atlas **D4 correction** — chart mounts at the FULL-HORIZON FIT box, NOT S_max; §9.4; acc 60–62 green; table/filter/column ZERO diffs; Vercel PREVIEW shipped, prod HELD for gandalf verify)
+**Last commit:** `3aa1d66` atlas D4 correction — chart is a STATIC full-horizon map: mounts at the DERIVED FIT BOX (union(canvas ∪ hull) + FIT_MARGIN, aspect-pinned, centered = old S_min view) written ONCE to viewBox + planeClip; overflow-auto scroll stage reverted to w-full h-auto page flow; scroll-nav math retired; §9.3 verbatim law amended per §9.4. On top of D3 (0a09713). Vercel PREVIEW shipped (prod HELD for gandalf).
+**Prior commit:** `0a09713` atlas D3 pass — five filter controls (AND-composed, non-applicable-fails law, family enumerated from data) → ONE flat D2 grid; fixed S_max mount (derived, no scale literal) + native scroll (viewBox/planeClip verbatim); pivot engine + zoom lens retired w/ tests; on top of D2 (2bff3c2).
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
+
+---
+
+## Atlas D4 correction pass — chart mounts at the FULL-HORIZON FIT, NOT S_max (2026-07-15)
+
+**Spec:** `reincarnated-collaboration/agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md` **§9.4** (D4-a…D4-d; acc 60–62).
+**Authority:** Matt 2026-07-15 7th message — "The table is PERFECT! The Atlas chart is completely wrong. Instead of setting the atlas zoom to just barely encompass all of the horizon, it's super-zoomed into a small set of ghost cells." D3-b (gandalf misread, owned in-spec) mapped "max zoom parameter" → S_max (the zoom-IN ceiling); Matt meant the zoom-OUT limit = the fit view. SUPERSEDES D3-b's fixed-S_max + native-scroll stage. Built on D3 (commit 0a09713). Auto-commit per CLAUDE.md team discipline. PREVIEW-only deploy; prod alias HELD for gandalf verify.
+
+**ABSOLUTE CONSTRAINT HELD — the table is Matt-RATIFIED ("PERFECT"):** ZERO diffs to `AtlasBuildTable.tsx`, the filter model (`atlasPivot.ts`), or the column model (`atlasColumns.ts`). Verified `git diff HEAD~1 --name-only` — those three files ABSENT from the D4 commit. Only the chart-stage files changed.
+
+**Files changed (4):**
+- `src/utils/atlasLens.ts` — REPOINTED from S_max derivation to FIT-BOX derivation. RETIRED: `TARGET_D`, `minSelectableRadius`, `sMax`/`rMinSelectable` fields, `renderedSize`, `canvasToRenderedPx`, `centerScroll`, `planeCenterCanvas` (the fixed-mount scroll-nav math). REVIVED from the pre-D3 lens: `FIT_MARGIN`, `unionBbox`, `padBbox`, and `aspectPinToViewBox` (the old `fitScale`+`viewBoxFor`-at-S_min logic, refactored to one pure fn). `deriveBounds` now returns `{ native, planeClip, fitBox, fitUnion, sMin, hullBbox }`. NEW: `viewBoxToAttr` / `viewBoxToRectAttrs` (mount-write serializers, 4dp trimmed). KEPT: `parseViewBox`/`parsePlaneClipRect`/`parseHullBbox`/`pointsBbox`.
+- `src/hooks/useAtlasStage.ts` (192→~110 ln) — REPLACED fixed-S_max sizing + scroll + resize + `scrollToMark` with ONE mount-time config: on markup inline (initial + skin flip), write the derived fit box to the live SVG's `viewBox` attr AND the `#planeClip rect` x/y/w/h. Static thereafter. Signature dropped `stageRef` (returns only `{ bounds }`).
+- `src/pages/Atlas.tsx` — stage `overflow-auto h-[70vh] [overscroll-behavior:contain]` → `w-full [&>svg]:block/h-auto/w-full` page-flow chart REGION (new `chartRegionRef`; `stageRef` gone). `handleSelectRow` center-scroll → page-level `scrollIntoView({block:'nearest'})` of the chart region when out of viewport (new `isElementInViewport` helper). Receipt line → fit box + implied S_min. aria-label "Build Horizon — full-horizon chart". Import `TARGET_D`→`FIT_MARGIN`. Chart→table wiring (filter-reset-then-scroll) UNCHANGED.
+- `src/__tests__/atlas-lens.test.ts` — REPOINTED. Retired citing §9.4: S_max derivation tests (`minSelectableRadius`/`TARGET_D`/`sMax`/doctored-RADIUS probe) + fixed-mount scroll-nav tests (`renderedSize`/`canvasToRenderedPx`/`centerScroll`/`planeCenterCanvas`). NEW: fit-box geometry (unionBbox/padBbox/aspectPinToViewBox — widen-short-dim/centered/contains both directions) + fit-box receipt (`-79.2367 -25.74 1884.0133 1413.01`, S_min 0.849251) + **doctored-HULL probe** (enlarge a hull vertex in source → wider fit box, smaller S_min, zero code change — mirrors the D3 doctored-radius probe) + no-box-literal probe + attr serializers.
+
+**Receipts (real archive artifact `29dc29f3…`):**
+- Fit box = `padBbox(unionBbox(canvas 0,0–1600,1200, hull x[43.10,1725.54]×y[−1.74,1363.27]), 24)` = fitUnion x[−24,1749.54]×y[−25.74,1387.27]; height binds (uH·4/3=1884.01 > uW=1773.54) → widen X.
+- **viewBox = planeClip = `-79.2367 -25.74 1884.0133 1413.01`** · **implied S_min = 0.849251×** · WHOLE HULL in frame.
+- CDP (playwright, `/atlas`, 1440px): DOM viewBox + planeClip == the fit box; hull rendered bbox 1429×1159 fully inside the 1600×1200 SVG frame; four pole rails (LAUNCH/EMBODY/DEPLOY/PERFORM) + banner in frame; NOT zoomed into a cluster; skin flip re-applies the identical fit box; table→chart selects `build · Arrow Storm Warden — Chronicon 2020` + injects the halo rule; ZERO console errors.
+
+**Verification:** 178/178 tests green (16 in the repointed lens suite; ALL 19 filter tests + table tests untouched-and-green; axis-inversion guard, sidecar-join, community-vocab, highlight all green). `npm run build` clean. Both SVG sha256 UNCHANGED (archive `29dc29f3…`, instrument `a5954a0e…`). Frozen JSON inputs untouched.
+
+**Preview:** `https://reincarnated-loadout-7w7osrxgx-matthew-wetmore-s-projects.vercel.app` (deploy id `dpl_7xMnDibymHcFfERAchkZcnRAoecb`, target=null=preview). **Production alias NOT touched — gandalf promotes after verify.**
 
 ---
 
