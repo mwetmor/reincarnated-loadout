@@ -1,35 +1,41 @@
-// atlasLens.ts — the artifact-derived scale math for the Build Horizon chart stage.
+// atlasLens.ts — the artifact-derived FIT-BOX math for the Build Horizon chart.
 //
 // PURE MODULE. No React, no DOM APIs — everything here operates on plain numbers
 // and (for bound derivation) the SVG SOURCE STRING. That keeps the load-bearing
-// math unit-testable under vitest's `node` environment, and makes S_max provably
-// DERIVED FROM THE ARTIFACT (§8.2, §4c never-invent): we parse the very bytes that
-// become the mounted SVG rather than restating any constant.
+// math unit-testable under vitest's `node` environment, and makes the mount box
+// provably DERIVED FROM THE ARTIFACT (§4c never-invent, §9.4): we parse the very
+// bytes that become the mounted SVG rather than restating any constant.
 //
-// D3 (spec §9.3, Matt 2026-07-15): the v1 zoom LENS is retired — pivots→filters,
-// zoom→fixed S_max. The interactive viewBox-lens math (zoomAtPoint / panByScreen /
-// gestureTransform / viewBoxFor / clip-tracks-view) is GONE with its tests. What
-// SURVIVES (and is load-bearing) is §8.2's BOUND DERIVATION: the chart now mounts at
-// a FIXED magnification = S_max, still derived from the mounted artifact bytes, and
-// navigation is NATIVE browser scrolling (no runtime viewBox/planeClip mutation).
+// D4 (spec §9.4, Matt 2026-07-15): the chart mounts at the FULL-HORIZON FIT view —
+// "just barely encompass all of the horizon" — NOT at S_max. D3-b's fixed-S_max +
+// native-scroll stage is SUPERSEDED: there is no zoom, no scroll, no pan. The mount
+// box is the OLD S_min view: union(canvas ∪ hull px bbox) + FIT_MARGIN, aspect-pinned
+// to the native 4:3 and centered on the union (exactly the old lens's viewBoxFor at
+// S_min). It is written ONCE to the SVG's `viewBox` + `planeClip` rect at inline
+// (initial mount + each skin flip) and static thereafter.
+//
+// (Supersession, §9.4: an EARLIER comment here asserted "no S_min is computed — there
+// is no zoom-out." That was D3-b's law. §9.4 revives the S_min/fit-box derivation as
+// the STATIC mount box — the fit view IS the ruled chart. S_max derivation is retired
+// with the scroll stage; the ≈8.276 ceiling is no longer load-bearing.)
 //
 // LAWS IMPLEMENTED:
-//   §8.2  S_max derived from the mounted artifact, never hardcoded.
-//         - S_max = TARGET_D / (2·r_min_selectable), where r_min_selectable is the
-//                   MIN radius among selection-wirable marks ONLY: [data-kit] +
-//                   [data-core] (meso ghosts). Drill-in glyphs (data-el=ghost with
-//                   NO data-core) are EXCLUDED — they do not drag the ceiling.
-//                   At S_max every selection-wirable mark renders ≥ TARGET_D by
-//                   construction — so no ease-scale logic is needed (§9.3 D3-b).
-//   §9.3  Fixed-mount navigation math: the SVG renders at (stageWidth × S_max), and
-//         a canvas point maps to a rendered pixel by canvasToRenderedPx(); the
-//         initial scroll centers the plane rect; a table-row click centers a mark.
-//         S_min (the old zoom-out floor) is NOT computed — there is no zoom-out.
+//   §9.4  The fit box = padBbox(unionBbox(canvasBbox, hullBbox), FIT_MARGIN),
+//         aspect-pinned to native (widen the short dim symmetrically), centered on
+//         the union. sMin = native.width / fitBox.width is the implied full-horizon
+//         scale (receipt only — it is not applied as a scroll magnification; the
+//         viewBox IS the fit box). A doctored hull in the source shifts the fit box
+//         with ZERO code change (acceptance #60/#62): the box is READ from the
+//         artifact, never restated.
 //
-// Spec: agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md §8.2, §9.3
+// Spec: agentic_orchestration/gandalf/notes/2026-07-15-atlas-interactive-glance-spec.md §9.4
 
-/** The ONE named design constant (spec §8.2): comfortable pointer-target diameter. */
-export const TARGET_D = 24;
+/**
+ * Margin (screen-independent px, canvas units) around the union in the fit box
+ * (spec §9.4, the old §8.2 S_min margin). The fit view pads the union by this on
+ * every side BEFORE the aspect-pin, so the closed hull never touches the frame edge.
+ */
+export const FIT_MARGIN = 24;
 
 /** An axis-aligned bounding box in canvas (viewBox) coordinates. */
 export interface Bbox {
@@ -48,20 +54,38 @@ export interface ViewBox {
 }
 
 /**
- * The artifact-derived mount bounds (spec §8.2 derivation, §9.3 fixed mount).
- * D3: no S_min / fitUnion / hull / reset-raw fields — there is no zoom-out floor and
- * no runtime mutation to reset. The chart mounts at `sMax` and scrolls natively.
+ * The artifact-derived mount bounds (spec §9.4 static fit box).
+ * D4: the chart mounts at `fitBox` (viewBox + planeClip written ONCE); no scroll, no
+ * zoom. `sMin` is the implied full-horizon scale (receipt only). `hullBbox` is the
+ * dashed-hull px bbox that drives the union (receipt: proves the hull closes in-frame).
  */
 export interface AtlasBounds {
   /** The native viewBox emitted by the renderer (`0 0 1600 1200`). */
   native: ViewBox;
-  /** The emitted planeClip <rect> attributes as NUMBERS — used ONLY to compute the
-   *  initial scroll position (plane-rect center). The rect is NEVER mutated (§9.3). */
+  /**
+   * The emitted planeClip <rect> attributes as NUMBERS. D4: the rect is REWRITTEN
+   * ONCE to `fitBox` at mount (so plane-layer content beyond the emitted clip — the
+   * hull's beyond-canvas extent — renders). These are the ORIGINAL emitted numbers,
+   * kept for the derivation receipt / reference.
+   */
   planeClip: { x: number; y: number; width: number; height: number };
-  /** Zoom-in ceiling = the FIXED mount scale: Matt's single-mark selection ease (§8.2). */
-  sMax: number;
-  /** The min selectable radius that set sMax (derivation receipt, acceptance #57). */
-  rMinSelectable: number;
+  /**
+   * The FIT BOX (spec §9.4): the union(canvas ∪ hull) + FIT_MARGIN, aspect-pinned to
+   * native and centered on the union. This is the ONE box written to the SVG's
+   * `viewBox` AND `planeClip` rect at mount. The whole horizon (incl. beyond-canvas
+   * hull extent) is in-frame at this box.
+   */
+  fitBox: ViewBox;
+  /** The un-aspect-pinned padded union (receipt: what the fit box must contain). */
+  fitUnion: Bbox;
+  /**
+   * The implied full-horizon scale = native.width / fitBox.width (the old §8.2 S_min).
+   * Receipt only — NOT applied as a magnification; the viewBox IS the fit box (a
+   * viewBox WIDER than native = a view "zoomed out" from native).
+   */
+  sMin: number;
+  /** The dashed-hull polyline px bbox (receipt: the union's beyond-canvas driver). */
+  hullBbox: Bbox;
 }
 
 // ---- SVG-source parsing (works on the exact bytes that become the DOM) ----
@@ -77,7 +101,7 @@ export function parseViewBox(svg: string): ViewBox {
 /**
  * Parse the emitted planeClip rect (`<clipPath id="planeClip"><rect x=.. y=.. w=.. h=..`).
  * Returns BOTH the numeric values (for arithmetic) AND the EXACT original attribute
- * STRINGS (for verbatim reset — §8.3, acceptance #39: "96.00" restores as "96.00").
+ * STRINGS (retained for reference / receipts).
  */
 export function parsePlaneClipRect(svg: string): {
   x: number;
@@ -140,121 +164,98 @@ export function pointsBbox(points: string): Bbox {
   return { x0, y0, x1, y1 };
 }
 
-/**
- * The MIN radius among SELECTION-WIRABLE marks only (spec §8.2): circles carrying
- * `data-kit` (kits) OR `data-core` (meso ghosts). Drill-in ghosts (data-el="ghost"
- * with NO data-core) are EXCLUDED. Returns the min `r`, or throws if none present.
- *
- * We scan every <circle …> once; a circle is selectable iff its tag text contains
- * `data-kit=` or `data-core=`. This mirrors the runtime CSS-selector wirability
- * (atlasSelectPath.hookToSelection) exactly — same seam, same set.
- */
-export function minSelectableRadius(svg: string): number {
-  let min = Infinity;
-  const circleRe = /<circle\b([^>]*)\/?>/g;
-  let m: RegExpExecArray | null;
-  while ((m = circleRe.exec(svg)) !== null) {
-    const attrs = m[1];
-    const wirable = /\bdata-kit=/.test(attrs) || /\bdata-core=/.test(attrs);
-    if (!wirable) continue;
-    const rm = attrs.match(/\br="([-\d.]+)"/);
-    if (!rm) continue;
-    const r = +rm[1];
-    if (Number.isFinite(r) && r > 0 && r < min) min = r;
-  }
-  if (!Number.isFinite(min)) {
-    throw new Error('atlasLens: no selectable ([data-kit]/[data-core]) circle radii found');
-  }
-  return min;
+// ---- Fit-box geometry (spec §9.4 — the surviving derivation law) ----
+
+/** Union of two bboxes. */
+export function unionBbox(a: Bbox, b: Bbox): Bbox {
+  return {
+    x0: Math.min(a.x0, b.x0),
+    y0: Math.min(a.y0, b.y0),
+    x1: Math.max(a.x1, b.x1),
+    y1: Math.max(a.y1, b.y1),
+  };
 }
 
-// ---- Bound derivation (S_max, §8.2 — the surviving derivation law) ----
+/** Grow a bbox by `m` on every side. */
+export function padBbox(b: Bbox, m: number): Bbox {
+  return { x0: b.x0 - m, y0: b.y0 - m, x1: b.x1 + m, y1: b.y1 + m };
+}
 
 /**
- * Derive the FIXED mount scale (S_max) + the plane-rect coords from the SVG source
- * string (spec §8.2). This is the single derivation path used at runtime (on the
- * fetched markup) AND in unit tests (on a synthetic SVG string) — proving the mount
- * scale is COPIED from the artifact, never restated. A doctored radius in the source
- * shifts sMax with ZERO code change (acceptance #57; the ≈8.276 literal appears
- * NOWHERE in source). No S_min / hull / union is computed — there is no zoom-out.
+ * Aspect-pin a bbox to `aspect` (native width/height) and return it as a ViewBox,
+ * centered on the bbox (spec §9.4). The viewBox must COVER the box in BOTH dims while
+ * holding the native aspect, so widen whichever dimension is short (symmetric, so the
+ * union stays centered) — this is exactly the old lens's viewBoxFor at S_min:
+ *   vbW = max(uW, uH · aspect); vbH = vbW / aspect;
+ *   minx = box.x0 + (uW − vbW)/2;  miny = box.y0 + (uH − vbH)/2  (one delta is 0).
+ */
+export function aspectPinToViewBox(box: Bbox, aspect: number): ViewBox {
+  const uW = box.x1 - box.x0;
+  const uH = box.y1 - box.y0;
+  const vbW = Math.max(uW, uH * aspect);
+  const vbH = vbW / aspect;
+  const minx = box.x0 + (uW - vbW) / 2;
+  const miny = box.y0 + (uH - vbH) / 2;
+  return { minx, miny, width: vbW, height: vbH };
+}
+
+/**
+ * Derive the STATIC FIT BOX (spec §9.4) from the SVG source string. This is the single
+ * derivation path used at runtime (on the fetched markup) AND in unit tests (on a
+ * synthetic SVG string) — proving the mount box is COPIED from the artifact, never
+ * restated. A doctored hull in the source shifts the fit box with ZERO code change
+ * (acceptance #60/#62; no box literal appears anywhere in source).
+ *
+ * fitBox = aspect-pin( padBbox(union(canvasBbox, hullBbox), FIT_MARGIN) ), native aspect.
+ * sMin (receipt) = native.width / fitBox.width — the implied full-horizon scale.
  */
 export function deriveBounds(svg: string): AtlasBounds {
   const native = parseViewBox(svg);
   const clip = parsePlaneClipRect(svg);
-  const rMinSelectable = minSelectableRadius(svg);
+  const hullBbox = parseHullBbox(svg);
 
-  const sMax = TARGET_D / (2 * rMinSelectable);
+  const canvasBbox: Bbox = {
+    x0: native.minx,
+    y0: native.miny,
+    x1: native.minx + native.width,
+    y1: native.miny + native.height,
+  };
+  const fitUnion = padBbox(unionBbox(canvasBbox, hullBbox), FIT_MARGIN);
+  const aspect = native.width / native.height;
+  const fitBox = aspectPinToViewBox(fitUnion, aspect);
+  const sMin = native.width / fitBox.width;
 
   return {
     native,
     planeClip: { x: clip.x, y: clip.y, width: clip.width, height: clip.height },
-    sMax,
-    rMinSelectable,
+    fitBox,
+    fitUnion,
+    sMin,
+    hullBbox,
   };
 }
 
-// ---- Fixed-mount navigation math (spec §9.3 D3-b) ----
+// ---- Attribute serialization for the mount-time write (spec §9.4 D4-a) ----
 //
-// The SVG renders at a FIXED width = stageWidth × S_max; its height follows the
-// intrinsic 4:3 aspect. A canvas-space point (cx, cy) — read off the inlined DOM
-// by [data-kit]/[data-core], or the plane-rect center — maps to a RENDERED pixel by
-// a straight linear scale, because the viewBox is native (`0 0 W H`, minx=miny=0)
-// and there is no letterboxing. These pure helpers drive the initial scroll-center
-// and the table→chart center-scroll. No runtime viewBox/planeClip mutation.
+// The fit box is written ONCE to the live SVG's `viewBox` attribute AND the planeClip
+// <rect> x/y/width/height at inline (initial mount + each skin flip). After that the
+// chart is static — no interaction-driven mutation. These pure serializers keep the
+// DOM-write helper (useAtlasStage) free of formatting logic and unit-testable here.
 
-/** The rendered pixel SIZE of the SVG at the fixed mount (stageWidth × S_max). */
-export function renderedSize(
-  native: ViewBox,
-  stageWidthPx: number,
-  sMax: number
-): { width: number; height: number } {
-  const width = stageWidthPx * sMax;
-  const height = width * (native.height / native.width);
-  return { width, height };
+/** Round a canvas coordinate for a DOM attribute (4 dp — sub-pixel, stable). */
+function fmt(n: number): string {
+  // toFixed(4) then trim trailing zeros / dot so integers stay clean.
+  return n.toFixed(4).replace(/\.?0+$/, '');
 }
 
-/**
- * Map a canvas-space point to a rendered pixel offset within the SVG, given the
- * rendered size. viewBox is native (origin 0,0), so this is a linear scale by the
- * rendered/canvas ratio on each axis (identical ratios since aspect is preserved).
- */
-export function canvasToRenderedPx(
-  cx: number,
-  cy: number,
-  native: ViewBox,
-  rendered: { width: number; height: number }
-): { px: number; py: number } {
-  const px = ((cx - native.minx) / native.width) * rendered.width;
-  const py = ((cy - native.miny) / native.height) * rendered.height;
-  return { px, py };
+/** The `viewBox` attribute string for a ViewBox (minx miny width height). */
+export function viewBoxToAttr(vb: ViewBox): string {
+  return `${fmt(vb.minx)} ${fmt(vb.miny)} ${fmt(vb.width)} ${fmt(vb.height)}`;
 }
 
-/**
- * The scrollLeft/scrollTop that centers a canvas-space point in a viewport of the
- * given size, clamped to the scrollable range [0, rendered − viewport]. Used for
- * the initial plane-center scroll and the table→chart mark-center scroll (§9.3).
- */
-export function centerScroll(
-  cx: number,
-  cy: number,
-  native: ViewBox,
-  rendered: { width: number; height: number },
-  viewport: { width: number; height: number }
-): { scrollLeft: number; scrollTop: number } {
-  const { px, py } = canvasToRenderedPx(cx, cy, native, rendered);
-  const scrollLeft = clampScroll(px - viewport.width / 2, rendered.width - viewport.width);
-  const scrollTop = clampScroll(py - viewport.height / 2, rendered.height - viewport.height);
-  return { scrollLeft, scrollTop };
-}
-
-/** The canvas-space center of the plane rect (initial scroll target, §9.3). */
-export function planeCenterCanvas(bounds: AtlasBounds): { cx: number; cy: number } {
-  const { x, y, width, height } = bounds.planeClip;
-  return { cx: x + width / 2, cy: y + height / 2 };
-}
-
-/** Clamp a scroll offset into [0, max]; max<0 (content smaller than view) → 0. */
-function clampScroll(v: number, max: number): number {
-  if (max <= 0) return 0;
-  return Math.min(Math.max(v, 0), max);
+/** The planeClip <rect> attribute values for a ViewBox (spec §9.4 D4-a). */
+export function viewBoxToRectAttrs(
+  vb: ViewBox
+): { x: string; y: string; width: string; height: string } {
+  return { x: fmt(vb.minx), y: fmt(vb.miny), width: fmt(vb.width), height: fmt(vb.height) };
 }

@@ -10,12 +10,15 @@
 //     bidirectionally to the chart.
 //   - Edition-I stays as an archived second lens (current page structure).
 //
-// D3 (spec §9.3, Matt 2026-07-15): pivots→filters, zoom→fixed S_max.
-//   - The chart mounts at a FIXED scale = S_max, DERIVED from the mounted artifact
-//     bytes at runtime (useAtlasStage → deriveBounds; NO scale literal in source).
-//     Navigation is NATIVE browser scrolling in a bounded-height overflow-auto stage;
-//     the SVG's emitted viewBox + planeClip serve VERBATIM (never mutated at runtime).
-//   - The pivot table is retired; a filter bar (five controls) drives a flat table.
+// D3 (spec §9.3, Matt 2026-07-15): pivots→filters. The pivot table is retired; a
+//   filter bar (five controls) drives a flat table.
+// D4 (spec §9.4, Matt 2026-07-15): the chart is a STATIC FULL-HORIZON MAP.
+//   - It mounts at the DERIVED FIT BOX (union(canvas ∪ hull) + FIT_MARGIN, aspect-
+//     pinned, centered — the old S_min view), written ONCE to the SVG's viewBox +
+//     planeClip at inline (useAtlasStage → deriveBounds; NO box literal in source).
+//     The whole horizon (incl. beyond-canvas hull extent) is visible at fluid width;
+//     no zoom, no pan, no scroll. (D3-b's fixed-S_max + native-scroll stage is
+//     superseded; §9.4 rules ONE mount-time write to the fit box as lawful.)
 //
 // SVG SOURCE: the r7 hooked Edition-II SVG (per-canvas file), vendored to
 // public/atlas/. It is INLINED (not <img>) so the page-injected highlight CSS can
@@ -32,7 +35,7 @@ import { useAtlasStage } from '../hooks/useAtlasStage';
 import { AtlasLegend } from '../components/atlas/AtlasLegend';
 import { AtlasSkinToggle } from '../components/atlas/AtlasSkinToggle';
 import { AtlasBuildTable } from '../components/atlas/AtlasBuildTable';
-import { TARGET_D } from '../utils/atlasLens';
+import { FIT_MARGIN } from '../utils/atlasLens';
 import { buildHighlightCss, type AtlasSelection } from '../utils/atlasHighlight';
 import { hookToSelection, itemToSelection } from '../utils/atlasSelectPath';
 import {
@@ -58,6 +61,18 @@ function leadSkinForDark(prov: RenderProvenance): SkinName {
   );
   // Fallback is defensive only; provenance always carries the dark entry.
   return entry ? entry[0] : 'archive';
+}
+
+/**
+ * True when any part of `el` is within the page viewport (§9.4 D4-d table→chart).
+ * The chart is a static map — table→chart only page-scrolls when the chart is OUT of
+ * view; if it's already (partly) visible, the in-place halo is enough (no jump).
+ */
+function isElementInViewport(el: HTMLElement): boolean {
+  const r = el.getBoundingClientRect();
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+  const vw = window.innerWidth || document.documentElement.clientWidth;
+  return r.bottom > 0 && r.right > 0 && r.top < vh && r.left < vw;
 }
 
 function LoadingState() {
@@ -117,18 +132,19 @@ export function Atlas() {
   const rootId = useId().replace(/:/g, '_'); // useId() emits ':' which is not id-safe
   const svgRootId = `atlas-svg-${rootId}`;
 
-  // ---- FIXED-SCALE STAGE (spec §9.3 D3-b): mount at S_max, native scroll ----
-  // S_max is DERIVED from the mounted artifact bytes (never hardcoded); the SVG's
-  // emitted viewBox + planeClip serve VERBATIM (never mutated). The stage owns the
-  // native scrollbars; the host div holds the inlined SVG.
-  const stageRef = useRef<HTMLDivElement>(null);
+  // ---- STATIC FULL-HORIZON MAP (spec §9.4 D4): mount at the derived fit box ----
+  // The fit box is DERIVED from the mounted artifact bytes (never hardcoded) and
+  // written ONCE to the SVG's viewBox + planeClip at inline; static thereafter (no
+  // scroll, no zoom, no pan). The host div holds the inlined SVG at page flow; the
+  // chartRegionRef is the scrollIntoView target for table→chart (page-level).
+  const chartRegionRef = useRef<HTMLDivElement>(null);
   const svgHostRef = useRef<HTMLDivElement>(null);
 
   // Inline the r7 SVG markup IMPERATIVELY into the host div, keyed on the markup.
-  // Owning the host's innerHTML outside React's render path keeps the artifact
-  // byte-equal in the DOM (no dangerouslySetInnerHTML churn); the stage hook sizes
-  // it (CSS width only) without touching the viewBox. Skin flip changes svgMarkup →
-  // the effect re-inlines the new-canvas artifact and the hook re-centers.
+  // Owning the host's innerHTML outside React's render path avoids dangerouslySet-
+  // InnerHTML churn; the stage hook then writes the derived fit box to the inlined
+  // SVG's viewBox + planeClip ONCE (§9.4 D4-c). Skin flip changes svgMarkup → the
+  // effect re-inlines the new-canvas artifact and the hook re-applies the fit box.
   useEffect(() => {
     const host = svgHostRef.current;
     if (!host) return;
@@ -136,19 +152,25 @@ export function Atlas() {
     else host.replaceChildren();
   }, [svgMarkup]);
 
-  const stage = useAtlasStage(stageRef, svgHostRef, svgMarkup, svgStatus === 'success');
+  const stage = useAtlasStage(svgHostRef, svgMarkup, svgStatus === 'success');
 
-  // ---- TABLE -> CHART: a leaf row click halos its mark + center-scrolls it (§9.3) ----
+  // ---- TABLE -> CHART: a leaf row click halos its mark; page-scrolls the chart (§9.4) ----
   const handleSelectRow = useCallback(
     (item: PivotItem) => {
       const sel = itemToSelection(item);
       setSelection(sel);
       setAggregateCells(null); // table-origin selection carries no aggregate caption
-      // Center-scroll the mark at the FIXED S_max (pan-only; no ease-scale — every
-      // wirable mark renders ≥ TARGET_D at S_max by construction, §9.3 D3-b).
-      stage.scrollToMark(sel);
+      // §9.4 D4-d: the chart is a STATIC map — there is no stage scroll to center a
+      // mark. The halo (highlight CSS) lands on the mark in place. If the chart region
+      // is scrolled OUT of the page viewport, bring it into view (page-level). Accepted
+      // consequence: at fit scale the smallest marks render below TARGET_D — the TABLE
+      // is the precision surface; the chart is the overview map with halo feedback.
+      const region = chartRegionRef.current;
+      if (region && !isElementInViewport(region)) {
+        region.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
     },
-    [stage]
+    []
   );
 
   // ---- CHART -> TABLE: a mark click reads its hooks, sets selection + reveals ----
@@ -266,15 +288,18 @@ export function Atlas() {
         <AtlasLegend selected={selectedClasses} onToggle={toggleClass} canvas={activeCanvas} />
       </div>
 
-      {/* CHART STAGE (§9.3 D3-b) — the inlined r7 SVG renders at a FIXED S_max inside a
-          bounded-height, overflow-auto TWO-AXIS native-scroll stage. No zoom UI, no
-          gesture wiring; touch/trackpad scroll the stage natively. The stage owns the
-          scrollbars; the SVG width is set by useAtlasStage (CSS width only — the
-          emitted viewBox is untouched). Canvas hex fills the surround. */}
+      {/* CHART REGION (§9.4 D4) — the inlined r7 SVG is a STATIC full-horizon map. It
+          mounts at the DERIVED FIT BOX (whole horizon incl. beyond-canvas hull extent
+          in frame) and flows at fluid width, height following the fit-box aspect. No
+          zoom UI, no scroll stage, no gestures — the block flows w-full h-auto. Canvas
+          hex fills the exposed surround (the fit box is wider than the canvas, so the
+          out-of-canvas margin shows). Click delegation reads the data-el hooks for
+          chart->table. This region is the scrollIntoView target for table->chart. */}
       <div
-        ref={stageRef}
+        ref={chartRegionRef}
         onClick={handleChartClick}
-        className="relative h-[70vh] min-h-[480px] w-full overflow-auto rounded-lg border border-gray-800 [overscroll-behavior:contain]"
+        aria-label="Build Horizon — full-horizon chart"
+        className="relative w-full rounded-lg border border-gray-800 [&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
         style={{ backgroundColor: canvasHex }}
       >
         {/* Page-injected highlight CSS — targets the inlined SVG's data-el hooks. It is
@@ -284,13 +309,13 @@ export function Atlas() {
         {/*
           The vendored r7 SVG is inlined IMPERATIVELY (via the effect above), not
           through dangerouslySetInnerHTML on the render path. The host div carries the
-          inlined <svg>; useAtlasStage sizes it to (stage width × S_max) via CSS width
-          only, so the emitted viewBox + planeClip stay byte-equal in the DOM (#58).
-          Click delegation on the STAGE reads the data-el / data-kit / data-core hooks
+          inlined <svg>; useAtlasStage writes the derived fit box to its viewBox +
+          planeClip ONCE at mount (§9.4 D4-c: one mount-time config write is lawful).
+          Click delegation on the REGION reads the data-el / data-kit / data-core hooks
           off the event target (chart->table). The SVG is a print-grade static artifact
           with NO scripts inside (renderer law §3.4) — inlining is inert at rest.
         */}
-        <div id={svgRootId} ref={svgHostRef} className="atlas-svg-host block w-max select-none" />
+        <div id={svgRootId} ref={svgHostRef} className="atlas-svg-host block w-full select-none" />
 
         {!svgMarkup && (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -304,14 +329,17 @@ export function Atlas() {
         )}
       </div>
 
-      {/* FIXED-MOUNT RECEIPT (§9.3 acceptance #57): S_max derived at runtime from the
-          artifact — r_min_selectable + formula + resulting scale, no scale literal in
-          source. Read live from the stage hook's derived bounds. */}
+      {/* FIT-BOX RECEIPT (§9.4 acceptance #60): the full-horizon fit box derived at
+          runtime from the artifact — the box numbers + the implied S_min (native.width
+          / fitBox.width). No box literal in source; a doctored hull shifts it. Read
+          live from the stage hook's derived bounds. */}
       {stage.bounds && (
         <p className="mt-1.5 font-mono text-[10px] text-gray-600">
-          Fixed magnification {stage.bounds.sMax.toFixed(3)}× · derived from the artifact:
-          TARGET_D / (2 · r_min_selectable) = {TARGET_D} / (2 · {stage.bounds.rMinSelectable}) ·
-          native-scroll (no zoom)
+          Full-horizon fit view · viewBox{' '}
+          {stage.bounds.fitBox.minx.toFixed(1)} {stage.bounds.fitBox.miny.toFixed(1)}{' '}
+          {stage.bounds.fitBox.width.toFixed(1)} {stage.bounds.fitBox.height.toFixed(1)} · implied
+          S_min {stage.bounds.sMin.toFixed(3)}× · union(canvas ∪ hull) + {FIT_MARGIN}px margin,
+          aspect-pinned (no zoom, no scroll)
         </p>
       )}
 
