@@ -5,7 +5,7 @@
 //     provenance skin_canvas_map — NEVER by skin name (the names are inverted:
 //     'archive' = dark, 'instrument' = light; caught + ratified 2026-07-15).
 //   - White ('instrument') sits behind the skin toggle.
-//   - Basic legend band, top-left (D1-a). Toggling a class halos its members.
+//   - Basic legend INSIDE the box, bottom-left (D6-b). Toggling a class halos its members.
 //   - A FILTER BAR + one flat build lattice below the chart (D3-a), wired
 //     bidirectionally to the chart.
 //   - Edition-I stays as an archived second lens (current page structure).
@@ -19,6 +19,14 @@
 //     The whole horizon (incl. beyond-canvas hull extent) is visible at fluid width;
 //     no zoom, no pan, no scroll. (D3-b's fixed-S_max + native-scroll stage is
 //     superseded; §9.4 rules ONE mount-time write to the fit box as lawful.)
+// D5 (spec §9.5): the PLATE + svg-sizing join the mount write-set (the "screen box"
+//   resizes to the fit mount).
+// D6 (spec §9.6, Matt 2026-07-15): (a) the artifact FRAME rect joins the write-set
+//   (fit box inset 12u) so the drawn box contains the whole chart — the region's own
+//   border is dropped to transparent to avoid a doubled boundary; (b) the LEGEND moves
+//   INSIDE the box as a bottom-left overlay (the D1-a normal-flow band retires); (c) the
+//   subtitle de-dupes ("Edition-Edition-II" → "Edition-II"); (d) the E2.2-relabeled
+//   artifact ("Build Horizon — Edition II" plate) is re-vendored.
 //
 // SVG SOURCE: the r7 hooked Edition-II SVG (per-canvas file), vendored to
 // public/atlas/. It is INLINED (not <img>) so the page-injected highlight CSS can
@@ -127,6 +135,19 @@ export function Atlas() {
   // D3-a: filter state OWNED by the page so chart->table can reset it to All when a
   // clicked mark is filtered out of the table (§9.3 D3-b deterministic reveal).
   const [filters, setFilters] = useState<AtlasFilterState>(DEFAULT_FILTERS);
+
+  // D6-b (§9.6): mobile-narrow gate for the in-box legend's initial state. At ≤640px the
+  // region is narrow enough that the expanded legend would cover >25% of it, so the legend
+  // starts COLLAPSED (a chip). Tracks the Tailwind `sm` breakpoint (640px). SSR-safe
+  // default false (desktop-first); corrected on mount + resize.
+  const [isNarrowViewport, setIsNarrowViewport] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 640px)');
+    const sync = () => setIsNarrowViewport(mq.matches);
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
 
   // Stable root id for the inlined-SVG wrapper — highlight CSS is scoped to it.
   const rootId = useId().replace(/:/g, '_'); // useId() emits ':' which is not id-safe
@@ -270,8 +291,12 @@ export function Atlas() {
               HORIZON vocabulary). Internals (atlas* files, routes /atlas, kit_id,
               types, test ids) stay `atlas`/kits per Matt's internal/community split. */}
           <h1 className="text-lg font-semibold text-gray-100">Build Horizon</h1>
+          {/* D6-c subtitle de-dupe (spec §9.6): atlas_version already reads "Edition-II",
+              so the old `Edition-{atlas_version}` template produced "Edition-Edition-II".
+              Render the value VERBATIM — the edition string stays sourced from atlas.json
+              (no hardcoded edition literal here). */}
           <p className="font-mono text-[11px] text-gray-500">
-            Edition-{data.derived_from.atlas_version} lattice · {data.counts.kits} builds ·{' '}
+            {data.derived_from.atlas_version} lattice · {data.counts.kits} builds ·{' '}
             {data.counts.ghosts.toLocaleString()} ghost cells · black copy leads
           </p>
         </div>
@@ -282,29 +307,42 @@ export function Atlas() {
         />
       </header>
 
-      {/* D1-a LEGEND BAND: the legend lives in a NORMAL-FLOW band between the page
-          header and the chart, top-left aligned. It NEVER overlays the SVG. */}
-      <div className="mb-3">
-        <AtlasLegend selected={selectedClasses} onToggle={toggleClass} canvas={activeCanvas} />
-      </div>
-
       {/* CHART REGION (§9.4 D4) — the inlined r7 SVG is a STATIC full-horizon map. It
           mounts at the DERIVED FIT BOX (whole horizon incl. beyond-canvas hull extent
           in frame) and flows at fluid width, height following the fit-box aspect. No
-          zoom UI, no scroll stage, no gestures — the block flows w-full h-auto. Canvas
-          hex fills the exposed surround (the fit box is wider than the canvas, so the
-          out-of-canvas margin shows). Click delegation reads the data-el hooks for
-          chart->table. This region is the scrollIntoView target for table->chart. */}
+          zoom UI, no scroll stage, no gestures — the block flows w-full h-auto. Click
+          delegation reads the data-el hooks for chart->table. This region is the
+          scrollIntoView target for table->chart, AND (§9.6 D6-b) the positioning context
+          (`relative`) for the in-box legend overlay.
+
+          D6-a (§9.6): the artifact FRAME rect is now written to the fit box inset 12u at
+          mount, so the drawn box reaches the view edge. The region's own border-gray-800
+          could DOUBLE that boundary; dropped to transparent (border-transparent) so the
+          artifact frame reads as THE single boundary — the doubled line read muddy at the
+          edge (judgment call, noted for galadriel eyes-verify). */}
       <div
         ref={chartRegionRef}
         onClick={handleChartClick}
         aria-label="Build Horizon — full-horizon chart"
-        className="relative w-full rounded-lg border border-gray-800 [&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
+        className="relative w-full rounded-lg border border-transparent [&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
         style={{ backgroundColor: canvasHex }}
       >
         {/* Page-injected highlight CSS — targets the inlined SVG's data-el hooks. It is
             scoped under #svgRootId; the SVG bytes are never mutated at rest. */}
         <style>{highlightCss}</style>
+
+        {/* D6-b (§9.6): the LEGEND lives INSIDE the box now — an absolutely-positioned
+            overlay in the region's bottom-left (title/provenance is top-left in-artifact,
+            the condensation key top-right, so bottom-left is clear of the binding
+            occlusion set). pointer-events are scoped inside the component (wrapper none,
+            panel auto) so chart clicks pass through the empty overlay area. On mobile the
+            legend starts COLLAPSED (a chip) so it never covers >25% of the region. */}
+        <AtlasLegend
+          selected={selectedClasses}
+          onToggle={toggleClass}
+          canvas={activeCanvas}
+          defaultCollapsed={isNarrowViewport}
+        />
 
         {/*
           The vendored r7 SVG is inlined IMPERATIVELY (via the effect above), not

@@ -19,11 +19,19 @@
 // the STATIC mount box — the fit view IS the ruled chart. S_max derivation is retired
 // with the scroll stage; the ≈8.276 ceiling is no longer load-bearing.)
 //
-// D5 (spec §9.5, Matt 2026-07-15): the fit box now ALSO governs the FRAME. D4 left the
+// D5 (spec §9.5, Matt 2026-07-15): the fit box now ALSO governs the PLATE. D4 left the
 // canvas PLATE rect + the svg's width/height attrs at emitted canvas geometry; D5
 // extends the mount-time write to a WRITE-SET (viewBox · planeClip · plate · svg sizing)
-// so the "screen box" fits the ruled zoom. This module adds the pure, fail-loud
+// so the dark backdrop fits the ruled zoom. This module adds the pure, fail-loud
 // STRUCTURAL plate identifier (identifyPlateRect); the DOM write lives in useAtlasStage.
+//
+// D6 (spec §9.6, Matt 2026-07-15): the DECORATIVE FRAME rect joins the write-set — the
+// drawn plot boundary Matt reads as "the box" was left at emitted canvas geometry, so
+// under the D4 full-horizon mount the hull/ghost content renders OUTSIDE it. The frame is
+// written to the fit box INSET by FRAME_INSET (12u) on all sides. This module adds the
+// fail-loud STRUCTURAL frame identifier (identifyFrameRect — the complement of the plate
+// law: fill="none" + a stroke) + insetViewBox; the DOM write lives in useAtlasStage. The
+// write-set is now: viewBox · planeClip · plate · svg-sizing · frame.
 //
 // LAWS IMPLEMENTED:
 //   §9.4  The fit box = padBbox(unionBbox(canvasBbox, hullBbox), FIT_MARGIN),
@@ -42,6 +50,14 @@
  * every side BEFORE the aspect-pin, so the closed hull never touches the frame edge.
  */
 export const FIT_MARGIN = 24;
+
+/**
+ * The decorative FRAME inset (canvas units) from the fit box on every side (spec §9.6
+ * D6-a — the ONLY legislated number in that pass). The frame rect is written to the fit
+ * box shrunk by this on all four sides, so its stroke sits fully on-plate and reads as a
+ * plot boundary rather than an edge-clip.
+ */
+export const FRAME_INSET = 12;
 
 /** An axis-aligned bounding box in canvas (viewBox) coordinates. */
 export interface Bbox {
@@ -260,10 +276,12 @@ export function deriveBounds(svg: string): AtlasBounds {
 
 /**
  * A minimal, DOM-agnostic descriptor of a candidate <rect>: its numeric width/height
- * (parsed from the attributes) and whether it carries a `fill`. The DOM helper builds
- * one of these per direct-child rect of the svg; the pure identifier below selects the
- * plate. Keeping the shape plain (no SVGRectElement) makes the identity logic unit-
- * testable under vitest's `node` env with the SAME code path the runtime uses.
+ * (parsed from the attributes), whether it carries a `fill`, whether that fill is the
+ * literal `none`, and whether it carries a `stroke`. The DOM helper builds one of these
+ * per direct-child rect of the svg; the pure identifiers below select the PLATE (§9.5)
+ * and the decorative FRAME (§9.6). Keeping the shape plain (no SVGRectElement) makes the
+ * identity logic unit-testable under vitest's `node` env with the SAME code path the
+ * runtime uses.
  */
 export interface PlateRectCandidate {
   /** Stable handle back to the source element (e.g., the SVGRectElement, or a test id). */
@@ -274,6 +292,10 @@ export interface PlateRectCandidate {
   height: number;
   /** True iff the rect carries a non-empty `fill` attribute. */
   hasFill: boolean;
+  /** True iff the rect's `fill` attribute is exactly `none` (§9.6 frame identity). */
+  fillIsNone: boolean;
+  /** True iff the rect carries a non-empty `stroke` attribute (§9.6 frame identity). */
+  hasStroke: boolean;
 }
 
 /**
@@ -311,6 +333,52 @@ export function identifyPlateRect(
   return matches[0];
 }
 
+// ---- Structural FRAME identification (spec §9.6 D6-a) ----
+//
+// D6 (spec §9.6, Matt 2026-07-15): "the legend needs to be moved into the Atlas box" +
+// "the box is too small." Under the D4 full-horizon mount, hull/ghost content renders
+// OUTSIDE the decorative frame rect (the drawn plot boundary the eye reads as "the screen
+// box"), so it no longer contains the chart. D6-a joins the FRAME to the mount-time
+// write-set: the frame's x/y/w/h are set to the fit box INSET by 12 canvas units on all
+// sides (the stroke stays fully on-plate, reads as a boundary not an edge-clip).
+//
+// Identification is STRUCTURAL + FAIL-LOUD — the exact COMPLEMENT of identifyPlateRect
+// (§9.5): the plate is the filled native-dim rect; the frame is the direct-child <rect>
+// with `fill="none"` AND a stroke present. NO stroke-literal matching (the stroke differs
+// per canvas: #3a3d33 dark / #c3cad6 light), NO positional index, NO hardcoded geometry
+// (the 12u inset is the only legislated number, applied by insetViewBox). Zero OR >1
+// candidates → throw loudly. Pure predicate over plain descriptors → node-testable, same
+// code path the runtime uses on the live svg's direct-child rects.
+
+/**
+ * Identify the decorative FRAME among the svg's direct-child rects, STRUCTURALLY and
+ * FAIL-LOUD (spec §9.6 D6-a). The frame is the candidate with `fill="none"` AND a stroke.
+ * Exactly ONE must match:
+ *   - 0 matches → throw (the artifact changed shape; do NOT guess a substitute).
+ *   - >1 matches → throw (ambiguous; do NOT pick by index or stroke literal).
+ * Returns the single matching candidate (the caller writes the inset fit box to its `ref`).
+ *
+ * @param candidates the svg's direct-child rects as descriptors
+ */
+export function identifyFrameRect(candidates: PlateRectCandidate[]): PlateRectCandidate {
+  const matches = candidates.filter((c) => c.fillIsNone && c.hasStroke);
+  if (matches.length === 0) {
+    throw new Error(
+      `atlasLens: no decorative frame rect found (a direct-child <rect> of the svg with ` +
+        `fill="none" and a stroke). The artifact shape changed — refusing to guess ` +
+        `(spec §9.6 D6-a).`
+    );
+  }
+  if (matches.length > 1) {
+    throw new Error(
+      `atlasLens: ambiguous decorative frame — ${matches.length} direct-child rects have ` +
+        `fill="none" with a stroke. Structural identity requires exactly one; refusing to ` +
+        `pick by index or stroke literal (spec §9.6 D6-a).`
+    );
+  }
+  return matches[0];
+}
+
 // ---- Attribute serialization for the mount-time write (spec §9.5 D5 write-set) ----
 //
 // The fit box is written ONCE (as a WRITE-SET, spec §9.5 D5-c) to the live SVG at inline
@@ -336,4 +404,20 @@ export function viewBoxToRectAttrs(
   vb: ViewBox
 ): { x: string; y: string; width: string; height: string } {
   return { x: fmt(vb.minx), y: fmt(vb.miny), width: fmt(vb.width), height: fmt(vb.height) };
+}
+
+/**
+ * Inset a ViewBox by `inset` canvas units on ALL FOUR sides (spec §9.6 D6-a). Origin
+ * moves in by `inset`; width/height shrink by `2·inset`. This is the frame rect's target:
+ * the fit box (the ruled view) shrunk by FRAME_INSET so its stroke reads as an in-plate
+ * boundary. A doctored hull → wider fit box → wider inset box → the frame follows, zero
+ * code change (acceptance #66).
+ */
+export function insetViewBox(vb: ViewBox, inset: number): ViewBox {
+  return {
+    minx: vb.minx + inset,
+    miny: vb.miny + inset,
+    width: vb.width - 2 * inset,
+    height: vb.height - 2 * inset,
+  };
 }

@@ -1,5 +1,5 @@
-// atlas-lens.test.ts — the artifact-derived FIT-BOX math + the STRUCTURAL plate
-// identification (spec §9.4 + §9.5, acc #60/#62/#63/#65).
+// atlas-lens.test.ts — the artifact-derived FIT-BOX math + the STRUCTURAL plate + frame
+// identification (spec §9.4 + §9.5 + §9.6, acc #60/#62/#63/#65/#66).
 //
 // D4 (spec §9.4, Matt 2026-07-15): the chart mounts at the FULL-HORIZON FIT view —
 // "just barely encompass all of the horizon" — NOT at S_max. This SUPERSEDES the D3-b
@@ -8,25 +8,34 @@
 // (minSelectableRadius / TARGET_D / sMax / the doctored-RADIUS probe) are RETIRED with
 // the scroll stage — table→chart is now a page-level scrollIntoView of the chart region.
 //
-// D5 (spec §9.5, Matt 2026-07-15): the "screen box" resizes to the ruled zoom. The
-// mount-time write becomes a WRITE-SET (§9.5 D5-c): viewBox · planeClip · PLATE · svg
-// sizing, all to the SAME derived fit box. This test file adds the pure, FAIL-LOUD
-// STRUCTURAL plate identifier (identifyPlateRect) — happy path, the doctored-HULL probe
-// EXTENDED to the plate (wider fit box → what the plate is written to grows, via
-// viewBoxToRectAttrs(fitBox)), and the ambiguous/absent-candidate fixtures that RAISE.
+// D5 (spec §9.5, Matt 2026-07-15): the PLATE resizes to the ruled zoom. The mount-time
+// write becomes a WRITE-SET (§9.5 D5-c): viewBox · planeClip · PLATE · svg sizing, all to
+// the SAME derived fit box. Adds the pure, FAIL-LOUD STRUCTURAL plate identifier
+// (identifyPlateRect) — happy path, the doctored-HULL probe EXTENDED to the plate, and the
+// ambiguous/absent-candidate fixtures that RAISE.
+//
+// D6 (spec §9.6, Matt 2026-07-15): the decorative FRAME joins the write-set (§9.6 D6-a) —
+// written to the fit box INSET FRAME_INSET (12u). Adds the pure, FAIL-LOUD STRUCTURAL
+// frame identifier (identifyFrameRect — the COMPLEMENT of the plate law: fill="none" + a
+// stroke) + insetViewBox — happy path, the doctored-HULL probe EXTENDED to the frame, and
+// the ambiguous/absent-candidate fixtures that RAISE.
 //
 // What SURVIVES + is asserted here: the SVG-source parsing (parseViewBox /
 // parsePlaneClipRect / parseHullBbox / pointsBbox) AND the FIT-BOX derivation (§9.4):
 // unionBbox / padBbox / aspectPinToViewBox / deriveBounds's fitBox + sMin + the
-// doctored-HULL probe + the viewBox/rect attribute serializers + (§9.5) identifyPlateRect.
-// All run under vitest's `node` env (strings/numbers/plain descriptors, no DOM) — the
-// SAME derivation + identity path the runtime uses on the fetched markup + live rects.
+// doctored-HULL probe + the viewBox/rect attribute serializers + (§9.5) identifyPlateRect
+// + (§9.6) identifyFrameRect + insetViewBox. All run under vitest's `node` env
+// (strings/numbers/plain descriptors, no DOM) — the SAME derivation + identity path the
+// runtime uses on the fetched markup + live rects.
 
 import { describe, it, expect } from 'vitest';
 import {
   FIT_MARGIN,
+  FRAME_INSET,
   deriveBounds,
+  identifyFrameRect,
   identifyPlateRect,
+  insetViewBox,
   parseViewBox,
   parsePlaneClipRect,
   parseHullBbox,
@@ -46,6 +55,10 @@ import {
  *   - the canvas PLATE rect: DIRECT child of <svg>, x=0 y=0 w=1600 h=1200 fill=#0e1016
  *     — native-dim + filled, the sole structural plate (spec §9.5 D5-a); every nested
  *     rect (the planeClip rect inside <defs>) is NOT a direct child and/or not native-dim
+ *   - the decorative FRAME rect: DIRECT child of <svg>, x=96 y=132 w=1408 h=972,
+ *     fill="none" + stroke=#3a3d33 — the sole structural frame (spec §9.6 D6-a); the ONLY
+ *     direct-child rect with fill="none" and a stroke (the plate is filled; the planeClip
+ *     rect has neither fill nor stroke and is inside <defs>)
  *   - ONE dashed hull polyline (dasharray "7 5") whose px bbox EXCEEDS the canvas on
  *     all four edges (x[43.10, 1725.54] × y[−1.74, 1363.27] — the real extremes)
  *   - kit circles (data-kit) + a meso-ghost circle (data-core) — present for realism
@@ -59,6 +72,7 @@ const SYNTH_SVG = `<?xml version="1.0" encoding="UTF-8"?>
 <g id="layer-ghosts" clip-path="url(#planeClip)">
 <circle cx="1000.06" cy="774.86" r="1.45" data-el="ghost" data-core="A|B|c|d|e|f|g" data-mult="1"/>
 </g>
+<rect x="96.00" y="132.00" width="1408.00" height="972.00" fill="none" stroke="#3a3d33" stroke-width="1"/>
 <g id="layer-live">
 <polyline points="43.10,579.93 1725.54,625.81 1329.55,1363.27 672.45,-1.74 43.10,579.93" fill="none" stroke="#5a5340" stroke-opacity="0.75" stroke-width="1.1" stroke-dasharray="7 5" stroke-linejoin="round"/>
 <circle cx="873.99" cy="377.69" r="3" data-el="live" data-kit="chr-arrow-storm-warden"/>
@@ -270,8 +284,10 @@ describe('atlasLens — mount-write attribute serializers (§9.4 D4-a)', () => {
 function directChildRectCandidates(svg: string): PlateRectCandidate[] {
   const withoutDefs = svg.replace(/<defs>[\s\S]*?<\/defs>/g, '');
   // Only rects that are NOT nested in a <g> … </g> (top-level rects). The synthetic +
-  // real artifacts place the plate as a top-level rect right after </defs>; every other
-  // rect is inside a layer group. A light structural filter: strip <g>…</g> blocks too.
+  // real artifacts place the PLATE + the FRAME as top-level rects (the plate right after
+  // </defs>, the frame just before <g id="layer-live">); every other rect is inside a
+  // layer group. A light structural filter: strip <g>…</g> blocks too. Both survive here
+  // (the runtime's Array.from(svg.children).filter(rect) sees the same two).
   const topLevel = withoutDefs.replace(/<g\b[\s\S]*?<\/g>/g, '');
   const rects = topLevel.match(/<rect\b[^>]*\/?>/g) ?? [];
   return rects.map((tag, i) => {
@@ -281,12 +297,15 @@ function directChildRectCandidates(svg: string): PlateRectCandidate[] {
     };
     const w = attr('width');
     const h = attr('height');
-    const fill = attr('fill');
+    const fill = (attr('fill') ?? '').trim();
+    const stroke = (attr('stroke') ?? '').trim();
     return {
       ref: `rect#${i}`,
       width: w == null ? NaN : Number(w),
       height: h == null ? NaN : Number(h),
-      hasFill: (fill ?? '').trim() !== '',
+      hasFill: fill !== '',
+      fillIsNone: fill.toLowerCase() === 'none',
+      hasStroke: stroke !== '',
     };
   });
 }
@@ -296,13 +315,16 @@ describe('atlasLens — structural plate identification (§9.5 D5-a, acc #63/#65
 
   it('picks the SINGLE native-dim, filled direct-child rect as the plate', () => {
     const candidates = directChildRectCandidates(SYNTH_SVG);
-    // The synthetic artifact has exactly one top-level rect: the plate.
-    expect(candidates).toHaveLength(1);
+    // The synthetic artifact has TWO top-level rects: the plate (rect#0) and the frame
+    // (rect#1, fill="none"). identifyPlateRect must pick the native-dim FILLED one — the
+    // frame (native-dim but fill="none") is NOT a plate, so it is correctly excluded.
+    expect(candidates).toHaveLength(2);
     const plate = identifyPlateRect(candidates, native);
     expect(plate.ref).toBe('rect#0');
     expect(plate.width).toBe(native.width);
     expect(plate.height).toBe(native.height);
     expect(plate.hasFill).toBe(true);
+    expect(plate.fillIsNone).toBe(false);
   });
 
   it('identifies by native dims + fill, NOT by fill literal or index', () => {
@@ -310,14 +332,14 @@ describe('atlasLens — structural plate identification (§9.5 D5-a, acc #63/#65
     // canvas: #0e1016 / #f7f8fa). Structural identity must pick the native-dim one
     // regardless of order or fill value — a decoy non-native filled rect is ignored.
     const candidates: PlateRectCandidate[] = [
-      { ref: 'decoy-footer', width: 400, height: 24, hasFill: true }, // non-native filled
-      { ref: 'plate', width: 1600, height: 1200, hasFill: true }, // the plate (2nd)
+      { ref: 'decoy-footer', width: 400, height: 24, hasFill: true, fillIsNone: false, hasStroke: false }, // non-native filled
+      { ref: 'plate', width: 1600, height: 1200, hasFill: true, fillIsNone: false, hasStroke: false }, // the plate (2nd)
     ];
     expect(identifyPlateRect(candidates, native).ref).toBe('plate');
 
     // Same plate, arbitrary fill value — still identified (no fill-literal matching).
     const lightCanvas: PlateRectCandidate[] = [
-      { ref: 'plate-light', width: 1600, height: 1200, hasFill: true },
+      { ref: 'plate-light', width: 1600, height: 1200, hasFill: true, fillIsNone: false, hasStroke: false },
     ];
     expect(identifyPlateRect(lightCanvas, native).ref).toBe('plate-light');
   });
@@ -326,8 +348,8 @@ describe('atlasLens — structural plate identification (§9.5 D5-a, acc #63/#65
     // A native-dim rect with NO fill is not a plate; a filled rect at non-native dims is
     // not a plate. Neither matches → throw (the artifact shape changed; refuse to guess).
     const noFillAtNative: PlateRectCandidate[] = [
-      { ref: 'unfilled-plate-slot', width: 1600, height: 1200, hasFill: false },
-      { ref: 'filled-but-small', width: 800, height: 600, hasFill: true },
+      { ref: 'unfilled-plate-slot', width: 1600, height: 1200, hasFill: false, fillIsNone: false, hasStroke: false },
+      { ref: 'filled-but-small', width: 800, height: 600, hasFill: true, fillIsNone: false, hasStroke: false },
     ];
     expect(() => identifyPlateRect(noFillAtNative, native)).toThrow(/no canvas plate rect/i);
     // And the truly-empty case.
@@ -336,8 +358,8 @@ describe('atlasLens — structural plate identification (§9.5 D5-a, acc #63/#65
 
   it('FAIL-LOUD: AMBIGUOUS (>1 native-dim filled rect) RAISES — no index/fill tiebreak', () => {
     const ambiguous: PlateRectCandidate[] = [
-      { ref: 'plate-a', width: 1600, height: 1200, hasFill: true },
-      { ref: 'plate-b', width: 1600, height: 1200, hasFill: true },
+      { ref: 'plate-a', width: 1600, height: 1200, hasFill: true, fillIsNone: false, hasStroke: false },
+      { ref: 'plate-b', width: 1600, height: 1200, hasFill: true, fillIsNone: false, hasStroke: false },
     ];
     expect(() => identifyPlateRect(ambiguous, native)).toThrow(/ambiguous canvas plate/i);
   });
@@ -361,5 +383,109 @@ describe('atlasLens — structural plate identification (§9.5 D5-a, acc #63/#65
     expect([doctoredAttrs.x, doctoredAttrs.y, doctoredAttrs.width, doctoredAttrs.height]).toEqual(
       viewBoxToAttr(doctored.fitBox).split(' ')
     );
+  });
+});
+
+// ---- §9.6 D6-a: structural, FAIL-LOUD FRAME identification + the 12u inset ----
+//
+// The FRAME is the COMPLEMENT of the plate (§9.5): the runtime enumerates the SAME live
+// direct-child rects and describes each as a PlateRectCandidate; identifyFrameRect picks
+// the single fill="none" + stroked candidate (0 or >1 → throws). insetViewBox is the ONLY
+// legislated number in this pass (12u) — the frame is written to the fit box shrunk 12u on
+// all sides. These tests mirror the runtime shape with plain descriptors (no DOM).
+
+describe('atlasLens — insetViewBox (§9.6 D6-a, the 12u frame inset)', () => {
+  it('shrinks a viewBox by `inset` on every side (origin in, size down by 2·inset)', () => {
+    expect(insetViewBox({ minx: 0, miny: 0, width: 1600, height: 1200 }, 12)).toEqual({
+      minx: 12,
+      miny: 12,
+      width: 1600 - 24,
+      height: 1200 - 24,
+    });
+    // Negative-origin fit box insets the same way (origin moves further from the edge).
+    const fitBox = { minx: -79.2367, miny: -25.74, width: 1884.0133, height: 1413.01 };
+    const inset = insetViewBox(fitBox, FRAME_INSET);
+    expect(inset.minx).toBeCloseTo(fitBox.minx + 12, 4);
+    expect(inset.miny).toBeCloseTo(fitBox.miny + 12, 4);
+    expect(inset.width).toBeCloseTo(fitBox.width - 24, 4);
+    expect(inset.height).toBeCloseTo(fitBox.height - 24, 4);
+    // The inset box stays fully INSIDE the fit box on all four edges (stroke on-plate).
+    expect(inset.minx).toBeGreaterThan(fitBox.minx);
+    expect(inset.miny).toBeGreaterThan(fitBox.miny);
+    expect(inset.minx + inset.width).toBeLessThan(fitBox.minx + fitBox.width);
+    expect(inset.miny + inset.height).toBeLessThan(fitBox.miny + fitBox.height);
+    // Aspect is preserved (both dims lose exactly 2·inset), so the frame stays 4:3-ish
+    // relative to the fit box — not asserted as exact 4:3 (inset breaks it by design;
+    // an equal absolute inset on a 4:3 box is intentionally slightly non-4:3).
+  });
+});
+
+describe('atlasLens — structural frame identification (§9.6 D6-a, acc #66)', () => {
+  it('picks the SINGLE fill="none" + stroked direct-child rect as the frame', () => {
+    const candidates = directChildRectCandidates(SYNTH_SVG);
+    // TWO top-level rects: the plate (rect#0, filled) and the frame (rect#1, fill="none").
+    expect(candidates).toHaveLength(2);
+    const frame = identifyFrameRect(candidates);
+    expect(frame.ref).toBe('rect#1');
+    expect(frame.fillIsNone).toBe(true);
+    expect(frame.hasStroke).toBe(true);
+    // The frame DOES carry a `fill` attribute (its value is the literal "none"), so
+    // hasFill is true — fillIsNone is the distinguishing signal from the filled plate.
+    expect(frame.hasFill).toBe(true);
+  });
+
+  it('identifies by fill="none" + stroke, NOT by stroke literal or index', () => {
+    // Frame FIRST this time, arbitrary stroke hex (mirrors dark vs light canvas:
+    // #3a3d33 / #c3cad6). Structural identity must pick the fill="none" + stroked one
+    // regardless of order or stroke value; a filled decoy (even with a stroke) is not a
+    // frame, and a fill="none" rect with NO stroke is not a frame.
+    const candidates: PlateRectCandidate[] = [
+      { ref: 'frame-light', width: 1408, height: 972, hasFill: false, fillIsNone: true, hasStroke: true }, // frame (1st), light stroke
+      { ref: 'filled-plate', width: 1600, height: 1200, hasFill: true, fillIsNone: false, hasStroke: false }, // plate decoy
+      { ref: 'stroked-but-filled', width: 300, height: 40, hasFill: true, fillIsNone: false, hasStroke: true }, // filled + stroked ≠ frame
+    ];
+    expect(identifyFrameRect(candidates).ref).toBe('frame-light');
+  });
+
+  it('FAIL-LOUD: ZERO candidates (no fill="none" stroked rect) RAISES', () => {
+    // A fill="none" rect with NO stroke is not a frame; a stroked but FILLED rect is not a
+    // frame. Neither matches → throw (the artifact shape changed; refuse to guess).
+    const noFrame: PlateRectCandidate[] = [
+      { ref: 'fillnone-no-stroke', width: 1408, height: 972, hasFill: false, fillIsNone: true, hasStroke: false },
+      { ref: 'stroked-filled', width: 1600, height: 1200, hasFill: true, fillIsNone: false, hasStroke: true },
+    ];
+    expect(() => identifyFrameRect(noFrame)).toThrow(/no decorative frame rect/i);
+    // And the truly-empty case.
+    expect(() => identifyFrameRect([])).toThrow(/no decorative frame rect/i);
+  });
+
+  it('FAIL-LOUD: AMBIGUOUS (>1 fill="none" stroked rect) RAISES — no index/stroke tiebreak', () => {
+    const ambiguous: PlateRectCandidate[] = [
+      { ref: 'frame-a', width: 1408, height: 972, hasFill: false, fillIsNone: true, hasStroke: true },
+      { ref: 'frame-b', width: 1408, height: 972, hasFill: false, fillIsNone: true, hasStroke: true },
+    ];
+    expect(() => identifyFrameRect(ambiguous)).toThrow(/ambiguous decorative frame/i);
+  });
+
+  it('DOCTORED-HULL PROBE extends to the FRAME: a wider fit box ⇒ the frame is written wider (inset 12u), zero code change', () => {
+    // The frame is written to viewBoxToRectAttrs(insetViewBox(fitBox, 12)). So the D4/D5
+    // doctored-hull probe (enlarge a hull vertex in the SOURCE → wider fit box) makes the
+    // frame follow with zero code change (acceptance #66) — always 12u inside the fit box.
+    const baseline = deriveBounds(SYNTH_SVG);
+    const doctored = deriveBounds(SYNTH_SVG.replace('1725.54,625.81', '2600.00,625.81'));
+
+    // The frame is identified identically in both (structural; unchanged by the hull).
+    expect(identifyFrameRect(directChildRectCandidates(SYNTH_SVG)).ref).toBe('rect#1');
+
+    // What the frame gets WRITTEN to (the inset fit box) grows with the fit box.
+    const baseAttrs = viewBoxToRectAttrs(insetViewBox(baseline.fitBox, FRAME_INSET));
+    const doctoredAttrs = viewBoxToRectAttrs(insetViewBox(doctored.fitBox, FRAME_INSET));
+    expect(Number(doctoredAttrs.width)).toBeGreaterThan(Number(baseAttrs.width));
+
+    // The frame box == the fit box inset 12u on all sides (acceptance #66: attrs receipt).
+    expect(Number(doctoredAttrs.x)).toBeCloseTo(doctored.fitBox.minx + FRAME_INSET, 3);
+    expect(Number(doctoredAttrs.y)).toBeCloseTo(doctored.fitBox.miny + FRAME_INSET, 3);
+    expect(Number(doctoredAttrs.width)).toBeCloseTo(doctored.fitBox.width - 2 * FRAME_INSET, 3);
+    expect(Number(doctoredAttrs.height)).toBeCloseTo(doctored.fitBox.height - 2 * FRAME_INSET, 3);
   });
 });
