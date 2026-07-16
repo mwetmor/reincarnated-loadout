@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Nav } from './components/Nav';
 import { Loadout } from './pages/Loadout';
@@ -11,10 +12,37 @@ import { Planning } from './pages/Planning';
 import { PlanningDoc } from './pages/PlanningDoc';
 import { EngineState } from './pages/EngineState';
 import { Forge } from './pages/Forge';
-import { Atlas } from './pages/Atlas';
 // cycle-18 recovery-2: KitBrowser at /kits preserves cycle-18 grid surface.
 // /kit-space redirects to /kits (discovery surface); /loadout = rich per-character view.
 // cosmograph Phase A (2026-06-06): /forge = forward-looking future-engine substrate cosmograph.
+
+// v1.12 RE-HOME (drax, Matt-ruled 2026-07-16 · contract §7.8): the interactive Build-Horizon
+// atlas re-homed to the Glance app (ONE served truth). The loadout `/atlas` page + its
+// components/utils/hooks/build-step/probe + vendored public/atlas artifacts were DELETED here;
+// this route now REDIRECTS to the Glance home. External redirect (not react-router Navigate,
+// which is in-app only) via a one-shot effect.
+function AtlasRedirect() {
+  useEffect(() => {
+    window.location.replace('https://reincarnated-glance.vercel.app/#/atlas');
+  }, []);
+  return (
+    <div className="mx-auto max-w-md px-4 py-24 text-center">
+      <p className="font-mono text-sm text-gray-400">
+        Build Horizon has moved to the Glance app.
+      </p>
+      <p className="mt-2 font-mono text-xs text-gray-600">
+        Redirecting… If nothing happens,{' '}
+        <a
+          href="https://reincarnated-glance.vercel.app/#/atlas"
+          className="text-indigo-400 underline underline-offset-2 hover:text-indigo-300"
+        >
+          open it here
+        </a>
+        .
+      </p>
+    </div>
+  );
+}
 
 function Footer() {
   return (
@@ -65,8 +93,9 @@ export default function App() {
             <Route path="/state-of-engine" element={<EngineState />} />
             {/* cosmograph Phase A (2026-06-06): /forge = substrate cosmograph (PROVISIONAL future-engine view) */}
             <Route path="/forge" element={<Forge />} />
-            {/* atlas Glance package (2026-07-15): /atlas = interactive kit-atlas (black-copy lead, pivot table, legend scaffold) */}
-            <Route path="/atlas" element={<Atlas />} />
+            {/* v1.12 (Matt-ruled 2026-07-16): the interactive Build Horizon re-homed to the
+                Glance app (contract §7.8). /atlas now REDIRECTS there (one served truth). */}
+            <Route path="/atlas" element={<AtlasRedirect />} />
             {/* cycle-18 recovery-2: /kits = kit browser (grid/featured/faction filter) */}
             <Route path="/kits" element={<KitBrowser />} />
             {/* /kit-space redirects to /kits (kit discovery surface) */}

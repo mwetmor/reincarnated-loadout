@@ -38,11 +38,9 @@ export function Nav() {
             <NavItem to="/state-of-engine">Engine</NavItem>
             {/* cosmograph Phase A (2026-06-06): Forge = forward-looking future-engine surface; adjacency after Engine reads correctly */}
             <NavItem to="/forge">Forge</NavItem>
-            {/* atlas Glance package (2026-07-15): interactive build-lattice surface.
-                D2-d (Matt-RULED 2026-07-15): the community-facing NAME is "Build Horizon"
-                (avoids the PoE "Atlas of Worlds" collision). Route path /atlas is an
-                INTERNAL identifier and stays unchanged per the internal/community split. */}
-            <NavItem to="/atlas">Build Horizon</NavItem>
+            {/* v1.12 (Matt-ruled 2026-07-16): the "Build Horizon" tab retired — the interactive
+                atlas re-homed to the Glance app (contract §7.8, one served truth). The /atlas
+                route still resolves as a redirect (see App.tsx), but the nav tab is dropped. */}
             <NavItem to="/planning">Planning</NavItem>
           </div>
         </div>

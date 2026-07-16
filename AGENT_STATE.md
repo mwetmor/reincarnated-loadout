@@ -11,12 +11,53 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-15 (**D6+D6-b-v2 PRODUCTION PROMOTION** — gandalf verify gate PASSED; prebuilt `vercel build --prod` + `vercel deploy --prebuilt --prod` from HEAD a4f29de; prod alias `reincarnated-loadout.vercel.app` moved to `dpl_FmT6CextADTAqzaYLdBSaypL7PZ2`; PRD `/atlas` now serves `index-D6X1Qz1d.js` [was pre-D6 `index-ylVnWeU_.js`])
+**Last updated:** 2026-07-16 (**v1.12 ATLAS RE-HOME — /atlas RETIRED to a redirect**; the interactive
+Build-Horizon package ported to the Glance app @ Edition III; loadout atlas page/components/utils/hooks/
+build-step/probe + `public/atlas/` + `data-src/atlas/` DELETED, nav tab dropped, `/atlas` → redirect to
+`https://reincarnated-glance.vercel.app/#/atlas`. Build + 91 tests GREEN; preview UP; STOP at preview —
+no PRD deploy this pass, gandalf verify gates the glance promotion. See the v1.12 section below.)
+**Prior update:** 2026-07-15 (**D6+D6-b-v2 PRODUCTION PROMOTION** — gandalf verify gate PASSED; prebuilt `vercel build --prod` + `vercel deploy --prebuilt --prod` from HEAD a4f29de; prod alias `reincarnated-loadout.vercel.app` moved to `dpl_FmT6CextADTAqzaYLdBSaypL7PZ2`; PRD `/atlas` now serves `index-D6X1Qz1d.js` [was pre-D6 `index-ylVnWeU_.js`])
 **Last commit:** (pending this session) D6-b v2 legend placement fix — anchor bottom-LEFT → bottom-RIGHT. On top of D6 (cf879e4).
 **Prior commit:** `cf879e4` atlas D6 — FRAME joins the mount write-set (fit box INSET 12u) via fail-loud STRUCTURAL identifyFrameRect; legend moves INSIDE the box (bottom-left in v1 — CORRECTED to bottom-right in D6-b v2 below); subtitle de-dupes "Edition-Edition-II" → "Edition-II"; region border → transparent. And `5f93cc9` D6-d re-vendor; `9e4bf4a` D5; `3aa1d66` D4.
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
+
+---
+
+## v1.12 — /atlas RETIRES: interactive Build-Horizon re-homes to the Glance app (2026-07-16)
+
+**Authority:** Matt 2026-07-16 (verbatim *"It was supposed to be on the glance app. … I do want it on
+glance."*). Charge: gandalf brief `reincarnated-collaboration/agentic_orchestration/gandalf/briefs/2026-07-16-drax-v112-atlas-port-brief.md`;
+Glance contract §7.8. This is the RETIREMENT half of a two-repo pass; the PORT half landed in the Glance
+seam (see `reincarnated-collaboration/glance/AGENT_STATE.md` v1.12).
+
+**Why:** the loadout `/atlas` home was spec-line drift, never a ruling (Matt's standing 2026-07-09 ruling
+is Glance-standalone). The interactive Build-Horizon package now lives in `glance/app` (ONE served truth);
+the loadout copy is DELETED so a dead second tree never invites a future fix-pass editing the wrong code.
+
+**What changed (loadout):**
+- `src/App.tsx` — `/atlas` route now renders `AtlasRedirect` (a one-shot `window.location.replace(
+  'https://reincarnated-glance.vercel.app/#/atlas')` + a "Build Horizon has moved" fallback link). The
+  `import { Atlas }` is gone.
+- `src/components/Nav.tsx` — the "Build Horizon" nav tab dropped.
+- DELETED (git rm): `src/pages/Atlas.tsx`; `src/components/atlas/*` (6); `src/utils/atlas*.ts` (5);
+  `src/hooks/useAtlas{Data,Stage,Svg}.ts`; `src/data/atlasTypes.ts`; `src/__tests__/atlas-*.test.ts` (8);
+  `scripts/atlas/*` (incl. d5/d6 probes, build-fail-guard, sidecars, export script); `public/atlas/*`
+  (the vendored Edition-II SVGs + slim JSON); `data-src/atlas/*` (the fat Edition-II source).
+- `package.json` — removed `build:atlas` + `verify:atlas-guard` scripts (the build step is gone).
+
+**Verification (preview):**
+- `npm run build` GREEN (tsc -b + vite; 1507 modules — no orphaned imports from the deleted package).
+- Suite GREEN: 91 tests (4 files). The 98 atlas tests retired WITH the package (189→91, fully attributable).
+- Preview UP `http://localhost:4174` (launch: `npm run preview -- --port 4174 --strictPort`). Root route
+  renders (title "Reincarnated Loadout", nav present, no console errors). `/atlas` fires the redirect —
+  CDP confirmed requests to `reincarnated-glance.vercel.app` after navigating to `/atlas`; nav no longer
+  contains "Build Horizon".
+
+**NOT done (STOP at preview per charge):** no PRD deploy of the loadout redirect; gandalf's verify gate
+sequences the two-deploy promotion (glance PRD + this redirect). Current prod loadout still serves the
+live `/atlas` page until Matt authorizes the redirect deploy.
 
 ---
 
