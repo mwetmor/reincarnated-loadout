@@ -12,7 +12,7 @@
 # AGENT_STATE — drax
 
 **Last updated:** 2026-07-15 (atlas D3 UX pass — simple filters REPLACE pivots + zoom REMOVED, fixed at derived S_max w/ native scroll; acc 54–59 green; D2 union grid untouched; Vercel PREVIEW shipped, prod HELD for gandalf verify)
-**Last commit:** atlas D3 pass — five filter controls (AND-composed, non-applicable-fails law, family enumerated from data) → ONE flat D2 grid; fixed S_max mount (derived, no scale literal) + native scroll (viewBox/planeClip verbatim); pivot engine + zoom lens retired w/ tests; on top of D2 (2bff3c2)
+**Last commit:** `0a09713` atlas D3 pass — five filter controls (AND-composed, non-applicable-fails law, family enumerated from data) → ONE flat D2 grid; fixed S_max mount (derived, no scale literal) + native scroll (viewBox/planeClip verbatim); pivot engine + zoom lens retired w/ tests; on top of D2 (2bff3c2). Vercel PREVIEW shipped (prod HELD for gandalf).
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
@@ -65,8 +65,8 @@
 
 **Deviations from brief:** none material. Two notes: (1) `parsePlaneClipRect` still returns its `raw` verbatim strings — harmless (the verbatim-reset consumer is gone, but the field + its test cost nothing and document the emitted precision); left in rather than churn the parser + test. (2) The new table component is `AtlasBuildTable.tsx` (fresh file) rather than an in-place rewrite of `AtlasPivotTable.tsx` — cleaner diff; the old file is DELETED. File names/types/ids all stay `atlas*`/kits per the internal/community split.
 
-**Preview URL:** _(filled after deploy)_
-**Commit:** _(filled after commit)_
+**Preview URL:** https://reincarnated-loadout-8lf28zrle-matthew-wetmore-s-projects.vercel.app (readyState READY; target=null = PREVIEW, prod alias NOT touched; routing intact — root/`/atlas`/data-json all 302→Vercel SSO auth uniformly, no SPA-rewrite 404). PROD HELD for gandalf verify + promotion.
+**Commit:** `0a09713` (drax: atlas D3 UX pass — filters replace pivots · fixed zoom at derived S_max; 16 files, +1277/−2310).
 
 ---
 
