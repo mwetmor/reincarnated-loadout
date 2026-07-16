@@ -10,9 +10,17 @@
 //      content sits INSIDE the drawn frame at mount + after skin flip; the fail-loud
 //      frame-identification test is in the unit suite (ambiguous fixture RAISES).
 //   67 legend-in-box: the legend node renders INSIDE the chart region (DOM containment);
-//      no normal-flow band between header and region; placement bottom-left; the binding
-//      occlusion set (title / pole labels / condensation key / drill-in dots) is untouched
-//      (galadriel eyes-verifies the pixels — this probe reports the geometry).
+//      no normal-flow band between header and region; placement bottom-RIGHT; and — per the
+//      D6-b OCCLUSION LAW v2 (gandalf verify-gate finding 2026-07-15) — the legend overlay
+//      rect intersects the screen-space bbox of ZERO in-artifact `<text>` node (±4px pad).
+//      This is a CLASS invariant, not a list: title, poles, condensation key, footer honesty
+//      block, points-denominator line, GHOST FIELD + graveyard annotations, and every
+//      drill-in dot label — all `<text>` nodes with a nonzero bbox are checked. FAIL-LOUD
+//      with the offending text content if any hit. Asserted at BOTH viewports (1440, 375)
+//      and BOTH skins (default dark + flipped light). Non-binding (NOT checked): ghost-
+//      lattice speckle + dashed boundary curves (blurred backdrop leaves them inferable;
+//      text under a panel is information destroyed — that asymmetry is the law's rationale).
+//      (galadriel still eyes-verifies the pixels — this probe reports + gates the geometry.)
 //   68 subtitle: the header subtitle reads "Edition-II lattice · …" exactly once (no
 //      "Edition-Edition").
 //   + no-regression: plate == viewBox == fit box (D5 acc 63); svg width/height absent (64);
@@ -103,7 +111,7 @@ async function launchChrome(userDataDir) {
   throw new Error('Chrome did not expose the debugging endpoint');
 }
 
-async function probeViewport(browser, vp, doExtras) {
+async function probeViewport(browser, vp, extras) {
   const { targetId } = await browser.send('Target.createTarget', { url: 'about:blank' });
   const { sessionId } = await browser.send('Target.attachToTarget', { targetId, flatten: true });
   const S = (method, params) => browser.send(method, params, sessionId);
@@ -202,6 +210,46 @@ async function probeViewport(browser, vp, doExtras) {
       legendCollapsed = !/Live Kits|Ghosts|Condensations|Graveyard/i.test(txt);
     }
 
+    // ---- D6-b v2 TEXT-OCCLUSION (acc 67 v2) ----
+    // The BINDING invariant: the legend overlay rect intersects the screen-space bbox of NO
+    // in-artifact <text> node (±4px pad). Measure the legend's on-screen rect and EVERY svg
+    // <text> node's bbox (getBoundingClientRect handles the viewBox→screen transform + the
+    // region's proportional scaling for us), then compute padded intersections. A zero-area
+    // text node (e.g. an empty label) is skipped. Report the full hit list with content so a
+    // failure is self-describing. PAD is the spec's ±4px. NON-binding nodes (speckle, dashed
+    // curves) are <path>/<circle>/<line>, never <text> — so scanning <text> only is exactly
+    // the v2 binding set.
+    const PAD = 4;
+    const rectsIntersect = (a, b) =>
+      a.left - PAD < b.right && a.right + PAD > b.left &&
+      a.top - PAD < b.bottom && a.bottom + PAD > b.top;
+    let textOcclusion = { legendRectPresent: !!legendRect, textNodes: 0, occlusions: [] };
+    if (legendRect && svg) {
+      const textNodes = Array.from(svg.querySelectorAll('text'));
+      let counted = 0;
+      const hits = [];
+      for (const t of textNodes) {
+        const tr = t.getBoundingClientRect();
+        // Skip zero-area nodes (nothing rendered → nothing to occlude).
+        if (tr.width <= 0 || tr.height <= 0) continue;
+        counted++;
+        if (rectsIntersect(legendRect, tr)) {
+          hits.push({
+            text: (t.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 80),
+            bbox: { left: Math.round(tr.left), top: Math.round(tr.top), right: Math.round(tr.right), bottom: Math.round(tr.bottom) },
+          });
+        }
+      }
+      textOcclusion = {
+        legendRectPresent: true,
+        legendRect: { left: Math.round(legendRect.left), top: Math.round(legendRect.top), right: Math.round(legendRect.right), bottom: Math.round(legendRect.bottom) },
+        textNodes: counted,
+        pad: PAD,
+        occlusions: hits,
+        textOcclusions: hits.length,
+      };
+    }
+
     // Is there a normal-flow legend band BETWEEN the header and the region? (must be GONE)
     // Heuristic: any element with "Legend" text that is a SIBLING before the region (not a
     // descendant of it). Walk the region's preceding siblings for legend text.
@@ -233,6 +281,7 @@ async function probeViewport(browser, vp, doExtras) {
         corner: legendCorner, coveragePct: legendCoveragePct, collapsed: legendCollapsed,
         bandBeforeRegion,
       },
+      textOcclusion,
       subtitle: subtitleText,
     };
   })()`);
@@ -269,54 +318,63 @@ async function probeViewport(browser, vp, doExtras) {
     }
   }
 
-  // Extras only at 1440: skin-flip re-apply + a wiring smoke.
-  if (doExtras && !measurement.error) {
-    // Full-page screenshot for eyes reference (galadriel judges the pixels).
-    const full = await S('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
-    const fullPath = path.join(OUT_DIR, `d6-atlas-${vp.name}-full.png`);
-    fs.writeFileSync(fullPath, Buffer.from(full.data, 'base64'));
-    result.fullScreenshot = fullPath;
+  // Extras. `extras === 'full'` (1440): eyes-ref screenshots + wiring smoke + skin-flip.
+  // `extras === 'flip'` (375): skin-flip + post-flip text-occlusion only (no heavy shots).
+  // The DEFAULT-skin text-occlusion is already in `measurement` at EVERY viewport; the flip
+  // adds the LIGHT-skin check so acc 67 v2 is proven at BOTH viewports × BOTH skins.
+  if (extras && !measurement.error) {
+    if (extras === 'full') {
+      // Full-page screenshot for eyes reference (galadriel judges the pixels).
+      const full = await S('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
+      const fullPath = path.join(OUT_DIR, `d6-atlas-${vp.name}-full.png`);
+      fs.writeFileSync(fullPath, Buffer.from(full.data, 'base64'));
+      result.fullScreenshot = fullPath;
 
-    // Bottom-left corner crop (where the legend sits — occlusion eyes-reference).
-    const regionBox = await evalJs(`(() => {
-      const region = document.querySelector('[aria-label="Build Horizon — full-horizon chart"]');
-      const r = region.getBoundingClientRect();
-      return { x: r.left + window.scrollX, y: r.top + window.scrollY, w: r.width, h: r.height };
-    })()`);
-    const cropW = Math.min(420, regionBox.w - 2);
-    const cropH = Math.min(340, regionBox.h - 2);
-    for (const c of [
-      { tag: 'bottomleft', x: regionBox.x + 1, y: regionBox.y + regionBox.h - cropH - 1 },
-      { tag: 'topleft', x: regionBox.x + 1, y: regionBox.y + 1 },
-      { tag: 'topright', x: regionBox.x + regionBox.w - cropW - 1, y: regionBox.y + 1 },
-    ]) {
-      const shot = await S('Page.captureScreenshot', {
-        format: 'png',
-        captureBeyondViewport: true,
-        clip: { x: c.x, y: c.y, width: cropW, height: cropH, scale: 1 },
-      });
-      fs.writeFileSync(path.join(OUT_DIR, `d6-atlas-cornercrop-${c.tag}.png`), Buffer.from(shot.data, 'base64'));
+      // Corner crops — bottom-RIGHT is where the legend NOW sits (v2 occlusion eyes-ref);
+      // bottom-left / top-left / top-right kept so the footer honesty block (now UN-occluded,
+      // bottom-left) + title + condensation key are all eyes-checkable.
+      const regionBox = await evalJs(`(() => {
+        const region = document.querySelector('[aria-label="Build Horizon — full-horizon chart"]');
+        const r = region.getBoundingClientRect();
+        return { x: r.left + window.scrollX, y: r.top + window.scrollY, w: r.width, h: r.height };
+      })()`);
+      const cropW = Math.min(480, regionBox.w - 2);
+      const cropH = Math.min(360, regionBox.h - 2);
+      for (const c of [
+        { tag: 'bottomright', x: regionBox.x + regionBox.w - cropW - 1, y: regionBox.y + regionBox.h - cropH - 1 },
+        { tag: 'bottomleft', x: regionBox.x + 1, y: regionBox.y + regionBox.h - cropH - 1 },
+        { tag: 'topleft', x: regionBox.x + 1, y: regionBox.y + 1 },
+        { tag: 'topright', x: regionBox.x + regionBox.w - cropW - 1, y: regionBox.y + 1 },
+      ]) {
+        const shot = await S('Page.captureScreenshot', {
+          format: 'png',
+          captureBeyondViewport: true,
+          clip: { x: c.x, y: c.y, width: cropW, height: cropH, scale: 1 },
+        });
+        fs.writeFileSync(path.join(OUT_DIR, `d6-atlas-cornercrop-${c.tag}.png`), Buffer.from(shot.data, 'base64'));
+      }
+
+      // Wiring smoke: chart mark → selection + halo (chart↔table still fires post-D6).
+      result.wiring = await evalJs(`(async () => {
+        const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+        const out = {};
+        const kitMark = document.querySelector('.atlas-svg-host svg [data-kit]');
+        out.markFound = !!kitMark;
+        if (kitMark) {
+          const kid = kitMark.getAttribute('data-kit');
+          kitMark.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+          await sleep(160);
+          out.selectionShown = /build ·/.test(document.body.textContent || '');
+          const styleText = Array.from(document.querySelectorAll('style')).map(s=>s.textContent).join('\\n');
+          out.haloRuleForKit = styleText.includes('[data-kit="'+kid+'"]');
+          out.markStrokeWidth = getComputedStyle(kitMark).strokeWidth;
+        }
+        return out;
+      })()`);
     }
 
-    // Wiring smoke: chart mark → selection + halo (chart↔table still fires post-D6).
-    result.wiring = await evalJs(`(async () => {
-      const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-      const out = {};
-      const kitMark = document.querySelector('.atlas-svg-host svg [data-kit]');
-      out.markFound = !!kitMark;
-      if (kitMark) {
-        const kid = kitMark.getAttribute('data-kit');
-        kitMark.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-        await sleep(160);
-        out.selectionShown = /build ·/.test(document.body.textContent || '');
-        const styleText = Array.from(document.querySelectorAll('style')).map(s=>s.textContent).join('\\n');
-        out.haloRuleForKit = styleText.includes('[data-kit="'+kid+'"]');
-        out.markStrokeWidth = getComputedStyle(kitMark).strokeWidth;
-      }
-      return out;
-    })()`);
-
-    // Skin flip re-apply (acc 66 "after skin flip"): frame + plate re-written on flip.
+    // Skin flip re-apply (acc 66 "after skin flip") + LIGHT-skin text-occlusion (acc 67 v2):
+    // frame + plate re-written on flip AND the legend still hits ZERO <text> bbox in light.
     result.skinFlip = await evalJs(`(async () => {
       const sleep = (ms) => new Promise(r => setTimeout(r, ms));
       const btns = Array.from(document.querySelectorAll('button'));
@@ -336,12 +394,46 @@ async function probeViewport(browser, vp, doExtras) {
         width: el.getAttribute('width'), height: el.getAttribute('height'),
         fill: el.getAttribute('fill'), stroke: el.getAttribute('stroke'),
       }));
+      // LIGHT-skin text-occlusion (v2): re-find the legend + re-scan every <text> node.
+      const PAD = 4;
+      const rectsIntersect = (a, b) =>
+        a.left - PAD < b.right && a.right + PAD > b.left &&
+        a.top - PAD < b.bottom && a.bottom + PAD > b.top;
+      const region = document.querySelector('[aria-label="Build Horizon — full-horizon chart"]');
+      let legendEl = null;
+      if (region) {
+        legendEl = Array.from(region.querySelectorAll('div,button')).find(el => {
+          const t = (el.textContent || '').trim();
+          return /^Legend\\b/.test(t) && el.offsetParent !== null;
+        }) || null;
+      }
+      const legendRect = legendEl ? legendEl.getBoundingClientRect() : null;
+      let textOcclusion = { legendRectPresent: !!legendRect, textNodes: 0, occlusions: [], textOcclusions: null };
+      if (legendRect) {
+        const hits = [];
+        let counted = 0;
+        for (const t of Array.from(svg.querySelectorAll('text'))) {
+          const tr = t.getBoundingClientRect();
+          if (tr.width <= 0 || tr.height <= 0) continue;
+          counted++;
+          if (rectsIntersect(legendRect, tr)) {
+            hits.push({ text: (t.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 80),
+              bbox: { left: Math.round(tr.left), top: Math.round(tr.top), right: Math.round(tr.right), bottom: Math.round(tr.bottom) } });
+          }
+        }
+        textOcclusion = {
+          legendRectPresent: true,
+          legendRect: { left: Math.round(legendRect.left), top: Math.round(legendRect.top), right: Math.round(legendRect.right), bottom: Math.round(legendRect.bottom) },
+          textNodes: counted, pad: PAD, occlusions: hits, textOcclusions: hits.length,
+        };
+      }
       return {
         flipped: true,
         viewBox: svg.getAttribute('viewBox'),
         plate: info.find(r => r.fill && r.fill.toLowerCase() !== 'none') || null,
         frame: info.find(r => r.fill && r.fill.toLowerCase() === 'none' && r.stroke) || null,
         svgWidthAttr: svg.getAttribute('width'),
+        textOcclusion,
       };
     })()`);
   }
@@ -358,7 +450,10 @@ async function main() {
   const results = [];
   try {
     for (const vp of VIEWPORTS) {
-      const r = await probeViewport(browser, vp, vp.name === '1440');
+      // 1440 → full extras (screenshots + wiring + flip). 375 → flip-only (both viewports
+      // must prove text-occlusion under BOTH skins per acc 67 v2). 1280 → base measurement.
+      const extras = vp.name === '1440' ? 'full' : vp.name === '375' ? 'flip' : null;
+      const r = await probeViewport(browser, vp, extras);
       results.push(r);
     }
   } finally {
@@ -369,6 +464,52 @@ async function main() {
   fs.writeFileSync(outJson, JSON.stringify(results, null, 2));
   console.log(JSON.stringify(results, null, 2));
   console.log('\nReceipts JSON:', outJson);
+
+  // ---- ACC 67 v2 GATE (fail-loud): zero <text> intersections at 1440 + 375, both skins ----
+  // The binding surfaces are: 1440-dark, 1440-light, 375-dark, 375-light. Each carries a
+  // textOcclusions count; ANY nonzero → the legend occludes an in-artifact text node → FAIL.
+  const occChecks = [];
+  for (const r of results) {
+    // Every measured viewport's DARK-skin occlusion is gated (1280 included: it is a real
+    // desktop width where the expanded panel's left edge must clear the points-line tail —
+    // the proportional-scaling robustness the charge requires). LIGHT skin runs at 1440 + 375.
+    if (r.textOcclusion && typeof r.textOcclusion.textOcclusions === 'number') {
+      occChecks.push({ where: `${r.viewport}-dark`, ...r.textOcclusion });
+    }
+    if (r.skinFlip && r.skinFlip.textOcclusion && typeof r.skinFlip.textOcclusion.textOcclusions === 'number') {
+      occChecks.push({ where: `${r.viewport}-light`, ...r.skinFlip.textOcclusion });
+    }
+  }
+  console.log('\n==== ACC 67 v2 — legend × in-artifact <text> occlusion (±4px pad) ====');
+  const REQUIRED = ['1440-dark', '1440-light', '375-dark', '375-light'];
+  const seen = new Set(occChecks.map((c) => c.where));
+  const missing = REQUIRED.filter((k) => !seen.has(k));
+  let failed = false;
+  for (const c of occChecks) {
+    const corner = c.legendRect
+      ? `legend[l=${c.legendRect.left},t=${c.legendRect.top},r=${c.legendRect.right},b=${c.legendRect.bottom}]`
+      : 'legend[absent]';
+    console.log(`  ${c.where}: textOcclusions=${c.textOcclusions} · textNodes=${c.textNodes} · ${corner}`);
+    if (c.textOcclusions > 0) {
+      failed = true;
+      for (const h of c.occlusions) {
+        console.log(`      ✗ OCCLUDES <text> "${h.text}"  bbox=[l=${h.bbox.left},t=${h.bbox.top},r=${h.bbox.right},b=${h.bbox.bottom}]`);
+      }
+    }
+    if (c.legendRectPresent === false) {
+      failed = true;
+      console.log(`      ✗ legend rect NOT FOUND at ${c.where} — cannot prove the law`);
+    }
+  }
+  if (missing.length) {
+    failed = true;
+    console.log(`  ✗ MISSING required occlusion checks: ${missing.join(', ')}`);
+  }
+  if (failed) {
+    console.error('\nPROBE FAILED: acc 67 v2 — the legend overlay intersects an in-artifact <text> bbox (or a required check is missing). See the ✗ lines above.');
+    process.exit(1);
+  }
+  console.log('  acc 67 v2 PASS — legend intersects ZERO in-artifact <text> bbox at all four binding surfaces.');
   process.exit(0);
 }
 
