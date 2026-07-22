@@ -88,8 +88,13 @@ ACTIVE = on Tier-3 spine && not shadowed = the kits the sim actually fights.
   source_lane/errata_applied/verified_date/created_date/extraction_provenance). Frost Blades correctly
   shows dual geometry (melee_arc + projectile); maxroll.gg guide auto-selected for both PoE spot kits.
 
-**Deploy:** pushed (Matt's "update the Vercel app" = deploy authorization; auto-deploy on push). See the
-commit + push record appended after this entry.
+**Deploy:** commit `f695efc` pushed `b5d0a3d..f695efc main` (Matt's "update the Vercel app" = deploy
+authorization; git-push auto-deploy). Production deployment `reincarnated-loadout-4ndrgvixv` (● Ready,
+target production) auto-aliased `https://reincarnated-loadout.vercel.app`. LIVE-verified: prod
+`/canon` + `/canon/index.json` + `/canon/kits/*.json` all HTTP 200; live index.json serves 267 records
+/ schema v2.0 / spine-status {ACTIVE 120, SHADOWED 11, UNPLACED 136}; live poe1-frost-blades shows dual
+geometry (melee_arc + projectile) + its maxroll build-guide link. **vercel.json untouched** (existing
+SPA rewrite handles the /canon deep links — deliberately not changed per the May-12 routing lesson).
 
 **No overrides / no TODO(drax):** the DB is the contract; no engine-gap compensation was needed. No
 engine bug found while consuming (all 267 records + joins well-formed).
