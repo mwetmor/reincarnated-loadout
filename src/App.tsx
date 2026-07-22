@@ -12,6 +12,8 @@ import { Planning } from './pages/Planning';
 import { PlanningDoc } from './pages/PlanningDoc';
 import { EngineState } from './pages/EngineState';
 import { Forge } from './pages/Forge';
+import { CanonIndex } from './pages/CanonIndex';
+import { CanonKit } from './pages/CanonKit';
 // cycle-18 recovery-2: KitBrowser at /kits preserves cycle-18 grid surface.
 // /kit-space redirects to /kits (discovery surface); /loadout = rich per-character view.
 // cosmograph Phase A (2026-06-06): /forge = forward-looking future-engine substrate cosmograph.
@@ -98,6 +100,11 @@ export default function App() {
             <Route path="/atlas" element={<AtlasRedirect />} />
             {/* cycle-18 recovery-2: /kits = kit browser (grid/featured/faction filter) */}
             <Route path="/kits" element={<KitBrowser />} />
+            {/* canon inspection surface (Matt-requested 2026-07-22): the 267 canonical
+                KIT records "as the battle sim sees them" — full per-kit join + build-guide
+                links. index + lazy-fetched per-kit detail. Distinct from /kits (generated). */}
+            <Route path="/canon" element={<CanonIndex />} />
+            <Route path="/canon/:kitId" element={<CanonKit />} />
             {/* /kit-space redirects to /kits (kit discovery surface) */}
             <Route path="/kit-space" element={<Navigate to="/kits" replace />} />
           </Routes>

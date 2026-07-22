@@ -1,0 +1,707 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 0,
+    "recognition_hooks": 1,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1010,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-chronomancer-01",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 1011,
+      "assert_text": "expresses: The source player would miss (1) that the CC is literal TIME-STOP -- enemies fro",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "poe2-chronomancer-01",
+      "last_result": "red",
+      "routed_docket_id": 163
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 299,
+    "kit_id": "poe2-chronomancer-01",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Chronomancer Ascendancy Overview for Path of Exile 2 Return of the Ancients 0.5.4",
+    "url": "https://maxroll.gg/poe2/resources/chronomancer-ascendancy"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 299,
+      "kit_id": "poe2-chronomancer-01",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Chronomancer Ascendancy Overview for Path of Exile 2 Return of the Ancients 0.5.4",
+      "url": "https://maxroll.gg/poe2/resources/chronomancer-ascendancy"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 300,
+      "kit_id": "poe2-chronomancer-01",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe2db.tw",
+      "title": "Time Freeze - PoE2DB",
+      "url": "https://poe2db.tw/us/Time_Freeze"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 301,
+      "kit_id": "poe2-chronomancer-01",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "Crit Eye/Comet Chronomancer (Nerf Safe)",
+      "url": "https://www.pathofexile.com/forum/view-thread/3643825"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-chronomancer-01",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 869,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-poe2",
+        "docket_id": 163,
+        "evidence_kits": [
+          "poe2-chronomancer-01"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:poe2-chronomancer-01",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "poe2-record"
+        },
+        "source_deviation_id": 869,
+        "source_kit_id": "poe2-chronomancer-01",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 PoE2 structuring of poe2-chronomancer-01.",
+        "status": "open"
+      },
+      "docket_id": 163,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-chronomancer-01",
+      "missing_expression": "The source player would miss (1) that the CC is literal TIME-STOP -- enemies frozen mid-animation, not stunned-and-recovering -- our stun approximation loses the total-action-denial texture that made it boss-trivializing (and negative);",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "The source player would miss (1) that the CC is literal TIME-STOP -- enemies frozen mid-animation, not stunned-and-recovering -- our stun approximation loses the total-action-denial texture that made it boss-trivializing (and negative); (2) the cooldown-RESET engine (Time Snap) as a first-class mechanic -- no native key resets cooldowns, so the signature back-to-back-stasis loop degrades to a cadence note + docket. Both are IDENTITY-level losses -> APPROX bordering GAPPED; kept APPROX because a duration-capped mass-stun controller is recognizably 'that build, weaker.'"
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 593,
+      "kit_id": "poe2-chronomancer-01",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "This Skill allows you to stop time every 1 minute for 3 seconds. This is a very powerful crowd control ability which prevents all enemies from performing any actions.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 592,
+      "kit_id": "poe2-chronomancer-01",
+      "payload_json": {
+        "ascendancy": "Chronomancer",
+        "nodes": [
+          "Ultimate Command (grants Time Freeze — stops time every 1 minute for 3 seconds)",
+          "Unbound Encore (grants Time Snap — resets cooldowns every 30-40s)",
+          "Now and Again (reworked in 0.5)",
+          "Inevitable Agony",
+          "Phased Form (reworked in 0.5)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/resources/chronomancer-ascendancy"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 591,
+      "kit_id": "poe2-chronomancer-01",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Release a large wave that stops time for all affected enemies for a duration.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 590,
+      "kit_id": "poe2-chronomancer-01",
+      "payload_json": {
+        "geometry_verbatim": "Time Freeze: large wave, 10-metre radius AoE, hits all enemies in zone. Duration-based CC rather than per-target geometry."
+      },
+      "source_url": "https://poe2db.tw/us/Time_Freeze"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "This allows you to reset cooldowns of all abilities every 30-40s.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 589,
+      "kit_id": "poe2-chronomancer-01",
+      "payload_json": {
+        "loop_verbatim": "Time Freeze: releases large AoE wave stopping time for all enemies for 3 seconds (55-65s cooldown). Time Snap: resets all ability cooldowns every 30-40 seconds (granted by Unbound Encore node). Loop: Time Snap resets Time Freeze cooldown enabling back-to-back stasis windows. Duration scales down with repeat applications per 30s window."
+      },
+      "source_url": "https://maxroll.gg/poe2/resources/chronomancer-ascendancy"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Ice Nova Snap Chronomancer Build Guide for Path of Exile 2 The Last of the Druids 0.4.0",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 594,
+      "kit_id": "poe2-chronomancer-01",
+      "payload_json": {
+        "variants": [
+          "Ice Nova Snap Chronomancer (0.4)",
+          "Arc Chronomancer (0.2)",
+          "Fireball Chronomancer (leveling guide)",
+          "Frostbolt CoC Comet Chronomancer (0.4)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/ice-nova-snap-chronomancer-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "blank|at-target|var|blank|blank|blank|blank|blank|solo|ranged|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": null,
+    "ctrl_ailments_mapped": null,
+    "ctrl_function": null,
+    "ctrl_treatment": null,
+    "def_bin": null,
+    "def_conf": null,
+    "def_riders": null,
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": null,
+    "econ_meter_type": null,
+    "econ_status": null,
+    "economy_model": null,
+    "flags": [
+      "A5-negative-supplementary"
+    ],
+    "geometry_conf": null,
+    "geometry_rule_fired": null,
+    "geometry_value": null,
+    "kit_id": "poe2-chronomancer-01",
+    "mob_policy_while_casting": null,
+    "mob_skill_is_movement": null,
+    "mob_verbs": null,
+    "provenance_json": {
+      "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+      "keying": "A5-negative-rekey-2026-07-14",
+      "negative": 1,
+      "passive_null_coords": [
+        "geometry_value",
+        "ctrl_treatment",
+        "ctrl_function",
+        "def_bin",
+        "economy_model",
+        "mob_policy_while_casting"
+      ],
+      "recoverable_coords": [
+        "delivery_value",
+        "amp_val",
+        "proxy_val",
+        "range_val",
+        "tempo_val",
+        "commit_val",
+        "activation_val",
+        "dependency_val"
+      ],
+      "source": "megaprobe-facts-jsonl (sparse negative row)",
+      "supplementary_only": true
+    },
+    "raw_json": {
+      "delivery": {
+        "conf": 0.7,
+        "evidence": "Time-manipulation skills target enemies/areas; at-target delivery",
+        "value": "at-target"
+      },
+      "folk_name": "Chronomancer (launch)",
+      "footprint": {
+        "conf": 0.68,
+        "evidence": "Time-rewind and freeze-time cover large zones; atlas geo=large-AOE confirmed",
+        "value": "large-zone"
+      },
+      "game": "poe2",
+      "keying_provenance": {
+        "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+        "keying": "A5-negative-rekey-2026-07-14",
+        "negative": 1,
+        "passive_null_coords": [
+          "geometry_value",
+          "ctrl_treatment",
+          "ctrl_function",
+          "def_bin",
+          "economy_model",
+          "mob_policy_while_casting"
+        ],
+        "recoverable_coords": [
+          "delivery_value",
+          "amp_val",
+          "proxy_val",
+          "range_val",
+          "tempo_val",
+          "commit_val",
+          "activation_val",
+          "dependency_val"
+        ],
+        "source": "megaprobe-facts-jsonl (sparse negative row)",
+        "supplementary_only": true
+      },
+      "kit_id": "poe2-chronomancer-01",
+      "mech_note": "mech_note: 'Time-manipulation ascendancy whose freeze-time and rewind toys never paid rent at any tier.' The IRMVSI prefix (INT/ranged/med/variable) reflects the multi-tool nature of time skills — variable amp because different time effects produce different damage patterns. conf=0.68.",
+      "row_class": "combat-kit",
+      "status": "negative",
+      "why_negative": "failed-meta: time-manipulation ascendancy mechanics (freeze-time, rewind) were too slow and imprecise for PoE2's fast combat loop; never achieved meta tier in 0.1-0.4 era"
+    },
+    "resource_verbatim": null,
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-chronomancer-01",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Release a large wave (10-metre radius nova-around-self) that stops time for all affected enemies for 3s. -> ring (burst-around-self). Time-stop -> STUN (mass, duration-capped), NOT freeze -- time-stop is element-neutral hard CC, not cold-thematic shatter-carrier. Duration decays with repeat applications per window.",
+      "source_skill": "Time Freeze",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-chronomancer-01",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "Resets all ability cooldowns every 30-40s (Unbound Encore node). Self-targeted utility with no geometry footprint -> self_buff. This IS the kit's loop: Snap resets Time Freeze for back-to-back stasis windows -- NOT silently dropped.",
+      "source_skill": "Time Snap",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-chronomancer-01",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The source player would miss (1) that the CC is literal TIME-STOP -- enemies frozen mid-animation, not stunned-and-recovering -- our stun approximation loses the total-action-denial texture that made it boss-trivializing (and negative); (2) the cooldown-RESET engine (Time Snap) as a first-class mechanic -- no native key resets cooldowns, so the signature back-to-back-stasis loop degrades to a cadence note + docket. Both are IDENTITY-level losses -> APPROX bordering GAPPED; kept APPROX because a duration-capped mass-stun controller is recognizably 'that build, weaker.'",
+    "grade": "APPROX",
+    "kit_id": "poe2-chronomancer-01",
+    "mapping_json": {
+      "fidelity_notes": "NEGATIVE=1 (attested trap-kit) -- mapped HONESTLY per wild-strike PoE1 precedent: honest grade, trap-canon UNLAUNDERED (the map does not sand off the boss-trivializing CC that made it negative). Time Freeze -> STUN (mass, duration-capped) + note, per addendum A (NOT freeze; flavor loss = the cold register). Time Snap cooldown-reset-burst (addendum B): the kit's loop -- but NO native economy key expresses 'reset all cooldowns' -> DOCKET-CANDIDATE filed (cooldown-reset-burst class); approximated to cadence_scale + proc-loop note, NOT silently dropped. death_class=extrinsic-tuning (the negative was launch tuning, reworked 0.5). verify_ledger: negative_canon UNSUPPORTED but corpus negative=1 governs; era CONFIRMED 0.1-0.4.",
+      "motion_frame": "Time Freeze mass-stops enemies (3s, 55-65s cd); Time Snap resets all cooldowns (30-40s) enabling back-to-back Freeze windows; duration decays on repeat.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence_scale": "cooldown-utility gated (Time Freeze 55-65s; Time Snap 30-40s)",
+        "persistent_condition_shape": "proc-loop"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "cooldown-reset loop (Time Snap)"
+          ],
+          "geometry": [
+            "Time Freeze ring nova"
+          ],
+          "traits_affixes": [
+            "CC-duration scalers"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "stun"
+          ],
+          "delivery_notes": "Release a large wave (10-metre radius nova-around-self) that stops time for all affected enemies for 3s. -> ring (burst-around-self). Time-stop -> STUN (mass, duration-capped), NOT freeze -- time-stop is element-neutral hard CC, not cold-thematic shatter-carrier. Duration decays with repeat applications per window.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "ring",
+          "source_skill": "Time Freeze"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Resets all ability cooldowns every 30-40s (Unbound Encore node). Self-targeted utility with no geometry footprint -> self_buff. This IS the kit's loop: Snap resets Time Freeze for back-to-back stasis windows -- NOT silently dropped.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Time Snap"
+        }
+      ],
+      "t4_doors": [
+        "TEMPORAL_CHARGE",
+        "ZONE_CONTROL"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": "Time-stopped state (mass CC)",
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Chronomancer (launch): ring zone identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-chronomancer-01",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.68,
+    "amp_val": "var",
+    "architecture": null,
+    "atlas_coords": "blank|at-target|var|blank|blank|blank|blank|blank|solo|ranged|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "blank|at-target|var|blank|blank|blank|blank|blank|solo|ranged|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "blank"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "var"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "blank"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "blank"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "blank"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "blank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "blank"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMVSI-MLCG-CD-CO-~~",
+    "attr_conf": 0.68,
+    "attr_val": "INT",
+    "avg_conf": 0.68,
+    "canon_tier": "negative",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.68,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Time Freeze",
+      "Time Snap"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": "extrinsic-tuning",
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "cooldown-utility",
+    "elem_raw": "cold",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn;0.3-edict;0.4",
+    "eras_normalized": "0.1;0.2-dawn;0.3-edict;0.4",
+    "flags": "",
+    "folk_name": "Chronomancer (launch)",
+    "game": "poe2",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-chronomancer-01",
+    "lattice_coord": "IRMVSI",
+    "lineage": "",
+    "mech_note": "mech_note: 'Time-manipulation ascendancy whose freeze-time and rewind toys never paid rent at any tier.' The IRMVSI prefix (INT/ranged/med/variable) reflects the multi-tool nature of time skills — variable amp because different time effects produce different damage patterns. conf=0.68.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|LARGE|INST×econ:cooldown",
+    "mobile_key_group": "IRMVSI-MLCG-CD-CO-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 0,
+    "negative": 1,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;aoe",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.68,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.68,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "complete-kit-mapping",
+    "tempo_conf": 0.68,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "0.3.0 - The Third Edict / 0.4.0 - The Last of the Druids",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.1, 0.2-dawn, 0.3-edict, 0.4",
+      "errata_applied": 0,
+      "id": 360,
+      "kit_id": "poe2-chronomancer-01",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/resources/chronomancer-ascendancy",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Ice Nova Snap Chronomancer Build Guide for Path of Exile 2 The Last of the Druids 0.4.0",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Chronomancer (launch)'; aliases 'Time Freeze Chronomancer', 'launch Chronomancer negative'",
+      "errata_applied": 0,
+      "id": 358,
+      "kit_id": "poe2-chronomancer-01",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/ice-nova-snap-chronomancer-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Release a large wave that stops time for all affected enemies for a duration. Duration is lower the more times the enemy has had time stopped for them.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Time Freeze, Time Snap; time-stop loop that stops all enemy actions for duration",
+      "errata_applied": 0,
+      "id": 359,
+      "kit_id": "poe2-chronomancer-01",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poe2db.tw/us/Time_Freeze",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Release a large wave (10-metre radius nova-around-self) that stops time for all affected enemies for 3s. -> ring (burst-around-self). Time-stop -> STUN (mass, duration-capped), NOT freeze -- time-stop is element-neutral hard CC, not cold-thematic shatter-carrier. Duration decays with repeat applications per window.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Time Freeze' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (2 sig)",
+      "errata_applied": 0,
+      "id": 2508,
+      "kit_id": "poe2-chronomancer-01",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Resets all ability cooldowns every 30-40s (Unbound Encore node). Self-targeted utility with no geometry footprint -> self_buff. This IS the kit's loop: Snap resets Time Freeze for back-to-back stasis windows -- NOT silently dropped.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Time Snap' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1 sig)",
+      "errata_applied": 0,
+      "id": 2509,
+      "kit_id": "poe2-chronomancer-01",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "negative_canon",
+      "claim_subject": null,
+      "claim_text": "Time-stop loop / ability-usage freeze mechanic that trivializes boss encounters — negative because launch implementation removed/reworked",
+      "errata_applied": 0,
+      "id": 361,
+      "kit_id": "poe2-chronomancer-01",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poe2db.tw/us/Time_Freeze",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    }
+  ]
+}

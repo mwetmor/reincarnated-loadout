@@ -1,0 +1,807 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 929,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-dee-witch-hunter",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "unknown",
+    "cite_class": "communal",
+    "id": 437,
+    "kit_id": "gd-dee-witch-hunter",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "forums.crateentertainment.com",
+    "title": "[1.0.0.7] Dreeg's Champion",
+    "url": "https://forums.crateentertainment.com/t/1-0-0-7-dreegs-champion/36230"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 437,
+      "kit_id": "gd-dee-witch-hunter",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.0.0.7] Dreeg's Champion",
+      "url": "https://forums.crateentertainment.com/t/1-0-0-7-dreegs-champion/36230"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 438,
+      "kit_id": "gd-dee-witch-hunter",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.2.0.3] Witch Hunter w/ Ember's Calling set - Fire/Burn Dreeg's Evil Eye",
+      "url": "https://forums.crateentertainment.com/t/1-2-0-3-witch-hunter-w-embers-calling-set-fire-burn-dreegs-evil-eye-75-fire-rr/133677"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-dee-witch-hunter",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 805,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 GD tranche; internal-consistency reconcile, no W1 evidence — W5 is GD's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "gd-dee-witch-hunter",
+      "missing_expression": "minor drift: the two-stage projectile-then-pool delivery is compressed to the pool geometry with the bolt as delivery flavor;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "minor drift: the two-stage projectile-then-pool delivery is compressed to the pool geometry with the bolt as delivery flavor; the fumble-curse accuracy layer and confusion layer are withheld pending steward rows (near-misses, not silent drops)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 929,
+      "kit_id": "gd-dee-witch-hunter",
+      "payload_json": {
+        "handle": "unknown",
+        "site": "forums.crateentertainment.com",
+        "thread": "[1.0.0.7] Dreeg's Champion"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-7-dreegs-champion/36230"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 928,
+      "kit_id": "gd-dee-witch-hunter",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "the 5 piece set bonus is a huge damage boost … Dreeg's Infinite Gaze to proc tainted eruption",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 927,
+      "kit_id": "gd-dee-witch-hunter",
+      "payload_json": {
+        "key_set": "Shroud of Deception of Dreeg (5-piece set)",
+        "notes": "Dreeg's Infinite Gaze weapon procs Tainted Eruption",
+        "set_bonus": "huge damage boost at 5 pieces"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-7-dreegs-champion/36230"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "acid eye-bolts that burst into poison pools and fumble curses",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 926,
+      "kit_id": "gd-dee-witch-hunter",
+      "payload_json": {
+        "aoe": "burst radius at impact",
+        "delivery": "projectile",
+        "footprint": "small-radius poison pool at landing",
+        "notes": "Eye-bolt travels as single projectile; detonates into AoE acid pool on contact",
+        "range": "ranged"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-7-dreegs-champion/36230"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "poison/acid build focused on damage-over-time effects … Dreeg's Infinite Gaze to proc tainted eruption … confusion effects that neutralize threats",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 925,
+      "kit_id": "gd-dee-witch-hunter",
+      "payload_json": {
+        "resource": "mana spend per cast",
+        "summary": "Fire acid eye-bolts at targets; each bolt bursts into a poison pool on landing; Bloody Pox applied as spreading curse for pack coverage; stacks acid/poison DoT until enemies dissolve",
+        "tempo": "spam/on-demand"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-7-dreegs-champion/36230"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[1.2.0.3] Witch Hunter w/ Ember's Calling set - Fire/Burn Dreeg's Evil Eye",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 930,
+      "kit_id": "gd-dee-witch-hunter",
+      "payload_json": {
+        "variants": [
+          "acid/poison DEE (base version)",
+          "fire/burn DEE conversion (Ember's Calling set variant, patch-era)",
+          "Warlock DEE (Arcanist+Occultist, different class)"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-2-0-3-witch-hunter-w-embers-calling-set-fire-burn-dreegs-evil-eye-75-fire-rr/133677"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|projectile|flat|circle|damage|none|tank|spend|solo|ranged|low|instant|active|build→spend",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.71,
+    "geometry_rule_fired": "R8-proj-blast",
+    "geometry_value": "circle",
+    "kit_id": "gd-dee-witch-hunter",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRLFSI-HSMD-DW-AC-~~",
+      "delivery": "projectile",
+      "elem_raw": "acid",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.71,
+        "rule_fired": "R8-proj-blast",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Dreeg's Evil Eye Witch Hunter",
+      "game": "gd",
+      "kit_id": "gd-dee-witch-hunter",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRLFSI-HSMD-DW-AC-~~",
+        "delivery": "projectile",
+        "elem_raw": "acid",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "energy",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "spam",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-dee-witch-hunter",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "single acid eye-bolt projectile that detonates at impact into a small-radius poison DoT pool ('acid eye-bolts that burst into poison pools and fumble curses'; 'Eye-bolt travels as single projectile; detonates into AoE acid pool on contact'); spam/on-demand. ground_targeted_circle carries the pool identity (phrase-book pool/patch/ground-DoT); the projectile travel is delivery flavor, drift noted. poison NAMED in fetched text ('poison pools'; 'poison/acid build focused on damage-over-time effects').",
+      "source_skill": "Dreeg's Evil Eye",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-dee-witch-hunter",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "cast on a target and spreads through the pack ('Bloody Pox applied as spreading curse for pack coverage'); contributes to the kit-level attested acid/poison DoT stack ('stacks acid/poison DoT until enemies dissolve'). single_target cast + contagion-spread note; propagation is proximity-spread, not on-kill.",
+      "source_skill": "Bloody Pox",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "gd-dee-witch-hunter",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "minor drift: the two-stage projectile-then-pool delivery is compressed to the pool geometry with the bolt as delivery flavor; the fumble-curse accuracy layer and confusion layer are withheld pending steward rows (near-misses, not silent drops).",
+    "grade": "CLOSE",
+    "kit_id": "gd-dee-witch-hunter",
+    "mapping_json": {
+      "fidelity_notes": "earth chosen for GD acid per main-law poison/acid row (venom register: Dreeg acid/poison theme dominant in fetched language) over the shadow-occult alternative (Occultist class flavor) -- noted per the row's either-way ailment lane. NOT emitted under 0-discipline: 'fumble curses' IS fetched but no crosswalk row covers fumble (the blind row lists blind/smoke/dim-vision -- vision register; fumble is a miss-chance status with matching accuracy-tax SEMANTICS) -> filed to steward as a row question, token withheld; 'confusion effects that neutralize threats' fetched but NO row (closest fear NOT emitted -- confusion is not a fear/terror/horrify naming). Item rider: Dreeg's Infinite Gaze weapon procs Tainted Eruption ('to blow up any mobs' = burst payload attested, trigger CONDITION unfetched -> rider noted here, not forced into trigger_grammar). R-M5 considered, not applicable.",
+      "motion_frame": "spam acid eye-bolts that burst into poison pools, seed Bloody Pox into the pack for spreading coverage, and kite while stacked acid DoTs dissolve everything",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "light energy per cast (spam-on-demand; the DoT stack carries damage between casts)"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "light-cost spam cadence"
+          ],
+          "geometry": [
+            "poison-pool radius/duration",
+            "Pox pack-spread range"
+          ],
+          "traits_affixes": [
+            "acid/poison DoT scaling (earth-family gated)",
+            "Shroud of Deception 5pc set damage bonus -> gear-affix numeric lane"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "single acid eye-bolt projectile that detonates at impact into a small-radius poison DoT pool ('acid eye-bolts that burst into poison pools and fumble curses'; 'Eye-bolt travels as single projectile; detonates into AoE acid pool on contact'); spam/on-demand. ground_targeted_circle carries the pool identity (phrase-book pool/patch/ground-DoT); the projectile travel is delivery flavor, drift noted. poison NAMED in fetched text ('poison pools'; 'poison/acid build focused on damage-over-time effects').",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Dreeg's Evil Eye"
+        },
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "cast on a target and spreads through the pack ('Bloody Pox applied as spreading curse for pack coverage'); contributes to the kit-level attested acid/poison DoT stack ('stacks acid/poison DoT until enemies dissolve'). single_target cast + contagion-spread note; propagation is proximity-spread, not on-kill.",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Bloody Pox"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_saturation"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "acid-slow"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 463,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 464,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "evidence": "Acid eye-bolt projectile; burst into poison pool at landing; fumble curse area",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 461,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "_prior_ingest11": {
+          "meter_type": "n/a",
+          "model": "spend",
+          "note": "GD resource is Energy ('Spirit' is a GD STAT name — confusion source). resource_verbatim relabelled per WRONG-RESOURCE-GENERALLY sweep; raw preserved.",
+          "plain_text": "mana (spend); Acid eye-bolts that burst into poison pools and fumble curses — the green DoT ca",
+          "resource_verbatim": "mana"
+        },
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "energy (spend); Acid eye-bolts that burst into poison pools and fumble curses — the green DoT ca",
+        "resource_verbatim": "energy"
+      },
+      "family": "economy",
+      "id": 465,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "dot",
+        "label_verbatim": "acid"
+      },
+      "family": "element",
+      "id": 466,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.71,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.71,
+        "evidence": "Eye-bolt impact small poison pool; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 462,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with small-radius footprint. Acid eye-bolts that burst into poison pools and fumble curses  —  the green DoT caster stacking Dreeg's corrosion until packs dissolve retroac.",
+      "family": "geo_text",
+      "id": 468,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 467,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 469,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "gt",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 470,
+      "kit_id": "gd-dee-witch-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Dreeg's Evil Eye Witch Hunter: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-dee-witch-hunter",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:earth",
+      "hook_id": "H2",
+      "hook_text": "earth element register",
+      "hook_type": "register",
+      "kit_id": "gd-dee-witch-hunter",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.83,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|flat|circle|damage|none|tank|spend|solo|ranged|low|instant|active|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|flat|circle|damage|none|tank|spend|solo|ranged|low|instant|active|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRLFSI-HSMD-DW-AC-~~",
+    "attr_conf": 0.83,
+    "attr_val": "INT",
+    "avg_conf": 0.83,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.83,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Dreeg's Evil Eye",
+      "Bloody Pox(support)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "energy-light-DoT",
+    "elem_raw": "acid",
+    "era_year": 2016,
+    "eras": "base-2016;fg-2019;patch-1.1-1.2",
+    "eras_normalized": "base-2016;fg-2019;patch-1.1-1.2",
+    "flags": "vdm2-w5-acid-register-split-2026-07-22: acid->earth register (skill.element_primary='earth' on the acid eye-bolt/poison-pool delivery) disagrees with court='chaos-poison' / sibling gd-blight-fiend-ritualist's acid->shadow. GD-acid register split (earth vs shadow) — W5 to unify (parallels the D2-poison split).",
+    "folk_name": "Dreeg's Evil Eye Witch Hunter",
+    "game": "gd",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "gd-dee-witch-hunter",
+    "lattice_coord": "IRLFSI",
+    "lineage": "",
+    "mech_note": "Acid eye-bolts that burst into poison pools and fumble curses — the green DoT caster stacking Dreeg's corrosion until packs dissolve retroac",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×econ:dot-walk",
+    "mobile_key_group": "IRLFSI-HSMD-DW-AC-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "acid",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.83,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.83,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.83,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Tagged as [1.0.0.7], with an update note mentioning '1.0.0.9 Update' in the initial post, placing this in an early Grim Dawn patch cycle.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "eras=['base-2016','fg-2019','patch-1.1-1.2']",
+      "errata_applied": 0,
+      "id": 559,
+      "kit_id": "gd-dee-witch-hunter",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-7-dreegs-champion/36230",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Referred to as the 'DEE Witch Hunter' and identified by the Dreeg's set it requires. The build is also called a poison/acid build focused on damage-over-time effects.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "folk_name='Dreeg's Evil Eye Witch Hunter'; aliases=['DEE Witch Hunter','Dreeg's Evil Eye acid build','Bloody Pox DEE combo']",
+      "errata_applied": 0,
+      "id": 557,
+      "kit_id": "gd-dee-witch-hunter",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-7-dreegs-champion/36230",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Dreeg's Infinite Gaze to proc tainted eruption to blow up any mobs … poison/acid build focused on damage-over-time effects … Witch Hunter (Occultist + Nightblade)",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "core_skills=['Dreeg's Evil Eye','Bloody Pox(support)']; delivery=projectile; burst into poison pool at landing; acid/poison damage",
+      "errata_applied": 0,
+      "id": 558,
+      "kit_id": "gd-dee-witch-hunter",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-7-dreegs-champion/36230",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "single acid eye-bolt projectile that detonates at impact into a small-radius poison DoT pool ('acid eye-bolts that burst into poison pools and fumble curses'; 'Eye-bolt travels as single projectile; detonates into AoE acid pool on contact'); spam/on-demand. ground_targeted_circle carries the pool identity (phrase-book pool/patch/ground-DoT); the projectile travel is delivery flavor, drift noted. poison NAMED in fetched text ('poison pools'; 'poison/acid build focused on damage-over-time effects'",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Dreeg's Evil Eye' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (7 sig)",
+      "errata_applied": 0,
+      "id": 2234,
+      "kit_id": "gd-dee-witch-hunter",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "cast on a target and spreads through the pack ('Bloody Pox applied as spreading curse for pack coverage'); contributes to the kit-level attested acid/poison DoT stack ('stacks acid/poison DoT until enemies dissolve'). single_target cast + contagion-spread note; propagation is proximity-spread, not on-kill.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bloody Pox' delivery_class=projectile (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'projectile'",
+      "errata_applied": 0,
+      "id": 2235,
+      "kit_id": "gd-dee-witch-hunter",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

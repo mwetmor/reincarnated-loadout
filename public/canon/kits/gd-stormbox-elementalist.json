@@ -1,0 +1,744 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 955,
+      "assert_text": "primary_delivery_class == 'beam'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-stormbox-elementalist",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "unknown",
+    "cite_class": "communal",
+    "id": 481,
+    "kit_id": "gd-stormbox-elementalist",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "steamcommunity.com",
+    "title": "So about Storm Box of Elgoloth...",
+    "url": "https://steamcommunity.com/app/219990/discussions/0/1678063648170859096/"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 481,
+      "kit_id": "gd-stormbox-elementalist",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "steamcommunity.com",
+      "title": "So about Storm Box of Elgoloth...",
+      "url": "https://steamcommunity.com/app/219990/discussions/0/1678063648170859096/"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "russell_timmerman",
+      "cite_class": "communal",
+      "id": 482,
+      "kit_id": "gd-stormbox-elementalist",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "My best Character so far. Elementalist Stun Jacks",
+      "url": "https://forums.crateentertainment.com/t/my-best-character-so-far-elementalist-stun-jacks/93990"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-stormbox-elementalist",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 822,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 GD tranche; internal-consistency reconcile, no W1 evidence — W5 is GD's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "gd-stormbox-elementalist",
+      "missing_expression": "MANDATORY (§7.3): the source player would miss the persistent enemy-attached tether — Storm Box rides the tagged enemy and re-arcs continuously over its duration;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "MANDATORY (§7.3): the source player would miss the persistent enemy-attached tether — Storm Box rides the tagged enemy and re-arcs continuously over its duration; engine chain renders as cooldown-cadenced arc casts from the target, losing the set-and-forget tag-and-wait texture. Player test: that build, worse — the tag-then-arcs loop survives at chain + cooldown cadence."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1061,
+      "kit_id": "gd-stormbox-elementalist",
+      "payload_json": {
+        "handle": "russell_timmerman",
+        "site": "forums.crateentertainment.com"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/my-best-character-so-far-elementalist-stun-jacks/93990"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1060,
+      "kit_id": "gd-stormbox-elementalist",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Allagast set for cooldown reduction",
+      "conf": 0.62,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1059,
+      "kit_id": "gd-stormbox-elementalist",
+      "payload_json": {
+        "alteration": "provides cooldown reduction for Storm Box",
+        "item": "Allagast set"
+      },
+      "source_url": "https://steamcommunity.com/app/219990/discussions/0/1678063648170859096/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "great single target DoT with tether",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1058,
+      "kit_id": "gd-stormbox-elementalist",
+      "payload_json": {
+        "delivery": "attached to target enemy (beacon/tether)",
+        "footprint": "chain-hop arcs from beacon to nearby enemies",
+        "verbatim": "great single target DoT with tether [...] the electrocute from the box and the Shaman mastery's Wind Devil skill would stack"
+      },
+      "source_url": "https://steamcommunity.com/app/219990/discussions/0/1678063648170859096/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "great single target DoT with tether [...] Storm Box only requires focus on one damage type",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1057,
+      "kit_id": "gd-stormbox-elementalist",
+      "payload_json": {
+        "loop_verb": "place-beacon cooldown loop",
+        "resource": "cooldown for Storm Box placement; energy secondary",
+        "summary": "Place Storm Box of Elgoloth on a target enemy; it creates a lightning tether beacon that arcs to all nearby enemies. Cooldown-gated placement. Lightning damage only. Pairs with Thermite Mines for RR."
+      },
+      "source_url": "https://steamcommunity.com/app/219990/discussions/0/1678063648170859096/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Elemental Storm Box/Obliteration VINDICATOR",
+      "conf": 0.65,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1062,
+      "kit_id": "gd-stormbox-elementalist",
+      "payload_json": {
+        "variants": [
+          "Storm Box caster Elementalist (Shaman+Demolitionist)",
+          "Storm Box+Stun Jacks hybrid Purifier (Inquisitor+Demolitionist)",
+          "Storm Box Vindicator (Shaman+Inquisitor)"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-4-the-elemental-storm-box-obliteration-vindicator-sr76-cr150-70/113683"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|chain|damage|none|tank|cooldown|light|ranged|low|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "cooldown",
+    "flags": [],
+    "geometry_conf": 0.65,
+    "geometry_rule_fired": "R1",
+    "geometry_value": "chain",
+    "kit_id": "gd-stormbox-elementalist",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRLFLI-HCDM-SP-LI-~~",
+      "delivery": "at-target",
+      "elem_raw": "lightning",
+      "footprint": "chain-hop"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.65,
+        "rule_fired": "R1",
+        "value": "chain"
+      },
+      "flags": [],
+      "folk_name": "Storm Box Elementalist",
+      "game": "gd",
+      "kit_id": "gd-stormbox-elementalist",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRLFLI-HCDM-SP-LI-~~",
+        "delivery": "at-target",
+        "elem_raw": "lightning",
+        "footprint": "chain-hop"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "cooldown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "beam",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-stormbox-elementalist",
+      "motion_signature": "chain_hop",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "'Placed on a target enemy; creates a lightning tether beacon that arcs to all nearby enemies' — 'great single target DoT with tether'. Mapped as chain (arcing between targets) from the tagged enemy; the persistent enemy-attached beacon is the drift. 'Electrocute' is GD's lightning-DoT damage register — NO engine token (engine shock requires CC).",
+      "source_skill": "Storm Box of Elgoloth",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "gd-stormbox-elementalist",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "MANDATORY (§7.3): the source player would miss the persistent enemy-attached tether — Storm Box rides the tagged enemy and re-arcs continuously over its duration; engine chain renders as cooldown-cadenced arc casts from the target, losing the set-and-forget tag-and-wait texture. Player test: that build, worse — the tag-then-arcs loop survives at chain + cooldown cadence.",
+    "grade": "APPROX",
+    "kit_id": "gd-stormbox-elementalist",
+    "mapping_json": {
+      "fidelity_notes": "Identity carries a WATCH annotation (folk-name weakness; identity claim UNSUPPORTED in verify_ledger) — irrelevant to mapping per steward; mapped from attested tether/box mechanics. Thermite Mines named 'for RR' but application shape unfetched → no curse/sunder token (near-miss). Enemy-attached persistent emitter has no geometry home — qual mint-candidate filed; chain is the parsimony-best render.",
+      "motion_frame": "Tag one enemy with a Storm Box beacon; the tether arcs chain into the pack while you wait",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence": "cooldown-place beacon; tag-and-wait loop (Allagast set CDR)",
+        "resource": "energy"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "cooldown reduction (Allagast)"
+          ],
+          "geometry": [
+            "tether arc reach"
+          ],
+          "traits_affixes": [
+            "mono-lightning scalers ('Storm Box only requires focus on one damage type')"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "'Placed on a target enemy; creates a lightning tether beacon that arcs to all nearby enemies' — 'great single target DoT with tether'. Mapped as chain (arcing between targets) from the tagged enemy; the persistent enemy-attached beacon is the drift. 'Electrocute' is GD's lightning-DoT damage register — NO engine token (engine shock requires CC).",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "chain",
+          "source_skill": "Storm Box of Elgoloth"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_uptime",
+        "RESONANCE_LOOP"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1643,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 1644,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.69,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.69,
+        "evidence": "Storm Box beacon placed on targeted enemy; lightning arcs chain to everything nearby",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1641,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "cooldown",
+        "plain_text": "cooldown (cooldown); Pin a crackling TETHER-BOX onto one target and lightning arcs to everything near",
+        "resource_verbatim": "cooldown"
+      },
+      "family": "economy",
+      "id": 1645,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "lightning"
+      },
+      "family": "element",
+      "id": 1646,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "evidence": "Lightning arcs chain from beacon to nearby; geo=chain in atlas",
+        "value": "chain-hop"
+      },
+      "family": "footprint",
+      "id": 1642,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with chain-hop footprint. Pin a crackling TETHER-BOX onto one target and lightning arcs to everything nearby while it rides them  —  a damage beacon you attach rather t.",
+      "family": "geo_text",
+      "id": 1648,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 1647,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1649,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "gt",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1650,
+      "kit_id": "gd-stormbox-elementalist",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Storm Box Elementalist: chain beam identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-stormbox-elementalist",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "gd-stormbox-elementalist",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.77,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|chain|damage|none|tank|cooldown|light|ranged|low|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|chain|damage|none|tank|cooldown|light|ranged|low|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "chain"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "cooldown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRLFLI-HCDM-SP-LI-~~",
+    "attr_conf": 0.77,
+    "attr_val": "INT",
+    "avg_conf": 0.77,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.77,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Storm Box of Elgoloth"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "tag-and-wait",
+    "elem_raw": "lightning",
+    "era_year": 2016,
+    "eras": "aom-2017;patch-1.1-1.2",
+    "eras_normalized": "aom-2017;patch-1.1-1.2",
+    "flags": "",
+    "folk_name": "Storm Box Elementalist",
+    "game": "gd",
+    "geo_raw": "chain",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-03",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "gd-stormbox-elementalist",
+    "lattice_coord": "IRLFLI",
+    "lineage": "",
+    "mech_note": "[VDM-1 basin-2 2026-07-18 ingest-11] IDENTITY-INTENT WATCH: dominant Storm Box expression is VINDICATOR, not Elementalist; identity reclassed CONFIRMED->UNSUPPORTED (steward). Is this corpus entry intended as Vindicator? Demote candidate iff curation later requires primary-skill-anchored identities. [original mech_note follows] Pin a crackling TETHER-BOX onto one target and lightning arcs to everything nearby while it rides them — a damage beacon you attach rather t",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: mark/tag ledger + consume-trigger operators",
+    "mobile_cell_id": "LIGHT|CHAIN|INST×GX-03",
+    "mobile_key_group": "IRLFLI-HCDM-SP-LI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.77,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.77,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.77,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Elementalist [...] Shaman side [...] community text December 2019 showing post-AoM Elementalist Stun Jacks / Storm Box combinations",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Present as build in eras: aom-2017, patch-1.1-1.2",
+      "errata_applied": 0,
+      "id": 628,
+      "kit_id": "gd-stormbox-elementalist",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/my-best-character-so-far-elementalist-stun-jacks/93990",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name: Storm Box Elementalist; aliases include Storm Box of Elgoloth build, lightning Elementalist",
+      "errata_applied": 0,
+      "id": 626,
+      "kit_id": "gd-stormbox-elementalist",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/my-best-character-so-far-elementalist-stun-jacks/93990",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "great single target DoT with tether [...] Storm Box only requires focus on one damage type",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill: Storm Box of Elgoloth. Placed on target enemy, lightning arcs chain to nearby enemies, cooldown resource.",
+      "errata_applied": 0,
+      "id": 627,
+      "kit_id": "gd-stormbox-elementalist",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://steamcommunity.com/app/219990/discussions/0/1678063648170859096/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "'Placed on a target enemy; creates a lightning tether beacon that arcs to all nearby enemies' — 'great single target DoT with tether'. Mapped as chain (arcing between targets) from the tagged enemy; the persistent enemy-attached beacon is the drift. 'Electrocute' is GD's lightning-DoT damage register — NO engine token (engine shock requires CC).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Storm Box of Elgoloth' delivery_class=beam (band_conf=0.75); lint: anchor leans 'aura' (1 sig) vs assigned 'beam' (0) — weak/defensible (thin margin), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2275,
+      "kit_id": "gd-stormbox-elementalist",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

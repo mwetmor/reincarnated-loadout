@@ -1,0 +1,809 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 933,
+      "assert_text": "primary_delivery_class == 'motion'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-eor-warlord",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "unknown",
+    "cite_class": "communal",
+    "id": 446,
+    "kit_id": "gd-eor-warlord",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "forums.crateentertainment.com",
+    "title": "[1.1.9.7] SSF Physical Eye of Reckoning Warlord | leveling and beginner build | HC friendly",
+    "url": "https://forums.crateentertainment.com/t/1-1-9-7-ssf-physical-eye-of-reckoning-warlord-leveling-and-beginner-build-hc-friendly/124405"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 446,
+      "kit_id": "gd-eor-warlord",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.1.9.7] SSF Physical Eye of Reckoning Warlord | leveling and beginner build | HC friendly",
+      "url": "https://forums.crateentertainment.com/t/1-1-9-7-ssf-physical-eye-of-reckoning-warlord-leveling-and-beginner-build-hc-friendly/124405"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "authored",
+      "id": 447,
+      "kit_id": "gd-eor-warlord",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "massivelyop.com",
+      "title": "Grim Dawn's Forgotten Gods expansion has launched with new story chapter and Oathkeeper mastery",
+      "url": "https://massivelyop.com/2019/03/29/grim-dawns-forgotten-gods-expansion-has-launched-with-new-story-chapter-and-oathkeeper-mastery/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-eor-warlord",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 808,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 GD tranche; internal-consistency reconcile, no W1 evidence — W5 is GD's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "gd-eor-warlord",
+      "missing_expression": "A GD EoR Warlord keeps the spin loop, movement-while-channel, the conversion identity, and the Judgment tap rhythm -- but every devotion-proc payload (Maul and the whole bound-devotion damage layer that Judgment exists to fire) is EMPTY under 0.3: names fetched, payloads not.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "A GD EoR Warlord keeps the spin loop, movement-while-channel, the conversion identity, and the Judgment tap rhythm -- but every devotion-proc payload (Maul and the whole bound-devotion damage layer that Judgment exists to fire) is EMPTY under 0.3: names fetched, payloads not. The source player would miss the proc-damage layer that motivates casting Judgment at all; its consequence slot is lawfully null. That build, worse (R-M7: still that build -- spin + convert + tap remains playable) -> APPROX, un-minted."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 953,
+      "kit_id": "gd-eor-warlord",
+      "payload_json": {
+        "handle": "unknown",
+        "site": "forums.crateentertainment.com",
+        "thread": "[1.1.9.7] SSF Physical Eye of Reckoning Warlord"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-ssf-physical-eye-of-reckoning-warlord-leveling-and-beginner-build-hc-friendly/124405"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Bull, Assassin, Lion, Bear (Maul proc), Crab, Stag, Turtle, Wraith, Hammer",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 952,
+      "kit_id": "gd-eor-warlord",
+      "payload_json": {
+        "devotions": [
+          "Bull",
+          "Assassin",
+          "Lion",
+          "Bear (Maul proc on Judgment)",
+          "Crab",
+          "Stag",
+          "Turtle",
+          "Wraith",
+          "Hammer"
+        ],
+        "notes": "Maul proc bound to Judgment; constellation path prioritizes physical and life leech"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-ssf-physical-eye-of-reckoning-warlord-leveling-and-beginner-build-hc-friendly/124405"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "when you run out of energy, you lose Beronath conversion aura and need to recast it",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 951,
+      "kit_id": "gd-eor-warlord",
+      "payload_json": {
+        "key_items": [
+          "Korvan Spaulders (elemental-to-physical conversion early)",
+          "Beronath conversion aura (from item)",
+          "Kaisan's Eldritch Eye amulet",
+          "Conduit of Divine Whispers belt"
+        ],
+        "notes": "Energy management critical; Beronath aura requires mana or it drops"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-ssf-physical-eye-of-reckoning-warlord-leveling-and-beginner-build-hc-friendly/124405"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "spinning melee attack … cyclone-style ability where the character spins and damages nearby enemies",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 950,
+      "kit_id": "gd-eor-warlord",
+      "payload_json": {
+        "aoe": "small ring around player during spin",
+        "delivery": "self-origin moving cyclone",
+        "footprint": "small-radius around moving player",
+        "notes": "Player moves freely while spinning; hits all nearby in radius continuously",
+        "range": "melee/close"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-ssf-physical-eye-of-reckoning-warlord-leveling-and-beginner-build-hc-friendly/124405"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "spin2win … cyclone-style ability where the character spins and damages nearby enemies … Judgment is used as a proc vehicle for binding devotions",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 949,
+      "kit_id": "gd-eor-warlord",
+      "payload_json": {
+        "resource": "mana spend (channel)",
+        "summary": "Activate Eye of Reckoning channel; character moves while spinning, hitting all nearby enemies in small radius; Judgment cast for AoE proc and devotion triggers; Vire's Might used for mobility and gap-close; Ascension toggles for defense",
+        "tempo": "continuous spin + proc juggle"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-ssf-physical-eye-of-reckoning-warlord-leveling-and-beginner-build-hc-friendly/124405"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Ultimate Hardcore Lightning Eye of Reckoning Warlord - Soulara of Teslaria",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 954,
+      "kit_id": "gd-eor-warlord",
+      "payload_json": {
+        "variants": [
+          "physical EoR Warlord (this version)",
+          "lightning EoR Warlord (Soulare's Helm)",
+          "fire EoR Warlord"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/ultimate-hardcore-lightning-eye-of-reckoning-warlord-soulara-of-teslaria/124549"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|self-origin|flat|whirlwind|damage|none|tank|spend|solo|melee|high|channel|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.74,
+    "geometry_rule_fired": "R8-spin",
+    "geometry_value": "whirlwind",
+    "kit_id": "gd-eor-warlord",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMHFSC-_SDT-SP-FI-~~",
+      "delivery": "self-origin",
+      "elem_raw": "fire",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.74,
+        "rule_fired": "R8-spin",
+        "value": "whirlwind"
+      },
+      "flags": [],
+      "folk_name": "Eye of Reckoning Warlord",
+      "game": "gd",
+      "kit_id": "gd-eor-warlord",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMHFSC-_SDT-SP-FI-~~",
+        "delivery": "self-origin",
+        "elem_raw": "fire",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "energy",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-eor-warlord",
+      "motion_signature": "orbit_fixed",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "spin channel: self-origin moving cyclone, small radius around the player, full movement while spinning ('spin2win ... cyclone-style ability where the character spins and damages nearby enemies'; 'Player moves freely while spinning'). Physical-converted build -> element-neutral per THE PHYSICAL RULE.",
+      "source_skill": "Eye of Reckoning",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-eor-warlord",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "at-target AoE cast whose fetched ROLE is proc-vehicle ('Judgment cast for AoE proc and devotion triggers'; 'Judgment is used as a proc vehicle for binding devotions'); AoE shape underspecified in fetched text -> minimal at-target burst token (circle) with this note.",
+      "source_skill": "Judgment",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "gd-eor-warlord",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "A GD EoR Warlord keeps the spin loop, movement-while-channel, the conversion identity, and the Judgment tap rhythm -- but every devotion-proc payload (Maul and the whole bound-devotion damage layer that Judgment exists to fire) is EMPTY under 0.3: names fetched, payloads not. The source player would miss the proc-damage layer that motivates casting Judgment at all; its consequence slot is lawfully null. That build, worse (R-M7: still that build -- spin + convert + tap remains playable) -> APPROX, un-minted.",
+    "grade": "APPROX",
+    "kit_id": "gd-eor-warlord",
+    "mapping_json": {
+      "fidelity_notes": "A ROW-1 EVIDENCE KIT (devotion-proc rider): 'Maul proc bound to Judgment' maps as trigger-rider STRUCTURE only -- on-cast-linked to the carrier skill; the proc PAYLOAD is not fetched, so per the row law it contributes NOTHING to mapping_json (consequence_type lawfully null; the name 'Maul' implies no stun/no anything, 0.3/0.4). elem_raw=fire (kb) vs fetched PHYSICAL identity ('SSF Physical Eye of Reckoning Warlord'; physical+leech devotions; elemental-to-physical conversion items) -> physical rule: element-neutral, conversion-is-the-point -> ELEMENT_CONVERSION_PHYSICAL door. Judgment 'circle' is a minimal token; shape unfetched. ADCtH/leech = sustain scaler -> traits lane, NOT drain (no enemy-status language). R-M5 considered, not applicable. Basin-1 whirlwind/spin shape precedent cited for the geometry read only; this kit's own fetched cyclone language carries (C.4).",
+      "motion_frame": "spin and juggle: hold the EoR cyclone while moving through packs, tap Judgment to fire the bound devotion procs, Vire's Might to gap-close, watching energy so the Beronath conversion aura never drops",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "energy-hungry spin channel + aura upkeep ('when you run out of energy, you lose Beronath conversion aura and need to recast it' -- energy management identity-load-bearing)",
+        "persistent_condition_shape": "tick-cost"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "energy sustain for channel + Beronath aura upkeep"
+          ],
+          "geometry": [
+            "spin radius around moving player"
+          ],
+          "traits_affixes": [
+            "physical + life-leech devotion-path scalers ('constellation path prioritizes physical and life leech')",
+            "elemental-to-physical conversion (Korvan Spaulders early; Beronath aura from item)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "spin channel: self-origin moving cyclone, small radius around the player, full movement while spinning ('spin2win ... cyclone-style ability where the character spins and damages nearby enemies'; 'Player moves freely while spinning'). Physical-converted build -> element-neutral per THE PHYSICAL RULE.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "whirlwind",
+          "source_skill": "Eye of Reckoning"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "at-target AoE cast whose fetched ROLE is proc-vehicle ('Judgment cast for AoE proc and devotion triggers'; 'Judgment is used as a proc vehicle for binding devotions'); AoE shape underspecified in fetched text -> minimal at-target burst token (circle) with this note.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "circle",
+          "source_skill": "Judgment"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_PHYSICAL"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2983,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 2984,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "evidence": "Eye of Reckoning channel spins moving blade cyclone from player body",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 2981,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "_prior_ingest11": {
+          "meter_type": "n/a",
+          "model": "spend",
+          "note": "GD resource is Energy ('Spirit' is a GD STAT name — confusion source). resource_verbatim relabelled per WRONG-RESOURCE-GENERALLY sweep; raw preserved.",
+          "plain_text": "mana (spend); Grim Dawn's spin-to-win — Eye of Reckoning whirls fire-physical blades in a movi",
+          "resource_verbatim": "mana"
+        },
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "energy (spend); Grim Dawn's spin-to-win — Eye of Reckoning whirls fire-physical blades in a movi",
+        "resource_verbatim": "energy"
+      },
+      "family": "economy",
+      "id": 2985,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 2986,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Cyclone spin covers small radius around moving player; geo=small-AOE",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 2982,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with small-radius footprint. Grim Dawn's spin-to-win  —  Eye of Reckoning whirls fire-physical blades in a moving cyclone, the Forgotten Gods answer to a genre tradition n.",
+      "family": "geo_text",
+      "id": 2988,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 2987,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2989,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "gt",
+        "cf",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2990,
+      "kit_id": "gd-eor-warlord",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Eye of Reckoning Warlord: whirlwind motion identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-eor-warlord",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.87,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|self-origin|flat|whirlwind|damage|none|tank|spend|solo|melee|high|channel|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|self-origin|flat|whirlwind|damage|none|tank|spend|solo|melee|high|channel|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "whirlwind"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMHFSC-_SDT-SP-FI-~~",
+    "attr_conf": 0.87,
+    "attr_val": "STR",
+    "avg_conf": 0.87,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.87,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Eye of Reckoning",
+      "Judgment"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "energy-per-tick",
+    "elem_raw": "fire",
+    "era_year": 2016,
+    "eras": "fg-2019;patch-1.1-1.2",
+    "eras_normalized": "fg-2019;patch-1.1-1.2",
+    "flags": "",
+    "folk_name": "Eye of Reckoning Warlord",
+    "game": "gd",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "gd-eor-warlord",
+    "lattice_coord": "SMHFSC",
+    "lineage": "genre/spin",
+    "mech_note": "Eye of Reckoning: channel while moving, spinning blades of fire and physical damage in a cyclone around the body, hitting everything in a radius continuously. Warlord (Soldier + Oathkeeper) uses Stoneguard or Octavius sets to amplify EoR damage and Shield Throw interactions. Unlike WW Barbarian (melee contact), EoR's radius hits at arm's length — the cyclone precedes the body, hitting enemies before they reach the caster. Resource: Soldier's Menhir's Bulwark + shield stats allow facetanking while channeling, making this the tankiest channel-move identity in GD. The Forgotten Gods-era addition (2019) gave the game its spin-to-win; Guardians of Cairn set further cemented the identity with EoR-specific bonuses. High-end viable on Celestial bosses with good itemization.",
+    "mint": 0,
+    "mob_raw": "full_move-during",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|SMALL|CHAN×econ:spend",
+    "mobile_key_group": "SMHFSC-_SDT-SP-FI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;cf;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.87,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.87,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.87,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "WHIRLWIND",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Oathkeeper mastery debuted with Forgotten Gods expansion (March 27, 2019). Warlord = Soldier+Oathkeeper. Era floor fg-2019 is consistent with mastery intro.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "eras=['fg-2019','patch-1.1-1.2']",
+      "errata_applied": 0,
+      "id": 571,
+      "kit_id": "gd-eor-warlord",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://massivelyop.com/2019/03/29/grim-dawns-forgotten-gods-expansion-has-launched-with-new-story-chapter-and-oathkeeper-mastery/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Physical EoR Warlord' or referenced as 'spin2win' gameplay … [1.1.9.7] SSF Physical Eye of Reckoning Warlord",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "folk_name='Eye of Reckoning Warlord'; aliases=['EoR Warlord','Eye of Reckoning spin build','physical spin Warlord']",
+      "errata_applied": 0,
+      "id": 569,
+      "kit_id": "gd-eor-warlord",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-ssf-physical-eye-of-reckoning-warlord-leveling-and-beginner-build-hc-friendly/124405",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Eye of Reckoning (EoR) is described as a spinning melee attack … 'spin2win' … cyclone-style ability where the character spins and damages nearby enemies … Judgment is used as a proc vehicle",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "core_skills=['Eye of Reckoning','Judgment']; delivery=self-origin spinning cyclone; resource=mana spend; movement=full-move while spinning",
+      "errata_applied": 0,
+      "id": 570,
+      "kit_id": "gd-eor-warlord",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-ssf-physical-eye-of-reckoning-warlord-leveling-and-beginner-build-hc-friendly/124405",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "spin channel: self-origin moving cyclone, small radius around the player, full movement while spinning ('spin2win ... cyclone-style ability where the character spins and damages nearby enemies'; 'Player moves freely while spinning'). Physical-converted build -> element-neutral per THE PHYSICAL RULE.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Eye of Reckoning' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (3 sig)",
+      "errata_applied": 0,
+      "id": 2242,
+      "kit_id": "gd-eor-warlord",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "at-target AoE cast whose fetched ROLE is proc-vehicle ('Judgment cast for AoE proc and devotion triggers'; 'Judgment is used as a proc vehicle for binding devotions'); AoE shape underspecified in fetched text -> minimal at-target burst token (circle) with this note.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Judgment' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (3 sig)",
+      "errata_applied": 0,
+      "id": 2243,
+      "kit_id": "gd-eor-warlord",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

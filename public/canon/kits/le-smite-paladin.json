@@ -1,0 +1,854 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1114,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-smite-paladin",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Volca",
+    "cite_class": "authored",
+    "id": 556,
+    "kit_id": "le-smite-paladin",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Smite Paladin Guide for Last Epoch Season 4 - Maxroll.gg",
+    "url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Volca",
+      "cite_class": "authored",
+      "id": 556,
+      "kit_id": "le-smite-paladin",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Smite Paladin Guide for Last Epoch Season 4 - Maxroll.gg",
+      "url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 557,
+      "kit_id": "le-smite-paladin",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "odealo.com",
+      "title": "[0.8.5f]Smiter Paladin Last Epoch Build - Odealo",
+      "url": "https://odealo.com/articles/smiter-paladin-last-epoch-build"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 558,
+      "kit_id": "le-smite-paladin",
+      "quarantined": 1,
+      "rank_class": "recovered",
+      "site": "lastepochtools.com",
+      "title": "Multistrike Smite Paladin Build Guide (Tombs of the Erased / 1.2.1)",
+      "url": "https://www.lastepochtools.com/build-guides/multistrike-smite-paladin"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-smite-paladin",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 964,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-smite-paladin",
+      "missing_expression": "Minor drift: missing-Mana damage substrate approximated via gear-numeric lane pending steward candidate;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: missing-Mana damage substrate approximated via gear-numeric lane pending steward candidate; holy is carried by the aura skill while Smite itself rides lightning. The proc-storm loop (hit -> sky-bolt at target) is native trigger grammar."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1265,
+      "kit_id": "le-smite-paladin",
+      "payload_json": {
+        "handle": "Volca",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "A large Mana pool provides a huge buff to your damage with Devotion.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1264,
+      "kit_id": "le-smite-paladin",
+      "payload_json": {
+        "notes": "Devotion amulet interaction with missing Mana is the build's damage capstone; guide from 0.8.5f confirms Smite Paladin existed in beta",
+        "passive_nodes": [
+          "Symbols of Hope (buff)",
+          "Celestial Devotion (Smite proc on crit/evasion)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "This setup needs Spirit Xylem, Devotion, Harbinger of Stars and Dominance of the Tundra to function.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1263,
+      "kit_id": "le-smite-paladin",
+      "payload_json": {
+        "key_uniques": [
+          "Devotion (amulet; Cast Speed + Adaptive Spell Damage from missing Mana)",
+          "Spirit Xylem",
+          "Harbinger of Stars",
+          "Dominance of the Tundra",
+          "Grasp of the Blood Mage",
+          "Titan Heart",
+          "Red Ring of Atlaria",
+          "Twisted Heart of Uhkeiros"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Lightning bolts that descend from the sky.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1262,
+      "kit_id": "le-smite-paladin",
+      "payload_json": {
+        "aoe": "single point",
+        "geometry": "single lightning strike at targeted/hit point from above; point-impact; proc-chain delivers multiple Smites per combat rotation",
+        "range_class": "dual (melee weapon proc + overhead strike range)"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Smite, obliterating enemies with Lightning bolts that descend from the sky... Holy Aura, Symbols of Hope and Javelin grant powerful buffs.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1261,
+      "kit_id": "le-smite-paladin",
+      "payload_json": {
+        "core_driver": "proc-triggered Smite chain on every weapon hit",
+        "description": "Paladin equips Holy Aura as always-active buff and attacks with melee/throwing weapons to proc Smite. Each weapon hit auto-generates a Smite lightning strike at the hit target. Large Mana pool feeds Devotion amulet for damage boost. Smite calls down lightning from above at targeted point."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Smite Hammerdin Paladin... Smite Shield Throw Paladin... Spin To Win Warpath Smite Paladin.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1266,
+      "kit_id": "le-smite-paladin",
+      "payload_json": {
+        "variants": [
+          {
+            "name": "Smite Paladin (standard)",
+            "notes": "melee proc chain; Season 4"
+          },
+          {
+            "name": "Smite Hammerdin",
+            "notes": "Smite + Holy Hammer variant"
+          },
+          {
+            "name": "Smite Shield Throw Paladin",
+            "notes": "throwing weapon proc variant"
+          },
+          {
+            "name": "Spin To Win Warpath Smite Paladin",
+            "notes": "Warpath + Smite proc; 1.2.1"
+          }
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "rooted|at-target|flat|melee_strike|damage|stun|tank|free|solo|dual|high|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\", \"GAP-AILMENT:stun\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "stun",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.82,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.82,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "le-smite-paladin",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "WDHFSI-MNDT-PC-LI-~~",
+      "delivery": "at-target",
+      "elem_raw": "Lightning",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp",
+          "GAP-AILMENT:stun"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.82,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.82,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Smite Paladin",
+      "game": "le",
+      "kit_id": "le-smite-paladin",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "WDHFSI-MNDT-PC-LI-~~",
+        "delivery": "at-target",
+        "elem_raw": "Lightning",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-smite-paladin",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "lightning bolt descends from the sky at the hit/targeted point; point impact; auto-generated at the target of each weapon hit - proc chain delivers many Smites per rotation",
+      "source_skill": "Smite",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-smite-paladin",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "always-active buff aura; Symbols of Hope + Javelin add further buffs",
+      "source_skill": "Holy Aura",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-smite-paladin",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: missing-Mana damage substrate approximated via gear-numeric lane pending steward candidate; holy is carried by the aura skill while Smite itself rides lightning. The proc-storm loop (hit -> sky-bolt at target) is native trigger grammar.",
+    "grade": "CLOSE",
+    "kit_id": "le-smite-paladin",
+    "mapping_json": {
+      "fidelity_notes": "Carrier weapon attack lives in trigger grammar (every hit -> linked-cast Smite; depth 1); Celestial Devotion adds an on-crit rider - nearest single enum kept as on-hit-threshold (every hit), on-crit noted here per 7.2. Missing-Mana-as-spell-damage (item Devotion) filed as its OWN stat-as-damage-substrate cluster candidate - offense-side inversion, do-not-merge question vs B ward-from-missing-health flagged to steward. NO shock/sunder emitted - lightning flavor never implies a status (0-UNIVERSAL; near-miss). Variant carriers (Warpath spin, Shield Throw, Holy Hammer) are variant-scoped, never on the core row. Eras: beta confirmed (0.8.5f/0.9 anchors); 1.2-woven honest-U post-SMITE-RULING (quarantined lastepochtools citation NOT resurrected).",
+      "motion_frame": "melee/throwing attacker whose every weapon hit calls down a Smite at the struck target",
+      "option_c_substrate_flags": null,
+      "resource_economy": null,
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "large Mana pool feeds Devotion amulet damage"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Devotion amulet: Cast Speed + Adaptive Spell Damage from missing Mana -> item lane + substrate candidate",
+            "Spirit Xylem / Harbinger of Stars / Dominance of the Tundra required set"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "lightning bolt descends from the sky at the hit/targeted point; point impact; auto-generated at the target of each weapon hit - proc chain delivers many Smites per rotation",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Smite"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "always-active buff aura; Symbols of Hope + Javelin add further buffs",
+          "element_primary": "holy",
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Holy Aura"
+        }
+      ],
+      "t4_doors": [
+        "RESOURCE_CONVERSION",
+        "NETWORK_AMPLIFIER"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-hit-threshold",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock",
+          "stun"
+        ],
+        "centrality": "rider",
+        "conf": 0.72
+      },
+      "family": "control",
+      "id": 1333,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "layers": [
+          "armor",
+          "block",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 1334,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "evidence": "Smite calls lightning down on targeted position (overhead delivery to at-target location); PC suffix = proc-trigger Smite on melee hits",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1331,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "melee/weapon attacks trigger Smite procs",
+        "conf": 0.8,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "Smite's primary economy is proc-triggered: each melee or weapon hit auto-generates a Smite for free. A base Mana cost exists for manually cast Smite but the dominant playstyle is proc-chain (economy = proc).",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 1335,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "damage_mode": "hit",
+        "label_verbatim": "Lightning"
+      },
+      "family": "element",
+      "id": 1336,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "evidence": "Single lightning strike at targeted point; small point impact; atlas geo=single confirmed",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 1332,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Smite calls down holy lightning on a targeted point. The key engine is proc-triggering: every melee hit, thrown weapon hit, or similar trigger fires an additional Smite call. Multiple Smites rain from above every time the player attacks.",
+      "family": "geo_text",
+      "id": 1338,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 1337,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=let;kb",
+      "family": "rank1_upgrade",
+      "id": 1339,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb",
+        "let"
+      ],
+      "family": "sources_used",
+      "id": 1340,
+      "kit_id": "le-smite-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Smite Paladin: single target projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "le-smite-paladin",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "le-smite-paladin",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.8,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|flat|melee_strike|damage|stun|tank|free|solo|dual|high|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|flat|melee_strike|damage|stun|tank|free|solo|dual|high|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "stun"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WDHFSI-MNDT-PC-LI-~~",
+    "attr_conf": 0.8,
+    "attr_val": "WIS",
+    "avg_conf": 0.8,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.8,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Smite",
+      "Holy Aura"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "proc-engine",
+    "elem_raw": "lightning",
+    "era_year": 2024,
+    "eras": "beta-0.8-0.9;1.0-launch;1.2-woven",
+    "eras_normalized": "beta-0.8-0.9;1.0-launch;1.2-woven",
+    "flags": "",
+    "folk_name": "Smite Paladin",
+    "game": "le",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "le-smite-paladin",
+    "lattice_coord": "WDHFSI",
+    "lineage": "",
+    "mech_note": "prov=let;kb. mech_note ref: 'Bolts of holy lightning called down on every trigger the tree can wire — smite-on-hit, smite-on-throw, smite raining from procs.' LI suffix = Lightning. PC suffix in old vocab = proc-trigger economy (confirmed by mech_note). This is the canonical proc-spam archetype in LE. Shield-split D1: armor+block (Sentinel), NOT ward.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×econ:proc",
+    "mobile_key_group": "WDHFSI-MNDT-PC-LI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "let;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.8,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.8,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.8,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MELEE-STRIKE",
+    "on_spine": true,
+    "shadowed_by": "RATIFIED",
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=1].members (working_label=MELEE-STRIKE; status=proposed)",
+    "spine_status": "SHADOWED",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Last Epoch - Divine Priest Build Guide - How To Build A Smite Paladin (Patch 0.9)... [0.8.5f]Smiter Paladin Last Epoch Build.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: beta-0.8-0.9",
+      "errata_applied": 0,
+      "id": 780,
+      "kit_id": "le-smite-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/smiter-paladin-last-epoch-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 781,
+      "kit_id": "le-smite-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.2-woven",
+      "errata_applied": 0,
+      "id": 782,
+      "kit_id": "le-smite-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Smite Paladin... Smite, obliterating enemies with Lightning bolts that descend from the sky.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Smite Paladin LE' / 'Holy Aura Smite Paladin' / 'divine strike Paladin' are real community usage",
+      "errata_applied": 0,
+      "id": 778,
+      "kit_id": "le-smite-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Holy Aura, Symbols of Hope and Javelin grant powerful buffs... A large Mana pool provides a huge buff to your damage with Devotion.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Smite (proc-triggered lightning strikes at-target), Holy Aura (buff aura); dominant economy is proc-chain; resource=Mana; lightning damage",
+      "errata_applied": 0,
+      "id": 779,
+      "kit_id": "le-smite-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/smite-paladin-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "lightning bolt descends from the sky at the hit/targeted point; point impact; auto-generated at the target of each weapon hit - proc chain delivers many Smites per rotation",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Smite' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2341,
+      "kit_id": "le-smite-paladin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "always-active buff aura; Symbols of Hope + Javelin add further buffs",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Holy Aura' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1 sig)",
+      "errata_applied": 0,
+      "id": 2342,
+      "kit_id": "le-smite-paladin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

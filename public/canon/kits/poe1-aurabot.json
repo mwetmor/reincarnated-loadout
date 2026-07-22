@@ -1,0 +1,840 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 547,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-aurabot",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 548,
+      "assert_text": "expresses: Aurabot's identity is a party-support buff-projector — zero personal damage, out",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "poe1-aurabot",
+      "last_result": "red",
+      "routed_docket_id": 91
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 18,
+    "kit_id": "poe1-aurabot",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "pathofexile.com/forum",
+    "title": "[2.2] Guardian Aurabot (optional dual-curse) from 2week Flashback event",
+    "url": "https://www.pathofexile.com/forum/view-thread/1664893"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 18,
+      "kit_id": "poe1-aurabot",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com/forum",
+      "title": "[2.2] Guardian Aurabot (optional dual-curse) from 2week Flashback event",
+      "url": "https://www.pathofexile.com/forum/view-thread/1664893"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "cutiechuchu#6132",
+      "cite_class": "authored",
+      "id": 17,
+      "kit_id": "poe1-aurabot",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "pathofexile.com/forum",
+      "title": "[3.16] Comprehensive Guide for CI Aurabots | 16 Auras + 300% Aura Effect Viable",
+      "url": "https://www.pathofexile.com/forum/view-thread/3179545"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 19,
+      "kit_id": "poe1-aurabot",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poe-vault.com",
+      "title": "[3.15] Necromancer Aurabot Support Build Guide",
+      "url": "https://www.poe-vault.com/guides/necromancer-aurabot-support-build-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-aurabot",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 511,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-poe1",
+        "docket_id": 91,
+        "evidence_kits": [
+          "poe1-aurabot"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:poe1-aurabot",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "poe1-record"
+        },
+        "source_deviation_id": 511,
+        "source_kit_id": "poe1-aurabot",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 PoE1 structuring of poe1-aurabot.",
+        "status": "open"
+      },
+      "docket_id": 91,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-aurabot",
+      "missing_expression": "Aurabot's identity is a party-support buff-projector — zero personal damage, output = ALLIES' amplified power — and it is explicitly useless solo.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "Aurabot's identity is a party-support buff-projector — zero personal damage, output = ALLIES' amplified power — and it is explicitly useless solo. The engine is solo-scope, so the kit's entire purpose has no lane: there are no allies to buff. Additionally the ~100% reservation exceeds the engine's 0.75 LOCKED reservation cap. Mapped the aura shell + clamped reserve, but a player of the original would find the build does literally nothing in solo — the ally-projection that IS the kit cannot be expressed. Docketed as out-of-solo-scope."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 35,
+      "kit_id": "poe1-aurabot",
+      "payload_json": {
+        "handle": "cutiechuchu#6132",
+        "site": "pathofexile.com/forum",
+        "url": "https://www.pathofexile.com/forum/view-thread/3179545"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3179545"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 34,
+      "kit_id": "poe1-aurabot",
+      "payload_json": {
+        "ascendancy_primary": "Guardian",
+        "ascendancy_secondary": "Scion (Ascendant)",
+        "guardian_nodes": [
+          "Radiant Faith (ES from aura count)",
+          "Unwavering Faith (aura effect)",
+          "Harmony of Purpose"
+        ],
+        "note": "Guardian is canonical for aura effect stacking; Scion used for hybrid variants."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3179545"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "March of the Legion boots (mandatory)",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 33,
+      "kit_id": "poe1-aurabot",
+      "payload_json": {
+        "alteration": "Mandatory — extends aura radius to cover more distance.",
+        "key_item": "March of the Legion (boots)",
+        "secondary_alteration": "Grants aura effect for socketed supports.",
+        "secondary_item": "Victario's Influence (chest)",
+        "tertiary_alteration": "Reserves mana for an additional aura.",
+        "tertiary_item": "Alpha's Howl (helmet)"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3179545"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "running close to carry and have fun",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 32,
+      "kit_id": "poe1-aurabot",
+      "payload_json": {
+        "geometry_note": "No projectile or targeted AoE; passive radius from caster body. March of the Legion boots extend aura radius.",
+        "verbatim": "Aura-pulse delivery. Auras radiate from the player body in a large zone; all party members within radius receive buffs. Separation from carry means carry leaves aura radius and loses all buffs."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3179545"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Smite all the time you can. Try to sync your movement with Carry (and vice versa) to avoid separating",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 31,
+      "kit_id": "poe1-aurabot",
+      "payload_json": {
+        "description": "Reserve the entire mana pool across 10-16 auras (Wrath, Anger, Hatred, Purity of Fire/Ice/Lightning, Zealotry, Discipline, Vitality, Grace, Determination, Haste). Move with the carry at all times to keep allies within aura radius. Cast Smite as token personal skill. Personal damage is near-zero; output is teammates' amplified power."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3179545"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 36,
+      "kit_id": "poe1-aurabot",
+      "payload_json": {
+        "named_variants": [
+          "Poor Aurabot (budget)",
+          "Budget Aurabot",
+          "Endgame Aurabot (300% aura effect target)",
+          "Pre-3.16 Super Endgame (legacy clusters)",
+          "Necromancer Aurabot (3.15 variant)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3179545"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|aura-pulse|flat|aura|damage|none|mitigate|reserve|solo|dual|low|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "aura-pulse",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"RS\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "reserve",
+    "flags": [],
+    "geometry_conf": 0.48,
+    "geometry_rule_fired": "R8-aura",
+    "geometry_value": "aura",
+    "kit_id": "poe1-aurabot",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "WDLFSI-ML_M-RS-__-~~",
+      "delivery": "aura-pulse",
+      "elem_raw": "n/a",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "RS"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.48,
+        "rule_fired": "R8-aura",
+        "value": "aura"
+      },
+      "flags": [],
+      "folk_name": "Aurabot",
+      "game": "poe1",
+      "kit_id": "poe1-aurabot",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "WDLFSI-ML_M-RS-__-~~",
+        "delivery": "aura-pulse",
+        "elem_raw": "n/a",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana (full reserve)",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-aurabot",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "10-16 persistent auras radiating from the player body; in the source these buff ALLIES within radius (Generosity shares to allies, not self). In solo scope there are no allies to receive them — the ally-projection is the un-mappable core",
+      "source_skill": "aura suite (Wrath/Anger/Hatred/Malevolence/Determination/Grace/Haste/Purities)",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-aurabot",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 1,
+      "source_anchor": "near-zero-damage token attack the player presses occasionally; not the kit's point",
+      "source_skill": "Smite (token personal skill)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-aurabot",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Aurabot's identity is a party-support buff-projector — zero personal damage, output = ALLIES' amplified power — and it is explicitly useless solo. The engine is solo-scope, so the kit's entire purpose has no lane: there are no allies to buff. Additionally the ~100% reservation exceeds the engine's 0.75 LOCKED reservation cap. Mapped the aura shell + clamped reserve, but a player of the original would find the build does literally nothing in solo — the ally-projection that IS the kit cannot be expressed. Docketed as out-of-solo-scope.",
+    "grade": "GAPPED",
+    "kit_id": "poe1-aurabot",
+    "mapping_json": {
+      "fidelity_notes": "GAPPED on IDENTITY: Aurabot's entire purpose is projecting auras onto ALLIES to multiply PARTY output — it is strictly multiplayer and useless solo (source: 'useless solo', mech_note). The engine is solo-scope; there is no ally to receive the buff, so the kit's reason-for-existing has no lane. Distinct from aurastacker (self-stacking, next kit) — Aurabot uses Generosity to share to allies NOT self. TWO gaps docketed: (1) ally-buff-projection role has no solo-scope lane; (2) Aurabot reserves ~100% of pool, EXCEEDING the engine's reservation_percent 0.75 LOCKED cap — clamped in the map, noting the source exceeds it. NETWORK_AMPLIFIER/RESONANCE_LOOP are the nearest T4s (aura-network amps) but they model SELF-amplification, not ally-projection. Mapped the shell (aura geometry + clamped full-reserve) as MAPPED_DOCKET.",
+      "motion_frame": "walking buff-station: no personal offense; the player's job is to keep allies inside a large aura radius — a role that does not exist in solo scope",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "reservation_percent": 0.75,
+        "reservation_resource": "mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "near-total reservation (source ~100%, engine-clamped to 0.75 LOCKED cap)",
+            "reservation-efficiency to fit 8+ auras"
+          ],
+          "geometry": [
+            "aura radius (March-of-the-Legion extension)"
+          ],
+          "traits_affixes": [
+            "aura-effect scaling",
+            "reservation-efficiency"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "10-16 persistent auras radiating from the player body; in the source these buff ALLIES within radius (Generosity shares to allies, not self). In solo scope there are no allies to receive them — the ally-projection is the un-mappable core",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "aura suite (Wrath/Anger/Hatred/Malevolence/Determination/Grace/Haste/Purities)"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "near-zero-damage token attack the player presses occasionally; not the kit's point",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Smite (token personal skill)"
+        }
+      ],
+      "t4_doors": [
+        "NETWORK_AMPLIFIER",
+        "RESONANCE_LOOP"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED_DOCKET"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1813,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 1814,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.51,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.51,
+        "evidence": "Reserves entire resource pool; auras project from player body to all allies in radius",
+        "value": "aura-pulse"
+      },
+      "family": "delivery",
+      "id": 1811,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "reserve",
+        "plain_text": "mana (full reserve) (reserve); Reserves the entire resource pool to project auras onto ALLIES — a build with ne",
+        "resource_verbatim": "mana (full reserve)"
+      },
+      "family": "economy",
+      "id": 1815,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "n/a"
+      },
+      "family": "element",
+      "id": 1816,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.48,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.48,
+        "evidence": "Aura radius extends far to cover all party members; geo=large-AOE in atlas",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 1812,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Aura-pulse delivery with large-zone footprint. Reserves the entire resource pool to project auras onto ALLIES  —  a build with near-zero personal damage whose output is other players' power.",
+      "family": "geo_text",
+      "id": 1818,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 1817,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1819,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1820,
+      "kit_id": "poe1-aurabot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Aurabot: aura aura identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-aurabot",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "poe1-aurabot",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.57,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|aura-pulse|flat|aura|damage|none|mitigate|reserve|solo|dual|low|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|aura-pulse|flat|aura|damage|none|mitigate|reserve|solo|dual|low|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "aura-pulse"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "aura"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "reserve"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WDLFSI-ML_M-RS-__-~~",
+    "attr_conf": 0.57,
+    "attr_val": "WIS",
+    "avg_conf": 0.57,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.57,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "aura suite",
+      "Smite(token)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": null,
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "full-reservation",
+    "elem_raw": "n/a",
+    "era_year": 2013,
+    "eras": "2.x;3.0-3.6;3.7-3.13;3.14-3.19;3.20+",
+    "eras_normalized": "2.x;3.0-3.6;3.7-3.13;3.14-3.19;3.20+",
+    "flags": "",
+    "folk_name": "Aurabot",
+    "game": "poe1",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-05",
+    "is_system": 0,
+    "key_completeness": 10,
+    "kit_id": "poe1-aurabot",
+    "lattice_coord": "WDLFSI",
+    "lineage": "",
+    "mech_note": "A support build that reserves the entire mana pool (and sometimes life via Blood Magic) to project auras onto ALLIES — zero personal damage, 100% multiplier to party output. Core auras: Hatred (added cold damage), Wrath (lightning), Anger (fire), Malevolence (DoT), Determination (armour), Grace (evasion), Haste (speed), Clarity (mana regen). Aurasbot's damage contribution is multiplicative: if the party DPS player does 10M DPS, a 20% aura damage buff is 2M DPS added via zero button presses. Generosity support gem shares aura effects to allies only (not self). The build requires specific passive clusters (reduced reserve nodes, reservation efficiency items) to fit 8+ auras simultaneously. Strictly multiplayer: useless solo. Represents PoE's most extreme support-class expression — the player is a walking buff-station.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|LARGE|INST×GAP-D2-05",
+    "mobile_key_group": "WDLFSI-ML_M-RS-__-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "n/a",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.57,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.57,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.57,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "AURA",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[2.2] Guardian Aurabot (optional dual-curse) from 2week Flashback event",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 2.x, 3.0-3.6, 3.7-3.13, 3.14-3.19, 3.20+",
+      "errata_applied": 0,
+      "id": 21,
+      "kit_id": "poe1-aurabot",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1664893",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.16] Comprehensive Guide for CI Aurabots | 16 Auras + 300% Aura Effect Viable",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Aurabot' (no aliases) is real community usage; class Guardian/Scion",
+      "errata_applied": 0,
+      "id": 19,
+      "kit_id": "poe1-aurabot",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3179545",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Wrath/Anger/Hatred > Purity of Ice/Lightning/Fire > Zealotry > Discipline > Vitality > Grace > Determination > Haste",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills aura suite + Smite (token); reserves entire resource pool to project auras onto allies; near-zero personal damage; output is other players' power",
+      "errata_applied": 0,
+      "id": 20,
+      "kit_id": "poe1-aurabot",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3179545",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "10-16 persistent auras radiating from the player body; in the source these buff ALLIES within radius (Generosity shares to allies, not self). In solo scope there are no allies to receive them — the ally-projection is the un-mappable core",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'aura suite (Wrath/Anger/Hatred/Malevolence/Determination/Grace/Haste/Purities)' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2375,
+      "kit_id": "poe1-aurabot",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "near-zero-damage token attack the player presses occasionally; not the kit's point",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Smite (token personal skill)' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'melee_arc'",
+      "errata_applied": 0,
+      "id": 2376,
+      "kit_id": "poe1-aurabot",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

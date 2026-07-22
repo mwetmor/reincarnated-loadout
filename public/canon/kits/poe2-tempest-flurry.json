@@ -1,0 +1,793 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1037,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-tempest-flurry",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 366,
+    "kit_id": "poe2-tempest-flurry",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Falling Thunder Invoker Build Guide for Path of Exile 2 Return of the Ancients 0.5.1",
+    "url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 366,
+      "kit_id": "poe2-tempest-flurry",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Falling Thunder Invoker Build Guide for Path of Exile 2 Return of the Ancients 0.5.1",
+      "url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 367,
+      "kit_id": "poe2-tempest-flurry",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "switchbladegaming.com",
+      "title": "PoE2 Monk Build 2026: Maximize Bell of Death Stacks with the Tempest Flurry Timing Loop",
+      "url": "https://www.switchbladegaming.com/path-of-exile-2/monk-best-build/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-tempest-flurry",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 893,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-tempest-flurry",
+      "missing_expression": "Minor drift: the 4-hit RHYTHM cadence (each hit in the combo escalates, the 4th erupts) is the flurry's signature feel, and while melee_arc + a MOMENTUM_CASCADE door capture 'ramping repeated swings culminating in a burst', the engine has no first-class '4th-hit-of-a-fixed-combo erupts' beat -- the eruption reads as a generic finisher rather than a metered rhythm payoff.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: the 4-hit RHYTHM cadence (each hit in the combo escalates, the 4th erupts) is the flurry's signature feel, and while melee_arc + a MOMENTUM_CASCADE door capture 'ramping repeated swings culminating in a burst', the engine has no first-class '4th-hit-of-a-fixed-combo erupts' beat -- the eruption reads as a generic finisher rather than a metered rhythm payoff. The dual Combo/Power-Charge currencies compress to one accumulator. The core melee-flurry-into-lightning-burst maps cleanly -> CLOSE."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 743,
+      "kit_id": "poe2-tempest-flurry",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "I am the Thunder… (damage as Lightning); ...and I Shall Rage (Unbound Avatar skill); Lead me through Grace… (Spirit scaling); Sunder my Enemies… (ignore elemental resistances on crits)",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 742,
+      "kit_id": "poe2-tempest-flurry",
+      "payload_json": {
+        "ascendancy": "Invoker",
+        "notables": [
+          "I am the Thunder...",
+          "...and I Shall Rage",
+          "Lead me through Grace...",
+          "Sunder my Enemies..."
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 741,
+      "kit_id": "poe2-tempest-flurry",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Monk executes a multi-hit quarterstaff flurry with a rhythm-building cadence. The final hit of the combo chain erupts in a lightning burst.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 740,
+      "kit_id": "poe2-tempest-flurry",
+      "payload_json": {
+        "tempest_flurry": "rapid multi-hit quarterstaff melee flurry; small-radius melee range; 4-hit cadence with rhythm; final hit creates lightning burst; full-move policy while casting"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Tempest Flurry (combo + bell striker) → Tempest Bell ×3 → Charged Staff (active buff) → Falling Thunder (boss burst on Invoker)",
+      "conf": 0.83,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 739,
+      "kit_id": "poe2-tempest-flurry",
+      "payload_json": {
+        "summary": "Tempest Flurry builds Combo Points → summon Tempest Bell → attack bell to ring it. Activate Charged Staff at 3+ Power Charges for 30-second lightning damage buff. Falling Thunder for burst on bosses at 6 charges. Keep 4-hit flurry combo cycling."
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Tempest Flurry Gemling Legionnaire Build Guide - Path of Exile 2",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 744,
+      "kit_id": "poe2-tempest-flurry",
+      "payload_json": {
+        "known_variants": [
+          "Tempest Flurry Invoker (standard)",
+          "Tempest Flurry Gemling Legionnaire",
+          "Ice Strike Invoker (flurry as combo builder, Ice Strike as primary)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|ground_targeted_circle|damage|none|evade|generator-spender|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "evade",
+    "def_conf": 0.82,
+    "def_riders": "[\"synonym:evasion\"]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "combo",
+    "econ_status": "native-partial",
+    "economy_model": "generator-spender",
+    "flags": [],
+    "geometry_conf": 0.82,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe2-tempest-flurry",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "DMHFSI",
+      "delivery": "at-target",
+      "elem_raw": "Lightning",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "evade",
+        "conf": 0.82,
+        "riders": [
+          "synonym:evasion"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "combo",
+        "status": "native-partial"
+      },
+      "engine_geometry": {
+        "conf": 0.82,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Tempest Flurry Monk",
+      "game": "poe2",
+      "kit_id": "poe2-tempest-flurry",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "DMHFSI",
+        "delivery": "at-target",
+        "elem_raw": "Lightning",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana + Combo Points",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-tempest-flurry",
+      "motion_signature": "arc_sweep",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "rapid multi-hit quarterstaff melee flurry, small-radius melee range, 4-hit rhythm cadence whose FINAL hit erupts in a lightning burst -> melee_arc (mirrors gemling-stacker Tempest-Flurry=melee_arc precedent; same skill). Full-move policy while casting (mobile flurry). lightning. ailment=sunder (poe2 shock damage-amp; no paralysis attested -> S-A BINDING). The 4-hit-then-erupt cadence IS the identity.",
+      "source_skill": "Tempest Flurry (rhythm quarterstaff flurry)",
+      "speed_band": "fast",
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "builder_spender",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-tempest-flurry",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "activated at 3+ Power Charges for a 30-second lightning-damage buff (and enables the Falling-Thunder-class burst) -> self_buff (charge-consuming maintain-buff). lightning. This is the SPEND half of the builder-spender: Tempest Flurry banks charges, Charged Staff consumes them for a damage window.",
+      "source_skill": "Charged Staff (Power-Charge-spend buff + lightning finisher)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-tempest-flurry",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: the 4-hit RHYTHM cadence (each hit in the combo escalates, the 4th erupts) is the flurry's signature feel, and while melee_arc + a MOMENTUM_CASCADE door capture 'ramping repeated swings culminating in a burst', the engine has no first-class '4th-hit-of-a-fixed-combo erupts' beat -- the eruption reads as a generic finisher rather than a metered rhythm payoff. The dual Combo/Power-Charge currencies compress to one accumulator. The core melee-flurry-into-lightning-burst maps cleanly -> CLOSE.",
+    "grade": "CLOSE",
+    "kit_id": "poe2-tempest-flurry",
+    "mapping_json": {
+      "fidelity_notes": "GX-03 GX-07 (corpus gx). HOT-FLAG 7 RESOLVED: queried kit_mapping for b01/b02 melee precedents -> Tempest Flurry maps melee_arc (gemling-stacker precedent, SAME skill name, 'rapid melee attacks with area of effect' + flurry-with-AoE-finisher shape); the ALTERNATIVE was ice-strike-invoker's melee_strike, but that member is for Ice Strike specifically ('small close contact' single-contact), a DIFFERENT skill -- Tempest Flurry's multi-hit-rhythm-with-erupting-finisher is the melee_arc swing-family, not a single strike. Chose melee_arc; noted the melee_strike alternative. shock->sunder (S-A BINDING; 'shock vs freeze' in corpus mech_note is a control-descriptor, NOT fetched paralysis attestation -> sunder). Combo/Power-Charge builder-spender -> accumulator + spend-burst (Section-B). Charged Staff -> self_buff (charge-consuming maintain-buff; R-M9-adjacent buff). TEMPORAL_CHARGE routes the charge engine; MOMENTUM_CASCADE routes the rhythm-cadence ramp. Invoker ascendancy -> t4 via 5 (R-M1). eras 0.1/0.2/0.5 CONFIRMED.",
+      "motion_frame": "Cycle the 4-hit Tempest Flurry to build Combo/Power Charges and land the lightning-burst final hit; at 3+ charges pop Charged Staff for a 30s lightning buff; Falling Thunder for boss burst at 6 charges.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator",
+        "combo_points": "built by the 4-hit flurry cadence (accumulator)",
+        "cost_scale": "mana per cast",
+        "power_charges": "banked to 3+ for Charged Staff, 6 for Falling Thunder (spend)"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Combo Points / Power Charge accumulator",
+            "Charged Staff / Falling Thunder spend",
+            "mana per cast"
+          ],
+          "geometry": [
+            "Tempest Flurry melee_arc (4-hit rhythm + lightning-burst finisher)",
+            "Charged Staff self_buff (charge-spend window)"
+          ],
+          "traits_affixes": [
+            "lightning penetration (Sunder my Enemies)",
+            "combo/charge-generation + attack speed",
+            "Spirit scaling (Lead me through Grace)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "sunder"
+          ],
+          "delivery_notes": "rapid multi-hit quarterstaff melee flurry, small-radius melee range, 4-hit rhythm cadence whose FINAL hit erupts in a lightning burst -> melee_arc (mirrors gemling-stacker Tempest-Flurry=melee_arc precedent; same skill). Full-move policy while casting (mobile flurry). lightning. ailment=sunder (poe2 shock damage-amp; no paralysis attested -> S-A BINDING). The 4-hit-then-erupt cadence IS the identity.",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "melee_arc",
+          "source_skill": "Tempest Flurry (rhythm quarterstaff flurry)"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "activated at 3+ Power Charges for a 30-second lightning-damage buff (and enables the Falling-Thunder-class burst) -> self_buff (charge-consuming maintain-buff). lightning. This is the SPEND half of the builder-spender: Tempest Flurry banks charges, Charged Staff consumes them for a damage window.",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Charged Staff (Power-Charge-spend buff + lightning finisher)"
+        }
+      ],
+      "t4_doors": [
+        "TEMPORAL_CHARGE",
+        "MOMENTUM_CASCADE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "spend-burst",
+        "mark_identity": "Combo Points / Power Charges accumulated on the flurry cadence",
+        "proc_trigger_condition": "on-hit-threshold",
+        "trigger_chain_shape": "apply-consume-pair"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock"
+        ],
+        "centrality": "rider",
+        "conf": 0.75
+      },
+      "family": "control",
+      "id": 4063,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "layers": [
+          "evasion",
+          "energy-shield"
+        ],
+        "primary": "evasion"
+      },
+      "family": "defense",
+      "id": 4064,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "evidence": "Lightning quarterstaff flurry delivers rapid at-target melee hits; final combo hit erupts in a burst",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 4061,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "quarterstaff hits generate combo points",
+        "conf": 0.8,
+        "meter_type": "combo",
+        "model": "meter",
+        "plain_text": "Same Monk combo system as Ice Strike Invoker; Mana per cast + Combo Points from hits.",
+        "resource_verbatim": "Mana + Combo Points"
+      },
+      "family": "economy",
+      "id": 4065,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "damage_mode": "hit",
+        "label_verbatim": "Lightning"
+      },
+      "family": "element",
+      "id": 4066,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "evidence": "Flurry covers small-radius melee range; final eruption hit extends slightly",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 4062,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Monk executes a multi-hit quarterstaff flurry with a rhythm-building cadence. The final hit of the combo chain erupts in a lightning burst. The rhythm pattern (fast-fast-fast-ERUPT) is the core loop.",
+      "family": "geo_text",
+      "id": 4068,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 4067,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 4069,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 4070,
+      "kit_id": "poe2-tempest-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Tempest Flurry Monk: melee arc melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-tempest-flurry",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "poe2-tempest-flurry",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|ground_targeted_circle|damage|none|evade|generator-spender|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|ground_targeted_circle|damage|none|evade|generator-spender|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "evade"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "generator-spender"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMHFSI-HSMD-MT-LI-~~",
+    "attr_conf": 0.82,
+    "attr_val": "DEX",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Tempest Flurry",
+      "Charged Staff"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "combo-counter",
+    "elem_raw": "lightning",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn;0.5-ancients",
+    "eras_normalized": "0.1;0.2-dawn;0.5-ancients",
+    "flags": "",
+    "folk_name": "Tempest Flurry Monk",
+    "game": "poe2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-03 GX-07",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-tempest-flurry",
+    "lattice_coord": "DMHFSI",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note: 'Lightning quarterstaff flurry whose final combo hit erupts — the rhythm-melee build since beta.' Spans 0.1 through 0.5-ancients — long-lived Monk identity. Same prefix as poe2-ice-strike-invoker (DMHFSI); distinguished by element (Lightning vs Cold) and control (shock vs freeze).",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: mark/tag ledger + consume-trigger operators",
+    "mobile_cell_id": "SOLO|SMALL|INST×GX-03",
+    "mobile_key_group": "DMHFSI-HSMD-MT-LI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;pc",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[0.1] Tri's Simple Tempest Flurry Invoker - PoE 2 Monk Build Guide... Falling Thunder Invoker Build Guide for Path of Exile 2 Return of the Ancients 0.5.1",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.1, 0.2-dawn, 0.5-ancients",
+      "errata_applied": 0,
+      "id": 461,
+      "kit_id": "poe2-tempest-flurry",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Tempest Flurry Invoker Build Guide for Path of Exile 2 Return of the Ancients 0.5.1... By Act 5 you should be running: Tempest Flurry (combo + bell striker) → Tempest Bell ×3 → Charged Staff (active buff)",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Tempest Flurry Monk' and aliases 'Tempest Flurry Charged Staff', 'flurry monk' are real community usage",
+      "errata_applied": 0,
+      "id": 459,
+      "kit_id": "poe2-tempest-flurry",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Charged Staff adds a large damage bonus to your attacks as well as a shockwave to increase AoE. Charged Staff sacrifices Power Charges to apply a large Lightning Damage buff",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Tempest Flurry and Charged Staff; multi-hit quarterstaff flurry combo with lightning burst",
+      "errata_applied": 0,
+      "id": 460,
+      "kit_id": "poe2-tempest-flurry",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.switchbladegaming.com/path-of-exile-2/monk-best-build/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "rapid multi-hit quarterstaff melee flurry, small-radius melee range, 4-hit rhythm cadence whose FINAL hit erupts in a lightning burst -> melee_arc (mirrors gemling-stacker Tempest-Flurry=melee_arc precedent; same skill). Full-move policy while casting (mobile flurry). lightning. ailment=sunder (poe2 shock damage-amp; no paralysis attested -> S-A BINDING). The 4-hit-then-erupt cadence IS the identity.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Tempest Flurry (rhythm quarterstaff flurry)' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2 sig)",
+      "errata_applied": 0,
+      "id": 2547,
+      "kit_id": "poe2-tempest-flurry",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "activated at 3+ Power Charges for a 30-second lightning-damage buff (and enables the Falling-Thunder-class burst) -> self_buff (charge-consuming maintain-buff). lightning. This is the SPEND half of the builder-spender: Tempest Flurry banks charges, Charged Staff consumes them for a damage window.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Charged Staff (Power-Charge-spend buff + lightning finisher)' delivery_class=aura (band_conf=0.75); lint: anchor leans 'zone' (1 sig) vs assigned 'aura' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2548,
+      "kit_id": "poe2-tempest-flurry",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

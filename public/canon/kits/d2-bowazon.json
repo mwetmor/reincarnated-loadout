@@ -1,0 +1,857 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 3,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 8
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 802,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-bowazon",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "louner; undertow; mhlg; Janet the Java",
+    "cite_class": "communal",
+    "id": 601,
+    "kit_id": "d2-bowazon",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "General thoughts and tips on physical Bowazon",
+    "url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "louner; undertow; mhlg; Janet the Java",
+      "cite_class": "communal",
+      "id": 601,
+      "kit_id": "d2-bowazon",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "General thoughts and tips on physical Bowazon",
+      "url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-bowazon",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 715,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-bowazon",
+      "missing_expression": "Player would miss: IAS breakpoint identity (weapon-speed-as-identity not directly mappable;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Player would miss: IAS breakpoint identity (weapon-speed-as-identity not directly mappable; approximated via cadence_scale economy note); Strafe animation-lock feel; Valkyrie companion pet layer (GAP-noted but rider not core loop)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "louner (original poster)",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1367,
+      "kit_id": "d2-bowazon",
+      "payload_json": {
+        "handle": "louner",
+        "site": "diablo2.io"
+      },
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "bowazons were the supreme subclass in classic D2 and early LoD",
+      "conf": 0.66,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1366,
+      "kit_id": "d2-bowazon",
+      "payload_json": {
+        "runewords": [
+          "Faith (Amazon bow, Fanaticism aura)",
+          "Harmony (utility)"
+        ],
+        "skills": [
+          "Valkyrie (tank companion)",
+          "Penetrate (AR boost)",
+          "Pierce"
+        ]
+      },
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "damage entirely weapon-and-attack-speed dependent",
+      "conf": 0.68,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1365,
+      "kit_id": "d2-bowazon",
+      "payload_json": {
+        "key_items": [
+          "Amazon-specific bows (Faith runeword for IAS+Fanaticism aura)",
+          "Windforce (physical bow)",
+          "Razortail belt (pierce)",
+          "Unique quivers"
+        ],
+        "notes": "Physical damage entirely weapon-and-attack-speed dependent; no elemental scaling"
+      },
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Multishot fans arrows for density, Strafe autotargets sequential shots",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1364,
+      "kit_id": "d2-bowazon",
+      "payload_json": {
+        "delivery": "projectile (ranged bow attacks)",
+        "footprint": "multi-point spread (Multishot), sequential (Strafe), homing (Guided Arrow)",
+        "notes": "Multishot fan can hit up to 24 arrows at level 20; Strafe fires fixed 11 shots autotargeting",
+        "range_type": "ranged"
+      },
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "most effects work just for the middle few Arrows with Multiple Shot",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1363,
+      "kit_id": "d2-bowazon",
+      "payload_json": {
+        "summary": "Multiple Shot fans arrows in a spread hitting groups; Strafe autotargets sequential shots against multiple enemies or the same target repeatedly; Guided Arrow homes on a single target. Physical damage entirely dependent on weapon base + attack rating. Pierce adds arrow penetration."
+      },
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "A classic FA/Multi/Guide build is mentioned as a favorite bowazon variant",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1368,
+      "kit_id": "d2-bowazon",
+      "payload_json": {
+        "variants": [
+          "Pure Multishot Bowazon",
+          "Strafezon (Strafe primary)",
+          "Freezeazon (Freezing Arrow + physical hybrid)",
+          "Classic Bowazon (pre-LoD, physical focus)"
+        ]
+      },
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|projectile|flat|multi_projectile|damage|none|mitigate|free|light|ranged|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.57,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "d2-bowazon",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "DRHFLI-LMDD-SP-PH-~~",
+      "delivery": "projectile",
+      "elem_raw": "physical",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "UNKNOWN"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.57,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Bowazon",
+      "game": "d2",
+      "kit_id": "d2-bowazon",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DRHFLI-LMDD-SP-PH-~~",
+        "delivery": "projectile",
+        "elem_raw": "physical",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "stamina/none",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bowazon",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Fan-spread arrow volley; anchor: 'Multishot fans arrows for density'; 'most effects work just for the middle few Arrows with Multiple Shot'; up to 24 arrows at level 20; physical = element-neutral",
+      "source_skill": "Multiple Shot",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bowazon",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Autotarget sequential shots against multiple enemies or same target; anchor: 'Strafe autotargets sequential shots'; fixed 11 shots; channel-like commitment during animation (delivery note)",
+      "source_skill": "Strafe",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bowazon",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 2,
+      "source_anchor": "Homing single-target arrow; seeking delivery noted; physical single-target",
+      "source_skill": "Guided Arrow",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-bowazon",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player would miss: IAS breakpoint identity (weapon-speed-as-identity not directly mappable; approximated via cadence_scale economy note); Strafe animation-lock feel; Valkyrie companion pet layer (GAP-noted but rider not core loop).",
+    "grade": "CLOSE",
+    "kit_id": "d2-bowazon",
+    "mapping_json": {
+      "fidelity_notes": "Physical = element-neutral per main law §1 physical rule. Guided Arrow seeking delivery = delivery note (same treatment as Bone Spirit). Strafe's commitment/lock animation = fidelity texture (channel-like but not a channel economy; R-M4 not triggered). Valkyrie is autonomous combatant (pet-rider) → §CROSS row 2 GAP treatment noted in scaffold but does not elevate to GAPPED grade since combat identity (bow shots) maps fully. Pierce = geometry-modifier scaffold per §3.",
+      "motion_frame": "Multishot for group density; Strafe for sustained sequential targeting; Guided Arrow for pursuing single targets; physical damage weapon-and-attack-speed dependent",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "Mana per shot (low); attack speed breakpoints critical — weapon IAS identity-load-bearing"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "IAS gear breakpoints; Faith runeword Fanaticism aura (item fidelity)"
+          ],
+          "geometry": [
+            "Pierce (arrow penetration — Razortail belt item fidelity; geometry modifier per §3)",
+            "Valkyrie companion (pet-rider — autonomous combatant per §CROSS row 2 gap; utility-light)"
+          ],
+          "traits_affixes": [
+            "Penetrate passive AR boost"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Fan-spread arrow volley; anchor: 'Multishot fans arrows for density'; 'most effects work just for the middle few Arrows with Multiple Shot'; up to 24 arrows at level 20; physical = element-neutral",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Multiple Shot"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Autotarget sequential shots against multiple enemies or same target; anchor: 'Strafe autotargets sequential shots'; fixed 11 shots; channel-like commitment during animation (delivery note)",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Strafe"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Homing single-target arrow; seeking delivery noted; physical single-target",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Guided Arrow"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION_overkill",
+        "TEMPORAL_CHARGE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 193,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 194,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.6,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.6,
+        "evidence": "Multishot fans arrow projectiles across enemy spread; Strafe autotargets sequential projectile shots",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 191,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "other",
+        "plain_text": "stamina/none (other); Pure physical ranged attacker: Multishot fans arrows for density, Strafe autotar",
+        "resource_verbatim": "stamina/none"
+      },
+      "family": "economy",
+      "id": 195,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 196,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.57,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.57,
+        "evidence": "Multishot fans wide arrow spread across multi-target footprint; geo=multi-spawn",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 192,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with multi-point footprint. Pure physical ranged attacker: Multishot fans arrows for density, Strafe autotargets sequential shots; damage entirely weapon-and-attack-spe.",
+      "family": "geo_text",
+      "id": 198,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 197,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 199,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "dx",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 200,
+      "kit_id": "d2-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Bowazon: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-bowazon",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.67,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|projectile|flat|multi_projectile|damage|none|mitigate|free|light|ranged|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|projectile|flat|multi_projectile|damage|none|mitigate|free|light|ranged|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DRHFLI-LMDD-SP-PH-~~",
+    "attr_conf": 0.67,
+    "attr_val": "DEX",
+    "avg_conf": 0.67,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.67,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Multiple Shot",
+      "Strafe",
+      "Guided Arrow"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "none/stamina-era",
+    "elem_raw": "physical",
+    "era_year": 2000,
+    "eras": "classic;lod;d2r",
+    "eras_normalized": "classic;lod;d2r",
+    "flags": "econ-recrawl-application-2026-07-17:f4110f20:spend/steady-mana (leech-sustained). Multishot base 4 (scales +1/lvl to 23 at L20), Strafe fixed 11, Guided Arrow 8→3.2, Cold Arrow 3.5, Immolation Arrow 6, Freezing Arrow 9. Sources: Arreat Summit amazon-bow.shtml + Maxroll d2/guides/multiple-shot-amazon",
+    "folk_name": "Bowazon",
+    "game": "d2",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-bowazon",
+    "lattice_coord": "DRHFLI",
+    "lineage": "",
+    "mech_note": "Pure physical ranged attacker: Multishot fans arrows for density, Strafe autotargets sequential shots; damage entirely weapon-and-attack-spe",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|MULTI|INST×econ:spend",
+    "mobile_key_group": "DRHFLI-LMDD-SP-PH-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "dx;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.67,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.67,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.67,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MULTI-PROJECTILE-VOLLEY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=5].members (working_label=MULTI-PROJECTILE-VOLLEY; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "bowazons were the supreme subclass in classic D2 and early LoD",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in classic",
+      "errata_applied": 0,
+      "id": 863,
+      "kit_id": "d2-bowazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "bowazons were the supreme subclass in classic D2 and early LoD",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod",
+      "errata_applied": 0,
+      "id": 864,
+      "kit_id": "d2-bowazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "the game shift[ed] towards favoring elemental over physical damage, making modern D2R bowazons comparatively weaker for endgame content",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r",
+      "errata_applied": 0,
+      "id": 865,
+      "kit_id": "d2-bowazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Bowazon — Amazon archer specialization... bowazons were the supreme subclass in classic D2 and early LoD",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name Bowazon; aliases Bow Amazon, Multiple Shot Amazon, Strafe Amazon",
+      "errata_applied": 0,
+      "id": 861,
+      "kit_id": "d2-bowazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "most effects work just for the middle few Arrows with Multiple Shot",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Multiple Shot (fan spread), Strafe (autotarget sequential), Guided Arrow",
+      "errata_applied": 0,
+      "id": 862,
+      "kit_id": "d2-bowazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/general-thoughts-and-tips-on-physical-bowazon-t1111426.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Fan-spread arrow volley; anchor: 'Multishot fans arrows for density'; 'most effects work just for the middle few Arrows with Multiple Shot'; up to 24 arrows at level 20; physical = element-neutral",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Multiple Shot' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2091,
+      "kit_id": "d2-bowazon",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Autotarget sequential shots against multiple enemies or same target; anchor: 'Strafe autotargets sequential shots'; fixed 11 shots; channel-like commitment during animation (delivery note)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Strafe' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2092,
+      "kit_id": "d2-bowazon",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Homing single-target arrow; seeking delivery noted; physical single-target",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Guided Arrow' delivery_class=projectile (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'projectile'",
+      "errata_applied": 0,
+      "id": 2093,
+      "kit_id": "d2-bowazon",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

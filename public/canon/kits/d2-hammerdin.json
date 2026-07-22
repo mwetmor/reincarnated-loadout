@@ -1,0 +1,844 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 8
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 823,
+      "assert_text": "primary_delivery_class == 'motion'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-hammerdin",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 640,
+    "kit_id": "d2-hammerdin",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Blessed Hammer Paladin Endgame Build Guide Season 14 — Maxroll.gg",
+    "url": "https://maxroll.gg/d2/guides/blessed-hammer-paladin"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 638,
+      "kit_id": "d2-hammerdin",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "icy-veins.com",
+      "title": "Blessed Hammer Paladin (Hammerdin) Build — Diablo 2 Resurrected — Icy Veins",
+      "url": "https://www.icy-veins.com/d2/blessed-hammer-paladin-hammerdin-build"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 639,
+      "kit_id": "d2-hammerdin",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Diablo 2 Guide: Paladin Hammerdin v1.10 — PureDiablo",
+      "url": "https://www.purediablo.com/strategy/diablo-2-guide-paladin-hammerdin-v1-10"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 640,
+      "kit_id": "d2-hammerdin",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Blessed Hammer Paladin Endgame Build Guide Season 14 — Maxroll.gg",
+      "url": "https://maxroll.gg/d2/guides/blessed-hammer-paladin"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-hammerdin",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 731,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-hammerdin",
+      "missing_expression": "Source player would miss: (1) hammers travel in fixed spiral paths — coverage is position-dependent, not true ring/orbit;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Source player would miss: (1) hammers travel in fixed spiral paths — coverage is position-dependent, not true ring/orbit; the spiral-arc placement puzzle is mechanically distinct from a maintained orbital. Orbit token is the best available approximation."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1481,
+      "kit_id": "d2-hammerdin",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Blessed Aim and Vigor receive 20 points each as synergies",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1480,
+      "kit_id": "d2-hammerdin",
+      "payload_json": {
+        "notes": "Magic damage type bypasses nearly all monster resistances — signature identity",
+        "runewords": "Heart of the Oak, Enigma, Spirit",
+        "synergies": "Blessed Aim and Vigor are synergy skills for Blessed Hammer damage; Concentration aura doubles damage"
+      },
+      "source_url": "https://www.icy-veins.com/d2/blessed-hammer-paladin-hammerdin-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Heart of the Oak (Ko Vex Pul Thul) provides +3 skills and 40 FCR, with the definitive endgame Hammerdin weapon",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1479,
+      "kit_id": "d2-hammerdin",
+      "payload_json": {
+        "key_items": "Heart of the Oak (Ko Vex Pul Thul) — +3 skills 40 FCR; Herald of Zakarum or Spirit shield; Enigma runeword for Teleport mobility; Harlequin Crest helm",
+        "notes": "FCR breakpoints: 75% first, 125% optimal"
+      },
+      "source_url": "https://www.icy-veins.com/d2/blessed-hammer-paladin-hammerdin-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "the Hammerdin boasts both high damage output and fair area of effect",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1478,
+      "kit_id": "d2-hammerdin",
+      "payload_json": {
+        "delivery": "spiral radial arcs from caster position",
+        "footprint": "multi-point spiraling",
+        "geometry": "self-origin multi-point",
+        "notes": "Hammers travel in fixed spiral paths outward from cast point; position-dependent hit coverage"
+      },
+      "source_url": "https://www.icy-veins.com/d2/blessed-hammer-paladin-hammerdin-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "the Hammerdin boasts both high damage output and fair area of effect via Blessed Hammer's magic damage that is very rarely resisted by monsters.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1477,
+      "kit_id": "d2-hammerdin",
+      "payload_json": {
+        "loop": "Cast Blessed Hammer with Concentration aura active; hammers spiral outward from player body in fixed arcs; magic damage hits nearly all enemies; reposition with Vigor/Enigma Teleport; Holy Shield provides defense"
+      },
+      "source_url": "https://www.icy-veins.com/d2/blessed-hammer-paladin-hammerdin-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "the Hammerdin is an iconic Paladin build",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1482,
+      "kit_id": "d2-hammerdin",
+      "payload_json": {
+        "variants": [
+          "Pure Hammerdin (max Blessed Hammer/Concentration/Vigor/Blessed Aim/Holy Shield)",
+          "Budget Hammerdin (Spirit shield, Insight merc)",
+          "Ladder-starter variant"
+        ]
+      },
+      "source_url": "https://www.icy-veins.com/d2/blessed-hammer-paladin-hammerdin-build"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|self-origin|flat|multi_projectile|damage|none|evade|spend|solo|dual|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "evade",
+    "def_conf": 0.72,
+    "def_riders": "[\"trigger:block\"]",
+    "delivery_value": "self-origin",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"BT\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [
+      "resolved:block-evade-physics"
+    ],
+    "geometry_conf": 0.68,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "d2-hammerdin",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "teleport"
+    ],
+    "provenance_json": {
+      "atlas_key": "WDHFSI-HMDM-LC-MA-~~",
+      "delivery": "self-origin",
+      "elem_raw": "magic",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "evade",
+        "conf": 0.72,
+        "riders": [
+          "trigger:block"
+        ]
+      },
+      "econ": {
+        "gaps": [
+          "BT"
+        ],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.68,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [
+        "resolved:block-evade-physics"
+      ],
+      "folk_name": "Hammerdin",
+      "game": "d2",
+      "kit_id": "d2-hammerdin",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "teleport"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "WDHFSI-HMDM-LC-MA-~~",
+        "delivery": "self-origin",
+        "elem_raw": "magic",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-hammerdin",
+      "motion_signature": "orbit_fixed",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Hammers spiral outward from caster position in fixed radial arcs; multi-point self-origin emission. Magic damage — element-neutral per THE PHYSICAL RULE (holy is probe fabrication per §A row 6 — never import). Position-dependent hit coverage; player repositions to maximize hits. Moving delivery; not rooted.",
+      "source_skill": "Blessed Hammer",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-hammerdin",
+      "motion_signature": "blink_translate",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Item-granted repositioning skill; Enigma runeword provides Teleport. Aggressive repositioning is core to loop.",
+      "source_skill": "Teleport (Enigma runeword)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-hammerdin",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Source player would miss: (1) hammers travel in fixed spiral paths — coverage is position-dependent, not true ring/orbit; the spiral-arc placement puzzle is mechanically distinct from a maintained orbital. Orbit token is the best available approximation.",
+    "grade": "CLOSE",
+    "kit_id": "d2-hammerdin",
+    "mapping_json": {
+      "fidelity_notes": "CLOSE: Spiral orbit geometry maps cleanly to orbit per §A row 6 phrase-book. Magic damage = element-neutral (holy NEVER — probe fabrication, §A row 6 hot-fact). T4 PERSISTENCE_ENGINE_uptime: uptime IS the loop (keep hammers spiraling, reposition to catch mobs). ZONE_CONTROL: positional-alignment identity. Enigma Teleport maps as item-defined-archetype mobility layer (item dissolves; mechanic lands per §CROSS row 4). Synergies (Blessed Aim, Vigor) → traits-affixes scaffold lane per §A row 1. Aura (Concentration) is free toggle, no reservation, d2-aura law. Era: lod-1.10+ and d2r CONFIRMED; rotw-s13+ UNSUPPORTED in verify_ledger. Deviation: player would miss the fixed-spiral positional puzzle (orbit token approximates but can't fully capture the placement-dependent coverage shape).",
+      "motion_frame": "Cast Blessed Hammer with Concentration aura active; hammers spiral outward in fixed arcs; reposition via Teleport to align spiral paths with enemy clusters",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "mana-sustain: Concentration aura + mana gear; mana cost per Blessed Hammer cast is primary gate"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Concentration aura = 200% damage passive boost; aura-pulse geometry + free toggle (no reservation — d2 auras are free, §A row 2)"
+          ],
+          "geometry": [
+            "Enigma Teleport = geometry/repositioning modifier; aggressive repositioning is loop-critical"
+          ],
+          "traits_affixes": [
+            "Blessed Aim, Vigor synergies = scaffold.support_lanes.traits_affixes (§A row 1 synergy law)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Hammers spiral outward from caster position in fixed radial arcs; multi-point self-origin emission. Magic damage — element-neutral per THE PHYSICAL RULE (holy is probe fabrication per §A row 6 — never import). Position-dependent hit coverage; player repositions to maximize hits. Moving delivery; not rooted.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "orbit",
+          "source_skill": "Blessed Hammer"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Item-granted repositioning skill; Enigma runeword provides Teleport. Aggressive repositioning is core to loop.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "teleport",
+          "source_skill": "Teleport (Enigma runeword)"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_uptime",
+        "ZONE_CONTROL"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 743,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "resist",
+          "block"
+        ],
+        "primary": "block"
+      },
+      "family": "defense",
+      "id": 744,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Blessed Hammers spiral outward from player body in fixed radial arcs",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 741,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Blessed Hammers spiral outward from the cast point in a fixed pattern; magic dam",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 745,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "magic"
+      },
+      "family": "element",
+      "id": 746,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.68,
+        "evidence": "Hammers spiral in multiple paths from body; geo=multi-spawn in atlas",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 742,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with multi-point footprint. Blessed Hammers spiral outward from the cast point in a fixed pattern; magic damage ignores nearly all immunities; the genre's canonical spi.",
+      "family": "geo_text",
+      "id": 748,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "teleport"
+        ]
+      },
+      "family": "movement",
+      "id": 747,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2 Blessed Hammer: +minor flat magic damage; synergy multiplier unchanged.",
+      "family": "rank1_upgrade",
+      "id": 749,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "iv (Icy Veins guide)",
+        "dw",
+        "ph"
+      ],
+      "family": "sources_used",
+      "id": 750,
+      "kit_id": "d2-hammerdin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Hammerdin: orbit motion identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-hammerdin",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.8,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|self-origin|flat|multi_projectile|damage|none|evade|spend|solo|dual|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|self-origin|flat|multi_projectile|damage|none|evade|spend|solo|dual|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "evade"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WDHFSI-HMDM-LC-MA-~~",
+    "attr_conf": 0.8,
+    "attr_val": "WIS",
+    "avg_conf": 0.8,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.8,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Blessed Hammer",
+      "Concentration",
+      "Holy Shield"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": null,
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-sustain",
+    "elem_raw": "magic",
+    "era_year": 2000,
+    "eras": "lod-1.10+;d2r;rotw-s13+",
+    "eras_normalized": "lod-1.10+;d2r;rotw-s13+",
+    "flags": "vdm2-w5-elem-anomaly-2026-07-22: elem_raw='magic' — D2 'magic' damage is element-NEUTRAL (ignores immunities); the Blessed Hammer delivery_notes state 'holy is probe fabrication'. 'magic' is a genre-true damage class but not an RDR element register; W5 to decide whether magic→neutral-register mapping needs a court/register rule (shared by d2-bonemancer, d2-berserker, and the magic Warlocks).",
+    "folk_name": "Hammerdin",
+    "game": "d2",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-01",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-hammerdin",
+    "lattice_coord": "WDHFSI",
+    "lineage": "",
+    "mech_note": "Blessed Hammers spiral outward from the cast point in a fixed pattern; magic damage ignores nearly all immunities; the genre's canonical spi",
+    "mint": 0,
+    "mob_raw": "teleport-high(Enigma)",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|MULTI|INST×GAP-D2-01",
+    "mobile_key_group": "WDHFSI-HMDM-LC-MA-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "magic",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "iv;dw;ph",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.8,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.8,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.8,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "the Hammerdin is an iconic Paladin build",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod-1.10+ era",
+      "errata_applied": 0,
+      "id": 937,
+      "kit_id": "d2-hammerdin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/diablo-2-guide-paladin-hammerdin-v1-10",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "the Hammerdin boasts both high damage output and fair area of effect via Blessed Hammer's magic damage that is very rarely resisted by monsters.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r era",
+      "errata_applied": 0,
+      "id": 938,
+      "kit_id": "d2-hammerdin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/blessed-hammer-paladin-hammerdin-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in rotw-s13+ era",
+      "errata_applied": 0,
+      "id": 939,
+      "kit_id": "d2-hammerdin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/blessed-hammer-paladin",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "One of the most popular characters in Diablo 2, the Hammerdin is an iconic Paladin build.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Hammerdin' and aliases 'Blessed Hammer Paladin', 'BH Paladin' are real community usage",
+      "errata_applied": 0,
+      "id": 935,
+      "kit_id": "d2-hammerdin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/blessed-hammer-paladin-hammerdin-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "20 points to Blessed Hammer (primary), 20 to Concentration (damage boost), and 20 to Holy Shield (defense).",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Blessed Hammer, Concentration, Holy Shield; magic damage delivery",
+      "errata_applied": 0,
+      "id": 936,
+      "kit_id": "d2-hammerdin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/blessed-hammer-paladin-hammerdin-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Hammers spiral outward from caster position in fixed radial arcs; multi-point self-origin emission. Magic damage — element-neutral per THE PHYSICAL RULE (holy is probe fabrication per §A row 6 — never import). Position-dependent hit coverage; player repositions to maximize hits. Moving delivery; not rooted.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Blessed Hammer' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (1 sig)",
+      "errata_applied": 0,
+      "id": 2133,
+      "kit_id": "d2-hammerdin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Item-granted repositioning skill; Enigma runeword provides Teleport. Aggressive repositioning is core to loop.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Teleport (Enigma runeword)' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (1 sig)",
+      "errata_applied": 0,
+      "id": 2134,
+      "kit_id": "d2-hammerdin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "mapping_json: Blessed Hammer \"Magic damage — element-neutral per THE PHYSICAL RULE (holy is probe fabrication per §A row 6 — never import)\"; spiral-arc self-origin. elem_raw=\"magic\".",
+      "claim_family": "mechanics",
+      "claim_subject": "elem_anomaly",
+      "claim_text": "[§7 elem_raw anomaly · PROPOSED:DOCUMENTED-CROSSWALK] elem_raw='magic' — elem_raw='magic' is CORRECT and anchor-confirmed: Blessed Hammer deals D2 'magic' damage, which is DEFINED by non-membership in any elemental register (V-15). court is correctly NULL (magic→NULL). The anchor explicitly warns against importing the 'holy' probe-fabrication. Not a disagreement — a correctly-tagged non-membership element. No correction.",
+      "errata_applied": 0,
+      "id": 2579,
+      "kit_id": "d2-hammerdin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

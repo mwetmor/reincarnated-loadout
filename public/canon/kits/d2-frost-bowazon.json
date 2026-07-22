@@ -1,0 +1,815 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 815,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-frost-bowazon",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "MrLlamaSC",
+    "cite_class": "authored",
+    "id": 625,
+    "kit_id": "d2-frost-bowazon",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "icy-veins.com",
+    "title": "Freezing Arrow Frostmaiden Amazon Build for Diablo 2 Resurrected",
+    "url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "MrLlamaSC",
+      "cite_class": "authored",
+      "id": 625,
+      "kit_id": "d2-frost-bowazon",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "icy-veins.com",
+      "title": "Freezing Arrow Frostmaiden Amazon Build for Diablo 2 Resurrected",
+      "url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-frost-bowazon",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 726,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-frost-bowazon",
+      "missing_expression": "Pierce-enabled chain detonation (each pierced enemy independently detonates the AoE) is a geometry-multiply texture with no direct engine token;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Pierce-enabled chain detonation (each pierced enemy independently detonates the AoE) is a geometry-multiply texture with no direct engine token; carried in delivery_notes. Player feels 'freeze-and-shatter ranged cold controller' — that build, minor pierce-chain texture loss."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "MrLlamaSC is a professional twitch broadcaster that has been streaming since 2014",
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1445,
+      "kit_id": "d2-frost-bowazon",
+      "payload_json": {
+        "handle": "MrLlamaSC",
+        "note": "Updated May 22, 2026 through Patch 2.8",
+        "site": "icy-veins.com"
+      },
+      "source_url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Pierce is the force multiplier for this build; 100% pierce chance achievable via Razortail + Pierce skill",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1444,
+      "kit_id": "d2-frost-bowazon",
+      "payload_json": {
+        "notes": "Pierce is the force multiplier described as making 100% pierce achievable via Razortail + Pierce skill.",
+        "runewords": [
+          "Ice (weapon)",
+          "Faith (alt weapon)",
+          "Chains of Honor (armor)",
+          "Call to Arms (swap)"
+        ],
+        "synergies": [
+          "Cold Arrow is Freezing Arrow's primary synergy (each point increases FA cold damage)",
+          "Pierce skill multiplies effective AoE coverage"
+        ],
+        "uniques": [
+          "Razortail (belt — critical pierce enabler)"
+        ]
+      },
+      "source_url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Ice Matriarchal Bow — specifically made for a frostmaiden or cold bowazon; Chains of Honor; Call to Arms",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1443,
+      "kit_id": "d2-frost-bowazon",
+      "payload_json": {
+        "key_items": [
+          "Ice runeword Matriarchal or Grand Matron Bow (BIS for cold bowazon — Holy Freeze aura, cold skill damage)",
+          "Faith runeword bow (alt — for balanced physical/elemental)",
+          "Razortail belt (pierce mechanic — up to 100% pierce chance)",
+          "Chains of Honor (armor)",
+          "Call to Arms (swap weapon for BO)",
+          "Mavina's set (budget option)"
+        ],
+        "notes": "Ice runeword in correct base is the defining BIS; Razortail is the critical pierce-enabler that multiplies AoE value."
+      },
+      "source_url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "When a Freezing Arrow passes through enemies, each target it hits can trigger the ice explosion independently",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1442,
+      "kit_id": "d2-frost-bowazon",
+      "payload_json": {
+        "geometry": "Freezing Arrow: bow projectile (single arrow) that on impact produces cold AoE burst in radius. Pierce allows projectile to pass through multiple targets, each triggering independent detonation. Small-to-medium AoE radius at impact. Point delivery with radius footprint."
+      },
+      "source_url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Freezing Arrow fires an arrow that detonates on impact into a massive ice explosion, dealing cold damage in a large radius and freezing every enemy caught in the blast",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1441,
+      "kit_id": "d2-frost-bowazon",
+      "payload_json": {
+        "loop": "Fire Freezing Arrow as primary attack — arrow detonates on impact with cold AoE burst, freezing all enemies in radius. Cold Arrow provides synergy. Pierce (via Razortail belt or skill) enables single arrow to pass through multiple enemies, each triggering independent AoE explosion. Cold Arrow as fallback single-target."
+      },
+      "source_url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Diablo 2 Guide: Poor Man's Freezing Arrow/Strafezon Amazon v1.12",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1446,
+      "kit_id": "d2-frost-bowazon",
+      "payload_json": {
+        "notes": "PureDiablo hosts a 'Poor Man's Freezing Arrow/Strafezon' guide — confirms budget variant existed in earlier patches.",
+        "variants": [
+          "Pure Frostmaiden (Freezing Arrow + Cold Arrow; Ice runeword bow)",
+          "Freezing Arrow/Strafe hybrid (cold + physical; Faith bow)",
+          "Poor Man's Freezing Arrow/Strafezon (budget; Dacar92 guide v1.12)"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/strategy/diablo-2-guide-poor-mans-freezing-arrow-strafezon-amazon-v1-12"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|projectile|flat|circle|damage|hard-stop|mitigate|spend|light|ranged|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:freeze\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hard-stop",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.59,
+    "geometry_rule_fired": "R8-proj-blast",
+    "geometry_value": "circle",
+    "kit_id": "d2-frost-bowazon",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "DRMFLI-LSMD-SP-CO-~~",
+      "delivery": "projectile",
+      "elem_raw": "cold",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:freeze"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.59,
+        "rule_fired": "R8-proj-blast",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Frostmaiden",
+      "game": "d2",
+      "kit_id": "d2-frost-bowazon",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DRMFLI-LSMD-SP-CO-~~",
+        "delivery": "projectile",
+        "elem_raw": "cold",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-frost-bowazon",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": "all",
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Bow projectile that on impact produces cold AoE burst in radius, freezing all enemies caught. Pierce (via Razortail belt) enables single arrow to pass through multiple enemies, each triggering independent AoE detonation. Freeze attested: 'Freezing Arrow fires an arrow that detonates on impact into a massive ice explosion, dealing cold damage in a large radius and freezing every enemy caught in the blast.'",
+      "source_skill": "Freezing Arrow",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-frost-bowazon",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Synergy for Freezing Arrow; single-target fallback cold bow shot.",
+      "source_skill": "Cold Arrow",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-frost-bowazon",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Pierce-enabled chain detonation (each pierced enemy independently detonates the AoE) is a geometry-multiply texture with no direct engine token; carried in delivery_notes. Player feels 'freeze-and-shatter ranged cold controller' — that build, minor pierce-chain texture loss.",
+    "grade": "CLOSE",
+    "kit_id": "d2-frost-bowazon",
+    "mapping_json": {
+      "fidelity_notes": "Freeze attested explicitly in fetched skill_loop anchor. Pierce mechanic (Razortail + Pierce skill enabling multi-target detonation chain) is a geometry-modifier (support lane: geometry); it approximates as AoE-multiplication texture in delivery_notes. Ice runeword Holy Freeze aura = item-layer capstone texture (§CROSS row 4), not a skill row. Pure cold control ranged build. No burn/poison/bleed attested.",
+      "motion_frame": "Fire Freezing Arrow into packs; arrow detonates cold AoE burst freezing all enemies in radius; Pierce enables multi-target chain detonation; Cold Arrow as single-target fallback",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence_scale": "bow-fire-loop",
+        "cost_scale": "mana-hungry"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "Pierce skill/Razortail belt: piercing projectile through multiple targets, each triggering independent detonation"
+          ],
+          "traits_affixes": [
+            "Cold Arrow synergy; Ice runeword weapon is item-defined BIS (Holy Freeze aura on weapon = item-layer)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "freeze"
+          ],
+          "delivery_notes": "Bow projectile that on impact produces cold AoE burst in radius, freezing all enemies caught. Pierce (via Razortail belt) enables single arrow to pass through multiple enemies, each triggering independent AoE detonation. Freeze attested: 'Freezing Arrow fires an arrow that detonates on impact into a massive ice explosion, dealing cold damage in a large radius and freezing every enemy caught in the blast.'",
+          "element_primary": "water",
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Freezing Arrow"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Synergy for Freezing Arrow; single-target fallback cold bow shot.",
+          "element_primary": "water",
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Cold Arrow"
+        }
+      ],
+      "t4_doors": [
+        "ZONE_CONTROL",
+        "MOMENTUM_CASCADE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "chill",
+          "freeze"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 903,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 904,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.63,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.63,
+        "evidence": "Freezing Arrow fired as bow projectile; cold AoE burst deploys at arrow impact",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 901,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Freezing Arrow converts bow shots into cold AOE bursts with hard crowd-freeze; c",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 905,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "cold"
+      },
+      "family": "element",
+      "id": 906,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.59,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.59,
+        "evidence": "Freezing Arrow cold burst at arrow impact; small AoE radius; geo=small-AOE",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 902,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with small-radius footprint. Freezing Arrow converts bow shots into cold AOE bursts with hard crowd-freeze; control-forward ranged play.",
+      "family": "geo_text",
+      "id": 908,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 907,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 909,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 910,
+      "kit_id": "d2-frost-bowazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Frostmaiden: single target projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-frost-bowazon",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:water",
+      "hook_id": "H2",
+      "hook_text": "water element register",
+      "hook_type": "register",
+      "kit_id": "d2-frost-bowazon",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.7,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|projectile|flat|circle|damage|hard-stop|mitigate|spend|light|ranged|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|projectile|flat|circle|damage|hard-stop|mitigate|spend|light|ranged|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hard-stop"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DRMFLI-LSMD-SP-CO-~~",
+    "attr_conf": 0.7,
+    "attr_val": "DEX",
+    "avg_conf": 0.7,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.7,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Freezing Arrow",
+      "Cold Arrow"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-hungry",
+    "elem_raw": "cold",
+    "era_year": 2000,
+    "eras": "lod;d2r",
+    "eras_normalized": "lod;d2r",
+    "flags": "",
+    "folk_name": "Frostmaiden",
+    "game": "d2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-frost-bowazon",
+    "lattice_coord": "DRMFLI",
+    "lineage": "",
+    "mech_note": "Freezing Arrow converts bow shots into cold AOE bursts with hard crowd-freeze; control-forward ranged play.",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|SMALL|INST×econ:spend",
+    "mobile_key_group": "DRMFLI-LSMD-SP-CO-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.7,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.7,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.7,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Freezing Arrow Frostmaiden Amazon Build",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod era",
+      "errata_applied": 0,
+      "id": 913,
+      "kit_id": "d2-frost-bowazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Freezing Arrow Frostmaiden Amazon Build",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r era",
+      "errata_applied": 0,
+      "id": 914,
+      "kit_id": "d2-frost-bowazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Freezing Arrow Frostmaiden Amazon Build",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Frostmaiden' and aliases 'Frost Bowazon', 'Freezing Arrow Amazon', 'Cold Arrow Amazon' are real community usage",
+      "errata_applied": 0,
+      "id": 911,
+      "kit_id": "d2-frost-bowazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "With strong crowd control thanks to Freezing Arrow, the Frostmaiden crushes any area without Cold Immune monsters.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Freezing Arrow, Cold Arrow",
+      "errata_applied": 0,
+      "id": 912,
+      "kit_id": "d2-frost-bowazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/freezing-arrow-frostmaiden-amazon-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Bow projectile that on impact produces cold AoE burst in radius, freezing all enemies caught. Pierce (via Razortail belt) enables single arrow to pass through multiple enemies, each triggering independent AoE detonation. Freeze attested: 'Freezing Arrow fires an arrow that detonates on impact into a massive ice explosion, dealing cold damage in a large radius and freezing every enemy caught in the blast.'",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Freezing Arrow' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (3) but 'zone' more strongly (6) — mixed signal",
+      "errata_applied": 0,
+      "id": 2121,
+      "kit_id": "d2-frost-bowazon",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Synergy for Freezing Arrow; single-target fallback cold bow shot.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Cold Arrow' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2122,
+      "kit_id": "d2-frost-bowazon",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

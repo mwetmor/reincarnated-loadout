@@ -1,0 +1,743 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 549,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-aurastacker",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Jix#7520",
+    "cite_class": "authored",
+    "id": 20,
+    "kit_id": "poe1-aurastacker",
+    "quarantined": 0,
+    "rank_class": "recovered",
+    "site": "pathofexile.com/forum",
+    "title": "[3.18] Aura Stacking - EZ new Uber Content",
+    "url": "https://www.pathofexile.com/forum/view-thread/2913007"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Jix#7520",
+      "cite_class": "authored",
+      "id": 20,
+      "kit_id": "poe1-aurastacker",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "pathofexile.com/forum",
+      "title": "[3.18] Aura Stacking - EZ new Uber Content",
+      "url": "https://www.pathofexile.com/forum/view-thread/2913007"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-aurastacker",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 512,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-aurastacker",
+      "missing_expression": "The self-stacking aura identity lands cleanly (NETWORK_AMPLIFIER, solo-viable unlike Aurabot), but the source reserves ~100% of the pool (via Aul's Uprising free-aura) which exceeds the engine's 0.75 LOCKED reservation cap — clamped in the map.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The self-stacking aura identity lands cleanly (NETWORK_AMPLIFIER, solo-viable unlike Aurabot), but the source reserves ~100% of the pool (via Aul's Uprising free-aura) which exceeds the engine's 0.75 LOCKED reservation cap — clamped in the map. A player would keep the 'walking-buff-tower who deals damage by existing' feel; the extreme near-total reservation magnitude is capped below the source's."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 41,
+      "kit_id": "poe1-aurastacker",
+      "payload_json": {
+        "handle": "Jix#7520",
+        "site": "pathofexile.com/forum",
+        "url": "https://www.pathofexile.com/forum/view-thread/2913007"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2913007"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Scion — Ascendant ascendancy, necro ascendancy for attack speed scaling",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 40,
+      "kit_id": "poe1-aurastacker",
+      "payload_json": {
+        "ascendancy": "Scion (Ascendant)",
+        "ascendant_choices": [
+          "Necromancer (attack speed from undying)",
+          "Guardian (aura effect via Radiant Faith)"
+        ],
+        "note": "Guardian or Scion are both used; guide retrieved is Scion 3.18."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2913007"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "legacy aura effect clusters (x9), call of the brotherhood 2x",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 39,
+      "kit_id": "poe1-aurastacker",
+      "payload_json": {
+        "alteration": "Removes reservation cost of one named aura (varies by implicit roll), allowing 100% reservation of remaining mana while gaining a free aura.",
+        "key_item": "Aul's Uprising (amulet)",
+        "secondary_alteration": "Each jewel provides large aura effect multiplier; stacking 9 clusters generates extreme total multiplier.",
+        "secondary_item": "Legacy aura effect cluster jewels",
+        "tertiary_alteration": "Converts lightning damage to cold for elemental reflect immunity and cold scaling.",
+        "tertiary_item": "Call of the Brotherhood (x2 rings)"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2913007"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 38,
+      "kit_id": "poe1-aurastacker",
+      "payload_json": {
+        "geometry_note": "Distinct from Aurabot: player is own aura recipient; no party dependency.",
+        "verbatim": "Aura-pulse delivery from player body; aura radius extends around caster. Solo use — auras buff the player themselves, not allies. Small effective combat radius since player is the only recipient."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2913007"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Reserve EVERYTHING — a dozen-plus auras whose stacked effect multiplies into absurd offense and defense at once",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 37,
+      "kit_id": "poe1-aurastacker",
+      "payload_json": {
+        "description": "Reserve mana and ES across 12+ auras; each aura provides both offensive and defensive stats. Stacked aura effect (via cluster jewels, Aul's Uprising necklace to remove reservation of one aura) multiplies into absurd offense and defense simultaneously. Character runs through maps dealing damage from their own aura buffs, no active attack required in core loop."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2913007"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 42,
+      "kit_id": "poe1-aurastacker",
+      "payload_json": {
+        "named_variants": [
+          "Scion Aurastacker (Jix 3.18)",
+          "Guardian Aurastacker",
+          "Aul's Stacker (name referencing key item)",
+          "Cheapest Aurastacker (budget variant)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2913007"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|aura-pulse|flat|self_buff|damage|hard-stop|mitigate|reserve|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:freeze\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hard-stop",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "aura-pulse",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"RS\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "reserve",
+    "flags": [],
+    "geometry_conf": 0.58,
+    "geometry_rule_fired": "R0c",
+    "geometry_value": "self_buff",
+    "kit_id": "poe1-aurastacker",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "WMHFSI-HSDM-RS-CO-~~",
+      "delivery": "aura-pulse",
+      "elem_raw": "cold",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:freeze"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "RS"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.58,
+        "rule_fired": "R0c",
+        "value": "self_buff"
+      },
+      "flags": [],
+      "folk_name": "Solo Aurastacker",
+      "game": "poe1",
+      "kit_id": "poe1-aurastacker",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "WMHFSI-HSDM-RS-CO-~~",
+        "delivery": "aura-pulse",
+        "elem_raw": "cold",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana (full reserve)",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-aurastacker",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "a dozen-plus persistent auras radiating from the player, buffing the PLAYER themselves (solo self-recipient); stacked aura-effect (cluster jewels) multiplies offense and defense simultaneously. water/cold family via Call-of-the-Brotherhood lightning->cold conversion; the auras ARE the offense — no active attack in the core loop",
+      "source_skill": "aura suite (12+ auras: Zealotry/Hatred/Determination/Grace/Discipline/Purities/etc)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-aurastacker",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The self-stacking aura identity lands cleanly (NETWORK_AMPLIFIER, solo-viable unlike Aurabot), but the source reserves ~100% of the pool (via Aul's Uprising free-aura) which exceeds the engine's 0.75 LOCKED reservation cap — clamped in the map. A player would keep the 'walking-buff-tower who deals damage by existing' feel; the extreme near-total reservation magnitude is capped below the source's.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-aurastacker",
+    "mapping_json": {
+      "fidelity_notes": "SELF-stacking aura-network — maps cleanly to NETWORK_AMPLIFIER/RESONANCE_LOOP (crosswalk §5 aurabot-adjacent SELF-stacking). Distinct from Aurabot (kit-6): Aurastacker is the SELF-recipient version and IS solo-viable — the player buffs themselves, so the identity has a solo lane. Element water/cold (Call of the Brotherhood converts lightning->cold for reflect-immunity + cold scaling). RESERVATION TENSION (shared with aurabot): Aul's Uprising removes one aura's reservation enabling ~100% total reservation, which EXCEEDS the engine reservation_percent 0.75 LOCKED cap; clamped in-map with note. The 'no active attack; damage IS the stacked auras' identity is captured by NETWORK_AMPLIFIER as the self-amplification engine + aura geometry.",
+      "motion_frame": "self-amplifying presence: run through content dealing damage purely from stacked self-auras; no active attack button in the core loop",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "reservation_percent": 0.75,
+        "reservation_resource": "mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "near-total reservation via Aul's-Uprising free-aura (source ~100%, engine-clamped to 0.75 LOCKED)",
+            "reservation-efficiency clusters"
+          ],
+          "geometry": [
+            "aura radius (self-recipient)"
+          ],
+          "traits_affixes": [
+            "aura-effect scaling (legacy cluster-jewel stacking)",
+            "reservation-efficiency",
+            "lightning->cold conversion"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "a dozen-plus persistent auras radiating from the player, buffing the PLAYER themselves (solo self-recipient); stacked aura-effect (cluster jewels) multiplies offense and defense simultaneously. water/cold family via Call-of-the-Brotherhood lightning->cold conversion; the auras ARE the offense — no active attack in the core loop",
+          "element_primary": "water",
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "aura suite (12+ auras: Zealotry/Hatred/Determination/Grace/Discipline/Purities/etc)"
+        }
+      ],
+      "t4_doors": [
+        "NETWORK_AMPLIFIER",
+        "RESONANCE_LOOP"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "chill",
+          "freeze"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 4593,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 4594,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.61,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.61,
+        "evidence": "Full reservation aura stacking; damage and defense multiply through own aura stack",
+        "value": "aura-pulse"
+      },
+      "family": "delivery",
+      "id": 4591,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "reserve",
+        "plain_text": "mana (full reserve) (reserve); Reserve EVERYTHING — a dozen-plus auras whose stacked effect multiplies into abs",
+        "resource_verbatim": "mana (full reserve)"
+      },
+      "family": "economy",
+      "id": 4595,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "cold"
+      },
+      "family": "element",
+      "id": 4596,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.58,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.58,
+        "evidence": "Auras cover small-radius around player body; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 4592,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Aura-pulse delivery with small-radius footprint. Reserve EVERYTHING  —  a dozen-plus auras whose stacked effect multiplies into absurd offense and defense at once; the full-reservation econom.",
+      "family": "geo_text",
+      "id": 4598,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 4597,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 4599,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 4600,
+      "kit_id": "poe1-aurastacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Solo Aurastacker: aura aura identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-aurastacker",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:water",
+      "hook_id": "H2",
+      "hook_text": "water element register",
+      "hook_type": "register",
+      "kit_id": "poe1-aurastacker",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.68,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|aura-pulse|flat|self_buff|damage|hard-stop|mitigate|reserve|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|aura-pulse|flat|self_buff|damage|hard-stop|mitigate|reserve|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "aura-pulse"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "self_buff"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hard-stop"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "reserve"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WMHFSI-HSDM-RS-CO-~~",
+    "attr_conf": 0.68,
+    "attr_val": "WIS",
+    "avg_conf": 0.68,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.68,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "aura suite",
+      "Zealotry/Hatred/etc"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "full-reservation",
+    "elem_raw": "cold",
+    "era_year": 2013,
+    "eras": "3.7-3.13",
+    "eras_normalized": "3.7-3.13",
+    "flags": "",
+    "folk_name": "Solo Aurastacker",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-aurastacker",
+    "lattice_coord": "WMHFSI",
+    "lineage": "",
+    "mech_note": "Reserve EVERYTHING — a dozen-plus auras whose stacked effect multiplies into absurd offense and defense at once; the full-reservation econom",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×econ:reserve",
+    "mobile_key_group": "WMHFSI-HSDM-RS-CO-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.68,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.68,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.68,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "AURA",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-archipelago-mock.json points[stratum=core, family assigned, not gateA self-seed] (affinity=0.609)",
+    "spine_status": "ACTIVE",
+    "tier": "PROPAGATED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "3.17 READY",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 24,
+      "kit_id": "poe1-aurastacker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2913007",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.18] Aura Stacking - EZ new Uber Content",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Solo Aurastacker', alias \"Aul's stacker\" are real community usage; class Guardian/Scion",
+      "errata_applied": 0,
+      "id": 22,
+      "kit_id": "poe1-aurastacker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2913007",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "legacy aura effect clusters (x9)",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills aura suite + Zealotry/Hatred/etc; reserve everything for a dozen-plus auras whose stacked effect multiplies offense and defense; full-reservation economy",
+      "errata_applied": 0,
+      "id": 23,
+      "kit_id": "poe1-aurastacker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2913007",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "a dozen-plus persistent auras radiating from the player, buffing the PLAYER themselves (solo self-recipient); stacked aura-effect (cluster jewels) multiplies offense and defense simultaneously. water/cold family via Call-of-the-Brotherhood lightning->cold conversion; the auras ARE the offense — no active attack in the core loop",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'aura suite (12+ auras: Zealotry/Hatred/Determination/Grace/Discipline/Purities/etc)' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2377,
+      "kit_id": "poe1-aurastacker",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

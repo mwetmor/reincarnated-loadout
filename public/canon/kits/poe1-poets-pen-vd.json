@@ -1,0 +1,906 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 4,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 3,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 610,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-poets-pen-vd",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "odealo",
+    "cite_class": "communal",
+    "id": 165,
+    "kit_id": "poe1-poets-pen-vd",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "odealo.com",
+    "title": "Poet's Pen Volatile Dead Berserker/Marauder Patch 3.1 Build",
+    "url": "https://odealo.com/articles/poets-pen-volatile-dead-berserker-marauder-odealos-crafty-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "odealo",
+      "cite_class": "communal",
+      "id": 165,
+      "kit_id": "poe1-poets-pen-vd",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "Poet's Pen Volatile Dead Berserker/Marauder Patch 3.1 Build",
+      "url": "https://odealo.com/articles/poets-pen-volatile-dead-berserker-marauder-odealos-crafty-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 166,
+      "kit_id": "poe1-poets-pen-vd",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Volatile Dead — PoEDB",
+      "url": "https://poedb.tw/us/Volatile_Dead"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 167,
+      "kit_id": "poe1-poets-pen-vd",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "[3.10] Poet's Pen + Volatile Dead, Uber Elder deathless",
+      "url": "https://www.pathofexile.com/forum/view-thread/2586778"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "communal",
+      "cite_class": "communal",
+      "id": 274,
+      "kit_id": "poe1-poets-pen-vd",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": null,
+      "url": "https://poedb.tw/us/The_Poets_Pen"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-poets-pen-vd",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 574,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-poets-pen-vd",
+      "missing_expression": "Two spells triggered from ONE attack (dual-wand simultaneity) generalizes to the engine's one-trigger -> linked-cast shape — mapped as the spell pair sharing the attack trigger at depth-1;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Two spells triggered from ONE attack (dual-wand simultaneity) generalizes to the engine's one-trigger -> linked-cast shape — mapped as the spell pair sharing the attack trigger at depth-1; a purist loses the strict both-wands-fire-together texture. The 0.25s hard trigger-cooldown is carried as an economy note, not an enum. Corpse-seeking orb locomotion is behavioral."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 371,
+      "kit_id": "poe1-poets-pen-vd",
+      "payload_json": null,
+      "source_url": "https://odealo.com/articles/poets-pen-volatile-dead-berserker-marauder-odealos-crafty-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Trigger a Socketed Spell when you Attack with this Weapon, with a 0.25 second Cooldown",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 370,
+      "kit_id": "poe1-poets-pen-vd",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "Trigger a Socketed Spell when you Attack with this Weapon, with a 0.25 second Cooldown",
+            "effect": "Trigger a Socketed Spell when you Attack with this Weapon, with a 0.25 second Cooldown; spells alternate between attacks",
+            "node": "The Poet's Pen (item trigger mechanic)",
+            "type": "item_mod"
+          },
+          {
+            "anchor_quote": null,
+            "effect": "Modified explosion radius variant",
+            "node": "Volatile Dead of Confinement (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": null,
+            "effect": "Adjusted orb explosion damage variant",
+            "node": "Volatile Dead of Seething (transfig)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/The_Poets_Pen"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'Trigger a Socketed Spell when you Attack... with a 0.25 second Cooldown'",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 369,
+      "kit_id": "poe1-poets-pen-vd",
+      "payload_json": {
+        "alteration": "Unique wand with 'Trigger a Socketed Spell when you Attack with this Weapon, with a 0.25 second Cooldown'; build requires dual wielding two Poet's Pens",
+        "item": "The Poet's Pen"
+      },
+      "source_url": "https://odealo.com/articles/poets-pen-volatile-dead-berserker-marauder-odealos-crafty-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'Corpses near the targeted location explode... creating an orb which moves towards nearby enemies before dealing spell damage in a larger area'",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 368,
+      "kit_id": "poe1-poets-pen-vd",
+      "payload_json": {
+        "aoe": "VD orbs seek nearby enemies; each detonates in a larger area on hit",
+        "delivery": "multi-point (multiple VD orbs spawn and seek targets independently)",
+        "notes": "Corpse explosion secondary AoE; orbs self-direct from cast point"
+      },
+      "source_url": "https://poedb.tw/us/Volatile_Dead"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'attack with Frenzy skill and skills triggered from Poet's Pen will clear the screen by themselves'",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 367,
+      "kit_id": "poe1-poets-pen-vd",
+      "payload_json": {
+        "loop": "Attack with Frenzy using dual Poet's Pen wands; attack triggers socketed Volatile Dead and Unearth; Unearth creates corpses; VD orbs consume corpses and seek targets; Frenzy generates frenzy charges increasing attack speed"
+      },
+      "source_url": "https://odealo.com/articles/poets-pen-volatile-dead-berserker-marauder-odealos-crafty-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'as of Patch 3.2, this build is no longer supported. Berserker class is no longer viable choice... leading to the Templar Inquisitor guide'",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 372,
+      "kit_id": "poe1-poets-pen-vd",
+      "payload_json": {
+        "variants": [
+          "Berserker/Marauder (3.1 original)",
+          "Inquisitor Templar (3.2+ after Berserker nerf)",
+          "Occultist",
+          "Scion Ascendant (3.10)"
+        ]
+      },
+      "source_url": "https://odealo.com/articles/poets-pen-volatile-dead-berserker-marauder-odealos-crafty-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "full-move|at-target|flat|multi_projectile|damage|none|mitigate|free|light|dual|high|instant|triggered|apply→detonate",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.66,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "poe1-poets-pen-vd",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "IDHFLI-HMDD-PC-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "fire",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.66,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Poet's Pen Volatile Dead",
+      "game": "poe1",
+      "kit_id": "poe1-poets-pen-vd",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IDHFLI-HMDD-PC-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "fire",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "corpses",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-poets-pen-vd",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "consumes nearby corpses -> spawns seeking fire orbs (up to ~3 per cast, one per corpse) that roll toward nearby enemies and detonate in a larger circle on contact ('creating an orb which moves towards nearby enemies before dealing spell damage in a larger area'). Multi-orb spawn -> multi_projectile; the roll-seek locomotion + detonation circle are behavioral notes",
+      "source_skill": "Volatile Dead",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-poets-pen-vd",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "bone projectile dealing phys that SEEDS a corpse at impact — the ammo-supplier half of the corpse pair; physical -> element-neutral (physical rule)",
+      "source_skill": "Unearth",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-poets-pen-vd",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 2,
+      "source_anchor": "the ONE button: each wand attack generates a frenzy charge (attack-speed ramp) and trips both socketed spells via the wands' trigger; physical attack -> element-neutral",
+      "source_skill": "Frenzy (trigger driver)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-poets-pen-vd",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Two spells triggered from ONE attack (dual-wand simultaneity) generalizes to the engine's one-trigger -> linked-cast shape — mapped as the spell pair sharing the attack trigger at depth-1; a purist loses the strict both-wands-fire-together texture. The 0.25s hard trigger-cooldown is carried as an economy note, not an enum. Corpse-seeking orb locomotion is behavioral.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-poets-pen-vd",
+    "mapping_json": {
+      "fidelity_notes": "ITEM-KEYSTONE kit (crosswalks section-4 load-bearing): The Poet's Pen DISSOLVES — 'Trigger a Socketed Spell when you Attack with this Weapon, with a 0.25 second Cooldown' lands as kit-declared trigger grammar (the attack IS the trigger: on-cast-linked -> linked-cast) + the trigger-cooldown cadence in the economy lane. Dual-wield = TWO spells tripped per attack, modeled as parallel depth-1 linked-casts sharing one trigger; MAX_CHAIN_DEPTH=1 respected (VD's corpse-consume is the triggered cast's own effect, not a second trigger hop). Corpse-as-ammo = accumulator with on-corpse-consume fill (engine-native per b03 detonate-dead ledger, resource_economy precedent). chain_count 3 per R-M2: all three actives are load-bearing in the dominant rotation. CLASS-COLUMN CAVEAT (REVIEW-2 cross-seam discrepancy): source attests Berserker 3.1 -> Inquisitor 3.2+ (dossier anchor: 'as of Patch 3.2... Berserker class is no longer viable choice... leading to the Templar Inquisitor guide'); the corpus class column lives in another table and is NOT this mapping's surface — mechanics mapped here are class-independent.",
+      "motion_frame": "one-button trigger engine: run and attack with Frenzy; the two wands auto-cast Unearth (seed corpses) + Volatile Dead (consume them into seeking fire orbs) every trigger window — 'skills triggered from Poet's Pen will clear the screen by themselves'",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "accumulator_fill_trigger": "on-corpse-consume",
+        "charge_stack_sub_shape": "accumulator"
+      },
+      "scaffold": {
+        "chain_count": 3,
+        "support_lanes": {
+          "economy": [
+            "0.25s wand-trigger cooldown = the cast-cadence governor (attack speed matters only up to the trigger floor)",
+            "corpse accumulator: Unearth fills, VD spends (on-corpse-consume)",
+            "frenzy-charge attack-speed ramp"
+          ],
+          "geometry": [
+            "multi_projectile seeking-orb detonations",
+            "single_target bone-projectile corpse seeding"
+          ],
+          "traits_affixes": [
+            "fire/spell damage (the triggered spells)",
+            "attack speed (trigger rate up to the cooldown floor)",
+            "frenzy-charge maximum"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "burn"
+          ],
+          "delivery_notes": "consumes nearby corpses -> spawns seeking fire orbs (up to ~3 per cast, one per corpse) that roll toward nearby enemies and detonate in a larger circle on contact ('creating an orb which moves towards nearby enemies before dealing spell damage in a larger area'). Multi-orb spawn -> multi_projectile; the roll-seek locomotion + detonation circle are behavioral notes",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Volatile Dead"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "bone projectile dealing phys that SEEDS a corpse at impact — the ammo-supplier half of the corpse pair; physical -> element-neutral (physical rule)",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Unearth"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "the ONE button: each wand attack generates a frenzy charge (attack-speed ramp) and trips both socketed spells via the wands' trigger; physical attack -> element-neutral",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Frenzy (trigger driver)"
+        }
+      ],
+      "t4_doors": [
+        "TEMPORAL_CHARGE",
+        "RESOURCE_CONVERSION"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": "corpse (Unearth seeds the consumable; Volatile Dead spends it)",
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-consume-pair"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3623,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 3624,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Wand auto-casts socketed spells on attack hit; VD orbs seek and detonate at target",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 3621,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "corpses (proc); Unique wands auto-cast socketed spells on attack — attack-triggered Volatile Dea",
+        "resource_verbatim": "corpses"
+      },
+      "family": "economy",
+      "id": 3625,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 3626,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.66,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.66,
+        "evidence": "Multiple VD orbs seek targets from cast; geo=multi-spawn in atlas",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 3622,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with multi-point footprint. Unique wands auto-cast socketed spells on attack  —  attack-triggered Volatile Dead orbs seek and detonate off Unearth corpses; the item-trigg.",
+      "family": "geo_text",
+      "id": 3628,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 3627,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 3629,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 3630,
+      "kit_id": "poe1-poets-pen-vd",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Poet's Pen Volatile Dead: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-poets-pen-vd",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "poe1-poets-pen-vd",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.78,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|multi_projectile|damage|none|mitigate|free|light|dual|high|instant|triggered|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|multi_projectile|damage|none|mitigate|free|light|dual|high|instant|triggered|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDHFLI-HMDD-PC-FI-~~",
+    "attr_conf": 0.78,
+    "attr_val": "INT",
+    "avg_conf": 0.78,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.78,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Volatile Dead",
+      "Unearth",
+      "Frenzy(trigger)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "corpse-resource+trigger-cadence",
+    "elem_raw": "fire",
+    "era_year": 2013,
+    "eras": "3.0-3.6",
+    "eras_normalized": "3.0-3.6",
+    "flags": "",
+    "folk_name": "Poet's Pen Volatile Dead",
+    "game": "poe1",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-poets-pen-vd",
+    "lattice_coord": "IDHFLI",
+    "lineage": "",
+    "mech_note": "Unique wands auto-cast socketed spells on attack — attack-triggered Volatile Dead orbs seek and detonate off Unearth corpses; the item-trigg",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|MULTI|INST×econ:proc",
+    "mobile_key_group": "IDHFLI-HMDD-PC-FI-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.78,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.78,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.78,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Poet's Pen introduced patch 3.1 (Abyss league); build guides documented from 3.1 through 3.5",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6",
+      "errata_applied": 0,
+      "id": 199,
+      "kit_id": "poe1-poets-pen-vd",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/poets-pen-volatile-dead-berserker-marauder-odealos-crafty-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Poet's Pen Volatile Dead Berserker/Marauder Patch 3.1 Build' — odealo.com guide title",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Poet's Pen Volatile Dead' is real community usage",
+      "errata_applied": 0,
+      "id": 196,
+      "kit_id": "poe1-poets-pen-vd",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/poets-pen-volatile-dead-berserker-marauder-odealos-crafty-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Multiple guides and forum threads use 'Poet's Pen VD' shorthand; '[3.10] Poet's Pen + Volatile Dead' forum thread title confirms alias",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Aliases 'Poet's Pen' and 'VD Poet's' are real community usage",
+      "errata_applied": 0,
+      "id": 197,
+      "kit_id": "poe1-poets-pen-vd",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2586778",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Frenzy will trigger spells socketed in your Poet's Pens wands and generate Frenzy Charges... Volatile Dead, which is your core spell will provide amazing DPS'",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Volatile Dead + Unearth + Frenzy(trigger); Poet's Pen auto-casts socketed spells on attack; VD orbs consume Unearth corpses; Frenzy generates frenzy charges",
+      "errata_applied": 0,
+      "id": 198,
+      "kit_id": "poe1-poets-pen-vd",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/poets-pen-volatile-dead-berserker-marauder-odealos-crafty-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "consumes nearby corpses -> spawns seeking fire orbs (up to ~3 per cast, one per corpse) that roll toward nearby enemies and detonate in a larger circle on contact ('creating an orb which moves towards nearby enemies before dealing spell damage in a larger area'). Multi-orb spawn -> multi_projectile; the roll-seek locomotion + detonation circle are behavioral notes",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Volatile Dead' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (2) but 'zone' more strongly (3) — mixed signal",
+      "errata_applied": 0,
+      "id": 2455,
+      "kit_id": "poe1-poets-pen-vd",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "bone projectile dealing phys that SEEDS a corpse at impact — the ammo-supplier half of the corpse pair; physical -> element-neutral (physical rule)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Unearth' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2456,
+      "kit_id": "poe1-poets-pen-vd",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "the ONE button: each wand attack generates a frenzy charge (attack-speed ramp) and trips both socketed spells via the wands' trigger; physical attack -> element-neutral",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Frenzy (trigger driver)' delivery_class=projectile (band_conf=0.75); lint: anchor leans 'motion' (1 sig) vs assigned 'projectile' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2457,
+      "kit_id": "poe1-poets-pen-vd",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,843 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 565,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-cwdt-loop",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 59,
+    "kit_id": "poe1-cwdt-loop",
+    "quarantined": 0,
+    "rank_class": "recovered",
+    "site": "reddit.com/r/pathofexile (via libredd.it)",
+    "title": "New CWDT Loop With Forbidden Rite and Petrified Blood - No Uniques Necessary!",
+    "url": "https://libredd.it/r/pathofexile/comments/ou2jej/new_cwdt_loop_with_forbidden_rite_and_petrified/"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 59,
+      "kit_id": "poe1-cwdt-loop",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "reddit.com/r/pathofexile (via libredd.it)",
+      "title": "New CWDT Loop With Forbidden Rite and Petrified Blood - No Uniques Necessary!",
+      "url": "https://libredd.it/r/pathofexile/comments/ou2jej/new_cwdt_loop_with_forbidden_rite_and_petrified/"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 60,
+      "kit_id": "poe1-cwdt-loop",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "odealo.com",
+      "title": "[3.25] Heartbound Loop Autobomber Scion Build - Odealo's Crafty Guide",
+      "url": "https://odealo.com/articles/heartbound-loop-autobomber-scion-build"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 61,
+      "kit_id": "poe1-cwdt-loop",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "pathofexile.com/forum",
+      "title": "[3.26] CWDT Ward Loop Scion",
+      "url": "https://www.pathofexile.com/forum/view-thread/3261066"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-cwdt-loop",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 527,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-cwdt-loop",
+      "missing_expression": "on-damage-taken -> linked-cast is native at depth 1, but the IDENTITY is a CLOSED SELF-FEEDING CIRCUIT: the triggered spell's own self-damage re-crosses the CwDT threshold and re-triggers CwDT indefinitely — the consequence re-triggering its cause = trigger-chain DEPTH >1.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "on-damage-taken -> linked-cast is native at depth 1, but the IDENTITY is a CLOSED SELF-FEEDING CIRCUIT: the triggered spell's own self-damage re-crosses the CwDT threshold and re-triggers CwDT indefinitely — the consequence re-triggering its cause = trigger-chain DEPTH >1. MAX_CHAIN_DEPTH=1 is LOCKED (template law): deeper chains APPROX + note, NEVER a depth mint. Engine models one hop and stops; the self-perpetuating automation-circuit (a build that plays itself) cannot be represented or minted. A player would get one cast per external hit, not the autonomous loop that IS the kit. Not a missing-lane docket — a deliberate engine LOCK; recorded as the canonical MAX_CHAIN_DEPTH exemplar."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 131,
+      "kit_id": "poe1-cwdt-loop",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Ascendant (Scion) with Pathfinder/Deadeye flask synergy and Elementalist.",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 130,
+      "kit_id": "poe1-cwdt-loop",
+      "payload_json": {
+        "ascendancy": "Scion (Ascendant)",
+        "nodes": [
+          {
+            "alteration": "Flask sustain for Olroth's Resolve uptime.",
+            "name": "Pathfinder/Deadeye (flask synergy)"
+          },
+          {
+            "alteration": "Triple damage from Annihilating Light amplified further.",
+            "name": "Elementalist"
+          }
+        ]
+      },
+      "source_url": "https://odealo.com/articles/heartbound-loop-autobomber-scion-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Heartbound Loop Ring triggers when minions die, dealing '420 Physical Damage taken on Minion Death.' Annihilating Light: Elemental Skills deal Triple Damage.",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 129,
+      "kit_id": "poe1-cwdt-loop",
+      "payload_json": {
+        "items": [
+          {
+            "alteration": "420 physical damage taken on minion death — primary self-damage source feeding CwDT in Heartbound variant.",
+            "name": "Heartbound Loop",
+            "slot": "ring"
+          },
+          {
+            "alteration": "Elemental skills deal Triple Damage — massive damage multiplier.",
+            "name": "Annihilating Light",
+            "slot": "staff"
+          },
+          {
+            "alteration": "Maintains Ward to absorb self-inflicted damage — loop sustain.",
+            "name": "Olroth's Resolve",
+            "slot": "flask"
+          },
+          {
+            "alteration": "Converts evasion to Ward for sustain system.",
+            "name": "Ynda's Stand",
+            "slot": "belt"
+          }
+        ]
+      },
+      "source_url": "https://odealo.com/articles/heartbound-loop-autobomber-scion-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Cold projectile spells are triggered from the player's position, creating area denial through chilled ground effects and freeze mechanics rather than positional placement.",
+      "conf": 0.86,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 128,
+      "kit_id": "poe1-cwdt-loop",
+      "payload_json": {
+        "geometry": "All triggered spells originate from self-position (player body). Area spells (Ice Spear, Freezing Pulse, VD, Forbidden Rite) radiate outward from player creating large-zone AoE coverage. Player walks forward to position center of damage zone. No manual aiming required."
+      },
+      "source_url": "https://odealo.com/articles/heartbound-loop-autobomber-scion-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Self-damage sources feed Cast-when-Damage-Taken, whose triggered spells cause more self-damage — a closed automation circuit.",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 127,
+      "kit_id": "poe1-cwdt-loop",
+      "payload_json": {
+        "loop": "Self-damage source (Forbidden Rite, Heartbound Loop ring, or Scold's Bridle helmet) deals a Hit to the player. Hit damage crosses the CwDT threshold, triggering linked spells. Triggered spells deal additional self-damage or area spells, which cascade back into further CwDT triggers. Petrified Blood / Ward mechanics absorb excess self-damage to keep the loop sustainable. Player walks forward; all combat damage is automated."
+      },
+      "source_url": "https://libredd.it/r/pathofexile/comments/ou2jej/new_cwdt_loop_with_forbidden_rite_and_petrified/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "New CWDT Loop With Forbidden Rite and Petrified Blood — No Uniques Necessary!",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 132,
+      "kit_id": "poe1-cwdt-loop",
+      "payload_json": {
+        "variants": [
+          {
+            "description": "FR's chaos hit as self-damage source; Petrified Blood enables low-life sustain. Earliest FR-CwDT variant, ~3.14.",
+            "name": "Forbidden Rite + Petrified Blood loop"
+          },
+          {
+            "description": "Minion death triggers ring damage feeding CwDT; 3.25+ iteration.",
+            "name": "Heartbound Loop Autobomber"
+          },
+          {
+            "description": "3.26 variant using Ward mechanics for damage absorption.",
+            "name": "CWDT Ward Loop Scion"
+          }
+        ]
+      },
+      "source_url": "https://libredd.it/r/pathofexile/comments/ou2jej/new_cwdt_loop_with_forbidden_rite_and_petrified/"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "walk|self-origin|flat|circle|damage|hex|mitigate|free|solo|dual|high|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\", \"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.55,
+    "geometry_rule_fired": "R8-self-circle",
+    "geometry_value": "circle",
+    "kit_id": "poe1-cwdt-loop",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk-forward"
+    ],
+    "provenance_json": {
+      "atlas_key": "IDHFSI-_LDM-PC-CH-~~",
+      "delivery": "self-origin",
+      "elem_raw": "chaos",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot",
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.55,
+        "rule_fired": "R8-self-circle",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "CWDT Self-Hit Loop",
+      "game": "poe1",
+      "kit_id": "poe1-cwdt-loop",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk-forward"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IDHFSI-_LDM-PC-CH-~~",
+        "delivery": "self-origin",
+        "elem_raw": "chaos",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "self-hit+proc",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-cwdt-loop",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "the automation primitive: a self-damage HIT crosses the CwDT threshold and triggers linked spells from self-position. self_buff placeholder for the trigger-carrier; the trigger IS the kit, not a targeted geometry. depth-1 primitive is native; the CLOSED LOOP is not",
+      "source_skill": "Cast when Damage Taken (trigger)",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-cwdt-loop",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "triggered area spell that radiates from the player AND deals more self-damage, feeding the next CwDT. chaos -> shadow; ring = self-radiating burst. The consequence re-triggering the cause is the depth>1 collision",
+      "source_skill": "Forbidden Rite / VD (triggered self-damage payload)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-cwdt-loop",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "on-damage-taken -> linked-cast is native at depth 1, but the IDENTITY is a CLOSED SELF-FEEDING CIRCUIT: the triggered spell's own self-damage re-crosses the CwDT threshold and re-triggers CwDT indefinitely — the consequence re-triggering its cause = trigger-chain DEPTH >1. MAX_CHAIN_DEPTH=1 is LOCKED (template law): deeper chains APPROX + note, NEVER a depth mint. Engine models one hop and stops; the self-perpetuating automation-circuit (a build that plays itself) cannot be represented or minted. A player would get one cast per external hit, not the autonomous loop that IS the kit. Not a missing-lane docket — a deliberate engine LOCK; recorded as the canonical MAX_CHAIN_DEPTH exemplar.",
+    "grade": "APPROX",
+    "kit_id": "poe1-cwdt-loop",
+    "mapping_json": {
+      "fidelity_notes": "Trigger kit — trigger_grammar load-bearing, AND the batch's MAX_CHAIN_DEPTH=1 collision. The native primitive lands: proc_trigger_condition=on-damage-taken, consequence_type=linked-cast (self-damage -> triggered spell). THE IDENTITY that exceeds the LOCK: this is a CLOSED SELF-FEEDING CIRCUIT — the triggered spell's self-damage RE-CROSSES the CwDT threshold and re-triggers CwDT, ad infinitum ('spells created from CWDT proc CWDT again creating a loop'). That is the consequence re-triggering its own cause = trigger-chain DEPTH >1. Per template law MAX_CHAIN_DEPTH=1 is LOCKED: source trigger-chains deeper than 1 -> APPROX + fidelity_note, NEVER a depth mint. So the engine models ONE hop (damage-taken -> linked-cast) and STOPS; the self-perpetuating automation-circuit identity — the whole point, a build that plays ITSELF — cannot be represented and cannot be minted. A CwDT-loop player would find the loop does not close: they'd get one triggered cast per external hit, not an autonomous self-sustaining engine. damage_taken_converts_shape=resource-fill carries the Ward/Petrified-Blood overflow-absorb that keeps the source's loop sustainable. RETRIBUTION_ENGINE (damage-taken -> output) + SACRIFICE_ASCENDANCY (self-damage-as-fuel) are the closest capstones. No docket for a NEW lane — the constraint is a deliberate engine LOCK, not a missing lane; recorded as the canonical MAX_CHAIN_DEPTH exemplar.",
+      "motion_frame": "walk-forward automation circuit: a self-damage source feeds CwDT, whose triggered spell deals more self-damage, re-feeding CwDT — a closed hands-off loop; player just walks while Ward/Petrified-Blood absorbs the overflow",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "damage_taken_converts_shape": "resource-fill"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "damage_taken_converts_shape=resource-fill (Ward/Petrified-Blood absorbs self-hits to sustain the loop)",
+            "self-hit-as-trigger-fuel (Forbidden Rite / Heartbound Loop / Scold's Bridle sources)"
+          ],
+          "geometry": [
+            "self_buff trigger-carrier",
+            "ring triggered-spell payload (self-radiating AoE)"
+          ],
+          "traits_affixes": [
+            "chaos/elemental spell-damage (Annihilating-Light-triple-damage-analog)",
+            "ward / life-recovery (the overflow sink that keeps the loop alive)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "the automation primitive: a self-damage HIT crosses the CwDT threshold and triggers linked spells from self-position. self_buff placeholder for the trigger-carrier; the trigger IS the kit, not a targeted geometry. depth-1 primitive is native; the CLOSED LOOP is not",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Cast when Damage Taken (trigger)"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "triggered area spell that radiates from the player AND deals more self-damage, feeding the next CwDT. chaos -> shadow; ring = self-radiating burst. The consequence re-triggering the cause is the depth>1 collision",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "ring",
+          "source_skill": "Forbidden Rite / VD (triggered self-damage payload)"
+        }
+      ],
+      "t4_doors": [
+        "RETRIBUTION_ENGINE",
+        "SACRIFICE_ASCENDANCY"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-damage-taken",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "poison",
+          "wither"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3033,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 3034,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.59,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.59,
+        "evidence": "Closed self-damage automation loop; all spells trigger from self-position repeatedly",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 3031,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "self-hit+proc (proc); Self-damage sources feed Cast-when-Damage-Taken, whose triggered spells cause mo",
+        "resource_verbatim": "self-hit+proc"
+      },
+      "family": "economy",
+      "id": 3035,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "chaos"
+      },
+      "family": "element",
+      "id": 3036,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.55,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.55,
+        "evidence": "Large AoE spells triggered from self continuously; geo=large-AOE in atlas",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 3032,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with large-zone footprint. Self-damage sources feed Cast-when-Damage-Taken, whose triggered spells cause more self-damage  —  a closed automation circuit; the build cast.",
+      "family": "geo_text",
+      "id": 3038,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk-forward"
+        ]
+      },
+      "family": "movement",
+      "id": 3037,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 3039,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 3040,
+      "kit_id": "poe1-cwdt-loop",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "CWDT Self-Hit Loop: self buff aura identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-cwdt-loop",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "poe1-cwdt-loop",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.65,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|self-origin|flat|circle|damage|hex|mitigate|free|solo|dual|high|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|self-origin|flat|circle|damage|hex|mitigate|free|solo|dual|high|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDHFSI-_LDM-PC-CH-~~",
+    "attr_conf": 0.65,
+    "attr_val": "INT",
+    "avg_conf": 0.65,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.65,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Cast when Damage Taken",
+      "Forbidden Rite/VD"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "self-hit-trigger-engine",
+    "elem_raw": "chaos",
+    "era_year": 2013,
+    "eras": "3.14-3.19;3.20+",
+    "eras_normalized": "3.14-3.19;3.20+",
+    "flags": "degenerate-famous",
+    "folk_name": "CWDT Self-Hit Loop",
+    "game": "poe1",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-01",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "poe1-cwdt-loop",
+    "lattice_coord": "IDHFSI",
+    "lineage": "",
+    "mech_note": "Cast-when-Damage-Taken (CWDT) loop: self-damage sources trigger CWDT, whose socketed spells cause further self-damage, which triggers CWDT again — a closed automation circuit that fires spells perpetually without any player button presses. Typical components: Heartbound Loop ring (summon minions, when they die you take damage), CWDT socketed with Volatile Dead or similar AoE, Skeletons (to die and feed Heartbound Loop), and Olroth's Resolve flask (to survive the self-damage via ward). The build casts nothing — all damage is automatic. The player runs, the loop fires. GGG has patched this archetype multiple times (CWDT trigger rework in 3.16 broke many loop configurations; Olroth flask adjustments). Represents PoE1's most extreme automation expression — the 'build plays itself' archetype.",
+    "mint": 0,
+    "mob_raw": "walk-forward",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|LARGE|INST×GAP-P1-01",
+    "mobile_key_group": "IDHFSI-_LDM-PC-CH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.65,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.65,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.65,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TRAP-MINE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "New CWDT Loop With Forbidden Rite and Petrified Blood — No Uniques Necessary! [3.14+ era discussion]; [3.25] Heartbound Loop Autobomber Scion Build; [3.26] CWDT Ward Loop Scion",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 3.14-3.19 and 3.20+",
+      "errata_applied": 0,
+      "id": 76,
+      "kit_id": "poe1-cwdt-loop",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/heartbound-loop-autobomber-scion-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "With self damaging mechanics it is possible to cause spells created from CWDT to proc CWDT again creating a loop.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'CWDT Self-Hit Loop', aliases 'Squire loop', 'Scold's Bridle lineage' are real community usage",
+      "errata_applied": 0,
+      "id": 74,
+      "kit_id": "poe1-cwdt-loop",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://libredd.it/r/pathofexile/comments/ou2jej/new_cwdt_loop_with_forbidden_rite_and_petrified/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The damage you take from Forbidden Rite is actually a Hit, which enables these self-triggering loops. Level 20, 20% Quality CwDT Gem requires 2945 damage to activate per cycle.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Cast when Damage Taken + Forbidden Rite/VD: self-damage sources feed CwDT, whose triggered spells cause more self-damage — a closed automation circuit",
+      "errata_applied": 0,
+      "id": 75,
+      "kit_id": "poe1-cwdt-loop",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://libredd.it/r/pathofexile/comments/ou2jej/new_cwdt_loop_with_forbidden_rite_and_petrified/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "the automation primitive: a self-damage HIT crosses the CwDT threshold and triggers linked spells from self-position. self_buff placeholder for the trigger-carrier; the trigger IS the kit, not a targeted geometry. depth-1 primitive is native; the CLOSED LOOP is not",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Cast when Damage Taken (trigger)' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1 sig)",
+      "errata_applied": 0,
+      "id": 2396,
+      "kit_id": "poe1-cwdt-loop",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "triggered area spell that radiates from the player AND deals more self-damage, feeding the next CwDT. chaos -> shadow; ring = self-radiating burst. The consequence re-triggering the cause is the depth>1 collision",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Forbidden Rite / VD (triggered self-damage payload)' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (3 sig)",
+      "errata_applied": 0,
+      "id": 2397,
+      "kit_id": "poe1-cwdt-loop",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,812 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 859,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-wl-echoing-strike",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 696,
+    "kit_id": "d2-wl-echoing-strike",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Echoing Strike Warlock Endgame Build Guide for Diablo II: Resurrected Season 14",
+    "url": "https://maxroll.gg/d2/guides/echoing-strike-warlock-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 695,
+      "kit_id": "d2-wl-echoing-strike",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "icy-veins.com",
+      "title": "Echoing Strike Warlock Build - Diablo 2 Resurrected - Icy Veins",
+      "url": "https://www.icy-veins.com/d2/echoing-strike-warlock-build"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 696,
+      "kit_id": "d2-wl-echoing-strike",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Echoing Strike Warlock Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "url": "https://maxroll.gg/d2/guides/echoing-strike-warlock-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-wl-echoing-strike",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 755,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-wl-echoing-strike",
+      "missing_expression": "Echoing out-and-return path is a unique mechanical feel (double-hit line) that the engine's line geometry approximates but loses the return-pass damage texture.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Echoing out-and-return path is a unique mechanical feel (double-hit line) that the engine's line geometry approximates but loses the return-pass damage texture. FCR-gated attack rate (not mana cost) as primary cadence gate is partially absorbed into economy note."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1643,
+      "kit_id": "d2-wl-echoing-strike",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The base Magic Damage of Echoing Strike is increased by a summed up multiplier which increases by 5% for each Skill Point allocated into Mirrored Blades.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1642,
+      "kit_id": "d2-wl-echoing-strike",
+      "payload_json": {
+        "patch_changes": [
+          "Patch 3.2: synergy damage now additive instead of multiplicative; attack rating dependency added"
+        ],
+        "runewords": [
+          "Void",
+          "Call to Arms",
+          "Spirit",
+          "Enigma",
+          "Fortitude"
+        ],
+        "synergies": [
+          "Mirrored Blades (synergy: base Magic Damage of Echoing Strike increased 5% per skill point in Mirrored Blades)",
+          "Blade Warp (synergy)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/echoing-strike-warlock-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Call to Arms, Spirit, Enigma, Fortitude, and Insight are recommended.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1641,
+      "kit_id": "d2-wl-echoing-strike",
+      "payload_json": {
+        "notable_runewords": [
+          "Void (dagger)",
+          "Call to Arms",
+          "Spirit",
+          "Enigma",
+          "Fortitude",
+          "Insight"
+        ]
+      },
+      "source_url": "https://www.icy-veins.com/d2/echoing-strike-warlock-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The Echoing Strike Warlock is a ranged physical fighter, similar to that of a Throw Barbarian. Throws projections of his weapons in front of himself.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1640,
+      "kit_id": "d2-wl-echoing-strike",
+      "payload_json": {
+        "delivery": "ranged (projectile — weapon projection)",
+        "footprint": "pierce-path (out and back)",
+        "notes": "Probe recorded 'at-target/small-radius melee' — CONTRADICTED by fetched text: explicitly ranged projectile. Red-flag filed."
+      },
+      "source_url": "https://www.icy-veins.com/d2/echoing-strike-warlock-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The Echoing Strike Warlock throws projections of his weapons in front of himself, dealing damage both on the way out and the way in.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1639,
+      "kit_id": "d2-wl-echoing-strike",
+      "payload_json": {
+        "summary": "Warlock levitates weapon and throws projections that travel out and return, dealing physical+magic damage on both paths. FCR governs attack rate (75% FCR breakpoint required). Mirrored Blades provides single-target burst. Echoing Strike relies on Attack Rating as of patch 3.2. Considered strongest Warlock build in S13; nerfs in patch 3.2 made synergy additive instead of multiplicative."
+      },
+      "source_url": "https://www.icy-veins.com/d2/echoing-strike-warlock-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Mirrored Blades: good for Single Target fights as it swings a bunch of times at once at one monster.",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1644,
+      "kit_id": "d2-wl-echoing-strike",
+      "payload_json": {
+        "variants": [
+          "Echoing Strike Warlock (ranged weapon-projection primary)",
+          "Echoing Strike + Mirrored Blades (single-target boss variant)"
+        ]
+      },
+      "source_url": "https://www.icy-veins.com/d2/echoing-strike-warlock-build"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|at-target|flat|ground_targeted_circle|damage|none|mitigate|spend|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.5,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.37,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "d2-wl-echoing-strike",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IMHFSI-_SDT-SP-__-~~",
+      "delivery": "at-target",
+      "elem_raw": "physical?",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.5,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "UNKNOWN"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.37,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Echoing Strike Warlock",
+      "game": "d2",
+      "kit_id": "d2-wl-echoing-strike",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IMHFSI-_SDT-SP-__-~~",
+        "delivery": "at-target",
+        "elem_raw": "physical?",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "unknown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-wl-echoing-strike",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": "all",
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Ranged weapon-projection throw that travels OUT and returns, dealing physical+magic damage on both paths. ERRATA-46: probe geometry 'at-target/small-radius/melee' CONTRADICTED by fetched text — explicitly ranged projectile. Physical+magic: physical rule makes both element-neutral per MW1-close. Line geometry (out-and-return linear pierce path).",
+      "source_skill": "Echoing Strike",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-wl-echoing-strike",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Single-target burst variant: 'swings a bunch of times at once at one monster' — rapid multi-hit at single target. Element-neutral (physical/magic split per kit pattern).",
+      "source_skill": "Mirrored Blades",
+      "speed_band": "fast",
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-wl-echoing-strike",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Echoing out-and-return path is a unique mechanical feel (double-hit line) that the engine's line geometry approximates but loses the return-pass damage texture. FCR-gated attack rate (not mana cost) as primary cadence gate is partially absorbed into economy note.",
+    "grade": "CLOSE",
+    "kit_id": "d2-wl-echoing-strike",
+    "mapping_json": {
+      "fidelity_notes": "ERRATA-46 flagged: probe geometry was wrong (melee/at-target); fetched text is AUTHORITATIVE — ranged projectile out-and-return. Line geometry for the out-and-back pierce path. Out-and-return is an attested shape precedent (basin-3 echo-network lane; this is a distinct physical manifestation — weapon returns vs mark-echo). Physical+magic damage both element-neutral per physical rule + MW1-close magic-damage ruling.",
+      "motion_frame": "Levitate weapon, throw ranged projections that travel out and return dealing damage on both paths; FCR governs attack rate; reposition with Enigma as needed.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "leech": "gear mana-stolen + Insight Meditation",
+        "spend": "steady-mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Insight mana sustain",
+            "gear mana-stolen leech"
+          ],
+          "geometry": [
+            "Mirrored Blades synergy: +5% magic damage per skill point — scaffold"
+          ],
+          "traits_affixes": [
+            "Echoing Strike synergy: Mirrored Blades, Blade Warp — scaffold"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Ranged weapon-projection throw that travels OUT and returns, dealing physical+magic damage on both paths. ERRATA-46: probe geometry 'at-target/small-radius/melee' CONTRADICTED by fetched text — explicitly ranged projectile. Physical+magic: physical rule makes both element-neutral per MW1-close. Line geometry (out-and-return linear pierce path).",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "line",
+          "source_skill": "Echoing Strike"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Single-target burst variant: 'swings a bunch of times at once at one monster' — rapid multi-hit at single target. Element-neutral (physical/magic split per kit pattern).",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Mirrored Blades"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_PHYSICAL"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.5
+      },
+      "family": "control",
+      "id": 2703,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.5,
+        "layers": [
+          "armor",
+          "resist"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 2704,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.39,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.39,
+        "evidence": "Echoing Strike direct melee hit on target; echo AoE radiates from hit point (post-cutoff)",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2701,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.4,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.4,
+        "meter_type": "n/a",
+        "model": "other",
+        "plain_text": "unknown (other); RotW expansion class flagship melee: Echoing Strike repeats/echoes hits; dominat",
+        "resource_verbatim": "unknown"
+      },
+      "family": "economy",
+      "id": 2705,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.45,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.45,
+        "damage_mode": "hit",
+        "label_verbatim": "physical?"
+      },
+      "family": "element",
+      "id": 2706,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.37,
+        "evidence": "Small echo AoE from melee hit; geo=small-AOE in atlas (post-cutoff)",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 2702,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with small-radius footprint. RotW expansion class flagship melee: Echoing Strike repeats/echoes hits; dominated S13 ladder, brought down some in patch 3.",
+      "family": "geo_text",
+      "id": 2708,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.45,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.45,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 2707,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2709,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "aoe",
+        "od (online docs — Diablo wiki / game manual)",
+        "iv (Icy Veins guide)"
+      ],
+      "family": "sources_used",
+      "id": 2710,
+      "kit_id": "d2-wl-echoing-strike",
+      "post_cutoff_cap": 1,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Echoing Strike Warlock: line projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-wl-echoing-strike",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.43,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|ground_targeted_circle|damage|none|mitigate|spend|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|ground_targeted_circle|damage|none|mitigate|spend|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IMHFSI-_SDT-SP-__-~~",
+    "attr_conf": 0.43,
+    "attr_val": "INT",
+    "avg_conf": 0.43,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.43,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Echoing Strike"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "unknown",
+    "elem_raw": "physical?",
+    "era_year": 2000,
+    "eras": "rotw-s13+",
+    "eras_normalized": "rotw-s13+",
+    "flags": "econ-recrawl-applied-2026-07-16:spend/steady-mana+leech; gear mana-stolen + Insight Meditation; no reservation/meter,mh-v3-high-recrawl-verified-2026-07-17:legolas-b14f3de6; vdm2-w5-elem-anomaly-2026-07-22: elem_raw='physical?' — question-mark on an otherwise-physical melee kit; the '?' marks unverified extraction (Warlock kb-harvest tranche). W5 to confirm.",
+    "folk_name": "Echoing Strike Warlock",
+    "game": "d2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-11",
+    "is_system": 0,
+    "key_completeness": 10,
+    "kit_id": "d2-wl-echoing-strike",
+    "lattice_coord": "IMHFSI",
+    "lineage": "",
+    "mech_note": "[VDM-1 basin-3 2026-07-18 ingest-13] ERRATA-46 probe-fabrication #N (footprint/geometry): b05 flagged probe geometry 'at-target/small-radius/melee' as WRONG — fetched text: 'ranged physical fighter... throws projections of his weapons' = ranged delivery, NOT melee. Probe geometry artifact if probe row exists; flag for any future probe authoring. [original mech_note follows] RotW expansion class flagship melee: Echoing Strike repeats/echoes hits; dominated S13 ladder, brought down some in patch 3.2 yet still top-",
+    "mint": 0,
+    "mob_raw": "unknown",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×GAP-D2-11",
+    "mobile_key_group": "IMHFSI-_SDT-SP-__-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical?",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "aoe;od;iv",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.43,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.43,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": [
+      "https://www.rpgstash.com/blog/d2r-warlock-skill-trees-guide-chaos-demon-eldritch",
+      "https://maxroll.gg/d2/guides/echoing-strike-warlock-guide",
+      "https://odealo.com/articles/echoing-strike-warlock-build-for-diablo-2-resurrected"
+    ],
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.43,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "In Season 13, Echoing Strike was stacking damage multiplicatively instead of additively — which was a bug, not a feature.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era: rotw-s13+",
+      "errata_applied": 0,
+      "id": 1053,
+      "kit_id": "d2-wl-echoing-strike",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/echoing-strike-warlock-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Echoing Strike Warlock Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Echoing Strike Warlock'; aliases 'Echoing Strike Warlock D2R'",
+      "errata_applied": 0,
+      "id": 1051,
+      "kit_id": "d2-wl-echoing-strike",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/echoing-strike-warlock-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The Echoing Strike Warlock throws projections of his weapons in front of himself, dealing damage both on the way out and the way in.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Echoing Strike",
+      "errata_applied": 0,
+      "id": 1052,
+      "kit_id": "d2-wl-echoing-strike",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/echoing-strike-warlock-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Ranged weapon-projection throw that travels OUT and returns, dealing physical+magic damage on both paths. ERRATA-46: probe geometry 'at-target/small-radius/melee' CONTRADICTED by fetched text — explicitly ranged projectile. Physical+magic: physical rule makes both element-neutral per MW1-close. Line geometry (out-and-return linear pierce path).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Echoing Strike' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (3 sig)",
+      "errata_applied": 0,
+      "id": 2202,
+      "kit_id": "d2-wl-echoing-strike",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Single-target burst variant: 'swings a bunch of times at once at one monster' — rapid multi-hit at single target. Element-neutral (physical/magic split per kit pattern).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Mirrored Blades' delivery_class=projectile (band_conf=0.75); lint: anchor leans 'zone' (1 sig) vs assigned 'projectile' (0) — weak/defensible (thin margin), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2203,
+      "kit_id": "d2-wl-echoing-strike",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "mapping_json: \"physical+magic damage on both paths\" (out-and-return throw); element_primary=null; CLOSE/MAPPED. elem_raw=\"physical?\".",
+      "claim_family": "mechanics",
+      "claim_subject": "elem_anomaly",
+      "claim_text": "[§7 elem_raw anomaly · PROPOSED:AMBIGUOUS-HOLD] elem_raw='physical?' — Anchor supports PHYSICAL as the primary of a physical+magic split; the '?' reflects the magic component. Neither a clean correction (physical is already the tag) nor a clean confirmation (magic split muddies it). D2 magic-damage is defined by non-elemental-membership (V-15/V-20), so the physical+magic straddle is a genuine martial/non-membership boundary. HOLD 'physical?' — the honest uncertainty; a court re-derivation would put it at physical (martial register, cf V-20), defensible but not forced.",
+      "errata_applied": 0,
+      "id": 2577,
+      "kit_id": "d2-wl-echoing-strike",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

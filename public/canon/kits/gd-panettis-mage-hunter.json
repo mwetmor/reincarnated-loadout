@@ -1,0 +1,830 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 939,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-panettis-mage-hunter",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "unknown",
+    "cite_class": "communal",
+    "id": 459,
+    "kit_id": "gd-panettis-mage-hunter",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "forums.crateentertainment.com",
+    "title": "[1.1.8.1] Shaper of Elements - Elemental PRM Mage Hunter",
+    "url": "https://forums.crateentertainment.com/t/1-1-8-1-shaper-of-elements-elemental-prm-mage-hunter/106609"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 459,
+      "kit_id": "gd-panettis-mage-hunter",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.1.8.1] Shaper of Elements - Elemental PRM Mage Hunter",
+      "url": "https://forums.crateentertainment.com/t/1-1-8-1-shaper-of-elements-elemental-prm-mage-hunter/106609"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "authored",
+      "id": 460,
+      "kit_id": "gd-panettis-mage-hunter",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "mmos.com",
+      "title": "Grim Dawn Ashes Of Malmouth Expansion Coming On October 11th",
+      "url": "https://mmos.com/news/grim-dawn-ashes-of-malmouth-october-11"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-panettis-mage-hunter",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 814,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 GD tranche; internal-consistency reconcile, no W1 evidence — W5 is GD's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "gd-panettis-mage-hunter",
+      "missing_expression": "minor drift: equal-thirds tri-elemental compresses to a 2-slot hybrid (cold dropped per hybrid law -- the source player would see one-third of the rainbow missing its color, damage carried but flavor narrowed).",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "minor drift: equal-thirds tri-elemental compresses to a 2-slot hybrid (cold dropped per hybrid law -- the source player would see one-third of the rainbow missing its color, damage carried but flavor narrowed)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 989,
+      "kit_id": "gd-panettis-mage-hunter",
+      "payload_json": {
+        "handle": "unknown",
+        "site": "forums.crateentertainment.com",
+        "thread": "[1.1.8.1] Shaper of Elements - Elemental PRM Mage Hunter"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-shaper-of-elements-elemental-prm-mage-hunter/106609"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Blind Sage, Attak Seru, Leviathan (three 'rarely used tier 3 Devotions'), plus Alladrah's Phoenix",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 988,
+      "kit_id": "gd-panettis-mage-hunter",
+      "payload_json": {
+        "devotions": [
+          "Blind Sage",
+          "Attak Seru",
+          "Leviathan",
+          "Alladrah's Phoenix"
+        ],
+        "notes": "Rare tier-3 devotion path; elemental-focused constellations"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-shaper-of-elements-elemental-prm-mage-hunter/106609"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Mythical Invoker's rings … Only 2 set pieces used",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 987,
+      "kit_id": "gd-panettis-mage-hunter",
+      "payload_json": {
+        "key_items": [
+          "Mythical Invoker's rings (2-piece)"
+        ],
+        "notes": "Tri-elemental conversion via chest/shoulder/ring global modifiers; minimal set dependency"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-shaper-of-elements-elemental-prm-mage-hunter/106609"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Elemental damage is dealt as 1/3 fire, 1/3 cold, 1/3 lightning … missiles multiply across enemy packs",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 986,
+      "kit_id": "gd-panettis-mage-hunter",
+      "payload_json": {
+        "aoe": "replication multiplies coverage across multiple targets",
+        "delivery": "projectile",
+        "footprint": "chain-hop (missiles fork and replicate through packs)",
+        "notes": "Base damage is tri-elemental not mono-lightning; KB element label 'lightning' is inaccurate",
+        "range": "ranged"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-shaper-of-elements-elemental-prm-mage-hunter/106609"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "a huge amount of AoE through replication mechanics … rapid-fire spam caster with maxed casting speed … Will never have energy issues even as a spam caster",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 985,
+      "kit_id": "gd-panettis-mage-hunter",
+      "payload_json": {
+        "resource": "mana spend (spam)",
+        "summary": "Spam Panetti's Replicating Missile; projectiles fork and multiply across target groups; base damage is tri-elemental (fire/cold/lightning); energy managed via gear; Inquisitor passive/Seal for survivability",
+        "tempo": "rapid-fire spam caster"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-shaper-of-elements-elemental-prm-mage-hunter/106609"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[1.2.1.6] Beginner Panetti's Mage Hunter - The Javazon of Grim Dawn",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 990,
+      "kit_id": "gd-panettis-mage-hunter",
+      "payload_json": {
+        "variants": [
+          "elemental tri-damage PRM (this)",
+          "aether PRM (base, pre-conversion)",
+          "cold PRM Mage Hunter"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-2-1-6-beginner-panettis-mage-hunter-the-javazon-of-grim-dawn/142560"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|projectile|flat|chain|damage|none|tank|spend|solo|ranged|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R1",
+    "geometry_value": "chain",
+    "kit_id": "gd-panettis-mage-hunter",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRHFSI-MCDM-SP-LI-~~",
+      "delivery": "projectile",
+      "elem_raw": "lightning",
+      "footprint": "chain-hop"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R1",
+        "value": "chain"
+      },
+      "flags": [],
+      "folk_name": "Panetti's Missile Mage Hunter",
+      "game": "gd",
+      "kit_id": "gd-panettis-mage-hunter",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRHFSI-MCDM-SP-LI-~~",
+        "delivery": "projectile",
+        "elem_raw": "lightning",
+        "footprint": "chain-hop"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "energy",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "spam",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-panettis-mage-hunter",
+      "motion_signature": "fork_split",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "spam replicating projectile: missiles fork and multiply through packs ('projectiles fork and multiply across target groups'; 'missiles multiply across enemy packs'; 'a huge amount of AoE through replication mechanics'); tri-elemental base per ERRATA-36 ('Elemental damage is dealt as 1/3 fire, 1/3 cold, 1/3 lightning'); casting-speed-maxed rapid fire.",
+      "source_skill": "Panetti's Replicating Missile",
+      "speed_band": "fast",
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-panettis-mage-hunter",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "survivability platform ('Inquisitor passive/Seal for survivability').",
+      "source_skill": "Inquisitor Seal",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "gd-panettis-mage-hunter",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "minor drift: equal-thirds tri-elemental compresses to a 2-slot hybrid (cold dropped per hybrid law -- the source player would see one-third of the rainbow missing its color, damage carried but flavor narrowed).",
+    "grade": "CLOSE",
+    "kit_id": "gd-panettis-mage-hunter",
+    "mapping_json": {
+      "fidelity_notes": "ERRATA-36 GOVERNS: damage profile mixed(fire/cold/lightning); the kb mono-lightning read + its downstream shock framing were CONTRADICTED -> shock NOT emitted (0 near-miss: zero fetched shock language; the kb ailment rode the wrong element read). 1 hybrid law: triple -> top-2 at equal thirds -> fire primary (GD tri-element row default 'dominant OR fire'), lightning secondary; COLD DROPPED and noted -- the water-secondary alternative is equally legal at equal weights (slot choice flagged for steward preference). fork over chain per 7.2 ('fork and multiply' = splitting-dominant; kb chain-hop framing is the noted alternative). Aether-to-tri conversion IS the identity ('Shaper of Elements'; 'converting aether damage to fire, lightning, and cold') -> ELEMENT_CONVERSION_HYBRID. Era: verify_ledger restamp governs (aom-2017 floor via Inquisitor, errata over kb base-2016). R-M5 considered, not applicable.",
+      "motion_frame": "rapid-fire replication: hose the pack with Panetti's missiles at max cast speed and watch them fork through everything; energy never runs dry",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence_scale": "casting-speed-maxed rapid fire ('rapid-fire spam caster with maxed casting speed')",
+        "cost_scale": "spam caster with energy pressure REMOVED ('Will never have energy issues even as a spam caster')"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "max cast-speed cadence"
+          ],
+          "geometry": [
+            "fork/replication multiplication through packs"
+          ],
+          "traits_affixes": [
+            "tri-elemental conversion global modifiers ('tri-elemental conversion via chest/shoulder/ring global modifiers')",
+            "elemental percent scaling; Mythical Invoker's rings"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "spam replicating projectile: missiles fork and multiply through packs ('projectiles fork and multiply across target groups'; 'missiles multiply across enemy packs'; 'a huge amount of AoE through replication mechanics'); tri-elemental base per ERRATA-36 ('Elemental damage is dealt as 1/3 fire, 1/3 cold, 1/3 lightning'); casting-speed-maxed rapid fire.",
+          "element_primary": "fire",
+          "element_secondary": "lightning",
+          "geometry_value": "fork",
+          "source_skill": "Panetti's Replicating Missile"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "survivability platform ('Inquisitor passive/Seal for survivability').",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Inquisitor Seal"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_HYBRID"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "ailments": [
+          "shock"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3513,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 3514,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Replicating missile projectiles fork and chain through pack",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 3511,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "_prior_ingest11": {
+          "meter_type": "n/a",
+          "model": "spend",
+          "note": "GD resource is Energy ('Spirit' is a GD STAT name — confusion source). resource_verbatim relabelled per WRONG-RESOURCE-GENERALLY sweep; raw preserved.",
+          "plain_text": "mana (spend); Replicating arcane missiles that split and fork through packs — the pure-mage sp",
+          "resource_verbatim": "mana"
+        },
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "energy (spend); Replicating arcane missiles that split and fork through packs — the pure-mage sp",
+        "resource_verbatim": "energy"
+      },
+      "family": "economy",
+      "id": 3515,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "_prior_ingest11": {
+          "label_verbatim": "lightning",
+          "note": "kb mono-lightning CONTRADICTED (b02): PRM base is tri-elemental (1/3 fire/cold/lightning); 'shock' ailment is downstream-unreliable."
+        },
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "mixed / fire+cold+lightning (PRM tri-elemental base; shock-downstream-unreliable)"
+      },
+      "family": "element",
+      "id": 3516,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Missiles fork and chain through targets; geo=chain in atlas",
+        "value": "chain-hop"
+      },
+      "family": "footprint",
+      "id": 3512,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": "Projectile delivery with chain-hop footprint. Replicating arcane missiles that split and fork through packs  —  the pure-mage spam button, elemental tri-damage fanning wider with every inv.",
+      "family": "geo_text",
+      "id": 3518,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 3517,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 3519,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": [
+        "gt",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 3520,
+      "kit_id": "gd-panettis-mage-hunter",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Panetti's Missile Mage Hunter: fork projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-panettis-mage-hunter",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "gd-panettis-mage-hunter",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|projectile|flat|chain|damage|none|tank|spend|solo|ranged|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|projectile|flat|chain|damage|none|tank|spend|solo|ranged|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "chain"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRHFSI-MCDM-SP-LI-~~",
+    "attr_conf": 0.82,
+    "attr_val": "INT",
+    "avg_conf": 0.82,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Panetti's Replicating Missile"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": null,
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "energy-spender",
+    "elem_raw": "mixed(fire/cold/lightning)",
+    "era_year": 2016,
+    "eras": "aom-2017;patch-1.1-1.2",
+    "eras_normalized": "aom-2017;patch-1.1-1.2",
+    "flags": "vdm2-w5-elem-anomaly-2026-07-22: elem_raw='mixed(fire/cold/lightning)' — equal-thirds tri-elemental with a NULL court (the only GD NULL-court record row; already flagged W3b MIGRATION §court as a Leg-B per-kit-resolution candidate). 'mixed(...)' is not a single RDR element register; the hybrid law compresses it to a 2-slot fire+lightning (cold dropped). W5 to confirm the mixed→court/register rule + which two slots survive.",
+    "folk_name": "Panetti's Missile Mage Hunter",
+    "game": "gd",
+    "geo_raw": "chain",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-15",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "gd-panettis-mage-hunter",
+    "lattice_coord": "IRHFSI",
+    "lineage": "",
+    "mech_note": "Replicating arcane missiles that split and fork through packs — the pure-mage spam button, elemental tri-damage fanning wider with every inv",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: element-application addendum covers hybrid caps — status-gate ops verify",
+    "mobile_cell_id": "SOLO|CHAIN|INST×GX-15",
+    "mobile_key_group": "IRHFSI-MCDM-SP-LI-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "mixed(fire/cold/lightning)",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Ashes of Malmouth expansion was released on October 11th 2017 … introduced two new Masteries: the Inquisitor and the Necromancer",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "era floor base-2016 — Mage Hunter = Arcanist+Inquisitor; Inquisitor debuted aom-2017",
+      "errata_applied": 1,
+      "id": 589,
+      "kit_id": "gd-panettis-mage-hunter",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://mmos.com/news/grim-dawn-ashes-of-malmouth-october-11",
+      "verdict": "CONTRADICTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[1.1.8.1] Shaper of Elements - Elemental PRM Mage Hunter … Arcanist + Inquisitor = Mage Hunter class … 'PRM Mage Hunter,' 'Panetti Spaghetti'",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "folk_name='Panetti\\'s Missile Mage Hunter'; aliases=['PRM Mage Hunter','aether missile Mage Hunter']",
+      "errata_applied": 0,
+      "id": 587,
+      "kit_id": "gd-panettis-mage-hunter",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-shaper-of-elements-elemental-prm-mage-hunter/106609",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Elemental damage is dealt as 1/3 fire, 1/3 cold, 1/3 lightning … missiles multiply across enemy packs … tri-elemental focus converting aether damage to fire, lightning, and cold",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "core_skills=['Panetti\\'s Replicating Missile']; delivery=projectile fork/chain; resource=mana spam; element=lightning; ailment=shock",
+      "errata_applied": 1,
+      "id": 588,
+      "kit_id": "gd-panettis-mage-hunter",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-shaper-of-elements-elemental-prm-mage-hunter/106609",
+      "verdict": "CONTRADICTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "spam replicating projectile: missiles fork and multiply through packs ('projectiles fork and multiply across target groups'; 'missiles multiply across enemy packs'; 'a huge amount of AoE through replication mechanics'); tri-elemental base per ERRATA-36 ('Elemental damage is dealt as 1/3 fire, 1/3 cold, 1/3 lightning'); casting-speed-maxed rapid fire.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Panetti's Replicating Missile' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (2 sig)",
+      "errata_applied": 0,
+      "id": 2253,
+      "kit_id": "gd-panettis-mage-hunter",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "survivability platform ('Inquisitor passive/Seal for survivability').",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Inquisitor Seal' delivery_class=zone (band_conf=0.75); lint: anchor leans 'aura' (1 sig) vs assigned 'zone' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2254,
+      "kit_id": "gd-panettis-mage-hunter",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "mapping_json: Panetti's Replicating Missile element_primary=FIRE, element_secondary=LIGHTNING; deviation_notes: \"equal-thirds tri-elemental compresses to a 2-slot hybrid (cold dropped per hybrid law)\". elem_raw=\"mixed(fire/cold/lightning)\"; court=NULL.",
+      "claim_family": "mechanics",
+      "claim_subject": "elem_anomaly",
+      "claim_text": "[§7 elem_raw anomaly · PROPOSED:DOCUMENTED-CROSSWALK] elem_raw='mixed(fire/cold/lightning)' — elem_raw='mixed(fire/cold/lightning)' HONESTLY captures the equal-thirds tri-elemental output; court is CORRECTLY NULL (mixed→NULL per V-15, exactly like poe1-discharge's tri-elemental case). The deviation_notes document the hybrid-law cold-drop transparently. Not a disagreement — the canonical worked example of a correctly-tagged tri-elemental with NULL court. No correction. (This is the PRECEDENT poe1-discharge's AMBIGUOUS-HOLD points at.)",
+      "errata_applied": 0,
+      "id": 2580,
+      "kit_id": "gd-panettis-mage-hunter",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1093,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-fire-aura-spellblade",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 509,
+    "kit_id": "le-fire-aura-spellblade",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Fire Aura Spellblade Guide for Last Epoch Season 4",
+    "url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 509,
+      "kit_id": "le-fire-aura-spellblade",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Fire Aura Spellblade Guide for Last Epoch Season 4",
+      "url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 510,
+      "kit_id": "le-fire-aura-spellblade",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "forum.lastepoch.com",
+      "title": "Lightning Fire Aura RF Spellblade Build 0.8.1i",
+      "url": "https://forum.lastepoch.com/t/lightning-fire-aura-rf-spellblade-build-0-8-1i/36327"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-fire-aura-spellblade",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 945,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-fire-aura-spellblade",
+      "missing_expression": "Aura-pulse damage delivery maps clean.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Aura-pulse damage delivery maps clean. Source player would miss the depth-3 DPS cascade (Firebrand -> Frost Claw -> Ice Barrage), which the engine caps at chain-depth 1 — a real scaling delta, though not the core identity loop. Fire->cold Freezing-Aura conversion is captured by ELEMENT_CONVERSION_MONO. Flame Ward burst-defense button has no aura-identity role and is a rider."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Written by Lizard_IRL. Content Reviewed by Volca.",
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1145,
+      "kit_id": "le-fire-aura-spellblade",
+      "payload_json": {
+        "handle": "Lizard_IRL",
+        "reviewer": "Volca",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1144,
+      "kit_id": "le-fire-aura-spellblade",
+      "payload_json": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Enable the Low Life playstyle with Exsanguinous and Last Steps of the Living. Pair them with Mask of Indifference to boost your survivability even further",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1143,
+      "kit_id": "le-fire-aura-spellblade",
+      "payload_json": {
+        "key_items": [
+          "Exsanguinous",
+          "Last Steps of the Living",
+          "Mask of Indifference",
+          "Mad Alchemist's Ladle",
+          "Transcriber's Graver"
+        ],
+        "notes": "Exsanguinous + Last Steps enable Low Life playstyle; Mad Alchemist's Ladle + Transcriber's Graver dual-wield combo boosts damage."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "the build revolves around stacking Fire Auras, which deal Damage to anything nearby...By converting Fire Aura into Cold Damage, this build surrounds you with a constant wave of frost",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1142,
+      "kit_id": "le-fire-aura-spellblade",
+      "payload_json": {
+        "delivery": "aura-pulse",
+        "description": "Fire aura radiates from player position dealing damage to nearby enemies. By conversion (Freezing Aura node) the aura deals Cold damage in a constant pulse around the Spellblade chassis.",
+        "footprint": "small-radius"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Spam Firebrand to proc Frost Claws that proc Ice Barrage to massively increase your DPS thanks to Frost Armor...the build revolves around stacking Fire Auras, which deal Damage to anything nearby",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1141,
+      "kit_id": "le-fire-aura-spellblade",
+      "payload_json": {
+        "core_cycle": "Firebrand -> Fire Aura -> aura damage -> Flame Ward (defensive)",
+        "summary": "Cast Firebrand to generate Fire Auras; Fire Auras radiate damage to nearby enemies (fire/cold via conversion); Flame Ward provides on-demand burst defense; Teleport for repositioning; build enables Low Life via Exsanguinous + Last Steps."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "By converting Fire Aura into Cold Damage, this build surrounds you with a constant wave of frost, freezing and breaking apart entire packs",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1146,
+      "kit_id": "le-fire-aura-spellblade",
+      "payload_json": {
+        "variants": [
+          "fire (default)",
+          "cold-conversion via Freezing Aura node",
+          "Low Life Ward variant with Exsanguinous"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|aura-pulse|flat|aura|damage|none|absorb|reserve|solo|melee|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.4,
+    "def_riders": "[\"synonym:ward\"]",
+    "delivery_value": "aura-pulse",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"RS\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "reserve",
+    "flags": [],
+    "geometry_conf": 0.37,
+    "geometry_rule_fired": "R8-aura",
+    "geometry_value": "aura",
+    "kit_id": "le-fire-aura-spellblade",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IMMFSI-_SDM-RS-FI-~~",
+      "delivery": "aura-pulse",
+      "elem_raw": "Fire",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.4,
+        "riders": [
+          "synonym:ward"
+        ]
+      },
+      "econ": {
+        "gaps": [
+          "RS"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.37,
+        "rule_fired": "R8-aura",
+        "value": "aura"
+      },
+      "flags": [],
+      "folk_name": "Fire Aura Spellblade",
+      "game": "le",
+      "kit_id": "le-fire-aura-spellblade",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IMMFSI-_SDM-RS-FI-~~",
+        "delivery": "aura-pulse",
+        "elem_raw": "Fire",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-fire-aura-spellblade",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "Aura radiates from player position dealing damage to anything nearby (fetched: 'the build revolves around stacking Fire Auras, which deal Damage to anything nearby'; delivery 'aura-pulse', footprint 'small-radius'). Aura is PASSIVE-EMERGENT (stacked from Firebrand), NOT Flame Ward (Flame Ward = a separate defensive cooldown — do not conflate, per hot-fact). [STEWARD AUDIT 2026-07-18: freeze + water-secondary STRUCK from the core row — dossier variants list 'fire (default)' with 'cold-conversion via Freezing Aura node' as a VARIANT; §7.2 dominant loop = fire aura. Variant-scoped ailments do not ride the core row (this batch's own hammer-throw bleed discipline). The Freezing Aura conversion (cold pulse, freezing language) lives in the ELEMENT_CONVERSION_MONO door + scaffold geometry lane + this note.] burn NOT emitted for the fire core ('deal Damage' != burn, §0.1).",
+      "source_skill": "Fire Aura (passive-emergent, stacked)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-fire-aura-spellblade",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Aura-pulse damage delivery maps clean. Source player would miss the depth-3 DPS cascade (Firebrand -> Frost Claw -> Ice Barrage), which the engine caps at chain-depth 1 — a real scaling delta, though not the core identity loop. Fire->cold Freezing-Aura conversion is captured by ELEMENT_CONVERSION_MONO. Flame Ward burst-defense button has no aura-identity role and is a rider.",
+    "grade": "CLOSE",
+    "kit_id": "le-fire-aura-spellblade",
+    "mapping_json": {
+      "fidelity_notes": "Core CORRECTED per hot-fact: the aura is PASSIVE-EMERGENT (Firebrand stacks it), NOT Flame Ward. Flame Ward = defensive cooldown, recorded as a rider only (fidelity, not core geometry). ELEMENT_CONVERSION_MONO T4 for the Freezing Aura fire->cold identity. The advertised DPS cascade 'Firebrand procs Frost Claws that proc Ice Barrage' is a depth-3 proc chain > MAX_CHAIN_DEPTH=1 (LOCKED, §3) — recorded as a scaling rider, NOT the core loop; the DOMINANT loop every 3s (§7.2) is Firebrand-spam -> aura pulse, which maps clean as aura delivery. Low-life enable (Exsanguinous + Last Steps + Mask of Indifference) = item note; this is a Low-Life-Ward variant host (cross-ref le-low-life-ward). §0 near-miss: burn WANTED for the fire aura ('deal Damage to anything nearby') but no fetched status language names burn — WITHHELD; freeze NOT carried on the core row (variant-scoped — struck at audit; hammer-throw parity); the conversion route is door+scaffold-recorded.",
+      "motion_frame": "Spam Firebrand -> Fire Auras stack -> auras pulse damage to nearby enemies (fire, or cold via Freezing Aura) -> Flame Ward on-demand for burst defense",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_shape": "per-cast Firebrand to build/maintain the aura stack (aura itself is passive-emergent once stacked)",
+        "resource": "mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "Freezing Aura (fire->cold conversion)"
+          ],
+          "traits_affixes": [
+            "Mad Alchemist's Ladle + Transcriber's Graver (dual-wield damage)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Aura radiates from player position dealing damage to anything nearby (fetched: 'the build revolves around stacking Fire Auras, which deal Damage to anything nearby'; delivery 'aura-pulse', footprint 'small-radius'). Aura is PASSIVE-EMERGENT (stacked from Firebrand), NOT Flame Ward (Flame Ward = a separate defensive cooldown — do not conflate, per hot-fact). [STEWARD AUDIT 2026-07-18: freeze + water-secondary STRUCK from the core row — dossier variants list 'fire (default)' with 'cold-conversion via Freezing Aura node' as a VARIANT; §7.2 dominant loop = fire aura. Variant-scoped ailments do not ride the core row (this batch's own hammer-throw bleed discipline). The Freezing Aura conversion (cold pulse, freezing language) lives in the ELEMENT_CONVERSION_MONO door + scaffold geometry lane + this note.] burn NOT emitted for the fire core ('deal Damage' != burn, §0.1).",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Fire Aura (passive-emergent, stacked)"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_MONO"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "ignite"
+        ],
+        "centrality": "rider",
+        "conf": 0.37
+      },
+      "family": "control",
+      "id": 173,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.4,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.4,
+        "layers": [
+          "shield-absorb",
+          "ward"
+        ],
+        "primary": "ward"
+      },
+      "family": "defense",
+      "id": 174,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.37,
+        "evidence": "POST-CUTOFF: 'burning aura output on the melee-mage chassis' per mech_note implies aura-pulse delivery; live verification required",
+        "value": "aura-pulse"
+      },
+      "family": "delivery",
+      "id": 171,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.37,
+        "meter_type": "n/a",
+        "model": "reserve",
+        "plain_text": "POST-CUTOFF: aura economy inferred as reserve/channel; live verification required",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 175,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.4,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.4,
+        "damage_mode": "dot",
+        "label_verbatim": "Fire"
+      },
+      "family": "element",
+      "id": 176,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.37,
+        "evidence": "POST-CUTOFF: aura-pulse footprint is small-radius around player; inferred from aura class; live verification required",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 172,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "POST-CUTOFF (1.4-omens, Season 4). Fire aura radiating from melee-mage chassis. Full spatial characterization deferred to dossier.",
+      "family": "geo_text",
+      "id": 178,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.37,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 177,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "DEFERRED — post-cutoff; live source required",
+      "family": "rank1_upgrade",
+      "id": 179,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "lb (post-cutoff)"
+      ],
+      "family": "sources_used",
+      "id": 180,
+      "kit_id": "le-fire-aura-spellblade",
+      "post_cutoff_cap": 1,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Fire Aura Spellblade: aura aura identity",
+      "hook_type": "geometry",
+      "kit_id": "le-fire-aura-spellblade",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "le-fire-aura-spellblade",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.37,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|aura-pulse|flat|aura|damage|none|absorb|reserve|solo|melee|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|aura-pulse|flat|aura|damage|none|absorb|reserve|solo|melee|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "aura-pulse"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "aura"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "reserve"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IMMFSI-_SDM-RS-FI-~~",
+    "attr_conf": 0.37,
+    "attr_val": "INT",
+    "avg_conf": 0.37,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.37,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Flame Ward/aura suite"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "aura-passive",
+    "elem_raw": "fire",
+    "era_year": 2024,
+    "eras": "1.4-omens",
+    "eras_normalized": "1.4-omens",
+    "flags": "",
+    "folk_name": "Fire Aura Spellblade",
+    "game": "le",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-05",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "le-fire-aura-spellblade",
+    "lattice_coord": "IMMFSI",
+    "lineage": "",
+    "mech_note": "[VDM-1 basin-2 2026-07-18 ingest-11] CORE-SKILL FRAMING: core_skills 'Flame Ward/aura suite' MISFRAMES the delivery — Flame Ward is a DEFENSIVE COOLDOWN, not the aura. The fire aura radiates PASSIVELY via a passive node (emergent, unnamed), NOT a placed Flame Ward skill (b05 addendum). core_skills value LEFT as-is (framing note, no unilateral restamp of the skill token). [original mech_note follows] POST-CUTOFF. Season 4 (1.4-omens) aura-scaling rework. prov=lb. mech_note ref: 'The Season 4 aura-scaling rework birthed an S-tier — burning aura output on the melee-mage chassis, walk-forward damage.' RS suffix in old vocab = reserve economy. FI = Fire. Full dossier required.",
+    "mint": 0,
+    "mob_raw": "walk-forward",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B: reservation/aura toggles — loot-operator extension",
+    "mobile_cell_id": "SOLO|SMALL|INST×GX-05",
+    "mobile_key_group": "IMMFSI-_SDM-RS-FI-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "lb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.37,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.37,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": [
+      "https://maxroll.gg/last-epoch/news/last-epoch-1-4-branch-update-for-season-4-shattered-omens"
+    ],
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.37,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "AURA",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Fire Aura Spellblade Guide for Last Epoch Season 4 — Last Updated: March 25, 2026",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.4-omens",
+      "errata_applied": 0,
+      "id": 688,
+      "kit_id": "le-fire-aura-spellblade",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Fire Aura Spellblade Guide for Last Epoch Season 4 — the build revolves around stacking Fire Auras, which deal Damage to anything nearby",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Fire Aura Spellblade' is real community usage",
+      "errata_applied": 0,
+      "id": 686,
+      "kit_id": "le-fire-aura-spellblade",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Spam Firebrand to proc Frost Claws that proc Ice Barrage...Flame Ward remains your key defensive tool, use it strategically to withstand dangerous bursts",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills include Flame Ward/aura suite; fire aura delivery; Mana resource; aura-pulse footprint",
+      "errata_applied": 0,
+      "id": 687,
+      "kit_id": "le-fire-aura-spellblade",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/fire-aura-spellblade-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Aura radiates from player position dealing damage to anything nearby (fetched: 'the build revolves around stacking Fire Auras, which deal Damage to anything nearby'; delivery 'aura-pulse', footprint 'small-radius'). Aura is PASSIVE-EMERGENT (stacked from Firebrand), NOT Flame Ward (Flame Ward = a separate defensive cooldown — do not conflate, per hot-fact). [STEWARD AUDIT 2026-07-18: freeze + water-secondary STRUCK from the core row — dossier variants list 'fire (default)' with 'cold-conversion ",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Fire Aura (passive-emergent, stacked)' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1) but 'zone' more strongly (2) — mixed signal",
+      "errata_applied": 0,
+      "id": 2307,
+      "kit_id": "le-fire-aura-spellblade",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

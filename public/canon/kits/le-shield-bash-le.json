@@ -1,0 +1,701 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 0,
+    "recognition_hooks": 1,
+    "verify_ledger": 8
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1109,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-shield-bash-le",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Volca",
+    "cite_class": "authored",
+    "id": 548,
+    "kit_id": "le-shield-bash-le",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Shield Bash Forge Guard Guide for Last Epoch Season 4 - Maxroll.gg",
+    "url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Volca",
+      "cite_class": "authored",
+      "id": 548,
+      "kit_id": "le-shield-bash-le",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Shield Bash Forge Guard Guide for Last Epoch Season 4 - Maxroll.gg",
+      "url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "DaddyLuvsYou",
+      "cite_class": "communal",
+      "id": 549,
+      "kit_id": "le-shield-bash-le",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forum.lastepoch.com",
+      "title": "Build - Forge Guard Shield Bash v1.3.2 - Sentinel - Last Epoch Forums",
+      "url": "https://forum.lastepoch.com/t/build-forge-guard-shield-bash-v1-3-2/79874/12"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-shield-bash-le",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 960,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-shield-bash-le",
+      "missing_expression": "The block-cap chase AS the damage-scaling verb (defense stat converting to a more-damage multiplier) is unexpressed - approximated as flat numeric scaling;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The block-cap chase AS the damage-scaling verb (defense stat converting to a more-damage multiplier) is unexpressed - approximated as flat numeric scaling; source player would miss capping block being offense. Core loop (single-target melee spam behind a defensive wall) carries."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1241,
+      "kit_id": "le-shield-bash-le",
+      "payload_json": {
+        "handle": "Volca",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "damage scaled by stacking Strength thanks to Indomitable Force and Iron Arms.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1240,
+      "kit_id": "le-shield-bash-le",
+      "payload_json": {
+        "notes": "Block Chance cap is the mechanical capstone; no unique passive node named as singular capstone",
+        "passive_nodes": [
+          "Indomitable Force (Strength scaling)",
+          "Iron Arms (Strength scaling)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Use Twisted Heart of Uhkeiros or Code of an Erased Sentinel as your Relic... Shattered Worlds from Uber Aberroth.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1239,
+      "kit_id": "le-shield-bash-le",
+      "payload_json": {
+        "key_uniques": [
+          "Event Horizon (sword)",
+          "Twisted Heart of Uhkeiros (relic)",
+          "Code of an Erased Sentinel (relic)",
+          "Shattered Worlds (uber drop)",
+          "Red Ring of Atlaria",
+          "Flames of Midnight"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Limited AoE... Mediocre Clear Speed.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1238,
+      "kit_id": "le-shield-bash-le",
+      "payload_json": {
+        "aoe": "single",
+        "geometry": "single-target melee hit; limited AoE noted as explicit con in guide; physical damage",
+        "range_class": "melee"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Shield Bash is your main Damage Skill, with damage scaled by stacking Strength... has a built-in damage multiplier with 1.5% More Damage per Block Chance, granting it 150% More Damage with capped Block.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1237,
+      "kit_id": "le-shield-bash-le",
+      "payload_json": {
+        "core_driver": "block-stacking damage multiplier",
+        "description": "Player spams Shield Bash as primary damage skill, scaling via Strength. Block chance (capped at 100%) feeds the 1.5% More Damage per Block Chance multiplier. Ring of Shields provides defensive layer; Manifest Armor adds armor. Build can reach 600-1000+ corruption in endgame Monoliths."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Last Epoch Forge Guard Shield Bash Endgame Build Guide! 500+ Corruption... Dual Shield Goodness!!",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1242,
+      "kit_id": "le-shield-bash-le",
+      "payload_json": {
+        "variants": [
+          {
+            "name": "Shield Bash Forge Guard (standard)",
+            "notes": "single-shield dual-block scaling"
+          },
+          {
+            "name": "Dual Shield Shield Bash",
+            "notes": "dual-shield variant; 500+ corruption attested in YouTube title"
+          }
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "blank|at-target|spiky|blank|blank|blank|blank|blank|solo|melee|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": null,
+    "ctrl_ailments_mapped": null,
+    "ctrl_function": null,
+    "ctrl_treatment": null,
+    "def_bin": null,
+    "def_conf": null,
+    "def_riders": null,
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": null,
+    "econ_meter_type": null,
+    "econ_status": null,
+    "economy_model": null,
+    "flags": [
+      "A5-negative-supplementary"
+    ],
+    "geometry_conf": null,
+    "geometry_rule_fired": null,
+    "geometry_value": null,
+    "kit_id": "le-shield-bash-le",
+    "mob_policy_while_casting": null,
+    "mob_skill_is_movement": null,
+    "mob_verbs": null,
+    "provenance_json": {
+      "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+      "keying": "A5-negative-rekey-2026-07-14",
+      "negative": 1,
+      "passive_null_coords": [
+        "geometry_value",
+        "ctrl_treatment",
+        "ctrl_function",
+        "def_bin",
+        "economy_model",
+        "mob_policy_while_casting"
+      ],
+      "recoverable_coords": [
+        "delivery_value",
+        "amp_val",
+        "proxy_val",
+        "range_val",
+        "tempo_val",
+        "commit_val",
+        "activation_val",
+        "dependency_val"
+      ],
+      "source": "megaprobe-facts-jsonl (sparse negative row)",
+      "supplementary_only": true
+    },
+    "raw_json": {
+      "delivery": {
+        "conf": 0.85,
+        "evidence": "Melee shield slam at target; at-target",
+        "value": "at-target"
+      },
+      "folk_name": "Shield Bash (LE)",
+      "footprint": {
+        "conf": 0.8,
+        "evidence": "Single-target shield impact; atlas geo=single but SP='point' in new vocab",
+        "value": "point"
+      },
+      "game": "le",
+      "keying_provenance": {
+        "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+        "keying": "A5-negative-rekey-2026-07-14",
+        "negative": 1,
+        "passive_null_coords": [
+          "geometry_value",
+          "ctrl_treatment",
+          "ctrl_function",
+          "def_bin",
+          "economy_model",
+          "mob_policy_while_casting"
+        ],
+        "recoverable_coords": [
+          "delivery_value",
+          "amp_val",
+          "proxy_val",
+          "range_val",
+          "tempo_val",
+          "commit_val",
+          "activation_val",
+          "dependency_val"
+        ],
+        "source": "megaprobe-facts-jsonl (sparse negative row)",
+        "supplementary_only": true
+      },
+      "kit_id": "le-shield-bash-le",
+      "mech_note": "mech_note ref: 'The shield-slam that never found a tree path worth building — the third game in the corpus where a skill named Shield Bash appears as a negative.' PH suffix = Physical.",
+      "row_class": "combat-kit",
+      "status": "negative",
+      "why_negative": "failed-meta; Shield Bash has no LE node tree depth worth building around — the third game in the corpus (after D2 and PoE1) where a skill named Shield Bash appears as a negative; LE's Sentinel tree provides no meaningful Shield Bash scaling path"
+    },
+    "resource_verbatim": null,
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-shield-bash-le",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "single-target melee hit, Strength-scaled; limited AoE is an explicit guide con; block-chance feeds a more-damage multiplier (capped block = full multiplier)",
+      "source_skill": "Shield Bash",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-shield-bash-le",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "defensive shield-entity layer supporting the bash loop (see le-ring-of-shields for the full support-skill mapping)",
+      "source_skill": "Ring of Shields",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-shield-bash-le",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The block-cap chase AS the damage-scaling verb (defense stat converting to a more-damage multiplier) is unexpressed - approximated as flat numeric scaling; source player would miss capping block being offense. Core loop (single-target melee spam behind a defensive wall) carries.",
+    "grade": "APPROX",
+    "kit_id": "le-shield-bash-le",
+    "mapping_json": {
+      "fidelity_notes": "physical -> null element (THE PHYSICAL RULE). 'Bash' name implies NO stun - no status named in fetched text, none emitted (attestation law 0.4; near-miss logged). Block-chance-as-damage-multiplier = defensive-stat-as-offense: filed as its OWN stat-as-damage-substrate cluster candidate (C.2 - no merge), kit graded un-minted with the multiplier approximated in the numeric trait lane. corpus negative=1 but the kb negative framing is UNATTESTED (verify honest-U) - annotation only, not mapping grounds. Eras beta;1.0;1.2 per corpus (Season-2 era anchor confirmed).",
+      "motion_frame": "stationary single-target melee spam in block posture; Manifest Armor adds armor",
+      "option_c_substrate_flags": null,
+      "resource_economy": null,
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [],
+          "traits_affixes": [
+            "Indomitable Force + Iron Arms Strength scaling -> numeric trait lane",
+            "Event Horizon / Twisted Heart of Uhkeiros / Code of an Erased Sentinel / Shattered Worlds / Red Ring of Atlaria -> gear lane"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "single-target melee hit, Strength-scaled; limited AoE is an explicit guide con; block-chance feeds a more-damage multiplier (capped block = full multiplier)",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Shield Bash"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "defensive shield-entity layer supporting the bash loop (see le-ring-of-shields for the full support-skill mapping)",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Ring of Shields"
+        }
+      ],
+      "t4_doors": [
+        "RETRIBUTION_ENGINE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Shield Bash (LE): melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "le-shield-bash-le",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.85,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "blank|at-target|spiky|blank|blank|blank|blank|blank|solo|melee|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "blank|at-target|spiky|blank|blank|blank|blank|blank|solo|melee|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "blank"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "blank"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "blank"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "blank"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "blank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "blank"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMMSSI-LNMT-SP-PH-~~",
+    "attr_conf": 0.85,
+    "attr_val": "STR",
+    "avg_conf": 0.85,
+    "canon_tier": "negative",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.85,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Shield Bash"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": "extrinsic-itemization",
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "physical",
+    "era_year": 2024,
+    "eras": "beta-0.8-0.9;1.0-launch;1.2-woven",
+    "eras_normalized": "beta-0.8-0.9;1.0-launch;1.2-woven",
+    "flags": "",
+    "folk_name": "Shield Bash (LE)",
+    "game": "le",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "le-shield-bash-le",
+    "lattice_coord": "SMMSSI",
+    "lineage": "",
+    "mech_note": "mech_note ref: 'The shield-slam that never found a tree path worth building — the third game in the corpus where a skill named Shield Bash appears as a negative.' PH suffix = Physical.",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×econ:spend",
+    "mobile_key_group": "SMMSSI-LNMT-SP-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 0,
+    "negative": 1,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.85,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.85,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "complete-kit-mapping",
+    "tempo_conf": 0.85,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: beta-0.8-0.9",
+      "errata_applied": 0,
+      "id": 764,
+      "kit_id": "le-shield-bash-le",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 765,
+      "kit_id": "le-shield-bash-le",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Shield Bash Forge Guard Build Guide | Last Epoch Season 2... Maxroll Season 2 (April 2025) changelog entry.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.2-woven",
+      "errata_applied": 0,
+      "id": 766,
+      "kit_id": "le-shield-bash-le",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Shield Bash Forge Guard... Shield Bash is your main Damage Skill.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Shield Bash (LE)' / 'Forge Guard Shield Bash' / 'shield melee build LE' are real community usage",
+      "errata_applied": 0,
+      "id": 762,
+      "kit_id": "le-shield-bash-le",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Shield Bash is your main Damage Skill, with damage scaled by stacking Strength thanks to Indomitable Force and Iron Arms.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill: Shield Bash; single-target melee physical hit; Forge Guard / Sentinel class; resource=Mana",
+      "errata_applied": 0,
+      "id": 763,
+      "kit_id": "le-shield-bash-le",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "single-target melee hit, Strength-scaled; limited AoE is an explicit guide con; block-chance feeds a more-damage multiplier (capped block = full multiplier)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Shield Bash' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1 sig)",
+      "errata_applied": 0,
+      "id": 2334,
+      "kit_id": "le-shield-bash-le",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "defensive shield-entity layer supporting the bash loop (see le-ring-of-shields for the full support-skill mapping)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Ring of Shields' delivery_class=aura (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'aura'",
+      "errata_applied": 0,
+      "id": 2335,
+      "kit_id": "le-shield-bash-le",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "negative_canon",
+      "claim_subject": null,
+      "claim_text": "Shield Bash LE is negative — kit-family centralization concern or scaling deficiency identified at triage",
+      "errata_applied": 0,
+      "id": 767,
+      "kit_id": "le-shield-bash-le",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/shield-bash-forge-guard-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    }
+  ]
+}

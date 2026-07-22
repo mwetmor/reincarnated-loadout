@@ -1,0 +1,923 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 5,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 624,
+      "assert_text": "primary_delivery_class == 'summon_delegate'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-spectres",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 625,
+      "assert_text": "expresses: Player test fails: hand a Spectre Necromancer a fixed generic minion squad and t",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "poe1-spectres",
+      "last_result": "red",
+      "routed_docket_id": 100
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 201,
+    "kit_id": "poe1-spectres",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Raise Spectre — poedb.tw",
+    "url": "https://poedb.tw/us/Raise_Spectre"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 201,
+      "kit_id": "poe1-spectres",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Raise Spectre — poedb.tw",
+      "url": "https://poedb.tw/us/Raise_Spectre"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 202,
+      "kit_id": "poe1-spectres",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com/forum",
+      "title": "(3.2) All Map Mod Solar Guard Spectre LEAGUE START",
+      "url": "https://www.pathofexile.com/forum/view-thread/2094035"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 203,
+      "kit_id": "poe1-spectres",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com/forum",
+      "title": "[3.13] Spectre necro. syndicate operatives. All gear explained",
+      "url": "https://www.pathofexile.com/forum/view-thread/2989420"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "GhazzyTV",
+      "cite_class": "authored",
+      "id": 204,
+      "kit_id": "poe1-spectres",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe-vault.com",
+      "title": "GhazzyTV's Spectre Summoner Necromancer Build Guide (PoE Mirage 3.28)",
+      "url": "https://www.poe-vault.com/guides/the-spectre-summoner-build-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 205,
+      "kit_id": "poe1-spectres",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[3.26] Raise Spectre Necromancer Summoner build — Odealo",
+      "url": "https://odealo.com/articles/3-1-starter-spectre-summoner-necromancer-odealos-crafty-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-spectres",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 586,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-poe1",
+        "docket_id": 100,
+        "evidence_kits": [
+          "poe1-spectres"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:poe1-spectres",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "poe1-record"
+        },
+        "source_deviation_id": 586,
+        "source_kit_id": "poe1-spectres",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 PoE1 structuring of poe1-spectres.",
+        "status": "open"
+      },
+      "docket_id": 100,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-spectres",
+      "missing_expression": "Player test fails: hand a Spectre Necromancer a fixed generic minion squad and they say 'this is a summoner, but this is not Spectres.' The defining identity — choosing WHICH world monster to enslave (Solar Guards vs Slave Drivers vs Syndicate Operatives) and inheriting its ability kit — has no engine mechanism class.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "Player test fails: hand a Spectre Necromancer a fixed generic minion squad and they say 'this is a summoner, but this is not Spectres.' The defining identity — choosing WHICH world monster to enslave (Solar Guards vs Slave Drivers vs Syndicate Operatives) and inheriting its ability kit — has no engine mechanism class."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "GhazzyTV's Spectre Summoner Necromancer Build Guide",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 443,
+      "kit_id": "poe1-spectres",
+      "payload_json": {
+        "handle": "GhazzyTV",
+        "note": "primary Spectre Summoner guide author; guide maintained from 3.7+ era through 3.28",
+        "site": "poe-vault.com"
+      },
+      "source_url": "https://www.poe-vault.com/guides/the-spectre-summoner-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "+2 to maximum number of Spectres...Raised Spectres have (800—1000)% increased Critical Strike Chance",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 442,
+      "kit_id": "poe1-spectres",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "1% increased Minion Maximum Life and Minions deal 1% increased Melee Damage (per 1% quality)",
+            "effect": "1% increased Minion Maximum Life and Minions deal 1% increased Melee Damage per 1% quality",
+            "node": "Anomalous Raise Spectre (alt quality)",
+            "type": "alt_quality"
+          },
+          {
+            "anchor_quote": "Minions have 0.5% reduced Enemy Stun Threshold (per 1% quality)",
+            "effect": "Minions have 0.5% reduced Enemy Stun Threshold per 1% quality",
+            "node": "Divergent Raise Spectre (alt quality)",
+            "type": "alt_quality"
+          },
+          {
+            "anchor_quote": "Minions are Created with maximum Frenzy Charges",
+            "effect": "Minions are Created with maximum Frenzy Charges",
+            "node": "Phantasmal Raise Spectre (alt quality)",
+            "type": "alt_quality"
+          },
+          {
+            "anchor_quote": "Base cast time of 0.6 seconds (versus standard 0.85)...Minions gain 800-1180% increased Critical Strike Chance",
+            "effect": "0.6s cast time vs 0.85s standard; 800-1180% increased Critical Strike Chance; up to 4-6 spectres",
+            "node": "Raise Spectre of Transience (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": "+2 to maximum number of Spectres...Raised Spectres have (800—1000)% increased Critical Strike Chance",
+            "effect": "+2 to maximum number of Spectres; 40-50% reduced Mana Cost; spectres gain 800-1000% increased Critical Strike Chance; Base Duration of 20 seconds; do not travel between Areas",
+            "node": "Soul's Wick (threshold jewel)",
+            "req": "jewel",
+            "type": "threshold_jewel"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Raise_Spectre"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Soul's Wick (+2), Wraithlord (+1 per jewel), and Midnight Bargain (+1)",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 441,
+      "kit_id": "poe1-spectres",
+      "payload_json": {
+        "notable_items": [
+          "Soul's Wick (+2 spectres)",
+          "Wraithlord (+1 per jewel in sockets)",
+          "Midnight Bargain (+1 spectre)"
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Raise_Spectre"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Raise permanent copy of map monster at corpse position; spectre fights independently",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 440,
+      "kit_id": "poe1-spectres",
+      "payload_json": {
+        "verbatim": "at-target cast on corpse; permanent spectre entity spawned at corpse location; spectres spread across combat area independently; multi-entity footprint"
+      },
+      "source_url": "https://poedb.tw/us/Raise_Spectre"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Raise Spectre is the best and most popular Minion Spell; you don't want to transition to full Spectres until you have a minimum of three",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 439,
+      "kit_id": "poe1-spectres",
+      "payload_json": {
+        "description": "Raise permanent copies of map monsters from their corpses. Spectres retain all their monster abilities and attack/cast independently. Use Desecrate to generate fresh corpses of specific monsters (including those not normally in zone). Army fights while you position and buff."
+      },
+      "source_url": "https://www.poe-vault.com/guides/the-spectre-summoner-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Solar Guard Spectre LEAGUE START; syndicate operatives…default melee attack and a ranged spell",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 444,
+      "kit_id": "poe1-spectres",
+      "payload_json": {
+        "list": [
+          "Solar Guards era (3.0-3.6) — fire projectile spectres",
+          "Syndicate Operatives era (3.7-3.13) — physical ranged",
+          "Slave Drivers — lightning AoE, popular starter",
+          "Wretched Defilers — current meta (3.26+)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2094035"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "walk|at-target|flat|multi_projectile|damage|none|tank|free|heavy|ranged|med|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.66,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "poe1-spectres",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRMFHI-MMDM-SP-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "fire",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.66,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Spectre Necromancer",
+      "game": "poe1",
+      "kit_id": "poe1-spectres",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRMFHI-MMDM-SP-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "fire",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "corpses",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-spectres",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "permanent independent minion entities raised at corpse position; 3-5 powerful ranged proxies spread across the combat area and fight autonomously (multi-entity footprint). Fire per the Solar Guard era-variant (corpus element); later-era spectre pools drift physical/lightning.",
+      "source_skill": "Raise Spectre",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-spectres",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "utility corpse-generation patch: desecrated ground spawning the corpses that fuel Raise Spectre — summon-ritual support, not a damage skill.",
+      "source_skill": "Desecrate",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-spectres",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player test fails: hand a Spectre Necromancer a fixed generic minion squad and they say 'this is a summoner, but this is not Spectres.' The defining identity — choosing WHICH world monster to enslave (Solar Guards vs Slave Drivers vs Syndicate Operatives) and inheriting its ability kit — has no engine mechanism class.",
+    "grade": "GAPPED",
+    "kit_id": "poe1-spectres",
+    "mapping_json": {
+      "fidelity_notes": "The runtime loop (permanent ranged proxy army + support caster) lands on totem/proxy lanes. THE GAP: spectres are raised copies of MAP MONSTERS — the minion pool is the game's enemy roster, and each spectre RETAINS ITS NATIVE MONSTER ABILITIES ('Raise permanent copy of map monster'). Engine proxies are kit-generated content; there is no world-entity-capture or monster-ability-inheritance lane. Docket filed (batch flag e applied).",
+      "motion_frame": "army-anchor: the permanent monster army fights independently while the player walks, buffs, and Desecrates fresh corpses",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "corpse-bind-permanent: summon once, army persists (no recast cadence)",
+            "+spectre-count items (Soul's Wick +2, Wraithlord, Midnight Bargain) -> proxy-count affix lane"
+          ],
+          "geometry": [
+            "persistent multi-entity proxy squad (totem lane)",
+            "corpse-patch utility circle"
+          ],
+          "traits_affixes": [
+            "minion-damage/minion-life intrinsic traits",
+            "+proxy-count gear affixes"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "burn"
+          ],
+          "delivery_notes": "permanent independent minion entities raised at corpse position; 3-5 powerful ranged proxies spread across the combat area and fight autonomously (multi-entity footprint). Fire per the Solar Guard era-variant (corpus element); later-era spectre pools drift physical/lightning.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Raise Spectre"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "utility corpse-generation patch: desecrated ground spawning the corpses that fuel Raise Spectre — summon-ritual support, not a damage skill.",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Desecrate"
+        }
+      ],
+      "t4_doors": [
+        "PROXY_ASCENSION",
+        "PROXY_SOVEREIGNTY"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED_DOCKET"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 923,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "hp-stack",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 924,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Raise permanent copy of map monster at corpse position; spectre fights independently",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 921,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "corpses (proc); Raise permanent copies of MAP MONSTERS as your army — the game's entire enemy ro",
+        "resource_verbatim": "corpses"
+      },
+      "family": "economy",
+      "id": 925,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 926,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.66,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.66,
+        "evidence": "Multiple spectre entities spread across combat area; geo=multi-spawn in atlas",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 922,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with multi-point footprint. Raise permanent copies of MAP MONSTERS as your army  —  the game's entire enemy roster becomes the build space; which corpse you bind defines.",
+      "family": "geo_text",
+      "id": 928,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 927,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 929,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 930,
+      "kit_id": "poe1-spectres",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Spectre Necromancer: totem summon_delegate identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-spectres",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "poe1-spectres",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.78,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|multi_projectile|damage|none|tank|free|heavy|ranged|med|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|multi_projectile|damage|none|tank|free|heavy|ranged|med|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "heavy"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMFHI-MMDM-SP-FI-~~",
+    "attr_conf": 0.78,
+    "attr_val": "INT",
+    "avg_conf": 0.78,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.78,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Raise Spectre",
+      "Desecrate"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "corpse-bind-permanent",
+    "elem_raw": "fire",
+    "era_year": 2013,
+    "eras": "3.0-3.6;3.7-3.13;3.14-3.19",
+    "eras_normalized": "3.0-3.6;3.7-3.13;3.14-3.19",
+    "flags": "",
+    "folk_name": "Spectre Necromancer",
+    "game": "poe1",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-13",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-spectres",
+    "lattice_coord": "IRMFHI",
+    "lineage": "",
+    "mech_note": "Raise permanent copies of MAP MONSTERS as your army — the game's entire enemy roster becomes the build space; which corpse you bind defines ",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A+B: soul-control troop command exists; turret/pet AI variants + summon economy needed",
+    "mobile_cell_id": "HEAVY|MULTI|INST×GAP-P1-13",
+    "mobile_key_group": "IRMFHI-MMDM-SP-FI-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.78,
+    "proxy_val": "heavy",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.78,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.78,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TRAP-MINE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-archipelago-mock.json points[stratum=core, family assigned, not gateA self-seed] (affinity=0.774)",
+    "spine_status": "ACTIVE",
+    "tier": "PROPAGATED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "(3.2) All Map Mod Solar Guard Spectre LEAGUE START (SSF Viable/End Game Viable)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6 (Solar Guards)",
+      "errata_applied": 0,
+      "id": 253,
+      "kit_id": "poe1-spectres",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2094035",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.13] Spectre necro. The tanky HC purity version. syndicate operatives. All gear explained",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13 (Syndicate Operatives)",
+      "errata_applied": 0,
+      "id": 254,
+      "kit_id": "poe1-spectres",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2989420",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.14-3.19",
+      "errata_applied": 0,
+      "id": 255,
+      "kit_id": "poe1-spectres",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "(3.2) All Map Mod Solar Guard Spectre LEAGUE START; [3.13] Spectre necro. syndicate operatives. All gear explained",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Spectre Necromancer' is real community usage; aliases 'Solar Guards era' and 'Syndicate Operatives era' are real community usage",
+      "errata_applied": 0,
+      "id": 251,
+      "kit_id": "poe1-spectres",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2094035",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Raise Spectre is the best and most popular Minion Spell; Desecrate included as utility gem for creating corpses; Necromancer ascendancy",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Raise Spectre and Desecrate; Necromancer class",
+      "errata_applied": 0,
+      "id": 252,
+      "kit_id": "poe1-spectres",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/3-1-starter-spectre-summoner-necromancer-odealos-crafty-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "permanent independent minion entities raised at corpse position; 3-5 powerful ranged proxies spread across the combat area and fight autonomously (multi-entity footprint). Fire per the Solar Guard era-variant (corpus element); later-era spectre pools drift physical/lightning.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Raise Spectre' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (2 sig)",
+      "errata_applied": 0,
+      "id": 2472,
+      "kit_id": "poe1-spectres",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "utility corpse-generation patch: desecrated ground spawning the corpses that fuel Raise Spectre — summon-ritual support, not a damage skill.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Desecrate' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (1) but 'summon_delegate' more strongly (2) — mixed signal",
+      "errata_applied": 0,
+      "id": 2473,
+      "kit_id": "poe1-spectres",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

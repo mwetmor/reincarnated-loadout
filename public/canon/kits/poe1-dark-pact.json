@@ -1,0 +1,849 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 567,
+      "assert_text": "primary_delivery_class == 'beam'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-dark-pact",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 568,
+      "assert_text": "expresses: chain + shadow(chaos) + drain lands the chaining sacrifice-nova, but the SIGNATU",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "poe1-dark-pact",
+      "last_result": "red",
+      "routed_docket_id": 93
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": "http://web.archive.org/web/20170817003830/http://www.pathofexile.com:80/forum/view-thread/1954194",
+    "author_handle": "poetech#3681",
+    "cite_class": "authored",
+    "id": 65,
+    "kit_id": "poe1-dark-pact",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "pathofexile.com/forum",
+    "title": "[3.0] Beginners Friendly: Dark Pact Skeleton Necromancer [Build in Progress]",
+    "url": "https://www.pathofexile.com/forum/view-thread/1954194"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": "http://web.archive.org/web/20170817003830/http://www.pathofexile.com:80/forum/view-thread/1954194",
+      "author_handle": "poetech#3681",
+      "cite_class": "authored",
+      "id": 65,
+      "kit_id": "poe1-dark-pact",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com/forum",
+      "title": "[3.0] Beginners Friendly: Dark Pact Skeleton Necromancer [Build in Progress]",
+      "url": "https://www.pathofexile.com/forum/view-thread/1954194"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "GhazzyTV",
+      "cite_class": "authored",
+      "id": 66,
+      "kit_id": "poe1-dark-pact",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poe-vault.com",
+      "title": "GhazzyTV's Dark Pact Necromancer Build Guide (PoE Mirage 3.28)",
+      "url": "https://www.poe-vault.com/guides/dark-pact-necromancer-build-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-dark-pact",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 528,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-poe1",
+        "docket_id": 93,
+        "evidence_kits": [
+          "poe1-dark-pact"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:poe1-dark-pact",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "poe1-record"
+        },
+        "source_deviation_id": 528,
+        "source_kit_id": "poe1-dark-pact",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 PoE1 structuring of poe1-dark-pact.",
+        "status": "open"
+      },
+      "docket_id": 93,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-dark-pact",
+      "missing_expression": "chain + shadow(chaos) + drain lands the chaining sacrifice-nova, but the SIGNATURE is an INVERSION of the proxy pattern: skeletons are CONSUMABLE BATTERIES whose MAX LIFE is the ammo Dark Pact spends — Minion Life supports scale YOUR damage by inflating the battery.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "chain + shadow(chaos) + drain lands the chaining sacrifice-nova, but the SIGNATURE is an INVERSION of the proxy pattern: skeletons are CONSUMABLE BATTERIES whose MAX LIFE is the ammo Dark Pact spends — Minion Life supports scale YOUR damage by inflating the battery. No engine lane represents 'proxy max-life as a consumable per-cast ammo pool'; the PROXY family models proxies that attack + are sustained, not consumed as fuel. Mapped as chain-nova + totem-battery-field + minion-life-consume note + hp_cost_scale no-skeleton fallback (native); captures the chain-chaos feel but loses the battery-inversion substrate. Docket filed (proxy-max-life-as-ammo, shared with animate-weapon + this batch's bladefall field-consume). Engine chain decays 0.7x/hop (arc precedent) — acceptable since Dark Pact propagates not grows, hop-count capped vs PoE noted."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "GhazzyTV's Dark Pact Necromancer Build Guide",
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 143,
+      "kit_id": "poe1-dark-pact",
+      "payload_json": {
+        "author_handle": "GhazzyTV",
+        "note": "3.0 era forum guide author: poetech#3681",
+        "site": "poe-vault.com"
+      },
+      "source_url": "https://www.poe-vault.com/guides/dark-pact-necromancer-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Ascendancy Progression: Spirit Eater → Beacon of Corruption → Commander of Darkness → Mistress of Sacrifice",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 142,
+      "kit_id": "poe1-dark-pact",
+      "payload_json": {
+        "ascendancy_3_0": "Necromancer (Witch)",
+        "nodes_3_0": [
+          {
+            "alteration": "Consumes summoned monster spirits for power.",
+            "name": "Spirit Eater"
+          },
+          {
+            "alteration": "Caustic cloud on death of minions/nearby monsters.",
+            "name": "Beacon of Corruption"
+          },
+          {
+            "alteration": "Damage and resistance buff to minions and player.",
+            "name": "Commander of Darkness"
+          },
+          {
+            "alteration": "Bone offering also applies to player.",
+            "name": "Mistress of Sacrifice"
+          }
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1954194"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Amplification Rod unique wand provides pseudo 6-link functionality with built-in supports.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 141,
+      "kit_id": "poe1-dark-pact",
+      "payload_json": {
+        "items": [
+          {
+            "alteration": "Pseudo 6-link functionality with built-in support gems — budget early enabler.",
+            "name": "Amplification Rod",
+            "slot": "wand"
+          }
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1954194"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The 6% removed life is added to the base damage so the skill does scale with minion life. The skill chains between skeletons when at least three are present, enabling area-of-effect coverage across enemy packs.",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 140,
+      "kit_id": "poe1-dark-pact",
+      "payload_json": {
+        "geometry": "Chain-hop delivery: chaos nova originates at skeleton position, chains to nearby skeletons. Each chain hop generates a new nova at the next skeleton. Coverage scales with number of skeletons and their distribution across the battlefield. When cast without skeletons: nova originates at player's own position (self-damage mode). Area of effect at each hop is small blast radius."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1954194"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "summon skeletons on the field and then directly connecting them by casting Dark Pact, chaining between your skeletons. The skill chains between skeletons when at least three are present.",
+      "conf": 0.93,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 139,
+      "kit_id": "poe1-dark-pact",
+      "payload_json": {
+        "loop": "Use Spell Totem or self-cast Summon Skeletons to populate the field with skeleton minions. Cast Dark Pact on clustered skeletons — the spell chains between them, sacrificing skeleton life to deal chaos damage in chaining novas. Skeletons die rapidly, requiring constant resummoning (two-button rotation). When no skeletons are present, Dark Pact damages the player's own life instead. Minion Life support gems on skeletons increase their life pool to amplify Dark Pact damage."
+      },
+      "source_url": "https://www.poe-vault.com/guides/dark-pact-necromancer-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "A separate high-budget guide using Dark Pact Elementalist with CI (Chaos Inoculation) is mentioned as an alternative path.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 144,
+      "kit_id": "poe1-dark-pact",
+      "payload_json": {
+        "variants": [
+          {
+            "description": "Original archetype — skeleton summoning + Dark Pact chaining. poetech's 3.0 guide.",
+            "name": "Dark Pact Skeleton Necromancer (3.0 classic)"
+          },
+          {
+            "description": "Mentioned in GhazzyTV guide as high-budget alternative with Chaos Inoculation.",
+            "name": "Dark Pact CI Elementalist (high-budget)"
+          }
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/guides/dark-pact-necromancer-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|at-target|flat|chain|damage|hex|mitigate|self-cost|light|dual|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\", \"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "self-cost",
+    "flags": [],
+    "geometry_conf": 0.68,
+    "geometry_rule_fired": "R1",
+    "geometry_value": "chain",
+    "kit_id": "poe1-dark-pact",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IDHFLI-MCDG-AM-CH-~~",
+      "delivery": "at-target",
+      "elem_raw": "chaos",
+      "footprint": "chain-hop"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot",
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.68,
+        "rule_fired": "R1",
+        "value": "chain"
+      },
+      "flags": [],
+      "folk_name": "Dark Pact",
+      "game": "poe1",
+      "kit_id": "poe1-dark-pact",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IDHFLI-MCDG-AM-CH-~~",
+        "delivery": "at-target",
+        "elem_raw": "chaos",
+        "footprint": "chain-hop"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "minion-life",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "beam",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-dark-pact",
+      "motion_signature": "chain_hop",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "chaos nova that originates at a skeleton and CHAINS between skeletons (>=3 present), each hop a fresh nova; SACRIFICES skeleton max-life as the damage fuel (or the player's own life if no skeletons). chain geometry; chaos -> shadow; drain carries the life-sacrifice-as-damage register. Note: engine chain DECAYS 0.7x/hop (arc precedent)",
+      "source_skill": "Dark Pact",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-dark-pact",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "populate the field with skeleton minions whose MAX LIFE is the ammo pool Dark Pact spends; totem = placed proxy entities. They are NOT autonomous attackers here — they are consumable batteries, dying rapidly and needing constant resummon",
+      "source_skill": "Summon Skeletons (fuel/proxy source)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-dark-pact",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "chain + shadow(chaos) + drain lands the chaining sacrifice-nova, but the SIGNATURE is an INVERSION of the proxy pattern: skeletons are CONSUMABLE BATTERIES whose MAX LIFE is the ammo Dark Pact spends — Minion Life supports scale YOUR damage by inflating the battery. No engine lane represents 'proxy max-life as a consumable per-cast ammo pool'; the PROXY family models proxies that attack + are sustained, not consumed as fuel. Mapped as chain-nova + totem-battery-field + minion-life-consume note + hp_cost_scale no-skeleton fallback (native); captures the chain-chaos feel but loses the battery-inversion substrate. Docket filed (proxy-max-life-as-ammo, shared with animate-weapon + this batch's bladefall field-consume). Engine chain decays 0.7x/hop (arc precedent) — acceptable since Dark Pact propagates not grows, hop-count capped vs PoE noted.",
+    "grade": "APPROX",
+    "kit_id": "poe1-dark-pact",
+    "mapping_json": {
+      "fidelity_notes": "chain + shadow(chaos) is the base geometry/element and lands; drain for the life-sacrifice register (poison is the alt chaos-DoT read, but the DOMINANT loop is a hit-nova that DRAINS minion life, not a stacking DoT — §7.2 dominant-loop wins). THE IDENTITY MISS: minions-as-CONSUMABLE-BATTERIES. Dark Pact's soul is an INVERSION of the normal proxy pattern — you don't direct skeletons to attack; you CONSUME their max-life as ammunition (Minion Life supports scale YOUR damage BY raising the battery capacity). The engine PROXY family + resource_economy models proxies that ATTACK and are sustained; it has no lane for 'proxy max-life is a consumable ammo pool the caster spends per cast.' Mapped as chain-nova + a totem-proxy field + minion-life-consume note + hp_cost_scale for the no-skeleton self-cost fallback (native), which captures the chain-chaos-nova + self-cost feel but LOSES the minion-as-battery consumption substrate. A Dark Pact player would notice their skeletons no longer FUNCTION as a spendable life-pool that Minion-Life gear inflates — the battery inversion is what made this kit unique. Docket candidate filed (proxy-max-life-as-consumable-ammo, shared family with animate-weapon batch-01 + bladefall-bladeblast field-resource-consume this batch). Engine chain DECAYS 0.7x/hop (arc-audit precedent): acceptable here since Dark Pact's chain PROPAGATES the sacrifice-nova rather than growing per-hop — but hop-count is capped at engine default (primary+3) vs PoE scaling to more skeletons; noted. PROXY_FISSION (one action -> many proxy interactions) + SACRIFICE_ASCENDANCY (life-as-fuel) are the closest capstones.",
+      "motion_frame": "battery-and-detonate caster: summon skeletons as a life-battery field, cast Dark Pact to chain-nova between them spending their life as damage; two-button resummon rotation as they burn down",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "hp_cost_scale": 0.3,
+        "reservation_resource": "hp"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "minion-life-consume (skeleton MAX LIFE = the spent damage fuel)",
+            "hp_cost_scale fallback (player life spent when no skeletons — the self-cost mode)"
+          ],
+          "geometry": [
+            "chain nova (skeleton-to-skeleton hops)",
+            "totem/proxy skeleton-battery field"
+          ],
+          "traits_affixes": [
+            "minion-life scaling (Minion Life supports RAISE the battery = RAISE Dark Pact damage — the signature inversion)",
+            "chaos/spell-damage",
+            "resummon-cadence (skeletons die fast)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "drain"
+          ],
+          "delivery_notes": "chaos nova that originates at a skeleton and CHAINS between skeletons (>=3 present), each hop a fresh nova; SACRIFICES skeleton max-life as the damage fuel (or the player's own life if no skeletons). chain geometry; chaos -> shadow; drain carries the life-sacrifice-as-damage register. Note: engine chain DECAYS 0.7x/hop (arc precedent)",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "chain",
+          "source_skill": "Dark Pact"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "populate the field with skeleton minions whose MAX LIFE is the ammo pool Dark Pact spends; totem = placed proxy entities. They are NOT autonomous attackers here — they are consumable batteries, dying rapidly and needing constant resummon",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Summon Skeletons (fuel/proxy source)"
+        }
+      ],
+      "t4_doors": [
+        "PROXY_FISSION",
+        "SACRIFICE_ASCENDANCY"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "poison",
+          "wither"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3653,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 3654,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Chaos nova cast at skeleton position (or self); nova chains from target to nearby",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 3651,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "self-cost",
+        "plain_text": "minion-life (self-cost); Chaining chaos nova that SACRIFICES skeleton life to fuel its damage — or your o",
+        "resource_verbatim": "minion-life"
+      },
+      "family": "economy",
+      "id": 3655,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "chaos"
+      },
+      "family": "element",
+      "id": 3656,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.68,
+        "evidence": "Nova chains to nearby from target; geo=chain in atlas",
+        "value": "chain-hop"
+      },
+      "family": "footprint",
+      "id": 3652,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with chain-hop footprint. Chaining chaos nova that SACRIFICES skeleton life to fuel its damage  —  or your own life if no skeletons; minions as batteries, the self-dama.",
+      "family": "geo_text",
+      "id": 3658,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 3657,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 3659,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 3660,
+      "kit_id": "poe1-dark-pact",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Dark Pact: chain beam identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-dark-pact",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "poe1-dark-pact",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.8,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|chain|damage|hex|mitigate|self-cost|light|dual|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|chain|damage|hex|mitigate|self-cost|light|dual|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "chain"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "self-cost"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDHFLI-MCDG-AM-CH-~~",
+    "attr_conf": 0.8,
+    "attr_val": "INT",
+    "avg_conf": 0.8,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.8,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Dark Pact",
+      "Summon Skeletons"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "minion-life-consume",
+    "elem_raw": "chaos",
+    "era_year": 2013,
+    "eras": "3.0-3.6",
+    "eras_normalized": "3.0-3.6",
+    "flags": "",
+    "folk_name": "Dark Pact",
+    "game": "poe1",
+    "geo_raw": "chain",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-01",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-dark-pact",
+    "lattice_coord": "IDHFLI",
+    "lineage": "",
+    "mech_note": "Chaining chaos nova that SACRIFICES skeleton life to fuel its damage — or your own life if no skeletons; minions as batteries, the self-dama",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|CHAIN|INST×GAP-P1-01",
+    "mobile_key_group": "IDHFLI-MCDG-AM-CH-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.8,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.8,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.8,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "DOT-AILMENT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=4].members (working_label=DOT-AILMENT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.0] Beginners Friendly: Dark Pact Skeleton Necromancer [Build in Progress] — posted 2017 (3.0 era)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6",
+      "errata_applied": 0,
+      "id": 82,
+      "kit_id": "poe1-dark-pact",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1954194",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Chaining chaos nova that SACRIFICES skeleton life to fuel its damage — or your own life if no skeletons; minions as batteries.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Dark Pact' is real community usage; class Necromancer/Berserker",
+      "errata_applied": 0,
+      "id": 80,
+      "kit_id": "poe1-dark-pact",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1954194",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The playstyle is based around summoning your skeletons on the field and then directly connecting them by casting Dark Pact, chaining between your skeletons. Rather than directing minions as autonomous attackers, Dark Pact converts their maximum life into waves of chaos damage.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Dark Pact + Summon Skeletons: chaining chaos nova that sacrifices skeleton life to fuel damage; chains between skeletons; or uses player life if no skeletons",
+      "errata_applied": 0,
+      "id": 81,
+      "kit_id": "poe1-dark-pact",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/dark-pact-necromancer-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "chaos nova that originates at a skeleton and CHAINS between skeletons (>=3 present), each hop a fresh nova; SACRIFICES skeleton max-life as the damage fuel (or the player's own life if no skeletons). chain geometry; chaos -> shadow; drain carries the life-sacrifice-as-damage register. Note: engine chain DECAYS 0.7x/hop (arc precedent)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Dark Pact' delivery_class=beam (band_conf=0.75); lint: anchor leans 'projectile' (1 sig) vs assigned 'beam' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2399,
+      "kit_id": "poe1-dark-pact",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "populate the field with skeleton minions whose MAX LIFE is the ammo pool Dark Pact spends; totem = placed proxy entities. They are NOT autonomous attackers here — they are consumable batteries, dying rapidly and needing constant resummon",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Summon Skeletons (fuel/proxy source)' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (4 sig)",
+      "errata_applied": 0,
+      "id": 2400,
+      "kit_id": "poe1-dark-pact",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

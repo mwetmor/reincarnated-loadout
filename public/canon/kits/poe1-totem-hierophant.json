@@ -1,0 +1,570 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 0,
+    "recognition_hooks": 1,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 633,
+      "assert_text": "primary_delivery_class == 'summon_delegate'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-totem-hierophant",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 228,
+    "kit_id": "poe1-totem-hierophant",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "odealo.com",
+    "title": "[3.6] Arc Hexa-Spell Totem Hierophant Build — Odealo",
+    "url": "https://odealo.com/articles/arc-hexa-spell-totem-hierophant-build-odealos-crafty-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 228,
+      "kit_id": "poe1-totem-hierophant",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[3.6] Arc Hexa-Spell Totem Hierophant Build — Odealo",
+      "url": "https://odealo.com/articles/arc-hexa-spell-totem-hierophant-build-odealos-crafty-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 229,
+      "kit_id": "poe1-totem-hierophant",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Spell Totem Support — poedb.tw",
+      "url": "https://poedb.tw/us/Spell_Totem_Support"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "communal",
+      "cite_class": "communal",
+      "id": 277,
+      "kit_id": "poe1-totem-hierophant",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": null,
+      "url": "https://poedb.tw/us/Hierophant"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-totem-hierophant",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 594,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-totem-hierophant",
+      "missing_expression": "What the Hierophant would miss: six simultaneous totems (engine proxy counts are lower), the hard you-cannot-deal-damage keystone contract, and the 40%-slower proxy-cast tax as an explicit chassis parameter.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "What the Hierophant would miss: six simultaneous totems (engine proxy counts are lower), the hard you-cannot-deal-damage keystone contract, and the 40%-slower proxy-cast tax as an explicit chassis parameter. Place-totems-and-kite with fewer proxies reads 'totem hiero, worse' — identity approximated, not absent."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 491,
+      "kit_id": "poe1-totem-hierophant",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Ancestral Bond — This prevents YOU from dealing damage, but not your proxies, such as mines and totems",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 490,
+      "kit_id": "poe1-totem-hierophant",
+      "payload_json": {
+        "keystone": "Ancestral Bond — prevents player from dealing damage directly; enables maximum totem count; core keystone for this build archetype"
+      },
+      "source_url": "https://odealo.com/articles/arc-hexa-spell-totem-hierophant-build-odealos-crafty-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "100% increased Totem Duration, +1 to maximum number of Summoned Totems",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 489,
+      "kit_id": "poe1-totem-hierophant",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "100% increased Totem Duration, +1 to maximum number of Summoned Totems, 100% increased Totem Placement speed",
+            "effect": "100% increased Totem Duration; +1 to maximum number of Summoned Totems; 100% increased Totem Placement speed",
+            "item": "Pursuit of Faith (Hierophant ascendancy node)",
+            "type": "ascendancy_node"
+          },
+          {
+            "anchor_quote": "5% more Damage per Summoned Totem, Regenerate 0.5% of Mana per second for each Summoned Totem",
+            "effect": "5% more Damage per Summoned Totem; Regenerate 0.5% Mana per second per Totem; 1% Life regen per second per Totem",
+            "item": "Ritual of Awakening (Hierophant ascendancy node)",
+            "type": "ascendancy_node"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Hierophant"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "totems last approximately 8 seconds while casting 40% slower; base range of 60 units",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 488,
+      "kit_id": "poe1-totem-hierophant",
+      "payload_json": {
+        "verbatim": "totem placed at target location; casts supported spell independently; totem range 60 units; totems last ~8 seconds; cast 40% slower than player; multiple totem placements spread AoE coverage"
+      },
+      "source_url": "https://poedb.tw/us/Spell_Totem_Support"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "take Ancestral Bond in the Passive Skill Tree; Hierophant chosen because Pursuit of Faith and Ritual of Awakening Passives provide totem benefits; patch 3.5 adds Multiple Totems Support Gem, increasing summoned Totem cap by 2",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 487,
+      "kit_id": "poe1-totem-hierophant",
+      "payload_json": {
+        "description": "Place Spell Totems that cast your linked spell independently while you reposition. Take Ancestral Bond keystone to prevent self-damage in exchange for up to 6 active totems (with Multiple Totems Support, 3.5+). Hierophant's Pursuit of Faith and Ritual of Awakening passives boost totem damage and count."
+      },
+      "source_url": "https://odealo.com/articles/arc-hexa-spell-totem-hierophant-build-odealos-crafty-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[3.22]Holy Flame Totem Hierophant Starter Build; [3.22]Freezing Pulse Totem Hiero; [3.15]Forbidden Rite Totem Hierophant",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 492,
+      "kit_id": "poe1-totem-hierophant",
+      "payload_json": {
+        "list": [
+          "Arc Hexa-Totem Hiero — 3.5/3.6 canonical form",
+          "Holy Flame Totem Hiero — modern league starter form",
+          "Freezing Pulse Totem Hiero — cold variant",
+          "Forbidden Rite Totem Hiero — 3.15 chaos variant"
+        ]
+      },
+      "source_url": "https://odealo.com/articles/arc-hexa-spell-totem-hierophant-build-odealos-crafty-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "unknown",
+    "cell_key": "full-move|blank|blank|totem|blank|unknown|blank|unknown|heavy|melee|low|instant|unknown|unknown",
+    "ctrl_ailment_gaps": null,
+    "ctrl_ailments_mapped": null,
+    "ctrl_function": "unknown",
+    "ctrl_treatment": null,
+    "def_bin": null,
+    "def_conf": null,
+    "def_riders": null,
+    "delivery_value": null,
+    "dependency_val": "unknown",
+    "econ_gaps": null,
+    "econ_meter_type": null,
+    "econ_status": null,
+    "economy_model": "unknown",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "mint-dossier-fold12-2026-07-13",
+    "geometry_value": "totem",
+    "kit_id": "poe1-totem-hierophant",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": null,
+    "provenance_json": {
+      "authority": "gandalf returns-adjudication 2026-07-13",
+      "geo_descriptor": "at-target totem placement; ancestral totems persist, wide ground-slam",
+      "geometry_rule_fired": "mint-dossier-curation",
+      "mob_descriptor": "FULL mobility while totems persist",
+      "source": "mint-dossier-fold12-2026-07-13"
+    },
+    "raw_json": {
+      "flags": [],
+      "geometry_value": "totem",
+      "kit_id": "poe1-totem-hierophant",
+      "mob_policy_while_casting": "full-move",
+      "route": null,
+      "row_class": "combat-kit",
+      "source": "mint-dossier-fold12-2026-07-13"
+    },
+    "resource_verbatim": null,
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-totem-hierophant",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "placed proxy caster: totem at target location independently casts the player's LINKED spell (Arc / Holy Flame / Freezing Pulse / Forbidden Rite era-variants); ~8s lifetime, casts 40% slower than the player, 60-unit range, up to 6 active (Multiple Totems 3.5+). Element slots neutral — the chassis takes whatever spell is socketed; variant elements live on the linked spell.",
+      "source_skill": "Spell Totem (linked spell)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-totem-hierophant",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "What the Hierophant would miss: six simultaneous totems (engine proxy counts are lower), the hard you-cannot-deal-damage keystone contract, and the 40%-slower proxy-cast tax as an explicit chassis parameter. Place-totems-and-kite with fewer proxies reads 'totem hiero, worse' — identity approximated, not absent.",
+    "grade": "APPROX",
+    "kit_id": "poe1-totem-hierophant",
+    "mapping_json": {
+      "fidelity_notes": "Proxy-executes-your-linked-skill = on-cast-linked/linked-cast at DEPTH-1 (b04 generals-cry precedent; MAX_CHAIN_DEPTH=1 holds — the totem's cast is terminal). Ancestral Bond's player-damage-PROHIBITION has no hard lane; its strategic content (proxy supremacy for count/power) is expressed by PROXY_ASCENSION + PROXY_CONVERGENCE. Eras NULL (Unattested Register, DB-only census) — not a mapping surface. Quantitative mint-candidate filed: simultaneous totem count to 6 (graded as if un-minted).",
+      "motion_frame": "place-and-reposition: drop spell totems that cast for you (Ancestral Bond — you never deal damage directly), then kite",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "placement cadence vs totem lifetime",
+            "Ancestral Bond: ALL damage outsourced to proxies"
+          ],
+          "geometry": [
+            "totem placement spread as AoE coverage",
+            "totem range"
+          ],
+          "traits_affixes": [
+            "totem-damage passives (Pursuit of Faith / Ritual of Awakening analog ranks)",
+            "totem-count affixes",
+            "cast-speed"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "placed proxy caster: totem at target location independently casts the player's LINKED spell (Arc / Holy Flame / Freezing Pulse / Forbidden Rite era-variants); ~8s lifetime, casts 40% slower than the player, 60-unit range, up to 6 active (Multiple Totems 3.5+). Element slots neutral — the chassis takes whatever spell is socketed; variant elements live on the linked spell.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Spell Totem (linked spell)"
+        }
+      ],
+      "t4_doors": [
+        "PROXY_ASCENSION",
+        "PROXY_CONVERGENCE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Totem Hierophant: totem summon_delegate identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-totem-hierophant",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": null,
+    "amp_val": null,
+    "architecture": null,
+    "atlas_coords": "full-move|blank|blank|totem|blank|unknown|blank|unknown|heavy|melee|low|instant|unknown|unknown",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|blank|blank|totem|blank|unknown|blank|unknown|heavy|melee|low|instant|unknown|unknown",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "blank"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "blank"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "totem"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "blank"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "unknown"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "blank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "unknown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "heavy"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "unknown"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "unknown"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMLHHI-~~",
+    "attr_conf": null,
+    "attr_val": "STR",
+    "avg_conf": null,
+    "canon_tier": null,
+    "capstone_source_acquisition": null,
+    "commit_conf": null,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": null,
+    "core_skills_prov": null,
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 0,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": null,
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": null,
+    "eras_normalized": null,
+    "flags": null,
+    "folk_name": "Totem Hierophant",
+    "game": "poe1",
+    "geo_raw": null,
+    "grain": "kit",
+    "grain_note": null,
+    "gx": null,
+    "is_system": 0,
+    "key_completeness": null,
+    "kit_id": "poe1-totem-hierophant",
+    "lattice_coord": "SMLHHI",
+    "lineage": null,
+    "mech_note": "Ancestral Warchief / Ancestral Protector place melee totems that auto-attack; Hierophant node chain allows 2+ simultaneous. The genre's canonical totem-placer identity.",
+    "mint": 1,
+    "mob_raw": null,
+    "mobile_blocking_mechanics": null,
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": null,
+    "mobile_key_group": null,
+    "mobile_mechanics_status": null,
+    "mobile_rank_in_cell": null,
+    "mobile_representative": null,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "mint-dossier",
+    "provenance_tag": "mint-dossier-reexpressed",
+    "proxy_conf": null,
+    "proxy_val": "heavy",
+    "pull_pending_vocab": 0,
+    "range_conf": null,
+    "range_val": "melee",
+    "skill_debut_year": 2016,
+    "source": "mint",
+    "source_date": "2026-07-12",
+    "source_urls": [
+      "https://www.poewiki.net/wiki/Ancestral_Warchief",
+      "https://www.poewiki.net/wiki/Ancestral_Protector",
+      "https://www.pathofexile.com/forum/view-thread/2769163",
+      "https://www.angryroleplayer.com/path-of-exile-builds/ancestral-warchief-chieftain-path-of-exile-build/"
+    ],
+    "stabilization_patch": "2.3.0",
+    "suffix_rekey_status": "complete-kit-mapping",
+    "tempo_conf": null,
+    "tempo_val": "low",
+    "tier": null,
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era stamps absent from DB — cannot verify era claims",
+      "errata_applied": 0,
+      "id": 290,
+      "kit_id": "poe1-totem-hierophant",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Arc Hexa-Spell Totem Hierophant build; Assistance with Ancestral Bond Hierophant build — Hierophant is perfectly suited for Spell Totems",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Totem Hierophant' is real community usage; aliases 'Spell Totem Hiero', 'Totems Hiero', 'Ancestral Bond' are real community usage",
+      "errata_applied": 0,
+      "id": 288,
+      "kit_id": "poe1-totem-hierophant",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/arc-hexa-spell-totem-hierophant-build-odealos-crafty-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "take Ancestral Bond in the Passive Skill Tree; Hierophant chosen because Pursuit of Faith and Ritual of Awakening Passives provide totem benefits; Spell Totem Support confirmed",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Spell Totem and Ancestral Warchief; Hierophant class; Ancestral Bond keystone",
+      "errata_applied": 0,
+      "id": 289,
+      "kit_id": "poe1-totem-hierophant",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/arc-hexa-spell-totem-hierophant-build-odealos-crafty-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "placed proxy caster: totem at target location independently casts the player's LINKED spell (Arc / Holy Flame / Freezing Pulse / Forbidden Rite era-variants); ~8s lifetime, casts 40% slower than the player, 60-unit range, up to 6 active (Multiple Totems 3.5+). Element slots neutral — the chassis takes whatever spell is socketed; variant elements live on the linked spell.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Spell Totem (linked spell)' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (1 sig)",
+      "errata_applied": 0,
+      "id": 2483,
+      "kit_id": "poe1-totem-hierophant",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

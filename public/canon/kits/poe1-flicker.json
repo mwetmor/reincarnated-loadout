@@ -1,0 +1,764 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 583,
+      "assert_text": "primary_delivery_class == 'motion'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-flicker",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 108,
+    "kit_id": "poe1-flicker",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Flicker Strike — PoEDB",
+    "url": "https://poedb.tw/us/Flicker_Strike"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 108,
+      "kit_id": "poe1-flicker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Flicker Strike — PoEDB",
+      "url": "https://poedb.tw/us/Flicker_Strike"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Spacefight0r#5392",
+      "cite_class": "communal",
+      "id": 109,
+      "kit_id": "poe1-flicker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "[3.9] Raider Flicker Strike (10-15 million Shaper DPS)",
+      "url": "https://www.pathofexile.com/forum/view-thread/2731202"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "ACGIFT#1167",
+      "cite_class": "communal",
+      "id": 110,
+      "kit_id": "poe1-flicker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "[3.20] Oro's Flickering Flame Slayer: League-start-capable Flicker Strike",
+      "url": "https://www.pathofexile.com/forum/view-thread/3325373"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-flicker",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 548,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-flicker",
+      "missing_expression": "The teleport-strike + charge-fuelled auto-chaining lands via dash_attack + charge-cycle economy + TEMPORAL_CHARGE, but two behavioral signatures generalize: (a) Flicker teleports to a RANDOM nearby enemy each hop (dash_attack models a directed reposition, not random target-hop selection);",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The teleport-strike + charge-fuelled auto-chaining lands via dash_attack + charge-cycle economy + TEMPORAL_CHARGE, but two behavioral signatures generalize: (a) Flicker teleports to a RANDOM nearby enemy each hop (dash_attack models a directed reposition, not random target-hop selection); (b) the hard dependency where running out of charges STOPS the build cold is a numeric-sustain property, not a bespoke mechanism. A player keeps the 'blink-strike a screen while holding one button' feel; the frantic random-hop chaos and the charge-starvation failure state are approximated."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 221,
+      "kit_id": "poe1-flicker",
+      "payload_json": {
+        "credits": [
+          {
+            "handle": "Spacefight0r#5392",
+            "note": "3.9 Raider Flicker Strike guide",
+            "site": "pathofexile.com/forum"
+          },
+          {
+            "handle": "ACGIFT#1167",
+            "note": "3.20 Oro's Flickering Flame Slayer guide",
+            "site": "pathofexile.com/forum"
+          }
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2731202"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "50% increased Critical Strike Chance per Power Charge",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 220,
+      "kit_id": "poe1-flicker",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "50% increased Critical Strike Chance per Power Charge",
+            "effect": "50% increased Critical Strike Chance per Power Charge",
+            "node": "Flicker Strike of Power (transfig)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Flicker_Strike"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Terminus Est enables early gameplay... Farrul's Fur to be able to sustain Frenzy and Power charges.",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 219,
+      "kit_id": "poe1-flicker",
+      "payload_json": {
+        "key_items": [
+          "Terminus Est (frenzy charge on kill — enables early sustain)",
+          "Farrul's Fur (Frenzy and Power charge sustain alternative)",
+          "Oro's Sacrifice (frenzy charge on ignite — alternative sustain)",
+          "Blood Rage (life flask generating frenzy charges)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2731202"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Increases or reductions to Melee Strike Range have no special interaction with flicker — you neither land farther away nor initiate from farther away.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 218,
+      "kit_id": "poe1-flicker",
+      "payload_json": {
+        "aoe": null,
+        "delivery": "teleport to target enemy (melee range on arrival)",
+        "footprint": "single target only",
+        "projectile": false,
+        "range_text": "Teleports the character to a nearby monster... Increases or reductions to Melee Strike Range have no special interaction with flicker"
+      },
+      "source_url": "https://poedb.tw/us/Flicker_Strike"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Cooldown: 2.00 seconds (bypassed by spending a Frenzy Charge). Raider has innate Frenzy charge generation.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 217,
+      "kit_id": "poe1-flicker",
+      "payload_json": {
+        "summary": "Player activates Flicker Strike consuming one Frenzy Charge to bypass 2s cooldown and teleport-strike a random nearby enemy; skill chains automatically from target to target as long as Frenzy Charges are generated via kills, Blood Rage, or Raider passives; screen clears itself while player holds one button."
+      },
+      "source_url": "https://poedb.tw/us/Flicker_Strike"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Slayer ascendancy... recommended over Raider due to lower investment requirements.",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 222,
+      "kit_id": "poe1-flicker",
+      "payload_json": {
+        "variants": [
+          "Terminus Est frenzy-on-kill (classic league starter)",
+          "Oro's Sacrifice ignite-sustain Slayer (3.20+)",
+          "Raider (frenzy passive generation, evasion focus)",
+          "Slayer (Bane of Legends boss DPS, Brutal Charge)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3325373"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|dash_attack|damage|none|mitigate|generator-spender|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "charge",
+    "econ_status": "native-partial",
+    "economy_model": "generator-spender",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R0a-dash",
+    "geometry_value": "dash_attack",
+    "kit_id": "poe1-flicker",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 1,
+    "mob_verbs": [
+      "dash"
+    ],
+    "provenance_json": {
+      "atlas_key": "DMHFSI-KNDD-AM-PH-~~",
+      "delivery": "at-target",
+      "elem_raw": "physical",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "charge",
+        "status": "native-partial"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R0a-dash",
+        "value": "dash_attack"
+      },
+      "flags": [],
+      "folk_name": "Flicker Strike",
+      "game": "poe1",
+      "kit_id": "poe1-flicker",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": true,
+        "verbs": [
+          "dash"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DMHFSI-KNDD-AM-PH-~~",
+        "delivery": "at-target",
+        "elem_raw": "physical",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "charge",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-flicker",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "teleport-strike: the player vanishes and reappears in melee range of a nearby enemy AND lands the hit in one action, then auto-repeats target-to-target while Frenzy Charges last. Physical melee -> element-neutral (physical rule; elem_raw=physical is flavor only). Engine's own derivation rule (physical + teleport-effect -> dash_attack) corroborates dash_attack over teleport (which is the non-physical reposition member). The 'random nearby target each hop' auto-chaining is a behavioral property of the repeated dash, not a distinct 26-geometry",
+      "source_skill": "Flicker Strike",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-flicker",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The teleport-strike + charge-fuelled auto-chaining lands via dash_attack + charge-cycle economy + TEMPORAL_CHARGE, but two behavioral signatures generalize: (a) Flicker teleports to a RANDOM nearby enemy each hop (dash_attack models a directed reposition, not random target-hop selection); (b) the hard dependency where running out of charges STOPS the build cold is a numeric-sustain property, not a bespoke mechanism. A player keeps the 'blink-strike a screen while holding one button' feel; the frantic random-hop chaos and the charge-starvation failure state are approximated.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-flicker",
+    "mapping_json": {
+      "fidelity_notes": "CHARGE-CYCLE teleport-striker. Identity = 'spend a Frenzy Charge to bypass cooldown and teleport-strike; sustain charges via kills to hold the loop'. charge_stack_sub_shape=cycle (accumulate-then-spend rhythm, not a pure accumulator) captures the generate/consume treadmill; TEMPORAL_CHARGE is the charge-engine T4 door. PHASE_MOMENTUM as secondary (the repeated blink-reposition reads as phase-cycling movement). Physical rule: physical melee -> element-neutral; Terminus Est / Oro's / Blood Rage are the charge-sustain items (economy lane, not element). The auto-teleport-to-a-RANDOM-nearby-enemy is the signature feel; dash_attack carries the reposition-strike but not the randomness of target selection (a behavioral property). Slayer/Raider variants swap the sustain source (ignite vs frenzy-passive) but keep the identity.",
+      "motion_frame": "movement-IS-attack: hold one button, the character blinks enemy-to-enemy striking on each arrival; positioning is automatic, the loop is charge-fuelled teleport-strikes",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "cycle"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Frenzy-charge cycle: kills/Blood-Rage/Raider generate, each Flicker spends one to bypass the 2s cooldown",
+            "charge-sustain is the entire viability gate"
+          ],
+          "geometry": [
+            "dash_attack teleport-strike",
+            "multistrike/attack-speed (hop cadence)"
+          ],
+          "traits_affixes": [
+            "frenzy-charge-max",
+            "attack-speed",
+            "evasion (Raider defensive)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "teleport-strike: the player vanishes and reappears in melee range of a nearby enemy AND lands the hit in one action, then auto-repeats target-to-target while Frenzy Charges last. Physical melee -> element-neutral (physical rule; elem_raw=physical is flavor only). Engine's own derivation rule (physical + teleport-effect -> dash_attack) corroborates dash_attack over teleport (which is the non-physical reposition member). The 'random nearby target each hop' auto-chaining is a behavioral property of the repeated dash, not a distinct 26-geometry",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "dash_attack",
+          "source_skill": "Flicker Strike"
+        }
+      ],
+      "t4_doors": [
+        "TEMPORAL_CHARGE",
+        "PHASE_MOMENTUM"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 143,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 144,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Auto-teleporting melee strike chains from enemy to enemy fueled by frenzy charges",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 141,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "charge",
+        "model": "meter",
+        "plain_text": "charge (meter); Auto-teleporting strike chains from enemy to enemy fueled by frenzy charges — th",
+        "resource_verbatim": "charge"
+      },
+      "family": "economy",
+      "id": 145,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 146,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Single enemy at time; teleports between targets; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 142,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. Auto-teleporting strike chains from enemy to enemy fueled by frenzy charges  —  the screen plays itself while the pilot holds one button; the.",
+      "family": "geo_text",
+      "id": 148,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": true,
+        "verbs": [
+          "dash"
+        ]
+      },
+      "family": "movement",
+      "id": 147,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 149,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 150,
+      "kit_id": "poe1-flicker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Flicker Strike: dash attack motion identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-flicker",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|dash_attack|damage|none|mitigate|generator-spender|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|dash_attack|damage|none|mitigate|generator-spender|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "dash_attack"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "generator-spender"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMHFSI-KNDD-AM-PH-~~",
+    "attr_conf": 0.82,
+    "attr_val": "DEX",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Flicker Strike",
+      "Frenzy"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "charge-consumer",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "1.x;2.x;3.0-3.6;3.7-3.13;3.20+",
+    "eras_normalized": "1.x;2.x;3.0-3.6;3.7-3.13;3.20+",
+    "flags": "",
+    "folk_name": "Flicker Strike",
+    "game": "poe1",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-02 GAP-P1-03",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-flicker",
+    "lattice_coord": "DMHFSI",
+    "lineage": "",
+    "mech_note": "Auto-teleporting strike chains from enemy to enemy fueled by frenzy charges — the screen plays itself while the pilot holds one button; the ",
+    "mint": 0,
+    "mob_raw": "skill-IS-movement",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×GAP-P1-02",
+    "mobile_key_group": "DMHFSI-KNDD-AM-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.9] Raider Flicker Strike (10-15 million Shaper DPS) ... [3.20] Oro's Flickering Flame Slayer: League-start-capable Flicker Strike",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras: 1.x, 2.x, 3.0-3.6, 3.7-3.13, 3.20+",
+      "errata_applied": 0,
+      "id": 121,
+      "kit_id": "poe1-flicker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2731202",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Raider has innate Frenzy charge generation, high movement speed, and high evasion. [Terminus Est enables early gameplay]",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Flicker Strike' and alias 'Terminus Est flicker' are real community usage",
+      "errata_applied": 0,
+      "id": 119,
+      "kit_id": "poe1-flicker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2731202",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Teleports the character to a nearby monster and attacks with a melee weapon... Cooldown: 2.00 seconds (bypassed by spending a Frenzy Charge)",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Flicker Strike and Frenzy; frenzy charges sustain teleporting melee chain",
+      "errata_applied": 0,
+      "id": 120,
+      "kit_id": "poe1-flicker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Flicker_Strike",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "teleport-strike: the player vanishes and reappears in melee range of a nearby enemy AND lands the hit in one action, then auto-repeats target-to-target while Frenzy Charges last. Physical melee -> element-neutral (physical rule; elem_raw=physical is flavor only). Engine's own derivation rule (physical + teleport-effect -> dash_attack) corroborates dash_attack over teleport (which is the non-physical reposition member). The 'random nearby target each hop' auto-chaining is a behavioral property of",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Flicker Strike' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (4 sig)",
+      "errata_applied": 0,
+      "id": 2417,
+      "kit_id": "poe1-flicker",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

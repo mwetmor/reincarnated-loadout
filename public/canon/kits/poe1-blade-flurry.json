@@ -1,0 +1,758 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 554,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-blade-flurry",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "LiftingNerdBro#1842",
+    "cite_class": "authored",
+    "id": 33,
+    "kit_id": "poe1-blade-flurry",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "pathofexile.com/forum",
+    "title": "[2.5] Assassin CI Blade Flurry End-Game Build! [HC/SC]",
+    "url": "https://www.pathofexile.com/forum/view-thread/1775250"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "LiftingNerdBro#1842",
+      "cite_class": "authored",
+      "id": 33,
+      "kit_id": "poe1-blade-flurry",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com/forum",
+      "title": "[2.5] Assassin CI Blade Flurry End-Game Build! [HC/SC]",
+      "url": "https://www.pathofexile.com/forum/view-thread/1775250"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 34,
+      "kit_id": "poe1-blade-flurry",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poedb.tw",
+      "title": "Blade Flurry - poedb.tw",
+      "url": "https://poedb.tw/us/Blade_Flurry"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-blade-flurry",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 517,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-blade-flurry",
+      "missing_expression": "The channel-stack-release identity lands via PC tick-cost channel + charge-stack accumulator + TEMPORAL_CHARGE, but the frontal close-range AoE geometry ('circle in front of player') has no exact 26-type — approximated to melee_arc (neither the whirlwind-spin nor cone-breath fit).",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The channel-stack-release identity lands via PC tick-cost channel + charge-stack accumulator + TEMPORAL_CHARGE, but the frontal close-range AoE geometry ('circle in front of player') has no exact 26-type — approximated to melee_arc (neither the whirlwind-spin nor cone-breath fit). A player keeps the build-6-stages-and-detonate commitment feel; the precise frontal-circle footprint is generalized to a wide melee arc."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 71,
+      "kit_id": "poe1-blade-flurry",
+      "payload_json": {
+        "handle": "LiftingNerdBro#1842",
+        "site": "pathofexile.com/forum",
+        "url": "https://www.pathofexile.com/forum/view-thread/1775250"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1775250"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Unstable Infusion --> Deadly Infusion --> Noxious Strike --> Toxic Delivery",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 70,
+      "kit_id": "poe1-blade-flurry",
+      "payload_json": {
+        "ascendancy_primary": "Assassin",
+        "ascendancy_secondary": "Champion",
+        "assassin_nodes_2x": [
+          "Unstable Infusion",
+          "Deadly Infusion",
+          "Noxious Strike",
+          "Toxic Delivery"
+        ],
+        "champion_note": "Champion used in impale-stacking physical variants (3.13+) for Inspiriting Cry + Intimidate."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1775250"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Voidheart ring (applies poison/bleed), Kiara's Determination (flask preventing stuns/curses)",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 69,
+      "kit_id": "poe1-blade-flurry",
+      "payload_json": {
+        "alteration": "Applies poison and bleed on hit, synergizing with physical melee.",
+        "key_item": "Voidheart (ring)",
+        "secondary_alteration": "Prevents stun/curse during channel, protecting the rooted channel phase.",
+        "secondary_item": "Kiara's Determination (flask)",
+        "tertiary_alteration": "Socketed hex curses do not apply mana reservation.",
+        "tertiary_item": "Heretic's Veil (helmet)"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1775250"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Repeatedly hit enemies in a circle in front of you while channelling... Damage area: 14 units, Channelling targeting area: 17 units, Release targeting area: 19 units",
+      "conf": 0.92,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 68,
+      "kit_id": "poe1-blade-flurry",
+      "payload_json": {
+        "geometry_note": "Rooted while channelling — player cannot move during stage accumulation.",
+        "verbatim": "Self-origin delivery in a small radius around the player. During channel: 14-unit damage radius, 17-unit targeting radius. On release: 19-unit release radius. Circle in front of player. Concentrated Effect (boss) vs Increased Area of Effect (mapping) swap."
+      },
+      "source_url": "https://poedb.tw/us/Blade_Flurry"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Channel to stack, release to detonate the stored stacks in one burst — the channel-and-release commitment archetype.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 67,
+      "kit_id": "poe1-blade-flurry",
+      "payload_json": {
+        "description": "Hold channel to accumulate stages (each stage: 25% more damage); max 6 stages. On release, deal the channelled damage plus one additional hit per stage. For bosses: channel to 6 stages, release. For mapping: channel briefly and keep moving. Ancestral Warchief totems placed nearby provide additional melee damage buff during channel."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1775250"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 72,
+      "kit_id": "poe1-blade-flurry",
+      "payload_json": {
+        "named_variants": [
+          "Assassin CI Blade Flurry (LiftingNerdBro, 2.5)",
+          "Champion Impale Blade Flurry (3.13+)",
+          "Gladiator Blade Flurry (spell block variant)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1775250"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|self-origin|spiky|circle|damage|none|mitigate|spend|solo|melee|med|channel|active|apply→detonate",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.72,
+    "geometry_rule_fired": "R8-self-circle",
+    "geometry_value": "circle",
+    "kit_id": "poe1-blade-flurry",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "DMMSSC-RSDD-SP-PH-~~",
+      "delivery": "self-origin",
+      "elem_raw": "physical",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.72,
+        "rule_fired": "R8-self-circle",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Blade Flurry",
+      "game": "poe1",
+      "kit_id": "poe1-blade-flurry",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DMMSSC-RSDD-SP-PH-~~",
+        "delivery": "self-origin",
+        "elem_raw": "physical",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-blade-flurry",
+      "motion_signature": "arc_sweep",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "channel to accumulate up to 6 stages (each +25% more damage); on release, detonate the stored stages in one burst (extra hit per stage). Self-origin frontal close-range AoE (dossier: 'circle in front of player', small radius) -> melee_arc (wide frontal melee) is the closest 26-type. Rooted while channelling. Physical melee -> element-neutral (physical rule); Voidheart ring applies poison + bleed on hit",
+      "source_skill": "Blade Flurry",
+      "speed_band": null,
+      "width_band": "wide"
+    }
+  ],
+  "kit_id": "poe1-blade-flurry",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The channel-stack-release identity lands via PC tick-cost channel + charge-stack accumulator + TEMPORAL_CHARGE, but the frontal close-range AoE geometry ('circle in front of player') has no exact 26-type — approximated to melee_arc (neither the whirlwind-spin nor cone-breath fit). A player keeps the build-6-stages-and-detonate commitment feel; the precise frontal-circle footprint is generalized to a wide melee arc.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-blade-flurry",
+    "mapping_json": {
+      "fidelity_notes": "CHANNEL-AND-RELEASE charge archetype: the identity is stack-via-channel (6 stages, +25% more each) then release-to-detonate. Lands via resource_economy PC (persistent_condition_shape=tick-cost for the channel-maintain) + charge_stack_sub_shape=accumulator (the 6-stage build), with TEMPORAL_CHARGE / MOMENTUM_CASCADE as the T4 charge-engine door. The 'rooted while channelling' commitment is a behavioral property of the tick-cost channel. PHYSICAL RULE: physical melee -> element-neutral (flavor only); Voidheart ring applies poison + bleed on hit -> both ailment lanes. GEOMETRY FRICTION: dossier says 'self-origin small radius around player, circle in front of player' — NOT a spin (whirlwind) nor a breath (cone); the honest closest 26-type is melee_arc (wide frontal melee swing). The Conc-Effect(boss)/Increased-AoE(mapping) swap is a radius trait-toggle. Ancestral Warchief totem buff is a secondary support (totem geometry) not central to the dominant channel loop.",
+      "motion_frame": "channel-and-commit melee: root in place, hold to build 6 stages, release to detonate the stored burst — a positioning-commitment archetype",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator",
+        "persistent_condition_shape": "tick-cost"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "channel tick-cost (PC persistent_condition)",
+            "stage-accumulator charge-stack (6-stage cap, +25%/stage)",
+            "release-burst on stack-consume"
+          ],
+          "geometry": [
+            "melee_arc frontal close-AoE",
+            "Conc-Effect (boss) vs Increased-AoE (mapping) radius swap"
+          ],
+          "traits_affixes": [
+            "physical/attack scaling",
+            "poison-scaling",
+            "bleed-scaling (Voidheart)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "poison",
+            "bleed"
+          ],
+          "delivery_notes": "channel to accumulate up to 6 stages (each +25% more damage); on release, detonate the stored stages in one burst (extra hit per stage). Self-origin frontal close-range AoE (dossier: 'circle in front of player', small radius) -> melee_arc (wide frontal melee) is the closest 26-type. Rooted while channelling. Physical melee -> element-neutral (physical rule); Voidheart ring applies poison + bleed on hit",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_arc",
+          "source_skill": "Blade Flurry"
+        }
+      ],
+      "t4_doors": [
+        "TEMPORAL_CHARGE",
+        "MOMENTUM_CASCADE"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 913,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 914,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.77,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.77,
+        "evidence": "Blades accumulate around player body; released as burst from self on channel-end",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 911,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Channel to stack, release to detonate the stored stacks in one burst — the chann",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 915,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 916,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Blades accumulate in small radius around player; burst at release; geo=small-AOE",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 912,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with small-radius footprint. Channel to stack, release to detonate the stored stacks in one burst  —  the channel-and-release commitment archetype.",
+      "family": "geo_text",
+      "id": 918,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 917,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 919,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 920,
+      "kit_id": "poe1-blade-flurry",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Blade Flurry: melee arc melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-blade-flurry",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.85,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "rooted|self-origin|spiky|circle|damage|none|mitigate|spend|solo|melee|med|channel|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|self-origin|spiky|circle|damage|none|mitigate|spend|solo|melee|med|channel|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMMSSC-RSDD-SP-PH-~~",
+    "attr_conf": 0.85,
+    "attr_val": "DEX",
+    "avg_conf": 0.85,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.85,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Blade Flurry"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-per-tick",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "2.x;3.0-3.6",
+    "eras_normalized": "2.x;3.0-3.6",
+    "flags": "",
+    "folk_name": "Blade Flurry",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-04",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-blade-flurry",
+    "lattice_coord": "DMMSSC",
+    "lineage": "",
+    "mech_note": "Channel to stack, release to detonate the stored stacks in one burst — the channel-and-release commitment archetype.",
+    "mint": 0,
+    "mob_raw": "rooted-while-channel",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|SMALL|CHAN×GAP-P1-04",
+    "mobile_key_group": "DMMSSC-RSDD-SP-PH-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.85,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.85,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.85,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The skill was first added in patch 2.4.2",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 2.x, 3.0-3.6",
+      "errata_applied": 0,
+      "id": 44,
+      "kit_id": "poe1-blade-flurry",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Blade_Flurry",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[2.5 Video Guide] Assassin CI Blade Flurry End-Game Build! [HC/SC]",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Blade Flurry' (no aliases) is real community usage; class Assassin/Champion",
+      "errata_applied": 0,
+      "id": 41,
+      "kit_id": "poe1-blade-flurry",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1775250",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Repeatedly hit enemies in a circle in front of you while channelling, dealing damage to and around the enemy. The damage is continually boosted while channelling.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Blade Flurry: channel to stack stages up to 6, release to detonate stored stacks in burst; 25% more damage per stage; self-origin small-radius; rooted while channelling",
+      "errata_applied": 0,
+      "id": 42,
+      "kit_id": "poe1-blade-flurry",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Blade_Flurry",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "25% more Damage with Hits and Ailments for each stage. Maximum 6 Stages. You unleash an additional hit for each stage reached once the channelling ends.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Release burst and 6-stage cap",
+      "errata_applied": 0,
+      "id": 43,
+      "kit_id": "poe1-blade-flurry",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Blade_Flurry",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "channel to accumulate up to 6 stages (each +25% more damage); on release, detonate the stored stages in one burst (extra hit per stage). Self-origin frontal close-range AoE (dossier: 'circle in front of player', small radius) -> melee_arc (wide frontal melee) is the closest 26-type. Rooted while channelling. Physical melee -> element-neutral (physical rule); Voidheart ring applies poison + bleed on hit",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Blade Flurry' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2) but 'zone' more strongly (5) — mixed signal",
+      "errata_applied": 0,
+      "id": 2383,
+      "kit_id": "poe1-blade-flurry",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

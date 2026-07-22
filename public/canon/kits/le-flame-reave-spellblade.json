@@ -1,0 +1,837 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1094,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-flame-reave-spellblade",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 511,
+    "kit_id": "le-flame-reave-spellblade",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Flame Reave Spellblade Guide for Last Epoch Season 4",
+    "url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 511,
+      "kit_id": "le-flame-reave-spellblade",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Flame Reave Spellblade Guide for Last Epoch Season 4",
+      "url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 513,
+      "kit_id": "le-flame-reave-spellblade",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forum.lastepoch.com",
+      "title": "Searing Blade Pure Flame Reave Spellblade Build Showcase [1.1.7.8]",
+      "url": "https://forum.lastepoch.com/t/searing-blade-pure-flame-reave-spellblade-build-showcase-1-1-7-8/74646"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 512,
+      "kit_id": "le-flame-reave-spellblade",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "forum.lastepoch.com",
+      "title": "1 to 75 Flame Reave SpellBlade | Leveling Guide | 0.8.4F",
+      "url": "https://forum.lastepoch.com/t/1-to-75-flame-reave-spellblade-leveling-guide-0-8-4f/47091"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-flame-reave-spellblade",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 946,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-flame-reave-spellblade",
+      "missing_expression": "Cone melee AoE maps directly.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Cone melee AoE maps directly. Source player would miss (1) the Sunwreath cone->giant-circle transform that redefines clear geometry (approximated by GEOMETRY_COLLAPSE, not a native cone->ring swap), and (2) the aura-consume-for-mana self-refund loop (Flame Drinker) — an unusual sustain cadence the engine notes but does not natively model as an aura-spend."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Written by Lizard_IRL. Content Reviewed by Volca.",
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1151,
+      "kit_id": "le-flame-reave-spellblade",
+      "payload_json": {
+        "handle": "Lizard_IRL",
+        "reviewer": "Volca",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1150,
+      "kit_id": "le-flame-reave-spellblade",
+      "payload_json": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Sunwreath completely empowers Flame Reave by changing its default cone shape into a giant circle",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1149,
+      "kit_id": "le-flame-reave-spellblade",
+      "payload_json": {
+        "key_items": [
+          "Sunwreath (cone-to-circle transform)",
+          "Jasper's Searing Pride",
+          "Boneclamor Barbute",
+          "Siphon of Anguish",
+          "Titan Heart",
+          "Truesight Glass"
+        ],
+        "notes": "Sunwreath is the build-defining AoE transform item."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Sunwreath completely empowers Flame Reave by changing its default cone shape into a giant circle that expands around you; greatly increasing its clear potential",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1148,
+      "kit_id": "le-flame-reave-spellblade",
+      "payload_json": {
+        "delivery": "at-target",
+        "description": "Flame Reave default shape is a cone AoE in front of the player from melee contact point. With Sunwreath unique, cone transforms into a giant circle expanding around the player. Close melee range.",
+        "footprint": "cone-default-or-circle-with-sunwreath"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Generate Fire Auras to consume them and generate Mana thanks to Flame Drinker...Flame Reave is your main Damage Skill",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1147,
+      "kit_id": "le-flame-reave-spellblade",
+      "payload_json": {
+        "core_cycle": "Firebrand stacks -> Enchant Weapon buff -> Flame Reave spam -> Fire Aura consumption -> Mana regeneration",
+        "summary": "Flame Reave is the primary damage skill. Hit enemies to generate Fire Auras; consume Fire Auras for Mana via Flame Drinker node. Firebrand buffs and stacks prior to Flame Reave burst. Enchant Weapon provides damage buff. Flame Ward for emergency defense."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Searing Blade Pure Flame Reave Spellblade Build Showcase [1.1.7.8]",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1152,
+      "kit_id": "le-flame-reave-spellblade",
+      "payload_json": {
+        "variants": [
+          "Firebrand Flame Reave (standard)",
+          "Searing Blade Pure Flame Reave (forum variant 1.1.7.8)",
+          "beta leveling variant 0.8.4F"
+        ]
+      },
+      "source_url": "https://forum.lastepoch.com/t/searing-blade-pure-flame-reave-spellblade-build-showcase-1-1-7-8/74646"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|at-target|flat|ground_targeted_circle|damage|none|absorb|spend|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.88,
+    "def_riders": "[\"synonym:ward\"]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.82,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "le-flame-reave-spellblade",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IMHFSI-HSDM-SP-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "Fire",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.88,
+        "riders": [
+          "synonym:ward"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.82,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Flame Reave Spellblade",
+      "game": "le",
+      "kit_id": "le-flame-reave-spellblade",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IMHFSI-HSDM-SP-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "Fire",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-flame-reave-spellblade",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Default shape is a CONE AoE in front of the player from melee contact point (fetched: 'Flame Reave default shape is a cone AoE in front of the player', 'Close melee range'). Sunwreath unique transforms the cone into 'a giant circle that expands around you' — an item geometry-transform recorded as a rider (§4 mechanic-granting item); the DEFAULT cone is core. No status ailment fetched (burn not named; 'fire hit damage' is claim_text).",
+      "source_skill": "Flame Reave",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "builder_spender",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-flame-reave-spellblade",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "Buff/stack builder cast prior to Flame Reave burst (fetched: 'Firebrand buffs and stacks prior to Flame Reave burst'). Fire Auras generated on hit are consumed for Mana via Flame Drinker.",
+      "source_skill": "Firebrand",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-flame-reave-spellblade",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Cone melee AoE maps directly. Source player would miss (1) the Sunwreath cone->giant-circle transform that redefines clear geometry (approximated by GEOMETRY_COLLAPSE, not a native cone->ring swap), and (2) the aura-consume-for-mana self-refund loop (Flame Drinker) — an unusual sustain cadence the engine notes but does not natively model as an aura-spend.",
+    "grade": "CLOSE",
+    "kit_id": "le-flame-reave-spellblade",
+    "mapping_json": {
+      "fidelity_notes": "Cone melee-caster delivery maps clean. GEOMETRY_COLLAPSE T4 for the Sunwreath cone->circle build-defining transform (the AoE-shape warp IS the clear identity). The aura-consume-for-mana economy (generate Fire Auras on hit, spend them for Mana via Flame Drinker) is a distinctive builder recorded in resource_economy — a self-refunding cadence, not a standard cost. Fire Auras here are a SPENT resource (contrast le-fire-aura-spellblade where they are the DAMAGE delivery). §0 near-miss: burn WANTED but not named in fetched text — WITHHELD.",
+      "motion_frame": "Firebrand stacks -> Enchant Weapon buff -> Flame Reave spam (cone, or circle w/ Sunwreath) -> Fire Aura consumption -> Mana regeneration",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_shape": "per-cast Flame Reave spend; REFUNDED by consuming stacked Fire Auras via Flame Drinker node (aura-consume-for-mana builder — 'Generate Fire Auras to consume them and generate Mana')",
+        "resource": "mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Flame Drinker (aura-consume-for-mana)"
+          ],
+          "geometry": [
+            "Sunwreath (cone->giant circle transform)"
+          ],
+          "traits_affixes": [
+            "Jasper's Searing Pride",
+            "Titan Heart"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Default shape is a CONE AoE in front of the player from melee contact point (fetched: 'Flame Reave default shape is a cone AoE in front of the player', 'Close melee range'). Sunwreath unique transforms the cone into 'a giant circle that expands around you' — an item geometry-transform recorded as a rider (§4 mechanic-granting item); the DEFAULT cone is core. No status ailment fetched (burn not named; 'fire hit damage' is claim_text).",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "cone",
+          "source_skill": "Flame Reave"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Buff/stack builder cast prior to Flame Reave burst (fetched: 'Firebrand buffs and stacks prior to Flame Reave burst'). Fire Auras generated on hit are consumed for Mana via Flame Drinker.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Firebrand"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_COLLAPSE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "ignite"
+        ],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1723,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "layers": [
+          "shield-absorb",
+          "ward"
+        ],
+        "primary": "ward"
+      },
+      "family": "defense",
+      "id": 1724,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "evidence": "Melee sword swings create crescent fire waves at target; at-target melee delivery confirmed",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1721,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.82,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Mana spend per strike. Firebrand stacks are the secondary economy — they build on hits and convert to Ward, making each swing both offense and defense investment.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 1725,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.9,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.9,
+        "damage_mode": "hit",
+        "label_verbatim": "Fire"
+      },
+      "family": "element",
+      "id": 1726,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "evidence": "Crescent wave spreads in tight arc from melee contact point; small-radius close range confirmed",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 1722,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Spellblade executes melee sword swings emitting crescent-shaped fire waves from the blade. Firebrand stacks accumulate on hits and generate Ward. The melee contact range is close; fire wave extends slightly beyond sword reach.",
+      "family": "geo_text",
+      "id": 1728,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 1727,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=mx-le;kb",
+      "family": "rank1_upgrade",
+      "id": 1729,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb",
+        "mx-le"
+      ],
+      "family": "sources_used",
+      "id": 1730,
+      "kit_id": "le-flame-reave-spellblade",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Flame Reave Spellblade: cone zone identity",
+      "hook_type": "geometry",
+      "kit_id": "le-flame-reave-spellblade",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "le-flame-reave-spellblade",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.85,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|flat|ground_targeted_circle|damage|none|absorb|spend|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|flat|ground_targeted_circle|damage|none|absorb|spend|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IMHFSI-HSDM-SP-FI-~~",
+    "attr_conf": 0.85,
+    "attr_val": "INT",
+    "avg_conf": 0.85,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.85,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Flame Reave",
+      "Firebrand"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "builder-widened-wave",
+    "elem_raw": "fire",
+    "era_year": 2024,
+    "eras": "beta-0.8-0.9;1.0-launch;1.4-omens",
+    "eras_normalized": "beta-0.8-0.9;1.0-launch;1.4-omens",
+    "flags": "",
+    "folk_name": "Flame Reave Spellblade",
+    "game": "le",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "le-flame-reave-spellblade",
+    "lattice_coord": "IMHFSI",
+    "lineage": "",
+    "mech_note": "prov=mx-le;kb. mech_note ref: 'Melee-mage crescent waves of fire off sword swings, ward from Firebrand stacks — the battle-mage identity build since beta.' FI suffix = Fire. Ward defense = primary (Spellblade builds Ward via Firebrand + INT). Shield-split D1: this IS a Ward kit (not armor/block). Flame Reave is the foundational Spellblade skill from beta through 1.4.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×econ:spend",
+    "mobile_key_group": "IMHFSI-HSDM-SP-FI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "mx-le;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.85,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.85,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.85,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "1 to 75 Flame Reave SpellBlade | Leveling Guide | 0.8.4F — Using flame ward for defense and enchant weapon and firebrand for offense then flame reave",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: beta-0.8-0.9",
+      "errata_applied": 0,
+      "id": 691,
+      "kit_id": "le-flame-reave-spellblade",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/1-to-75-flame-reave-spellblade-leveling-guide-0-8-4f/47091",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Searing Blade Pure Flame Reave Spellblade Build Showcase [1.1.7.8]",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 692,
+      "kit_id": "le-flame-reave-spellblade",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/searing-blade-pure-flame-reave-spellblade-build-showcase-1-1-7-8/74646",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Flame Reave Spellblade Guide for Last Epoch Season 4 — Last Updated: April 8, 2026",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.4-omens",
+      "errata_applied": 0,
+      "id": 693,
+      "kit_id": "le-flame-reave-spellblade",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Flame Reave Spellblade Guide...Flame Reave is your main Damage Skill",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Flame Reave Spellblade' and alias 'Firebrand Flame Reave' are real community usage",
+      "errata_applied": 0,
+      "id": 689,
+      "kit_id": "le-flame-reave-spellblade",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Generate Fire Auras to consume them and generate Mana thanks to Flame Drinker...Sunwreath completely empowers Flame Reave by changing its default cone shape into a giant circle",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Flame Reave and Firebrand; Mana spend; at-target melee delivery; fire hit damage; Firebrand stacks convert to Ward",
+      "errata_applied": 0,
+      "id": 690,
+      "kit_id": "le-flame-reave-spellblade",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/flame-reave-spellblade-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Default shape is a CONE AoE in front of the player from melee contact point (fetched: 'Flame Reave default shape is a cone AoE in front of the player', 'Close melee range'). Sunwreath unique transforms the cone into 'a giant circle that expands around you' — an item geometry-transform recorded as a rider (§4 mechanic-granting item); the DEFAULT cone is core. No status ailment fetched (burn not named; 'fire hit damage' is claim_text).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Flame Reave' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (2 sig)",
+      "errata_applied": 0,
+      "id": 2308,
+      "kit_id": "le-flame-reave-spellblade",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Buff/stack builder cast prior to Flame Reave burst (fetched: 'Firebrand buffs and stacks prior to Flame Reave burst'). Fire Auras generated on hit are consumed for Mana via Flame Drinker.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Firebrand' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2309,
+      "kit_id": "le-flame-reave-spellblade",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,915 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 4,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 8
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 801,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-bonemancer",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Johny82PL; Schnorki (mod); Necrarch (mod)",
+    "cite_class": "communal",
+    "id": 599,
+    "kit_id": "d2-bonemancer",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "Bonemancer questions",
+    "url": "https://diablo2.io/forums/bonemancer-questions-t1471582.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Johny82PL; Schnorki (mod); Necrarch (mod)",
+      "cite_class": "communal",
+      "id": 599,
+      "kit_id": "d2-bonemancer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Bonemancer questions",
+      "url": "https://diablo2.io/forums/bonemancer-questions-t1471582.html"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "rgp151",
+      "cite_class": "communal",
+      "id": 600,
+      "kit_id": "d2-bonemancer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Bonemancer Necro success in Hell",
+      "url": "https://diablo2.io/forums/bonemancer-necro-success-in-hell-t809922.html"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-bonemancer",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 714,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-bonemancer",
+      "missing_expression": "Player would miss: Bone Spirit seeking feel (engine delivers seeking via delivery_notes only;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Player would miss: Bone Spirit seeking feel (engine delivers seeking via delivery_notes only; no native seeking geometry in 26-enum); Bone Prison cage shape (mapped circle; cage-wall feel partially approximated)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1361,
+      "kit_id": "d2-bonemancer",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "allocating points into curses like Lower Resist, Amplify Damage, and Life Tap can be helpful",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1360,
+      "kit_id": "d2-bonemancer",
+      "payload_json": {
+        "curses": [
+          "Lower Resist (group play)",
+          "Amplify Damage",
+          "Life Tap"
+        ],
+        "runewords": [
+          "White (bone skill bonus)",
+          "Heart of the Oak"
+        ],
+        "synergies": [
+          "Bone Spear ↔ Bone Spirit cross-synergy"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/bonemancer-guide-standard-for-wiki.174172/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Weapons include White, Heart of the Oak, or Wizardspike",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1359,
+      "kit_id": "d2-bonemancer",
+      "payload_json": {
+        "key_items": [
+          "White (runeword, +bone skills)",
+          "Heart of the Oak (+skills, FCR, resists)",
+          "Wizardspike (FCR + resists)",
+          "Homunculus (shield +skills)",
+          "Spirit Monarch (FCR)",
+          "Lidless Wall"
+        ],
+        "notes": "Bone armor absorb scales with +bone skills; high FCR breakpoints important for cast rate"
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/bonemancer-guide-standard-for-wiki.174172/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Bone Spear: projectile mechanics — positioning matters significantly",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1358,
+      "kit_id": "d2-bonemancer",
+      "payload_json": {
+        "delivery": "projectile (Bone Spear pierces line; Bone Spirit seeks target)",
+        "footprint": "linear pierce / point-seek",
+        "notes": "Bone Spear pierces through enemies in a line; Bone Spirit is homing single-target; Bone Prison creates cage AoE zone for immobilization",
+        "range_type": "ranged"
+      },
+      "source_url": "https://diablo2.io/forums/bonemancer-questions-t1471582.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "I use Bonespear 99% of the time",
+      "conf": 0.76,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1357,
+      "kit_id": "d2-bonemancer",
+      "payload_json": {
+        "summary": "Bone Spear is primary damage at range; Bone Spirit home-seeks single targets. Bone Prison creates immobilizing bone cage for control. Bone Armor absorbs incoming damage. Player casts from range, prisons dangerous targets, Bone Spears through crowds (pierces in line)."
+      },
+      "source_url": "https://diablo2.io/forums/bonemancer-necro-success-in-hell-t809922.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Diablo 2 Guide: Bone Necromancer v1.10 PvP",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1362,
+      "kit_id": "d2-bonemancer",
+      "payload_json": {
+        "variants": [
+          "PvP Bonemancer (Bone Spear/Spirit + Bone Prison for dueling)",
+          "PvM Bonemancer (Bone Spear + Corpse Explosion clear)"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/strategy/diablo-2-guide-bone-necromancer-v1-10-pvp"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|projectile|flat|single_target|damage|none|absorb|spend|solo|ranged|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.65,
+    "geometry_rule_fired": "R9-proj",
+    "geometry_value": "single_target",
+    "kit_id": "d2-bonemancer",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRHFSI-MNMM-SP-MA-~~",
+      "delivery": "projectile",
+      "elem_raw": "magic",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.65,
+        "rule_fired": "R9-proj",
+        "value": "single_target"
+      },
+      "flags": [],
+      "folk_name": "Bonemancer",
+      "game": "d2",
+      "kit_id": "d2-bonemancer",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRHFSI-MNMM-SP-MA-~~",
+        "delivery": "projectile",
+        "elem_raw": "magic",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bonemancer",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": "all",
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Piercing linear projectile; anchor: 'Bone Spear: projectile mechanics — positioning matters significantly'; 'I use Bonespear 99% of the time'; pierces through enemies in a line; magic/bone damage → shadow per §1 (shadow/bone/necrotic)",
+      "source_skill": "Bone Spear",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bonemancer",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Homing single-target projectile; anchor: 'Bone Spirit home-seeks single targets'; seeking delivery noted in delivery_notes",
+      "source_skill": "Bone Spirit",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bonemancer",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 2,
+      "source_anchor": "Bone cage immobilization zone placed on target; anchor: 'Bone Prison creates immobilizing bone cage for control'; root attested — 'Bone Prison creates cage AoE zone for immobilization'",
+      "source_skill": "Bone Prison",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bonemancer",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 3,
+      "source_anchor": "Absorb-hits defensive self-buff; 'Bone Armor absorbs incoming damage'; self-shield layer",
+      "source_skill": "Bone Armor",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-bonemancer",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player would miss: Bone Spirit seeking feel (engine delivers seeking via delivery_notes only; no native seeking geometry in 26-enum); Bone Prison cage shape (mapped circle; cage-wall feel partially approximated).",
+    "grade": "CLOSE",
+    "kit_id": "d2-bonemancer",
+    "mapping_json": {
+      "fidelity_notes": "Magic/bone damage → shadow per §1. Bone Prison root: attested 'bone cage for control' / 'immobilizing'. Seeking Bone Spirit = delivery note (seeking ≠ chain per §C seeking row — single-target redirect). PvM variant uses Corpse Explosion for clear — that verb is corpse-node-docket adjacent (§CROSS row 1) but is a VARIANT not core identity per variant-scope law; core loop = Bone Spear spam. PvP identity (Prison + Spear poke) captured in variant note. FCR breakpoints = economy scaffold texture.",
+      "motion_frame": "Cast Bone Spear from range through crowds; Bone Spirit home-seeks priority targets; Bone Prison cages dangerous enemies; Bone Armor maintained for damage absorption",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "Moderate mana per Bone Spear/Spirit cast; FCR breakpoints noted (item_alterations anchor: 'high FCR breakpoints important for cast rate')"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "FCR gear breakpoints"
+          ],
+          "geometry": [
+            "Bone Spear linear pierce (crowd geometry) vs Bone Spirit seek (single-target)"
+          ],
+          "traits_affixes": [
+            "Bone Spear ↔ Bone Spirit cross-synergy — §A row 1 scaffold; 'Bone Spear ↔ Bone Spirit cross-synergy' per capstone_alterations anchor"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Piercing linear projectile; anchor: 'Bone Spear: projectile mechanics — positioning matters significantly'; 'I use Bonespear 99% of the time'; pierces through enemies in a line; magic/bone damage → shadow per §1 (shadow/bone/necrotic)",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "line",
+          "source_skill": "Bone Spear"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Homing single-target projectile; anchor: 'Bone Spirit home-seeks single targets'; seeking delivery noted in delivery_notes",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Bone Spirit"
+        },
+        {
+          "ailments": [
+            "root"
+          ],
+          "delivery_notes": "Bone cage immobilization zone placed on target; anchor: 'Bone Prison creates immobilizing bone cage for control'; root attested — 'Bone Prison creates cage AoE zone for immobilization'",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "circle",
+          "source_skill": "Bone Prison"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Absorb-hits defensive self-buff; 'Bone Armor absorbs incoming damage'; self-shield layer",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Bone Armor"
+        }
+      ],
+      "t4_doors": [
+        "ZONE_CONTROL",
+        "PERSISTENCE_ENGINE_uptime",
+        "GEOMETRY_PROPAGATION_cascade"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 233,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "resist",
+          "shield-absorb"
+        ],
+        "primary": "shield-absorb"
+      },
+      "family": "defense",
+      "id": 234,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.69,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.69,
+        "evidence": "Bone Spear/Bone Spirit projectile fired toward target; piercing trajectory",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 231,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Bone Spear/Spirit magic-damage caster with Bone Prison control; PvP royalty and ",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 235,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "magic"
+      },
+      "family": "element",
+      "id": 236,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "evidence": "Bone Spear pierces in a line; single contact point at impact; geo=single",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 232,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with point footprint. Bone Spear/Spirit magic-damage caster with Bone Prison control; PvP royalty and the immunity-proof caster archetype.",
+      "family": "geo_text",
+      "id": 238,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 237,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 239,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 240,
+      "kit_id": "d2-bonemancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Bonemancer: line projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-bonemancer",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "d2-bonemancer",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.77,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|projectile|flat|single_target|damage|none|absorb|spend|solo|ranged|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|projectile|flat|single_target|damage|none|absorb|spend|solo|ranged|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "single_target"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRHFSI-MNMM-SP-MA-~~",
+    "attr_conf": 0.77,
+    "attr_val": "INT",
+    "avg_conf": 0.77,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.77,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Bone Spear",
+      "Bone Spirit",
+      "Bone Prison",
+      "Bone Armor"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": null,
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-mid",
+    "elem_raw": "magic",
+    "era_year": 2000,
+    "eras": "lod-1.10+;d2r",
+    "eras_normalized": "lod-1.10+;d2r",
+    "flags": "",
+    "folk_name": "Bonemancer",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-09",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-bonemancer",
+    "lattice_coord": "IRHFSI",
+    "lineage": "",
+    "mech_note": "Bone Spear/Spirit magic-damage caster with Bone Prison control; PvP royalty and the immunity-proof caster archetype.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×GAP-D2-09",
+    "mobile_key_group": "IRHFSI-MNMM-SP-MA-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "magic",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.77,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.77,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.77,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Bonemancer - Necromancer build specializing in bone skills... pre-Resurrected era (original D2)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod-1.10+",
+      "errata_applied": 0,
+      "id": 859,
+      "kit_id": "d2-bonemancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/bonemancer-questions-t1471582.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "bonemancer — playing D2R on single-player... Bone Spear Primary damage skill used 99% of the time",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r",
+      "errata_applied": 0,
+      "id": 860,
+      "kit_id": "d2-bonemancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/bonemancer-necro-success-in-hell-t809922.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Bonemancer is confirmed as the colloquial name for this Necromancer build variant",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name Bonemancer; aliases Bone Necromancer, Bone Spear Necro",
+      "errata_applied": 0,
+      "id": 857,
+      "kit_id": "d2-bonemancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/bonemancer-questions-t1471582.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "I use Bonespear 99% of the time... Bone Spear/Spirit magic-damage caster with Bone Prison control",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Bone Spear, Bone Spirit (projectiles, magic damage), Bone Prison, Bone Armor",
+      "errata_applied": 0,
+      "id": 858,
+      "kit_id": "d2-bonemancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/bonemancer-necro-success-in-hell-t809922.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Piercing linear projectile; anchor: 'Bone Spear: projectile mechanics — positioning matters significantly'; 'I use Bonespear 99% of the time'; pierces through enemies in a line; magic/bone damage → shadow per §1 (shadow/bone/necrotic)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bone Spear' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (2 sig)",
+      "errata_applied": 0,
+      "id": 2087,
+      "kit_id": "d2-bonemancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Homing single-target projectile; anchor: 'Bone Spirit home-seeks single targets'; seeking delivery noted in delivery_notes",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bone Spirit' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2088,
+      "kit_id": "d2-bonemancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Bone cage immobilization zone placed on target; anchor: 'Bone Prison creates immobilizing bone cage for control'; root attested — 'Bone Prison creates cage AoE zone for immobilization'",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bone Prison' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (2 sig)",
+      "errata_applied": 0,
+      "id": 2089,
+      "kit_id": "d2-bonemancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Absorb-hits defensive self-buff; 'Bone Armor absorbs incoming damage'; self-shield layer",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bone Armor' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2090,
+      "kit_id": "d2-bonemancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

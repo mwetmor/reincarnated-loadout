@@ -1,0 +1,839 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 861,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-wl-tainted-summoner",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 862,
+      "assert_text": "expresses: Kit identity is autonomous-demon-army summoner (Bind Demon accumulate + Summon T",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "d2-wl-tainted-summoner",
+      "last_result": "red",
+      "routed_docket_id": 141
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 699,
+    "kit_id": "d2-wl-tainted-summoner",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Summoner Warlock Endgame Build Guide for Diablo II: Resurrected Season 14",
+    "url": "https://maxroll.gg/d2/guides/summoner-warlock-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 699,
+      "kit_id": "d2-wl-tainted-summoner",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Summoner Warlock Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "url": "https://maxroll.gg/d2/guides/summoner-warlock-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 700,
+      "kit_id": "d2-wl-tainted-summoner",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Blood Boil Warlock Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "url": "https://maxroll.gg/d2/guides/blood-boil-warlock-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-wl-tainted-summoner",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 756,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-d2",
+        "docket_id": 141,
+        "evidence_kits": [
+          "d2-wl-tainted-summoner"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:d2-wl-tainted-summoner",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "d2-record"
+        },
+        "source_deviation_id": 756,
+        "source_kit_id": "d2-wl-tainted-summoner",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 D2 structuring of d2-wl-tainted-summoner.",
+        "status": "open"
+      },
+      "docket_id": 141,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-wl-tainted-summoner",
+      "missing_expression": "Kit identity is autonomous-demon-army summoner (Bind Demon accumulate + Summon Tainted autonomous combatants).",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "Kit identity is autonomous-demon-army summoner (Bind Demon accumulate + Summon Tainted autonomous combatants). Both are summoner-GAP territory. ERRATA-55 unattested folk-name adds identity uncertainty. The kit as described is 'not that build' in engine without autonomous-combatant support."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1655,
+      "kit_id": "d2-wl-tainted-summoner",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Summon Tainted: Massive synergy boost with Blood Boil for large Fire damage.",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1654,
+      "kit_id": "d2-wl-tainted-summoner",
+      "payload_json": {
+        "runewords": [
+          "Enigma",
+          "Infinity",
+          "Call to Arms",
+          "Spirit"
+        ],
+        "synergies": [
+          "Blood Boil synergy with Summon Tainted for fire damage scaling"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/blood-boil-warlock-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Enigma, Call to Arms, Infinity Cryptic Axe, Heart of the Oak, Spirit",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1653,
+      "kit_id": "d2-wl-tainted-summoner",
+      "payload_json": {
+        "notable_runewords": [
+          "Enigma",
+          "Call to Arms",
+          "Spirit",
+          "Infinity",
+          "Heart of the Oak"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/blood-boil-warlock-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Bind Demon: 10% chance bind injured non-boss demon. Summon Tainted: Ranged fireball summon.",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1652,
+      "kit_id": "d2-wl-tainted-summoner",
+      "payload_json": {
+        "delivery": "at-target (Bind Demon targets enemy at its position)",
+        "footprint": "point (single enemy conversion)",
+        "notes": "Summon Tainted = ranged fireball summon. Bind Demon = single-target conversion at enemy location."
+      },
+      "source_url": "https://gurugamer.com/pc-console/complete-list-of-warlock-skills-in-diablo-2-resurrected-26393"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Bind Demon allows you to convert a Unique monster to your side. They retain their Affixes and grant additional bonuses when they become your ally.",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1651,
+      "kit_id": "d2-wl-tainted-summoner",
+      "payload_json": {
+        "summary": "Warlock converts enemies using Bind Demon (10% chance to bind injured non-boss demon; demon retains affixes). Summon Tainted provides ranged fireball summon allies. Build identity centers on accumulating bound demons as army. Overlaps significantly with Blood Boil Warlock; 'Tainted Summoner' is not an independently named guide archetype in primary sources."
+      },
+      "source_url": "https://maxroll.gg/d2/guides/summoner-warlock-guide"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1656,
+      "kit_id": "d2-wl-tainted-summoner",
+      "payload_json": null,
+      "source_url": null
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "walk|at-target|flat|single_target|damage|blind|glass|free|heavy|dual|low|instant|triggered|build→spend",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:blind\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "blind",
+    "ctrl_treatment": "damage",
+    "def_bin": "glass",
+    "def_conf": 0.5,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.4,
+    "geometry_rule_fired": "R9-proj",
+    "geometry_value": "single_target",
+    "kit_id": "d2-wl-tainted-summoner",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IDLFHI-_NMM-AM-__-~~",
+      "delivery": "at-target",
+      "elem_raw": "shadow?",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:blind"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "glass",
+        "conf": 0.5,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.4,
+        "rule_fired": "R9-proj",
+        "value": "single_target"
+      },
+      "flags": [],
+      "folk_name": "Tainted Summoner Warlock",
+      "game": "d2",
+      "kit_id": "d2-wl-tainted-summoner",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IDLFHI-_NMM-AM-__-~~",
+        "delivery": "at-target",
+        "elem_raw": "shadow?",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "convert+consume",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-wl-tainted-summoner",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "10% chance to bind injured non-boss demon at enemy position. Single-target conversion. ERRATA-55 / UNATTESTED-REGISTER: folk-name 'Tainted Summoner' not a named guide archetype in primary sources (honest-U per corpus mech_note). Mechanics attested via Blood Boil guide. Converted demon retains affixes.",
+      "source_skill": "Bind Demon",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-wl-tainted-summoner",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Ranged fireball summon companion. Autonomous combatant = summoner-GAP; mapped APPROX as totem with gap noted. Kit identity centers on accumulating bound-demon army.",
+      "source_skill": "Summon Tainted",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-wl-tainted-summoner",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Kit identity is autonomous-demon-army summoner (Bind Demon accumulate + Summon Tainted autonomous combatants). Both are summoner-GAP territory. ERRATA-55 unattested folk-name adds identity uncertainty. The kit as described is 'not that build' in engine without autonomous-combatant support.",
+    "grade": "GAPPED",
+    "kit_id": "d2-wl-tainted-summoner",
+    "mapping_json": {
+      "fidelity_notes": "ERRATA-55 UNATTESTED REGISTER: 'Tainted Summoner' is not an independently named guide archetype in primary sources (maxroll uses 'Summoner Warlock'). Honest-U register governs — mechanics attested via Blood Boil guide overlap. Identity is UNSUPPORTED in verify_ledger. Summoner-deferral accrual: autonomous-combatant army is the loop identity — GAPPED terminal for the autonomous-army core. Bind Demon conversion maps as companion-pact APPROX; PROXY_ASCENSION door covers the accumulate-allies identity. Source player gets a full autonomous demon army; engine gives proxy entities.",
+      "motion_frame": "Bind Demon to convert enemy uniques; accumulate bound-demon army; Summon Tainted provides supplemental ranged fireball summons. Overlaps significantly with Blood Boil Warlock.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "spend": "steady-mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Enigma teleport for positioning",
+            "Infinity merc curse:sap rider"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Blood Boil synergy with Summon Tainted — scaffold"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "10% chance to bind injured non-boss demon at enemy position. Single-target conversion. ERRATA-55 / UNATTESTED-REGISTER: folk-name 'Tainted Summoner' not a named guide archetype in primary sources (honest-U per corpus mech_note). Mechanics attested via Blood Boil guide. Converted demon retains affixes.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Bind Demon"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Ranged fireball summon companion. Autonomous combatant = summoner-GAP; mapped APPROX as totem with gap noted. Kit identity centers on accumulating bound-demon army.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Summon Tainted"
+        }
+      ],
+      "t4_doors": [
+        "PROXY_ASCENSION"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED_DOCKET"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "ailments": [
+          "blind"
+        ],
+        "centrality": "none",
+        "conf": 0.5
+      },
+      "family": "control",
+      "id": 203,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.5,
+        "layers": [
+          "glass"
+        ],
+        "primary": "glass"
+      },
+      "family": "defense",
+      "id": 204,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.42,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.42,
+        "evidence": "Bind Demon converts targeted enemy at its position; consume command at location (post-cutoff)",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 201,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.5,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "convert+consume (proc); Bind Demon converts enemies into companions, then consumes them — an enemy-conve",
+        "resource_verbatim": "convert+consume"
+      },
+      "family": "economy",
+      "id": 205,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.45,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.45,
+        "damage_mode": "hybrid",
+        "label_verbatim": "shadow?"
+      },
+      "family": "element",
+      "id": 206,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.4,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.4,
+        "evidence": "Single enemy converted at position; geo=single in atlas (post-cutoff)",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 202,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": "At-target delivery with point footprint. Bind Demon converts enemies into companions, then consumes them  —  an enemy-conversion summon economy (reap-adjacent verb in official D2!).",
+      "family": "geo_text",
+      "id": 208,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.45,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.45,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 207,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 209,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": [
+        "iv (Icy Veins guide)",
+        "aoe"
+      ],
+      "family": "sources_used",
+      "id": 210,
+      "kit_id": "d2-wl-tainted-summoner",
+      "post_cutoff_cap": 1,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Tainted Summoner Warlock: single target projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-wl-tainted-summoner",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "d2-wl-tainted-summoner",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.47,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|single_target|damage|blind|glass|free|heavy|dual|low|instant|triggered|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|single_target|damage|blind|glass|free|heavy|dual|low|instant|triggered|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "single_target"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "blind"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "glass"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "heavy"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDLFHI-_NMM-AM-__-~~",
+    "attr_conf": 0.47,
+    "attr_val": "INT",
+    "avg_conf": 0.47,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.47,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Bind Demon",
+      "Summon Tainted"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": null,
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "convert-consume",
+    "elem_raw": "shadow?",
+    "era_year": 2000,
+    "eras": "rotw-s13+",
+    "eras_normalized": "rotw-s13+",
+    "flags": "mh-v3-high-recrawl-verified-2026-07-17:legolas-b14f3de6; vdm2-w5-elem-anomaly-2026-07-22: elem_raw='shadow?' — question-mark shadow on a summoner Warlock; unverified extraction. W5 to confirm register + summoner-GAP interaction.",
+    "folk_name": "Tainted Summoner Warlock",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-11",
+    "is_system": 0,
+    "key_completeness": 10,
+    "kit_id": "d2-wl-tainted-summoner",
+    "lattice_coord": "IDLFHI",
+    "lineage": "",
+    "mech_note": "[VDM-1 basin-3 2026-07-18 ingest-13] ERRATA-55 UNATTESTED REGISTER (folk-name): 'Tainted Summoner' is NOT a named archetype in fetched maxroll/icy-veins/wl-build sources — maxroll's Summoner Warlock uses Goatman/Defiler framing. 'Tainted Summoner' appears to be a kb-generated folk name, not an attested community term. Mechanics + era confirmed via Blood Boil guide; identity remains honest-U (folk-name unattested). [original mech_note follows] Bind Demon converts enemies into companions, then consumes them — an enemy-conversion summon economy (reap-adjacent verb in official D2!). S",
+    "mint": 0,
+    "mob_raw": "unknown",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A+B: soul-control troop command exists; turret/pet AI variants + summon economy needed",
+    "mobile_cell_id": "HEAVY|SINGLE|INST×GAP-D2-11",
+    "mobile_key_group": "IDLFHI-_NMM-AM-__-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "shadow?",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "iv;aoe",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.47,
+    "proxy_val": "heavy",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.47,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": [
+      "https://www.rpgstash.com/blog/d2r-warlock-skill-trees-guide-chaos-demon-eldritch"
+    ],
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.47,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Summon Tainted deals considerable AoE Fire Damage with its primary ranged attack. This quickly kills any enemies who are not naturally Fire Resistant.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era: rotw-s13+",
+      "errata_applied": 0,
+      "id": 1059,
+      "kit_id": "d2-wl-tainted-summoner",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/blood-boil-warlock-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Tainted Summoner Warlock'; aliases 'Tainted Summoner Warlock D2R', 'Bind Demon Warlock'",
+      "errata_applied": 0,
+      "id": 1057,
+      "kit_id": "d2-wl-tainted-summoner",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/summoner-warlock-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Bind Demon is crucial, as it allows you to convert a Unique monster to your side. Blood Boil causes % Loss of Maximum Life to all summoned and bound demons.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Bind Demon, Summon Tainted",
+      "errata_applied": 0,
+      "id": 1058,
+      "kit_id": "d2-wl-tainted-summoner",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/blood-boil-warlock-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "10% chance to bind injured non-boss demon at enemy position. Single-target conversion. ERRATA-55 / UNATTESTED-REGISTER: folk-name 'Tainted Summoner' not a named guide archetype in primary sources (honest-U per corpus mech_note). Mechanics attested via Blood Boil guide. Converted demon retains affixes.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bind Demon' delivery_class=projectile (band_conf=0.75); lint: anchor leans 'summon_delegate' (1 sig) vs assigned 'projectile' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2207,
+      "kit_id": "d2-wl-tainted-summoner",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Ranged fireball summon companion. Autonomous combatant = summoner-GAP; mapped APPROX as totem with gap noted. Kit identity centers on accumulating bound-demon army.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Summon Tainted' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (4 sig)",
+      "errata_applied": 0,
+      "id": 2208,
+      "kit_id": "d2-wl-tainted-summoner",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "mapping_json: \"autonomous-demon-army summoner\"; Bind Demon + Summon Tainted; \"ERRATA-55 / UNATTESTED-REGISTER: folk-name 'Tainted Summoner' unattested\"; GAPPED/MAPPED_DOCKET. elem_raw=\"shadow?\".",
+      "claim_family": "mechanics",
+      "claim_subject": "elem_anomaly",
+      "claim_text": "[§7 elem_raw anomaly · PROPOSED:AMBIGUOUS-HOLD] elem_raw='shadow?' — elem_raw='shadow?' rests on an UNATTESTED folk-name (ERRATA-55). The summoned units are fireball attackers (overlaps Blood Boil Warlock), which would argue fire, not shadow — but the identity itself is unattested. Two uncertainties compound (unattested name + summoner-GAP). HOLD 'shadow?' honestly; flag that IF corrected it likely trends fire (per the fireball-summon anchor), but the unattested base makes any correction speculative → next-lap attestation finding.",
+      "errata_applied": 0,
+      "id": 2578,
+      "kit_id": "d2-wl-tainted-summoner",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

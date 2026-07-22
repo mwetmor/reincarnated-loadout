@@ -1,0 +1,870 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 3,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 803,
+      "assert_text": "primary_delivery_class == 'motion'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-bvc",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 604,
+    "kit_id": "d2-bvc",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Whirlwind Barbarian Endgame Build Guide for Diablo II: Resurrected Season 14",
+    "url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Yuqing",
+      "cite_class": "authored",
+      "id": 602,
+      "kit_id": "d2-bvc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "PvP BvC Guide by Yuqing & Co.",
+      "url": "https://www.purediablo.com/forums/threads/pvp-bvc-guide-by-yuqing-co.1065/"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Ling",
+      "cite_class": "authored",
+      "id": 603,
+      "kit_id": "d2-bvc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "PvP Barb vs Caster Guide (BvC) by Ling",
+      "url": "https://www.purediablo.com/forums/threads/pvp-barb-vs-caster-guide-bvc-by-ling.1064/"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 604,
+      "kit_id": "d2-bvc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Whirlwind Barbarian Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-bvc",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 716,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-bvc",
+      "missing_expression": "Player would miss: PvP context (engine is solo PvE — WW mechanics map but caster-hunting purpose is context);",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Player would miss: PvP context (engine is solo PvE — WW mechanics map but caster-hunting purpose is context); Enigma teleport repositioning layer (item-dependent mobility)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "PvP BvC Guide by Yuqing & Co.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1373,
+      "kit_id": "d2-bvc",
+      "payload_json": {
+        "handle": "Yuqing",
+        "secondary": "Ling (separate guide)",
+        "site": "purediablo.com"
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/pvp-bvc-guide-by-yuqing-co.1065/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Whirlwind (20), Leap (14-20), Berserk (1-3), Weapon Mastery (20), Battle Orders (20)",
+      "conf": 0.76,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1372,
+      "kit_id": "d2-bvc",
+      "payload_json": {
+        "runewords": [
+          "Grief (weapon)",
+          "Enigma (armor)",
+          "Fortitude (armor alt)"
+        ],
+        "skills": [
+          "Berserk (1-3 pts for magic damage vs high-def targets)",
+          "Weapon Mastery (20)"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/pvp-bvc-guide-by-yuqing-co.1065/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "due to the nature of this build, it tends to be one of the most expensive builds to use",
+      "conf": 0.74,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1371,
+      "kit_id": "d2-bvc",
+      "payload_json": {
+        "key_items": [
+          "Grief (primary damage axe/sword)",
+          "Enigma (teleport for caster hunting)",
+          "Arreats Face (helmet)",
+          "Verdungo's Heartcoil (belt, PDR)"
+        ],
+        "notes": "One of most expensive builds in D2; Enigma teleport enables aggressive caster pursuit"
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/pvp-bvc-guide-by-yuqing-co.1065/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "it will take your character to the selected point while performing a spinning attack",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1370,
+      "kit_id": "d2-bvc",
+      "payload_json": {
+        "delivery": "self-origin spinning (Whirlwind moves character)",
+        "footprint": "small-radius around spinning body",
+        "notes": "Whirlwind carries character to target point while spinning — delivery IS movement; Leap provides gap-close with knockback; no stand-still casting required",
+        "range_type": "self-origin"
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/pvp-bvc-guide-by-yuqing-co.1065/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Whirlwind is the primary attack of the build and arguably the best physical attack skill because it moves",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1369,
+      "kit_id": "d2-bvc",
+      "payload_json": {
+        "summary": "Whirlwind moves the Barbarian through enemies dealing spinning physical hits; Leap gap-closes with knockback effect; Battle Orders stacks HP/mana for survivability. PvP role: pursue casters, use Leap stun then WW through them for burst physical damage."
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/pvp-bvc-guide-by-yuqing-co.1065/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Although the name BvC shouldn't be taken too literally",
+      "conf": 0.76,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1374,
+      "kit_id": "d2-bvc",
+      "payload_json": {
+        "variants": [
+          "BvC (Barbarian vs Caster, anti-caster PvP)",
+          "BvB (Barbarian vs Barbarian, different gearing)",
+          "WW Barb PvM (non-PvP variant)"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/pvp-barb-vs-caster-guide-bvc-by-ling.1064/"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|self-origin|spiky|whirlwind|damage|stun|tank|spend|solo|melee|med|channel|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:stun\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "stun",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.65,
+    "geometry_rule_fired": "R8-spin",
+    "geometry_value": "whirlwind",
+    "kit_id": "d2-bvc",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMMSSC-HSMT-SP-PH-~~",
+      "delivery": "self-origin",
+      "elem_raw": "physical",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:stun"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.65,
+        "rule_fired": "R8-spin",
+        "value": "whirlwind"
+      },
+      "flags": [],
+      "folk_name": "BvC",
+      "game": "d2",
+      "kit_id": "d2-bvc",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMMSSC-HSMT-SP-PH-~~",
+        "delivery": "self-origin",
+        "elem_raw": "physical",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bvc",
+      "motion_signature": "orbit_fixed",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "Moving-channel: character IS carried to target point while spinning; anchor: 'it will take your character to the selected point while performing a spinning attack'; §CROSS row 5 moving-channel law: delivery_notes MUST state moving-vs-rooted: MOVING; physical = element-neutral; footprint = path-swath around spin",
+      "source_skill": "Whirlwind",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bvc",
+      "motion_signature": "leap_arc",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 1,
+      "source_anchor": "Gap-close leap; knockback payload; anchor: 'Leap gap-closes with knockback effect'; PvP role: Leap stun then WW; §2 knockback attested via 'knockback effect' in dossier skill_loop",
+      "source_skill": "Leap",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-bvc",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 2,
+      "source_anchor": "Warcry self+party HP/mana buff; 'Battle Orders stacks HP/mana for survivability'; self_buff / aura economy layer",
+      "source_skill": "Battle Orders",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-bvc",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player would miss: PvP context (engine is solo PvE — WW mechanics map but caster-hunting purpose is context); Enigma teleport repositioning layer (item-dependent mobility).",
+    "grade": "CLOSE",
+    "kit_id": "d2-bvc",
+    "mapping_json": {
+      "fidelity_notes": "PvP context per §D PvP row: mechanics map natively; PvP meta framing = fidelity note. Moving-channel §CROSS row 5: WW IS the movement delivery — MOVING noted. Knockback from Leap: attested 'knockback effect' in dossier. Physical = element-neutral. §A row 3 charge-composite precedent applies analogously to Leap gap-close (traversal-strike composite). MOMENTUM_CASCADE T4 captures aggressive pursuit identity.",
+      "motion_frame": "PvP: Leap to gap-close with knockback, immediately Whirlwind through caster target for burst physical damage; Battle Orders maintained for HP stack; Enigma teleport for repositioning (item fidelity)",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "WW mana per spin; Battle Orders warcry mana; no special economy"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Battle Orders HP/mana stack (warcry economy layer)"
+          ],
+          "geometry": [
+            "Enigma teleport repositioning (item fidelity note)"
+          ],
+          "traits_affixes": [
+            "Berserk 1-3 pt magic-damage finisher — scaffold skill; Weapon Mastery passive"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Moving-channel: character IS carried to target point while spinning; anchor: 'it will take your character to the selected point while performing a spinning attack'; §CROSS row 5 moving-channel law: delivery_notes MUST state moving-vs-rooted: MOVING; physical = element-neutral; footprint = path-swath around spin",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "whirlwind",
+          "source_skill": "Whirlwind"
+        },
+        {
+          "ailments": [
+            "knockback"
+          ],
+          "delivery_notes": "Gap-close leap; knockback payload; anchor: 'Leap gap-closes with knockback effect'; PvP role: Leap stun then WW; §2 knockback attested via 'knockback effect' in dossier skill_loop",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "leap_strike",
+          "source_skill": "Leap"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Warcry self+party HP/mana buff; 'Battle Orders stacks HP/mana for survivability'; self_buff / aura economy layer",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Battle Orders"
+        }
+      ],
+      "t4_doors": [
+        "MOMENTUM_CASCADE",
+        "DEFENSIVE_TRADEOFF"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "stun"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 263,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "hp-stack"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 264,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.69,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.69,
+        "evidence": "Whirlwind body-rotation through pack; Leap provides gap-close targeting",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 261,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); PvP-named Whirlwind barbarian tuned to hunt casters — Leap stun, WW intercepts, ",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 265,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 266,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "evidence": "WW small zone around spinning player; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 262,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with small-radius footprint. PvP-named Whirlwind barbarian tuned to hunt casters  —  Leap stun, WW intercepts, BO stack; the named-comp culture's flagship (listed under Ba.",
+      "family": "geo_text",
+      "id": 268,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 267,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 269,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "dw"
+      ],
+      "family": "sources_used",
+      "id": 270,
+      "kit_id": "d2-bvc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "BvC: whirlwind motion identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-bvc",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.77,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|self-origin|spiky|whirlwind|damage|stun|tank|spend|solo|melee|med|channel|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|self-origin|spiky|whirlwind|damage|stun|tank|spend|solo|melee|med|channel|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "whirlwind"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "stun"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMMSSC-HSMT-SP-PH-~~",
+    "attr_conf": 0.77,
+    "attr_val": "STR",
+    "avg_conf": 0.77,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.77,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Whirlwind",
+      "Leap",
+      "Battle Orders"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-per-spin",
+    "elem_raw": "physical",
+    "era_year": 2000,
+    "eras": "lod-pvp;d2r-pvp",
+    "eras_normalized": "lod-pvp;d2r-pvp",
+    "flags": "",
+    "folk_name": "BvC",
+    "game": "d2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-01",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-bvc",
+    "lattice_coord": "SMMSSC",
+    "lineage": "",
+    "mech_note": "PvP-named Whirlwind barbarian purpose-built to hunt casters: Leap stuns, WW intercepts and deals physical burst, Battle Orders stacks HP for a durability window. The BvC (Barbarian versus Caster) name encodes the matchup target — this is not a PvE farming build. WW in PvP hits targets at the spin's rotational contact points; gear (Grief for max damage, Enigma for repositioning teleport, BK rings) and skill timing define the ceiling. Considered the PvP meta flagship for D2 and listed under the Barbarian class because of its PvP-named-composition culture status, not for PvE applicability. Grief Phase Blade + Enigma are both non-ladder-viable for casual players — this build exists only at the geared ceiling.",
+    "mint": 0,
+    "mob_raw": "leap+ww-high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|SMALL|CHAN×GAP-D2-01",
+    "mobile_key_group": "SMMSSC-HSMT-SP-PH-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "dw",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.77,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.77,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.77,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "WHIRLWIND",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Whirlwind (20), Leap (14-20), Berserk (1-3), Weapon Mastery (20), Battle Orders (20) — PvP Barb vs Caster Guide (BvC) by Ling",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod-pvp",
+      "errata_applied": 0,
+      "id": 868,
+      "kit_id": "d2-bvc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/pvp-barb-vs-caster-guide-bvc-by-ling.1064/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Whirlwind Barbarian Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r-pvp",
+      "errata_applied": 0,
+      "id": 869,
+      "kit_id": "d2-bvc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Although the name BvC shouldn't be taken too literally, they are great at what they're built to do: Kill Casters",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name BvC; aliases Barbarian vs Caster, BvC Barbarian PvP, WW Leap BvC",
+      "errata_applied": 0,
+      "id": 866,
+      "kit_id": "d2-bvc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/pvp-bvc-guide-by-yuqing-co.1065/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Whirlwind is the primary attack of the build and arguably the best physical attack skill because it moves — it will take your character to the selected point while performing a spinning attack",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Whirlwind (moves character, spinning attack), Leap (knockback), Battle Orders",
+      "errata_applied": 0,
+      "id": 867,
+      "kit_id": "d2-bvc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/pvp-bvc-guide-by-yuqing-co.1065/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Moving-channel: character IS carried to target point while spinning; anchor: 'it will take your character to the selected point while performing a spinning attack'; §CROSS row 5 moving-channel law: delivery_notes MUST state moving-vs-rooted: MOVING; physical = element-neutral; footprint = path-swath around spin",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Whirlwind' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (1 sig)",
+      "errata_applied": 0,
+      "id": 2094,
+      "kit_id": "d2-bvc",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Gap-close leap; knockback payload; anchor: 'Leap gap-closes with knockback effect'; PvP role: Leap stun then WW; §2 knockback attested via 'knockback effect' in dossier skill_loop",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Leap' delivery_class=motion (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'motion'",
+      "errata_applied": 0,
+      "id": 2095,
+      "kit_id": "d2-bvc",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Warcry self+party HP/mana buff; 'Battle Orders stacks HP/mana for survivability'; self_buff / aura economy layer",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Battle Orders' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2096,
+      "kit_id": "d2-bvc",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

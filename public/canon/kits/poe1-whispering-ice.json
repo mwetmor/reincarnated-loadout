@@ -1,0 +1,862 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 8
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 642,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-whispering-ice",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Odealo",
+    "cite_class": "communal",
+    "id": 256,
+    "kit_id": "poe1-whispering-ice",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "odealo.com",
+    "title": "[3.24] Whispering Ice Icestorm Trickster Build - Odealo's Crafty Guide",
+    "url": "https://odealo.com/articles/whispering-ice-icestorm-trickster-build"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Odealo",
+      "cite_class": "communal",
+      "id": 256,
+      "kit_id": "poe1-whispering-ice",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[3.24] Whispering Ice Icestorm Trickster Build - Odealo's Crafty Guide",
+      "url": "https://odealo.com/articles/whispering-ice-icestorm-trickster-build"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 257,
+      "kit_id": "poe1-whispering-ice",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com/forum",
+      "title": "General Discussion - Whispering Ice 'Icestorm' discussion about 3.12's big changes",
+      "url": "https://www.pathofexile.com/forum/view-thread/2936012/page/2"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 255,
+      "kit_id": "poe1-whispering-ice",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poedb.tw",
+      "title": "The Whispering Ice - PoEDB",
+      "url": "https://poedb.tw/us/The_Whispering_Ice"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-whispering-ice",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 602,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-whispering-ice",
+      "missing_expression": "Player of the original would miss storms growing LONGER as INT climbs (duration side of the scaling pact) and the staff-as-whole-build item romance;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Player of the original would miss storms growing LONGER as INT climbs (duration side of the scaling pact) and the staff-as-whole-build item romance; the damage side of stat-stacking survives natively. TIMED-WHILE-ACTIVE-APPROX does not apply (storm duration is skill-native, not a proc window)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 539,
+      "kit_id": "poe1-whispering-ice",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'With 2000 Intelligence, one Icestorm will last 3 seconds'",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 538,
+      "kit_id": "poe1-whispering-ice",
+      "payload_json": {
+        "ascendancy_nodes": [
+          "Trickster: Ghost Dance + Escape Artist (ES/evasion synergy)",
+          "Guardian: Radiant Faith (ES from devotion for party play)",
+          "Berserker: Aspect of Carnage (damage multiplier on high-investment)"
+        ],
+        "int_threshold": "~2000 INT target; at 2000 INT each Icestorm lasts 3 seconds"
+      },
+      "source_url": "https://odealo.com/articles/whispering-ice-icestorm-trickster-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'two core unique items are The Whispering Ice and Anathema Ring'",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 537,
+      "kit_id": "poe1-whispering-ice",
+      "payload_json": {
+        "notable_items": [
+          "The Whispering Ice unique staff (mandatory — sole source of Icestorm)",
+          "Anathema ring (converts curses to charges for INT stacking)",
+          "Void Battery wands (not applicable — this build uses the staff)",
+          "Shaper's Touch gloves (INT to Accuracy/ES conversion)"
+        ]
+      },
+      "source_url": "https://odealo.com/articles/whispering-ice-icestorm-trickster-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'Icy bolts rain down over the targeted area. They explode when landing, dealing damage to nearby enemies and chilling them'",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 536,
+      "kit_id": "poe1-whispering-ice",
+      "payload_json": {
+        "aoe": "Icestorm covers large area at target location; icy bolts impact every 0.2s",
+        "concurrent_storms": "up to 5 active simultaneously",
+        "delivery": "at-target (large zone)",
+        "intensify_interaction": "Intensify Support reduces AoE (increases single-target density)",
+        "range": "cast range; player not required at target location"
+      },
+      "source_url": "https://poedb.tw/us/The_Whispering_Ice"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'Icy bolts rain down over the targeted area... 1% increased Spell Damage per 10 Intelligence; skill damage and duration scale per 10 Intelligence'",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 535,
+      "kit_id": "poe1-whispering-ice",
+      "payload_json": {
+        "description": "Equip The Whispering Ice staff to gain Icestorm skill; cast Icestorm at target; icy bolts rain down at target area; damage and duration both scale per 10 Intelligence; maintain up to 5 concurrent Icestorms; stack Intelligence to maximize both damage and storm duration; Cyclone variant uses CwC to auto-cast Icestorm while spinning"
+      },
+      "source_url": "https://poedb.tw/us/The_Whispering_Ice"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 540,
+      "kit_id": "poe1-whispering-ice",
+      "payload_json": {
+        "variants": [
+          "Trickster CI (primary modern variant; ES + evasion)",
+          "Ascendant Scion (highest INT scaling potential)",
+          "Berserker (high-investment damage variant)",
+          "Cyclone CwC variant (auto-cast Icestorm while spinning)"
+        ]
+      },
+      "source_url": "https://odealo.com/articles/whispering-ice-icestorm-trickster-build"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|at-target|var|ground_targeted_circle|damage|hard-stop|mitigate|unknown|solo|ranged|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:freeze\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hard-stop",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "unknown",
+    "flags": [],
+    "geometry_conf": 0.68,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe1-whispering-ice",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRMVSI-MLMM-SW-CO-~~",
+      "delivery": "at-target",
+      "elem_raw": "cold",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:freeze"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "UNKNOWN"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.68,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Whispering Ice",
+      "game": "poe1",
+      "kit_id": "poe1-whispering-ice",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRMVSI-MLMM-SW-CO-~~",
+        "delivery": "at-target",
+        "elem_raw": "cold",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "stat→damage",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-whispering-ice",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "cast rains icy bolts over a large target zone (impacts every 0.2s for the storm duration, bolts explode and chill); up to 5 storms live at once; damage AND duration both scale per 10 Intelligence; granted solely by The Whispering Ice staff — item dissolves, skill maps as core (crosswalk 4)",
+      "source_skill": "Icestorm (item-granted)",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-whispering-ice",
+      "motion_signature": "orbit_fixed",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 1,
+      "source_anchor": "spin-channel chassis auto-casting Icestorm (cast-while-channelling = on-cast-linked trigger, depth 1) — variant delivery only, not the identity; primary loop stays self-cast",
+      "source_skill": "Cyclone (CwC variant)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-whispering-ice",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player of the original would miss storms growing LONGER as INT climbs (duration side of the scaling pact) and the staff-as-whole-build item romance; the damage side of stat-stacking survives natively. TIMED-WHILE-ACTIVE-APPROX does not apply (storm duration is skill-native, not a proc window).",
+    "grade": "APPROX",
+    "kit_id": "poe1-whispering-ice",
+    "mapping_json": {
+      "fidelity_notes": "Item-keystone kit ruled MAPPED under the R-M7 test: the stacking identity HAS lanes — native caster-stat damage scaling + attribute-stacking gear affixes + RESOURCE_CONVERSION door — so the player gets 'stack one stat until the storm is enormous', which IS this build, worse. LOST: the stat -> DURATION binding (INT lengthening storms, the second half of the per-10-INT quantization) — no stat-to-duration lane; 5-storm cap approximated via the saturation door; the single-unique build-around dissolves per crosswalk 4 (staff recorded here). Four-era longevity (2.0 through 3.20+) all CONFIRMED.",
+      "motion_frame": "stat-stack caster: walk between packs layering overlapping ice storms; every point of Intelligence visibly buys a bigger, longer storm (CwC variant spins through the middle instead)",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana spend default; INT thresholds (~2000 INT -> 3s storms) as gear-progression pacing"
+          ],
+          "geometry": [
+            "large ground-zone bolt rain",
+            "5-storm concurrent overlap (saturation)",
+            "Intensify-style AoE-shrink-for-density noted"
+          ],
+          "traits_affixes": [
+            "INT attribute-stacking gear affixes — THE build engine (crosswalk 4 numeric-modulation lane)",
+            "INT-to-ES/accuracy conversion (Shaper's Touch-class) as gear numeric",
+            "curse-to-charge INT tech (Anathema) as flavor note"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "chill",
+            "freeze"
+          ],
+          "delivery_notes": "cast rains icy bolts over a large target zone (impacts every 0.2s for the storm duration, bolts explode and chill); up to 5 storms live at once; damage AND duration both scale per 10 Intelligence; granted solely by The Whispering Ice staff — item dissolves, skill maps as core (crosswalk 4)",
+          "element_primary": "water",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Icestorm (item-granted)"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "spin-channel chassis auto-casting Icestorm (cast-while-channelling = on-cast-linked trigger, depth 1) — variant delivery only, not the identity; primary loop stays self-cast",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "whirlwind",
+          "source_skill": "Cyclone (CwC variant)"
+        }
+      ],
+      "t4_doors": [
+        "RESOURCE_CONVERSION",
+        "PERSISTENCE_ENGINE_saturation"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "chill",
+          "freeze"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2213,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 2214,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Icestorm rains at target location; damage and duration scale per 10 INT stacked",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2211,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "other",
+        "plain_text": "stat→damage (other); The staff grants Icestorm whose damage AND duration scale per 10 Intelligence — ",
+        "resource_verbatim": "stat→damage"
+      },
+      "family": "economy",
+      "id": 2215,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "cold"
+      },
+      "family": "element",
+      "id": 2216,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.68,
+        "evidence": "Icestorm covers large zone at target; geo=large-AOE in atlas",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 2212,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with large-zone footprint. The staff grants Icestorm whose damage AND duration scale per 10 Intelligence  —  the purest attribute-stack-as-weapon build in the genre; a d.",
+      "family": "geo_text",
+      "id": 2218,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 2217,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2219,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2220,
+      "kit_id": "poe1-whispering-ice",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Whispering Ice: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-whispering-ice",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:water",
+      "hook_id": "H2",
+      "hook_text": "water element register",
+      "hook_type": "register",
+      "kit_id": "poe1-whispering-ice",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.8,
+    "amp_val": "var",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|var|ground_targeted_circle|damage|hard-stop|mitigate|unknown|solo|ranged|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|var|ground_targeted_circle|damage|hard-stop|mitigate|unknown|solo|ranged|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "var"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hard-stop"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "unknown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMVSI-MLMM-SW-CO-~~",
+    "attr_conf": 0.8,
+    "attr_val": "INT",
+    "avg_conf": 0.8,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.8,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Icestorm(item)",
+      "Cyclone(CwC variant)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "stat-is-the-weapon",
+    "elem_raw": "cold",
+    "era_year": 2013,
+    "eras": "2.x;3.0-3.6;3.7-3.13;3.20+",
+    "eras_normalized": "2.x;3.0-3.6;3.7-3.13;3.20+",
+    "flags": "econ-recrawl-application-2026-07-17:f4110f20:spend w/ cooldown-gate rider. Icestorm 0.75s cast + 6.50s cooldown; Int-per-10 is DAMAGE scaling, not resource-econ. Clarity aura RS is secondary. Sources: Odealo articles/whispering-ice-icestorm-trickster-build + poedb.tw us",
+    "folk_name": "Whispering Ice",
+    "game": "poe1",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-08",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-whispering-ice",
+    "lattice_coord": "IRMVSI",
+    "lineage": "",
+    "mech_note": "The staff grants Icestorm whose damage AND duration scale per 10 Intelligence — the purest attribute-stack-as-weapon build in the genre; a d",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|LARGE|INST×GAP-P1-08",
+    "mobile_key_group": "IRMVSI-MLMM-SW-CO-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.8,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.8,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.8,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'The Whispering Ice was introduced in version 2.0.0' — item and associated Icestorm build present from 2.0 era onward",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 2.x",
+      "errata_applied": 0,
+      "id": 325,
+      "kit_id": "poe1-whispering-ice",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/The_Whispering_Ice",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Odealo and Trickster build guides document INT-stack Icestorm across multiple 3.x eras; 3.12 forum thread discusses 'Icestorm 3.12 big changes' implying active meta through 3.x",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6",
+      "errata_applied": 0,
+      "id": 326,
+      "kit_id": "poe1-whispering-ice",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2936012/page/2",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Whispering Ice STACKING Int Build Update | Path of Exile 3.17 Archnemesis League' YouTube + 3.12 forum discussion confirm meta presence through 3.7-3.13 era",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 327,
+      "kit_id": "poe1-whispering-ice",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.youtube.com/watch?v=YonwHwPZaI0",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'[3.27] Icestorm Trickster Build - POE Keepers of the Flame' rpgstash guide and '[3.24] Whispering Ice Icestorm Trickster Build' Odealo guide confirm continued meta presence",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.20+",
+      "errata_applied": 0,
+      "id": 328,
+      "kit_id": "poe1-whispering-ice",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/whispering-ice-icestorm-trickster-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'[3.24] Whispering Ice Icestorm Trickster Build' Odealo guide title; YouTube title 'Icestorm Intelligence Stacker Budget Build Guide' confirm both names",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Whispering Ice' and alias 'Icestorm int-stack' are real community usage",
+      "errata_applied": 0,
+      "id": 323,
+      "kit_id": "poe1-whispering-ice",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/whispering-ice-icestorm-trickster-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Icy bolts rain down over the targeted area... damage AND duration scale per 10 Intelligence... maximum 5 concurrent Icestorms active at any time'",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Icestorm (item-granted) + optional Cyclone (CwC variant); damage and duration scale per 10 Intelligence; icy bolts rain at target area; up to 5 concurrent storms",
+      "errata_applied": 0,
+      "id": 324,
+      "kit_id": "poe1-whispering-ice",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/The_Whispering_Ice",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "cast rains icy bolts over a large target zone (impacts every 0.2s for the storm duration, bolts explode and chill); up to 5 storms live at once; damage AND duration both scale per 10 Intelligence; granted solely by The Whispering Ice staff — item dissolves, skill maps as core (crosswalk 4)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Icestorm (item-granted)' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (2 sig)",
+      "errata_applied": 0,
+      "id": 2496,
+      "kit_id": "poe1-whispering-ice",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "spin-channel chassis auto-casting Icestorm (cast-while-channelling = on-cast-linked trigger, depth 1) — variant delivery only, not the identity; primary loop stays self-cast",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Cyclone (CwC variant)' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (1 sig)",
+      "errata_applied": 0,
+      "id": 2497,
+      "kit_id": "poe1-whispering-ice",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,807 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 0,
+    "dossier": 6,
+    "geometry_bands": 3,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 833,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-maul-bear",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 655,
+    "kit_id": "d2-maul-bear",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Maul Druid Endgame Build Guide Season 14 — Maxroll.gg",
+    "url": "https://maxroll.gg/d2/guides/maul-druid"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 655,
+      "kit_id": "d2-maul-bear",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Maul Druid Endgame Build Guide Season 14 — Maxroll.gg",
+      "url": "https://maxroll.gg/d2/guides/maul-druid"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-maul-bear",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1535,
+      "kit_id": "d2-maul-bear",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Maul deals a high amount of Physical Damage, stacking additional Damage and Attack Speed with each blow (up to a maximum)",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1534,
+      "kit_id": "d2-maul-bear",
+      "payload_json": {
+        "notes": "Werebear is LoD-only class skill (Druid is LoD expansion class); build not possible in classic Diablo 2",
+        "synergies": "Lycanthropy synergizes with Werebear for life; Maul stacks damage and attack speed with each hit up to a maximum"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/maul-druid"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1533,
+      "kit_id": "d2-maul-bear",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Shock Wave stuns mobs in a cone in front of the Werebear. Stun length is based on its Skill Level.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1532,
+      "kit_id": "d2-maul-bear",
+      "payload_json": {
+        "delivery": "melee single-target swing (Maul); Shockwave cone in front of caster (bear form)",
+        "footprint": "single target for Maul; cone AoE for Shockwave",
+        "geometry": "at-target single with stun cone",
+        "notes": "Werebear form significantly boosts life pool — defines tank identity"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/maul-druid"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Continuously attack monsters with Maul to build up stacks...Use Shock Wave to Stun dangerous monster packs.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1531,
+      "kit_id": "d2-maul-bear",
+      "payload_json": {
+        "loop": "Transform to Werebear; attack with Maul to build damage-and-speed stacks; use Shockwave for crowd control on dangerous packs; tank identity — sustain through high HP pool; slow heavy swings build momentum"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/maul-druid"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "A Werebear Druid has the highest possible Life pool in the game",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1536,
+      "kit_id": "d2-maul-bear",
+      "payload_json": {
+        "variants": [
+          "Pure Maul Bear (Maul/Werebear/Lycanthropy maxed)",
+          "Shockwave Bear (Shockwave focus for CC)",
+          "Hybrid Werebear-Summon (bear form + grizzly support)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/maul-druid"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "rooted|at-target|flat|melee_strike|damage|none|tank|free|light|melee|low|wind-up|triggered|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.57,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "d2-maul-bear",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "WMLFLW-LNMT-SP-PH-~~",
+      "delivery": "at-target",
+      "elem_raw": "physical",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.57,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Maul Werebear",
+      "game": "d2",
+      "kit_id": "d2-maul-bear",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "WMLFLW-LNMT-SP-PH-~~",
+        "delivery": "at-target",
+        "elem_raw": "physical",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "on-hit stacks",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-maul-bear",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "Single-target melee swing in Werebear form. Each hit stacks additional physical damage and attack speed ('stacking additional Damage and Attack Speed with each blow up to a maximum' — capstone_alterations anchor). Stack ramp: sustain-stack is the steady state, NOT accumulate-then-spend. Physical damage; THE PHYSICAL RULE.",
+      "source_skill": "Maul",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-maul-bear",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Cone AoE in front of Werebear. 'Shock Wave stuns mobs in a cone in front of the Werebear. Stun length is based on its Skill Level.' — verify_ledger + dossier anchor. Stun attested: legal emission per §0-UNIVERSAL.",
+      "source_skill": "Shockwave",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-maul-bear",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 2,
+      "source_anchor": "Permanent form transform; economy-agnostic (d2 wereforms swap no resource — §CROSS form law). In-form loop is the kit's loop. Form-locked: Maul and Shockwave are in-form skills only.",
+      "source_skill": "Werebear (form transform)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-maul-bear",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": null,
+    "grade": "EXACT",
+    "kit_id": "d2-maul-bear",
+    "mapping_json": {
+      "fidelity_notes": "EXACT: Form law (§CROSS row 3): economy-agnostic, permanent form — map the in-form loop as the kit. Werebear maps as self_buff (form entry); Maul + Shockwave map as in-form primary skills. Stun attested in dossier + verify_ledger anchor: 'Shock Wave stuns mobs in a cone' — §0-UNIVERSAL satisfied. Maul stack ramp: §A row 5 — sustain-stack (stack IS steady state), NOT two-tier-accumulator; NO accrual filing to two-tier-accumulator family. Physical element: null slots per THE PHYSICAL RULE. T4 MOMENTUM_CASCADE: Maul hit-stack ramp is momentum-accumulation identity. PHASE_MOMENTUM: form-entry + sustained momentum texture. Eras: lod and d2r both CONFIRMED.",
+      "motion_frame": "Transform to Werebear; attack with Maul to ramp damage-and-speed stacks; use Shockwave cone for CC on dangerous packs; sustain through high HP pool",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "on-hit-ramp: Maul stacks build per hit at no additional cost; attested 'on-hit-ramp' corpus econ_raw; economy is the melee engagement cadence"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [],
+          "traits_affixes": [
+            "Lycanthropy synergy (life for Werebear) + Maul synergy (damage/speed per hit) — traits-affixes scaffold lane per §A row 1"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Single-target melee swing in Werebear form. Each hit stacks additional physical damage and attack speed ('stacking additional Damage and Attack Speed with each blow up to a maximum' — capstone_alterations anchor). Stack ramp: sustain-stack is the steady state, NOT accumulate-then-spend. Physical damage; THE PHYSICAL RULE.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Maul"
+        },
+        {
+          "ailments": [
+            "stun"
+          ],
+          "delivery_notes": "Cone AoE in front of Werebear. 'Shock Wave stuns mobs in a cone in front of the Werebear. Stun length is based on its Skill Level.' — verify_ledger + dossier anchor. Stun attested: legal emission per §0-UNIVERSAL.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "cone",
+          "source_skill": "Shockwave"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Permanent form transform; economy-agnostic (d2 wereforms swap no resource — §CROSS form law). In-form loop is the kit's loop. Form-locked: Maul and Shockwave are in-form skills only.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Werebear (form transform)"
+        }
+      ],
+      "t4_doors": [
+        "MOMENTUM_CASCADE",
+        "PHASE_MOMENTUM"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "slow"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2373,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "hp-stack"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 2374,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.6,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.6,
+        "evidence": "Maul charge-building slow swing on targeted enemy in werebear form",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2371,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "on-hit stacks (proc); Bear form stacks Maul damage charges per hit; slow heavy swings, tank identity, ",
+        "resource_verbatim": "on-hit stacks"
+      },
+      "family": "economy",
+      "id": 2375,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 2376,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.57,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.57,
+        "evidence": "Single target slow swing; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 2372,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. Bear form stacks Maul damage charges per hit; slow heavy swings, tank identity, the other half of the form-shift family.",
+      "family": "geo_text",
+      "id": 2378,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 2377,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2379,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2380,
+      "kit_id": "d2-maul-bear",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Maul Werebear: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-maul-bear",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.67,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|flat|melee_strike|damage|none|tank|free|light|melee|low|wind-up|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|flat|melee_strike|damage|none|tank|free|light|melee|low|wind-up|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "wind-up"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WMLFLW-LNMT-SP-PH-~~",
+    "attr_conf": 0.67,
+    "attr_val": "WIS",
+    "avg_conf": 0.67,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.67,
+    "commit_provenance": null,
+    "commit_val": "wind-up",
+    "core_skills": [
+      "Werebear",
+      "Maul",
+      "Shockwave"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "on-hit-ramp",
+    "elem_raw": "physical",
+    "era_year": 2000,
+    "eras": "lod;d2r",
+    "eras_normalized": "lod;d2r",
+    "flags": "",
+    "folk_name": "Maul Werebear",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-02",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-maul-bear",
+    "lattice_coord": "WMLFLW",
+    "lineage": "",
+    "mech_note": "Bear form stacks Maul damage charges per hit; slow heavy swings, tank identity, the other half of the form-shift family.",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|SINGLE|WIND×GAP-D2-02",
+    "mobile_key_group": "WMLFLW-LNMT-SP-PH-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.67,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.67,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.67,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "SHAPESHIFT",
+    "on_spine": true,
+    "shadowed_by": "DOCKET",
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=3].members (working_label=SHAPESHIFT; status=proposed)",
+    "spine_status": "SHADOWED",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Maul Druid Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod era",
+      "errata_applied": 0,
+      "id": 979,
+      "kit_id": "d2-maul-bear",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/maul-druid",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Maul Druid Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r era",
+      "errata_applied": 0,
+      "id": 980,
+      "kit_id": "d2-maul-bear",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/maul-druid",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Maul Druid Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Maul Werebear' and aliases 'Maul Bear', 'Werebear Maul Druid', 'Shockwave Bear' are real community usage",
+      "errata_applied": 0,
+      "id": 977,
+      "kit_id": "d2-maul-bear",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/maul-druid",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Maul swipes at enemies, increasing your Physical Damage and Attack Speed with each successful hit...Shock Wave stuns mobs in a cone in front of the Werebear.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Werebear, Maul, Shockwave; Maul stacks damage charges per hit; Shockwave for crowd control",
+      "errata_applied": 0,
+      "id": 978,
+      "kit_id": "d2-maul-bear",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/maul-druid",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Single-target melee swing in Werebear form. Each hit stacks additional physical damage and attack speed ('stacking additional Damage and Attack Speed with each blow up to a maximum' — capstone_alterations anchor). Stack ramp: sustain-stack is the steady state, NOT accumulate-then-spend. Physical damage; THE PHYSICAL RULE.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Maul' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2 sig)",
+      "errata_applied": 0,
+      "id": 2151,
+      "kit_id": "d2-maul-bear",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Cone AoE in front of Werebear. 'Shock Wave stuns mobs in a cone in front of the Werebear. Stun length is based on its Skill Level.' — verify_ledger + dossier anchor. Stun attested: legal emission per §0-UNIVERSAL.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Shockwave' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (1 sig)",
+      "errata_applied": 0,
+      "id": 2152,
+      "kit_id": "d2-maul-bear",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Permanent form transform; economy-agnostic (d2 wereforms swap no resource — §CROSS form law). In-form loop is the kit's loop. Form-locked: Maul and Shockwave are in-form skills only.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Werebear (form transform)' delivery_class=aura (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'aura'",
+      "errata_applied": 0,
+      "id": 2153,
+      "kit_id": "d2-maul-bear",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

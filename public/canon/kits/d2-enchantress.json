@@ -1,0 +1,827 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 807,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-enchantress",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "MrLlamaSC",
+    "cite_class": "authored",
+    "id": 611,
+    "kit_id": "d2-enchantress",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "icy-veins.com",
+    "title": "Enchantress Sorceress Build for Diablo 2 Resurrected",
+    "url": "https://www.icy-veins.com/d2/enchantress-sorceress-build"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "MrLlamaSC",
+      "cite_class": "authored",
+      "id": 611,
+      "kit_id": "d2-enchantress",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "icy-veins.com",
+      "title": "Enchantress Sorceress Build for Diablo 2 Resurrected",
+      "url": "https://www.icy-veins.com/d2/enchantress-sorceress-build"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "MongoJerry",
+      "cite_class": "authored",
+      "id": 612,
+      "kit_id": "d2-enchantress",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Diablo 2 Guide: MongoJerry's 1.10 Enchantress Sorceress Guide",
+      "url": "https://www.purediablo.com/strategy/mongojerrys-1-10-enchantress-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-enchantress",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 720,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-enchantress",
+      "missing_expression": "Source Enchantress wraps a buff-economy into a melee kit via oskill — the buff-recast loop and melee-strike delivery are both present, but the double-Fire-Mastery application trigger and the prebuff window are minor texture losses.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Source Enchantress wraps a buff-economy into a melee kit via oskill — the buff-recast loop and melee-strike delivery are both present, but the double-Fire-Mastery application trigger and the prebuff window are minor texture losses. Player feels 'fire melee with big buff' — that build, slightly worse."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "MrLlamaSC is a professional twitch broadcaster that has been streaming since 2014",
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1397,
+      "kit_id": "d2-enchantress",
+      "payload_json": {
+        "handle": "MrLlamaSC",
+        "note": "Professional Twitch broadcaster, 30,000+ hours in D2",
+        "site": "icy-veins.com"
+      },
+      "source_url": "https://www.icy-veins.com/d2/enchantress-sorceress-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Enchant only synergizes with Warmth; Fire Mastery % Fire Damage...will apply twice",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1396,
+      "kit_id": "d2-enchantress",
+      "payload_json": {
+        "notes": "Fire Mastery % fire damage applies twice for melee enchantress — once on cast, once on swing hit.",
+        "runewords": [
+          "Passion (Zeal oskill)",
+          "Fortitude",
+          "Call to Arms",
+          "Spirit",
+          "Phoenix"
+        ],
+        "synergies": [
+          "Enchant synergizes with Warmth only"
+        ],
+        "uniques": [
+          "Flickering Flame",
+          "Ormus' Robes",
+          "Andariel's Visage",
+          "The Reaper's Toll"
+        ]
+      },
+      "source_url": "https://www.icy-veins.com/d2/enchantress-sorceress-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Passion Runeword; Call to Arms; Spirit; Phoenix; Flickering Flame; Ormus' Robes; Fortitude",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1395,
+      "kit_id": "d2-enchantress",
+      "payload_json": {
+        "key_items": [
+          "Passion runeword (grants Zeal oskill)",
+          "Orb with +5-6 to Enchant for prebuff/support variant",
+          "Rainbow Facet jewels",
+          "Flickering Flame helm",
+          "Ormus' Robes",
+          "Fortitude",
+          "Call to Arms",
+          "Spirit"
+        ],
+        "notes": "Passion enables the Zeal-attack loop; Spirit provides FCR/skills for caster portion."
+      },
+      "source_url": "https://www.icy-veins.com/d2/enchantress-sorceress-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Enchant — main damage boost Skill; Passion Runeword enabling melee Zeal attacks",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1394,
+      "kit_id": "d2-enchantress",
+      "payload_json": {
+        "geometry": "Enchant: single-target touch-range buff cast (self or ally). Zeal: melee multi-hit sequence on adjacent target(s). Point footprint. No AoE on delivery."
+      },
+      "source_url": "https://www.icy-veins.com/d2/enchantress-sorceress-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Enchant converts the sorceress (and party/mercenary) into fire-melee attackers; Passion Runeword enabling Zeal as oskill",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1393,
+      "kit_id": "d2-enchantress",
+      "payload_json": {
+        "loop": "Cast Enchant on self (and party/mercenary) to add fire damage to attacks. Use Passion runeword to gain Zeal oskill; execute rapid multi-hit melee strikes empowered by fire damage buff. Recast Enchant as needed; prebuff before runs possible."
+      },
+      "source_url": "https://www.icy-veins.com/d2/enchantress-sorceress-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The Enchantress can be used in various ways, including enchanting party members...or enchanting herself to become a Zealot",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1398,
+      "kit_id": "d2-enchantress",
+      "payload_json": {
+        "notes": "Spec lists Zeal as 'oskill era' — confirmed; Passion runeword is the mechanism in both LoD and D2R.",
+        "variants": [
+          "Support Enchantress (buff party/mercenary; prebuff-focused; Orb with +Enchant)",
+          "Melee Enchantress (Passion Zeal loop; self-melee; Phoenix/Fortitude gear)"
+        ]
+      },
+      "source_url": "https://www.icy-veins.com/d2/enchantress-sorceress-build"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|melee_strike|damage|none|glass|cooldown|light|melee|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "glass",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "cooldown",
+    "flags": [],
+    "geometry_conf": 0.59,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "d2-enchantress",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "teleport"
+    ],
+    "provenance_json": {
+      "atlas_key": "IMMFLI-HNDG-SP-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "fire",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "glass",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.59,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Enchantress",
+      "game": "d2",
+      "kit_id": "d2-enchantress",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "teleport"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IMMFLI-HNDG-SP-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "fire",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "cooldown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-enchantress",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "Touch-range buff cast on self or ally; adds flat fire damage to melee attacks for duration. Fire Mastery applies twice per swing-hit (once on cast, once on hit). Prebuff variant possible.",
+      "source_skill": "Enchant",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-enchantress",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 1,
+      "source_anchor": "Multi-hit melee sequence (5 hits) on adjacent target. Fire damage sourced from Enchant buff. Item-defined-archetype: Passion runeword grants Zeal; kit identity is the WITH-Passion form.",
+      "source_skill": "Zeal (Passion oskill)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-enchantress",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Source Enchantress wraps a buff-economy into a melee kit via oskill — the buff-recast loop and melee-strike delivery are both present, but the double-Fire-Mastery application trigger and the prebuff window are minor texture losses. Player feels 'fire melee with big buff' — that build, slightly worse.",
+    "grade": "CLOSE",
+    "kit_id": "d2-enchantress",
+    "mapping_json": {
+      "fidelity_notes": "Item-defined-archetype (§CROSS row 4): kit identity is Enchantress WITH Passion runeword. No ailment attestation in fetched dossier (no burn/stun/bleed named). Pure-physical melee swing carries fire damage via buff — element_primary=fire per Enchant's identity. Support variant (buff-only party Enchantress) maps as same kit with solo-scope note.",
+      "motion_frame": "Cast Enchant buff on self; execute rapid Zeal multi-hit melee sequence empowered by fire damage; recast on timer",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence_scale": "recast-as-needed",
+        "cost_scale": "long-buff-cycle"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Enchant synergizes with Warmth only — single synergy path"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Fire Mastery passive scales all fire damage; Passion runeword enables oskill Zeal"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Touch-range buff cast on self or ally; adds flat fire damage to melee attacks for duration. Fire Mastery applies twice per swing-hit (once on cast, once on hit). Prebuff variant possible.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Enchant"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Multi-hit melee sequence (5 hits) on adjacent target. Fire damage sourced from Enchant buff. Item-defined-archetype: Passion runeword grants Zeal; kit identity is the WITH-Passion form.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Zeal (Passion oskill)"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_uptime",
+        "ELEMENT_CONVERSION_MONO"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1513,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "resist",
+          "glass"
+        ],
+        "primary": "glass"
+      },
+      "family": "defense",
+      "id": 1514,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.63,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.63,
+        "evidence": "Enchant buff applied via direct cast on self or ally; touch-range delivery",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1511,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "cooldown",
+        "plain_text": "cooldown (cooldown); Enchant converts the sorceress (and party/mercenary) into fire-melee attackers; ",
+        "resource_verbatim": "cooldown"
+      },
+      "family": "economy",
+      "id": 1515,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 1516,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.59,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.59,
+        "evidence": "Buff applied to single target; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 1512,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. Enchant converts the sorceress (and party/mercenary) into fire-melee attackers; self-buff-as-build plus external scaling  —  the buff-economy.",
+      "family": "geo_text",
+      "id": 1518,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "teleport"
+        ]
+      },
+      "family": "movement",
+      "id": 1517,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1519,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1520,
+      "kit_id": "d2-enchantress",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Enchantress: self buff aura identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-enchantress",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "d2-enchantress",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.7,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|melee_strike|damage|none|glass|cooldown|light|melee|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|melee_strike|damage|none|glass|cooldown|light|melee|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "glass"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "cooldown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IMMFLI-HNDG-SP-FI-~~",
+    "attr_conf": 0.7,
+    "attr_val": "INT",
+    "avg_conf": 0.7,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.7,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Enchant",
+      "Fire Mastery",
+      "Zeal(oskill era)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "long-buff-cycle",
+    "elem_raw": "fire",
+    "era_year": 2000,
+    "eras": "lod;d2r",
+    "eras_normalized": "lod;d2r",
+    "flags": "",
+    "folk_name": "Enchantress",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-05",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-enchantress",
+    "lattice_coord": "IMMFLI",
+    "lineage": "",
+    "mech_note": "Enchant converts the sorceress (and party/mercenary) into fire-melee attackers; self-buff-as-build plus external scaling — the buff-economy ",
+    "mint": 0,
+    "mob_raw": "teleport-high",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|SINGLE|INST×GAP-D2-05",
+    "mobile_key_group": "IMMFLI-HNDG-SP-FI-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.7,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.7,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.7,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MELEE-STRIKE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=1].members (working_label=MELEE-STRIKE; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Diablo 2 Guide: MongoJerry's 1.10 Enchantress Sorceress Guide",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod era",
+      "errata_applied": 0,
+      "id": 882,
+      "kit_id": "d2-enchantress",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/mongojerrys-1-10-enchantress-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Enchantress Sorceress Build for Diablo 2 Resurrected",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r era",
+      "errata_applied": 0,
+      "id": 883,
+      "kit_id": "d2-enchantress",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/enchantress-sorceress-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Enchantress Sorceress Build for Diablo 2 Resurrected",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Enchantress' and aliases 'Enchant Sorceress', 'Fire Enchantress' are real community usage",
+      "errata_applied": 0,
+      "id": 880,
+      "kit_id": "d2-enchantress",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/enchantress-sorceress-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "20 points to Enchant — main damage boost Skill, required; 20 points to Fire Mastery — added damage for Enchant, required; Passion Runeword",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Enchant, Fire Mastery, Zeal (oskill via Passion runeword era)",
+      "errata_applied": 0,
+      "id": 881,
+      "kit_id": "d2-enchantress",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/enchantress-sorceress-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Touch-range buff cast on self or ally; adds flat fire damage to melee attacks for duration. Fire Mastery applies twice per swing-hit (once on cast, once on hit). Prebuff variant possible.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Enchant' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1) but 'melee_arc' more strongly (2) — mixed signal",
+      "errata_applied": 0,
+      "id": 2103,
+      "kit_id": "d2-enchantress",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Multi-hit melee sequence (5 hits) on adjacent target. Fire damage sourced from Enchant buff. Item-defined-archetype: Passion runeword grants Zeal; kit identity is the WITH-Passion form.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Zeal (Passion oskill)' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2 sig)",
+      "errata_applied": 0,
+      "id": 2104,
+      "kit_id": "d2-enchantress",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

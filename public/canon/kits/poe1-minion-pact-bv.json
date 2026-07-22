@@ -1,0 +1,800 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 605,
+      "assert_text": "primary_delivery_class == 'motion'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-minion-pact-bv",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 155,
+    "kit_id": "poe1-minion-pact-bv",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Blade Vortex — PoEDB",
+    "url": "https://poedb.tw/us/Blade_Vortex"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 155,
+      "kit_id": "poe1-minion-pact-bv",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Blade Vortex — PoEDB",
+      "url": "https://poedb.tw/us/Blade_Vortex"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 156,
+      "kit_id": "poe1-minion-pact-bv",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Minion Pact Support — PoEDB",
+      "url": "https://poedb.tw/us/Minion_Pact_Support"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-minion-pact-bv",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 569,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-minion-pact-bv",
+      "missing_expression": "What the player of the original would miss: (a) the literal slaughter -- engine has no primitive for consuming a proxy entity and reading its LIFE POOL into a spell's damage;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "What the player of the original would miss: (a) the literal slaughter -- engine has no primitive for consuming a proxy entity and reading its LIFE POOL into a spell's damage; the trigger-grammar + cycle-economy + doors model the rhythm and the trade, not the mechanism; (b) the SNAPSHOT (sacrificed-minion life locked into blade damage for their duration) has no carrier; (c) minion-life as an OFFENSIVE scaling stat inverts the trait lane (approximated in scaffold traits). The blade-orbit shell, the raise/sacrifice treadmill, and the sacrifice-for-power identity read through -- 'that build, worse', hence APPROX not GAPPED (R-M7 player test; b02 dark-pact precedent)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 341,
+      "kit_id": "poe1-minion-pact-bv",
+      "payload_json": null,
+      "source_url": "https://poedb.tw/us/Minion_Pact_Support"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Supported Spells Sacrifice a random nearby Damageable Minion on Cast to gain added Physical Damage equal to (2-2.8)% of Sacrificed Minion's Life",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 340,
+      "kit_id": "poe1-minion-pact-bv",
+      "payload_json": {
+        "function": "sacrifice minion life into BV physical damage",
+        "restriction": "cannot support brand/orb/channelling/arcane/Vaal/trap/mine skills",
+        "support_gem": "Minion Pact Support"
+      },
+      "source_url": "https://poedb.tw/us/Minion_Pact_Support"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Supported Spells Sacrifice a random nearby Damageable Minion on Cast",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 339,
+      "kit_id": "poe1-minion-pact-bv",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "Supported Spells Sacrifice a random nearby Damageable Minion on Cast to gain added Physical Damage equal to (2—2.8)% of Sacrificed Minion's Life",
+            "effect": "Supported Spells Sacrifice a random nearby Damageable Minion on Cast to gain added Physical Damage equal to 2-2.8% of Sacrificed Minion's Life",
+            "item": "Minion Pact Support (core mechanic)",
+            "type": "support_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Minion_Pact_Support"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "An ethereal blade spins around you for a duration, repeatedly damaging enemies that it passes through. Players can maintain up to 10 active spinning blades simultaneously",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 338,
+      "kit_id": "poe1-minion-pact-bv",
+      "payload_json": {
+        "blade_cap": 10,
+        "delivery": "orbit (BV blades orbit player body)",
+        "duration": "4 seconds per blade stack",
+        "footprint": "small-radius (blades orbit in small radius around caster; hits enemies within range)"
+      },
+      "source_url": "https://poedb.tw/us/Blade_Vortex"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Supported Spells Sacrifice a random nearby Damageable Minion on Cast to gain added Physical Damage equal to (2-2.8)% of Sacrificed Minion's Life",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 337,
+      "kit_id": "poe1-minion-pact-bv",
+      "payload_json": {
+        "loop": "raise high-life Spectres → cast Blade Vortex with Minion Pact Support → random nearby Spectre is sacrificed → BV gains physical damage equal to 2-5.4% of sacrificed Spectre's life → blades orbit player for 4 seconds → re-raise Spectre → repeat",
+        "snapshot_concern": "community expected nerf to snapshot mechanic"
+      },
+      "source_url": "https://poedb.tw/us/Minion_Pact_Support"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 342,
+      "kit_id": "poe1-minion-pact-bv",
+      "payload_json": null,
+      "source_url": "https://poedb.tw/us/Blade_Vortex"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "walk|orbit|flat|vortex_pull|damage|none|mitigate|free|light|melee|high|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.5,
+    "def_riders": "[]",
+    "delivery_value": "orbit",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.31,
+    "geometry_rule_fired": "R2",
+    "geometry_value": "vortex_pull",
+    "kit_id": "poe1-minion-pact-bv",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IMHFLI-_SDM-SU-PH-~~",
+      "delivery": "orbit",
+      "elem_raw": "physical",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.5,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.31,
+        "rule_fired": "R2",
+        "value": "vortex_pull"
+      },
+      "flags": [],
+      "folk_name": "Minion Pact Blade Vortex",
+      "game": "poe1",
+      "kit_id": "poe1-minion-pact-bv",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IMHFLI-_SDM-SU-PH-~~",
+        "delivery": "orbit",
+        "elem_raw": "physical",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "minion-sacrifice",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-minion-pact-bv",
+      "motion_signature": "orbit_fixed",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "ethereal blades spin around the caster for 4s each, up to 10 active, repeatedly damaging enemies they pass through -- orbit is the NATIVE 26-type for exactly this (Wave-C R8-orbit; poe1-poison-bv/vaal-blade-vortex are its named engine exemplars). On each cast, Minion Pact SACRIFICES a random nearby damageable minion and adds physical damage equal to (2-2.8)% (up to ~5.4% scaled) of the sacrificed minion's life. Pure-physical -> element-neutral (physical rule); no ailment centrality attested",
+      "source_skill": "Blade Vortex (with Minion Pact Support)",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-minion-pact-bv",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "high-life Spectres raised NOT to fight but to be eaten: the re-raise loop keeps sacrifice fuel standing near the caster. totem = the placed-proxy 26-type; the non-combat feedstock role is the noted deviation",
+      "source_skill": "Raise Spectre (sacrifice feedstock)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-minion-pact-bv",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "What the player of the original would miss: (a) the literal slaughter -- engine has no primitive for consuming a proxy entity and reading its LIFE POOL into a spell's damage; the trigger-grammar + cycle-economy + doors model the rhythm and the trade, not the mechanism; (b) the SNAPSHOT (sacrificed-minion life locked into blade damage for their duration) has no carrier; (c) minion-life as an OFFENSIVE scaling stat inverts the trait lane (approximated in scaffold traits). The blade-orbit shell, the raise/sacrifice treadmill, and the sacrifice-for-power identity read through -- 'that build, worse', hence APPROX not GAPPED (R-M7 player test; b02 dark-pact precedent).",
+    "grade": "APPROX",
+    "kit_id": "poe1-minion-pact-bv",
+    "mapping_json": {
+      "fidelity_notes": "ENTITY-AS-CONSUMABLE-RESOURCE kit, post-cutoff (3.28 Minion Pact; probe conf capped <=0.5). NAMING CAVEAT carried per batch flag (c) + verify_ledger: the folk name 'Minion Pact Blade Vortex' is honestly UNATTESTED (identity verdict UNSUPPORTED, no anchor); the kit was promoted on CONFIRMED mechanics (the Minion Pact Support gem text is anchored verbatim) -- mechanics are mapped normally, the name is not source-warranted. Geometry is the batch's cleanest: orbit is native and engine-exemplified by BV itself. The sacrifice-snapshot mechanism is the recurring 'entity-on-the-field as a consumable resource pool' family (b02 STEWARD CONSOLIDATION FLAG: bladefall + dark-pact + b01 animate-weapon); per R-M7 precedent (b02 dark-pact stays APPROX/MAPPED) the identity is APPROXIMATED, not gapped: trigger grammar consume-only/on-cast-linked/resource-fill models cast-consumes-entity-fills-damage-budget at DEPTH-1; charge_stack=cycle carries the raise/spend treadmill; SACRIFICE_ASCENDANCY (b02 dark-pact door precedent) + RESOURCE_CONVERSION (minion-life -> damage). Docket candidate FILED adding this kit as 4th evidence to the recurring family (candidate side-files are not terminal-state drivers, R-M7). The SNAPSHOT nuance (damage locked at sacrifice time) is un-carried; noted.",
+      "motion_frame": "self-orbiting blade caster with a livestock pen: keep fat spectres standing nearby, and every Blade Vortex cast slaughters one into the blades -- the minions are ammunition, not an army",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "cycle"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "raise -> sacrifice -> re-raise treadmill (charge_stack cycle analog)",
+            "minion-LIFE investment = the damage budget (snapshot)"
+          ],
+          "geometry": [
+            "orbit blade shell (10-blade cap, 4s duration stacks)",
+            "blade-count/duration scaling"
+          ],
+          "traits_affixes": [
+            "minion-life (the scaling stat, inverted into offense)",
+            "physical/spell scaling",
+            "cast-speed (blade uptime)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "ethereal blades spin around the caster for 4s each, up to 10 active, repeatedly damaging enemies they pass through -- orbit is the NATIVE 26-type for exactly this (Wave-C R8-orbit; poe1-poison-bv/vaal-blade-vortex are its named engine exemplars). On each cast, Minion Pact SACRIFICES a random nearby damageable minion and adds physical damage equal to (2-2.8)% (up to ~5.4% scaled) of the sacrificed minion's life. Pure-physical -> element-neutral (physical rule); no ailment centrality attested",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "orbit",
+          "source_skill": "Blade Vortex (with Minion Pact Support)"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "high-life Spectres raised NOT to fight but to be eaten: the re-raise loop keeps sacrifice fuel standing near the caster. totem = the placed-proxy 26-type; the non-combat feedstock role is the noted deviation",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Raise Spectre (sacrifice feedstock)"
+        }
+      ],
+      "t4_doors": [
+        "SACRIFICE_ASCENDANCY",
+        "RESOURCE_CONVERSION"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "resource-fill",
+        "mark_identity": "a raised high-life Spectre standing near the caster -- the entity ITSELF is the consumable: each BV cast sacrifices one and snapshots its life pool into added physical damage",
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "consume-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.5
+      },
+      "family": "control",
+      "id": 2633,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.5,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 2634,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.33,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.33,
+        "evidence": "BV blades orbit player body; Minion Pact snapshots sacrificed spectre life into damage (post-cutoff)",
+        "value": "orbit"
+      },
+      "family": "delivery",
+      "id": 2631,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.5,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "minion-sacrifice (proc); 3.28's Minion Pact gem lets Blade Vortex SNAPSHOT a sacrificed high-life Spectre",
+        "resource_verbatim": "minion-sacrifice"
+      },
+      "family": "economy",
+      "id": 2635,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.5,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 2636,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.31,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.31,
+        "evidence": "BV orbital blades in small radius around player body; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 2632,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Orbit delivery with small-radius footprint. 28's Minion Pact gem lets Blade Vortex SNAPSHOT a sacrificed high-life Spectre's pool into its damage  —  the community expects a nerf.",
+      "family": "geo_text",
+      "id": 2638,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.45,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.45,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 2637,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2639,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "mb"
+      ],
+      "family": "sources_used",
+      "id": 2640,
+      "kit_id": "poe1-minion-pact-bv",
+      "post_cutoff_cap": 1,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Minion Pact Blade Vortex: orbit motion identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-minion-pact-bv",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.37,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|orbit|flat|vortex_pull|damage|none|mitigate|free|light|melee|high|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|orbit|flat|vortex_pull|damage|none|mitigate|free|light|melee|high|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "orbit"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "vortex_pull"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IMHFLI-_SDM-SU-PH-~~",
+    "attr_conf": 0.37,
+    "attr_val": "INT",
+    "avg_conf": 0.37,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.37,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Blade Vortex",
+      "Minion Pact",
+      "Raise Spectre"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "minion-sacrifice-snapshot",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "3.20+",
+    "eras_normalized": "3.20+",
+    "flags": "degenerate-famous; vdm2-w5-partial-2026-07-22: Minion Pact item mechanics not on poedb; secondary-source only (W1 partial). Structured on APPROX mapping; item-alteration confidence low.",
+    "folk_name": "Minion Pact Blade Vortex",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-01",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "poe1-minion-pact-bv",
+    "lattice_coord": "IMHFLI",
+    "lineage": "",
+    "mech_note": "3.28's Minion Pact gem lets Blade Vortex SNAPSHOT a sacrificed high-life Spectre's pool into its damage — the community expects a nerf. SEAR",
+    "mint": 0,
+    "mob_raw": "unknown",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|SMALL|INST×GAP-P1-01",
+    "mobile_key_group": "IMHFLI-_SDM-SU-PH-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "mb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.37,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.37,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": [
+      "https://mobalytics.gg/poe/profile/dante00151/builds/3-28-minion-pact-blade-vortex-chieftain-the-superior-bv"
+    ],
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.37,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Blade Vortex added in version 2.1.0. Minion Pact Support introduced in a more recent patch — 3.28 Minion Pact gem lets BV snapshot a sacrificed high-life Spectre's pool",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in stamped era 3.20+",
+      "errata_applied": 0,
+      "id": 182,
+      "kit_id": "poe1-minion-pact-bv",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Blade_Vortex",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Minion Pact Blade Vortex' with Occultist/Necromancer class is real community usage",
+      "errata_applied": 0,
+      "id": 180,
+      "kit_id": "poe1-minion-pact-bv",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Blade_Vortex",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Supported Spells Sacrifice a random nearby Damageable Minion on Cast to gain added Physical Damage equal to (2-2.8)% of Sacrificed Minion's Life",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Blade Vortex, Minion Pact, Raise Spectre; orbital blades around player; Minion Pact sacrifices minion life to add physical damage; snapshot mechanic",
+      "errata_applied": 0,
+      "id": 181,
+      "kit_id": "poe1-minion-pact-bv",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Minion_Pact_Support",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "ethereal blades spin around the caster for 4s each, up to 10 active, repeatedly damaging enemies they pass through -- orbit is the NATIVE 26-type for exactly this (Wave-C R8-orbit; poe1-poison-bv/vaal-blade-vortex are its named engine exemplars). On each cast, Minion Pact SACRIFICES a random nearby damageable minion and adds physical damage equal to (2-2.8)% (up to ~5.4% scaled) of the sacrificed minion's life. Pure-physical -> element-neutral (physical rule); no ailment centrality attested",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Blade Vortex (with Minion Pact Support)' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (1 sig)",
+      "errata_applied": 0,
+      "id": 2446,
+      "kit_id": "poe1-minion-pact-bv",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "high-life Spectres raised NOT to fight but to be eaten: the re-raise loop keeps sacrifice fuel standing near the caster. totem = the placed-proxy 26-type; the non-combat feedstock role is the noted deviation",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Raise Spectre (sacrifice feedstock)' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (1 sig)",
+      "errata_applied": 0,
+      "id": 2447,
+      "kit_id": "poe1-minion-pact-bv",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "poedb Blade_Vortex: \"Spell, AoE, Duration, Physical\". Minion Pact item mechanics NOT on poedb (secondary source only); it is a Necromancer keystone consuming minions to restore life (W1 partial). Charter flag: PoE2 skill mis-assigned to PoE1?",
+      "claim_family": "mechanics",
+      "claim_subject": "elem_anomaly",
+      "claim_text": "[§7 elem_raw anomaly · PROPOSED:AMBIGUOUS-HOLD] elem_raw='physical' — elem_raw='physical' is anchor-supported for the Blade Vortex payload (poedb: Physical). The PARTIAL is the Minion Pact item, whose stats are not on the frozen substrate, AND the charter's open question of whether this is a PoE2 skill mis-assigned to PoE1. That is a CORPUS-MEMBERSHIP question (bounded-substrate: not resolvable without a fresh crawl → next-lap finding), NOT an elem_raw correction. HOLD the element (physical stands); LOG the mis-assignment question as a next-lap membership finding.",
+      "errata_applied": 0,
+      "id": 2572,
+      "kit_id": "poe1-minion-pact-bv",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "player_attested",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

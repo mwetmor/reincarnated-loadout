@@ -1,0 +1,856 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 3,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 8
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 844,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-singer",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Blubbalutsch",
+    "cite_class": "communal",
+    "id": 672,
+    "kit_id": "d2-singer",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "The Worker - A War Cry Horker Barbarian Build",
+    "url": "https://diablo2.io/forums/the-worker-a-war-cry-horker-barbarian-build-t1277155.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Blubbalutsch",
+      "cite_class": "communal",
+      "id": 672,
+      "kit_id": "d2-singer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "The Worker - A War Cry Horker Barbarian Build",
+      "url": "https://diablo2.io/forums/the-worker-a-war-cry-horker-barbarian-build-t1277155.html"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "official",
+      "id": 673,
+      "kit_id": "d2-singer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "War Cry — Diablo 2 Resurrected Skill",
+      "url": "https://diablo2.io/skills/war-cry-t4191.html"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-singer",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 745,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-singer",
+      "missing_expression": "Small-radius constraint (notably smaller than other War Cries) has no engine enforcement.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Small-radius constraint (notably smaller than other War Cries) has no engine enforcement. The inversion pleasure (barbarian as caster) is player-experience texture the engine cannot encode. Engine stun + circle geometry captures the loop correctly."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1583,
+      "kit_id": "d2-singer",
+      "payload_json": {
+        "handle": "Blubbalutsch",
+        "site": "diablo2.io"
+      },
+      "source_url": "https://diablo2.io/forums/the-worker-a-war-cry-horker-barbarian-build-t1277155.html"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1582,
+      "kit_id": "d2-singer",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1581,
+      "kit_id": "d2-singer",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Injures and stuns all nearby enemies",
+      "conf": 0.84,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1580,
+      "kit_id": "d2-singer",
+      "payload_json": {
+        "delivery": "self-origin",
+        "footprint": "small-radius",
+        "notes": "War Cry radiates from player body as instant AoE shout; 'notably small radius compared to other War Cries' per skill page. Enemies in radius are injured and stunned."
+      },
+      "source_url": "https://diablo2.io/skills/war-cry-t4191.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The Worker is a caster barb, using the skill War Cry to defeat enemies and Find Item to generate drops.",
+      "conf": 0.86,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1579,
+      "kit_id": "d2-singer",
+      "payload_json": {
+        "description": "Cast War Cry repeatedly from within monster packs; shout injures and stuns all nearby enemies in radius; Battle Orders for life/mana/stamina buff; Battle Cry for defense debuff on enemies. Caster barbarian using shout tree exclusively — counterintuitive class expression.",
+        "source_note": "diablo2.io War Cry skill page + Worker guide"
+      },
+      "source_url": "https://diablo2.io/forums/the-worker-a-war-cry-horker-barbarian-build-t1277155.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The Worker is a caster barb, using the skill War Cry to defeat enemies and Find Item to generate drops.",
+      "conf": 0.76,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1584,
+      "kit_id": "d2-singer",
+      "payload_json": {
+        "variants": [
+          "Pure Singer (War Cry damage focus)",
+          "War Cry Horker / Worker (War Cry + Find Item for MF farming)",
+          "Baal Runner Singer (teleporter-adjacent support role)"
+        ]
+      },
+      "source_url": "https://diablo2.io/forums/the-worker-a-war-cry-horker-barbarian-build-t1277155.html"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|self-origin|flat|circle|damage|stun|tank|spend|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:stun\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "stun",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R8-self-circle",
+    "geometry_value": "circle",
+    "kit_id": "d2-singer",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMHFSI-LSMT-SP-PH-~~",
+      "delivery": "self-origin",
+      "elem_raw": "physical",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:stun"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R8-self-circle",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Singer",
+      "game": "d2",
+      "kit_id": "d2-singer",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMHFSI-LSMT-SP-PH-~~",
+        "delivery": "self-origin",
+        "elem_raw": "physical",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-singer",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Self-origin small-radius shout AoE. Dossier skill_geometry: 'notably small radius compared to other War Cries.' Skill_loop: 'injures and stuns all nearby enemies.' Stun attested in anchor_quote: 'Injures and stuns all nearby enemies.' Element-neutral: War Cry is physical/magic shout — no element family.",
+      "source_skill": "War Cry",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-singer",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "Buff shout: life/mana/stamina increase. Persistent aura-toggle for party/self buff.",
+      "source_skill": "Battle Orders",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-singer",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 2,
+      "source_anchor": "Defense debuff shout on enemies in radius. Reduces enemy attack rating and damage — maps to curse:weaken (reduces enemy offensive output). Persistent caster-anchored debuff.",
+      "source_skill": "Battle Cry",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-singer",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Small-radius constraint (notably smaller than other War Cries) has no engine enforcement. The inversion pleasure (barbarian as caster) is player-experience texture the engine cannot encode. Engine stun + circle geometry captures the loop correctly.",
+    "grade": "CLOSE",
+    "kit_id": "d2-singer",
+    "mapping_json": {
+      "fidelity_notes": "Stun attested: anchor_quote 'Injures and stuns all nearby enemies' — fetched-class, contiguous in-store. LEGAL. Element-neutral: War Cry is physical/magic damage; no element family per THE PHYSICAL RULE. Battle Cry curse:weaken: reduces enemy damage/attack — curse:weaken per main law §2 (Enfeeble/Weaken row: reduces enemy output). Singer Worker variant (War Cry + Find Item) = loot-economy-identity variant, noted — mapped kit is pure Singer combat loop; Worker variant's Find-Item identity goes to loot-economy-identity docket if surfaced as its own kit. Beloved-inversion-canon nature (barbarian as caster) preserved in motion_frame. [STEWARD-AUDIT 2026-07-18 MW2-close: Battle Cry 'curse:weaken' STRUCK — weaken/lowers/reduces all absent from store. War Cry 'stun' KEPT — 'shout injures and stuns all nearby enemies' attested. Grade unchanged]",
+      "motion_frame": "Cast War Cry repeatedly from within monster packs to stun-lock and injure; Battle Orders for self-buff; Battle Cry for enemy defense debuff. Caster barbarian using shout tree exclusively.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "steady-mana",
+        "cost_slope": "flat-per-cast"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "small-radius proximity requirement for AoE consistency"
+          ],
+          "traits_affixes": [
+            "War Cry synergy scaffold (1.10+ patch per verify_ledger)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "stun"
+          ],
+          "delivery_notes": "Self-origin small-radius shout AoE. Dossier skill_geometry: 'notably small radius compared to other War Cries.' Skill_loop: 'injures and stuns all nearby enemies.' Stun attested in anchor_quote: 'Injures and stuns all nearby enemies.' Element-neutral: War Cry is physical/magic shout — no element family.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "circle",
+          "source_skill": "War Cry"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Buff shout: life/mana/stamina increase. Persistent aura-toggle for party/self buff.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Battle Orders"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Defense debuff shout on enemies in radius. Reduces enemy attack rating and damage — maps to curse:weaken (reduces enemy offensive output). Persistent caster-anchored debuff.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Battle Cry"
+        }
+      ],
+      "t4_doors": [
+        "ZONE_CONTROL",
+        "NETWORK_AMPLIFIER",
+        "PERSISTENCE_ENGINE_uptime"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "stun"
+        ],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 883,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "resist",
+          "hp-stack"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 884,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "War Cry shout radiates from player body as instant AoE shock wave",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 881,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Caster barbarian: War Cry stun-nukes in a radius off mana; the class's shout tre",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 885,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 886,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "War Cry ring radiates small-radius AoE; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 882,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with small-radius footprint. Caster barbarian: War Cry stun-nukes in a radius off mana; the class's shout tree played as the whole kit  —  beloved inversion canon.",
+      "family": "geo_text",
+      "id": 888,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 887,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 889,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "od (online docs — Diablo wiki / game manual)",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 890,
+      "kit_id": "d2-singer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Singer: circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-singer",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|self-origin|flat|circle|damage|stun|tank|spend|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|self-origin|flat|circle|damage|stun|tank|spend|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "stun"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMHFSI-LSMT-SP-PH-~~",
+    "attr_conf": 0.82,
+    "attr_val": "STR",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "War Cry",
+      "Battle Cry",
+      "Battle Orders"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-hungry",
+    "elem_raw": "physical",
+    "era_year": 2000,
+    "eras": "lod;d2r;rotw-s14",
+    "eras_normalized": "lod;d2r;rotw-s14",
+    "flags": "",
+    "folk_name": "Singer",
+    "game": "d2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-singer",
+    "lattice_coord": "SMHFSI",
+    "lineage": "",
+    "mech_note": "Caster barbarian: War Cry stun-nukes in a radius off mana; the class's shout tree played as the whole kit — beloved inversion canon.",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×econ:spend",
+    "mobile_key_group": "SMHFSI-LSMT-SP-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "od;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "with the addition of Synergies in patch 1.10 this skill became more used as the damaging skill in the Singing Barbarian build",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: lod",
+      "errata_applied": 0,
+      "id": 1012,
+      "kit_id": "d2-singer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/war-cry-t4191.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[D2R SC] Patriarch Dickinson - the master singer barbarian",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: d2r",
+      "errata_applied": 0,
+      "id": 1013,
+      "kit_id": "d2-singer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/d2r-sc-patriarch-dickinson-the-master-singer-barbarian.196116/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: rotw-s14 (post-cutoff — fetched text defines)",
+      "errata_applied": 0,
+      "id": 1014,
+      "kit_id": "d2-singer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/war-cry-t4191.html",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The Worker is a caster barb, using the skill War Cry to defeat enemies and Find Item to generate drops.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Singer' or 'War Cry Barbarian' or 'Singer Barb' is real community usage",
+      "errata_applied": 0,
+      "id": 1010,
+      "kit_id": "d2-singer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/the-worker-a-war-cry-horker-barbarian-build-t1277155.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Injures and stuns all nearby enemies",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: War Cry, Battle Cry, Battle Orders; stuns enemies in radius; mana resource",
+      "errata_applied": 0,
+      "id": 1011,
+      "kit_id": "d2-singer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/war-cry-t4191.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Self-origin small-radius shout AoE. Dossier skill_geometry: 'notably small radius compared to other War Cries.' Skill_loop: 'injures and stuns all nearby enemies.' Stun attested in anchor_quote: 'Injures and stuns all nearby enemies.' Element-neutral: War Cry is physical/magic shout — no element family.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'War Cry' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (2 sig)",
+      "errata_applied": 0,
+      "id": 2171,
+      "kit_id": "d2-singer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Buff shout: life/mana/stamina increase. Persistent aura-toggle for party/self buff.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Battle Orders' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (4 sig)",
+      "errata_applied": 0,
+      "id": 2172,
+      "kit_id": "d2-singer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Defense debuff shout on enemies in radius. Reduces enemy attack rating and damage — maps to curse:weaken (reduces enemy offensive output). Persistent caster-anchored debuff.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Battle Cry' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2173,
+      "kit_id": "d2-singer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

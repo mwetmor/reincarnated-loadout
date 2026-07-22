@@ -1,0 +1,670 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 0,
+    "recognition_hooks": 1,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 798,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-blade-sin",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Stormlash (data contributor)",
+    "cite_class": "official",
+    "id": 591,
+    "kit_id": "d2-blade-sin",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "Blade Fury — Diablo 2 Resurrected Skill",
+    "url": "https://diablo2.io/skills/blade-fury-t4001.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Stormlash (data contributor)",
+      "cite_class": "official",
+      "id": 591,
+      "kit_id": "d2-blade-sin",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Blade Fury — Diablo 2 Resurrected Skill",
+      "url": "https://diablo2.io/skills/blade-fury-t4001.html"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 592,
+      "kit_id": "d2-blade-sin",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Diablo 2 Guide: The Furysin (Blade Fury)",
+      "url": "https://www.purediablo.com/strategy/diablo-2-guide-the-furysin-blade-fury"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-blade-sin",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 712,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-blade-sin",
+      "missing_expression": "Player would miss: fixed-6fps IAS-immune cadence feel — engine cadence_scale approximates but lacks the hard-cap IAS-ignore mechanic;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Player would miss: fixed-6fps IAS-immune cadence feel — engine cadence_scale approximates but lacks the hard-cap IAS-ignore mechanic; blade-sentinel dual role (placed lane + synergy scalar) partially approximated."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Data contributed by Stormlash",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1343,
+      "kit_id": "d2-blade-sin",
+      "payload_json": {
+        "handle": "Stormlash",
+        "site": "diablo2.io"
+      },
+      "source_url": "https://diablo2.io/skills/blade-fury-t4001.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Blade Sentinel: listed as both a prerequisite and synergy (+10% Damage per Level)",
+      "conf": 0.74,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1342,
+      "kit_id": "d2-blade-sin",
+      "payload_json": {
+        "notes": "Venom and Fade are standard support skills; Shadow Master for distraction",
+        "synergies": [
+          "Blade Sentinel (+10% damage per level)"
+        ]
+      },
+      "source_url": "https://diablo2.io/skills/blade-fury-t4001.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Stormlash is suggested as the best weapon for a Blade Fury Assassin",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1341,
+      "kit_id": "d2-blade-sin",
+      "payload_json": {
+        "key_items": [
+          "Stormlash (recommended weapon; Crushing Blow, Static Field proc)",
+          "Ethereal weapons (no durability loss via Blade Fury)"
+        ],
+        "notes": "Blade Fury's no-durability property makes ethereal weapons viable; Stormlash named as best-in-slot"
+      },
+      "source_url": "https://www.purediablo.com/strategy/diablo-2-guide-the-furysin-blade-fury"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Throw spinning blades to slice up your enemies",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1340,
+      "kit_id": "d2-blade-sin",
+      "payload_json": {
+        "delivery": "ranged projectile (thrown blades)",
+        "footprint": "linear/point",
+        "notes": "Blades travel toward target; no AoE; fixed 6fps fire rate independent of IAS",
+        "range_type": "ranged"
+      },
+      "source_url": "https://diablo2.io/skills/blade-fury-t4001.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "will attack constantly with 6 frames per attack. It does not work with Burst of Speed or any other increased (or decreased) attack speed.",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1339,
+      "kit_id": "d2-blade-sin",
+      "payload_json": {
+        "summary": "Blade Fury fires spinning blades at a fixed 6fps regardless of IAS; blades do not consume weapon durability enabling ethereal weapons. Blade Sentinel serves as prerequisite and damage synergy (+10% per level). Player typically prepares with Venom/Fade/Shadow Master then deploys Blade Fury from medium range."
+      },
+      "source_url": "https://diablo2.io/skills/blade-fury-t4001.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The PvM Hybrid Furysin Guide (Dual Dream Kicking Furysin)",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1344,
+      "kit_id": "d2-blade-sin",
+      "payload_json": {
+        "variants": [
+          "Furysin (PvM Blade Fury focused)",
+          "PvM Hybrid Furysin (Dual Dream kicking hybrid)",
+          "Pure Blade Fury (primary skill build)"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/the-pvm-hybrid-furysin-guide-dual-dream-kicking-furysin.120210/"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "blank|projectile|flat|blank|blank|blank|blank|blank|solo|dual|med|channel|active|one-shot",
+    "ctrl_ailment_gaps": null,
+    "ctrl_ailments_mapped": null,
+    "ctrl_function": null,
+    "ctrl_treatment": null,
+    "def_bin": null,
+    "def_conf": null,
+    "def_riders": null,
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": null,
+    "econ_meter_type": null,
+    "econ_status": null,
+    "economy_model": null,
+    "flags": [
+      "A5-negative-supplementary"
+    ],
+    "geometry_conf": null,
+    "geometry_rule_fired": null,
+    "geometry_value": null,
+    "kit_id": "d2-blade-sin",
+    "mob_policy_while_casting": null,
+    "mob_skill_is_movement": null,
+    "mob_verbs": null,
+    "provenance_json": {
+      "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+      "keying": "A5-negative-rekey-2026-07-14",
+      "negative": 1,
+      "passive_null_coords": [
+        "geometry_value",
+        "ctrl_treatment",
+        "ctrl_function",
+        "def_bin",
+        "economy_model",
+        "mob_policy_while_casting"
+      ],
+      "recoverable_coords": [
+        "delivery_value",
+        "amp_val",
+        "proxy_val",
+        "range_val",
+        "tempo_val",
+        "commit_val",
+        "activation_val",
+        "dependency_val"
+      ],
+      "source": "megaprobe-facts-jsonl (sparse negative row)",
+      "supplementary_only": true
+    },
+    "raw_json": {
+      "delivery": {
+        "conf": 0.54,
+        "evidence": "Blade Fury fires blade projectiles in a rapid stream from player toward enemy",
+        "value": "projectile"
+      },
+      "folk_name": "Blade Fury sin",
+      "footprint": {
+        "conf": 0.51,
+        "evidence": "Single-target hit with minimal spread; geo=single in atlas",
+        "value": "point"
+      },
+      "game": "d2",
+      "keying_provenance": {
+        "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+        "keying": "A5-negative-rekey-2026-07-14",
+        "negative": 1,
+        "passive_null_coords": [
+          "geometry_value",
+          "ctrl_treatment",
+          "ctrl_function",
+          "def_bin",
+          "economy_model",
+          "mob_policy_while_casting"
+        ],
+        "recoverable_coords": [
+          "delivery_value",
+          "amp_val",
+          "proxy_val",
+          "range_val",
+          "tempo_val",
+          "commit_val",
+          "activation_val",
+          "dependency_val"
+        ],
+        "source": "megaprobe-facts-jsonl (sparse negative row)",
+        "supplementary_only": true
+      },
+      "kit_id": "d2-blade-sin",
+      "mech_note": "Blade skills (Fury/Sentinel/Shield) chronically undertuned pre-D2R; documented dead branch for two decades.",
+      "row_class": "combat-kit",
+      "status": "negative",
+      "why_negative": "Blade skills (Fury/Sentinel/Shield) chronically undertuned for two decades pre-D2R; no viable primary loop ever established; documented dead branch"
+    },
+    "resource_verbatim": null,
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-blade-sin",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Ranged thrown spinning blades; anchor: 'Throw spinning blades to slice up your enemies'; 'will attack constantly with 6 frames per attack. It does not work with Burst of Speed or any other increased (or decreased) attack speed. Doesn't use up the durability of weapons.' Fixed 6fps cadence IAS-immune; physical element-neutral; projectile linear.",
+      "source_skill": "Blade Fury",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-blade-sin",
+      "motion_signature": "lane_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Placed traversing sentinel blade; synergy-only per §A row 1 (scaffold role, +10% damage per level); also kit capstone anchor: 'Blade Sentinel: listed as both a prerequisite and synergy (+10% Damage per Level)'",
+      "source_skill": "Blade Sentinel",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-blade-sin",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player would miss: fixed-6fps IAS-immune cadence feel — engine cadence_scale approximates but lacks the hard-cap IAS-ignore mechanic; blade-sentinel dual role (placed lane + synergy scalar) partially approximated.",
+    "grade": "APPROX",
+    "kit_id": "d2-blade-sin",
+    "mapping_json": {
+      "fidelity_notes": "negative=1 kit; maps on fetched evidence per §E.3 falsified-negative law: dossier CONFIRMED, verify_ledger negative_canon CONFIRMED. Fixed IAS-immune cadence is distinctive identity texture — cadence_scale key captures it. Physical = element-neutral. Blade Sentinel is hybrid (placed-lane sentinel + scaffold synergy); mapped as placed_lane with scaffold note. §A row 1 synergy = scaffold.support_lanes.traits_affixes.",
+      "motion_frame": "Mid-range: deploy Blade Fury at fixed 6fps rate; Blade Sentinel as passive lane hazard and damage synergy scaffold",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence_scale": "fixed-6fps-IAS-immune",
+        "cost_scale": "mana per blade"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Ethereal weapon viability (no durability loss) — item fidelity note"
+          ],
+          "geometry": [
+            "Blade Sentinel placed-lane scaffold"
+          ],
+          "traits_affixes": [
+            "Blade Sentinel synergy: +10% damage per level — §A row 1 scaffold"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Ranged thrown spinning blades; anchor: 'Throw spinning blades to slice up your enemies'; 'will attack constantly with 6 frames per attack. It does not work with Burst of Speed or any other increased (or decreased) attack speed. Doesn't use up the durability of weapons.' Fixed 6fps cadence IAS-immune; physical element-neutral; projectile linear.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "line",
+          "source_skill": "Blade Fury"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Placed traversing sentinel blade; synergy-only per §A row 1 (scaffold role, +10% damage per level); also kit capstone anchor: 'Blade Sentinel: listed as both a prerequisite and synergy (+10% Damage per Level)'",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "placed_lane",
+          "source_skill": "Blade Sentinel"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_uptime",
+        "TEMPORAL_CHARGE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Blade Fury sin: line projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-blade-sin",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.6,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "blank|projectile|flat|blank|blank|blank|blank|blank|solo|dual|med|channel|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "blank|projectile|flat|blank|blank|blank|blank|blank|solo|dual|med|channel|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "blank"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "blank"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "blank"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "blank"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "blank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "blank"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DDMFSC-MNDD-SP-PH-~~",
+    "attr_conf": 0.6,
+    "attr_val": "DEX",
+    "avg_conf": 0.6,
+    "canon_tier": "negative",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.6,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Blade Fury",
+      "Blade Sentinel"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": "extrinsic-tuning",
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "physical",
+    "era_year": 2000,
+    "eras": "lod",
+    "eras_normalized": "lod",
+    "flags": "",
+    "folk_name": "Blade Fury sin",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-blade-sin",
+    "lattice_coord": "DDMFSC",
+    "lineage": "",
+    "mech_note": "Blade skills (Fury/Sentinel/Shield) chronically undertuned pre-D2R; documented dead branch for two decades.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|SINGLE|CHAN×econ:spend",
+    "mobile_key_group": "DDMFSC-MNDD-SP-PH-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 0,
+    "negative": 1,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.6,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.6,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "complete-kit-mapping",
+    "tempo_conf": 0.6,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Throw spinning blades to slice up your enemies",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod",
+      "errata_applied": 0,
+      "id": 846,
+      "kit_id": "d2-blade-sin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/blade-fury-t4001.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The Furysin is an Assassin build concentrated around the use of Blade Fury",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name Blade Fury sin; aliases Blade Fury Assassin, Blade Sin",
+      "errata_applied": 0,
+      "id": 844,
+      "kit_id": "d2-blade-sin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/diablo-2-guide-the-furysin-blade-fury",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "will attack constantly with 6 frames per attack. It does not work with Burst of Speed or any other increased (or decreased) attack speed. Doesn't use up the durability of weapons",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Blade Fury (throws spinning blades, fixed 6fps, no IAS interaction, no durability use), Blade Sentinel",
+      "errata_applied": 0,
+      "id": 845,
+      "kit_id": "d2-blade-sin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/blade-fury-t4001.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Ranged thrown spinning blades; anchor: 'Throw spinning blades to slice up your enemies'; 'will attack constantly with 6 frames per attack. It does not work with Burst of Speed or any other increased (or decreased) attack speed. Doesn't use up the durability of weapons.' Fixed 6fps cadence IAS-immune; physical element-neutral; projectile linear.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Blade Fury' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (2 sig)",
+      "errata_applied": 0,
+      "id": 2080,
+      "kit_id": "d2-blade-sin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Placed traversing sentinel blade; synergy-only per §A row 1 (scaffold role, +10% damage per level); also kit capstone anchor: 'Blade Sentinel: listed as both a prerequisite and synergy (+10% Damage per Level)'",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Blade Sentinel' delivery_class=zone (band_conf=0.75); lint: anchor leans 'motion' (1 sig) vs assigned 'zone' (0) — weak/defensible (thin margin), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2081,
+      "kit_id": "d2-blade-sin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "This is considered by many to be one point wonder skill... it is not viable in PvP",
+      "claim_family": "negative_canon",
+      "claim_subject": null,
+      "claim_text": "Blade Fury lod-era negative — blade-skill over-centralization concern; kit lacks late-game viability / depth relative to alternatives",
+      "errata_applied": 0,
+      "id": 847,
+      "kit_id": "d2-blade-sin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/blade-fury-t4001.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    }
+  ]
+}

@@ -1,0 +1,796 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1014,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-demon-form",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 1015,
+      "assert_text": "expresses: The source player would miss (1) the FORM-SWAP itself as a distinct game-state (",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "poe2-demon-form",
+      "last_result": "red",
+      "routed_docket_id": 164
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 307,
+    "kit_id": "poe2-demon-form",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Infernalist Ascendancy Overview - Path of Exile 2",
+    "url": "https://maxroll.gg/poe2/resources/infernalist-ascendancy"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 307,
+      "kit_id": "poe2-demon-form",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Infernalist Ascendancy Overview - Path of Exile 2",
+      "url": "https://maxroll.gg/poe2/resources/infernalist-ascendancy"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "wishdropper#0634",
+      "cite_class": "communal",
+      "id": 308,
+      "kit_id": "poe2-demon-form",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "[PoE 2] Demon Form Spark Build | Infernalist | Early Access",
+      "url": "https://www.pathofexile.com/forum/view-thread/3656716"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 309,
+      "kit_id": "poe2-demon-form",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "[POE2 0.1.0d] Demonfernalist - Cold / Crit / Demon Form - Witch Infernalist build",
+      "url": "https://www.pathofexile.com/forum/view-thread/3643314"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-demon-form",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 872,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-poe2",
+        "docket_id": 164,
+        "evidence_kits": [
+          "poe2-demon-form"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:poe2-demon-form",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "poe2-record"
+        },
+        "source_deviation_id": 872,
+        "source_kit_id": "poe2-demon-form",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 PoE2 structuring of poe2-demon-form.",
+        "status": "open"
+      },
+      "docket_id": 164,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-demon-form",
+      "missing_expression": "The source player would miss (1) the FORM-SWAP itself as a distinct game-state (you BECOME a demon -- a body/moveset change, GX-02) -- rendered as a self_buff it loses the transformation identity;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "The source player would miss (1) the FORM-SWAP itself as a distinct game-state (you BECOME a demon -- a body/moveset change, GX-02) -- rendered as a self_buff it loses the transformation identity; (2) the unbounded Demonflame life-drain ramp -- clamped to hp_cost_scale 0.30, the escalating 'race your own life-loss' tension is capped, losing the run-it-till-you-die brinkmanship; (3) element ambiguity (fire per corpus vs lightning/Spark per attested builds). Form-swap has no engine lane (GX-02 pending) and the drain-ramp is clamped -> APPROX; not GAPPED because a fire-spell self-buff caster with a decaying-HP cost is 'that build, weaker.'"
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "[PoE 2] Demon Form Spark Build | Infernalist | Early Access | Path of Exile 2",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 611,
+      "kit_id": "poe2-demon-form",
+      "payload_json": {
+        "handle": "wishdropper#0634",
+        "site": "pathofexile.com/forum",
+        "url": "https://www.pathofexile.com/forum/view-thread/3656716"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3656716"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Demon Form is a skill that 'Shapeshift into a demon, vastly boosting the power of your Spells'",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 610,
+      "kit_id": "poe2-demon-form",
+      "payload_json": {
+        "ascendancy": "Infernalist",
+        "fire_nodes": [
+          "Bringer of Flame",
+          "Pyromantic Pact",
+          "Seething Body",
+          "Grinning Immolation"
+        ],
+        "form_nodes": [
+          "Altered Flesh",
+          "Beidat's Gaze",
+          "Beidat's Will",
+          "Beidat's Hand",
+          "Demonic Possession",
+          "Mastered Darkness (unlimited Demonflame stacks)",
+          "Loyal Hellhound"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/resources/infernalist-ascendancy"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 609,
+      "kit_id": "poe2-demon-form",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 608,
+      "kit_id": "poe2-demon-form",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Shapeshift into a demon, vastly boosting the power of your Spells... You gain Demonflame every second you remain in demon form, causing your life to be lost at an ever-increasing rate.",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 607,
+      "kit_id": "poe2-demon-form",
+      "payload_json": {
+        "loop_verbatim": "Infernalist uses Demon Form to shapeshift, gaining increased cast speed, spell level boosts, and damage. Demonflame stacks accumulate per second in form, increasing life drain rate (up to 10 stacks; Mastered Darkness removes cap). Life drain managed via recovery investment. Form enables spell casting with boosted stats. Note: attested builds in fetched sources use Spark (lightning), not fire, in-form — element is not locked to fire."
+      },
+      "source_url": "https://maxroll.gg/poe2/resources/infernalist-ascendancy"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Shin's Arch-Demon Fireball Infernalist",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 612,
+      "kit_id": "poe2-demon-form",
+      "payload_json": {
+        "variants": [
+          "Demon Form Spark (lightning, wishdropper#0634, 0.1)",
+          "Arch-Demon Fireball Infernalist (fire, 0.1)",
+          "Demonfernalist Cold/Crit (cold, 0.1.0d)",
+          "Infernalist Summoner (spirit pool variant, no Demon Form emphasis)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3647223"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|self-origin|var|circle|damage|none|absorb|self-cost|solo|ranged|high|instant|active|build→spend",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.78,
+    "def_riders": "[\"synonym:energy-shield\"]",
+    "delivery_value": "self-origin",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "self-cost",
+    "flags": [],
+    "geometry_conf": 0.8,
+    "geometry_rule_fired": "R8-self-circle",
+    "geometry_value": "circle",
+    "kit_id": "poe2-demon-form",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IRHVSI",
+      "delivery": "self-origin",
+      "elem_raw": "Fire",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.78,
+        "riders": [
+          "synonym:energy-shield"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.8,
+        "rule_fired": "R8-self-circle",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Demon Form Infernalist",
+      "game": "poe2",
+      "kit_id": "poe2-demon-form",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IRHVSI",
+        "delivery": "self-origin",
+        "elem_raw": "Fire",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Spirit + Life (form drain)",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-demon-form",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "Demon Form is a SELF-ORIGIN transformation (shapeshift into a demon, vastly boosting Spell power) -- primary delivery self-origin; the form radiates boosted spells (large-zone). Mapped the FORM as self_buff (the form-entry buff), with the in-form casting element = fire per corpus (attested builds use Spark/lightning in-form -- element NOT locked; note). burn rider (ignite -> burn per main law).",
+      "source_skill": "in-form spell (Spark-attested; fire per corpus)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-demon-form",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The source player would miss (1) the FORM-SWAP itself as a distinct game-state (you BECOME a demon -- a body/moveset change, GX-02) -- rendered as a self_buff it loses the transformation identity; (2) the unbounded Demonflame life-drain ramp -- clamped to hp_cost_scale 0.30, the escalating 'race your own life-loss' tension is capped, losing the run-it-till-you-die brinkmanship; (3) element ambiguity (fire per corpus vs lightning/Spark per attested builds). Form-swap has no engine lane (GX-02 pending) and the drain-ramp is clamped -> APPROX; not GAPPED because a fire-spell self-buff caster with a decaying-HP cost is 'that build, weaker.'",
+    "grade": "APPROX",
+    "kit_id": "poe2-demon-form",
+    "mapping_json": {
+      "fidelity_notes": "GX-02 FIRED (addendum C.1 / form-swap): Demon Form ENTRY is the form-swap gate class -- flagged GX-02 in fidelity_notes (no numbering); form itself mapped as self_buff, in-form kit per R-M rules. corpus gx='GX-02 GX-06' confirms. Demonflame ramp + life-drain-in-form (addendum B, C.1): hp_cost_scale CLAMPED to 0.30 LOCKED ceiling -- Demonflame's 'ever-increasing rate' EXCEEDS a fixed 0.30 (it ramps unbounded with Mastered Darkness), so CLAMP + note per addendum (accrues to review-book clamp list); the accumulator + ramp_per_s carry the ramp texture. Spirit -> reservation_resource:spirit (FALSE-FRIEND: poe2 Spirit, NOT engine spirit-guide). ELEMENT: corpus elem=fire mapped primary, BUT dossier skill_loop explicitly notes attested fetched builds use Spark (LIGHTNING) in-form -- 'element is not locked to fire.' Honored corpus fire per row but flagged the ambiguity; per-kit override to lightning would be legal. verify_ledger: mechanics UNSUPPORTED (probe delivery=self-origin conf 0.83; geometry dossier abstained).",
+      "motion_frame": "Shapeshift into demon form (self-origin buff: +cast speed, +spell levels, +damage); Demonflame stacks accrue per second raising life-drain rate; cast boosted spells until drain forces exit.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "accumulator": "Demonflame stacks accrue per second (up to 10; Mastered Darkness removes cap)",
+        "hp_cost_scale": 0.3,
+        "ramp_per_s": "life lost at ever-increasing rate while in form",
+        "reservation_resource": "spirit"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Demonflame accumulator",
+            "hp_cost_scale life-drain ramp",
+            "spirit reservation for form"
+          ],
+          "geometry": [
+            "in-form large-zone spells"
+          ],
+          "traits_affixes": [
+            "fire/spell scalers"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "burn"
+          ],
+          "delivery_notes": "Demon Form is a SELF-ORIGIN transformation (shapeshift into a demon, vastly boosting Spell power) -- primary delivery self-origin; the form radiates boosted spells (large-zone). Mapped the FORM as self_buff (the form-entry buff), with the in-form casting element = fire per corpus (attested builds use Spark/lightning in-form -- element NOT locked; note). burn rider (ignite -> burn per main law).",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "in-form spell (Spark-attested; fire per corpus)"
+        }
+      ],
+      "t4_doors": [
+        "SACRIFICE_ASCENDANCY",
+        "PHASE_MOMENTUM"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "resource-fill",
+        "mark_identity": "Demonflame stacks (self, per-second accrual)",
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "ailments": [
+          "ignite"
+        ],
+        "centrality": "rider",
+        "conf": 0.72
+      },
+      "family": "control",
+      "id": 1673,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.78,
+        "layers": [
+          "energy-shield",
+          "self-cost"
+        ],
+        "primary": "energy-shield"
+      },
+      "family": "defense",
+      "id": 1674,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.83,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.83,
+        "evidence": "Demon Form transformation changes the player body; primary delivery is self-origin (the form radiates fire skills)",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 1671,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "builder_source": "Demon Form uses Spirit and drains Life while active",
+        "conf": 0.75,
+        "meter_type": "n/a",
+        "model": "self-cost",
+        "plain_text": "Infernalist's Demon Form activates via Spirit reservation and drains Life while active. The form has its own skill economy. Self-cost + Spirit = dual resource pressure.",
+        "resource_verbatim": "Spirit + Life (form drain)"
+      },
+      "family": "economy",
+      "id": 1675,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.85,
+        "damage_mode": "hit+dot",
+        "label_verbatim": "Fire"
+      },
+      "family": "element",
+      "id": 1676,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Demon form fire skills cover large zones; atlas geo=large-AOE confirmed for the form's primary attacks",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 1672,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "Infernalist transforms into a Demon — a different body with its own skill economy and fire-focused powers. The form increases fire power and grants unique demon skills at the cost of Life over time. A transformation-based large-zone fire presence.",
+      "family": "geo_text",
+      "id": 1678,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.8,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 1677,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 1679,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 1680,
+      "kit_id": "poe2-demon-form",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Demon Form Infernalist: self buff aura identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-demon-form",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "poe2-demon-form",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.73,
+    "amp_val": "var",
+    "architecture": null,
+    "atlas_coords": "full-move|self-origin|var|circle|damage|none|absorb|self-cost|solo|ranged|high|instant|active|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|self-origin|var|circle|damage|none|absorb|self-cost|solo|ranged|high|instant|active|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "var"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "self-cost"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRHVSI-HLDG-SP-FI-~~",
+    "attr_conf": 0.73,
+    "attr_val": "INT",
+    "avg_conf": 0.73,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.73,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Demon Form",
+      "fire spells in-form"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "form-ramp-vs-life-drain",
+    "elem_raw": "fire",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn;0.4",
+    "eras_normalized": "0.1;0.2-dawn;0.4",
+    "flags": "",
+    "folk_name": "Demon Form Infernalist",
+    "game": "poe2",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-02 GX-06",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-demon-form",
+    "lattice_coord": "IRHVSI",
+    "lineage": "",
+    "mech_note": "[VDM-1 basin-1 2026-07-18] ANNOTATION: element framing MISLEADING — Demon Form is element-AGNOSTIC (Spark/lightning + cold + fire variants all attested); 'fire spells in-form' is NOT the defining/exclusive mechanic (fire nodes exist in the Infernalist ascendancy but the form does not lock element). mechanics verify UNSUPPORTED for the fire-exclusive claim. No element/eras restamp this wave. -- prov=kb. mech_note: 'Transform into a demon — a DIFFERENT body with its own skill economy — gaining scaled fire power.' Era=0.1;0.2-dawn;0.4. Variable amp (V): the demon form's skill set produces variable output depending on which demon skills are equipped. Self-cost economy parallels LE Reaper Form. Spirit + Life drain = dual resource sacrifice.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "form-swap stat-block hotswap",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "SOLO|LARGE|INST×GX-02",
+    "mobile_key_group": "IRHVSI-HLDG-SP-FI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;u4",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.73,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.73,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.73,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "SHAPESHIFT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=3].members (working_label=SHAPESHIFT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[POE2 0.1.0d] Demonfernalist - Cold / Crit / Demon Form - Witch Infernalist build",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.1, 0.2-dawn, 0.4",
+      "errata_applied": 0,
+      "id": 371,
+      "kit_id": "poe2-demon-form",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3643314",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Demon Form — We gain these stats while in Demon Form: (12–25)% increased Cast Speed while in Demon Form",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Demon Form Infernalist'; aliases 'Demon Form fire spells', 'Infernalist demon stance'",
+      "errata_applied": 0,
+      "id": 369,
+      "kit_id": "poe2-demon-form",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3656716",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Demon Form, fire spells in-form; Spirit + Life drain while active; fire-focused element",
+      "errata_applied": 0,
+      "id": 370,
+      "kit_id": "poe2-demon-form",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/resources/infernalist-ascendancy",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Demon Form is a SELF-ORIGIN transformation (shapeshift into a demon, vastly boosting Spell power) -- primary delivery self-origin; the form radiates boosted spells (large-zone). Mapped the FORM as self_buff (the form-entry buff), with the in-form casting element = fire per corpus (attested builds use Spark/lightning in-form -- element NOT locked; note). burn rider (ignite -> burn per main law).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'in-form spell (Spark-attested; fire per corpus)' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1) but 'zone' more strongly (2) — mixed signal",
+      "errata_applied": 0,
+      "id": 2514,
+      "kit_id": "poe2-demon-form",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

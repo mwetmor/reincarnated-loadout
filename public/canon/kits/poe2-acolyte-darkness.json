@@ -1,0 +1,726 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1004,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-acolyte-darkness",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 286,
+    "kit_id": "poe2-acolyte-darkness",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Acolyte of Chayula Ascendancy Overview - Path of Exile 2",
+    "url": "https://maxroll.gg/poe2/resources/acolyte-of-chayula-ascendancy"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 286,
+      "kit_id": "poe2-acolyte-darkness",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Acolyte of Chayula Ascendancy Overview - Path of Exile 2",
+      "url": "https://maxroll.gg/poe2/resources/acolyte-of-chayula-ascendancy"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 287,
+      "kit_id": "poe2-acolyte-darkness",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe2db.tw",
+      "title": "Into the Breach - PoE2DB",
+      "url": "https://poe2db.tw/us/Into_the_Breach"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-acolyte-darkness",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 865,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-acolyte-darkness",
+      "missing_expression": "The source player would miss the Waking Dream Remnant economy as its OWN resource (a color-streamed pickup meter, made mono-color by Lucid Dreaming) -- we render it as reservation-swap + on-kill fill, losing the pickup-stream texture and the purple-damage-stack ramp.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The source player would miss the Waking Dream Remnant economy as its OWN resource (a color-streamed pickup meter, made mono-color by Lucid Dreaming) -- we render it as reservation-swap + on-kill fill, losing the pickup-stream texture and the purple-damage-stack ramp. Also the darkness-absorb defensive window (Embrace the Darkness) is folded into a T4 door, not modeled as an active mitigation buff. That build, worse -- not a different build -- so APPROX not GAPPED."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 569,
+      "kit_id": "poe2-acolyte-darkness",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Waking Dream provides Into the Breach, a persistent buff that spawns Remnants near your character.",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 568,
+      "kit_id": "poe2-acolyte-darkness",
+      "payload_json": {
+        "ascendancy": "Acolyte of Chayula",
+        "nodes": [
+          "Waking Dream (provides Into the Breach; spawns Remnants near player: red=life, blue=mana, purple=damage stacks)",
+          "Embrace the Darkness (absorbs damage as darkness for 5 seconds)",
+          "Lucid Dreaming (restricts Remnants to one color for consistent stream)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/resources/acolyte-of-chayula-ascendancy"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 567,
+      "kit_id": "poe2-acolyte-darkness",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 566,
+      "kit_id": "poe2-acolyte-darkness",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 565,
+      "kit_id": "poe2-acolyte-darkness",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 570,
+      "kit_id": "poe2-acolyte-darkness",
+      "payload_json": null,
+      "source_url": null
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|ground_targeted_circle|control|hex|evade|generator-spender|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\", \"GAP-AILMENT:blind\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "control",
+    "def_bin": "evade",
+    "def_conf": 0.8,
+    "def_riders": "[\"synonym:evasion\"]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native-partial",
+    "economy_model": "generator-spender",
+    "flags": [],
+    "geometry_conf": 0.8,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe2-acolyte-darkness",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "DMHFSI",
+      "delivery": "at-target",
+      "elem_raw": "Chaos",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp",
+          "GAP-AILMENT:blind"
+        ],
+        "ailments_mapped": [],
+        "treatment": "control"
+      },
+      "def": {
+        "bin": "evade",
+        "conf": 0.8,
+        "riders": [
+          "synonym:evasion"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native-partial"
+      },
+      "engine_geometry": {
+        "conf": 0.8,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Darkness Acolyte",
+      "game": "poe2",
+      "kit_id": "poe2-acolyte-darkness",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "DMHFSI",
+        "delivery": "at-target",
+        "elem_raw": "Chaos",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Waking Dream (Darkness)",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-acolyte-darkness",
+      "motion_signature": "arc_sweep",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "at-target quarterstaff melee strikes (footprint small-radius); chaos-convert striker. Into the Breach is a persistent buff (Waking Dream), not a discrete attack — the striking skill maps as the core active.",
+      "source_skill": "Into the Breach chaos-converted strikes",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-acolyte-darkness",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The source player would miss the Waking Dream Remnant economy as its OWN resource (a color-streamed pickup meter, made mono-color by Lucid Dreaming) -- we render it as reservation-swap + on-kill fill, losing the pickup-stream texture and the purple-damage-stack ramp. Also the darkness-absorb defensive window (Embrace the Darkness) is folded into a T4 door, not modeled as an active mitigation buff. That build, worse -- not a different build -- so APPROX not GAPPED.",
+    "grade": "APPROX",
+    "kit_id": "poe2-acolyte-darkness",
+    "mapping_json": {
+      "fidelity_notes": "elem_raw 'chaos' -> shadow (main-law drain/corruption lineage; ailment lane none in fetched text -- probe 'chaos-debuff'/'darkness-stacks' are resource-flavor not a registry ailment, so no ailment emitted). Waking Dream 'Darkness replaces Spirit' is a Spirit-RESERVATION swap (addendum FALSE-FRIEND: poe2 Spirit != engine spirit-guide) mapped reservation_resource:spirit; the bespoke Darkness charge pool has no native economy key -> approximated to reservation+on-kill Remnant-fill, note the novel resource. Embrace the Darkness (absorb-damage-as-darkness 5s) -> SACRIFICE_ASCENDANCY-class defensive trade. verify_ledger: mechanics UNSUPPORTED (skill_loop/geometry dossier abstained), era restamped ERRATA-16 (0.3-0.5, Into the Breach intro) errata_applied=1 -- respected. Only capstone_alterations was non-abstained, so skill geometry is inferred from probe delivery=at-target melee + core_skills.",
+      "motion_frame": "At-target melee striker sustained by Waking Dream Remnants spawned near the player (red=life, blue=mana, purple=damage).",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "reservation_percent": 0.3,
+        "reservation_resource": "spirit"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "reservation_resource",
+            "reservation_percent"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "ELEMENT_CONVERSION_PHYSICAL-adjacent chaos-convert on strikes"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "at-target quarterstaff melee strikes (footprint small-radius); chaos-convert striker. Into the Breach is a persistent buff (Waking Dream), not a discrete attack — the striking skill maps as the core active.",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "melee_arc",
+          "source_skill": "Into the Breach chaos-converted strikes"
+        }
+      ],
+      "t4_doors": [
+        "RESOURCE_CONVERSION",
+        "SACRIFICE_ASCENDANCY"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "resource-fill",
+        "mark_identity": "Remnant pickups (Waking Dream spawns Remnants near player; Lucid Dreaming restricts to one color)",
+        "proc_trigger_condition": "on-kill",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "ailments": [
+          "chaos-debuff",
+          "darkness-stacks"
+        ],
+        "centrality": "core",
+        "conf": 0.75
+      },
+      "family": "control",
+      "id": 3743,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.8,
+        "layers": [
+          "evasion",
+          "energy-shield"
+        ],
+        "primary": "evasion"
+      },
+      "family": "defense",
+      "id": 3744,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.83,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.83,
+        "evidence": "Chaos Monk delivers at-target melee strikes powered by Waking Dream darkness resource",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 3741,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "builder_source": "Spirit converted to Darkness charges",
+        "conf": 0.75,
+        "meter_type": "n/a",
+        "model": "meter",
+        "plain_text": "Acolyte trades Spirit reservation for Waking Dream charges (darkness resource). Darkness charges power chaos-enhanced attacks. Novel resource unique to this ascendancy path.",
+        "resource_verbatim": "Waking Dream (Darkness)"
+      },
+      "family": "economy",
+      "id": 3745,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.82,
+        "damage_mode": "hit",
+        "label_verbatim": "Chaos"
+      },
+      "family": "element",
+      "id": 3746,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Melee quarterstaff strikes at close range",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 3742,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "Chaos Monk who trades Spirit for the Waking Dream darkness resource. Darkness charges enable enhanced melee strikes and chaos skill effects. The Acolyte converts spirit reservation into a darkness-powered combat engine.",
+      "family": "geo_text",
+      "id": 3748,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 3747,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 3749,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 3750,
+      "kit_id": "poe2-acolyte-darkness",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Darkness Acolyte: melee arc melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-acolyte-darkness",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "poe2-acolyte-darkness",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.8,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|ground_targeted_circle|control|hex|evade|generator-spender|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|ground_targeted_circle|control|hex|evade|generator-spender|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "control"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "evade"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "generator-spender"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMHFSI-HSDD-MT-CH-~~",
+    "attr_conf": 0.8,
+    "attr_val": "DEX",
+    "avg_conf": 0.8,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.8,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Into the Breach",
+      "chaos-converted strikes"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "darkness-replaces-spirit",
+    "elem_raw": "chaos",
+    "era_year": 2024,
+    "eras": "0.3-edict;0.4;0.5-ancients",
+    "eras_normalized": "0.3-edict;0.4;0.5-ancients",
+    "flags": "",
+    "folk_name": "Darkness Acolyte",
+    "game": "poe2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-05",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-acolyte-darkness",
+    "lattice_coord": "DMHFSI",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note: 'Chaos monk who trades spirit for the Waking Dream darkness resource, converting [Spirit] into chaos-skill powered attacks.' Era=0.1;0.2-dawn only — earlier PoE2 version before the Monk ascendancy paths were further developed. The 'Acolyte of Chayula' path with Waking Dream is the Chaos Monk archetype.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B: reservation/aura toggles — loot-operator extension",
+    "mobile_cell_id": "SOLO|SMALL|INST×GX-05",
+    "mobile_key_group": "DMHFSI-HSDD-MT-CH-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.8,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.8,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.8,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "DOT-AILMENT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=4].members (working_label=DOT-AILMENT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "version history starting from v0.3.0, with updates continuing through v0.5.0",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.1, 0.2-dawn",
+      "errata_applied": 1,
+      "id": 348,
+      "kit_id": "poe2-acolyte-darkness",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poe2db.tw/us/Into_the_Breach",
+      "verdict": "CONTRADICTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Darkness Acolyte'; aliases 'Into the Breach chaos build', 'chaos-convert striker'",
+      "errata_applied": 0,
+      "id": 346,
+      "kit_id": "poe2-acolyte-darkness",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/resources/acolyte-of-chayula-ascendancy",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Into the Breach, chaos-converted strikes; Spirit converted to Waking Dream / darkness charges powering chaos attacks",
+      "errata_applied": 0,
+      "id": 347,
+      "kit_id": "poe2-acolyte-darkness",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/resources/acolyte-of-chayula-ascendancy",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "at-target quarterstaff melee strikes (footprint small-radius); chaos-convert striker. Into the Breach is a persistent buff (Waking Dream), not a discrete attack — the striking skill maps as the core active.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Into the Breach chaos-converted strikes' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2 sig)",
+      "errata_applied": 0,
+      "id": 2503,
+      "kit_id": "poe2-acolyte-darkness",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

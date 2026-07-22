@@ -1,0 +1,633 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 0,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 0,
+    "recognition_hooks": 1,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 561,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-cleave",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "official",
+    "id": 49,
+    "kit_id": "poe1-cleave",
+    "quarantined": 0,
+    "rank_class": "recovered",
+    "site": "poedb.tw",
+    "title": "Cleave - PoEDB, Path of Exile Wiki",
+    "url": "https://poedb.tw/us/Cleave"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "official",
+      "id": 49,
+      "kit_id": "poe1-cleave",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poedb.tw",
+      "title": "Cleave - PoEDB, Path of Exile Wiki",
+      "url": "https://poedb.tw/us/Cleave"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "IsneakyI",
+      "cite_class": "authored",
+      "id": 50,
+      "kit_id": "poe1-cleave",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "pathofexile.com/forum",
+      "title": "Duelist - IsneakyI 3.11 Champion Cleave guide",
+      "url": "https://www.pathofexile.com/forum/view-thread/2910707"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-cleave",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Duelist - IsneakyI 3.11 Champion Cleave guide",
+      "conf": 0.97,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 107,
+      "kit_id": "poe1-cleave",
+      "payload_json": {
+        "author_handle": "IsneakyI",
+        "site": "pathofexile.com/forum"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2910707"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Master of metal -> Unstoppable Hero -> Conqueror -> Worthy Foe",
+      "conf": 0.84,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 106,
+      "kit_id": "poe1-cleave",
+      "payload_json": {
+        "ascendancy": "Champion (3.11 guide)",
+        "nodes": [
+          {
+            "alteration": "Impale stacking from Champion.",
+            "name": "Master of Metal"
+          },
+          {
+            "alteration": "Fortify effect bonus.",
+            "name": "Unstoppable Hero"
+          },
+          {
+            "alteration": "Taunt-based damage reduction.",
+            "name": "Conqueror"
+          },
+          {
+            "alteration": "Always hits as though enemies are taunted.",
+            "name": "Worthy Foe"
+          }
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2910707"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Ichimonji — mana reservation reduction, essential for gem setup. Overwhelm's Odds jewel — critical for fortify on hit.",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 105,
+      "kit_id": "poe1-cleave",
+      "payload_json": {
+        "items": [
+          {
+            "alteration": "Provides mana reservation reduction enabling gem setup before specialized amulet.",
+            "name": "Ichimonji",
+            "slot": "weapon (early)"
+          },
+          {
+            "alteration": "Required for Fortify on hit functionality.",
+            "name": "Overwhelm's Odds jewel"
+          },
+          {
+            "alteration": "Elemental conversion for Slayer Cleave variant.",
+            "name": "Voidforge",
+            "slot": "weapon (3.23 variant)"
+          }
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2910707"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Attack Damage ranges from 179-511% of base (levels 1-20). Attack Speed: 80% of base. Base radius: 20 units.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 104,
+      "kit_id": "poe1-cleave",
+      "payload_json": {
+        "geometry": "Melee arc in 180-degree frontal cone. Base radius 20 units scaling to +1 metre at gem level 20. Quality adds up to +1 metre radius per nearby enemy. Dual-wield hits 60% damage per weapon. Attack speed at 80% of base."
+      },
+      "source_url": "https://poedb.tw/us/Cleave"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Jump into the pack and let our multistrike cleave kill everything around us.",
+      "conf": 0.84,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 103,
+      "kit_id": "poe1-cleave",
+      "payload_json": {
+        "loop": "Jump into pack and swing weapon in frontal 180-degree arc. With Multistrike Support, the attack repeats three times per activation covering surrounding enemies. Relies on Fortify (stacked via hits) for defense. Totem support (Ancestral Warchief + Ancestral Protector) used during boss phases to amplify damage while Cleaving."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2910707"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[3.11] Champion Cleave guide; [3.23] Voidforge Cleave Build | Slayer | Affliction",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 108,
+      "kit_id": "poe1-cleave",
+      "payload_json": {
+        "variants": [
+          {
+            "description": "Impale + Fortify stacking; IsneakyI guide.",
+            "name": "Champion Cleave (3.11)"
+          },
+          {
+            "description": "Elemental conversion variant using Voidforge.",
+            "name": "Voidforge Cleave Slayer (3.23)"
+          }
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2910707"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "blank|at-target|flat|blank|blank|blank|blank|blank|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": null,
+    "ctrl_ailments_mapped": null,
+    "ctrl_function": null,
+    "ctrl_treatment": null,
+    "def_bin": null,
+    "def_conf": null,
+    "def_riders": null,
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": null,
+    "econ_meter_type": null,
+    "econ_status": null,
+    "economy_model": null,
+    "flags": [
+      "A5-negative-supplementary",
+      "A5-death-null: §A.2 pattern 10 only (sibling-shadowed isotope loser — no death= class, validation not corpse)."
+    ],
+    "geometry_conf": null,
+    "geometry_rule_fired": null,
+    "geometry_value": null,
+    "kit_id": "poe1-cleave",
+    "mob_policy_while_casting": null,
+    "mob_skill_is_movement": null,
+    "mob_verbs": null,
+    "provenance_json": {
+      "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+      "keying": "A5-negative-rekey-2026-07-14",
+      "negative": 1,
+      "passive_null_coords": [
+        "geometry_value",
+        "ctrl_treatment",
+        "ctrl_function",
+        "def_bin",
+        "economy_model",
+        "mob_policy_while_casting"
+      ],
+      "recoverable_coords": [
+        "delivery_value",
+        "amp_val",
+        "proxy_val",
+        "range_val",
+        "tempo_val",
+        "commit_val",
+        "activation_val",
+        "dependency_val"
+      ],
+      "source": "megaprobe-facts-jsonl (sparse negative row)",
+      "supplementary_only": true
+    },
+    "raw_json": {
+      "delivery": {
+        "conf": 0.78,
+        "evidence": "Direct frontal arc melee; dual-wield sweep on targeted enemy and adjacent",
+        "value": "at-target"
+      },
+      "folk_name": "Cleave",
+      "footprint": {
+        "conf": 0.74,
+        "evidence": "Frontal arc small AoE around player; geo=small-AOE in atlas (negative)",
+        "value": "small-radius"
+      },
+      "game": "poe1",
+      "keying_provenance": {
+        "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+        "keying": "A5-negative-rekey-2026-07-14",
+        "negative": 1,
+        "passive_null_coords": [
+          "geometry_value",
+          "ctrl_treatment",
+          "ctrl_function",
+          "def_bin",
+          "economy_model",
+          "mob_policy_while_casting"
+        ],
+        "recoverable_coords": [
+          "delivery_value",
+          "amp_val",
+          "proxy_val",
+          "range_val",
+          "tempo_val",
+          "commit_val",
+          "activation_val",
+          "dependency_val"
+        ],
+        "source": "megaprobe-facts-jsonl (sparse negative row)",
+        "supplementary_only": true
+      },
+      "kit_id": "poe1-cleave",
+      "mech_note": "Dual-wield frontal arc that spent a decade as the skill you replace by act two — perpetually one tier below whatever else was in the slot; s",
+      "row_class": "combat-kit",
+      "status": "negative",
+      "why_negative": "Perpetually one tier below every other AoE melee option for a decade; no identity hook, no numbers advantage; the reference boring-melee negative"
+    },
+    "resource_verbatim": null,
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-cleave",
+      "motion_signature": "arc_sweep",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "swing weapon(s) in a 180-degree frontal arc damaging everything in front; dual-wield hits 60% per weapon combined. melee_arc is the purpose-built 'wide frontal melee swing' type — a lossless fit. physical -> no element family; bleed is the native physical-swing ailment substrate. base radius 20u -> +1m at gem 20 is a numeric range",
+      "source_skill": "Cleave",
+      "speed_band": null,
+      "width_band": "wide"
+    }
+  ],
+  "kit_id": "poe1-cleave",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": null,
+    "grade": "EXACT",
+    "kit_id": "poe1-cleave",
+    "mapping_json": {
+      "fidelity_notes": "The cleanest map in the batch. melee_arc IS the Cleave identity — a wide frontal-cone swing — and the engine type exists precisely for it. physical -> no element family (crosswalk §1); bleed carries the physical-swing ailment flavor; dual-wield 60%/weapon + 80% attack-speed + base-radius scaling are all NUMERIC tuning, not identity-mechanisms. Nothing identity-bearing is lost. NOTE per batch instruction: the stage-1 negative_canon claim ('extrinsic-no-lever: no meaningful scaling lever vs Blade Flurry/Cyclone, fell off without a hard nerf') is UNSUPPORTED (verify_ledger) AND is an inference-not-attested meta-economy observation — I do NOT treat it as verified fact, and it maps to no engine MECHANISM regardless (a 'lacks a scaling lever' judgement is a balance-meta claim about the source ecosystem, not a mechanic the engine must represent). Grade reflects only the attested mechanics. Multistrike (thrice-repeat) is a geometry/cadence support; Fortify-on-hit is a def-bin/trait rider (Champion variant).",
+      "motion_frame": "jump-in-and-swing bruiser: leap into the pack, sweep the 180-degree frontal arc, stack Fortify off hits; Multistrike repeats the swing three times",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light (below identity-default; not bar-worthy)"
+          ],
+          "geometry": [
+            "melee_arc frontal 180-degree swing",
+            "AoE-radius (base 20u; +1m gem20; +1m/nearby-enemy quality)",
+            "Multistrike-analog thrice-repeat"
+          ],
+          "traits_affixes": [
+            "physical / melee-damage",
+            "attack-speed (80% base baseline)",
+            "impale / Fortify-on-hit (Champion-analog defensive stacking)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "bleed"
+          ],
+          "delivery_notes": "swing weapon(s) in a 180-degree frontal arc damaging everything in front; dual-wield hits 60% per weapon combined. melee_arc is the purpose-built 'wide frontal melee swing' type — a lossless fit. physical -> no element family; bleed is the native physical-swing ailment substrate. base radius 20u -> +1m at gem 20 is a numeric range",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_arc",
+          "source_skill": "Cleave"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_COLLAPSE",
+        "ZONE_CONTROL"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Cleave: melee arc melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-cleave",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.87,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "blank|at-target|flat|blank|blank|blank|blank|blank|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "blank|at-target|flat|blank|blank|blank|blank|blank|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "blank"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "blank"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "blank"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "blank"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "blank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "blank"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMHFSI-MSDT-SP-PH-~~",
+    "attr_conf": 0.87,
+    "attr_val": "STR",
+    "avg_conf": 0.87,
+    "canon_tier": "negative",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.87,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Cleave"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": "extrinsic-no-lever",
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "1.x;2.x;3.0-3.6;3.7-3.13",
+    "eras_normalized": "1.x;2.x;3.0-3.6;3.7-3.13",
+    "flags": "",
+    "folk_name": "Cleave",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-cleave",
+    "lattice_coord": "SMHFSI",
+    "lineage": "",
+    "mech_note": "Dual-wield frontal arc that spent a decade as the skill you replace by act two — perpetually one tier below whatever else was in the slot; s",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×econ:spend",
+    "mobile_key_group": "SMHFSI-MSDT-SP-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 0,
+    "negative": 1,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.87,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.87,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "complete-kit-mapping",
+    "tempo_conf": 0.87,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.11] Champion Cleave guide — IsneakyI; [3.23] Voidforge Cleave Build | Slayer | Affliction",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in eras 1.x, 2.x, 3.0-3.6, 3.7-3.13",
+      "errata_applied": 0,
+      "id": 63,
+      "kit_id": "poe1-cleave",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2910707",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "the character swings their weapon (or both weapons if dual wielding) in an arc, damaging monsters in an area in front of them.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Cleave' is real community usage; class Duelist lineage",
+      "errata_applied": 0,
+      "id": 61,
+      "kit_id": "poe1-cleave",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Cleave",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Attack Damage 179-511% of base (levels 1-20). Attack Speed: 80% of base. Deals 60% damage from each weapon combined when dual wielding.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Cleave: melee AoE in 180-degree frontal arc; dual-wield compatible; 80% attack speed",
+      "errata_applied": 0,
+      "id": 62,
+      "kit_id": "poe1-cleave",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Cleave",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "swing weapon(s) in a 180-degree frontal arc damaging everything in front; dual-wield hits 60% per weapon combined. melee_arc is the purpose-built 'wide frontal melee swing' type — a lossless fit. physical -> no element family; bleed is the native physical-swing ailment substrate. base radius 20u -> +1m at gem 20 is a numeric range",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Cleave' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (3 sig)",
+      "errata_applied": 0,
+      "id": 2390,
+      "kit_id": "poe1-cleave",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "negative_canon",
+      "claim_subject": null,
+      "claim_text": "Negative kill = extrinsic-no-lever: skill lacks a meaningful scaling lever vs alternatives (Blade Flurry, Cyclone) and fell off meta without a hard nerf",
+      "errata_applied": 0,
+      "id": 64,
+      "kit_id": "poe1-cleave",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    }
+  ]
+}

@@ -1,0 +1,812 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1096,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-frost-wall-rm",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 516,
+    "kit_id": "le-frost-wall-rm",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Lightning Blast Runemaster Guide for Last Epoch Season 4",
+    "url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 516,
+      "kit_id": "le-frost-wall-rm",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Lightning Blast Runemaster Guide for Last Epoch Season 4",
+      "url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 517,
+      "kit_id": "le-frost-wall-rm",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "forum.lastepoch.com",
+      "title": "Runemaster question: Frost Wall spec - Chill Touched vs Pyroglass",
+      "url": "https://forum.lastepoch.com/t/runemaster-question-frost-wall-spec-chill-touched-vs-pyroglass/75990"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-frost-wall-rm",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 948,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-frost-wall-rm",
+      "missing_expression": "Placed ice-lane with guaranteed freeze maps clean.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Placed ice-lane with guaranteed freeze maps clean. Source player would miss (1) the wall physically blocking enemy projectiles/movement (engine placed_lane is a hit-lane, not a collision barrier), and (2) the Pyroglass fire-conversion -> Brand of Trespass -> damage-multiplier Runemaster chain (a rune-interaction rider with no native lane). Control identity preserved via ZONE_CONTROL + freeze/chill."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "I was reading BinaQc's Runemaster guide",
+      "conf": 0.65,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1163,
+      "kit_id": "le-frost-wall-rm",
+      "payload_json": {
+        "handle": "BinaQc",
+        "note": "BinaQc's Runemaster guide referenced in Frost Wall spec thread",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://forum.lastepoch.com/t/runemaster-question-frost-wall-spec-chill-touched-vs-pyroglass/75990"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Upcoming Bugfix (Nerf) - Frost Wall (Aspirant's Arrival)",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1162,
+      "kit_id": "le-frost-wall-rm",
+      "payload_json": {
+        "notes": "Pyroglass node converts Frost Wall to fire for Brand of Trespass; Aspirant's Arrival node subject to bugfix/nerf (August 2025)"
+      },
+      "source_url": "https://forum.lastepoch.com/t/upcoming-bugfix-nerf-frost-wall-aspirants-arrival/78737/4"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1161,
+      "kit_id": "le-frost-wall-rm",
+      "payload_json": null,
+      "source_url": "https://forum.lastepoch.com/t/runemaster-question-frost-wall-spec-chill-touched-vs-pyroglass/75990"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Frost Wall is an incredible crowd control tool with guaranteed Freeze on everything but bosses, and can be used to get out of tough situations and give yourself some breathing room",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1160,
+      "kit_id": "le-frost-wall-rm",
+      "payload_json": {
+        "delivery": "at-target-ground",
+        "description": "Frost Wall creates a horizontal line of ice segments at cast target position. Wall blocks movement and projectiles; enemies passing through or touching wall receive chill/freeze. Multiple segments can be placed.",
+        "footprint": "lane-barrier"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Frost Wall is an incredible crowd control tool with guaranteed Freeze on everything but bosses...Convert Frost Wall to Fire with Pyroglass. This setup applies Brand of Trespass, enabling Celestial Doom, provides Cleanse, Haste, and a Damage Multiplier",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1159,
+      "kit_id": "le-frost-wall-rm",
+      "payload_json": {
+        "core_cycle": "Place Frost Wall -> enemies chill/freeze in lane -> Pyroglass fire conversion -> Brand of Trespass -> spell damage multiplier",
+        "summary": "Place Frost Wall segments at targeted ground positions to create lane barriers that chill/freeze enemies passing through. Glacier provides mobility. Runemaster rune patterns fire secondary spells off wall interactions. Pyroglass node converts Frost Wall to fire, enabling Brand of Trespass debuff for damage multiplication."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Glacier and Frost Wall offer multiple buffs, mobility, and even cast Lightning Blast for additional damage output",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1164,
+      "kit_id": "le-frost-wall-rm",
+      "payload_json": {
+        "variants": [
+          "Frost Wall as primary control skill (this kit)",
+          "Frost Wall as support in Lightning Blast RM",
+          "Frost Wall converted to fire via Pyroglass for damage multiplication"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|at-target|flat|totem|control|hard-stop|absorb|spend|light|dual|med|instant|active|apply→detonate",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:freeze\"]",
+    "ctrl_ailments_mapped": "[\"chill\", \"chill\"]",
+    "ctrl_function": "hard-stop",
+    "ctrl_treatment": "control",
+    "def_bin": "absorb",
+    "def_conf": 0.82,
+    "def_riders": "[\"synonym:ward\"]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [
+      "resolved:walls-demand",
+      "resolved:wave-c-corpus-align-2026-07-17:placed-lane-rewire"
+    ],
+    "geometry_conf": 0.82,
+    "geometry_rule_fired": "R0b-realign-wave-c",
+    "geometry_value": "placed_lane",
+    "kit_id": "le-frost-wall-rm",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IDMFLI-MLCM-SP-CO-~~",
+      "delivery": "at-target",
+      "elem_raw": "Cold",
+      "footprint": "lane"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:freeze"
+        ],
+        "ailments_mapped": [
+          "chill",
+          "chill"
+        ],
+        "treatment": "control"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.82,
+        "riders": [
+          "synonym:ward"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.82,
+        "rule_fired": "R0b",
+        "value": "totem"
+      },
+      "flags": [
+        "resolved:walls-demand"
+      ],
+      "folk_name": "Frost Wall Runemaster",
+      "game": "le",
+      "kit_id": "le-frost-wall-rm",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IDMFLI-MLCM-SP-CO-~~",
+        "delivery": "at-target",
+        "elem_raw": "Cold",
+        "footprint": "lane"
+      },
+      "row_class": "combat-kit",
+      "walls_demand": true
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-frost-wall-rm",
+      "motion_signature": "lane_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Creates a horizontal line of ice segments at cast target position (fetched: 'horizontal line of ice segments', 'lane-barrier'); wall blocks movement AND projectiles; enemies passing through/touching receive chill/freeze. freeze admitted on strong fetched behavioral language ('guaranteed Freeze on everything but bosses' — boss-immune); chill on 'chill/freeze enemies passing through'. Multiple segments placeable. Element cold -> water.",
+      "source_skill": "Frost Wall",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-frost-wall-rm",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Secondary mobility/traversal (fetched: 'Glacier provides mobility'); listed core skill alongside Frost Wall.",
+      "source_skill": "Glacier",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-frost-wall-rm",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Placed ice-lane with guaranteed freeze maps clean. Source player would miss (1) the wall physically blocking enemy projectiles/movement (engine placed_lane is a hit-lane, not a collision barrier), and (2) the Pyroglass fire-conversion -> Brand of Trespass -> damage-multiplier Runemaster chain (a rune-interaction rider with no native lane). Control identity preserved via ZONE_CONTROL + freeze/chill.",
+    "grade": "CLOSE",
+    "kit_id": "le-frost-wall-rm",
+    "mapping_json": {
+      "fidelity_notes": "Placed-lane ice barrier with guaranteed freeze (boss-immune) + chill maps clean; ZONE_CONTROL T4 for the barrier-control identity. Wall-as-projectile-BLOCK is a geometry nuance the engine placed_lane approximates (no native projectile-blocking wall). Pyroglass fire-conversion -> Brand of Trespass (Cleanse/Haste/damage-multiplier) is a Runemaster rune-interaction rider at the capstone/item layer (fidelity, not core geometry). The RM rune-pattern (secondary spells fired off wall interactions) = the Runemaster-specific rider. eras 1.0/1.2 are verify_ledger UNSUPPORTED (anchor=none) but identity+mechanics CONFIRMED — mapped on the CONFIRMED mechanics. §0 near-miss: none withheld — freeze + chill both behaviorally fetched.",
+      "motion_frame": "Place Frost Wall segments at targeted ground -> enemies chill/freeze in lane -> Runemaster rune patterns fire secondary spells off wall interactions -> (Pyroglass) fire conversion -> Brand of Trespass damage multiplier",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_shape": "per-cast placement spend",
+        "resource": "mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "multi-segment placement"
+          ],
+          "traits_affixes": [
+            "Pyroglass (Frost Wall->fire conversion)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "freeze",
+            "chill"
+          ],
+          "delivery_notes": "Creates a horizontal line of ice segments at cast target position (fetched: 'horizontal line of ice segments', 'lane-barrier'); wall blocks movement AND projectiles; enemies passing through/touching receive chill/freeze. freeze admitted on strong fetched behavioral language ('guaranteed Freeze on everything but bosses' — boss-immune); chill on 'chill/freeze enemies passing through'. Multiple segments placeable. Element cold -> water.",
+          "element_primary": "water",
+          "element_secondary": null,
+          "geometry_value": "placed_lane",
+          "source_skill": "Frost Wall"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Secondary mobility/traversal (fetched: 'Glacier provides mobility'); listed core skill alongside Frost Wall.",
+          "element_primary": "water",
+          "element_secondary": null,
+          "geometry_value": "mobility",
+          "source_skill": "Glacier"
+        }
+      ],
+      "t4_doors": [
+        "ZONE_CONTROL"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": "Brand of Trespass (via Pyroglass fire-conversion) — enables Celestial Doom + damage multiplier",
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "chill",
+          "freeze",
+          "slow"
+        ],
+        "centrality": "core",
+        "conf": 0.85
+      },
+      "family": "control",
+      "id": 2383,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "layers": [
+          "shield-absorb",
+          "ward"
+        ],
+        "primary": "ward"
+      },
+      "family": "defense",
+      "id": 2384,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.83,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.83,
+        "evidence": "Frost Wall segments placed at targeted ground position; static structure delivery; at-target confirmed",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2381,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.8,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Mana spend per wall placement. Multiple wall segments can be stacked. Runemaster's proc system fires secondary effects off wall interactions.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 2385,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "damage_mode": "hit",
+        "label_verbatim": "Cold"
+      },
+      "family": "element",
+      "id": 2386,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "evidence": "Wall extends horizontally across cast line, blocking movement and projectiles; lane footprint confirmed by wall structure",
+        "value": "lane"
+      },
+      "family": "footprint",
+      "id": 2382,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Runemaster places a wall of ice segments at targeted position. The wall creates a physical lane barrier that blocks movement and projectiles, chills/freezes passing enemies, and (via tree nodes) detonates or amplifies spells fired through it.",
+      "family": "geo_text",
+      "id": 2388,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 2387,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=let;kb",
+      "family": "rank1_upgrade",
+      "id": 2389,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb",
+        "let (Last Epoch tools)"
+      ],
+      "family": "sources_used",
+      "id": 2390,
+      "kit_id": "le-frost-wall-rm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Frost Wall Runemaster: placed lane zone identity",
+      "hook_type": "geometry",
+      "kit_id": "le-frost-wall-rm",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:water",
+      "hook_id": "H2",
+      "hook_text": "water element register",
+      "hook_type": "register",
+      "kit_id": "le-frost-wall-rm",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.72,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|flat|totem|control|hard-stop|absorb|spend|light|dual|med|instant|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|flat|totem|control|hard-stop|absorb|spend|light|dual|med|instant|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "totem"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "control"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hard-stop"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDMFLI-MLCM-SP-CO-~~",
+    "attr_conf": 0.72,
+    "attr_val": "INT",
+    "avg_conf": 0.72,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.72,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Frost Wall",
+      "Glacier"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "wall-enhanced-casting",
+    "elem_raw": "cold",
+    "era_year": 2024,
+    "eras": "1.0-launch;1.2-woven",
+    "eras_normalized": "1.0-launch;1.2-woven",
+    "flags": "",
+    "folk_name": "Frost Wall Runemaster",
+    "game": "le",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-18-proposed",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "le-frost-wall-rm",
+    "lattice_coord": "IDMFLI",
+    "lineage": "",
+    "mech_note": "prov=let;kb. mech_note ref: 'WALLS as the win condition — Frost Wall segments block, chill, and detonate through tree nodes while spells fired THROUGH the wall [are amplified].' CO suffix = Cold. Atlas geo=large-AOE captured the wall's horizontal extent; corrected to lane (wall is elongated lane not a large circular zone). Ctrl C2: control is CORE to this kit — the wall IS the damage/zone mechanism.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "persistent/mobile zone entities — VFX slot model adjacent; follow-zones new",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|LARGE|INST×GX-18-proposed",
+    "mobile_key_group": "IDMFLI-MLCM-SP-CO-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "let;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.72,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.72,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.72,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 700,
+      "kit_id": "le-frost-wall-rm",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/runemaster-question-frost-wall-spec-chill-touched-vs-pyroglass/75990",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.2-woven",
+      "errata_applied": 0,
+      "id": 701,
+      "kit_id": "le-frost-wall-rm",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/runemaster-question-frost-wall-spec-chill-touched-vs-pyroglass/75990",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Runemaster question: Frost Wall spec — Chill Touched vs Pyroglass...BinaQc's Runemaster guide",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Frost Wall Runemaster' and alias 'Glacier Frost Wall combo' are real community usage",
+      "errata_applied": 0,
+      "id": 698,
+      "kit_id": "le-frost-wall-rm",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/runemaster-question-frost-wall-spec-chill-touched-vs-pyroglass/75990",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Frost Wall is an incredible crowd control tool with guaranteed Freeze on everything but bosses...Convert Frost Wall to Fire with Pyroglass...provides Cleanse, Haste, and a Damage Multiplier",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Frost Wall and Glacier; Mana spend; at-target lane placement; cold damage; chill/freeze/slow ailments; wall blocks movement and projectiles",
+      "errata_applied": 0,
+      "id": 699,
+      "kit_id": "le-frost-wall-rm",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Creates a horizontal line of ice segments at cast target position (fetched: 'horizontal line of ice segments', 'lane-barrier'); wall blocks movement AND projectiles; enemies passing through/touching receive chill/freeze. freeze admitted on strong fetched behavioral language ('guaranteed Freeze on everything but bosses' — boss-immune); chill on 'chill/freeze enemies passing through'. Multiple segments placeable. Element cold -> water.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Frost Wall' delivery_class=zone (band_conf=0.75); lint: anchor leans 'projectile' (1 sig) vs assigned 'zone' (0) — weak/defensible (thin margin), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2311,
+      "kit_id": "le-frost-wall-rm",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Secondary mobility/traversal (fetched: 'Glacier provides mobility'); listed core skill alongside Frost Wall.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Glacier' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (2 sig)",
+      "errata_applied": 0,
+      "id": 2312,
+      "kit_id": "le-frost-wall-rm",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

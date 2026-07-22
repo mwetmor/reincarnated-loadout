@@ -1,0 +1,643 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 0,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1013,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-concoction",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 304,
+    "kit_id": "poe2-concoction",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Poisonous Concoction Pathfinder Build Guide - Path of Exile 2",
+    "url": "https://maxroll.gg/poe2/build-guides/poisonous-concoction-pathfinder-build-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 304,
+      "kit_id": "poe2-concoction",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Poisonous Concoction Pathfinder Build Guide - Path of Exile 2",
+      "url": "https://maxroll.gg/poe2/build-guides/poisonous-concoction-pathfinder-build-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 305,
+      "kit_id": "poe2-concoction",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "Poisonous Concoction Pathfinder is hitting REALLY HARD - A SMALL GUIDE",
+      "url": "https://www.pathofexile.com/forum/view-thread/3635301"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 306,
+      "kit_id": "poe2-concoction",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe.ninja",
+      "title": "Pathfinder Poisonous Concoction builds - Dawn of the Hunt - Path of Exile 2",
+      "url": "https://poe.ninja/poe2/builds/dawn?class=Pathfinder&skills=Poisonous+Concoction"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-concoction",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 871,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-concoction",
+      "missing_expression": "Minor drift: the flask-charge-as-ammo economy (your damage skill literally spends flask charges, gated by charge-recovery mods) maps to a cycle-shape + note but loses the tight flask-sustain-vs-fire-rate tension that IS the Pathfinder identity;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: the flask-charge-as-ammo economy (your damage skill literally spends flask charges, gated by charge-recovery mods) maps to a cycle-shape + note but loses the tight flask-sustain-vs-fire-rate tension that IS the Pathfinder identity; the RNG element-variant framing (Poison/Fire/Ice from one Concoction chassis) is collapsed to the confirmed poison variant. Core throw-poison loop maps cleanly, so CLOSE."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 605,
+      "kit_id": "poe2-concoction",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Brew Concoction gives you the option to pick Poisonous Concoction. This provides you with your main skill so is the backbone of your entire build.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 604,
+      "kit_id": "poe2-concoction",
+      "payload_json": {
+        "ascendancy": "Pathfinder",
+        "nodes": [
+          "Brew Concoction (grants Poisonous Concoction as main skill, auto-levels)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/poisonous-concoction-pathfinder-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Grab a Widowhail with as much Quiver Effect as possible, at least 220% is highly recommended as this makes you hit the 300% breakpoint",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 603,
+      "kit_id": "poe2-concoction",
+      "payload_json": {
+        "key_items": [
+          "Widowhail (quiver effect scaling — at least 220%, hits 300% breakpoint)",
+          "Life flask with recovery mods (0.25 charges/sec, increased amount/rate)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/poisonous-concoction-pathfinder-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Poisonous Concoction throws a bottle to apply a strong poison on the enemy.",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 602,
+      "kit_id": "poe2-concoction",
+      "payload_json": {
+        "geometry_verbatim": "Poisonous Concoction throws a bottle projectile to target; Scattershot support fires 3 instances simultaneously for multi-point application. AoE radius of explosion/poison cloud not specified in fetched text."
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/poisonous-concoction-pathfinder-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Brew Concoction gives you the option to pick Poisonous Concoction. This provides you with your main skill so is the backbone of your entire build.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 601,
+      "kit_id": "poe2-concoction",
+      "payload_json": {
+        "loop_verbatim": "Poisonous Concoction throws a bottle applying strong poison; provided by Brew Concoction Pathfinder ascendancy node (auto-levels with character). Link with Scattershot for 3 simultaneous poisons. Scale via flask mods and Widowhail quiver for 300% quiver effect breakpoint. Late game: Chaos Inoculation for energy shield defense."
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/poisonous-concoction-pathfinder-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Pathfinder Poisonous Concoction builds - Dawn of the Hunt - Path of Exile 2",
+      "conf": 0.65,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 606,
+      "kit_id": "poe2-concoction",
+      "payload_json": {
+        "variants": [
+          "Poisonous Concoction Pathfinder (poison chaos)",
+          "Fire Concoction variant (mentioned in aliases; not found in separate guide)",
+          "Ice Concoction variant (mentioned in aliases; not found in separate guide)"
+        ]
+      },
+      "source_url": "https://poe.ninja/poe2/builds/dawn?class=Pathfinder&skills=Poisonous+Concoction"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "blank|at-target|flat|blank|blank|blank|blank|blank|solo|dual|med|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": null,
+    "ctrl_ailments_mapped": null,
+    "ctrl_function": null,
+    "ctrl_treatment": null,
+    "def_bin": null,
+    "def_conf": null,
+    "def_riders": null,
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": null,
+    "econ_meter_type": null,
+    "econ_status": null,
+    "economy_model": null,
+    "flags": [
+      "A5-negative-supplementary",
+      "A5-death-null: §A.2 pattern 12 only (port-context death — §A.2 provides no matching enum value; candidate 'extrinsic-port'). gandalf adjudicate."
+    ],
+    "geometry_conf": null,
+    "geometry_rule_fired": null,
+    "geometry_value": null,
+    "kit_id": "poe2-concoction",
+    "mob_policy_while_casting": null,
+    "mob_skill_is_movement": null,
+    "mob_verbs": null,
+    "provenance_json": {
+      "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+      "keying": "A5-negative-rekey-2026-07-14",
+      "negative": 1,
+      "passive_null_coords": [
+        "geometry_value",
+        "ctrl_treatment",
+        "ctrl_function",
+        "def_bin",
+        "economy_model",
+        "mob_policy_while_casting"
+      ],
+      "recoverable_coords": [
+        "delivery_value",
+        "amp_val",
+        "proxy_val",
+        "range_val",
+        "tempo_val",
+        "commit_val",
+        "activation_val",
+        "dependency_val"
+      ],
+      "source": "megaprobe-facts-jsonl (sparse negative row)",
+      "supplementary_only": true
+    },
+    "raw_json": {
+      "delivery": {
+        "conf": 0.82,
+        "evidence": "Flask-charge throw lands at target; at-target delivery",
+        "value": "at-target"
+      },
+      "folk_name": "Concoction Pathfinder",
+      "footprint": {
+        "conf": 0.78,
+        "evidence": "Flask explosion at target covers small-radius; atlas geo=small-AOE confirmed",
+        "value": "small-radius"
+      },
+      "game": "poe2",
+      "keying_provenance": {
+        "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+        "keying": "A5-negative-rekey-2026-07-14",
+        "negative": 1,
+        "passive_null_coords": [
+          "geometry_value",
+          "ctrl_treatment",
+          "ctrl_function",
+          "def_bin",
+          "economy_model",
+          "mob_policy_while_casting"
+        ],
+        "recoverable_coords": [
+          "delivery_value",
+          "amp_val",
+          "proxy_val",
+          "range_val",
+          "tempo_val",
+          "commit_val",
+          "activation_val",
+          "dependency_val"
+        ],
+        "source": "megaprobe-facts-jsonl (sparse negative row)",
+        "supplementary_only": true
+      },
+      "kit_id": "poe2-concoction",
+      "mech_note": "mech_note: 'PoE1 league-start QUEEN ported to PoE2 and died — flask-charge throwing suffered.' PoE2 flask rework removed the economy that made Concoction work in PoE1.",
+      "row_class": "combat-kit",
+      "status": "negative",
+      "why_negative": "ported-and-failed: PoE1's Concoction (flask-charge throwing) was ported to PoE2 but flask-charge system changes made the economy non-viable; the build lost its identity in translation"
+    },
+    "resource_verbatim": null,
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-concoction",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Throws a bottle projectile to target that applies a strong poison + poison cloud on impact (at-target thrown-flask -> ground_targeted_circle for the cloud AoE). Scattershot support fires 3 simultaneous instances (multi-point). poison is the core ailment. Chaos-poison -> earth (venom-themed, main-law poison row) with poison lane.",
+      "source_skill": "Poisonous Concoction",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-concoction",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: the flask-charge-as-ammo economy (your damage skill literally spends flask charges, gated by charge-recovery mods) maps to a cycle-shape + note but loses the tight flask-sustain-vs-fire-rate tension that IS the Pathfinder identity; the RNG element-variant framing (Poison/Fire/Ice from one Concoction chassis) is collapsed to the confirmed poison variant. Core throw-poison loop maps cleanly, so CLOSE.",
+    "grade": "CLOSE",
+    "kit_id": "poe2-concoction",
+    "mapping_json": {
+      "fidelity_notes": "NEGATIVE=1 (attested trap-kit) -- mapped HONESTLY: era was ERRATA-17 floor-extended (corpus eras 0.1-0.5-ancients; verify_ledger era CONTRADICTED errata_applied=1, anchor references 0.1.0e Chaos-Inoculation-low-life bugfix). The attested identity is the poison-flask-throw + flask-charge-ammo economy; mapped that, not laundered. Chaos-poison -> earth family (venom-themed, main-law poison row; ailment=poison either way). Flask-charge-ammo economy -> charge_stack_sub_shape:cycle + cost_scale note (bottles draw flask charges -- a consumable ammo cycle, native-adjacent). Fire/Ice Concoction variants exist in aliases but 'not found in separate guide' (dossier) -- mapped the poison variant (dominant/confirmed). Widowhail quiver (300% quiver-effect breakpoint) + life flask -> gear-affix/flask-effect lanes (item dissolves, mechanic lands). Late-game Chaos Inoculation -> DEFENSIVE_TRADEOFF-adjacent (not a core-loop skill; noted not door-listed to keep t4 to identity). death_class=extrinsic-content-mix.",
+      "motion_frame": "Throw Poisonous Concoction bottles (auto-leveled main skill from Brew Concoction node); Scattershot triples the throw; scale via flask mods + Widowhail quiver 300% breakpoint.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "cycle",
+        "cost_scale": "flask-charge ammo (bottles consume flask charges; 0.25 charges/sec recovery)"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "flask-charge ammo cycle"
+          ],
+          "geometry": [
+            "Scattershot 3x multi-point"
+          ],
+          "traits_affixes": [
+            "poison/chaos DoT scalers",
+            "flask-effect scalers (Widowhail quiver 300%)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "Throws a bottle projectile to target that applies a strong poison + poison cloud on impact (at-target thrown-flask -> ground_targeted_circle for the cloud AoE). Scattershot support fires 3 simultaneous instances (multi-point). poison is the core ailment. Chaos-poison -> earth (venom-themed, main-law poison row) with poison lane.",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Poisonous Concoction"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE",
+        "GEOMETRY_COLLAPSE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "apply-mark",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Concoction Pathfinder: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-concoction",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:earth",
+      "hook_id": "H2",
+      "hook_text": "earth element register",
+      "hook_type": "register",
+      "kit_id": "poe2-concoction",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "blank|at-target|flat|blank|blank|blank|blank|blank|solo|dual|med|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "blank|at-target|flat|blank|blank|blank|blank|blank|solo|dual|med|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "blank"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "blank"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "blank"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "blank"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "blank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "blank"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DDMFSI-HSDD-AM-CH-~~",
+    "attr_conf": 0.82,
+    "attr_val": "DEX",
+    "avg_conf": 0.82,
+    "canon_tier": "negative",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Poisonous/Fire/Ice Concoction"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": "extrinsic-content-mix",
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "flask-charge-ammo",
+    "elem_raw": "chaos",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "eras_normalized": "0.1;0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "flags": "vdm2-w5-poison-register-split-2026-07-22: poison->earth register (skill.element_primary='earth' on the Gas-Grenade/flask-charge chaos-poison delivery) disagrees with court='chaos-poison' (W3b crosswalk licenses shadow). PoE2-poison register split (earth vs shadow) — parallels the D2-poison and GD-acid splits (RB-6 / Leg-B court-basis). W5 to unify which register the chaos-poison decay family takes across PoE1/PoE2/D2/GD.",
+    "folk_name": "Concoction Pathfinder",
+    "game": "poe2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-14",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-concoction",
+    "lattice_coord": "DDMFSI",
+    "lineage": "",
+    "mech_note": "mech_note: 'PoE1 league-start QUEEN ported to PoE2 and died — flask-charge throwing suffered.' PoE2 flask rework removed the economy that made Concoction work in PoE1.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B: finite-ammo/consumable economy",
+    "mobile_cell_id": "SOLO|SMALL|INST×GX-14",
+    "mobile_key_group": "DDMFSI-HSDD-AM-CH-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 0,
+    "negative": 1,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;mt",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "complete-kit-mapping",
+    "tempo_conf": 0.82,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Adjusted build for patch 0.1.0e Hotfix 6. This patch fixes a bug where Chaos Inoculation was counted as being on Low Life.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.2-dawn, 0.3-edict, 0.4, 0.5-ancients",
+      "errata_applied": 1,
+      "id": 367,
+      "kit_id": "poe2-concoction",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/poisonous-concoction-pathfinder-build-guide",
+      "verdict": "CONTRADICTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Poisonous Concoction Pathfinder is hitting REALLY HARD - A SMALL GUIDE",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Concoction Pathfinder'; aliases 'Poisonous Concoction Pathfinder', 'Fire Concoction', 'Ice Concoction'",
+      "errata_applied": 0,
+      "id": 365,
+      "kit_id": "poe2-concoction",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3635301",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Brew Concoction gives you the option to pick Poisonous Concoction. This provides you with your main skill so is the backbone of your entire build.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill: Poisonous/Fire/Ice Concoction; flask-scaling archetype via Brew Concoction ascendancy node",
+      "errata_applied": 0,
+      "id": 366,
+      "kit_id": "poe2-concoction",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/poisonous-concoction-pathfinder-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Throws a bottle projectile to target that applies a strong poison + poison cloud on impact (at-target thrown-flask -> ground_targeted_circle for the cloud AoE). Scattershot support fires 3 simultaneous instances (multi-point). poison is the core ailment. Chaos-poison -> earth (venom-themed, main-law poison row) with poison lane.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Poisonous Concoction' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (4 sig)",
+      "errata_applied": 0,
+      "id": 2513,
+      "kit_id": "poe2-concoction",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "negative_canon",
+      "claim_subject": null,
+      "claim_text": "Concoction flask-scaling archetype identified as negative — kit-family over-centralization concern per corpus triage",
+      "errata_applied": 0,
+      "id": 368,
+      "kit_id": "poe2-concoction",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/poisonous-concoction-pathfinder-build-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    }
+  ]
+}

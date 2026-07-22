@@ -1,0 +1,788 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 603,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-lightning-strike",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 152,
+    "kit_id": "poe1-lightning-strike",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Lightning Strike — PoEDB",
+    "url": "https://poedb.tw/us/Lightning_Strike"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 152,
+      "kit_id": "poe1-lightning-strike",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Lightning Strike — PoEDB",
+      "url": "https://poedb.tw/us/Lightning_Strike"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-lightning-strike",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 567,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-lightning-strike",
+      "missing_expression": "The strike-spawns-fan identity lands as a two-geometry composite, but the engine expresses two discrete geometries rather than a unified strike-that-emits primitive (same generalization as b04 frost-blades);",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The strike-spawns-fan identity lands as a two-geometry composite, but the engine expresses two discrete geometries rather than a unified strike-that-emits primitive (same generalization as b04 frost-blades); the ~85-degree forward arc, the fan's 50%-less ratio, and the cannot-miss coupling are un-enumerated properties. A LS player keeps melee-and-ranged-in-one-button."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 329,
+      "kit_id": "poe1-lightning-strike",
+      "payload_json": null,
+      "source_url": "https://poedb.tw/us/Lightning_Strike"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "164% Effectiveness of Base and Added Damage at gem level 1...scaling up to 377% at gem level 20",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 328,
+      "kit_id": "poe1-lightning-strike",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "Divergent: Chance to Shock enemies",
+            "effect": "Chance to Shock enemies (0-20% per quality level)",
+            "node": "Divergent Lightning Strike (alt quality)",
+            "type": "alt_quality"
+          },
+          {
+            "anchor_quote": "164% Effectiveness of Base and Added Damage at gem level 1...scaling up to 377% at gem level 20",
+            "effect": "164% Effectiveness of Base and Added Damage at level 1; 377% at level 20; 50% physical-to-lightning conversion retained",
+            "node": "Lightning Strike of Arcing (transfig)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Lightning_Strike"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "164% Effectiveness...377% at gem level 20",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 327,
+      "kit_id": "poe1-lightning-strike",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "164% Effectiveness...377% at gem level 20",
+            "effect": "164-377% Effectiveness at levels 1-20; 50% physical-to-lightning conversion retained",
+            "item": "Lightning Strike of Arcing (transfig gem)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Lightning_Strike"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "a number of lightning projectiles will shoot out in a ~85 degree arc. Fires 3 projectiles base, with quality providing up to 1 additional projectile",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 326,
+      "kit_id": "poe1-lightning-strike",
+      "payload_json": {
+        "delivery": "at-target (melee hit) with simultaneous projectile fan",
+        "footprint": "multi-point (melee impact + 3 forward projectiles in 85-degree arc)",
+        "projectile_count": "3 base (quality adds up to 1 more)",
+        "range_note": "melee range hit; projectiles travel forward until hitting enemy"
+      },
+      "source_url": "https://poedb.tw/us/Lightning_Strike"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "a number of lightning projectiles will shoot out in a ~85 degree arc, traveling in a straight line until they strike an enemy. Currently fires 3 projectiles base",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 325,
+      "kit_id": "poe1-lightning-strike",
+      "payload_json": {
+        "dual_component": "melee hit + projectile fan in single button press",
+        "loop": "melee swing on target → 50% phys converts to lightning → simultaneously fires 3 base projectiles in ~85-degree arc → projectiles deal 50% less damage but cannot miss if melee connects → shock applies → run to next pack"
+      },
+      "source_url": "https://poedb.tw/us/Lightning_Strike"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 330,
+      "kit_id": "poe1-lightning-strike",
+      "payload_json": null,
+      "source_url": "https://poedb.tw/us/Lightning_Strike"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|multi_projectile|damage|none|mitigate|spend|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "poe1-lightning-strike",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DMHFSI-HMDD-SP-LI-~~",
+      "delivery": "at-target",
+      "elem_raw": "lightning",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Lightning Strike",
+      "game": "poe1",
+      "kit_id": "poe1-lightning-strike",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DMHFSI-HMDD-SP-LI-~~",
+        "delivery": "at-target",
+        "elem_raw": "lightning",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-lightning-strike",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "the primary melee swing on the targeted enemy -- the every-3-seconds dominant action; 50% phys->lightning conversion; applies the shock (-> sunder, s2 false friend). Leads per s7.2",
+      "source_skill": "Lightning Strike (melee hit)",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 3,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-lightning-strike",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "on the melee hit, 3 base projectiles (quality adds up to 1) shoot FORWARD in a ~85-degree arc, traveling straight until they strike an enemy; 50% less damage than the strike but cannot miss if the melee connects. The ranged-clear half spawned by the hit",
+      "source_skill": "Lightning Strike (projectile fan)",
+      "speed_band": null,
+      "width_band": "medium"
+    }
+  ],
+  "kit_id": "poe1-lightning-strike",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The strike-spawns-fan identity lands as a two-geometry composite, but the engine expresses two discrete geometries rather than a unified strike-that-emits primitive (same generalization as b04 frost-blades); the ~85-degree forward arc, the fan's 50%-less ratio, and the cannot-miss coupling are un-enumerated properties. A LS player keeps melee-and-ranged-in-one-button.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-lightning-strike",
+    "mapping_json": {
+      "fidelity_notes": "COMPOSITE melee->projectile STRIKE (b04 frost-blades precedent: one source skill = two engine geometries, melee leads per s7.2). The FORWARD ~85-degree fan (vs frost-blades' behind-target fan) is the directional signature; multi_projectile carries the fan, direction noted. 50% phys->lightning -> ELEMENT_CONVERSION_PHYSICAL (partial-conversion attack, b04 ice-shot/molten-class routing); GEOMETRY_PROPAGATION_cascade routes the hit-spawns-projectiles propagation identity (b04 frost-blades exact precedent). PoE shock -> sunder on both components. Eras 1.x;3.20+ CONFIRMED (introduced 0.9.6; 3.20 reduced projectile count -- the 3-base count mapped is the modern verified number). The cannot-miss-if-melee-connects guarantee and the 50%-less fan damage are behavioral/numeric riders with no carriers (noted).",
+      "motion_frame": "melee-and-ranged in one button: strike the front enemy, the hit throws a forward fan of lightning bolts through the pack -- close-range commitment with projected clear, at full run between packs",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light attack spend; full-move strike cadence"
+          ],
+          "geometry": [
+            "melee_strike primary hit",
+            "multi_projectile forward fan (~85-degree arc; extra-projectiles widen)"
+          ],
+          "traits_affixes": [
+            "lightning-penetration",
+            "shock-effect (sunder analog)",
+            "attack-speed",
+            "projectile-count (fan width)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "sunder"
+          ],
+          "delivery_notes": "the primary melee swing on the targeted enemy -- the every-3-seconds dominant action; 50% phys->lightning conversion; applies the shock (-> sunder, s2 false friend). Leads per s7.2",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Lightning Strike (melee hit)"
+        },
+        {
+          "ailments": [
+            "sunder"
+          ],
+          "delivery_notes": "on the melee hit, 3 base projectiles (quality adds up to 1) shoot FORWARD in a ~85-degree arc, traveling straight until they strike an enemy; 50% less damage than the strike but cannot miss if the melee connects. The ranged-clear half spawned by the hit",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Lightning Strike (projectile fan)"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION_cascade",
+        "ELEMENT_CONVERSION_PHYSICAL"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1683,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 1684,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Direct melee hit on target; simultaneously fires converted-lightning projectiles forward",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1681,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Melee strike that also fires converted-lightning projectiles forward — melee and",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 1685,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "lightning"
+      },
+      "family": "element",
+      "id": 1686,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Melee hit + forward lightning projectile fan; geo=multi-spawn in atlas",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 1682,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with multi-point footprint. Melee strike that also fires converted-lightning projectiles forward  —  melee and ranged in one button; the modern era's dominant strike skil.",
+      "family": "geo_text",
+      "id": 1688,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 1687,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1689,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1690,
+      "kit_id": "poe1-lightning-strike",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Lightning Strike: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-lightning-strike",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "poe1-lightning-strike",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|multi_projectile|damage|none|mitigate|spend|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|multi_projectile|damage|none|mitigate|spend|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMHFSI-HMDD-SP-LI-~~",
+    "attr_conf": 0.82,
+    "attr_val": "DEX",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Lightning Strike"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "lightning",
+    "era_year": 2013,
+    "eras": "1.x;3.20+",
+    "eras_normalized": "1.x;3.20+",
+    "flags": "",
+    "folk_name": "Lightning Strike",
+    "game": "poe1",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-05",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-lightning-strike",
+    "lattice_coord": "DMHFSI",
+    "lineage": "",
+    "mech_note": "Melee strike that also fires converted-lightning projectiles forward — melee and ranged in one button; the modern era's dominant strike skil",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|MULTI|INST×GAP-P1-05",
+    "mobile_key_group": "DMHFSI-HMDD-SP-LI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MULTI-PROJECTILE-VOLLEY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=5].members (working_label=MULTI-PROJECTILE-VOLLEY; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Strike first added in version 0.9.6. v3.20.0: Reduced projectile count (previously up to 7, now fires 2 additional projectiles)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in stamped eras 1.x and 3.20+",
+      "errata_applied": 0,
+      "id": 176,
+      "kit_id": "poe1-lightning-strike",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Lightning_Strike",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Strike was first added in version 0.9.6 of Path of Exile",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Lightning Strike' and alias 'LS' with class Raider/Warden/Champion are real community usage",
+      "errata_applied": 0,
+      "id": 174,
+      "kit_id": "poe1-lightning-strike",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Lightning_Strike",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "a number of lightning projectiles will shoot out in a ~85 degree arc, traveling in a straight line until they strike an enemy. Currently fires 3 projectiles base",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Lightning Strike; direct melee hit on target; simultaneously fires converted-lightning projectiles forward; multi-spawn footprint",
+      "errata_applied": 0,
+      "id": 175,
+      "kit_id": "poe1-lightning-strike",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Lightning_Strike",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "the primary melee swing on the targeted enemy -- the every-3-seconds dominant action; 50% phys->lightning conversion; applies the shock (-> sunder, s2 false friend). Leads per s7.2",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Lightning Strike (melee hit)' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1 sig)",
+      "errata_applied": 0,
+      "id": 2442,
+      "kit_id": "poe1-lightning-strike",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "on the melee hit, 3 base projectiles (quality adds up to 1) shoot FORWARD in a ~85-degree arc, traveling straight until they strike an enemy; 50% less damage than the strike but cannot miss if the melee connects. The ranged-clear half spawned by the hit",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Lightning Strike (projectile fan)' delivery_class=projectile (band_conf=0.75); lint: anchor STRONGLY entails 'melee_arc' (2 sig), assigned 'projectile' has 0 support — genuine mismatch",
+      "errata_applied": 0,
+      "id": 2443,
+      "kit_id": "poe1-lightning-strike",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONTRADICTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,904 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 10
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 614,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-righteous-fire",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 178,
+    "kit_id": "poe1-righteous-fire",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Righteous Fire — PoEDB",
+    "url": "https://poedb.tw/us/Righteous_Fire"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 178,
+      "kit_id": "poe1-righteous-fire",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Righteous Fire — PoEDB",
+      "url": "https://poedb.tw/us/Righteous_Fire"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Pohx",
+      "cite_class": "communal",
+      "id": 179,
+      "kit_id": "poe1-righteous-fire",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe-vault.com",
+      "title": "Pohx's Righteous Fire Juggernaut Build Guide",
+      "url": "https://www.poe-vault.com/guides/righteous-fire-juggernaut-build-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 180,
+      "kit_id": "poe1-righteous-fire",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe-vault.com",
+      "title": "[3.19] The Burning Man - Righteous Fire Juggernaut Build Guide",
+      "url": "https://www.poe-vault.com/guides/the-burning-man-righteous-fire-juggernaut-build-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-righteous-fire",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 577,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-righteous-fire",
+      "missing_expression": "Self-burn intensity clamped by the LOCKED 0.30 hp-cost ceiling: the source's knife-edge 'your own skill is actively killing you and one gear mistake means you burn to death' tension softens to a strong-but-survivable tick.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Self-burn intensity clamped by the LOCKED 0.30 hp-cost ceiling: the source's knife-edge 'your own skill is actively killing you and one gear mistake means you burn to death' tension softens to a strong-but-survivable tick. Walk-forward burning-aura identity, zero-button loop, and the regen race itself are intact."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 389,
+      "kit_id": "poe1-righteous-fire",
+      "payload_json": {
+        "handle": "Pohx",
+        "note": "Pohx is the long-running primary author of RF Juggernaut/Chieftain guides; known as 'RF guy' in community",
+        "site": "poe-vault.com"
+      },
+      "source_url": "https://www.poe-vault.com/guides/righteous-fire-juggernaut-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Now grants 15-25% more Cast Speed at gem levels 1-20",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 388,
+      "kit_id": "poe1-righteous-fire",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "Base radius is (0—0.3) metres",
+            "effect": "Base radius is (0-0.3) metres per quality",
+            "node": "Righteous Fire (quality)",
+            "type": "base_quality"
+          },
+          {
+            "anchor_quote": "Now grants 15-25% more Cast Speed at gem levels 1-20",
+            "effect": "Grants 15-25% more Cast Speed at gem levels 1-20",
+            "node": "Righteous Fire of Arcane Devotion (transfig)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Righteous_Fire"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Now grants 15-25% more Cast Speed at gem levels 1-20",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 387,
+      "kit_id": "poe1-righteous-fire",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "Now grants 15-25% more Cast Speed at gem levels 1-20",
+            "effect": "Grants 15-25% more Cast Speed at gem levels 1-20",
+            "item": "Righteous Fire of Arcane Devotion (transfig gem)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Righteous_Fire"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'The skill affects a base radius of 1.8–2.3 meters, scaling with gem level'",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 386,
+      "kit_id": "poe1-righteous-fire",
+      "payload_json": {
+        "aoe": "small radius 1.8-2.3 meters base; scales with gem level",
+        "delivery": "aura-pulse (self-burn ring radiates around walking body)",
+        "notes": "Circular aura around player; Fire Trap provides at-target ranged supplement for bosses"
+      },
+      "source_url": "https://poedb.tw/us/Righteous_Fire"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'For tougher targets, we'll be cursing with our Flammability & Throwing Fire Trap'",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 385,
+      "kit_id": "poe1-righteous-fire",
+      "payload_json": {
+        "loop": "Activate Righteous Fire once per zone; self-burn aura continuously damages nearby enemies while regen and reduced-cost items out-heal the self-damage; walk forward through packs; throw Fire Trap for single-target or kiting ranged threats"
+      },
+      "source_url": "https://www.poe-vault.com/guides/righteous-fire-juggernaut-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'many variations ranging from Juggernaut, Occultist, low life Guardians, Hybrid Inquisitors'",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 390,
+      "kit_id": "poe1-righteous-fire",
+      "payload_json": {
+        "variants": [
+          "Juggernaut (primary; life regen + phys mitigation)",
+          "Chieftain (totem + fire conversion)",
+          "Inquisitor (crit/consecrated ground variant)",
+          "Occultist (low-life historical)",
+          "Guardian (low-life historical)"
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/guides/righteous-fire-juggernaut-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|aura-pulse|flat|aura|damage|none|mitigate|self-cost|solo|melee|low|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "aura-pulse",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "self-cost",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R8-aura",
+    "geometry_value": "aura",
+    "kit_id": "poe1-righteous-fire",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk-forward"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMLFSI-_SDT-SP-FI-~~",
+      "delivery": "aura-pulse",
+      "elem_raw": "fire",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R8-aura",
+        "value": "aura"
+      },
+      "flags": [],
+      "folk_name": "Righteous Fire",
+      "game": "poe1",
+      "kit_id": "poe1-righteous-fire",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk-forward"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMLFSI-_SDT-SP-FI-~~",
+        "delivery": "aura-pulse",
+        "elem_raw": "fire",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "life",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-righteous-fire",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "toggle self-immolation: constant fire DoT in a small radius (base 1.8-2.3m, gem-scaled) around the walking body; costs the caster's own life per second; sustained by out-regenerating the self-burn — activate once per zone, never press it again",
+      "source_skill": "Righteous Fire",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-righteous-fire",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "the boss/single-target supplement and the only button the build actually presses: thrown eruption + burning-ground patch (b03 fire-trap geometry convention)",
+      "source_skill": "Fire Trap",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-righteous-fire",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Self-burn intensity clamped by the LOCKED 0.30 hp-cost ceiling: the source's knife-edge 'your own skill is actively killing you and one gear mistake means you burn to death' tension softens to a strong-but-survivable tick. Walk-forward burning-aura identity, zero-button loop, and the regen race itself are intact.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-righteous-fire",
+    "mapping_json": {
+      "fidelity_notes": "The crosswalk section-5 NAMES this kit for PERSISTENCE_ENGINE_uptime ('DoT/uptime ramps (RF...)') — door assignment is law-direct. DEFENSIVE_TRADEOFF carries the life/defense-trade half: the build IS the regen-vs-self-burn race. Toggle -> persistent_condition_shape=tick-cost (section-3 stance/toggle lane), the tick paid from life. SOURCE MAGNITUDE CLAMPED: the source burn is near-lethal (~90% of life+ES per second, out-regenned by stacked regen); engine hp_cost_scale is LOCKED at 0.30 max — mapped at the cap (aurabot b01 clamp precedent), so the race survives at lower stakes. Ailment burn native (fire family). Variants (Chieftain / Inquisitor / historical low-life Occultist+Guardian) collapse to the same chassis with different sustain sources. Longest-lived kit in the batch (1.x through 3.20+, 'most durable SSF progression curve of any skill gem').",
+      "motion_frame": "walk-forward tank: activate RF once and simply walk — everything near the burning body melts while regen races the self-burn; throw Fire Trap at tougher targets ('For tougher targets, we'll be cursing with our Flammability & Throwing Fire Trap')",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "hp_cost_scale": 0.3,
+        "persistent_condition_shape": "tick-cost"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "tick-cost toggle paid in life; regen must permanently out-heal it",
+            "once-per-zone activation — effectively zero cast loop"
+          ],
+          "geometry": [
+            "aura radius (small, gem-scaled — proximity IS the aim)",
+            "ground_targeted_circle supplement (Fire Trap)"
+          ],
+          "traits_affixes": [
+            "life-regeneration stacking (Juggernaut primary chassis)",
+            "fire/burning damage ('affects Righteous Fire' spell-damage register)",
+            "max-res / fire-res (self-burn mitigation)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "burn"
+          ],
+          "delivery_notes": "toggle self-immolation: constant fire DoT in a small radius (base 1.8-2.3m, gem-scaled) around the walking body; costs the caster's own life per second; sustained by out-regenerating the self-burn — activate once per zone, never press it again",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Righteous Fire"
+        },
+        {
+          "ailments": [
+            "burn"
+          ],
+          "delivery_notes": "the boss/single-target supplement and the only button the build actually presses: thrown eruption + burning-ground patch (b03 fire-trap geometry convention)",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Fire Trap"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_uptime",
+        "DEFENSIVE_TRADEOFF"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1353,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 1354,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Self-burn aura radiates constant fire DoT around walking body; item-/passive-granted",
+        "value": "aura-pulse"
+      },
+      "family": "delivery",
+      "id": 1351,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "self-cost",
+        "plain_text": "life (self-cost); Self-burn aura: the body is permanently on fire, damaging everything nearby whil",
+        "resource_verbatim": "life"
+      },
+      "family": "economy",
+      "id": 1355,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 1356,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Self-burn ring radiates small radius; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 1352,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Aura-pulse delivery with small-radius footprint. Self-burn aura: the body is permanently on fire, damaging everything nearby while regeneration out-heals the self-damage; the walk-forward t.",
+      "family": "geo_text",
+      "id": 1358,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk-forward"
+        ]
+      },
+      "family": "movement",
+      "id": 1357,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1359,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "od2",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1360,
+      "kit_id": "poe1-righteous-fire",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Righteous Fire: aura aura identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-righteous-fire",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "poe1-righteous-fire",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|aura-pulse|flat|aura|damage|none|mitigate|self-cost|solo|melee|low|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|aura-pulse|flat|aura|damage|none|mitigate|self-cost|solo|melee|low|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "aura-pulse"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "aura"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "self-cost"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMLFSI-_SDT-SP-FI-~~",
+    "attr_conf": 0.82,
+    "attr_val": "STR",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Righteous Fire",
+      "Fire Trap(single-target)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "hp-burn-vs-regen",
+    "elem_raw": "fire",
+    "era_year": 2013,
+    "eras": "1.x;3.0-3.6;3.7-3.13;3.14-3.19;3.20+",
+    "eras_normalized": "1.x;3.0-3.6;3.7-3.13;3.14-3.19;3.20+",
+    "flags": "vdm2-w5-elem-anomaly-2026-07-22: 90% self-burn identity clamped by LOCKED 0.30 hp-cost ceiling; frozen elem/self-cost interplay needs W5 re-derivation",
+    "folk_name": "Righteous Fire",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-01",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "poe1-righteous-fire",
+    "lattice_coord": "SMLFSI",
+    "lineage": "",
+    "mech_note": "Righteous Fire: a toggle-aura that permanently burns the caster's body, dealing fire damage per second to all nearby enemies in a radius, scaled by fire damage bonuses and burning damage. The caster sustains the self-damage via massive life/ES regeneration (Juggernaut ascendancy, Bereks Grip, Vitality aura, life regen nodes). The offense scales via Spell Damage that says 'affects Righteous Fire' (e.g. Spell Damage increases burn). The build walks forward — proximity kills everything in the burning radius without any button presses. Scorch rune and Archmage variants add secondary offense. RF is the quintessential walk-forward tank build: everything in range burns, the caster never drops a button. Has been competitively viable for 10+ years of PoE history, with the most durable SSF progression curve of any skill gem.",
+    "mint": 0,
+    "mob_raw": "walk-forward",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×GAP-P1-01",
+    "mobile_key_group": "SMLFSI-_SDT-SP-FI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "od2;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "AURA",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Righteous Fire introduced version 0.9.9 (Closed Beta); listed as original skill available from Act 2 quest in base game",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 1.x",
+      "errata_applied": 0,
+      "id": 212,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Righteous_Fire",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'It has had many variations ranging from Occultist to low life Guardians, Hybrid Inquisitors' — spanning 3.x eras",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6",
+      "errata_applied": 0,
+      "id": 213,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/righteous-fire-juggernaut-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Righteous Fire documented as perpetual league-starter across all 3.x eras; no gap found in community coverage",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 214,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/righteous-fire-juggernaut-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'[3.19] The Burning Man - Righteous Fire (RF) Juggernaut Build Guide' on poe-vault.com confirms 3.19 active",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.14-3.19",
+      "errata_applied": 0,
+      "id": 215,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/the-burning-man-righteous-fire-juggernaut-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Pohx's RF Juggernaut and Chieftain guides on poe-vault.com for 3.26 confirm ongoing meta as league-starter",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.20+",
+      "errata_applied": 0,
+      "id": 216,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/righteous-fire-juggernaut-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Righteous Fire has been in Path of Exile since Closed Beta... Today, Righteous Fire is the easiest League starter in Path of Exile'",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Righteous Fire' and alias 'RF' are real community usage",
+      "errata_applied": 0,
+      "id": 210,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/righteous-fire-juggernaut-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'For tougher targets, we'll be cursing with our Flammability & Throwing Fire Trap... keep them on the edge of your ring from Righteous Fire'",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Self-burn aura radiates constant fire DoT around walking body; life cost mechanic; Fire Trap used as single-target supplement outside aura radius",
+      "errata_applied": 0,
+      "id": 211,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/righteous-fire-juggernaut-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "toggle self-immolation: constant fire DoT in a small radius (base 1.8-2.3m, gem-scaled) around the walking body; costs the caster's own life per second; sustained by out-regenerating the self-burn — activate once per zone, never press it again",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Righteous Fire' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2461,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "the boss/single-target supplement and the only button the build actually presses: thrown eruption + burning-ground patch (b03 fire-trap geometry convention)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Fire Trap' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (1 sig)",
+      "errata_applied": 0,
+      "id": 2462,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "poedb: \"Spell, AoE, Fire\"; deals 70% max life + 70% max ES as base FIRE dmg/s to enemies; self-burn 90% max life + 70% ES/s (W1 anchor).",
+      "claim_family": "mechanics",
+      "claim_subject": "elem_anomaly",
+      "claim_text": "[§7 elem_raw anomaly · PROPOSED:DOCUMENTED-CROSSWALK] elem_raw='fire' — elem_raw='fire' is CORRECT and anchor-confirmed. The flagged context (90% self-burn) is a MECHANIC note (the self-degeneration cost), not an element dispute. No correction; the self-burn context is documented, element stands.",
+      "errata_applied": 0,
+      "id": 2571,
+      "kit_id": "poe1-righteous-fire",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "player_attested",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

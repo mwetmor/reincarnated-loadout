@@ -1,0 +1,797 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1016,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-erasure-edc-lich",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 310,
+    "kit_id": "poe2-erasure-edc-lich",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Essence Drain Lich Build Guide for Path of Exile 2 Return of the Ancients 0.5.4",
+    "url": "https://maxroll.gg/poe2/build-guides/essence-drain-lich-build-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 310,
+      "kit_id": "poe2-erasure-edc-lich",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Essence Drain Lich Build Guide for Path of Exile 2 Return of the Ancients 0.5.4",
+      "url": "https://maxroll.gg/poe2/build-guides/essence-drain-lich-build-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 311,
+      "kit_id": "poe2-erasure-edc-lich",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Lich Ascendancy Overview - Path of Exile 2",
+      "url": "https://maxroll.gg/poe2/resources/lich-ascendancy-overview"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-erasure-edc-lich",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 873,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-erasure-edc-lich",
+      "missing_expression": "Minor drift, and it is CLEAN: with the Erasure phantom removed per binding, the kit IS classic Essence-Drain/Contagion -- a chaos-DoT projectile + on-kill AoE-spread propagation -- which maps to GEOMETRY_PROPAGATION + drain almost exactly.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift, and it is CLEAN: with the Erasure phantom removed per binding, the kit IS classic Essence-Drain/Contagion -- a chaos-DoT projectile + on-kill AoE-spread propagation -- which maps to GEOMETRY_PROPAGATION + drain almost exactly. The only loss is the unverifiable 'Erasure amplifies the spread chain' claim, which by ruling we grade as nonexistent. If Erasure is later confirmed real this may need revisit, but on current source CLOSE is honest. [D-7.7 2026-07-19: possible-phantom annotation KEPT; NO deletion (poe2-REVIEW-2 / b1-REVIEW-2; deletion is Matt-only). 'Erasure' remains unverified-possible-phantom; Essence Drain + Contagion are CONFIRMED real.]"
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 617,
+      "kit_id": "poe2-erasure-edc-lich",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Rupture the Soul - Enemies killed near you have a 33% chance to explode",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 616,
+      "kit_id": "poe2-erasure-edc-lich",
+      "payload_json": {
+        "ascendancy": "Lich",
+        "nodes": [
+          "Rupture the Soul (33% chance enemies killed near you explode)",
+          "Incessant Cacophony (extra curse slot, infinite duration)",
+          "Necromantic Conduit (Unholy Might — 30% extra Chaos damage)",
+          "Blackened Heart (scales Unholy Might with max Mana)",
+          "Soulless Form / Eternal Life (Life cannot change while ES present)",
+          "Price of Power (spells consume Power Charges for 40% more damage)",
+          "Eldritch Empowerment (30% more damage sacrificing ES)",
+          "Crystalline Phylactery (extra jewel socket, doubled modifiers)"
+        ],
+        "note": "No node named 'Erasure' exists in Lich ascendancy per fetched source."
+      },
+      "source_url": "https://maxroll.gg/poe2/resources/lich-ascendancy-overview"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 615,
+      "kit_id": "poe2-erasure-edc-lich",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Contagion is an Area of Effect Spell that spreads all chaos damage over time debuffs to nearby enemies.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 614,
+      "kit_id": "poe2-erasure-edc-lich",
+      "payload_json": {
+        "geometry_verbatim": "Essence Drain: single projectile fired at target, applies DoT on hit. Contagion: AoE pulse around cast point spreading DoT. Combined footprint: projectile placement + spreading AoE chain on kill."
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/essence-drain-lich-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Essence Drain is a Projectile Spell that applies a Chaos damage over time debuff to enemies it hits. Contagion is an Area of Effect Spell that spreads all chaos damage over time debuffs to nearby enemies.",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 613,
+      "kit_id": "poe2-erasure-edc-lich",
+      "payload_json": {
+        "loop_verbatim": "Cast Essence Drain (chaos projectile applying heavy chaos DoT to hit enemy). Cast Contagion (AoE spell that spreads all chaos DoT debuffs to nearby enemies). On kill the spread propagates exponentially through packs. 'Erasure' mechanic per corpus claims Lich amplifies spread — but no Lich node or skill named Erasure found in fetched sources; claimed mechanic remains unverified."
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/essence-drain-lich-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Essence Drain Lich Build Guide for Path of Exile 2 Return of the Ancients 0.5.4",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 618,
+      "kit_id": "poe2-erasure-edc-lich",
+      "payload_json": {
+        "variants": [
+          "ED/Contagion Lich (primary variant; confirmed 0.2-0.5)",
+          "Essence Drain Lich leveling guide (maxroll 0.5.4)",
+          "Twink Essence Drain Lich leveling (0.4)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/essence-drain-lich-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|projectile|flat|chain|damage|expose|absorb|spend|solo|ranged|low|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\", \"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "expose",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.85,
+    "def_riders": "[\"synonym:energy-shield\"]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.85,
+    "geometry_rule_fired": "R1",
+    "geometry_value": "chain",
+    "kit_id": "poe2-erasure-edc-lich",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IRLFSI",
+      "delivery": "projectile",
+      "elem_raw": "Chaos",
+      "footprint": "chain-hop"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp",
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.85,
+        "riders": [
+          "synonym:energy-shield"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.85,
+        "rule_fired": "R1",
+        "value": "chain"
+      },
+      "flags": [],
+      "folk_name": "Erasure DoT Contagion Lich",
+      "game": "poe2",
+      "kit_id": "poe2-erasure-edc-lich",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IRLFSI",
+        "delivery": "projectile",
+        "elem_raw": "Chaos",
+        "footprint": "chain-hop"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-erasure-edc-lich",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Projectile Spell that applies a chaos damage-over-time debuff to enemies it hits -> shadow (chaos drain-DoT lineage). Primary delivery projectile (single-target projectile carrying the DoT). drain = the essence-drain DoT; curse:amplify approximates the DoT-taken amp (probe 'chaos-exposure'). commit=instant, tempo low (DoT playstyle).",
+      "source_skill": "Essence Drain",
+      "speed_band": "instant",
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-erasure-edc-lich",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "AoE spell around cast point that spreads all chaos DoT debuffs to nearby enemies; on kill the spread propagates through packs (chain-hop). -> ground_targeted_circle for the AoE spread-application zone; the propagation is the on-kill cascade (t4).",
+      "source_skill": "Contagion",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-erasure-edc-lich",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift, and it is CLEAN: with the Erasure phantom removed per binding, the kit IS classic Essence-Drain/Contagion -- a chaos-DoT projectile + on-kill AoE-spread propagation -- which maps to GEOMETRY_PROPAGATION + drain almost exactly. The only loss is the unverifiable 'Erasure amplifies the spread chain' claim, which by ruling we grade as nonexistent. If Erasure is later confirmed real this may need revisit, but on current source CLOSE is honest. [D-7.7 2026-07-19: possible-phantom annotation KEPT; NO deletion (poe2-REVIEW-2 / b1-REVIEW-2; deletion is Matt-only). 'Erasure' remains unverified-possible-phantom; Essence Drain + Contagion are CONFIRMED real.]",
+    "grade": "CLOSE",
+    "kit_id": "poe2-erasure-edc-lich",
+    "mapping_json": {
+      "fidelity_notes": "ERASURE PHANTOM (addendum C.6 BINDING): 'Erasure' 404s on poe2db and is absent from ALL fetched sources (dossier: 'no Lich node or skill named Erasure found... claimed mechanic remains unverified'). MAPPED FROM Essence Drain + Contagion ONLY; graded AS IF ERASURE DOES NOT EXIST; phantom fidelity_noted. Chaos -> shadow (main-law chaos drain-DoT lineage). ED's DoT -> drain ailment; the damage-taken amp read (probe 'chaos-exposure') -> curse:amplify (main-law Despair/Vulnerability row: raises damage taken; NOT sap -- honoring the b01 Despair correction). Contagion on-kill spread -> GEOMETRY_PROPAGATION (on-kill cascade, main-law capstone row) + on_kill economy key. Lich 'Rupture the Soul' (33% kill-explosion) reinforces the on-kill-propagation identity but is a separate node -> folded into GEOMETRY_PROPAGATION door. verify_ledger: identity+mechanics UNSUPPORTED for the Erasure claim specifically (the phantom); ED/Contagion era CONFIRMED 0.2-0.5.",
+      "motion_frame": "Cast Essence Drain (chaos DoT projectile) then Contagion (AoE that spreads all chaos DoT); on kill the plague propagates exponentially through packs.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "mana-light spend per ED cast; Contagion spread is free on kill",
+        "on_kill": "DoT spread propagates on defender death"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "on-kill free propagation"
+          ],
+          "geometry": [
+            "Contagion spread AoE",
+            "ED projectile"
+          ],
+          "traits_affixes": [
+            "chaos-DoT scalers"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "drain",
+            "curse:amplify"
+          ],
+          "delivery_notes": "Projectile Spell that applies a chaos damage-over-time debuff to enemies it hits -> shadow (chaos drain-DoT lineage). Primary delivery projectile (single-target projectile carrying the DoT). drain = the essence-drain DoT; curse:amplify approximates the DoT-taken amp (probe 'chaos-exposure'). commit=instant, tempo low (DoT playstyle).",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Essence Drain"
+        },
+        {
+          "ailments": [
+            "drain"
+          ],
+          "delivery_notes": "AoE spell around cast point that spreads all chaos DoT debuffs to nearby enemies; on kill the spread propagates through packs (chain-hop). -> ground_targeted_circle for the AoE spread-application zone; the propagation is the on-kill cascade (t4).",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Contagion"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION",
+        "PERSISTENCE_ENGINE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "apply-mark",
+        "mark_identity": "chaos DoT debuffs (Contagion spreads them on kill)",
+        "proc_trigger_condition": "on-defender-death",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "ailments": [
+          "wither",
+          "chaos-exposure"
+        ],
+        "centrality": "rider",
+        "conf": 0.75
+      },
+      "family": "control",
+      "id": 853,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.85,
+        "layers": [
+          "energy-shield",
+          "sustain-leech"
+        ],
+        "primary": "energy-shield"
+      },
+      "family": "defense",
+      "id": 854,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.85,
+        "evidence": "Essence Drain fires a projectile; Contagion is at-target AOE that spreads; Erasure mechanic chains; primary delivery = projectile (ED)",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 851,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.82,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Mana spend per ED cast. Contagion spread is free (triggers on kill). The economy scales by DoT efficiency, not cast frequency.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 855,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.88,
+        "damage_mode": "dot",
+        "label_verbatim": "Chaos"
+      },
+      "family": "element",
+      "id": 856,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.85,
+        "evidence": "Contagion spreads (chains) the DoT plague to new targets on kill; atlas geo=chain confirmed as chain-hop",
+        "value": "chain-hop"
+      },
+      "family": "footprint",
+      "id": 852,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "Essence Drain fires a chaos projectile applying heavy DoT. On kill, Contagion auto-spreads the DoT to nearby enemies. The Erasure mechanic amplifies the spread chain via Lich ascendancy bonus. An exponentially spreading plague loop.",
+      "family": "geo_text",
+      "id": 858,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 857,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 859,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 860,
+      "kit_id": "poe2-erasure-edc-lich",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Erasure DoT Contagion Lich: single target projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-erasure-edc-lich",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "poe2-erasure-edc-lich",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|flat|chain|damage|expose|absorb|spend|solo|ranged|low|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|flat|chain|damage|expose|absorb|spend|solo|ranged|low|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "chain"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "expose"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRLFSI-HCDM-SP-CH-~~",
+    "attr_conf": 0.82,
+    "attr_val": "INT",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Essence Drain lineage",
+      "Contagion",
+      "Erasure"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "chaos",
+    "era_year": 2024,
+    "eras": "0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "eras_normalized": "0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "flags": "",
+    "folk_name": "Erasure DoT Contagion Lich",
+    "game": "poe2",
+    "geo_raw": "chain",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-erasure-edc-lich",
+    "lattice_coord": "IRLFSI",
+    "lineage": "",
+    "mech_note": "[VDM-1 basin-1 2026-07-18] PHANTOM-CANDIDATE (b1-REVIEW-2 (basin-1)): 'Erasure' 404s on poe2db and is absent from all lich/witch sources fetched; Essence Drain + Contagion CONFIRMED real. 'Erasure' in core_skills is unverified-possible-phantom (NOT deleted — REVIEW open for Matt-tier per poe1-REVIEW-1 earthshatter / di-spiritform precedent). id+mechanics verify UNSUPPORTED. -- prov=kb. mech_note: 'The ED-and-Contagion plague loop reborn in PoE2's Lich chassis with the Erasure-[mechanic] amplifying spread.' Era=0.2-dawn through 0.5-ancients. The Lich ascendancy (Sorceress path) enables advanced DoT scaling. Erasure = PoE2-specific mechanic that accelerates Contagion spread. damage_mode=dot (chaos DoT is ALL the damage).",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|CHAIN|INST×econ:spend",
+    "mobile_key_group": "IRLFSI-HCDM-SP-CH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;bm",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "DOT-AILMENT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=4].members (working_label=DOT-AILMENT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Essence Drain & Contagion was a strong leveling choice in 0.2, and 0.3's support gem changes have further buffed it",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.2-dawn, 0.3-edict, 0.4, 0.5-ancients",
+      "errata_applied": 0,
+      "id": 374,
+      "kit_id": "poe2-erasure-edc-lich",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/essence-drain-lich-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Erasure DoT Contagion Lich'; aliases 'ED/Contagion Lich', 'Essence Drain Lich', 'Erasure DoT spread'",
+      "errata_applied": 0,
+      "id": 372,
+      "kit_id": "poe2-erasure-edc-lich",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/essence-drain-lich-build-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Essence Drain (projectile chaos DoT), Contagion (spread on kill), Erasure (amplifies spread chain via Lich ascendancy)",
+      "errata_applied": 0,
+      "id": 373,
+      "kit_id": "poe2-erasure-edc-lich",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/resources/lich-ascendancy-overview",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Projectile Spell that applies a chaos damage-over-time debuff to enemies it hits -> shadow (chaos drain-DoT lineage). Primary delivery projectile (single-target projectile carrying the DoT). drain = the essence-drain DoT; curse:amplify approximates the DoT-taken amp (probe 'chaos-exposure'). commit=instant, tempo low (DoT playstyle).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Essence Drain' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2515,
+      "kit_id": "poe2-erasure-edc-lich",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "AoE spell around cast point that spreads all chaos DoT debuffs to nearby enemies; on kill the spread propagates through packs (chain-hop). -> ground_targeted_circle for the AoE spread-application zone; the propagation is the on-kill cascade (t4).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Contagion' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (5 sig)",
+      "errata_applied": 0,
+      "id": 2516,
+      "kit_id": "poe2-erasure-edc-lich",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

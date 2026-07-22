@@ -1,0 +1,815 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1097,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-ghostflame-warlock",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "official",
+    "id": 519,
+    "kit_id": "le-ghostflame-warlock",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Last Epoch 1.1 Patch Notes",
+    "url": "https://maxroll.gg/last-epoch/news/1-1-patch-notes"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "official",
+      "id": 519,
+      "kit_id": "le-ghostflame-warlock",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Last Epoch 1.1 Patch Notes",
+      "url": "https://maxroll.gg/last-epoch/news/1-1-patch-notes"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 520,
+      "kit_id": "le-ghostflame-warlock",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Torment Warlock Guide for Last Epoch Season 4",
+      "url": "https://maxroll.gg/last-epoch/build-guides/torment-warlock-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "official",
+      "id": 518,
+      "kit_id": "le-ghostflame-warlock",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "maxroll.gg",
+      "title": "Warlock Mastery Reveal",
+      "url": "https://maxroll.gg/last-epoch/news/warlock-wrap-up-falconer-teaser"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-ghostflame-warlock",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 949,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-ghostflame-warlock",
+      "missing_expression": "Channeled fire+necrotic cone maps clean (cone + channel tick-cost economy carry the sustained-DoT identity;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Channeled fire+necrotic cone maps clean (cone + channel tick-cost economy carry the sustained-DoT identity; PERSISTENCE_ENGINE_uptime door). [STEWARD REGRADE 2026-07-18: APPROX -> CLOSE — the APPROX rationale rested on the withheld ailment ('the ailment-free row does not carry the DoT payload'), which the m04-audit damage-type-over-time RULING dissolves: 'fire and necrotic damage over time' attests delivery TIMING, not a status; dossier attests DoT only to 'enemies in cone path' during the stream (no lingering/stacking-beyond-channel language) — the engine channel-tick cone IS that shape. Forcewave-regrade precedent.] Remaining texture drift: the defensive-channel inversion (Disdain damage-reduction-while-channeling) and the Bone Curse variant-silent aura (no curse effect fetched) are riders the engine gestures at — noted, minor."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Written by Volca. Content Reviewed by Lizard_IRL.",
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1169,
+      "kit_id": "le-ghostflame-warlock",
+      "payload_json": {
+        "handle": "Volca",
+        "reviewer": "Lizard_IRL",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/torment-warlock-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Disdain now grants 6% less damage taken per point from ignited, damned, or bleeding enemies while channeling Ghostflame (from 10%)...Channel cost is now 48 (from 40)",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1168,
+      "kit_id": "le-ghostflame-warlock",
+      "payload_json": {
+        "notes": "1.1 nerfs: Disdain node 10%->6% damage reduction per point; Ghostflame channel cost 40->48; Spirit of Dread movespeed 20%->10%. Changes reduce survivability of channel."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/news/1-1-patch-notes"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1167,
+      "kit_id": "le-ghostflame-warlock",
+      "payload_json": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/torment-warlock-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Channel to unleash the souls of the dead in a hellish torrent!...Ghostflame is a channeled jet of horrid flames dealing both fire and necrotic damage over time",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1166,
+      "kit_id": "le-ghostflame-warlock",
+      "payload_json": {
+        "delivery": "channel-directional",
+        "description": "Ghostflame is a channeled jet directed at targeted position. Functions as a sustained stream of spectral fire covering a directional cone area in front of the Warlock. Enemies in cone path receive fire+necrotic DoT.",
+        "footprint": "cone-channel"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/news/warlock-wrap-up-falconer-teaser"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Channel to unleash the souls of the dead in a hellish torrent! Normally channeling leaves you vulnerable, but with proper investment you can shrug off even the mightiest of blows when using Ghostflame...Bone Curse is used as an aura with Signet of Agony",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1165,
+      "kit_id": "le-ghostflame-warlock",
+      "payload_json": {
+        "core_cycle": "Apply Bone Curse (aura) -> Channel Ghostflame -> fire+necrotic DoT -> damage reduction while channeling",
+        "summary": "Channel Ghostflame to deal fire+necrotic DoT to enemies in front. Bone Curse applied to bosses as aura-debuff via Signet of Agony. Channeling provides defensive damage reduction while held. Mana drains continuously during channel."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/torment-warlock-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "with proper investment you can shrug off even the mightiest of blows when using Ghostflame",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1170,
+      "kit_id": "le-ghostflame-warlock",
+      "payload_json": {
+        "variants": [
+          "Ghostflame as leveling tool (1.0 Warlock leveling)",
+          "Ghostflame defensive channel in Torment Warlock support role",
+          "Lowlife DoT Warlock with Ghostflame as defense button"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/news/warlock-wrap-up-falconer-teaser"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|beam|flat|vortex_pull|damage|hex|absorb|reserve|solo|dual|high|channel|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:curse/hex\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.85,
+    "def_riders": "[\"synonym:ward\"]",
+    "delivery_value": "beam",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"RS\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "reserve",
+    "flags": [],
+    "geometry_conf": 0.8,
+    "geometry_rule_fired": "R2",
+    "geometry_value": "vortex_pull",
+    "kit_id": "le-ghostflame-warlock",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IDHFSC-_SDM-SP-NE-~~",
+      "delivery": "beam",
+      "elem_raw": "Necrotic / Fire (hybrid per mech_note)",
+      "footprint": "cone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:curse/hex"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.85,
+        "riders": [
+          "synonym:ward"
+        ]
+      },
+      "econ": {
+        "gaps": [
+          "RS"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.8,
+        "rule_fired": "R2",
+        "value": "vortex_pull"
+      },
+      "flags": [],
+      "folk_name": "Ghostflame Warlock",
+      "game": "le",
+      "kit_id": "le-ghostflame-warlock",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IDHFSC-_SDM-SP-NE-~~",
+        "delivery": "beam",
+        "elem_raw": "Necrotic / Fire (hybrid per mech_note)",
+        "footprint": "cone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-ghostflame-warlock",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Channeled jet directed at target ('Channel to unleash the souls of the dead in a hellish torrent!', 'a channeled jet of horrid flames'); sustained directional stream covering a cone in front of the Warlock. Geometry = CONE per hot-fact geo-erratum ('channeled jet'/'hellish torrent' -> cone-projection reading; erratum pending). element_primary=shadow (necrotic register), secondary=fire ('both fire and necrotic damage over time'). NO status ailment emitted: 'fire and necrotic damage over time' names damage-TYPE-over-time, not a NAMED status (§0.1 fire != burn; strict m02 frostburn/electrocute precedent) — withheld.",
+      "source_skill": "Ghostflame",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-ghostflame-warlock",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "Applied to bosses as an aura-debuff via Signet of Agony (fetched: 'Bone Curse is used as an aura with Signet of Agony'). The curse-APPLICATION-as-aura is fetched, but NO curse EFFECT (amplify/weaken/decrepify/sap) is fetched -> curse variant WITHHELD per §2 shape-silent rule + §0.4 (skill NAME != status/effect attestation). Recorded as a curse-aura rider without a pinned variant.",
+      "source_skill": "Bone Curse",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-ghostflame-warlock",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Channeled fire+necrotic cone maps clean (cone + channel tick-cost economy carry the sustained-DoT identity; PERSISTENCE_ENGINE_uptime door). [STEWARD REGRADE 2026-07-18: APPROX -> CLOSE — the APPROX rationale rested on the withheld ailment ('the ailment-free row does not carry the DoT payload'), which the m04-audit damage-type-over-time RULING dissolves: 'fire and necrotic damage over time' attests delivery TIMING, not a status; dossier attests DoT only to 'enemies in cone path' during the stream (no lingering/stacking-beyond-channel language) — the engine channel-tick cone IS that shape. Forcewave-regrade precedent.] Remaining texture drift: the defensive-channel inversion (Disdain damage-reduction-while-channeling) and the Bone Curse variant-silent aura (no curse effect fetched) are riders the engine gestures at — noted, minor.",
+    "grade": "CLOSE",
+    "kit_id": "le-ghostflame-warlock",
+    "mapping_json": {
+      "fidelity_notes": "Channeled cone-jet DoT maps as cone (hot-fact geo-erratum) + channel tick-cost economy; PERSISTENCE_ENGINE_uptime T4 for the sustained-channel DoT identity. Defensive damage-reduction-while-channeling (Disdain) recorded as a trait rider — the channel is unusually a DEFENSIVE stance ('with proper investment you can shrug off even the mightiest of blows'). verify_ledger 1.1 restamp governs cost (48, not 40). §0 near-misses (TWO, notable): (1) burn/fire-DoT WANTED ('fire damage over time') but not a NAMED status -> WITHHELD (strict §0.1); (2) necrotic-DoT has no registry home (drain requires leech/decay language, not present) -> WITHHELD; (3) Bone Curse curse:variant WITHHELD (no effect fetched, shape-silent §2). Element carries all three flavors; the DoT-ness is captured by geometry+economy, not by an ailment token. [STEWARD 2026-07-18: grade APPROX->CLOSE per the damage-type-over-time ruling (m04 addendum); withholds all UPHELD — burn, necrotic-DoT (no registry home), curse-variant (shape-silent §2).]",
+      "motion_frame": "Apply Bone Curse (aura, Signet of Agony) -> Channel Ghostflame (cone jet) -> fire+necrotic DoT to enemies in front -> damage reduction while channeling (Disdain)",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_shape": "channel drain (1.1 restamp: channel cost 48; 1.0 base 40) — continuous mana consumption while held",
+        "persistent_condition_shape": "channel-maintain (tick-cost)",
+        "resource": "mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "channel tick-cost drain"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Disdain (damage-reduction-while-channeling: 6% per pt from ignited/damned/bleeding enemies, 1.1 restamp from 10%)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Channeled jet directed at target ('Channel to unleash the souls of the dead in a hellish torrent!', 'a channeled jet of horrid flames'); sustained directional stream covering a cone in front of the Warlock. Geometry = CONE per hot-fact geo-erratum ('channeled jet'/'hellish torrent' -> cone-projection reading; erratum pending). element_primary=shadow (necrotic register), secondary=fire ('both fire and necrotic damage over time'). NO status ailment emitted: 'fire and necrotic damage over time' names damage-TYPE-over-time, not a NAMED status (§0.1 fire != burn; strict m02 frostburn/electrocute precedent) — withheld.",
+          "element_primary": "shadow",
+          "element_secondary": "fire",
+          "geometry_value": "cone",
+          "source_skill": "Ghostflame"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Applied to bosses as an aura-debuff via Signet of Agony (fetched: 'Bone Curse is used as an aura with Signet of Agony'). The curse-APPLICATION-as-aura is fetched, but NO curse EFFECT (amplify/weaken/decrepify/sap) is fetched -> curse variant WITHHELD per §2 shape-silent rule + §0.4 (skill NAME != status/effect attestation). Recorded as a curse-aura rider without a pinned variant.",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Bone Curse"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_uptime"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "curse-stacks",
+          "slow"
+        ],
+        "centrality": "rider",
+        "conf": 0.72
+      },
+      "family": "control",
+      "id": 493,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "layers": [
+          "shield-absorb",
+          "ward"
+        ],
+        "primary": "ward"
+      },
+      "family": "defense",
+      "id": 494,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "evidence": "Channeled spectral fire stream directed at target; beam delivery confirmed by 'stream of spectral fire' mech_note and channel commit",
+        "value": "beam"
+      },
+      "family": "delivery",
+      "id": 491,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.8,
+        "meter_type": "n/a",
+        "model": "reserve",
+        "plain_text": "Ghostflame channel drains Mana continuously while held. Warlock builds invest in Mana regeneration or leech to sustain channel. Releasing ends the drain.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 495,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "damage_mode": "dot",
+        "label_verbatim": "Necrotic / Fire (hybrid per mech_note)"
+      },
+      "family": "element",
+      "id": 496,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Channel projects a cone-shaped stream of ghostflame; enemies in the cone path take DoT damage",
+        "value": "cone"
+      },
+      "family": "footprint",
+      "id": 492,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Warlock channels a spectral fire beam in a cone projection toward targeted direction. Curse stacks on enemies amplify the beam's damage. The channel is directional but covers a widening cone shape rather than a pure line.",
+      "family": "geo_text",
+      "id": 498,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 497,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=kb",
+      "family": "rank1_upgrade",
+      "id": 499,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 500,
+      "kit_id": "le-ghostflame-warlock",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Ghostflame Warlock: cone zone identity",
+      "hook_type": "geometry",
+      "kit_id": "le-ghostflame-warlock",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "le-ghostflame-warlock",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|beam|flat|vortex_pull|damage|hex|absorb|reserve|solo|dual|high|channel|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|beam|flat|vortex_pull|damage|hex|absorb|reserve|solo|dual|high|channel|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "beam"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "vortex_pull"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "reserve"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDHFSC-_SDM-SP-NE-~~",
+    "attr_conf": 0.82,
+    "attr_val": "INT",
+    "avg_conf": 0.82,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Ghostflame",
+      "Bone Curse"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-per-tick+curse",
+    "elem_raw": "necrotic",
+    "era_year": 2024,
+    "eras": "1.0-launch;1.1-harbingers",
+    "eras_normalized": "1.0-launch;1.1-harbingers",
+    "flags": "",
+    "folk_name": "Ghostflame Warlock",
+    "game": "le",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "le-ghostflame-warlock",
+    "lattice_coord": "IDHFSC",
+    "lineage": "",
+    "mech_note": "[VDM-1 basin-2 2026-07-18 ingest-11] GEO-TEXT REVIEW (beam->cone): probe delivery.value='beam' + geo_raw='small-AOE' — fetched describes a 'channeled jet'/'hellish torrent' covering a widening CONE projection, not a pure line. The probe geo_text prose already captures the cone nuance; delivery.value LEFT as 'beam' pending steward review (b05 flag — 'review', not hard-restamp). [original mech_note follows] prov=kb. mech_note ref: 'Channel a stream of spectral fire that hybridizes necrotic and fire damage while curses amplify.' NE suffix = Necrotic element. Warlock primary defense = Ward (Acolyte ward-stack class). atlas pos-5 = S=solo, pos-4 = F=flat confirmed. Damage_mode=dot (continuous channel DoT).",
+    "mint": 0,
+    "mob_raw": "full_move-during",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|SMALL|CHAN×econ:spend",
+    "mobile_key_group": "IDHFSC-_SDM-SP-NE-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "necrotic",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "CHANNELED-BEAM",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "With our release of Last Epoch on February 21st...Ghostflame is listed as a Warlock skill: Channel to unleash the souls of the dead in a hellish torrent!",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 704,
+      "kit_id": "le-ghostflame-warlock",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/news/warlock-wrap-up-falconer-teaser",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "1.1 patch notes (July 9 2024): Ghostflame — No longer prevents mana regeneration while channeling. Channel cost is now 48 (from 40). Disdain now grants 6% less damage taken per point from ignited, damned, or bleeding enemies while channeling Ghostflame (from 10%)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.1-harbingers",
+      "errata_applied": 0,
+      "id": 705,
+      "kit_id": "le-ghostflame-warlock",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/news/1-1-patch-notes",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Channel to unleash the souls of the dead in a hellish torrent! Normally channeling leaves you vulnerable, but with proper investment you can shrug off even the mightiest of blows when using Ghostflame",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Ghostflame Warlock' and alias 'Bone Curse Ghostflame' are real community usage",
+      "errata_applied": 0,
+      "id": 702,
+      "kit_id": "le-ghostflame-warlock",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/news/warlock-wrap-up-falconer-teaser",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Ghostflame is a channeled jet of horrid flames dealing both fire and necrotic damage over time, though it comes at the cost of mana regeneration while channeling...Bone Curse is used as an aura with Signet of Agony",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Ghostflame (channel) and Bone Curse; Mana channel-drain reserve; beam/cone delivery; necrotic/fire hybrid DoT; rooted while channeling",
+      "errata_applied": 0,
+      "id": 703,
+      "kit_id": "le-ghostflame-warlock",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/torment-warlock-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Channeled jet directed at target ('Channel to unleash the souls of the dead in a hellish torrent!', 'a channeled jet of horrid flames'); sustained directional stream covering a cone in front of the Warlock. Geometry = CONE per hot-fact geo-erratum ('channeled jet'/'hellish torrent' -> cone-projection reading; erratum pending). element_primary=shadow (necrotic register), secondary=fire ('both fire and necrotic damage over time'). NO status ailment emitted: 'fire and necrotic damage over time' nam",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Ghostflame' delivery_class=zone (band_conf=0.75); lint: anchor leans 'beam' (2 sig) vs assigned 'zone' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2313,
+      "kit_id": "le-ghostflame-warlock",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Applied to bosses as an aura-debuff via Signet of Agony (fetched: 'Bone Curse is used as an aura with Signet of Agony'). The curse-APPLICATION-as-aura is fetched, but NO curse EFFECT (amplify/weaken/decrepify/sap) is fetched -> curse variant WITHHELD per §2 shape-silent rule + §0.4 (skill NAME != status/effect attestation). Recorded as a curse-aura rider without a pinned variant.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bone Curse' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2314,
+      "kit_id": "le-ghostflame-warlock",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

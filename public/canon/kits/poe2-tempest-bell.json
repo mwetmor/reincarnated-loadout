@@ -1,0 +1,799 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1036,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-tempest-bell",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 364,
+    "kit_id": "poe2-tempest-bell",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Falling Thunder Invoker Build Guide for Path of Exile 2 Return of the Ancients 0.5.1",
+    "url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 364,
+      "kit_id": "poe2-tempest-bell",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Falling Thunder Invoker Build Guide for Path of Exile 2 Return of the Ancients 0.5.1",
+      "url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 365,
+      "kit_id": "poe2-tempest-bell",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "switchbladegaming.com",
+      "title": "PoE2 Monk Build 2026: Maximize Bell of Death Stacks with the Tempest Flurry Timing Loop",
+      "url": "https://www.switchbladegaming.com/path-of-exile-2/monk-best-build/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-tempest-bell",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 892,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-tempest-bell",
+      "missing_expression": "Minor drift: Tempest Bell's defining texture -- a placed proxy that does nothing on its own and only pulses WHEN YOUR OWN MELEE HITS IT -- collapses into a totem (placed proxy) whose proc is expressed via trigger_grammar (on-hit-threshold -> resource-fill/pulse).",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: Tempest Bell's defining texture -- a placed proxy that does nothing on its own and only pulses WHEN YOUR OWN MELEE HITS IT -- collapses into a totem (placed proxy) whose proc is expressed via trigger_grammar (on-hit-threshold -> resource-fill/pulse). The engine's totem is more autonomous than the bell's 'you must ring it yourself' dependency, so the player's 'I attack my own bell to weaponize it' loop reads as a more self-sufficient sentry. The dual-currency (Combo Points to summon + Power Charges to Falling-Thunder) is modeled as one accumulator + a charge bank. Recognizable, slightly-hollowed proxy identity -> CLOSE."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 737,
+      "kit_id": "poe2-tempest-bell",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "I am the Thunder… (damage as Lightning); and I Shall Rage (Unbound Avatar skill); Lead me through Grace… (Spirit scaling); Sunder my Enemies… (ignore elemental resistances on crits)",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 736,
+      "kit_id": "poe2-tempest-bell",
+      "payload_json": {
+        "ascendancy": "Invoker (or Martial Artist in 0.5)",
+        "notables_invoker": [
+          "I am the Thunder...",
+          "...and I Shall Rage",
+          "Lead me through Grace...",
+          "Sunder my Enemies..."
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 735,
+      "kit_id": "poe2-tempest-bell",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "three bells now stack, making bossing damage noticeably nastier",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 734,
+      "kit_id": "poe2-tempest-bell",
+      "payload_json": {
+        "tempest_bell": "placed at target position; pulses lightning damage in small radius on each bell ring; stationary proxy; 0.5s cooldown between summons",
+        "tempest_flurry": "multi-hit quarterstaff attack at melee range; builds combo points"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Against rares and bosses, place Tempest Bell (3 bells in 0.5), then fire Falling Thunder with 6 Power Charges and 20 Combo for maximum burst",
+      "conf": 0.83,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 733,
+      "kit_id": "poe2-tempest-bell",
+      "payload_json": {
+        "summary": "Build Combo Points via Tempest Flurry hits → summon Tempest Bell (up to 3 in 0.5) → attack bell to ring it, pulsing lightning damage in small AoE → repeat. Boss: place 3 bells, Falling Thunder burst with 6 Power Charges + 20 Combo."
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Invoker and the new Martial Artist introduced in Patch 0.5, both of which use Tempest Bell and Tempest Flurry",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 738,
+      "kit_id": "poe2-tempest-bell",
+      "payload_json": {
+        "known_variants": [
+          "Invoker Tempest Bell (crit-lightning)",
+          "Martial Artist Tempest Bell (0.5 new ascendancy)",
+          "Hollow Focus Storm Wave Martial Artist (bell + Hollow Focus explosions)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|spiky|totem|damage|stun|evade|generator-spender|light|melee|med|instant|active|build→spend",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\", \"GAP-AILMENT:stun\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "stun",
+    "ctrl_treatment": "damage",
+    "def_bin": "evade",
+    "def_conf": 0.8,
+    "def_riders": "[\"synonym:evasion\"]",
+    "delivery_value": "at-target",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[\"SU\"]",
+    "econ_meter_type": "combo",
+    "econ_status": "native-partial",
+    "economy_model": "generator-spender",
+    "flags": [],
+    "geometry_conf": 0.8,
+    "geometry_rule_fired": "R0b",
+    "geometry_value": "totem",
+    "kit_id": "poe2-tempest-bell",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "DMMSLI",
+      "delivery": "at-target",
+      "elem_raw": "Lightning / Physical",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp",
+          "GAP-AILMENT:stun"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "evade",
+        "conf": 0.8,
+        "riders": [
+          "synonym:evasion"
+        ]
+      },
+      "econ": {
+        "gaps": [
+          "SU"
+        ],
+        "meter_type": "combo",
+        "status": "native-partial"
+      },
+      "engine_geometry": {
+        "conf": 0.8,
+        "rule_fired": "R0b",
+        "value": "totem"
+      },
+      "flags": [],
+      "folk_name": "Tempest Bell Monk",
+      "game": "poe2",
+      "kit_id": "poe2-tempest-bell",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "DMMSLI",
+        "delivery": "at-target",
+        "elem_raw": "Lightning / Physical",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Combo Points + Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "builder_spender",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-tempest-bell",
+      "motion_signature": "arc_sweep",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "multi-hit quarterstaff attack at melee range that builds Combo Points AND strikes the placed bell to ring it -> melee_arc (mirrors gemling-stacker's Tempest Flurry=melee_arc precedent; the flurry is the same skill). lightning. ailment=sunder (poe2 shock damage-amp band; no paralysis attested for this kit -> S-A BINDING). This is the Combo-Point BUILDER and the bell-RINGER in one motion.",
+      "source_skill": "Tempest Flurry (combo-point builder + bell striker)",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-tempest-bell",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "placed at target position (Combo-Points SUMMON it, up to 3 in 0.5); a stationary proxy that pulses lightning damage in a small radius EACH TIME the player attacks/rings it -> totem (placed stationary object struck by the player; totem/sentry phrase-book). 0.5s cooldown between summons. lightning. The bell is a player-amplified placed proxy: the player must manually RING it (light proxy), so the payoff is gated on the melee flurry hitting it.",
+      "source_skill": "Tempest Bell (placed pulsing proxy)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-tempest-bell",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: Tempest Bell's defining texture -- a placed proxy that does nothing on its own and only pulses WHEN YOUR OWN MELEE HITS IT -- collapses into a totem (placed proxy) whose proc is expressed via trigger_grammar (on-hit-threshold -> resource-fill/pulse). The engine's totem is more autonomous than the bell's 'you must ring it yourself' dependency, so the player's 'I attack my own bell to weaponize it' loop reads as a more self-sufficient sentry. The dual-currency (Combo Points to summon + Power Charges to Falling-Thunder) is modeled as one accumulator + a charge bank. Recognizable, slightly-hollowed proxy identity -> CLOSE.",
+    "grade": "CLOSE",
+    "kit_id": "poe2-tempest-bell",
+    "mapping_json": {
+      "fidelity_notes": "GX-03 (corpus gx). Tempest Bell -> totem (placed stationary proxy struck-to-proc; the corpus 'light proxy' read + phrase-book totem/sentry). Tempest Flurry -> melee_arc per the gemling-stacker Tempest-Flurry=melee_arc precedent (HOT-FLAG 7 consistency: same skill name, flurry-with-AoE shape) -- distinct from ice-strike's melee_strike (which is a small single-contact Ice Strike, a different skill). shock->sunder (S-A BINDING; no paralysis attestation). chain_count=3 per R-M2 (Tempest Flurry + Tempest Bell + Falling Thunder finisher = 3 load-bearing actives). Combo-Point builder-spender -> accumulator + resource-fill (Section-B precedent). PROXY_ASCENSION routes the bell-as-placed-amplifier-proxy; TEMPORAL_CHARGE routes the Combo/Power-Charge engine. Invoker/Martial-Artist ascendancy -> t4 via 5 (R-M1). eras 0.1-0.5 CONFIRMED.",
+      "motion_frame": "Build Combo Points with Tempest Flurry -> summon Tempest Bell (up to 3) -> keep striking the bells to ring them, each ring pulsing lightning in a small AoE. Boss: place 3 bells, then Falling Thunder burst with 6 Power Charges + 20 Combo.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator",
+        "combo_points": "built by Tempest Flurry hits (accumulator); summon Tempest Bell on threshold + spent on Falling Thunder burst",
+        "cost_scale": "mana per cast",
+        "power_charges": "banked to 6 for Falling Thunder finisher"
+      },
+      "scaffold": {
+        "chain_count": 3,
+        "support_lanes": {
+          "economy": [
+            "Combo Points accumulator",
+            "Power Charge bank (6 for Falling Thunder)",
+            "mana per cast"
+          ],
+          "geometry": [
+            "Tempest Flurry melee_arc (builder + bell-ringer)",
+            "Tempest Bell totem pulse (small radius)",
+            "Falling Thunder burst finisher"
+          ],
+          "traits_affixes": [
+            "lightning penetration (Sunder my Enemies -- ignore ele res on crit)",
+            "combo/charge-generation",
+            "Spirit scaling (Lead me through Grace)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "sunder"
+          ],
+          "delivery_notes": "multi-hit quarterstaff attack at melee range that builds Combo Points AND strikes the placed bell to ring it -> melee_arc (mirrors gemling-stacker's Tempest Flurry=melee_arc precedent; the flurry is the same skill). lightning. ailment=sunder (poe2 shock damage-amp band; no paralysis attested for this kit -> S-A BINDING). This is the Combo-Point BUILDER and the bell-RINGER in one motion.",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "melee_arc",
+          "source_skill": "Tempest Flurry (combo-point builder + bell striker)"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "placed at target position (Combo-Points SUMMON it, up to 3 in 0.5); a stationary proxy that pulses lightning damage in a small radius EACH TIME the player attacks/rings it -> totem (placed stationary object struck by the player; totem/sentry phrase-book). 0.5s cooldown between summons. lightning. The bell is a player-amplified placed proxy: the player must manually RING it (light proxy), so the payoff is gated on the melee flurry hitting it.",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Tempest Bell (placed pulsing proxy)"
+        }
+      ],
+      "t4_doors": [
+        "PROXY_ASCENSION",
+        "TEMPORAL_CHARGE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "resource-fill",
+        "mark_identity": "Combo Points (summon bell) + the placed Bell itself (rung on each player hit -> pulse)",
+        "proc_trigger_condition": "on-hit-threshold",
+        "trigger_chain_shape": "apply-consume-pair"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock",
+          "stun"
+        ],
+        "centrality": "rider",
+        "conf": 0.75
+      },
+      "family": "control",
+      "id": 4353,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "layers": [
+          "evasion",
+          "energy-shield"
+        ],
+        "primary": "evasion"
+      },
+      "family": "defense",
+      "id": 4354,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.83,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.83,
+        "evidence": "Bell placed at location; strikes to the bell deliver its damage pulse; at-target delivery mediated through bell proxy",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 4351,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "Combo Points accumulated from hits; spent to summon Bell",
+        "conf": 0.8,
+        "meter_type": "combo",
+        "model": "meter",
+        "plain_text": "Bell summoned using accumulated Combo Points (Monk system). Subsequent bell-striking is a regular attack (Mana cost). The Bell itself is the light proxy.",
+        "resource_verbatim": "Combo Points + Mana"
+      },
+      "family": "economy",
+      "id": 4355,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "damage_mode": "hit",
+        "label_verbatim": "Lightning / Physical"
+      },
+      "family": "element",
+      "id": 4356,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Bell pulse area is small-radius around bell position; atlas geo=small-AOE confirmed",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 4352,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Combo Points summon a Tempest Bell at a target position. Every attack that physically strikes the Bell RINGS it, pulsing lightning damage in a small area. The bell-ringing loop: place bell → attack bell → pulse → attack bell → pulse.",
+      "family": "geo_text",
+      "id": 4358,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 4357,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 4359,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 4360,
+      "kit_id": "poe2-tempest-bell",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Tempest Bell Monk: melee arc melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-tempest-bell",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "poe2-tempest-bell",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.73,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|spiky|totem|damage|stun|evade|generator-spender|light|melee|med|instant|active|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|spiky|totem|damage|stun|evade|generator-spender|light|melee|med|instant|active|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "totem"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "stun"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "evade"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "generator-spender"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMMSLI-MSDD-MT-LI-~~",
+    "attr_conf": 0.73,
+    "attr_val": "DEX",
+    "avg_conf": 0.73,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.73,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Tempest Bell",
+      "Tempest Flurry/Whirling Assault"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "combo-spend-to-place",
+    "elem_raw": "lightning",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "eras_normalized": "0.1;0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "flags": "",
+    "folk_name": "Tempest Bell Monk",
+    "game": "poe2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-03",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-tempest-bell",
+    "lattice_coord": "DMMSLI",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note: 'Combo points SUMMON a bell; every attack that strikes the bell RINGS it, pulsing damage in a radius.' Long-lived kit: 0.1 through 0.5-ancients. Light proxy: bell is a placed stationary object struck by the player — between 'at-target' (player decides where to place) and 'at-target' (player attacks it). proxy=light because bell amplifies player attacks but player must manually ring it.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: mark/tag ledger + consume-trigger operators",
+    "mobile_cell_id": "LIGHT|SMALL|INST×GX-03",
+    "mobile_key_group": "DMMSLI-MSDD-MT-LI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;bm",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.73,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.73,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.73,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Falling Thunder Invoker Build Guide for Path of Exile 2 Return of the Ancients 0.5.1... Ice Strike becomes available after Geonor and pairs with Tempest Bell as your main campaign damage source",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.1, 0.2-dawn, 0.3-edict, 0.4, 0.5-ancients",
+      "errata_applied": 0,
+      "id": 458,
+      "kit_id": "poe2-tempest-bell",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Tempest Bell — the skill the community calls the Bell of Death when stacked to maximum capacity. The 4-hit Tempest Flurry combo cycle and the 0.5-second Tempest Bell cooldown interlock almost perfectly.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Tempest Bell Monk' and aliases 'Bell Monk', 'Tempest Bell Whirling Assault' are real community usage",
+      "errata_applied": 0,
+      "id": 456,
+      "kit_id": "poe2-tempest-bell",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.switchbladegaming.com/path-of-exile-2/monk-best-build/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Against rares and bosses, place Tempest Bell (3 bells in 0.5), then fire Falling Thunder with 6 Power Charges and 20 Combo for maximum burst. In 0.5 Return of the Ancients, GGG quietly buffed Tempest Bell: three bells now stack",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Tempest Bell and Tempest Flurry/Whirling Assault; bell placed then struck for damage pulse",
+      "errata_applied": 0,
+      "id": 457,
+      "kit_id": "poe2-tempest-bell",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.switchbladegaming.com/path-of-exile-2/monk-best-build/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "multi-hit quarterstaff attack at melee range that builds Combo Points AND strikes the placed bell to ring it -> melee_arc (mirrors gemling-stacker's Tempest Flurry=melee_arc precedent; the flurry is the same skill). lightning. ailment=sunder (poe2 shock damage-amp band; no paralysis attested for this kit -> S-A BINDING). This is the Combo-Point BUILDER and the bell-RINGER in one motion.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Tempest Flurry (combo-point builder + bell striker)' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (3 sig)",
+      "errata_applied": 0,
+      "id": 2545,
+      "kit_id": "poe2-tempest-bell",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "placed at target position (Combo-Points SUMMON it, up to 3 in 0.5); a stationary proxy that pulses lightning damage in a small radius EACH TIME the player attacks/rings it -> totem (placed stationary object struck by the player; totem/sentry phrase-book). 0.5s cooldown between summons. lightning. The bell is a player-amplified placed proxy: the player must manually RING it (light proxy), so the payoff is gated on the melee flurry hitting it.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Tempest Bell (placed pulsing proxy)' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (1 sig)",
+      "errata_applied": 0,
+      "id": 2546,
+      "kit_id": "poe2-tempest-bell",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

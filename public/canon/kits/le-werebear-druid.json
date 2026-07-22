@@ -1,0 +1,941 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 4,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 9
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1123,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-werebear-druid",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "maxroll-staff",
+    "cite_class": "authored",
+    "id": 578,
+    "kit_id": "le-werebear-druid",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Swipe Werebear Druid Last Epoch Build Guide - Maxroll.gg",
+    "url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "maxroll-staff",
+      "cite_class": "authored",
+      "id": 578,
+      "kit_id": "le-werebear-druid",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Swipe Werebear Druid Last Epoch Build Guide - Maxroll.gg",
+      "url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown-op",
+      "cite_class": "authored",
+      "id": 579,
+      "kit_id": "le-werebear-druid",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "forum.lastepoch.com",
+      "title": "EarthQuake Werebear is Back! | Build Guide | 0.8.4 - Primalist - Last Epoch Forums",
+      "url": "https://forum.lastepoch.com/t/earthquake-werebear-is-back-build-guide-0-8-4/46282"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown-op",
+      "cite_class": "authored",
+      "id": 580,
+      "kit_id": "le-werebear-druid",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "forum.lastepoch.com",
+      "title": "[build] Melee Druid (Werebear) [WIP] [0.7.2] - Primalist - Last Epoch Forums",
+      "url": "https://forum.lastepoch.com/t/build-melee-druid-werebear-wip-0-7-2/15463"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-werebear-druid",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 972,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-werebear-druid",
+      "missing_expression": "Bear-form visual + Rampage traversal texture thinned;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Bear-form visual + Rampage traversal texture thinned; Earthquake-as-idol-scaler compressed into a delivery note; chance-roll proc kept as threshold trigger. In-form loop (melee arc spam + proc quakes + Rage pressure + DR stacking) survives intact -- that build."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Swipe Werebear Druid Last Epoch Build Guide - Maxroll.gg",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1313,
+      "kit_id": "le-werebear-druid",
+      "payload_json": {
+        "handle": "maxroll-staff",
+        "role": "Season 4 Swipe Werebear Druid guide author",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Place 15 Points into Shaman to unlock Earthquake ... Boar Heart: Aspect of the Boar grants 15% Damage Reduction",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1312,
+      "kit_id": "le-werebear-druid",
+      "payload_json": {
+        "notes": "Earthquake specialization is an indirect Aftershock scaler via idol interaction, not a standalone damage source.",
+        "passive_keystones": [
+          "Boar Heart / Aspect of the Boar (15% DR)",
+          "Ursine Strength (16% DR vs nearby)"
+        ],
+        "secondary_skills": [
+          "Earthquake (15 Shaman points to unlock — scales Aftershocks)",
+          "Warcry (Berserker buff)",
+          "Rampage (movement)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fangs of the Berserker, Siphon of Anguish, Undisputed, Army of Skin, Seed of Ekkidrasil and Null Portent turn this build into an absolute powerhouse",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1311,
+      "kit_id": "le-werebear-druid",
+      "payload_json": {
+        "key_uniques": [
+          "Fangs of the Berserker",
+          "Siphon of Anguish",
+          "Undisputed",
+          "Army of Skin",
+          "Seed of Ekkidrasil",
+          "Null Portent",
+          "Nest of Nightmares"
+        ],
+        "notes": "Dual wield Undisputed + Nest of Nightmares called out. Adorned Heorot Idols for Aftershock chance."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Limited AoE [listed as build weakness] ... Chance To Create An Aftershock Under A Nearby Enemy On Melee Attack",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1310,
+      "kit_id": "le-werebear-druid",
+      "payload_json": {
+        "aoe_shape": "small-radius around bear form; Aftershocks appear under nearby enemies",
+        "primary_geometry": "self-origin melee AoE (small-radius)",
+        "range": "close melee",
+        "weakness_noted": "Limited AoE (explicitly noted in guide)"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Mana is replaced by Rage while Transformed ... Spam Swipe to deal damage and trigger Aftershocks",
+      "conf": 0.92,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1309,
+      "kit_id": "le-werebear-druid",
+      "payload_json": {
+        "loop": "Transform into Werebear Form (costs Mana, enter Rage-driven bear form with own skill bar). Spam Swipe for melee damage and Aftershock triggers. Warcry for Berserker buff. Rampage for movement. Rage builds on attack, drains when idle — maintain combat pressure to sustain form.",
+        "loop_type": "permanent-transform-spam",
+        "resource": "Rage (replaces Mana while transformed)"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Aftershock Werebear Druid ... Tornado Werebear Druid ... Shatter Totem Werebear Druid ... Cold Dot Werebear Druid ... Earthquake Werebear Druid",
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1314,
+      "kit_id": "le-werebear-druid",
+      "payload_json": {
+        "variants": [
+          "Swipe Werebear (Season 4 dominant)",
+          "Earthquake Werebear (0.8.4 and recurring)",
+          "Aftershock Werebear",
+          "Tornado Werebear",
+          "Shatter Totem Werebear",
+          "Cold DoT Werebear",
+          "BearSwarm hybrid (Swarmblade/Werebear)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|self-origin|flat|circle|damage|hex|tank|generator-spender|solo|melee|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"bleed\", \"chill\"]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.88,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "rage",
+    "econ_status": "native-partial",
+    "economy_model": "generator-spender",
+    "flags": [],
+    "geometry_conf": 0.8,
+    "geometry_rule_fired": "R8-self-circle",
+    "geometry_value": "circle",
+    "kit_id": "le-werebear-druid",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "WMMFSI-MSMT-MT-PH-~~",
+      "delivery": "self-origin",
+      "elem_raw": "Physical",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "bleed",
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.88,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "rage",
+        "status": "native-partial"
+      },
+      "engine_geometry": {
+        "conf": 0.8,
+        "rule_fired": "R8-self-circle",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Werebear Druid",
+      "game": "le",
+      "kit_id": "le-werebear-druid",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "WMMFSI-MSMT-MT-PH-~~",
+        "delivery": "self-origin",
+        "elem_raw": "Physical",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana + Rage",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-werebear-druid",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "Permanent-transform chassis (R-M9 register): Mana-cost entry into the Rage-driven bear form with its own skill bar; kit maps IN-FORM per SB Rage-in-form law ('Mana is replaced by Rage while Transformed' -- verbatim).",
+      "source_skill": "Werebear Form",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "spam",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-werebear-druid",
+      "motion_signature": "arc_sweep",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 1,
+      "source_anchor": "'Spam Swipe to deal damage and trigger Aftershocks' -- in-form spam melee, self-origin small-radius AoE; guide explicitly lists 'Limited AoE' as the build weakness (honest small-arc footprint).",
+      "source_skill": "Swipe",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "spam",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-werebear-druid",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 2,
+      "source_anchor": "Chance-proc quake under nearby enemies on melee hit, grounded on THREE legal fragments cited separately: skill_geometry 'Aftershocks appear under nearby enemies' + item_alterations 'Adorned Heorot Idols for Aftershock chance' + verify anchor 'Spam Swipe to deal damage and trigger Aftershocks'. Slam/quake phrase-book row (ground_slam). Scaled indirectly: 'Earthquake specialization is an indirect Aftershock scaler via idol interaction, not a standalone damage source.' [STEWARD AUDIT 2026-07-18: mapper's Title-Case 'affix/idol verbatim' ('Chance To Create An Aftershock Under A Nearby Enemy On Melee Attack') was an ANCHOR-SPLICE -- exists in NO store, memory-styled as tooltip text; STRUCK. Every mapped fact (under-enemy placement, chance-roll, on-melee trigger) is independently store-attested; geometry/trigger/grade unchanged.]",
+      "source_skill": "Aftershock (proc)",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-werebear-druid",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 3,
+      "source_anchor": "Berserker buff upkeep in the in-form loop; Rampage rides as movement utility (not a load-bearing damage active).",
+      "source_skill": "Warcry",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-werebear-druid",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Bear-form visual + Rampage traversal texture thinned; Earthquake-as-idol-scaler compressed into a delivery note; chance-roll proc kept as threshold trigger. In-form loop (melee arc spam + proc quakes + Rage pressure + DR stacking) survives intact -- that build.",
+    "grade": "CLOSE",
+    "kit_id": "le-werebear-druid",
+    "mapping_json": {
+      "fidelity_notes": "SB Rage-in-form law applied: in-form economy IS the kit economy; Mana->Rage swap recorded here, not as a second economy; permanent form dissolves the form-SWAP docket class (GX-02 not triggered; spirit-swap adjacency = design note only). Elements null/null per THE PHYSICAL RULE (corpus elem physical). T4 second door is BASE GEOMETRY_PROPAGATION per the cascade-pin: Aftershock is trigger-driven proc-geometry, neither on-kill (_cascade) nor on-hit scaling (_overkill) -> base token exactly as the pin directs. Variant-scoped attributes OFF core (7.2): Earthquake / Aftershock-named / Tornado / Shatter Totem / Cold DoT / BearSwarm variants (Shatter Totem noted as SB totem-lane texture; Cold DoT would implicate no-home LE Frostbite -- withheld). Earthquake spec mapped as scaler-not-skill per fetched note. Near-misses: stun (slam theme, never named -- 0-UNIVERSAL), chill (probe 'roar-slow' = probe-class, ILLEGAL).",
+      "motion_frame": "enter permanent Werebear Form -> spam Swipe (chance-procs Aftershock quakes under nearby enemies) -> Warcry Berserker upkeep -> Rampage to reposition -> keep attacking so Rage never drains out",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator ('Rage builds on attack, drains when idle -- maintain combat pressure to sustain form')",
+        "persistent_condition_shape": "tick-cost (form sustained by Rage pressure; idle decay)",
+        "resource": "rage (native engine type; replaces mana IN FORM per SB law)"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Rage-sustain pressure"
+          ],
+          "geometry": [
+            "Adorned Heorot Idols (Aftershock chance)"
+          ],
+          "traits_affixes": [
+            "Boar Heart / Aspect of the Boar (15% DR)",
+            "Ursine Strength (16% DR vs nearby)",
+            "Fangs of the Berserker / Undisputed dual-wield / Nest of Nightmares / Army of Skin / Seed of Ekkidrasil / Null Portent (affix lane)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Permanent-transform chassis (R-M9 register): Mana-cost entry into the Rage-driven bear form with its own skill bar; kit maps IN-FORM per SB Rage-in-form law ('Mana is replaced by Rage while Transformed' -- verbatim).",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Werebear Form"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "'Spam Swipe to deal damage and trigger Aftershocks' -- in-form spam melee, self-origin small-radius AoE; guide explicitly lists 'Limited AoE' as the build weakness (honest small-arc footprint).",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_arc",
+          "source_skill": "Swipe"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Chance-proc quake under nearby enemies on melee hit, grounded on THREE legal fragments cited separately: skill_geometry 'Aftershocks appear under nearby enemies' + item_alterations 'Adorned Heorot Idols for Aftershock chance' + verify anchor 'Spam Swipe to deal damage and trigger Aftershocks'. Slam/quake phrase-book row (ground_slam). Scaled indirectly: 'Earthquake specialization is an indirect Aftershock scaler via idol interaction, not a standalone damage source.' [STEWARD AUDIT 2026-07-18: mapper's Title-Case 'affix/idol verbatim' ('Chance To Create An Aftershock Under A Nearby Enemy On Melee Attack') was an ANCHOR-SPLICE -- exists in NO store, memory-styled as tooltip text; STRUCK. Every mapped fact (under-enemy placement, chance-roll, on-melee trigger) is independently store-attested; geometry/trigger/grade unchanged.]",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "ground_slam",
+          "source_skill": "Aftershock (proc)"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Berserker buff upkeep in the in-form loop; Rampage rides as movement utility (not a load-bearing damage active).",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Warcry"
+        }
+      ],
+      "t4_doors": [
+        "MOMENTUM_CASCADE",
+        "GEOMETRY_PROPAGATION"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "burst-damage (Aftershock quake under nearby enemy)",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-hit-threshold (nearest apply-event for chance-on-melee-attack Aftershock proc; chance-roll noted)",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "maul-wound",
+          "roar-slow"
+        ],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3733,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "layers": [
+          "hp-stack",
+          "armor"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 3734,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "evidence": "Werebear transformation — player becomes the bear; all damage emanates from bear-form melee attacks centered on player position; self-origin transformation",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 3731,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "combat attacks in bear form generate then drain Rage",
+        "conf": 0.78,
+        "meter_type": "rage",
+        "model": "meter",
+        "plain_text": "Entering Werebear costs Mana. Rage builds during combat and drains when not attacking. Rage powers enhanced bear attacks. The bear form itself persists as long as the player maintains combat activity.",
+        "resource_verbatim": "Mana + Rage"
+      },
+      "family": "economy",
+      "id": 3735,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "damage_mode": "hit",
+        "label_verbatim": "Physical"
+      },
+      "family": "element",
+      "id": 3736,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Bear form melee attacks (swipe, maul, roar) cover small-radius around the transformed Druid",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 3732,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Druid transforms into a Werebear with its own skill bar (swipe, roar, maul). The bear form provides massive built-in tankiness and melee attacks within close range. Form is maintained on a Rage-drain meter.",
+      "family": "geo_text",
+      "id": 3738,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 3737,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=mx-le;eg;kb",
+      "family": "rank1_upgrade",
+      "id": 3739,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb",
+        "mx-le",
+        "eg"
+      ],
+      "family": "sources_used",
+      "id": 3740,
+      "kit_id": "le-werebear-druid",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Werebear Druid: self buff aura identity",
+      "hook_type": "geometry",
+      "kit_id": "le-werebear-druid",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.73,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|self-origin|flat|circle|damage|hex|tank|generator-spender|solo|melee|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|self-origin|flat|circle|damage|hex|tank|generator-spender|solo|melee|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "generator-spender"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WMMFSI-MSMT-MT-PH-~~",
+    "attr_conf": 0.73,
+    "attr_val": "WIS",
+    "avg_conf": 0.73,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.73,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Werebear Form",
+      "Swipe"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "rage-drain-form",
+    "elem_raw": "physical",
+    "era_year": 2024,
+    "eras": "beta-0.8-0.9;1.0-launch;1.4-omens",
+    "eras_normalized": "beta-0.8-0.9;1.0-launch;1.4-omens",
+    "flags": "",
+    "folk_name": "Werebear Druid",
+    "game": "le",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-02 GX-19",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "le-werebear-druid",
+    "lattice_coord": "WMMFSI",
+    "lineage": "",
+    "mech_note": "prov=mx-le;eg;kb. mech_note ref: 'The bear form with its own bar — swipe, roar, maul on rage-drain fuel, massive built-in tankiness; the Season 4 bossing king.' PH suffix = Physical. MT suffix in old vocab = multi-target (bear AoE). meter_type=rage: Werebear uses Rage secondary meter. eras include 1.4-omens but also beta through 1.0 — NOT post-cutoff (bear existed from beta; Season 4 reference = became S-tier, not introduced). conf=0.73 in atlas reflects the build's relatively consistent but not dominant historical presence pre-Season-4.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A+B: soul-control troop command exists; turret/pet AI variants + summon economy needed",
+    "mobile_cell_id": "SOLO|SMALL|INST×GX-02",
+    "mobile_key_group": "WMMFSI-MSMT-MT-PH-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "mx-le;eg;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.73,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.73,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.73,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "SHAPESHIFT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=3].members (working_label=SHAPESHIFT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[build] Melee Druid (Werebear) [WIP] [0.7.2] ... EarthQuake Werebear is Back! | Build Guide | 0.8.4",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: beta-0.8-0.9",
+      "errata_applied": 0,
+      "id": 823,
+      "kit_id": "le-werebear-druid",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/earthquake-werebear-is-back-build-guide-0-8-4/46282",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Swipe Werebear Druid Last Epoch Build Guide - Maxroll.gg [Season 4 - Shattered Omens, updated April 27, 2026]",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 824,
+      "kit_id": "le-werebear-druid",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Season 4 - Shattered Omens ... last update April 27, 2026 ... Spam Swipe to deal damage",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.4-omens",
+      "errata_applied": 0,
+      "id": 825,
+      "kit_id": "le-werebear-druid",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Swipe Werebear Druid Last Epoch Build Guide - Maxroll.gg ... permanent Werebear Form build",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Werebear Druid' and aliases 'Swipe Werebear', 'bear form Druid LE' are real community usage.",
+      "errata_applied": 0,
+      "id": 821,
+      "kit_id": "le-werebear-druid",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Mana is replaced by Rage while Transformed ... Spam Swipe to deal damage and trigger Aftershocks",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Werebear Form, Swipe. Mana replaced by Rage while transformed.",
+      "errata_applied": 0,
+      "id": 822,
+      "kit_id": "le-werebear-druid",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/swipe-werebear-druid-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Permanent-transform chassis (R-M9 register): Mana-cost entry into the Rage-driven bear form with its own skill bar; kit maps IN-FORM per SB Rage-in-form law ('Mana is replaced by Rage while Transformed' -- verbatim).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Werebear Form' delivery_class=aura (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'aura'",
+      "errata_applied": 0,
+      "id": 2359,
+      "kit_id": "le-werebear-druid",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "'Spam Swipe to deal damage and trigger Aftershocks' -- in-form spam melee, self-origin small-radius AoE; guide explicitly lists 'Limited AoE' as the build weakness (honest small-arc footprint).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Swipe' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2 sig)",
+      "errata_applied": 0,
+      "id": 2360,
+      "kit_id": "le-werebear-druid",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Chance-proc quake under nearby enemies on melee hit, grounded on THREE legal fragments cited separately: skill_geometry 'Aftershocks appear under nearby enemies' + item_alterations 'Adorned Heorot Idols for Aftershock chance' + verify anchor 'Spam Swipe to deal damage and trigger Aftershocks'. Slam/quake phrase-book row (ground_slam). Scaled indirectly: 'Earthquake specialization is an indirect Aftershock scaler via idol interaction, not a standalone damage source.' [STEWARD AUDIT 2026-07-18: ma",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Aftershock (proc)' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (3 sig)",
+      "errata_applied": 0,
+      "id": 2361,
+      "kit_id": "le-werebear-druid",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Berserker buff upkeep in the in-form loop; Rampage rides as movement utility (not a load-bearing damage active).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Warcry' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1 sig)",
+      "errata_applied": 0,
+      "id": 2362,
+      "kit_id": "le-werebear-druid",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

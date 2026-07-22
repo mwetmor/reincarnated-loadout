@@ -1,0 +1,781 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 632,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-tornado-shot",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 226,
+    "kit_id": "poe1-tornado-shot",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Tornado Shot — poedb.tw",
+    "url": "https://poedb.tw/us/Tornado_Shot"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 226,
+      "kit_id": "poe1-tornado-shot",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Tornado Shot — poedb.tw",
+      "url": "https://poedb.tw/us/Tornado_Shot"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Manni",
+      "cite_class": "authored",
+      "id": 227,
+      "kit_id": "poe1-tornado-shot",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe-vault.com",
+      "title": "Manni's Tornado Shot Deadeye Build Guide (PoE Necropolis 3.24)",
+      "url": "https://www.poe-vault.com/guides/manni-tornado-shot-deadeye-build-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-tornado-shot",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 593,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-tornado-shot",
+      "missing_expression": "Minor drift: no-double-hit-per-burst and secondary-range-from-projectile-speed are behavioral;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: no-double-hit-per-burst and secondary-range-from-projectile-speed are behavioral; the fire-at-point-then-radial-burst clear identity lands as multi_projectile propagation."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Manni's Tornado Shot Deadeye Build Guide",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 485,
+      "kit_id": "poe1-tornado-shot",
+      "payload_json": {
+        "handle": "Manni",
+        "note": "primary TS Deadeye guide author for 3.24",
+        "site": "poe-vault.com"
+      },
+      "source_url": "https://www.poe-vault.com/guides/manni-tornado-shot-deadeye-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "(0—40)% increased Projectile Speed",
+      "conf": 0.5,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 484,
+      "kit_id": "poe1-tornado-shot",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "(0—40)% increased Projectile Speed",
+            "effect": "(0-40)% increased Projectile Speed",
+            "node": "Tornado Shot (quality)",
+            "type": "base_quality"
+          },
+          {
+            "anchor_quote": null,
+            "effect": "Listed variant; mechanical details not available on poedb page",
+            "node": "Tornado Shot of Cloudburst (transfig)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Tornado_Shot"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Since the release of Windripper this build has become incredibly popular as a currency farmer, particularly for players hunting The Doctor",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 483,
+      "kit_id": "poe1-tornado-shot",
+      "payload_json": {
+        "notable_items": [
+          "Windripper — MF bow; since Windripper TS became incredibly popular for currency farming and hunting The Doctor divination card"
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/guides/manni-tornado-shot-deadeye-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Arrow flies to a point then bursts into secondary arrows in all directions; inherently fires 3 secondary projectiles per primary arrow; each enemy can only be hit once per secondary burst",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 482,
+      "kit_id": "poe1-tornado-shot",
+      "payload_json": {
+        "verbatim": "primary arrow projectile to targeted point; on impact creates 3 secondary projectiles fired in all directions; secondary range scales with projectile speed; each enemy can only be hit once per secondary burst"
+      },
+      "source_url": "https://poedb.tw/us/Tornado_Shot"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "primary projectile fired at location; secondary projectiles created at that location and shot out in a random direction; Tornado Shot has been one of the ultimate high budget speed farming builds",
+      "conf": 0.92,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 481,
+      "kit_id": "poe1-tornado-shot",
+      "payload_json": {
+        "description": "Fire a primary arrow to a target point; on impact, the arrow bursts into secondary arrows in all directions. Secondary arrows cover screen-wide AoE, making this the premier clear-speed and magic-find build. Primary arrow pierces. Secondary arrows cannot double-hit same enemy per burst."
+      },
+      "source_url": "https://www.poe-vault.com/guides/manni-tornado-shot-deadeye-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Tornado Shot is most famously played as the Deadeye ascendancy; Poison Tornado Shot rose to popularity",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 486,
+      "kit_id": "poe1-tornado-shot",
+      "payload_json": {
+        "list": [
+          "TS Deadeye — canonical MF/clear variant",
+          "Poison TS Pathfinder — DoT variant",
+          "TS Champion — fortify sustain variant"
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/guides/manni-tornado-shot-deadeye-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|projectile|flat|multi_projectile|damage|none|mitigate|spend|solo|ranged|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.74,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "poe1-tornado-shot",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DRHFSI-HMDD-SP-PH-~~",
+      "delivery": "projectile",
+      "elem_raw": "physical",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.74,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Tornado Shot",
+      "game": "poe1",
+      "kit_id": "poe1-tornado-shot",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DRHFSI-HMDD-SP-PH-~~",
+        "delivery": "projectile",
+        "elem_raw": "physical",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-tornado-shot",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": "all",
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "composite: primary arrow (pierces) flies to the targeted point, then bursts into 3 secondary arrows fired in ALL directions; secondary range scales with projectile speed; each enemy hit once per secondary burst. Dominant footprint = the radial secondary burst (§7.2), primary arrow folded into this note — ice-shot b04 precedent.",
+      "source_skill": "Tornado Shot",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-tornado-shot",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: no-double-hit-per-burst and secondary-range-from-projectile-speed are behavioral; the fire-at-point-then-radial-burst clear identity lands as multi_projectile propagation.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-tornado-shot",
+    "mapping_json": {
+      "fidelity_notes": "Pure-physical per corpus/probe -> element-neutral per THE PHYSICAL RULE; Windripper elemental/MF variant noted (element carried by gear affixes, not the kit slot). GEOMETRY_PROPAGATION base token per R-M1 (impact-spawn secondaries; not on-kill cascade). The magic-find/currency-farming fame is extrinsic-itemization — no engine loot-find lane, recorded here only.",
+      "motion_frame": "full-move screen-clear archer: fire at a point, secondaries burst everywhere; very-high-mobility farming loop",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light spend (chassis default)"
+          ],
+          "geometry": [
+            "point-burst radial secondaries",
+            "projectile-speed as secondary-range scaling",
+            "extra-projectile supports multiply burst density"
+          ],
+          "traits_affixes": [
+            "projectile-speed",
+            "attack-speed",
+            "elemental-added rolls (Windripper variant)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "composite: primary arrow (pierces) flies to the targeted point, then bursts into 3 secondary arrows fired in ALL directions; secondary range scales with projectile speed; each enemy hit once per secondary burst. Dominant footprint = the radial secondary burst (§7.2), primary arrow folded into this note — ice-shot b04 precedent.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Tornado Shot"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 4533,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 4534,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "evidence": "Arrow projectile flies to point then bursts secondary arrows in all directions from impact",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 4531,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Arrow flies to a point then bursts into secondary arrows in all directions — pro",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 4535,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 4536,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Secondary arrows burst in all directions from impact; geo=multi-spawn in atlas",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 4532,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with multi-point footprint. Arrow flies to a point then bursts into secondary arrows in all directions  —  projectile-spawns-projectiles; the endgame magic-find throne fo.",
+      "family": "geo_text",
+      "id": 4538,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 4537,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 4539,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "el",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 4540,
+      "kit_id": "poe1-tornado-shot",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Tornado Shot: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-tornado-shot",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.87,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|flat|multi_projectile|damage|none|mitigate|spend|solo|ranged|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|flat|multi_projectile|damage|none|mitigate|spend|solo|ranged|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DRHFSI-HMDD-SP-PH-~~",
+    "attr_conf": 0.87,
+    "attr_val": "DEX",
+    "avg_conf": 0.87,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.87,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Tornado Shot"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "1.x;3.0-3.6;3.7-3.13;3.20+",
+    "eras_normalized": "1.x;3.0-3.6;3.7-3.13;3.20+",
+    "flags": "",
+    "folk_name": "Tornado Shot",
+    "game": "poe1",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-05",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-tornado-shot",
+    "lattice_coord": "DRHFSI",
+    "lineage": "",
+    "mech_note": "Arrow flies to a point then bursts into secondary arrows in all directions — projectile-spawns-projectiles; the endgame magic-find throne fo",
+    "mint": 0,
+    "mob_raw": "very-high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|MULTI|INST×GAP-P1-05",
+    "mobile_key_group": "DRHFSI-HMDD-SP-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "el;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.87,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.87,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.87,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MULTI-PROJECTILE-VOLLEY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=5].members (working_label=MULTI-PROJECTILE-VOLLEY; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Tornado Shot has been added to the game (version 1.2.0)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 1.x (intro 1.2.0)",
+      "errata_applied": 0,
+      "id": 284,
+      "kit_id": "poe1-tornado-shot",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Tornado_Shot",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6",
+      "errata_applied": 0,
+      "id": 285,
+      "kit_id": "poe1-tornado-shot",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Tornado Shot Deadeye (PoE Heist 3.12); Tornado Shot has been one of the ultimate high budget speed farming builds over many leagues in PoE's history",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 286,
+      "kit_id": "poe1-tornado-shot",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/manni-tornado-shot-deadeye-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.20+",
+      "errata_applied": 0,
+      "id": 287,
+      "kit_id": "poe1-tornado-shot",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Tornado Shot is one of the fastest and most prolific builds to ever grace Wraeclast's shores; most famously played as Deadeye ascendancy",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Tornado Shot' is real community usage; alias 'TS' is real community usage; Deadeye class",
+      "errata_applied": 0,
+      "id": 282,
+      "kit_id": "poe1-tornado-shot",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/manni-tornado-shot-deadeye-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "primary projectile is fired at the location we aimed; secondary projectiles are then created at that location and shot out in a random direction",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Tornado Shot; primary arrow fires to point then secondary arrows burst in all directions",
+      "errata_applied": 0,
+      "id": 283,
+      "kit_id": "poe1-tornado-shot",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/manni-tornado-shot-deadeye-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "composite: primary arrow (pierces) flies to the targeted point, then bursts into 3 secondary arrows fired in ALL directions; secondary range scales with projectile speed; each enemy hit once per secondary burst. Dominant footprint = the radial secondary burst (§7.2), primary arrow folded into this note — ice-shot b04 precedent.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Tornado Shot' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (4 sig)",
+      "errata_applied": 0,
+      "id": 2482,
+      "kit_id": "poe1-tornado-shot",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

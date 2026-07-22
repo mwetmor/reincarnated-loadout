@@ -1,0 +1,894 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 3,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 839,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-poison-nova-necro",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 840,
+      "assert_text": "expresses: Corpse Explosion's corpse-consumer identity loses fidelity — corpse_nodes rider ",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "d2-poison-nova-necro",
+      "last_result": "red",
+      "routed_docket_id": 134
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "ghostpos",
+    "cite_class": "communal",
+    "id": 664,
+    "kit_id": "d2-poison-nova-necro",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "Necro Build -- Poison Nova",
+    "url": "https://diablo2.io/forums/necro-build-poison-nova-t1503529.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "ghostpos",
+      "cite_class": "communal",
+      "id": 664,
+      "kit_id": "d2-poison-nova-necro",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Necro Build -- Poison Nova",
+      "url": "https://diablo2.io/forums/necro-build-poison-nova-t1503529.html"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "xigua",
+      "cite_class": "communal",
+      "id": 665,
+      "kit_id": "d2-poison-nova-necro",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Gearing a poison nova necro",
+      "url": "https://diablo2.io/forums/gearing-a-poison-nova-necro-t1459573.html"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-poison-nova-necro",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 742,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-d2",
+        "docket_id": 134,
+        "evidence_kits": [
+          "d2-poison-nova-necro"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:d2-poison-nova-necro",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "d2-record"
+        },
+        "source_deviation_id": 742,
+        "source_kit_id": "d2-poison-nova-necro",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 D2 structuring of d2-poison-nova-necro.",
+        "status": "open"
+      },
+      "docket_id": 134,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-poison-nova-necro",
+      "missing_expression": "Corpse Explosion's corpse-consumer identity loses fidelity — corpse_nodes rider note captures the gap.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "Corpse Explosion's corpse-consumer identity loses fidelity — corpse_nodes rider note captures the gap. Immune cleanup via CE has no engine corpse-resource analogue. Engine ring geometry + DoT correctly captures Nova identity. Lower Resist → curse:sap loses the poison-resistance-specific flavor."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1565,
+      "kit_id": "d2-poison-nova-necro",
+      "payload_json": {
+        "handle": "Schnorki",
+        "role": "moderator",
+        "site": "diablo2.io"
+      },
+      "source_url": "https://diablo2.io/forums/gearing-a-poison-nova-necro-t1459573.html"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1564,
+      "kit_id": "d2-poison-nova-necro",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Bramble is stronger, but Enigma is WAY more practical. Matter of taste",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1563,
+      "kit_id": "d2-poison-nova-necro",
+      "payload_json": {
+        "items": [
+          {
+            "effect": "higher poison skill damage bonus",
+            "name": "Bramble",
+            "type": "runeword"
+          },
+          {
+            "effect": "superior mobility via Teleport; more practical over Bramble per community consensus",
+            "name": "Enigma",
+            "type": "runeword"
+          },
+          {
+            "effect": "three-piece discount option — poison resist and set bonuses",
+            "name": "Trang-Oul's set",
+            "type": "set"
+          }
+        ]
+      },
+      "source_url": "https://diablo2.io/forums/gearing-a-poison-nova-necro-t1459573.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "you lower res, you Nova, you...wait for Nova to do its thing",
+      "conf": 0.83,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1562,
+      "kit_id": "d2-poison-nova-necro",
+      "payload_json": {
+        "delivery": "self-origin",
+        "footprint": "ring",
+        "notes": "Poison Nova expands as complete ring from player body; covers entire screen at high skill level. DoT damage — enemies must linger in zone for full effect."
+      },
+      "source_url": "https://diablo2.io/forums/necro-build-poison-nova-t1503529.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "You go in, you lower res, you Nova, you...wait for Nova to do its thing before novaing again to refresh",
+      "conf": 0.89,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1561,
+      "kit_id": "d2-poison-nova-necro",
+      "payload_json": {
+        "description": "Apply Lower Resist curse to reduce enemy poison resistance; cast Poison Nova ring from caster body; wait for DoT ticks; repeat Nova to refresh on tough targets. Corpse Explosion for non-poison-immune cleanup. Skeleton army optional support layer.",
+        "source_note": "diablo2.io poison nova thread + gearing thread"
+      },
+      "source_url": "https://diablo2.io/forums/necro-build-poison-nova-t1503529.html"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1566,
+      "kit_id": "d2-poison-nova-necro",
+      "payload_json": null,
+      "source_url": null
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|self-origin|flat|ring|damage|none|mitigate|spend|light|dual|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.65,
+    "geometry_rule_fired": "R4",
+    "geometry_value": "ring",
+    "kit_id": "d2-poison-nova-necro",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IDMFLI-MLMM-SP-PO-~~",
+      "delivery": "self-origin",
+      "elem_raw": "poison",
+      "footprint": "ring"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.65,
+        "rule_fired": "R4",
+        "value": "ring"
+      },
+      "flags": [],
+      "folk_name": "Poison Nova Necromancer",
+      "game": "d2",
+      "kit_id": "d2-poison-nova-necro",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IDMFLI-MLMM-SP-PO-~~",
+        "delivery": "self-origin",
+        "elem_raw": "poison",
+        "footprint": "ring"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-poison-nova-necro",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "screen",
+      "skill_ordinal": 0,
+      "source_anchor": "Self-origin ring expanding from caster body; covers entire screen at high skill level. DoT damage — 'enemies must linger in zone for full effect.' Dossier anchor: 'you lower res, you Nova, you...wait for Nova to do its thing before novaing again to refresh.'",
+      "source_skill": "Poison Nova",
+      "speed_band": "slow",
+      "width_band": "wide"
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-poison-nova-necro",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "Persistent caster-anchored curse reducing enemy poison resistance. Aura/hex shape → curse:sap per main law (aura/hex → curse; hit-proc window → sunder). Dossier: 'lower res' as preparatory cast.",
+      "source_skill": "Lower Resist",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-poison-nova-necro",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 2,
+      "source_anchor": "AoE corpse detonation for non-poison-immune cleanup. Corpse-rider (not corpse-core) — combat verb exists independently; gap noted per §CROSS row 1.",
+      "source_skill": "Corpse Explosion",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-poison-nova-necro",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Corpse Explosion's corpse-consumer identity loses fidelity — corpse_nodes rider note captures the gap. Immune cleanup via CE has no engine corpse-resource analogue. Engine ring geometry + DoT correctly captures Nova identity. Lower Resist → curse:sap loses the poison-resistance-specific flavor.",
+    "grade": "CLOSE",
+    "kit_id": "d2-poison-nova-necro",
+    "mapping_json": {
+      "fidelity_notes": "Shadow element: corruption-themed necro per main-law poison/nature→shadow rule (hot-fact confirmed). Poison ailment attested: dossier 'Poison Nova,' verify_ledger CONFIRMED. Lower Resist curse:sap: aura-anchored persistent debuff, not on-hit window → curse:sap per §CROSS addendum. Corpse Explosion: corpse-rider APPROX — CE is cleanup, not the loop identity; corpse_nodes key populated with rider note per R-M4 (identity-load-bearing: CE is named in core_skills but as secondary). Skeleton army optional support layer noted; not a skill row (pet-GAP would apply if included — appropriately omitted from core loop per dossier). DoT-timing ruling: 'wait for Nova to do its thing' attests cadence/timing, not additional ailment.",
+      "motion_frame": "Apply Lower Resist curse; cast Poison Nova ring from caster body; wait for DoT ticks; refresh Nova; Corpse Explosion for immune cleanup.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "corpse_nodes": "corpse-rider — CE uses available corpses but identity is not corpse-harvest core",
+        "cost_scale": "steady-mana",
+        "cost_slope": "flat-per-cast"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "full-screen ring coverage"
+          ],
+          "traits_affixes": [
+            "Poison Nova synergy scaffold; Bramble/Enigma item items noted"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "Self-origin ring expanding from caster body; covers entire screen at high skill level. DoT damage — 'enemies must linger in zone for full effect.' Dossier anchor: 'you lower res, you Nova, you...wait for Nova to do its thing before novaing again to refresh.'",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "ring",
+          "source_skill": "Poison Nova"
+        },
+        {
+          "ailments": [
+            "curse:sap"
+          ],
+          "delivery_notes": "Persistent caster-anchored curse reducing enemy poison resistance. Aura/hex shape → curse:sap per main law (aura/hex → curse; hit-proc window → sunder). Dossier: 'lower res' as preparatory cast.",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Lower Resist"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "AoE corpse detonation for non-poison-immune cleanup. Corpse-rider (not corpse-core) — combat verb exists independently; gap noted per §CROSS row 1.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Corpse Explosion"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_saturation",
+        "ZONE_CONTROL",
+        "NETWORK_AMPLIFIER"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "poison"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2043,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 2044,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.69,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.69,
+        "evidence": "Poison Nova ring expands outward from player body at point-blank origin",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 2041,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Poison Nova blankets the whole screen in an expanding DoT ring on cooldown caden",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 2045,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "dot",
+        "label_verbatim": "poison"
+      },
+      "family": "element",
+      "id": 2046,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "evidence": "Nova ring expands as complete ring pattern from body; geo=large-AOE (screen coverage)",
+        "value": "ring"
+      },
+      "family": "footprint",
+      "id": 2042,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with ring footprint. Poison Nova blankets the whole screen in an expanding DoT ring on cooldown cadence, Lower Resist amplifying; sweep-and-move plague caster.",
+      "family": "geo_text",
+      "id": 2048,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 2047,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2049,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2050,
+      "kit_id": "d2-poison-nova-necro",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Poison Nova Necromancer: ring zone identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-poison-nova-necro",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "d2-poison-nova-necro",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.77,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|self-origin|flat|ring|damage|none|mitigate|spend|light|dual|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|self-origin|flat|ring|damage|none|mitigate|spend|light|dual|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ring"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDMFLI-MLMM-SP-PO-~~",
+    "attr_conf": 0.77,
+    "attr_val": "INT",
+    "avg_conf": 0.77,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.77,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Poison Nova",
+      "Lower Resist",
+      "Corpse Explosion"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-mid",
+    "elem_raw": "poison",
+    "era_year": 2000,
+    "eras": "lod-1.10+;d2r",
+    "eras_normalized": "lod-1.10+;d2r",
+    "flags": "",
+    "folk_name": "Poison Nova Necromancer",
+    "game": "d2",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-poison-nova-necro",
+    "lattice_coord": "IDMFLI",
+    "lineage": "",
+    "mech_note": "Poison Nova blankets the whole screen in an expanding DoT ring on cooldown cadence, Lower Resist amplifying; sweep-and-move plague caster.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|LARGE|INST×econ:spend",
+    "mobile_key_group": "IDMFLI-MLMM-SP-PO-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "poison",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.77,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.77,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.77,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "DOT-AILMENT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=4].members (working_label=DOT-AILMENT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "put 7 points in the curse tree for Lower Resist and 62 points to poison and its prerequisites",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: lod-1.10+",
+      "errata_applied": 0,
+      "id": 1000,
+      "kit_id": "d2-poison-nova-necro",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/pvm-poison-necromancer.184452/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Meet Thanatos - The Deadly Poison Nova Necromancer!",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: d2r",
+      "errata_applied": 0,
+      "id": 1001,
+      "kit_id": "d2-poison-nova-necro",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/meet-thanatos-the-deadly-poison-nova-necromancer.195146/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "You go in, you lower res, you Nova, you...wait for Nova to do its thing before novaing again to refresh",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Poison Nova Necromancer' or 'PNova Necromancer' is real community usage",
+      "errata_applied": 0,
+      "id": 998,
+      "kit_id": "d2-poison-nova-necro",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/necro-build-poison-nova-t1503529.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "You go in, you lower res, you Nova, you...wait for Nova to do its thing before novaing again to refresh (if one isn't enough yet to kill stuff outright).",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Poison Nova, Lower Resist, Corpse Explosion; mana resource",
+      "errata_applied": 0,
+      "id": 999,
+      "kit_id": "d2-poison-nova-necro",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/necro-build-poison-nova-t1503529.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Self-origin ring expanding from caster body; covers entire screen at high skill level. DoT damage — 'enemies must linger in zone for full effect.' Dossier anchor: 'you lower res, you Nova, you...wait for Nova to do its thing before novaing again to refresh.'",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Poison Nova' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (1 sig)",
+      "errata_applied": 0,
+      "id": 2165,
+      "kit_id": "d2-poison-nova-necro",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Persistent caster-anchored curse reducing enemy poison resistance. Aura/hex shape → curse:sap per main law (aura/hex → curse; hit-proc window → sunder). Dossier: 'lower res' as preparatory cast.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Lower Resist' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2166,
+      "kit_id": "d2-poison-nova-necro",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "AoE corpse detonation for non-poison-immune cleanup. Corpse-rider (not corpse-core) — combat verb exists independently; gap noted per §CROSS row 1.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Corpse Explosion' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (2 sig)",
+      "errata_applied": 0,
+      "id": 2167,
+      "kit_id": "d2-poison-nova-necro",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

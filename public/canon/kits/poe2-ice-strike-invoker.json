@@ -1,0 +1,833 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1022,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-ice-strike-invoker",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Milkybk_",
+    "cite_class": "authored",
+    "id": 328,
+    "kit_id": "poe2-ice-strike-invoker",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Ice Strike Invoker Monk Build Guide - Path of Exile 2 0.5.1",
+    "url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker-leveling-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Milkybk_",
+      "cite_class": "authored",
+      "id": 328,
+      "kit_id": "poe2-ice-strike-invoker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Ice Strike Invoker Monk Build Guide - Path of Exile 2 0.5.1",
+      "url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker-leveling-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 329,
+      "kit_id": "poe2-ice-strike-invoker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[0.1.1]Ice Strike invoker POE2 Build Guide",
+      "url": "https://odealo.com/articles/ice-strike-invoker-poe2-build"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 330,
+      "kit_id": "poe2-ice-strike-invoker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "rpgstash.com",
+      "title": "PoE 2 Ice Strike Invoker Build Guide: Shatter Everything in Patch 0.3.0",
+      "url": "https://www.rpgstash.com/blog/poe-2-020-ice-strike-invoker-build-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-ice-strike-invoker",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 878,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-ice-strike-invoker",
+      "missing_expression": "A minor drift: the two distinct accumulators the source exposes (Combo Points on Ice Strike AND Power Charges spent by Charged Staff) are modeled as one builder-spender accumulator + spend-burst;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "A minor drift: the two distinct accumulators the source exposes (Combo Points on Ice Strike AND Power Charges spent by Charged Staff) are modeled as one builder-spender accumulator + spend-burst; the player keeps the freeze->shatter payoff and the bank-then-dump feel, so the drift is the second charge-type's separate identity."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "by Milkybk_",
+      "conf": 0.98,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 653,
+      "kit_id": "poe2-ice-strike-invoker",
+      "payload_json": {
+        "handle": "Milkybk_",
+        "role": "Content Creator",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker-leveling-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "I am the Thunder...and I Shall Rage as primary choices, progressing to Lead me through Grace...and potentially Sunder my Enemies...or Meditate",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 652,
+      "kit_id": "poe2-ice-strike-invoker",
+      "payload_json": {
+        "ascendancy_notables": [
+          "I am the Thunder and I Shall Rage (primary Invoker notables)",
+          "Lead me through Grace",
+          "Sunder my Enemies",
+          "Meditate (optional alternate)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker-leveling-guide"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 651,
+      "kit_id": "poe2-ice-strike-invoker",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Herald of Ice creates screen-wide Cold explosions",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 650,
+      "kit_id": "poe2-ice-strike-invoker",
+      "payload_json": {
+        "geometry": "At-target melee (quarterstaff close range). Ice Strike is a flurry of rapid close-range hits. Shatter on frozen target = point-of-contact burst. Herald of Ice explosion = medium-radius around frozen kill.",
+        "range": "melee / close contact primary; medium-radius herald secondary"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker-leveling-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Generate 4 combo points with Ice Strike ... Charged Staff sacrifices Power Charges to apply a large Lightning Damage buff and add a shockwave to your Ice Strike",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 649,
+      "kit_id": "poe2-ice-strike-invoker",
+      "payload_json": {
+        "loop": "Hit with Ice Strike to build Combo Points (up to 4). Release Tempest Bell or Charged Staff finisher spending Power Charges for lightning shockwave. Herald of Ice procs Cold explosions on freeze-kill. Two phases: freeze packs with rapid ice hits → shatter for burst multiplier.",
+        "resource": "Mana + Combo Points"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker-leveling-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Ice Strike Invoker Build Guide - Hardcore SSF",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 654,
+      "kit_id": "poe2-ice-strike-invoker",
+      "payload_json": {
+        "variants": [
+          "Pure Ice Strike Invoker (no HoWA)",
+          "Ice Strike + HoWA Invoker (attribute-stacking variant)",
+          "Hardcore SSF Ice Strike Invoker"
+        ]
+      },
+      "source_url": "https://www.mmojugg.com/news/ice-strike-invoker-build-guide-hardcore-ssf.html"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|ground_targeted_circle|control|hard-stop|evade|generator-spender|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:freeze\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hard-stop",
+    "ctrl_treatment": "control",
+    "def_bin": "evade",
+    "def_conf": 0.82,
+    "def_riders": "[\"synonym:evasion\"]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "combo",
+    "econ_status": "native-partial",
+    "economy_model": "generator-spender",
+    "flags": [],
+    "geometry_conf": 0.85,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe2-ice-strike-invoker",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "DMHFSI",
+      "delivery": "at-target",
+      "elem_raw": "Cold",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:freeze"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "control"
+      },
+      "def": {
+        "bin": "evade",
+        "conf": 0.82,
+        "riders": [
+          "synonym:evasion"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "combo",
+        "status": "native-partial"
+      },
+      "engine_geometry": {
+        "conf": 0.85,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Ice Strike Invoker",
+      "game": "poe2",
+      "kit_id": "poe2-ice-strike-invoker",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "DMHFSI",
+        "delivery": "at-target",
+        "elem_raw": "Cold",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana + Combo Points",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-ice-strike-invoker",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "at-target quarterstaff cold flurry, small close contact -> builds Combo Points (centrality=core for freeze/chill). Rapid ice hits chill then FREEZE packs; a heavy Charged-Staff finisher SPENDS Power Charges to add a lightning shockwave and SHATTERS frozen enemies for a burst multiplier (freeze->shatter is native threshold-burst). water (cold register) primary; lightning secondary via the Charged Staff shockwave.",
+      "source_skill": "Ice Strike",
+      "speed_band": "fast",
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "builder_spender",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-ice-strike-invoker",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Herald of Ice procs a Cold explosion (nova around a frozen kill) -> ring. The Charged-Staff finisher lightning shockwave rides here too. Secondary stage per 7.2 -- the builder Ice Strike is the every-3-seconds loop; this is the spend-burst payoff.",
+      "source_skill": "Charged Staff / Herald of Ice (finisher + on-freeze-kill explosion)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-ice-strike-invoker",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "A minor drift: the two distinct accumulators the source exposes (Combo Points on Ice Strike AND Power Charges spent by Charged Staff) are modeled as one builder-spender accumulator + spend-burst; the player keeps the freeze->shatter payoff and the bank-then-dump feel, so the drift is the second charge-type's separate identity.",
+    "grade": "CLOSE",
+    "kit_id": "poe2-ice-strike-invoker",
+    "mapping_json": {
+      "fidelity_notes": "GX-03. Section-B Combo Points row: accumulator economy + trigger_grammar consequence_type spend-burst (builder-spender native; PoE1 charge precedent carries). chain_count=3 per R-M2 (>=3 load-bearing actives: Ice Strike builder + Charged Staff finisher + Herald of Ice). Dual-element (water primary / lightning secondary) maps both slots -- 7x7 native. GEOMETRY_COLLAPSE routes the freeze->shatter conc-burst; TEMPORAL_CHARGE routes the Combo/Power-Charge engine.",
+      "motion_frame": "builder-spender ice monk: flurry to freeze the pack and bank Combo Points, then dump the charged finisher to shatter everything at once in a cold-then-lightning burst",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator",
+        "combo_points": "build up to 4 on quarterstaff hits (accumulator)",
+        "cost_scale": "mana per cast"
+      },
+      "scaffold": {
+        "chain_count": 3,
+        "support_lanes": {
+          "economy": [
+            "Combo Points accumulator (cap 4)",
+            "Power Charge spend on finisher",
+            "mana per cast"
+          ],
+          "geometry": [
+            "at-target melee flurry (small)",
+            "shatter burst at point of contact",
+            "Herald-of-Ice nova on freeze-kill (ring)"
+          ],
+          "traits_affixes": [
+            "freeze-buildup / chill-effect",
+            "cold penetration",
+            "shatter-threshold scaling"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "freeze",
+            "chill"
+          ],
+          "delivery_notes": "at-target quarterstaff cold flurry, small close contact -> builds Combo Points (centrality=core for freeze/chill). Rapid ice hits chill then FREEZE packs; a heavy Charged-Staff finisher SPENDS Power Charges to add a lightning shockwave and SHATTERS frozen enemies for a burst multiplier (freeze->shatter is native threshold-burst). water (cold register) primary; lightning secondary via the Charged Staff shockwave.",
+          "element_primary": "water",
+          "element_secondary": "lightning",
+          "geometry_value": "melee_strike",
+          "source_skill": "Ice Strike"
+        },
+        {
+          "ailments": [
+            "freeze"
+          ],
+          "delivery_notes": "Herald of Ice procs a Cold explosion (nova around a frozen kill) -> ring. The Charged-Staff finisher lightning shockwave rides here too. Secondary stage per 7.2 -- the builder Ice Strike is the every-3-seconds loop; this is the spend-burst payoff.",
+          "element_primary": "water",
+          "element_secondary": "lightning",
+          "geometry_value": "ring",
+          "source_skill": "Charged Staff / Herald of Ice (finisher + on-freeze-kill explosion)"
+        }
+      ],
+      "t4_doors": [
+        "TEMPORAL_CHARGE",
+        "GEOMETRY_COLLAPSE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "spend-burst",
+        "mark_identity": "Combo Points / Power Charges (accumulated on hits)",
+        "proc_trigger_condition": "on-hit-threshold",
+        "trigger_chain_shape": "apply-consume-pair"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "freeze",
+          "chill"
+        ],
+        "centrality": "core",
+        "conf": 0.88
+      },
+      "family": "control",
+      "id": 33,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "layers": [
+          "evasion",
+          "energy-shield"
+        ],
+        "primary": "evasion"
+      },
+      "family": "defense",
+      "id": 34,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "evidence": "Quarterstaff cold flurry delivers at-target melee hits; heavy shatter hit at frozen targets",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 31,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "quarterstaff hits generate combo points",
+        "conf": 0.82,
+        "meter_type": "combo",
+        "model": "meter",
+        "plain_text": "Monk combat generates Combo Points (3-point system). Finisher attacks spend accumulated combo for powered effects. Mana funds each cast.",
+        "resource_verbatim": "Mana + Combo Points"
+      },
+      "family": "economy",
+      "id": 35,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.9,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.9,
+        "damage_mode": "hit",
+        "label_verbatim": "Cold"
+      },
+      "family": "element",
+      "id": 36,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "evidence": "Melee flurry hits within close quarterstaff range; geo=small-AOE confirmed",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 32,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Invoker executes quarterstaff cold flurry that freezes packs on rapid hits. A heavy follow-up attack SHATTERS frozen enemies for multiplied physical-cold burst. Two-phase: freeze → shatter.",
+      "family": "geo_text",
+      "id": 38,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 37,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 39,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 40,
+      "kit_id": "poe2-ice-strike-invoker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Ice Strike Invoker: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-ice-strike-invoker",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:water",
+      "hook_id": "H2",
+      "hook_text": "water element register",
+      "hook_type": "register",
+      "kit_id": "poe2-ice-strike-invoker",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|ground_targeted_circle|control|hard-stop|evade|generator-spender|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|ground_targeted_circle|control|hard-stop|evade|generator-spender|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "control"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hard-stop"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "evade"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "generator-spender"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMHFSI-HSMD-MT-CO-~~",
+    "attr_conf": 0.82,
+    "attr_val": "DEX",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Ice Strike",
+      "Charged Staff",
+      "Herald of Ice"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "combo-charge",
+    "elem_raw": "cold",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn",
+    "eras_normalized": "0.1;0.2-dawn",
+    "flags": "",
+    "folk_name": "Ice Strike Invoker",
+    "game": "poe2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-03",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-ice-strike-invoker",
+    "lattice_coord": "DMHFSI",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note: 'Quarterstaff cold flurry freezes packs, then heavy hits SHATTER the frozen — PoE2's Monk freeze identity kit since 0.1.' Freeze=core: shatter = the damage payoff for the freeze buildup. Combo system: Monk PoE2-specific; 3 combo points build up on basic attacks, spent on power moves.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: mark/tag ledger + consume-trigger operators",
+    "mobile_cell_id": "SOLO|SMALL|INST×GX-03",
+    "mobile_key_group": "DMHFSI-HSMD-MT-CO-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[0.1.1]Ice Strike invoker POE2 Build Guide",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.1",
+      "errata_applied": 0,
+      "id": 395,
+      "kit_id": "poe2-ice-strike-invoker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/ice-strike-invoker-poe2-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "PoE 2 Ice Strike Invoker Build Guide: Shatter Everything in Patch 0.3.0",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.2-dawn",
+      "errata_applied": 0,
+      "id": 396,
+      "kit_id": "poe2-ice-strike-invoker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.rpgstash.com/blog/poe-2-020-ice-strike-invoker-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[0.1.1]Ice Strike invoker POE2 Build Guide",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Ice Strike Invoker' and aliases 'Ice Strike monk', 'Charged Staff Invoker', 'Herald of Ice Invoker' are real community usage",
+      "errata_applied": 0,
+      "id": 393,
+      "kit_id": "poe2-ice-strike-invoker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/ice-strike-invoker-poe2-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Charged Staff sacrifices Power Charges to apply a large Lightning Damage buff and add a shockwave to your Ice Strike. Combine this with Tempest Bell to shred bosses.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Ice Strike (cold flurry), Charged Staff (sacrifices Power Charges for lightning buff + shockwave), Herald of Ice; combo points system (3-point); freeze/shatter two-phase delivery",
+      "errata_applied": 0,
+      "id": 394,
+      "kit_id": "poe2-ice-strike-invoker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-invoker-leveling-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "at-target quarterstaff cold flurry, small close contact -> builds Combo Points (centrality=core for freeze/chill). Rapid ice hits chill then FREEZE packs; a heavy Charged-Staff finisher SPENDS Power Charges to add a lightning shockwave and SHATTERS frozen enemies for a burst multiplier (freeze->shatter is native threshold-burst). water (cold register) primary; lightning secondary via the Charged Staff shockwave.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Ice Strike' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1 sig)",
+      "errata_applied": 0,
+      "id": 2522,
+      "kit_id": "poe2-ice-strike-invoker",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Herald of Ice procs a Cold explosion (nova around a frozen kill) -> ring. The Charged-Staff finisher lightning shockwave rides here too. Secondary stage per 7.2 -- the builder Ice Strike is the every-3-seconds loop; this is the spend-burst payoff.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Charged Staff / Herald of Ice (finisher + on-freeze-kill explosion)' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (1 sig)",
+      "errata_applied": 0,
+      "id": 2523,
+      "kit_id": "poe2-ice-strike-invoker",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

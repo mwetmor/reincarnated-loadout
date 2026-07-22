@@ -1,0 +1,742 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 622,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-spectral-helix",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 197,
+    "kit_id": "poe1-spectral-helix",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Spectral Helix — PoEDB",
+    "url": "https://poedb.tw/us/Spectral_Helix"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 197,
+      "kit_id": "poe1-spectral-helix",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Spectral Helix — PoEDB",
+      "url": "https://poedb.tw/us/Spectral_Helix"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-spectral-helix",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 584,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-spectral-helix",
+      "missing_expression": "The corkscrew signature — the literal helix path, hits distributed along ~4.25 rotations, and the density-at-spiral-crossings texture (near-origin overlap shotgunning) — collapses to a line + wide-swath note;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The corkscrew signature — the literal helix path, hits distributed along ~4.25 rotations, and the density-at-spiral-crossings texture (near-origin overlap shotgunning) — collapses to a line + wide-swath note; the player keeps 'throw spinning blades that grind through packs at attack speed', loses the helix choreography itself. Wall-bounce behavioral."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 431,
+      "kit_id": "poe1-spectral-helix",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "150-220% Effectiveness of Base and Added Damage at gem levels 1-20 (previously 120-180%)",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 430,
+      "kit_id": "poe1-spectral-helix",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "Projectiles that have Pierced deal (0—20)% more Damage",
+            "effect": "Projectiles that have Pierced deal (0-20)% more Damage",
+            "node": "Spectral Helix (quality)",
+            "type": "base_quality"
+          },
+          {
+            "anchor_quote": "150-220% Effectiveness of Base and Added Damage at gem levels 1-20 (previously 120-180%)",
+            "effect": "150-220% Effectiveness of Base and Added Damage at levels 1-20 (previously 120-180%)",
+            "node": "Spectral Helix of Trarthus (transfig)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Spectral_Helix"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "150-220% Effectiveness at gem levels 1-20 (previously 120-180%)",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 429,
+      "kit_id": "poe1-spectral-helix",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "150-220% Effectiveness of Base and Added Damage at gem levels 1-20 (previously 120-180%)",
+            "effect": "150-220% Effectiveness (previously 120-180%)",
+            "item": "Spectral Helix of Trarthus (transfig gem)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Spectral_Helix"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'The projectile completes approximately 4.25 full rotations during its flight, creating the characteristic helix geometry'",
+      "conf": 0.84,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 428,
+      "kit_id": "poe1-spectral-helix",
+      "payload_json": {
+        "aoe": "small-radius hits along the spiral path; approximately 4.25 rotations",
+        "delivery": "projectile (thrown weapon in corkscrew helix trajectory)",
+        "notes": "Unique rotational projectile; hits enemies at many points along the spiral rather than a single impact"
+      },
+      "source_url": "https://poedb.tw/us/Spectral_Helix"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'spins around while flying in a large spiral, damaging enemies in its path, and bouncing if it collides with walls'",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 427,
+      "kit_id": "poe1-spectral-helix",
+      "payload_json": {
+        "loop": "Throw weapon as Spectral Helix; projectile corkscrews outward in a large spiral, hitting enemies along the entire spiral path; bounces off walls; repeat cast for sustained damage; typically paired with high physical damage weapon and impale/bleed scaling"
+      },
+      "source_url": "https://poedb.tw/us/Spectral_Helix"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 432,
+      "kit_id": "poe1-spectral-helix",
+      "payload_json": {
+        "variants": [
+          "Raider (primary; high attack speed + frenzy charges)",
+          "Slayer (alternate; culling + leech)"
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Spectral_Helix"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|projectile|flat|circle|damage|none|mitigate|spend|solo|dual|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.66,
+    "geometry_rule_fired": "R8-proj-blast",
+    "geometry_value": "circle",
+    "kit_id": "poe1-spectral-helix",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DDHFSI-HSDD-SP-PH-~~",
+      "delivery": "projectile",
+      "elem_raw": "physical",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.66,
+        "rule_fired": "R8-proj-blast",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Spectral Helix",
+      "game": "poe1",
+      "kit_id": "poe1-spectral-helix",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DDHFSI-HSDD-SP-PH-~~",
+        "delivery": "projectile",
+        "elem_raw": "physical",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-spectral-helix",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "throws a spectral weapon-copy that corkscrews outward, completing ~4.25 rotations along its flight, dealing weapon hits at many points along the spiral (a wide swath around the travel axis) rather than a single impact; bounces off walls; the spiral can re-hit targets it recrosses. Physical -> element-neutral; bleed via the attested build-level phys/bleed scaling pairing",
+      "source_skill": "Spectral Helix",
+      "speed_band": null,
+      "width_band": "wide"
+    }
+  ],
+  "kit_id": "poe1-spectral-helix",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The corkscrew signature — the literal helix path, hits distributed along ~4.25 rotations, and the density-at-spiral-crossings texture (near-origin overlap shotgunning) — collapses to a line + wide-swath note; the player keeps 'throw spinning blades that grind through packs at attack speed', loses the helix choreography itself. Wall-bounce behavioral.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-spectral-helix",
+    "mapping_json": {
+      "fidelity_notes": "Physical rule (section-1): pure-phys thrown attack -> element-neutral, identity expressed via geometry + bleed substrate; conversion is NOT the build's point, so no ELEMENT_CONVERSION_PHYSICAL door. GEOMETRY JUDGMENT (section-7.2): the R-M6 drift-tick-orb class (-> circle) was CONSIDERED and rejected — helix is a FAST attack projectile dealing discrete weapon hits along its path, not a slow-drift tick-AoE orb; the outward TRAVEL is the dominant axis -> line (b04 freezing-pulse / glacial-cascade corridor precedent), with the corkscrew micro-motion, ~4.25-rotation count, and multi-hit-per-enemy-per-pass carried as behavioral notes; alternative (circle) recorded here per the competing-rows law. Bleed attested only as build-level scaling pairing (dossier: 'paired with high physical damage weapon and impale/bleed scaling'; probe control empty) — included as the physical-rule identity ailment with that provenance caveat. Impale has no ailment lane (nearest register: section-2 on-hit sunder window) — trait-lane note, not asserted on the skill. TEMPORAL_CHARGE = the frenzy-charge Raider chassis door; no second door forced (R-M1: doors express the source identity, not everything plausible). Era 3.14-3.19 + 3.20+.",
+      "motion_frame": "helix-thrower: stream corkscrew throws into packs at high attack speed (Raider frenzy tempo); each spiral grinds a wide corridor swath while the player repositions between throws",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light attack streaming",
+            "frenzy-charge tempo (Raider primary; Slayer cull/leech alternate)"
+          ],
+          "geometry": [
+            "line travel axis; spiral sweep = wide-corridor coverage (note)",
+            "wall-bounce behavior"
+          ],
+          "traits_affixes": [
+            "physical weapon damage",
+            "attack speed + frenzy-charge maximum (Raider chassis)",
+            "bleed / impale scaling affixes (impale ~= on-hit sunder-window register — trait-lane note only, not a skill ailment)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "bleed"
+          ],
+          "delivery_notes": "throws a spectral weapon-copy that corkscrews outward, completing ~4.25 rotations along its flight, dealing weapon hits at many points along the spiral (a wide swath around the travel axis) rather than a single impact; bounces off walls; the spiral can re-hit targets it recrosses. Physical -> element-neutral; bleed via the attested build-level phys/bleed scaling pairing",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "line",
+          "source_skill": "Spectral Helix"
+        }
+      ],
+      "t4_doors": [
+        "TEMPORAL_CHARGE"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2033,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 2034,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Thrown weapon projectile in corkscrew helix pattern",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 2031,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Thrown weapon corkscrews outward in a helix, hitting along its spiral path — pro",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 2035,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 2036,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.66,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.66,
+        "evidence": "Hits along helix path; impact zone at end; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 2032,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with small-radius footprint. Thrown weapon corkscrews outward in a helix, hitting along its spiral path  —  projectile with rotational micro-motion.",
+      "family": "geo_text",
+      "id": 2038,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 2037,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2039,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2040,
+      "kit_id": "poe1-spectral-helix",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Spectral Helix: line projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-spectral-helix",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.78,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|flat|circle|damage|none|mitigate|spend|solo|dual|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|flat|circle|damage|none|mitigate|spend|solo|dual|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DDHFSI-HSDD-SP-PH-~~",
+    "attr_conf": 0.78,
+    "attr_val": "DEX",
+    "avg_conf": 0.78,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.78,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Spectral Helix"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "3.14-3.19;3.20+",
+    "eras_normalized": "3.14-3.19;3.20+",
+    "flags": "",
+    "folk_name": "Spectral Helix",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-06",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-spectral-helix",
+    "lattice_coord": "DDHFSI",
+    "lineage": "",
+    "mech_note": "Thrown weapon corkscrews outward in a helix, hitting along its spiral path — projectile with rotational micro-motion.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×GAP-P1-06",
+    "mobile_key_group": "DDHFSI-HSDD-SP-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.78,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.78,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.78,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Spectral Helix introduced patch 3.15.0 (Expedition league); falls within 3.14-3.19 bucket",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.14-3.19",
+      "errata_applied": 0,
+      "id": 245,
+      "kit_id": "poe1-spectral-helix",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Spectral_Helix",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Build guides present through 3.20+ era; '[3.24] Scourge Arrow of Menace Ballista Pathfinder' era guides confirm Spectral Helix survival",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.20+",
+      "errata_applied": 0,
+      "id": 246,
+      "kit_id": "poe1-spectral-helix",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://pathofexilegems.com/builds/3-24-scourge-arrow-pathfinder/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Spectral Helix' is the official gem name introduced 3.15.0; build guides and poe.ninja use this name",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Spectral Helix' is real community usage",
+      "errata_applied": 0,
+      "id": 243,
+      "kit_id": "poe1-spectral-helix",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Spectral_Helix",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'spins around while flying in a large spiral, damaging enemies in its path, and bouncing if it collides with walls... approximately 4.25 full rotations'",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Spectral Helix; thrown weapon corkscrews outward in helix, hitting along spiral path; bounces off walls",
+      "errata_applied": 0,
+      "id": 244,
+      "kit_id": "poe1-spectral-helix",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Spectral_Helix",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "throws a spectral weapon-copy that corkscrews outward, completing ~4.25 rotations along its flight, dealing weapon hits at many points along the spiral (a wide swath around the travel axis) rather than a single impact; bounces off walls; the spiral can re-hit targets it recrosses. Physical -> element-neutral; bleed via the attested build-level phys/bleed scaling pairing",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Spectral Helix' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2470,
+      "kit_id": "poe1-spectral-helix",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,891 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 3,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 8
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 834,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-meteorb",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 835,
+      "assert_text": "expresses: Immunity-driven tree-partition motive has no engine lane.",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "d2-meteorb",
+      "last_result": "red",
+      "routed_docket_id": 133
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 656,
+    "kit_id": "d2-meteorb",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "purediablo.com",
+    "title": "Diablo 2 Guide: Meteorb Sorceress Guide",
+    "url": "https://www.purediablo.com/strategy/meteorb-sorceress-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 656,
+      "kit_id": "d2-meteorb",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Diablo 2 Guide: Meteorb Sorceress Guide",
+      "url": "https://www.purediablo.com/strategy/meteorb-sorceress-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 657,
+      "kit_id": "d2-meteorb",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "D2 - D2R:Frozen Orb Sorceress Guide",
+      "url": "https://www.purediablo.com/forums/threads/d2r-frozen-orb-sorceress-guide.20353/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-meteorb",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 738,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-d2",
+        "docket_id": 133,
+        "evidence_kits": [
+          "d2-meteorb"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:d2-meteorb",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "d2-record"
+        },
+        "source_deviation_id": 738,
+        "source_kit_id": "d2-meteorb",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 D2 structuring of d2-meteorb.",
+        "status": "open"
+      },
+      "docket_id": 133,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-meteorb",
+      "missing_expression": "Immunity-driven tree-partition motive has no engine lane.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "Immunity-driven tree-partition motive has no engine lane. Fireball is primary spam; Meteor is secondary burst-on-stationary — skill relative weight noted. Engine loses the 'which element do I cast now?' immunity-check loop that defined meteorb gameplay every 3 seconds."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1541,
+      "kit_id": "d2-meteorb",
+      "payload_json": null,
+      "source_url": "https://www.purediablo.com/strategy/meteorb-sorceress-guide"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1540,
+      "kit_id": "d2-meteorb",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1539,
+      "kit_id": "d2-meteorb",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Frozen Orb can single-handedly kill crowds, and Meteor makes short work of larger, meatier targets",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1538,
+      "kit_id": "d2-meteorb",
+      "payload_json": {
+        "delivery": "at-target",
+        "footprint": "large-zone",
+        "notes": "Meteor: delayed AoE impact at cursor; Frozen Orb: projectile with shard spray. Fireball: fast projectile. Screen-coverage via combined fire."
+      },
+      "source_url": "https://www.purediablo.com/strategy/meteorb-sorceress-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "throw a Meteor right on your mercenary, hold down stand still and spam two or three Fire Balls, another Meteor",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1537,
+      "kit_id": "d2-meteorb",
+      "payload_json": {
+        "description": "Cast Frozen Orb at pack entry to chill enemies; spam Fireball at high rate; drop Meteor on stationary targets or mercenary position; Frozen Orb handles fire-immune enemies. Dual-tree partition: fire for normal enemies, cold for fire-immunes.",
+        "source_note": "purediablo.com meteorb guide"
+      },
+      "source_url": "https://www.purediablo.com/strategy/meteorb-sorceress-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Diablo 2 Sorceress Starter Guide - Blizzball or Meteorb",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1542,
+      "kit_id": "d2-meteorb",
+      "payload_json": {
+        "source_note": "PureDiablo guide distinguishes Meteorb vs Blizzball as separate sorceress archetypes",
+        "variants": [
+          "Meteorb (Meteor + Frozen Orb)",
+          "Blizzball (Blizzard + Fireball — distinct kit, mentioned as alternative starter)"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/strategy/diablo-2-sorceress-guide-blizzball-meteorb"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|spiky|ground_targeted_circle|damage|none|glass|spend|solo|ranged|med|wind-up|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "glass",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.65,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "d2-meteorb",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "teleport"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRMSSW-HLDG-SP-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "fire",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "glass",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.65,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Meteorb",
+      "game": "d2",
+      "kit_id": "d2-meteorb",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "teleport"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRMSSW-HLDG-SP-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "fire",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-meteorb",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Delayed AoE impact at cursor position; player drops on stationary or mercenary-positioned targets.",
+      "source_skill": "Meteor",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "spam",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-meteorb",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Fast projectile spam; primary fire-leg attack against non-immune enemies.",
+      "source_skill": "Fire Ball",
+      "speed_band": "fast",
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-meteorb",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 2,
+      "source_anchor": "Projectile with shard spray; handles fire-immune enemies; dossier: 'Frozen Orb can single-handedly kill crowds.'",
+      "source_skill": "Frozen Orb",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-meteorb",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Immunity-driven tree-partition motive has no engine lane. Fireball is primary spam; Meteor is secondary burst-on-stationary — skill relative weight noted. Engine loses the 'which element do I cast now?' immunity-check loop that defined meteorb gameplay every 3 seconds.",
+    "grade": "CLOSE",
+    "kit_id": "d2-meteorb",
+    "mapping_json": {
+      "fidelity_notes": "Dual-tree partition driven by enemy immunity system — fire for normal, cold for fire-immunes. Engine has no immunity partition mechanic; the player's coverage motive is lost. Source kit identity survives as two-element coverage; what the source player felt was tactical necessity (immunity routing) is lost. Verified: dual fire+cold CONFIRMED (verify_ledger). Blizzball listed as distinct variant, not this kit.",
+      "motion_frame": "Stationary caster alternates between fire-leg (Fireball/Meteor) and cold-leg (Frozen Orb) depending on enemy immunity.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "steady-mana",
+        "cost_slope": "flat-per-cast"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "cold-leg immune coverage partition"
+          ],
+          "traits_affixes": [
+            "Cold Mastery synergy scaling (fire tree / cold tree split-investment scaffold)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Delayed AoE impact at cursor position; player drops on stationary or mercenary-positioned targets.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Meteor"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Fast projectile spam; primary fire-leg attack against non-immune enemies.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Fire Ball"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Projectile with shard spray; handles fire-immune enemies; dossier: 'Frozen Orb can single-handedly kill crowds.'",
+          "element_primary": "water",
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Frozen Orb"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_HYBRID",
+        "GEOMETRY_COLLAPSE",
+        "PERSISTENCE_ENGINE_uptime"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 733,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "resist",
+          "glass"
+        ],
+        "primary": "glass"
+      },
+      "family": "defense",
+      "id": 734,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.69,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.69,
+        "evidence": "Meteor falls at cursor location with delay; Frozen Orb projectile for secondary element",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 731,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Fire Meteor tree + cold Frozen Orb tree in one kit — the genre's canonical dual-",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 735,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 736,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "evidence": "Meteor impact large AoE + Orb shard spray; geo=large-AOE in atlas",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 732,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with large-zone footprint. Fire Meteor tree + cold Frozen Orb tree in one kit  —  the genre's canonical dual-element chain-partition, born from immunity coverage; K-rost.",
+      "family": "geo_text",
+      "id": 738,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "teleport"
+        ]
+      },
+      "family": "movement",
+      "id": 737,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 739,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "od (online docs — Diablo wiki / game manual)",
+        "ph",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 740,
+      "kit_id": "d2-meteorb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Meteorb: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-meteorb",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "d2-meteorb",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.77,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|spiky|ground_targeted_circle|damage|none|glass|spend|solo|ranged|med|wind-up|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|spiky|ground_targeted_circle|damage|none|glass|spend|solo|ranged|med|wind-up|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "glass"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "wind-up"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMSSW-HLDG-SP-FI-~~",
+    "attr_conf": 0.77,
+    "attr_val": "INT",
+    "avg_conf": 0.77,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.77,
+    "commit_provenance": null,
+    "commit_val": "wind-up",
+    "core_skills": [
+      "Meteor",
+      "Fire Ball",
+      "Frozen Orb"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-hungry",
+    "elem_raw": "fire",
+    "era_year": 2000,
+    "eras": "lod-1.10+;d2r;rotw-s14",
+    "eras_normalized": "lod-1.10+;d2r;rotw-s14",
+    "flags": "",
+    "folk_name": "Meteorb",
+    "game": "d2",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-01",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-meteorb",
+    "lattice_coord": "IRMSSW",
+    "lineage": "",
+    "mech_note": "Fire Meteor tree + cold Frozen Orb tree in one kit — the genre's canonical dual-element chain-partition, born from immunity coverage; K-rost",
+    "mint": 0,
+    "mob_raw": "teleport-high",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "SOLO|LARGE|WIND×GAP-D2-01",
+    "mobile_key_group": "IRMSSW-HLDG-SP-FI-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "od;ph;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.77,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.77,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.77,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "put points in Frozen Orb, Cold Mastery, and Fire Mastery. Beyond lvl 30 put extra points into Cold Mastery and Frozen Orb",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: lod-1.10+",
+      "errata_applied": 0,
+      "id": 983,
+      "kit_id": "d2-meteorb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/meteorb-sorceress-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "D2 - D2R:Frozen Orb Sorceress Guide",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: d2r",
+      "errata_applied": 0,
+      "id": 984,
+      "kit_id": "d2-meteorb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/d2r-frozen-orb-sorceress-guide.20353/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: rotw-s14 (post-cutoff — fetched text defines)",
+      "errata_applied": 0,
+      "id": 985,
+      "kit_id": "d2-meteorb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/meteorb-sorceress-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Diablo 2 Guide: Meteorb Sorceress Guide",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Meteorb' or 'Meteorb Sorceress' is real community usage",
+      "errata_applied": 0,
+      "id": 981,
+      "kit_id": "d2-meteorb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/meteorb-sorceress-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "most people never use Meteor, opting for Fireball instead. One might cast a Frozen Orb at the beginning of a fight",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Meteor, Fire Ball, Frozen Orb; dual fire+cold element build",
+      "errata_applied": 0,
+      "id": 982,
+      "kit_id": "d2-meteorb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/meteorb-sorceress-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Delayed AoE impact at cursor position; player drops on stationary or mercenary-positioned targets.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Meteor' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (1 sig)",
+      "errata_applied": 0,
+      "id": 2154,
+      "kit_id": "d2-meteorb",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Fast projectile spam; primary fire-leg attack against non-immune enemies.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Fire Ball' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2155,
+      "kit_id": "d2-meteorb",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Projectile with shard spray; handles fire-immune enemies; dossier: 'Frozen Orb can single-handedly kill crowds.'",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Frozen Orb' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (2 sig)",
+      "errata_applied": 0,
+      "id": 2156,
+      "kit_id": "d2-meteorb",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

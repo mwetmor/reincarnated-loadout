@@ -1,0 +1,784 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 838,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-poison-javazon",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 662,
+    "kit_id": "d2-poison-javazon",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "purediablo.com",
+    "title": "Diablo 2 Guide: PvM LF/PJ Javazon Guide for v1.10",
+    "url": "https://www.purediablo.com/strategy/pvm-lf-pj-javazon-guide-for-v1-10"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 662,
+      "kit_id": "d2-poison-javazon",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Diablo 2 Guide: PvM LF/PJ Javazon Guide for v1.10",
+      "url": "https://www.purediablo.com/strategy/pvm-lf-pj-javazon-guide-for-v1-10"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 663,
+      "kit_id": "d2-poison-javazon",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Gito's Poison Javazon Guide!~",
+      "url": "https://www.purediablo.com/forums/threads/gitos-poison-javazon-guide.30058/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-poison-javazon",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 741,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-poison-javazon",
+      "missing_expression": "Overlapping-zone stacking identity (throw to two sides simultaneously) has no engine enforcement — player spatial tactic, not a mechanic.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Overlapping-zone stacking identity (throw to two sides simultaneously) has no engine enforcement — player spatial tactic, not a mechanic. Patient kill-confirmation loop (DoT, wait, confirm) is mood/pacing that engine captures only via DoT uptime, not timing UI."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1559,
+      "kit_id": "d2-poison-javazon",
+      "payload_json": null,
+      "source_url": "https://www.purediablo.com/strategy/pvm-lf-pj-javazon-guide-for-v1-10"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1558,
+      "kit_id": "d2-poison-javazon",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1557,
+      "kit_id": "d2-poison-javazon",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Plague Javelin adds poison damage to thrown javelins, with the projectile leaving a trail of poison gas behind it",
+      "conf": 0.84,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1556,
+      "kit_id": "d2-poison-javazon",
+      "payload_json": {
+        "delivery": "at-target",
+        "footprint": "large-zone",
+        "notes": "Plague Javelin: projectile thrown to landing point, explodes into large poison gas cloud on contact. Poison Javelin: trail of poison gas behind projectile."
+      },
+      "source_url": "https://www.purediablo.com/strategy/pvm-lf-pj-javazon-guide-for-v1-10"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The main skill is Plague Javelin which you throw to one side of the creature pack, and Poison Javelin is used to attack monsters on the other side",
+      "conf": 0.86,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1555,
+      "kit_id": "d2-poison-javazon",
+      "payload_json": {
+        "description": "Throw Plague Javelin to one side of monster pack creating poison gas cloud; throw Poison Javelin at other side. Clouds overlap for stacking poison DoT. Enemies run through gas zones; patient kill-confirmation gameplay.",
+        "source_note": "purediablo.com PvM LF/PJ javazon guide v1.10"
+      },
+      "source_url": "https://www.purediablo.com/strategy/pvm-lf-pj-javazon-guide-for-v1-10"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "PvM LF/PJ Javazon Guide for v1.10",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1560,
+      "kit_id": "d2-poison-javazon",
+      "payload_json": {
+        "variants": [
+          "Pure Poison Javazon (Plague Javelin + Poison Javelin)",
+          "Lightning Fury / Poison Javazon hybrid (LF/PJ — listed in same guide; shares skills, different damage emphasis)"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/strategy/pvm-lf-pj-javazon-guide-for-v1-10"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|at-target|flat|ground_targeted_circle|damage|none|mitigate|spend|solo|ranged|low|instant|active|apply→detonate",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.62,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "d2-poison-javazon",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "DRLFSI-LLDD-SP-PO-~~",
+      "delivery": "at-target",
+      "elem_raw": "poison",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.62,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Poison Javazon",
+      "game": "d2",
+      "kit_id": "d2-poison-javazon",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DRLFSI-LLDD-SP-PO-~~",
+        "delivery": "at-target",
+        "elem_raw": "poison",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-poison-javazon",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Projectile thrown to landing point, explodes into large poison gas cloud on contact. Dossier: 'projectile leaving a trail of poison gas behind it... throw to one side of the creature pack.'",
+      "source_skill": "Plague Javelin",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-poison-javazon",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Thrown projectile leaving poison trail; dossier: 'Poison Javelin is used to attack monsters on the other side.' Overlapping gas clouds stack DoT.",
+      "source_skill": "Poison Javelin",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-poison-javazon",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Overlapping-zone stacking identity (throw to two sides simultaneously) has no engine enforcement — player spatial tactic, not a mechanic. Patient kill-confirmation loop (DoT, wait, confirm) is mood/pacing that engine captures only via DoT uptime, not timing UI.",
+    "grade": "CLOSE",
+    "kit_id": "d2-poison-javazon",
+    "mapping_json": {
+      "fidelity_notes": "Earth element (amazon, venom/nature-themed per main-law element table; not corruption-themed → earth not shadow). Poison ailment attested: dossier 'poison gas cloud,' 'Plague Javelin adds poison damage,' verify_ledger CONFIRMED 'poison DoT delivery.' DoT-timing ruling: 'poison DoT' attests delivery timing, not a second ailment. LF/PJ hybrid is a separate variant — pure poison-javazon is the identity mapped here.",
+      "motion_frame": "Throw Plague Javelin cloud to one side of pack; Poison Javelin to other side; overlapping gas zones stack poison DoT; patient kill-confirmation.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "steady-mana",
+        "cost_slope": "flat-per-cast"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "cloud overlap zone-stacking tactic"
+          ],
+          "traits_affixes": [
+            "Plague Javelin synergy scaffold"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "Projectile thrown to landing point, explodes into large poison gas cloud on contact. Dossier: 'projectile leaving a trail of poison gas behind it... throw to one side of the creature pack.'",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Plague Javelin"
+        },
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "Thrown projectile leaving poison trail; dossier: 'Poison Javelin is used to attack monsters on the other side.' Overlapping gas clouds stack DoT.",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "line",
+          "source_skill": "Poison Javelin"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_saturation",
+        "ZONE_CONTROL",
+        "GEOMETRY_PROPAGATION_cascade"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "poison"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2653,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 2654,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.66,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.66,
+        "evidence": "Plague Javelin thrown as projectile; poison cloud deploys at landing location",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2651,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Plague Javelin blankets areas in overlapping poison clouds; damage-over-time ide",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 2655,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "dot",
+        "label_verbatim": "poison"
+      },
+      "family": "element",
+      "id": 2656,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.62,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.62,
+        "evidence": "Plague Javelin poison cloud blankets large zone; geo=large-AOE in atlas",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 2652,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with large-zone footprint. Plague Javelin blankets areas in overlapping poison clouds; damage-over-time identity with delayed kill confirmation.",
+      "family": "geo_text",
+      "id": 2658,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 2657,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2659,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2660,
+      "kit_id": "d2-poison-javazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Poison Javazon: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-poison-javazon",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:earth",
+      "hook_id": "H2",
+      "hook_text": "earth element register",
+      "hook_type": "register",
+      "kit_id": "d2-poison-javazon",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.73,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|flat|ground_targeted_circle|damage|none|mitigate|spend|solo|ranged|low|instant|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|flat|ground_targeted_circle|damage|none|mitigate|spend|solo|ranged|low|instant|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "DRLFSI-LLDD-SP-PO-~~",
+    "attr_conf": 0.73,
+    "attr_val": "DEX",
+    "avg_conf": 0.73,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.73,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Plague Javelin",
+      "Poison Javelin"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-mid",
+    "elem_raw": "poison",
+    "era_year": 2000,
+    "eras": "lod",
+    "eras_normalized": "lod",
+    "flags": "vdm2-w5-poison-register-split-2026-07-22: poison->earth register (Plague/Poison Javelin element_primary='earth') disagrees with court='chaos-poison' / poison-nova-necro's poison->shadow. D2-poison register split — W5 to unify.",
+    "folk_name": "Poison Javazon",
+    "game": "d2",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-08",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-poison-javazon",
+    "lattice_coord": "DRLFSI",
+    "lineage": "",
+    "mech_note": "Plague Javelin blankets areas in overlapping poison clouds; damage-over-time identity with delayed kill confirmation.",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|LARGE|INST×GAP-D2-08",
+    "mobile_key_group": "DRLFSI-LLDD-SP-PO-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "poison",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.73,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.73,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.73,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "DOT-AILMENT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=4].members (working_label=DOT-AILMENT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "PvM LF/PJ Javazon Guide for v1.10",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: lod",
+      "errata_applied": 0,
+      "id": 997,
+      "kit_id": "d2-poison-javazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/pvm-lf-pj-javazon-guide-for-v1-10",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Gito's Poison Javazon Guide!~",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Poison Javazon' or 'Plague Javelin Amazon' is real community usage",
+      "errata_applied": 0,
+      "id": 995,
+      "kit_id": "d2-poison-javazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/gitos-poison-javazon-guide.30058/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The main skill is Plague Javelin which you throw to one side of the creature pack, and Poison Javelin is used to attack monsters on the other side",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Plague Javelin, Poison Javelin; poison DoT delivery",
+      "errata_applied": 0,
+      "id": 996,
+      "kit_id": "d2-poison-javazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/pvm-lf-pj-javazon-guide-for-v1-10",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Projectile thrown to landing point, explodes into large poison gas cloud on contact. Dossier: 'projectile leaving a trail of poison gas behind it... throw to one side of the creature pack.'",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Plague Javelin' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (1) but 'projectile' more strongly (2) — mixed signal",
+      "errata_applied": 0,
+      "id": 2163,
+      "kit_id": "d2-poison-javazon",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Thrown projectile leaving poison trail; dossier: 'Poison Javelin is used to attack monsters on the other side.' Overlapping gas clouds stack DoT.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Poison Javelin' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (2 sig)",
+      "errata_applied": 0,
+      "id": 2164,
+      "kit_id": "d2-poison-javazon",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

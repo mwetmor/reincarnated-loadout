@@ -1,0 +1,785 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1107,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-runic-invocation",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 544,
+    "kit_id": "le-runic-invocation",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Hydrahedron Runemaster Build Guide - Last Epoch Maxroll.gg",
+    "url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 544,
+      "kit_id": "le-runic-invocation",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Hydrahedron Runemaster Build Guide - Last Epoch Maxroll.gg",
+      "url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 545,
+      "kit_id": "le-runic-invocation",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "dotesports.com",
+      "title": "Last Epoch: All Runic Invocations, listed",
+      "url": "https://dotesports.com/last-epoch/news/last-epoch-all-runic-invocations-listed"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-runic-invocation",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 958,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-runic-invocation",
+      "missing_expression": "The combinatorial identity (~40 outputs selected by specific rune sequences / spell rotations) has no engine lane;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The combinatorial identity (~40 outputs selected by specific rune sequences / spell rotations) has no engine lane; realized loop approximated as accumulator-spend into one payoff zone. Source player would miss choosing WHICH output via rotation ordering. Terminal stays MAPPED per R-M7 (that build, worse - the rotate-then-nuke loop survives)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.5,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1229,
+      "kit_id": "le-runic-invocation",
+      "payload_json": {
+        "handle": null,
+        "notes": "Author handle not captured in fetched guide page; Hydrahedron guide",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Runic Invocation: Enigma is used to get double value from Nimbus Walk... Hydrahedron is a powerful Runic Invocation.",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1228,
+      "kit_id": "le-runic-invocation",
+      "payload_json": {
+        "notes": "40 total Runic Invocation combinations; Runic Invocation: Enigma and Runic Invocation: Hydrahedron are endgame-defining output spells; passive tree governs rune-slot count and cooldown reduction"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Runic Invocation generating massive Ward bursts through Reowyn's Frostguard.",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1227,
+      "kit_id": "le-runic-invocation",
+      "payload_json": {
+        "key_uniques": [
+          "Reowyn's Frostguard (Ward burst via Lightning Blast+Runic Invocation interaction)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Hydrahedron is a powerful Runic Invocation unique to the Runemaster that turns foes into ashes... insane Range, a very easy playstyle and auto targeting mechanic.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1226,
+      "kit_id": "le-runic-invocation",
+      "payload_json": {
+        "aoe": "large-zone",
+        "geometry": "large elemental zone at target area; output varies by rune combination (fire burst, ice storm, lightning fork, etc.); Hydrahedron = auto-targeting large zone",
+        "range_class": "ranged"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Runic Invocations are a combination of only three Runes: Rah (Red), Heo (Blue), and Gon (Purple)... requires specific rune combinations (and therefore specific spell rotations) in order to work.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1225,
+      "kit_id": "le-runic-invocation",
+      "payload_json": {
+        "core_driver": "rune-combination recipe loop",
+        "description": "Runemaster slots rune inputs (Flame Rush, Frost Wall, etc.) to build a specific rune sequence (Rah/Heo/Gon combination). On invocation, the combination determines the output from ~40 possible spells. High-tier outputs produce large elemental zone effects. The Hydrahedron variant uses Runic Invocation: Enigma to multiply value from mobility skills."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Hydrahedron Runemaster... Lightning Blast Runemaster Build.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1230,
+      "kit_id": "le-runic-invocation",
+      "payload_json": {
+        "variants": [
+          {
+            "name": "Hydrahedron Runemaster",
+            "notes": "Runic Invocation: Hydrahedron as primary output; auto-targeting large zone"
+          },
+          {
+            "name": "Lightning Blast Runemaster",
+            "notes": "Uses Runic Invocation to generate Ward via Reowyn's Frostguard; Lightning Blast as primary skill"
+          }
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|projectile|spiky|circle|damage|none|absorb|finite|solo|ranged|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[\"chill\", \"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.82,
+    "def_riders": "[\"synonym:ward\"]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"RC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "finite",
+    "flags": [],
+    "geometry_conf": 0.78,
+    "geometry_rule_fired": "R8-proj-blast",
+    "geometry_value": "circle",
+    "kit_id": "le-runic-invocation",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IRMSSI-HLMM-MT-LI-~~",
+      "delivery": "projectile",
+      "elem_raw": "Cold / Lightning / Fire (rune-combination-dependent)",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [
+          "chill",
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.82,
+        "riders": [
+          "synonym:ward"
+        ]
+      },
+      "econ": {
+        "gaps": [
+          "RC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.78,
+        "rule_fired": "R8-proj-blast",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Runic Invocation Runemaster",
+      "game": "le",
+      "kit_id": "le-runic-invocation",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IRMSSI-HLMM-MT-LI-~~",
+        "delivery": "projectile",
+        "elem_raw": "Cold / Lightning / Fire (rune-combination-dependent)",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Rune Sequences",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-runic-invocation",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "invocation output = large elemental zone at target area; output spell varies by rune combination (fire burst / ice storm / lightning fork per dossier); Hydrahedron variant = auto-targeting large zone [ERRATA-57 2026-07-19: multi-element outputs 'fire burst, ice storm, lightning fork' attest engine FIRE + WATER (ice) alongside the lightning primary; added to attested set via attested_elements_errata. Blind-rider anchor, D-1.]",
+      "source_skill": "Runic Invocation",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-runic-invocation",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The combinatorial identity (~40 outputs selected by specific rune sequences / spell rotations) has no engine lane; realized loop approximated as accumulator-spend into one payoff zone. Source player would miss choosing WHICH output via rotation ordering. Terminal stays MAPPED per R-M7 (that build, worse - the rotate-then-nuke loop survives).",
+    "grade": "APPROX",
+    "kit_id": "le-runic-invocation",
+    "mapping_json": {
+      "fidelity_notes": "Class corrected: Runemaster is a Mage mastery (corpus governs). Rune-input spells (Flame Rush, Frost Wall) are named as inputs only, behavior unfetched -> they map as accumulator ticks, not own skill rows (attestation law 0.4). Multi-element output range kept as fidelity texture; corpus lightning primary carries the row. trigger_grammar row = Reowyn's Frostguard ward-burst rider (basin-2 B row, attested twice): on-cast-of-carrier -> ward overshield fill; item-layer rider, never rewrites core geometry. Accumulator shape filed as two-tier-accumulator accrual; recipe-determines-output filed as docket-candidate (no lane, main-law 7.4 recipe class).",
+      "motion_frame": "ranged rotation caster: cast rune-input spells to slot Rah/Heo/Gon runes, then invoke the payoff zone",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator"
+      },
+      "scaffold": {
+        "chain_count": 3,
+        "support_lanes": {
+          "economy": [
+            "rune-slot count + cooldown reduction via passive tree"
+          ],
+          "geometry": [],
+          "traits_affixes": []
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "attested_elements_errata": [
+            "fire",
+            "water"
+          ],
+          "delivery_notes": "invocation output = large elemental zone at target area; output spell varies by rune combination (fire burst / ice storm / lightning fork per dossier); Hydrahedron variant = auto-targeting large zone [ERRATA-57 2026-07-19: multi-element outputs 'fire burst, ice storm, lightning fork' attest engine FIRE + WATER (ice) alongside the lightning primary; added to attested set via attested_elements_errata. Blind-rider anchor, D-1.]",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Runic Invocation"
+        }
+      ],
+      "t4_doors": [
+        "RESOURCE_CONVERSION",
+        "ELEMENTAL_ECHO"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "resource-fill",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "chill",
+          "shock",
+          "ignite"
+        ],
+        "centrality": "rider",
+        "conf": 0.75
+      },
+      "family": "control",
+      "id": 3183,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "layers": [
+          "shield-absorb",
+          "ward"
+        ],
+        "primary": "ward"
+      },
+      "family": "defense",
+      "id": 3184,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "evidence": "Most runic invocations fire projectile-type effects at target direction; delivery varies by rune combination but projectile dominates for damage combos",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 3181,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "Runemaster slots runes before each cast",
+        "conf": 0.78,
+        "meter_type": "n/a",
+        "model": "recipe",
+        "plain_text": "Economy is recipe-based: player arranges rune inputs (Glyph slots, Rune types) before casting. The combination is the 'recipe' that determines output. Mana cost applies on invocation.",
+        "resource_verbatim": "Rune Sequences"
+      },
+      "family": "economy",
+      "id": 3185,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "damage_mode": "hit",
+        "label_verbatim": "Cold / Lightning / Fire (rune-combination-dependent)"
+      },
+      "family": "element",
+      "id": 3186,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Major invocations create large elemental zone effects; atlas geo=large-AOE confirmed for the primary damage invocations",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 3182,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Runemaster slots 2-3 rune types in sequence and then invokes. The rune combination determines the spell output from dozens of possible invocations (fire burst, ice storm, lightning fork, etc.). High-tier combinations produce large elemental zones.",
+      "family": "geo_text",
+      "id": 3188,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 3187,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=gg;lw;kb",
+      "family": "rank1_upgrade",
+      "id": 3189,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb",
+        "gg",
+        "lw"
+      ],
+      "family": "sources_used",
+      "id": 3190,
+      "kit_id": "le-runic-invocation",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Runic Invocation Runemaster: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "le-runic-invocation",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "le-runic-invocation",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.73,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "rooted|projectile|spiky|circle|damage|none|absorb|finite|solo|ranged|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|projectile|spiky|circle|damage|none|absorb|finite|solo|ranged|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "finite"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMSSI-HLMM-MT-LI-~~",
+    "attr_conf": 0.73,
+    "attr_val": "INT",
+    "avg_conf": 0.73,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.73,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Runic Invocation",
+      "Flame Rush/Frost Wall(rune feeders)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "combo-sequence-spend",
+    "elem_raw": "lightning",
+    "era_year": 2024,
+    "eras": "1.0-launch;1.2-woven;1.4-omens",
+    "eras_normalized": "1.0-launch;1.2-woven;1.4-omens",
+    "flags": "",
+    "folk_name": "Runic Invocation Runemaster",
+    "game": "le",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-03 GX-15",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "le-runic-invocation",
+    "lattice_coord": "IRMSSI",
+    "lineage": "",
+    "mech_note": "[VDM-1 basin-2 2026-07-18 ingest-11] CLASS CORRECTION: spec/folk class 'Runemaster (Mage+Primalist)' — Runemaster is a MAGE mastery; 'Primalist' is an ingest artifact (Runemaster is not available to Primalist). folk_name slug 'Runic Invocation Runemaster' LEFT as-is (identifier, not a truth claim). [original mech_note follows] prov=gg;lw;kb. mech_note ref: 'Cast three RUNES in sequence and INVOKE the spell their combination spells out — dozens of distinct invocations from fire/ice/lightning combinations.' LI suffix = Lightning (dominant element in the corpus characterization). MT suffix in old vocab = multi-target. The recipe economy is unique in the LE corpus. Control=rider because element varies by rune choice; no single ailment is core identity.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: mark/tag ledger + consume-trigger operators",
+    "mobile_cell_id": "SOLO|LARGE|INST×GX-03",
+    "mobile_key_group": "IRMSSI-HLMM-MT-LI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gg;lw;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.73,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.73,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.73,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 754,
+      "kit_id": "le-runic-invocation",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.2-woven",
+      "errata_applied": 0,
+      "id": 755,
+      "kit_id": "le-runic-invocation",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Season 4 - Shattered Omens... Last Updated: April 27, 2026.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.4-omens",
+      "errata_applied": 0,
+      "id": 756,
+      "kit_id": "le-runic-invocation",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The Runemaster class casts one of many different Runic Invocation attacks depending on the combination of elemental spells used beforehand.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Runic Invocation Runemaster' / 'Flame Rush Frost Wall Runemaster' / 'random rune build Runemaster' are real community usage",
+      "errata_applied": 0,
+      "id": 752,
+      "kit_id": "le-runic-invocation",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/hydrahedron-runemaster-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Runic Invocations are a combination of only three Runes: Rah (Red), Heo (Blue), and Gon (Purple)... requires specific rune combinations (and therefore specific spell rotations) in order to work.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Runic Invocation (output spell), Flame Rush / Frost Wall (rune feeders); rune combination determines output; large-AOE elemental output; resource=Mana",
+      "errata_applied": 0,
+      "id": 753,
+      "kit_id": "le-runic-invocation",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://dotesports.com/last-epoch/news/last-epoch-all-runic-invocations-listed",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "invocation output = large elemental zone at target area; output spell varies by rune combination (fire burst / ice storm / lightning fork per dossier); Hydrahedron variant = auto-targeting large zone [ERRATA-57 2026-07-19: multi-element outputs 'fire burst, ice storm, lightning fork' attest engine FIRE + WATER (ice) alongside the lightning primary; added to attested set via attested_elements_errata. Blind-rider anchor, D-1.]",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Runic Invocation' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (4 sig)",
+      "errata_applied": 0,
+      "id": 2331,
+      "kit_id": "le-runic-invocation",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

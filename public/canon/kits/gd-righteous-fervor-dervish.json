@@ -1,0 +1,780 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 0,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 949,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-righteous-fervor-dervish",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "unknown",
+    "cite_class": "communal",
+    "id": 473,
+    "kit_id": "gd-righteous-fervor-dervish",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "forums.crateentertainment.com",
+    "title": "[1.1.8.1] Edgyswingsetacid - DW Righteous Fervor Dervish [SR 90]",
+    "url": "https://forums.crateentertainment.com/t/1-1-8-1-edgyswingsetacid-dw-righteous-fervor-dervish-sr-90-4-50-crucible-avatar-ravager-crate/99684"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 473,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.1.8.1] Edgyswingsetacid - DW Righteous Fervor Dervish [SR 90]",
+      "url": "https://forums.crateentertainment.com/t/1-1-8-1-edgyswingsetacid-dw-righteous-fervor-dervish-sr-90-4-50-crucible-avatar-ravager-crate/99684"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 474,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "steamcommunity.com",
+      "title": "The Acid Dervish - an invincible dance of blades",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?l=german&id=1781921985"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-righteous-fervor-dervish",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.5,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1031,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "payload_json": {
+        "handle": "unknown",
+        "site": "steamcommunity.com / forums.crateentertainment.com"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-edgyswingsetacid-dw-righteous-fervor-dervish-sr-90-4-50-crucible-avatar-ravager-crate/99684"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Night's Chill is an effect of an aura that decreases the resistances of enemies by a staggering 30%",
+      "conf": 0.68,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1030,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "payload_json": {
+        "aura": "Night's Chill reduces enemy acid resistance by 30%",
+        "set": "Venomblade set",
+        "skill_mod": "Dreeg's Reproach (acid conversion of Righteous Fervor)"
+      },
+      "source_url": "https://steamcommunity.com/sharedfiles/filedetails/?l=german&id=1781921985"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "100% conversion via Venomblade set pieces",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1029,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "payload_json": {
+        "alteration": "100% conversion of damage types to acid for Righteous Fervor",
+        "item": "Venomblade set"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-edgyswingsetacid-dw-righteous-fervor-dervish-sr-90-4-50-crucible-avatar-ravager-crate/99684"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "fast single target attack that can have (nearly) 100% acid damage [...] fast hits mean more chance of activating the AoE-skill",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1028,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "payload_json": {
+        "delivery": "at-target melee single-target per swing",
+        "footprint": "point (single target); WPS procs add small-radius splash",
+        "verbatim": "fast single target attack [...] Nightblades have area of effect attacks that can be activated off of your main attack"
+      },
+      "source_url": "https://steamcommunity.com/sharedfiles/filedetails/?l=german&id=1781921985"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "a fast single target attack that can have (nearly) 100% acid damage right at the start of the game [...] fast hits mean more chance of activating the AoE-skill",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1027,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "payload_json": {
+        "loop_verb": "default-attack spam with WPS procs",
+        "resource": "energy (spend)",
+        "summary": "Default-attack replacement: Righteous Fervor is primary melee swing. Acid conversion applied to each hit. WPS skills (Nightblade passives) activate off Righteous Fervor swings for AoE spread. Fast attack speed stacks fervor meter."
+      },
+      "source_url": "https://steamcommunity.com/sharedfiles/filedetails/?l=german&id=1781921985"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "COLD Righteous Fervor Deathmarked Dervish",
+      "conf": 0.68,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1032,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "payload_json": {
+        "variants": [
+          "DW acid Dervish (main)",
+          "cold Righteous Fervor Dervish (Deathmarked set)"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/dw-melee-1-1-2-4-cold-righteous-fervor-deathmarked-dervish-sr-75-viable/51045"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|melee_strike|damage|none|tank|generator-spender|solo|melee|high|instant|active|build→spend",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[]",
+    "econ_meter_type": "charge",
+    "econ_status": "native-partial",
+    "economy_model": "generator-spender",
+    "flags": [],
+    "geometry_conf": 0.74,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "gd-righteous-fervor-dervish",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DMHFSI-HNDD-MT-AC-~~",
+      "delivery": "at-target",
+      "elem_raw": "acid",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "charge",
+        "status": "native-partial"
+      },
+      "engine_geometry": {
+        "conf": 0.74,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Righteous Fervor Dervish",
+      "game": "gd",
+      "kit_id": "gd-righteous-fervor-dervish",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DMHFSI-HNDD-MT-AC-~~",
+        "delivery": "at-target",
+        "elem_raw": "acid",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "ramp",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "Default-attack replacer (§A replacer row — this kit is the row's verbatim evidence): 'a fast single target attack that can have (nearly) 100% acid damage right at the start'; 100% conversion via Venomblade set. WPS riders: 'area of effect attacks that can be activated off of your main attack' — 'fast hits mean more chance of activating the AoE-skill'.",
+      "source_skill": "Righteous Fervor",
+      "speed_band": "fast",
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "'An effect of an aura that decreases the resistances of enemies by a staggering 30%' — caster-anchored persistent RR → curse:sap (§2 GD-RR row). Name-collision guarded: NO chill token; fetched behavior is resistance reduction only (§0.3).",
+      "source_skill": "Night's Chill (aura)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "gd-righteous-fervor-dervish",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": null,
+    "grade": "EXACT",
+    "kit_id": "gd-righteous-fervor-dervish",
+    "mapping_json": {
+      "fidelity_notes": "Replacer native + WPS as trigger-grammar riders per §A (WPS chance-per-swing → nearest enum on-hit-threshold; proc payloads fetched only generically as 'area of effect attacks', so no per-proc payload invention). Acid → earth (venom register: Venomblade/Dreeg's Reproach, §1 acid row). NO poison token: acid is damage-type language throughout; no stacking-DoT status behavior fetched. Cold Deathmarked variant noted, unmapped.",
+      "motion_frame": "Fast acid swings; WPS AoE procs ride each hit while the fervor meter ramps",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator",
+        "note": "fervor meter ramps with attack speed (ramp-meter economy)",
+        "resource": "energy"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "ramp accumulator"
+          ],
+          "geometry": [
+            "WPS proc splash radius"
+          ],
+          "traits_affixes": [
+            "100% acid conversion (Venomblade set); -30% acid RR (Night's Chill)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Default-attack replacer (§A replacer row — this kit is the row's verbatim evidence): 'a fast single target attack that can have (nearly) 100% acid damage right at the start'; 100% conversion via Venomblade set. WPS riders: 'area of effect attacks that can be activated off of your main attack' — 'fast hits mean more chance of activating the AoE-skill'.",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Righteous Fervor"
+        },
+        {
+          "ailments": [
+            "curse:sap"
+          ],
+          "delivery_notes": "'An effect of an aura that decreases the resistances of enemies by a staggering 30%' — caster-anchored persistent RR → curse:sap (§2 GD-RR row). Name-collision guarded: NO chill token; fetched behavior is resistance reduction only (§0.3).",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Night's Chill (aura)"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_MONO",
+        "MOMENTUM_CASCADE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "burst-damage",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-hit-threshold",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "acid-slow"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 83,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 84,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "evidence": "Direct melee swing stacking Fervor meter; acid conversion on each hit",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 81,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "charge",
+        "model": "meter",
+        "plain_text": "ramp (meter); The Oathkeeper's stacking default attack — Righteous Fervor ramps a fervor meter",
+        "resource_verbatim": "ramp"
+      },
+      "family": "economy",
+      "id": 85,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "dot",
+        "label_verbatim": "acid"
+      },
+      "family": "element",
+      "id": 86,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Single target per swing; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 82,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. The Oathkeeper's stacking default attack  —  Righteous Fervor ramps a fervor meter as you swing, acid conversions and WPS filling the gaps; ra.",
+      "family": "geo_text",
+      "id": 88,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 87,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 89,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "gt",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 90,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Righteous Fervor Dervish: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-righteous-fervor-dervish",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:earth",
+      "hook_id": "H2",
+      "hook_text": "earth element register",
+      "hook_type": "register",
+      "kit_id": "gd-righteous-fervor-dervish",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.87,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|melee_strike|damage|none|tank|generator-spender|solo|melee|high|instant|active|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|melee_strike|damage|none|tank|generator-spender|solo|melee|high|instant|active|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "generator-spender"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMHFSI-HNDD-MT-AC-~~",
+    "attr_conf": 0.87,
+    "attr_val": "DEX",
+    "avg_conf": 0.87,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.87,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Righteous Fervor"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "ramp-meter",
+    "elem_raw": "acid",
+    "era_year": 2016,
+    "eras": "fg-2019;patch-1.1-1.2",
+    "eras_normalized": "fg-2019;patch-1.1-1.2",
+    "flags": "vdm2-w5-acid-register-split-2026-07-22: acid->earth register (skill.element_primary='earth' on Righteous Fervor acid conversion) disagrees with court='chaos-poison' / blight-fiend's acid->shadow. GD-acid register split — W5 to unify.",
+    "folk_name": "Righteous Fervor Dervish",
+    "game": "gd",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "gd-righteous-fervor-dervish",
+    "lattice_coord": "DMHFSI",
+    "lineage": "",
+    "mech_note": "The Oathkeeper's stacking default attack — Righteous Fervor ramps a fervor meter as you swing, acid conversions and WPS filling the gaps; ra",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×econ:meter",
+    "mobile_key_group": "DMHFSI-HNDD-MT-AC-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "acid",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.87,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.87,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.87,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MELEE-STRIKE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=1].members (working_label=MELEE-STRIKE; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "build is tagged as [1.1.8.1], placing it in the Forgotten Gods expansion era (post-2019) [...] references the Build Compendium X (Forgotten Gods)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Present as build in eras: fg-2019, patch-1.1-1.2",
+      "errata_applied": 0,
+      "id": 612,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-edgyswingsetacid-dw-righteous-fervor-dervish-sr-90-4-50-crucible-avatar-ravager-crate/99684",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Edgyswingsetacid - DW Righteous fervor Dervish",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name: Righteous Fervor Dervish; aliases include RF Dervish, acid RF Dervish, Righteous Fervor Oathkeeper Nightblade",
+      "errata_applied": 0,
+      "id": 610,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-edgyswingsetacid-dw-righteous-fervor-dervish-sr-90-4-50-crucible-avatar-ravager-crate/99684",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "a fast single target attack that can have (nearly) 100% acid damage right at the start of the game [...] fast hits mean more chance of activating the AoE-skill",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill: Righteous Fervor. Melee default attack with acid conversion, fast single-target swing, WPS interactions.",
+      "errata_applied": 0,
+      "id": 611,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://steamcommunity.com/sharedfiles/filedetails/?l=german&id=1781921985",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Default-attack replacer (§A replacer row — this kit is the row's verbatim evidence): 'a fast single target attack that can have (nearly) 100% acid damage right at the start'; 100% conversion via Venomblade set. WPS riders: 'area of effect attacks that can be activated off of your main attack' — 'fast hits mean more chance of activating the AoE-skill'.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Righteous Fervor' delivery_class=melee_arc (band_conf=0.75); lint: anchor leans 'zone' (2 sig) vs assigned 'melee_arc' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2265,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "'An effect of an aura that decreases the resistances of enemies by a staggering 30%' — caster-anchored persistent RR → curse:sap (§2 GD-RR row). Name-collision guarded: NO chill token; fetched behavior is resistance reduction only (§0.3).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Night's Chill (aura)' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1 sig)",
+      "errata_applied": 0,
+      "id": 2266,
+      "kit_id": "gd-righteous-fervor-dervish",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

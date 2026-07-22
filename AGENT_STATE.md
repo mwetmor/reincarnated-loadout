@@ -29,6 +29,71 @@ served bundle. Glance PRD serves Edition III (see glance AGENT_STATE). See the v
 
 ---
 
+## v1.13 — /canon inspection surface: the 267 canonical KIT records "as the battle sim sees them" (2026-07-22)
+
+**Authority:** Matt 2026-07-22 (verbatim-adjacent: inspect the 267 canonical kit records — "the
+skills, stats, etc which we have rendered within our pipeline as the battle sim sees them" — with
+100% of all information per kit + a link to their Maxroll/community build guide). Spec author: gandalf.
+Context: today's aware-fighter ablation gate showed odd per-kit behavior; Matt inspects the flagged
+kits first (d2-bowazon, poe1-kinetic-fusillade, poe1-caustic-arrow, d2-poison-javazon, poe1-frost-blades).
+**Completeness IS the product — nothing summarized away.**
+
+**Source of truth (READ-ONLY, never copied into repo):**
+- SQLite `agentic_orchestration/research/curated/corpus.db` (opened `file:...?mode=ro`). Pool =
+  `SELECT * FROM canon_corpus WHERE corpus_class='record'` → **267 rows** (annex 304 / system 19 OUT).
+- Spine-status sidecar (JSON) `agentic_orchestration/elrond/notes/2026-07-22-tier3-family-membership-sidecar.json`.
+- Schema stamp: latest by `applied_utc` = **v2.0** (2026-07-22T06:35:21Z), of 21 corpus_schema_meta rows.
+
+**What shipped (all NEW files — no existing route touched):**
+- `scripts/export_canon_corpus.py` — READ-ONLY exporter → `public/canon/index.json` (267 summary rows
+  + export-provenance block) + `public/canon/kits/<kit_id>.json` (267 files, the FULL join per kit:
+  spine + engine_key + mapping + delta_t4 + geometry_bands + recognition_hooks + acceptance_asserts +
+  deviations[+joined docket] + citations + verify_ledger + dossier + probe_facts + spine_status). Parses
+  JSON-string cols into objects (keeps raw + `__parse_error` flag on failure). Fails LOUD if DB/sidecar
+  absent. Deterministic (sorted keys, kit_id-sorted). **Total payload 7.37 MB; 267 files + index.**
+- `src/data/canonTypes.ts` — open-row types (`CanonRow = Record<string,JsonValue>`) so EVERY column
+  survives even if the engine schema grows; tone maps (grade/verdict/spine_status), displayGame.
+- `src/hooks/useCanonData.ts` — `useCanonIndex()` (index.json) + `useCanonKit(kitId)` (LAZY per-kit
+  fetch; the 267 files are NOT bundled — confirmed via grep of dist JS). In-memory cache; derived-state
+  return (lint-clean, no in-effect setState).
+- `src/components/Canon/CanonPrimitives.tsx` + `canonHelpers.ts` — Section/KV/Value/RowFields/RowTable/
+  **RowExtras**/ExternalLink/AnchorQuote. Honest-gap discipline (null→em-dash, ''→(empty), []→none,
+  missing table→labeled absence, quarantined/abstained→FLAGGED not hidden). RowFields/RowTable render
+  ALL keys; RowExtras is the completeness tail for the pretty citation/verify/dossier rows.
+- `src/pages/CanonIndex.tsx` — `/canon`: dense sortable/filterable table of 267 (folk_name, game, tier,
+  court, element, range/tempo/amp, grade, spine_status badge, bands, ✓cf, guide-link ↗). Filters:
+  game/tier/court/grade/spine + text search. Header caption + export stamp + cross-note to /kits.
+- `src/pages/CanonKit.tsx` — `/canon/:kitId`: 13 sim-view-first sections (header w/ **Build guide ↗**
+  button [best non-quarantined maxroll.gg, else rank-1/attested] + **glance harvest view ↗** cross-link
+  → `reincarnated-glance.vercel.app/#/corpus/<id>`; sim coordinates w/ 14-slot atlas decode; engine key;
+  skills & geometry; behavior & identity notes; recognition hooks; acceptance asserts; deviations &
+  dockets; community build guides; verify ledger; dossier; probe facts; provenance) + a full-spine
+  escape-hatch section rendering EVERY remaining canon_corpus column.
+- `src/App.tsx` — routes `/canon` + `/canon/:kitId` (lazy per-kit). `src/components/Nav.tsx` — "Canon"
+  tab after Kits. **vercel.json NOT touched** (SPA rewrite already handles deep links — verified).
+
+**spine_status (per the 267 records):** ACTIVE 120 / SHADOWED 11 / UNPLACED 136. (The sidecar's "131
+active" counts ALL 275 memberships incl. annex kits; among the 267 RECORD kits it's 120 — correct.)
+ACTIVE = on Tier-3 spine && not shadowed = the kits the sim actually fights.
+
+**Verify (all GREEN):**
+- `npm run build` clean (tsc -b + vite; 1512 modules). Suite: **91 tests pass** (unchanged). Lint on all
+  6 new canon files: **0 problems** (repo-wide pre-existing lint untouched).
+- 267 kit files land in `dist/canon/kits/`; grep confirms kit data NOT in the JS bundle (lazy static).
+- Preview (`npm run preview`): root + `/canon` + all 5 spot routes + their kit-json all HTTP 200;
+  `/kits` (untouched) still 200.
+- **COMPLETENESS CHECK (the bar Matt set):** for all 5 spot kits, diffed rendered field set vs the DB
+  row/join → **ZERO un-rendered columns.** Every column of every join table is both exported AND has a
+  render path (pretty component + RowExtras tail catches accessed_date/claim_subject/anchor_lint/
+  source_lane/errata_applied/verified_date/created_date/extraction_provenance). Frost Blades correctly
+  shows dual geometry (melee_arc + projectile); maxroll.gg guide auto-selected for both PoE spot kits.
+
+**Deploy:** pushed (Matt's "update the Vercel app" = deploy authorization; auto-deploy on push). See the
+commit + push record appended after this entry.
+
+**No overrides / no TODO(drax):** the DB is the contract; no engine-gap compensation was needed. No
+engine bug found while consuming (all 267 records + joins well-formed).
+
 ## v1.12 — /atlas RETIRES: interactive Build-Horizon re-homes to the Glance app (2026-07-16)
 
 **Authority:** Matt 2026-07-16 (verbatim *"It was supposed to be on the glance app. … I do want it on

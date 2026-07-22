@@ -1,0 +1,784 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1118,
+      "assert_text": "primary_delivery_class == 'summon_delegate'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-storm-totem-shaman",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "BinaQc",
+    "cite_class": "authored",
+    "id": 563,
+    "kit_id": "le-storm-totem-shaman",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Tornado Shaman Guide for Last Epoch Season 4 - Maxroll.gg",
+    "url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "BinaQc",
+      "cite_class": "authored",
+      "id": 563,
+      "kit_id": "le-storm-totem-shaman",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Tornado Shaman Guide for Last Epoch Season 4 - Maxroll.gg",
+      "url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "BinaQc",
+      "cite_class": "authored",
+      "id": 564,
+      "kit_id": "le-storm-totem-shaman",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Totem Shaman Guide for Last Epoch Season 4 - Maxroll.gg",
+      "url": "https://maxroll.gg/last-epoch/build-guides/totem-shaman-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-storm-totem-shaman",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 967,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-storm-totem-shaman",
+      "missing_expression": "Minor drift: tornado-as-mobile-weather flavor rides a stationary placed-emitter token (no wandering behavior attested, so no pursuit delta);",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: tornado-as-mobile-weather flavor rides a stationary placed-emitter token (no wandering behavior attested, so no pursuit delta); autonomous per-zone bolt targeting is texture inside the emitter grammar. Placement loop, multi-zone coverage, and lightning payload are native."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1283,
+      "kit_id": "le-storm-totem-shaman",
+      "payload_json": {
+        "handle": "BinaQc",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Gathering Storm allows you to drastically increase the damage of those storm bolts... Summon Storm Totem can't be manually cast in Spriggan Form, but procs from using Spirit Thorns while in Spriggan Form thanks to Stormcarved Testament.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1282,
+      "kit_id": "le-storm-totem-shaman",
+      "payload_json": {
+        "passive_nodes": [
+          "Charged Storm (Storm Bolt proc from Tornado)",
+          "Gathering Storm (Storm Bolt damage amplifier)"
+        ],
+        "set_identities": [
+          "Stormcarved Testament (Totem Shaman variant: Storm Totem procs from Healing Totem in Spriggan Form)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Items like Mad Alchemist's Ladle, Tempest Maw and Eye of Storms offer great offensive options while Wall of Nothing and Twisted Heart of Uhkeiros are must-haves.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1281,
+      "kit_id": "le-storm-totem-shaman",
+      "payload_json": {
+        "key_uniques": [
+          "Mad Alchemist's Ladle (offensive)",
+          "Tempest Maw (offensive)",
+          "Eye of Storms (offensive)",
+          "Wall of Nothing (defensive)",
+          "Twisted Heart of Uhkeiros (defensive)",
+          "Stormcarved Testament (Storm Totem proc in Spriggan Form)",
+          "Foot of the Mountain (Mana cost reduction)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "long lasting Tornados on the battlefield that rapidly cast Storm Bolts... stand your ground and unleash a storm of Tornados as everything melts around you.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1280,
+      "kit_id": "le-storm-totem-shaman",
+      "payload_json": {
+        "aoe": "multi-point large-area",
+        "geometry": "multi-point: multiple tornadoes placed across encounter area; each tornado covers its own lightning-strike zone; enormous area coverage via Charged Storm",
+        "range_class": "ranged (totem/tornado placement)"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Place down long lasting Tornados on the battlefield that rapidly cast Storm Bolts thanks to Charged Storm for huge Lightning damage.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1279,
+      "kit_id": "le-storm-totem-shaman",
+      "payload_json": {
+        "core_driver": "tornado-to-storm-bolt proc chain; totem placement loop",
+        "description": "Shaman places Tornados which autonomously call Storm Bolts (lightning) via Charged Storm node. Gathering Storm amplifies Storm Bolt damage. Summon Spriggan Form variant uses Healing Totem spam to proc Storm Totem via Stormcarved Testament. Multiple simultaneous totems/tornadoes cover the encounter area."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Tornado Shaman... Totem Shaman... Summon Storm Totem.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1284,
+      "kit_id": "le-storm-totem-shaman",
+      "payload_json": {
+        "variants": [
+          {
+            "name": "Tornado Shaman",
+            "notes": "Tornado placement + Storm Bolt proc via Charged Storm; primary variant"
+          },
+          {
+            "name": "Totem Shaman (Spriggan Form)",
+            "notes": "Healing Totem spam in Spriggan Form procs Storm Totem via Stormcarved Testament; plays like a caster"
+          }
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|totem|damage|none|tank|spend|heavy|dual|med|instant|active|apply→detonate",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.82,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.82,
+    "geometry_rule_fired": "R0b",
+    "geometry_value": "totem",
+    "kit_id": "le-storm-totem-shaman",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "WDMFHI-HMMM-SP-LI-~~",
+      "delivery": "at-target",
+      "elem_raw": "Lightning",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.82,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.82,
+        "rule_fired": "R0b",
+        "value": "totem"
+      },
+      "flags": [],
+      "folk_name": "Storm Totem Shaman",
+      "game": "le",
+      "kit_id": "le-storm-totem-shaman",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "WDMFHI-HMMM-SP-LI-~~",
+        "delivery": "at-target",
+        "elem_raw": "Lightning",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-storm-totem-shaman",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "placement ATTESTED ('Place down long lasting Tornados on the battlefield') -> placed-emitter lane; each tornado rapidly auto-casts Storm Bolts (lightning strikes) in its own zone via Charged Storm; multiple simultaneous tornadoes cover the encounter area",
+      "source_skill": "Tornado",
+      "speed_band": "fast",
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-storm-totem-shaman",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: tornado-as-mobile-weather flavor rides a stationary placed-emitter token (no wandering behavior attested, so no pursuit delta); autonomous per-zone bolt targeting is texture inside the emitter grammar. Placement loop, multi-zone coverage, and lightning payload are native.",
+    "grade": "CLOSE",
+    "kit_id": "le-storm-totem-shaman",
+    "mapping_json": {
+      "fidelity_notes": "B totem lane: placed emitter MAPS (placement language checked and present). Storm Bolt emission kept inside the placement row + grammar (emitter payload), not a second delivery. Spriggan Form Totem-Shaman variant is variant-scoped (W2 ruling 4): Stormcarved Testament makes Summon Storm Totem proc-cast from Spirit Thorns in-form ('can't be manually cast in Spriggan Form') = trigger rider on the in-form loop per B form law, and the form economy would govern that variant - none of it rides the core row; Rage NOT attested for this kit, not mapped. Multi-totem count filed as placed-proxy-count accrual. NO shock/sunder - lightning flavor never implies a status (0-UNIVERSAL; near-miss). Eras: all era verifies honest-U; corpus columns beta;1.0;1.2 retained as-ingested.",
+      "motion_frame": "stand-your-ground placement cycle: seed the battlefield with tornado emitters, hold position while zones melt the screen",
+      "option_c_substrate_flags": null,
+      "resource_economy": null,
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Foot of the Mountain: Mana cost reduction -> gear lane"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Gathering Storm: Storm Bolt damage amplifier -> numeric lane",
+            "Mad Alchemist's Ladle / Tempest Maw / Eye of Storms offensive uniques"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "placement ATTESTED ('Place down long lasting Tornados on the battlefield') -> placed-emitter lane; each tornado rapidly auto-casts Storm Bolts (lightning strikes) in its own zone via Charged Storm; multiple simultaneous tornadoes cover the encounter area",
+          "element_primary": "lightning",
+          "element_secondary": "wind",
+          "geometry_value": "totem",
+          "source_skill": "Tornado"
+        }
+      ],
+      "t4_doors": [
+        "ZONE_CONTROL",
+        "PROXY_FISSION"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock",
+          "slow-tornado"
+        ],
+        "centrality": "rider",
+        "conf": 0.72
+      },
+      "family": "control",
+      "id": 4463,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "layers": [
+          "hp-stack",
+          "armor"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 4464,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "evidence": "Totems placed at target location autonomously fire lightning at nearby enemies; at-target delivery mediated by totem placement and totem-autonomous attack",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 4461,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.8,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Mana spend per totem placed. Totems persist until killed or replaced. Multiple totems active simultaneously up to cap.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 4465,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "damage_mode": "hit",
+        "label_verbatim": "Lightning"
+      },
+      "family": "element",
+      "id": 4466,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "evidence": "Multiple totems placed at different positions simultaneously; each totem covers its own area; multi-point coverage atlas geo=multi-spawn confirmed",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 4462,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Shaman plants lightning totems at targeted positions. Active totems channel lightning at nearby enemies and call tornadoes. Multiple simultaneous totems provide multi-point area coverage while the Shaman repositions freely.",
+      "family": "geo_text",
+      "id": 4468,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 4467,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=kb",
+      "family": "rank1_upgrade",
+      "id": 4469,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 4470,
+      "kit_id": "le-storm-totem-shaman",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Storm Totem Shaman: totem summon_delegate identity",
+      "hook_type": "geometry",
+      "kit_id": "le-storm-totem-shaman",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "le-storm-totem-shaman",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|totem|damage|none|tank|spend|heavy|dual|med|instant|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|totem|damage|none|tank|spend|heavy|dual|med|instant|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "totem"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "heavy"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "WDMFHI-HMMM-SP-LI-~~",
+    "attr_conf": 0.82,
+    "attr_val": "WIS",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Storm Totem",
+      "Tornado"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "totem-cycle",
+    "elem_raw": "lightning",
+    "era_year": 2024,
+    "eras": "beta-0.8-0.9;1.0-launch;1.2-woven",
+    "eras_normalized": "beta-0.8-0.9;1.0-launch;1.2-woven",
+    "flags": "",
+    "folk_name": "Storm Totem Shaman",
+    "game": "le",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-19 GX-09",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "le-storm-totem-shaman",
+    "lattice_coord": "WDMFHI",
+    "lineage": "",
+    "mech_note": "[VDM-1 basin-2 2026-07-18 ingest-11] FORM-SPECIFIC RESOURCE NOTE: Spriggan Form variant replaces Mana with Rage ('Mana is replaced by Rage while Transformed') — form-specific override, NOT a contradiction of the base Mana resource. Value LEFT as-is. [original mech_note follows] prov=kb. mech_note ref: 'Planted totems channel the storm FOR you — lightning pylons and spinning tornadoes doing the casting while the shaman repositions.' LI suffix = Lightning. Heavy proxy: the totems are fully autonomous and generate all meaningful damage — Shaman is a placement/movement unit. Shield-split D1: Primalist uses HP-STACK, not ward or block.",
+    "mint": 0,
+    "mob_raw": "high-while-totems-work",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: rotational/orbital substrate addendum — build pending",
+    "mobile_cell_id": "HEAVY|MULTI|INST×GX-19",
+    "mobile_key_group": "WDMFHI-HMMM-SP-LI-~~",
+    "mobile_mechanics_status": "designed-addendum",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "heavy",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TOTEM-SENTRY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: beta-0.8-0.9",
+      "errata_applied": 0,
+      "id": 796,
+      "kit_id": "le-storm-totem-shaman",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 797,
+      "kit_id": "le-storm-totem-shaman",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.2-woven",
+      "errata_applied": 0,
+      "id": 798,
+      "kit_id": "le-storm-totem-shaman",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Tornado Shaman... Place down long lasting Tornados on the battlefield that rapidly cast Storm Bolts thanks to Charged Storm for huge Lightning damage.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Storm Totem Shaman LE' / 'Tornado Shaman' / 'lightning totem Shaman' are real community usage",
+      "errata_applied": 0,
+      "id": 794,
+      "kit_id": "le-storm-totem-shaman",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Place down long lasting Tornados on the battlefield that rapidly cast Storm Bolts thanks to Charged Storm for huge Lightning damage.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Storm Totem, Tornado; multi-point area coverage; lightning damage; resource=Mana; totems placed at target positions channel autonomously",
+      "errata_applied": 0,
+      "id": 795,
+      "kit_id": "le-storm-totem-shaman",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/tornado-shaman-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "placement ATTESTED ('Place down long lasting Tornados on the battlefield') -> placed-emitter lane; each tornado rapidly auto-casts Storm Bolts (lightning strikes) in its own zone via Charged Storm; multiple simultaneous tornadoes cover the encounter area",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Tornado' delivery_class=summon_delegate (band_conf=0.75); lint: anchor leans 'zone' (4 sig) vs assigned 'summon_delegate' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2346,
+      "kit_id": "le-storm-totem-shaman",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

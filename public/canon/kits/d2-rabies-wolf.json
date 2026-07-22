@@ -1,0 +1,828 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 841,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-rabies-wolf",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Deleted User 632",
+    "cite_class": "communal",
+    "id": 666,
+    "kit_id": "d2-rabies-wolf",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "MLD Rabies Druid",
+    "url": "https://diablo2.io/forums/mld-rabies-druid-t1063773.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Deleted User 632",
+      "cite_class": "communal",
+      "id": 666,
+      "kit_id": "d2-rabies-wolf",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "MLD Rabies Druid",
+      "url": "https://diablo2.io/forums/mld-rabies-druid-t1063773.html"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 667,
+      "kit_id": "d2-rabies-wolf",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Diablo 2 Guide: Druid Rabies Wolf v1.10",
+      "url": "https://www.purediablo.com/strategy/diablo-2-guide-druid-rabies-wolf-v1-10"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-rabies-wolf",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 743,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-rabies-wolf",
+      "missing_expression": "Contagious spread mechanic (poison hops via target contact) has no engine geometry analogue — melee_strike + delivery note is 'that build, worse.' The defining loop feel (bite one, poison cascades through touching pack) cannot map without a chain-hop spread geometry or mechanic.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Contagious spread mechanic (poison hops via target contact) has no engine geometry analogue — melee_strike + delivery note is 'that build, worse.' The defining loop feel (bite one, poison cascades through touching pack) cannot map without a chain-hop spread geometry or mechanic. Docket candidate filed for contact-propagation-DoT. GX-02 form-swap docket also relevant."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1571,
+      "kit_id": "d2-rabies-wolf",
+      "payload_json": {
+        "handle": "Deleted User 632",
+        "site": "diablo2.io"
+      },
+      "source_url": "https://diablo2.io/forums/mld-rabies-druid-t1063773.html"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1570,
+      "kit_id": "d2-rabies-wolf",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Trang Oul's Claws offer 25% Poison skill damage to increase your Rabies",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1569,
+      "kit_id": "d2-rabies-wolf",
+      "payload_json": {
+        "items": [
+          {
+            "effect": "+skills, +resists, +strength, attack rating, 30% FHR — can socket Shael",
+            "name": "Jalal's Mane",
+            "type": "unique helm"
+          },
+          {
+            "effect": "25% Poison skill damage bonus to Rabies",
+            "name": "Trang Oul's Claws",
+            "type": "set gloves"
+          },
+          {
+            "effect": "level 21 Poison Creeper charges — provides 21 synergy points to Rabies (mutually exclusive with invested Poison Creeper points)",
+            "name": "Carrion Wind",
+            "type": "unique ring"
+          },
+          {
+            "effect": "deadly strike, open wounds, crushing blow; 30% FRW",
+            "name": "Gore Riders",
+            "type": "unique boots"
+          }
+        ]
+      },
+      "source_url": "https://www.purediablo.com/strategy/diablo-2-guide-druid-rabies-wolf-v1-10"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "In team versus team contest infected opponents can infect team members if they touch",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1568,
+      "kit_id": "d2-rabies-wolf",
+      "payload_json": {
+        "delivery": "at-target",
+        "footprint": "chain-hop",
+        "notes": "Melee bite on single target; poison contagion jumps to adjacent enemies on contact. Spreading DoT chain mechanic — unique among D2 skills."
+      },
+      "source_url": "https://diablo2.io/forums/mld-rabies-druid-t1063773.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Rabies does more damage to a stationary target then one that is moving",
+      "conf": 0.83,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1567,
+      "kit_id": "d2-rabies-wolf",
+      "payload_json": {
+        "description": "Shapeshift into Werewolf form; bite primary target with Rabies to apply contagious poison DoT; poison spreads via contact to adjacent enemies who touch infected targets, chaining through packs. Stationary targets take maximum DoT damage.",
+        "source_note": "diablo2.io MLD Rabies Druid guide"
+      },
+      "source_url": "https://diablo2.io/forums/mld-rabies-druid-t1063773.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fury/Rabies Wolves work well because they deal in two forms of damage (physical and poison)",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1572,
+      "kit_id": "d2-rabies-wolf",
+      "payload_json": {
+        "variants": [
+          "Fury/Rabies hybrid (Werewolf melee with both Fury and Rabies for physical + poison dual damage)",
+          "Pure Rabies (single target bite, chain-propagation focus)"
+        ]
+      },
+      "source_url": "https://diablo2.io/forums/mld-rabies-druid-t1063773.html"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|at-target|flat|chain|damage|none|mitigate|unknown|light|melee|low|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "unknown",
+    "flags": [],
+    "geometry_conf": 0.59,
+    "geometry_rule_fired": "R1",
+    "geometry_value": "chain",
+    "kit_id": "d2-rabies-wolf",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "WMLFLI-MCDT-SP-PO-~~",
+      "delivery": "at-target",
+      "elem_raw": "poison",
+      "footprint": "chain-hop"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "UNKNOWN"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.59,
+        "rule_fired": "R1",
+        "value": "chain"
+      },
+      "flags": [],
+      "folk_name": "Rabies Wolf",
+      "game": "d2",
+      "kit_id": "d2-rabies-wolf",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "WMLFLI-MCDT-SP-PO-~~",
+        "delivery": "at-target",
+        "elem_raw": "poison",
+        "footprint": "chain-hop"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "form lock",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-rabies-wolf",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "Form-transformation into Werewolf; permanent form-lock for this kit. Economy-agnostic per §CROSS form law; in-form stats rewritten. Dossier flags: mana cost 15/40s base; flags.econ-recrawl attests 'spend/steady-mana + SS-overlay.'",
+      "source_skill": "Werewolf",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-rabies-wolf",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 1,
+      "source_anchor": "Melee bite on single target; contagious poison spreads to adjacent enemies on contact. Dossier: 'infected opponents can infect team members if they touch.' Chain-hop spread delivery — novel shape; mapped to melee_strike with spread in delivery_notes. Mana 10 per bite attested (econ-recrawl flags).",
+      "source_skill": "Rabies",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-rabies-wolf",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Contagious spread mechanic (poison hops via target contact) has no engine geometry analogue — melee_strike + delivery note is 'that build, worse.' The defining loop feel (bite one, poison cascades through touching pack) cannot map without a chain-hop spread geometry or mechanic. Docket candidate filed for contact-propagation-DoT. GX-02 form-swap docket also relevant.",
+    "grade": "APPROX",
+    "kit_id": "d2-rabies-wolf",
+    "mapping_json": {
+      "fidelity_notes": "Form-lock: Werewolf is dominant/permanent form — §CROSS form law maps in-form loop. Economy-agnostic ruling: d2 wereform swaps no resource; persistent_condition_shape=activation-toggle captures form entry. Earth element: druid/nature/venom-themed — earth not shadow per main law. Poison ailment attested: verify_ledger CONFIRMED 'contagious poison spreading.' Contact-spread chain-hop ('infected opponents can infect team members if they touch') is a novel delivery shape not in the 26-enum; docket candidate filed. GX-02 flag in corpus: form-swap pending GX-02 per flags column — noted for review-book. Econ-recrawl flags (wave-c-corpus-align) provide 'spend/steady-mana' verified attestation.",
+      "motion_frame": "Shapeshift into Werewolf (permanent form); bite primary target with Rabies; poison spreads contact-to-contact through pack; stationary targets take maximum DoT.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "spend",
+        "cost_slope": "steady-mana",
+        "persistent_condition_shape": "activation-toggle"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Werewolf form toggle economy (SS-overlay)"
+          ],
+          "geometry": [
+            "contact-spread chain-hop delivery (novel — docket candidate)"
+          ],
+          "traits_affixes": [
+            "Rabies synergy scaffold; Carrion Wind ring provides synergy points (item_alterations)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Form-transformation into Werewolf; permanent form-lock for this kit. Economy-agnostic per §CROSS form law; in-form stats rewritten. Dossier flags: mana cost 15/40s base; flags.econ-recrawl attests 'spend/steady-mana + SS-overlay.'",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Werewolf"
+        },
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "Melee bite on single target; contagious poison spreads to adjacent enemies on contact. Dossier: 'infected opponents can infect team members if they touch.' Chain-hop spread delivery — novel shape; mapped to melee_strike with spread in delivery_notes. Mana 10 per bite attested (econ-recrawl flags).",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Rabies"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION_cascade",
+        "PERSISTENCE_ENGINE_saturation",
+        "PHASE_MOMENTUM"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "poison"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1003,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 1004,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.63,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.63,
+        "evidence": "Rabies bite on targeted enemy; contagion spreads to adjacent targets on contact",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1001,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "other",
+        "plain_text": "form lock (other); Werewolf bite spreads a contagious poison that jumps target-to-target; DoT plagu",
+        "resource_verbatim": "form lock"
+      },
+      "family": "economy",
+      "id": 1005,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "dot",
+        "label_verbatim": "poison"
+      },
+      "family": "element",
+      "id": 1006,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.59,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.59,
+        "evidence": "Bite chains poison spread to adjacent enemies; geo=chain in atlas",
+        "value": "chain-hop"
+      },
+      "family": "footprint",
+      "id": 1002,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with chain-hop footprint. Werewolf bite spreads a contagious poison that jumps target-to-target; DoT plague delivered by a shapeshifted melee body.",
+      "family": "geo_text",
+      "id": 1008,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 1007,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1009,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1010,
+      "kit_id": "d2-rabies-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Rabies Wolf: self buff aura identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-rabies-wolf",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:earth",
+      "hook_id": "H2",
+      "hook_text": "earth element register",
+      "hook_type": "register",
+      "kit_id": "d2-rabies-wolf",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.7,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|chain|damage|none|mitigate|unknown|light|melee|low|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|chain|damage|none|mitigate|unknown|light|melee|low|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "chain"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "unknown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WMLFLI-MCDT-SP-PO-~~",
+    "attr_conf": 0.7,
+    "attr_val": "WIS",
+    "avg_conf": 0.7,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.7,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Werewolf",
+      "Rabies"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "form-locked",
+    "elem_raw": "poison",
+    "era_year": 2000,
+    "eras": "lod;d2r",
+    "eras_normalized": "lod;d2r",
+    "flags": "econ-recrawl-application-2026-07-17:f4110f20:spend/steady-mana + SS-overlay. Rabies 10 mana/bite (poison DoT 4-11.6s by level, spreads target-to-target); Werewolf form 15 mana / 40s base. Sources: Arreat Summit druid-shapeshifting.shtml + Maxroll d2/guides/rabies-druid-guide,ss-overlay-werewolf-form-buff-2026-07-17:GX-02-docket-evidence; vdm2-w5-poison-register-split-2026-07-22: poison->earth register (Rabies element_primary='earth') disagrees with court='chaos-poison' / poison-nova-necro's poison->shadow. D2-poison register split — W5 to unify.",
+    "folk_name": "Rabies Wolf",
+    "game": "d2",
+    "geo_raw": "chain",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-02",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-rabies-wolf",
+    "lattice_coord": "WMLFLI",
+    "lineage": "",
+    "mech_note": "Werewolf bite spreads a contagious poison that jumps target-to-target; DoT plague delivered by a shapeshifted melee body.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|CHAIN|INST×GAP-D2-02",
+    "mobile_key_group": "WMLFLI-MCDT-SP-PO-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "poison",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.7,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.7,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.7,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "SHAPESHIFT",
+    "on_spine": true,
+    "shadowed_by": "PROPAGATED",
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=3].members (working_label=SHAPESHIFT; status=proposed)",
+    "spine_status": "SHADOWED",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Diablo 2 Guide: Druid Rabies Wolf v1.10",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: lod",
+      "errata_applied": 0,
+      "id": 1004,
+      "kit_id": "d2-rabies-wolf",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/diablo-2-guide-druid-rabies-wolf-v1-10",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Patriarch Isenhart, Rabies Druid (D2R)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: d2r",
+      "errata_applied": 0,
+      "id": 1005,
+      "kit_id": "d2-rabies-wolf",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/patriarch-isenhart-rabies-druid-d2r.196313/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Complete Rabies Druid Build Guide",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Rabies Wolf' or 'Rabies Werewolf' or 'Rabies Druid' is real community usage",
+      "errata_applied": 0,
+      "id": 1002,
+      "kit_id": "d2-rabies-wolf",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/complete-rabies-druid-build-guide.142197/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "In team versus team contest infected opponents can infect team members if they touch",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Werewolf, Rabies; Druid class; contagious poison spreading to adjacent enemies",
+      "errata_applied": 0,
+      "id": 1003,
+      "kit_id": "d2-rabies-wolf",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/mld-rabies-druid-t1063773.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Form-transformation into Werewolf; permanent form-lock for this kit. Economy-agnostic per §CROSS form law; in-form stats rewritten. Dossier flags: mana cost 15/40s base; flags.econ-recrawl attests 'spend/steady-mana + SS-overlay.'",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Werewolf' delivery_class=aura (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'aura'",
+      "errata_applied": 0,
+      "id": 2168,
+      "kit_id": "d2-rabies-wolf",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Melee bite on single target; contagious poison spreads to adjacent enemies on contact. Dossier: 'infected opponents can infect team members if they touch.' Chain-hop spread delivery — novel shape; mapped to melee_strike with spread in delivery_notes. Mana 10 per bite attested (econ-recrawl flags).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Rabies' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2 sig)",
+      "errata_applied": 0,
+      "id": 2169,
+      "kit_id": "d2-rabies-wolf",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

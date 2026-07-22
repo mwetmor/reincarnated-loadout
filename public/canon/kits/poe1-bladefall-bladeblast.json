@@ -1,0 +1,853 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 4,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 555,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-bladefall-bladeblast",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 556,
+      "assert_text": "expresses: The signature is a TWO-STAGE coupling: Bladefall PLANTS a lingering-blade field;",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "poe1-bladefall-bladeblast",
+      "last_result": "red",
+      "routed_docket_id": 92
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Tripolarbear",
+    "cite_class": "authored",
+    "id": 35,
+    "kit_id": "poe1-bladefall-bladeblast",
+    "quarantined": 0,
+    "rank_class": "recovered",
+    "site": "maxroll.gg",
+    "title": "Poison Concoction/Bladefall Blade Blast Occultist - PoE League Starter Guide",
+    "url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": "http://web.archive.org/web/20200921172755/https://www.pathofexile.com/forum/view-thread/2919618",
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 36,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com/forum",
+      "title": "[3.11] Bladefall + Blade Blast Ascendant",
+      "url": "https://www.pathofexile.com/forum/view-thread/2919618"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Tripolarbear",
+      "cite_class": "authored",
+      "id": 35,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "maxroll.gg",
+      "title": "Poison Concoction/Bladefall Blade Blast Occultist - PoE League Starter Guide",
+      "url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "TraviiGrinds",
+      "cite_class": "authored",
+      "id": 37,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "pathofexile.com/forum",
+      "title": "[3.13] TraviiGrinds's Bladefall/Blade Blast Elementalist | Leaguestart | SSF Viable",
+      "url": "https://www.pathofexile.com/forum/view-thread/3009876"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "TbXie",
+      "cite_class": "authored",
+      "id": 38,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poe-vault.com",
+      "title": "TbXie's Bladefall Blade Blast Chieftain Build Guide (PoE Crucible 3.21)",
+      "url": "https://www.poe-vault.com/guides/blade-blast-chieftain-build-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-bladefall-bladeblast",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 518,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-poe1",
+        "docket_id": 92,
+        "evidence_kits": [
+          "poe1-bladefall-bladeblast"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:poe1-bladefall-bladeblast",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "poe1-record"
+        },
+        "source_deviation_id": 518,
+        "source_kit_id": "poe1-bladefall-bladeblast",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 PoE1 structuring of poe1-bladefall-bladeblast.",
+        "status": "open"
+      },
+      "docket_id": 92,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-bladefall-bladeblast",
+      "missing_expression": "The signature is a TWO-STAGE coupling: Bladefall PLANTS a lingering-blade field;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "The signature is a TWO-STAGE coupling: Bladefall PLANTS a lingering-blade field; Blade Blast CONSUMES that field as detonation fuel (blade count = damage budget, up to 30 detonations/s). No engine lane represents 'a placed-entity field that a second skill spends as a consumable ammunition queue' — engine placed entities are autonomous, not spend-by-detonation. Mapped as multi_projectile seed feeding a ring explosion-cascade (GEOMETRY_PROPAGATION_cascade), which lands the plant-then-explode combat feel but loses the shared field-resource substrate that COUPLES the two buttons. A player of the original would miss that Bladefall's job is to stock the ammo Blade Blast burns. Docket candidate filed (field-resource-consume, shared with animate-weapon)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Author: Tripolarbear (reviewed by Raxxanterax)",
+      "conf": 0.97,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 77,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "payload_json": {
+        "author_handle": "Tripolarbear",
+        "reviewer": "Raxxanterax",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Profane Bloom enables explosion chains on cursed enemy deaths — critical for the build's mapping identity.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 76,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "payload_json": {
+        "ascendancy": "Occultist",
+        "nodes": [
+          {
+            "alteration": "Explosion chains on cursed-enemy deaths — critical for mapping identity.",
+            "name": "Profane Bloom"
+          },
+          {
+            "alteration": "Reduces chaos resistance of nearby enemies.",
+            "name": "Void Beacon"
+          },
+          {
+            "alteration": "Amplifies wither-based damage.",
+            "name": "Withering Presence"
+          },
+          {
+            "alteration": "Grants additional curse slot.",
+            "name": "Malediction"
+          }
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The Gull (helmet) — Spawns Lesser Shrines on kill, combining shrine effects with Atlas passives for speed/survivability buffs.",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 75,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "payload_json": {
+        "items": [
+          {
+            "alteration": "Spawns Lesser Shrines on kill, granting shrine buffs that boost speed and survivability during clear.",
+            "name": "The Gull",
+            "slot": "helmet"
+          }
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Concentrated Effect Support causes your lingering blades to fall within a concentrated area, allowing more overlapping explosions from Blade Blast.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 74,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "payload_json": {
+        "geometry": "Bladefall: stationary lingering blades positioned around targeted enemies at cast location (Spell Cascade extends front/behind). Blade Blast: explosion radius around each blade — overlapping explosions rewarded by AoE stacking via Concentrated Effect or Increased AoE. Explosion chains propagate across the blade field; radius scales with Increased Area of Effect Support."
+      },
+      "source_url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Unleash a torrent of blades with Bladefall to leave Lingering Blades surrounding your foes. Before they react, use Blade Blast to cause your Lingering Blades to explode dealing massive damage.",
+      "conf": 0.91,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 73,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "payload_json": {
+        "loop": "Two-button cast sequence: (1) cast Bladefall to rain blades at target location, leaving lingering blades on the ground around enemies; (2) cast Blade Blast to detonate all lingering blades in a chain of explosions — each detonation can mark further blades, emptying the queue at up to 30 detonations per second. Unleash Support maximises blades per cast; Spell Cascade drops additional volleys in front/behind target. Profane Bloom (Occultist ascendancy) chains explosions on cursed-enemy death for mapping."
+      },
+      "source_url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The guide distinguishes between the Poisonous Concoction leveling phase and the mid-game BF/BB swap at character level 88.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 78,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "payload_json": {
+        "variants": [
+          {
+            "description": "Level with Poisonous Concoction, swapping to BF/BB at character level 88.",
+            "name": "Poisonous Concoction leveling phase"
+          },
+          {
+            "description": "Separate Assassin variant (poe-vault.com) scaling physical poison damage rather than Occultist chaos.",
+            "name": "BF/BB Poison Assassin"
+          }
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "walk|at-target|spiky|totem|damage|none|mitigate|free|solo|ranged|med|instant|triggered|apply→detonate",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.68,
+    "geometry_rule_fired": "R0b",
+    "geometry_value": "totem",
+    "kit_id": "poe1-bladefall-bladeblast",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRMSSI-MLDD-AM-PH-~~",
+      "delivery": "at-target",
+      "elem_raw": "physical",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.68,
+        "rule_fired": "R0b",
+        "value": "totem"
+      },
+      "flags": [],
+      "folk_name": "Bladefall + Blade Blast",
+      "game": "poe1",
+      "kit_id": "poe1-bladefall-bladeblast",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRMSSI-MLDD-AM-PH-~~",
+        "delivery": "at-target",
+        "elem_raw": "physical",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "field resources",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "volley of blades rains at the target location and LEAVES lingering blade-entities stuck in the ground; multi_projectile placement whose real function is seeding a persistent blade-field (the detonation fuel), not the impact damage. physical origin -> no element family (crosswalk physical rule); flavor-neutral",
+      "source_skill": "Bladefall",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "detonates every lingering blade in an explosion-per-blade; each detonation marks further blades for a propagating chain of explosions across the field (up to 30 detonations/s). ring = burst-around-each-blade; the dominant every-3s damage is the field-detonation cascade. Profane Bloom (Occultist) adds cursed-death explosion-chaining atop it",
+      "source_skill": "Blade Blast",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-bladefall-bladeblast",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The signature is a TWO-STAGE coupling: Bladefall PLANTS a lingering-blade field; Blade Blast CONSUMES that field as detonation fuel (blade count = damage budget, up to 30 detonations/s). No engine lane represents 'a placed-entity field that a second skill spends as a consumable ammunition queue' — engine placed entities are autonomous, not spend-by-detonation. Mapped as multi_projectile seed feeding a ring explosion-cascade (GEOMETRY_PROPAGATION_cascade), which lands the plant-then-explode combat feel but loses the shared field-resource substrate that COUPLES the two buttons. A player of the original would miss that Bladefall's job is to stock the ammo Blade Blast burns. Docket candidate filed (field-resource-consume, shared with animate-weapon).",
+    "grade": "APPROX",
+    "kit_id": "poe1-bladefall-bladeblast",
+    "mapping_json": {
+      "fidelity_notes": "Physical->no family (crosswalk §1 physical rule); the blades deal physical hit-damage, element-neutral, identity via geometry+propagation. The IDENTITY MISS: the lingering-blade field is a FIELD RESOURCE you plant (Bladefall) then consume (Blade Blast) — econ_raw=field-resource-consume. Engine placed entities (placed_lane/totem) are autonomous colliders, not a detonation-queue whose every member is spent by a second skill. Mapped as multi_projectile-seed -> ring-detonation-cascade (GEOMETRY_PROPAGATION_cascade), which captures the plant-then-explode feel but LOSES 'the blade field is a spendable ammunition pool.' A BF/BB player would notice their two skills are no longer coupled by a shared consumable field-substrate — the blade-count-as-detonation-budget is what made the combo sing. Field-resource-consume docketed (shared family with animate-weapon's ground-item-as-ammo, batch-01). The 30-detonations/s empty-the-queue cadence is a magnitude the ring+propagation approximates. Profane Bloom cursed-death chaining routes as the GEOMETRY_PROPAGATION_cascade on-kill reading.",
+      "motion_frame": "two-button plant-and-reap caster: rain a blade-field with Bladefall, detonate the whole field with Blade Blast; the field IS a consumable spatial resource you seed then reap",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "multi_projectile blade-seed (Unleash = max blades/cast; Spell Cascade = extra volleys front/behind)",
+            "ring detonation radius (Conc Effect / Increased AoE overlaps the explosions)",
+            "explosion-chain propagation across the field"
+          ],
+          "traits_affixes": [
+            "spell-damage / physical-scaling",
+            "AoE-radius",
+            "curse-on-hit (Profane-Bloom-analog death-chain)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "volley of blades rains at the target location and LEAVES lingering blade-entities stuck in the ground; multi_projectile placement whose real function is seeding a persistent blade-field (the detonation fuel), not the impact damage. physical origin -> no element family (crosswalk physical rule); flavor-neutral",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Bladefall"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "detonates every lingering blade in an explosion-per-blade; each detonation marks further blades for a propagating chain of explosions across the field (up to 30 detonations/s). ring = burst-around-each-blade; the dominant every-3s damage is the field-detonation cascade. Profane Bloom (Occultist) adds cursed-death explosion-chaining atop it",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "ring",
+          "source_skill": "Blade Blast"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION_cascade",
+        "GEOMETRY_COLLAPSE"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1613,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 1614,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Bladefall volley of blades rains at target location; Blade Blast detonates every lingering blade",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1611,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "field resources (proc); Bladefall volleys leave lingering blades stuck in the ground; Blade Blast DETONA",
+        "resource_verbatim": "field resources"
+      },
+      "family": "economy",
+      "id": 1615,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 1616,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.68,
+        "evidence": "Bladefall + Blade Blast cover large zone; geo=large-AOE in atlas",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 1612,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with large-zone footprint. Bladefall volleys leave lingering blades stuck in the ground; Blade Blast DETONATES every lingering blade in a chain of explosions  —  plant t.",
+      "family": "geo_text",
+      "id": 1618,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 1617,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1619,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1620,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Bladefall + Blade Blast: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-bladefall-bladeblast",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.8,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|spiky|totem|damage|none|mitigate|free|solo|ranged|med|instant|triggered|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|spiky|totem|damage|none|mitigate|free|solo|ranged|med|instant|triggered|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "totem"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMSSI-MLDD-AM-PH-~~",
+    "attr_conf": 0.8,
+    "attr_val": "INT",
+    "avg_conf": 0.8,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.8,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Bladefall",
+      "Blade Blast"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "field-resource-consume",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "3.7-3.13",
+    "eras_normalized": "3.7-3.13",
+    "flags": "",
+    "folk_name": "Bladefall + Blade Blast",
+    "game": "poe1",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-02",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-bladefall-bladeblast",
+    "lattice_coord": "IRMSSI",
+    "lineage": "",
+    "mech_note": "Bladefall volley lands blades into the ground as persistent objects (stagger count); Blade Blast detonates all accumulated lingering blades simultaneously for physical/chaos AoE damage scaled by number of blades present. The two-button sequence is PLANT → DETONATE: cast Bladefall once or twice to stack ground-blades on the target area, then Blade Blast to consume all blades in a chained explosion. Blade Blast damage scales with blade count — more pre-placed blades means larger detonation. Mine delivery (self-detonating mines) automates the Bladefall plant phase, making the player only press Detonate. Popular as a CI (Chaos Inoculation) occultist build where chaos damage bypass is irrelevant. Introduced in 3.9 (Metamorph) and has held varying viability across leagues since — strong at league start for solo self-found.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|LARGE|INST×GAP-P1-02",
+    "mobile_key_group": "IRMSSI-MLDD-AM-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.8,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.8,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.8,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TRAP-MINE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.11] Bladefall + Blade Blast Ascendant; [3.13] TraviiGrinds's Bladefall/Blade Blast Elementalist | Leaguestart | SSF Viable",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 47,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2919618",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Unleash a torrent of blades with Bladefall to leave Lingering Blades surrounding your foes. Before they react, use Blade Blast to cause your Lingering Blades to explode dealing massive damage.",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Bladefall + Blade Blast' and alias 'BF/BB' are real community usage",
+      "errata_applied": 0,
+      "id": 45,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Blade Blast detonates any lingering blades that are on the ground. A lingering blade is marked for detonation when it is hit by a Blade Blast explosion.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Bladefall and Blade Blast: Bladefall leaves lingering blades stuck in the ground; Blade Blast detonates every lingering blade in a chain of explosions",
+      "errata_applied": 0,
+      "id": 46,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe/build-guides/bladefall-bladeblast-occultist-league-starter-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "volley of blades rains at the target location and LEAVES lingering blade-entities stuck in the ground; multi_projectile placement whose real function is seeding a persistent blade-field (the detonation fuel), not the impact damage. physical origin -> no element family (crosswalk physical rule); flavor-neutral",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bladefall' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1) but 'zone' more strongly (3) — mixed signal",
+      "errata_applied": 0,
+      "id": 2384,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "detonates every lingering blade in an explosion-per-blade; each detonation marks further blades for a propagating chain of explosions across the field (up to 30 detonations/s). ring = burst-around-each-blade; the dominant every-3s damage is the field-detonation cascade. Profane Bloom (Occultist) adds cursed-death explosion-chaining atop it",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Blade Blast' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (5 sig)",
+      "errata_applied": 0,
+      "id": 2385,
+      "kit_id": "poe1-bladefall-bladeblast",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

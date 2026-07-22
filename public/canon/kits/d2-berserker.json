@@ -1,0 +1,793 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 797,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-berserker",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "MacroBioBoi; DarkHumility (orig)",
+    "cite_class": "authored",
+    "id": 589,
+    "kit_id": "d2-berserker",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Berserk Barbarian Endgame Build Guide for Diablo II: Resurrected Season 14",
+    "url": "https://maxroll.gg/d2/guides/berserk-barbarian"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "MacroBioBoi; DarkHumility (orig)",
+      "cite_class": "authored",
+      "id": 589,
+      "kit_id": "d2-berserker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Berserk Barbarian Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "url": "https://maxroll.gg/d2/guides/berserk-barbarian"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Nate",
+      "cite_class": "communal",
+      "id": 590,
+      "kit_id": "d2-berserker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Best berserk barb MF off hand?",
+      "url": "https://diablo2.io/forums/best-berserk-barb-mf-off-hand-t1037414.html"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-berserker",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 711,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-berserker",
+      "missing_expression": "Player would miss: magic damage conversion (engine has no magic element family;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Player would miss: magic damage conversion (engine has no magic element family; approximated as element-neutral physical with DEFENSIVE_TRADEOFF trade); Hork loot-economy identity loop not capturable in engine scope."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Updated and Maintained by MacroBioBoi",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1337,
+      "kit_id": "d2-berserker",
+      "payload_json": {
+        "handle": "MacroBioBoi",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/berserk-barbarian"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Pit Zerker pays homage to one of his best known specialties",
+      "conf": 0.74,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1336,
+      "kit_id": "d2-berserker",
+      "payload_json": {
+        "notes": "Find Item (Hork) is key mechanic for loot farming; Pit Zerker identity tied to Pit farming loop",
+        "runewords": [
+          "Grief (primary weapon)",
+          "Enigma (armor)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/berserk-barbarian"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "avoiding cold damage to prevent corpse shattering needed for the Find Item mechanic",
+      "conf": 0.74,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1335,
+      "kit_id": "d2-berserker",
+      "payload_json": {
+        "key_items": [
+          "Grief Phase Blade (primary damage weapon)",
+          "Enigma (mobility)",
+          "Immortal King's Will (set piece)"
+        ],
+        "notes": "Avoiding cold damage items important to preserve corpses for Find Item/Hork"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/berserk-barbarian"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "You have 0 Defense while using this Skill",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1334,
+      "kit_id": "d2-berserker",
+      "payload_json": {
+        "delivery": "at-target single swing",
+        "footprint": "point (single enemy)",
+        "notes": "Single-target magic damage melee; no AoE; Howl has warcry AoE but is utility not damage",
+        "range_type": "melee"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/berserk-barbarian"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Berserk violently swings your primary weapon at the targeted enemy, dealing Magic Damage. You have 0 Defense while using this Skill.",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1333,
+      "kit_id": "d2-berserker",
+      "payload_json": {
+        "summary": "Berserk converts all physical weapon damage to magic damage on each swing; defense drops to zero during use. Player targets single enemy, swings Berserk for magic damage to pierce physical immunities; Howl used as panic tool to scatter mobs."
+      },
+      "source_url": "https://maxroll.gg/d2/guides/berserk-barbarian"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Pit Zerker pays homage to one of his best known specialties",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1338,
+      "kit_id": "d2-berserker",
+      "payload_json": {
+        "variants": [
+          "Pit Zerker (Pitzerker — Pit farming MF variant)",
+          "Zerk Barb (general label)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/berserk-barbarian"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|at-target|spiky|melee_strike|damage|none|glass|spend|solo|melee|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "glass",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.68,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "d2-berserker",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMMSSI-LNDG-SP-MA-~~",
+      "delivery": "at-target",
+      "elem_raw": "magic",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "glass",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.68,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Berserker",
+      "game": "d2",
+      "kit_id": "d2-berserker",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMMSSI-LNDG-SP-MA-~~",
+        "delivery": "at-target",
+        "elem_raw": "magic",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-berserker",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "At-target single-target magic-damage melee swing; anchor: 'Berserk violently swings your primary weapon at the targeted enemy, dealing Magic Damage. You have 0 Defense while using this Skill.' Physical → magic conversion; engine physical rule applies: element-neutral (magic has no engine family); identity via DEFENSIVE_TRADEOFF T4 (zero-defense trade)",
+      "source_skill": "Berserk",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-berserker",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Warcry cone scatter; 'Howl used as panic tool to scatter mobs' — fear attested via corpus description 'Howl as panic tool'; §2 fear = boss-immune; utility not damage",
+      "source_skill": "Howl",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-berserker",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player would miss: magic damage conversion (engine has no magic element family; approximated as element-neutral physical with DEFENSIVE_TRADEOFF trade); Hork loot-economy identity loop not capturable in engine scope.",
+    "grade": "CLOSE",
+    "kit_id": "d2-berserker",
+    "mapping_json": {
+      "fidelity_notes": "Magic damage = no engine element family (physical rule extension: magic is also element-neutral); pure-physical → element-neutral crosswalk applied. DEFENSIVE_TRADEOFF T4 covers zero-defense-during-swing identity. Howl fear: §2 attests fear status ('panic tool to scatter mobs' = monsters flee = fear); boss-immune noted. Find-Item/Hork identity: §A row 4 — combat loop maps natively (Berserk swing), loot-economy loop filed to docket-candidate. Synergy chain scaffold per §A row 1.",
+      "motion_frame": "Stand-and-swing Berserk for max single-target magic damage; defense drops to zero mid-swing; Howl for emergency mob scatter",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "Berserk mana per swing; no special economy"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Find Item / Hork loot loop identity — docket: loot-economy-identity (§A row 4, §CROSS row 1 adjacent)"
+          ],
+          "geometry": [],
+          "traits_affixes": []
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "At-target single-target magic-damage melee swing; anchor: 'Berserk violently swings your primary weapon at the targeted enemy, dealing Magic Damage. You have 0 Defense while using this Skill.' Physical → magic conversion; engine physical rule applies: element-neutral (magic has no engine family); identity via DEFENSIVE_TRADEOFF T4 (zero-defense trade)",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Berserk"
+        },
+        {
+          "ailments": [
+            "fear"
+          ],
+          "delivery_notes": "Warcry cone scatter; 'Howl used as panic tool to scatter mobs' — fear attested via corpus description 'Howl as panic tool'; §2 fear = boss-immune; utility not damage",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "cone",
+          "source_skill": "Howl"
+        }
+      ],
+      "t4_doors": [
+        "DEFENSIVE_TRADEOFF",
+        "GEOMETRY_COLLAPSE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3433,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "glass"
+        ],
+        "primary": "glass"
+      },
+      "family": "defense",
+      "id": 3434,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Berserk single swing connects at targeted enemy with zero defense trade",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 3431,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Berserk converts to magic damage at the cost of zero defense while swinging — th",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 3435,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "magic"
+      },
+      "family": "element",
+      "id": 3436,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.68,
+        "evidence": "Single enemy swing; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 3432,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. Berserk converts to magic damage at the cost of zero defense while swinging  —  the all-in single-target trade.",
+      "family": "geo_text",
+      "id": 3438,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 3437,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 3439,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 3440,
+      "kit_id": "d2-berserker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Berserker: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-berserker",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.8,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|spiky|melee_strike|damage|none|glass|spend|solo|melee|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|spiky|melee_strike|damage|none|glass|spend|solo|melee|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "glass"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMMSSI-LNDG-SP-MA-~~",
+    "attr_conf": 0.8,
+    "attr_val": "STR",
+    "avg_conf": 0.8,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.8,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Berserk",
+      "Howl"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": null,
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "magic",
+    "era_year": 2000,
+    "eras": "lod;d2r",
+    "eras_normalized": "lod;d2r",
+    "flags": "",
+    "folk_name": "Berserker",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-berserker",
+    "lattice_coord": "SMMSSI",
+    "lineage": "",
+    "mech_note": "Berserk converts to magic damage at the cost of zero defense while swinging — the all-in single-target trade.",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×econ:spend",
+    "mobile_key_group": "SMMSSI-LNDG-SP-MA-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "magic",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.8,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.8,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.8,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MELEE-STRIKE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=1].members (working_label=MELEE-STRIKE; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "berserk barb... the build works well solo (P1) but struggles in multiplayer settings",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod",
+      "errata_applied": 0,
+      "id": 842,
+      "kit_id": "d2-berserker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/best-berserk-barb-mf-off-hand-t1037414.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Berserk Barbarian Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r",
+      "errata_applied": 0,
+      "id": 843,
+      "kit_id": "d2-berserker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/berserk-barbarian",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Zerk Barb... Pit Zerker pays homage to one of his best known specialties",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name Berserker; aliases Berserk Barbarian, Berserker Barb",
+      "errata_applied": 0,
+      "id": 840,
+      "kit_id": "d2-berserker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/berserk-barbarian",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Berserk violently swings your primary weapon at the targeted enemy, dealing Magic Damage. You have 0 Defense while using this Skill.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Berserk (converts to magic damage, zero defense), Howl",
+      "errata_applied": 0,
+      "id": 841,
+      "kit_id": "d2-berserker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/berserk-barbarian",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "At-target single-target magic-damage melee swing; anchor: 'Berserk violently swings your primary weapon at the targeted enemy, dealing Magic Damage. You have 0 Defense while using this Skill.' Physical → magic conversion; engine physical rule applies: element-neutral (magic has no engine family); identity via DEFENSIVE_TRADEOFF T4 (zero-defense trade)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Berserk' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2 sig)",
+      "errata_applied": 0,
+      "id": 2078,
+      "kit_id": "d2-berserker",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Warcry cone scatter; 'Howl used as panic tool to scatter mobs' — fear attested via corpus description 'Howl as panic tool'; §2 fear = boss-immune; utility not damage",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Howl' delivery_class=zone (band_conf=0.75); lint: anchor leans 'melee_arc' (1 sig) vs assigned 'zone' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2079,
+      "kit_id": "d2-berserker",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

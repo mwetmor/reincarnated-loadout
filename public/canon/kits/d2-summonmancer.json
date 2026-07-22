@@ -1,0 +1,963 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 4,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 10
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 848,
+      "assert_text": "primary_delivery_class == 'summon_delegate'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-summonmancer",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 849,
+      "assert_text": "expresses: Core loop (kill → corpse → raise skeleton + corpse explode → kill → repeat) is t",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "d2-summonmancer",
+      "last_result": "red",
+      "routed_docket_id": 137
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 678,
+    "kit_id": "d2-summonmancer",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "purediablo.com",
+    "title": "Meet Tartarus - The Summoner Necromancer",
+    "url": "https://www.purediablo.com/forums/threads/meet-tartarus-the-summoner-necromancer.15049/"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 678,
+      "kit_id": "d2-summonmancer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Meet Tartarus - The Summoner Necromancer",
+      "url": "https://www.purediablo.com/forums/threads/meet-tartarus-the-summoner-necromancer.15049/"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 679,
+      "kit_id": "d2-summonmancer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Diablo 2 Guide: Bone/Summon Necromancer V 2.0",
+      "url": "https://www.purediablo.com/strategy/bone-summon-v-2-0"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "DopamineJunky",
+      "cite_class": "communal",
+      "id": 680,
+      "kit_id": "d2-summonmancer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Summon build",
+      "url": "https://diablo2.io/forums/summon-build-t1459264.html"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-summonmancer",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 748,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-d2",
+        "docket_id": 137,
+        "evidence_kits": [
+          "d2-summonmancer"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:d2-summonmancer",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "d2-record"
+        },
+        "source_deviation_id": 748,
+        "source_kit_id": "d2-summonmancer",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 D2 structuring of d2-summonmancer.",
+        "status": "open"
+      },
+      "docket_id": 137,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-summonmancer",
+      "missing_expression": "Core loop (kill → corpse → raise skeleton + corpse explode → kill → repeat) is the engine's most complex missing mechanic — both summoner GAP and spatial-consumable-resource-node gap simultaneously.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "Core loop (kill → corpse → raise skeleton + corpse explode → kill → repeat) is the engine's most complex missing mechanic — both summoner GAP and spatial-consumable-resource-node gap simultaneously. Amp Damage maps cleanly; CE and skeletons do not."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1601,
+      "kit_id": "d2-summonmancer",
+      "payload_json": null,
+      "source_url": "https://www.purediablo.com/forums/threads/meet-tartarus-the-summoner-necromancer.15049/"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1600,
+      "kit_id": "d2-summonmancer",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1599,
+      "kit_id": "d2-summonmancer",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Corpse Explosion being quite helpful and able to be pumped for additional radius",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1598,
+      "kit_id": "d2-summonmancer",
+      "payload_json": {
+        "delivery": "at-target",
+        "footprint": "large-zone",
+        "notes": "Skeleton army distributed across zone; Corpse Explosion covers large AoE radius from each corpse. Combined effect = full-screen clearing."
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/meet-tartarus-the-summoner-necromancer.15049/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The only curse that's really necessary for this build is Amp, and that for one point. Amplify Damage is so good that you can basically skip any other curse",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1597,
+      "kit_id": "d2-summonmancer",
+      "payload_json": {
+        "description": "Raise Skeleton army from fallen corpses; cast Amplify Damage curse to double physical damage taken by enemies; use Corpse Explosion to chain-kill packs (kills become new corpses for more explosions and new skeletons). Clay Golem for boss deceleration.",
+        "source_note": "purediablo.com Meet Tartarus guide"
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/meet-tartarus-the-summoner-necromancer.15049/"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Diablo 2 Guide: Bone/Summon Necromancer V 2.0",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1602,
+      "kit_id": "d2-summonmancer",
+      "payload_json": {
+        "variants": [
+          "Revive Necro (adds Revive for expanded army beyond skeleton cap)",
+          "Bone/Summon hybrid (bone spells + skeleton army — separate PureDiablo guide confirms sub-variant)"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/strategy/bone-summon-v-2-0"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "rooted|at-target|spiky|ground_targeted_circle|damage|none|tank|free|heavy|dual|low|instant|triggered|apply→detonate",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "d2-summonmancer",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "IDLSHI-LLMM-SP-PH-~~",
+      "delivery": "at-target",
+      "elem_raw": "physical",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Summonmancer",
+      "game": "d2",
+      "kit_id": "d2-summonmancer",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IDLSHI-LLMM-SP-PH-~~",
+        "delivery": "at-target",
+        "elem_raw": "physical",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "corpses",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-summonmancer",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "GAP — autonomous pet combatants raised from fallen corpses. Summoner-deferral §CROSS row 2. Army of skeletons from corpse-nodes.",
+      "source_skill": "Raise Skeleton",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-summonmancer",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "AoE corpse detonation — corpse consumed, large-zone explosion. Corpse-CORE (loop verb IS corpse harvest): 'kills make corpses, corpses make bombs and soldiers.' Spatial-consumable-resource-node docket applies (§CROSS row 1).",
+      "source_skill": "Corpse Explosion",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-summonmancer",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 2,
+      "source_anchor": "Curse: doubles physical damage taken by enemies. Dossier: 'Amplify Damage is so good that you can basically skip any other curse.' D2 Amp Damage → curse:amplify per main law §2 (and hot-fact). Caster-radius persistent.",
+      "source_skill": "Amplify Damage",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-summonmancer",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 3,
+      "source_anchor": "GAP (autonomous combatant). Boss deceleration mechanic — Clay Golem slows targets. 'Chill' maps to movement-slow; dossier 'Clay Golem for boss deceleration' — 'deceleration' does not name chill explicitly. §0-UNIVERSAL: chill not attested by name. Near-miss: chill not attested.",
+      "source_skill": "Clay Golem",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-summonmancer",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Core loop (kill → corpse → raise skeleton + corpse explode → kill → repeat) is the engine's most complex missing mechanic — both summoner GAP and spatial-consumable-resource-node gap simultaneously. Amp Damage maps cleanly; CE and skeletons do not.",
+    "grade": "GAPPED",
+    "kit_id": "d2-summonmancer",
+    "mapping_json": {
+      "fidelity_notes": "GAPPED: dual gap — (1) summoner-deferral: Skeleton army is autonomous pet combatant army (§CROSS row 2); (2) spatial-consumable-resource-node: Corpse Explosion's loop IS corpse harvest; 'kills make corpses, corpses make bombs and soldiers' — verify_ledger CONFIRMED. Hot-fact confirmed: 'summonmancer = army GAP + corpse-raise (§CROSS.1/.2) + Amp Damage → curse:amplify.' Amp Damage curse:amplify: D2 Amp Damage is the hot-fact governing row — curse:amplify CONFIRMED (verify_ledger: 'Amplify Damage curse to double physical damage'). Shadow element: necromancer = corruption-themed → shadow (main law + hot-fact). Clay Golem chill: NOT attested by name; 'deceleration' ≠ chill per §0-UNIVERSAL; near-miss logged. Accrual to placed-proxy-count family (skeleton army count). CE on-kill chain-trigger maps to GEOMETRY_PROPAGATION_cascade shape but cannot instantiate without engine corpse-node lane. [STEWARD-AUDIT 2026-07-18 MW2-close: Clay Golem 'chill' STRUCK — no slow/chill language anywhere in store (return-prose block honored in file). Grade unchanged]",
+      "motion_frame": "Raise Skeleton army from fallen corpses; Amplify Damage curse to double physical damage; Corpse Explosion chain-kill packs (kills → new corpses → new explosions and skeletons); Clay Golem for boss deceleration.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "corpse_nodes": "corpse-CORE — loop identity IS corpse harvest (raise+explode); spatial-consumable-resource-node gap",
+        "cost_scale": "steady-mana",
+        "cost_slope": "flat-per-cast"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "corpse-node spatial resource economy (gap)"
+          ],
+          "geometry": [
+            "full-screen zone clearing via CE radius"
+          ],
+          "traits_affixes": []
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "GAP — autonomous pet combatants raised from fallen corpses. Summoner-deferral §CROSS row 2. Army of skeletons from corpse-nodes.",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Raise Skeleton"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "AoE corpse detonation — corpse consumed, large-zone explosion. Corpse-CORE (loop verb IS corpse harvest): 'kills make corpses, corpses make bombs and soldiers.' Spatial-consumable-resource-node docket applies (§CROSS row 1).",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Corpse Explosion"
+        },
+        {
+          "ailments": [
+            "curse:amplify"
+          ],
+          "delivery_notes": "Curse: doubles physical damage taken by enemies. Dossier: 'Amplify Damage is so good that you can basically skip any other curse.' D2 Amp Damage → curse:amplify per main law §2 (and hot-fact). Caster-radius persistent.",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Amplify Damage"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "GAP (autonomous combatant). Boss deceleration mechanic — Clay Golem slows targets. 'Chill' maps to movement-slow; dossier 'Clay Golem for boss deceleration' — 'deceleration' does not name chill explicitly. §0-UNIVERSAL: chill not attested by name. Near-miss: chill not attested.",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Clay Golem"
+        }
+      ],
+      "t4_doors": null,
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": "corpse-node",
+        "proc_trigger_condition": "on-defender-death",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED_DOCKET"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2103,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "resist",
+          "hp-stack"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 2104,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Skeletons raised at corpse positions; Corpse Explosion detonates at corpse location",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2101,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "corpses (proc); Skeleton army + Amplify Damage + Corpse Explosion chain: kills make corpses, cor",
+        "resource_verbatim": "corpses"
+      },
+      "family": "economy",
+      "id": 2105,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 2106,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Skeleton army + Corpse Explosion cover large zone; geo=large-AOE in atlas",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 2102,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with large-zone footprint. Skeleton army + Amplify Damage + Corpse Explosion chain: kills make corpses, corpses make bombs and soldiers  —  the corpse-economy engine and.",
+      "family": "geo_text",
+      "id": 2108,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 2107,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2 Raise Skeleton: +1 summoned skeleton cap; marginal damage.",
+      "family": "rank1_upgrade",
+      "id": 2109,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "iv (Icy Veins guide)",
+        "od (online docs — Diablo wiki / game manual)",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2110,
+      "kit_id": "d2-summonmancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Summonmancer: totem summon_delegate identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-summonmancer",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "d2-summonmancer",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|spiky|ground_targeted_circle|damage|none|tank|free|heavy|dual|low|instant|triggered|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|spiky|ground_targeted_circle|damage|none|tank|free|heavy|dual|low|instant|triggered|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "heavy"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDLSHI-LLMM-SP-PH-~~",
+    "attr_conf": 0.82,
+    "attr_val": "INT",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Raise Skeleton",
+      "Corpse Explosion",
+      "Amplify Damage",
+      "Clay Golem"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "corpse-resource",
+    "elem_raw": "physical",
+    "era_year": 2000,
+    "eras": "classic;lod-1.10+;d2r;rotw-s14",
+    "eras_normalized": "classic;lod-1.10+;d2r;rotw-s14",
+    "flags": "",
+    "folk_name": "Summonmancer",
+    "game": "d2",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-04",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-summonmancer",
+    "lattice_coord": "IDLSHI",
+    "lineage": "",
+    "mech_note": "Skeleton army + Amplify Damage + Corpse Explosion chain: kills make corpses, corpses make bombs and soldiers — the corpse-economy engine and",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A+B: soul-control troop command exists; turret/pet AI variants + summon economy needed",
+    "mobile_cell_id": "HEAVY|LARGE|INST×GAP-D2-04",
+    "mobile_key_group": "IDLSHI-LLMM-SP-PH-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "iv;od;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "heavy",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TRAP-MINE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-archipelago-mock.json points[stratum=core, family assigned, not gateA self-seed] (affinity=0.762)",
+    "spine_status": "ACTIVE",
+    "tier": "PROPAGATED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Diablo 2 Guide: Bone/Summon Necromancer V 2.0",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: classic",
+      "errata_applied": 0,
+      "id": 1025,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/strategy/bone-summon-v-2-0",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Necro has a faster clear speed with Corpse Explosion.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: lod-1.10+",
+      "errata_applied": 0,
+      "id": 1026,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/summon-build-t1459264.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Rak's Hardcore Summoner Necro guide",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: d2r",
+      "errata_applied": 0,
+      "id": 1027,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/raks-hardcore-summoner-necro-guide.139667/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Era token: rotw-s14 (post-cutoff — fetched text defines)",
+      "errata_applied": 0,
+      "id": 1028,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/summon-build-t1459264.html",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Meet Tartarus - The Summoner Necromancer",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Summonmancer' or 'Skeleton Necromancer' or 'Summoner Necro' is real community usage",
+      "errata_applied": 0,
+      "id": 1023,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/meet-tartarus-the-summoner-necromancer.15049/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The only curse that's really necessary for this build is Amp, and that for one point. Amplify Damage is so good that you can basically skip any other curse",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Raise Skeleton, Corpse Explosion, Amplify Damage, Clay Golem; corpse economy loop",
+      "errata_applied": 0,
+      "id": 1024,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/meet-tartarus-the-summoner-necromancer.15049/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "GAP — autonomous pet combatants raised from fallen corpses. Summoner-deferral §CROSS row 2. Army of skeletons from corpse-nodes.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Raise Skeleton' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (4 sig)",
+      "errata_applied": 0,
+      "id": 2181,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "AoE corpse detonation — corpse consumed, large-zone explosion. Corpse-CORE (loop verb IS corpse harvest): 'kills make corpses, corpses make bombs and soldiers.' Spatial-consumable-resource-node docket applies (§CROSS row 1).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Corpse Explosion' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (3 sig)",
+      "errata_applied": 0,
+      "id": 2182,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Curse: doubles physical damage taken by enemies. Dossier: 'Amplify Damage is so good that you can basically skip any other curse.' D2 Amp Damage → curse:amplify per main law §2 (and hot-fact). Caster-radius persistent.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Amplify Damage' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1 sig)",
+      "errata_applied": 0,
+      "id": 2183,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "GAP (autonomous combatant). Boss deceleration mechanic — Clay Golem slows targets. 'Chill' maps to movement-slow; dossier 'Clay Golem for boss deceleration' — 'deceleration' does not name chill explicitly. §0-UNIVERSAL: chill not attested by name. Near-miss: chill not attested.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Clay Golem' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (2 sig)",
+      "errata_applied": 0,
+      "id": 2184,
+      "kit_id": "d2-summonmancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

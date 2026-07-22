@@ -1,0 +1,806 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 8
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1098,
+      "assert_text": "primary_delivery_class == 'motion'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-hammer-throw-paladin",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 523,
+    "kit_id": "le-hammer-throw-paladin",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Crit Hammerdin Paladin Guide for Last Epoch Season 4",
+    "url": "https://maxroll.gg/last-epoch/build-guides/crit-hammerdin-paladin-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 523,
+      "kit_id": "le-hammer-throw-paladin",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Crit Hammerdin Paladin Guide for Last Epoch Season 4",
+      "url": "https://maxroll.gg/last-epoch/build-guides/crit-hammerdin-paladin-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 521,
+      "kit_id": "le-hammer-throw-paladin",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "forum.lastepoch.com",
+      "title": "An S Tier Hammerdin? Yes Please! Here ya go 0.8.1c",
+      "url": "https://forum.lastepoch.com/t/an-s-tier-hammerdin-yes-please-here-ya-go-0-8-1c/32261"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 522,
+      "kit_id": "le-hammer-throw-paladin",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "maxroll.gg",
+      "title": "Nova Hammerdin Paladin Last Epoch Build Guide",
+      "url": "https://maxroll.gg/last-epoch/build-guides/nova-hammerdin-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-hammer-throw-paladin",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 950,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-hammer-throw-paladin",
+      "missing_expression": "Orbiting physical hammers map cleanly to orbit.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Orbiting physical hammers map cleanly to orbit. Source player would miss the geometry POLYMORPHISM across variants: the mapped core is orbit, but Nova Hammerdin (Enra's + Avatar of the Spire) converts to a screen-wide nova and DISABLES orbit — the engine picks one geometry, not a stance-swap between orbit and nova. PERSISTENCE_ENGINE_uptime (audit-corrected door) carries the always-on orbit-field identity but not the orbit<->nova fork. Physical-neutral element loses the 'holy hammerdin' flavor (carried in element-slot flavor only)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Written by Volca. Content Reviewed by Lizard_IRL.",
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1175,
+      "kit_id": "le-hammer-throw-paladin",
+      "payload_json": {
+        "handle": "Volca",
+        "reviewer": "Lizard_IRL",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/nova-hammerdin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Symbols of Hope provides valuable buffs. Place this Skill on your Action Bar, but do not manually activate it",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1174,
+      "kit_id": "le-hammer-throw-paladin",
+      "payload_json": {
+        "note_on_name": "DB records 'Sigils of Hope'; current Season 4 maxroll guides show 'Symbols of Hope' — possible rename between patches; beta-era guides confirm 'Sigils of Hope' as the original name.",
+        "notes": "Symbols of Hope (current name in Season 4 guides) provides buffs; Disintegrating Aura node mana cost adjusted in 1.1 patch (+8 mana cost from 12)."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/crit-hammerdin-paladin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Enra's Technique combined with Avatar of the Spire transforms Hammer Throw into an AoE skill",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1173,
+      "kit_id": "le-hammer-throw-paladin",
+      "payload_json": {
+        "key_items": [
+          "Enra's Technique (nova AoE transform)",
+          "Avatar of the Spire (complements Enra's)"
+        ],
+        "notes": "Crit Hammerdin variant uses Primal Cadence; Bleed variant applies bleed DoT via spiraling hammers."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/nova-hammerdin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Enra's Technique combined with Avatar of the Spire transforms Hammer Throw into an AoE skill, filling the battlefield with Hammers...Enra's Technique disables spiral, chain and orbit, while granting a huge amount of damage in return",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1172,
+      "kit_id": "le-hammer-throw-paladin",
+      "payload_json": {
+        "delivery": "orbit-or-nova",
+        "description": "Hammers thrown outward; via tree nodes they orbit or nova around the player. Orbit form: multiple hammers circle the Paladin hitting all enemies in range. Nova/AoE form: Enra's Technique + Avatar of the Spire create screen-wide nova. Crit Hammerdin variant disables spiral/orbit for massive single-hit damage.",
+        "footprint": "multi-point"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/nova-hammerdin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Hammer Throw is your main Damage skill...Enra's Technique combined with Avatar of the Spire transforms Hammer Throw into an AoE skill, filling the battlefield with Hammers",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1171,
+      "kit_id": "le-hammer-throw-paladin",
+      "payload_json": {
+        "core_cycle": "Maintain Sigils of Hope -> Hammer Throw spam -> hammers orbit/spiral player -> auto-hit all nearby enemies",
+        "summary": "Throw hammers that travel and then orbit the walking Paladin via tree nodes (Enra's Technique + Avatar of the Spire for nova/AoE form; orbit form in other variants). Sigils of Hope buffed before throwing. Multiple hammers active simultaneously striking all enemies player walks through."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/nova-hammerdin-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Nova Hammerdin Paladin...Smite Hammerdin Paladin...Crit Hammerdin Paladin...Bleed Hammerdin Paladin",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1176,
+      "kit_id": "le-hammer-throw-paladin",
+      "payload_json": {
+        "variants": [
+          "Nova Hammerdin (Enra's Technique + Avatar of Spire, screen-wide AoE)",
+          "Smite Hammerdin (spiraling hammers + lightning Smite)",
+          "Bleed Hammerdin (bleed DoT via spiral)",
+          "Crit Hammerdin (single powerful hit, orbit disabled)",
+          "Beta 0.8.1c hammerdin (classic thrown hammer spiral)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/nova-hammerdin-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "full-move|orbit|flat|ricochet_bounce|damage|none|tank|spend|solo|dual|high|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.82,
+    "def_riders": "[]",
+    "delivery_value": "orbit",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.8,
+    "geometry_rule_fired": "R7-bounce",
+    "geometry_value": "ricochet_bounce",
+    "kit_id": "le-hammer-throw-paladin",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "WDHFSI-_MDT-SP-PH-~~",
+      "delivery": "orbit",
+      "elem_raw": "Physical / Lightning",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.82,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.8,
+        "rule_fired": "R7-bounce",
+        "value": "ricochet_bounce"
+      },
+      "flags": [],
+      "folk_name": "Hammer Throw Paladin",
+      "game": "le",
+      "kit_id": "le-hammer-throw-paladin",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "WDHFSI-_MDT-SP-PH-~~",
+        "delivery": "orbit",
+        "elem_raw": "Physical / Lightning",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-hammer-throw-paladin",
+      "motion_signature": "orbit_fixed",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "screen",
+      "skill_ordinal": 0,
+      "source_anchor": "Hammers thrown outward then ORBIT/circle the walking Paladin, auto-hitting all enemies in range (fetched: 'hammers orbit the player', 'multiple hammers circle the Paladin hitting all enemies in range', 'auto-hit all nearby enemies'). PHYSICAL element -> no family (THE PHYSICAL RULE): element-neutral, identity via geometry. NO core ailment: bleed appears only in the Bleed-Hammerdin VARIANT ('bleed DoT via spiral'), not the mapped orbit core. Enra's Technique + Avatar of the Spire transform to a screen-wide NOVA but DISABLE orbit/spiral/chain — that is a distinct variant fork, noted.",
+      "source_skill": "Hammer Throw",
+      "speed_band": null,
+      "width_band": "wide"
+    }
+  ],
+  "kit_id": "le-hammer-throw-paladin",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Orbiting physical hammers map cleanly to orbit. Source player would miss the geometry POLYMORPHISM across variants: the mapped core is orbit, but Nova Hammerdin (Enra's + Avatar of the Spire) converts to a screen-wide nova and DISABLES orbit — the engine picks one geometry, not a stance-swap between orbit and nova. PERSISTENCE_ENGINE_uptime (audit-corrected door) carries the always-on orbit-field identity but not the orbit<->nova fork. Physical-neutral element loses the 'holy hammerdin' flavor (carried in element-slot flavor only).",
+    "grade": "CLOSE",
+    "kit_id": "le-hammer-throw-paladin",
+    "mapping_json": {
+      "fidelity_notes": "Classic hammerdin: orbiting physical hammers maps clean to orbit geometry (element-neutral per THE PHYSICAL RULE — lineage=genre/hammerdin, D2 hammerdin ancestor). ERA NAME NOTE (hot-fact): 'Sigils of Hope' (DB/beta name) renamed 'Symbols of Hope' in Season-4/current guides — era-scoped name drift, same buff skill; recorded, not a mapping change. The Enra's Technique + Avatar of the Spire NOVA form (screen-wide AoE, disables orbit) is a major variant fork — T4 CORRECTED at audit: GEOMETRY_PROPAGATION_cascade STRUCK (§5 pins propagation to on-kill/_overkill on-hit; orbiting hammers PROPAGATE nothing) -> PERSISTENCE_ENGINE_uptime — the walking always-on orbit-damage field is RF-class (the §5 DoT/uptime exemplar). [STEWARD AUDIT 2026-07-18] Sigils/Symbols of Hope = buff-maintenance rider (not a delivery). §0 near-miss: bleed WANTED but ONLY variant-scoped (Bleed Hammerdin), not attested for the mapped orbit core -> WITHHELD.",
+      "motion_frame": "Maintain Sigils/Symbols of Hope buffs -> Hammer Throw spam -> hammers orbit/spiral the walking Paladin -> auto-hit all nearby enemies",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_shape": "per-cast spend (mana-light)",
+        "resource": "mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "Enra's Technique + Avatar of the Spire (orbit->screen-wide nova, disables spiral/chain/orbit)"
+          ],
+          "traits_affixes": [
+            "Primal Cadence (crit variant)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Hammers thrown outward then ORBIT/circle the walking Paladin, auto-hitting all enemies in range (fetched: 'hammers orbit the player', 'multiple hammers circle the Paladin hitting all enemies in range', 'auto-hit all nearby enemies'). PHYSICAL element -> no family (THE PHYSICAL RULE): element-neutral, identity via geometry. NO core ailment: bleed appears only in the Bleed-Hammerdin VARIANT ('bleed DoT via spiral'), not the mapped orbit core. Enra's Technique + Avatar of the Spire transform to a screen-wide NOVA but DISABLE orbit/spiral/chain — that is a distinct variant fork, noted.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "orbit",
+          "source_skill": "Hammer Throw"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_uptime"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock"
+        ],
+        "centrality": "rider",
+        "conf": 0.65
+      },
+      "family": "control",
+      "id": 4283,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "layers": [
+          "armor",
+          "block",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 4284,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.83,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.83,
+        "evidence": "Hammer Throw evolves into orbit pattern: thrown hammers travel and ultimately circle/orbit the walking Paladin; orbit delivery is the build-defining form",
+        "value": "orbit"
+      },
+      "family": "delivery",
+      "id": 4281,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.78,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Mana spend per hammer throw. Orbit-enabling tree nodes cause thrown hammers to persist in orbit (no per-orbit cost). Active hammer count is the key economy variable.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 4285,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "damage_mode": "hit",
+        "label_verbatim": "Physical / Lightning"
+      },
+      "family": "element",
+      "id": 4286,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Multiple hammers orbiting at different angular positions create multi-point coverage around the player; atlas geo=multi-spawn confirmed",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 4282,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Hammer Throw launches physical hammers that travel outward and then — via tree nodes — begin orbiting the moving Paladin. Multiple hammers orbit simultaneously, striking all enemies the player walks through or near.",
+      "family": "geo_text",
+      "id": 4288,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 4287,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=let;kb",
+      "family": "rank1_upgrade",
+      "id": 4289,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb",
+        "let"
+      ],
+      "family": "sources_used",
+      "id": 4290,
+      "kit_id": "le-hammer-throw-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Hammer Throw Paladin: orbit motion identity",
+      "hook_type": "geometry",
+      "kit_id": "le-hammer-throw-paladin",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.83,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|orbit|flat|ricochet_bounce|damage|none|tank|spend|solo|dual|high|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|orbit|flat|ricochet_bounce|damage|none|tank|spend|solo|dual|high|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "orbit"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ricochet_bounce"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WDHFSI-_MDT-SP-PH-~~",
+    "attr_conf": 0.83,
+    "attr_val": "WIS",
+    "avg_conf": 0.83,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.83,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Hammer Throw",
+      "Sigils of Hope"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "physical",
+    "era_year": 2024,
+    "eras": "beta-0.8-0.9;1.0-launch;1.2-woven;1.4-omens",
+    "eras_normalized": "beta-0.8-0.9;1.0-launch;1.2-woven;1.4-omens",
+    "flags": "",
+    "folk_name": "Hammer Throw Paladin",
+    "game": "le",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-09",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "le-hammer-throw-paladin",
+    "lattice_coord": "WDHFSI",
+    "lineage": "genre/hammerdin",
+    "mech_note": "[VDM-1 basin-2 2026-07-18 ingest-11] PATCH RENAME NOTE: 'Sigils of Hope' (beta/1.0 era name, correct at stamp) renamed to 'Symbols of Hope' in current Season 4 — era-scoped name note, not a contradiction. Value LEFT as-is. [original mech_note follows] prov=let;kb. mech_note ref: 'Thrown hammers with tree nodes for RICOCHET and ORBIT paths circling the walking Paladin — Last Epoch's chapter of the genre-wide Hammerdin lineage.' PH suffix = Physical. geo=multi-spawn in atlas correctly characterized as orbit/multi-point. Orbit delivery is the distinguishing mechanic vs simple projectile throw. Two delivery modes (ricochet vs orbit) with orbit being the canonical endgame build. Ctrl C2: pure offense.",
+    "mint": 0,
+    "mob_raw": "walk-forward",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: rotational/orbital substrate addendum — build pending",
+    "mobile_cell_id": "SOLO|MULTI|INST×GX-09",
+    "mobile_key_group": "WDHFSI-_MDT-SP-PH-~~",
+    "mobile_mechanics_status": "designed-addendum",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "let;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.83,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.83,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.83,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Viable for 0.8.1c — HAMMERDIN! Throw to your hearts content! — Sigils of Hope a core skill alongside Hammer Throw",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: beta-0.8-0.9",
+      "errata_applied": 0,
+      "id": 709,
+      "kit_id": "le-hammer-throw-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/an-s-tier-hammerdin-yes-please-here-ya-go-0-8-1c/32261",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Hammer Throw Enrya's Technique Avatar of The Spire Paladin 340+ Corruption — search result title confirms 1.0+ era presence",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 710,
+      "kit_id": "le-hammer-throw-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/hammer-throw-enryas-technique-avatar-of-the-spire-paladin-340-corruption/45894",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.2-woven",
+      "errata_applied": 0,
+      "id": 711,
+      "kit_id": "le-hammer-throw-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/nova-hammerdin-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Crit Hammerdin Paladin Guide for Last Epoch Season 4 — Last Updated: April 27, 2026",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.4-omens",
+      "errata_applied": 0,
+      "id": 712,
+      "kit_id": "le-hammer-throw-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/crit-hammerdin-paladin-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "An S Tier Hammerdin? Yes Please! — 0.8.1c...HAMMERDIN! Throw to your hearts content!",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Hammer Throw Paladin' and alias 'hammerdin LE' are real community usage",
+      "errata_applied": 0,
+      "id": 706,
+      "kit_id": "le-hammer-throw-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/an-s-tier-hammerdin-yes-please-here-ya-go-0-8-1c/32261",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Hammer Throw is your main Damage skill...Enra's Technique combined with Avatar of the Spire transforms Hammer Throw into an AoE skill, filling the battlefield with Hammers",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Hammer Throw and Sigils of Hope; Mana spend; orbit delivery pattern; hammers travel and circle player",
+      "errata_applied": 0,
+      "id": 707,
+      "kit_id": "le-hammer-throw-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/nova-hammerdin-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Sigils of Hope appears in the skills section alongside Hammer Throw, Lunge, Holy Aura, and Smite — indicating it's a core component",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Sigils of Hope is a core skill",
+      "errata_applied": 0,
+      "id": 708,
+      "kit_id": "le-hammer-throw-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/an-s-tier-hammerdin-yes-please-here-ya-go-0-8-1c/32261",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Hammers thrown outward then ORBIT/circle the walking Paladin, auto-hitting all enemies in range (fetched: 'hammers orbit the player', 'multiple hammers circle the Paladin hitting all enemies in range', 'auto-hit all nearby enemies'). PHYSICAL element -> no family (THE PHYSICAL RULE): element-neutral, identity via geometry. NO core ailment: bleed appears only in the Bleed-Hammerdin VARIANT ('bleed DoT via spiral'), not the mapped orbit core. Enra's Technique + Avatar of the Spire transform to a s",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Hammer Throw' delivery_class=motion (band_conf=0.75); lint: anchor leans 'projectile' (3 sig) vs assigned 'motion' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2315,
+      "kit_id": "le-hammer-throw-paladin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,791 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 4,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1007,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-blood-mage",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 1008,
+      "assert_text": "expresses: Minor drift: the 150%-of-max-life OVERHEAL buffer (the survivability core of the",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "poe2-blood-mage",
+      "last_result": "red",
+      "routed_docket_id": 162
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 292,
+    "kit_id": "poe2-blood-mage",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Bloodmage Ascendancy Overview - Path of Exile 2",
+    "url": "https://maxroll.gg/poe2/resources/bloodmage-ascendancy"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 292,
+      "kit_id": "poe2-blood-mage",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Bloodmage Ascendancy Overview - Path of Exile 2",
+      "url": "https://maxroll.gg/poe2/resources/bloodmage-ascendancy"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 293,
+      "kit_id": "poe2-blood-mage",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe2db.tw",
+      "title": "Bonestorm - PoE2DB",
+      "url": "https://poe2db.tw/us/Bonestorm"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 294,
+      "kit_id": "poe2-blood-mage",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe.ninja",
+      "title": "Blood Mage Life Remnants builds - Fate of the Vaal - Path of Exile 2",
+      "url": "https://poe.ninja/poe2/builds/vaal?class=Blood+Mage&skills=Life+Remnants"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "DrugaddictMenemist#6176",
+      "cite_class": "communal",
+      "id": 295,
+      "kit_id": "poe2-blood-mage",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "My Bonestorm/Reap Blood Mage starter for PoE 2 - THE JOURNEY PAID OFF",
+      "url": "https://www.pathofexile.com/forum/view-thread/3592603"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-blood-mage",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 867,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-poe2",
+        "docket_id": 162,
+        "evidence_kits": [
+          "poe2-blood-mage"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:poe2-blood-mage",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "poe2-record"
+        },
+        "source_deviation_id": 867,
+        "source_kit_id": "poe2-blood-mage",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 PoE2 structuring of poe2-blood-mage.",
+        "status": "open"
+      },
+      "docket_id": 162,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-blood-mage",
+      "missing_expression": "Minor drift: the 150%-of-max-life OVERHEAL buffer (the survivability core of the build -- you bank effective HP above your bar) is not expressible as a native key, so it degrades to a note + docket-candidate;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "Minor drift: the 150%-of-max-life OVERHEAL buffer (the survivability core of the build -- you bank effective HP above your bar) is not expressible as a native key, so it degrades to a note + docket-candidate; the clamp of hp_cost_scale to 0.30 may under-state the source's Life pressure. Geometry+ailment+on-kill loop otherwise map cleanly, so CLOSE not APPROX."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "My Bonestorm/Reap Blood Mage starter for PoE 2 - THE JOURNEY PAID OFF",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 581,
+      "kit_id": "poe2-blood-mage",
+      "payload_json": {
+        "handle": "DrugaddictMenemist#6176",
+        "site": "pathofexile.com/forum",
+        "url": "https://www.pathofexile.com/forum/view-thread/3592603"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3592603"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Grasping Wounds prevents a portion of the damage taken from hits, and staggers it over the next 4 seconds.",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 580,
+      "kit_id": "poe2-blood-mage",
+      "payload_json": {
+        "ascendancy": "Blood Mage",
+        "nodes": [
+          "Sanguimancy (Life Remnants on hit and on kill; spells cost Life in addition to Mana)",
+          "Grasping Wounds (prevents portion of damage taken, staggers over 4 seconds)"
+        ],
+        "source_note": "Bonestorm not listed as Blood Mage capstone node — it is a general witch skill used in conjunction with Blood Mage ascendancy."
+      },
+      "source_url": "https://maxroll.gg/poe2/resources/bloodmage-ascendancy"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 579,
+      "kit_id": "poe2-blood-mage",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Channel to conjure a swarm of bone spikes in the air, then release to fire them at enemies and explode.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 578,
+      "kit_id": "poe2-blood-mage",
+      "payload_json": {
+        "geometry_verbatim": "Bonestorm: channels then releases bone shard projectiles; multi-point impact spray. Confirmed: 'Channel to conjure a swarm of bone spikes in the air, then release to fire them at enemies and explode.'"
+      },
+      "source_url": "https://poe2db.tw/us/Bonestorm"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "spending life on top of mana... Life Remnants are generated through Sanguimancy 'on hit and on kill'",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 577,
+      "kit_id": "poe2-blood-mage",
+      "payload_json": {
+        "loop_verbatim": "Cast Bonestorm (channels bone shard projectiles; costs Life + Mana via Sanguimancy). On kill, Life Remnants drop from Sanguimancy passive, healing above max life to 150%. Sustained kill cadence refunds Life spent on casts."
+      },
+      "source_url": "https://maxroll.gg/poe2/resources/bloodmage-ascendancy"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fireball Blood Mage Build Guide for Path of Exile 2 The Last of the Druids 0.4.0",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 582,
+      "kit_id": "poe2-blood-mage",
+      "payload_json": {
+        "variants": [
+          "Bonestorm Blood Mage (physical crit, early access)",
+          "Fireball Blood Mage (0.4, maxroll endgame guide)",
+          "Lightning Spear Bleed Blood Mage (0.4 endgame)",
+          "Detonate Dead Blood Mage (0.5 era)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|projectile|spiky|multi_projectile|damage|expose|tank|self-cost|solo|ranged|med|wind-up|active|apply→detonate",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[\"bleed\"]",
+    "ctrl_function": "expose",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.8,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "self-cost",
+    "flags": [],
+    "geometry_conf": 0.78,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "poe2-blood-mage",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IRMSSW",
+      "delivery": "projectile",
+      "elem_raw": "Chaos / Physical",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [
+          "bleed"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.8,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.78,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Blood Mage",
+      "game": "poe2",
+      "kit_id": "poe2-blood-mage",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IRMSSW",
+        "delivery": "projectile",
+        "elem_raw": "Chaos / Physical",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Life + Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-blood-mage",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Channel to conjure a swarm of bone spikes, release to fire them as a physical multi-point projectile spray that explodes on impact. Physical -> element-neutral per THE PHYSICAL RULE; identity via geometry+ailment. Impale-> sunder (hit-applied damage-taken amp); bleed rider per probe. commit=wind-up (channel-then-release).",
+      "source_skill": "Bonestorm",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-blood-mage",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: the 150%-of-max-life OVERHEAL buffer (the survivability core of the build -- you bank effective HP above your bar) is not expressible as a native key, so it degrades to a note + docket-candidate; the clamp of hp_cost_scale to 0.30 may under-state the source's Life pressure. Geometry+ailment+on-kill loop otherwise map cleanly, so CLOSE not APPROX.",
+    "grade": "CLOSE",
+    "kit_id": "poe2-blood-mage",
+    "mapping_json": {
+      "fidelity_notes": "elem 'physical' -> THE PHYSICAL RULE: element-neutral (both slots null), identity carried by multi_projectile geometry + sunder/bleed ailments. Sanguimancy 'spells cost Life in addition to Mana' -> hp_cost_scale, CLAMPED to 0.30 LOCKED ceiling (source rate unquantified in fetched text; clamp+note per addendum B/review-book clamp list). Life-remnant kill-vacuum (addendum B) -> on_kill recovery keys; pickup-radius flavor noted. WATCH-ITEM FIRED: ES-overleech-above-cap -- 'healing above max life to 150%' is an above-max-life buffer; NO native economy key expresses an above-cap overheal reservoir -> docket-candidate filed (steward consolidates with grim-feast b02). Bonestorm is a general witch skill, NOT a Blood Mage capstone node (dossier source_note). Grasping Wounds (stagger damage over 4s) -> RETRIBUTION_ENGINE-adjacent defensive door. Impale->sunder per addendum A.",
+      "motion_frame": "Channel-release Bonestorm spray; spells cost Life+Mana (Sanguimancy); Life Remnants drop on hit/kill and overheal to 150% max, refunding the Life spent.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "hp_cost_scale": 0.3,
+        "on_kill": "Life Remnants generated on hit and on kill (heal above max life, up to 150%)",
+        "on_kill_frac": "life-remnant vacuum pickup"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "hp_cost_scale (Life-on-cast)",
+            "on_kill Life-Remnant recovery"
+          ],
+          "geometry": [
+            "Bonestorm shard-count / multi_projectile spread"
+          ],
+          "traits_affixes": [
+            "physical-crit scalers"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "sunder",
+            "bleed"
+          ],
+          "delivery_notes": "Channel to conjure a swarm of bone spikes, release to fire them as a physical multi-point projectile spray that explodes on impact. Physical -> element-neutral per THE PHYSICAL RULE; identity via geometry+ailment. Impale-> sunder (hit-applied damage-taken amp); bleed rider per probe. commit=wind-up (channel-then-release).",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Bonestorm"
+        }
+      ],
+      "t4_doors": [
+        "SACRIFICE_ASCENDANCY",
+        "RETRIBUTION_ENGINE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "resource-fill",
+        "mark_identity": "Life Remnants (Sanguimancy on-hit/on-kill drops)",
+        "proc_trigger_condition": "on-kill",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "bleed",
+          "chaos-exposure"
+        ],
+        "centrality": "rider",
+        "conf": 0.7
+      },
+      "family": "control",
+      "id": 2313,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "layers": [
+          "hp-stack",
+          "self-cost"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 2314,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Blood Mage casts blood-powered spell projectiles; projectile delivery confirmed; atlas geo=multi-spawn = multiple projectiles",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 2311,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "Life recovered from kills",
+        "conf": 0.82,
+        "meter_type": "n/a",
+        "model": "self-cost",
+        "plain_text": "Blood Mage ascendancy: spells cost Life in addition to Mana. Life-orb recovery on kill returns the spent Life. Sustained play requires steady kill cadence to maintain HP.",
+        "resource_verbatim": "Life + Mana"
+      },
+      "family": "economy",
+      "id": 2315,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "damage_mode": "hit",
+        "label_verbatim": "Chaos / Physical"
+      },
+      "family": "element",
+      "id": 2316,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "evidence": "Multiple blood spell projectiles hit at various points; multi-point footprint",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 2312,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Blood Mage casts spells that cost Life on top of Mana. Life sacrificed on cast is recovered from kills in bursts. A high-risk, high-recovery loop: each spell costs health, each kill returns it.",
+      "family": "geo_text",
+      "id": 2318,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 2317,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 2319,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 2320,
+      "kit_id": "poe2-blood-mage",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Blood Mage: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-blood-mage",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.73,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "rooted|projectile|spiky|multi_projectile|damage|expose|tank|self-cost|solo|ranged|med|wind-up|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|projectile|spiky|multi_projectile|damage|expose|tank|self-cost|solo|ranged|med|wind-up|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "expose"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "self-cost"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "wind-up"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMSSW-MMDM-SP-PH-~~",
+    "attr_conf": 0.73,
+    "attr_val": "INT",
+    "avg_conf": 0.73,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.73,
+    "commit_provenance": null,
+    "commit_val": "wind-up",
+    "core_skills": [
+      "Bonestorm",
+      "Life Remnants"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "life-as-second-mana",
+    "elem_raw": "physical",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn;0.3-edict;0.4",
+    "eras_normalized": "0.1;0.2-dawn;0.3-edict;0.4",
+    "flags": "",
+    "folk_name": "Blood Mage",
+    "game": "poe2",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-06",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-blood-mage",
+    "lattice_coord": "IRMSSW",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note: 'Casts cost LIFE on top of mana with life-orb recovery from kills — launched as a [risky] playstyle.' Era=0.1 through 0.4. Blood Mage = Witch ascendancy. The self-cost defense (Life as currency) mirrors LE Harvest Lich / D2 Sacrifice patterns across the corpus.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: self-cost contract operators",
+    "mobile_cell_id": "SOLO|MULTI|WIND×GX-06",
+    "mobile_key_group": "IRMSSW-MMDM-SP-PH-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;bm",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.73,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.73,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.73,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Bonestorm introduced in version 0.1.0d (with support updates). Version 0.2.0 redesigned its impale mechanic",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.1, 0.2-dawn, 0.3-edict, 0.4",
+      "errata_applied": 0,
+      "id": 354,
+      "kit_id": "poe2-blood-mage",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poe2db.tw/us/Bonestorm",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Blood Mage Life Remnants builds - Fate of the Vaal - Path of Exile 2",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Blood Mage'; aliases 'Bonestorm life remnants', 'self-flagellate Blood Mage'",
+      "errata_applied": 0,
+      "id": 352,
+      "kit_id": "poe2-blood-mage",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poe.ninja/poe2/builds/vaal?class=Blood+Mage&skills=Life+Remnants",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Life Remnants are generated through Sanguimancy 'on hit and on kill.' They heal based on character level and can restore health 'above your Maximum Life, up to 150%'",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Bonestorm, Life Remnants; spells cost Life in addition to Mana; Life recovered from kills via Life Remnants",
+      "errata_applied": 0,
+      "id": 353,
+      "kit_id": "poe2-blood-mage",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/resources/bloodmage-ascendancy",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Channel to conjure a swarm of bone spikes, release to fire them as a physical multi-point projectile spray that explodes on impact. Physical -> element-neutral per THE PHYSICAL RULE; identity via geometry+ailment. Impale-> sunder (hit-applied damage-taken amp); bleed rider per probe. commit=wind-up (channel-then-release).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bonestorm' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1) but 'beam' more strongly (2) — mixed signal",
+      "errata_applied": 0,
+      "id": 2505,
+      "kit_id": "poe2-blood-mage",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

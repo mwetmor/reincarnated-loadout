@@ -1,0 +1,807 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1102,
+      "assert_text": "primary_delivery_class == 'beam'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-lightning-blast",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 532,
+    "kit_id": "le-lightning-blast",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Lightning Blast Runemaster Guide for Last Epoch Season 4",
+    "url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 532,
+      "kit_id": "le-lightning-blast",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Lightning Blast Runemaster Guide for Last Epoch Season 4",
+      "url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 533,
+      "kit_id": "le-lightning-blast",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "forum.lastepoch.com",
+      "title": "Infinite Lightning Blast Sorc Build Guide — great for starting season and beginners! 0.9 Ready",
+      "url": "https://forum.lastepoch.com/t/infinite-lightning-blast-sorc-build-guide-great-for-starting-season-and-beginners-0-9-ready/52254"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 534,
+      "kit_id": "le-lightning-blast",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "forum.lastepoch.com",
+      "title": "Lightning Blast Mage - Beginner-Friendly Build Guide - Last Epoch 0.9.0",
+      "url": "https://forum.lastepoch.com/t/lightning-blast-mage-beginner-friendly-build-guide-last-epoch-0-9-0/58361"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-lightning-blast",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 954,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-lightning-blast",
+      "missing_expression": "Chain-projectile spam maps clean.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Chain-projectile spam maps clean. Source player would miss (1) the Spark Charge self-cascading proc-engine (Lightning Blast procs charges that proc more — an on-cast proc-loop the engine only approximates via chain, not a dedicated charge-cascade), and (2) the Reowyn's Frostguard on-cast Ward burst (Runemaster variant) — a defensive on-cast rider with no native engine lane. Neither breaks the core loop; both are riders. ELEMENTAL_ECHO gestures at the repeated-hit lightning identity."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Written by BinaQc. Content Reviewed by Volca.",
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1199,
+      "kit_id": "le-lightning-blast",
+      "payload_json": {
+        "handle": "BinaQc",
+        "reviewer": "Volca",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "When fully stacked, Foot of the Mountain reduces Lightning Blast Mana cost to zero...Runic Invocation generates massive Ward bursts through Reowyn's Frostguard",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1198,
+      "kit_id": "le-lightning-blast",
+      "payload_json": {
+        "notes": "Foot of the Mountain node reduces Lightning Blast Mana cost to zero when fully stacked. Runemaster variant integrates Runic Invocation for Ward burst. Frost Wall converted via Pyroglass for Reowyn's Frostguard activation."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fragment of the Enigma is a tremendous boost to our damage, while Knowledge of an Erased Mage provides additional Damage Dealt to Mana Before Health",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1197,
+      "kit_id": "le-lightning-blast",
+      "payload_json": {
+        "key_items": [
+          "Fragment of the Enigma (Spark Charge procs)",
+          "Reowyn's Frostguard (Ward burst via Runic Invocation)",
+          "Knowledge of an Erased Mage"
+        ],
+        "notes": "Fragment of the Enigma provides additional Spark Charge procs beyond the skill itself."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Convergence makes all your chains hit the same target but cuts the number of chains in half and then rounds up, therefore, aim for an odd number of chains to get the best value",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1196,
+      "kit_id": "le-lightning-blast",
+      "payload_json": {
+        "delivery": "projectile-chain",
+        "description": "Lightning Blast fires a lightning bolt projectile that chains to nearby enemies in sequence. Convergence node makes all chains hit the same target (concentrated damage) at cost of chain count halving. Fork and chain count nodes expand coverage.",
+        "footprint": "chain-hop"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "This is a Caster build that spams Lightning Blast to reliably proc Spark Charges, both from the skill itself and from Fragment of the Enigma",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1195,
+      "kit_id": "le-lightning-blast",
+      "payload_json": {
+        "core_cycle": "Lightning Blast spam -> chain arcs to nearby enemies -> Spark Charge procs -> Fragment of the Enigma procs",
+        "summary": "Spam Lightning Blast to fire chaining projectile bolts. High cast speed drives Spark Charge procs (both from Lightning Blast skill tree and Fragment of the Enigma unique). Chains converge on target with Convergence node. Runemaster variant adds Runic Invocation for Ward burst via Reowyn's Frostguard."
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Lightning Blast Runemaster...Static Orb Sorcerer: Use Static Orb for AoE and Lightning Blast for single target DPS",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1200,
+      "kit_id": "le-lightning-blast",
+      "payload_json": {
+        "variants": [
+          "Lightning Blast Sorcerer (this kit — caster spam)",
+          "Lightning Blast Runemaster (Spark Charge + Runic Invocation variant)",
+          "Static Orb Sorc (Lightning Blast as single-target supplement)",
+          "Elemental Nova Sorc (Lightning Blast as single-target supplement)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|projectile|flat|chain|damage|none|absorb|spend|solo|ranged|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\", \"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.78,
+    "def_riders": "[\"synonym:ward\"]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.88,
+    "geometry_rule_fired": "R1",
+    "geometry_value": "chain",
+    "kit_id": "le-lightning-blast",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IRHFSI-HCMM-SP-LI-~~",
+      "delivery": "projectile",
+      "elem_raw": "Lightning",
+      "footprint": "chain-hop"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp",
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "control"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.78,
+        "riders": [
+          "synonym:ward"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.88,
+        "rule_fired": "R1",
+        "value": "chain"
+      },
+      "flags": [],
+      "folk_name": "Lightning Blast",
+      "game": "le",
+      "kit_id": "le-lightning-blast",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IRHFSI-HCMM-SP-LI-~~",
+        "delivery": "projectile",
+        "elem_raw": "Lightning",
+        "footprint": "chain-hop"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "beam",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-lightning-blast",
+      "motion_signature": "chain_hop",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Fires a lightning bolt projectile that chains to nearby enemies in sequence (fetched: 'chains to nearby enemies', 'aim for an odd number of chains'). Convergence node makes all chains hit the SAME target (concentrated single-target) at cost of chain count halving — geometry-modifying node, chain token holds either way. NO status ailment attestable: 'Spark Charge' is a named skill/item PROC, not a fetched status (§0.4 name-collision); mechanics 'shock/electrify' lives only in verify_ledger.claim_text = INADMISSIBLE (§0.2). shock/sunder NOT emitted.",
+      "source_skill": "Lightning Blast",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-lightning-blast",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Chain-projectile spam maps clean. Source player would miss (1) the Spark Charge self-cascading proc-engine (Lightning Blast procs charges that proc more — an on-cast proc-loop the engine only approximates via chain, not a dedicated charge-cascade), and (2) the Reowyn's Frostguard on-cast Ward burst (Runemaster variant) — a defensive on-cast rider with no native engine lane. Neither breaks the core loop; both are riders. ELEMENTAL_ECHO gestures at the repeated-hit lightning identity.",
+    "grade": "CLOSE",
+    "kit_id": "le-lightning-blast",
+    "mapping_json": {
+      "fidelity_notes": "§B Reowyn ward-burst rider EXERCISED (first of two attestations run-wide): 'Runic Invocation generates massive Ward bursts through Reowyn's Frostguard' — trigger_grammar RIDER with a DEFENSIVE payload (on-cast-of-carrier -> gain overshield), sibling of the §A devotion-proc row. Item-granted, lives at item_alterations layer; never rewrites core skill_geometry (Lightning Blast stays a chain projectile). Reowyn rider is the RUNEMASTER variant; the mapped core is the Sorcerer caster-spam (this kit). Spark Charge cascade (skill procs charges from itself + Fragment of the Enigma) = a proc-loop rider on cast; engine chain geometry carries the delivery, the Spark-Charge proc-engine is the rider the engine approximates. §0 near-miss: shock WANTED (lightning + 'electrify' in claim) but claim_text is INADMISSIBLE and no fetched behavioral status language exists — WITHHELD.",
+      "motion_frame": "Spam Lightning Blast -> chain arcs to nearby enemies -> Spark Charge procs (skill + Fragment of the Enigma) -> repeat",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_shape": "per-cast spend; Foot of the Mountain node reduces cost to ZERO when fully stacked (fetched capstone) — free-cast state at stack cap",
+        "resource": "mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Foot of the Mountain (cost->0 at stack cap)"
+          ],
+          "geometry": [
+            "Convergence (chains->single target)",
+            "chain-count/Fork nodes"
+          ],
+          "traits_affixes": [
+            "Fragment of the Enigma (extra Spark Charge procs)",
+            "Knowledge of an Erased Mage"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Fires a lightning bolt projectile that chains to nearby enemies in sequence (fetched: 'chains to nearby enemies', 'aim for an odd number of chains'). Convergence node makes all chains hit the SAME target (concentrated single-target) at cost of chain count halving — geometry-modifying node, chain token holds either way. NO status ailment attestable: 'Spark Charge' is a named skill/item PROC, not a fetched status (§0.4 name-collision); mechanics 'shock/electrify' lives only in verify_ledger.claim_text = INADMISSIBLE (§0.2). shock/sunder NOT emitted.",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "chain",
+          "source_skill": "Lightning Blast"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENTAL_ECHO"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "resource-fill",
+        "mark_identity": "Ward burst (Reowyn's Frostguard) — DEFENSE payload",
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock",
+          "electrify"
+        ],
+        "centrality": "core",
+        "conf": 0.85
+      },
+      "family": "control",
+      "id": 2263,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "layers": [
+          "ward",
+          "glass"
+        ],
+        "primary": "ward"
+      },
+      "family": "defense",
+      "id": 2264,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "evidence": "Lightning Blast fires a projectile bolt that chains; initial delivery is projectile; chain behavior is footprint characteristic",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 2261,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.82,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Mana spend per blast. High cast-speed investment drives rapid bolt spam.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 2265,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.9,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.9,
+        "damage_mode": "hit",
+        "label_verbatim": "Lightning"
+      },
+      "family": "element",
+      "id": 2266,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "evidence": "Atlas geo=chain confirmed; bolt chains between enemies (chain-hop footprint); multiple chain targets per cast",
+        "value": "chain-hop"
+      },
+      "family": "footprint",
+      "id": 2262,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lightning Blast fires a lightning bolt projectile that arcs between nearby enemies in chain-hop sequence. Tree nodes expand chain count, fork paths, and add repeat-cast procs for sustained storm coverage.",
+      "family": "geo_text",
+      "id": 2268,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 2267,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=lb;kb",
+      "family": "rank1_upgrade",
+      "id": 2269,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb",
+        "lb"
+      ],
+      "family": "sources_used",
+      "id": 2270,
+      "kit_id": "le-lightning-blast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Lightning Blast: chain beam identity",
+      "hook_type": "geometry",
+      "kit_id": "le-lightning-blast",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "le-lightning-blast",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.87,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|projectile|flat|chain|damage|none|absorb|spend|solo|ranged|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|projectile|flat|chain|damage|none|absorb|spend|solo|ranged|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "chain"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRHFSI-HCMM-SP-LI-~~",
+    "attr_conf": 0.87,
+    "attr_val": "INT",
+    "avg_conf": 0.87,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.87,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Lightning Blast"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-spender",
+    "elem_raw": "lightning",
+    "era_year": 2024,
+    "eras": "beta-0.8-0.9;1.0-launch;1.2-woven;1.4-omens",
+    "eras_normalized": "beta-0.8-0.9;1.0-launch;1.2-woven;1.4-omens",
+    "flags": "",
+    "folk_name": "Lightning Blast",
+    "game": "le",
+    "geo_raw": "chain",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "le-lightning-blast",
+    "lattice_coord": "IRHFSI",
+    "lineage": "",
+    "mech_note": "prov=lb;kb. mech_note ref: 'The chain-lightning perennial — tree paths for chains, forks, and repeat-cast storms, currently wearing the Runemaster's [optimization layer].' LI suffix = Lightning. Control=core: Shock/Electrify debuffs are the primary damage-amplification loop in Lightning Blast builds. Chain-hop footprint: G2 flag — this is chain-hop not a true line (each hop is a discrete jump, not a continuous beam). Ctrl C2: pure offense, no support application.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|CHAIN|INST×econ:spend",
+    "mobile_key_group": "IRHFSI-HCMM-SP-LI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "lb;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.87,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.87,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.87,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Infinite Lightning Blast Sorc Build Guide — great for starting season and beginners! 0.9 Ready",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: beta-0.8-0.9",
+      "errata_applied": 0,
+      "id": 729,
+      "kit_id": "le-lightning-blast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/infinite-lightning-blast-sorc-build-guide-great-for-starting-season-and-beginners-0-9-ready/52254",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Blast Mage - Beginner-Friendly Build Guide - Last Epoch 0.9.0 — forum guide confirming Sorcerer usage through 1.0 launch window",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 730,
+      "kit_id": "le-lightning-blast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/lightning-blast-mage-beginner-friendly-build-guide-last-epoch-0-9-0/58361",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.2-woven",
+      "errata_applied": 0,
+      "id": 731,
+      "kit_id": "le-lightning-blast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Blast Runemaster Guide for Last Epoch Season 4 — Last Updated April 2026",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.4-omens",
+      "errata_applied": 0,
+      "id": 732,
+      "kit_id": "le-lightning-blast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Blast Mage - Beginner-Friendly Build Guide - Last Epoch 0.9.0...Infinite Lightning Blast Sorc Build Guide — great for starting season and beginners! 0.9 Ready",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Lightning Blast Sorcerer' and alias 'lightning nuke Sorcerer' are real community usage",
+      "errata_applied": 0,
+      "id": 727,
+      "kit_id": "le-lightning-blast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forum.lastepoch.com/t/infinite-lightning-blast-sorc-build-guide-great-for-starting-season-and-beginners-0-9-ready/52254",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "This is a Caster build that spams Lightning Blast to reliably proc Spark Charges...Convergence makes all your chains hit the same target but cuts the number of chains in half",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Lightning Blast; Mana spend; projectile chain-hop delivery; lightning damage; shock/electrify ailments",
+      "errata_applied": 0,
+      "id": 728,
+      "kit_id": "le-lightning-blast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/lightning-blast-runemaster-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Fires a lightning bolt projectile that chains to nearby enemies in sequence (fetched: 'chains to nearby enemies', 'aim for an odd number of chains'). Convergence node makes all chains hit the SAME target (concentrated single-target) at cost of chain count halving — geometry-modifying node, chain token holds either way. NO status ailment attestable: 'Spark Charge' is a named skill/item PROC, not a fetched status (§0.4 name-collision); mechanics 'shock/electrify' lives only in verify_ledger.claim_",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Lightning Blast' delivery_class=beam (band_conf=0.75); lint: anchor leans 'projectile' (3 sig) vs assigned 'beam' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2324,
+      "kit_id": "le-lightning-blast",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

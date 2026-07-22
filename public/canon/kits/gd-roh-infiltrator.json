@@ -1,0 +1,794 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 950,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-roh-infiltrator",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "unknown",
+    "cite_class": "communal",
+    "id": 475,
+    "kit_id": "gd-roh-infiltrator",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "forums.crateentertainment.com",
+    "title": "[1.1.9.7] DW Melee Cold ABB + Rune of Hagarrad Infiltrator - SR 90",
+    "url": "https://forums.crateentertainment.com/t/1-1-9-7-dw-melee-cold-abb-rune-of-hagarrad-infiltrator-sr-90/124166"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 475,
+      "kit_id": "gd-roh-infiltrator",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.1.9.7] DW Melee Cold ABB + Rune of Hagarrad Infiltrator - SR 90",
+      "url": "https://forums.crateentertainment.com/t/1-1-9-7-dw-melee-cold-abb-rune-of-hagarrad-infiltrator-sr-90/124166"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Crate Entertainment",
+      "cite_class": "official",
+      "id": 476,
+      "kit_id": "gd-roh-infiltrator",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "store.steampowered.com",
+      "title": "Grim Dawn - Ashes of Malmouth Expansion on Steam",
+      "url": "https://store.steampowered.com/app/642280/Grim_Dawn__Ashes_of_Malmouth_Expansion/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-roh-infiltrator",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 819,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 GD tranche; internal-consistency reconcile, no W1 evidence — W5 is GD's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "gd-roh-infiltrator",
+      "missing_expression": "Trap arms on enemy contact;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Trap arms on enemy contact; engine ground-circle bursts/ticks on placement — the arm-and-lure timing texture is lost (qual mint-candidate filed). Still that build, slightly worse: place-under-enemies loop survives."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.5,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1037,
+      "kit_id": "gd-roh-infiltrator",
+      "payload_json": {
+        "handle": "unknown",
+        "site": "forums.crateentertainment.com"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-dw-melee-cold-abb-rune-of-hagarrad-infiltrator-sr-90/124166"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1036,
+      "kit_id": "gd-roh-infiltrator",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Rune of Haggard Chillwhisper off-hand Infiltrator",
+      "conf": 0.62,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1035,
+      "kit_id": "gd-roh-infiltrator",
+      "payload_json": {
+        "alteration": "provides cold RoH caster variant; off-hand instead of dual-wield",
+        "item": "Chillwhisper off-hand"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-7-0-the-cold-fantasy-rune-of-haggard-chillwhisper-off-hand-infiltrator/100797"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "rune placed on floor, cold shards burst when enemies step on it",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1034,
+      "kit_id": "gd-roh-infiltrator",
+      "payload_json": {
+        "delivery": "at-target floor placement (trap)",
+        "footprint": "small-radius burst on trigger",
+        "verbatim": "rune placed on floor, cold shards burst when enemies step on it [...] never saw such DW Melee build both utilize ABB and Rune of Hagarrad"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-dw-melee-cold-abb-rune-of-hagarrad-infiltrator-sr-90/124166"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "rune placed on floor, cold shards burst when enemies step on it [...] WoR provides very good stats that are irreplacable",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1033,
+      "kit_id": "gd-roh-infiltrator",
+      "payload_json": {
+        "loop_verb": "place-rune trap + melee follow-up",
+        "resource": "cooldown for rune; energy secondary",
+        "summary": "Inscribe Rune of Hagarrad on floor at targeted position; cold shards burst when enemies step on it. Cooldown-gated trap placement. Word of Renewal provides healing and stat buffer. Hybrid melee-trap loop in some builds."
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-dw-melee-cold-abb-rune-of-hagarrad-infiltrator-sr-90/124166"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Cold DW Caster Infiltrator SSF Beginner guide",
+      "conf": 0.68,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1038,
+      "kit_id": "gd-roh-infiltrator",
+      "payload_json": {
+        "variants": [
+          "caster RoH Infiltrator (off-hand)",
+          "DW melee hybrid ABB+RoH Infiltrator",
+          "pure cold caster"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-cold-dw-caster-infiltrator-ssf-beginner-guide-leveling-advanced-all-celestials-hc-friendly/115289"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|spiky|ground_targeted_circle|damage|hard-stop|evade|cooldown|light|dual|med|instant|active|apply→detonate",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:freeze\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hard-stop",
+    "ctrl_treatment": "damage",
+    "def_bin": "evade",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "cooldown",
+    "flags": [],
+    "geometry_conf": 0.64,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "gd-roh-infiltrator",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DDMSLI-HSMD-CD-CO-~~",
+      "delivery": "at-target",
+      "elem_raw": "cold",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:freeze"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "evade",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.64,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Rune of Hagarrad Infiltrator",
+      "game": "gd",
+      "kit_id": "gd-roh-infiltrator",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DDMSLI-HSMD-CD-CO-~~",
+        "delivery": "at-target",
+        "elem_raw": "cold",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "cooldown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-roh-infiltrator",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "'Rune placed on floor, cold shards burst when enemies step on it' — at-target floor placement, small-radius burst, cooldown-gated. Proximity-armed trap timing is the drift vs the engine's immediate ground-circle (qual mint-candidate filed).",
+      "source_skill": "Rune of Hagarrad",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-roh-infiltrator",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "'WoR provides very good stats that are irreplacable' — healing + stat buffer support.",
+      "source_skill": "Word of Renewal",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "gd-roh-infiltrator",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Trap arms on enemy contact; engine ground-circle bursts/ticks on placement — the arm-and-lure timing texture is lost (qual mint-candidate filed). Still that build, slightly worse: place-under-enemies loop survives.",
+    "grade": "CLOSE",
+    "kit_id": "gd-roh-infiltrator",
+    "mapping_json": {
+      "fidelity_notes": "NO freeze/chill token — 'cold shards' is element flavor only; no status behavior fetched (§0.1; prior knowledge of RoH's freeze is exactly the memory-supplement leak class and was not used). Proximity-arming has no trigger-enum home (on-enemy-proximity absent) → trigger_grammar stays null, drift carried in notes + candidate. DW melee hybrid (ABB) variant noted; ABB behavior unfetched — contributes nothing.",
+      "motion_frame": "Inscribe cold rune traps ahead and melee alongside; Word of Renewal keeps you standing",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence": "cooldown-gated trap placement; energy secondary",
+        "resource": "energy"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "cooldown cadence"
+          ],
+          "geometry": [
+            "trap burst radius"
+          ],
+          "traits_affixes": [
+            "WoR stat buffer; Chillwhisper off-hand caster variant"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "'Rune placed on floor, cold shards burst when enemies step on it' — at-target floor placement, small-radius burst, cooldown-gated. Proximity-armed trap timing is the drift vs the engine's immediate ground-circle (qual mint-candidate filed).",
+          "element_primary": "water",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Rune of Hagarrad"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "'WoR provides very good stats that are irreplacable' — healing + stat buffer support.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Word of Renewal"
+        }
+      ],
+      "t4_doors": [
+        "ZONE_CONTROL"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "chill",
+          "freeze"
+        ],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2073,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "dodge"
+        ],
+        "primary": "dodge"
+      },
+      "family": "defense",
+      "id": 2074,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.68,
+        "evidence": "Rune inscribed on floor at targeted position; cold shard burst when enemies step on it",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2071,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "cooldown",
+        "plain_text": "cooldown (cooldown); Inscribe a RUNE on the floor and let them step on it — Hagarrad's cold shard-bur",
+        "resource_verbatim": "cooldown"
+      },
+      "family": "economy",
+      "id": 2075,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "cold"
+      },
+      "family": "element",
+      "id": 2076,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.64,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.64,
+        "evidence": "Shard burst in small radius when triggered; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 2072,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with small-radius footprint. Inscribe a RUNE on the floor and let them step on it  —  Hagarrad's cold shard-burst trap armed where you drew it, Kalastor as the fire siblin.",
+      "family": "geo_text",
+      "id": 2078,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 2077,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2079,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "gt",
+        "cf",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2080,
+      "kit_id": "gd-roh-infiltrator",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Rune of Hagarrad Infiltrator: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-roh-infiltrator",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:water",
+      "hook_id": "H2",
+      "hook_text": "water element register",
+      "hook_type": "register",
+      "kit_id": "gd-roh-infiltrator",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.75,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|spiky|ground_targeted_circle|damage|hard-stop|evade|cooldown|light|dual|med|instant|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|spiky|ground_targeted_circle|damage|hard-stop|evade|cooldown|light|dual|med|instant|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hard-stop"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "evade"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "cooldown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "DDMSLI-HSMD-CD-CO-~~",
+    "attr_conf": 0.75,
+    "attr_val": "DEX",
+    "avg_conf": 0.75,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.75,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Rune of Hagarrad",
+      "Word of Renewal"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "cooldown-trap-cycle",
+    "elem_raw": "cold",
+    "era_year": 2016,
+    "eras": "aom-2017;patch-1.1-1.2",
+    "eras_normalized": "aom-2017;patch-1.1-1.2",
+    "flags": "",
+    "folk_name": "Rune of Hagarrad Infiltrator",
+    "game": "gd",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-03 GX-19",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "gd-roh-infiltrator",
+    "lattice_coord": "DDMSLI",
+    "lineage": "",
+    "mech_note": "Inscribe a RUNE on the floor and let them step on it — Hagarrad's cold shard-burst trap armed where you drew it, Kalastor as the fire siblin",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A+B: soul-control troop command exists; turret/pet AI variants + summon economy needed",
+    "mobile_cell_id": "LIGHT|SMALL|INST×GX-03",
+    "mobile_key_group": "DDMSLI-HSMD-CD-CO-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;cf;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.75,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.75,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.75,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Infiltrator (Nightblade/Inquisitor) [...] Inquisitor debuted with Ashes of Malmouth (October 2017)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Present as build in eras: aom-2017, patch-1.1-1.2",
+      "errata_applied": 0,
+      "id": 615,
+      "kit_id": "gd-roh-infiltrator",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://store.steampowered.com/app/642280/Grim_Dawn__Ashes_of_Malmouth_Expansion/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "DW Melee Cold ABB + Rune of Hagarrad Infiltrator",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name: Rune of Hagarrad Infiltrator; aliases include RoH Infiltrator, cold Infiltrator, Word of Renewal Infiltrator",
+      "errata_applied": 0,
+      "id": 613,
+      "kit_id": "gd-roh-infiltrator",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-dw-melee-cold-abb-rune-of-hagarrad-infiltrator-sr-90/124166",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "rune placed on floor, cold shards burst when enemies step on it [...] WoR provides very good stats that are irreplacable",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Rune of Hagarrad (cold rune trap on floor), Word of Renewal. Dual delivery (caster+melee).",
+      "errata_applied": 0,
+      "id": 614,
+      "kit_id": "gd-roh-infiltrator",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-dw-melee-cold-abb-rune-of-hagarrad-infiltrator-sr-90/124166",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "'Rune placed on floor, cold shards burst when enemies step on it' — at-target floor placement, small-radius burst, cooldown-gated. Proximity-armed trap timing is the drift vs the engine's immediate ground-circle (qual mint-candidate filed).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Rune of Hagarrad' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (5 sig)",
+      "errata_applied": 0,
+      "id": 2267,
+      "kit_id": "gd-roh-infiltrator",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "'WoR provides very good stats that are irreplacable' — healing + stat buffer support.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Word of Renewal' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1 sig)",
+      "errata_applied": 0,
+      "id": 2268,
+      "kit_id": "gd-roh-infiltrator",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

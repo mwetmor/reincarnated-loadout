@@ -1,0 +1,815 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 4,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 578,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-elemental-hit",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 579,
+      "assert_text": "expresses: The defining mechanic — each attack rolls a RANDOM element from {fire,cold,light",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "poe1-elemental-hit",
+      "last_result": "red",
+      "routed_docket_id": 95
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 96,
+    "kit_id": "poe1-elemental-hit",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poe-vault.com",
+    "title": "[3.20] Crit Based Elemental Hit Deadeye Build Guide (PoE The Forbidden Sanctum)",
+    "url": "https://www.poe-vault.com/guides/elemental-hit-deadeye-build-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 96,
+      "kit_id": "poe1-elemental-hit",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe-vault.com",
+      "title": "[3.20] Crit Based Elemental Hit Deadeye Build Guide (PoE The Forbidden Sanctum)",
+      "url": "https://www.poe-vault.com/guides/elemental-hit-deadeye-build-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "official",
+      "id": 97,
+      "kit_id": "poe1-elemental-hit",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "Skill Revamp - Elemental Hit (Official Announcement 3.3.0)",
+      "url": "https://www.pathofexile.com/forum/view-thread/2148537"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 98,
+      "kit_id": "poe1-elemental-hit",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[3.6] Fire Elemental Hit Deadeye starter build - Odealo's Crafty Guide",
+      "url": "https://odealo.com/articles/fire-elemental-hit-deadeye-starter-build-odealos-crafty-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "communal",
+      "cite_class": "communal",
+      "id": 271,
+      "kit_id": "poe1-elemental-hit",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": null,
+      "url": "https://poedb.tw/us/Elemental_Hit"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-elemental-hit",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 543,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-poe1",
+        "docket_id": 95,
+        "evidence_kits": [
+          "poe1-elemental-hit"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:poe1-elemental-hit",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "poe1-record"
+        },
+        "source_deviation_id": 543,
+        "source_kit_id": "poe1-elemental-hit",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 PoE1 structuring of poe1-elemental-hit.",
+        "status": "open"
+      },
+      "docket_id": 95,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-elemental-hit",
+      "missing_expression": "The defining mechanic — each attack rolls a RANDOM element from {fire,cold,lightning}, and build-defining Combat Focus jewels PRUNE that pool to force a single element — has no engine lane: engine fixes one element per skill at generation, with no per-attack-RNG-element-roll and no element-pool-pruning primitive.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "The defining mechanic — each attack rolls a RANDOM element from {fire,cold,lightning}, and build-defining Combat Focus jewels PRUNE that pool to force a single element — has no engine lane: engine fixes one element per skill at generation, with no per-attack-RNG-element-roll and no element-pool-pruning primitive. Mapped to the meta ENDPOINT (forced mono-fire bow burst via ELEMENT_CONVERSION_MONO), which captures where the build lands but LOSES the random-roll-then-sculpt-the-pool identity that makes Combat Focus jewels the signature item. A player would miss that their element came from a pool they curated."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": 0.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 197,
+      "kit_id": "poe1-elemental-hit",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Prismatic Skills deal 50% less [element] Damage and cannot choose [element]",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 196,
+      "kit_id": "poe1-elemental-hit",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "+(0—5)% more Damage for each type of Elemental Ailment on the Enemy",
+            "effect": "+(0-5)% more Damage for each type of Elemental Ailment on the Enemy",
+            "node": "Elemental Hit (quality)",
+            "type": "base_quality"
+          },
+          {
+            "anchor_quote": "Now requires a Bow or Wand",
+            "effect": "Now requires a Bow or Wand",
+            "node": "Elemental Hit of the Spectrum (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": "Prismatic Skills deal 50% less [element] Damage and cannot choose [element]",
+            "effect": "Prismatic Skills deal 50% less [element] Damage and cannot choose [element]. Crimson/Viridian/Cobalt block Cold/Lightning/Fire respectively",
+            "node": "Combat Focus (threshold jewel — three variants)",
+            "req": "40 total of two attributes in radius",
+            "type": "threshold_jewel"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Elemental_Hit"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Two Combat Focus Jewels … required, to prevent your Elemental Hit from choosing Cold or Lightning Damage types",
+      "conf": 0.93,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 195,
+      "kit_id": "poe1-elemental-hit",
+      "payload_json": {
+        "function": "force fire-only element selection",
+        "required_jewels": [
+          "Combat Focus (Dexterity and Strength) — blocks Cold",
+          "Combat Focus (Strength and Intelligence) — blocks Lightning"
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/guides/elemental-hit-deadeye-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Combat Focus jewels can prevent the skill from choosing both Cold and Lightning Damage types",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 194,
+      "kit_id": "poe1-elemental-hit",
+      "payload_json": {
+        "combat_focus_note": "threshold jewels restrict element pool: Crimson Combat Focus blocks cold, Viridian blocks lightning",
+        "geometry": "bow projectile to target; small AoE burst at impact; range = bow range (ranged); element burst radius at impact point"
+      },
+      "source_url": "https://odealo.com/articles/fire-elemental-hit-deadeye-starter-build-odealos-crafty-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "It will still choose a random element of damage to deal with each attack, but it will not deal any other type of damage with that attack.",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 193,
+      "kit_id": "poe1-elemental-hit",
+      "payload_json": {
+        "loop": "Attack with bow (Elemental Hit) -> each attack randomly selects fire/cold/lightning element -> Combat Focus jewels remove cold and lightning to force fire-only rolls -> burst fire damage at impact with small AoE; crit scaling via Deadeye Accuracy + Tailwind"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2148537"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "TbXie's Elemental Hit of the Spectrum Deadeye … [3.20] Crit Based Elemental Hit Deadeye",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 198,
+      "kit_id": "poe1-elemental-hit",
+      "payload_json": {
+        "variants": [
+          "Elemental Hit Deadeye (primary — crit bow, 3.3-3.6 peak)",
+          "Elemental Hit of the Spectrum Deadeye (3.24 transfigured gem, bow/wand)",
+          "Elemental Hit Chieftain (fire conversion)",
+          "Elemental Hit Raider (3.16)"
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/guides/elemental-hit-deadeye-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|projectile|spiky|circle|damage|none|mitigate|spend|solo|ranged|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R8-proj-blast",
+    "geometry_value": "circle",
+    "kit_id": "poe1-elemental-hit",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DRMSSI-HSDD-SP-FI-~~",
+      "delivery": "projectile",
+      "elem_raw": "fire",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R8-proj-blast",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Elemental Hit",
+      "game": "poe1",
+      "kit_id": "poe1-elemental-hit",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DRMSSI-HSDD-SP-FI-~~",
+        "delivery": "projectile",
+        "elem_raw": "fire",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-elemental-hit",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "bow attack: a projectile to the target with a small AoE burst at impact (ranged, bow range). Each attack rolls ONE random element (fire/cold/lightning) at large values; Combat Focus threshold jewels DELETE unwanted elements (block cold, block lightning) to FORCE a single-element roll. Mapped element_primary=fire = the forced-fire meta play (the reference build); burn = the fire-ignite. multi_projectile = the bow-shot delivery",
+      "source_skill": "Elemental Hit",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-elemental-hit",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The defining mechanic — each attack rolls a RANDOM element from {fire,cold,lightning}, and build-defining Combat Focus jewels PRUNE that pool to force a single element — has no engine lane: engine fixes one element per skill at generation, with no per-attack-RNG-element-roll and no element-pool-pruning primitive. Mapped to the meta ENDPOINT (forced mono-fire bow burst via ELEMENT_CONVERSION_MONO), which captures where the build lands but LOSES the random-roll-then-sculpt-the-pool identity that makes Combat Focus jewels the signature item. A player would miss that their element came from a pool they curated.",
+    "grade": "APPROX",
+    "kit_id": "poe1-elemental-hit",
+    "mapping_json": {
+      "fidelity_notes": "RNG-ELEMENT BOW: 'each attack rolls ONE random element at huge values; Combat Focus rings delete unwanted elements to force the roll' (mech_note; item_alterations: Combat Focus jewels block cold / block lightning). Geometry multi_projectile (bow projectile + small impact AoE, probe delivery 'projectile'). THE IDENTITY-BEARING MECHANIC — per-attack RANDOM element selection from a {fire,cold,lightning} pool, with build-defining threshold jewels that PRUNE the pool to force a single element — has NO engine lane: engine fixes ONE element per skill at generation time; there is no per-attack-random-element-roll primitive, nor an element-pool-pruning mechanic. Mapped to the ENDPOINT of the meta play (forced single fire via Combat Focus) = element_primary=fire + ELEMENT_CONVERSION_MONO (the mono-element lock IS the build's point, §5 element conversion). This is an APPROX: the map captures where the build LANDS (mono-fire bow burst) but LOSES the mechanic that defines the journey — the random-roll-then-prune-the-pool gameplay (the reason Combat Focus jewels exist). CAPSTONE ABSTAINED — t4 routed from core identity (element-lock = mono conversion) + probe (mana-spend, projectile, burn) per fallback. A player of Elemental Hit would miss that their damage came from a randomized element pool they sculpted with jewels; the engine just gives them fire.",
+      "motion_frame": "RNG-element bow burst: shoot, each hit lands one random element at huge values, run freely; Combat Focus jewels lock the roll to a single element for consistency",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light spend (probe 'mana/spend'; chassis default, no deviation)"
+          ],
+          "geometry": [
+            "multi_projectile (bow shot)",
+            "small AoE burst at impact"
+          ],
+          "traits_affixes": [
+            "fire-penetration (post-lock)",
+            "ignite/burn scaling",
+            "crit + accuracy (Deadeye Accuracy/Tailwind); Combat-Focus element-lock jewels (the identity item)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "burn"
+          ],
+          "delivery_notes": "bow attack: a projectile to the target with a small AoE burst at impact (ranged, bow range). Each attack rolls ONE random element (fire/cold/lightning) at large values; Combat Focus threshold jewels DELETE unwanted elements (block cold, block lightning) to FORCE a single-element roll. Mapped element_primary=fire = the forced-fire meta play (the reference build); burn = the fire-ignite. multi_projectile = the bow-shot delivery",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Elemental Hit"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_MONO",
+        "ELEMENTAL_ECHO"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2803,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 2804,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Bow projectile; each shot rolls single random element hit on impact",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 2801,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Each attack rolls ONE random element at huge values; Combat Focus rings delete u",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 2805,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 2806,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Element burst radius at impact; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 2802,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with small-radius footprint. Each attack rolls ONE random element at huge values; Combat Focus rings delete unwanted elements to force the roll  —  RNG-element bow burst.",
+      "family": "geo_text",
+      "id": 2808,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 2807,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2809,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2810,
+      "kit_id": "poe1-elemental-hit",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Elemental Hit: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-elemental-hit",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "poe1-elemental-hit",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|spiky|circle|damage|none|mitigate|spend|solo|ranged|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|spiky|circle|damage|none|mitigate|spend|solo|ranged|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DRMSSI-HSDD-SP-FI-~~",
+    "attr_conf": 0.82,
+    "attr_val": "DEX",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Elemental Hit"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "fire",
+    "era_year": 2013,
+    "eras": "3.0-3.6",
+    "eras_normalized": "3.0-3.6",
+    "flags": "",
+    "folk_name": "Elemental Hit",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-10",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-elemental-hit",
+    "lattice_coord": "DRMSSI",
+    "lineage": "",
+    "mech_note": "Each attack rolls ONE random element at huge values; Combat Focus rings delete unwanted elements to force the roll — RNG-element bow burst.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×GAP-P1-10",
+    "mobile_key_group": "DRMSSI-HSDD-SP-FI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "This revamp was part of Content Update 3.3.0, announced on May 24, 2018 … [3.6] Fire Elemental Hit Deadeye starter build",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6 (single era stamp)",
+      "errata_applied": 0,
+      "id": 109,
+      "kit_id": "poe1-elemental-hit",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2148537",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.20] Crit Based Elemental Hit Deadeye Build Guide … catapulted itself to superlative status on its release",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Elemental Hit' is real community usage for Deadeye/Chieftain bow build",
+      "errata_applied": 0,
+      "id": 107,
+      "kit_id": "poe1-elemental-hit",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/elemental-hit-deadeye-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "It will still choose a random element of damage to deal with each attack, but it will not deal any other type of damage with that attack.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Bow projectile; each shot rolls single random element; Combat Focus jewels eliminate unwanted elements to force single-element rolls",
+      "errata_applied": 0,
+      "id": 108,
+      "kit_id": "poe1-elemental-hit",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2148537",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "bow attack: a projectile to the target with a small AoE burst at impact (ranged, bow range). Each attack rolls ONE random element (fire/cold/lightning) at large values; Combat Focus threshold jewels DELETE unwanted elements (block cold, block lightning) to FORCE a single-element roll. Mapped element_primary=fire = the forced-fire meta play (the reference build); burn = the fire-ignite. multi_projectile = the bow-shot delivery",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Elemental Hit' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (2 sig)",
+      "errata_applied": 0,
+      "id": 2412,
+      "kit_id": "poe1-elemental-hit",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

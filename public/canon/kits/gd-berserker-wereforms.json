@@ -1,0 +1,679 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 0,
+    "probe_facts": 10,
+    "recognition_hooks": 0,
+    "verify_ledger": 3
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 918,
+      "assert_text": "kit_identity_present == true",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-berserker-wereforms",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 919,
+      "assert_text": "expresses: MANDATORY (GAPPED): the entire kit is unmappable because the source content does",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "gd-berserker-wereforms",
+      "last_result": "red",
+      "routed_docket_id": 149
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "official",
+    "id": 418,
+    "kit_id": "gd-berserker-wereforms",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "grimdawn.com",
+    "title": "Guide - About - Fangs of Asterkarn - Grim Dawn",
+    "url": "https://www.grimdawn.com/guide/about/fangs-of-asterkarn/"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "official",
+      "id": 418,
+      "kit_id": "gd-berserker-wereforms",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "grimdawn.com",
+      "title": "Guide - About - Fangs of Asterkarn - Grim Dawn",
+      "url": "https://www.grimdawn.com/guide/about/fangs-of-asterkarn/"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 419,
+      "kit_id": "gd-berserker-wereforms",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "wccftech.com",
+      "title": "Grim Dawn: Fangs of Asterkarn Hits PC July 23",
+      "url": "https://wccftech.com/grim-dawn-fangs-of-asterkarn-release-date-july-2026/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-berserker-wereforms",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 797,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-gd",
+        "docket_id": 149,
+        "evidence_kits": [
+          "gd-berserker-wereforms"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:gd-berserker-wereforms",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "gd-record"
+        },
+        "source_deviation_id": 797,
+        "source_kit_id": "gd-berserker-wereforms",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 GD structuring of gd-berserker-wereforms.",
+        "status": "open"
+      },
+      "docket_id": 149,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": null,
+      "kit_id": "gd-berserker-wereforms",
+      "missing_expression": "MANDATORY (GAPPED): the entire kit is unmappable because the source content does not yet exist -- Fangs of Asterkarn is unshipped and every dossier family abstained.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "MANDATORY (GAPPED): the entire kit is unmappable because the source content does not yet exist -- Fangs of Asterkarn is unshipped and every dossier family abstained. The source player would experience a wereform/transformation ARPG loop (per folk-name aliases) but zero mechanics are attested, so nothing beyond the identity placeholder can be translated. This is a content-availability gap, NOT an engine-capability gap. See docket: unshipped-content class."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 875,
+      "kit_id": "gd-berserker-wereforms",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 874,
+      "kit_id": "gd-berserker-wereforms",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 873,
+      "kit_id": "gd-berserker-wereforms",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 872,
+      "kit_id": "gd-berserker-wereforms",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 871,
+      "kit_id": "gd-berserker-wereforms",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 876,
+      "kit_id": "gd-berserker-wereforms",
+      "payload_json": null,
+      "source_url": null
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|at-target|flat|ground_targeted_circle|damage|hard-stop|tank|free|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:freeze\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hard-stop",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.5,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.28,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "gd-berserker-wereforms",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMHFSI-_SDT-SP-CO-~~",
+      "delivery": "at-target",
+      "elem_raw": "cold",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:freeze"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.5,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "UNKNOWN"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.28,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Berserker (FoA mastery)",
+      "game": "gd",
+      "kit_id": "gd-berserker-wereforms",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMHFSI-_SDT-SP-CO-~~",
+        "delivery": "at-target",
+        "elem_raw": "cold",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "unknown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [],
+  "kit_id": "gd-berserker-wereforms",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "MANDATORY (GAPPED): the entire kit is unmappable because the source content does not yet exist -- Fangs of Asterkarn is unshipped and every dossier family abstained. The source player would experience a wereform/transformation ARPG loop (per folk-name aliases) but zero mechanics are attested, so nothing beyond the identity placeholder can be translated. This is a content-availability gap, NOT an engine-capability gap. See docket: unshipped-content class.",
+    "grade": "GAPPED",
+    "kit_id": "gd-berserker-wereforms",
+    "mapping_json": {
+      "fidelity_notes": "DOSSIER THIN BY DESIGN: all six kit_dossier families ABSTAINED (skill_loop, skill_geometry, item_alterations, capstone_alterations, author_credit, variants) -- verify_ledger identity + mechanics both UNSUPPORTED. Fangs of Asterkarn (FoA) mastery is UNSHIPPED as of crawl date ('Grim Dawn: Fangs of Asterkarn Hits PC July 23 -- expansion not yet shipped'; era stamp foa-pending is accurate). elem_raw=cold (corpus) would route water, but corpus columns are NOT fetched attestation -- per §0.1 there is no fetched language to map from, so no skill/element/ailment is emitted. Wereform/transformation shape is a KNOWN candidate for the engine spirit-swap/form axis but NOTHING is attested to place it. BACKFILL-2 pending (re-crawl once FoA ships). Row emitted per m01 hot-fact directive ('map what exists, note the gap') rather than skipped -- the gap IS the mapping.",
+      "motion_frame": "UNMAPPABLE -- content unshipped; no fetched skill_loop language exists to describe a motion frame",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [],
+          "traits_affixes": []
+        }
+      },
+      "skills": [],
+      "t4_doors": [],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED_DOCKET"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "ailments": [
+          "chill",
+          "freeze"
+        ],
+        "centrality": "none",
+        "conf": 0.5
+      },
+      "family": "control",
+      "id": 293,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.5,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 294,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.3,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.3,
+        "evidence": "Shapeshifter transforms to wereform and strikes target (post-cutoff; FoA mastery)",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 291,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.4,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.4,
+        "meter_type": "n/a",
+        "model": "other",
+        "plain_text": "unknown (other); Grim Dawn's tenth mastery — a shapeshifter who transforms into 'vicious beastlik",
+        "resource_verbatim": "unknown"
+      },
+      "family": "economy",
+      "id": 295,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.5,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.5,
+        "damage_mode": "hit",
+        "label_verbatim": "cold"
+      },
+      "family": "element",
+      "id": 296,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.28,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.28,
+        "evidence": "Wereform strike small AoE (post-cutoff); geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 292,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": "At-target delivery with small-radius footprint. Grim Dawn's tenth mastery  —  a shapeshifter who transforms into 'vicious beastlike forms,' dual-wields between forms, and infuses weapons wit.",
+      "family": "geo_text",
+      "id": 298,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.45,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": {
+        "conf": 0.45,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 297,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 299,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "named-source-unfetched",
+      "facts_json": [
+        "gdw",
+        "fw",
+        "sk"
+      ],
+      "family": "sources_used",
+      "id": 300,
+      "kit_id": "gd-berserker-wereforms",
+      "post_cutoff_cap": 1,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [],
+  "spine": {
+    "amp_conf": 0.33,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|ground_targeted_circle|damage|hard-stop|tank|free|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|ground_targeted_circle|damage|hard-stop|tank|free|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hard-stop"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMHFSI-_SDT-SP-CO-~~",
+    "attr_conf": 0.33,
+    "attr_val": "STR",
+    "avg_conf": 0.33,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.33,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "wereform suite(TBD)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "unknown",
+    "elem_raw": "cold",
+    "era_year": 2016,
+    "eras": "foa-pending",
+    "eras_normalized": "foa-pending",
+    "flags": "econ-recrawl-applied-2026-07-16:PC/activation-toggle; wereform (werewolf/wereraven) persists while active, extendable to permanent; no per-tick drain; cold-infused weapon attacks state-enabled (ailment GAP freeze UNRESOLVED this pass)",
+    "folk_name": "Berserker (FoA mastery)",
+    "game": "gd",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-02",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "gd-berserker-wereforms",
+    "lattice_coord": "SMHFSI",
+    "lineage": "",
+    "mech_note": "Grim Dawn's tenth mastery — a shapeshifter who transforms into 'vicious beastlike forms,' dual-wields between forms, and infuses weapons wit",
+    "mint": 0,
+    "mob_raw": "unknown",
+    "mobile_blocking_mechanics": "form-swap stat-block hotswap",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "SOLO|SMALL|INST×GX-02",
+    "mobile_key_group": "SMHFSI-_SDT-SP-CO-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gdw;fw;sk",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.33,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.33,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": [
+      "https://www.grimdawn.com/guide/character/masteries/berserker/",
+      "https://www.grimdawn.com/guide/about/fangs-of-asterkarn/",
+      "https://massivelyop.com/2026/06/01/grim-dawns-fangs-of-asterkarn-expansion-adds-a-frosty-new-realm-and-a-shapeshifting-mastery-line-july-23/",
+      "https://grimdawn.fandom.com/wiki/Fangs_of_Asterkarn"
+    ],
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.33,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "SHAPESHIFT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=3].members (working_label=SHAPESHIFT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Grim Dawn: Fangs of Asterkarn Hits PC July 23 — expansion not yet shipped as of crawl date 2026-07-18; foa-pending era stamp is accurate",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Present in era: foa-pending",
+      "errata_applied": 0,
+      "id": 531,
+      "kit_id": "gd-berserker-wereforms",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://wccftech.com/grim-dawn-fangs-of-asterkarn-release-date-july-2026/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Berserker (FoA mastery)'; aliases include 'FoA Berserker wereform', 'Forgotten Gods werewolf build', 'wereraven Berserker'",
+      "errata_applied": 0,
+      "id": 529,
+      "kit_id": "gd-berserker-wereforms",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.grimdawn.com/guide/about/fangs-of-asterkarn/",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: wereform suite(TBD)",
+      "errata_applied": 0,
+      "id": 530,
+      "kit_id": "gd-berserker-wereforms",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.grimdawn.com/guide/about/fangs-of-asterkarn/",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    }
+  ]
+}

@@ -1,0 +1,722 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 0,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 920,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-blade-arc-warder",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Allan_Ashcroft",
+    "cite_class": "authored",
+    "id": 420,
+    "kit_id": "gd-blade-arc-warder",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "forums.crateentertainment.com",
+    "title": "[1.2.0.3] Big Bleed - Easy Blade Arc Warder. Ravager, Callagadra, SR90",
+    "url": "https://forums.crateentertainment.com/t/1-2-0-3-big-bleed-easy-blade-arc-warder-ravager-callagadra-sr90/133802"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Allan_Ashcroft",
+      "cite_class": "authored",
+      "id": 420,
+      "kit_id": "gd-blade-arc-warder",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.2.0.3] Big Bleed - Easy Blade Arc Warder. Ravager, Callagadra, SR90",
+      "url": "https://forums.crateentertainment.com/t/1-2-0-3-big-bleed-easy-blade-arc-warder-ravager-callagadra-sr90/133802"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "The_Coyote",
+      "cite_class": "authored",
+      "id": 421,
+      "kit_id": "gd-blade-arc-warder",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.1.9.7 - 1.1.9.8] Budget Physical Blade Arc S&B Warder [SR80]",
+      "url": "https://forums.crateentertainment.com/t/1-1-9-7-1-1-9-8-budget-physical-blade-arc-s-b-warder-sr80-ravager-of-minds/127745"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-blade-arc-warder",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Allan_Ashcroft — Big Bleed Blade Arc Warder; The_Coyote — Budget Physical Blade Arc S&B Warder",
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 881,
+      "kit_id": "gd-blade-arc-warder",
+      "payload_json": {
+        "handle": "Allan_Ashcroft",
+        "post_type": "build guide",
+        "secondary_handle": "The_Coyote",
+        "site": "forums.crateentertainment.com"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-2-0-3-big-bleed-easy-blade-arc-warder-ravager-callagadra-sr90/133802"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 880,
+      "kit_id": "gd-blade-arc-warder",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 879,
+      "kit_id": "gd-blade-arc-warder",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Blade Arc requires the Soldier mastery bar at level 10... melee attack that deals damage in an arc pattern",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 878,
+      "kit_id": "gd-blade-arc-warder",
+      "payload_json": {
+        "delivery": "self-origin-arc",
+        "footprint": "wide-arc-small-radius",
+        "notes": "Arc sweep from player; both 2H and S&B variants documented",
+        "weapon_requirement": "two-handed or one-handed-with-shield"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-1-1-9-8-budget-physical-blade-arc-s-b-warder-sr80-ravager-of-minds/127745"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "entire build revolves around scaling bleed damage as a damage-over-time effect with big numbers... utilizes Guillotine two-handed weapon",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 877,
+      "kit_id": "gd-blade-arc-warder",
+      "payload_json": {
+        "summary": "Swing two-handed weapon in wide arc applying bleed DoT; bleed continues ticking after moving past targets; Shaman Devouring Swarm or primal support adds resistance reduction"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-2-0-3-big-bleed-easy-blade-arc-warder-ravager-callagadra-sr90/133802"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[1.1.9.4] Lightning Blade Arc Warder SR 75-76... [1.1.9.6] No-Set! S&B Physical Blade Arc Warlord",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 882,
+      "kit_id": "gd-blade-arc-warder",
+      "payload_json": {
+        "known_variants": [
+          "Lightning Blade Arc Warder",
+          "S&B Physical Blade Arc Warlord",
+          "2H Bleed Blade Arc Warder (Guillotine)"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-4-lightning-blade-arc-warder-sr-75-76-85ish/113492"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "walk|self-origin|flat|circle|damage|none|tank|spend|solo|melee|med|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"bleed\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.74,
+    "geometry_rule_fired": "R8-self-circle",
+    "geometry_value": "circle",
+    "kit_id": "gd-blade-arc-warder",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMMFSI-MSDT-DW-BL-~~",
+      "delivery": "self-origin",
+      "elem_raw": "bleed",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "bleed"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.74,
+        "rule_fired": "R8-self-circle",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Blade Arc Warder",
+      "game": "gd",
+      "kit_id": "gd-blade-arc-warder",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMMFSI-MSDT-DW-BL-~~",
+        "delivery": "self-origin",
+        "elem_raw": "bleed",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "energy",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-blade-arc-warder",
+      "motion_signature": "arc_sweep",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "wide self-origin melee arc sweep applying stacking bleed damage-over-time ('melee attack that deals damage in an arc pattern'; 'entire build revolves around scaling bleed damage as a damage-over-time effect with big numbers'); bleed continues ticking after moving past targets. melee_arc carries the wide-swing identity (phrase-book wide melee swing). bleed NAMED explicitly in fetched text ('scaling bleed damage as a damage-over-time'). Physical/bleed damage -> no element family (THE PHYSICAL RULE); the bleed ailment IS the identity.",
+      "source_skill": "Blade Arc",
+      "speed_band": null,
+      "width_band": "wide"
+    }
+  ],
+  "kit_id": "gd-blade-arc-warder",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "",
+    "grade": "EXACT",
+    "kit_id": "gd-blade-arc-warder",
+    "mapping_json": {
+      "fidelity_notes": "melee_arc for the wide-arc sweep; bleed is the load-bearing ailment (explicitly named, phys-DoT per THE PHYSICAL RULE / §A Internal-Trauma-as-bleed lineage confirms bleed = the phys ailment-substrate). Element-neutral: bleed/physical carries no 7-family slot; Lightning Blade Arc variant exists (variants list) but this kit's fetched identity is the 2H bleed build (Guillotine). PERSISTENCE_ENGINE_saturation = the bleed-DoT-uptime identity ('big numbers' DoT that ticks after moving past). Devouring Swarm noted as an RR support-lane, not emitted as its own skill (single-active kit). EXACT: clean arc + named bleed with no forcing.",
+      "motion_frame": "swing a two-handed weapon in a wide bleed-arc through the pack, then keep moving while stacked bleed DoTs tick down enemies from behind",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "light per-swing energy (melee attack; the bleed DoT stack carries damage between swings)"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "light-cost melee cadence"
+          ],
+          "geometry": [
+            "arc width / radius"
+          ],
+          "traits_affixes": [
+            "bleed damage + duration scaling",
+            "Devouring Swarm / primal support -> resistance-reduction lane (RR debuff)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "bleed"
+          ],
+          "delivery_notes": "wide self-origin melee arc sweep applying stacking bleed damage-over-time ('melee attack that deals damage in an arc pattern'; 'entire build revolves around scaling bleed damage as a damage-over-time effect with big numbers'); bleed continues ticking after moving past targets. melee_arc carries the wide-swing identity (phrase-book wide melee swing). bleed NAMED explicitly in fetched text ('scaling bleed damage as a damage-over-time'). Physical/bleed damage -> no element family (THE PHYSICAL RULE); the bleed ailment IS the identity.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_arc",
+          "source_skill": "Blade Arc"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_saturation"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "bleed"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2123,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 2124,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "evidence": "Wide two-handed arc sweep from player body; bleed DoT on all hit enemies",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 2121,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "_prior_ingest11": {
+          "meter_type": "n/a",
+          "model": "spend",
+          "note": "GD resource is Energy ('Spirit' is a GD STAT name — confusion source). resource_verbatim relabelled per WRONG-RESOURCE-GENERALLY sweep; raw preserved.",
+          "plain_text": "mana (spend); Wide two-handed arcs that leave everything BLEEDING OUT — the trauma-and-bleed s",
+          "resource_verbatim": "mana"
+        },
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "energy (spend); Wide two-handed arcs that leave everything BLEEDING OUT — the trauma-and-bleed s",
+        "resource_verbatim": "energy"
+      },
+      "family": "economy",
+      "id": 2125,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "bleed"
+      },
+      "family": "element",
+      "id": 2126,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Arc sweep in small radius around player; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 2122,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with small-radius footprint. Wide two-handed arcs that leave everything BLEEDING OUT  —  the trauma-and-bleed sweeper whose damage keeps ticking after you've walked past t.",
+      "family": "geo_text",
+      "id": 2128,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 2127,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2129,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "gt",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2130,
+      "kit_id": "gd-blade-arc-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Blade Arc Warder: melee arc melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-blade-arc-warder",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.87,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|self-origin|flat|circle|damage|none|tank|spend|solo|melee|med|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|self-origin|flat|circle|damage|none|tank|spend|solo|melee|med|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMMFSI-MSDT-DW-BL-~~",
+    "attr_conf": 0.87,
+    "attr_val": "STR",
+    "avg_conf": 0.87,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.87,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Blade Arc"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "hit-and-walk-DoT",
+    "elem_raw": "bleed",
+    "era_year": 2016,
+    "eras": "base-2016;patch-1.1-1.2",
+    "eras_normalized": "base-2016;patch-1.1-1.2",
+    "flags": "",
+    "folk_name": "Blade Arc Warder",
+    "game": "gd",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "gd-blade-arc-warder",
+    "lattice_coord": "SMMFSI",
+    "lineage": "",
+    "mech_note": "Wide two-handed arcs that leave everything BLEEDING OUT — the trauma-and-bleed sweeper whose damage keeps ticking after you've walked past t",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×econ:dot-walk",
+    "mobile_key_group": "SMMFSI-MSDT-DW-BL-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "bleed",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.87,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.87,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.87,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TRAP-MINE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-archipelago-mock.json points[stratum=core, family assigned, not gateA self-seed] (affinity=0.559)",
+    "spine_status": "ACTIVE",
+    "tier": "PROPAGATED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Blade Arc requires the Soldier mastery bar at level 10 — treated as a core Soldier skill in this build; Soldier is a base-game mastery",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Present in eras: base-2016, patch-1.1-1.2",
+      "errata_applied": 0,
+      "id": 534,
+      "kit_id": "gd-blade-arc-warder",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-1-1-9-8-budget-physical-blade-arc-s-b-warder-sr80-ravager-of-minds/127745",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Warder = Soldier + Shaman... centers on scaling bleed effects... utilizes the Guillotine two-handed weapon",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Blade Arc Warder'; aliases include 'physical Blade Arc Warder', 'two-hand Blade Arc'",
+      "errata_applied": 0,
+      "id": 532,
+      "kit_id": "gd-blade-arc-warder",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-2-0-3-big-bleed-easy-blade-arc-warder-ravager-callagadra-sr90/133802",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "skill functions as a melee attack that deals damage in an arc pattern... entire build revolves around scaling bleed damage as a damage-over-time effect",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill: Blade Arc (wide arc sweep dealing bleed DoT)",
+      "errata_applied": 0,
+      "id": 533,
+      "kit_id": "gd-blade-arc-warder",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-2-0-3-big-bleed-easy-blade-arc-warder-ravager-callagadra-sr90/133802",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "wide self-origin melee arc sweep applying stacking bleed damage-over-time ('melee attack that deals damage in an arc pattern'; 'entire build revolves around scaling bleed damage as a damage-over-time effect with big numbers'); bleed continues ticking after moving past targets. melee_arc carries the wide-swing identity (phrase-book wide melee swing). bleed NAMED explicitly in fetched text ('scaling bleed damage as a damage-over-time'). Physical/bleed damage -> no element family (THE PHYSICAL RULE",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Blade Arc' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (3 sig)",
+      "errata_applied": 0,
+      "id": 2222,
+      "kit_id": "gd-blade-arc-warder",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

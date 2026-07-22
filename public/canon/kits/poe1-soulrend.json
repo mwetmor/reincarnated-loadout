@@ -1,0 +1,752 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 620,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-soulrend",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 193,
+    "kit_id": "poe1-soulrend",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Soulrend — PoEDB",
+    "url": "https://poedb.tw/us/Soulrend"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 193,
+      "kit_id": "poe1-soulrend",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Soulrend — PoEDB",
+      "url": "https://poedb.tw/us/Soulrend"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-soulrend",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 582,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-soulrend",
+      "missing_expression": "The damage-FEEDS-defense loop (per-hit spell-leech -> energy shield) has no resource_economy key — the TH lane converts damage TAKEN, not dealt;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The damage-FEEDS-defense loop (per-hit spell-leech -> energy shield) has no resource_economy key — the TH lane converts damage TAKEN, not dealt; carried via the defense probe (ES primary), trait lane, and the RESOURCE_CONVERSION door. A player of the original misses the mechanical per-pack shield-refill pulse; homing-turn and the DoT-area-around-the-projectile are behavioral notes on the line pierce."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 419,
+      "kit_id": "poe1-soulrend",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.5,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 418,
+      "kit_id": "poe1-soulrend",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": null,
+            "effect": "Listed variant; mechanical details not available on poedb page",
+            "node": "Soulrend of Reaping (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": null,
+            "effect": "Listed variant; mechanical details not available on poedb page",
+            "node": "Soulrend of the Spiral (transfig)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Soulrend"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 417,
+      "kit_id": "poe1-soulrend",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'repeatedly applies a short but powerful chaos damage over time debuff to each enemy in an area around it'",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 416,
+      "kit_id": "poe1-soulrend",
+      "payload_json": {
+        "aoe": "point (single piercing projectile; DoT debuff left on each hit enemy)",
+        "delivery": "projectile (single homing chaos projectile)",
+        "notes": "Piercing behavior allows multi-target hit on a single cast; DoT aura around projectile path"
+      },
+      "source_url": "https://poedb.tw/us/Soulrend"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'fires a single projectile that turns towards enemies in front of it and pierces through those it hits... 4% of Spell Damage Leeched as Energy Shield'",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 415,
+      "kit_id": "poe1-soulrend",
+      "payload_json": {
+        "loop": "Cast Soulrend toward enemy clusters; homing projectile seeks targets, pierces through them, applies chaos DoT debuff on each hit, and leeches life as energy shield; re-cast for ongoing projectile coverage; ES sustain from leech is primary defense"
+      },
+      "source_url": "https://poedb.tw/us/Soulrend"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 420,
+      "kit_id": "poe1-soulrend",
+      "payload_json": {
+        "variants": [
+          "Trickster (primary; ES leech + evasion)"
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Soulrend"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "full-move|projectile|flat|single_target|damage|hex|absorb|free|solo|ranged|low|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\", \"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.72,
+    "def_riders": "[\"synonym:energy-shield\"]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.66,
+    "geometry_rule_fired": "R9-proj",
+    "geometry_value": "single_target",
+    "kit_id": "poe1-soulrend",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRLFSI-HNDM-SP-CH-~~",
+      "delivery": "projectile",
+      "elem_raw": "chaos",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot",
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.72,
+        "riders": [
+          "synonym:energy-shield"
+        ]
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.66,
+        "rule_fired": "R9-proj",
+        "value": "single_target"
+      },
+      "flags": [],
+      "folk_name": "Soulrend",
+      "game": "poe1",
+      "kit_id": "poe1-soulrend",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRLFSI-HNDM-SP-CH-~~",
+        "delivery": "projectile",
+        "elem_raw": "chaos",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "damage-as-shield",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-soulrend",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": "all",
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "single HOMING chaos projectile that turns toward enemies in front of it, PIERCES everything it passes, repeatedly applies a short powerful chaos DoT to each enemy in an area around it, and leeches spell damage as energy shield (4% attested) while traveling. Straight-line pierce -> line; the homing turn is behavioral",
+      "source_skill": "Soulrend",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-soulrend",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The damage-FEEDS-defense loop (per-hit spell-leech -> energy shield) has no resource_economy key — the TH lane converts damage TAKEN, not dealt; carried via the defense probe (ES primary), trait lane, and the RESOURCE_CONVERSION door. A player of the original misses the mechanical per-pack shield-refill pulse; homing-turn and the DoT-area-around-the-projectile are behavioral notes on the line pierce.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-soulrend",
+    "mapping_json": {
+      "fidelity_notes": "chaos -> SHADOW (section-1 drain-DoT lineage — literally the soul-drain register). Ailment DRAIN (section-2 life-drain/essence-drain row) from the dossier-verbatim 'chaos damage over time debuff' + ES-leech identity — this OVERRIDES the probe's generic [poison, wither] rider tags (dossier is the verified surface; the wither register survives only as a trait-lane rider note). Homing = behavioral property on a line pierce (flicker/spark randomness precedent). ERA CAVEAT: verify_ledger holds era 3.7-3.13 UNSUPPORTED (no errata applied; corpus eras retained) — mapping is era-agnostic mechanics. Doors: RESOURCE_CONVERSION carries the damage->ES conversion identity (econ_raw=damage-feeds-defense); PERSISTENCE_ENGINE_uptime the chaos-DoT uptime loop (section-5 ED/C register). CAPSTONE ABSTAINED — doors from identity.",
+      "motion_frame": "soul-siphon caster: lob homing soul-projectiles down corridors; they thread through packs leaving DoT and refilling the caster's energy shield — the damage output IS the defensive intake",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "damage-feeds-defense: ES-leech-on-damage-DEALT has no chassis key — carried in traits + deviation",
+            "low-tempo recast rhythm (duration DoT does the work)"
+          ],
+          "geometry": [
+            "line pierce-through-pack trajectory (homing turn behavioral)",
+            "DoT-area-around-projectile footprint (note)"
+          ],
+          "traits_affixes": [
+            "chaos DoT scaling",
+            "energy shield + ES-leech affixes (Trickster chassis)",
+            "projectile speed (pack coverage)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "drain"
+          ],
+          "delivery_notes": "single HOMING chaos projectile that turns toward enemies in front of it, PIERCES everything it passes, repeatedly applies a short powerful chaos DoT to each enemy in an area around it, and leeches spell damage as energy shield (4% attested) while traveling. Straight-line pierce -> line; the homing turn is behavioral",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "line",
+          "source_skill": "Soulrend"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_uptime",
+        "RESOURCE_CONVERSION"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "poison",
+          "wither"
+        ],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1083,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "energy-shield",
+          "resist"
+        ],
+        "primary": "energy-shield"
+      },
+      "family": "defense",
+      "id": 1084,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Homing chaos projectile flies toward target and drains life into energy shield as it passes",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 1081,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "damage-as-shield (proc); Homing chaos projectile that drains life into energy shield as it passes through",
+        "resource_verbatim": "damage-as-shield"
+      },
+      "family": "economy",
+      "id": 1085,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "chaos"
+      },
+      "family": "element",
+      "id": 1086,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.66,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.66,
+        "evidence": "Single homing projectile to target; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 1082,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with point footprint. Homing chaos projectile that drains life into energy shield as it passes through packs, leaving DoT  —  damage that FEEDS the defense.",
+      "family": "geo_text",
+      "id": 1088,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 1087,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1089,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1090,
+      "kit_id": "poe1-soulrend",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Soulrend: line projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-soulrend",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "poe1-soulrend",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.78,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|flat|single_target|damage|hex|absorb|free|solo|ranged|low|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|flat|single_target|damage|hex|absorb|free|solo|ranged|low|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "single_target"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRLFSI-HNDM-SP-CH-~~",
+    "attr_conf": 0.78,
+    "attr_val": "INT",
+    "avg_conf": 0.78,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.78,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Soulrend"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "damage-feeds-defense",
+    "elem_raw": "chaos",
+    "era_year": 2013,
+    "eras": "3.0-3.6;3.7-3.13",
+    "eras_normalized": "3.0-3.6;3.7-3.13",
+    "flags": "",
+    "folk_name": "Soulrend",
+    "game": "poe1",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-soulrend",
+    "lattice_coord": "IRLFSI",
+    "lineage": "",
+    "mech_note": "Homing chaos projectile that drains life into energy shield as it passes through packs, leaving DoT — damage that FEEDS the defense.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×econ:spend",
+    "mobile_key_group": "IRLFSI-HNDM-SP-CH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.78,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.78,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.78,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TRAP-MINE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Soulrend introduced patch 3.6.0 (Synthesis league); era bucket 3.0-3.6 is the introduction patch",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6",
+      "errata_applied": 0,
+      "id": 235,
+      "kit_id": "poe1-soulrend",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Soulrend",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 236,
+      "kit_id": "poe1-soulrend",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Soulrend",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Soulrend' is the official gem name introduced 3.6.0 and primary community identifier; no folk-name divergence found",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Soulrend' is real community usage",
+      "errata_applied": 0,
+      "id": 233,
+      "kit_id": "poe1-soulrend",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Soulrend",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'fires a single projectile that turns towards enemies... 4% of Spell Damage Leeched as Energy Shield... repeatedly applies a short but powerful chaos damage over time debuff'",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Soulrend; homing chaos projectile that drains life into energy shield as it passes through enemies; DoT debuff left on enemies",
+      "errata_applied": 0,
+      "id": 234,
+      "kit_id": "poe1-soulrend",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Soulrend",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "single HOMING chaos projectile that turns toward enemies in front of it, PIERCES everything it passes, repeatedly applies a short powerful chaos DoT to each enemy in an area around it, and leeches spell damage as energy shield (4% attested) while traveling. Straight-line pierce -> line; the homing turn is behavioral",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Soulrend' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (2 sig)",
+      "errata_applied": 0,
+      "id": 2468,
+      "kit_id": "poe1-soulrend",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

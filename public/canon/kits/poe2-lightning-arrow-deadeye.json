@@ -1,0 +1,837 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 9
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1024,
+      "assert_text": "primary_delivery_class == 'beam'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Crouching_Tuna",
+    "cite_class": "authored",
+    "id": 334,
+    "kit_id": "poe2-lightning-arrow-deadeye",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Lightning Arrow Deadeye Build Guide - Path of Exile 2 0.5.4",
+    "url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Crouching_Tuna",
+      "cite_class": "authored",
+      "id": 334,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Lightning Arrow Deadeye Build Guide - Path of Exile 2 0.5.4",
+      "url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-lightning-arrow-deadeye",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 880,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "missing_expression": "Two verified drifts noted: (1) engine chain hops sequentially and decays 0.7x/hop, whereas Lightning Arrow's beam splash is simultaneous at full damage to up to 3 targets -- a LA player's screen-clear is slightly weaker per-hop;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Two verified drifts noted: (1) engine chain hops sequentially and decays 0.7x/hop, whereas Lightning Arrow's beam splash is simultaneous at full damage to up to 3 targets -- a LA player's screen-clear is slightly weaker per-hop; (2) Lightning Rod's placed boss-zone is approximated as ground_targeted_circle rather than a shot-empowered rod. Both preserve the run-and-gun chain identity."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Crouching_Tuna - PoE Franchise Director",
+      "conf": 0.98,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 665,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "payload_json": {
+        "handle": "Crouching_Tuna",
+        "role": "PoE Franchise Director",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Deadeye ascendancy provides additional projectiles at no extra cost",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 664,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "payload_json": {
+        "ascendancy": "Deadeye (Ranger ascendancy)",
+        "notables": [
+          "Projectile multiplication nodes increasing arrow count",
+          "Deadeye ascendancy nodes for additional projectiles at no extra cost"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 663,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "fires a fast lightning projectile that on contact with an enemy unleashes lightning beams that arc to up to three enemies within a large radius",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 662,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "payload_json": {
+        "geometry": "Projectile delivery (ranged). Chain-hop on contact: lightning beams arc from primary impact to up to 3 nearby targets. Multi-arrow Deadeye variants create a spreading chain network across packs.",
+        "range": "ranged projectile + chain-hop"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Lightning Arrow fires a fast lightning projectile that on contact with an enemy unleashes lightning beams that arc to up to three enemies within a large radius.",
+      "conf": 0.92,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 661,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "payload_json": {
+        "loop": "Fire Lightning Arrow at packs — each arrow arcs lightning beams to up to 3 nearby enemies. Place Lightning Rod on bosses for single-target concentrated damage. Deadeye ascendancy adds projectiles for more chains. High attack speed with mana-per-shot funding.",
+        "resource": "Mana per shot"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fire it [Lightning Rod] directly on top of bosses — your primary damage on single target",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 666,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "payload_json": {
+        "variants": [
+          "Lightning Arrow Deadeye (standard multi-arrow)",
+          "Lightning Arrow + Lightning Rod heavy single-target focus"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|projectile|flat|chain|damage|none|evade|spend|solo|ranged|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "evade",
+    "def_conf": 0.85,
+    "def_riders": "[\"synonym:evasion\"]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.88,
+    "geometry_rule_fired": "R1",
+    "geometry_value": "chain",
+    "kit_id": "poe2-lightning-arrow-deadeye",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "DRHFSI",
+      "delivery": "projectile",
+      "elem_raw": "Lightning",
+      "footprint": "chain-hop"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "evade",
+        "conf": 0.85,
+        "riders": [
+          "synonym:evasion"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.88,
+        "rule_fired": "R1",
+        "value": "chain"
+      },
+      "flags": [],
+      "folk_name": "Lightning Arrow Deadeye",
+      "game": "poe2",
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "DRHFSI",
+        "delivery": "projectile",
+        "elem_raw": "Lightning",
+        "footprint": "chain-hop"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "beam",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "motion_signature": "chain_hop",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "bow projectile: fires a fast lightning projectile that ON CONTACT unleashes lightning beams arcing to up to 3 nearby enemies within a large radius (dossier verbatim). Mirrors PoE1-lightning-arrow (queried: geometry_value=chain, ailments=[sunder]) -- one-hop splash-fan modeled as chain. Multi-arrow Deadeye nodes create a spreading chain network. poe2 DELTA: no phys->lightning conversion attested (native lightning; the 50% conversion + ELEMENT_CONVERSION_PHYSICAL PoE1 carried is DROPPED). shock rider -> sunder.",
+      "source_skill": "Lightning Arrow",
+      "speed_band": "fast",
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "placed on bosses for single-target concentrated damage ('Fire it directly on top of bosses -- your primary damage on single target'). A placed zone the Lightning Arrow shots empower -> ground_targeted_circle. Secondary boss stage per 7.2; the every-3-seconds mapping loop is Lightning Arrow chain-clear.",
+      "source_skill": "Lightning Rod",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-lightning-arrow-deadeye",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Two verified drifts noted: (1) engine chain hops sequentially and decays 0.7x/hop, whereas Lightning Arrow's beam splash is simultaneous at full damage to up to 3 targets -- a LA player's screen-clear is slightly weaker per-hop; (2) Lightning Rod's placed boss-zone is approximated as ground_targeted_circle rather than a shot-empowered rod. Both preserve the run-and-gun chain identity.",
+    "grade": "CLOSE",
+    "kit_id": "poe2-lightning-arrow-deadeye",
+    "mapping_json": {
+      "fidelity_notes": "No GX flag. PoE1 LA row queried and mirrored (chain + sunder + run-and-gun frame). poe2 deltas: (a) native lightning, NO phys->lightning -> DROPPED ELEMENT_CONVERSION_PHYSICAL; (b) Lightning Rod is a poe2-specific placed boss-zone 2nd stage -> added as skill[1] + GEOMETRY_PROPAGATION_cascade. Verified drift (arc-b01, engine truth): engine chain hops SEQUENTIALLY decay 0.7x/hop while LA splash is SIMULTANEOUS full-damage to 3 -- chain still the honest type. s2 FALSE FRIEND (shock->sunder). eras 0.1-0.5 CONFIRMED.",
+      "motion_frame": "run-and-gun bow mapper: fire lightning arrows on the full move, every arrow forks beams into the pack around its target -- whole screens light up with chained splashes; drop a Lightning Rod under bosses for concentrated single-target",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "mana per shot (plain pool); high attack speed; Deadeye adds projectiles at no extra cost"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light attack spend; full-move fire; free extra projectiles"
+          ],
+          "geometry": [
+            "chain splash-to-3 around primary hit (large radius)",
+            "extra-projectiles (Deadeye) extend to screen-wide chain network",
+            "Lightning Rod placed boss zone (ground_targeted_circle)"
+          ],
+          "traits_affixes": [
+            "shock-effect (sunder-magnitude analog)",
+            "lightning-penetration",
+            "projectile/attack-speed",
+            "additional-projectiles"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "sunder"
+          ],
+          "delivery_notes": "bow projectile: fires a fast lightning projectile that ON CONTACT unleashes lightning beams arcing to up to 3 nearby enemies within a large radius (dossier verbatim). Mirrors PoE1-lightning-arrow (queried: geometry_value=chain, ailments=[sunder]) -- one-hop splash-fan modeled as chain. Multi-arrow Deadeye nodes create a spreading chain network. poe2 DELTA: no phys->lightning conversion attested (native lightning; the 50% conversion + ELEMENT_CONVERSION_PHYSICAL PoE1 carried is DROPPED). shock rider -> sunder.",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "chain",
+          "source_skill": "Lightning Arrow"
+        },
+        {
+          "ailments": [
+            "sunder"
+          ],
+          "delivery_notes": "placed on bosses for single-target concentrated damage ('Fire it directly on top of bosses -- your primary damage on single target'). A placed zone the Lightning Arrow shots empower -> ground_targeted_circle. Secondary boss stage per 7.2; the every-3-seconds mapping loop is Lightning Arrow chain-clear.",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Lightning Rod"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENTAL_ECHO",
+        "GEOMETRY_PROPAGATION_cascade"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock"
+        ],
+        "centrality": "rider",
+        "conf": 0.82
+      },
+      "family": "control",
+      "id": 673,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "layers": [
+          "evasion",
+          "dodge"
+        ],
+        "primary": "evasion"
+      },
+      "family": "defense",
+      "id": 674,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.9,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.9,
+        "evidence": "Fires arrows that chain lightning between targets; projectile delivery confirmed",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 671,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.85,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Mana spend per shot. High attack speed enables rapid shots. Deadeye nodes provide additional projectiles at no extra cost.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 675,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.9,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.9,
+        "damage_mode": "hit",
+        "label_verbatim": "Lightning"
+      },
+      "family": "element",
+      "id": 676,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "evidence": "Atlas geo=chain; lightning chains hop between targets; chain-hop footprint",
+        "value": "chain-hop"
+      },
+      "family": "footprint",
+      "id": 672,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Deadeye fires Lightning Arrow that hits primary target and chains lightning to additional nearby enemies. Projectile multiplication nodes increase arrow count, creating a spreading chain network across packs.",
+      "family": "geo_text",
+      "id": 678,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 677,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 679,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 680,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Lightning Arrow Deadeye: chain beam identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.85,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|flat|chain|damage|none|evade|spend|solo|ranged|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|flat|chain|damage|none|evade|spend|solo|ranged|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "chain"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "evade"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DRHFSI-HCDD-SP-LI-~~",
+    "attr_conf": 0.85,
+    "attr_val": "DEX",
+    "avg_conf": 0.85,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.85,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Lightning Arrow",
+      "Lightning Rod"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "lightning",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "eras_normalized": "0.1;0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "flags": "",
+    "folk_name": "Lightning Arrow Deadeye",
+    "game": "poe2",
+    "geo_raw": "chain",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-lightning-arrow-deadeye",
+    "lattice_coord": "DRHFSI",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note: 'Chaining lightning arrows with Deadeye projectile multiplication — PoE2's static-striker archetype.' Chain-hop footprint is the core mechanic. PoE2 Deadeye: ascendancy specializes in projectile multiplication and movement speed. Era spans 0.1 through 0.5-ancients with conf=0.85 — well-documented baseline in training, later-era patches may have balance-changed specifics.",
+    "mint": 0,
+    "mob_raw": "very-high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|CHAIN|INST×econ:spend",
+    "mobile_key_group": "DRHFSI-HCDD-SP-LI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 2,
+    "mobile_representative": 0,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;bm",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.85,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.85,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.85,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Arrow Deadeye Build Guide ... changelog entries noting updates for 0.5.3 and 0.3.0 [from earlier versions]",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.1",
+      "errata_applied": 0,
+      "id": 404,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Arrow Deadeye Build Guide ... changelog entries noting updates for 0.5.3 and 0.3.0 [from earlier versions]",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.2-dawn",
+      "errata_applied": 0,
+      "id": 405,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Arrow Deadeye Build Guide ... changelog entries noting updates for 0.5.3 and 0.3.0",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.3-edict",
+      "errata_applied": 0,
+      "id": 406,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Arrow Deadeye Build Guide ... changelog entries noting updates for 0.5.3 and 0.3.0 [maintained through later versions]",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.4",
+      "errata_applied": 0,
+      "id": 407,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "patch 0.5.4 (most recent update June 25, 2026)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.5-ancients",
+      "errata_applied": 0,
+      "id": 408,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Arrow Deadeye Build Guide - Path of Exile 2",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Lightning Arrow Deadeye' and aliases 'LA Deadeye', 'Lightning Rod Deadeye' are real community usage",
+      "errata_applied": 0,
+      "id": 402,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Arrow fires a fast lightning projectile that on contact with an enemy unleashes lightning beams that arc to up to three enemies within a large radius.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Lightning Arrow fires projectile that arcs lightning to up to three enemies; Lightning Rod placed for single-target burst; Deadeye ascendancy projectile multiplication",
+      "errata_applied": 0,
+      "id": 403,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "bow projectile: fires a fast lightning projectile that ON CONTACT unleashes lightning beams arcing to up to 3 nearby enemies within a large radius (dossier verbatim). Mirrors PoE1-lightning-arrow (queried: geometry_value=chain, ailments=[sunder]) -- one-hop splash-fan modeled as chain. Multi-arrow Deadeye nodes create a spreading chain network. poe2 DELTA: no phys->lightning conversion attested (native lightning; the 50% conversion + ELEMENT_CONVERSION_PHYSICAL PoE1 carried is DROPPED). shock ri",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Lightning Arrow' delivery_class=beam (band_conf=0.75); lint: anchor entails 'beam' (1) but 'projectile' more strongly (2) — mixed signal",
+      "errata_applied": 0,
+      "id": 2525,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "placed on bosses for single-target concentrated damage ('Fire it directly on top of bosses -- your primary damage on single target'). A placed zone the Lightning Arrow shots empower -> ground_targeted_circle. Secondary boss stage per 7.2; the every-3-seconds mapping loop is Lightning Arrow chain-clear.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Lightning Rod' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (3 sig)",
+      "errata_applied": 0,
+      "id": 2526,
+      "kit_id": "poe2-lightning-arrow-deadeye",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

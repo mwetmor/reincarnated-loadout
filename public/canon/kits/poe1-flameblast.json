@@ -1,0 +1,788 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 582,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-flameblast",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 105,
+    "kit_id": "poe1-flameblast",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "pathofexile.com",
+    "title": "[3.17] Ultimate Self-cast Flameblast Occultist (Forum)",
+    "url": "https://www.pathofexile.com/forum/view-thread/3262997"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 105,
+      "kit_id": "poe1-flameblast",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "[3.17] Ultimate Self-cast Flameblast Occultist (Forum)",
+      "url": "https://www.pathofexile.com/forum/view-thread/3262997"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 106,
+      "kit_id": "poe1-flameblast",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[3.2] Starter Flameblast Totem Build - Odealo's Crafty Guide",
+      "url": "https://odealo.com/articles/3-0-starter-flameblast-totem-build-odealos-crafty-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 107,
+      "kit_id": "poe1-flameblast",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Flameblast - PoEDB",
+      "url": "https://poedb.tw/us/Flameblast"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-flameblast",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 547,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-flameblast",
+      "missing_expression": "Flameblast maps nearly losslessly — the purest charge-and-detonate: circle expanding-nova geometry + native accumulator-discharge (10-stage build via on-passive-tick, release at cap, and native sub-threshold release = the 'earlier release = weaker' behavior) + tick-cost rooted channel + fire/burn.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Flameblast maps nearly losslessly — the purest charge-and-detonate: circle expanding-nova geometry + native accumulator-discharge (10-stage build via on-passive-tick, release at cap, and native sub-threshold release = the 'earlier release = weaker' behavior) + tick-cost rooted channel + fire/burn. Only minor flavor drift: the exact +0.3m-per-stage radius growth and 165%-more-per-stage magnitude are numeric tuning the geometry/accumulator carry as scaling rather than named fields; and 'circle' (filled expanding disc) is chosen over 'ring' for the self-origin grow-out. A player keeps the full channel-grow-release commitment faithfully."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": 0.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 215,
+      "kit_id": "poe1-flameblast",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "200% more Spell Damage for each stage",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 214,
+      "kit_id": "poe1-flameblast",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "grants 1% less cast speed per 1% gem quality",
+            "effect": "grants 1% less cast speed per 1% gem quality (from 2% per 1% gem quality)",
+            "node": "Divergent Flameblast (alt quality)",
+            "type": "alt_quality"
+          },
+          {
+            "anchor_quote": "0.3s vs 0.20s base cast time; +0.7m per stage vs +0.3m",
+            "effect": "Cast time 0.3s vs 0.20s base; radius scaling +0.7m per stage vs +0.3m",
+            "node": "Flameblast of Celerity (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": null,
+            "effect": "Listed variant; mechanics not detailed on poedb page",
+            "node": "Flameblast of Contraction (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": "200% more Spell Damage for each stage",
+            "effect": "200% more Spell Damage for each stage",
+            "node": "Vaal Flameblast (vaal)",
+            "type": "vaal_variant"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Flameblast"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "grants 1% less cast speed per 1% gem quality",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 213,
+      "kit_id": "poe1-flameblast",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "grants 1% less cast speed per 1% gem quality",
+            "effect": "1% less cast speed per 1% gem quality (vs 2% for standard quality)",
+            "item": "Divergent Flameblast (alt quality gem)",
+            "type": "alt_quality_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Flameblast"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "base radius of 2 meters, expanding by +0.3 metres to radius per Stage, resulting in a maximum 5-meter radius at full charge",
+      "conf": 0.93,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 212,
+      "kit_id": "poe1-flameblast",
+      "payload_json": {
+        "channel_note": "10 stages max; earlier release = smaller zone + less damage",
+        "geometry": "self-origin nova; large zone (base 2m radius, +0.3m per stage = 5m max at stage 10); player is origin point; fire damage type; rooted while channeling"
+      },
+      "source_url": "https://poedb.tw/us/Flameblast"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Channels to build up a large explosion, which is released when you stop using the skill … 165% more Spell Damage for each stage",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 211,
+      "kit_id": "poe1-flameblast",
+      "payload_json": {
+        "loop": "Channel Flameblast growing circle through up to 10 stages from player position -> each stage grows radius (+0.3m) and multiplies damage (165% per stage) -> release at full stage for enormous fire nova; rooted during channel; Elementalist Shaper of Flames for ignite; Totem variant avoids player vulnerability"
+      },
+      "source_url": "https://poedb.tw/us/Flameblast"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[3.2] Starter Flameblast Totem Build … [3.17] Ultimate Self-cast Flameblast Occultist",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 216,
+      "kit_id": "poe1-flameblast",
+      "payload_json": {
+        "variants": [
+          "Self-cast Flameblast Elementalist/Chieftain (primary, rooted channel)",
+          "Flameblast Totem build (Spell Totem Support, avoids player vulnerability)",
+          "Self-cast Flameblast Occultist (3.17+)"
+        ]
+      },
+      "source_url": "https://odealo.com/articles/3-0-starter-flameblast-totem-build-odealos-crafty-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|self-origin|spiky|circle|damage|none|mitigate|spend|solo|dual|low|channel|active|apply→detonate",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.75,
+    "geometry_rule_fired": "R8-self-circle",
+    "geometry_value": "circle",
+    "kit_id": "poe1-flameblast",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "IDLSSC-RLDG-SP-FI-~~",
+      "delivery": "self-origin",
+      "elem_raw": "fire",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.75,
+        "rule_fired": "R8-self-circle",
+        "value": "circle"
+      },
+      "flags": [],
+      "folk_name": "Flameblast",
+      "game": "poe1",
+      "kit_id": "poe1-flameblast",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IDLSSC-RLDG-SP-FI-~~",
+        "delivery": "self-origin",
+        "elem_raw": "fire",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-flameblast",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "channel from the player's own position to grow a circle through up to 10 stages (base 2m radius, +0.3m/stage = 5m max; 165% more spell damage per stage); release at full size for an enormous fire nova; rooted while channeling, earlier release = smaller zone + less damage. fire->burn. circle = the expanding self-origin circle (§6 expanding circle); it grows from self so circle (not ring) is the honest type for the filled expanding nova",
+      "source_skill": "Flameblast",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-flameblast",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Flameblast maps nearly losslessly — the purest charge-and-detonate: circle expanding-nova geometry + native accumulator-discharge (10-stage build via on-passive-tick, release at cap, and native sub-threshold release = the 'earlier release = weaker' behavior) + tick-cost rooted channel + fire/burn. Only minor flavor drift: the exact +0.3m-per-stage radius growth and 165%-more-per-stage magnitude are numeric tuning the geometry/accumulator carry as scaling rather than named fields; and 'circle' (filled expanding disc) is chosen over 'ring' for the self-origin grow-out. A player keeps the full channel-grow-release commitment faithfully.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-flameblast",
+    "mapping_json": {
+      "fidelity_notes": "THE PUREST CHARGE-AND-DETONATE (mech_note verbatim): channel to grow a circle through 10 stages from the player position, release an enormous fire nova at full size; rooted while channeling (dossier skill_loop/skill_geometry). This maps NEARLY LOSSLESSLY: (1) circle geometry (§6 expanding circle; self-origin filled nova — circle over ring since it is a filled growing disc from self, not a hollow burst-ring); (2) the 10-stage-channel-then-release IS the accumulator-discharge primitive (charge_stack_sub_shape=accumulator, accumulator_max=10 = the 10 stages, fill on-passive-tick = the channel builds a stage per tick, discharge_threshold=10 = release at full — all engine-verified enums, resource_economy.py:70-74,143); (3) the rooted channel-maintain = persistent_condition_shape=tick-cost (mana-per-stage). fire->burn (probe 'burn'; Shaper of Flames guaranteed-ignite variant). T4 TEMPORAL_CHARGE (the stage-charge engine, §5 charge/stack) + GEOMETRY_COLLAPSE (the grow-then-detonate-one-big-nova reading). CAPSTONE ABSTAINED — t4 routed from core identity (stage-charge-then-detonate engine) + probe (mana-spend, rooted, self-origin, large-zone) per fallback. The 'earlier release = smaller/weaker' is the native accumulator-below-threshold behavior (discharge before cap = fewer stages consumed) — a clean match. The rooted-vulnerability is a behavioral property of the tick-cost channel; the Totem variant (avoids player vulnerability) is a delivery swap noted in variants, not the dominant self-cast identity.",
+      "motion_frame": "purest charge-and-detonate: root at the player position, channel to grow the circle through 10 stages, release the full-size fire nova; commit or release early for less",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "accumulator_discharge_threshold": 10,
+        "accumulator_fill_trigger": "on-passive-tick",
+        "accumulator_max": 10,
+        "charge_stack_sub_shape": "accumulator",
+        "persistent_condition_shape": "tick-cost"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "stage accumulator (channel-to-build-10-stages, release-to-detonate; on-passive-tick fill while channeling; discharge at cap)",
+            "channel tick-cost (mana-per-stage; rooted-while-casting)",
+            "release-burst at stage cap (165% more per stage)"
+          ],
+          "geometry": [
+            "circle (expanding self-origin nova, +0.3m/stage to 5m)"
+          ],
+          "traits_affixes": [
+            "fire-penetration",
+            "ignite/burn scaling (Shaper of Flames guaranteed ignite)",
+            "area-of-effect (nova radius)",
+            "cast/channel speed (faster stage build)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "burn"
+          ],
+          "delivery_notes": "channel from the player's own position to grow a circle through up to 10 stages (base 2m radius, +0.3m/stage = 5m max; 165% more spell damage per stage); release at full size for an enormous fire nova; rooted while channeling, earlier release = smaller zone + less damage. fire->burn. circle = the expanding self-origin circle (§6 expanding circle); it grows from self so circle (not ring) is the honest type for the filled expanding nova",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "circle",
+          "source_skill": "Flameblast"
+        }
+      ],
+      "t4_doors": [
+        "TEMPORAL_CHARGE",
+        "GEOMETRY_COLLAPSE"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1583,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 1584,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.79,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.79,
+        "evidence": "Channel grows circle at player position; release fires nova from self on completion",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 1581,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Channel to grow a circle through ten stages, release an enormous fire nova at fu",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 1585,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 1586,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "evidence": "Nova grows to large circle; release at full size = very large zone; geo=large-AOE",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 1582,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with large-zone footprint. Channel to grow a circle through ten stages, release an enormous fire nova at full size  —  the genre's purest charge-and-detonate spell.",
+      "family": "geo_text",
+      "id": 1588,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 1587,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1589,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1590,
+      "kit_id": "poe1-flameblast",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Flameblast: circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-flameblast",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "poe1-flameblast",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.88,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "rooted|self-origin|spiky|circle|damage|none|mitigate|spend|solo|dual|low|channel|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|self-origin|spiky|circle|damage|none|mitigate|spend|solo|dual|low|channel|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDLSSC-RLDG-SP-FI-~~",
+    "attr_conf": 0.88,
+    "attr_val": "INT",
+    "avg_conf": 0.88,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.88,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Flameblast"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-per-stage",
+    "elem_raw": "fire",
+    "era_year": 2013,
+    "eras": "1.x;2.x;3.0-3.6",
+    "eras_normalized": "1.x;2.x;3.0-3.6",
+    "flags": "",
+    "folk_name": "Flameblast",
+    "game": "poe1",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-04",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-flameblast",
+    "lattice_coord": "IDLSSC",
+    "lineage": "",
+    "mech_note": "Channel to grow a circle through ten stages, release an enormous fire nova at full size — the genre's purest charge-and-detonate spell.",
+    "mint": 0,
+    "mob_raw": "rooted-while-channel",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|LARGE|CHAN×GAP-P1-04",
+    "mobile_key_group": "IDLSSC-RLDG-SP-FI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.88,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.88,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.88,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Flameblast debuted in version 1.0.4 … underwent significant redesign in patch 2.4.0 … [3.2] Starter Flameblast Totem Build",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 1.x, 2.x, 3.0-3.6",
+      "errata_applied": 0,
+      "id": 118,
+      "kit_id": "poe1-flameblast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Flameblast",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.17] Ultimate Self-cast Flameblast Occultist … Starter Flameblast Totem Build",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Flameblast' is real community usage for Elementalist/Chieftain channel build",
+      "errata_applied": 0,
+      "id": 116,
+      "kit_id": "poe1-flameblast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3262997",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Channels to build up a large explosion, which is released when you stop using the skill … 165% more Spell Damage for each stage",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Channel grows circle through ten stages from self-origin; release fires enormous fire nova; rooted while casting; mana spend resource",
+      "errata_applied": 0,
+      "id": 117,
+      "kit_id": "poe1-flameblast",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Flameblast",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "channel from the player's own position to grow a circle through up to 10 stages (base 2m radius, +0.3m/stage = 5m max; 165% more spell damage per stage); release at full size for an enormous fire nova; rooted while channeling, earlier release = smaller zone + less damage. fire->burn. circle = the expanding self-origin circle (§6 expanding circle); it grows from self so circle (not ring) is the honest type for the filled expanding nova",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Flameblast' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (3 sig)",
+      "errata_applied": 0,
+      "id": 2416,
+      "kit_id": "poe1-flameblast",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

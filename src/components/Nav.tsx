@@ -30,6 +30,9 @@ export function Nav() {
             <NavItem to="/loadout">Loadout</NavItem>
             {/* cycle-18 recovery-2: Kits nav item for kit browser surface */}
             <NavItem to="/kits">Kits</NavItem>
+            {/* canon inspection surface (Matt-requested 2026-07-22): the 267 canonical
+                records as the sim consumes them; adjacency after Kits reads correctly. */}
+            <NavItem to="/canon">Canon</NavItem>
             {/* cycle-18 recovery Fix B: Sample removed from active nav per Matt B1; /sample route preserved for historical access */}
             <NavItem to="/analytics">Analytics</NavItem>
             <NavItem to="/encounters">Encounters</NavItem>

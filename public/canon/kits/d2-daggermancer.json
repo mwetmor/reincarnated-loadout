@@ -1,0 +1,804 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 806,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-daggermancer",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Stormlash (data contributor)",
+    "cite_class": "official",
+    "id": 609,
+    "kit_id": "d2-daggermancer",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "Poison Dagger — Diablo 2 Resurrected Skill",
+    "url": "https://diablo2.io/skills/poison-dagger-t4133.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Stormlash (data contributor)",
+      "cite_class": "official",
+      "id": 609,
+      "kit_id": "d2-daggermancer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Poison Dagger — Diablo 2 Resurrected Skill",
+      "url": "https://diablo2.io/skills/poison-dagger-t4133.html"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "basicnecromancy; Necrarch (mod)",
+      "cite_class": "communal",
+      "id": 610,
+      "kit_id": "d2-daggermancer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Poison Necro build style: What about Daggermancer?",
+      "url": "https://diablo2.io/forums/poison-necro-build-style-what-about-daggermancer-t1049069.html"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-daggermancer",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 719,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-daggermancer",
+      "missing_expression": "Player would miss: Crushing Blow identity layer (on-kill threshold mechanic;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Player would miss: Crushing Blow identity layer (on-kill threshold mechanic; approximated via execute T4 door note but not mapped as ailment — no fetched 'execute' language); adjacency-only melee range constraint (approximated by melee_strike geometry)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Data contributed by Stormlash",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1391,
+      "kit_id": "d2-daggermancer",
+      "payload_json": {
+        "handle": "Stormlash",
+        "site": "diablo2.io"
+      },
+      "source_url": "https://diablo2.io/skills/poison-dagger-t4133.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Synergies: Poison Explosion (+20% per level) and Poison Nova (+20% per level)",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1390,
+      "kit_id": "d2-daggermancer",
+      "payload_json": {
+        "curses": [
+          "Amplify Damage",
+          "Decrepify",
+          "Lower Resist",
+          "Dim Vision / Confuse"
+        ],
+        "synergies": [
+          "Poison Explosion (+20% per level)",
+          "Poison Nova (+20% per level)"
+        ]
+      },
+      "source_url": "https://diablo2.io/skills/poison-dagger-t4133.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "can achieve over 10,000 damage with Trang-Oul's Claws... Blackbog's Sharp is recommended",
+      "conf": 0.68,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1389,
+      "kit_id": "d2-daggermancer",
+      "payload_json": {
+        "key_items": [
+          "Blackbog's Sharp (recommended dagger)",
+          "Trang-Oul's Claws (gloves, +poison skills)",
+          "Homunculus (shield, +skills)"
+        ],
+        "notes": "Stacking Crushing Blow enables faster boss kills; Bone Armor for survival while in melee range"
+      },
+      "source_url": "https://diablo2.io/skills/poison-dagger-t4133.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Poison Dagger direct melee stab into targeted adjacent enemy",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1388,
+      "kit_id": "d2-daggermancer",
+      "payload_json": {
+        "delivery": "at-target melee stab",
+        "footprint": "point (adjacent single enemy)",
+        "notes": "Short dagger melee range; must be adjacent to target; poison DoT delivers over seconds after initial hit",
+        "range_type": "melee"
+      },
+      "source_url": "https://diablo2.io/skills/poison-dagger-t4133.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Adds poison to your Dagger attacks... the higher the Skill Level, the more spread out over time the Poison damage is",
+      "conf": 0.74,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1387,
+      "kit_id": "d2-daggermancer",
+      "payload_json": {
+        "summary": "Poison Dagger delivers a melee stab applying poison DoT that spreads over multiple seconds; higher skill level = longer duration with same total damage spread over more time. Amplify Damage curse lowers enemy physical resistance. Corpse Explosion serves as primary clear speed tool; Poison Dagger is boss-focused via stacked Crushing Blow."
+      },
+      "source_url": "https://diablo2.io/skills/poison-dagger-t4133.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Synergizing Poison Dagger, Poison Explosion, and Poison Nova all together",
+      "conf": 0.66,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1392,
+      "kit_id": "d2-daggermancer",
+      "payload_json": {
+        "variants": [
+          "Daggermancer (pure Poison Dagger melee)",
+          "Poison Necro (Poison Nova primary)",
+          "Hybrid Poison (Dagger + Corpse Explosion)"
+        ]
+      },
+      "source_url": "https://diablo2.io/forums/poison-necro-build-style-what-about-daggermancer-t1049069.html"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|at-target|flat|melee_strike|damage|none|mitigate|spend|light|melee|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.64,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "d2-daggermancer",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "IMMFLI-LNMG-SP-PO-~~",
+      "delivery": "at-target",
+      "elem_raw": "poison",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.64,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Daggermancer",
+      "game": "d2",
+      "kit_id": "d2-daggermancer",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IMMFLI-LNMG-SP-PO-~~",
+        "delivery": "at-target",
+        "elem_raw": "poison",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-daggermancer",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "Melee stab applying poison DoT; anchor: 'Adds poison to your Dagger attacks... the poison damage is delivered as a damage-over-time effect that spreads across multiple seconds'; 'the higher the Skill Level, the more spread out over time the Poison damage is'; poison DoT = earth (nature/venom-themed — §1 poison/nature/acid → earth or shadow; necro kit: shadow is bone/necrotic lineage, but dagger is venom-themed physical melee → earth preferred; ailment = poison either way per §1)",
+      "source_skill": "Poison Dagger",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-daggermancer",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Curse reducing physical resistance; anchor: 'Amplify Damage curse lowers enemy physical resistance'; §2 Amp Damage → curse:amplify per main §2 table ('PoE Vulnerability / D2 Amp Damage → curse:amplify')",
+      "source_skill": "Amplify Damage curse",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-daggermancer",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player would miss: Crushing Blow identity layer (on-kill threshold mechanic; approximated via execute T4 door note but not mapped as ailment — no fetched 'execute' language); adjacency-only melee range constraint (approximated by melee_strike geometry).",
+    "grade": "CLOSE",
+    "kit_id": "d2-daggermancer",
+    "mapping_json": {
+      "fidelity_notes": "Poison/venom-themed melee → earth element per §1; ailment = poison per §1 (stack-additive). Amp Damage → curse:amplify per §2 main law table directly. Corpse Explosion as PvM clear tool is variant-scope (variant-only mechanism per §E.2 variant-scope law; core identity = Poison Dagger boss-kill via Crushing Blow + DoT). PERSISTENCE_ENGINE_saturation T4 captures the DoT-spread identity. era unsupported pre-2.4 (verify_ledger era UNSUPPORTED noted).",
+      "motion_frame": "Adjacent melee stab with Poison Dagger to apply stacking poison DoT; Amplify Damage curse to enable physical/poison penetration; Corpse Explosion for clear speed (variant layer)",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "Poison Dagger mana per hit (low); Amplify Damage mana per cast"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Bone Armor defensive layer (survival in melee range; 'Bone Armor for survival while in melee range' — item_alterations)"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Synergies: Poison Explosion +20%/level, Poison Nova +20%/level — §A row 1 scaffold; capstone anchor"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "Melee stab applying poison DoT; anchor: 'Adds poison to your Dagger attacks... the poison damage is delivered as a damage-over-time effect that spreads across multiple seconds'; 'the higher the Skill Level, the more spread out over time the Poison damage is'; poison DoT = earth (nature/venom-themed — §1 poison/nature/acid → earth or shadow; necro kit: shadow is bone/necrotic lineage, but dagger is venom-themed physical melee → earth preferred; ailment = poison either way per §1)",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Poison Dagger"
+        },
+        {
+          "ailments": [
+            "curse:amplify"
+          ],
+          "delivery_notes": "Curse reducing physical resistance; anchor: 'Amplify Damage curse lowers enemy physical resistance'; §2 Amp Damage → curse:amplify per main §2 table ('PoE Vulnerability / D2 Amp Damage → curse:amplify')",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Amplify Damage curse"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_saturation",
+        "ELEMENT_CONVERSION_PHYSICAL"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "ailments": [
+          "poison"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3283,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 3284,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.68,
+        "evidence": "Poison Dagger direct melee stab into targeted adjacent enemy",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 3281,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Poison Dagger melee necromancer made semi-real by 2.4 — a shallow-canon curiosit",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 3285,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "dot",
+        "label_verbatim": "poison"
+      },
+      "family": "element",
+      "id": 3286,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.64,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.64,
+        "evidence": "Single adjacent enemy; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 3282,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "At-target delivery with point footprint. Poison Dagger melee necromancer made semi-real by 2.",
+      "family": "geo_text",
+      "id": 3288,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 3287,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 3289,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 3290,
+      "kit_id": "d2-daggermancer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Daggermancer: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-daggermancer",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:earth",
+      "hook_id": "H2",
+      "hook_text": "earth element register",
+      "hook_type": "register",
+      "kit_id": "d2-daggermancer",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.75,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|flat|melee_strike|damage|none|mitigate|spend|light|melee|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|flat|melee_strike|damage|none|mitigate|spend|light|melee|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IMMFLI-LNMG-SP-PO-~~",
+    "attr_conf": 0.75,
+    "attr_val": "INT",
+    "avg_conf": 0.75,
+    "canon_tier": "shallow",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.75,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Poison Dagger",
+      "Amplify Damage"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "poison",
+    "era_year": 2000,
+    "eras": "d2r-2.4+",
+    "eras_normalized": "d2r-2.4+",
+    "flags": "vdm2-w5-poison-register-split-2026-07-22: poison->earth register (skill.element_primary='earth' on Poison Dagger) disagrees with court='chaos-poison' / sibling poison-nova-necro's poison->shadow. D2-poison register split (earth vs shadow) — W5 to unify.",
+    "folk_name": "Daggermancer",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-daggermancer",
+    "lattice_coord": "IMMFLI",
+    "lineage": "",
+    "mech_note": "Poison Dagger melee necromancer made semi-real by 2.4 — a shallow-canon curiosity proving the buff-promotes-build pattern.",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|SINGLE|INST×econ:spend",
+    "mobile_key_group": "IMMFLI-LNMG-SP-PO-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "poison",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.75,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.75,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.75,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MELEE-STRIKE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=1].members (working_label=MELEE-STRIKE; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r-2.4+",
+      "errata_applied": 0,
+      "id": 879,
+      "kit_id": "d2-daggermancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/poison-necro-build-style-what-about-daggermancer-t1049069.html",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Daggermancer is discussed as a melee poison necromancer variant",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name Daggermancer; aliases Poison Dagger Necromancer, Dagger Necro",
+      "errata_applied": 0,
+      "id": 877,
+      "kit_id": "d2-daggermancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/poison-necro-build-style-what-about-daggermancer-t1049069.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Adds poison to your Dagger attacks... the poison damage is delivered as a damage-over-time effect that spreads across multiple seconds",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Poison Dagger (melee stab, poison DoT), Amplify Damage",
+      "errata_applied": 0,
+      "id": 878,
+      "kit_id": "d2-daggermancer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/poison-dagger-t4133.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Melee stab applying poison DoT; anchor: 'Adds poison to your Dagger attacks... the poison damage is delivered as a damage-over-time effect that spreads across multiple seconds'; 'the higher the Skill Level, the more spread out over time the Poison damage is'; poison DoT = earth (nature/venom-themed — §1 poison/nature/acid → earth or shadow; necro kit: shadow is bone/necrotic lineage, but dagger is venom-themed physical melee → earth preferred; ailment = poison either way per §1)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Poison Dagger' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1 sig)",
+      "errata_applied": 0,
+      "id": 2101,
+      "kit_id": "d2-daggermancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Curse reducing physical resistance; anchor: 'Amplify Damage curse lowers enemy physical resistance'; §2 Amp Damage → curse:amplify per main §2 table ('PoE Vulnerability / D2 Amp Damage → curse:amplify')",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Amplify Damage curse' delivery_class=projectile (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'projectile'",
+      "errata_applied": 0,
+      "id": 2102,
+      "kit_id": "d2-daggermancer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

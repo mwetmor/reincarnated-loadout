@@ -1,0 +1,835 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 0,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 8
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 865,
+      "assert_text": "primary_delivery_class == 'motion'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-ww-barb",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 704,
+    "kit_id": "d2-ww-barb",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Whirlwind Barbarian Endgame Build Guide for Diablo II: Resurrected Season 14",
+    "url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 704,
+      "kit_id": "d2-ww-barb",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Whirlwind Barbarian Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "official",
+      "id": 705,
+      "kit_id": "d2-ww-barb",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "classic.battle.net",
+      "title": "The Arreat Summit - Skills: Barbarian Combat Skills",
+      "url": "https://classic.battle.net/diablo2exp/skills/barbarian-combatskills.shtml"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 706,
+      "kit_id": "d2-ww-barb",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablobytes.com",
+      "title": "Whirlwind Barbarian Build Guide — WW Barb — Diablo 2 Resurrected (D2R)",
+      "url": "https://diablobytes.com/d2-resurrected/builds/whirlwind-barb/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-ww-barb",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1667,
+      "kit_id": "d2-ww-barb",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Battle Orders grants you and your party a percentage based amount of Life, Mana, and Stamina.",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1666,
+      "kit_id": "d2-ww-barb",
+      "payload_json": {
+        "notable_oskills": [],
+        "runewords": [
+          "Grief",
+          "Fortitude",
+          "Enigma",
+          "Breath of the Dying",
+          "Death",
+          "Beast"
+        ],
+        "synergies": [
+          "Battle Orders: percentage boost to party Life/Mana/Stamina"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Grief Phase Blade is effectively mandatory for competitive damage output.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1665,
+      "kit_id": "d2-ww-barb",
+      "payload_json": {
+        "notable_runewords": [
+          "Grief Phase Blade (mandatory damage)",
+          "Fortitude (armor)",
+          "Enigma",
+          "Breath of the Dying",
+          "Death",
+          "Beast",
+          "Last Wish",
+          "Insight (merc)",
+          "Obedience"
+        ],
+        "notable_uniques": []
+      },
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "makes your character spin and deal Physical Damage when phasing through enemies",
+      "conf": 0.89,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1664,
+      "kit_id": "d2-ww-barb",
+      "payload_json": {
+        "delivery": "self-origin (spinning body)",
+        "footprint": "small-radius (AoE around player path)",
+        "notes": "Player moves while spinning; hits all enemies in radius along movement path. Full-move policy while channeling."
+      },
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "makes your character spin and deal Physical Damage when phasing through enemies",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1663,
+      "kit_id": "d2-ww-barb",
+      "payload_json": {
+        "summary": "Whirlwind channels player into spinning movement that deals weapon-scaled physical damage to all enemies in path. Entire output is physical/weapon-scaled. Battle Orders provides party-wide HP and mana buff. Mana leech via ring/weapon covers sustained WW cost. Grief Phase Blade is near-mandatory endgame weapon."
+      },
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Berserk: Magical damage, required for breaking Physical Immune monsters",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1668,
+      "kit_id": "d2-ww-barb",
+      "payload_json": {
+        "variants": [
+          "WW Barb (pure Whirlwind)",
+          "Berserk WW hybrid (WW for packs, Berserk for physical-immune bosses)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "full-move|self-origin|flat|whirlwind|damage|none|tank|spend|solo|melee|med|channel|triggered|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "self-origin",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.72,
+    "geometry_rule_fired": "R8-spin",
+    "geometry_value": "whirlwind",
+    "kit_id": "d2-ww-barb",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMMFSC-_SDT-SP-PH-~~",
+      "delivery": "self-origin",
+      "elem_raw": "physical",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.72,
+        "rule_fired": "R8-spin",
+        "value": "whirlwind"
+      },
+      "flags": [],
+      "folk_name": "Whirlwind Barbarian",
+      "game": "d2",
+      "kit_id": "d2-ww-barb",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMMFSC-_SDT-SP-PH-~~",
+        "delivery": "self-origin",
+        "elem_raw": "physical",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-ww-barb",
+      "motion_signature": "orbit_fixed",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "Moving-channel spin through packs dealing weapon-scaled physical damage to all enemies in path along movement. Full-move policy while channeling per batch hot-fact §CROSS.5. Physical rule: element-neutral. Path-swath delivery noted.",
+      "source_skill": "Whirlwind",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-ww-barb",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "Party-wide percentage boost to Life/Mana/Stamina. Free persistent toggle (no reservation cost). Party-buff aura.",
+      "source_skill": "Battle Orders",
+      "speed_band": null,
+      "width_band": "wide"
+    }
+  ],
+  "kit_id": "d2-ww-barb",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": null,
+    "grade": "EXACT",
+    "kit_id": "d2-ww-barb",
+    "mapping_json": {
+      "fidelity_notes": "Moving-channel: geometry = whirlwind (spin-to-win per phrase-book); delivery_notes state moving-vs-rooted per §CROSS.5 batch hot-fact. Physical rule: element-neutral. Grief Phase Blade is near-mandatory (item_alterations) — numeric scaler per §4, not a mechanism rewrite. Battle Orders free-toggle aura (no reservation). MOMENTUM_CASCADE for the moving-through-packs velocity-damage loop identity.",
+      "motion_frame": "Spin-to-win moving channel: player holds WW and steers through packs, dealing weapon-scaled physical hits along movement path; Battle Orders active for party sustain.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "leech": "mana leech via ring/weapon covering WW sustain cost",
+        "spend": "steady-mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana leech gear sustain"
+          ],
+          "geometry": [
+            "Grief Phase Blade mandatory weapon (item-defined output scale)"
+          ],
+          "traits_affixes": [
+            "Berserk variant for physical-immune — scaffold"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Moving-channel spin through packs dealing weapon-scaled physical damage to all enemies in path along movement. Full-move policy while channeling per batch hot-fact §CROSS.5. Physical rule: element-neutral. Path-swath delivery noted.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "whirlwind",
+          "source_skill": "Whirlwind"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Party-wide percentage boost to Life/Mana/Stamina. Free persistent toggle (no reservation cost). Party-buff aura.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Battle Orders"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_PHYSICAL",
+        "MOMENTUM_CASCADE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2413,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "hp-stack",
+          "sustain-leech"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 2414,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.77,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.77,
+        "evidence": "Whirlwind channels player rotation through pack; delivery from spinning body",
+        "value": "self-origin"
+      },
+      "family": "delivery",
+      "id": 2411,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); The genre's spin-to-win origin: channel-move through packs dealing weapon hits a",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 2415,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 2416,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "WW spin covers small zone around player path; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 2412,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Self-origin delivery with small-radius footprint. The genre's spin-to-win origin: channel-move through packs dealing weapon hits along the path; entire output weapon-scaled physical.",
+      "family": "geo_text",
+      "id": 2418,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 2417,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2419,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "od (online docs — Diablo wiki / game manual)",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2420,
+      "kit_id": "d2-ww-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Whirlwind Barbarian: whirlwind motion identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-ww-barb",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.85,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|self-origin|flat|whirlwind|damage|none|tank|spend|solo|melee|med|channel|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|self-origin|flat|whirlwind|damage|none|tank|spend|solo|melee|med|channel|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "self-origin"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "whirlwind"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMMFSC-_SDT-SP-PH-~~",
+    "attr_conf": 0.85,
+    "attr_val": "STR",
+    "avg_conf": 0.85,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.85,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Whirlwind",
+      "Battle Orders"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-per-spin",
+    "elem_raw": "physical",
+    "era_year": 2000,
+    "eras": "classic;lod;d2r;rotw-s14",
+    "eras_normalized": "classic;lod;d2r;rotw-s14",
+    "flags": "",
+    "folk_name": "Whirlwind Barbarian",
+    "game": "d2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "d2-ww-barb",
+    "lattice_coord": "SMMFSC",
+    "lineage": "",
+    "mech_note": "The genre's spin-to-win origin: channel-move through packs dealing weapon hits along the path; entire output weapon-scaled physical.",
+    "mint": 0,
+    "mob_raw": "full_move-during",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|SMALL|CHAN×econ:spend",
+    "mobile_key_group": "SMMFSC-_SDT-SP-PH-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "od;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.85,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.85,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.85,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "WHIRLWIND",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "A fierce spinning attack.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era: classic",
+      "errata_applied": 0,
+      "id": 1066,
+      "kit_id": "d2-ww-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://classic.battle.net/diablo2exp/skills/barbarian-combatskills.shtml",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The WW Barb has been a staple of the game since its original release, and Patch 2.4's Whirlwind rework made it smoother and more reliable than ever.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era: lod",
+      "errata_applied": 0,
+      "id": 1067,
+      "kit_id": "d2-ww-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablobytes.com/d2-resurrected/builds/whirlwind-barb/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Season 14 Last Updated: May 22, 2026. No changes for Season 14.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era: d2r",
+      "errata_applied": 0,
+      "id": 1068,
+      "kit_id": "d2-ww-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era: rotw-s14",
+      "errata_applied": 0,
+      "id": 1069,
+      "kit_id": "d2-ww-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "the iconic Whirlwind Barbarian, also known as the WW Barb",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Whirlwind Barbarian'; aliases 'WW Barb', 'Berserk WW hybrid'",
+      "errata_applied": 0,
+      "id": 1064,
+      "kit_id": "d2-ww-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "makes your character spin and deal Physical Damage when phasing through enemies. Battle Orders grants you and your party a percentage based amount of Life, Mana, and Stamina.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Whirlwind, Battle Orders",
+      "errata_applied": 0,
+      "id": 1065,
+      "kit_id": "d2-ww-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Moving-channel spin through packs dealing weapon-scaled physical damage to all enemies in path along movement. Full-move policy while channeling per batch hot-fact §CROSS.5. Physical rule: element-neutral. Path-swath delivery noted.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Whirlwind' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (2 sig)",
+      "errata_applied": 0,
+      "id": 2209,
+      "kit_id": "d2-ww-barb",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Party-wide percentage boost to Life/Mana/Stamina. Free persistent toggle (no reservation cost). Party-buff aura.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Battle Orders' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (5 sig)",
+      "errata_applied": 0,
+      "id": 2210,
+      "kit_id": "d2-ww-barb",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

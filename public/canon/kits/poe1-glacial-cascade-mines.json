@@ -1,0 +1,780 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 589,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-glacial-cascade-mines",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "aer0",
+    "cite_class": "communal",
+    "id": 124,
+    "kit_id": "poe1-glacial-cascade-mines",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Glacial Cascade Elementalist League Starter — Maxroll.gg (3.28)",
+    "url": "https://maxroll.gg/poe/build-guides/glacial-cascade-elementalist-league-starter"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 123,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Glacial Cascade — PoEDB",
+      "url": "https://poedb.tw/us/Glacial_Cascade"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "aer0",
+      "cite_class": "communal",
+      "id": 124,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Glacial Cascade Elementalist League Starter — Maxroll.gg (3.28)",
+      "url": "https://maxroll.gg/poe/build-guides/glacial-cascade-elementalist-league-starter"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-glacial-cascade-mines",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 553,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-glacial-cascade-mines",
+      "missing_expression": "The marching 4-burst ice cascade + knockback + freeze/shatter lands via line + GEOMETRY_PROPAGATION_cascade + the mine trigger-chassis, but two properties generalize: (a) the precise '4 discrete sequential bursts each bigger/final-burst-double-radius' cadence is a numeric multi-hit property line geometry doesn't enumerate;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The marching 4-burst ice cascade + knockback + freeze/shatter lands via line + GEOMETRY_PROPAGATION_cascade + the mine trigger-chassis, but two properties generalize: (a) the precise '4 discrete sequential bursts each bigger/final-burst-double-radius' cadence is a numeric multi-hit property line geometry doesn't enumerate; (b) the mine throw/detonate delivery is approximated via trigger-grammar + activation-toggle rather than a native mine primitive. A player keeps the 'lay mines, erupt a shoving line of ice that shatters the pack' feel; the exact burst-count/overlap-tuning and mine cadence are abstracted."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 251,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "payload_json": {
+        "credits": [
+          {
+            "handle": "aer0",
+            "note": "Glacial Cascade Elementalist League Starter (3.28) — Elementalist not Saboteur, but GC covered",
+            "site": "maxroll.gg"
+          }
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe/build-guides/glacial-cascade-elementalist-league-starter"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Glacial Cascade has 1 additional Bursts",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 250,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "Base Critical Strike Chance of 6% (previously 5%)",
+            "effect": "Base Critical Strike Chance 6% (previously 5%); 140-160% Effectiveness of Added Damage (previously 110-130%)",
+            "node": "Glacial Cascade of the Fissure (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": "Glacial Cascade has 1 additional Bursts...20% of Glacial Cascade Physical Damage Converted to Cold Damage",
+            "effect": "Glacial Cascade has 1 additional Bursts; 20% of Glacial Cascade Physical Damage Converted to Cold Damage",
+            "node": "The Long Winter (threshold jewel)",
+            "req": "40 Intelligence in Radius",
+            "type": "threshold_jewel"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Glacial_Cascade"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Glacial Cascade has 1 additional Bursts",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 249,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "Glacial Cascade has 1 additional Bursts...20% of Glacial Cascade Physical Damage Converted to Cold Damage",
+            "effect": "Glacial Cascade has 1 additional Bursts; 20% of Glacial Cascade Physical Damage Converted to Cold Damage",
+            "item": "The Long Winter (threshold jewel)",
+            "type": "threshold_jewel"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Glacial_Cascade"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Increasing Area of Effect expands each circle's radius rather than extending range, allowing greater overlap and more reliable multi-hits on single targets. The final burst delivers 200% increased damage and has 100% more radius.",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 248,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "payload_json": {
+        "aoe": "4 burst areas; final burst 100% more radius; area scales with AoE passives",
+        "delivery": "thrown mines detonate at target location",
+        "footprint": "large zone — 4 cascading overlapping circular areas in sequence (forward march)",
+        "projectile": false,
+        "range_text": "creates multiple overlapping circular areas arranged in sequence... Increasing Area of Effect expands each circle's radius rather than extending range"
+      },
+      "source_url": "https://poedb.tw/us/Glacial_Cascade"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Icicles emerge from the ground in a series of small bursts, each damaging enemies caught in the area and knocking them back in the direction of the next burst. It causes 4 bursts per cast.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 247,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "payload_json": {
+        "summary": "Player throws mines via High-Impact Mine Support; detonation triggers Glacial Cascade — a series of 4 cascading ice burst areas marching forward; final burst delivers 200% increased damage with 100% more radius; Mine Mastery enables auto-detonation on move making it play like a caster."
+      },
+      "source_url": "https://poedb.tw/us/Glacial_Cascade"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 252,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "payload_json": {
+        "variants": [
+          "GC Mines Saboteur (High-Impact Mine, primary documented variant 3.0-3.13)",
+          "Glacial Cascade self-cast Elementalist (3.28 Maxroll guide — non-mine variant)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe/build-guides/glacial-cascade-elementalist-league-starter"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|spiky|totem|damage|hard-stop|tank|cooldown|heavy|ranged|high|instant|active|apply→detonate",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:freeze\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hard-stop",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "cooldown",
+    "flags": [],
+    "geometry_conf": 0.62,
+    "geometry_rule_fired": "R0b",
+    "geometry_value": "totem",
+    "kit_id": "poe1-glacial-cascade-mines",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRHSHI-HLDD-SP-CO-~~",
+      "delivery": "at-target",
+      "elem_raw": "cold",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:freeze"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.62,
+        "rule_fired": "R0b",
+        "value": "totem"
+      },
+      "flags": [],
+      "folk_name": "Glacial Cascade Mines",
+      "game": "poe1",
+      "kit_id": "poe1-glacial-cascade-mines",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRHSHI-HLDD-SP-CO-~~",
+        "delivery": "at-target",
+        "elem_raw": "cold",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "cooldown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "on mine detonation, icicles erupt from the ground in a SERIES OF 4 BURSTS MARCHING FORWARD in a line, each knocking enemies toward the next burst; final burst deals 200% more damage with 100% more radius. line = the forward-marching lane of sequential eruptions (the dominant footprint); water/cold; chill+freeze (native shatter) + knockback (each burst shoves toward the next)",
+      "source_skill": "Glacial Cascade (via High-Impact Mine)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-glacial-cascade-mines",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The marching 4-burst ice cascade + knockback + freeze/shatter lands via line + GEOMETRY_PROPAGATION_cascade + the mine trigger-chassis, but two properties generalize: (a) the precise '4 discrete sequential bursts each bigger/final-burst-double-radius' cadence is a numeric multi-hit property line geometry doesn't enumerate; (b) the mine throw/detonate delivery is approximated via trigger-grammar + activation-toggle rather than a native mine primitive. A player keeps the 'lay mines, erupt a shoving line of ice that shatters the pack' feel; the exact burst-count/overlap-tuning and mine cadence are abstracted.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-glacial-cascade-mines",
+    "mapping_json": {
+      "fidelity_notes": "MINE-DELIVERED CASCADE. Geometry: dossier is explicit -- '4 cascading overlapping circular areas in sequence (forward march)', 'series of small bursts... knocking them back in the direction of the next burst'. The dominant footprint is a FORWARD-MARCHING LANE of eruptions -> line (a sequenced-along-an-axis AoE), noted over ground_targeted_circle (single patch) and ground_slam (single quake) because the marching-sequence IS the identity. water/cold; ailments chill+freeze (native shatter) + knockback (each burst shoves toward the next -- a load-bearing signature). Mine delivery -> trigger_grammar on-cast-linked/linked-cast (mine-throw links the GC cast, detonate fires) + activation-toggle for the throw/detonate rhythm; DEPTH-1 (throw links, detonate fires) within MAX_CHAIN_DEPTH. GEOMETRY_PROPAGATION_cascade is the exact door -- the 4-burst forward-march IS a geometry propagation. The 'overlap circles on a single target for multi-hit' (AoE-passives widen radius, not range) is a numeric AoE-scaling property noted in traits.",
+      "motion_frame": "mine-layer caster: throw mines into a pack, detonate to erupt a marching line of ice bursts that shove and shatter; Mine Mastery auto-detonate-on-move lets it play like a caster",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "persistent_condition_shape": "activation-toggle"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mine throw/detonate cycle",
+            "Mine-Mastery auto-detonate-on-move (caster-like cadence)"
+          ],
+          "geometry": [
+            "line forward-marching burst sequence",
+            "area-of-effect (widens each circle -> more overlap, more multi-hits on single targets)"
+          ],
+          "traits_affixes": [
+            "cold-penetration",
+            "area-of-effect (overlap for boss multi-hit)",
+            "freeze/chill-scaling"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "chill",
+            "freeze",
+            "knockback"
+          ],
+          "delivery_notes": "on mine detonation, icicles erupt from the ground in a SERIES OF 4 BURSTS MARCHING FORWARD in a line, each knocking enemies toward the next burst; final burst deals 200% more damage with 100% more radius. line = the forward-marching lane of sequential eruptions (the dominant footprint); water/cold; chill+freeze (native shatter) + knockback (each burst shoves toward the next)",
+          "element_primary": "water",
+          "element_secondary": null,
+          "geometry_value": "line",
+          "source_skill": "Glacial Cascade (via High-Impact Mine)"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION_cascade",
+        "ELEMENTAL_ECHO"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-consume-pair"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "chill",
+          "freeze"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 993,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "hp-stack",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 994,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.66,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.66,
+        "evidence": "Mines thrown; detonation triggers cascading ice eruptions marching forward",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 991,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "cooldown",
+        "plain_text": "cooldown (cooldown); Thrown mines detonate cascading ice eruptions marching forward in a line — deplo",
+        "resource_verbatim": "cooldown"
+      },
+      "family": "economy",
+      "id": 995,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "cold"
+      },
+      "family": "element",
+      "id": 996,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.62,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.62,
+        "evidence": "Cascading ice eruptions march forward covering large lane; geo=large-AOE",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 992,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with large-zone footprint. Thrown mines detonate cascading ice eruptions marching forward in a line  —  deploy-then-detonate caster at mine cadence.",
+      "family": "geo_text",
+      "id": 998,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 997,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 999,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1000,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Glacial Cascade Mines: line projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-glacial-cascade-mines",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:water",
+      "hook_id": "H2",
+      "hook_text": "water element register",
+      "hook_type": "register",
+      "kit_id": "poe1-glacial-cascade-mines",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.73,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|spiky|totem|damage|hard-stop|tank|cooldown|heavy|ranged|high|instant|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|spiky|totem|damage|hard-stop|tank|cooldown|heavy|ranged|high|instant|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "totem"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hard-stop"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "cooldown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "heavy"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRHSHI-HLDD-SP-CO-~~",
+    "attr_conf": 0.73,
+    "attr_val": "INT",
+    "avg_conf": 0.73,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.73,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Glacial Cascade",
+      "High-Impact Mine"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mine-throw-cycle",
+    "elem_raw": "cold",
+    "era_year": 2013,
+    "eras": "3.0-3.6;3.7-3.13",
+    "eras_normalized": "3.0-3.6;3.7-3.13",
+    "flags": "",
+    "folk_name": "Glacial Cascade Mines",
+    "game": "poe1",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-03",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-glacial-cascade-mines",
+    "lattice_coord": "IRHSHI",
+    "lineage": "",
+    "mech_note": "Thrown mines detonate cascading ice eruptions marching forward in a line — deploy-then-detonate caster at mine cadence.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A+B: soul-control troop command exists; turret/pet AI variants + summon economy needed",
+    "mobile_cell_id": "HEAVY|LARGE|INST×GAP-P1-03",
+    "mobile_key_group": "IRHSHI-HLDD-SP-CO-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.73,
+    "proxy_val": "heavy",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.73,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.73,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TOTEM-SENTRY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Glacial Cascade introduced version 1.1.2 ... mine interaction notes: Version 3.11.0 fixed a bug where Glacial Cascade mines failed to target Betrayal Fortress doors",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras: 3.0-3.6, 3.7-3.13",
+      "errata_applied": 0,
+      "id": 136,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Glacial_Cascade",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.22] Hexblast Miner Sabo ... GC mines ... Glacial Cascade Mines",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Glacial Cascade Mines' and alias 'GC mines' are real community usage",
+      "errata_applied": 0,
+      "id": 134,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Glacial_Cascade",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Icicles emerge from the ground in a series of small bursts, each damaging enemies caught in the area and knocking them back in the direction of the next burst.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Glacial Cascade and High-Impact Mine; thrown mines detonate cascading ice eruptions marching forward",
+      "errata_applied": 0,
+      "id": 135,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Glacial_Cascade",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "on mine detonation, icicles erupt from the ground in a SERIES OF 4 BURSTS MARCHING FORWARD in a line, each knocking enemies toward the next burst; final burst deals 200% more damage with 100% more radius. line = the forward-marching lane of sequential eruptions (the dominant footprint); water/cold; chill+freeze (native shatter) + knockback (each burst shoves toward the next)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Glacial Cascade (via High-Impact Mine)' delivery_class=projectile (band_conf=0.75); lint: anchor STRONGLY entails 'zone' (4 sig), assigned 'projectile' has 0 support — genuine mismatch",
+      "errata_applied": 0,
+      "id": 2425,
+      "kit_id": "poe1-glacial-cascade-mines",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONTRADICTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,776 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 581,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-fire-trap",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 102,
+    "kit_id": "poe1-fire-trap",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "pathofexile.com",
+    "title": "Shadow Saboteur Fire trap Build - Forum",
+    "url": "https://www.pathofexile.com/forum/view-thread/1872594/page/1"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 102,
+      "kit_id": "poe1-fire-trap",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "Shadow Saboteur Fire trap Build - Forum",
+      "url": "https://www.pathofexile.com/forum/view-thread/1872594/page/1"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 103,
+      "kit_id": "poe1-fire-trap",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[3.23] Fire Trap Elementalist Starter Build - Odealo's Crafty Guide",
+      "url": "https://odealo.com/articles/fire-trap-elementalist-build"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 104,
+      "kit_id": "poe1-fire-trap",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Fire Trap - PoEDB",
+      "url": "https://poedb.tw/us/Fire_Trap"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-fire-trap",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 546,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-fire-trap",
+      "missing_expression": "The deploy-and-bait trap identity approximates across trigger-grammar (trap = placed mark, proximity-detonation = consume -> burst-damage) + activation-toggle throw rhythm + ground_targeted_circle burning-ground, but the engine has no dedicated TRAP primitive: 'throw to ground -> arm as a dormant device -> detonate when an enemy STEPS NEAR (proximity-enter)' is mapped to on-hit-threshold (the near",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The deploy-and-bait trap identity approximates across trigger-grammar (trap = placed mark, proximity-detonation = consume -> burst-damage) + activation-toggle throw rhythm + ground_targeted_circle burning-ground, but the engine has no dedicated TRAP primitive: 'throw to ground -> arm as a dormant device -> detonate when an enemy STEPS NEAR (proximity-enter)' is mapped to on-hit-threshold (the nearest proc; there is no on-proximity-enter condition). A player of Fire Trap would notice the pre-arm-and-bait positional game (place traps, lure enemies onto them) becomes a more generic placed-hazard-that-fires-on-contact; the burning-ground DoT and deploy-a-zone feel are intact, but the distinctive dormant-trap-armed-in-advance mechanic is approximated."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": 0.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 209,
+      "kit_id": "poe1-fire-trap",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "With at least 40 Dexterity in Radius, Fire Trap throws up to 1 additional Traps",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 208,
+      "kit_id": "poe1-fire-trap",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": null,
+            "effect": "Alternate transfigured gem variant listed; specific mechanic diff not detailed on poedb page",
+            "node": "Fire Trap of Blasting (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": "With at least 40 Dexterity in Radius, Fire Trap throws up to 1 additional Traps",
+            "effect": "Fire Trap throws up to 1 additional Traps; Can have up to 1 additional Trap placed at a time",
+            "node": "Choking Ash (threshold jewel)",
+            "req": "40 Dexterity in Radius",
+            "type": "threshold_jewel"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Fire_Trap"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "With at least 40 Dexterity in Radius, Fire Trap throws up to 1 additional Traps",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 207,
+      "kit_id": "poe1-fire-trap",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "With at least 40 Dexterity in Radius, Fire Trap throws up to 1 additional Traps",
+            "effect": "Fire Trap throws up to 1 additional Traps; Can have up to 1 additional Trap placed at a time",
+            "item": "Choking Ash (threshold jewel)",
+            "type": "threshold_jewel"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Fire_Trap"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "throws a trap that explodes when triggered, dealing fire damage to surrounding enemies and leaving an area of burning ground",
+      "conf": 0.89,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 206,
+      "kit_id": "poe1-fire-trap",
+      "payload_json": {
+        "geometry": "thrown to target location; explosion AoE on trigger (large zone per poedb); burning ground area persists after explosion; fire damage type; trap-based (not spell/attack directly)"
+      },
+      "source_url": "https://poedb.tw/us/Fire_Trap"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Thrown trap arms on the ground and erupts when enemies step near, leaving burning ground",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 205,
+      "kit_id": "poe1-fire-trap",
+      "payload_json": {
+        "loop": "Throw Fire Trap at target location -> trap arms -> enemy proximity triggers explosion (hit damage, can ignite) -> trap leaves burning ground DoT for ~3 seconds; pre-position traps before pulls; Saboteur Pyromaniac provides life regen + ignite immunity"
+      },
+      "source_url": "https://odealo.com/articles/fire-trap-elementalist-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[3.26] Fire Trap of Blasting Elementalist Build … Saboteur Fire Trap of Blasting builds - poe.ninja",
+      "conf": 0.83,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 210,
+      "kit_id": "poe1-fire-trap",
+      "payload_json": {
+        "variants": [
+          "Fire Trap Saboteur (original hit + burning ground, 1.x-3.13)",
+          "Fire Trap of Blasting Elementalist (transfigured gem, 3.26+)",
+          "Explosive Trap Saboteur (adjacent skill, 3.24+ dominant trap archetype)"
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Fire_Trap"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|spiky|totem|damage|none|tank|cooldown|heavy|ranged|med|instant|active|apply→detonate",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "cooldown",
+    "flags": [],
+    "geometry_conf": 0.61,
+    "geometry_rule_fired": "R0b",
+    "geometry_value": "totem",
+    "kit_id": "poe1-fire-trap",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRMSHI-HLDD-SP-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "fire",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.61,
+        "rule_fired": "R0b",
+        "value": "totem"
+      },
+      "flags": [],
+      "folk_name": "Fire Trap",
+      "game": "poe1",
+      "kit_id": "poe1-fire-trap",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRMSHI-HLDD-SP-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "fire",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "cooldown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-fire-trap",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "thrown to a target ground location where it ARMS; when an enemy steps near (proximity), it erupts for a fire hit (can ignite) AND leaves a burning-ground DoT patch persisting ~3s. fire->burn. ground_targeted_circle = the thrown-to-ground eruption + persistent burning-ground patch (§6 pool/patch/ground-DoT). The proximity-arm-then-erupt is a trap behavioral property (deploy-and-bait)",
+      "source_skill": "Fire Trap",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-fire-trap",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The deploy-and-bait trap identity approximates across trigger-grammar (trap = placed mark, proximity-detonation = consume -> burst-damage) + activation-toggle throw rhythm + ground_targeted_circle burning-ground, but the engine has no dedicated TRAP primitive: 'throw to ground -> arm as a dormant device -> detonate when an enemy STEPS NEAR (proximity-enter)' is mapped to on-hit-threshold (the nearest proc; there is no on-proximity-enter condition). A player of Fire Trap would notice the pre-arm-and-bait positional game (place traps, lure enemies onto them) becomes a more generic placed-hazard-that-fires-on-contact; the burning-ground DoT and deploy-a-zone feel are intact, but the distinctive dormant-trap-armed-in-advance mechanic is approximated.",
+    "grade": "APPROX",
+    "kit_id": "poe1-fire-trap",
+    "mapping_json": {
+      "fidelity_notes": "FOUNDING TRAP ARCHETYPE: thrown trap arms on the ground, erupts on enemy proximity, leaves burning ground DoT (mech_note; dossier skill_loop). Element fire->burn (probe 'burn', damage_mode hybrid = hit + burning-ground). Geometry ground_targeted_circle (§6 pool/patch/ground-DoT = the burning-ground patch + at-location eruption; probe footprint 'large-zone' burning ground). THE TRAP MECHANIC — throw-to-ground -> ARM (a placed dormant device) -> PROXIMITY detonation — has no dedicated trap primitive; approximated across two lanes: (1) the placed-dormant-then-fires shape maps to trigger-grammar as an apply-consume pair (the trap is a placed mark:consumption, the enemy-proximity-detonation consumes it for burst-damage; proc_trigger_condition on-hit-threshold = the proximity/step-near trigger, the nearest enum to 'enemy enters radius'); (2) the throw+arm rhythm maps to resource_economy persistent_condition_shape=activation-toggle (throw = the activation). MAX_CHAIN_DEPTH=1 respected (throw-arm -> proximity-fire is one apply-consume pair). The burning-ground PERSISTENCE is the ground_targeted_circle patch + PERSISTENCE_ENGINE_uptime T4 reading; ZONE_CONTROL (§5 the deploy-a-hazard-zone identity) leads. CAPSTONE ABSTAINED — t4 routed from core identity (deploy-hazard-zone + burning-ground uptime) + probe (cooldown, fire, burn, large-zone) per fallback. TIMED/PROXIMITY note: 'erupts when enemies step near' is a proximity-enter condition; the engine has no on-proximity-enter proc, on-hit-threshold is the honest nearest (the enemy contacting/triggering the trap).",
+      "motion_frame": "deploy-and-bait trapper: throw fire traps at a location to pre-arm them, bait enemies into the proximity trigger, they erupt and leave burning ground; run freely (traps do the work)",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "persistent_condition_shape": "activation-toggle"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "trap-throw cooldown/activation (probe 'cooldown' model; the throw-then-arm rhythm)",
+            "pre-position traps before pulls (deploy cadence)"
+          ],
+          "geometry": [
+            "ground_targeted_circle (trap eruption + burning-ground patch)",
+            "throw-to-location placement"
+          ],
+          "traits_affixes": [
+            "fire-penetration",
+            "burning/ignite-damage scaling (burning ground benefits from burn scaling)",
+            "trap-throwing-speed / trap-count"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "burn"
+          ],
+          "delivery_notes": "thrown to a target ground location where it ARMS; when an enemy steps near (proximity), it erupts for a fire hit (can ignite) AND leaves a burning-ground DoT patch persisting ~3s. fire->burn. ground_targeted_circle = the thrown-to-ground eruption + persistent burning-ground patch (§6 pool/patch/ground-DoT). The proximity-arm-then-erupt is a trap behavioral property (deploy-and-bait)",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Fire Trap"
+        }
+      ],
+      "t4_doors": [
+        "ZONE_CONTROL",
+        "PERSISTENCE_ENGINE_uptime"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "burst-damage",
+        "mark_identity": "mark:consumption",
+        "proc_trigger_condition": "on-hit-threshold",
+        "trigger_chain_shape": "apply-consume-pair"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2773,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "hp-stack",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 2774,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "evidence": "Trap thrown to ground location; erupts in fire when enemies step near",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2771,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "cooldown",
+        "plain_text": "cooldown (cooldown); Thrown trap arms on the ground and erupts when enemies step near, leaving burnin",
+        "resource_verbatim": "cooldown"
+      },
+      "family": "economy",
+      "id": 2775,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 2776,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.61,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.61,
+        "evidence": "Burning ground large zone after trap eruption; geo=large-AOE in atlas",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 2772,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with large-zone footprint. Thrown trap arms on the ground and erupts when enemies step near, leaving burning ground  —  deploy-and-bait; the founding trap archetype.",
+      "family": "geo_text",
+      "id": 2778,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 2777,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2779,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2780,
+      "kit_id": "poe1-fire-trap",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Fire Trap: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-fire-trap",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "poe1-fire-trap",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.72,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|spiky|totem|damage|none|tank|cooldown|heavy|ranged|med|instant|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|spiky|totem|damage|none|tank|cooldown|heavy|ranged|med|instant|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "totem"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "cooldown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "heavy"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMSHI-HLDD-SP-FI-~~",
+    "attr_conf": 0.72,
+    "attr_val": "INT",
+    "avg_conf": 0.72,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.72,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Fire Trap"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "trap-throw-cycle",
+    "elem_raw": "fire",
+    "era_year": 2013,
+    "eras": "1.x;2.x;3.7-3.13",
+    "eras_normalized": "1.x;2.x;3.7-3.13",
+    "flags": "",
+    "folk_name": "Fire Trap",
+    "game": "poe1",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-03",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-fire-trap",
+    "lattice_coord": "IRMSHI",
+    "lineage": "",
+    "mech_note": "Thrown trap arms on the ground and erupts when enemies step near, leaving burning ground — deploy-and-bait; the founding trap archetype.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A+B: soul-control troop command exists; turret/pet AI variants + summon economy needed",
+    "mobile_cell_id": "HEAVY|LARGE|INST×GAP-P1-03",
+    "mobile_key_group": "IRMSHI-HLDD-SP-FI-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.72,
+    "proxy_val": "heavy",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.72,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.72,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TOTEM-SENTRY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 1.x, 2.x, 3.7-3.13",
+      "errata_applied": 0,
+      "id": 115,
+      "kit_id": "poe1-fire-trap",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Shadow Saboteur Fire trap Build … Fire Trap of Blasting Saboteur",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Fire Trap' is real community usage for Saboteur trap build",
+      "errata_applied": 0,
+      "id": 113,
+      "kit_id": "poe1-fire-trap",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/1872594/page/1",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "leaves Burning ground shortly after, which is not an Ignite, but will benefit from increases to Burning Damage nonetheless",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Trap thrown to ground; erupts on proximity trigger; leaves burning ground DoT; cooldown resource model",
+      "errata_applied": 0,
+      "id": 114,
+      "kit_id": "poe1-fire-trap",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/fire-trap-elementalist-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "thrown to a target ground location where it ARMS; when an enemy steps near (proximity), it erupts for a fire hit (can ignite) AND leaves a burning-ground DoT patch persisting ~3s. fire->burn. ground_targeted_circle = the thrown-to-ground eruption + persistent burning-ground patch (§6 pool/patch/ground-DoT). The proximity-arm-then-erupt is a trap behavioral property (deploy-and-bait)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Fire Trap' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (3 sig)",
+      "errata_applied": 0,
+      "id": 2415,
+      "kit_id": "poe1-fire-trap",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

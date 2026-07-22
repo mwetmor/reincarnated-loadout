@@ -1,0 +1,874 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 3,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 810,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-fireclaw-wolf",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Teo1904",
+    "cite_class": "authored",
+    "id": 617,
+    "kit_id": "d2-fireclaw-wolf",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Fire Claws Druid Endgame Build Guide for Diablo II: Resurrected Season 14",
+    "url": "https://maxroll.gg/d2/guides/fire-claws-druid"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Teo1904",
+      "cite_class": "authored",
+      "id": 617,
+      "kit_id": "d2-fireclaw-wolf",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Fire Claws Druid Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "url": "https://maxroll.gg/d2/guides/fire-claws-druid"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 618,
+      "kit_id": "d2-fireclaw-wolf",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "wikipedia.org",
+      "title": "Diablo II: Lord of Destruction - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Diablo_II:_Lord_of_Destruction"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-fireclaw-wolf",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 722,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-fireclaw-wolf",
+      "missing_expression": "Body-attached Armageddon (moving meteor circle) and form-lock are texture losses.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Body-attached Armageddon (moving meteor circle) and form-lock are texture losses. Feral Rage→Fire Claws switch pattern approximated as self_buff prelude. Player feels 'fire melee werewolf' — that build, slight delivery texture loss on moving Armageddon."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "by Teo1904",
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1415,
+      "kit_id": "d2-fireclaw-wolf",
+      "payload_json": {
+        "handle": "Teo1904",
+        "note": "Fire Claws Druid Endgame Build Guide S14",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/fire-claws-druid"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "numerous fire immune monsters in Hell difficulty, thus the build is almost unplayable in higher difficulties",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1414,
+      "kit_id": "d2-fireclaw-wolf",
+      "payload_json": {
+        "notes": "Build's main weakness noted: numerous fire immune monsters in Hell make it nearly unplayable in pure form without Infinity merc.",
+        "runewords": [
+          "Grief (weapon)",
+          "Phoenix (shield)",
+          "Enigma (armor)",
+          "Infinity (merc)",
+          "Spirit (budget)"
+        ],
+        "synergies": [
+          "Fire Claws synergized by Molten Boulder, Firestorm, Armageddon (all fire elemental tree)"
+        ],
+        "uniques": [
+          "Jalal's Mane",
+          "Raven Frost"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/fire-claws-druid"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Grief Phase Blade; Phoenix Monarch; Enigma Mage Plate; Infinity; Jalal's Mane; Raven Frost; Magefist; Spirit Monarch",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1413,
+      "kit_id": "d2-fireclaw-wolf",
+      "payload_json": {
+        "key_items": [
+          "Grief Phase Blade (weapon — flat physical+fire damage)",
+          "Phoenix Monarch (shield — fire aura)",
+          "Enigma Mage Plate (armor — Teleport)",
+          "Infinity (merc weapon — Conviction aura breaks fire resistance)",
+          "Jalal's Mane (helm)",
+          "Raven Frost (ring)",
+          "Magefist (gloves)",
+          "Spirit Monarch (budget shield)"
+        ],
+        "notes": "Phoenix shield provides Holy Fire aura; Infinity merc is key for breaking fire immunities."
+      },
+      "source_url": "https://maxroll.gg/d2/guides/fire-claws-druid"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fire Claws is capped at 7 frames while in Werewolf Form (six when using the Thresher)",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1412,
+      "kit_id": "d2-fireclaw-wolf",
+      "payload_json": {
+        "geometry": "Fire Claws: single-target melee claw strike at adjacent enemy (point footprint). Fire Claws adds fire damage to each claw hit. Werewolf form increases attack speed. Fire Claws capped at 7 frames in Werewolf form (6 with Thresher)."
+      },
+      "source_url": "https://maxroll.gg/d2/guides/fire-claws-druid"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "cast Armageddon before you hit enemies repeatedly with Fire Claws so that the meteors will hit the monsters in your vicinity",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1411,
+      "kit_id": "d2-fireclaw-wolf",
+      "payload_json": {
+        "loop": "Shapeshift into Werewolf form (form-locked). Cast Armageddon for body-attached fire meteor aura. Attack enemies with Fire Claws melee strikes (fire-enhanced claw hits). Use Feral Rage for life leech buff charges before switching to Fire Claws burst."
+      },
+      "source_url": "https://maxroll.gg/d2/guides/fire-claws-druid"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fire Claw is your main Damage Skill; Transform into the Werewolf-form to travel",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1416,
+      "kit_id": "d2-fireclaw-wolf",
+      "payload_json": {
+        "notes": "Fandom wiki documents both Fireclaws Werewolf and Fireclaws Werebear as distinct named builds.",
+        "variants": [
+          "Fireclaws Werewolf (wolf form; higher attack speed cap)",
+          "Fireclaws Werebear (bear form; more survivable; different frame cap)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/fire-claws-druid"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|at-target|flat|melee_strike|damage|none|tank|unknown|light|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "unknown",
+    "flags": [],
+    "geometry_conf": 0.62,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "d2-fireclaw-wolf",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "WMHFLI-MNDT-SP-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "fire",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "UNKNOWN"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.62,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Fireclaws Wolf",
+      "game": "d2",
+      "kit_id": "d2-fireclaw-wolf",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "WMHFLI-MNDT-SP-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "fire",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "form lock",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-fireclaw-wolf",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "Single-target melee claw strike at adjacent enemy; each hit adds fire damage. Capped at 7 frames in Werewolf form (6 with Thresher). Form-locked — economy-agnostic form law applies.",
+      "source_skill": "Fire Claws",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-fireclaw-wolf",
+      "motion_signature": "burst_around_self",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Body-attached meteor rain during combat; cast before engaging, meteors hit enemies in vicinity.",
+      "source_skill": "Armageddon",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-fireclaw-wolf",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 2,
+      "source_anchor": "Stack life-leech charges and velocity buff before switching to Fire Claws burst. §A row 5: stack-ramp self-buff, NOT two-tier-accumulator.",
+      "source_skill": "Feral Rage (pre-buff)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-fireclaw-wolf",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Body-attached Armageddon (moving meteor circle) and form-lock are texture losses. Feral Rage→Fire Claws switch pattern approximated as self_buff prelude. Player feels 'fire melee werewolf' — that build, slight delivery texture loss on moving Armageddon.",
+    "grade": "CLOSE",
+    "kit_id": "d2-fireclaw-wolf",
+    "mapping_json": {
+      "fidelity_notes": "Economy-agnostic form law (§CROSS row 3): Werewolf is permanent form; kit maps the in-form loop. No resource swap on form — economy maps the in-form melee economy. Feral Rage is §A row 5 stack-ramp self_buff (NOT two-tier-accumulator — no counted tier to release). Phoenix shield Holy Fire aura (item-layer) = capstone-scaler texture, not a skill row. Fire immunity limitation noted.",
+      "motion_frame": "Shapeshift into Werewolf (form-locked); cast Armageddon; stack Feral Rage pre-buff charges; execute Fire Claws melee burst on target",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence_scale": "on-hit-ramp",
+        "cost_scale": "form-locked"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Feral Rage stack-ramp: each hit builds leech+velocity buff (sustain-stack, not accumulator)"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Fire Claws synergized by Molten Boulder/Firestorm/Armageddon; Infinity merc breaks fire immunity"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Single-target melee claw strike at adjacent enemy; each hit adds fire damage. Capped at 7 frames in Werewolf form (6 with Thresher). Form-locked — economy-agnostic form law applies.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Fire Claws"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Body-attached meteor rain during combat; cast before engaging, meteors hit enemies in vicinity.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "circle",
+          "source_skill": "Armageddon"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Stack life-leech charges and velocity buff before switching to Fire Claws burst. §A row 5: stack-ramp self-buff, NOT two-tier-accumulator.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Feral Rage (pre-buff)"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_MONO",
+        "PHASE_MOMENTUM"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 873,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "hp-stack",
+          "sustain-leech"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 874,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.66,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.66,
+        "evidence": "Fire Claws melee strike on targeted enemy while in werewolf form",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 871,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "other",
+        "plain_text": "form lock (other); Werewolf whose claws deal fire via Fire Claws synergy stack — form-shift melee w",
+        "resource_verbatim": "form lock"
+      },
+      "family": "economy",
+      "id": 875,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 876,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.62,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.62,
+        "evidence": "Single target claw hit; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 872,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. Werewolf whose claws deal fire via Fire Claws synergy stack  —  form-shift melee wearing an elemental damage identity.",
+      "family": "geo_text",
+      "id": 878,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 877,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 879,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 880,
+      "kit_id": "d2-fireclaw-wolf",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Fireclaws Wolf: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-fireclaw-wolf",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "d2-fireclaw-wolf",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.73,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|melee_strike|damage|none|tank|unknown|light|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|melee_strike|damage|none|tank|unknown|light|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "unknown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WMHFLI-MNDT-SP-FI-~~",
+    "attr_conf": 0.73,
+    "attr_val": "WIS",
+    "avg_conf": 0.73,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.73,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Werewolf",
+      "Fire Claws"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "form-locked",
+    "elem_raw": "fire",
+    "era_year": 2000,
+    "eras": "lod;d2r",
+    "eras_normalized": "lod;d2r",
+    "flags": "econ-recrawl-application-2026-07-17:f4110f20:spend/steady-mana + SS-overlay. Fire Claws 4 mana/attack; Werewolf form 15 mana cast-once, 40s base (Lycanthropy passive extends). Sources: Arreat Summit druid-shapeshifting.shtml + Maxroll d2/guides/werewolf-fury-druid,ss-overlay-werewolf-form-buff-2026-07-17:GX-02-docket-evidence",
+    "folk_name": "Fireclaws Wolf",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-02",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-fireclaw-wolf",
+    "lattice_coord": "WMHFLI",
+    "lineage": "",
+    "mech_note": "Werewolf whose claws deal fire via Fire Claws synergy stack — form-shift melee wearing an elemental damage identity.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|SINGLE|INST×GAP-D2-02",
+    "mobile_key_group": "WMHFLI-MNDT-SP-FI-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.73,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.73,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.73,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "SHAPESHIFT",
+    "on_spine": true,
+    "shadowed_by": "DOCKET",
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=3].members (working_label=SHAPESHIFT; status=proposed)",
+    "spine_status": "SHADOWED",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lord of Destruction added content in the form of two new character classes",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod era",
+      "errata_applied": 0,
+      "id": 895,
+      "kit_id": "d2-fireclaw-wolf",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://en.wikipedia.org/wiki/Diablo_II:_Lord_of_Destruction",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Fire Claws Druid Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r era",
+      "errata_applied": 0,
+      "id": 896,
+      "kit_id": "d2-fireclaw-wolf",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/fire-claws-druid",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Fire Claws Druid Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Fireclaws Wolf' and aliases 'Fire Claws Werewolf', 'Fireclaws Druid' are real community usage",
+      "errata_applied": 0,
+      "id": 893,
+      "kit_id": "d2-fireclaw-wolf",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/fire-claws-druid",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Fire Claw is your main Damage Skill; Transform into the Werewolf-form to travel",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Werewolf, Fire Claws",
+      "errata_applied": 0,
+      "id": 894,
+      "kit_id": "d2-fireclaw-wolf",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/fire-claws-druid",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Single-target melee claw strike at adjacent enemy; each hit adds fire damage. Capped at 7 frames in Werewolf form (6 with Thresher). Form-locked — economy-agnostic form law applies.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Fire Claws' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2 sig)",
+      "errata_applied": 0,
+      "id": 2110,
+      "kit_id": "d2-fireclaw-wolf",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Body-attached meteor rain during combat; cast before engaging, meteors hit enemies in vicinity.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Armageddon' delivery_class=zone (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'zone'",
+      "errata_applied": 0,
+      "id": 2111,
+      "kit_id": "d2-fireclaw-wolf",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Stack life-leech charges and velocity buff before switching to Fire Claws burst. §A row 5: stack-ramp self-buff, NOT two-tier-accumulator.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Feral Rage (pre-buff)' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2112,
+      "kit_id": "d2-fireclaw-wolf",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

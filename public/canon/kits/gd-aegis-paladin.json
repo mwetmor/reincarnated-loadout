@@ -1,0 +1,795 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 916,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-aegis-paladin",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Ulvar1",
+    "cite_class": "authored",
+    "id": 414,
+    "kit_id": "gd-aegis-paladin",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "forums.crateentertainment.com",
+    "title": "[1.1.8.1] Fire Shield Throw Paladin from scratch - build journal and guide",
+    "url": "https://forums.crateentertainment.com/t/1-1-8-1-fire-shield-throw-paladin-from-scratch-build-journal-and-guide/105073"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Ulvar1",
+      "cite_class": "authored",
+      "id": 414,
+      "kit_id": "gd-aegis-paladin",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.1.8.1] Fire Shield Throw Paladin from scratch - build journal and guide",
+      "url": "https://forums.crateentertainment.com/t/1-1-8-1-fire-shield-throw-paladin-from-scratch-build-journal-and-guide/105073"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 415,
+      "kit_id": "gd-aegis-paladin",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[Forgotten Gods] What we know about the new Mastery",
+      "url": "https://forums.crateentertainment.com/t/forgotten-gods-what-we-know-about-the-new-mastery/46822"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-aegis-paladin",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 795,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 GD tranche; internal-consistency reconcile, no W1 evidence — W5 is GD's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "gd-aegis-paladin",
+      "missing_expression": "minor drift: the out-and-return boomerang leg is a signature the source player feels (shield comes back) but the engine ricochet_bounce geometry does not model the return path -- filed as out-and-return accrual, geometry approximates the outbound hop only.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "minor drift: the out-and-return boomerang leg is a signature the source player feels (shield comes back) but the engine ricochet_bounce geometry does not model the return path -- filed as out-and-return accrual, geometry approximates the outbound hop only. No status lost (none attested)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "guide's creator is Ulvar1, posted November 6, 2020",
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 863,
+      "kit_id": "gd-aegis-paladin",
+      "payload_json": {
+        "handle": "Ulvar1",
+        "post_type": "build guide",
+        "site": "forums.crateentertainment.com"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-fire-shield-throw-paladin-from-scratch-build-journal-and-guide/105073"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 862,
+      "kit_id": "gd-aegis-paladin",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 861,
+      "kit_id": "gd-aegis-paladin",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "hurl a magical aegis that will home in upon your target",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 860,
+      "kit_id": "gd-aegis-paladin",
+      "payload_json": {
+        "delivery": "thrown-projectile",
+        "footprint": "chain-hop-ricochet",
+        "notes": "Shield thrown at target, ricochets to multiple nearby enemies, returns to player"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/forgotten-gods-what-we-know-about-the-new-mastery/46822"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "you throw a shield that bounces on monsters dealing massive damage to them... Inquisitor Seal is one of the most strong defense skills but I did not choose it to be mobile",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 859,
+      "kit_id": "gd-aegis-paladin",
+      "payload_json": {
+        "summary": "Throw Aegis of Menhir; shield ricochets through pack and returns; Inquisitor Seal optional defensive placement for mobile variant"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-fire-shield-throw-paladin-from-scratch-build-journal-and-guide/105073"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Acid Aegis Sentinel... Infernal Aegis Burning DOT Shieldbreaker build showcase",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 864,
+      "kit_id": "gd-aegis-paladin",
+      "payload_json": {
+        "known_variants": [
+          "Acid Aegis Sentinel",
+          "Aether Aegis of Menhir",
+          "Infernal Aegis Burning DOT Shieldbreaker",
+          "Retaliation Warlord Aegis"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-7-acid-aegis-sentinel-experiment159b-leveling-journal/124629"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "walk|projectile|flat|chain|damage|none|tank|spend|solo|dual|med|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.72,
+    "geometry_rule_fired": "R1",
+    "geometry_value": "chain",
+    "kit_id": "gd-aegis-paladin",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "SDMFSI-MCDT-SP-FI-~~",
+      "delivery": "projectile",
+      "elem_raw": "fire",
+      "footprint": "chain-hop"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.72,
+        "rule_fired": "R1",
+        "value": "chain"
+      },
+      "flags": [],
+      "folk_name": "Aegis of Menhir Paladin",
+      "game": "gd",
+      "kit_id": "gd-aegis-paladin",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SDMFSI-MCDT-SP-FI-~~",
+        "delivery": "projectile",
+        "elem_raw": "fire",
+        "footprint": "chain-hop"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "energy",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-aegis-paladin",
+      "motion_signature": "ricochet_return",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "thrown shield that homes on the target, bounces/ricochets through multiple nearby enemies, then returns to the player ('hurl a magical aegis that will home in upon your target'; 'you throw a shield that bounces on monsters dealing massive damage to them'; 'ricochets to multiple nearby enemies, returns to player'). ricochet_bounce carries the bounce-through-pack identity; the RETURN-to-player leg is an out-and-return behavioral delta -> family-accrual candidate (docket). NO ailment named (fire theme never implies burn -- §0.1).",
+      "source_skill": "Aegis of Menhir",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-aegis-paladin",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "optional placed defensive zone ('one of the most strong defense skills but I did not choose it to be mobile'); dropped in the mobile variant. Not part of the core offensive loop in the mapped variant.",
+      "source_skill": "Inquisitor Seal",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "gd-aegis-paladin",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "minor drift: the out-and-return boomerang leg is a signature the source player feels (shield comes back) but the engine ricochet_bounce geometry does not model the return path -- filed as out-and-return accrual, geometry approximates the outbound hop only. No status lost (none attested).",
+    "grade": "CLOSE",
+    "kit_id": "gd-aegis-paladin",
+    "mapping_json": {
+      "fidelity_notes": "ricochet_bounce over chain: 'bounces on monsters' + 'ricochets to nearby enemies' is bounce-hop language, not target-arc. The 'returns to player' leg is the out-and-return SHAPE (basin-1 family) -> accrual candidate WITHOUT numbers; base ricochet_bounce does not encode the return, hence CLOSE + note. Element fire per elem_raw (Oathkeeper fire-shield base); Acid/Aether/Infernal-DOT variants exist but this kit's fetched identity is the fire base. GEOMETRY_PROPAGATION_overkill approximates the multi-enemy hop payoff -- delivery-appropriate, not a hard capstone attestation. No status attestable.",
+      "motion_frame": "hurl the Aegis of Menhir shield to home on a target, ricochet through the pack, and boomerang back to the player, repeating on cooldown while staying mobile",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence_scale": "cooldown-governed throw rhythm (shield out-and-return cycle)"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "cooldown cadence on the throw cycle"
+          ],
+          "geometry": [
+            "ricochet hop count",
+            "return-leg reach"
+          ],
+          "traits_affixes": [
+            "fire/physical shield-damage scaling"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "thrown shield that homes on the target, bounces/ricochets through multiple nearby enemies, then returns to the player ('hurl a magical aegis that will home in upon your target'; 'you throw a shield that bounces on monsters dealing massive damage to them'; 'ricochets to multiple nearby enemies, returns to player'). ricochet_bounce carries the bounce-through-pack identity; the RETURN-to-player leg is an out-and-return behavioral delta -> family-accrual candidate (docket). NO ailment named (fire theme never implies burn -- §0.1).",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "ricochet_bounce",
+          "source_skill": "Aegis of Menhir"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "optional placed defensive zone ('one of the most strong defense skills but I did not choose it to be mobile'); dropped in the mobile variant. Not part of the core offensive loop in the mapped variant.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Inquisitor Seal"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION_overkill"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3353,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 3354,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.77,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.77,
+        "evidence": "Shield thrown as projectile; ricochets between enemies and returns to player",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 3351,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "_prior_ingest11": {
+          "meter_type": "n/a",
+          "model": "spend",
+          "note": "GD resource is Energy ('Spirit' is a GD STAT name — confusion source). resource_verbatim relabelled per WRONG-RESOURCE-GENERALLY sweep; raw preserved.",
+          "plain_text": "mana (spend); THROW THE SHIELD — Aegis of Menhir ricochets between enemies and RETURNS to your",
+          "resource_verbatim": "mana"
+        },
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "energy (spend); THROW THE SHIELD — Aegis of Menhir ricochets between enemies and RETURNS to your",
+        "resource_verbatim": "energy"
+      },
+      "family": "economy",
+      "id": 3355,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 3356,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Shield ricochets across chain of targets; geo=chain in atlas",
+        "value": "chain-hop"
+      },
+      "family": "footprint",
+      "id": 3352,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with chain-hop footprint. THROW THE SHIELD  —  Aegis of Menhir ricochets between enemies and RETURNS to your arm, fire-holy damage riding the flight path both ways; the.",
+      "family": "geo_text",
+      "id": 3358,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 3357,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 3359,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "gt",
+        "cf",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 3360,
+      "kit_id": "gd-aegis-paladin",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Aegis of Menhir Paladin: ricochet bounce projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-aegis-paladin",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "gd-aegis-paladin",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.85,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|projectile|flat|chain|damage|none|tank|spend|solo|dual|med|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|projectile|flat|chain|damage|none|tank|spend|solo|dual|med|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "chain"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SDMFSI-MCDT-SP-FI-~~",
+    "attr_conf": 0.85,
+    "attr_val": "STR",
+    "avg_conf": 0.85,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.85,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Aegis of Menhir",
+      "Inquisitor Seal"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "energy-spender",
+    "elem_raw": "fire",
+    "era_year": 2016,
+    "eras": "fg-2019;patch-1.1-1.2",
+    "eras_normalized": "fg-2019;patch-1.1-1.2",
+    "flags": "",
+    "folk_name": "Aegis of Menhir Paladin",
+    "game": "gd",
+    "geo_raw": "chain",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-10",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "gd-aegis-paladin",
+    "lattice_coord": "SDMFSI",
+    "lineage": "",
+    "mech_note": "THROW THE SHIELD — Aegis of Menhir ricochets between enemies and RETURNS to your arm, fire-holy damage riding the flight path both ways; the",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C+D: return-path/carom projectile solver",
+    "mobile_cell_id": "SOLO|CHAIN|INST×GX-10",
+    "mobile_key_group": "SDMFSI-MCDT-SP-FI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;cf;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.85,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.85,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.85,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TRAP-MINE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-archipelago-mock.json points[stratum=core, family assigned, not gateA self-seed] (affinity=0.755)",
+    "spine_status": "ACTIVE",
+    "tier": "PROPAGATED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "When Forgotten Gods expansion was about to be released, 'everyone' was hyped for the Oathkeeper skills — Oathkeeper arrived with FG; Aegis of Menhir is an Oathkeeper skill",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Present in eras: fg-2019, patch-1.1-1.2",
+      "errata_applied": 0,
+      "id": 525,
+      "kit_id": "gd-aegis-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/forgotten-gods-what-we-know-about-the-new-mastery/46822",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Paladin is Oathkeeper + Inquisitor... you throw a shield that bounces on monsters dealing massive damage to them",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Aegis of Menhir Paladin'; aliases include 'Aegis Paladin', 'Menhir's Bulwark Paladin', 'shield proc Paladin'",
+      "errata_applied": 0,
+      "id": 523,
+      "kit_id": "gd-aegis-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-fire-shield-throw-paladin-from-scratch-build-journal-and-guide/105073",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "you throw a shield that bounces on monsters dealing massive damage to them... Inquisitor also has one of the most strong defense skill in game - the inquisitor seal",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Aegis of Menhir (shield projectile that ricochets), Inquisitor Seal (defensive toggle)",
+      "errata_applied": 0,
+      "id": 524,
+      "kit_id": "gd-aegis-paladin",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-1-8-1-fire-shield-throw-paladin-from-scratch-build-journal-and-guide/105073",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "thrown shield that homes on the target, bounces/ricochets through multiple nearby enemies, then returns to the player ('hurl a magical aegis that will home in upon your target'; 'you throw a shield that bounces on monsters dealing massive damage to them'; 'ricochets to multiple nearby enemies, returns to player'). ricochet_bounce carries the bounce-through-pack identity; the RETURN-to-player leg is an out-and-return behavioral delta -> family-accrual candidate (docket). NO ailment named (fire th",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Aegis of Menhir' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2218,
+      "kit_id": "gd-aegis-paladin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "optional placed defensive zone ('one of the most strong defense skills but I did not choose it to be mobile'); dropped in the mobile variant. Not part of the core offensive loop in the mapped variant.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Inquisitor Seal' delivery_class=aura (band_conf=0.75); lint: anchor leans 'zone' (1 sig) vs assigned 'aura' (0) — weak/defensible (cognate pair), not a hard contradiction",
+      "errata_applied": 0,
+      "id": 2219,
+      "kit_id": "gd-aegis-paladin",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

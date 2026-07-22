@@ -1,0 +1,792 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 552,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-bane",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 27,
+    "kit_id": "poe1-bane",
+    "quarantined": 0,
+    "rank_class": "recovered",
+    "site": "poedb.tw",
+    "title": "Bane - poedb.tw",
+    "url": "https://poedb.tw/us/Bane"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 27,
+      "kit_id": "poe1-bane",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poedb.tw",
+      "title": "Bane - poedb.tw",
+      "url": "https://poedb.tw/us/Bane"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 28,
+      "kit_id": "poe1-bane",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "odealo.com",
+      "title": "[3.20] Bane Occultist Starter Build",
+      "url": "https://odealo.com/articles/bane-occultist-starter-build"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Enki#6435",
+      "cite_class": "authored",
+      "id": 29,
+      "kit_id": "poe1-bane",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "pathofexile.com/forum",
+      "title": "[3.19] Enki's Lowlife Chaos DoT Occultist - Bane & Essence Drain",
+      "url": "https://www.pathofexile.com/forum/view-thread/3230231"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-bane",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 515,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-bane",
+      "missing_expression": "The chaos-DoT-plus-curse-bundle and per-curse damage multiplier land via the drain ailment + curse: variants + NETWORK_AMPLIFIER, but the source's defining 'ONE cast applies ALL linked curses simultaneously' is expressed as the kit carrying multiple curse-ailments rather than a single bundled-cast primitive.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The chaos-DoT-plus-curse-bundle and per-curse damage multiplier land via the drain ailment + curse: variants + NETWORK_AMPLIFIER, but the source's defining 'ONE cast applies ALL linked curses simultaneously' is expressed as the kit carrying multiple curse-ailments rather than a single bundled-cast primitive. Outcome-faithful; a player keeps the 'cast once, everything is cursed and melting' feel, though the engine models the curses as co-applied discrete ailments."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 59,
+      "kit_id": "poe1-bane",
+      "payload_json": [
+        {
+          "handle": "Odealo editorial",
+          "site": "odealo.com",
+          "url": "https://odealo.com/articles/bane-occultist-starter-build"
+        },
+        {
+          "handle": "Enki#6435",
+          "site": "pathofexile.com/forum",
+          "url": "https://www.pathofexile.com/forum/view-thread/3230231"
+        }
+      ],
+      "source_url": "https://odealo.com/articles/bane-occultist-starter-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Void Beacon, Withering Presence, Profane Bloom, Unholy Authority",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 58,
+      "kit_id": "poe1-bane",
+      "payload_json": {
+        "ascendancy": "Occultist",
+        "key_benefit": "Occultist provides +1 curse via Ascendancy, synergizing with Bane's per-curse damage multiplier.",
+        "nodes_in_order": [
+          "Void Beacon (chaos resist reduction on nearby enemies)",
+          "Withering Presence (wither on nearby enemies)",
+          "Profane Bloom (cursed enemies explode on death)",
+          "Unholy Authority (immune to own curses)"
+        ]
+      },
+      "source_url": "https://odealo.com/articles/bane-occultist-starter-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Carcass Jack provides (40-50)% increased Area of Effect and (40-50)% increased Area Damage",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 57,
+      "kit_id": "poe1-bane",
+      "payload_json": {
+        "alteration": "Primary weapon for chaos damage scaling.",
+        "key_item": "Cane of Unravelling (wand)",
+        "secondary_alteration": "(40-50)% increased AoE and Area Damage.",
+        "secondary_item": "Carcass Jack (chest)",
+        "tertiary_alteration": "Multiplicative life/ES scaling.",
+        "tertiary_item": "Crown of the Inward Eye"
+      },
+      "source_url": "https://odealo.com/articles/bane-occultist-starter-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Applies a debuff to enemies in an area, which deals chaos damage over Time.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 56,
+      "kit_id": "poe1-bane",
+      "payload_json": {
+        "geometry_note": "Small-radius AoE application (not chain, not projectile); the DoT persists after the initial application.",
+        "verbatim": "At-target delivery in a small AoE radius. Bane description: 'Applies a debuff to enemies in an area.' Carcass Jack grants (40-50)% increased Area of Effect to scale the coverage."
+      },
+      "source_url": "https://poedb.tw/us/Bane"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "One cast applies chaos DoT AND every linked curse simultaneously — the curse-bundler damage spell.",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 55,
+      "kit_id": "poe1-bane",
+      "payload_json": {
+        "description": "Link Bane with Despair and optionally Punishment/Temporal Chains/Enfeeble. One Bane cast applies the chaos DoT debuff AND all linked curses simultaneously in a small AoE. Each linked curse increases Bane's damage by ~40%. On bosses, add Vaal Blight for heavy DoT. Loop: cast Bane → all curses land with DoT → enemies melt."
+      },
+      "source_url": "https://odealo.com/articles/bane-occultist-starter-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 60,
+      "kit_id": "poe1-bane",
+      "payload_json": {
+        "named_variants": [
+          "Bane Occultist (solo Bane + Despair)",
+          "Essence Drain + Bane Occultist (Enki lineage, 3.19)",
+          "Lowlife Chaos DoT Occultist (Enki, Bane + ED combo)"
+        ]
+      },
+      "source_url": "https://odealo.com/articles/bane-occultist-starter-build"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|at-target|flat|ground_targeted_circle|damage|hex|absorb|spend|solo|dual|low|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\", \"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.72,
+    "def_riders": "[\"synonym:energy-shield\"]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.72,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe1-bane",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "IDLFSI-MSMM-SP-CH-~~",
+      "delivery": "at-target",
+      "elem_raw": "chaos",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot",
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.72,
+        "riders": [
+          "synonym:energy-shield"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.72,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Bane",
+      "game": "poe1",
+      "kit_id": "poe1-bane",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IDLFSI-MSMM-SP-CH-~~",
+        "delivery": "at-target",
+        "elem_raw": "chaos",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-bane",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "one cast applies a chaos DoT (drain) in a small area AND every linked hex-curse simultaneously to the same enemies; more curses applied = more Bane damage (per-curse multiplier). shadow family (chaos drain-DoT lineage). Bundled curses: Despair->curse:amplify (chaos-res-reduction hex), Enfeeble->curse:weaken, Temporal Chains->curse:decrepify",
+      "source_skill": "Bane (+ Despair, + linked hexes)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-bane",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The chaos-DoT-plus-curse-bundle and per-curse damage multiplier land via the drain ailment + curse: variants + NETWORK_AMPLIFIER, but the source's defining 'ONE cast applies ALL linked curses simultaneously' is expressed as the kit carrying multiple curse-ailments rather than a single bundled-cast primitive. Outcome-faithful; a player keeps the 'cast once, everything is cursed and melting' feel, though the engine models the curses as co-applied discrete ailments.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-bane",
+    "mapping_json": {
+      "fidelity_notes": "CURSE-BUNDLER: the identity is 'one cast = chaos DoT + ALL linked curses at once, with a per-curse damage multiplier'. Element chaos -> shadow (§1 chaos drain-DoT lineage). The chaos DoT maps to the DRAIN ailment (§2 life-drain/decay/chaos-DoT -> drain), NOT poison (Bane is a hex-DoT, not a stacking-venom skill). Bundled curses land as curse: variants by application-shape (§2): Despair (chaos-res hex) -> curse:amplify; Enfeeble -> curse:weaken; Temporal Chains -> curse:decrepify. Geometry ground_targeted_circle (small-area application + persistent DoT patch). NETWORK_AMPLIFIER routes the curse-network + per-curse-multiplier ('more curses = more damage' IS a curse-network amp). MILD APPROX noted in-grade: engine applies each curse as a discrete ailment; the source's 'ALL linked curses in a SINGLE cast simultaneously' is expressed as the kit applying multiple curse-ailments together, which is faithful in outcome. Occultist +1-curse and Profane Bloom (cursed-enemies-explode) are ascendancy flavor; explode-on-death of cursed enemies is a secondary on-death propagation not central to the dominant DoT loop. [STEWARD AUDIT: Despair re-routed sap->amplify — Despair is a damage-taken amp, Vulnerability-class; crosswalk §2 lacked a Despair row (law gap, now fixed).]",
+      "motion_frame": "stationary hex-caster: one cast lands a chaos-DoT-plus-full-curse-bundle on a pack, enemies melt from stacked debuffs",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "curse-application cadence"
+          ],
+          "geometry": [
+            "ground_targeted_circle DoT-application area",
+            "area-of-effect (Carcass Jack) to widen coverage"
+          ],
+          "traits_affixes": [
+            "chaos/DoT scaling",
+            "curse-effect",
+            "+curse-count (Occultist ascendancy analog)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "drain",
+            "curse:weaken",
+            "curse:decrepify",
+            "curse:amplify"
+          ],
+          "delivery_notes": "one cast applies a chaos DoT (drain) in a small area AND every linked hex-curse simultaneously to the same enemies; more curses applied = more Bane damage (per-curse multiplier). shadow family (chaos drain-DoT lineage). Bundled curses: Despair->curse:amplify (chaos-res-reduction hex), Enfeeble->curse:weaken, Temporal Chains->curse:decrepify",
+          "element_primary": "shadow",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Bane (+ Despair, + linked hexes)"
+        }
+      ],
+      "t4_doors": [
+        "NETWORK_AMPLIFIER",
+        "PERSISTENCE_ENGINE_saturation"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "poison",
+          "wither"
+        ],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3093,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "energy-shield",
+          "resist"
+        ],
+        "primary": "energy-shield"
+      },
+      "family": "defense",
+      "id": 3094,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.77,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.77,
+        "evidence": "Single at-target cast applies chaos DoT + all linked curses simultaneously",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 3091,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); One cast applies chaos DoT AND every linked curse simultaneously — the curse-bun",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 3095,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "chaos"
+      },
+      "family": "element",
+      "id": 3096,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Small AoE radius applying DoT + curses; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 3092,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with small-radius footprint. One cast applies chaos DoT AND every linked curse simultaneously  —  the curse-bundler damage spell.",
+      "family": "geo_text",
+      "id": 3098,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 3097,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 3099,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 3100,
+      "kit_id": "poe1-bane",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Bane: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-bane",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:shadow",
+      "hook_id": "H2",
+      "hook_text": "shadow element register",
+      "hook_type": "register",
+      "kit_id": "poe1-bane",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.85,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|ground_targeted_circle|damage|hex|absorb|spend|solo|dual|low|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|ground_targeted_circle|damage|hex|absorb|spend|solo|dual|low|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDLFSI-MSMM-SP-CH-~~",
+    "attr_conf": 0.85,
+    "attr_val": "INT",
+    "avg_conf": 0.85,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.85,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Bane",
+      "Despair"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-mid",
+    "elem_raw": "chaos",
+    "era_year": 2013,
+    "eras": "3.0-3.6;3.7-3.13",
+    "eras_normalized": "3.0-3.6;3.7-3.13",
+    "flags": "",
+    "folk_name": "Bane",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-bane",
+    "lattice_coord": "IDLFSI",
+    "lineage": "",
+    "mech_note": "One cast applies chaos DoT AND every linked curse simultaneously — the curse-bundler damage spell.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×econ:spend",
+    "mobile_key_group": "IDLFSI-MSMM-SP-CH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.85,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.85,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.85,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "DOT-AILMENT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=4].members (working_label=DOT-AILMENT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Added a new Intelligence Skill Gem - Bane: Applies a debuff which deals Chaos damage over time, as well as any linked curses, to enemies in an area. [patch 3.6.0]",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 3.0-3.6, 3.7-3.13",
+      "errata_applied": 0,
+      "id": 36,
+      "kit_id": "poe1-bane",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Bane",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.20] Bane Occultist Starter Build",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Bane' (no aliases) is real community usage; class Occultist",
+      "errata_applied": 0,
+      "id": 33,
+      "kit_id": "poe1-bane",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/bane-occultist-starter-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Applies a debuff to enemies in an area, which deals chaos damage over Time. Linked hex curses are also applied to those enemies.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Bane + Despair; one cast applies chaos DoT AND every linked curse simultaneously; per-curse damage multiplier",
+      "errata_applied": 0,
+      "id": 34,
+      "kit_id": "poe1-bane",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Bane",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "(28-42)% more Damage per Curse applied",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Per-curse damage increase of ~40% (corpus says 40%; actual scaling is 28-42% by gem level)",
+      "errata_applied": 0,
+      "id": 35,
+      "kit_id": "poe1-bane",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Bane",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "one cast applies a chaos DoT (drain) in a small area AND every linked hex-curse simultaneously to the same enemies; more curses applied = more Bane damage (per-curse multiplier). shadow family (chaos drain-DoT lineage). Bundled curses: Despair->curse:amplify (chaos-res-reduction hex), Enfeeble->curse:weaken, Temporal Chains->curse:decrepify",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bane (+ Despair, + linked hexes)' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (1 sig)",
+      "errata_applied": 0,
+      "id": 2381,
+      "kit_id": "poe1-bane",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

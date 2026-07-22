@@ -1,0 +1,800 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 826,
+      "assert_text": "primary_delivery_class == 'summon_delegate'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-hydra-sorc",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 642,
+    "kit_id": "d2-hydra-sorc",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Hydra Sorceress Endgame Build Guide Season 14 — Maxroll.gg",
+    "url": "https://maxroll.gg/d2/guides/hydra-sorceress"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 642,
+      "kit_id": "d2-hydra-sorc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Hydra Sorceress Endgame Build Guide Season 14 — Maxroll.gg",
+      "url": "https://maxroll.gg/d2/guides/hydra-sorceress"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 643,
+      "kit_id": "d2-hydra-sorc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "icy-veins.com",
+      "title": "Hydra Orb Sorceress Build — Diablo 2 Resurrected — Icy Veins",
+      "url": "https://www.icy-veins.com/d2/hydra-orb-sorceress-build"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-hydra-sorc",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 733,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-hydra-sorc",
+      "missing_expression": "Source player would miss: the 6-turret simultaneous stacking density is the build's power multiplier;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Source player would miss: the 6-turret simultaneous stacking density is the build's power multiplier; mapping captures placed-turret identity but not the specific up-to-6 count scaling texture."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1493,
+      "kit_id": "d2-hydra-sorc",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The Hydra Orb Sorceress is a new creation thanks to Patch 2.4 buffing Hydra to remove any casting cooldown",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1492,
+      "kit_id": "d2-hydra-sorc",
+      "payload_json": {
+        "key_change": "Patch 2.4 removed Hydra casting cooldown, enabling 6-stack playstyle; prior to 2.4 Hydra had casting delay that prevented this",
+        "notes": "Pre-2.4 Hydra was a supplementary skill, not build-defining"
+      },
+      "source_url": "https://www.icy-veins.com/d2/hydra-orb-sorceress-build"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1491,
+      "kit_id": "d2-hydra-sorc",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Hydra summons a 3-headed pet on the targeted location that spits out fire bolts. The Skill lasts for 10 Seconds and you can have up to 6 at a time.",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1490,
+      "kit_id": "d2-hydra-sorc",
+      "payload_json": {
+        "delivery": "placed stationary entities fire projectiles automatically",
+        "footprint": "6-hydra turret network at placed positions",
+        "geometry": "at-target multi-point turret",
+        "notes": "Each Hydra has 3 heads firing fire bolts; 6 simultaneous Hydras possible post-2.4"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/hydra-sorceress"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Stack up to six Hydra so that they're most likely to all fire into the same direction.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1489,
+      "kit_id": "d2-hydra-sorc",
+      "payload_json": {
+        "loop": "Teleport into position; drop up to 6 Hydra turrets at target location; Hydras fire automatically for 10 seconds; reposition while turrets shoot; use Static Field vs bosses; place new Hydras when old expire"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/hydra-sorceress"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Hydra Sorceress Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1494,
+      "kit_id": "d2-hydra-sorc",
+      "payload_json": {
+        "variants": [
+          "Hydra Orb (Hydra + Frozen Orb dual element)",
+          "Pure Hydra Fireball (mono-fire)",
+          "Ladder starter Hydra variant"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/hydra-sorceress"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|totem|damage|none|glass|cooldown|heavy|ranged|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "glass",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "cooldown",
+    "flags": [],
+    "geometry_conf": 0.62,
+    "geometry_rule_fired": "R0b",
+    "geometry_value": "totem",
+    "kit_id": "d2-hydra-sorc",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "teleport"
+    ],
+    "provenance_json": {
+      "atlas_key": "IRMFHI-HNDG-CD-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "fire",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "glass",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.62,
+        "rule_fired": "R0b",
+        "value": "totem"
+      },
+      "flags": [],
+      "folk_name": "Hydra Sorceress",
+      "game": "d2",
+      "kit_id": "d2-hydra-sorc",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "teleport"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IRMFHI-HNDG-CD-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "fire",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "cooldown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-hydra-sorc",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Placed stationary 3-headed turret entity; each head fires fire bolts automatically. Up to 6 simultaneous Hydras post-2.4 (casting cooldown removed). 10-second duration; player repositions while turrets fire. Stationary placed emitter — totem lane (not summoner GAP: no HP bar, no autonomous combat behavior, duration-capped).",
+      "source_skill": "Hydra",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-hydra-sorc",
+      "motion_signature": "blink_translate",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Offensive repositioning while Hydras fire. 'Teleport into position; drop Hydras; reposition while turrets shoot' — attested skill_loop.",
+      "source_skill": "Teleport",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-hydra-sorc",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Source player would miss: the 6-turret simultaneous stacking density is the build's power multiplier; mapping captures placed-turret identity but not the specific up-to-6 count scaling texture.",
+    "grade": "CLOSE",
+    "kit_id": "d2-hydra-sorc",
+    "mapping_json": {
+      "fidelity_notes": "CLOSE: Hydra maps cleanly as stationary placed turret (totem geometry). Totem-vs-companion two-lane law: Hydra is duration-capped stationary emitter, not autonomous combatant — totem lane is correct (not summoner GAP). Fire element confirmed: 'spits out fire bolts' (dossier). Element-neutral for Teleport slot. T4 PROXY_SOVEREIGNTY: multi-turret network identity. PERSISTENCE_ENGINE_uptime: turret uptime IS the damage loop — keep 6 Hydras running. Era: d2r-2.4+ CONFIRMED; rotw-s14 UNSUPPORTED. Accrual to placed-proxy-count family (§E.3): '6 simultaneous Hydras possible.' Deviation: 6-hydra stacking density and the specific fire-bolt-per-head cadence are attested but not fully expressible in current mapping_json.",
+      "motion_frame": "Teleport into position; place up to 6 Hydra turrets; reposition while Hydras fire automatically for 10 seconds; refresh Hydras when they expire",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cooldown": "primary gate: Hydra casting cooldown removed in d2r-2.4+; prior to 2.4 casting delay was the constraint. Post-2.4: mana cost per placement is the economy gate.",
+        "cost_scale": "mana-per-placement; cooldown-cycle per corpus econ_raw"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [],
+          "geometry": [
+            "6-Hydra stack: placement count is the geometry multiplier — placed-proxy-count family accrual"
+          ],
+          "traits_affixes": [
+            "Hydra synergies (Fire Bolt, Meteor) — traits-affixes scaffold lane per §A row 1"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Placed stationary 3-headed turret entity; each head fires fire bolts automatically. Up to 6 simultaneous Hydras post-2.4 (casting cooldown removed). 10-second duration; player repositions while turrets fire. Stationary placed emitter — totem lane (not summoner GAP: no HP bar, no autonomous combat behavior, duration-capped).",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Hydra"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Offensive repositioning while Hydras fire. 'Teleport into position; drop Hydras; reposition while turrets shoot' — attested skill_loop.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "teleport",
+          "source_skill": "Teleport"
+        }
+      ],
+      "t4_doors": [
+        "PROXY_SOVEREIGNTY",
+        "PERSISTENCE_ENGINE_uptime"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2023,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "resist",
+          "glass"
+        ],
+        "primary": "glass"
+      },
+      "family": "defense",
+      "id": 2024,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.66,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.66,
+        "evidence": "Hydra turret entities summoned at target locations; fire automatically from placed position",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2021,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "cooldown",
+        "plain_text": "cooldown (cooldown); Summons stationary fire-spitting hydra emitters on short cooldowns and repositio",
+        "resource_verbatim": "cooldown"
+      },
+      "family": "economy",
+      "id": 2025,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 2026,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.62,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.62,
+        "evidence": "Multiple hydra heads placed at various positions; multi-point turret network",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 2022,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with multi-point footprint. Summons stationary fire-spitting hydra emitters on short cooldowns and repositions while they shoot  —  turret-caster identity made real by 2.",
+      "family": "geo_text",
+      "id": 2028,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "teleport"
+        ]
+      },
+      "family": "movement",
+      "id": 2027,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2029,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "od (online docs — Diablo wiki / game manual)",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2030,
+      "kit_id": "d2-hydra-sorc",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Hydra Sorceress: totem summon_delegate identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-hydra-sorc",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "d2-hydra-sorc",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.73,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|totem|damage|none|glass|cooldown|heavy|ranged|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|totem|damage|none|glass|cooldown|heavy|ranged|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "totem"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "glass"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "cooldown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "heavy"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMFHI-HNDG-CD-FI-~~",
+    "attr_conf": 0.73,
+    "attr_val": "INT",
+    "avg_conf": 0.73,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.73,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Hydra",
+      "Fire Ball",
+      "Teleport"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "cooldown-cycle",
+    "elem_raw": "fire",
+    "era_year": 2000,
+    "eras": "d2r-2.4+;rotw-s14",
+    "eras_normalized": "d2r-2.4+;rotw-s14",
+    "flags": "",
+    "folk_name": "Hydra Sorceress",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-hydra-sorc",
+    "lattice_coord": "IRMFHI",
+    "lineage": "",
+    "mech_note": "Summons stationary fire-spitting hydra emitters on short cooldowns and repositions while they shoot — turret-caster identity made real by 2.",
+    "mint": 0,
+    "mob_raw": "teleport-high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A+B: soul-control troop command exists; turret/pet AI variants + summon economy needed",
+    "mobile_cell_id": "HEAVY|SINGLE|INST×econ:cooldown",
+    "mobile_key_group": "IRMFHI-HNDG-CD-FI-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "od;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.73,
+    "proxy_val": "heavy",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.73,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.73,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TOTEM-SENTRY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-archipelago-mock.json points[stratum=core, family assigned, not gateA self-seed] (affinity=0.457)",
+    "spine_status": "ACTIVE",
+    "tier": "PROPAGATED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The Hydra Orb Sorceress is a new creation thanks to Patch 2.4 buffing Hydra to remove any casting cooldown",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r-2.4+ era",
+      "errata_applied": 0,
+      "id": 946,
+      "kit_id": "d2-hydra-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/hydra-orb-sorceress-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in rotw-s14 era",
+      "errata_applied": 0,
+      "id": 947,
+      "kit_id": "d2-hydra-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/hydra-sorceress",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Hydra Sorceress Endgame Build Guide for Diablo II: Resurrected Season 14",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Hydra Sorceress' and alias 'Hydra Sorc' are real community usage",
+      "errata_applied": 0,
+      "id": 944,
+      "kit_id": "d2-hydra-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/hydra-sorceress",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Hydra summons a 3-headed pet on the targeted location that spits out fire bolts.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Hydra, Fire Ball, Teleport; Hydra summons stationary fire-spitting turrets at target location",
+      "errata_applied": 0,
+      "id": 945,
+      "kit_id": "d2-hydra-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/hydra-sorceress",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Placed stationary 3-headed turret entity; each head fires fire bolts automatically. Up to 6 simultaneous Hydras post-2.4 (casting cooldown removed). 10-second duration; player repositions while turrets fire. Stationary placed emitter — totem lane (not summoner GAP: no HP bar, no autonomous combat behavior, duration-capped).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Hydra' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (2 sig)",
+      "errata_applied": 0,
+      "id": 2138,
+      "kit_id": "d2-hydra-sorc",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Offensive repositioning while Hydras fire. 'Teleport into position; drop Hydras; reposition while turrets shoot' — attested skill_loop.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Teleport' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (1 sig)",
+      "errata_applied": 0,
+      "id": 2139,
+      "kit_id": "d2-hydra-sorc",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

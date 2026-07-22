@@ -1,0 +1,791 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 805,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-conc-barb",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "LuckyAce",
+    "cite_class": "authored",
+    "id": 608,
+    "kit_id": "d2-conc-barb",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "Guide to Playing a MF Concentrate Barbarian",
+    "url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "LuckyAce",
+      "cite_class": "authored",
+      "id": 608,
+      "kit_id": "d2-conc-barb",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Guide to Playing a MF Concentrate Barbarian",
+      "url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-conc-barb",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 718,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-conc-barb",
+      "missing_expression": "Player would miss: uninterruptible swing feel — engine melee_strike approximates but no native 'cannot be interrupted' mechanic;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Player would miss: uninterruptible swing feel — engine melee_strike approximates but no native 'cannot be interrupted' mechanic; the safety-vs-damage identity is approximated via DEFENSIVE_TRADEOFF T4."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "LuckyAce — the guide's creator, who notes nearly 20 years of Diablo 2 experience",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1385,
+      "kit_id": "d2-conc-barb",
+      "payload_json": {
+        "handle": "LuckyAce",
+        "site": "diablo2.io"
+      },
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Concentrate paired with Battle Orders, which chains with Shout, which chains with Berserk",
+      "conf": 0.76,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1384,
+      "kit_id": "d2-conc-barb",
+      "payload_json": {
+        "notes": "Synergy chain: Concentrate ↔ Battle Orders ↔ Shout ↔ Berserk",
+        "runewords": [
+          "Grief (weapon)",
+          "Enigma (armor)",
+          "Rhyme (shield, budget)"
+        ],
+        "synergies": [
+          "Battle Orders (HP/mana stack)",
+          "Shout (defense)"
+        ]
+      },
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Weapons: Grief (endgame), Unbending Will, Honor",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1383,
+      "kit_id": "d2-conc-barb",
+      "payload_json": {
+        "key_items": [
+          "Grief (endgame weapon)",
+          "Unbending Will",
+          "Honor (budget)",
+          "Enigma (armor)",
+          "Wealth (budget armor for MF)",
+          "Reaper's Toll (merc)",
+          "Insight (merc)"
+        ],
+        "notes": "MF variant uses Wealth + budget offensive items; Enigma strongly recommended for mobility"
+      },
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Single-Target Attacker dealing physical damage exclusively from the left-hand weapon",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1382,
+      "kit_id": "d2-conc-barb",
+      "payload_json": {
+        "delivery": "at-target single swing",
+        "footprint": "point (single enemy)",
+        "notes": "Uninterruptible melee single-target; no AoE; Whirlwind available as secondary for crowd control but not core identity skill",
+        "range_type": "melee"
+      },
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "an attack that cannot be interrupted... Single-Target Attacker dealing physical damage exclusively from the left-hand weapon",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1381,
+      "kit_id": "d2-conc-barb",
+      "payload_json": {
+        "summary": "Concentrate delivers an uninterruptible single-target physical swing; cannot be interrupted by hit recovery frames. Shout buffs team defense. Player stands at melee range, Concentrates single target; the uninterruptible property enables reliable tanking and sustained DPS without knockback risk."
+      },
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Patriarch OldKingFocus, Immortal King's Concentration Barb (D2R)",
+      "conf": 0.74,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1386,
+      "kit_id": "d2-conc-barb",
+      "payload_json": {
+        "variants": [
+          "MF Concentrate Barb (Magic Find via Enigma/Wealth)",
+          "Hardcore Concentrate Barb (safety-first melee)",
+          "IK Concentration Barb (Immortal King's set)"
+        ]
+      },
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|at-target|flat|melee_strike|damage|none|tank|spend|solo|melee|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.71,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "d2-conc-barb",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMMFSI-LNDT-SP-PH-~~",
+      "delivery": "at-target",
+      "elem_raw": "physical",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.71,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Concentrate Barbarian",
+      "game": "d2",
+      "kit_id": "d2-conc-barb",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMMFSI-LNDT-SP-PH-~~",
+        "delivery": "at-target",
+        "elem_raw": "physical",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-conc-barb",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "Uninterruptible single-target physical swing; anchor: 'an attack that cannot be interrupted... Single-Target Attacker dealing physical damage exclusively from the left-hand weapon'; physical = element-neutral; no AoE; no hit-recovery interruption",
+      "source_skill": "Concentrate",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-conc-barb",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "Warcry team defense buff; 'Shout buffs team defense'; self_buff/aura layer; free warcry toggle",
+      "source_skill": "Shout",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-conc-barb",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player would miss: uninterruptible swing feel — engine melee_strike approximates but no native 'cannot be interrupted' mechanic; the safety-vs-damage identity is approximated via DEFENSIVE_TRADEOFF T4.",
+    "grade": "CLOSE",
+    "kit_id": "d2-conc-barb",
+    "mapping_json": {
+      "fidelity_notes": "Uninterruptible swing is core identity (no hit-recovery interruption); DEFENSIVE_TRADEOFF T4 partially captures the safety-trade identity. Physical = element-neutral. Synergy chain captured in scaffold per §A row 1. PERSISTENCE_ENGINE_uptime covers the sustained tanking swing identity.",
+      "motion_frame": "Stand at melee range; Concentrate for uninterruptible sustained DPS; Shout maintained for defense; safe tanking identity via uninterruptible property",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "Concentrate mana per swing (low); no special economy"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Battle Orders HP/mana (synergy chain via capstone_alterations anchor: 'Concentrate ↔ Battle Orders ↔ Shout ↔ Berserk')"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Synergy chain: Concentrate ↔ Battle Orders ↔ Shout ↔ Berserk — §A row 1 scaffold"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Uninterruptible single-target physical swing; anchor: 'an attack that cannot be interrupted... Single-Target Attacker dealing physical damage exclusively from the left-hand weapon'; physical = element-neutral; no AoE; no hit-recovery interruption",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Concentrate"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Warcry team defense buff; 'Shout buffs team defense'; self_buff/aura layer; free warcry toggle",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Shout"
+        }
+      ],
+      "t4_doors": [
+        "DEFENSIVE_TRADEOFF",
+        "PERSISTENCE_ENGINE_uptime"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2193,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "hp-stack"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 2194,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "evidence": "Concentrate delivers uninterruptible single swing at targeted enemy",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2191,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Uninterruptible defensive single-target swing; the safe-melee identity and hardc",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 2195,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 2196,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.71,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.71,
+        "evidence": "Single enemy only; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 2192,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. Uninterruptible defensive single-target swing; the safe-melee identity and hardcore staple.",
+      "family": "geo_text",
+      "id": 2198,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 2197,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2199,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2200,
+      "kit_id": "d2-conc-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Concentrate Barbarian: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-conc-barb",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.83,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|flat|melee_strike|damage|none|tank|spend|solo|melee|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|flat|melee_strike|damage|none|tank|spend|solo|melee|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMMFSI-LNDT-SP-PH-~~",
+    "attr_conf": 0.83,
+    "attr_val": "STR",
+    "avg_conf": 0.83,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.83,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Concentrate",
+      "Shout"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "physical",
+    "era_year": 2000,
+    "eras": "lod;d2r",
+    "eras_normalized": "lod;d2r",
+    "flags": "",
+    "folk_name": "Concentrate Barbarian",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-conc-barb",
+    "lattice_coord": "SMMFSI",
+    "lineage": "",
+    "mech_note": "Uninterruptible defensive single-target swing; the safe-melee identity and hardcore staple.",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×econ:spend",
+    "mobile_key_group": "SMMFSI-LNDT-SP-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.83,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.83,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.83,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MELEE-STRIKE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=1].members (working_label=MELEE-STRIKE; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Concentrate Barbarian — pre-Resurrected, classic D2 prior to D2R update",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod",
+      "errata_applied": 0,
+      "id": 875,
+      "kit_id": "d2-conc-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "guide references Diablo 2 Resurrected patch 2.4, with the author noting this is an original build",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r",
+      "errata_applied": 0,
+      "id": 876,
+      "kit_id": "d2-conc-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Concentrate Barbarian or MF Concentrate Barb — a niche build focused on Magic Finding",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name Concentrate Barbarian; aliases Conc Barb, Concentrate Barb, Concentration Barbarian",
+      "errata_applied": 0,
+      "id": 873,
+      "kit_id": "d2-conc-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "an attack that cannot be interrupted... Single-Target Attacker dealing physical damage exclusively from the left-hand weapon",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Concentrate (uninterruptible, single-target physical), Shout",
+      "errata_applied": 0,
+      "id": 874,
+      "kit_id": "d2-conc-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/guide-to-playing-a-mf-concentrate-barbarian-t899635.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Uninterruptible single-target physical swing; anchor: 'an attack that cannot be interrupted... Single-Target Attacker dealing physical damage exclusively from the left-hand weapon'; physical = element-neutral; no AoE; no hit-recovery interruption",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Concentrate' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1 sig)",
+      "errata_applied": 0,
+      "id": 2099,
+      "kit_id": "d2-conc-barb",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Warcry team defense buff; 'Shout buffs team defense'; self_buff/aura layer; free warcry toggle",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Shout' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (3 sig)",
+      "errata_applied": 0,
+      "id": 2100,
+      "kit_id": "d2-conc-barb",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

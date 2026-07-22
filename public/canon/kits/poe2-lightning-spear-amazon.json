@@ -1,0 +1,807 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1025,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-lightning-spear-amazon",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Crouching_Tuna",
+    "cite_class": "authored",
+    "id": 335,
+    "kit_id": "poe2-lightning-spear-amazon",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Lightning Spear Amazon Build Guide - Path of Exile 2 0.5.4",
+    "url": "https://maxroll.gg/poe2/build-guides/lightning-spear-amazon"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Crouching_Tuna",
+      "cite_class": "authored",
+      "id": 335,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Lightning Spear Amazon Build Guide - Path of Exile 2 0.5.4",
+      "url": "https://maxroll.gg/poe2/build-guides/lightning-spear-amazon"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 336,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "thegamer.com",
+      "title": "Huntress Class Guide And Ascendancies In Path Of Exile 2",
+      "url": "https://www.thegamer.com/path-of-exile-2-poe2-huntress-class-ascendancies-guide/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-lightning-spear-amazon",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 881,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-lightning-spear-amazon",
+      "missing_expression": "Minor drift: the secondary-bolt cascade is modeled as a multi_projectile shotgun + on-hit propagation;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: the secondary-bolt cascade is modeled as a multi_projectile shotgun + on-hit propagation; the source's specific crit-engine-triggers-on-fork-bolts amplification (crit density scaling off the secondaries) is carried in traits, not as a distinct mechanic -- the fanout clear identity is preserved."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Crouching_Tuna - PoE Franchise Director",
+      "conf": 0.98,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 671,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "payload_json": {
+        "handle": "Crouching_Tuna",
+        "role": "PoE Franchise Director",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-spear-amazon"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The build scales Damage, Critical Hits and Speed with the Penetrate, In for the Kill and Predatory Instinct Ascendancy notables",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 670,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "payload_json": {
+        "ascendancy": "Amazon (Huntress ascendancy)",
+        "notables": [
+          "Predatory Instinct",
+          "In for the Kill",
+          "Critical Strike",
+          "Penetrate",
+          "Mystic Harvest (Life Leech from Elemental Damage)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-spear-amazon"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 669,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "primary projectiles burst into secondary projectiles on impact. These send arcs of lighting to monsters within a large area around the impact",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 668,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "payload_json": {
+        "geometry": "Projectile delivery (thrown weapon). On impact: multi-spawn fanout — secondary projectiles arc to enemies in large area around impact. Chain-hop / fanout footprint.",
+        "range": "ranged thrown projectile → large-radius fanout on impact"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-spear-amazon"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "When you throw a Lightning Spear primary projectiles burst into secondary projectiles on impact. These send arcs of lighting to monsters within a large area around the impact.",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 667,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "payload_json": {
+        "loop": "Throw Lightning Spear — projectile travels and bursts into secondary fork bolts on impact, sending lightning arcs to enemies in large area. Rotate Storm Lance and Explosive Spear for boss single-target. Elemental crit engine triggers on fork bolt hits.",
+        "resource": "Mana per throw"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-spear-amazon"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Lightning Spear Amazon Endgame Build",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 672,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "payload_json": {
+        "variants": [
+          "Lightning Spear Amazon endgame (current primary form)",
+          "Tanky Lightning Spear Amazon (evasion + Ghost Dance defense emphasis)",
+          "OP Lightning Spear 0.5 league starter"
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/poe2/huntress/amazon/lightning-spear-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|projectile|var|chain|damage|none|evade|spend|solo|dual|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "evade",
+    "def_conf": 0.8,
+    "def_riders": "[\"synonym:evasion\"]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.82,
+    "geometry_rule_fired": "R1",
+    "geometry_value": "chain",
+    "kit_id": "poe2-lightning-spear-amazon",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "DDHVSI",
+      "delivery": "projectile",
+      "elem_raw": "Lightning",
+      "footprint": "chain-hop"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "evade",
+        "conf": 0.8,
+        "riders": [
+          "synonym:evasion"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.82,
+        "rule_fired": "R1",
+        "value": "chain"
+      },
+      "flags": [],
+      "folk_name": "Lightning Spear Amazon",
+      "game": "poe2",
+      "kit_id": "poe2-lightning-spear-amazon",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "DDHVSI",
+        "delivery": "projectile",
+        "elem_raw": "Lightning",
+        "footprint": "chain-hop"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "thrown-weapon projectile that travels to impact, then BURSTS into secondary projectiles -- 'these send arcs of lightning to monsters within a large area around the impact' (verbatim). Section-C.4 two-stage impact-fanout: the DOMINANT every-3-seconds loop (7.2) is the throw+impact-fanout that clears the pack, so the primary geometry is the impact SHOTGUN of secondary bolts -> multi_projectile (the fan of secondaries IS the delivery, distinct from PoE1-LA's single-arrow splash). Travel-throw spine folded into this note. shock rider -> sunder.",
+      "source_skill": "Lightning Spear",
+      "speed_band": null,
+      "width_band": "wide"
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "rotated in for boss single-target ('Rotate Storm Lance and Explosive Spear for boss single-target'). Concentrated single-target throw. Secondary boss stage per 7.2.",
+      "source_skill": "Storm Lance / Explosive Spear (boss single-target rotation)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-lightning-spear-amazon",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: the secondary-bolt cascade is modeled as a multi_projectile shotgun + on-hit propagation; the source's specific crit-engine-triggers-on-fork-bolts amplification (crit density scaling off the secondaries) is carried in traits, not as a distinct mechanic -- the fanout clear identity is preserved.",
+    "grade": "CLOSE",
+    "kit_id": "poe2-lightning-spear-amazon",
+    "mapping_json": {
+      "fidelity_notes": "No GX flag. Section-C.4 two-stage impact-fanout resolved via 7.2 dominant-loop rule: the impact fan of secondary projectiles is the mapping geometry (multi_projectile); the travel-throw noted as the delivery spine. Distinguished from lightning-arrow-deadeye THIS batch: LA = one arrow, splash-to-3 simultaneous (chain); Lightning Spear = one throw BURSTING into many secondary projectiles over a large area (multi_projectile shotgun). GEOMETRY_PROPAGATION_overkill routes the on-impact secondary-bolt cascade (on-hit scaling). shock->sunder. amp_val=var reflects crit-on-fork-bolt variance.",
+      "motion_frame": "thrown-spear cascade: hurl a lightning spear into the pack, it bursts on impact into a fan of forking bolts that arc across a wide area -- the elemental crit engine pops on the fork bolts for explosive amplification",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "mana per throw (plain pool)"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana per throw"
+          ],
+          "geometry": [
+            "throw -> impact fanout of secondary bolts (multi_projectile shotgun, large area)",
+            "single-target boss throws (Storm Lance / Explosive Spear)"
+          ],
+          "traits_affixes": [
+            "critical-strike (Amazon elemental crit engine triggers on fork bolts)",
+            "lightning-penetration",
+            "projectile / additional-projectiles",
+            "shock-effect (sunder analog)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "sunder"
+          ],
+          "delivery_notes": "thrown-weapon projectile that travels to impact, then BURSTS into secondary projectiles -- 'these send arcs of lightning to monsters within a large area around the impact' (verbatim). Section-C.4 two-stage impact-fanout: the DOMINANT every-3-seconds loop (7.2) is the throw+impact-fanout that clears the pack, so the primary geometry is the impact SHOTGUN of secondary bolts -> multi_projectile (the fan of secondaries IS the delivery, distinct from PoE1-LA's single-arrow splash). Travel-throw spine folded into this note. shock rider -> sunder.",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Lightning Spear"
+        },
+        {
+          "ailments": [
+            "sunder"
+          ],
+          "delivery_notes": "rotated in for boss single-target ('Rotate Storm Lance and Explosive Spear for boss single-target'). Concentrated single-target throw. Secondary boss stage per 7.2.",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Storm Lance / Explosive Spear (boss single-target rotation)"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION_overkill",
+        "ELEMENTAL_ECHO"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock"
+        ],
+        "centrality": "rider",
+        "conf": 0.78
+      },
+      "family": "control",
+      "id": 1403,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "layers": [
+          "evasion"
+        ],
+        "primary": "evasion"
+      },
+      "family": "defense",
+      "id": 1404,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "evidence": "Thrown lightning spear travels as projectile, then forks into bolt cascades on impact",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 1401,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.8,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Mana spend per throw. Amazon's elemental crit engine scales on fork bolt hits.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 1405,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.88,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.88,
+        "damage_mode": "hit",
+        "label_verbatim": "Lightning"
+      },
+      "family": "element",
+      "id": 1406,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "evidence": "Fork cascades hop between targets after spear impact; atlas geo=multi-spawn captured as chain-hop fanout",
+        "value": "chain-hop"
+      },
+      "family": "footprint",
+      "id": 1402,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Amazon hurls a Lightning Spear that travels to impact and forks into multiple lightning bolt cascades. The elemental crit engine triggers on the fork bolts for explosive damage amplification. A thrown-weapon cascade archetype.",
+      "family": "geo_text",
+      "id": 1408,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 1407,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 1409,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 1410,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Lightning Spear Amazon: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-lightning-spear-amazon",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "poe2-lightning-spear-amazon",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.83,
+    "amp_val": "var",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|var|chain|damage|none|evade|spend|solo|dual|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|var|chain|damage|none|evade|spend|solo|dual|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "var"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "chain"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "evade"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DDHVSI-HMMD-SP-LI-~~",
+    "attr_conf": 0.83,
+    "attr_val": "DEX",
+    "avg_conf": 0.83,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.83,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Lightning Spear",
+      "Storm Lance"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "lightning",
+    "era_year": 2024,
+    "eras": "0.2-dawn;0.3-edict",
+    "eras_normalized": "0.2-dawn;0.3-edict",
+    "flags": "",
+    "folk_name": "Lightning Spear Amazon",
+    "game": "poe2",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-lightning-spear-amazon",
+    "lattice_coord": "DDHVSI",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note: 'Thrown lightning spears fork into bolt cascades under Amazon's elemental crit engine.' Era=0.2-dawn;0.3-edict. Amazon: new class in PoE2 (spear-based, D/W hybrid). Elemental crit: PoE2 mechanic where critting with an element triggers a secondary effect (lightning = shock cascades).",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|MULTI|INST×econ:spend",
+    "mobile_key_group": "DDHVSI-HMMD-SP-LI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.83,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.83,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.83,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Amazon is the pick of choice for the Huntress ... Ritualist officially released on April 4th as part of the big Dawn of the Hunt update [0.2.0]",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.2-dawn",
+      "errata_applied": 0,
+      "id": 411,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.thegamer.com/path-of-exile-2-poe2-huntress-class-ascendancies-guide/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Spear Amazon Build Guide ... written for 0.5.2 [changelog shows active across prior patches]",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.3-edict",
+      "errata_applied": 0,
+      "id": 412,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-spear-amazon",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Lightning Spear Amazon Build Guide for Path of Exile 2 Return of the Ancients 0.5.4 | Maxroll.gg",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Lightning Spear Amazon' and aliases 'Lightning Spear Storm Lance', 'Amazon lightning spear' are real community usage",
+      "errata_applied": 0,
+      "id": 409,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-spear-amazon",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "When you throw a Lightning Spear primary projectiles burst into secondary projectiles on impact. These send arcs of lighting to monsters within a large area around the impact.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Lightning Spear thrown projectile bursts into secondary projectiles on impact; Storm Lance used for single-target rotation; elemental crit engine on fork bolts",
+      "errata_applied": 0,
+      "id": 410,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/lightning-spear-amazon",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "thrown-weapon projectile that travels to impact, then BURSTS into secondary projectiles -- 'these send arcs of lightning to monsters within a large area around the impact' (verbatim). Section-C.4 two-stage impact-fanout: the DOMINANT every-3-seconds loop (7.2) is the throw+impact-fanout that clears the pack, so the primary geometry is the impact SHOTGUN of secondary bolts -> multi_projectile (the fan of secondaries IS the delivery, distinct from PoE1-LA's single-arrow splash). Travel-throw spine",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Lightning Spear' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (5 sig)",
+      "errata_applied": 0,
+      "id": 2527,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "rotated in for boss single-target ('Rotate Storm Lance and Explosive Spear for boss single-target'). Concentrated single-target throw. Secondary boss stage per 7.2.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Storm Lance / Explosive Spear (boss single-target rotation)' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2528,
+      "kit_id": "poe2-lightning-spear-amazon",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

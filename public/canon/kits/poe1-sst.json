@@ -1,0 +1,768 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 628,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-sst",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 212,
+    "kit_id": "poe1-sst",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Spectral Shield Throw — poedb.tw",
+    "url": "https://poedb.tw/us/Spectral_Shield_Throw"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 212,
+      "kit_id": "poe1-sst",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Spectral Shield Throw — poedb.tw",
+      "url": "https://poedb.tw/us/Spectral_Shield_Throw"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 213,
+      "kit_id": "poe1-sst",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[3.25] Spectral Shield Throw Gladiator Build — Odealo",
+      "url": "https://odealo.com/articles/spectral-shield-throw-pure-physical-gladiator-odealos-crafty-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 214,
+      "kit_id": "poe1-sst",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[3.21] Elemental Spectral Shield Throw Raider — Odealo",
+      "url": "https://odealo.com/articles/elemental-spectral-shield-throw-raider"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-sst",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 589,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-sst",
+      "missing_expression": "Minor drift: primary-vs-secondary pierce split and shard-count patch history are behavioral;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: primary-vs-secondary pierce split and shard-count patch history are behavioral; defence-scaling approximated via door + affix lane. The throw-and-shatter loop itself lands cleanly."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Velyna's Spectral Shield Throw Raider",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 461,
+      "kit_id": "poe1-sst",
+      "payload_json": {
+        "handle": "Velyna",
+        "note": "primary SST Raider guide author for 3.24",
+        "site": "poe-vault.com"
+      },
+      "source_url": "https://www.poe-vault.com/guides/velynas-spectral-shield-throw-raider"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fires cold damage instead of physical",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 460,
+      "kit_id": "poe1-sst",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "Fires (0—2) additional Projectiles",
+            "effect": "Fires (0-2) additional Projectiles",
+            "node": "Spectral Shield Throw (quality)",
+            "type": "base_quality"
+          },
+          {
+            "anchor_quote": "Fires cold damage instead of physical",
+            "effect": "Fires cold damage instead of physical; adjusted scaling",
+            "node": "Spectral Shield Throw of Shattering (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": "no longer changes the behaviour of Spectral Shield Throw specifically",
+            "effect": "No longer changes Spectral Shield Throw behaviour specifically; now grants +0.2% to Off Hand Critical Strike Chance per 10 Maximum Energy Shield on Shield",
+            "node": "Seething Fury jewel (reworked)",
+            "type": "threshold_jewel_reworked"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Spectral_Shield_Throw"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Added Physical Damage per 15 Armour or Evasion Rating on Shield",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 459,
+      "kit_id": "poe1-sst",
+      "payload_json": {
+        "note": "damage scales off shield armour/evasion; shield stat optimization is core gear target"
+      },
+      "source_url": "https://poedb.tw/us/Spectral_Shield_Throw"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "primary projectile which cannot pierce; shatters, launching a number of smaller shards as projectiles in all directions; secondary projectiles deal reduced damage but can pierce",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 458,
+      "kit_id": "poe1-sst",
+      "payload_json": {
+        "verbatim": "primary shield projectile cannot pierce; shatters on impact launching multiple shrapnel projectiles in all directions; secondary shards can pierce; at gem level 20: up to 13 secondary projectiles (pre-3.15 rework) then reduced to 3+chain"
+      },
+      "source_url": "https://poedb.tw/us/Spectral_Shield_Throw"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "deals off-hand damage augmented by the defences of the shield; will shatter, launching a number of smaller shards as projectiles in all directions",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 457,
+      "kit_id": "poe1-sst",
+      "payload_json": {
+        "description": "Throw a spectral copy of your equipped shield as a projectile. On impact, the shield shatters into secondary shrapnel projectiles in all directions. Damage scales off the shield's armour and evasion rating, not weapon damage. Gladiator's block and bleed synergy are primary ascendancy supports."
+      },
+      "source_url": "https://poedb.tw/us/Spectral_Shield_Throw"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[3.21] Elemental Spectral Shield Throw Raider; [3.19] Chaos Spectral Shield Throw Pathfinder",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 462,
+      "kit_id": "poe1-sst",
+      "payload_json": {
+        "list": [
+          "SST Bleed Gladiator — physical bleed variant (canonical)",
+          "Elemental SST Raider — elemental conversion variant",
+          "Chaos SST Pathfinder — chaos conversion variant (3.19)"
+        ]
+      },
+      "source_url": "https://odealo.com/articles/spectral-shield-throw-pure-physical-gladiator-odealos-crafty-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|projectile|var|multi_projectile|damage|none|mitigate|spend|solo|dual|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.68,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "poe1-sst",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "SDMVSI-MMDM-SP-PH-~~",
+      "delivery": "projectile",
+      "elem_raw": "physical",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.68,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Spectral Shield Throw",
+      "game": "poe1",
+      "kit_id": "poe1-sst",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SDMVSI-MMDM-SP-PH-~~",
+        "delivery": "projectile",
+        "elem_raw": "physical",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-sst",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": "all",
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "composite: primary shield projectile (cannot pierce) flies straight, then SHATTERS on impact into a radial shrapnel spray (secondaries can pierce; up to 13 shards pre-3.15, later 3+chain). Dominant footprint = the shatter burst (§7.2), primary throw folded into this note — ice-shot b04 precedent.",
+      "source_skill": "Spectral Shield Throw",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-sst",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: primary-vs-secondary pierce split and shard-count patch history are behavioral; defence-scaling approximated via door + affix lane. The throw-and-shatter loop itself lands cleanly.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-sst",
+    "mapping_json": {
+      "fidelity_notes": "Pure-physical -> element-neutral per THE PHYSICAL RULE; canonical form is SST Bleed Gladiator -> bleed. Damage scales off the SHIELD'S armour/evasion, not weapon damage — defence-stat-into-damage identity routed RESOURCE_CONVERSION door + gear-affix lane note (no dedicated stat-conversion primitive asserted). GEOMETRY_PROPAGATION base token per R-M1 (impact-spawn, neither clearly cascade-on-kill nor overkill).",
+      "motion_frame": "walk-and-throw shield lobber: each throw shatters into a shrapnel spray; medium tempo with spiky shatter variance",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light spend (chassis default)"
+          ],
+          "geometry": [
+            "impact-shatter radial spray",
+            "shard count/pierce"
+          ],
+          "traits_affixes": [
+            "shield armour/evasion rolls AS the damage stat (gear-affix lane carries the scaling identity)",
+            "block (Gladiator)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "bleed"
+          ],
+          "delivery_notes": "composite: primary shield projectile (cannot pierce) flies straight, then SHATTERS on impact into a radial shrapnel spray (secondaries can pierce; up to 13 shards pre-3.15, later 3+chain). Dominant footprint = the shatter burst (§7.2), primary throw folded into this note — ice-shot b04 precedent.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Spectral Shield Throw"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION",
+        "RESOURCE_CONVERSION"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 4423,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 4424,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Shield copy projectile thrown; shatters into shrapnel on impact",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 4421,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Throws a copy of the shield that shatters into shrapnel; damage scales off shiel",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 4425,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 4426,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.68,
+        "evidence": "Shield shatters into shrapnel spray in multiple directions; geo=multi-spawn in atlas",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 4422,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with multi-point footprint. Throws a copy of the shield that shatters into shrapnel; damage scales off shield defenses  —  gear-stat-as-weapon oddity.",
+      "family": "geo_text",
+      "id": 4428,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 4427,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 4429,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 4430,
+      "kit_id": "poe1-sst",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Spectral Shield Throw: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-sst",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.8,
+    "amp_val": "var",
+    "architecture": null,
+    "atlas_coords": "walk|projectile|var|multi_projectile|damage|none|mitigate|spend|solo|dual|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|projectile|var|multi_projectile|damage|none|mitigate|spend|solo|dual|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "var"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SDMVSI-MMDM-SP-PH-~~",
+    "attr_conf": 0.8,
+    "attr_val": "STR",
+    "avg_conf": 0.8,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.8,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Spectral Shield Throw"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "3.0-3.6;3.20+",
+    "eras_normalized": "3.0-3.6;3.20+",
+    "flags": "",
+    "folk_name": "Spectral Shield Throw",
+    "game": "poe1",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-08",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-sst",
+    "lattice_coord": "SDMVSI",
+    "lineage": "",
+    "mech_note": "Throws a copy of the shield that shatters into shrapnel; damage scales off shield defenses — gear-stat-as-weapon oddity.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|MULTI|INST×GAP-P1-08",
+    "mobile_key_group": "SDMVSI-MMDM-SP-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.8,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.8,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.8,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MULTI-PROJECTILE-VOLLEY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=5].members (working_label=MULTI-PROJECTILE-VOLLEY; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Spectral Shield Throw was introduced in patch 3.2.0 as a new Dexterity/Strength Skill Gem",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6 (intro 3.2.0)",
+      "errata_applied": 0,
+      "id": 269,
+      "kit_id": "poe1-sst",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Spectral_Shield_Throw",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.25]Spectral Shield Throw Gladiator Build — Updated for Patch 3.25; [3.21]Elemental Spectral Shield Throw Raider",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.20+",
+      "errata_applied": 0,
+      "id": 270,
+      "kit_id": "poe1-sst",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/spectral-shield-throw-pure-physical-gladiator-odealos-crafty-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.25]Spectral Shield Throw Gladiator Build; Spectral Shield Throw Bleed Gladiator — tanky & fast mapping",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Spectral Shield Throw' is real community usage; alias 'SST' is real community usage",
+      "errata_applied": 0,
+      "id": 267,
+      "kit_id": "poe1-sst",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/spectral-shield-throw-pure-physical-gladiator-odealos-crafty-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Spectral Shield Throw deals damage based on your Shield's Armour and Evasion; shatters on impact, which combined with Gratuitous Violence, will detonate any pack of enemies; Gladiator class",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Spectral Shield Throw; shield copy projectile shatters into shrapnel; damage scales off shield defenses; Gladiator class",
+      "errata_applied": 0,
+      "id": 268,
+      "kit_id": "poe1-sst",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/spectral-shield-throw-pure-physical-gladiator-odealos-crafty-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "composite: primary shield projectile (cannot pierce) flies straight, then SHATTERS on impact into a radial shrapnel spray (secondaries can pierce; up to 13 shards pre-3.15, later 3+chain). Dominant footprint = the shatter burst (§7.2), primary throw folded into this note — ice-shot b04 precedent.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Spectral Shield Throw' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (5 sig)",
+      "errata_applied": 0,
+      "id": 2477,
+      "kit_id": "poe1-sst",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

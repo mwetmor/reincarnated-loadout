@@ -1,0 +1,804 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1092,
+      "assert_text": "primary_delivery_class == 'summon_delegate'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "le-explosive-trap-falconer",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "unknown",
+    "cite_class": "authored",
+    "id": 507,
+    "kit_id": "le-explosive-trap-falconer",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Explosive Ballista Falconer - Last Epoch Maxroll.gg",
+    "url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "authored",
+      "id": 507,
+      "kit_id": "le-explosive-trap-falconer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Explosive Ballista Falconer - Last Epoch Maxroll.gg",
+      "url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "official",
+      "id": 508,
+      "kit_id": "le-explosive-trap-falconer",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Last Epoch 1.0 Patch Notes Released!",
+      "url": "https://maxroll.gg/last-epoch/news/last-epoch-1-0-patch-notes-released"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "le-explosive-trap-falconer",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 944,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 LE tranche; internal-consistency reconcile, no W1 evidence — W5 is LE's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "le-explosive-trap-falconer",
+      "missing_expression": "Trap+Ballista both map `totem` (placed-proxy) — clean, but the DEPLOY-AND-DETONATE tempo (pre-place, then chain-trigger) is a placed-detonator rhythm that `totem` (a persistent emitter) approximates rather than nails.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Trap+Ballista both map `totem` (placed-proxy) — clean, but the DEPLOY-AND-DETONATE tempo (pre-place, then chain-trigger) is a placed-detonator rhythm that `totem` (a persistent emitter) approximates rather than nails. The falcon companion is a pet-rider gap (autonomous strikes not deliverable). Source player loses the falcon chip-damage and the precise trigger-detonation timing feel, but the trap-carpet identity is deliverable."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.5,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1139,
+      "kit_id": "le-explosive-trap-falconer",
+      "payload_json": {
+        "guide_title": "Explosive Ballista Falconer",
+        "handle": "unknown",
+        "site": "maxroll.gg"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Armed Construction transforms Ballista into an explosive. Explosive Trap needs to hit an enemy to give you Mana back via Sapping Strikes",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1138,
+      "kit_id": "le-explosive-trap-falconer",
+      "payload_json": {
+        "node_armed_construction": "transforms Ballista into explosive — core enabler for Explosive Ballista variant",
+        "node_sapping_strikes": "critical Mana sustain via Trap-hit Mana return"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Use Tier 6 Rings with Throwing Damage and Reduced Mana Cost, or Bo's Anarchy. Without this reduced Mana cost, Explosive Trap costs Mana and therefore does not generate any Mana from Sapping Strikes",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1137,
+      "kit_id": "le-explosive-trap-falconer",
+      "payload_json": {
+        "power_items": [
+          "Melvern's Writ",
+          "Peak of the Mountain",
+          "Death Rattle",
+          "Woven Flesh",
+          "Apogee of Frozen Light",
+          "Foot of the Mountain",
+          "Cradle of the Erased"
+        ],
+        "required_items": [
+          "Tier 6 Rings with Throwing Damage + Reduced Mana Cost",
+          "Bo's Anarchy (alternative for Mana reduction)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Explosive Trap which proc explosive Ballistae in a massive AoE... The Explosive Ballista Falconer spreads havoc on the battlefield, filling it with explosions",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1136,
+      "kit_id": "le-explosive-trap-falconer",
+      "payload_json": {
+        "delivery": "at-target trap placement (multiple pre-placed)",
+        "footprint": "large-AOE chain detonation when triggered",
+        "notes": "Deploy-and-detonate pattern; traps placed at target ground positions; massive AoE on detonation — 'incredible AoE, Damage'"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Explosive Trap needs to hit an enemy to give you Mana back via Sapping Strikes... Armed Construction transforms Ballista into an explosive",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1135,
+      "kit_id": "le-explosive-trap-falconer",
+      "payload_json": {
+        "resource_model": "Mana per trap placement; Sapping Strikes returns Mana on trap hit",
+        "summary": "Place Explosive Traps at target positions carpeting the ground; traps chain-detonate when triggered; Explosive Ballista variant uses Armed Construction to spawn explosive Ballistae from traps; Mana cost per trap placement; Sapping Strikes generates Mana when traps hit enemies; Falconry provides falcon combat support"
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Explosive Ballista Falconer throws Explosive Trap which proc explosive Ballistae in a massive AoE",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1140,
+      "kit_id": "le-explosive-trap-falconer",
+      "payload_json": {
+        "variants": [
+          "Explosive Ballista Falconer (Explosive Trap + Ballista proc)",
+          "Trap-only Falconer (falcon Dive Bomb detonation variant — per KB; separate from Ballista variant)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|spiky|totem|damage|none|evade|spend|light|dual|high|instant|active|apply→detonate",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "evade",
+    "def_conf": 0.8,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.8,
+    "geometry_rule_fired": "R0b",
+    "geometry_value": "totem",
+    "kit_id": "le-explosive-trap-falconer",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "DDHSLI-HLDD-SP-PH-~~",
+      "delivery": "at-target",
+      "elem_raw": "Physical / Fire",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "evade",
+        "conf": 0.8,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.8,
+        "rule_fired": "R0b",
+        "value": "totem"
+      },
+      "flags": [],
+      "folk_name": "Explosive Trap Falconer",
+      "game": "le",
+      "kit_id": "le-explosive-trap-falconer",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "DDHSLI-HLDD-SP-PH-~~",
+        "delivery": "at-target",
+        "elem_raw": "Physical / Fire",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-explosive-trap-falconer",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Deploy multiple traps at target ground positions (carpet the ground); they chain-detonate when triggered for a massive AoE ('filling it with explosions'). Placed-proxy deploy-detonate. Physical (§1 physical rule; DEX throwing). Explosive Ballista variant: Armed Construction spawns explosive Ballistae from the traps.",
+      "source_skill": "Explosive Trap",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "le-explosive-trap-falconer",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Armed Construction transforms the Ballista into an explosive turret proc'd by the traps ('proc explosive Ballistae in a massive AoE') — placed-proxy turret.",
+      "source_skill": "Ballista (Explosive)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "le-explosive-trap-falconer",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Trap+Ballista both map `totem` (placed-proxy) — clean, but the DEPLOY-AND-DETONATE tempo (pre-place, then chain-trigger) is a placed-detonator rhythm that `totem` (a persistent emitter) approximates rather than nails. The falcon companion is a pet-rider gap (autonomous strikes not deliverable). Source player loses the falcon chip-damage and the precise trigger-detonation timing feel, but the trap-carpet identity is deliverable.",
+    "grade": "CLOSE",
+    "kit_id": "le-explosive-trap-falconer",
+    "mapping_json": {
+      "fidelity_notes": "Physical -> element-neutral (§1 physical rule; DEX throwing). Explosive Trap + Ballista both map `totem` (placed-proxy: traps = placed detonators, Ballistae = placed turrets; §6 totem/sentry/turret -> totem). Multiple traps + procced Ballistae = accrual to placed-proxy-count family (no numbers). NO ailment token: explosions, no burn/named status (§0.1). trigger_grammar: trap-placement -> on-trigger detonation -> proc Ballistae is the on-cast-linked proc engine (depth-1). Falcon (Falconry) is a persistent COMPANION support -> summoner-deferral GAP flavor -> pet-RIDER (falcon's autonomous strikes not deliverable; the trap-carpet loop is the identity + is deliverable). Sibling of le-detonating-arrow-mm's trap-proc chassis but DISTINCT primary (explosive Ballistae vs procced DA explosions). Two doors: PROXY_ASCENSION (placed-proxy carpet) + GEOMETRY_PROPAGATION base [STEWARD AUDIT 2026-07-18: _cascade is pinned on-kill in §5; chain-detonation here is trigger-driven — R-M1 base-when-unclear].",
+      "motion_frame": "Carpet the ground with Explosive Traps at target positions; they chain-detonate and (Explosive Ballista variant) spawn explosive Ballistae for a screen of blasts; Sapping Strikes returns Mana on every trap-hit; the falcon supports",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "regen_shape": "Sapping Strikes returns Mana when a trap HITS an enemy; REQUIRES reduced-Mana-cost gear (T6 rings / Bo's Anarchy) or the trap's Mana cost negates the Sapping return",
+        "resource": "mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Sapping Strikes Mana-on-trap-hit",
+            "mandatory reduced-Mana-cost gear"
+          ],
+          "geometry": [
+            "trap placement count (carpet)",
+            "Ballista proc count",
+            "chain-detonation AoE"
+          ],
+          "traits_affixes": [
+            "throwing/physical damage scalers",
+            "Armed Construction (Ballista->explosive)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Deploy multiple traps at target ground positions (carpet the ground); they chain-detonate when triggered for a massive AoE ('filling it with explosions'). Placed-proxy deploy-detonate. Physical (§1 physical rule; DEX throwing). Explosive Ballista variant: Armed Construction spawns explosive Ballistae from the traps.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Explosive Trap"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Armed Construction transforms the Ballista into an explosive turret proc'd by the traps ('proc explosive Ballistae in a massive AoE') — placed-proxy turret.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Ballista (Explosive)"
+        }
+      ],
+      "t4_doors": [
+        "PROXY_ASCENSION",
+        "GEOMETRY_PROPAGATION"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-consume-pair"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "ignite"
+        ],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1833,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "layers": [
+          "dodge",
+          "evasion"
+        ],
+        "primary": "dodge"
+      },
+      "family": "defense",
+      "id": 1834,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Player places traps at target location; falcon Dive Bombs detonate traps; delivery is mediated: player places, falcon triggers",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1831,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.78,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Each trap placed costs Mana. Falcon detonation is the trigger mechanism (no additional resource for detonation). Multiple traps can be pre-placed before trigger.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 1835,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "Physical / Fire"
+      },
+      "family": "element",
+      "id": 1836,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Trap explosions cover large AoE; atlas geo=large-AOE confirmed by 'carpet the floor' mech_note",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 1832,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Player carpets the ground with explosive traps placed at target positions. When the falcon executes Dive Bomb into the trap zone, the traps chain-detonate in a large explosion radius. Deploy-and-detonate pattern.",
+      "family": "geo_text",
+      "id": 1838,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 1837,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred; prov=kb",
+      "family": "rank1_upgrade",
+      "id": 1839,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 1840,
+      "kit_id": "le-explosive-trap-falconer",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Explosive Trap Falconer: totem summon_delegate identity",
+      "hook_type": "geometry",
+      "kit_id": "le-explosive-trap-falconer",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.77,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|spiky|totem|damage|none|evade|spend|light|dual|high|instant|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|spiky|totem|damage|none|evade|spend|light|dual|high|instant|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "totem"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "evade"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "DDHSLI-HLDD-SP-PH-~~",
+    "attr_conf": 0.77,
+    "attr_val": "DEX",
+    "avg_conf": 0.77,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.77,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Explosive Trap",
+      "Falconry"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "le",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "trap-stock-deploy",
+    "elem_raw": "physical",
+    "era_year": 2024,
+    "eras": "1.0-launch;1.1-harbingers",
+    "eras_normalized": "1.0-launch;1.1-harbingers",
+    "flags": "",
+    "folk_name": "Explosive Trap Falconer",
+    "game": "le",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-03",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "le-explosive-trap-falconer",
+    "lattice_coord": "DDHSLI",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note ref: '1.0 launch most overtuned archetype, deploy-detonate.' Falcon detonates traps = combined falcon+trap proxy. Note: proxy characterization is nuanced — traps are 'light' (placed kit), falcon is 'heavy' (autonomous); aggregate proxy=light-to-heavy depending on which arm is dominant. Atlas coded L=light (trap arm dominant).",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: mark/tag ledger + consume-trigger operators",
+    "mobile_cell_id": "LIGHT|LARGE|INST×GX-03",
+    "mobile_key_group": "DDHSLI-HLDD-SP-PH-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.77,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.77,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.77,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TOTEM-SENTRY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-archipelago-mock.json points[stratum=core, family assigned, not gateA self-seed] (affinity=0.42)",
+    "spine_status": "ACTIVE",
+    "tier": "PROPAGATED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Patch 1.0 introduced the Falconer Mastery — Falconer is the third Rogue class mastery, a master tactician who utilizes traps and their fearsome Falcon companion",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.0-launch",
+      "errata_applied": 0,
+      "id": 684,
+      "kit_id": "le-explosive-trap-falconer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/news/last-epoch-1-0-patch-notes-released",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in era: 1.1-harbingers",
+      "errata_applied": 0,
+      "id": 685,
+      "kit_id": "le-explosive-trap-falconer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Explosive Ballista Falconer throws Explosive Trap which proc explosive Ballistae... Explosive Trap needs to hit an enemy to give you Mana back",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Explosive Trap Falconer'; aliases include 'trap Falconer', 'mine Falconer'",
+      "errata_applied": 0,
+      "id": 682,
+      "kit_id": "le-explosive-trap-falconer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Armed Construction transforms Ballista into an explosive. Explosive Trap needs to hit an enemy to give you Mana back via Sapping Strikes",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Explosive Trap, Falconry; trap placement + falcon detonation loop; physical/fire damage; Mana resource",
+      "errata_applied": 0,
+      "id": 683,
+      "kit_id": "le-explosive-trap-falconer",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/last-epoch/build-guides/explosive-ballista-falconer-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Deploy multiple traps at target ground positions (carpet the ground); they chain-detonate when triggered for a massive AoE ('filling it with explosions'). Placed-proxy deploy-detonate. Physical (§1 physical rule; DEX throwing). Explosive Ballista variant: Armed Construction spawns explosive Ballistae from the traps.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Explosive Trap' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (3) but 'zone' more strongly (4) — mixed signal",
+      "errata_applied": 0,
+      "id": 2305,
+      "kit_id": "le-explosive-trap-falconer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Armed Construction transforms the Ballista into an explosive turret proc'd by the traps ('proc explosive Ballistae in a massive AoE') — placed-proxy turret.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Ballista (Explosive)' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails 'summon_delegate' (2 sig)",
+      "errata_applied": 0,
+      "id": 2306,
+      "kit_id": "le-explosive-trap-falconer",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

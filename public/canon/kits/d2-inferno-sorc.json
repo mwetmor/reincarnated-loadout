@@ -1,0 +1,660 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 4,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 0,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 828,
+      "assert_text": "primary_delivery_class == 'beam'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-inferno-sorc",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 648,
+    "kit_id": "d2-inferno-sorc",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Blaze Sorceress Guide — Diablo II: Resurrected Season 11 — Maxroll.gg",
+    "url": "https://maxroll.gg/d2/guides/blaze-sorceress"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 646,
+      "kit_id": "d2-inferno-sorc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.wiki.fextralife.com",
+      "title": "Inferno — Diablo 2 Wiki (Fextralife)",
+      "url": "https://diablo2.wiki.fextralife.com/Inferno"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 647,
+      "kit_id": "d2-inferno-sorc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Inferno — Diablo 2 Resurrected Skill — diablo2.io",
+      "url": "https://diablo2.io/skills/inferno-t4099.html"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 648,
+      "kit_id": "d2-inferno-sorc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Blaze Sorceress Guide — Diablo II: Resurrected Season 11 — Maxroll.gg",
+      "url": "https://maxroll.gg/d2/guides/blaze-sorceress"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": "http://web.archive.org/web/20090324044015/http://classic.battle.net:80/diablo2exp/skills/sorceress-fire.shtml",
+      "author_handle": "Blizzard Entertainment (official)",
+      "cite_class": "official",
+      "id": 934,
+      "kit_id": "d2-inferno-sorc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "classic.battle.net (Arreat Summit via Wayback)",
+      "title": "The Arreat Summit - Skills: Sorceress Fire Spells",
+      "url": "http://web.archive.org/web/20090324044015/http://classic.battle.net:80/diablo2exp/skills/sorceress-fire.shtml"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-inferno-sorc",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 735,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-inferno-sorc",
+      "missing_expression": "Source player would miss: (1) rooted-during-channel creates total positional vulnerability — a design texture approximated by delivery_notes but not an engine constraint;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Source player would miss: (1) rooted-during-channel creates total positional vulnerability — a design texture approximated by delivery_notes but not an engine constraint; (2) fire immune hard-stop creates a secondary-skill requirement that has no engine analog in this mapping."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1505,
+      "kit_id": "d2-inferno-sorc",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Patch 2.4 increased range baseline by 75%...mana cost baseline reduced from 7 to 4 mana per second",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1504,
+      "kit_id": "d2-inferno-sorc",
+      "payload_json": {
+        "notes": "Pre-2.4 (classic/lod era) Inferno was strictly short-range, single-target-locked, high mana drain",
+        "patch_notes": "D2R 2.4: mana cost reduced 7 to 4/sec; range increased 75%; free-aim added",
+        "synergies": "Warmth synergizes powerfully with Inferno damage"
+      },
+      "source_url": "https://diablo2.io/skills/inferno-t4099.html"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1503,
+      "kit_id": "d2-inferno-sorc",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Creates a continuous jet of flame to scorch your enemies...3.3-yard range at level 1",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1502,
+      "kit_id": "d2-inferno-sorc",
+      "payload_json": {
+        "delivery": "channeled directional fire stream from caster",
+        "footprint": "narrow cone in front of caster",
+        "geometry": "short-range linear stream",
+        "notes": "Pre-2.4: locked onto single target; post-2.4: free-aim direction; historically caster-rooted",
+        "range_base": "3.3 yards at level 1; scales to 17.1 yards at level 20"
+      },
+      "source_url": "https://diablo2.wiki.fextralife.com/Inferno"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Channeling this Skill emits a continuous stream of Fire from your Character in the direction of your cursor, while rooting your Character in place.",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1501,
+      "kit_id": "d2-inferno-sorc",
+      "payload_json": {
+        "loop": "Channel Inferno at enemy; continuous fire stream applies per-frame damage; caster is rooted during channel; fire immune enemies are hard-stop; reposition between channels; secondary skill required for fire immune mobs"
+      },
+      "source_url": "https://maxroll.gg/d2/guides/blaze-sorceress"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Inferno is effective against Single Targets and tightly clustered enemies. You can use it to kill stragglers",
+      "conf": 0.65,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1506,
+      "kit_id": "d2-inferno-sorc",
+      "payload_json": {
+        "variants": [
+          "Inferno-Blaze hybrid (Blaze primary, Inferno for stragglers)",
+          "Pure Inferno challenge build"
+        ]
+      },
+      "source_url": "https://maxroll.gg/d2/guides/blaze-sorceress"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "blank|beam|flat|blank|blank|blank|blank|blank|solo|melee|high|channel|active|one-shot",
+    "ctrl_ailment_gaps": null,
+    "ctrl_ailments_mapped": null,
+    "ctrl_function": null,
+    "ctrl_treatment": null,
+    "def_bin": null,
+    "def_conf": null,
+    "def_riders": null,
+    "delivery_value": "beam",
+    "dependency_val": "one-shot",
+    "econ_gaps": null,
+    "econ_meter_type": null,
+    "econ_status": null,
+    "economy_model": null,
+    "flags": [
+      "A5-negative-supplementary"
+    ],
+    "geometry_conf": null,
+    "geometry_rule_fired": null,
+    "geometry_value": null,
+    "kit_id": "d2-inferno-sorc",
+    "mob_policy_while_casting": null,
+    "mob_skill_is_movement": null,
+    "mob_verbs": null,
+    "provenance_json": {
+      "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+      "keying": "A5-negative-rekey-2026-07-14",
+      "negative": 1,
+      "passive_null_coords": [
+        "geometry_value",
+        "ctrl_treatment",
+        "ctrl_function",
+        "def_bin",
+        "economy_model",
+        "mob_policy_while_casting"
+      ],
+      "recoverable_coords": [
+        "delivery_value",
+        "amp_val",
+        "proxy_val",
+        "range_val",
+        "tempo_val",
+        "commit_val",
+        "activation_val",
+        "dependency_val"
+      ],
+      "source": "megaprobe-facts-jsonl (sparse negative row)",
+      "supplementary_only": true
+    },
+    "raw_json": {
+      "delivery": {
+        "conf": 0.78,
+        "evidence": "Inferno channels as a fire cone/beam extending from player facing; player is the source",
+        "value": "beam"
+      },
+      "folk_name": "Inferno Sorceress",
+      "footprint": {
+        "conf": 0.74,
+        "evidence": "Inferno forms a narrow cone in front of caster; atlas geo=small-AOE but shape is directional cone",
+        "value": "cone"
+      },
+      "game": "d2",
+      "keying_provenance": {
+        "geometry_null_reason": "delivery+footprint pair AMBIGUOUS across positives (no deterministic geometry); charter §5 passive-category rule",
+        "keying": "A5-negative-rekey-2026-07-14",
+        "negative": 1,
+        "passive_null_coords": [
+          "geometry_value",
+          "ctrl_treatment",
+          "ctrl_function",
+          "def_bin",
+          "economy_model",
+          "mob_policy_while_casting"
+        ],
+        "recoverable_coords": [
+          "delivery_value",
+          "amp_val",
+          "proxy_val",
+          "range_val",
+          "tempo_val",
+          "commit_val",
+          "activation_val",
+          "dependency_val"
+        ],
+        "source": "megaprobe-facts-jsonl (sparse negative row)",
+        "supplementary_only": true
+      },
+      "kit_id": "d2-inferno-sorc",
+      "mech_note": "Inferno's channel flame cone under-delivered its listed damage for decades (infamous breakpoint bug); the canonical dead channel skill.",
+      "row_class": "combat-kit",
+      "status": "negative",
+      "why_negative": "Infamous channel damage breakpoint bug caused Inferno to under-deliver listed damage for decades; canonical failed channel skill; known dead end"
+    },
+    "resource_verbatim": null,
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "beam",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-inferno-sorc",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Channeled directional fire stream from caster. Caster is ROOTED during channel ('rooting your Character in place' — dossier skill_loop, verify_ledger anchor_quote). Short-range cone in front of caster (narrow stream, §CROSS row 5 rooted-channel contrast case). Per-frame damage tick delivery. Fire immune enemies are hard-stop.",
+      "source_skill": "Inferno",
+      "speed_band": null,
+      "width_band": "narrow"
+    }
+  ],
+  "kit_id": "d2-inferno-sorc",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Source player would miss: (1) rooted-during-channel creates total positional vulnerability — a design texture approximated by delivery_notes but not an engine constraint; (2) fire immune hard-stop creates a secondary-skill requirement that has no engine analog in this mapping.",
+    "grade": "APPROX",
+    "kit_id": "d2-inferno-sorc",
+    "mapping_json": {
+      "fidelity_notes": "APPROX: beam_channel geometry maps the rooted fire-stream correctly. §CROSS row 5 rooted-channel law: delivery_notes MUST state rooted — done ('caster is ROOTED during channel'). Fire element confirmed: 'continuous stream of Fire' (dossier). Ailments: DoT-timing law — 'continuous jet of flame' is delivery timing flavor, not an attested burn status. No 'burn' or burn status named in dossier or verify_ledger — §0-UNIVERSAL bars burn emission. Negative kit (canon_corpus.negative=1): identity CONFIRMED, negative_canon CONFIRMED ('Not very strong, sometimes annoying to play'). Eras: classic + lod both CONFIRMED. Inferno's infamous per-frame breakpoint bug (mech_note) is review-book texture. T4 PERSISTENCE_ENGINE_uptime: uptime of the channel IS the loop. Deviation: the rooted-ness and the fire-immune hard wall are the build's defining failure points — approximation captures channel shape but not the mobility-deprivation penalty.",
+      "motion_frame": "Channel Inferno at enemy; caster rooted; continuous fire stream per-frame; reposition between channels; secondary skill for fire immune mobs",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "mana-drain: Inferno continuous mana drain per second; 'mana-drain' per corpus econ_raw. Warmth synergy reduces cost."
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Warmth synergy = mana cost reduction → traits-affixes/economy lane per §A row 1"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Warmth synergy (+6% fire damage per level) — traits-affixes scaffold lane"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Channeled directional fire stream from caster. Caster is ROOTED during channel ('rooting your Character in place' — dossier skill_loop, verify_ledger anchor_quote). Short-range cone in front of caster (narrow stream, §CROSS row 5 rooted-channel contrast case). Per-frame damage tick delivery. Fire immune enemies are hard-stop.",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "beam_channel",
+          "source_skill": "Inferno"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_uptime"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Inferno Sorceress: beam channel beam identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-inferno-sorc",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "d2-inferno-sorc",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.87,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "blank|beam|flat|blank|blank|blank|blank|blank|solo|melee|high|channel|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "blank|beam|flat|blank|blank|blank|blank|blank|solo|melee|high|channel|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "blank"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "beam"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "blank"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "blank"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "blank"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "blank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "blank"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "IMHFSC-RSDG-SP-FI-~~",
+    "attr_conf": 0.87,
+    "attr_val": "INT",
+    "avg_conf": 0.87,
+    "canon_tier": "negative",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.87,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Inferno"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": "extrinsic-tuning",
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-drain",
+    "elem_raw": "fire",
+    "era_year": 2000,
+    "eras": "classic;lod",
+    "eras_normalized": "classic;lod",
+    "flags": "",
+    "folk_name": "Inferno Sorceress",
+    "game": "d2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-inferno-sorc",
+    "lattice_coord": "IMHFSC",
+    "lineage": "",
+    "mech_note": "Inferno's channel flame cone under-delivered its listed damage for decades (infamous breakpoint bug); the canonical dead channel skill.",
+    "mint": 0,
+    "mob_raw": "rooted-while-channel",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|SMALL|CHAN×econ:spend",
+    "mobile_key_group": "IMHFSC-RSDG-SP-FI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 0,
+    "negative": 1,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.87,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.87,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "complete-kit-mapping",
+    "tempo_conf": 0.87,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Inferno [6]...A spout of flame that burns your enemies.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in classic era",
+      "errata_applied": 0,
+      "id": 955,
+      "kit_id": "d2-inferno-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "http://web.archive.org/web/20090324044015/http://classic.battle.net:80/diablo2exp/skills/sorceress-fire.shtml",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Creates a continuous jet of flame to scorch your enemies",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod era",
+      "errata_applied": 0,
+      "id": 956,
+      "kit_id": "d2-inferno-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.wiki.fextralife.com/Inferno",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "play an alternative Fire Sorc...Not very strong, sometimes annoying to play, but definitely something new!",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Inferno Sorceress' and aliases 'Inferno Sorc', 'Fire Channel Sorceress' are real community usage",
+      "errata_applied": 0,
+      "id": 953,
+      "kit_id": "d2-inferno-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/inferno-t4099.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Creates a continuous jet of flame to scorch your enemies...3.3-yard range at level 1",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Inferno — short-range channeled fire stream that roots caster",
+      "errata_applied": 0,
+      "id": 954,
+      "kit_id": "d2-inferno-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.wiki.fextralife.com/Inferno",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Channeled directional fire stream from caster. Caster is ROOTED during channel ('rooting your Character in place' — dossier skill_loop, verify_ledger anchor_quote). Short-range cone in front of caster (narrow stream, §CROSS row 5 rooted-channel contrast case). Per-frame damage tick delivery. Fire immune enemies are hard-stop.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Inferno' delivery_class=beam (band_conf=0.75); lint: anchor entails 'beam' (2 sig)",
+      "errata_applied": 0,
+      "id": 2141,
+      "kit_id": "d2-inferno-sorc",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Not very strong, sometimes annoying to play...Channeling this Skill emits a continuous stream of Fire...rooting your Character in place.",
+      "claim_family": "negative_canon",
+      "claim_subject": null,
+      "claim_text": "Inferno classic/lod negative — short-range channeled fire stream; fire immune enemies create hard-stop; range and immunity wall define the negative kit identity",
+      "errata_applied": 0,
+      "id": 957,
+      "kit_id": "d2-inferno-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/d2/guides/blaze-sorceress",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    }
+  ]
+}

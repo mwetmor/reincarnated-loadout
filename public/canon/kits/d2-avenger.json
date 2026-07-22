@@ -1,0 +1,816 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 796,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-avenger",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Stormlash (data contributor)",
+    "cite_class": "official",
+    "id": 587,
+    "kit_id": "d2-avenger",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "Vengeance — Diablo 2 Resurrected Skill",
+    "url": "https://diablo2.io/skills/vengeance-t4185.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Stormlash (data contributor)",
+      "cite_class": "official",
+      "id": 587,
+      "kit_id": "d2-avenger",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Vengeance — Diablo 2 Resurrected Skill",
+      "url": "https://diablo2.io/skills/vengeance-t4185.html"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 588,
+      "kit_id": "d2-avenger",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Vengeance pally advice please",
+      "url": "https://diablo2.io/forums/vengeance-pally-advice-please-t1463261.html"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-avenger",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 710,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-avenger",
+      "missing_expression": "Player would miss: cold as third simultaneous element (mapped fire+lightning only);",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Player would miss: cold as third simultaneous element (mapped fire+lightning only); engine 7×7 covers two; tri-ele simultaneous feel is approximated."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Description credited to Trang Oul; data contributed by Stormlash",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1331,
+      "kit_id": "d2-avenger",
+      "payload_json": {
+        "handle": "Stormlash",
+        "site": "diablo2.io"
+      },
+      "source_url": "https://diablo2.io/skills/vengeance-t4185.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Resist Fire/Cold/Lightning: +10% elemental damage per level",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1330,
+      "kit_id": "d2-avenger",
+      "payload_json": {
+        "runewords": [
+          "EbotD (endgame weapon)"
+        ],
+        "synergies": [
+          "Resist Fire/Cold/Lightning (+10% elemental per level)",
+          "Salvation (+2% elemental per level)"
+        ]
+      },
+      "source_url": "https://diablo2.io/skills/vengeance-t4185.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Vengeance bases its elemental damage on the base damage of the weapon and doesn't take into account Grief's flat damage",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1329,
+      "kit_id": "d2-avenger",
+      "payload_json": {
+        "key_items": [
+          "EbotD (weapon base damage scales Vengeance elemental)",
+          "Fine/Sharp charms (+min/max damage)",
+          "Insight merc (mana support)"
+        ],
+        "notes": "Vengeance bases elemental damage on weapon base damage, not flat bonuses like Grief"
+      },
+      "source_url": "https://diablo2.io/forums/vengeance-pally-advice-please-t1463261.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Vengeance melee converts each swing into tri-element damage under Conviction",
+      "conf": 0.74,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1328,
+      "kit_id": "d2-avenger",
+      "payload_json": {
+        "delivery": "at-target melee swing",
+        "footprint": "point (single enemy)",
+        "notes": "Single enemy contact per swing; elemental damage applied on-hit",
+        "range_type": "melee"
+      },
+      "source_url": "https://diablo2.io/skills/vengeance-t4185.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fire, lightning and cold damage are added to each successful attack",
+      "conf": 0.76,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1327,
+      "kit_id": "d2-avenger",
+      "payload_json": {
+        "summary": "Vengeance converts each melee swing into tri-element (fire+cold+lightning) damage; Conviction aura reduces enemy resistances. Player positions next to target and attacks; all three elemental damage types apply simultaneously on each hit."
+      },
+      "source_url": "https://diablo2.io/skills/vengeance-t4185.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Advice avenger holy fire paladin",
+      "conf": 0.65,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1332,
+      "kit_id": "d2-avenger",
+      "payload_json": {
+        "variants": [
+          "Avenger Holy Fire hybrid (Conviction + Holy Fire aura)",
+          "Pure Avenger (Conviction only)"
+        ]
+      },
+      "source_url": "https://diablo2.io/forums/advice-avenger-holy-fire-paladin-t1355190.html"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|at-target|flat|melee_strike|damage|none|mitigate|spend|solo|melee|med|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.71,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "d2-avenger",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "WMMFSI-LNDT-SP-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "fire",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.71,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Avenger",
+      "game": "d2",
+      "kit_id": "d2-avenger",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "WMMFSI-LNDT-SP-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "fire",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-avenger",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "At-target melee swing applying tri-element (fire+cold+lightning) damage simultaneously; anchor: 'Fire, lightning and cold damage are added to each successful attack'; cold is third element — dropped to secondary note per triple-element rule; dominant scaling = fire/lightning by convention [ERRATA-56 2026-07-19: cold (the explicit third element of the tri-element 'Fire, lightning and cold' attack) attests engine WATER; added to attested set via attested_elements_errata (primary/secondary provenance preserved). Blind-rider anchor, D-1.]",
+      "source_skill": "Vengeance",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-avenger",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 1,
+      "source_anchor": "Persistent caster-anchored resistance-reduction aura enabling elemental damage to penetrate immunities; anchor: 'Conviction reduces enemy resistances. Player positions next to target and attacks'; §A row 2 + §2 aura/hex → curse:sap",
+      "source_skill": "Conviction aura",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-avenger",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Player would miss: cold as third simultaneous element (mapped fire+lightning only); engine 7×7 covers two; tri-ele simultaneous feel is approximated.",
+    "grade": "CLOSE",
+    "kit_id": "d2-avenger",
+    "mapping_json": {
+      "fidelity_notes": "Triple-element conversion (fire+cold+lightning) exceeds dual-element engine native; mapped top-2 (fire+lightning) per main-law hybrid rule; cold = fidelity_note drop. Verify_ledger anchor for Vengeance mechanics CONFIRMED. Conviction = curse:sap per §A row 2 + main §2. Synergies in scaffold per §A row 1.",
+      "motion_frame": "Position next to target, swing Vengeance for tri-element melee hits; Conviction always-on passive resistance debuff",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "Vengeance mana per swing (moderate); aura free toggle"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Insight merc for mana support"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Synergy: Resist Fire/Cold/Lightning +10% elemental per level; Salvation +2% elemental per level — §A row 1 scaffold"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "attested_elements_errata": [
+            "water"
+          ],
+          "delivery_notes": "At-target melee swing applying tri-element (fire+cold+lightning) damage simultaneously; anchor: 'Fire, lightning and cold damage are added to each successful attack'; cold is third element — dropped to secondary note per triple-element rule; dominant scaling = fire/lightning by convention [ERRATA-56 2026-07-19: cold (the explicit third element of the tri-element 'Fire, lightning and cold' attack) attests engine WATER; added to attested set via attested_elements_errata (primary/secondary provenance preserved). Blind-rider anchor, D-1.]",
+          "element_primary": "fire",
+          "element_secondary": "lightning",
+          "geometry_value": "melee_strike",
+          "source_skill": "Vengeance"
+        },
+        {
+          "ailments": [
+            "curse:sap"
+          ],
+          "delivery_notes": "Persistent caster-anchored resistance-reduction aura enabling elemental damage to penetrate immunities; anchor: 'Conviction reduces enemy resistances. Player positions next to target and attacks'; §A row 2 + §2 aura/hex → curse:sap",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "aura",
+          "source_skill": "Conviction aura"
+        }
+      ],
+      "t4_doors": [
+        "ELEMENT_CONVERSION_HYBRID",
+        "NETWORK_AMPLIFIER"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 3043,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "resist"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 3044,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "evidence": "Vengeance melee swing on targeted enemy; elemental conversion via Conviction",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 3041,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Vengeance melee converts each swing into tri-element damage under Conviction — t",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 3045,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 3046,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.71,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.71,
+        "evidence": "Single enemy Vengeance swing; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 3042,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. Vengeance melee converts each swing into tri-element damage under Conviction  —  the immunity-proof melee answer.",
+      "family": "geo_text",
+      "id": 3048,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 3047,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 3049,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 3050,
+      "kit_id": "d2-avenger",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Avenger: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-avenger",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "d2-avenger",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.83,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|flat|melee_strike|damage|none|mitigate|spend|solo|melee|med|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|flat|melee_strike|damage|none|mitigate|spend|solo|melee|med|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "WMMFSI-LNDT-SP-FI-~~",
+    "attr_conf": 0.83,
+    "attr_val": "WIS",
+    "avg_conf": 0.83,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.83,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Vengeance",
+      "Conviction"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-per-swing",
+    "elem_raw": "fire",
+    "era_year": 2000,
+    "eras": "lod;d2r",
+    "eras_normalized": "lod;d2r",
+    "flags": "",
+    "folk_name": "Avenger",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-D2-10",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-avenger",
+    "lattice_coord": "WMMFSI",
+    "lineage": "",
+    "mech_note": "Vengeance melee converts each swing into tri-element damage under Conviction — the immunity-proof melee answer.",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×GAP-D2-10",
+    "mobile_key_group": "WMMFSI-LNDT-SP-FI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.83,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.83,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.83,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MELEE-STRIKE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=1].members (working_label=MELEE-STRIKE; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Fire, lightning and cold damage are added to each successful attack",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod",
+      "errata_applied": 0,
+      "id": 838,
+      "kit_id": "d2-avenger",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/vengeance-t4185.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Vengeance pally advice please — the problem with Avenger is that the skill falters against multiple targets",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r",
+      "errata_applied": 0,
+      "id": 839,
+      "kit_id": "d2-avenger",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/forums/vengeance-pally-advice-please-t1463261.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Fire, lightning and cold damage are added to each successful attack",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name Avenger; aliases Vengeance Paladin, Conviction Avenger",
+      "errata_applied": 0,
+      "id": 836,
+      "kit_id": "d2-avenger",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/vengeance-t4185.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "At level 1, it would be +70% Fire, +70% Cold, and +70% Lightning. Monster resistances have the ability to reduce the additional elemental damage.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Vengeance (tri-element conversion), Conviction",
+      "errata_applied": 0,
+      "id": 837,
+      "kit_id": "d2-avenger",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/vengeance-t4185.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "At-target melee swing applying tri-element (fire+cold+lightning) damage simultaneously; anchor: 'Fire, lightning and cold damage are added to each successful attack'; cold is third element — dropped to secondary note per triple-element rule; dominant scaling = fire/lightning by convention [ERRATA-56 2026-07-19: cold (the explicit third element of the tri-element 'Fire, lightning and cold' attack) attests engine WATER; added to attested set via attested_elements_errata (primary/secondary provenan",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Vengeance' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2 sig)",
+      "errata_applied": 0,
+      "id": 2076,
+      "kit_id": "d2-avenger",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Persistent caster-anchored resistance-reduction aura enabling elemental damage to penetrate immunities; anchor: 'Conviction reduces enemy resistances. Player positions next to target and attacks'; §A row 2 + §2 aura/hex → curse:sap",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Conviction aura' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (1 sig)",
+      "errata_applied": 0,
+      "id": 2077,
+      "kit_id": "d2-avenger",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

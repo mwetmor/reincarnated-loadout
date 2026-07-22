@@ -1,0 +1,791 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1019,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-gemling-stacker",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 1020,
+      "assert_text": "expresses: The source player would miss the ENTIRE identity engine: attribute-stacking-AS-d",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "poe2-gemling-stacker",
+      "last_result": "red",
+      "routed_docket_id": 165
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Void241",
+    "cite_class": "communal",
+    "id": 319,
+    "kit_id": "poe2-gemling-stacker",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Tempest Flurry Gemling Legionnaire Build Guide - Path of Exile 2",
+    "url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-gemling-legionnaire-build-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Void241",
+      "cite_class": "communal",
+      "id": 319,
+      "kit_id": "poe2-gemling-stacker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Tempest Flurry Gemling Legionnaire Build Guide - Path of Exile 2",
+      "url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-gemling-legionnaire-build-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 320,
+      "kit_id": "poe2-gemling-stacker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "[PoE 2] HoWA Molten Blast Build | Gemling Legionnaire | Early Access",
+      "url": "https://www.pathofexile.com/forum/view-thread/3670962"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 321,
+      "kit_id": "poe2-gemling-stacker",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Gemling Legionnaire Ascendancy Overview - Path of Exile 2",
+      "url": "https://maxroll.gg/poe2/resources/gemling-legionnaire-ascendancy"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-gemling-stacker",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 876,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-poe2",
+        "docket_id": 165,
+        "evidence_kits": [
+          "poe2-gemling-stacker"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:poe2-gemling-stacker",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "poe2-record"
+        },
+        "source_deviation_id": 876,
+        "source_kit_id": "poe2-gemling-stacker",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 PoE2 structuring of poe2-gemling-stacker.",
+        "status": "open"
+      },
+      "docket_id": 165,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-gemling-stacker",
+      "missing_expression": "The source player would miss the ENTIRE identity engine: attribute-stacking-AS-damage.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "The source player would miss the ENTIRE identity engine: attribute-stacking-AS-damage. In PoE2 you pour 600+ STR / 300 DEX / 300-500 INT and Enhanced Effectiveness DOUBLES it, then Pillar + HoWA convert those raw stats into your whole damage output -- the build IS the stat-stack. The engine has no lane that couples attribute TOTALS to flat attack damage (docket #8 is the adjacent-but-distinct stat->proxy-count), so this degrades to trait/affix scaler notes + a RESOURCE_CONVERSION door + a docket-candidate. What survives (a lightning/cold melee attacker with freeze-shatter) is recognizable but hollow of the stacker fantasy -> APPROX (that build, much weaker), bordering GAPPED; kept APPROX because the melee-attack shell maps and the stat-coupling is a docket-able quantitative gap, not a wholly unmodelable mechanism."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "Tempest Flurry Gemling Legionnaire Build Guide - Path of Exile 2",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 635,
+      "kit_id": "poe2-gemling-stacker",
+      "payload_json": {
+        "handle": "Void241",
+        "site": "maxroll.gg",
+        "url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-gemling-legionnaire-build-guide"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-gemling-legionnaire-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Enhanced Effectiveness doubles the bonuses gained from attributes such as the Life gained from Strength",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 634,
+      "kit_id": "poe2-gemling-stacker",
+      "payload_json": {
+        "ascendancy": "Gemling Legionnaire",
+        "nodes": [
+          "Adaptive Capability",
+          "Enhanced Effectiveness (doubles attribute bonuses — e.g. Life from STR)",
+          "Gem Studded",
+          "Thaumaturgical Infusion",
+          "Essence of Virtue",
+          "Advanced Thaumaturgy",
+          "Implanted Gems (Motoric / Neurological / Bolstering)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/resources/gemling-legionnaire-ascendancy"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "After getting Hand of Wisdom and Action, you only need one roll of flat '#to # cold damage to attacks' for ailment application.",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 633,
+      "kit_id": "poe2-gemling-stacker",
+      "payload_json": {
+        "key_items": [
+          "Hand of Wisdom and Action (HoWA) — unique gloves, flat lightning damage from INT",
+          "Pillar of the Caged God — unique quarterstaff, scales damage with total attributes",
+          "The Three Dragons — unique, ensures freeze for Herald of Ice explosions",
+          "Soul Cores of Topotante — socketed into Pillar for monster resistance penetration"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-gemling-legionnaire-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "resulting in rapid, devastating attacks with a large area of effect",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 632,
+      "kit_id": "poe2-gemling-stacker",
+      "payload_json": {
+        "geometry_verbatim": "Tempest Flurry variant: rapid melee attacks with large area of effect. HoWA provides flat lightning to attacks. Geometry is melee-range (at-target) but AoE scales with attribute investment. Also attested: crossbow variants (HoWA Molten Blast)."
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-gemling-legionnaire-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "stacks strength, dexterity and intelligence to scale your Pillar of the Caged God and Hand of Wisdom and Action (HoWA), resulting in rapid, devastating attacks with a large area of effect",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 631,
+      "kit_id": "poe2-gemling-stacker",
+      "payload_json": {
+        "loop_verbatim": "Stack STR, DEX, INT simultaneously via Gemling Legionnaire ascendancy (Enhanced Effectiveness doubles attribute bonuses). Pillar of the Caged God scales damage with total attributes. Hand of Wisdom and Action (HoWA) converts INT to flat lightning damage added to attacks. Three Dragons ensures freeze for Herald of Ice explosions. STR targets: 600-700; DEX: 300; INT: 300-500."
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-gemling-legionnaire-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[PoE 2] HoWA Molten Blast Build | Gemling Legionnaire | Early Access | Path of Exile 2",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 636,
+      "kit_id": "poe2-gemling-stacker",
+      "payload_json": {
+        "variants": [
+          "Tempest Flurry Gemling (melee HoWA + Pillar, Void241)",
+          "HoWA Molten Blast Gemling (crossbow ranged variant, forum thread 0.1)",
+          "Gas Grenade Gemling (grenade crossbow variant, 0.5)",
+          "Gemling Twister (0.5, maxroll guide)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3670962"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|var|ground_targeted_circle|damage|none|tank|spend|solo|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe2-gemling-stacker",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "_MHVSI",
+      "delivery": "at-target",
+      "elem_raw": "Variable (all attributes = Physical/Cold/Lightning hybrid)",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Gemling Attribute Stacker",
+      "game": "poe2",
+      "kit_id": "poe2-gemling-stacker",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "_MHVSI",
+        "delivery": "at-target",
+        "elem_raw": "Variable (all attributes = Physical/Cold/Lightning hybrid)",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-gemling-stacker",
+      "motion_signature": "arc_sweep",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "Rapid melee attacks with a large area of effect (at-target melee, AoE scales with attribute investment). Hand of Wisdom and Action converts INT -> flat lightning damage on attacks; Three Dragons ensures freeze feeds Herald of Ice explosions. lightning primary (HoWA) + water secondary (cold-for-freeze). shock + freeze ailments. Host-flexible (crossbow Molten Blast variant attested).",
+      "source_skill": "Tempest Flurry (HoWA attribute-stacked)",
+      "speed_band": "fast",
+      "width_band": "wide"
+    }
+  ],
+  "kit_id": "poe2-gemling-stacker",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The source player would miss the ENTIRE identity engine: attribute-stacking-AS-damage. In PoE2 you pour 600+ STR / 300 DEX / 300-500 INT and Enhanced Effectiveness DOUBLES it, then Pillar + HoWA convert those raw stats into your whole damage output -- the build IS the stat-stack. The engine has no lane that couples attribute TOTALS to flat attack damage (docket #8 is the adjacent-but-distinct stat->proxy-count), so this degrades to trait/affix scaler notes + a RESOURCE_CONVERSION door + a docket-candidate. What survives (a lightning/cold melee attacker with freeze-shatter) is recognizable but hollow of the stacker fantasy -> APPROX (that build, much weaker), bordering GAPPED; kept APPROX because the melee-attack shell maps and the stat-coupling is a docket-able quantitative gap, not a wholly unmodelable mechanism.",
+    "grade": "APPROX",
+    "kit_id": "poe2-gemling-stacker",
+    "mapping_json": {
+      "fidelity_notes": "HoWA ATTRIBUTE-STACKING -> FLAT DAMAGE (addendum B / C hot-flag): this is NOT an accrual to docket #8 (siege-ballista is stat->proxy-COUNT; HoWA is stat->DAMAGE -- different mechanism). Mapped to trait/affix lanes (Enhanced Effectiveness doubling + HoWA INT->flat-lightning + Pillar total-attribute-damage) + RESOURCE_CONVERSION door (attributes ARE the damage stat). NO native economy key couples raw attribute totals to flat damage on attacks -> DOCKET-CANDIDATE filed as ITS OWN candidate (stat-as-damage-source, distinct from #8 stat-as-army-size). Element: corpus lightning primary (HoWA flat lightning) + water secondary (Three Dragons freeze/Herald of Ice); freeze ailment kept (Three Dragons fetched-attested via item_alterations); shock REMOVED at steward audit -- corpus-kb 'Lightning hybrid' is not fetched attestation (§0; basin headline: kb content unreliable post-cutoff) and engine shock=arc-CC ≠ poe2 damage-amp shock. GX-07 (corpus gx) is the attribute-stacking gate class. Host-flexible (Tempest Flurry melee dominant per Void241 primary guide; crossbow Molten Blast noted). verify_ledger: identity+mechanics+era CONFIRMED 0.1-0.5.",
+      "motion_frame": "Stack STR/DEX/INT simultaneously (Gemling Enhanced Effectiveness doubles attribute bonuses); Pillar of the Caged God scales damage with total attributes; HoWA turns INT into flat lightning on rapid melee attacks; Three Dragons routes freeze into Herald-of-Ice chains.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "standard mana spend; the 'economy' is attribute investment (STR 600-700, DEX 300, INT 300-500)"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "attribute-stacking damage coupling"
+          ],
+          "geometry": [
+            "Tempest Flurry melee_arc AoE (scales with attributes)"
+          ],
+          "traits_affixes": [
+            "attribute-stacking scalers (Enhanced Effectiveness doubling)",
+            "HoWA INT->flat-lightning",
+            "Pillar total-attribute damage"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "freeze"
+          ],
+          "delivery_notes": "Rapid melee attacks with a large area of effect (at-target melee, AoE scales with attribute investment). Hand of Wisdom and Action converts INT -> flat lightning damage on attacks; Three Dragons ensures freeze feeds Herald of Ice explosions. lightning primary (HoWA) + water secondary (cold-for-freeze). shock + freeze ailments. Host-flexible (crossbow Molten Blast variant attested).",
+          "element_primary": "lightning",
+          "element_secondary": "water",
+          "geometry_value": "melee_arc",
+          "source_skill": "Tempest Flurry (HoWA attribute-stacked)"
+        }
+      ],
+      "t4_doors": [
+        "RESOURCE_CONVERSION",
+        "GEOMETRY_PROPAGATION"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "burst-damage",
+        "mark_identity": "freeze (Three Dragons -> Herald of Ice explosion on freeze)",
+        "proc_trigger_condition": "on-ailment-application",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.65
+      },
+      "family": "control",
+      "id": 3763,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "energy-shield",
+          "evasion"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 3764,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Attribute-stacked melee attacks; delivery is at-target melee; conf MED (archetype-level, not skill-specific)",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 3761,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Standard Mana spend; the economy is the attribute investment (not a special resource).",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 3765,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.68,
+        "damage_mode": "hit",
+        "label_verbatim": "Variable (all attributes = Physical/Cold/Lightning hybrid)"
+      },
+      "family": "element",
+      "id": 3766,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Melee range attack footprint; small-radius confirmed; conf MED",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 3762,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Gemling Legionnaire ascendancy monetizes all three primary attributes simultaneously — every STR, DEX, and INT point feeds damage scaling. The kit's damage is the attribute investment, not any specific skill's design.",
+      "family": "geo_text",
+      "id": 3768,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 3767,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "NOT APPLICABLE — archetype defined by stat investment, not a rankable skill",
+      "family": "rank1_upgrade",
+      "id": 3769,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 3770,
+      "kit_id": "poe2-gemling-stacker",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Gemling Attribute Stacker: melee arc melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-gemling-stacker",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "poe2-gemling-stacker",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.68,
+    "amp_val": "var",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|var|ground_targeted_circle|damage|none|tank|spend|solo|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|var|ground_targeted_circle|damage|none|tank|spend|solo|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "var"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "_MHVSI-MSDM-SW-LI-~~",
+    "attr_conf": 0.68,
+    "attr_val": null,
+    "avg_conf": 0.68,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.68,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "host-flexible (HoWA/crossbow)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "stat-is-the-weapon",
+    "elem_raw": "lightning",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "eras_normalized": "0.1;0.2-dawn;0.3-edict;0.4;0.5-ancients",
+    "flags": "",
+    "folk_name": "Gemling Attribute Stacker",
+    "game": "poe2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-07",
+    "is_system": 0,
+    "key_completeness": 11,
+    "kit_id": "poe2-gemling-stacker",
+    "lattice_coord": "_MHVSI",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note: 'The ascendancy monetizes RAW ATTRIBUTES — every point of all three stats feeds damage.' conf=0.68 in atlas reflects archetype-level abstraction (the 'kit' is really a stat-stacking pattern, not a named skill). Underscore attr confirms class-neutral nature. Era=0.1 through 0.5-ancients — persistent attribute stacking archetype. Variable element: STR contributes physical, DEX contributes lightning (via HoWA-like conversion), INT contributes spell damage.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-C: thorns/stat-retaliation channel",
+    "mobile_cell_id": "SOLO|SMALL|INST×GX-07",
+    "mobile_key_group": "_MHVSI-MSDM-SW-LI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;aoe",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.68,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.68,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.68,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Path of Exile 2 is currently in early access, this means rapid development including frequent changes. [Dec 22 2024]",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.1, 0.2-dawn, 0.3-edict, 0.4, 0.5-ancients",
+      "errata_applied": 0,
+      "id": 383,
+      "kit_id": "poe2-gemling-stacker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-gemling-legionnaire-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "HOWA Tri Stacker Gemling HELP PLEASE",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Gemling Attribute Stacker'; aliases 'Gemling Legionnaire attribute stacker', 'HoWA Gemling', 'crossbow attribute stacker'",
+      "errata_applied": 0,
+      "id": 381,
+      "kit_id": "poe2-gemling-stacker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3669056",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "After getting Hand of Wisdom and Action, you only need one roll of flat '#to # cold damage to attacks' for ailment application.",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core mechanic: host-flexible (HoWA/crossbow); Gemling Legionnaire ascendancy; tri-attribute stacking (STR/DEX/INT) for damage",
+      "errata_applied": 0,
+      "id": 382,
+      "kit_id": "poe2-gemling-stacker",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/tempest-flurry-gemling-legionnaire-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Rapid melee attacks with a large area of effect (at-target melee, AoE scales with attribute investment). Hand of Wisdom and Action converts INT -> flat lightning damage on attacks; Three Dragons ensures freeze feeds Herald of Ice explosions. lightning primary (HoWA) + water secondary (cold-for-freeze). shock + freeze ailments. Host-flexible (crossbow Molten Blast variant attested).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Tempest Flurry (HoWA attribute-stacked)' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1) but 'zone' more strongly (4) — mixed signal",
+      "errata_applied": 0,
+      "id": 2520,
+      "kit_id": "poe2-gemling-stacker",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

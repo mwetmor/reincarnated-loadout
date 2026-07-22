@@ -1,0 +1,803 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 626,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-split-arrow-bleed",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 206,
+    "kit_id": "poe1-split-arrow-bleed",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Split Arrow — poedb.tw",
+    "url": "https://poedb.tw/us/Split_Arrow"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 206,
+      "kit_id": "poe1-split-arrow-bleed",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Split Arrow — poedb.tw",
+      "url": "https://poedb.tw/us/Split_Arrow"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 207,
+      "kit_id": "poe1-split-arrow-bleed",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "odealo.com",
+      "title": "[3.23] Bleeding Split Arrow/Puncture Gladiator Build — Odealo",
+      "url": "https://odealo.com/articles/bleeding-split-arrow-puncture-gladiator-build"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-split-arrow-bleed",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 587,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-split-arrow-bleed",
+      "missing_expression": "Minor drift: 5-9 arrow count scaling, the no-double-hit-per-attack rule, and explosion magnitude tuning are behavioral;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: 5-9 arrow count scaling, the no-double-hit-per-attack rule, and explosion magnitude tuning are behavioral; bleed, fan, swap-rotation, and on-kill pops all land on native lanes."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 449,
+      "kit_id": "poe1-split-arrow-bleed",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Split Arrow fires Projectiles in Parallel",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 448,
+      "kit_id": "poe1-split-arrow-bleed",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "Now has a Mana cost of 6 at gem level 1 (previously 7)",
+            "effect": "Mana cost 6 at level 1 (previously 7); 10 at level 20 (previously 11)",
+            "node": "Split Arrow of Splitting (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": "Split Arrow 'fires Projectiles in Parallel'",
+            "effect": "Split Arrow fires Projectiles in Parallel; (7-10)% increased Projectile Damage",
+            "node": "Straight and True (threshold jewel)",
+            "req": "40+ Dexterity nearby",
+            "type": "threshold_jewel"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Split_Arrow"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Split Arrow fires Projectiles in Parallel",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 447,
+      "kit_id": "poe1-split-arrow-bleed",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "Split Arrow 'fires Projectiles in Parallel'",
+            "effect": "Split Arrow fires Projectiles in Parallel; (7-10)% increased Projectile Damage",
+            "item": "Straight and True (threshold jewel)",
+            "type": "threshold_jewel"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Split_Arrow"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fires between 5-9 arrows depending on gem level; multiple arrows cannot hit the same enemy per attack; excess projectiles pass through",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 446,
+      "kit_id": "poe1-split-arrow-bleed",
+      "payload_json": {
+        "verbatim": "fan of arrows spreading across enemy group; each arrow applies bleed; at higher gem levels fires 5-9 arrows; multiple arrows cannot hit the same enemy per attack"
+      },
+      "source_url": "https://poedb.tw/us/Split_Arrow"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Split Arrow for clear speed and Puncture as primary single-target ability; mobility because it's a Bleed build that damages enemies even when you're not continuously attacking",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 445,
+      "kit_id": "poe1-split-arrow-bleed",
+      "payload_json": {
+        "description": "Fire a fan of arrows with Split Arrow applying bleed stacks to groups. Swap to Puncture for single-target bleed application on bosses. Gladiator's Gratuitous Violence causes bleed-stacked enemies to explode on death, clearing packs."
+      },
+      "source_url": "https://odealo.com/articles/bleeding-split-arrow-puncture-gladiator-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Split Arrow/Puncture is currently the best combination of Bleed Skills in Path of Exile",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 450,
+      "kit_id": "poe1-split-arrow-bleed",
+      "payload_json": {
+        "list": [
+          "Split Arrow/Puncture Bleed Gladiator — canonical form",
+          "Rain of Arrows Bleed — parallel bleed bow variant"
+        ]
+      },
+      "source_url": "https://odealo.com/articles/bleeding-split-arrow-puncture-gladiator-build"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|projectile|flat|multi_projectile|damage|none|mitigate|spend|solo|ranged|low|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.68,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "poe1-split-arrow-bleed",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DRLFSI-HMDM-SP-PH-~~",
+      "delivery": "projectile",
+      "elem_raw": "physical",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.68,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Split Arrow Bleed",
+      "game": "poe1",
+      "kit_id": "poe1-split-arrow-bleed",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DRLFSI-HMDM-SP-PH-~~",
+        "delivery": "projectile",
+        "elem_raw": "physical",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-split-arrow-bleed",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "fan of 5-9 arrows spreading across the pack, each applying bleed stacks; source rule 'multiple arrows cannot hit the same enemy per attack' (excess passes through) is behavioral — engine multi_projectile overlap behavior not asserted.",
+      "source_skill": "Split Arrow",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-split-arrow-bleed",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "boss-swap single-arrow heavy bleed application; the two-skill clear/single-target swap is the dominant rotation.",
+      "source_skill": "Puncture",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-split-arrow-bleed",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: 5-9 arrow count scaling, the no-double-hit-per-attack rule, and explosion magnitude tuning are behavioral; bleed, fan, swap-rotation, and on-kill pops all land on native lanes.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-split-arrow-bleed",
+    "mapping_json": {
+      "fidelity_notes": "Pure-physical bleed kit -> element-neutral per THE PHYSICAL RULE (elem slots null; identity = geometry + bleed). Gladiator's Gratuitous Violence (bleed-stacked enemies explode on death, clearing packs) routes to GEOMETRY_PROPAGATION_cascade — the on-kill propagation door IS the capstone identity.",
+      "motion_frame": "run-and-fan: full-move bleed application — fire the fan, keep moving while bleeds tick; swap to Puncture on bosses",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light spend (chassis default)",
+            "damage-while-not-attacking is the bleed uptime identity"
+          ],
+          "geometry": [
+            "arrow-fan width/count",
+            "single-target swap"
+          ],
+          "traits_affixes": [
+            "bleed-magnitude/duration trait ranks",
+            "physical bow affixes"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "bleed"
+          ],
+          "delivery_notes": "fan of 5-9 arrows spreading across the pack, each applying bleed stacks; source rule 'multiple arrows cannot hit the same enemy per attack' (excess passes through) is behavioral — engine multi_projectile overlap behavior not asserted.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Split Arrow"
+        },
+        {
+          "ailments": [
+            "bleed"
+          ],
+          "delivery_notes": "boss-swap single-arrow heavy bleed application; the two-skill clear/single-target swap is the dominant rotation.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "Puncture"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION_cascade",
+        "PERSISTENCE_ENGINE_uptime"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 133,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 134,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Arrow fan projectiles spread across enemy group; each applies bleed stacks",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 131,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Wide arrow fan applying stacked bleeds with Gladiator explosion pops — physical ",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 135,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 136,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.68,
+        "evidence": "Multiple bleed-applying projectiles fan out; geo=multi-spawn in atlas",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 132,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with multi-point footprint. Wide arrow fan applying stacked bleeds with Gladiator explosion pops  —  physical DoT at range.",
+      "family": "geo_text",
+      "id": 138,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 137,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 139,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 140,
+      "kit_id": "poe1-split-arrow-bleed",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Split Arrow Bleed: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-split-arrow-bleed",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.8,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|flat|multi_projectile|damage|none|mitigate|spend|solo|ranged|low|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|flat|multi_projectile|damage|none|mitigate|spend|solo|ranged|low|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DRLFSI-HMDM-SP-PH-~~",
+    "attr_conf": 0.8,
+    "attr_val": "DEX",
+    "avg_conf": 0.8,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.8,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Split Arrow",
+      "Puncture(swap)"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "3.0-3.6;3.7-3.13",
+    "eras_normalized": "3.0-3.6;3.7-3.13",
+    "flags": "",
+    "folk_name": "Split Arrow Bleed",
+    "game": "poe1",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-split-arrow-bleed",
+    "lattice_coord": "DRLFSI",
+    "lineage": "",
+    "mech_note": "Wide arrow fan applying stacked bleeds with Gladiator explosion pops — physical DoT at range.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|MULTI|INST×econ:spend",
+    "mobile_key_group": "DRLFSI-HMDM-SP-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.8,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.8,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.8,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MULTI-PROJECTILE-VOLLEY",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=5].members (working_label=MULTI-PROJECTILE-VOLLEY; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6",
+      "errata_applied": 0,
+      "id": 258,
+      "kit_id": "poe1-split-arrow-bleed",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 259,
+      "kit_id": "poe1-split-arrow-bleed",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Split Arrow/Puncture is currently the best combination of Bleed Skills in Path of Exile — Gladiator build",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Split Arrow Bleed' is real community usage; Gladiator class",
+      "errata_applied": 0,
+      "id": 256,
+      "kit_id": "poe1-split-arrow-bleed",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/bleeding-split-arrow-puncture-gladiator-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Split Arrow for clear speed and Puncture as primary single-target ability, with the two skills swapped depending on encounter needs; Gladiator, Blood in the Eyes, Gratuitous Violence",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Split Arrow and Puncture (swap); bleed DoT; Gladiator ascendancy",
+      "errata_applied": 0,
+      "id": 257,
+      "kit_id": "poe1-split-arrow-bleed",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://odealo.com/articles/bleeding-split-arrow-puncture-gladiator-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "fan of 5-9 arrows spreading across the pack, each applying bleed stacks; source rule 'multiple arrows cannot hit the same enemy per attack' (excess passes through) is behavioral — engine multi_projectile overlap behavior not asserted.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Split Arrow' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2474,
+      "kit_id": "poe1-split-arrow-bleed",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "boss-swap single-arrow heavy bleed application; the two-skill clear/single-target swap is the dominant rotation.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Puncture' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (1 sig)",
+      "errata_applied": 0,
+      "id": 2475,
+      "kit_id": "poe1-split-arrow-bleed",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

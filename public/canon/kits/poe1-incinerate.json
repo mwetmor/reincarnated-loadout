@@ -1,0 +1,733 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 598,
+      "assert_text": "primary_delivery_class == 'beam'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-incinerate",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "communal",
+    "id": 142,
+    "kit_id": "poe1-incinerate",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Incinerate — PoEDB",
+    "url": "https://poedb.tw/us/Incinerate"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 142,
+      "kit_id": "poe1-incinerate",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Incinerate — PoEDB",
+      "url": "https://poedb.tw/us/Incinerate"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-incinerate",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 562,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-incinerate",
+      "missing_expression": "Cone-vs-beam: the stage-expanding cone footprint is folded into beam_channel (channel dominance per s7.2) -- a player would see a straighter stream than the source's widening fan.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Cone-vs-beam: the stage-expanding cone footprint is folded into beam_channel (channel dominance per s7.2) -- a player would see a straighter stream than the source's widening fan. Stage count, per-stage cone-angle growth, and the release-wave multiplier are numeric properties with no enum carriers. 1.x-era 3-stage vs modern 8-stage numeric drift noted (mechanism identical)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 299,
+      "kit_id": "poe1-incinerate",
+      "payload_json": null,
+      "source_url": "https://poedb.tw/us/Incinerate"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "up to 8 maximum stages (expandable to 10 with helmet enchantments)",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 298,
+      "kit_id": "poe1-incinerate",
+      "payload_json": {
+        "note": "helmet enchantment extends max stages from 8 to 10"
+      },
+      "source_url": "https://poedb.tw/us/Incinerate"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "maximum of 15 Stages (previously 12)",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 297,
+      "kit_id": "poe1-incinerate",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "maximum of 15 Stages (previously 12)",
+            "effect": "Maximum of 15 Stages (previously 12); quality grants +0-3 to maximum Stages",
+            "item": "Incinerate of Venting (transfig gem)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": "Wider area coverage with adjusted cast time and mana costs",
+            "effect": "Wider area coverage; adjusted cast time and mana costs",
+            "item": "Incinerate of Expanse (transfig gem)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Incinerate"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "flames spread wider close to you and spread longer directly in front of you",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 296,
+      "kit_id": "poe1-incinerate",
+      "payload_json": {
+        "aoe_radius": null,
+        "delivery": "beam (channeled cone from player)",
+        "footprint": "cone (narrow at start, expands with stages)",
+        "range_note": "extends directly in front of player; cone angle expands per stage"
+      },
+      "source_url": "https://poedb.tw/us/Incinerate"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "flames spread wider close to you and spread longer directly in front of you. 25% more Damage with Hits and Ailments for each stage",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 295,
+      "kit_id": "poe1-incinerate",
+      "payload_json": {
+        "loop": "hold button to channel → stages ramp (up to 8) → each stage adds 25% more damage → at max stages, release for final wave (500% more damage hit) → restart",
+        "movement": "rooted while channeling",
+        "ramp_mechanic": "cone angle expands 100% per stage up to 300%"
+      },
+      "source_url": "https://poedb.tw/us/Incinerate"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 300,
+      "kit_id": "poe1-incinerate",
+      "payload_json": null,
+      "source_url": "https://poedb.tw/us/Incinerate"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|beam|flat|cone|damage|none|glass|spend|solo|dual|high|channel|active|build→spend",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "glass",
+    "def_conf": 0.72,
+    "def_riders": "[]",
+    "delivery_value": "beam",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.74,
+    "geometry_rule_fired": "R3",
+    "geometry_value": "cone",
+    "kit_id": "poe1-incinerate",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "IDHFSC-RSDG-SP-FI-~~",
+      "delivery": "beam",
+      "elem_raw": "fire",
+      "footprint": "cone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "glass",
+        "conf": 0.72,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.74,
+        "rule_fired": "R3",
+        "value": "cone"
+      },
+      "flags": [],
+      "folk_name": "Incinerate",
+      "game": "poe1",
+      "kit_id": "poe1-incinerate",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "IDHFSC-RSDG-SP-FI-~~",
+        "delivery": "beam",
+        "elem_raw": "fire",
+        "footprint": "cone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "beam",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-incinerate",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "channeled flamethrower held on the aim direction: flames spread wider close to you and longer directly in front (a cone-shaped footprint riding a channel spine); stages ramp to 8 (25% more damage per stage; cone angle +100% per stage up to 300%), releasing at max stages fires a final wave at 500% more damage. beam_channel = the channel-maintain delivery; cone is the noted footprint alternative (s7.2)",
+      "source_skill": "Incinerate",
+      "speed_band": null,
+      "width_band": "wide"
+    }
+  ],
+  "kit_id": "poe1-incinerate",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Cone-vs-beam: the stage-expanding cone footprint is folded into beam_channel (channel dominance per s7.2) -- a player would see a straighter stream than the source's widening fan. Stage count, per-stage cone-angle growth, and the release-wave multiplier are numeric properties with no enum carriers. 1.x-era 3-stage vs modern 8-stage numeric drift noted (mechanism identical).",
+    "grade": "CLOSE",
+    "kit_id": "poe1-incinerate",
+    "mapping_json": {
+      "fidelity_notes": "FOUNDING-ERA SUSTAINED-CHANNEL kit (eras 1.x;2.x CONFIRMED -- introduced 0.10.2). Geometry judgment s7.2: the dominant every-3-seconds act is HOLDING THE CHANNEL -> beam_channel (commit_val=channel corroborates); the dossier footprint is a stage-expanding cone ('flames spread wider close to you and spread longer directly in front') recorded as the alternative. Stage-ramp mechanism -> MOMENTUM_CASCADE: engine Layer-2 (verified t4_catalog_v2/layer2_dimensions) is ON_HIT stacking-capped(10) -> THRESHOLD_BURST -- the same build-stacks-then-burst shape as ramp-to-8-then-release-wave; stack cap 8-vs-10 and the 500%-wave magnitude are Layer-2-pinned territory (mapping never re-pins). persistent_condition_shape=tick-cost carries mana-per-tick channel economy (magnitude unattested, shape only per R-M4). ERA-DRIFT note: 8 stages / release wave / expanding cone are the MODERN gem's numbers (dossier verbatim); the 1.x/2.x-era gem ramped 3 stages with no release wave -- same channel-ramp MECHANISM, numbers era-drifted, mapped on mechanism.",
+      "motion_frame": "rooted channel-mage: plant your feet and hose the pack with a ramping flame-stream, sweep the aim, release for the payoff wave, re-plant",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "persistent_condition_shape": "tick-cost"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-per-tick channel drain; rooted while channeling",
+            "stage ramp to 8 -> release-wave payoff"
+          ],
+          "geometry": [
+            "beam_channel flame-stream (cone-spread footprint)",
+            "stage-expanding cone angle (+100%/stage to 300%)"
+          ],
+          "traits_affixes": [
+            "fire-penetration",
+            "cast-speed (faster stage gain)",
+            "burn-scaling"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "burn"
+          ],
+          "delivery_notes": "channeled flamethrower held on the aim direction: flames spread wider close to you and longer directly in front (a cone-shaped footprint riding a channel spine); stages ramp to 8 (25% more damage per stage; cone angle +100% per stage up to 300%), releasing at max stages fires a final wave at 500% more damage. beam_channel = the channel-maintain delivery; cone is the noted footprint alternative (s7.2)",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "beam_channel",
+          "source_skill": "Incinerate"
+        }
+      ],
+      "t4_doors": [
+        "MOMENTUM_CASCADE",
+        "ELEMENTAL_ECHO"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 363,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "glass"
+        ],
+        "primary": "glass"
+      },
+      "family": "defense",
+      "id": 364,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "evidence": "Channeled fire beam extending from player toward target; ramps in damage stages",
+        "value": "beam"
+      },
+      "family": "delivery",
+      "id": 361,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Channeled flamethrower whose damage ramps in stages the longer you hold — the fo",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 365,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 366,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Narrow fire cone extending from player facing; geo=small-AOE (cone shape)",
+        "value": "cone"
+      },
+      "family": "footprint",
+      "id": 362,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Beam delivery with cone footprint. Channeled flamethrower whose damage ramps in stages the longer you hold  —  the founding-era sustained-channel archetype.",
+      "family": "geo_text",
+      "id": 368,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 367,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2: +1% damage per stage; earlier max-ramp.",
+      "family": "rank1_upgrade",
+      "id": 369,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 370,
+      "kit_id": "poe1-incinerate",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Incinerate: beam channel beam identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-incinerate",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "poe1-incinerate",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.87,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|beam|flat|cone|damage|none|glass|spend|solo|dual|high|channel|active|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|beam|flat|cone|damage|none|glass|spend|solo|dual|high|channel|active|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "beam"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "cone"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "glass"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "IDHFSC-RSDG-SP-FI-~~",
+    "attr_conf": 0.87,
+    "attr_val": "INT",
+    "avg_conf": 0.87,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.87,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Incinerate"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-per-tick",
+    "elem_raw": "fire",
+    "era_year": 2013,
+    "eras": "1.x;2.x",
+    "eras_normalized": "1.x;2.x",
+    "flags": "",
+    "folk_name": "Incinerate",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-04",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-incinerate",
+    "lattice_coord": "IDHFSC",
+    "lineage": "",
+    "mech_note": "Channeled flamethrower whose damage ramps in stages the longer you hold — the founding-era sustained-channel archetype.",
+    "mint": 0,
+    "mob_raw": "rooted-while-channel",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|SMALL|CHAN×GAP-P1-04",
+    "mobile_key_group": "IDHFSC-RSDG-SP-FI-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.87,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.87,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.87,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "CHANNELED-BEAM",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Incinerate was introduced in patch 0.10.2. Version 1.0.4: Cast time adjusted; Version 2.0.0: ~100% damage increase",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in stamped eras 1.x and 2.x",
+      "errata_applied": 0,
+      "id": 161,
+      "kit_id": "poe1-incinerate",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Incinerate",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Continuously launches a torrent of fire from your hand, repeatedly damaging enemies",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Incinerate' with class Witch/Shadow lineage is real community usage",
+      "errata_applied": 0,
+      "id": 159,
+      "kit_id": "poe1-incinerate",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Incinerate",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Channeled fire beam extending from player toward target; ramps in damage stages. Stage progression operates on up to 8 maximum stages",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Incinerate; channeled flamethrower; damage ramps in stages; rooted while channeling; mana-per-tick resource model",
+      "errata_applied": 0,
+      "id": 160,
+      "kit_id": "poe1-incinerate",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Incinerate",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "channeled flamethrower held on the aim direction: flames spread wider close to you and longer directly in front (a cone-shaped footprint riding a channel spine); stages ramp to 8 (25% more damage per stage; cone angle +100% per stage up to 300%), releasing at max stages fires a final wave at 500% more damage. beam_channel = the channel-maintain delivery; cone is the noted footprint alternative (s7.2)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Incinerate' delivery_class=beam (band_conf=0.75); lint: anchor entails 'beam' (5 sig)",
+      "errata_applied": 0,
+      "id": 2435,
+      "kit_id": "poe1-incinerate",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

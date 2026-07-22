@@ -1,0 +1,790 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1009,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-bonestorm",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 296,
+    "kit_id": "poe2-bonestorm",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poe2db.tw",
+    "title": "Bonestorm - PoE2DB",
+    "url": "https://poe2db.tw/us/Bonestorm"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 296,
+      "kit_id": "poe2-bonestorm",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe2db.tw",
+      "title": "Bonestorm - PoE2DB",
+      "url": "https://poe2db.tw/us/Bonestorm"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 297,
+      "kit_id": "poe2-bonestorm",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "[PoE2 0.3] 2in1 Witch Hunter Build | Bonestorm & Unlimited Poison",
+      "url": "https://www.pathofexile.com/forum/view-thread/3852711"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 298,
+      "kit_id": "poe2-bonestorm",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com",
+      "title": "Unlimited Boneworks - Turning Bonestorm into a Non-Channeling skill with the Deadeye ascendancy",
+      "url": "https://www.pathofexile.com/forum/view-thread/3706145"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-bonestorm",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 868,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-bonestorm",
+      "missing_expression": "Minor drift: Bone Cage's exact shape is under-specified in source (only 'defensive panic button'), so its placed_lane+root mapping is a reasonable-but-thin inference.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: Bone Cage's exact shape is under-specified in source (only 'defensive panic button'), so its placed_lane+root mapping is a reasonable-but-thin inference. The core Bonestorm channel-release-Impale loop maps cleanly (geometry+sunder+accumulator), so CLOSE."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "My Bonestorm/Reap Blood Mage starter for PoE 2",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 587,
+      "kit_id": "poe2-bonestorm",
+      "payload_json": {
+        "handle": "DrugaddictMenemist#6176",
+        "site": "pathofexile.com/forum",
+        "url": "https://www.pathofexile.com/forum/view-thread/3592603"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3592603"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Unlimited Boneworks - Turning Bonestorm into a Non-Channeling skill with the Deadeye ascendancy",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 586,
+      "kit_id": "poe2-bonestorm",
+      "payload_json": {
+        "note": "Bonestorm used across multiple ascendancies (Blood Mage, Witch Hunter, Deadeye via non-channeling conversion). No single capstone ascendancy locked to Bonestorm."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3706145"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 585,
+      "kit_id": "poe2-bonestorm",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Channel to conjure a swarm of bone spikes in the air, then release to fire them at enemies and explode.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 584,
+      "kit_id": "poe2-bonestorm",
+      "payload_json": {
+        "geometry_verbatim": "Physical projectile barrage released in spray from caster; projectiles hit multiple impact points simultaneously. 'The physical-spell crit archetype: bone shard density + crit scaling for burst.' Multi-point footprint confirmed."
+      },
+      "source_url": "https://poe2db.tw/us/Bonestorm"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Channel to conjure a swarm of bone spikes in the air, then release to fire them at enemies and explode. Shrapnel Impales enemies Hit, causing subsequent Attack Hits against those targets to deal extra damage.",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 583,
+      "kit_id": "poe2-bonestorm",
+      "payload_json": {
+        "loop_verbatim": "Channel Bonestorm to accumulate bone shard charge count; release to fire full barrage as physical projectiles that explode on impact. Bone Cage used as defensive panic button. Impale debuff from shard hits amplifies subsequent attack damage."
+      },
+      "source_url": "https://poe2db.tw/us/Bonestorm"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Bloodmage - 'The Needler' Arbiter of Ash DOWN & T16+ (Bonestorm + Detonate Dead) Lategame Guide!",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 588,
+      "kit_id": "poe2-bonestorm",
+      "payload_json": {
+        "variants": [
+          "Blood Mage Bonestorm (physical crit, 0.1)",
+          "Witch Hunter Bonestorm + Poison (0.3)",
+          "Deadeye non-channeling Bonestorm (ascendancy conversion)",
+          "Bloodmage Needler (Bonestorm + Detonate Dead, endgame T16+)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3648838"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|projectile|spiky|multi_projectile|damage|none|absorb|spend|solo|ranged|med|wind-up|active|apply→detonate",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[\"bleed\"]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "absorb",
+    "def_conf": 0.78,
+    "def_riders": "[\"synonym:energy-shield\"]",
+    "delivery_value": "projectile",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.8,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "poe2-bonestorm",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "IRMSSW",
+      "delivery": "projectile",
+      "elem_raw": "Physical",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [
+          "bleed"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "absorb",
+        "conf": 0.78,
+        "riders": [
+          "synonym:energy-shield"
+        ]
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.8,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Bonestorm",
+      "game": "poe2",
+      "kit_id": "poe2-bonestorm",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "IRMSSW",
+        "delivery": "projectile",
+        "elem_raw": "Physical",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "Mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-bonestorm",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Channel to conjure a swarm of bone spikes in the air, then release to fire them at enemies and explode. Physical multi-point projectile barrage; wind-up (channel accumulates shard count). Physical -> element-neutral per THE PHYSICAL RULE. Shrapnel Impales hit enemies -> sunder (subsequent Attack Hits deal extra damage = damage-taken amp window).",
+      "source_skill": "Bone Storm",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-bonestorm",
+      "motion_signature": "lane_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Defensive panic button / placed containment. Secondary active; approximated as a placed control shape (cage=confinement -> root-adjacent). LOW confidence -- fetched text names it only as 'defensive panic button'.",
+      "source_skill": "Bone Cage",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-bonestorm",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: Bone Cage's exact shape is under-specified in source (only 'defensive panic button'), so its placed_lane+root mapping is a reasonable-but-thin inference. The core Bonestorm channel-release-Impale loop maps cleanly (geometry+sunder+accumulator), so CLOSE.",
+    "grade": "CLOSE",
+    "kit_id": "poe2-bonestorm",
+    "mapping_json": {
+      "fidelity_notes": "IMPALE -> SUNDER per addendum A (hit-applied damage-taken amp window; NOT bleed -- fetched text 'causing subsequent Attack Hits against those targets to deal extra damage' has no DoT component). elem 'physical' -> THE PHYSICAL RULE element-neutral. The channel-then-release shard-count is a wind-up accumulator (charge_stack_sub_shape:accumulator) -- longer hold = more shards. No capstone locked to Bonestorm (used across Blood Mage/Witch Hunter/Deadeye per dossier) -> no ascendancy T4; GEOMETRY_COLLAPSE chosen for the burst-conc-density identity. chain_count=2 (Bonestorm core + Bone Cage utility; Bone Cage is not damage-load-bearing). verify_ledger: identity+mechanics+era all CONFIRMED.",
+      "motion_frame": "Channel Bonestorm to accumulate shard count; release full barrage of exploding physical projectiles; Bone Cage as defensive panic button.",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "accumulator": "channel accumulates shard count",
+        "charge_stack_sub_shape": "accumulator",
+        "cost_scale": "mana-mid spend per cast"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "channel-accumulator shard count"
+          ],
+          "geometry": [
+            "shard-count -> multi_projectile density",
+            "Bone Cage placed_lane"
+          ],
+          "traits_affixes": [
+            "physical-crit scalers"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "sunder"
+          ],
+          "delivery_notes": "Channel to conjure a swarm of bone spikes in the air, then release to fire them at enemies and explode. Physical multi-point projectile barrage; wind-up (channel accumulates shard count). Physical -> element-neutral per THE PHYSICAL RULE. Shrapnel Impales hit enemies -> sunder (subsequent Attack Hits deal extra damage = damage-taken amp window).",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Bone Storm"
+        },
+        {
+          "ailments": [
+            "root"
+          ],
+          "delivery_notes": "Defensive panic button / placed containment. Secondary active; approximated as a placed control shape (cage=confinement -> root-adjacent). LOW confidence -- fetched text names it only as 'defensive panic button'.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "placed_lane",
+          "source_skill": "Bone Cage"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_COLLAPSE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "apply-mark",
+        "mark_identity": "Impale (Shrapnel Impales enemies Hit)",
+        "proc_trigger_condition": "on-hit-threshold",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "bleed"
+        ],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 4723,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "layers": [
+          "energy-shield",
+          "armor"
+        ],
+        "primary": "energy-shield"
+      },
+      "family": "defense",
+      "id": 4724,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.82,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.82,
+        "evidence": "Bone shards charged then released as barrage of physical projectiles; projectile delivery",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 4721,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.78,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "Mana spend per Bonestorm cast. Wind-up charges the shard count; longer hold = more shards released.",
+        "resource_verbatim": "Mana"
+      },
+      "family": "economy",
+      "id": 4725,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.85,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.85,
+        "damage_mode": "hit",
+        "label_verbatim": "Physical"
+      },
+      "family": "element",
+      "id": 4726,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "evidence": "Bone shard barrage sprays multiple projectiles to multiple impact points; atlas geo=multi-spawn confirmed",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 4722,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Charge a volley of bone shards during wind-up, then release the full barrage simultaneously. The physical-spell crit archetype: bone shard density + crit scaling for burst. A deliberate charge-and-release pattern.",
+      "family": "geo_text",
+      "id": 4728,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.8,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.8,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 4727,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "live source verification deferred",
+      "family": "rank1_upgrade",
+      "id": 4729,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb"
+      ],
+      "family": "sources_used",
+      "id": 4730,
+      "kit_id": "poe2-bonestorm",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Bonestorm: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-bonestorm",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.72,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "rooted|projectile|spiky|multi_projectile|damage|none|absorb|spend|solo|ranged|med|wind-up|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|projectile|spiky|multi_projectile|damage|none|absorb|spend|solo|ranged|med|wind-up|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "absorb"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "wind-up"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "IRMSSW-MMMM-SP-PH-~~",
+    "attr_conf": 0.72,
+    "attr_val": "INT",
+    "avg_conf": 0.72,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.72,
+    "commit_provenance": null,
+    "commit_val": "wind-up",
+    "core_skills": [
+      "Bone Storm",
+      "Bone Cage"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-mid",
+    "elem_raw": "physical",
+    "era_year": 2024,
+    "eras": "0.1;0.2-dawn;0.5-ancients",
+    "eras_normalized": "0.1;0.2-dawn;0.5-ancients",
+    "flags": "",
+    "folk_name": "Bonestorm",
+    "game": "poe2",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-bonestorm",
+    "lattice_coord": "IRMSSW",
+    "lineage": "",
+    "mech_note": "prov=kb. mech_note: 'Charge a volley of bone shards, release the barrage — a physical-spell crit chassis.' Era=0.1;0.2-dawn;0.5-ancients (gap in 0.3/0.4 — possibly nerfed then buffed). Same IRMSSW prefix as poe2-blood-mage; distinguished by element (Physical vs Chaos) and identity (crit barrage vs life-cost sustained).",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "no rule matched — Mac pass to classify",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "SOLO|MULTI|WIND×econ:spend",
+    "mobile_key_group": "IRMSSW-MMMM-SP-PH-~~",
+    "mobile_mechanics_status": "verify",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb;mt",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.72,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.72,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.72,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Bonestorm introduced in version 0.1.0d (with support updates). Version 0.2.0 redesigned its impale mechanic",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 0.1, 0.2-dawn, 0.5-ancients",
+      "errata_applied": 0,
+      "id": 357,
+      "kit_id": "poe2-bonestorm",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poe2db.tw/us/Bonestorm",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[PoE2 0.3] 2in1 Witch Hunter Build | Bonestorm & Unlimited Poison",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Bonestorm'; aliases 'Bone Storm spam', 'Bone Cage Bonestorm'",
+      "errata_applied": 0,
+      "id": 355,
+      "kit_id": "poe2-bonestorm",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/3852711",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Channel to conjure a swarm of bone spikes in the air, then release to fire them at enemies and explode. Shrapnel Impales enemies Hit",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Bone Storm (channeling physical projectile), Bone Cage; physical crit archetype",
+      "errata_applied": 0,
+      "id": 356,
+      "kit_id": "poe2-bonestorm",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poe2db.tw/us/Bonestorm",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Channel to conjure a swarm of bone spikes in the air, then release to fire them at enemies and explode. Physical multi-point projectile barrage; wind-up (channel accumulates shard count). Physical -> element-neutral per THE PHYSICAL RULE. Shrapnel Impales hit enemies -> sunder (subsequent Attack Hits deal extra damage = damage-taken amp window).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bone Storm' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (2 sig)",
+      "errata_applied": 0,
+      "id": 2506,
+      "kit_id": "poe2-bonestorm",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Defensive panic button / placed containment. Secondary active; approximated as a placed control shape (cage=confinement -> root-adjacent). LOW confidence -- fetched text names it only as 'defensive panic button'.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Bone Cage' delivery_class=zone (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'zone'",
+      "errata_applied": 0,
+      "id": 2507,
+      "kit_id": "poe2-bonestorm",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

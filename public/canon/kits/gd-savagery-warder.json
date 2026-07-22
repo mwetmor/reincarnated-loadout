@@ -1,0 +1,762 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 0,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 951,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-savagery-warder",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Archangel2245",
+    "cite_class": "communal",
+    "id": 477,
+    "kit_id": "gd-savagery-warder",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "forums.crateentertainment.com",
+    "title": "Warder (Soldier/Shaman)",
+    "url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Archangel2245",
+      "cite_class": "communal",
+      "id": 477,
+      "kit_id": "gd-savagery-warder",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "Warder (Soldier/Shaman)",
+      "url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-savagery-warder",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1043,
+      "kit_id": "gd-savagery-warder",
+      "payload_json": {
+        "handle": "Archangel2245",
+        "site": "forums.crateentertainment.com"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Kraken - additional bonuses to two-handed weapons",
+      "conf": 0.6,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1042,
+      "kit_id": "gd-savagery-warder",
+      "payload_json": {
+        "devotion": "Kraken - additional bonuses to two-handed weapons",
+        "note": "Spear of Heaven, Tempest for lightning variant; Bull/Bear for physical/bleed"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1041,
+      "kit_id": "gd-savagery-warder",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "I only have a soldier + a shaman [...] Totem Wendigo is our chill",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1040,
+      "kit_id": "gd-savagery-warder",
+      "payload_json": {
+        "delivery": "at-target single-target melee swing",
+        "footprint": "point; Upheaval passive adds AoE",
+        "verbatim": "2H Warder Cadence or Savagery [...] Savagery charges stack per swing"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Kraken - additional bonuses to two-handed weapons [...] Wendigo Totem complements Savagery well",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1039,
+      "kit_id": "gd-savagery-warder",
+      "payload_json": {
+        "loop_verb": "auto-attack stack",
+        "resource": "charge-stacking meter (Savagery charges); energy secondary",
+        "summary": "Two-handed auto-attack loop: Savagery stacks charges per swing, each stack increasing damage until max stacks. Wendigo Totem placed for HP sustain. Physical or lightning damage focus."
+      },
+      "source_url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "lightning/bleeding build, Savagery is recommended [...] most benefits from Savagery come when focusing on Physical or Lightning damage",
+      "conf": 0.68,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1044,
+      "kit_id": "gd-savagery-warder",
+      "payload_json": {
+        "variants": [
+          "lightning Savagery Warder (Ultos set)",
+          "physical Savagery Warder (two-handed mace)"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "walk|at-target|flat|melee_strike|damage|none|tank|generator-spender|solo|melee|med|instant|active|build→spend",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[]",
+    "econ_meter_type": "charge",
+    "econ_status": "native-partial",
+    "economy_model": "generator-spender",
+    "flags": [],
+    "geometry_conf": 0.74,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "gd-savagery-warder",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMMFSI-MNDT-MT-LI-~~",
+      "delivery": "at-target",
+      "elem_raw": "lightning",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "charge",
+        "status": "native-partial"
+      },
+      "engine_geometry": {
+        "conf": 0.74,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Savagery Warder",
+      "game": "gd",
+      "kit_id": "gd-savagery-warder",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMMFSI-MNDT-MT-LI-~~",
+        "delivery": "at-target",
+        "elem_raw": "lightning",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "ramp",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-savagery-warder",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "2H default-attack replacer (§A replacer row): 'Savagery charges stack per swing', each stack increasing damage until max. Upheaval passive adds AoE rider (footprint verbatim).",
+      "source_skill": "Savagery",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": "cooldown",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "summon_delegate",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-savagery-warder",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "Placed sustain emitter — 'Wendigo Totem complements Savagery well'; HP sustain payload. Native placed-emitter fit.",
+      "source_skill": "Wendigo Totem",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "gd-savagery-warder",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": null,
+    "grade": "EXACT",
+    "kit_id": "gd-savagery-warder",
+    "mapping_json": {
+      "fidelity_notes": "Single-tier accumulator (stacks → damage) — deliberately NOT filed to the two-tier-accumulator family; no second counted tier in fetched language. bleed WITHHELD as variant-scoped: 'lightning/bleeding build' + 'Bull/Bear for physical/bleed' attest the status only for the physical variant, not the mapped lightning primary loop (§7.2 dominant loop). 'Totem Wendigo is our chill' is colloquial — obviously no chill token.",
+      "motion_frame": "Two-handed swings stack Savagery charges to max; Wendigo Totem sustains the tank",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator",
+        "note": "Savagery charges stack per swing to max (ramp-meter economy)",
+        "resource": "energy"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "charge accumulator"
+          ],
+          "geometry": [
+            "Upheaval AoE rider"
+          ],
+          "traits_affixes": [
+            "Kraken 2H bonuses (devotion numeric lane)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "2H default-attack replacer (§A replacer row): 'Savagery charges stack per swing', each stack increasing damage until max. Upheaval passive adds AoE rider (footprint verbatim).",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Savagery"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Placed sustain emitter — 'Wendigo Totem complements Savagery well'; HP sustain payload. Native placed-emitter fit.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "totem",
+          "source_skill": "Wendigo Totem"
+        }
+      ],
+      "t4_doors": [
+        "TEMPORAL_CHARGE",
+        "MOMENTUM_CASCADE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "shock"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1843,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 1844,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "evidence": "Two-handed lightning auto-attack on target; Savagery charges stack per swing",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1841,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "charge",
+        "model": "meter",
+        "plain_text": "ramp (meter); The two-handed lightning ramp — Savagery charges stack with every swing until th",
+        "resource_verbatim": "ramp"
+      },
+      "family": "economy",
+      "id": 1845,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "lightning"
+      },
+      "family": "element",
+      "id": 1846,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Single target swing; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 1842,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. The two-handed lightning ramp  —  Savagery charges stack with every swing until the maul hums; Shaman's auto-attack identity under Soldier's s.",
+      "family": "geo_text",
+      "id": 1848,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 1847,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1849,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "gt",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1850,
+      "kit_id": "gd-savagery-warder",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Savagery Warder: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-savagery-warder",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "gd-savagery-warder",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.87,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|melee_strike|damage|none|tank|generator-spender|solo|melee|med|instant|active|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|melee_strike|damage|none|tank|generator-spender|solo|melee|med|instant|active|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "generator-spender"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMMFSI-MNDT-MT-LI-~~",
+    "attr_conf": 0.87,
+    "attr_val": "STR",
+    "avg_conf": 0.87,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.87,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Savagery",
+      "Wendigo Totem"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "lightning",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "ramp-meter",
+    "elem_raw": "lightning",
+    "era_year": 2016,
+    "eras": "base-2016;patch-1.1-1.2",
+    "eras_normalized": "base-2016;patch-1.1-1.2",
+    "flags": "",
+    "folk_name": "Savagery Warder",
+    "game": "gd",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "gd-savagery-warder",
+    "lattice_coord": "SMMFSI",
+    "lineage": "",
+    "mech_note": "The two-handed lightning ramp — Savagery charges stack with every swing until the maul hums; Shaman's auto-attack identity under Soldier's s",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×econ:meter",
+    "mobile_key_group": "SMMFSI-MNDT-MT-LI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "lightning",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.87,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.87,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.87,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MELEE-STRIKE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=1].members (working_label=MELEE-STRIKE; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "I only have a soldier + a shaman [...] post dated July 8, 2018",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Present as build in eras: base-2016, patch-1.1-1.2",
+      "errata_applied": 0,
+      "id": 618,
+      "kit_id": "gd-savagery-warder",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Warder (Soldier/Shaman) [...] Savagery charges stack per swing",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name: Savagery Warder; aliases include Wendigo Totem Savagery Warder, lightning Savagery build",
+      "errata_applied": 0,
+      "id": 616,
+      "kit_id": "gd-savagery-warder",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Kraken - additional bonuses to two-handed weapons [...] Savagery, Blade Arc with the transmuter [...] Wendigo Totem complements Savagery well",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Savagery (stacking charge auto-attack), Wendigo Totem (support). Two-handed melee, lightning/physical.",
+      "errata_applied": 0,
+      "id": 617,
+      "kit_id": "gd-savagery-warder",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/warder-soldier-shaman/46257",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "2H default-attack replacer (§A replacer row): 'Savagery charges stack per swing', each stack increasing damage until max. Upheaval passive adds AoE rider (footprint verbatim).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Savagery' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1 sig)",
+      "errata_applied": 0,
+      "id": 2269,
+      "kit_id": "gd-savagery-warder",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Placed sustain emitter — 'Wendigo Totem complements Savagery well'; HP sustain payload. Native placed-emitter fit.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Wendigo Totem' delivery_class=summon_delegate (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'summon_delegate'",
+      "errata_applied": 0,
+      "id": 2270,
+      "kit_id": "gd-savagery-warder",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

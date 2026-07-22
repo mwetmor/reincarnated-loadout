@@ -1,0 +1,808 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 1,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 814,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-frenzy-barb",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "MrLlamaSC",
+    "cite_class": "authored",
+    "id": 624,
+    "kit_id": "d2-frenzy-barb",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "icy-veins.com",
+    "title": "Frenzy Barbarian Build for Diablo 2 Resurrected",
+    "url": "https://www.icy-veins.com/d2/frenzy-barbarian-build"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "MrLlamaSC",
+      "cite_class": "authored",
+      "id": 624,
+      "kit_id": "d2-frenzy-barb",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "icy-veins.com",
+      "title": "Frenzy Barbarian Build for Diablo 2 Resurrected",
+      "url": "https://www.icy-veins.com/d2/frenzy-barbarian-build"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-frenzy-barb",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 725,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 D2 tranche; internal-consistency reconcile, no W1 evidence — W5 is D2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-frenzy-barb",
+      "missing_expression": "Physical melee with speed-ramp self-buff is well-covered;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Physical melee with speed-ramp self-buff is well-covered; minor texture loss on the dual-weapon alternating-hit feel and the 'frenzy state' escalating intensity. No ailment attestation means the on-hit bleed possibility from Gore Rider (item-layer) doesn't enter mapping_json. Player feels 'fast physical dual-wield melee brawler' — that build, slight intensity-escalation texture loss."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "MrLlamaSC is a professional twitch broadcaster that has been streaming since 2014",
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1439,
+      "kit_id": "d2-frenzy-barb",
+      "payload_json": {
+        "handle": "MrLlamaSC",
+        "note": "Updated May 22, 2026",
+        "site": "icy-veins.com"
+      },
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "20 points to Frenzy — main damage dealer, required; 20 points to Double Swing — Synergy of Frenzy",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1438,
+      "kit_id": "d2-frenzy-barb",
+      "payload_json": {
+        "notes": "Physical build — no elemental synergy. Sustain via life leech gear (Dracul's).",
+        "runewords": [
+          "Grief (weapon)",
+          "Oath (budget weapon)",
+          "Breath of the Dying (alt weapon)",
+          "Death (offhand)",
+          "Doom (offhand — Holy Freeze aura)"
+        ],
+        "synergies": [
+          "Double Swing is Frenzy's primary synergy",
+          "Blade Mastery (weapon mastery) increases damage/AR"
+        ],
+        "uniques": [
+          "Arreat's Face",
+          "Dracul's Grasp",
+          "Gore Rider",
+          "Raven Frost",
+          "Highlord's Wrath"
+        ]
+      },
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Weapon: Grief; Weapon Offhand: Breath of the Dying, Death, Grief, Doom",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1437,
+      "kit_id": "d2-frenzy-barb",
+      "payload_json": {
+        "key_items": [
+          "Grief Phase Blade (BIS — up to +800 flat damage, physical-defense-ignoring)",
+          "Oath Runeword (budget alt in Ettin Axe or War Sword)",
+          "Breath of the Dying (alternate BIS in offhand)",
+          "Death (runeword offhand option)",
+          "Doom (offhand for Holy Freeze aura)",
+          "Arreat's Face (helm)",
+          "Dracul's Grasp (gloves — life tap proc)",
+          "Gore Rider (boots)",
+          "Raven Frost (ring — cannot be frozen)",
+          "Highlord's Wrath (amulet)"
+        ],
+        "notes": "Dual Grief Phase Blades are the iconic endgame setup; flat damage bypasses enemy defense."
+      },
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "20 points to Frenzy — main damage dealer, required; 20 points to Double Swing — Synergy of Frenzy",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1436,
+      "kit_id": "d2-frenzy-barb",
+      "payload_json": {
+        "geometry": "Frenzy: direct at-target dual-wield melee swings on adjacent enemy. Point footprint — single enemy contact per swing sequence. Each Frenzy hit stacks self-buff (speed). Double Swing: similar at-target dual-hit melee on adjacent enemy."
+      },
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Frenzy takes advantage of dual weapons and fast Attack Speed to quickly crush his enemies; each successful hit puts the Barbarian into a Frenzied state causing faster movement and attack speed",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1435,
+      "kit_id": "d2-frenzy-barb",
+      "payload_json": {
+        "loop": "Begin with Double Swing (available level 6) to level. At level 24 unlock Frenzy — each Frenzy hit stacks attack speed and movement speed buff. Dual-wield weapons; alternate attacks via Frenzy's dual-hit mechanic. Life leech from hits sustains HP. High attack speed cap via stacked Frenzy charges."
+      },
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "This build begins with Double Swing at level 6 and can be very solid for leveling throughout the game",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1440,
+      "kit_id": "d2-frenzy-barb",
+      "payload_json": {
+        "notes": "Spec alias 'Double Swing Frenzy Barb' confirmed — Double Swing is both leveling primary and endgame synergy.",
+        "variants": [
+          "Dual Grief Frenzy Barb (endgame standard; pure physical)",
+          "Doom offhand variant (Holy Freeze aura; hybrid physical+slowing)",
+          "Frenzy/WW hybrid (niche; not standard)"
+        ]
+      },
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "full-move|at-target|flat|melee_strike|damage|none|tank|free|solo|melee|high|instant|triggered|build→spend",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.72,
+    "def_riders": "[\"sustain:leech\"]",
+    "delivery_value": "at-target",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R9-melee",
+    "geometry_value": "melee_strike",
+    "kit_id": "d2-frenzy-barb",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMHFSI-HNDT-SP-PH-~~",
+      "delivery": "at-target",
+      "elem_raw": "physical",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.72,
+        "riders": [
+          "sustain:leech"
+        ]
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R9-melee",
+        "value": "melee_strike"
+      },
+      "flags": [],
+      "folk_name": "Frenzy Barbarian",
+      "game": "d2",
+      "kit_id": "d2-frenzy-barb",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMHFSI-HNDT-SP-PH-~~",
+        "delivery": "at-target",
+        "elem_raw": "physical",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "on-hit stacks",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-frenzy-barb",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "Dual-wield at-target melee; each hit stacks attack speed AND movement speed self-buff. §A row 5: Frenzy speed-stack IS the steady state (NOT two-tier-accumulator — no counted-tier release). Sprint alias confirmed as Frenzy (batch hot-fact).",
+      "source_skill": "Frenzy",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-frenzy-barb",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 1,
+      "source_anchor": "Dual-hit at-target melee; Frenzy's primary synergy. Leveling and synergy scaffold.",
+      "source_skill": "Double Swing",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-frenzy-barb",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Physical melee with speed-ramp self-buff is well-covered; minor texture loss on the dual-weapon alternating-hit feel and the 'frenzy state' escalating intensity. No ailment attestation means the on-hit bleed possibility from Gore Rider (item-layer) doesn't enter mapping_json. Player feels 'fast physical dual-wield melee brawler' — that build, slight intensity-escalation texture loss.",
+    "grade": "CLOSE",
+    "kit_id": "d2-frenzy-barb",
+    "mapping_json": {
+      "fidelity_notes": "Physical build — THE PHYSICAL RULE: no element_primary (element-neutral). Identity via geometry+ailment+ramp. No ailments attested in fetched dossier (no bleed/stun named in skill_loop or skill_geometry). §A row 5: Frenzy stacked speed = sustain-stack ramp, NOT two-tier-accumulator (the stack IS the steady state; no counted-tier-to-release signature). Sprint/Frenzy alias confirmed per batch hot-fact. Doom offhand (Holy Freeze) = item-defined variant; variant-scope law governs.",
+      "motion_frame": "Stack Frenzy attack-speed+movement-speed self-buff via hits; sustain dual-wield melee burst; life leech from hits sustains HP",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence_scale": "frenzy-speed-stack-ramp",
+        "cost_scale": "on-hit-ramp"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Life leech via Dracul's Grasp item (life tap proc) — item-layer; Frenzy ramp is the sustain-stack steady state"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "Double Swing synergy; Blade Mastery passive damage/AR; Doom offhand variant adds Holy Freeze aura (item-defined)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Dual-wield at-target melee; each hit stacks attack speed AND movement speed self-buff. §A row 5: Frenzy speed-stack IS the steady state (NOT two-tier-accumulator — no counted-tier release). Sprint alias confirmed as Frenzy (batch hot-fact).",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Frenzy"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "Dual-hit at-target melee; Frenzy's primary synergy. Leveling and synergy scaffold.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Double Swing"
+        }
+      ],
+      "t4_doors": [
+        "MOMENTUM_CASCADE",
+        "TEMPORAL_CHARGE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 2063,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "layers": [
+          "armor",
+          "sustain-leech"
+        ],
+        "primary": "sustain-leech"
+      },
+      "family": "defense",
+      "id": 2064,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Frenzy dual-wield melee swings connect directly on targeted enemy",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 2061,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "on-hit stacks (proc); Dual-wield attack-speed stacker: Frenzy hits ramp self-haste; momentum melee lim",
+        "resource_verbatim": "on-hit stacks"
+      },
+      "family": "economy",
+      "id": 2065,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 2066,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Single enemy direct contact; geo=single in atlas",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 2062,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. Dual-wield attack-speed stacker: Frenzy hits ramp self-haste; momentum melee limited by physical-immune density.",
+      "family": "geo_text",
+      "id": 2068,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 2067,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: minor base damage increase; skill level economy unchanged.",
+      "family": "rank1_upgrade",
+      "id": 2069,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "dw",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 2070,
+      "kit_id": "d2-frenzy-barb",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Frenzy Barbarian: melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-frenzy-barb",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|melee_strike|damage|none|tank|free|solo|melee|high|instant|triggered|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|melee_strike|damage|none|tank|free|solo|melee|high|instant|triggered|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "melee_strike"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMHFSI-HNDT-SP-PH-~~",
+    "attr_conf": 0.82,
+    "attr_val": "STR",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Frenzy",
+      "Double Swing"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "on-hit-ramp",
+    "elem_raw": "physical",
+    "era_year": 2000,
+    "eras": "lod;d2r",
+    "eras_normalized": "lod;d2r",
+    "flags": "",
+    "folk_name": "Frenzy Barbarian",
+    "game": "d2",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "d2-frenzy-barb",
+    "lattice_coord": "SMHFSI",
+    "lineage": "",
+    "mech_note": "Dual-wield attack-speed stacker: Frenzy hits ramp self-haste; momentum melee limited by physical-immune density.",
+    "mint": 0,
+    "mob_raw": "high-while-buffed",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×econ:spend",
+    "mobile_key_group": "SMHFSI-HNDT-SP-PH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "dw;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "MELEE-STRIKE",
+    "on_spine": true,
+    "shadowed_by": "RATIFIED",
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=1].members (working_label=MELEE-STRIKE; status=proposed)",
+    "spine_status": "SHADOWED",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Frenzy Barbarian Build for Diablo 2 Resurrected",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in lod era",
+      "errata_applied": 0,
+      "id": 909,
+      "kit_id": "d2-frenzy-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Frenzy takes advantage of dual weapons and fast Attack Speed to quickly crush his enemies.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present in d2r era",
+      "errata_applied": 0,
+      "id": 910,
+      "kit_id": "d2-frenzy-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Frenzy Barbarian Build for Diablo 2 Resurrected",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Frenzy Barbarian' and aliases 'Frenzy Barb', 'Double Swing Frenzy Barb' are real community usage",
+      "errata_applied": 0,
+      "id": 907,
+      "kit_id": "d2-frenzy-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "20 points to Frenzy — main damage dealer, required; 20 points to Double Swing — Synergy of Frenzy",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Frenzy, Double Swing",
+      "errata_applied": 0,
+      "id": 908,
+      "kit_id": "d2-frenzy-barb",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.icy-veins.com/d2/frenzy-barbarian-build",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "Dual-wield at-target melee; each hit stacks attack speed AND movement speed self-buff. §A row 5: Frenzy speed-stack IS the steady state (NOT two-tier-accumulator — no counted-tier release). Sprint alias confirmed as Frenzy (batch hot-fact).",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Frenzy' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1) but 'aura' more strongly (2) — mixed signal",
+      "errata_applied": 0,
+      "id": 2119,
+      "kit_id": "d2-frenzy-barb",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Dual-hit at-target melee; Frenzy's primary synergy. Leveling and synergy scaffold.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Double Swing' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1 sig)",
+      "errata_applied": 0,
+      "id": 2120,
+      "kit_id": "d2-frenzy-barb",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

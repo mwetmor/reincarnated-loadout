@@ -1,0 +1,852 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 634,
+      "assert_text": "primary_delivery_class == 'zone'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-toxic-rain",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "authored",
+    "id": 232,
+    "kit_id": "poe1-toxic-rain",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Toxic Rain Ballista Pathfinder — Maxroll 3.25",
+    "url": "https://maxroll.gg/poe/build-guides/toxic-rain-ballista-pathfinder"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 230,
+      "kit_id": "poe1-toxic-rain",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Toxic Rain — poedb.tw",
+      "url": "https://poedb.tw/us/Toxic_Rain"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "PathofEvening",
+      "cite_class": "authored",
+      "id": 231,
+      "kit_id": "poe1-toxic-rain",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poe-vault.com",
+      "title": "PathofEvening's Toxic Rain Pathfinder Build Guide (PoE Mirage 3.28)",
+      "url": "https://www.poe-vault.com/guides/toxic-rain-pathfinder-build-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 232,
+      "kit_id": "poe1-toxic-rain",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Toxic Rain Ballista Pathfinder — Maxroll 3.25",
+      "url": "https://maxroll.gg/poe/build-guides/toxic-rain-ballista-pathfinder"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-toxic-rain",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 595,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-toxic-rain",
+      "missing_expression": "Minor drift: per-pod stacking-slow cap, the 5-pod overlap breakpoint, and pod-burst timing are behavioral density parameters on one ground-DoT zone lane;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift: per-pod stacking-slow cap, the 5-pod overlap breakpoint, and pod-burst timing are behavioral density parameters on one ground-DoT zone lane; the rain-pods-blanket-and-run identity lands (saturation door carries stack-density)."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "PathofEvening's Toxic Rain Pathfinder Build Guide (PoE Mirage 3.28)",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 497,
+      "kit_id": "poe1-toxic-rain",
+      "payload_json": {
+        "handle": "PathofEvening",
+        "note": "primary Toxic Rain Pathfinder guide author for 3.28",
+        "site": "poe-vault.com"
+      },
+      "source_url": "https://www.poe-vault.com/guides/toxic-rain-pathfinder-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Added a new Dexterity Skill Gem - Toxic Rain in version 3.4.0",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 496,
+      "kit_id": "poe1-toxic-rain",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "0.5% increased Skill Effect Duration (per 1% quality)",
+            "effect": "0.5% increased Skill Effect Duration per 1% quality",
+            "node": "Anomalous Toxic Rain (alt quality)",
+            "type": "alt_quality"
+          },
+          {
+            "anchor_quote": "1% of Physical Damage Converted to Chaos Damage (per 1% quality)",
+            "effect": "1% of Physical Damage Converted to Chaos Damage per 1% quality",
+            "node": "Divergent Toxic Rain (alt quality)",
+            "type": "alt_quality"
+          },
+          {
+            "anchor_quote": "Fires 0.1 additional Arrows and 1% reduced Debuff Effect",
+            "effect": "Fires 0.1 additional Arrows and 1% reduced Debuff Effect",
+            "node": "Phantasmal Toxic Rain (alt quality)",
+            "type": "alt_quality"
+          },
+          {
+            "anchor_quote": null,
+            "effect": "Modified effectiveness scaling",
+            "node": "Toxic Rain of Sporeburst (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": null,
+            "effect": "Alternative version with different properties",
+            "node": "Toxic Rain of Withering (transfig)",
+            "type": "transfigured_gem"
+          },
+          {
+            "anchor_quote": "Added a new Dexterity Skill Gem - Toxic Rain in version 3.4.0",
+            "errata": "ERRATA-15",
+            "note": "Introduced in version 3.4.0"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Toxic_Rain"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "1% of Physical Damage Converted to Chaos Damage (per 1% quality)",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 495,
+      "kit_id": "poe1-toxic-rain",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "0.5% increased Skill Effect Duration (per 1% quality)",
+            "effect": "0.5% increased Skill Effect Duration per 1% quality",
+            "item": "Anomalous Toxic Rain (alt quality gem)",
+            "type": "alt_quality_gem"
+          },
+          {
+            "anchor_quote": "1% of Physical Damage Converted to Chaos Damage (per 1% quality)",
+            "effect": "1% of Physical Damage Converted to Chaos Damage per 1% quality",
+            "item": "Divergent Toxic Rain (alt quality gem)",
+            "type": "alt_quality_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Toxic_Rain"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "arrows rain down around the targeted area dealing damage to enemies they hit and creating spore pods; pods deal ongoing chaos damage; each pod applies movement speed reduction 5% per pod max 30%",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 494,
+      "kit_id": "poe1-toxic-rain",
+      "payload_json": {
+        "verbatim": "arrows rain from overhead at targeted area; pods land creating chaos DoT zones; overlapping pod zones blanket large AoE; pods burst after duration; slow applied per pod up to 30% max"
+      },
+      "source_url": "https://poedb.tw/us/Toxic_Rain"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fire arrows into the air that rain down around the targeted area; creating spore pods where they land; 5% per pod movement speed reduction up to 30%; all five Toxic Rain pods to overlap onto enemies requires 37-43% AoE",
+      "conf": 0.92,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 493,
+      "kit_id": "poe1-toxic-rain",
+      "payload_json": {
+        "description": "Fire arrows that arc upward and rain down on a target area, creating spore pods on landing. Pods deal overlapping chaos DoT zones and slow enemies up to 30%. Maximum overlap requires specific AoE tuning (37-43%). Pods burst after duration for additional AoE damage. Perennial low-budget league-starter."
+      },
+      "source_url": "https://poedb.tw/us/Toxic_Rain"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Toxic Rain Ballista Pathfinder — 3.25 League Starter; Toxic Rain Raider guide (3.24)",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 498,
+      "kit_id": "poe1-toxic-rain",
+      "payload_json": {
+        "list": [
+          "Toxic Rain Pathfinder — canonical form (flask uptime + chaos damage)",
+          "Toxic Rain Raider — attack speed variant",
+          "Toxic Rain Ballista Pathfinder — ballista totem delivery variant (3.25)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe/build-guides/toxic-rain-ballista-pathfinder"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "full-move|at-target|flat|ground_targeted_circle|damage|hex|mitigate|spend|solo|ranged|low|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\", \"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.71,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe1-toxic-rain",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DRLFSI-HLMD-SP-CH-~~",
+      "delivery": "at-target",
+      "elem_raw": "chaos",
+      "footprint": "large-zone"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot",
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.71,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Toxic Rain",
+      "game": "poe1",
+      "kit_id": "poe1-toxic-rain",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DRLFSI-HLMD-SP-CH-~~",
+        "delivery": "at-target",
+        "elem_raw": "chaos",
+        "footprint": "large-zone"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-toxic-rain",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "arrows arc overhead and rain onto the targeted area; spore pods land and become overlapping chaos-DoT ground zones; each pod stacks 5% movement slow to 30% max; pods burst after duration for a second AoE hit. Per-attack pod count (~5) and the 37-43% AoE overlap tuning are the saturation identity.",
+      "source_skill": "Toxic Rain",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-toxic-rain",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift: per-pod stacking-slow cap, the 5-pod overlap breakpoint, and pod-burst timing are behavioral density parameters on one ground-DoT zone lane; the rain-pods-blanket-and-run identity lands (saturation door carries stack-density).",
+    "grade": "CLOSE",
+    "kit_id": "poe1-toxic-rain",
+    "mapping_json": {
+      "fidelity_notes": "PoE chaos, spore/nature-themed -> earth family per §1 poison-nature rule (shadow was the corruption-register alternative; pods/plants decide it), ailment lane poison either way. Pod slow -> chill (§2 movement-slow row). Wither (support-added chaos damage-taken stacking) is sunder-shaped but gem-external — noted, not mapped. Pod-burst delayed second hit is behavioral.",
+      "motion_frame": "run-and-rain: full-move pod blanketing; overlapping DoT zones do the work while the player repositions",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light spend (chassis default)",
+            "Pathfinder flask-uptime register noted"
+          ],
+          "geometry": [
+            "rain footprint size",
+            "pod overlap density (AoE tuning)"
+          ],
+          "traits_affixes": [
+            "DoT-magnitude ranks",
+            "AoE-size (overlap breakpoint)",
+            "duration"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "poison",
+            "chill"
+          ],
+          "delivery_notes": "arrows arc overhead and rain onto the targeted area; spore pods land and become overlapping chaos-DoT ground zones; each pod stacks 5% movement slow to 30% max; pods burst after duration for a second AoE hit. Per-attack pod count (~5) and the 37-43% AoE overlap tuning are the saturation identity.",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Toxic Rain"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_saturation",
+        "ZONE_CONTROL"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "poison",
+          "wither",
+          "slow"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 753,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 754,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "evidence": "Arrows rain from sky at target zone; pods land and tick overlapping chaos DoT zones",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 751,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Arrows rain pods that slow and tick chaos DoT in overlapping zones — the perenni",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 755,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "chaos"
+      },
+      "family": "element",
+      "id": 756,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.71,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.71,
+        "evidence": "Overlapping pod zones blanket large area; geo=large-AOE in atlas",
+        "value": "large-zone"
+      },
+      "family": "footprint",
+      "id": 752,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with large-zone footprint. Arrows rain pods that slow and tick chaos DoT in overlapping zones  —  the perennial low-budget league-start king.",
+      "family": "geo_text",
+      "id": 758,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 757,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 759,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "el",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 760,
+      "kit_id": "poe1-toxic-rain",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Toxic Rain: ground targeted circle zone identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-toxic-rain",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:earth",
+      "hook_id": "H2",
+      "hook_text": "earth element register",
+      "hook_type": "register",
+      "kit_id": "poe1-toxic-rain",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.83,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|ground_targeted_circle|damage|hex|mitigate|spend|solo|ranged|low|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|ground_targeted_circle|damage|hex|mitigate|spend|solo|ranged|low|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DRLFSI-HLMD-SP-CH-~~",
+    "attr_conf": 0.83,
+    "attr_val": "DEX",
+    "avg_conf": 0.83,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.83,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Toxic Rain"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "chaos",
+    "era_year": 2013,
+    "eras": "3.4-3.6;3.7-3.13;3.14-3.19;3.20+",
+    "eras_normalized": "3.4-3.6;3.7-3.13;3.14-3.19;3.20+",
+    "flags": "",
+    "folk_name": "Toxic Rain",
+    "game": "poe1",
+    "geo_raw": "large-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-11",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-toxic-rain",
+    "lattice_coord": "DRLFSI",
+    "lineage": "",
+    "mech_note": "Arrows rain pods that slow and tick chaos DoT in overlapping zones — the perennial low-budget league-start king.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|LARGE|INST×GAP-P1-11",
+    "mobile_key_group": "DRLFSI-HLMD-SP-CH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "el;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.83,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.83,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.83,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "DOT-AILMENT",
+    "on_spine": true,
+    "shadowed_by": "PROPAGATED",
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=4].members (working_label=DOT-AILMENT; status=proposed)",
+    "spine_status": "SHADOWED",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Toxic Rain was introduced in version 3.4.0 (Delve league)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6 (intro 3.4.0)",
+      "errata_applied": 0,
+      "id": 293,
+      "kit_id": "poe1-toxic-rain",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Toxic_Rain",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 294,
+      "kit_id": "poe1-toxic-rain",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.18] Ultimate Raise Spectre Necromancer Build Guide (PoE Sentinel) — multiple TR guides present in this window; 3.19 Toxic Rain Deadeye guide on poe-vault",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.14-3.19",
+      "errata_applied": 0,
+      "id": 295,
+      "kit_id": "poe1-toxic-rain",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/toxic-rain-deadeye-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Toxic Rain Ballista Pathfinder — PoE 3.25 League Starter Guide; PathofEvening's Toxic Rain Pathfinder Build Guide (PoE Mirage 3.28)",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.20+",
+      "errata_applied": 0,
+      "id": 296,
+      "kit_id": "poe1-toxic-rain",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe/build-guides/toxic-rain-ballista-pathfinder",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Toxic Rain Pathfinder is a fast-paced smooth mapping league starter; perennial low-budget league-start king",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Toxic Rain' is real community usage; alias 'TR' is real community usage; Pathfinder/Raider class",
+      "errata_applied": 0,
+      "id": 291,
+      "kit_id": "poe1-toxic-rain",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/toxic-rain-pathfinder-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Added a new Dexterity Skill Gem - Toxic Rain: Fire arrows into the air that rain down around the targeted area; spore pods deal chaos damage; 5% per pod movement speed reduction up to 30%",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Toxic Rain; arrows rain pods; overlapping chaos DoT zones; enemy slowing; Pathfinder/Raider class",
+      "errata_applied": 0,
+      "id": 292,
+      "kit_id": "poe1-toxic-rain",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Toxic_Rain",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "arrows arc overhead and rain onto the targeted area; spore pods land and become overlapping chaos-DoT ground zones; each pod stacks 5% movement slow to 30% max; pods burst after duration for a second AoE hit. Per-attack pod count (~5) and the 37-43% AoE overlap tuning are the saturation identity.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Toxic Rain' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (5 sig)",
+      "errata_applied": 0,
+      "id": 2484,
+      "kit_id": "poe1-toxic-rain",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

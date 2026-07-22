@@ -1,0 +1,842 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 7
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 637,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-viper-poison",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "tylam6746",
+    "cite_class": "communal",
+    "id": 241,
+    "kit_id": "poe1-viper-poison",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "pathofexile.com/forum",
+    "title": "[3.8] Pestilent Strike & Viper Strike Poison Assassin | Fast & Deadly | 6M Shaper DPS",
+    "url": "https://www.pathofexile.com/forum/view-thread/2646990"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "tylam6746",
+      "cite_class": "communal",
+      "id": 241,
+      "kit_id": "poe1-viper-poison",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexile.com/forum",
+      "title": "[3.8] Pestilent Strike & Viper Strike Poison Assassin | Fast & Deadly | 6M Shaper DPS",
+      "url": "https://www.pathofexile.com/forum/view-thread/2646990"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 242,
+      "kit_id": "poe1-viper-poison",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poedb.tw",
+      "title": "Pestilent Strike - PoEDB",
+      "url": "https://poedb.tw/us/Pestilent_Strike"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 243,
+      "kit_id": "poe1-viper-poison",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poedb.tw",
+      "title": "Viper Strike - PoEDB",
+      "url": "https://poedb.tw/us/Viper_Strike"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-viper-poison",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 598,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-viper-poison",
+      "missing_expression": "Minor drift only: Pestilent's kill-burst consumes-remaining-poison math simplified to on-kill cascade;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Minor drift only: Pestilent's kill-burst consumes-remaining-poison math simplified to on-kill cascade; poison instance bookkeeping approximated by native stack cap. Identity (stack poison fast, kills pop the pack) intact."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 515,
+      "kit_id": "poe1-viper-poison",
+      "payload_json": {
+        "handle": "tylam6746",
+        "note": "authored [3.8] Pestilent Strike & Viper Strike Poison Assassin guide",
+        "site": "pathofexile.com/forum"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2646990"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 514,
+      "kit_id": "poe1-viper-poison",
+      "payload_json": {
+        "ascendancy_nodes": [
+          "Assassin: Noxious Strike (poison proliferation on kill)",
+          "Assassin: Toxic Delivery (multiplied poison damage)",
+          "Pathfinder: Master Surgeon + Nature's Adrenaline (flask-stacking poison variant)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2646990"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.65,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 513,
+      "kit_id": "poe1-viper-poison",
+      "payload_json": {
+        "notable_items": [
+          "Coralito's Signature flask (poisoned enemies take increased damage)",
+          "Dying Sun for additional projectiles on Barrage swap",
+          "Shavronne's Wrappings for CI variant (Chaos Innoculation)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2646990"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'The base debuff radius is 27'; 'Strike an enemy, poisoning them and applying a short duration debuff'",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 512,
+      "kit_id": "poe1-viper-poison",
+      "payload_json": {
+        "delivery": "melee strike (at-target)",
+        "range": "melee range strike; no inherent projectile",
+        "spread_radius": "27 unit base debuff radius on Pestilent Strike kill spread",
+        "viper_strike": "single-target direct melee hit with poison stacking"
+      },
+      "source_url": "https://poedb.tw/us/Pestilent_Strike"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'Pestilent Strike clears packs very easily due to the poison prolif... use Viper Strike in the chest piece for flexible gameplay'",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 511,
+      "kit_id": "poe1-viper-poison",
+      "payload_json": {
+        "description": "Use Pestilent Strike for pack clearing — chaos melee strike that spreads a chaos DoT debuff to nearby enemies when a poisoned enemy dies; swap to Viper Strike for single-target boss damage via stacking multiple poison instances; both skills on Assassin for maximum poison effect"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2646990"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 516,
+      "kit_id": "poe1-viper-poison",
+      "payload_json": {
+        "variants": [
+          "Assassin (primary; poison stacking focus)",
+          "Pathfinder (flask-poison variant for sustain)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2646990"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|flat|ground_targeted_circle|damage|hex|mitigate|spend|solo|melee|high|instant|active|build→spend",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\", \"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe1-viper-poison",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DMHFSI-HNDD-SP-CH-~~",
+      "delivery": "at-target",
+      "elem_raw": "chaos",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot",
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Poison Assassin (Viper/Pestilent)",
+      "game": "poe1",
+      "kit_id": "poe1-viper-poison",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DMHFSI-HNDD-SP-CH-~~",
+        "delivery": "at-target",
+        "elem_raw": "chaos",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-viper-poison",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "fast chaos-poison melee strike; when a poisoned target DIES the remaining poison bursts to neighbors (27-unit base debuff radius) — on-kill contagion pop, landed on the GEOMETRY_PROPAGATION_cascade door (native on-kill propagation)",
+      "source_skill": "Pestilent Strike",
+      "speed_band": "fast",
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-viper-poison",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 1,
+      "source_anchor": "single-target boss poison stacker: layers multiple concurrent poison instances (engine poison is stack-additive native, cap 5-10)",
+      "source_skill": "Viper Strike",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-viper-poison",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Minor drift only: Pestilent's kill-burst consumes-remaining-poison math simplified to on-kill cascade; poison instance bookkeeping approximated by native stack cap. Identity (stack poison fast, kills pop the pack) intact.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-viper-poison",
+    "mapping_json": {
+      "fidelity_notes": "Assassin venom register -> earth family (crosswalk 1 poison row venom side; shadow alternative noted). The contagion-on-kill IS the cascade door — native. Ascendancy prolif/Toxic Delivery = trait lane. Wither scaffold noted as curse:amplify-class. Eras ERRATA-corrected at ingest-4 (3.7-3.13 confirmed; 3.0-3.6 floor removed — Pestilent Strike debuts 3.8).",
+      "motion_frame": "run-in melee poison stacker: fast strikes layer poison, kills pop contagion across the pack, focus-stack a single target for bosses",
+      "option_c_substrate_flags": null,
+      "resource_economy": {},
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-light spend = default chassis (not identity-load-bearing, R-M4)"
+          ],
+          "geometry": [
+            "melee_strike pair (clear tool + boss tool)",
+            "kill-pop spread radius"
+          ],
+          "traits_affixes": [
+            "poison magnitude/duration/stack-count",
+            "chaos/earth damage scaling",
+            "Coralito-class poisoned-enemies-take-more -> curse:amplify-flavor affix note"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "fast chaos-poison melee strike; when a poisoned target DIES the remaining poison bursts to neighbors (27-unit base debuff radius) — on-kill contagion pop, landed on the GEOMETRY_PROPAGATION_cascade door (native on-kill propagation)",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Pestilent Strike"
+        },
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "single-target boss poison stacker: layers multiple concurrent poison instances (engine poison is stack-additive native, cap 5-10)",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "melee_strike",
+          "source_skill": "Viper Strike"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_PROPAGATION_cascade",
+        "PERSISTENCE_ENGINE_saturation"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "ailments": [
+          "poison",
+          "wither"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 43,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 44,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Direct melee strike stacking poison on targeted enemy",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 41,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Fast poison-stacking strikes where kills burst remaining poison to neighbors — D",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 45,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "chaos"
+      },
+      "family": "element",
+      "id": 46,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Direct hit + contagion burst on kill; small radius spread; geo=single in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 42,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "At-target delivery with small-radius footprint. Fast poison-stacking strikes where kills burst remaining poison to neighbors  —  DoT melee with contagion pops.",
+      "family": "geo_text",
+      "id": 48,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 47,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 49,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "kb-legacy",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 50,
+      "kit_id": "poe1-viper-poison",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Poison Assassin (Viper/Pestilent): melee strike melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-viper-poison",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:earth",
+      "hook_id": "H2",
+      "hook_text": "earth element register",
+      "hook_type": "register",
+      "kit_id": "poe1-viper-poison",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|flat|ground_targeted_circle|damage|hex|mitigate|spend|solo|melee|high|instant|active|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|flat|ground_targeted_circle|damage|hex|mitigate|spend|solo|melee|high|instant|active|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMHFSI-HNDD-SP-CH-~~",
+    "attr_conf": 0.82,
+    "attr_val": "DEX",
+    "avg_conf": 0.82,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Pestilent Strike",
+      "Viper Strike"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "chaos",
+    "era_year": 2013,
+    "eras": "3.7-3.13",
+    "eras_normalized": "3.7-3.13",
+    "flags": "",
+    "folk_name": "Poison Assassin (Viper/Pestilent)",
+    "game": "poe1",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-viper-poison",
+    "lattice_coord": "DMHFSI",
+    "lineage": "",
+    "mech_note": "Fast poison-stacking strikes where kills burst remaining poison to neighbors — DoT melee with contagion pops.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SINGLE|INST×econ:spend",
+    "mobile_key_group": "DMHFSI-HNDD-SP-CH-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "DOT-AILMENT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=4].members (working_label=DOT-AILMENT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Pestilent Strike 'Added a new Dexterity/Intelligence Skill Gem - Pestilent Strike' in version 3.8.0; skill did not exist in 3.0-3.6. Viper Strike existed but the dual-skill Assassin archetype as stamped requires both.",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6",
+      "errata_applied": 1,
+      "id": 308,
+      "kit_id": "poe1-viper-poison",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Pestilent_Strike",
+      "verdict": "CONTRADICTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'[3.8] Pestilent Strike & Viper Strike Poison Assassin | Fast & Deadly | 6M Shaper DPS' thread by tylam6746 documents the build from patch 3.8",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 309,
+      "kit_id": "poe1-viper-poison",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2646990",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'[3.8] Pestilent Strike & Viper Strike Poison Assassin | Fast & Deadly | 6M Shaper DPS' — official forum thread title",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Poison Assassin (Viper/Pestilent)' is real community usage",
+      "errata_applied": 0,
+      "id": 305,
+      "kit_id": "poe1-viper-poison",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2646990",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'[3.8] Assassin Poisonator | Cobra Lash / Venom Gyre' guide and Pestilent Strike forum thread confirm the Assassin poison archetype name",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Alias 'Pestilent Strike' is real community usage for this archetype",
+      "errata_applied": 0,
+      "id": 306,
+      "kit_id": "poe1-viper-poison",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2646990",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Pestilent Strike clears packs very easily due to the poison prolif... Pest Strike alone needs pretty high-end gear in order to beat Viper Strike in terms of single target damage'",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills Pestilent Strike + Viper Strike; chaos melee poison stacking; Pestilent Strike spreads poison to nearby enemies on kill; Viper Strike handles single-target boss damage",
+      "errata_applied": 0,
+      "id": 307,
+      "kit_id": "poe1-viper-poison",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/2646990",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "fast chaos-poison melee strike; when a poisoned target DIES the remaining poison bursts to neighbors (27-unit base debuff radius) — on-kill contagion pop, landed on the GEOMETRY_PROPAGATION_cascade door (native on-kill propagation)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Pestilent Strike' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (1) but 'zone' more strongly (3) — mixed signal",
+      "errata_applied": 0,
+      "id": 2488,
+      "kit_id": "poe1-viper-poison",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "single-target boss poison stacker: layers multiple concurrent poison instances (engine poison is stack-additive native, cap 5-10)",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Viper Strike' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'melee_arc'",
+      "errata_applied": 0,
+      "id": 2489,
+      "kit_id": "poe1-viper-poison",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 4
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 1044,
+      "assert_text": "primary_delivery_class == 'motion'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe2-whirling-assault-ma",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "Manni",
+    "cite_class": "authored",
+    "id": 381,
+    "kit_id": "poe2-whirling-assault-ma",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "maxroll.gg",
+    "title": "Hollow Form Whirling Assault Martial Artist Build Guide for Path of Exile 2 Return of the Ancients 0.5.4",
+    "url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Manni",
+      "cite_class": "authored",
+      "id": 381,
+      "kit_id": "poe2-whirling-assault-ma",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Hollow Form Whirling Assault Martial Artist Build Guide for Path of Exile 2 Return of the Ancients 0.5.4",
+      "url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "authored",
+      "id": 382,
+      "kit_id": "poe2-whirling-assault-ma",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "maxroll.gg",
+      "title": "Whirling Assault Martial Artist Build Guide for Path of Exile 2 Return of the Ancients 0.5.4",
+      "url": "https://maxroll.gg/poe2/build-guides/whirling-assault-martial-artist-build-guide"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe2-whirling-assault-ma",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 899,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 PoE2 tranche; internal-consistency reconcile, no W1 evidence — W5 is PoE2's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe2-whirling-assault-ma",
+      "missing_expression": "A Hollow Form MA player gets a faithful spin-AoE with a charge-fueled proxy loop, but the CLONE MULTIPLICITY (multiple images each spinning simultaneously = output-multiplication by clone count) is softened: the engine models one whirlwind geometry + a linked-cast trigger, so the 'my clones spin for me and I just tap the button' identity lands as a single spin with a charge-accumulator feed rather",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "A Hollow Form MA player gets a faithful spin-AoE with a charge-fueled proxy loop, but the CLONE MULTIPLICITY (multiple images each spinning simultaneously = output-multiplication by clone count) is softened: the engine models one whirlwind geometry + a linked-cast trigger, so the 'my clones spin for me and I just tap the button' identity lands as a single spin with a charge-accumulator feed rather than N parallel spinning bodies. That build, worse (R-M7) -> CLOSE; playable, the clone-count damage-multiplier is the fidelity loss noted."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "authored by Manni (with Twitch link @manni2)",
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 785,
+      "kit_id": "poe2-whirling-assault-ma",
+      "payload_json": {
+        "handle": "Manni",
+        "site": "maxroll.gg",
+        "twitch": "@manni2"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Hollow Form Technique and Way of the Stonefist as essential ascendancy selections for the Martial Artist class",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 784,
+      "kit_id": "poe2-whirling-assault-ma",
+      "payload_json": {
+        "ascendancy_notables": [
+          "Hollow Form Technique",
+          "Way of the Stonefist"
+        ],
+        "class": "Martial Artist"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Lochtonial Caress provides your clones with a chance to grant you Charges, self-sustaining the Power Charges",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 783,
+      "kit_id": "poe2-whirling-assault-ma",
+      "payload_json": {
+        "key_item": "Lochtonial Caress",
+        "role": "Way of the Stonefist variant provides clones chance to grant Power Charges back to player"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "start using the Hollow Form Whirling Assault build as soon as you unlock Whirling Assault at level 41",
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 782,
+      "kit_id": "poe2-whirling-assault-ma",
+      "payload_json": {
+        "verbatim": "Clones execute Whirling Assault attack sequence at their position; Whirling Assault unlock at level 41; spatial characterization of Whirling Assault AoE not explicitly described in fetched guide text"
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Just tap Hollow Form and the images use the full Whirling Assault attack sequence, making for a smooth and convenient playstyle",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 781,
+      "kit_id": "poe2-whirling-assault-ma",
+      "payload_json": {
+        "summary": "Activate Hollow Form to summon clones; clones automatically execute full Whirling Assault attack sequence; Power Charges consumed per clone spawn; Lochtonial Caress (Way of the Stonefist) gives clones chance to grant charges back, self-sustaining the loop. Player taps Hollow Form and clones do the work."
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Whirling Assault Martial Artist Build Guide for Path of Exile 2 Return of the Ancients 0.5.4 [separate guide]",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 786,
+      "kit_id": "poe2-whirling-assault-ma",
+      "payload_json": {
+        "variants": [
+          "Hollow Form Whirling Assault (Lochtonial Caress charge loop)",
+          "Whirling Assault Martial Artist (non-Hollow Form variant — separate Maxroll guide exists)"
+        ]
+      },
+      "source_url": "https://maxroll.gg/poe2/build-guides/whirling-assault-martial-artist-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "unknown|at-target|flat|ground_targeted_circle|damage|none|post-cutoff-deferred|spend|light|melee|high|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "post-cutoff-deferred",
+    "def_conf": 0.37,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [
+      "resolved:dossier-deferred"
+    ],
+    "geometry_conf": 0.37,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe2-whirling-assault-ma",
+    "mob_policy_while_casting": "unknown",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [],
+    "provenance_json": {
+      "atlas_key": "DMHFLI",
+      "delivery": "at-target",
+      "elem_raw": "unknown",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "post-cutoff-deferred",
+        "conf": 0.37,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "UNKNOWN"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.37,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [
+        "resolved:dossier-deferred"
+      ],
+      "folk_name": "Whirling Assault Martial Artist",
+      "game": "poe2",
+      "kit_id": "poe2-whirling-assault-ma",
+      "mob": {
+        "policy_while_casting": "unknown",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "provenance": {
+        "atlas_key": "DMHFLI",
+        "delivery": "at-target",
+        "elem_raw": "unknown",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "unknown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe2-whirling-assault-ma",
+      "motion_signature": "orbit_fixed",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "spin AoE attack-sequence; the player taps Hollow Form to summon CLONES that each execute the full Whirling Assault spin at their position (dossier: 'the images use the full Whirling Assault attack sequence'). whirlwind = the spin-to-win 26-type (poe1-cyclone precedent). physical -> no element family (physical rule; elem_raw=physical). The clone-cast is a proxy-DELIVERY flavor on the spin, not a second geometry -- the dominant loop is the spin AoE. Whirling Assault AoE spatial detail NOT in fetched guide text (skill_geometry abstained on radius); mapped from the spin identity.",
+      "source_skill": "Whirling Assault (Hollow Form clone-cast)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe2-whirling-assault-ma",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "A Hollow Form MA player gets a faithful spin-AoE with a charge-fueled proxy loop, but the CLONE MULTIPLICITY (multiple images each spinning simultaneously = output-multiplication by clone count) is softened: the engine models one whirlwind geometry + a linked-cast trigger, so the 'my clones spin for me and I just tap the button' identity lands as a single spin with a charge-accumulator feed rather than N parallel spinning bodies. That build, worse (R-M7) -> CLOSE; playable, the clone-count damage-multiplier is the fidelity loss noted.",
+    "grade": "CLOSE",
+    "kit_id": "poe2-whirling-assault-ma",
+    "mapping_json": {
+      "fidelity_notes": "GX-11 GX-17 (corpus flags). Hollow Form = CLONE-CAST proxy delivery: clones replicate the Whirling Assault spin (Way of the Stonefist ascendancy). The Power Charge economy is the engine of the loop: Hollow Form consumes a Power Charge to spawn a clone, Lochtonial Caress gives clones a chance to refund charges -> charge_stack_sub_shape=accumulator with a self-feeding refund. Modeled the clone auto-cast as proc_trigger_condition=on-cast-linked / consequence_type=linked-cast (the clone fires the spin when summoned). MAX_CHAIN_DEPTH=1 holds (Hollow Form -> clone-spin is one link). physical -> element-neutral (physical rule). Ascendancy notables (Hollow Form Technique, Way of the Stonefist) route via main-law §5 -> the charge/momentum door group. NOT a spirit-reservation kit (no Spirit cost attested; reservation_resource null).",
+      "motion_frame": "tap-to-summon spin proxies: press Hollow Form and short-lived clones each spin Whirling Assault for you, Power Charges fuel each clone spawn and Lochtonial Caress feeds charges back to keep the loop self-sustaining",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator",
+        "reservation_resource": null
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "Power Charge accumulator (consumed per clone spawn)",
+            "Lochtonial Caress charge-refund (clones grant charges back -> self-sustaining loop)"
+          ],
+          "geometry": [
+            "whirlwind spin radius (clone-replicated)"
+          ],
+          "traits_affixes": [
+            "physical / attack-speed scaling",
+            "Power Charge count / retention affixes"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "spin AoE attack-sequence; the player taps Hollow Form to summon CLONES that each execute the full Whirling Assault spin at their position (dossier: 'the images use the full Whirling Assault attack sequence'). whirlwind = the spin-to-win 26-type (poe1-cyclone precedent). physical -> no element family (physical rule; elem_raw=physical). The clone-cast is a proxy-DELIVERY flavor on the spin, not a second geometry -- the dominant loop is the spin AoE. Whirling Assault AoE spatial detail NOT in fetched guide text (skill_geometry abstained on radius); mapped from the spin identity.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "whirlwind",
+          "source_skill": "Whirling Assault (Hollow Form clone-cast)"
+        }
+      ],
+      "t4_doors": [
+        "MOMENTUM_CASCADE",
+        "TEMPORAL_CHARGE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "linked-cast",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-cast-linked",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "unknown",
+        "conf": 0.37
+      },
+      "family": "control",
+      "id": 1983,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.37,
+        "layers": [
+          "unknown"
+        ],
+        "primary": "unknown"
+      },
+      "family": "defense",
+      "id": 1984,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.37,
+        "evidence": "POST-CUTOFF: inferred from mech_note; live verification required",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1981,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.37,
+        "meter_type": "n/a",
+        "model": "unknown",
+        "plain_text": "POST-CUTOFF: economy deferred",
+        "resource_verbatim": "unknown"
+      },
+      "family": "economy",
+      "id": 1985,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.37,
+        "damage_mode": "hit",
+        "label_verbatim": "unknown"
+      },
+      "family": "element",
+      "id": 1986,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.37,
+        "evidence": "POST-CUTOFF: inferred from atlas geo; live verification required",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 1982,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "POST-CUTOFF (0.5-ancients). Hollow Form CLONES cast Whirling Assault for you, bypassing attack restrictions. Full spatial characterization deferred to dossier.",
+      "family": "geo_text",
+      "id": 1988,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": 0.37,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.37,
+        "policy_while_casting": "unknown",
+        "skill_is_movement": false,
+        "verbs": []
+      },
+      "family": "movement",
+      "id": 1987,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "DEFERRED — post-cutoff; live source required",
+      "family": "rank1_upgrade",
+      "id": 1989,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 1,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (post-cutoff)"
+      ],
+      "family": "sources_used",
+      "id": 1990,
+      "kit_id": "poe2-whirling-assault-ma",
+      "post_cutoff_cap": 1,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Whirling Assault Martial Artist: whirlwind motion identity",
+      "hook_type": "geometry",
+      "kit_id": "poe2-whirling-assault-ma",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.37,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "unknown|at-target|flat|ground_targeted_circle|damage|none|post-cutoff-deferred|spend|light|melee|high|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "unknown|at-target|flat|ground_targeted_circle|damage|none|post-cutoff-deferred|spend|light|melee|high|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "unknown"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "post-cutoff-deferred"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "light"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "high"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "DMHFLI-HSDD-MT-PH-~~",
+    "attr_conf": 0.37,
+    "attr_val": "DEX",
+    "avg_conf": 0.37,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.37,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Whirling Assault",
+      "Hollow Form"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe2",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "clone-sustained-charge-loop",
+    "elem_raw": "physical",
+    "era_year": 2024,
+    "eras": "0.5-ancients",
+    "eras_normalized": "0.5-ancients",
+    "flags": "degenerate-famous,kb-only-backfill-attempted-2026-07-16,econ-recrawl-applied-2026-07-16:spend/mana-per-activation (Conservative Casting); power charges = damage-layer; spirit-reserve minor RS rider",
+    "folk_name": "Whirling Assault Martial Artist",
+    "game": "poe2",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GX-11 GX-17",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe2-whirling-assault-ma",
+    "lattice_coord": "DMHFLI",
+    "lineage": "",
+    "mech_note": "POST-CUTOFF. prov=kb. mech_note ref: 'Hollow Form CLONES cast Whirling Assault for you, bypassing attack restrictions.' Full dossier required.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "echo/clone actors — troop-command adjacent",
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": "LIGHT|SMALL|INST×GX-11",
+    "mobile_key_group": "DMHFLI-HSDD-MT-PH-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "aoe;bm",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.37,
+    "proxy_val": "light",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.37,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": [
+      "https://maxroll.gg/poe2/build-guides/whirling-assault-martial-artist-build-guide",
+      "https://boostmatch.gg/blog/poe-2/articles/poe2-martial-artist-monk-whirling-assault-build-guide"
+    ],
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.37,
+    "tempo_val": "high",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Return of the Ancients 0.5.4 ... last updated June 25, 2026",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 0.5-ancients",
+      "errata_applied": 0,
+      "id": 483,
+      "kit_id": "poe2-whirling-assault-ma",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Hollow Form Whirling Assault Martial Artist Build Guide for Path of Exile 2 Return of the Ancients 0.5.4",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Whirling Assault Martial Artist' and aliases 'Whirling Assault Hollow Form', 'Whirling Assault MA' are real community usage",
+      "errata_applied": 0,
+      "id": 481,
+      "kit_id": "poe2-whirling-assault-ma",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Hollow Form spawns additional clones if it can consume a Power Charge... clones use the full Whirling Assault attack sequence",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills are Whirling Assault and Hollow Form; Hollow Form clones cast Whirling Assault, bypassing attack restrictions via Power Charge consumption",
+      "errata_applied": 0,
+      "id": 482,
+      "kit_id": "poe2-whirling-assault-ma",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://maxroll.gg/poe2/build-guides/hollow-form-whirling-assault-martial-artist-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "spin AoE attack-sequence; the player taps Hollow Form to summon CLONES that each execute the full Whirling Assault spin at their position (dossier: 'the images use the full Whirling Assault attack sequence'). whirlwind = the spin-to-win 26-type (poe1-cyclone precedent). physical -> no element family (physical rule; elem_raw=physical). The clone-cast is a proxy-DELIVERY flavor on the spin, not a second geometry -- the dominant loop is the spin AoE. Whirling Assault AoE spatial detail NOT in fetch",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Whirling Assault (Hollow Form clone-cast)' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (3 sig)",
+      "errata_applied": 0,
+      "id": 2559,
+      "kit_id": "poe2-whirling-assault-ma",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

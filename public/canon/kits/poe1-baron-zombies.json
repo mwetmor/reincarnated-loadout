@@ -1,0 +1,770 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 3,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 1,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 553,
+      "assert_text": "primary_delivery_class == 'melee_arc'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-baron-zombies",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "TbXie",
+    "cite_class": "authored",
+    "id": 30,
+    "kit_id": "poe1-baron-zombies",
+    "quarantined": 0,
+    "rank_class": "recovered",
+    "site": "poe-vault.com",
+    "title": "[3.18] Zombiemancer Baron Raise Zombie Necromancer Summoner Build Guide",
+    "url": "https://www.poe-vault.com/guides/zombiemancer-the-baron-zombies-necromancer-summoner-build-guide"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "TbXie",
+      "cite_class": "authored",
+      "id": 30,
+      "kit_id": "poe1-baron-zombies",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poe-vault.com",
+      "title": "[3.18] Zombiemancer Baron Raise Zombie Necromancer Summoner Build Guide",
+      "url": "https://www.poe-vault.com/guides/zombiemancer-the-baron-zombies-necromancer-summoner-build-guide"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 31,
+      "kit_id": "poe1-baron-zombies",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poedb.tw",
+      "title": "The Baron - poedb.tw",
+      "url": "https://poedb.tw/us/The_Baron"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 32,
+      "kit_id": "poe1-baron-zombies",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poedb.tw",
+      "title": "Raise Zombie - poedb.tw",
+      "url": "https://poedb.tw/us/Raise_Zombie"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-baron-zombies",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 516,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-baron-zombies",
+      "missing_expression": "The str-stacked zombie army maps via PROXY_ASCENSION + attribute-affix scaling (Strength -> minion count/power) + TH leech, but 'a specific gear stat (STR) on your sheet becoming the army's scaling axis' is abstracted to generic attribute-stacking-of-minions rather than a bespoke Baron-helm mechanic.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "The str-stacked zombie army maps via PROXY_ASCENSION + attribute-affix scaling (Strength -> minion count/power) + TH leech, but 'a specific gear stat (STR) on your sheet becoming the army's scaling axis' is abstracted to generic attribute-stacking-of-minions rather than a bespoke Baron-helm mechanic. Outcome-faithful (stack STR, army grows); a player keeps the str-stack-summoner identity, though the flavor of one helm welding STR to zombie power is generalized."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 65,
+      "kit_id": "poe1-baron-zombies",
+      "payload_json": {
+        "credentials": "World First Delve 6000",
+        "handle": "TbXie",
+        "site": "poe-vault.com",
+        "url": "https://www.poe-vault.com/guides/zombiemancer-the-baron-zombies-necromancer-summoner-build-guide"
+      },
+      "source_url": "https://www.poe-vault.com/guides/zombiemancer-the-baron-zombies-necromancer-summoner-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 64,
+      "kit_id": "poe1-baron-zombies",
+      "payload_json": {
+        "ascendancy_primary": "Necromancer",
+        "ascendancy_secondary": "Guardian",
+        "guardian_note": "Guardian used in older pre-Necromancer-rework variants for minion aura buffs.",
+        "necromancer_nodes": [
+          "Mindless Aggression (minion damage/speed)",
+          "Unnatural Strength (+2 minion gem levels)",
+          "Bone Sculptor",
+          "Commander of Darkness"
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/guides/zombiemancer-the-baron-zombies-necromancer-summoner-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "+1 to maximum number of Raised Zombies per 500 Strength. With at least 1000 Strength, (1.5-2)% of Damage dealt by your Raised Zombies is Leeched to you as Life",
+      "conf": 0.92,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 63,
+      "kit_id": "poe1-baron-zombies",
+      "payload_json": {
+        "alteration": "+1 max Raised Zombies per 500 Strength; half of player Strength added to minions; 1000 STR threshold enables (1.5-2)% zombie damage leeched to player as Life.",
+        "key_item": "The Baron (helmet)",
+        "secondary_alteration": "Converts EVA and INT to ES/Mana; also adds STR scaling.",
+        "secondary_item": "Shaper's Touch (gloves)",
+        "tertiary_alteration": "+(40-50) STR; chaos damage to attacks based on STR.",
+        "tertiary_item": "Alberon's Warpath (boots)"
+      },
+      "source_url": "https://poedb.tw/us/The_Baron"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Raises a zombie minion from a corpse, which will follow you and attack enemies with a melee strike.",
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 62,
+      "kit_id": "poe1-baron-zombies",
+      "payload_json": {
+        "geometry_note": "Geometry is per-zombie, not per-cast; player positioning is passive.",
+        "verbatim": "At-target delivery (point): one zombie summoned per cast at target corpse location. Zombie slam AoE: 17-unit radius, 6-second cooldown. Player geometry is irrelevant — army spreads autonomously."
+      },
+      "source_url": "https://poedb.tw/us/Raise_Zombie"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "The Baron helm feeds the caster's stacked STRENGTH into zombie power and life-leech-per-minion",
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 61,
+      "kit_id": "poe1-baron-zombies",
+      "payload_json": {
+        "description": "Stack Strength via passive tree and items (Alberon's Warpath, Shaper's Touch, heavy belt). The Baron helmet converts STR into +1 max zombie per 500 STR and, at 1000+ STR, enables zombie leech back to player. Zombies fight autonomously; player moves through maps. Loop is passive — summon zombies once, maintain Strength, zombies clear content."
+      },
+      "source_url": "https://www.poe-vault.com/guides/zombiemancer-the-baron-zombies-necromancer-summoner-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 66,
+      "kit_id": "poe1-baron-zombies",
+      "payload_json": {
+        "named_variants": [
+          "Str-stack Zombiemancer (Baron + Shaper's Touch)",
+          "Montregul variant (Raise Zombie variant using Montregul's Grasp for explode)",
+          "CI Baron Zombiemancer (3.14, high ES + STR hybrid)"
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/guides/zombiemancer-the-baron-zombies-necromancer-summoner-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "rooted|at-target|flat|single_target|damage|none|tank|summon-uptime|heavy|melee|low|instant|active|one-shot",
+    "ctrl_ailment_gaps": "[]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "none",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"SU\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "summon-uptime",
+    "flags": [],
+    "geometry_conf": 0.7,
+    "geometry_rule_fired": "R9-proj",
+    "geometry_value": "single_target",
+    "kit_id": "poe1-baron-zombies",
+    "mob_policy_while_casting": "rooted",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "stand"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMLFHI-LNDT-SP-PH-~~",
+      "delivery": "at-target",
+      "elem_raw": "physical",
+      "footprint": "point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "UNKNOWN"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.7,
+        "rule_fired": "R9-proj",
+        "value": "single_target"
+      },
+      "flags": [],
+      "folk_name": "Baron Zombies",
+      "game": "poe1",
+      "kit_id": "poe1-baron-zombies",
+      "mob": {
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMLFHI-LNDT-SP-PH-~~",
+        "delivery": "at-target",
+        "elem_raw": "physical",
+        "footprint": "point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "stat→army",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "melee_arc",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-baron-zombies",
+      "motion_signature": "point_strike",
+      "origin": "self",
+      "pierce": null,
+      "range_band": "melee",
+      "skill_ordinal": 0,
+      "source_anchor": "summon zombies at corpse locations; they fight autonomously with slam attacks (ground_slam per-zombie AoE, ~17-unit radius). The Baron helm converts player STRENGTH into army size (+1 zombie/500 STR) and power (half player STR -> minions). Physical melee proxies — element-neutral (physical rule); flavor only. Player positioning is passive",
+      "source_skill": "Raise Zombie (Baron STR-stacked)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-baron-zombies",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "The str-stacked zombie army maps via PROXY_ASCENSION + attribute-affix scaling (Strength -> minion count/power) + TH leech, but 'a specific gear stat (STR) on your sheet becoming the army's scaling axis' is abstracted to generic attribute-stacking-of-minions rather than a bespoke Baron-helm mechanic. Outcome-faithful (stack STR, army grows); a player keeps the str-stack-summoner identity, though the flavor of one helm welding STR to zombie power is generalized.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-baron-zombies",
+    "mapping_json": {
+      "fidelity_notes": "MINION/PROXY ascendancy — PROXY_ASCENSION (Necromancer minion build); PROXY_SOVEREIGNTY candidate for the STR-stacked super-minion reading. THE SIGNATURE TWIST: The Baron helm converts a PLAYER attribute (Strength) into ARMY scaling — +1 max zombie per 500 STR, half player STR added to minions, and at 1000 STR minions leech life to the player. This lands as: (a) attribute-stacking gear-affix (§4 numeric modulation — STR-stack feeding minion-count/power is a trait/affix scaling); (b) the 1000-STR life-leech-per-minion maps to resource_economy TH (damage_taken_converts_shape=resource-fill — minion-damage-leeched-to-player). PHYSICAL RULE: zombies are physical-melee proxies -> element-neutral (element carries flavor only; Alberon's chaos-on-STR is a minor rider). ground_slam = the per-zombie slam geometry (the army's damage; player geometry is passive/irrelevant per dossier). No signature ailment called out for zombie slams (raw physical); ailments empty. The 'YOUR gear stat becomes the ARMY's scaling' identity is captured by the STR-attribute-affix + PROXY door, though the engine abstracts it as attribute-scaling-of-minions rather than a bespoke Baron-helm primitive.",
+      "motion_frame": "passive summoner: raise the zombie army once, stack Strength, move through content while the autonomous horde slams everything",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "damage_taken_converts_shape": "resource-fill"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "minion life-leech-to-player (1000-STR threshold; TH resource-fill)",
+            "summon-cadence (summon-once, maintain)"
+          ],
+          "geometry": [
+            "ground_slam (per-zombie proxy attack)",
+            "summon-count scaling from attribute"
+          ],
+          "traits_affixes": [
+            "Strength-stacking (Baron: STR -> +minions + minion-power; the attribute-affix that IS the scaling)",
+            "minion-damage",
+            "minion-life"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "summon zombies at corpse locations; they fight autonomously with slam attacks (ground_slam per-zombie AoE, ~17-unit radius). The Baron helm converts player STRENGTH into army size (+1 zombie/500 STR) and power (half player STR -> minions). Physical melee proxies — element-neutral (physical rule); flavor only. Player positioning is passive",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "ground_slam",
+          "source_skill": "Raise Zombie (Baron STR-stacked)"
+        }
+      ],
+      "t4_doors": [
+        "PROXY_ASCENSION",
+        "PROXY_SOVEREIGNTY"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 823,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "hp-stack",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "hp-stack"
+      },
+      "family": "defense",
+      "id": 824,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.74,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.74,
+        "evidence": "Zombie army summoned; STR on player sheet feeds zombie power and leech rate",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 821,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "other",
+        "plain_text": "stat→army (other); The Baron helm feeds the caster's stacked STRENGTH into zombie power and life-le",
+        "resource_verbatim": "stat→army"
+      },
+      "family": "economy",
+      "id": 825,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "physical"
+      },
+      "family": "element",
+      "id": 826,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Single zombie per summon; army spreads; geo=single in atlas (per entity)",
+        "value": "point"
+      },
+      "family": "footprint",
+      "id": 822,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with point footprint. The Baron helm feeds the caster's stacked STRENGTH into zombie power and life-leech-per-minion  —  a gear stat on YOUR sheet becomes the ARMY'.",
+      "family": "geo_text",
+      "id": 828,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "rooted",
+        "skill_is_movement": false,
+        "verbs": [
+          "stand"
+        ]
+      },
+      "family": "movement",
+      "id": 827,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 829,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 830,
+      "kit_id": "poe1-baron-zombies",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Baron Zombies: ground slam melee_arc identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-baron-zombies",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.82,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "rooted|at-target|flat|single_target|damage|none|tank|summon-uptime|heavy|melee|low|instant|active|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "rooted|at-target|flat|single_target|damage|none|tank|summon-uptime|heavy|melee|low|instant|active|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "rooted"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "single_target"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "none"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "summon-uptime"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "heavy"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "low"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMLFHI-LNDT-SP-PH-~~",
+    "attr_conf": 0.82,
+    "attr_val": "STR",
+    "avg_conf": 0.82,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.82,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Raise Zombie"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "physical",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "stat-feeds-army",
+    "elem_raw": "physical",
+    "era_year": 2013,
+    "eras": "3.0-3.6;3.7-3.13",
+    "eras_normalized": "3.0-3.6;3.7-3.13",
+    "flags": "",
+    "folk_name": "Baron Zombies",
+    "game": "poe1",
+    "geo_raw": "single",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-08",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-baron-zombies",
+    "lattice_coord": "SMLFHI",
+    "lineage": "",
+    "mech_note": "The Baron helm feeds the caster's stacked STRENGTH into zombie power and life-leech-per-minion — a gear stat on YOUR sheet becomes the ARMY'",
+    "mint": 0,
+    "mob_raw": "low",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A+B: soul-control troop command exists; turret/pet AI variants + summon economy needed",
+    "mobile_cell_id": "HEAVY|SINGLE|INST×GAP-P1-08",
+    "mobile_key_group": "SMLFHI-LNDT-SP-PH-~~",
+    "mobile_mechanics_status": "partial",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "physical",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.82,
+    "proxy_val": "heavy",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.82,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.82,
+    "tempo_val": "low",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "PoE 3.9 - Baron Zombie Necromancer Build Guide",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 3.0-3.6, 3.7-3.13",
+      "errata_applied": 0,
+      "id": 40,
+      "kit_id": "poe1-baron-zombies",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.youtube.com/watch?v=xNqngasaZgI",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "[3.18] Zombiemancer Baron Raise Zombie Necromancer Summoner Build Guide",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Baron Zombies', aliases 'Str-stack zombies', 'Montregul variant' are real community usage; class Guardian/Necromancer",
+      "errata_applied": 0,
+      "id": 37,
+      "kit_id": "poe1-baron-zombies",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/zombiemancer-the-baron-zombies-necromancer-summoner-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "+1 to maximum number of Raised Zombies per 500 Strength. With at least 1000 Strength, (1.5-2)% of Damage dealt by your Raised Zombies is Leeched to you as Life",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Raise Zombie; The Baron helm feeds caster's stacked Strength into zombie power (+1 max zombie per 500 STR) and life-leech-per-minion (at 1000 STR)",
+      "errata_applied": 0,
+      "id": 38,
+      "kit_id": "poe1-baron-zombies",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/The_Baron",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "The Baron requiring '500 Strength instead of 300 Strength to get an extra Zombie' following 3.10 nerfs",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Strength threshold and 1000 STR leech activation (500 STR per zombie nerf post-3.10)",
+      "errata_applied": 0,
+      "id": 39,
+      "kit_id": "poe1-baron-zombies",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.poe-vault.com/guides/zombiemancer-the-baron-zombies-necromancer-summoner-build-guide",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "summon zombies at corpse locations; they fight autonomously with slam attacks (ground_slam per-zombie AoE, ~17-unit radius). The Baron helm converts player STRENGTH into army size (+1 zombie/500 STR) and power (half player STR -> minions). Physical melee proxies — element-neutral (physical rule); flavor only. Player positioning is passive",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Raise Zombie (Baron STR-stacked)' delivery_class=melee_arc (band_conf=0.75); lint: anchor entails 'melee_arc' (2) but 'zone' more strongly (3) — mixed signal",
+      "errata_applied": 0,
+      "id": 2382,
+      "kit_id": "poe1-baron-zombies",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

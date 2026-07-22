@@ -1,0 +1,818 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 6
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 541,
+      "assert_text": "primary_delivery_class == 'aura'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-aegis-max-block",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "ComradeSerge#4604",
+    "cite_class": "communal",
+    "id": 1,
+    "kit_id": "poe1-aegis-max-block",
+    "quarantined": 0,
+    "rank_class": "recovered",
+    "site": "pathofexile.com/forum",
+    "title": "[3.1] GLADIATOR 1H+Shield Max Block & Spell Block Tank",
+    "url": "https://www.pathofexile.com/forum/view-thread/868996"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "ComradeSerge#4604",
+      "cite_class": "communal",
+      "id": 1,
+      "kit_id": "poe1-aegis-max-block",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "pathofexile.com/forum",
+      "title": "[3.1] GLADIATOR 1H+Shield Max Block & Spell Block Tank",
+      "url": "https://www.pathofexile.com/forum/view-thread/868996"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 2,
+      "kit_id": "poe1-aegis-max-block",
+      "quarantined": 0,
+      "rank_class": "recovered",
+      "site": "poedb.tw",
+      "title": "Aegis Aurora - poedb.tw",
+      "url": "https://poedb.tw/us/Aegis_Aurora"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-aegis-max-block",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 506,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-aegis-max-block",
+      "missing_expression": "Block-chance stacking to a ~75% cap and 'ES recovered per block' are numeric magnitudes the engine expresses via def-bin block rider + on-block trigger, not a bespoke mechanism;",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "Block-chance stacking to a ~75% cap and 'ES recovered per block' are numeric magnitudes the engine expresses via def-bin block rider + on-block trigger, not a bespoke mechanism; identity intact, the exact 'infinite shield vs blockable damage' feel is a numeric-tuning outcome. Delivery-agnostic offense means the offensive geometry is a placeholder, not a source-fixed skill."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.95,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 5,
+      "kit_id": "poe1-aegis-max-block",
+      "payload_json": {
+        "handle": "ComradeSerge#4604",
+        "site": "pathofexile.com/forum",
+        "thread": "https://www.pathofexile.com/forum/view-thread/868996"
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/868996"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Versatile Combatant + Violent Retaliation + Outmatch and Outlast",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 4,
+      "kit_id": "poe1-aegis-max-block",
+      "payload_json": {
+        "ascendancy": "Gladiator",
+        "keystone_nodes": [
+          "Versatile Combatant (max spell block = attack block)",
+          "Violent Retaliation (+damage per block charge)",
+          "Outmatch and Outlast"
+        ],
+        "note": "Gladiator provides attack+spell block cap synergy; Inquisitor and Necromancer variants use different ascendancies but same block-as-ES-recovery engine."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/868996"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Recover Energy Shield equal to 2% of Armour when you Block",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 3,
+      "kit_id": "poe1-aegis-max-block",
+      "payload_json": {
+        "alteration": "Block event triggers instant ES recovery equal to 2% of Armour value. Also grants +5% max cold resist and +6% block chance.",
+        "key_unique": "Aegis Aurora",
+        "secondary_item": "Tempest Shield (skill gem)",
+        "tempest_shield_alteration": "Grants block chance as a buff; zaps attacker with chain lightning on each block."
+      },
+      "source_url": "https://poedb.tw/us/Aegis_Aurora"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Recover Energy Shield equal to 2% of Armour when you Block",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 2,
+      "kit_id": "poe1-aegis-max-block",
+      "payload_json": {
+        "geometry_note": "delivery-agnostic: any skill can sit on top of the block engine; Tempest Shield chains lightning to nearby on block",
+        "verbatim": "at-target delivery with small-radius; melee hit small radius; Aegis Aurora block is at-target (no projectile, no AoE emitted — block is defensive proc)"
+      },
+      "source_url": "https://poedb.tw/us/Aegis_Aurora"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Aegis Aurora replenishes your energy shield each time you block",
+      "conf": 0.78,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1,
+      "kit_id": "poe1-aegis-max-block",
+      "payload_json": {
+        "description": "Player attacks or uses any skill (delivery-agnostic); each block triggers Aegis Aurora's instant ES recovery (2% of armour); at high block chance and armour, ES refills faster than boss damage can deplete it. Tempest Shield provides persistent block chance buff and returns lightning damage on block. The loop is: hit → block → ES recovered → continue attacking."
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/868996"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.7,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 6,
+      "kit_id": "poe1-aegis-max-block",
+      "payload_json": {
+        "named_variants": [
+          "Gladiator (Versatile Combatant block cap)",
+          "Inquisitor (Consecrated Ground + Battlemage)",
+          "Necromancer (minion hybrid)"
+        ]
+      },
+      "source_url": "https://www.pathofexile.com/forum/view-thread/868996"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "triggered",
+    "cell_key": "walk|at-target|flat|ground_targeted_circle|damage|hard-stop|mitigate|free|solo|melee|med|instant|triggered|one-shot",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:freeze\"]",
+    "ctrl_ailments_mapped": "[\"chill\"]",
+    "ctrl_function": "hard-stop",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "one-shot",
+    "econ_gaps": "[\"PC\"]",
+    "econ_meter_type": "n/a",
+    "econ_status": "gap",
+    "economy_model": "free",
+    "flags": [],
+    "geometry_conf": 0.53,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "poe1-aegis-max-block",
+    "mob_policy_while_casting": "walk",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "walk"
+    ],
+    "provenance_json": {
+      "atlas_key": "SMMFSI-MSDM-SW-CO-~~",
+      "delivery": "at-target",
+      "elem_raw": "cold",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:freeze"
+        ],
+        "ailments_mapped": [
+          "chill"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [
+          "PC"
+        ],
+        "meter_type": "n/a",
+        "status": "gap"
+      },
+      "engine_geometry": {
+        "conf": 0.53,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Aegis Max Block",
+      "game": "poe1",
+      "kit_id": "poe1-aegis-max-block",
+      "mob": {
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "SMMFSI-MSDM-SW-CO-~~",
+        "delivery": "at-target",
+        "elem_raw": "cold",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "block",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": 2,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "aura",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-aegis-max-block",
+      "motion_signature": null,
+      "origin": "self",
+      "pierce": null,
+      "range_band": "self",
+      "skill_ordinal": 0,
+      "source_anchor": "persistent block-chance buff that returns a lightning chain to attackers on each successful block; the returned zap is a defensive-proc consequence, not a targeted offensive geometry",
+      "source_skill": "Tempest Shield",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-aegis-max-block",
+      "motion_signature": "straight_line",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "the kit is delivery-agnostic — any offense sits atop the block engine; single_target placeholder for the on-block Retaliation payload. Offense identity is subordinate to the defensive loop",
+      "source_skill": "delivery-agnostic offense (Retaliation / attached spell / totem)",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-aegis-max-block",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "Block-chance stacking to a ~75% cap and 'ES recovered per block' are numeric magnitudes the engine expresses via def-bin block rider + on-block trigger, not a bespoke mechanism; identity intact, the exact 'infinite shield vs blockable damage' feel is a numeric-tuning outcome. Delivery-agnostic offense means the offensive geometry is a placeholder, not a source-fixed skill.",
+    "grade": "CLOSE",
+    "kit_id": "poe1-aegis-max-block",
+    "mapping_json": {
+      "fidelity_notes": "Aegis Aurora's 'ES recovered = 2% armour on block' is the identity; engine expresses it as on-block-successful trigger -> resource-fill consequence, paired with damage_taken_converts_shape=resource-fill in TH lane. Block-chance-cap (~75%) is a numeric def-bin rider (deflect_condition family), not an ailment. elem_raw=cold is flavor (Aegis cold-res grant); Tempest Shield return-damage is lightning; kit is functionally element-neutral defensive. Offense is delivery-agnostic so no dominant offensive geometry — single_target placeholder noted. RETRIBUTION_ENGINE routes the Retaliation block-to-damage conversion variant.",
+      "motion_frame": "stationary bruiser: tank in melee, block rate passively sustains and retaliates while any offense rides on top",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "damage_taken_converts_shape": "resource-fill",
+        "persistent_condition_shape": "proc-loop"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "reservation-free defensive chassis; block-chance as def-bin rider"
+          ],
+          "geometry": [],
+          "traits_affixes": [
+            "block-chance",
+            "max-block-cap",
+            "armour-scaling (feeds ES-recovery-per-block)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "persistent block-chance buff that returns a lightning chain to attackers on each successful block; the returned zap is a defensive-proc consequence, not a targeted offensive geometry",
+          "element_primary": "lightning",
+          "element_secondary": null,
+          "geometry_value": "self_buff",
+          "source_skill": "Tempest Shield"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "the kit is delivery-agnostic — any offense sits atop the block engine; single_target placeholder for the on-block Retaliation payload. Offense identity is subordinate to the defensive loop",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "single_target",
+          "source_skill": "delivery-agnostic offense (Retaliation / attached spell / totem)"
+        }
+      ],
+      "t4_doors": [
+        "DEFENSIVE_TRADEOFF",
+        "RETRIBUTION_ENGINE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": "resource-fill",
+        "mark_identity": null,
+        "proc_trigger_condition": "on-block-successful",
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "chill",
+          "freeze"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 113,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 114,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.56,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.56,
+        "evidence": "Direct melee attacks with block-as-sustain core; Aegis Aurora restores ES per block",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 111,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "proc",
+        "plain_text": "block (proc); Every BLOCK restores energy shield via Aegis Aurora — at capped block chance the",
+        "resource_verbatim": "block"
+      },
+      "family": "economy",
+      "id": 115,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "cold"
+      },
+      "family": "element",
+      "id": 116,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.53,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.53,
+        "evidence": "Melee hit small radius; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 112,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with small-radius footprint. Every BLOCK restores energy shield via Aegis Aurora  —  at capped block chance the defense refills itself faster than bosses can spend it; a m.",
+      "family": "geo_text",
+      "id": 118,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "policy_while_casting": "walk",
+        "skill_is_movement": false,
+        "verbs": [
+          "walk"
+        ]
+      },
+      "family": "movement",
+      "id": 117,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 119,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 120,
+      "kit_id": "poe1-aegis-max-block",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Aegis Max Block: self buff aura identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-aegis-max-block",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:lightning",
+      "hook_id": "H2",
+      "hook_text": "lightning element register",
+      "hook_type": "register",
+      "kit_id": "poe1-aegis-max-block",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.62,
+    "amp_val": "flat",
+    "architecture": null,
+    "atlas_coords": "walk|at-target|flat|ground_targeted_circle|damage|hard-stop|mitigate|free|solo|melee|med|instant|triggered|one-shot",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "walk|at-target|flat|ground_targeted_circle|damage|hard-stop|mitigate|free|solo|melee|med|instant|triggered|one-shot",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "walk"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "flat"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hard-stop"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "free"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "melee"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "triggered"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "one-shot"
+        }
+      ]
+    },
+    "atlas_key_orig": "SMMFSI-MSDM-SW-CO-~~",
+    "attr_conf": 0.62,
+    "attr_val": "STR",
+    "avg_conf": 0.62,
+    "canon_tier": "deep",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.62,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "delivery-agnostic",
+      "Tempest Shield"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "cold",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "block-refills-ES",
+    "elem_raw": "cold",
+    "era_year": 2013,
+    "eras": "3.7-3.13;3.14-3.19;3.20+",
+    "eras_normalized": "3.7-3.13;3.14-3.19;3.20+",
+    "flags": "vdm2-w5-elem-anomaly-2026-07-22: elem_raw='cold' but Tempest Shield + Aegis Aurora deal LIGHTNING; cold is block-cap/ES thematic, not skill output",
+    "folk_name": "Aegis Max Block",
+    "game": "poe1",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-aegis-max-block",
+    "lattice_coord": "SMMFSI",
+    "lineage": "",
+    "mech_note": "Aegis Aurora unique shield: every successful block restores a flat amount of Energy Shield. At maximum block chance (~75% + Tempest Shield + Anvil + block nodes), blocks occur so frequently that the ES regenerates faster than most boss damage depletes it — an effective infinite shield loop against any attack that can be blocked. Gladiator or Juggernaut ascendancy provides the block cap and block-recovery nodes. The offense comes from Retaliation (block-to-damage conversion) or attached spells (Static Strike, Holy Flame Totem). Projectiles from Tempest Shield also deal damage per block. The build is pure defense-first: the player tanks while the block rate passively shreds attackers. Counter-play: unblockable skills (many boss mechanics), chaos damage (bypasses ES), and Corrupted Blood (stacking bleed). One of PoE1's most distinctive defensive archetypes.",
+    "mint": 0,
+    "mob_raw": "med",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×econ:stat-weapon",
+    "mobile_key_group": "SMMFSI-MSDM-SW-CO-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "cold",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.62,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.62,
+    "range_val": "melee",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.62,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "TRAP-MINE",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "corpus.db table atlas_gateA_labels_2026_07_14 (col \"group\"; byte-identical to atlas_gateA_labels_refit_candidate_1)",
+    "spine_status": "ACTIVE",
+    "tier": "RATIFIED"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "updates 'from 1.0.6 to this day for each patch,' indicating continuous maintenance across multiple game versions",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in eras 3.7-3.13, 3.14-3.19, 3.20+",
+      "errata_applied": 0,
+      "id": 3,
+      "kit_id": "poe1-aegis-max-block",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/868996",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Aegis Aurora replenishes your energy shield each time you block",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Aegis Max Block' and alias 'Aegis Aurora archetype' are real community usage",
+      "errata_applied": 0,
+      "id": 1,
+      "kit_id": "poe1-aegis-max-block",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.pathofexile.com/forum/view-thread/868996",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Recover Energy Shield equal to 2% of Armour when you Block",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core mechanic: Aegis Aurora restores ES per block; Tempest Shield as persistent buff; delivery-agnostic (any skill can use the block sustain engine)",
+      "errata_applied": 0,
+      "id": 2,
+      "kit_id": "poe1-aegis-max-block",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Aegis_Aurora",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "persistent block-chance buff that returns a lightning chain to attackers on each successful block; the returned zap is a defensive-proc consequence, not a targeted offensive geometry",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Tempest Shield' delivery_class=aura (band_conf=0.75); lint: anchor entails 'aura' (2 sig)",
+      "errata_applied": 0,
+      "id": 2367,
+      "kit_id": "poe1-aegis-max-block",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "the kit is delivery-agnostic — any offense sits atop the block engine; single_target placeholder for the on-block Retaliation payload. Offense identity is subordinate to the defensive loop",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'delivery-agnostic offense (Retaliation / attached spell / totem)' delivery_class=projectile (band_conf=0.75); lint: anchor entails no delivery class incl. assigned 'projectile'",
+      "errata_applied": 0,
+      "id": 2368,
+      "kit_id": "poe1-aegis-max-block",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "ANCHOR_WEAK",
+      "anchor_quote": "poedb Tempest_Shield: \"arcing LIGHTNING damage to attackers when you block\"; Aegis Aurora is a COLD-themed unique shield but active skill output is LIGHTNING (W1 anchor).",
+      "claim_family": "mechanics",
+      "claim_subject": "elem_anomaly",
+      "claim_text": "[§7 elem_raw anomaly · PROPOSED:AMBIGUOUS-HOLD] elem_raw='cold' — Two registers legitimately collide: the ACTIVE skill (Tempest Shield) deals lightning; the build's IDENTITY unique (Aegis Aurora) + block-cap/ES playstyle is cold-themed. elem_raw='cold' tags the build identity, not the skill output. Anchor supports lightning for the skill but does NOT unambiguously refute the cold build-identity tag. Honest uncertainty → HOLD; a court re-derivation to lightning is defensible but not anchor-forced.",
+      "errata_applied": 0,
+      "id": 2564,
+      "kit_id": "poe1-aegis-max-block",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "player_attested",
+      "source_url": null,
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

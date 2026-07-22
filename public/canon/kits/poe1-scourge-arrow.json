@@ -1,0 +1,778 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 615,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "poe1-scourge-arrow",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "dataset",
+    "id": 181,
+    "kit_id": "poe1-scourge-arrow",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "poedb.tw",
+    "title": "Scourge Arrow — PoEDB",
+    "url": "https://poedb.tw/us/Scourge_Arrow"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "dataset",
+      "id": 181,
+      "kit_id": "poe1-scourge-arrow",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "poedb.tw",
+      "title": "Scourge Arrow — PoEDB",
+      "url": "https://poedb.tw/us/Scourge_Arrow"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "unknown",
+      "cite_class": "communal",
+      "id": 182,
+      "kit_id": "poe1-scourge-arrow",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "pathofexileclub.wordpress.com",
+      "title": "POE 3.8 Popular Scourge Arrow Pathfinder Build",
+      "url": "https://pathofexileclub.wordpress.com/2019/10/06/poe-3-8-popular-scourge-arrow-pathfinder-build-fast-tanky-easy-friendly-guide/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=ramp (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "poe1-scourge-arrow",
+    "shape": "ramp",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 578,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 tranche; W1 GAP-annotation lineage)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "poe1-scourge-arrow",
+      "missing_expression": "MANDATORY: the TWO-STAGE emission chain — arrow first (laying pods along its wake), pods THEN blooming delayed 9-arrow fans — is flattened to a single multi_projectile volley.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "MANDATORY: the TWO-STAGE emission chain — arrow first (laying pods along its wake), pods THEN blooming delayed 9-arrow fans — is flattened to a single multi_projectile volley. The player of the original loses pod-line PLACEMENT (painting a lane of delayed bloomers through/behind the pack) and the stage-dependent pod-count texture; the channel-charge rhythm and the close-range poison-shotgun payoff are intact — 'that build, worse', not 'not that build'."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.88,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 395,
+      "kit_id": "poe1-scourge-arrow",
+      "payload_json": {
+        "handle": "TbXie",
+        "note": "TbXie authored Poison Scourge Arrow Pathfinder Build Guide on poe-vault.com",
+        "site": "poe-vault.com"
+      },
+      "source_url": "https://www.poe-vault.com/guides/poison-scourge-arrow-pathfinder-build-guide"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "each Spore Pod to fire 0.05 additional Thorn Arrows per 1% gem quality",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "capstone_alterations",
+      "id": 394,
+      "kit_id": "poe1-scourge-arrow",
+      "payload_json": {
+        "capstone_alterations": [
+          {
+            "anchor_quote": "each Spore Pod to fire 0.05 additional Thorn Arrows per 1% gem quality",
+            "effect": "each Spore Pod fires 0.05 additional Thorn Arrows per 1% gem quality",
+            "node": "Anomalous Scourge Arrow (alt quality)",
+            "type": "alt_quality"
+          },
+          {
+            "anchor_quote": "Fires 4 thorn arrows per pod (versus 9 for standard version)",
+            "effect": "Fires 4 thorn arrows per pod (vs 9 standard); higher mana cost 9-13 at levels 1-20",
+            "node": "Scourge Arrow of Menace (transfig)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Scourge_Arrow"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Fires 4 thorn arrows per pod (versus 9 for standard version)",
+      "conf": 0.9,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "d5-backfill",
+      "family": "item_alterations",
+      "id": 393,
+      "kit_id": "poe1-scourge-arrow",
+      "payload_json": {
+        "item_alterations": [
+          {
+            "anchor_quote": "Fires 4 thorn arrows per pod (versus 9 for standard version)",
+            "effect": "Fires 4 thorn arrows per pod (vs 9 standard); mana cost 9-13",
+            "item": "Scourge Arrow of Menace (transfig gem)",
+            "type": "transfigured_gem"
+          }
+        ]
+      },
+      "source_url": "https://poedb.tw/us/Scourge_Arrow"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'each spore pod blooms, firing thorn arrows, which travel for a short time before dissipating'",
+      "conf": 0.84,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 392,
+      "kit_id": "poe1-scourge-arrow",
+      "payload_json": {
+        "aoe": "pods fire 9 thorn arrows each in short-range fan; combined footprint is multi-spawn",
+        "delivery": "projectile (arrow flies to target); secondary multi-point (spore pods land in spread pattern along path)",
+        "notes": "Channel-and-release with delayed pod detonation; effective range is mid-to-long bow range"
+      },
+      "source_url": "https://poedb.tw/us/Scourge_Arrow"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "'channel to infuse an arrow with chaos, gaining stages while it is held... leaves spore pods in its wake'",
+      "conf": 0.87,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 391,
+      "kit_id": "poe1-scourge-arrow",
+      "payload_json": {
+        "loop": "Channel Scourge Arrow to grow thorn charge stages (max 5); release to fire an arrow that leaves spore pods in its wake; each pod blooms firing 9 thorn arrows; poison stacks accumulate from multiple hits"
+      },
+      "source_url": "https://poedb.tw/us/Scourge_Arrow"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": null,
+      "conf": 0.82,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 396,
+      "kit_id": "poe1-scourge-arrow",
+      "payload_json": {
+        "variants": [
+          "Pathfinder (primary; flask sustain + poison + Nature's Reprisal)",
+          "Ranger general"
+        ]
+      },
+      "source_url": "https://www.poe-vault.com/guides/poison-scourge-arrow-pathfinder-build-guide"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|projectile|spiky|multi_projectile|damage|hex|mitigate|spend|solo|ranged|med|channel|active|build→spend",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:poison-dot\", \"GAP-AILMENT:damage-amp\"]",
+    "ctrl_ailments_mapped": "[]",
+    "ctrl_function": "hex",
+    "ctrl_treatment": "damage",
+    "def_bin": "mitigate",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "projectile",
+    "dependency_val": "build→spend",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "spend",
+    "flags": [],
+    "geometry_conf": 0.66,
+    "geometry_rule_fired": "R7-multi",
+    "geometry_value": "multi_projectile",
+    "kit_id": "poe1-scourge-arrow",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DRMSSC-HMDD-SP-CH-~~",
+      "delivery": "projectile",
+      "elem_raw": "chaos",
+      "footprint": "multi-point"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:poison-dot",
+          "GAP-AILMENT:damage-amp"
+        ],
+        "ailments_mapped": [],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "mitigate",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.66,
+        "rule_fired": "R7-multi",
+        "value": "multi_projectile"
+      },
+      "flags": [],
+      "folk_name": "Scourge Arrow",
+      "game": "poe1",
+      "kit_id": "poe1-scourge-arrow",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DRMSSC-HMDD-SP-CH-~~",
+        "delivery": "projectile",
+        "elem_raw": "chaos",
+        "footprint": "multi-point"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "mana",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": "channel",
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "poe1-scourge-arrow",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "CHANNEL to grow thorn stages 1-5 (commit=channel); release fires the arrow, which leaves spore pods in its wake; each pod blooms a fan of 9 short-range thorn arrows; overlapping fans shotgun poison stacks at close range. Volley/fan -> multi_projectile; the pod-line staging is the approximated part",
+      "source_skill": "Scourge Arrow",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "poe1-scourge-arrow",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "MANDATORY: the TWO-STAGE emission chain — arrow first (laying pods along its wake), pods THEN blooming delayed 9-arrow fans — is flattened to a single multi_projectile volley. The player of the original loses pod-line PLACEMENT (painting a lane of delayed bloomers through/behind the pack) and the stage-dependent pod-count texture; the channel-charge rhythm and the close-range poison-shotgun payoff are intact — 'that build, worse', not 'not that build'.",
+    "grade": "APPROX",
+    "kit_id": "poe1-scourge-arrow",
+    "mapping_json": {
+      "fidelity_notes": "chaos-poison kit -> EARTH per crosswalks section-1 nature/venom register (thorn arrows, SPORE pods, Pathfinder chassis, Nature's Reprisal — plant-venom themed throughout) — the deliberate counterpoint to poison-bv's shadow read in this same batch; poison ailment lane either way. Channel commit carried by corpus commit_val=channel + the accumulator charge-spend. CAPSTONE ABSTAINED — doors from identity: PERSISTENCE_ENGINE_saturation (poison-stack saturation is the kill mechanism) + MOMENTUM_CASCADE (charge-stages-then-payoff release rhythm; b04 heavy-strike build-up-to-payoff reading). Era 3.0-3.6 + 3.7-3.13.",
+      "motion_frame": "channel-and-release bowman: hold to grow thorn stages, release the spore-pod volley, reposition while poison ticks — a rhythmic charge/dump cadence",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "charge_stack_sub_shape": "accumulator"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "channel-stage accumulator (1-5) spent on release",
+            "mana-light"
+          ],
+          "geometry": [
+            "multi_projectile pod-fan volley (9 thorn arrows per pod)",
+            "pod line laid along the arrow's path (approximated as volley spread)"
+          ],
+          "traits_affixes": [
+            "poison damage / duration / faster-poison",
+            "channel + attack speed (stage growth rate)",
+            "projectile count / AoE (pod coverage)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "poison"
+          ],
+          "delivery_notes": "CHANNEL to grow thorn stages 1-5 (commit=channel); release fires the arrow, which leaves spore pods in its wake; each pod blooms a fan of 9 short-range thorn arrows; overlapping fans shotgun poison stacks at close range. Volley/fan -> multi_projectile; the pod-line staging is the approximated part",
+          "element_primary": "earth",
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Scourge Arrow"
+        }
+      ],
+      "t4_doors": [
+        "PERSISTENCE_ENGINE_saturation",
+        "MOMENTUM_CASCADE"
+      ],
+      "trigger_grammar": null
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "poison",
+          "wither"
+        ],
+        "centrality": "none",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 4213,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "resist",
+          "energy-shield"
+        ],
+        "primary": "resist"
+      },
+      "family": "defense",
+      "id": 4214,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.7,
+        "evidence": "Arrow projectile released after channel; spore pods land in spread pattern",
+        "value": "projectile"
+      },
+      "family": "delivery",
+      "id": 4211,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "spend",
+        "plain_text": "mana (spend); Channel to grow thorn charge stages, release a spore-pod fan — bow channel-and-r",
+        "resource_verbatim": "mana"
+      },
+      "family": "economy",
+      "id": 4215,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hybrid",
+        "label_verbatim": "chaos"
+      },
+      "family": "element",
+      "id": 4216,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.66,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.66,
+        "evidence": "Multiple spore pods fan from arrow release; geo=multi-spawn in atlas",
+        "value": "multi-point"
+      },
+      "family": "footprint",
+      "id": 4212,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Projectile delivery with multi-point footprint. Channel to grow thorn charge stages, release a spore-pod fan  —  bow channel-and-release with poison stacking.",
+      "family": "geo_text",
+      "id": 4218,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 4217,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Lv2 gem: +1–2% base damage; scaling threshold unchanged.",
+      "family": "rank1_upgrade",
+      "id": 4219,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 4220,
+      "kit_id": "poe1-scourge-arrow",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Scourge Arrow: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "poe1-scourge-arrow",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:earth",
+      "hook_id": "H2",
+      "hook_text": "earth element register",
+      "hook_type": "register",
+      "kit_id": "poe1-scourge-arrow",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.78,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|projectile|spiky|multi_projectile|damage|hex|mitigate|spend|solo|ranged|med|channel|active|build→spend",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|projectile|spiky|multi_projectile|damage|hex|mitigate|spend|solo|ranged|med|channel|active|build→spend",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "projectile"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "multi_projectile"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "hex"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "mitigate"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "spend"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "ranged"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "channel"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "build→spend"
+        }
+      ]
+    },
+    "atlas_key_orig": "DRMSSC-HMDD-SP-CH-~~",
+    "attr_conf": 0.78,
+    "attr_val": "DEX",
+    "avg_conf": 0.78,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.78,
+    "commit_provenance": null,
+    "commit_val": "channel",
+    "core_skills": [
+      "Scourge Arrow"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "poe1",
+    "corpus_class": "record",
+    "court": "chaos-poison",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "mana-light",
+    "elem_raw": "chaos",
+    "era_year": 2013,
+    "eras": "3.0-3.6;3.7-3.13",
+    "eras_normalized": "3.0-3.6;3.7-3.13",
+    "flags": "",
+    "folk_name": "Scourge Arrow",
+    "game": "poe1",
+    "geo_raw": "multi-spawn",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "GAP-P1-04",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "poe1-scourge-arrow",
+    "lattice_coord": "DRMSSC",
+    "lineage": "",
+    "mech_note": "Channel to grow thorn charge stages, release a spore-pod fan — bow channel-and-release with poison stacking.",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-B+C: sustained-stream/channel verb + movement-tax tuning",
+    "mobile_cell_id": "SOLO|MULTI|CHAN×GAP-P1-04",
+    "mobile_key_group": "DRMSSC-HMDD-SP-CH-~~",
+    "mobile_mechanics_status": "blocked-new",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "chaos",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.78,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.78,
+    "range_val": "ranged",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.78,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": "DOT-AILMENT",
+    "on_spine": true,
+    "shadowed_by": null,
+    "source_artifact": "agentic_orchestration/research/curated/atlas/atlas-e4-family-candidates.json dockets[docket_id=4].members (working_label=DOT-AILMENT; status=proposed)",
+    "spine_status": "ACTIVE",
+    "tier": "DOCKET"
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Scourge Arrow introduced version 3.4.0 (Delve league); immediately used in 3.4-3.6 Pathfinder builds",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.0-3.6",
+      "errata_applied": 0,
+      "id": 219,
+      "kit_id": "poe1-scourge-arrow",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Scourge_Arrow",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'In 3.7 and 3.8 poison builds received huge buffs... Scourge Arrow was buffed too'; POE 3.8 Scourge Arrow Pathfinder guide confirms meta presence",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Build present/meta in era 3.7-3.13",
+      "errata_applied": 0,
+      "id": 220,
+      "kit_id": "poe1-scourge-arrow",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://pathofexileclub.wordpress.com/2019/10/06/poe-3-8-popular-scourge-arrow-pathfinder-build-fast-tanky-easy-friendly-guide/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'Scourge Arrow' is the official gem name and primary build identifier; 'Poison Scourge Arrow Pathfinder' is the canonical community name",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Scourge Arrow' is real community usage",
+      "errata_applied": 0,
+      "id": 217,
+      "kit_id": "poe1-scourge-arrow",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Scourge_Arrow",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "'channel to infuse an arrow with chaos, gaining stages while it is held... leaves spore pods in its wake... each spore pod blooms, firing thorn arrows'",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill Scourge Arrow; channel to grow thorn stages; release spore-pod fan; bow channel-and-release with poison stacking",
+      "errata_applied": 0,
+      "id": 218,
+      "kit_id": "poe1-scourge-arrow",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://poedb.tw/us/Scourge_Arrow",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "CHANNEL to grow thorn stages 1-5 (commit=channel); release fires the arrow, which leaves spore pods in its wake; each pod blooms a fan of 9 short-range thorn arrows; overlapping fans shotgun poison stacks at close range. Volley/fan -> multi_projectile; the pod-line staging is the approximated part",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Scourge Arrow' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (3 sig)",
+      "errata_applied": 0,
+      "id": 2463,
+      "kit_id": "poe1-scourge-arrow",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,795 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 1,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 2,
+    "probe_facts": 10,
+    "recognition_hooks": 2,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 928,
+      "assert_text": "primary_delivery_class == 'projectile'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "gd-canister-saboteur",
+      "last_result": "green",
+      "routed_docket_id": null
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": "chillstepbbc",
+    "cite_class": "authored",
+    "id": 435,
+    "kit_id": "gd-canister-saboteur",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "forums.crateentertainment.com",
+    "title": "[1.0.0.9] [Saboteur] The Grenado Gunslinger [Caster/Gunslinger] (Apr 2017)",
+    "url": "https://forums.crateentertainment.com/t/1-0-0-9-saboteur-the-grenado-gunslinger-caster-gunslinger/38302"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "chillstepbbc",
+      "cite_class": "authored",
+      "id": 435,
+      "kit_id": "gd-canister-saboteur",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.0.0.9] [Saboteur] The Grenado Gunslinger [Caster/Gunslinger] (Apr 2017)",
+      "url": "https://forums.crateentertainment.com/t/1-0-0-9-saboteur-the-grenado-gunslinger-caster-gunslinger/38302"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": "Torzini",
+      "cite_class": "authored",
+      "id": 436,
+      "kit_id": "gd-canister-saboteur",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "forums.crateentertainment.com",
+      "title": "[1.1.9.3] The Sparkle Bomber - Cold Canister Bomb/PB Saboteur [SR75+]",
+      "url": "https://forums.crateentertainment.com/t/1-1-9-3-the-sparkle-bomber-cold-canister-bomb-pb-saboteur-sr75/112102"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "gd-canister-saboteur",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "accepted_downgrade",
+      "deviation_id": 804,
+      "docket": null,
+      "docket_id": null,
+      "downgrade_owner": "elrond (W4 GD tranche; internal-consistency reconcile, no W1 evidence — W5 is GD's external check)",
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "gd-canister-saboteur",
+      "missing_expression": "minor drift: the source player uses Flashbang as a hard CC/debuff (community calls it 'Insane') and stun-locks packs -- but the engine emits NO CC token for it because the fetched anchor names only 'debuff' (stun/blind live in probe/claim-paraphrase, both inadmissible).",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "none",
+      "source_anchor": "minor drift: the source player uses Flashbang as a hard CC/debuff (community calls it 'Insane') and stun-locks packs -- but the engine emits NO CC token for it because the fetched anchor names only 'debuff' (stun/blind live in probe/claim-paraphrase, both inadmissible). Canister's cluster-scatter maps to multi_projectile and internal-trauma to bleed cleanly. The withheld Flashbang CC + Thermite RR are near-misses, not silent drops."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 0,
+      "anchor_quote": "chillstepbbc posted this build guide on April 3, 2017; Torzini posted November 20, 2021",
+      "conf": 1.0,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 923,
+      "kit_id": "gd-canister-saboteur",
+      "payload_json": {
+        "handle": "chillstepbbc",
+        "post_type": "build guide",
+        "secondary_handle": "Torzini",
+        "site": "forums.crateentertainment.com"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-9-saboteur-the-grenado-gunslinger-caster-gunslinger/38302"
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 922,
+      "kit_id": "gd-canister-saboteur",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 921,
+      "kit_id": "gd-canister-saboteur",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "bigger pierce component and non transmutable internal trauma — scatter/fragment damage on impact",
+      "conf": 0.75,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 920,
+      "kit_id": "gd-canister-saboteur",
+      "payload_json": {
+        "delivery": "lobbed-projectile",
+        "footprint": "small-radius-scatter",
+        "notes": "Cluster bomb: lobbed at target, fragments scatter on impact in small radius; Flashbang thrown separately"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-9-saboteur-the-grenado-gunslinger-caster-gunslinger/38302"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Use Canister Bomb and PB whenever they are off cooldown... toss Flashbang",
+      "conf": 0.8,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 919,
+      "kit_id": "gd-canister-saboteur",
+      "payload_json": {
+        "summary": "Lob Canister Bomb at target; cluster fragments scatter on impact; use off cooldown; Flashbang as debuff/CC; Thermite Mines for RR support; cooldown-based grenadier rhythm"
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-1-9-3-the-sparkle-bomber-cold-canister-bomb-pb-saboteur-sr75/112102"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "[1.2.0.3] Flames of Frenzy - Ulzuin Fire Canister Bomb Shieldbreaker... [1.1.9.3] The Sparkle Bomber - Cold Canister Bomb",
+      "conf": 0.72,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 924,
+      "kit_id": "gd-canister-saboteur",
+      "payload_json": {
+        "known_variants": [
+          "Cold Canister Bomb + PB Saboteur (Sparkle Bomber)",
+          "Fire Canister Bomb Shieldbreaker (Ulzuin)",
+          "Unimaginative Grenado+Canister Bomb Purifier"
+        ]
+      },
+      "source_url": "https://forums.crateentertainment.com/t/1-2-0-3-flames-of-frenzy-ulzuin-fire-canister-bomb-shieldbreaker-sr-80-81/133944"
+    }
+  ],
+  "engine_key": {
+    "activation_val": "active",
+    "cell_key": "full-move|at-target|spiky|ground_targeted_circle|damage|stun|tank|cooldown|solo|dual|med|instant|active|apply→detonate",
+    "ctrl_ailment_gaps": "[\"GAP-AILMENT:stun\"]",
+    "ctrl_ailments_mapped": "[\"burn\"]",
+    "ctrl_function": "stun",
+    "ctrl_treatment": "damage",
+    "def_bin": "tank",
+    "def_conf": 0.65,
+    "def_riders": "[]",
+    "delivery_value": "at-target",
+    "dependency_val": "apply→detonate",
+    "econ_gaps": "[]",
+    "econ_meter_type": "n/a",
+    "econ_status": "native",
+    "economy_model": "cooldown",
+    "flags": [],
+    "geometry_conf": 0.72,
+    "geometry_rule_fired": "R8-at-target",
+    "geometry_value": "ground_targeted_circle",
+    "kit_id": "gd-canister-saboteur",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 0,
+    "mob_verbs": [
+      "run"
+    ],
+    "provenance_json": {
+      "atlas_key": "DDMSSI-HSMD-CD-FI-~~",
+      "delivery": "at-target",
+      "elem_raw": "fire",
+      "footprint": "small-radius"
+    },
+    "raw_json": {
+      "ctrl": {
+        "ailment_gaps": [
+          "GAP-AILMENT:stun"
+        ],
+        "ailments_mapped": [
+          "burn"
+        ],
+        "treatment": "damage"
+      },
+      "def": {
+        "bin": "tank",
+        "conf": 0.65,
+        "riders": []
+      },
+      "econ": {
+        "gaps": [],
+        "meter_type": "n/a",
+        "status": "native"
+      },
+      "engine_geometry": {
+        "conf": 0.72,
+        "rule_fired": "R8-at-target",
+        "value": "ground_targeted_circle"
+      },
+      "flags": [],
+      "folk_name": "Canister Bomb Saboteur",
+      "game": "gd",
+      "kit_id": "gd-canister-saboteur",
+      "mob": {
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "provenance": {
+        "atlas_key": "DDMSSI-HSMD-CD-FI-~~",
+        "delivery": "at-target",
+        "elem_raw": "fire",
+        "footprint": "small-radius"
+      },
+      "row_class": "combat-kit"
+    },
+    "resource_verbatim": "cooldown",
+    "route": null,
+    "row_class": "combat-kit"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "projectile",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-canister-saboteur",
+      "motion_signature": "fan_spread",
+      "origin": "self",
+      "pierce": "all",
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "lobbed cluster bomb whose fragments scatter on impact in a small radius, with a pierce component and internal trauma ('Cluster bomb: lobbed at target, fragments scatter on impact in small radius'; 'bigger pierce component and non transmutable internal trauma -- scatter/fragment damage on impact'). multi_projectile carries the cluster-fragment-scatter identity (phrase-book shotgun/volley/barrage -> multi_projectile). INTERNAL TRAUMA -> bleed (§A GD Internal-Trauma row = phys-DoT bleed): 'non transmutable internal trauma' is NAMED in fetched text on this skill, so bleed emits. Element fire (elem_raw / Demolitionist fire family).",
+      "source_skill": "Canister Bomb",
+      "speed_band": null,
+      "width_band": null
+    },
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "zone",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "gd-canister-saboteur",
+      "motion_signature": "ground_place",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 1,
+      "source_anchor": "thrown debuff/CC utility ('toss Flashbang'; 'Flashbang as debuff/CC'; 'Flashbang listed as Insane debuff'). ground_targeted_circle for the thrown-area debuff. NO ailment token: the fetched anchor names only 'debuff'/'Insane debuff' (shape-neutral); 'Flashbang' NAME does not attest blind, and 'stun' appears only in probe + claim-paraphrase, NOT in a fetched anchor -> both blind AND stun WITHHELD (§0.2 probe-illegal, §0.4 name-collision). See near-miss.",
+      "source_skill": "Flashbang",
+      "speed_band": null,
+      "width_band": null
+    }
+  ],
+  "kit_id": "gd-canister-saboteur",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "minor drift: the source player uses Flashbang as a hard CC/debuff (community calls it 'Insane') and stun-locks packs -- but the engine emits NO CC token for it because the fetched anchor names only 'debuff' (stun/blind live in probe/claim-paraphrase, both inadmissible). Canister's cluster-scatter maps to multi_projectile and internal-trauma to bleed cleanly. The withheld Flashbang CC + Thermite RR are near-misses, not silent drops.",
+    "grade": "CLOSE",
+    "kit_id": "gd-canister-saboteur",
+    "mapping_json": {
+      "fidelity_notes": "multi_projectile for the cluster-fragment scatter. bleed EMITTED via the §A GD Internal-Trauma row (internal trauma = phys-DoT bleed) -- 'non transmutable internal trauma' is NAMED on Canister Bomb in fetched text. Element fire (elem_raw / Demolitionist family); the fetched core-skill language emphasizes pierce + internal-trauma (physical-substrate) so fire is the base-identity slot while bleed carries the phys ailment. Flashbang: STUN and BLIND both WITHHELD -- 'stun/daze' is present only in the verify_ledger CLAIM paraphrase + probe (§0.2 probe-illegal), and the fetched anchor names only 'debuff'; 'Flashbang' name != blind attestation (§0.4). Thermite Mine RR: §2 RR-branch shape-silent -> WITHHOLD token, support-lane note only. GEOMETRY_COLLAPSE = closest T4 to the scatter-cluster identity. CLOSE.",
+      "motion_frame": "lob Canister Bombs off cooldown so the cluster fragments scatter across the pack dealing pierce + internal-trauma bleed, toss Flashbang as a debuff, and place Thermite Mines for resistance reduction on a grenadier rhythm",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cadence_scale": "cooldown-based grenadier lob rhythm (Canister + Flashbang off cooldown)"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "cooldown grenadier cadence"
+          ],
+          "geometry": [
+            "fragment scatter radius",
+            "Flashbang debuff zone",
+            "Thermite Mine placement"
+          ],
+          "traits_affixes": [
+            "fire + pierce/internal-trauma scaling",
+            "Thermite Mine -> resistance-reduction support lane (RR; token WITHHELD -- shape unanchored)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "ailments": [
+            "bleed"
+          ],
+          "delivery_notes": "lobbed cluster bomb whose fragments scatter on impact in a small radius, with a pierce component and internal trauma ('Cluster bomb: lobbed at target, fragments scatter on impact in small radius'; 'bigger pierce component and non transmutable internal trauma -- scatter/fragment damage on impact'). multi_projectile carries the cluster-fragment-scatter identity (phrase-book shotgun/volley/barrage -> multi_projectile). INTERNAL TRAUMA -> bleed (§A GD Internal-Trauma row = phys-DoT bleed): 'non transmutable internal trauma' is NAMED in fetched text on this skill, so bleed emits. Element fire (elem_raw / Demolitionist fire family).",
+          "element_primary": "fire",
+          "element_secondary": null,
+          "geometry_value": "multi_projectile",
+          "source_skill": "Canister Bomb"
+        },
+        {
+          "ailments": [],
+          "delivery_notes": "thrown debuff/CC utility ('toss Flashbang'; 'Flashbang as debuff/CC'; 'Flashbang listed as Insane debuff'). ground_targeted_circle for the thrown-area debuff. NO ailment token: the fetched anchor names only 'debuff'/'Insane debuff' (shape-neutral); 'Flashbang' NAME does not attest blind, and 'stun' appears only in probe + claim-paraphrase, NOT in a fetched anchor -> both blind AND stun WITHHELD (§0.2 probe-illegal, §0.4 name-collision). See near-miss.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "ground_targeted_circle",
+          "source_skill": "Flashbang"
+        }
+      ],
+      "t4_doors": [
+        "GEOMETRY_COLLAPSE"
+      ],
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": "apply-only"
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED"
+  },
+  "probe_facts": [
+    {
+      "conf": 0.68,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "ailments": [
+          "burn",
+          "stun"
+        ],
+        "centrality": "rider",
+        "conf": 0.68
+      },
+      "family": "control",
+      "id": 1953,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.65,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.65,
+        "layers": [
+          "armor",
+          "dodge",
+          "resist"
+        ],
+        "primary": "armor"
+      },
+      "family": "defense",
+      "id": 1954,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.77,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.77,
+        "evidence": "Cluster bomb lobbed at target; grenadier throw-scatter-detonate rhythm",
+        "value": "at-target"
+      },
+      "family": "delivery",
+      "id": 1951,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.7,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "builder_source": "n/a",
+        "conf": 0.7,
+        "meter_type": "n/a",
+        "model": "cooldown",
+        "plain_text": "cooldown (cooldown); Lobbed cluster bombs stun-locking packs under fragment rain — the grenadier rhyt",
+        "resource_verbatim": "cooldown"
+      },
+      "family": "economy",
+      "id": 1955,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.75,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.75,
+        "damage_mode": "hit",
+        "label_verbatim": "fire"
+      },
+      "family": "element",
+      "id": 1956,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.72,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.72,
+        "evidence": "Cluster bomb fragment scatter = small AoE; geo=small-AOE in atlas",
+        "value": "small-radius"
+      },
+      "family": "footprint",
+      "id": 1952,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "At-target delivery with small-radius footprint. Lobbed cluster bombs stun-locking packs under fragment rain  —  the grenadier rhythm of throw, scatter, detonate; Demolitionist's burst identi.",
+      "family": "geo_text",
+      "id": 1958,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": 0.78,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": {
+        "conf": 0.78,
+        "policy_while_casting": "full-move",
+        "skill_is_movement": false,
+        "verbs": [
+          "run"
+        ]
+      },
+      "family": "movement",
+      "id": 1957,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": "Rank 2: +minor base damage; skill modifier stack rate unchanged.",
+      "family": "rank1_upgrade",
+      "id": 1959,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    },
+    {
+      "conf": null,
+      "dossier_owed": 0,
+      "fact_provenance": "verified-v1.1",
+      "facts_json": [
+        "gt",
+        "kb (community knowledge base — PureDiablo / Icy Veins / Maxroll)"
+      ],
+      "family": "sources_used",
+      "id": 1960,
+      "kit_id": "gd-canister-saboteur",
+      "post_cutoff_cap": 0,
+      "prov": null
+    }
+  ],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Canister Bomb Saboteur: multi projectile projectile identity",
+      "hook_type": "geometry",
+      "kit_id": "gd-canister-saboteur",
+      "provenance": "crawled",
+      "rank": 1
+    },
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "element:fire",
+      "hook_id": "H2",
+      "hook_text": "fire element register",
+      "hook_type": "register",
+      "kit_id": "gd-canister-saboteur",
+      "provenance": "crawled",
+      "rank": 2
+    }
+  ],
+  "spine": {
+    "amp_conf": 0.85,
+    "amp_val": "spiky",
+    "architecture": null,
+    "atlas_coords": "full-move|at-target|spiky|ground_targeted_circle|damage|stun|tank|cooldown|solo|dual|med|instant|active|apply→detonate",
+    "atlas_coords_parsed": {
+      "expected_slots": 14,
+      "raw": "full-move|at-target|spiky|ground_targeted_circle|damage|stun|tank|cooldown|solo|dual|med|instant|active|apply→detonate",
+      "slot_count": 14,
+      "slots": [
+        {
+          "index": 0,
+          "label": "motion / mobility",
+          "value": "full-move"
+        },
+        {
+          "index": 1,
+          "label": "delivery",
+          "value": "at-target"
+        },
+        {
+          "index": 2,
+          "label": "amplitude (damage var.)",
+          "value": "spiky"
+        },
+        {
+          "index": 3,
+          "label": "geometry",
+          "value": "ground_targeted_circle"
+        },
+        {
+          "index": 4,
+          "label": "control function",
+          "value": "damage"
+        },
+        {
+          "index": 5,
+          "label": "control ailment",
+          "value": "stun"
+        },
+        {
+          "index": 6,
+          "label": "defensive profile",
+          "value": "tank"
+        },
+        {
+          "index": 7,
+          "label": "resource economy",
+          "value": "cooldown"
+        },
+        {
+          "index": 8,
+          "label": "proxy density",
+          "value": "solo"
+        },
+        {
+          "index": 9,
+          "label": "engagement range",
+          "value": "dual"
+        },
+        {
+          "index": 10,
+          "label": "damage tempo",
+          "value": "med"
+        },
+        {
+          "index": 11,
+          "label": "commitment",
+          "value": "instant"
+        },
+        {
+          "index": 12,
+          "label": "activation",
+          "value": "active"
+        },
+        {
+          "index": 13,
+          "label": "cadence / dependency",
+          "value": "apply→detonate"
+        }
+      ]
+    },
+    "atlas_key_orig": "DDMSSI-HSMD-CD-FI-~~",
+    "attr_conf": 0.85,
+    "attr_val": "DEX",
+    "avg_conf": 0.85,
+    "canon_tier": "moderate",
+    "capstone_source_acquisition": null,
+    "commit_conf": 0.85,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": [
+      "Canister Bomb",
+      "Flashbang"
+    ],
+    "core_skills_prov": "jsonl-stage0-backfill-2026-07-18",
+    "corpus_bucket": "gd",
+    "corpus_class": "record",
+    "court": "fire",
+    "ctrl_def_from_code": 1,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": "cooldown-rotation",
+    "elem_raw": "fire",
+    "era_year": 2016,
+    "eras": "base-2016;patch-1.1-1.2",
+    "eras_normalized": "base-2016;patch-1.1-1.2",
+    "flags": "",
+    "folk_name": "Canister Bomb Saboteur",
+    "game": "gd",
+    "geo_raw": "small-AOE",
+    "grain": "kit",
+    "grain_note": null,
+    "gx": "",
+    "is_system": 0,
+    "key_completeness": 12,
+    "kit_id": "gd-canister-saboteur",
+    "lattice_coord": "DDMSSI",
+    "lineage": "",
+    "mech_note": "Lobbed cluster bombs stun-locking packs under fragment rain — the grenadier rhythm of throw, scatter, detonate; Demolitionist's burst identi",
+    "mint": 0,
+    "mob_raw": "high",
+    "mobile_blocking_mechanics": "expressible-now",
+    "mobile_blocking_mechanics_archived": "LANDED-A: direct-hit instant verbs native",
+    "mobile_cell_id": "SOLO|SMALL|INST×econ:cooldown",
+    "mobile_key_group": "DDMSSI-HSMD-CD-FI-~~",
+    "mobile_mechanics_status": "have-core",
+    "mobile_rank_in_cell": 1,
+    "mobile_representative": 1,
+    "negative": 0,
+    "original_element": "fire",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "gt;kb",
+    "provenance_tag": "mobile-harvest-v3",
+    "proxy_conf": 0.85,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": 0.85,
+    "range_val": "dual",
+    "skill_debut_year": null,
+    "source": "canon",
+    "source_date": "2026-07-12",
+    "source_urls": null,
+    "stabilization_patch": null,
+    "suffix_rekey_status": "keyed-v1",
+    "tempo_conf": 0.85,
+    "tempo_val": "med",
+    "tier": "T1",
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": "version 1.0.0.9 which is the base-game era before expansions... Canister Bomb and Grenado are both active Demolitionist abilities in the base game",
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "Present in eras: base-2016, patch-1.1-1.2",
+      "errata_applied": 0,
+      "id": 556,
+      "kit_id": "gd-canister-saboteur",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-9-saboteur-the-grenado-gunslinger-caster-gunslinger/38302",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Saboteur combines Demolitionist and Nightblade... uses Canister Bomb as a RMB... Flashbang as active skill",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Canister Bomb Saboteur'; aliases include 'Flashbang Canister build', 'bomb-trap Saboteur'",
+      "errata_applied": 0,
+      "id": 554,
+      "kit_id": "gd-canister-saboteur",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-9-saboteur-the-grenado-gunslinger-caster-gunslinger/38302",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Canister Bomb... bigger pierce component and non transmutable internal trauma... Flashbang listed as 'Insane debuff'",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skills: Canister Bomb (cluster grenade scatter AoE), Flashbang (stun/daze rider)",
+      "errata_applied": 0,
+      "id": 555,
+      "kit_id": "gd-canister-saboteur",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://forums.crateentertainment.com/t/1-0-0-9-saboteur-the-grenado-gunslinger-caster-gunslinger/38302",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "lobbed cluster bomb whose fragments scatter on impact in a small radius, with a pierce component and internal trauma ('Cluster bomb: lobbed at target, fragments scatter on impact in small radius'; 'bigger pierce component and non transmutable internal trauma -- scatter/fragment damage on impact'). multi_projectile carries the cluster-fragment-scatter identity (phrase-book shotgun/volley/barrage -> multi_projectile). INTERNAL TRAUMA -> bleed (§A GD Internal-Trauma row = phys-DoT bleed): 'non tran",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Canister Bomb' delivery_class=projectile (band_conf=0.75); lint: anchor entails 'projectile' (3 sig)",
+      "errata_applied": 0,
+      "id": 2232,
+      "kit_id": "gd-canister-saboteur",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "thrown debuff/CC utility ('toss Flashbang'; 'Flashbang as debuff/CC'; 'Flashbang listed as Insane debuff'). ground_targeted_circle for the thrown-area debuff. NO ailment token: the fetched anchor names only 'debuff'/'Insane debuff' (shape-neutral); 'Flashbang' NAME does not attest blind, and 'stun' appears only in probe + claim-paraphrase, NOT in a fetched anchor -> both blind AND stun WITHHELD (§0.2 probe-illegal, §0.4 name-collision). See near-miss.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Flashbang' delivery_class=zone (band_conf=0.75); lint: anchor entails 'zone' (3 sig)",
+      "errata_applied": 0,
+      "id": 2233,
+      "kit_id": "gd-canister-saboteur",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}

@@ -1,0 +1,506 @@
+{
+  "_row_counts": {
+    "acceptance_asserts": 2,
+    "citations": 2,
+    "deviations": 1,
+    "dossier": 6,
+    "geometry_bands": 1,
+    "probe_facts": 0,
+    "recognition_hooks": 1,
+    "verify_ledger": 5
+  },
+  "acceptance_asserts": [
+    {
+      "assert_id": 850,
+      "assert_text": "primary_delivery_class == 'motion'",
+      "created_date": "2026-07-22",
+      "expected_state": null,
+      "hook_id": "H1",
+      "kit_id": "d2-teleport-sorc",
+      "last_result": "green",
+      "routed_docket_id": null
+    },
+    {
+      "assert_id": 851,
+      "assert_text": "expresses: No combat loop attested — the kit's identity is metagame transport service.",
+      "created_date": "2026-07-22",
+      "expected_state": "RED until engine lane exists (routed to docket)",
+      "hook_id": "H1",
+      "kit_id": "d2-teleport-sorc",
+      "last_result": "red",
+      "routed_docket_id": 138
+    }
+  ],
+  "best_citation": {
+    "accessed_date": "2026-07-18",
+    "archive_url": null,
+    "author_handle": null,
+    "cite_class": "official",
+    "id": 681,
+    "kit_id": "d2-teleport-sorc",
+    "quarantined": 0,
+    "rank_class": "attested-era",
+    "site": "diablo2.io",
+    "title": "Teleport — Diablo 2 Resurrected Skill",
+    "url": "https://diablo2.io/skills/teleport-t4176.html"
+  },
+  "citations": [
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "official",
+      "id": 681,
+      "kit_id": "d2-teleport-sorc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "diablo2.io",
+      "title": "Teleport — Diablo 2 Resurrected Skill",
+      "url": "https://diablo2.io/skills/teleport-t4176.html"
+    },
+    {
+      "accessed_date": "2026-07-18",
+      "archive_url": null,
+      "author_handle": null,
+      "cite_class": "communal",
+      "id": 682,
+      "kit_id": "d2-teleport-sorc",
+      "quarantined": 0,
+      "rank_class": "attested-era",
+      "site": "purediablo.com",
+      "title": "Build idea - Defensive 8 person baal teleporter for exp runs",
+      "url": "https://www.purediablo.com/forums/threads/build-idea-defensive-8-person-baal-teleporter-for-exp-runs-der-0.130063/"
+    }
+  ],
+  "delta_t4": {
+    "asserts_json": [
+      "T4 transformation shape=step (derived from mapping prose)"
+    ],
+    "created_date": "2026-07-22",
+    "kit_id": "d2-teleport-sorc",
+    "shape": "step",
+    "shape_signoff": "unvalidated",
+    "shape_signoff_by": null
+  },
+  "deviations": [
+    {
+      "created_date": "2026-07-22",
+      "deviation_class": "engine_inexpressible",
+      "deviation_id": 749,
+      "docket": {
+        "created_date": "2026-07-22",
+        "destination": "engine-design-intake",
+        "disposition": null,
+        "docket_family": "vdm2-w4-d2",
+        "docket_id": 138,
+        "evidence_kits": [
+          "d2-teleport-sorc"
+        ],
+        "intake_lane": "deviation",
+        "mechanism_class": "vdm2-deviation:d2-teleport-sorc",
+        "provenance_json": {
+          "auto_opened_by": "vdm2-w4-deviation-intake",
+          "tranche": "d2-record"
+        },
+        "source_deviation_id": 749,
+        "source_kit_id": "d2-teleport-sorc",
+        "spec_text_or_path": "Engine-inexpressible/param-gap surfaced by W4 D2 structuring of d2-teleport-sorc.",
+        "status": "open"
+      },
+      "docket_id": 138,
+      "downgrade_owner": null,
+      "downgrade_signoff_date": null,
+      "hook_refs": "[\"H1\"]",
+      "kit_id": "d2-teleport-sorc",
+      "missing_expression": "No combat loop attested — the kit's identity is metagame transport service.",
+      "proposed_fix_target": null,
+      "proposed_fix_type": "new_door_rfc",
+      "source_anchor": "No combat loop attested — the kit's identity is metagame transport service. Any combat mapping would be fabrication. Engine teleport geometry exists but the kit has no damage output to attach it to. First purely-utility non-combat kit in basin-3."
+    }
+  ],
+  "dossier": [
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "author_credit",
+      "id": 1607,
+      "kit_id": "d2-teleport-sorc",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "capstone_alterations",
+      "id": 1606,
+      "kit_id": "d2-teleport-sorc",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 1,
+      "anchor_quote": null,
+      "conf": null,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "item_alterations",
+      "id": 1605,
+      "kit_id": "d2-teleport-sorc",
+      "payload_json": null,
+      "source_url": null
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "instantly moves to a destination within your line of sight",
+      "conf": 0.85,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_geometry",
+      "id": 1604,
+      "kit_id": "d2-teleport-sorc",
+      "payload_json": {
+        "delivery": "at-target",
+        "footprint": "point",
+        "notes": "Caster moves to destination point instantly; no damage geometry. Mobility tool, not an attack."
+      },
+      "source_url": "https://diablo2.io/skills/teleport-t4176.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Instantly transports you between two points",
+      "conf": 0.83,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "skill_loop",
+      "id": 1603,
+      "kit_id": "d2-teleport-sorc",
+      "payload_json": {
+        "description": "Teleport skill used as primary utility: instant positional movement between two points; mana cost per use (additional levels only reduce mana cost). Used for rushing other characters through acts, teleporting to farming locations, mule ferrying. No combat damage output expected.",
+        "source_note": "diablo2.io Teleport skill page"
+      },
+      "source_url": "https://diablo2.io/skills/teleport-t4176.html"
+    },
+    {
+      "abstained": 0,
+      "anchor_quote": "Build idea - Defensive 8 person baal teleporter for exp runs",
+      "conf": 0.76,
+      "created_date": "2026-07-18",
+      "extraction_provenance": "fetched-vdm1",
+      "family": "variants",
+      "id": 1608,
+      "kit_id": "d2-teleport-sorc",
+      "payload_json": {
+        "variants": [
+          "Teleport mule (naked/low-combat sorceress, maxed Teleport for mana-free movement)",
+          "Act-rush teleporter (casts waypoints and rushes characters)",
+          "Baal teleporter (8-person exp run support)"
+        ]
+      },
+      "source_url": "https://www.purediablo.com/forums/threads/build-idea-defensive-8-person-baal-teleporter-for-exp-runs-der-0.130063/"
+    }
+  ],
+  "engine_key": {
+    "activation_val": null,
+    "cell_key": null,
+    "ctrl_ailment_gaps": null,
+    "ctrl_ailments_mapped": null,
+    "ctrl_function": null,
+    "ctrl_treatment": null,
+    "def_bin": null,
+    "def_conf": null,
+    "def_riders": null,
+    "delivery_value": null,
+    "dependency_val": null,
+    "econ_gaps": null,
+    "econ_meter_type": null,
+    "econ_status": null,
+    "economy_model": null,
+    "flags": [
+      "resolved:system-record"
+    ],
+    "geometry_conf": null,
+    "geometry_rule_fired": "mint-dossier-fold12-2026-07-13",
+    "geometry_value": null,
+    "kit_id": "d2-teleport-sorc",
+    "mob_policy_while_casting": "full-move",
+    "mob_skill_is_movement": 1,
+    "mob_verbs": null,
+    "provenance_json": {
+      "authority": "gandalf returns-adjudication 2026-07-13",
+      "geo_descriptor": "NOT a damage-delivery skill: movement identity (Teleport IS the verb)",
+      "geometry_rule_fired": "mint-dossier-curation",
+      "mob_descriptor": "maximum mobility; entire identity is mobility",
+      "source": "mint-dossier-fold12-2026-07-13"
+    },
+    "raw_json": {
+      "flags": [
+        "resolved:system-record"
+      ],
+      "geometry_value": null,
+      "kit_id": "d2-teleport-sorc",
+      "mob_policy_while_casting": "full-move",
+      "route": "mobility-grammar",
+      "row_class": "system-record",
+      "source": "mint-dossier-fold12-2026-07-13"
+    },
+    "resource_verbatim": null,
+    "route": "mobility-grammar",
+    "row_class": "system-record"
+  },
+  "geometry_bands": [
+    {
+      "band_conf": 0.75,
+      "cadence_class": null,
+      "chain": null,
+      "count_multiplier_source": null,
+      "count_multiplier_x": null,
+      "count_per_cast": 1,
+      "created_date": "2026-07-22",
+      "delivery_class": "motion",
+      "derivation": "dossier-prose",
+      "exact_json": null,
+      "exact_source_type": null,
+      "fork": null,
+      "kit_id": "d2-teleport-sorc",
+      "motion_signature": "blink_translate",
+      "origin": "self",
+      "pierce": null,
+      "range_band": null,
+      "skill_ordinal": 0,
+      "source_anchor": "Instant positional movement to targeted point. Dossier: 'instantly moves to a destination within your line of sight.' No combat damage output. Mana cost per use; higher levels reduce mana cost only.",
+      "source_skill": "Teleport",
+      "speed_band": "instant",
+      "width_band": null
+    }
+  ],
+  "kit_id": "d2-teleport-sorc",
+  "mapping": {
+    "authored_date": "2026-07-18",
+    "deviation_notes": "No combat loop attested — the kit's identity is metagame transport service. Any combat mapping would be fabrication. Engine teleport geometry exists but the kit has no damage output to attach it to. First purely-utility non-combat kit in basin-3.",
+    "grade": "GAPPED",
+    "kit_id": "d2-teleport-sorc",
+    "mapping_json": {
+      "fidelity_notes": "GAPPED: kit identity IS movement/utility service — no combat loop exists. Verify_ledger CONFIRMED: 'utility/movement build identity.' ERRATA-54 era backfill applied: eras set to 'lod;d2r-2.4+' (per mech_note and verify_ledger). Teleport geometry (teleport) maps the movement correctly; the IDENTITY is the gap — there is no 'damage' side to this kit. Loot-economy-identity docket adjacent: act-rushing / mule-ferrying is metagame service, not combat. R-M7: 'not that build' = GAPPED — a kit whose only attested loop is non-combat positional utility cannot map to an engine combat chassis. t4_doors=null per GAPPED/doorless rule (hot-fact).",
+      "motion_frame": "Teleport to destination as primary utility; no combat damage loop; movement-service identity (rushing, farming positioning, mule ferrying).",
+      "option_c_substrate_flags": null,
+      "resource_economy": {
+        "cost_scale": "spend",
+        "cost_slope": "steady-mana"
+      },
+      "scaffold": {
+        "chain_count": 2,
+        "support_lanes": {
+          "economy": [
+            "mana-cost-reduction-per-level (teleport spam economy)"
+          ],
+          "geometry": [],
+          "traits_affixes": []
+        }
+      },
+      "skills": [
+        {
+          "ailments": [],
+          "delivery_notes": "Instant positional movement to targeted point. Dossier: 'instantly moves to a destination within your line of sight.' No combat damage output. Mana cost per use; higher levels reduce mana cost only.",
+          "element_primary": null,
+          "element_secondary": null,
+          "geometry_value": "teleport",
+          "source_skill": "Teleport"
+        }
+      ],
+      "t4_doors": null,
+      "trigger_grammar": {
+        "consequence_type": null,
+        "mark_identity": null,
+        "proc_trigger_condition": null,
+        "trigger_chain_shape": null
+      }
+    },
+    "mapping_provenance": "authored-vdm1",
+    "terminal_state": "MAPPED_DOCKET"
+  },
+  "probe_facts": [],
+  "recognition_hooks": [
+    {
+      "coverage_status": "expressed",
+      "created_date": "2026-07-22",
+      "expressed_by": "geometry.delivery_class",
+      "hook_id": "H1",
+      "hook_text": "Teleport Sorceress: teleport motion identity",
+      "hook_type": "geometry",
+      "kit_id": "d2-teleport-sorc",
+      "provenance": "crawled",
+      "rank": 1
+    }
+  ],
+  "spine": {
+    "amp_conf": null,
+    "amp_val": null,
+    "architecture": null,
+    "atlas_coords": null,
+    "atlas_coords_parsed": null,
+    "atlas_key_orig": "IRHHSI-~~",
+    "attr_conf": null,
+    "attr_val": "INT",
+    "avg_conf": null,
+    "canon_tier": null,
+    "capstone_source_acquisition": null,
+    "commit_conf": null,
+    "commit_provenance": null,
+    "commit_val": "instant",
+    "core_skills": null,
+    "core_skills_prov": null,
+    "corpus_bucket": "d2",
+    "corpus_class": "record",
+    "court": null,
+    "ctrl_def_from_code": 0,
+    "ctrl_raw": null,
+    "death_class": null,
+    "def_raw": null,
+    "dossier_owed": 0,
+    "econ_raw": null,
+    "elem_raw": "n/a",
+    "era_year": 2000,
+    "eras": "lod;d2r-2.4+",
+    "eras_normalized": "lod;d2r-2.4+",
+    "flags": "vdm2-w5-elem-anomaly-2026-07-22: elem_raw='n/a' — first purely-utility non-combat kit; identity is metagame transport (Teleport), no damage output to attach an element to. 'n/a' is an honest no-element, but sits outside the elem_raw vocabulary; W5 to confirm the null-element handling / court assignment.",
+    "folk_name": "Teleport Sorceress",
+    "game": "d2",
+    "geo_raw": null,
+    "grain": null,
+    "grain_note": "system-record: not kit/gear/class emittable; excluded from fits by row_class",
+    "gx": null,
+    "is_system": 0,
+    "key_completeness": null,
+    "kit_id": "d2-teleport-sorc",
+    "lattice_coord": "IRHHSI",
+    "lineage": null,
+    "mech_note": "[VDM-1 basin-3 2026-07-18 ingest-13] ERRATA-54 NULL-ERA BACKFILL: eras NULL -> 'lod;d2r-2.4+'. Source: b03 roster: Teleport present at lod; D2R retained. _prior_ingest13 eras value was None (empty). [original mech_note follows] Teleport Sorceress uses Enigma runeword to make Teleport available as universal repositioning. The kit identity IS movement: teleport to safety, then damage. Genre's first movement-kit archetype; ancestor of all instant-dash builds.",
+    "mint": 1,
+    "mob_raw": null,
+    "mobile_blocking_mechanics": null,
+    "mobile_blocking_mechanics_archived": null,
+    "mobile_cell_id": null,
+    "mobile_key_group": null,
+    "mobile_mechanics_status": null,
+    "mobile_rank_in_cell": null,
+    "mobile_representative": null,
+    "negative": 0,
+    "original_element": "n/a",
+    "prefix_conf_provenance": "avg-collapsed",
+    "prov": "mint-dossier",
+    "provenance_tag": "mint-dossier-reexpressed",
+    "proxy_conf": null,
+    "proxy_val": "solo",
+    "pull_pending_vocab": 0,
+    "range_conf": null,
+    "range_val": "ranged",
+    "skill_debut_year": 2003,
+    "source": "mint",
+    "source_date": "2026-07-12",
+    "source_urls": [
+      "https://eu.forums.blizzard.com/en/d2r/t/the-enigmateleport-problem-a-solution/17407",
+      "https://diablo2.diablowiki.net/Guide:Blizzard_Sorceress_v1.10,_by_Zhao_Yue",
+      "https://diablo-archive.fandom.com/wiki/Patch_1.10_(Diablo_II)",
+      "https://maxroll.gg/d2/guides/lightning-sorceress"
+    ],
+    "stabilization_patch": "1.10",
+    "suffix_rekey_status": "complete-kit-mapping",
+    "tempo_conf": null,
+    "tempo_val": "high",
+    "tier": null,
+    "tier_confirm_pending": 0,
+    "unresolved": 0
+  },
+  "spine_status": {
+    "family": null,
+    "note": "not present in the tier-3 family-membership sidecar",
+    "on_spine": null,
+    "shadowed_by": null,
+    "source_artifact": null,
+    "spine_status": "UNPLACED",
+    "tier": null
+  },
+  "verify_ledger": [
+    {
+      "anchor_lint": null,
+      "anchor_quote": null,
+      "claim_family": "era",
+      "claim_subject": null,
+      "claim_text": "NULL-era kit — no era claim to verify; attested eras from fetched text recorded in summary",
+      "errata_applied": 0,
+      "id": 1031,
+      "kit_id": "d2-teleport-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/teleport-t4176.html",
+      "verdict": "UNSUPPORTED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Build idea - Defensive 8 person baal teleporter for exp runs",
+      "claim_family": "identity",
+      "claim_subject": null,
+      "claim_text": "Folk name 'Teleport Sorceress' or 'Tele Sorc' or 'Teleport Mule Sorceress' is real community usage",
+      "errata_applied": 0,
+      "id": 1029,
+      "kit_id": "d2-teleport-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://www.purediablo.com/forums/threads/build-idea-defensive-8-person-baal-teleporter-for-exp-runs-der-0.130063/",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": null,
+      "anchor_quote": "Instantly transports you between two points",
+      "claim_family": "mechanics",
+      "claim_subject": null,
+      "claim_text": "Core skill: Teleport; Sorceress class; utility/movement build identity",
+      "errata_applied": 0,
+      "id": 1030,
+      "kit_id": "d2-teleport-sorc",
+      "run_tag": "vdm1",
+      "source_lane": null,
+      "source_url": "https://diablo2.io/skills/teleport-t4176.html",
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-18"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "Instant positional movement to targeted point. Dossier: 'instantly moves to a destination within your line of sight.' No combat damage output. Mana cost per use; higher levels reduce mana cost only.",
+      "claim_family": "mechanics",
+      "claim_subject": "geometry",
+      "claim_text": "[§7 geometry] skill 'Teleport' delivery_class=motion (band_conf=0.75); lint: anchor entails 'motion' (2 sig)",
+      "errata_applied": 0,
+      "id": 2185,
+      "kit_id": "d2-teleport-sorc",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    },
+    {
+      "anchor_lint": "OK",
+      "anchor_quote": "mapping_json: \"No combat damage output... movement-service identity (rushing, farming positioning, mule ferrying)\"; GAPPED / MAPPED_DOCKET; \"first purely-utility non-combat kit in basin-3.\"",
+      "claim_family": "mechanics",
+      "claim_subject": "elem_anomaly",
+      "claim_text": "[§7 elem_raw anomaly · PROPOSED:DOCUMENTED-CROSSWALK] elem_raw='n/a' — elem_raw='n/a' is CORRECT and anchor-confirmed: the kit has NO combat damage output, so it has no element by construction. court is correctly NULL (n/a → non-membership per V-15). Not a disagreement — a documented no-element utility kit. No correction.",
+      "errata_applied": 0,
+      "id": 2574,
+      "kit_id": "d2-teleport-sorc",
+      "run_tag": "vdm2-w5a",
+      "source_lane": "dataset",
+      "source_url": null,
+      "verdict": "CONFIRMED",
+      "verified_date": "2026-07-22"
+    }
+  ]
+}
