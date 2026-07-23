@@ -11,12 +11,31 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-22 (**v1.15 /canon header-overlap FIX** — the sticky column-label band on
-`/canon` overlapped the first data row. Root cause: the table used `border-collapse` and Chrome ignores
-`position:sticky` on a `<thead>` inside a collapsed-border table, so the first `<tbody>` row painted OVER
-the (invisible) header band. Minimal fix in `src/pages/CanonIndex.tsx`: table → `border-separate
+**Last updated:** 2026-07-22 (**v1.16 /canon header band FLUSH + truly sticky — DEPLOYED TO PROD**. Matt's
+residual report after v1.15: "Banner still not fit to the top of the square" + it never pinned. ROOT CAUSE
+(playwright-measured, NOT the v1.15 assumption): the table sat in `div.overflow-x-auto`; CSS forces
+`overflow-y:auto` when `overflow-x:auto`, so that div was a scroll container = the sticky `<th>`'s
+CONTAINING BLOCK — but it never scrolls vertically (the WINDOW does: div scrollHeight==clientHeight). So
+`top:48px` (a) pushed each `<th>` 48px DOWN inside the div at rest [measured th.top=332 vs thead.top=284,
+firstRow=317 peeking ABOVE the band] and (b) never pinned on scroll [th.top=-67]. FIX in `CanonIndex.tsx`
+(2 lines + comments, no redesign): drop `overflow-x-auto` from the wrapper so the sticky offset resolves
+against the PAGE; set offset `top-12`→`top-[49px]` (Nav = h-12 48px inner + 1px border-b = box bottom y=49).
+Table is `min-w-full` → narrow viewports overflow and the PAGE scrolls horizontally (mobile column access
+preserved: docScrollWidth 1156>375, scrollX reaches 781) without re-adding the sticky-breaking wrapper.
+Verified (playwright, built bundle + dev, desktop + 375px mobile): rest → th.top==thead.top FLUSH, first
+row below, no peek; scroll → th.top==49==nav.bottom pins flush under Nav, rows scroll under; holds on mobile
+at deep scroll + after horizontal scroll. `npm run build` GREEN [bundle `index-BcpWTLlg.js`, was v1.15
+`index-Cf4GCKkE.js`]. `CanonKit.tsx` has no sticky/overflow-x table — defect absent, unchanged. Commit
+`53893fd` pushed to origin/main. **PROD DEPLOY**: `vercel build --prod` + `vercel deploy --prebuilt --prod`
+→ `dpl_6WW6KJ4Rq9QmxkSNivHQaruReRTd` (READY, production) auto-aliased `reincarnated-loadout.vercel.app`;
+PRD `/` + `/canon` 200, serve `index-BcpWTLlg.js`; `/canon-data/index.json` 200. vercel.json UNTOUCHED. See
+the v1.16 section below.)
+**Prior update:** 2026-07-22 (**v1.15 /canon header-overlap FIX** — the sticky column-label band on
+`/canon` overlapped the first data row. Root cause claimed: the table used `border-collapse` and Chrome
+ignores `position:sticky` on a `<thead>` inside a collapsed-border table. Fix: table → `border-separate
 border-spacing-0`; sticky offset moved off `<thead>` onto the `<th>` cells via a shared `TH_STICKY` class
-[`sticky top-12 z-10 bg-gray-900 border-b border-gray-800 px-2 py-2`]. No redesign. `CanonKit.tsx` shares
+[`sticky top-12 z-10 bg-gray-900 border-b border-gray-800 px-2 py-2`]. That fixed the overlap but left a
+RESIDUAL defect [the `overflow-x-auto` wrapper] — superseded by v1.16 above. `CanonKit.tsx` shares
 NO sticky-header pattern — NOT affected. Verified via playwright: overlap gone at top-of-page + 375px
 mobile; `npm run build` + preview root GREEN. See the v1.15 section below.)
 **Prior update:** 2026-07-16 (**v1.12 ATLAS RE-HOME — /atlas RETIRED to a redirect**; the interactive
