@@ -1,7 +1,7 @@
 // CanonIndex — /canon route.
 //
 // A dense, sortable, filterable table of all 267 canonical KIT records "as the
-// battle sim sees them". Source: public/canon/index.json (exported READ-ONLY from
+// battle sim sees them". Source: public/canon-data/index.json (exported READ-ONLY from
 // corpus.db by scripts/export_canon_corpus.py). This is the SIM-INPUT view: the
 // per-kit coordinates/keys the sim consumes to place each kit and generate a class.
 //
@@ -97,7 +97,7 @@ export function CanonIndex() {
   if (status === 'error' || !index) {
     return (
       <CenterNote
-        text={`Failed to load /canon/index.json — ${error ?? 'unknown error'}. Run scripts/export_canon_corpus.py.`}
+        text={`Failed to load /canon-data/index.json — ${error ?? 'unknown error'}. Run scripts/export_canon_corpus.py.`}
         error
       />
     );

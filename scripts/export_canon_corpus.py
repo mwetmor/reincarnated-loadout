@@ -14,9 +14,10 @@ Plus a READ-ONLY spine-status sidecar (a JSON file):
 The pool is `SELECT * FROM canon_corpus WHERE corpus_class='record'` -> 267 rows.
 Annex (corpus_class='annex') and system (corpus_class='system') classes are OUT of scope.
 
-Outputs (public/canon/ — a build-time asset dir, NOT bundled into the JS):
-  public/canon/index.json              267 summary rows + an export-provenance block
-  public/canon/kits/<kit_id>.json      the FULL per-kit join, one file per kit
+Outputs (public/canon-data/ — a build-time asset dir, NOT bundled into the JS;
+named -data so it does NOT squat on the React ROUTE /canon — see useCanonData.ts):
+  public/canon-data/index.json              267 summary rows + an export-provenance block
+  public/canon-data/kits/<kit_id>.json      the FULL per-kit join, one file per kit
 
 Design notes:
   * Every column of every joined row is emitted (RENDER EVERY COLUMN is the bar).
@@ -49,7 +50,7 @@ SIDECAR_PATH = (
     '/Users/admin/Games/reincarnated-collaboration/agentic_orchestration/'
     'elrond/notes/2026-07-22-tier3-family-membership-sidecar.json'
 )
-OUT_DIR = os.path.join(REPO_ROOT, 'public', 'canon')
+OUT_DIR = os.path.join(REPO_ROOT, 'public', 'canon-data')
 KITS_DIR = os.path.join(OUT_DIR, 'kits')
 
 # JSON-string columns to parse into real objects, per table. If parse fails the

@@ -2,8 +2,8 @@
 //
 // Source of truth is corpus.db (267 canon_corpus records, corpus_class='record'),
 // exported READ-ONLY by scripts/export_canon_corpus.py into:
-//   public/canon/index.json          — summary rows + export provenance
-//   public/canon/kits/<kit_id>.json  — the FULL per-kit join (lazy-fetched)
+//   public/canon-data/index.json          — summary rows + export provenance
+//   public/canon-data/kits/<kit_id>.json  — the FULL per-kit join (lazy-fetched)
 //
 // DESIGN: the detail payload must render EVERY column of EVERY joined row. Rather
 // than freeze a column list (which would silently drop new columns when the engine

@@ -1,8 +1,14 @@
 // useCanonData — fetches the /canon inspection surface data.
 //
 // Two hooks, matching the loadout's established idle/loading/success/error pattern:
-//   useCanonIndex()          — fetches public/canon/index.json (267 summary rows)
-//   useCanonKit(kitId)       — LAZY-fetches public/canon/kits/<kitId>.json on demand
+//   useCanonIndex()          — fetches public/canon-data/index.json (267 summary rows)
+//   useCanonKit(kitId)       — LAZY-fetches public/canon-data/kits/<kitId>.json on demand
+//
+// NOTE: data lives under public/canon-data/ (NOT public/canon/) so it does not squat
+// on the React ROUTE path /canon. Vercel's static filesystem layer resolves a real
+// file at the route path BEFORE the SPA rewrite fires — with data at public/canon/,
+// GET /canon served raw index.json instead of the React page (Matt-observed 2026-07-22).
+// Keep the data namespace distinct from the route.
 //
 // The 267 per-kit files are NOT bundled into the JS — each is fetched only when its
 // detail route is visited (a plain runtime fetch of a static public/ asset). A tiny
@@ -38,7 +44,7 @@ export function useCanonIndex(): UseCanonIndexResult {
     // Cache hit is already reflected in the initial state — nothing to fetch.
     if (indexCache) return;
     let cancelled = false;
-    fetchJson<CanonIndex>('/canon/index.json')
+    fetchJson<CanonIndex>('/canon-data/index.json')
       .then((data) => {
         if (cancelled) return;
         indexCache = data;
@@ -79,7 +85,7 @@ export function useCanonKit(kitId: string | undefined): UseCanonKitResult {
     if (kitCache.has(kitId)) return; // already cached — derived in render
     let cancelled = false;
     // encodeURIComponent guards kit_ids that contain path-unsafe characters.
-    fetchJson<CanonKitDetail>(`/canon/kits/${encodeURIComponent(kitId)}.json`)
+    fetchJson<CanonKitDetail>(`/canon-data/kits/${encodeURIComponent(kitId)}.json`)
       .then((data) => {
         if (cancelled) return;
         kitCache.set(kitId, data);

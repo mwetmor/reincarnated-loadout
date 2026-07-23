@@ -5,7 +5,7 @@
 // order (per spec). Nothing is dropped; sparse kits render honest labeled gaps, never
 // a crash. Quarantined citations + abstained dossier rows render VISUALLY FLAGGED.
 //
-// Source: public/canon/kits/<kitId>.json (lazy-fetched; exported READ-ONLY from
+// Source: public/canon-data/kits/<kitId>.json (lazy-fetched; exported READ-ONLY from
 // corpus.db by scripts/export_canon_corpus.py).
 
 import { useMemo } from 'react';
@@ -77,7 +77,7 @@ export function CanonKit() {
           <p className="font-semibold">Kit &ldquo;{kitId}&rdquo; not found.</p>
           <p className="mt-1 font-mono text-xs text-rose-400/80">{error ?? 'no such per-kit file'}</p>
           <p className="mt-3 text-xs text-gray-500">
-            Per-kit files are staged at build time (public/canon/kits/&lt;kit_id&gt;.json). Check the
+            Per-kit files are staged at build time (public/canon-data/kits/&lt;kit_id&gt;.json). Check the
             id, or return to the canon index.
           </p>
         </div>
