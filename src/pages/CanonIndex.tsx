@@ -28,13 +28,29 @@ type SortKey =
 
 type SortDir = 'asc' | 'desc';
 
-// Sticky header-cell class. In a border-separate table the sticky offset lives on
-// the <th> cells (Chrome ignores position:sticky on a <thead> when the table uses
-// border-collapse — that was the v1.14 bug: the first body row painted OVER the
-// header band). `top-12` = 3rem = the h-12 Nav height; the bottom border stands in
-// for the collapsed border the header used to carry.
+// Sticky header-cell class. Two things had to be true for the label band to sit
+// FLUSH to the top of its container AND pin cleanly under the Nav on scroll:
+//
+//  1. The offset lives on the <th> cells, not the <thead>. Chrome ignores
+//     position:sticky on a <thead> in a border-separate/-collapse table.
+//
+//  2. The band's sticky containing block must be the PAGE, not the table wrapper.
+//     v1.15 wrapped the table in `overflow-x-auto`, which (per CSS) forces
+//     `overflow-y: auto` too, making that div a scroll container — so it became
+//     the sticky containing block. But the div itself never scrolls vertically
+//     (the WINDOW does), so `top:48px` (a) pushed each <th> DOWN 48px inside that
+//     div at rest — detaching the band from the container top and letting the
+//     first body row peek ABOVE it (Matt: "banner not fit to the top of the
+//     square") — and (b) never pinned on scroll (the band scrolled away with the
+//     table). Fix: drop the overflow wrapper so the sticky offset resolves against
+//     the page. Measured (playwright): band now flush at container top (th.top ==
+//     thead.top) and pins at the Nav's bottom edge on scroll (th.top == 49).
+//
+// `top-[49px]` = the Nav's real rendered height: the inner strip is h-12 (48px)
+// and the <nav> carries a 1px border-b, so its box bottom is at y=49. The band's
+// own bottom border stands in for the collapsed border the header used to carry.
 const TH_STICKY =
-  'sticky top-12 z-10 bg-gray-900 border-b border-gray-800 px-2 py-2';
+  'sticky top-[49px] z-10 bg-gray-900 border-b border-gray-800 px-2 py-2';
 
 function uniqueSorted(rows: CanonIndexRow[], key: keyof CanonIndexRow): string[] {
   const set = new Set<string>();
@@ -158,12 +174,19 @@ export function CanonIndex() {
       </div>
 
       {/* table */}
-      {/* NOTE(drax v1.15): table is border-separate (NOT border-collapse) and the
-          sticky offset lives on the <th> cells — not the <thead>. Chrome does not
-          honor position:sticky on a <thead> inside a border-collapse table, which
-          made the first body row render OVER the (invisible) header band. The
-          shared TH_STICKY class parks the header row just under the h-12 Nav. */}
-      <div className="overflow-x-auto rounded-lg border border-gray-800">
+      {/* NOTE(drax v1.16): NO `overflow-x-auto` on this wrapper. That wrapper was
+          the v1.15 residual bug: overflow-x:auto forces overflow-y:auto, making the
+          div a scroll container and thus the sticky <th>'s containing block — but it
+          never scrolls vertically (the window does), so the `top` offset pushed the
+          band 48px DOWN inside the div (detached from the container top, first row
+          peeking above) and it never pinned on scroll. Dropping it lets the sticky
+          band resolve against the PAGE: flush at the container top, pins under the
+          Nav on scroll. The table is `min-w-full`, so on narrow (mobile) viewports
+          it overflows and the PAGE scrolls horizontally — column access preserved
+          without re-introducing the sticky-breaking wrapper. Border/rounding move to
+          this wrapper; table keeps border-separate so the sticky <th> offset works
+          (Chrome ignores sticky on a <thead> in a collapsed-border table). */}
+      <div className="rounded-lg border border-gray-800">
         <table className="min-w-full border-separate border-spacing-0 text-xs">
           <thead>
             <tr>
