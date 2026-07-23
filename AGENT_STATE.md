@@ -11,7 +11,15 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-16 (**v1.12 ATLAS RE-HOME — /atlas RETIRED to a redirect**; the interactive
+**Last updated:** 2026-07-22 (**v1.15 /canon header-overlap FIX** — the sticky column-label band on
+`/canon` overlapped the first data row. Root cause: the table used `border-collapse` and Chrome ignores
+`position:sticky` on a `<thead>` inside a collapsed-border table, so the first `<tbody>` row painted OVER
+the (invisible) header band. Minimal fix in `src/pages/CanonIndex.tsx`: table → `border-separate
+border-spacing-0`; sticky offset moved off `<thead>` onto the `<th>` cells via a shared `TH_STICKY` class
+[`sticky top-12 z-10 bg-gray-900 border-b border-gray-800 px-2 py-2`]. No redesign. `CanonKit.tsx` shares
+NO sticky-header pattern — NOT affected. Verified via playwright: overlap gone at top-of-page + 375px
+mobile; `npm run build` + preview root GREEN. See the v1.15 section below.)
+**Prior update:** 2026-07-16 (**v1.12 ATLAS RE-HOME — /atlas RETIRED to a redirect**; the interactive
 Build-Horizon package ported to the Glance app @ Edition III; loadout atlas page/components/utils/hooks/
 build-step/probe + `public/atlas/` + `data-src/atlas/` DELETED, nav tab dropped, `/atlas` → redirect to
 `https://reincarnated-glance.vercel.app/#/atlas`. Build + 91 tests GREEN. ~~STOP at preview~~
@@ -26,6 +34,55 @@ served bundle. Glance PRD serves Edition III (see glance AGENT_STATE). See the v
 **Last tag:** none active (the `drax/loadout-retired-2026-06-10` tag was deleted; it implied a retirement that is not happening)
 **Branch:** `main` — ahead of origin; push staged for Matt per ADR-006. NOTE: the prior "11 commits ahead" line was a STALE checkpoint — those 11 were all subsequently pushed to origin/main (verified `git merge-base --is-ancestor`); reconciled 2026-06-10. The one genuine pre-existing ahead commit was `aae190a` (rocket engine-sidecar update, NOT drax player-surface work).
 **Hive-mind mode:** N/A
+
+---
+
+## v1.15 — /canon sticky column-label band overlapped the first data row (2026-07-22)
+
+**Authority:** Matt 2026-07-22 (production UI fix; reviewed https://reincarnated-loadout.vercel.app/canon
+v1.14 live — page otherwise perfect, but the header band carrying the column labels sat too low and
+overlapped the content below it). No redesign — fix minimally.
+
+**Root cause (empirically confirmed via playwright geometry probe against `npm run dev`):**
+`src/pages/CanonIndex.tsx` rendered the sortable table with `<table className="… border-collapse …">`
+and the column-label row as `<thead className="sticky top-12 z-10 bg-gray-900">`. **Chrome does not
+honor `position:sticky` on a `<thead>` (or its `<th>`s) inside a `border-collapse` table** — the
+collapsed-border layout model does not reserve/paint the sticky header row, so the first `<tbody>` row
+(`d2-berserker`) rendered directly OVER the header band (measured 48px of overlap at every scroll
+offset). Visually: at the top of the page the label row was jammed under the first data row; when
+scrolled, the label band was hidden behind the rows entirely.
+
+**Fix (minimal, no redesign):**
+- Table class `border-collapse` → `border-separate border-spacing-0`.
+- Removed `sticky top-12 z-10 bg-gray-900` from `<thead>`; the sticky offset now lives on the `<th>`
+  cells via a shared const `TH_STICKY = 'sticky top-12 z-10 bg-gray-900 border-b border-gray-800 px-2
+  py-2'` (applied by the `Th` component + the two inline `<th>` cells "range / tempo / amp" and "guide").
+  The `border-b` stands in for the separator the collapsed border used to draw. `top-12` = 3rem = the
+  `h-12` Nav height (Nav is `sticky top-0 z-50` in `src/components/Nav.tsx`).
+- `CanonKit.tsx` (kit-detail page) checked: it has NO `<thead>` and NO sticky/fixed header pattern —
+  it uses the `Section`/`RowTable` primitives whose only `<thead>` is a plain non-sticky one. **NOT
+  affected — no change needed there.**
+
+**Verification (playwright, deviceScaleFactor 2):**
+- Desktop 1400px: overlap eliminated — first `<tbody>` row top now equals header-band bottom (clean
+  border separator between the label band and `d2-berserker`).
+- Mobile 375px (loadout is mobile-first): header band + horizontal-scroll table render cleanly, no
+  overlap.
+- Smoke: `npm run build` GREEN (tsc + vite); `npm run preview` root route HTTP 200 text/html,
+  `<title>Reincarnated Loadout</title>` + `#root` present.
+
+**Note on pre-existing sticky behavior (NOT changed):** the `overflow-x-auto` wrapper around the table
+is a scroll container, so the header does not pin to the *window* on vertical scroll — it scrolls with
+content. This was already the case in v1.13/v1.14 (never functioned as a window-pinned header). Matt's
+report was strictly the OVERLAP; that is what was fixed. Left the `top-12` sticky classes in place
+(harmless, and correct if the container arrangement ever changes). No TODO(drax) — this is not an engine
+gap, it is a self-contained CSS-layout fix.
+
+**Files touched:** `src/pages/CanonIndex.tsx` (only). `public/canon-data/`, `vercel.json`, and the
+untracked backup/pitch/seasons files were NOT touched.
+
+**Deploy:** `vercel build --prod` + `vercel deploy --prebuilt --prod` + alias move (same pattern as
+v1.14) — see the deploy record appended below.
 
 ---
 

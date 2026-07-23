@@ -28,6 +28,14 @@ type SortKey =
 
 type SortDir = 'asc' | 'desc';
 
+// Sticky header-cell class. In a border-separate table the sticky offset lives on
+// the <th> cells (Chrome ignores position:sticky on a <thead> when the table uses
+// border-collapse — that was the v1.14 bug: the first body row painted OVER the
+// header band). `top-12` = 3rem = the h-12 Nav height; the bottom border stands in
+// for the collapsed border the header used to carry.
+const TH_STICKY =
+  'sticky top-12 z-10 bg-gray-900 border-b border-gray-800 px-2 py-2';
+
 function uniqueSorted(rows: CanonIndexRow[], key: keyof CanonIndexRow): string[] {
   const set = new Set<string>();
   for (const r of rows) {
@@ -150,9 +158,14 @@ export function CanonIndex() {
       </div>
 
       {/* table */}
+      {/* NOTE(drax v1.15): table is border-separate (NOT border-collapse) and the
+          sticky offset lives on the <th> cells — not the <thead>. Chrome does not
+          honor position:sticky on a <thead> inside a border-collapse table, which
+          made the first body row render OVER the (invisible) header band. The
+          shared TH_STICKY class parks the header row just under the h-12 Nav. */}
       <div className="overflow-x-auto rounded-lg border border-gray-800">
-        <table className="min-w-full border-collapse text-xs">
-          <thead className="sticky top-12 z-10 bg-gray-900">
+        <table className="min-w-full border-separate border-spacing-0 text-xs">
+          <thead>
             <tr>
               <Th label="kit" k="kit_id" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
               <Th label="folk name" k="folk_name" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
@@ -160,14 +173,14 @@ export function CanonIndex() {
               <Th label="tier" k="tier" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
               <Th label="court" k="court" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
               <Th label="element" k="element" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
-              <th className="whitespace-nowrap px-2 py-2 text-left font-mono text-[0.62rem] uppercase text-gray-500">
+              <th className={`${TH_STICKY} whitespace-nowrap text-left font-mono text-[0.62rem] uppercase text-gray-500`}>
                 range / tempo / amp
               </th>
               <Th label="grade" k="grade" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
               <Th label="spine" k="spine_status" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
               <Th label="bands" k="bands_count" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} align="right" />
               <Th label="✓ cf" k="verify_confirmed" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} align="right" />
-              <th className="px-2 py-2 text-center font-mono text-[0.62rem] uppercase text-gray-500">
+              <th className={`${TH_STICKY} text-center font-mono text-[0.62rem] uppercase text-gray-500`}>
                 guide
               </th>
             </tr>
@@ -287,7 +300,7 @@ function Th({
   const active = k === sortKey;
   return (
     <th
-      className={`whitespace-nowrap px-2 py-2 font-mono text-[0.62rem] uppercase text-gray-500 ${align === 'right' ? 'text-right' : 'text-left'}`}
+      className={`${TH_STICKY} whitespace-nowrap font-mono text-[0.62rem] uppercase text-gray-500 ${align === 'right' ? 'text-right' : 'text-left'}`}
     >
       <button
         onClick={() => onSort(k)}
