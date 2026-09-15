@@ -11,7 +11,8 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-07-22 (**v1.16 /canon header band FLUSH + truly sticky — DEPLOYED TO PROD**. Matt's
+**Last updated:** 2026-09-15 (**v1.17 /playtest: Cliffside Godot 4.6.3 web build, DEPLOYED TO PROD via git push.** Matt 2026-09-15 "load this to the vercel app so friends can play test it on their phones" (gandalf dispatch, Run C-3). Static files only: `public/playtest/index.html` (landing) + `public/playtest/cliffside/` (Godot Web export, threads OFF, pck 34.84 MB, wasm 37.7 MB). Commit `ef5e544` pushed `fb1e5ec..ef5e544`, which auto-deployed Vercel Production deployment 6450649000 (success, `reincarnated-loadout-4kfr8k5ot`). Deploy truth: `/playtest`, `/playtest/`, `/playtest/cliffside` and `/playtest/cliffside/` all 200 (static wins over the SPA rewrite; vercel.json UNTOUCHED), `index.wasm` application/wasm (brotli), `index.pck` sha256 equals the local build, headless-Chrome live boot + touch + cast screenshots in `reincarnated-collaboration/agentic_orchestration/drax/captures/2026-09-15-web-playtest/`. Landing at 375px: no horizontal scroll. React bundle unchanged (`index-BcpWTLlg.js`). Build pipeline + source live in reincarnated-godot `web/` (local commit `60c1063`). NOTE: the Vercel CLI token on this host is INVALID (`vercel whoami` fails), so prebuilt CLI deploys need a `vercel login` first; git-push auto-deploy works.)
+**Prior update:** 2026-07-22 (**v1.16 /canon header band FLUSH + truly sticky — DEPLOYED TO PROD**. Matt's
 residual report after v1.15: "Banner still not fit to the top of the square" + it never pinned. ROOT CAUSE
 (playwright-measured, NOT the v1.15 assumption): the table sat in `div.overflow-x-auto`; CSS forces
 `overflow-y:auto` when `overflow-x:auto`, so that div was a scroll container = the sticky `<th>`'s
