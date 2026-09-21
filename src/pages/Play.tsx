@@ -50,7 +50,7 @@ const CHARACTERS: Character[] = [
     id: 'warlord',
     name: 'Warlord',
     style: 'Pixel art',
-    blurb: 'Armoured, mace and shield. The only one who can swing at anything.',
+    blurb: 'Armoured, mace and shield. The only one who can swing at anything — hold whirlwind and he spins as he walks.',
     packMb: 33,
     directions: 'All 8 directions',
     moves: 'Idle · walk · run · jump · cast · attack',
@@ -243,7 +243,8 @@ export function Play() {
               <Key>Space</Key> jumps, <Key>E</Key> or left click casts
             </li>
             <li>
-              <Key>F</Key> attacks — <span className="text-gray-500">Warlord only</span>
+              <Key>F</Key> whirlwinds —{' '}
+              <span className="text-gray-500">Warlord only; hold it, and it spins as you walk</span>
             </li>
             <li>
               <Key>Tab</Key> switches to the next spell effect
@@ -260,6 +261,13 @@ export function Play() {
               <strong className="text-gray-300">CAST</strong>,{' '}
               <strong className="text-gray-300">JUMP</strong> and{' '}
               <strong className="text-gray-300">VFX</strong> buttons sit on the right.
+            </li>
+            <li>
+              <strong className="text-gray-300">WHIRLWIND</strong> — Warlord only.{' '}
+              <span className="text-gray-500">
+                Hold it to keep spinning, and push the stick at the same time to spin while you
+                walk. The other two don&rsquo;t have the button at all.
+              </span>
             </li>
             <li className="text-gray-500">
               It is a large download — Wi-Fi is much happier than cellular.
