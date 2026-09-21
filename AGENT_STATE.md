@@ -3711,3 +3711,38 @@ First session 37–42 MB depending on character; ~28–33 MB to switch after (en
 **No TODO(drax) overrides opened.** Nothing here compensates for an engine gap; the frozen exporter (`export/godot_import.py`) was not touched, and `~/Games/reincarnated-godot` was used read-only.
 
 **Note for Matt:** the `/playtest/cliffside/` route was replaced in place, so any existing bookmark still works and now lands on the Warlord by default; `/play` is the front door.
+
+---
+
+### v1.27 — WHIRLWIND touch button: held channel, Warlord build only (2026-09-21)
+
+**Authority:** Matt on the live page — *"The only problem is that there is no button for whirlwind."* The overlay shipped MOVE + CAST / JUMP / VFX and nothing for attack, so on a phone there was no way to whirlwind at all. Production authorization from the original brief carried.
+
+**Deployed:** commit `2a2ce03` (loadout) · burst tooling `bd6720b62`. Only `warlord.pck` changed (35,985,152 → 35,983,828 B); `keeper.pck`, `necro.pck` and the shared engine are byte-identical.
+
+**Held, not tapped.** `keeper.gd` drops to idle the instant `Input.is_action_pressed("attack")` goes false — the spin costs you your sprint, the D2/PoE trade and Matt's own design. The overlay's existing button path was **already press-and-hold** (`Input.action_press` on touch down, `action_release` on touch up), so WHIRLWIND is wired exactly like CAST and the channel semantics came free. What did **not** come free is **drag-off release**, added here: release margin `1.6r` against a press margin of `1.15r` — hysteresis, so a thumb wobbling in place does not stutter the channel, and a finger that slides away cannot leave the player stuck spinning.
+
+**Absent, not inert, on the other two.** `runs/C-8/web/whirlwind_button_patch.py` reads `project.godot` and **refuses to add the button unless the build declares an `attack` action**. Keeper and Necromancer have none, so it cannot be aimed at them even by mistake — the degradation stays an absence, which is the truth, rather than a dead button, which reads as a bug. Verified: `WHIRLWIND` appears in the Warlord overlay source and in neither other build, and pressing that exact screen position in those builds is inert.
+
+**Placement:** bottom-right anchor `(-390, -370)`, `r95` in the 1920×1080 design space. Clearances computed *then seen*: 51 px from CAST, 67 from JUMP, 103 from VFX; right half only, so it can never swallow a left-half joystick touch. **69 CSS px** tap target at 844×390 (clears the 44 px floor). At 375 px portrait the game page shows the pre-existing rotate-to-landscape hint, unchanged.
+
+**How the HOLD was established** (`runs/C-8/web/verify_whirlwind_touch.js`) — a screenshot cannot distinguish a held channel from a one-tick flash, so this measures **per-frame churn** across four phases and requires *every* hold sample elevated, not just the first (which is precisely what a flash would produce). **On live production:**
+
+| phase | churn |
+|---|---|
+| idle (floor) | 0.0040 |
+| **WHIRLWIND held** | **0.0149 median, all 7 samples 0.0124–0.0159** |
+| after release | 0.0040 — stops |
+| dragged off button | 0.0017 — no stuck spin |
+| keyboard F | 0.0673 — unchanged |
+| keeper / necro pressing the empty spot | 0.0035 / 0.0049 — idle |
+
+**Walk-and-spin composes**: WHIRLWIND held on one finger + joystick pushed on another translates the view by **0.799** — the attack branch reads `Input.get_vector(...)`, which the touch joystick drives through `Input.action_press(action, strength)`, the same path as the keyboard. `run_modifier` stays ignored during the spin, as on desktop.
+
+⚑ **Two defects caught here, and the build was innocent of both.**
+- **A GDScript syntax bug I introduced:** the first splice produced ` func _update_joystick(` with a **leading space** — a top-level indentation error. The patch now asserts every top-level `func` sits at column 0; nothing else in the pipeline would have noticed before the export.
+- **`verify_trio.js` failed the Warlord twice on a working whirlwind** — same root cause in two costumes: it compared a *single* hold sample against the idle floor, first with a single-sample floor too (which drifted 0.0019–0.0049 run to run), then with a 4× gate when the real separation is ~3.7×. Both sides are now **medians of consecutive-frame churn**, gate at 2.2×, sitting between the measured 3.5–4× (Warlord) and ~1× (Keeper/Necro).
+
+**Third instrument defect in this piece** — after the tapped F and the ranged-`206` deploy poll — and the same shape each time: *a check that ran, returned cleanly, and was not answering the question asked of it.* In all three the build was correct and the measurement was not. This is the standing `git diff HEAD~1` finding in a different repo.
+
+**Copy updated** on `/play` (desktop F line, phone WHIRLWIND line, Warlord blurb) and on `/playtest/index.html` — all three say **hold**, because a player who taps it will conclude it is broken exactly as my own probe did.
