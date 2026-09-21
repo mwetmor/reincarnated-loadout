@@ -3659,3 +3659,55 @@ These are calibrated for 8 anchors at world size 11000×8500px (SPACING_X=2750px
 
 **TODO(drax): re-validate classifyLasso() thresholds when anchor count changes post-Legolas commission.** Current scaffold values: `within_anchor_centroid_threshold=1100`, `nearby_anchor_threshold=1200`, `cross_buffer_min_lasso_radius=600`, `min_lasso_polygon_points=2`. All four constants are fixed numerics in the function body — if world size or anchor spacing changes materially (e.g., 12-anchor zodiac layout), re-calibrate against new geometry before shipping. Discipline #40 scaffold-value flagging.
 **Tests:** 79/79 pass (unchanged).
+
+---
+
+### v1.26 — `/play`: cliffside as three characters, one shared engine, chosen before boot (2026-09-21)
+
+**Authority:** Matt, this session — playable cliffside in the loadout app with a character toggle, straight to production (he chose this over a lighter sprite-viewer, knowing it was the heavier path). Production push authorized **for this piece specifically**; it does not extend to another repo or a later piece.
+
+**Deployed:** `https://reincarnated-loadout.vercel.app/play` · commit `0f6c4e4` · pushed to `main` (Vercel git integration = production).
+
+**Architecture — three `.pck` against ONE shared engine wasm.** KR amended the brief mid-task: the original lean was one project carrying all three frame sets with a runtime toggle, chosen only to avoid tripling the payload. A pre-boot select screen makes that reasoning obsolete, so the character is chosen BEFORE the engine starts and only one character's assets are ever fetched. The runtime toggle was therefore never written — no player-node teardown, no camera re-parenting, no VFX lifecycle across a swap.
+
+`assemble_trio.py` **refuses to stage unless `index.wasm` / `index.js` / both audio worklets hash equal across the three builds** — "one shared engine" is a claim about bytes, and a pack built against a different engine fails at load with an opaque error. They were identical; git stored no new copy of the 37.7 MB wasm (it is absent from the commit).
+
+**Payload (compressed on the wire; Vercel serves `.pck`/`.wasm` with brotli):**
+
+| | raw | wire |
+|---|---|---|
+| engine (shared, cached) | 37.70 MB | **8.9 MB** |
+| warlord.pck | 35.99 MB | 33.2 MB |
+| keeper.pck | 31.23 MB | 28.6 MB |
+| necro.pck | 30.32 MB | 27.8 MB |
+
+First session 37–42 MB depending on character; ~28–33 MB to switch after (engine is cached, same URL). Hosted total 135.6 MB.
+
+**Sprite lossy pass — `runs/C-8/web/lossy_sprites.py` (new).** The web overlay (`reincarnated-godot/web/_overlay/apply_overlay.py`, used READ-ONLY this session) marks textures ≥2048 px as lossy WebP q0.9 — that covers the parallax plates and ground tiles but **misses the character sprites entirely**, which are 512×512: 544 frames / 39.1 MB of lossless PNG in the warlord project alone. That is both the largest single pck term and the *only* per-character term, i.e. exactly what the three-pck split exists to isolate. Dropping the threshold to 512 px took the warlord pck from a projected ~100 MB+ to 36.0 MB. Verified before adoption: alpha is **bit-exact** (no silhouette or fringe change), RGB error edge-confined at mean 3.9/255, p99 21, indistinguishable at 2× NEAREST zoom on the hard-pixel-art warlord — the riskiest of the three styles.
+
+**Graceful degradation is STRUCTURAL, not guarded.** The Keeper and Necromancer builds carry no `attack` input action, no `whirlwind.gd`, and no attack branch in `keeper.gd`. F is an unmapped key there — it cannot error because there is nothing to error. No runtime guard was added and none is needed.
+
+**Props.** Each build excludes the character you play, per the `CS-props-necro` precedent ("the necro IS the player"). `CS-props-trio` carries exactly two stills — `keeper_rest_still`, `necro_standing_still` — and **no warlord still**, so trio is already warlord-correct. ⚠ **The existing `runs/C-6/artifacts/CS-props-necro` drops BOTH stills** — it descends from the older v25 set, not from the trio — so reusing it would have silently removed the Keeper statue from the Necromancer's scene. It was not reused; `runs/C-8/web/mk_props_keeper.py` derives fresh trio-minus-one sets for both, and the necro was re-exported against the corrected set (`build-necro2`).
+
+**Necromancer N/NE/NW.** Never generated; the build has 25 animations across 5 directions (E/S/SE/SW/W). Surfaced in plain words on the select screen rather than hidden. In play, `keeper.gd:_nearest_animation` falls back on the SpriteFrames it actually has, so he keeps his **west-facing profile while walking north** — sliding upward in side view. Godot reports it itself: `Missing animation walk_N; using walk_W`. Captured against the Keeper's correct rear view in `runs/C-8/web/verify-local/`.
+
+**Two landmines Matt flagged — both checked, neither required a change:**
+1. **`vercel.json` rewrite.** Does NOT intercept the game assets: Vercel checks the filesystem *before* rewrites. Verified on live production — `warlord/keeper/necro.pck` → `application/octet-stream`, `index.wasm` → `application/wasm`, all br-encoded, while `/play` `/kits` `/canon` still fall through to the SPA shell. **`vercel.json` left UNCHANGED** — a speculative negative-lookahead is the exact shape of the May 12 regression, and my own file-type rule forbids shipping a vercel.json change without a local routing smoke-test, which `vercel dev` could not provide (it demands an interactive device login). If Matt wants the exclusion made explicit, it needs `vercel login` first.
+2. **COOP/COEP.** Not needed. The Web preset builds with **threads OFF** (`GODOT_THREADS_ENABLED = false`, fenced in `build_char.sh`), so there is no SharedArrayBuffer requirement. Enabling COEP would only risk the app's other cross-origin loads for no gain. No cross-origin-* headers are set in production, and all three characters boot.
+
+**Route-collision hazard removed before deploy:** portraits were first written to `public/play/`, directly shadowing the `/play` SPA route — a static host can resolve the directory before the rewrite. Moved to `public/characters/`.
+
+**How it was verified (`runs/C-8/web/verify_trio.js`, headless Chrome, run against BOTH a served local build and live production — ALL PASS on both):** per character — boots; only its own pack is fetched (wrong-pack fetches fail the run); scene actually drawn (88% non-background, not a black canvas); a held movement key repaints the view; F fires the whirlwind on the Warlord and is inert on the other two; **the game still responds to movement after F** (degraded, not broken); the "Change character" chip resolves to `/play`. Plus 375 px portrait select screen with no horizontal overflow and 44 px tap targets, and a phone-landscape (844×390, touch) production load with joystick + CAST/JUMP/VFX and the chip.
+
+⚑ **Two instruments lied this session; both were caught, and in both cases the instrument was the defect, not the build.**
+- **The F probe** used `keyboard.press()`. The warlord's attack is a **HELD channel** (`Input.is_action_pressed`, Cyclone-style — the spin costs you your sprint), so a down+up inside one frame reads as released on the next physics tick. The first run reported the attack **broken**. It was not. Fixed to hold, and **the whirlwind was confirmed by eye on the captured frames before the threshold was touched** — the number followed the picture, not the other way round.
+- **The deploy-readiness poll** checked the HTTP status of a *ranged* request and accepted `206` — which the 707-byte SPA fallback also returns. It declared the deploy live ~40 s early, and the very next probe "showed" the rewrite eating every pack. Re-polled on **content-type**, not status. Same family as the standing `git diff HEAD~1` finding: *the check running is not the check passing.*
+
+**Files — loadout:** `src/pages/Play.tsx` (new) · `src/App.tsx` (+`/play` route) · `src/components/Nav.tsx` (+Play tab, first) · `public/characters/{warlord,keeper,necro}.png` · `public/playtest/cliffside/{index.html,warlord.pck,keeper.pck,necro.pck}` (`index.pck` → `warlord.pck`) · `public/playtest/index.html`.
+**Files — burst (`runs/C-8/web/`):** `build_char.sh` · `lossy_sprites.py` · `assemble_trio.py` · `mk_props_keeper.py` · `mk_portraits.py` · `verify_trio.js` · `props/CS-props-{keeper,necro}` · `build-keeper/` `build-necro2/` `stage-{warlord,keeper,necro}/` · `verify-local/` `verify-prod/`.
+
+**localStorage:** `reincarnated.play.character` — last character chosen (`warlord`|`keeper`|`necro`). Per-viewer convenience only; wrapped in try/catch, nothing depends on it.
+
+**No TODO(drax) overrides opened.** Nothing here compensates for an engine gap; the frozen exporter (`export/godot_import.py`) was not touched, and `~/Games/reincarnated-godot` was used read-only.
+
+**Note for Matt:** the `/playtest/cliffside/` route was replaced in place, so any existing bookmark still works and now lands on the Warlord by default; `/play` is the front door.
