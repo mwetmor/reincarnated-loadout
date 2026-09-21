@@ -14,6 +14,7 @@ import { EngineState } from './pages/EngineState';
 import { Forge } from './pages/Forge';
 import { CanonIndex } from './pages/CanonIndex';
 import { CanonKit } from './pages/CanonKit';
+import { Play } from './pages/Play';
 // cycle-18 recovery-2: KitBrowser at /kits preserves cycle-18 grid surface.
 // /kit-space redirects to /kits (discovery surface); /loadout = rich per-character view.
 // cosmograph Phase A (2026-06-06): /forge = forward-looking future-engine substrate cosmograph.
@@ -84,6 +85,13 @@ export default function App() {
             {/* cycle-18 recovery Fix A: explicit /loadout route so direct URL navigation resolves */}
             <Route path="/loadout" element={<Loadout />} />
             <Route path="/sample" element={<Sample />} />
+            {/* /play (Matt-requested 2026-09-21): character select for the playable
+                cliffside scene. Three Godot .pck packs against ONE shared engine wasm
+                under public/playtest/cliffside/; the pack is chosen here, before the
+                engine boots, so only one character is ever downloaded. Selecting is a
+                full-page navigation out of the SPA (Godot wants real keyboard focus),
+                and the game shell carries a chip that links back to this route. */}
+            <Route path="/play" element={<Play />} />
             <Route path="/pitch" element={<Pitch />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/encounters" element={<Encounters />} />

@@ -26,6 +26,9 @@ export function Nav() {
             className="flex items-center gap-0.5 sm:gap-1 overflow-x-auto [&::-webkit-scrollbar]:hidden"
             style={{ scrollbarWidth: 'none' }}
           >
+            {/* /play (2026-09-21): the playable cliffside scene — character select.
+                First in the strip because it is the only player-facing surface here. */}
+            <NavItem to="/play">Play</NavItem>
             <NavItem to="/pitch">Summary</NavItem>
             <NavItem to="/loadout">Loadout</NavItem>
             {/* cycle-18 recovery-2: Kits nav item for kit browser surface */}
