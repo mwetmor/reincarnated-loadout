@@ -3846,3 +3846,43 @@ At the plateau the tower is ~90 % occluded by the near cliff — only its burnin
 **Captures:** `agentic_orchestration/drax/captures/2026-09-27-c9-horizon-landmarks/` — `bridge_west_landing_{A,B}.png`, `plateau_{A,B}.png`, and the stacked A-over-B pairs.
 
 **Open, queued:** R-C9-47 — Matt still sees *"a gap of black area between the lower thigh and upper thigh/hips"*. The conductor's diagnosis is right and is a defect in **my own probe**: it measures TRANSPARENT pixels, so the ×0.68 backdrop plug passes while reading to a player as a hole. RP-E (painted under-tabard layers) has landed; the fix is paint, not geometry, and the probe must fail on a **dark plug** (luma well under the adjacent plate), not only on alpha. **That is instrument defect #8 and the first one a player found before I did.**
+
+---
+
+### v1.30 — the hip gap was a DARK PLUG, not a hole; mist matched to A (2026-09-27)
+
+**Authority:** Matt on the live build (R-C9-47) — *"there is still a gap of black area between the lower thigh and upper thigh/hips"* — and R-C9-48, *make B's mist thick and low like A's*. Push authorized for this route.
+
+**Deployed:** loadout `e9647fa..750b602`. Live `index.pck` **sha256 `f5d058f44169f1a30dd82491e01f2251ca391547b0794417901482815173085c`**, 68,603,060 B — byte-identical to the build.
+
+⚑ **My own probe was the defect, and this is the important part.** `joint_gap()` reported **0.00** at the hip while Matt was looking at a black gap. Both were right. The probe counts **transparent** pixels; what sat in the slot between the two tabard flaps was **opaque and dark** — a ×0.68 backdrop at mean luma 75 against the thigh's 96, plus the flat grey slab of a cloned fill. **A dark plug passes a transparency test and reads to a player as a hole.** Eighth instrument on the standing list, and **the first one a player found before I did**.
+
+**The cause was never geometry.** There was no painted armour under the tabard, so anything put in that slot was *invented* — and an invented fill is either the wrong colour or the wrong shape. Three rounds of discs, caps and measured harvests were all the second kind of wrong; they closed the silhouette and left something that still did not look like a knight. RP-E repaints the figure **without the tabard**, so the fauld and mail skirt exist as paint:
+
+- **New part `hip_fauld`** — 23,942 px cut from `RP-E_a` at the mail's hem (seed rows 768–900), carried on the **hip bone**, drawn **in front of both thighs** and behind the tabard flaps: the job the tabard itself does in the still. (Behind them, where `body_backdrop` sat, the thigh's own cap draws over it and the slab comes back.)
+- **Thigh caps repainted** from RP-E's own cuisse below the mail hem, instead of the 17 px of plate that happened to show between the flaps. A cuisse top should be painted from cuisse.
+- **`body_backdrop` deleted.** It was darkened to ×0.68 precisely *because* it was a guess — shadow was the only way to make an invented shape defensible. With real paint there is nothing to hide and no reason to dim it.
+
+| slot between the flaps, full walk cycle | before | after |
+|---|---|---|
+| transparent | 12.31 % | **2.55 %** |
+| slot luma (near-thigh plate = 75.3) | — | **96.0** |
+
+**The crotch needed nothing, and I checked before building rather than after.** In `RP-E_a` every row from 760 to 1020 is a single contiguous run of armour — there is no gap between the legs anywhere in the painted pose. No plug was reinstated.
+
+**Tone** matched by −2.5 luma (a) and −4.7 (b), measured where all three show the *same object*: helm +2.55 and greaves +2.49 agree to 0.06, so it is a uniform exposure difference. **b's greave figure (+15.34) is not a tone measurement and was not used** — those masks intersect b's *far* leg with the seed's *near* leg (IoU 0.52), comparing two different objects and returning a number anyway.
+
+**The probe now fails on a dark plug — and not by asking "is this pixel dark".** The mail skirt *is* dark; a threshold that catches a ×0.68 backdrop at luma 75 also catches painted mail at 71, and **the first version of this check duly flagged the fix as worse than the bug** (hip 6.33 → 8.33). It now asks *"is this darker than the source says"*: every part's opaque pixels are compared with the painting's own pixels at the same coordinates, and the far-side copies are checked against their **declared** ×0.85 rather than excused. Every part lands at 0.99–1.00 of its source; `hip_fauld` is exactly **1.000**. The render-time dark-plug scan is kept as a reported diagnostic with that limitation stated in the code.
+
+**R-C9-48 — the mist.** A flat alpha cap matched A's **peak** and nothing else: B ran at mean alpha 0.443 against A's 0.341 and median 0.518 against 0.333, so the bank was denser all the way up and crossed half-coverage **260 screen px** above A's. *Matching one number of a distribution is not matching the distribution.* The whole alpha **histogram** is now matched onto A's over 512 quantiles — same mean, same median, same falloff, same peak — with the purple tint untouched. Plus a **measured −90 px screen trim**: the horizon rule matches half-coverage of the *layer's* width, and the screen only ever shows 1920 of its 4340 columns, so for a bank whose density varies horizontally those are not the same row. That correction cannot be folded into the rule, because the rule has no way to know which columns are on screen.
+
+| on-screen bank row | A | B | Δ (was) |
+|---|---|---|---|
+| bridge | 975 | **981** | +6 (−260) |
+| plateau | 614 | **615** | +1 (−246) |
+
+All three layers are now within 6 px at both cameras: far −6/0, forest −6/−2, mist +6/+1.
+
+**Verification:** desktop app GREEN (15/15 rig parts); `probe_rig.gd` 0 failures; web boot smoke green 7.6 s; live pck hash verified by full download.
+
+**Captures:** `agentic_orchestration/drax/captures/2026-09-27-knight-hip-fauld/hip_before_after_slowmo.mp4` (1/3 speed, hip only, walk then run) and `…/2026-09-27-c9-mist-density/` (A and B at both cameras, plus stacked pairs).
