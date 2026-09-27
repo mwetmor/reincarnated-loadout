@@ -3799,3 +3799,50 @@ Heel-toe had been rejected earlier because pivoting over the toe worsened reach.
 **No TODO(drax) overrides opened.** Nothing here compensates for an engine gap; `reincarnated-engine/` untouched.
 
 **Queued next (do not start without the conductor's go):** R-C9-41/42 — far-layer + horizon match to A's H1, cathedral/tower as staggered sprites, de-glitched forest, original C-3 cloud band. Inputs confirmed ready by the conductor.
+
+---
+
+### v1.29 — horizon back on the rule, landmarks as staggered sprites, idle↔walk blend (2026-09-27)
+
+**Authority:** Matt R-C9-41/42 — *"the horizon is far too large; match it to the other cliffside"*, *"stagger the cathedral and castle as they are in the original cliffside image"*, *"remove the glitches from the fire"*, *"bring the original clouds from the original cliffside"* — and R-C9-46, a short blend between idle and walk. Push authorized for this route, loadout only.
+
+**Deployed:** loadout `8cc2ab2..d438b56`. Live `index.pck` **sha256 `87f604b8959ec0d4c7391effe43cfa67b14a1474d37cdf3d568ea2b2ae34504d`**, 68,868,252 B — byte-identical to the build. `/playtest/cliffside/` untouched.
+
+**One layer cannot be framed twice.** `far_ruins` carried a `LAYER_DY_OVERRIDE` of +626 and `LAYER_DX` of +160 because the burning tower and cathedral were painted *into* it and stood 500–580 px above its own ridge: framed by the horizon rule they went off the top of the screen; framed for them, the ridge went 598 px down the frame. Matt saw the second and called the horizon far too large — the override was the cause, not the cure. Astra cut the landmarks out (`L12_layer_far`, the same painting with the hills continued behind them), so the layer is anonymous hills again and the plain rule fits it. Both overrides deleted; `TOP_FADE_PX` went with them, since no layer's own top edge is in frame any more.
+
+| on-screen solid row | A | B | Δ |
+|---|---|---|---|
+| bridge west landing — far | 48 | **42** | −6 |
+| bridge west landing — forest | 667 | **661** | −6 |
+| plateau — far | ridge above the viewport | same | 0 |
+| plateau — forest | 438 | **436** | −2 |
+| bridge — mist | 975 | 715 | **−260** |
+
+⚠ **The mist is the one layer still well off** (−260 at the bridge, −246 at the plateau) and it was not in this brief, so it was not touched. Its offset *is* on the horizon rule; the divergence is density, not placement — B's mist is tinted and capped at 220/255 alpha, so its 50 %-coverage row sits much higher than A's soft bank. Flagged, not fixed.
+
+**The landmarks, staggered the way A staggers its own** — a big one down in the land band, a small one up under the horizon, which is what reads as depth. New sprites under the `far_ruins` Parallax2D, over the far layer and under the forest by relative `z_index`, positioned in **layer-local coordinates stated as a distance from the horizon row**, so the numbers survive a re-render of the layer. B-only; no collision, so `visible` is the whole of it (unlike the still figures, which take a `StaticBody2D` down with them).
+
+| | scale | building, layer px | base below ridge | bridge box | plateau box |
+|---|---|---|---|---|---|
+| cathedral | 0.759 | 300 × 405 | 588 | x 27..641, y 215..667 | x 178..755, y 90..445 |
+| tower | 0.352 | 102 × 178 | 210 | x 807..1053, y 46..278 | x 941..1024, y 0..142 |
+
+At the plateau the tower is ~90 % occluded by the near cliff — only its burning top shows. The cathedral is the landmark that reads there, which is the role A's distant ruin plays at that camera.
+
+**Measured, not derived.** Horizon rows are read off frames with each layer rendered alone (`measure_horizon.py`); each landmark box is captured **with and without itself** and taken as the difference (`capture_landmarks.py`), so a wrong assumption about Parallax2D's scroll cannot pass — and hiding them one at a time also proves there is exactly one of each, no duplicates.
+
+**Forest:** swapped to the de-glitched `L12_layer_forest`. **Clouds:** the plate is now `CS9-band5`, the original C-3 band. The flagged vertical transition near x=4224 measures **1.94/255** between adjacent columns against a local median of 0.40 — real, but the band already shipped has a larger maximum step (2.74) elsewhere, and **no player camera reaches that column of the cloud bank** (at the bridge it is 566 px past the right edge). Not fixed, as instructed.
+
+**R-C9-46 — the idle↔walk pop.** idle stands at the painted hip height; the walk carries a 10.3 rig px crouch, so switching clips moved the whole knight in one frame. Every clip change now cross-fades over **0.18 s**. The duration is derived, not felt: the hip's per-frame change through the transition must stay under the walk's own bob, which sets a floor of 0.111 s; 0.18 gives a 1.6× margin and is still inside one Keeper step (0.29 s). Measured in Godot — idle↔walk **1.034 px/frame against a 1.173 bar**, idle↔run **2.384 against 2.784**.
+
+**…and the bob itself was snapping**, which had to be fixed before anything could be asserted against it. The reach clamp only looked at the *planted* leg, so the binding constraint changed identity in one frame at each stance handover — and because the two legs stand on ground lines 7.1 rig px apart, the two constraints disagree there. The hip stepped **2.32 rig px, the entire bob, in a single physics frame, twice per stride**. Both legs are now evaluated every frame (a swinging leg's constraint is slack and costs nothing) and the height's lower envelope is smoothed *under* the constraint, never over it, so reach is still guaranteed by construction. 2.32 → **1.70**.
+
+⚑ **Two more instruments that returned cleanly on the wrong question** (6 and 7 on the standing list):
+6. The horizon probe sampled **the frame's own top-left corner as "background"**. Where a layer covers that corner, the sample *is* the layer — so everything else differs from it and every row reads as covered. Eight layers × two styles, all reporting row 0. It now reads the project's declared clear colour, and hides the HUD: a full-width panel on row 0 was the other half of the same zero.
+7. **Godot's import cache, twice in one session.** A capture taken after rebuilding the far layer showed a cathedral that is not in the source file — Godot had drawn the *stale* imported texture. Ten minutes went into hunting a cathedral in a painting that does not contain one. `--import` after any texture rebuild, before any capture.
+
+**The plateau camera moved** from the far-plateau clearing across the bridge to the west plateau's northern lip (2200, 2000). The clearing is what the C-7 README calls the plateau and it is the wrong camera for this question: from it you are looking at meadow, the far layer is a sliver in one corner, and in A there is no cathedral there at all. The conductor's test for the right camera was *"in A the cathedral reads top-left"* — and that is this one.
+
+**Captures:** `agentic_orchestration/drax/captures/2026-09-27-c9-horizon-landmarks/` — `bridge_west_landing_{A,B}.png`, `plateau_{A,B}.png`, and the stacked A-over-B pairs.
+
+**Open, queued:** R-C9-47 — Matt still sees *"a gap of black area between the lower thigh and upper thigh/hips"*. The conductor's diagnosis is right and is a defect in **my own probe**: it measures TRANSPARENT pixels, so the ×0.68 backdrop plug passes while reading to a player as a hole. RP-E (painted under-tabard layers) has landed; the fix is paint, not geometry, and the probe must fail on a **dark plug** (luma well under the adjacent plate), not only on alpha. **That is instrument defect #8 and the first one a player found before I did.**
