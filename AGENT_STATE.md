@@ -3748,3 +3748,54 @@ First session 37–42 MB depending on character; ~28–33 MB to switch after (en
 **Third instrument defect in this piece** — after the tapped F and the ranged-`206` deploy poll — and the same shape each time: *a check that ran, returned cleanly, and was not answering the question asked of it.* In all three the build was correct and the measurement was not. This is the standing `git diff HEAD~1` finding in a different repo.
 
 **Copy updated** on `/play` (desktop F line, phone WHIRLWIND line, Warlord blurb) and on `/playtest/index.html` — all three say **hold**, because a player who taps it will conclude it is broken exactly as my own probe did.
+
+---
+
+### v1.28 — E rig: heel-toe as a ROLL, the hip join closed, Grok playback halved where the loop held two strides (2026-09-27)
+
+**Authority:** Matt, playing the live A/B cliffside (ledger R-C9-40) — *"the rig has the legs detaching at the thigh from the body and moving as ghosts. Also, the feet should not be flat.. they need to move up and down. Separately, the grok animation has speed issues. Some of the walks and runs are too fast (roughly double)."* Push authorized for this route update, loadout only.
+
+**Deployed:** loadout `3a6f12a..0babbf4`, production via the git integration. Live `index.pck` **sha256 `ba748764545f30f82e979c60298886485873a35ce4ff3bb5568a929d5e950822`**, 68,283,644 B — byte-identical to the local build. Burst tooling `43f02614c` (committed, **not** pushed). `/playtest/cliffside/` untouched.
+
+**The "ghosts" were the detachment and nothing else.** The conductor relayed Matt's clarification mid-task: disembodied legs look like ghosts; it was never about transparency or the far leg reading faint. **No opacity, tint or blend was changed** — and none needed to be: the rig has no semi-transparency and no additive blend anywhere, only a ~1 px alpha feather at each cut edge. Three separate causes, all in the cutting rather than the motion:
+
+1. **The thigh's hip end was a rectangle.** `clone_up()` filled the cuisse's hidden top by extruding the plate's widest row straight up, and *a rectangle rotated about a point inside it sweeps its corners off the pivot*. The thigh swings 64° in the walk and 91° in the run. Replaced by a **solid disc centred on each thigh's own socket** (the far leg's own socket sits 32 seed px up and 10 forward, so it gets its own) — the one shape a rotation about a pivot cannot move, so the join *cannot* open rather than merely not opening at the angles someone sampled.
+2. **The tabard is two separate hanging flaps**, and the torso plate stops 22 px below the hip. Between the flaps, below the belt, the only thing covering the body was the legs themselves — part them and the background showed *through* the knight. New part **`body_backdrop`** rides the hip bone at `z=-1`: the still's own pixels at those coordinates, ×0.68, at the bottom of the z order so it can only ever appear where there was a hole.
+3. **Knee and ankle seams were cut for a standing pose** (11 seed px of cuisse over greave; an ankle cut 62 px wide with the pivot at one *end* of it) and came apart the moment the foot articulated. Matching discs on both plates of each joint, plus a fill *measured* off the rendered rig — the lower plate is rotated through its working range and exactly what goes bare is painted in, from the still's own pixels, so at the painted angle the fill lies on what it covers and is invisible.
+
+| worst gap across a joint, every frame (rig px) | before | after |
+|---|---|---|
+| hip, near leg — walk / run | 4.33 / 8.00 | **1.00 / 1.00** |
+| hip, far leg — walk / run | 13.67 / 18.33 | **0.67 / 1.00** |
+| knee, near / far — walk | 2.67 / 6.00 | **0.33 / 0.00** |
+| ankle, near / far — walk | 6.00 / 9.33 | 5.00 / 4.67 |
+| idle, every joint | 0.67–4.33 | **0.00–0.33** |
+
+The residual ~5 rig px at the ankle is the **painting's own articulation notch** between the greave's front and the beak: the fill paints only where the still is opaque, so it cannot cross a gap the painter drew.
+
+**Heel-toe is a ROLL, not a rotation curve.** The contact walks along the sabaton's own lower convex hull and the foot's angle is whatever lays that hull's tangent flat on the ground. Three things follow without tuning: the angles are the painter's (his rocker runs −51°…+38°), the sole can neither sink into the ground nor float above it because the ground *is* the tangent line, and there is **no slip** — rolling without slipping means ground distance equals arc length, so the material point in contact has zero world velocity. Walk: heel strike toe-up **17.8°**, toe-off toe-down **29.3°**. Run: forefoot landing **−4.0°**, toe-off **+33.2°**. Contact slide **0.000 rig px** authored; **0.006 (walk) / 0.010 (run) canvas px** measured through the live bone chain in Godot.
+
+Heel-toe had been rejected earlier because pivoting over the toe worsened reach. Under a roll it does the opposite: the **ankle rises 13.2 rig px** over the rolling forefoot at toe-off, and the roll itself carries 20 rig px of the step. What actually bought the crouch back was **solving the plant's fore-aft placement** instead of centring the sweep on the hip — the two ends of a stance stopped being equally expensive once the foot articulated (heel strike puts the ankle 9.0 rig px up, toe-off 27.3). **Crouch 16.5 → 10.3 rig px (7.9 canvas px), bob 2.3 (walk) / 6.0 (run)**, and the walk's thigh range came down from 75.4° to 63.8°.
+
+**Grok speed.** `fps = 12 / keeper_stride` assumed one stride per 12-frame loop. **Nine of sixteen cells hold two**, so the knight took four steps in the time the Keeper took two — Matt's "roughly double", exactly where he saw it. Playback is now `12 / (strides × keeper_stride)`, the count measured per cell and read from `frames/knight_stride_census.json`, never assumed. Halved: **walk_S, walk_W, walk_NE, walk_SE, run_S, run_SW, run_W, run_NW, run_N** (20.700 → 10.350 fps walk; 21.750 → 10.875 run).
+
+⚑ **FIVE instruments were wrong before any of this was right, and every one of them returned cleanly.** Same family as the standing `git diff HEAD~1` finding and the v1.27 F-probe: *the check running is not the check passing.*
+1. An unrestricted transparency scan called the **open inside of a bent knee** a 62 rig px hole. A detachment is a HOLE — background surrounded by figure. An open notch is anatomy and belongs there.
+2. The enclosed-hole measure then counted the slot between the knight and **the pollaxe haft** — "37 rig px at the knee". The painting has that slot too; it is the gap between a man and the weapon he carries.
+3. **The enclosed-hole measure is not monotone.** Filling one gap can seal an open notch into a *new* hole. A build/harvest loop run against it oscillated for three passes (ankle 28 → 18 → 20 rig px) with every pass an improvement by its own lights. The measure that decides is now bounded, joint-local and monotone: the longest run of transparent pixels across a joint *with plate on both sides*.
+4. Measuring the stride period on the **source clips** looked like the obvious route (145 frames instead of 12) and cannot work — they hold about 1.5 strides, so there is no periodicity to find. A difference profile returned the search's **upper** bound for all sixteen clips; an autocorrelation then returned the **lower** bound for all sixteen. Neither looked like an error. That tool was deleted rather than shipped.
+5. `build_app.sh` verified the rig by enumerating **fourteen part names** and went on reporting *"all 14 knight-rig parts in the pck"*, green, while saying nothing at all about the fifteenth — `body_backdrop`, the part the entire hip fix depends on. It now reads the list from the scene. A check that enumerates what it expects stops matching the thing it checks the first time that thing grows.
+
+**Probes:** `tools/probe_rig.gd` **0 failures**, with two assertions added and one corrected. Added — the thigh's hip disc read off the **texture in texel space** (the invariant that makes the gap impossible, not a sample of frames), and contact-point slide through the live bone chain. Corrected — the old assertion that the planted *ankle* holds still: it does not any more and must not, because the foot rolls; asserting zero there would fail a correct heel-toe and pass a foot sliding backwards. It now checks the ankle travels the **authored** roll (9.4 walk / 10.0 run canvas px).
+
+**Verification:** local boot smoke `booted=true`, 7.7 s, `index.js` / `index.wasm` / `index.pck` all 200 with correct content types. **Live production** `toggle_test.js`: `CHANGED T (style B → A)`, `CHANGED T (style A → B)`, `CHANGED G (E rig ↔ Grok)`, `pageerror: none`. Live pck hash verified by full download against the local build.
+
+⚠ **A readiness check nearly lied again, and was caught:** the first deploy poll accepted a `206` on a ranged request plus an HTML content-type — conditions the *old* pck satisfies too. It reported the deploy live while `content-length` was still 68,243,988. Re-polled on the **exact content-length of the new build**, then confirmed by sha256. Same shape as the v1.26 ranged-`206` defect, one repo later.
+
+**Slow-motion comparison (1/3 speed, before vs after, E walk and E run, with a ground line):** `agentic_orchestration/drax/captures/2026-09-27-knight-rig-heeltoe/rig_before_after_E_slowmo.mp4` (10.2 s, 306 frames).
+
+**New tooling (burst, `runs/C-9/cliffside_B/tools/`):** `render_rig_E.py` (rasterises the shipped `.tscn` off-line and probes its joints — a second implementation of Godot's 2D transform composition, so it is checked against a Godot render rather than trusted alone) · `harvest_gaps.py` (maps measured gaps back through the bone chain into seed coordinates) · `measure_strides.py` (the stride census) · `render_rig_compare.py` (the slow-motion side-by-side).
+
+**No TODO(drax) overrides opened.** Nothing here compensates for an engine gap; `reincarnated-engine/` untouched.
+
+**Queued next (do not start without the conductor's go):** R-C9-41/42 — far-layer + horizon match to A's H1, cathedral/tower as staggered sprites, de-glitched forest, original C-3 cloud band. Inputs confirmed ready by the conductor.
