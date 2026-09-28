@@ -3915,3 +3915,38 @@ Nothing moved by more than 1 px, so nothing was chased.
 **The separate mist layer is left at its R-C9-48 histogram match.** My read is that the combined result is **not** too heavy: at both cameras the burning cathedral, the tower and the individual fires all still read through the veil, and the middle distance now carries the atmospheric weight A's has rather than less. A-over-B captures at both cameras are in `agentic_orchestration/drax/captures/2026-09-27-c9-painted-mist/` so the call can be overruled on the pictures rather than on my description of them.
 
 **Verification:** desktop app GREEN (15/15 rig parts); web boot smoke green 7.8 s; live pck hash verified by full download; live toggle test `CHANGED T (B→A)`, `CHANGED T (A→B)`, `CHANGED G`, `pageerror: none`.
+
+---
+
+### v1.32 — landmark smoke re-tinted violet-grey (2026-09-27)
+
+**Authority:** conductor R-C9-51 — the cathedral and tower plumes read green-olive over the violet sky (partly residual tint, partly grey reading green against violet by contrast). The smoke was re-tinted in `CS9-assembly/L12_sprite_{cathedral,tower}.png`; this re-imports them. Push authorized for this route.
+
+**Deployed:** loadout `92a3c35..64e10af`. Live `index.pck` **sha256 `9b862937a7976e82de16f178b02aa6fec46b51f64f3ff2ed407d945372cd814b`**, 68,103,108 B — byte-identical to the build. Placement, scale and layer positions unchanged.
+
+**Verified against the files, not the description of them:**
+
+| | before | after |
+|---|---|---|
+| alpha | **byte-identical** (max abs diff 0) | |
+| smoke green excess — cathedral | −22.60 | **−37.35** |
+| smoke green excess — tower | −19.02 | **−36.26** |
+| smoke blue-over-green | +7.68 / +10.51 | **+32.50 / +32.46** |
+| **fire** | **byte-identical** — sat 0.792→0.792, luma 121.6→121.6, R−B +168.0→+168.0 | |
+| masonry | green excess −27.03 → −27.14, luma 87.7 → 87.3 | |
+
+**On screen at the bridge**, measured on the **36,934 pixels that actually changed** rather than on a guessed plume box: green excess −25.31 → −31.76, **p95 −2.00 → −15.00**, blue-over-green −1.30 → **+20.64**. The p95 is the one that matters — the worst-case pixel went from essentially neutral, which is what reads *green* against violet, to clearly violet-leaning.
+
+⚑ **Two instruments of mine misfired here, and both were mine, not the build's.**
+1. My first on-screen check **boxed the plume by eye**. The box was ~90 % violet sky — the very thing it was meant to exclude — so it reported *no change at all* on a change that had plainly landed. Replaced by differencing the two captures and measuring only where they differ.
+2. My first file check flagged **23 % of the cathedral's and 33 % of the tower's opaque pixels as changed**, ~90 % inside the stated building span — which contradicts *"partial-alpha pixels only"* and looked like the edit had reached into the masonry. **It had not.** Those are pixels of *opaque smoke* (the dense plume near the source), and my "fire" classifier was **saturation-only**, so it counted fire-lit plume as flame. Defined properly — saturated *and* bright *and* warm — the fire is untouched to the byte.
+
+Ninth on the standing list, and **the first one that would have made me block a correct change rather than ship a broken one.** Worth noting the asymmetry: every earlier instrument defect risked shipping a fault; this one risked refusing a fix.
+
+**No source commit in collaboration or godot.** The scene and `landmarks_b.json` are byte-identical (the placement did not move) and the only change is the binary sprite PNGs, which are untracked by policy — so the ledger entry `M-C9-SMOKE-RETINT` is the text-level record of this verification.
+
+**Verification:** desktop app GREEN (15/15 rig parts); web boot smoke green 7.8 s; live pck hash verified by full download.
+
+**Captures:** `agentic_orchestration/drax/captures/2026-09-27-c9-smoke-retint/` — `bridge_B_before.png`, `bridge_B_after.png`, and the old-vs-new sprites over the violet sky.
+
+**Standing down.** The rig and 3D work moved to another session.
