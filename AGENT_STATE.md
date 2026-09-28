@@ -3972,3 +3972,16 @@ Ninth on the standing list, and **the first one that would have made me block a 
 **Frame rate.** Desktop, vsync off, 1920×1080, M2, `gl_compatibility`: Keeper 82/85, sprites 82/76, runtime 3D 74/70 (stand/walk). Web: all three at **60**, which is the `requestAnimationFrame` cap — the web number can say a skin does not *drop* frames; it cannot show headroom.
 
 **Captures:** `agentic_orchestration/drax/captures/2026-09-28-chartest/`.
+
+### 2026-09-28 (later) — R-C9-61 fix pass: E/W facing, pollaxe socket, carry clips
+
+Matt on the live route: *"With the Meshy version, E and W are inverted. Also the poleaxe floats near the character awkwardly."* Both confirmed, both fixed, live. `keeper.pck` 34,033,912 → **34,285,876**, sha256 `0fad9ff312c08be9317b5e5c68531848308c017ba68a2131daa717a3b2f4505e`, verified by download. Loadout `17e182a`, pushed. Collaboration `ad07e3faf` (not pushed).
+
+- **3D azimuth had the wrong SIGN**, not a 180° offset — a reversed forward swaps both axes, and N/S were correct. `az → -az`. `AZIMUTH_SIGN` in `knight3d.gd`.
+- **Placeholder sprites are W-facing art** fed unflipped to all 8 directions. Now mirrored for E/NE/SE, with `source_faces` declared in the manifest. **When the real per-direction set lands, set `source_faces` to `""` — a real set mirrors nothing.**
+- **Pollaxe** socketed to the RightHand bone (position + rotation) from the knight3d session's `socket_pollaxe.json`, now vendored at `godot/frames/socket_pollaxe.json`. Their fit is in **Blender Z-up** and this runtime is Y-up, so the rotation is conjugated (`C·R·C⁻¹`), and the two number the haft's ends oppositely so it takes a half turn. If they re-fit, re-copy the file; the conjugation and flip stay.
+- **walk/run/idle now play the carry clips** (`c_*`) when armed, library clips (`k_*`) when not. Retimed **per stride, not per clip** — the carry walk is 3.53 strides in 3.97 s and whole-clip scaling would have run it ~6× fast. Strides measured at build time; carry clips trimmed to whole strides so they loop.
+
+**⚑ The check that let this ship:** my facing test compared the three skins at ONE direction, saw them agree, and called it settled. Agreement at a single direction cannot distinguish "all correct" from "all mirrored" — an E/W swap is invisible to it by construction. `godot/tools/facing_probe.gd` now walks all 8 against the Keeper and asserts (forward from ankle→toe, projected onto the camera axes): **40 assertions, 0 failures.** Keep using it after any camera or rig change.
+
+**Still open:** `meshy_t1/camera.json` (the knight3d session's single camera number) has not landed; the build still uses my measured 114.729 px/m fit. Read from that file when it appears. `sprites_t1/` also not landed.
