@@ -3950,3 +3950,25 @@ Ninth on the standing list, and **the first one that would have made me block a 
 **Captures:** `agentic_orchestration/drax/captures/2026-09-27-c9-smoke-retint/` — `bridge_B_before.png`, `bridge_B_after.png`, and the old-vs-new sprites over the violet sky.
 
 **Standing down.** The rig and 3D work moved to another session.
+
+---
+
+## 2026-09-28 — R-C9-61: character toggle (K) on `/playtest/cliffside/` (T1 sprites + T3 runtime 3D)
+
+**Shipped and live.** `keeper.pck` 31,228,456 → 34,033,912, sha256 `f8179ee46010edf03d55d153f041467827fd87cee0f7a7576a12b732a4580c3d`, verified by full download. `index.html` changed by one line (the keeper pack's declared size). `warlord.pck` and `necro.pck` untouched. Loadout commit `7cabee4`, pushed.
+
+**The URL to hand anyone is `…/playtest/cliffside/?c=keeper`** — the bare route still defaults to `warlord` (`GODOT_DEFAULT_PACK`), which is unchanged and correct, but it is not the build this test lives in.
+
+**What K does:** cycles the player's VISUAL only — Keeper (default) → knight sprites (T1) → knight runtime 3D (T3) → Keeper. Three sibling nodes under the one `CharacterBody2D`; no scene switch, no new scene, and the body, collision shape, camera and walk/run speeds stay the Keeper's. Matt's read was that the A/B route lags because it switches scenes; whether or not that is the cause there, this build does not pay it. Touch button `K` / `CHAR` added to `reincarnated-godot/web/_overlay/touch_controls.gd`; it is dropped at `_ready` on every route that does not declare `char_toggle`, so no other route changes.
+
+**Sources live outside this repo** (`reincarnated-collaboration` commit `38803fc84`): `runs/C-9/chartest/tools/` and `chartest/godot/scripts/{character_skin,knight3d}.gd`. This repo holds only the built route.
+
+**⚑ Standing item — the T1 frames are a PLACEHOLDER.** `meshy_test/paint_a` is one painted E walk shown in all eight directions, so the knight does not turn. Labelled on the HUD. The real set lands at `runs/C-9/meshy_t1/sprites_t1/` (another session's `knight3d/` pipeline, not yet written). Swapping it is one line in `chartest/tools/knight_frames_manifest.json` — **and the camera fit must be re-run with it** (`godot/tools/fit_knight3d.gd`), or the 3D skin stays calibrated to the old artwork and the two knights will not be the same size.
+
+**⚑ Two px/m figures are in circulation for this character and neither is right.** 117.5 (`meshy_test/render_anim.py` ortho_scale) and 110.185 (`knight3d/10_render.py` `BODY_PX / 1.80`). Fitting the camera against the sprite cells actually in the build gives **114.729 px/m** (residual 0.00 px on both sole row and body height). Raised for the sprite-pipeline session, since the same disagreement sits on their side of the seam; not patched by me — it is theirs.
+
+**Defect found only in the browser:** `character_skin.gd` listened for K as an event *and* polled it as an action, so one press ran `cycle()` twice and the sprite skin was skipped. The scene probe passed throughout because it calls `cycle()` directly, underneath the input layer. `probe_chartest.gd` now sends a real `InputEventKey` and asserts the skin advances by exactly one.
+
+**Frame rate.** Desktop, vsync off, 1920×1080, M2, `gl_compatibility`: Keeper 82/85, sprites 82/76, runtime 3D 74/70 (stand/walk). Web: all three at **60**, which is the `requestAnimationFrame` cap — the web number can say a skin does not *drop* frames; it cannot show headroom.
+
+**Captures:** `agentic_orchestration/drax/captures/2026-09-28-chartest/`.
