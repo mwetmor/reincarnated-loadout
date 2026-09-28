@@ -3985,3 +3985,17 @@ Matt on the live route: *"With the Meshy version, E and W are inverted. Also the
 **⚑ The check that let this ship:** my facing test compared the three skins at ONE direction, saw them agree, and called it settled. Agreement at a single direction cannot distinguish "all correct" from "all mirrored" — an E/W swap is invisible to it by construction. `godot/tools/facing_probe.gd` now walks all 8 against the Keeper and asserts (forward from ankle→toe, projected onto the camera axes): **40 assertions, 0 failures.** Keep using it after any camera or rig change.
 
 **Still open:** `meshy_t1/camera.json` (the knight3d session's single camera number) has not landed; the build still uses my measured 114.729 px/m fit. Read from that file when it appears. `sprites_t1/` also not landed.
+
+### 2026-09-28 (3rd pass) — R-C9-61: figure height + camera.json adopted
+
+Matt: *"Is the keeper larger?"* She was, by 16%. `patch_scene.py` copied the **Keeper's** cell scale (0.629167) onto the knight's cells — hers hold a 238.75 px figure, his hold 200. Live: `keeper.pck` 34,297,544, sha256 `3f12d0e2800b3df15a31f0b4eadf44c5f5920755df0d8b6deb9811217b9fbd36`, verified. Loadout `182f570` pushed (size fix alone, authorized, since `sprites_t1` had not landed). Collaboration `de53f4aeb`.
+
+**The rule of record** (`cliffside_B/frames/knight_fit.json`): every player figure is **150.2135 canvas px** crown-to-sole, props split off. It belongs to the scene, not to a character — **every skin derives its own scale from its own cells; never inherit another character's.** Sprite 0.629167 → 0.751068, 3D View 0.629167 → 0.754839.
+
+**`godot/tools/size_probe.gd`** asserts it on a *player-view* capture (diff against a frame with every skin hidden; thin props split by row width, threshold validated against the Keeper's published 238.75). S: 150.0 / 150.0 / 151.1. E: 148.9 / 150.0 / 148.9. All within 2 px. **Run it after any scale, camera or cell-format change.** It also checks the Keeper against the rule — that caught its own unit bug (it read 125.0 because the project stretches a 1920 canvas into a 1600 window; run it at 1920×1080 or let `_canvas_scale()` convert).
+
+**Camera: `meshy_t1/camera.json` is now the source** (vendored at `godot/frames/camera_meshy_t1.json`). My 114.729 was wrong — it fitted the **placeholder** cells, a paint-over of a 117.5 px/m render measuring 202 px where the game's measure 199. Fit now targets their declared **199 px at ground row 398, stated in pixels**, and lands at 111.935 px/m.
+
+**⚑ 110.556 and 117.5 are one camera in two conventions**, not a disagreement: 117.5 × cos(19.77°) = 110.574. Theirs is projected px per metre of *character height*; gandalf's is an orthographic scale, px per metre of *screen-vertical extent*. The conversion is only exact for a pure vertical — an elevated view mixes in depth, and the crown sits ~0.22 m behind the toes — so **the ratio is pose-dependent and neither number transplants between pipelines. A declared pixel target is the convention-free interface.**
+
+**Still open:** `sprites_t1/` not landed. When it does: set `source_faces` to `""` in the manifest, re-run the frame builder (it re-derives the sprite scale), re-run `fit_knight3d.gd`, then `size_probe.gd` and `facing_probe.gd`, and push.
