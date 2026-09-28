@@ -3886,3 +3886,32 @@ All three layers are now within 6 px at both cameras: far −6/0, forest −6/�
 **Verification:** desktop app GREEN (15/15 rig parts); `probe_rig.gd` 0 failures; web boot smoke green 7.6 s; live pck hash verified by full download.
 
 **Captures:** `agentic_orchestration/drax/captures/2026-09-27-knight-hip-fauld/hip_before_after_slowmo.mp4` (1/3 speed, hip only, walk then run) and `…/2026-09-27-c9-mist-density/` (A and B at both cameras, plus stacked pairs).
+
+---
+
+### v1.31 — painted violet mist in the far and forest layers (2026-09-27)
+
+**Authority:** Matt R-C9-50 — *"Mist: yes, paint it."* Push authorized for this route.
+
+**Deployed:** loadout `39dda0a..883daa0`. Live `index.pck` **sha256 `583d99ae5cb70c32fcd71471934bc4e4cb73d4e9cce9c172b0a76ea36ff8724b`**, 68,089,524 B — byte-identical to the build.
+
+Far and forest sources swapped to `CS9-assembly/L13_layer_{far,forest}.png` — L12 with violet mist banks painted into the valleys by Astra EDIT. Land, fires, plumes and the `#00ff00` plate unchanged; landmark sprites untouched.
+
+**The plate keyed clean — checked, not assumed.** *"The mist is painted into the land, not over the plate"* is exactly the kind of claim that can be true of the intent and false of the file. It held: plate coverage matches L12 to four decimals (far 0.3750 vs 0.3750 at d>240), and the unmix's plate leak is **0.00 % → 0.00 %** on the far layer and 32.59 % → 0.24 % on the forest, both identical to before. The corroborating number is the **smoke band, which shrank** — far 1894 → 852 px, forest 3414 → 2149 — which is what new *opaque* paint does and the opposite of what semi-transparent paint over the plate would do. Green excess of the composite over the sky at the ridge is **−29.4/255 mean** (negative, so no halo), p99 +72.8 on the one-pixel antialias edge, slightly better than L12's +80.9.
+
+**The veiled crests did not move the horizon.** This was the thing to watch, and it came out flat:
+
+| on-screen solid row | A | B | Δ | (on L12) |
+|---|---|---|---|---|
+| bridge — far | 48 | 42 | −6 | −6 |
+| bridge — forest | 667 | 662 | −5 | −6 |
+| plateau — far | ridge above the viewport, both | | — | — |
+| plateau — forest | 438 | 436 | −2 | −2 |
+| bridge — mist | 975 | 981 | +6 | +6 |
+| plateau — mist | 614 | 615 | +1 | +1 |
+
+Nothing moved by more than 1 px, so nothing was chased.
+
+**The separate mist layer is left at its R-C9-48 histogram match.** My read is that the combined result is **not** too heavy: at both cameras the burning cathedral, the tower and the individual fires all still read through the veil, and the middle distance now carries the atmospheric weight A's has rather than less. A-over-B captures at both cameras are in `agentic_orchestration/drax/captures/2026-09-27-c9-painted-mist/` so the call can be overruled on the pictures rather than on my description of them.
+
+**Verification:** desktop app GREEN (15/15 rig parts); web boot smoke green 7.8 s; live pck hash verified by full download; live toggle test `CHANGED T (B→A)`, `CHANGED T (A→B)`, `CHANGED G`, `pageerror: none`.
