@@ -3999,3 +3999,17 @@ Matt: *"Is the keeper larger?"* She was, by 16%. `patch_scene.py` copied the **K
 **⚑ 110.556 and 117.5 are one camera in two conventions**, not a disagreement: 117.5 × cos(19.77°) = 110.574. Theirs is projected px per metre of *character height*; gandalf's is an orthographic scale, px per metre of *screen-vertical extent*. The conversion is only exact for a pure vertical — an elevated view mixes in depth, and the crown sits ~0.22 m behind the toes — so **the ratio is pose-dependent and neither number transplants between pipelines. A declared pixel target is the convention-free interface.**
 
 **Still open:** `sprites_t1/` not landed. When it does: set `source_faces` to `""` in the manifest, re-run the frame builder (it re-derives the sprite scale), re-run `fit_knight3d.gd`, then `size_probe.gd` and `facing_probe.gd`, and push.
+
+### 2026-09-28 (4th pass) — sprites_t1 landed and shipped
+
+192 painted cells (walk + idle, 8 directions) replace the 24-texture stand-in. Live: `keeper.pck` **35,994,216**, sha256 `b23e5d1511bc2bd55eeff9cc11beb05b7a70f29f997615f56f20f7ba3121a890`, verified. Loadout `8de7bee` pushed; collaboration `2760cd9f1`. Probes: toggle 0, facing+weapon 40/40, size 0.
+
+The manifest block did the swap; only two findings needed code.
+
+**⚑ The sprite skin is sized from the set's DECLARED format (199 px @ ground row 398), not from measuring the cells.** The knight carries a *painted* pollaxe whose haft clears his helm, and no splitter survives both references — row width slides 229→198 px with no plateau; a morphological opening hits 200 at one radius and collapses the Keeper's published 238.75 at the next. **Do not "fix" this by tuning a threshold.** The declared format is the convention-free interface and the 3D camera is fitted to the same one. Measured soles (392–401) confirm the declared ground row independently.
+
+**The per-direction size check re-armed by itself** when the substitution list emptied, and failed the sprite at +12/+17 px — that was the haft, not the scale. Replaced for that skin with an exact assertion no prop can contaminate: **scale == 150.2135 / the set's own declared figure height, offset.y == −its declared ground row.** Both skins: 0.754839, −398. That check would have caught the original 0.629167 in one line.
+
+**⚑ `shot_chartest`'s 3× inset is not safe for size comparisons** — it centres via the canvas transform, which doesn't track reliably here, so its panels are framed differently and the 3D knight *looks* half the sprite's size when they measure within 2 px. Use `size_probe`'s saved frames (`user://size/`), which are one player position with only the visible skin changed. `t1_size_sidebyside_{S,E}.png` is the honest picture.
+
+**Still pending:** RUN and ATTACK paint, behind the run's Astra image cap. Run plays walk cells at the Keeper's run stride; attack falls back to idle; both labelled on the HUD. When the paint lands: set `states.run.from` to `"run"` and drop its `hud_note`; same for attack. The 3D skin already has real run and attack clips.
