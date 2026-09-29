@@ -4013,3 +4013,33 @@ The manifest block did the swap; only two findings needed code.
 **⚑ `shot_chartest`'s 3× inset is not safe for size comparisons** — it centres via the canvas transform, which doesn't track reliably here, so its panels are framed differently and the 3D knight *looks* half the sprite's size when they measure within 2 px. Use `size_probe`'s saved frames (`user://size/`), which are one player position with only the visible skin changed. `t1_size_sidebyside_{S,E}.png` is the honest picture.
 
 **Still pending:** RUN and ATTACK paint, behind the run's Astra image cap. Run plays walk cells at the Keeper's run stride; attack falls back to idle; both labelled on the HUD. When the paint lands: set `states.run.from` to `"run"` and drop its `hud_note`; same for attack. The 3D skin already has real run and attack clips.
+
+---
+
+## 2026-09-29 — R-C9-71: the T2 manticore on `/playtest/cliffside/?c=keeper`
+
+**Built, verified locally, committed, NOT pushed.** Matt played the desktop app first (*"The manticore fits the painted world perfectly."*) and authorised the push; the push itself is his to run. `keeper.pck` **35,994,216 → 39,267,944** (+3,273,728 B) for 352 painted frames. `warlord.pck`, `necro.pck`, `index.wasm`, `index.js`, both audio worklets and all three icons are **byte-identical before and after — measured by sha256, not asserted**; `index.html` changed by exactly one number, the keeper pack's declared size.
+
+**The pack was rebuilt down the existing lineage, not a new path:** `C-8/web/build_char.sh <chartest/godot> keeper` → `assemble_trio.py` → `public/playtest/cliffside/`. The engine-identity gate passed (`index.js`, `index.wasm`, both worklets IDENTICAL across all three builds), which is what lets one 37.7 MB wasm serve three characters.
+
+**⚑ THE MANTICORE WAS IN THE WRONG PROJECT AND THE TWO LOOK ALIKE.** I built it into `runs/C-9/cliffside_B_app` for Matt's desktop app; `keeper.pck` is built from `runs/C-9/chartest/godot`. Both are cliffsides, both have `scenes/cliffside.tscn`, both have `sprites_knight/` — and only `chartest/godot` has `models/` and the K toggle. Building the web pack from the desktop project would have shipped the manticore and silently dropped the Keeper/knight-sprites/knight-3D toggle the route exists to demonstrate. Found by diffing the stage mirror against candidate sources rather than by assuming the desktop project was the source. The install into `chartest/godot` is **byte-identical to the desktop one Matt approved**: same 352 frames (content hash `8ec11ac67e3d6706`), same `manticore.tres` / `manticore_npc.gd` / `manticore_npc.tscn`, same octagon node block at (2410, 2310), leg 90.
+
+Safe to sit in that project: `patch_scene.py` (the K toggle) and `26_cliffside_npc.py` (the manticore) are both idempotent and both marker-scoped, so neither eats the other's block.
+
+**The collision geometry is identical between the two projects — 966 polygons, same hash** — so the octagon origin chosen by `test_move` grid search in the desktop app transfers. Re-probed in `chartest/godot` anyway: **all 8 legs travel 83–88 px of 90, all 8 facings appear, 0 blocked-skips, 3 closed cycles, 14.0 s per loop.**
+
+**Local verification — a real headless Chrome against a real server** (`meshy_t2/scripts/27_serve_web.py` + `28_web_verify.js`, collaboration `bf0fc62a4`): boots with **0 page errors and 0 console error lines**; **only `keeper.pck` is fetched**; the HUD reads **"CHARACTER Keeper (default) … K = next character"** in the build's own words, and K cycles Keeper → Knight sprites (T1) → Knight runtime 3D (T3) → Keeper, each press changing the HUD strip (0.149 / 0.138 / 0.101) and three returning it (0.0022). Still: `agentic_orchestration/drax/captures/2026-09-29-web-cliffside-manticore/01_still_keeper_default_manticore.png`.
+
+**⚑ TWO INSTRUMENTS FOUND MEASURING SOMETHING ELSE, BOTH RETURNING CLEANLY.**
+- A whole-frame "largest moving blob" tracker reported a **1040 × 872 px** path for a **217 × 217 px** loop. It was never on the creature: the HUD's fps digits repaint 4×/s, the player's idle animation plays at screen centre, and a fly swarm drifts through the grass, so the winning box hopped between movers and the "extent" was the distance between them. Fixed by measuring inside the region the scene's own numbers predict **and** pairing it with a same-sized control region on comparable ground — **11/15 frames carry a blob in the manticore's region, 0/15 in the control.**
+- The capture strip slept 1 s per sample and **labelled the samples as seconds**. They are **1.57–1.97 s** apart; a 1920×1080 screenshot plus PNG encode under software GL costs the rest. Read as seconds, the loop closed in **9 s against an authored 14** and the creature walked at **~100 px/s against an authored 64.7** — a correct build looking 35 % fast, and a bug hunt with nothing at the end of it. The interval is now measured from capture timestamps. **A time base is an instrument.**
+
+With it measured, two independent instruments agree without being tuned to each other: **loop period 14.0 s in the browser against 14.0 s from the in-engine probe**, and **58–68 px/s on screen against the authored 64.7 px/s**.
+
+**⚑ A DEFECT I CREATED AND NEARLY REPORTED.** The first still showed white shapes scattered through the grass. They are a spell: the harness clicked the canvas at (960, 900) to give it keyboard focus, and a click at a world position casts. The same still without the click is clean, and so is the untouched `warlord.pck`. **Harnesses do not click this canvas.**
+
+**Two things that are as they were on the desktop, not regressions:** the manticore passes behind a foreground tree for ~3 s of each 14 s loop (draw order, same tree, same octagon Matt approved); and the shell's "← Change character" chip overlays the HUD's first ~150 px, so the HUD has to be read with the chip hidden. Tab title reads "Keeper cell review stub" (the Godot project name overrides the picker's `document.title`) — pre-existing, present in the live pack.
+
+**Scale unchanged and deliberately so:** the manticore takes the Keeper's own `0.629167` with offset `−398` (its render's ground row), so its size relative to her is bit-identical to the build Matt judged. Nothing re-fitted.
+
+Loadout: this commit; collaboration `bf0fc62a4`. Captures 8.7 MB on disk, **not committed** (binaries). **Nothing pushed.**
