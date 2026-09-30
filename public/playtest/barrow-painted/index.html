@@ -111,7 +111,14 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":48648432,"index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":31736544,"index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_PACKS = {"barbarian": {"pack": "index.pck", "size": 31736544}, "sorceress": {"pack": "sorceress.pck", "size": 33393252}};
+(function () {
+	const pick = (new URLSearchParams(window.location.search).get('c') || '').toLowerCase() === 'sorceress' ? 'sorceress' : 'barbarian';
+	GODOT_CONFIG['mainPack'] = GODOT_PACKS[pick].pack;
+	GODOT_CONFIG['fileSizes'] = {[GODOT_PACKS[pick].pack]: GODOT_PACKS[pick].size, 'index.wasm': GODOT_CONFIG['fileSizes']['index.wasm']};
+}());
+
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
