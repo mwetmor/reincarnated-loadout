@@ -4043,3 +4043,60 @@ With it measured, two independent instruments agree without being tuned to each 
 **Scale unchanged and deliberately so:** the manticore takes the Keeper's own `0.629167` with offset `−398` (its render's ground row), so its size relative to her is bit-identical to the build Matt judged. Nothing re-fitted.
 
 Loadout: this commit; collaboration `bf0fc62a4`. Captures 8.7 MB on disk, **not committed** (binaries). **Nothing pushed.**
+
+## 2026-09-30 — R-C9-83: the Frost King's Barrow on `/playtest/barrow/` (phone web build)
+
+The C-9 Barrow (Godot 4.6.3, `cliffside3d/godot`) as a phone page. It is built by collaboration
+`astra_test_01/burst/runs/C-9/cliffside3d/tools/build_web_barrow.sh` from the same project as
+the desktop app, with web overrides: Compatibility renderer, a depth-only pen, heather cards and
+touch controls. The export is single-threaded (no COOP/COEP on our Vercel) and uses ETC2
+textures. It exports only the Barrow's dependencies.
+The page also adds a card to `public/playtest/index.html`. Collaboration commit: `1b150b3bd`.
+
+**Files (all under 50 MB):**
+- `index.pck`: 37,034,744 bytes, sha256 `c97982ec26077443722e527b4b2c04f6bc13412dfd66084f8446f23517be4903`.
+- `index.wasm`: 37,700,666 bytes, md5 `cfed4460…`, the same file as the cliffside page's.
+- Transfer with brotli: the wasm is 8.87 MB, measured off Vercel for the identical cliffside
+  wasm. The pck is about 34 MB (node brotli q4, which is within 1% of Vercel's measured ratio on
+  `warlord.pck`). About **43 MB in total**.
+
+**Measured, Chrome at 844x390 CSS px, DPR 3 (canvas 2532x1170), GPU ANGLE Metal on the M2:**
+- Brotli served locally, 40 Mbit/s with 20 ms latency: the pck arrived at 9.0 s, the Barrow was
+  built at 14.6 s, and the overlay was gone at 15.5 s.
+- At 100 Mbit/s: built at 9.0 s.
+- The M2 needs about 5.5 s from engine start to built. A phone CPU will be slower.
+- Frame rate: mean 57, median 60, minimum 45, with one dip for each first strike. MSAA 4x
+  against off made no difference on the M2.
+
+**Web levers, read from the page URL:**
+- `?msaa=0|2|4|8` sets MSAA; the default is the project's 4x.
+- `?scale3d=0.5..1` draws the 3D smaller and scales it up.
+- `?touch=1` forces the thumb controls.
+- `?fps=1` logs the frame rate to the console.
+
+**Before this was staged, three defects were fixed in the scene** (details in the collaboration commit):
+1. The splat never loaded in any export. That covers **the desktop app too**: no tarn, a bare
+   mound, and 318 of 650 instances.
+2. Compatibility added the sun's additive pass after sRGB encoding, which gave a white-washed
+   frame. The ambient now moves into the ramp's light().
+3. Blended heather cards were painted over by the post pass. They are now depthless cut-outs
+   drawn after it.
+
+**What still differs from the desktop app, by design or measured:**
+- The pen is depth-only (no crease, character or snow marks, per the coordinator's call), with a
+  6 px threshold. Junipers and other thin props ink dark, because there is no "thin" mark on the
+  web. An alpha-channel mark was tried and does not survive into Compatibility's screen copy
+  (alpha is 1.0 everywhere).
+- He draws with the screen pen, not his hull.
+- Heather is painted cards, not stems. The cards are drawn after the grade, so they come out
+  brighter and more saturated, take no cast shadow and cast none.
+- Snow reads slightly cooler and brighter: sun-only open snow is 207/201/190 against 202/189/173.
+- Shadows use hard PCF with normal bias 1.0.
+- Textures are 512 and 1024 px, and the ground tiles are lossy WebP.
+- He starts in the full kit and has a GEAR button.
+
+**Not changed, and flagged:** the falling snow draws about 0 pixels on BOTH builds in the
+look probe. The post pass paints its pre-transparent screen copy over the particles.
+
+**Pending:** the coordinator pushes, and push = production (Matt approved this page).
+The desktop app needs a rebuild to pick up the splat fix.
