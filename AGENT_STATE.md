@@ -4100,3 +4100,39 @@ look probe. The post pass paints its pre-transparent screen copy over the partic
 
 **Pending:** the coordinator pushes, and push = production (Matt approved this page).
 The desktop app needs a rebuild to pick up the splat fix.
+
+### 2026-09-30 (2nd pass) — /playtest/barrow/: falling snow, the web pen, the web's colour space
+
+A rebuild with four fixes, after the first page was pushed (`273c560`):
+- **Falling snow shows.** It drew about 0 px on BOTH builds, because the post pass paints its
+  pre-transparent screen copy over the particles. The particles now draw after the post pass.
+  Play frame, particles on against off: 1603 px on the web and 2051 on the desktop, counting
+  pixels that differ by more than 30 (both were 0 before).
+- **The web pen gets its marks back, through the STENCIL.** The thin props and the snow field
+  write a class, and the post pass runs as three passes chained with next_pass, one per class.
+  Ink on the snow is 0.13% of snow pixels (it was 0.50%; the desktop's is 0.45%). The trail
+  edges and the outlined bare patches are gone. Thin props get the desktop's 0.28 pen.
+- **The web's albedo is sRGB-encoded.** Compatibility linearises ALBEDO after the fragment
+  shader. So the linear tints (juniper, snow, heather cards) are raised to 1/2.2 on the web, and
+  the multiplicative noise amplitudes (including the paper grain) are divided by 2.2. The ramp's
+  shadow colour is linearised.
+- **The desktop's sky reflection is emulated per class.** Forward+ adds sky radiance even under
+  `specular_disabled`; Compatibility lost it with the ambient move. The emulation uses the values
+  measured on the desktop's ambient-only frame, and it is what made the junipers read black.
+
+Measured on the play frame, web against desktop:
+- Mean |difference| is **12** (it was 47 at the first test, then 17, then 14).
+- Thin props: 93/81/80 against 94/83/84. Near-black pixels on them: 0% (they were 60%).
+- Lit snow: 233/220/206 against 235/222/208.
+- Shadowed snow: 170/171/184 against 163/169/191.
+
+**Files:** `index.pck` 37,039,512 bytes, sha256 `42b177ad8f20b34762d1d693e899f458ca454a4e92b0feb9c1c9d489a11b0687`. `index.wasm` unchanged.
+
+**Timing,** in Chrome at phone size on the M2, brotli served:
+- 40 Mbit/s: built at 13.8 s, overlay gone at 14.7 s.
+- Wired speed: 6.0 s and 6.9 s.
+- Frame rate: mean 56.5, median 60, minimum 45.
+
+**The desktop app was rebuilt as well** (`build_app_barrow.sh`, staged to the review folder). Its
+launch fence now reads the scene's own `[barrow] loaded:` line: splat ok, 657 instances, no
+foot-lock node.
