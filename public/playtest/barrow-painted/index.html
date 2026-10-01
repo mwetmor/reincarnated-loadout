@@ -81,12 +81,12 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
         <label><input type="radio" name="s_armor" value="bmd"><span>Battle mage · + steel pass</span></label>
       </div></fieldset>
       <fieldset><legend>Fire Ball</legend><div class="seg">
-        <label><input type="radio" name="s_fb" value="" checked><span>Current</span></label>
-        <label><input type="radio" name="s_fb" value="c75"><span>Condensed (0.75)</span></label>
+        <label><input type="radio" name="s_fb" value="" checked><span>Condensed (current)</span></label>
+        <label><input type="radio" name="s_fb" value="full"><span>Full (old)</span></label>
       </div></fieldset>
       <fieldset><legend>Meteor</legend><div class="seg">
-        <label><input type="radio" name="s_meteor" value="mix3" checked><span>Mix 3</span></label>
-        <label><input type="radio" name="s_meteor" value="mix4"><span>Mix 4 · crater v4</span></label>
+        <label><input type="radio" name="s_meteor" value="" checked><span>Crater v4 (current)</span></label>
+        <label><input type="radio" name="s_meteor" value="mix3"><span>Mix 3 (old)</span></label>
       </div></fieldset>
       <fieldset><legend>Meteor fall</legend><div class="seg">
         <label><input type="radio" name="s_fall" value="" checked><span>0.82 s (current)</span></label>
@@ -101,7 +101,7 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
     <div class="body">
       <h2>Dark Knight</h2>
       <div class="sub">Mace. Space attack · X war cry · G his gear</div>
-      <p class="note">New: his full kit at 1.96 m — mace, helm, pauldrons, chest and cape. No war-cry effect yet.</p>
+      <p class="note">His full kit at 1.96 m — mace, helm, pauldrons, chest and cape. Stage I: raised idle chin, mace at shoulder height, cape v2. No war-cry effect yet.</p>
       <a class="go" href="#">Play the dark knight</a>
     </div>
   </section>
@@ -130,7 +130,7 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
       } else if (c === 'sorceress') {
         if (val(card, 's_armor') !== 'cur') { q.set('armor', val(card, 's_armor')); }
         if (val(card, 's_fb')) { q.set('fb', val(card, 's_fb')); }
-        q.set('meteor', val(card, 's_meteor'));
+        if (val(card, 's_meteor')) { q.set('meteor', val(card, 's_meteor')); }
         if (val(card, 's_fall')) { q.set('fall', val(card, 's_fall')); }
       }
       location.href = 'play.html?' + q.toString();
