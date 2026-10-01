@@ -1,227 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-		<title>C-9 Barrow painted</title>
-		<style>
-html, body, #canvas {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
-
-body {
-	color: white;
-	background-color: black;
-	overflow: hidden;
-	touch-action: none;
-}
-
-#canvas {
-	display: block;
-}
-
-#canvas:focus {
-	outline: none;
-}
-
-#status, #status-splash, #status-progress {
-	position: absolute;
-	left: 0;
-	right: 0;
-}
-
-#status, #status-splash {
-	top: 0;
-	bottom: 0;
-}
-
-#status {
-	background-color: #242424;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	visibility: hidden;
-}
-
-#status-splash {
-	max-height: 100%;
-	max-width: 100%;
-	margin: auto;
-}
-
-#status-splash.show-image--false {
-	display: none;
-}
-
-#status-splash.fullsize--true {
-	height: 100%;
-	width: 100%;
-	object-fit: contain;
-}
-
-#status-splash.use-filter--false {
-	image-rendering: pixelated;
-}
-
-#status-progress, #status-notice {
-	display: none;
-}
-
-#status-progress {
-	bottom: 10%;
-	width: 50%;
-	margin: 0 auto;
-}
-
-#status-notice {
-	background-color: #5b3943;
-	border-radius: 0.5rem;
-	border: 1px solid #9b3943;
-	color: #e0e0e0;
-	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
-	line-height: 1.3;
-	margin: 0 2rem;
-	overflow: hidden;
-	padding: 1rem;
-	text-align: center;
-	z-index: 1;
-}
-		</style>
-		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
-<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
-<base href="/playtest/barrow-painted/"><style>#rotate-hint{display:none;position:fixed;inset:0;z-index:10;background:#0b0f16;color:#e8eef7;font:600 20px/1.4 system-ui,sans-serif;align-items:center;justify-content:center;text-align:center;padding:24px}@media (orientation:portrait) and (pointer:coarse){#rotate-hint{display:flex}}#back-chip{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:calc(env(safe-area-inset-left,0px) + 8px);z-index:20;font:600 13px/1 system-ui,-apple-system,sans-serif}#back-chip a{display:block;padding:9px 13px;border-radius:999px;background:rgba(11,15,22,.78);color:#e8eef7;border:1px solid rgba(143,200,255,.45);text-decoration:none}</style><script>addEventListener('DOMContentLoaded',function(){var d=document.createElement('div');d.id='rotate-hint';d.textContent='Rotate your phone to landscape to play';document.body.appendChild(d);var n=document.createElement('div');n.id='back-chip';n.innerHTML='<a href="/playtest/">← Playtests</a>';document.body.appendChild(n);n.addEventListener('pointerdown',function(e){e.stopPropagation();},true);});</script>
-	</head>
-	<body>
-		<canvas id="canvas">
-			Your browser does not support the canvas tag.
-		</canvas>
-
-		<noscript>
-			Your browser does not support JavaScript.
-		</noscript>
-
-		<div id="status">
-			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="index.png" alt="">
-			<progress id="status-progress"></progress>
-			<div id="status-notice"></div>
-		</div>
-
-		<script src="index.js"></script>
-		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":31836044,"index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
-const GODOT_PACKS = {"barbarian": {"pack": "index.pck", "size": 31836044}, "sorceress": {"pack": "sorceress.pck", "size": 43353392}};
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Painted Barrow — choose</title>
+<!-- C-9 R-C9-117: the select screen BEFORE Godot boots (drax). Plain HTML, no framework. A card launches play.html
+     with the toggles as query params; Godot's cold boot starts only after a choice, and only that character's pack
+     (and its variant's) is ever fetched. Old links with a query (?c=sorceress ...) go straight to the game. -->
+<script>
 (function () {
-	const pick = (new URLSearchParams(window.location.search).get('c') || '').toLowerCase() === 'sorceress' ? 'sorceress' : 'barbarian';
-	GODOT_CONFIG['mainPack'] = GODOT_PACKS[pick].pack;
-	GODOT_CONFIG['fileSizes'] = {[GODOT_PACKS[pick].pack]: GODOT_PACKS[pick].size, 'index.wasm': GODOT_CONFIG['fileSizes']['index.wasm']};
+  var q = new URLSearchParams(location.search);
+  if (location.search.length > 1 && !q.has('select')) { location.replace('play.html' + location.search); }
 }());
+</script>
+<style>
+:root { --bg:#0e1218; --card:#171d26; --ink:#e8eef7; --dim:#9aa6b6; --line:#2a3340; --acc:#e7a24a; --acc2:#8fc8ff; }
+* { box-sizing:border-box; }
+html, body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif; }
+body { padding: max(14px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left)); }
+header { max-width:1100px; margin:0 auto 12px; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; }
+h1 { font-size:20px; margin:0; letter-spacing:.2px; }
+header p { margin:0; color:var(--dim); font-size:13px; }
+header a { color:var(--acc2); font-size:13px; }
+.grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; }
+.card img { display:block; width:100%; aspect-ratio:3/4; object-fit:cover; background:#e9e4dc; }
+.body { padding:12px 14px 14px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.card h2 { margin:0; font-size:18px; }
+.card .sub { color:var(--dim); font-size:12.5px; margin-top:-6px; }
+fieldset { border:0; margin:0; padding:0; }
+legend { font-size:12px; color:var(--dim); text-transform:uppercase; letter-spacing:.6px; margin-bottom:5px; padding:0; }
+.seg { display:flex; flex-wrap:wrap; gap:6px; }
+.seg label { position:relative; }
+.seg input { position:absolute; opacity:0; inset:0; margin:0; }
+.seg span { display:inline-block; padding:8px 11px; border-radius:9px; border:1px solid var(--line); background:#10151c; font-size:13.5px; min-height:38px; line-height:20px; cursor:pointer; }
+.seg input:checked + span { border-color:var(--acc); background:#2a1f12; color:#ffd9a6; }
+.seg input:focus-visible + span { outline:2px solid var(--acc2); outline-offset:2px; }
+.seg input:disabled + span { opacity:.35; cursor:not-allowed; }
+.note { font-size:12px; color:var(--dim); margin:2px 0 0; }
+.go { margin-top:auto; display:block; text-align:center; padding:13px; border-radius:11px; background:var(--acc); color:#1a1006; font-weight:700; font-size:16px; text-decoration:none; border:0; width:100%; cursor:pointer; }
+.go:active { transform:translateY(1px); }
+footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>The Painted Barrow — choose a character</h1>
+  <p>Pick a hero and the variants to try, then play. The first load takes a while (the game prepares its effects).</p>
+  <a href="/playtest/">← Playtests</a>
+</header>
 
-const GODOT_THREADS_ENABLED = false;
-const engine = new Engine(GODOT_CONFIG);
+<main class="grid">
+  <section class="card" data-c="barbarian">
+    <img src="select/barbarian.jpg" alt="The barbarian in the painted Barrow">
+    <div class="body">
+      <h2>Barbarian</h2>
+      <div class="sub">Axe and shield. Space slash · X chop · C bash · B block</div>
+      <fieldset><legend>Armour</legend><div class="seg">
+        <label><input type="radio" name="b_armor" value="viking" checked><span>Viking set (current)</span></label>
+        <label><input type="radio" name="b_armor" value="gladc"><span>Champion gladiator · painted + colour</span></label>
+        <label><input type="radio" name="b_armor" value="gladb"><span>Champion gladiator · painted only</span></label>
+      </div></fieldset>
+      <fieldset><legend>Axe hold</legend><div class="seg">
+        <label><input type="radio" name="b_hold" value="t1211" checked><span>T12_11 (installed)</span></label>
+        <label><input type="radio" name="b_hold" value="f25l"><span>T12_12c F25L</span></label>
+        <label><input type="radio" name="b_hold" value="f40l"><span>T12_12c F40L</span></label>
+      </div><p class="note">The axe hold applies to the Viking set. The champion carries no weapon: his buttons are his whirlwind and war cry.</p></fieldset>
+      <a class="go" href="#">Play the barbarian</a>
+    </div>
+  </section>
 
+  <section class="card" data-c="sorceress">
+    <img src="select/sorceress.jpg" alt="The sorceress in the painted Barrow">
+    <div class="body">
+      <h2>Sorceress</h2>
+      <div class="sub">Fire Ball and Meteor. Space Fire Ball · X Meteor · G her gear</div>
+      <fieldset><legend>Armour</legend><div class="seg">
+        <label><input type="radio" name="s_armor" value="cur" checked><span>Current robes</span></label>
+        <label><input type="radio" name="s_armor" value="bmc"><span>Battle mage · painted</span></label>
+        <label><input type="radio" name="s_armor" value="bmd"><span>Battle mage · + steel pass</span></label>
+      </div></fieldset>
+      <fieldset><legend>Fire Ball</legend><div class="seg">
+        <label><input type="radio" name="s_fb" value="" checked><span>Current</span></label>
+        <label><input type="radio" name="s_fb" value="c75"><span>Condensed (0.75)</span></label>
+      </div></fieldset>
+      <fieldset><legend>Meteor</legend><div class="seg">
+        <label><input type="radio" name="s_meteor" value="mix3" checked><span>Mix 3</span></label>
+        <label><input type="radio" name="s_meteor" value="mix4"><span>Mix 4 · crater v4</span></label>
+      </div></fieldset>
+      <fieldset><legend>Meteor fall</legend><div class="seg">
+        <label><input type="radio" name="s_fall" value="" checked><span>0.82 s (current)</span></label>
+        <label><input type="radio" name="s_fall" value="2.4"><span>2.4 s (D2 timing)</span></label>
+      </div></fieldset>
+      <a class="go" href="#">Play the sorceress</a>
+    </div>
+  </section>
+
+  <section class="card" data-c="warlord">
+    <img src="select/warlord.jpg" alt="The dark knight in the painted Barrow">
+    <div class="body">
+      <h2>Dark Knight</h2>
+      <div class="sub">Mace. Space attack · X war cry · G his gear</div>
+      <p class="note">New: his full kit at 1.96 m — mace, helm, pauldrons, chest and cape. No war-cry effect yet.</p>
+      <a class="go" href="#">Play the dark knight</a>
+    </div>
+  </section>
+</main>
+<footer>Toggles only choose what loads; every combination is the same painted Barrow. Back to this screen from the game with “← Characters”.</footer>
+
+<script>
 (function () {
-	const statusOverlay = document.getElementById('status');
-	const statusProgress = document.getElementById('status-progress');
-	const statusNotice = document.getElementById('status-notice');
-
-	let initializing = true;
-	let statusMode = '';
-
-	function setStatusMode(mode) {
-		if (statusMode === mode || !initializing) {
-			return;
-		}
-		if (mode === 'hidden') {
-			statusOverlay.remove();
-			initializing = false;
-			return;
-		}
-		statusOverlay.style.visibility = 'visible';
-		statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
-		statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
-		statusMode = mode;
-	}
-
-	function setStatusNotice(text) {
-		while (statusNotice.lastChild) {
-			statusNotice.removeChild(statusNotice.lastChild);
-		}
-		const lines = text.split('\n');
-		lines.forEach((line) => {
-			statusNotice.appendChild(document.createTextNode(line));
-			statusNotice.appendChild(document.createElement('br'));
-		});
-	}
-
-	function displayFailureNotice(err) {
-		console.error(err);
-		if (err instanceof Error) {
-			setStatusNotice(err.message);
-		} else if (typeof err === 'string') {
-			setStatusNotice(err);
-		} else {
-			setStatusNotice('An unknown error occurred.');
-		}
-		setStatusMode('notice');
-		initializing = false;
-	}
-
-	const missing = Engine.getMissingFeatures({
-		threads: GODOT_THREADS_ENABLED,
-	});
-
-	if (missing.length !== 0) {
-		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
-			let serviceWorkerRegistrationPromise;
-			try {
-				serviceWorkerRegistrationPromise = navigator.serviceWorker.getRegistration();
-			} catch (err) {
-				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
-			}
-			// There's a chance that installing the service worker would fix the issue
-			Promise.race([
-				serviceWorkerRegistrationPromise.then((registration) => {
-					if (registration != null) {
-						return Promise.reject(new Error('Service worker already exists.'));
-					}
-					return registration;
-				}).then(() => engine.installServiceWorker()),
-				// For some reason, `getRegistration()` can stall
-				new Promise((resolve) => {
-					setTimeout(() => resolve(), 2000);
-				}),
-			]).then(() => {
-				// Reload if there was no error.
-				window.location.reload();
-			}).catch((err) => {
-				console.error('Error while registering service worker:', err);
-			});
-		} else {
-			// Display the message as usual
-			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
-			displayFailureNotice(missingMsg + missing.join('\n'));
-		}
-	} else {
-		setStatusMode('progress');
-		engine.startGame({
-			'onProgress': function (current, total) {
-				if (current > 0 && total > 0) {
-					statusProgress.value = current;
-					statusProgress.max = total;
-				} else {
-					statusProgress.removeAttribute('value');
-					statusProgress.removeAttribute('max');
-				}
-			},
-		}).then(() => {
-			setStatusMode('hidden');
-		}, displayFailureNotice);
-	}
+  function val(card, name) { var e = card.querySelector('input[name="' + name + '"]:checked'); return e ? e.value : ''; }
+  function sync() {
+    var b = document.querySelector('[data-c="barbarian"]');
+    var glad = val(b, 'b_armor') !== 'viking';
+    b.querySelectorAll('input[name="b_hold"]').forEach(function (i) { i.disabled = glad; });
+  }
+  document.querySelectorAll('input').forEach(function (i) { i.addEventListener('change', sync); });
+  sync();
+  document.querySelectorAll('.card').forEach(function (card) {
+    card.querySelector('.go').addEventListener('click', function (ev) {
+      ev.preventDefault();
+      var c = card.getAttribute('data-c');
+      var q = new URLSearchParams();
+      q.set('c', c);
+      if (c === 'barbarian') {
+        var a = val(card, 'b_armor');
+        if (a !== 'viking') { q.set('armor', a); } else { q.set('hold', val(card, 'b_hold')); }
+      } else if (c === 'sorceress') {
+        if (val(card, 's_armor') !== 'cur') { q.set('armor', val(card, 's_armor')); }
+        if (val(card, 's_fb')) { q.set('fb', val(card, 's_fb')); }
+        q.set('meteor', val(card, 's_meteor'));
+        if (val(card, 's_fall')) { q.set('fall', val(card, 's_fall')); }
+      }
+      location.href = 'play.html?' + q.toString();
+    });
+  });
 }());
-		</script>
-	</body>
+</script>
+</body>
 </html>
-
