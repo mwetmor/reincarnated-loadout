@@ -77,8 +77,8 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
       <div class="sub">Fire Ball and Meteor. Space Fire Ball · X Meteor · G her gear</div>
       <fieldset><legend>Armour</legend><div class="seg">
         <label><input type="radio" name="s_armor" value="cur" checked><span>Current robes</span></label>
-        <label><input type="radio" name="s_armor" value="bmc"><span>Battle mage · painted</span></label>
-        <label><input type="radio" name="s_armor" value="bmd"><span>Battle mage · + steel pass</span></label>
+        <label><input type="radio" name="s_armor" value="bmc"><span>Battle mage · painted (wand + open book)</span></label>
+        <label><input type="radio" name="s_armor" value="bmd"><span>Battle mage · + steel pass (wand + open book)</span></label>
       </div></fieldset>
       <fieldset><legend>Fire Ball</legend><div class="seg">
         <label><input type="radio" name="s_fb" value="" checked><span>Condensed (current)</span></label>
@@ -88,6 +88,10 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
         <label><input type="radio" name="s_meteor" value="" checked><span>Crater v4 (current)</span></label>
         <label><input type="radio" name="s_meteor" value="mix3"><span>Mix 3 (old)</span></label>
       </div></fieldset>
+      <fieldset><legend>Crater v5 (try each)</legend><div class="seg">
+        <label><input type="checkbox" name="s_v5" value="a"><span>Stops on stones &amp; trees</span></label>
+        <label><input type="checkbox" name="s_v5" value="b"><span>Ice / earth craters</span></label>
+      </div><p class="note">Crater v4 only. Each part is off until you try it.</p></fieldset>
       <fieldset><legend>Meteor fall</legend><div class="seg">
         <label><input type="radio" name="s_fall" value="" checked><span>0.82 s (current)</span></label>
         <label><input type="radio" name="s_fall" value="2.4"><span>2.4 s (D2 timing)</span></label>
@@ -101,7 +105,11 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
     <div class="body">
       <h2>Dark Knight</h2>
       <div class="sub">Mace. Space attack · X war cry · G his gear</div>
-      <p class="note">His full kit at 1.96 m — mace, helm, pauldrons, chest and cape. Stage I: raised idle chin, mace at shoulder height, cape v2. No war-cry effect yet.</p>
+      <fieldset><legend>Eye glow</legend><div class="seg">
+        <label><input type="radio" name="w_eye" value="" checked><span>Violet</span></label>
+        <label><input type="radio" name="w_eye" value="ice"><span>Ice</span></label>
+      </div></fieldset>
+      <p class="note">His painted kit at 1.96 m — mace, helm, pauldrons, chest and cape. Take the mace off with GEAR and he walks unarmed (attack and war cry need the mace). No war-cry effect yet.</p>
       <a class="go" href="#">Play the dark knight</a>
     </div>
   </section>
@@ -112,6 +120,9 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
 (function () {
   function val(card, name) { var e = card.querySelector('input[name="' + name + '"]:checked'); return e ? e.value : ''; }
   function sync() {
+    var sc = document.querySelector('[data-c="sorceress"]');
+    var old = val(sc, 's_meteor') !== '';
+    sc.querySelectorAll('input[name="s_v5"]').forEach(function (i) { i.disabled = old; });
     var b = document.querySelector('[data-c="barbarian"]');
     var glad = val(b, 'b_armor') !== 'viking';
     b.querySelectorAll('input[name="b_hold"]').forEach(function (i) { i.disabled = glad; });
@@ -127,11 +138,15 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
       if (c === 'barbarian') {
         var a = val(card, 'b_armor');
         if (a !== 'viking') { q.set('armor', a); } else { q.set('hold', val(card, 'b_hold')); }
+      } else if (c === 'warlord') {
+        if (val(card, 'w_eye')) { q.set('eye', val(card, 'w_eye')); }
       } else if (c === 'sorceress') {
         if (val(card, 's_armor') !== 'cur') { q.set('armor', val(card, 's_armor')); }
         if (val(card, 's_fb')) { q.set('fb', val(card, 's_fb')); }
         if (val(card, 's_meteor')) { q.set('meteor', val(card, 's_meteor')); }
         if (val(card, 's_fall')) { q.set('fall', val(card, 's_fall')); }
+        var v5 = Array.prototype.map.call(card.querySelectorAll('input[name="s_v5"]:checked'), function (e) { return e.value; }).join('');
+        if (v5 && val(card, 's_meteor') === '') { q.set('v5', v5); }
       }
       location.href = 'play.html?' + q.toString();
     });
