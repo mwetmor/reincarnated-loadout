@@ -4136,3 +4136,20 @@ Measured on the play frame, web against desktop:
 **The desktop app was rebuilt as well** (`build_app_barrow.sh`, staged to the review folder). Its
 launch fence now reads the scene's own `[barrow] loaded:` line: splat ok, 657 instances, no
 foot-lock node.
+
+---
+
+## 2026-10-03 — /playtest/barrow-painted: the combined C-9 deploy (R-C9-138/139/140/141/142/143/146) — COMMITTED, NOT PUSHED
+
+Lane SO (drax) under conductor gandalf, Run C-9 Phase 2. Built by collaboration `astra_test_01/burst/runs/C-9/barrow_full/tools/build_web_painted.sh`
+(every fence ok, 57+ checks; the source commit in collab lists them). What it carries:
+- **Sorceress arena kit** (R-C9-138/140): select-page option "Battle mage · orb-staff + shield (arena kit)" = `?c=sorceress&armor=bm134`
+  (variant_so_bm134.pck, 33.4 MB); "Arena kit idle": "Calm standing (fixed lean)" (default) / "Sword-and-shield stance" = `&soidle=ss4`.
+  The orb staff points along her facing; the hood hides her hair (G steps to "armed, hood off" to see it).
+- **Character light** (R-C9-139): shared row "Character light (all three)": Current / Brighter sun / Sun + fill / Ambient lift =
+  `charlight=` (empty) / `a` / `b` / `c`. Characters' own materials only; the painting is pixel-identical.
+- **Meteor** (R-C9-142): crater v5 part (a) retired; the checkbox "Ice / earth craters + scorch on stones & trees" = `v5=b`.
+- **Dark knight** body final_k_eor3 (R-C9-141, helm crown tucked); the EoR re-port (R-C9-143/146, `eorfx=wwcr` the old one, URL only).
+Stale untracked `variant_barb_n25.pck` / `variant_barb_n40.pck` in the staging dir are NOT committed (dropped by R-C9-127).
+Rebuilt from collab 1b56f15ba (EOR2 deployable state, R-C9-143/146). Dark knight EoR page perf (?c=warlord&perf=eor, Chrome phone size): +1.50 ms/frame, +22 draws, worst 27.1 ms vs control 24.4, 0 frames over 33 ms (information, not a blocker).
+Push = Vercel deploy: the conductor pushes (R-C9-117). Smoke: `npm run build` ok, `vite preview` root 200, select page 200, select_check 18/18.
