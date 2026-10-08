@@ -127,6 +127,11 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
         <label><input type="radio" name="w_eor" value="" checked><span>Red (his)</span></label>
         <label><input type="radio" name="w_eor" value="original"><span>Original colours</span></label>
       </div></fieldset>
+      <fieldset><legend>Smoke tint</legend><div class="seg">
+        <label><input type="radio" name="w_smoke" value="1"><span>Light</span></label>
+        <label><input type="radio" name="w_smoke" value="" checked><span>Medium</span></label>
+        <label><input type="radio" name="w_smoke" value="3"><span>Strong</span></label>
+      </div></fieldset>
       <p class="note">His painted kit at 1.96 m — mace, helm, pauldrons, chest and cape. Take the mace off with GEAR and he walks unarmed (attack, war cry and the Eye of Reckoning need the mace). The Eye of Reckoning is a channel: tap for a 2.3 s spin, hold to keep spinning; he moves while he spins. No war-cry effect yet.</p>
       <a class="go" href="#">Play the dark knight</a>
     </div>
@@ -161,6 +166,7 @@ footer { max-width:1100px; margin:16px auto 0; color:var(--dim); font-size:12px;
       } else if (c === 'warlord') {
         if (val(card, 'w_eye')) { q.set('eye', val(card, 'w_eye')); }
         if (val(card, 'w_eor')) { q.set('eortint', val(card, 'w_eor')); }
+        if (val(card, 'w_smoke')) { q.set('eorsmoke', val(card, 'w_smoke')); }
       } else if (c === 'sorceress') {
         if (val(card, 's_armor') !== 'cur') { q.set('armor', val(card, 's_armor')); }
         if (val(card, 's_armor') === 'bm134' && val(card, 's_idle')) { q.set('soidle', val(card, 's_idle')); }
