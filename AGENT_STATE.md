@@ -1,3 +1,9 @@
+# Barrow arena preview — 2026-10-10
+
+Codex completed Claude's web packaging repairs after Matt reported exhausted Claude credits. Preview branch: `codex/c9-arena-web`; route: `/playtest/barrow-arena/`. Desktop and landscape touch emulation exercise movement, Whirlwind hold/release and zoom; the missing-pack test refuses startup. The inherited exploration touch layer is removed. Enemy VFX atlases are included. The KC2 runtime and model pack remain byte-pinned; Web explicitly selects the existing GDScript reference solver. Vite production build passed. Ten auxiliary packs; export 385,183,671 bytes, largest 41,429,056 bytes. Initial runtime load/shader warm-up and the pinned runtime's pre-existing NUL decoder warnings remain. Physical-phone performance and a Windows ZIP are not verified. Repair source and reproducible tests live in collaboration's `astra_test_01/burst/runs/C-9/barrow_full/tools/WEB_ARENA_NOTES.md`.
+
+---
+
 # AGENT_STATE — drax
 
 > ## SEAM FROZEN — no further roadmap (2026-06-10); app + cosmograph remain LIVE
