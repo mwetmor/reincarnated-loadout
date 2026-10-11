@@ -11,7 +11,18 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-10-11 — selected War Cry, Might candidate and web detail/mobile portability.
+**Last updated:** 2026-10-11 — user-selected Might follow-up.
+Collaboration implementation `6c15221e9`. Local packaged touch/PCM check passes.
+Might now uses Matt's supplied four-second ElevenLabs MP3 (`16_38_03`), unchanged,
+SHA-256 `1db4e2f682613e0981d9c5362654364f7c15ee7c4cc8fad9dc993d4a34031066`.
+War Cry and all other cues/mix settings remain unchanged. Updated six-skill
+page: `/playtest/barrow-arena/hero-sfx.html`. Audio pack and main manifest are
+re-exported; all 3,076 web payloads and isolated ordered pack mounting pass.
+Local CoreAudio and Vite production build pass. Existing graphics/mobile controls
+and performance limits remain. Windows ZIP is not updated by this follow-up.
+Publication/browser evidence: collaboration `audio_review/ELEVENLABS_WEB_REVISION.md`.
+
+**Prior update:** 2026-10-11 — selected War Cry, Might candidate and web detail/mobile portability.
 Collaboration implementation `155864993afb428c7f4c5a4b7c654445085af155`.
 War Cry uses Matt's supplied ElevenLabs MP3 unchanged; Might uses Fortify (pending
 listening approval). Approved pendulum and quieter Whirlwind contacts are preserved.
