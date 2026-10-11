@@ -11,7 +11,23 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-10-11 — Whirlwind hit balance follow-up for local/web.
+**Last updated:** 2026-10-11 — selected War Cry, Might candidate and web detail/mobile portability.
+Collaboration implementation `155864993afb428c7f4c5a4b7c654445085af155`.
+War Cry uses Matt's supplied ElevenLabs MP3 unchanged; Might uses Fortify (pending
+listening approval). Approved pendulum and quieter Whirlwind contacts are preserved.
+42 kits now use native frame dimensions/anchors with q95 WebP; wide atlases are
+rearranged below 4096px without shrinking frames. World bakes retain native pixels
+for 104/106 bakes; large bakes and hero textures remain bounded at 2048px.
+Split packs verify every member; export/public route contains 28 files below 50 MB.
+Browser telemetry is session-local to avoid IndexedDB save failures. Touch
+framebuffer is bounded; two-finger move/Whirlwind and 35-second combat pass in
+Mac Chrome at DPR3. Crowded combat measured about 28.8 FPS: no zero-lag, exact
+native-rendering parity or physical-phone/Safari performance claim. Native 4x
+MSAA is retained. Vite build passes; publication checks are recorded after the
+Git-triggered deployment in collaboration `audio_review/ELEVENLABS_WEB_REVISION.md`
+under the Barrow arena run. Updated six-skill audition: `/playtest/barrow-arena/hero-sfx.html`.
+
+**Prior update:** 2026-10-11 — Whirlwind hit balance follow-up for local/web.
 Matt accepted the pendulum sweep sound; outgoing hero physical contacts while
 Whirlwind plays are reduced by 10 dB. Normal attacks, incoming hits and the
 pendulum clip/gain retain their levels. CoreAudio verifies -2/-12/-2 dB for

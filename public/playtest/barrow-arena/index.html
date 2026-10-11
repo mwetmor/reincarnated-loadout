@@ -1,3 +1,4 @@
+<!-- Based on the Godot 4.6.3 MIT-licensed export template. -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -111,7 +112,24 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":40901448,"index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+// Playtest telemetry is session-local; browser storage permission is not required.
+const GODOT_CONFIG = Object.assign({"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":40903432,"index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4}, {persistentPaths: [], canvasResizePolicy: 0});
+// Bound framebuffer work, rather than shrinking the original animation textures.
+// CSS size and input coordinates still cover the complete browser window.
+const arenaCanvas = document.getElementById('canvas');
+function fitArenaCanvas() {
+    const touch = navigator.maxTouchPoints > 0;
+    const width = Math.max(1, window.innerWidth), height = Math.max(1, window.innerHeight);
+    const density = Math.min(window.devicePixelRatio || 1, touch ? 1.5 : 2,
+        Math.sqrt((touch ? 1000000 : 2100000) / (width * height)));
+    const w = Math.max(1, Math.round(width * density)), h = Math.max(1, Math.round(height * density));
+    if (arenaCanvas.width !== w) arenaCanvas.width = w;
+    if (arenaCanvas.height !== h) arenaCanvas.height = h;
+    arenaCanvas.style.width = width + 'px';
+    arenaCanvas.style.height = height + 'px';
+}
+fitArenaCanvas();
+window.addEventListener('resize', fitArenaCanvas);
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
