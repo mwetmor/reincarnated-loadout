@@ -11,7 +11,18 @@
 
 # AGENT_STATE — drax
 
-**Last updated:** 2026-10-11 — C-9 Barrow arena audio/render repair.
+**Last updated:** 2026-10-11 — Whirlwind hit balance follow-up for local/web.
+Matt accepted the pendulum sweep sound; outgoing hero physical contacts while
+Whirlwind plays are reduced by 10 dB. Normal attacks, incoming hits and the
+pendulum clip/gain retain their levels. CoreAudio verifies -2/-12/-2 dB for
+normal/channel/released hits, unchanged -8 dB incoming hits and loop. No simulation
+or sound-file changes. Web actual-pack audit, desktop/touch PCM/mutes/controls,
+missing-pack refusal and Vite build pass. This entry accompanies the new playtest
+route release. Latest deployment/public validation and remaining visual/phone
+parity limits: `reincarnated-collaboration/astra_test_01/burst/runs/C-9/barrow_full/audio_review/WHIRLWIND_HIT_BALANCE.md`.
+Other character skill audition verdicts remain pending Matt's listening review.
+
+**Prior update:** 2026-10-11 — C-9 Barrow arena audio/render repair.
 `/playtest/barrow-arena/` release `206b4169d4a1272481c8ccb1b2a361ca722e4055`
 is pushed and production deployment `dpl_2Rtd1yHdjEycAZ4nX68yLpW3ijMg` is READY.
 All 21 public game files hash-match the tested export without authentication.
